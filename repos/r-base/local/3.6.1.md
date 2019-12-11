@@ -522,20 +522,13 @@ Licenses: (parsed from: `/usr/share/doc/libcurl4/copyright`)
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.66.0-1
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.66.0-1.dsc' curl_7.66.0-1.dsc 2645 SHA256:ccbb6c4afc1cd645588c7df71bac4e5927d921044add1db5f44237e40c9217d2
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.66.0.orig.tar.gz' curl_7.66.0.orig.tar.gz 4066716 SHA256:d0393da38ac74ffac67313072d7fe75b1fa1010eb5987f63f349b024a36b7ffb
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.66.0-1.debian.tar.xz' curl_7.66.0-1.debian.tar.xz 29132 SHA256:c2de2c6f4de94b74ae78e9d2ebff10172a2c38609389b691de3e9638c775fd8f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.66.0-1/
 
-- https://sources.debian.net/src/curl/7.66.0-1/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.66.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.66.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
@@ -1567,16 +1560,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris isl=0.21-2
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.21-2.dsc' isl_0.21-2.dsc 1846 SHA256:561e5a9234ff4f1dcab8f57b703ed8fc4a5aadbf3cc0a31ece57a00b4d65f7d5
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.21.orig.tar.xz' isl_0.21.orig.tar.xz 1621680 SHA256:777058852a3db9500954361e294881214f6ecd4b594c00da5eee974cd6a54960
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.21-2.debian.tar.xz' isl_0.21-2.debian.tar.xz 23724 SHA256:ca40ff6d2a6e80dabf018a6c249d9899866af20c30fb828d7194711d3e9cb9bd
+'http://http.debian.net/debian/pool/main/i/isl/isl_0.21-2.dsc' isl_0.21-2.dsc 1846 SHA256:561e5a9234ff4f1dcab8f57b703ed8fc4a5aadbf3cc0a31ece57a00b4d65f7d5
+'http://http.debian.net/debian/pool/main/i/isl/isl_0.21.orig.tar.xz' isl_0.21.orig.tar.xz 1621680 SHA256:777058852a3db9500954361e294881214f6ecd4b594c00da5eee974cd6a54960
+'http://http.debian.net/debian/pool/main/i/isl/isl_0.21-2.debian.tar.xz' isl_0.21-2.debian.tar.xz 23724 SHA256:ca40ff6d2a6e80dabf018a6c249d9899866af20c30fb828d7194711d3e9cb9bd
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/isl/0.21-2/ (for browsing the source)
-- https://sources.debian.net/src/isl/0.21-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/isl/0.21-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `jbigkit=2.1-3.1`
 
@@ -3542,20 +3529,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-matrix/copyright`)
 - `GPL-2+`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris rmatrix=1.2-17-2
-'http://deb.debian.org/debian/pool/main/r/rmatrix/rmatrix_1.2-17-2.dsc' rmatrix_1.2-17-2.dsc 1864 SHA256:2d89cd345be912467aee8264b552cc247ffc928c25f18a598d34a476cc95587f
-'http://deb.debian.org/debian/pool/main/r/rmatrix/rmatrix_1.2-17.orig.tar.gz' rmatrix_1.2-17.orig.tar.gz 1860456 SHA256:db43e6f0196fd5dfd05a7e88cac193877352c60d771d4ec8772763e645723fcc
-'http://deb.debian.org/debian/pool/main/r/rmatrix/rmatrix_1.2-17-2.debian.tar.xz' rmatrix_1.2-17-2.debian.tar.xz 5524 SHA256:5eca5e47c8bdbad51d15e66cf4cdbe3eddc5a7d4b39e817e4558fb3ff3fc452e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/rmatrix/1.2-17-2/
 
-- https://sources.debian.net/src/rmatrix/1.2-17-2/ (for browsing the source)
-- https://sources.debian.net/src/rmatrix/1.2-17-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/rmatrix/1.2-17-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rpart=4.1-15-2`
 
