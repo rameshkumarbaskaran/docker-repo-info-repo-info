@@ -1,16 +1,16 @@
-# `mono:6.4.0.198-slim`
+# `mono:6.6.0.161-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:026f91a4b8fb522bad9088aa82f78d3cb54c7229a136c7582af994bcc5804e16`
-- Created: `2019-11-22T22:59:47.281470975Z`
-- Virtual Size: ~ 239.21 Mb  
+- Image ID: `sha256:c6194e440ff3046e473b21a8f2e394eb21ce932bec1df73a0dc7b98b2d06990e`
+- Created: `2019-12-10T22:12:14.126792325Z`
+- Virtual Size: ~ 241.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `MONO_VERSION=6.4.0.198`
+  - `MONO_VERSION=6.6.0.161`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -840,6 +840,63 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/init-system-helpers/1.48/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/init-system-helpers/1.48/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `keyutils=1.5.9-9`
+
+Binary Packages:
+
+- `libkeyutils1:amd64=1.5.9-9`
+
+Licenses: (parsed from: `/usr/share/doc/libkeyutils1/copyright`)
+
+- `GPL-2`
+- `GPL-2+`
+- `LGPL-2`
+- `LGPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris keyutils=1.5.9-9
+'http://deb.debian.org/debian/pool/main/k/keyutils/keyutils_1.5.9-9.dsc' keyutils_1.5.9-9.dsc 2033 SHA256:5fe3b2578a7ec662b7f495b11b7d861c3ee68c9550d4dec20c10ff4f3b3ca3dd
+'http://deb.debian.org/debian/pool/main/k/keyutils/keyutils_1.5.9.orig.tar.bz2' keyutils_1.5.9.orig.tar.bz2 74683 SHA256:4da2c5552c688b65ab14d4fd40fbdf720c8b396d8ece643e040cf6e707e083ae
+'http://deb.debian.org/debian/pool/main/k/keyutils/keyutils_1.5.9-9.debian.tar.xz' keyutils_1.5.9-9.debian.tar.xz 17588 SHA256:2e9db3f51d902a4d8fa4bef3b914353f9f83ed53b9003f24b5fc44748f4d6d80
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/keyutils/1.5.9-9/ (for browsing the source)
+- https://sources.debian.net/src/keyutils/1.5.9-9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/keyutils/1.5.9-9/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `krb5=1.15-1+deb9u1`
+
+Binary Packages:
+
+- `krb5-locales=1.15-1+deb9u1`
+- `libgssapi-krb5-2:amd64=1.15-1+deb9u1`
+- `libk5crypto3:amd64=1.15-1+deb9u1`
+- `libkrb5-3:amd64=1.15-1+deb9u1`
+- `libkrb5support0:amd64=1.15-1+deb9u1`
+
+Licenses: (parsed from: `/usr/share/doc/krb5-locales/copyright`, `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
+
+- `GPL-2`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris krb5=1.15-1+deb9u1
+'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.15-1+deb9u1.dsc' krb5_1.15-1+deb9u1.dsc 3373 SHA256:cb69444c826f380c9d3ea7c5e6bf04105ca2fceb26ecc14b293f458f337f34c2
+'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.15.orig.tar.gz' krb5_1.15.orig.tar.gz 9327157 SHA256:fd34752774c808ab4f6f864f935c49945f5a56b62240b1ad4ab1af7b4ded127c
+'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.15-1+deb9u1.debian.tar.xz' krb5_1.15-1+deb9u1.debian.tar.xz 144944 SHA256:f04183b2ecfd0fe488975338eb4f900d5f605c81a9ae279451ceda948d99a21c
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/krb5/1.15-1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/krb5/1.15-1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/krb5/1.15-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `libcap-ng=0.7.7-3`
 
 Binary Packages:
@@ -1133,28 +1190,28 @@ $ apt-get source -qq --print-uris mono-llvm=6.0+mono20190708165219-0xamarin1+deb
 'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20190708165219-0xamarin1+debian9b1.debian.tar.xz' mono-llvm_6.0+mono20190708165219-0xamarin1+debian9b1.debian.tar.xz 6052 SHA256:ed797e5279d6fb771ac5a131157ca43c760bab1feedc0154296bb42b614ef932
 ```
 
-### `dpkg` source package: `mono=6.4.0.198-0xamarin3+debian9b1`
+### `dpkg` source package: `mono=6.6.0.161-0xamarin7+debian9b1`
 
 Binary Packages:
 
-- `ca-certificates-mono=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-btls-interface4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-corlib4.5-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-i18n-west4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-i18n4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-security4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-system-configuration4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-system-core4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-system-numerics4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-system-security4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-system-xml4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `libmono-system4.0-cil=6.4.0.198-0xamarin3+debian9b1`
-- `mono-4.0-gac=6.4.0.198-0xamarin3+debian9b1`
-- `mono-gac=6.4.0.198-0xamarin3+debian9b1`
-- `mono-llvm-support=6.4.0.198-0xamarin3+debian9b1`
-- `mono-runtime=6.4.0.198-0xamarin3+debian9b1`
-- `mono-runtime-common=6.4.0.198-0xamarin3+debian9b1`
-- `mono-runtime-sgen=6.4.0.198-0xamarin3+debian9b1`
+- `ca-certificates-mono=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-btls-interface4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-corlib4.5-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-i18n-west4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-i18n4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-security4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-system-configuration4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-system-core4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-system-numerics4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-system-security4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-system-xml4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `libmono-system4.0-cil=6.6.0.161-0xamarin7+debian9b1`
+- `mono-4.0-gac=6.6.0.161-0xamarin7+debian9b1`
+- `mono-gac=6.6.0.161-0xamarin7+debian9b1`
+- `mono-llvm-support=6.6.0.161-0xamarin7+debian9b1`
+- `mono-runtime=6.6.0.161-0xamarin7+debian9b1`
+- `mono-runtime-common=6.6.0.161-0xamarin7+debian9b1`
+- `mono-runtime-sgen=6.6.0.161-0xamarin7+debian9b1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates-mono/copyright`, `/usr/share/doc/libmono-btls-interface4.0-cil/copyright`, `/usr/share/doc/libmono-corlib4.5-cil/copyright`, `/usr/share/doc/libmono-i18n-west4.0-cil/copyright`, `/usr/share/doc/libmono-i18n4.0-cil/copyright`, `/usr/share/doc/libmono-security4.0-cil/copyright`, `/usr/share/doc/libmono-system-configuration4.0-cil/copyright`, `/usr/share/doc/libmono-system-core4.0-cil/copyright`, `/usr/share/doc/libmono-system-numerics4.0-cil/copyright`, `/usr/share/doc/libmono-system-security4.0-cil/copyright`, `/usr/share/doc/libmono-system-xml4.0-cil/copyright`, `/usr/share/doc/libmono-system4.0-cil/copyright`, `/usr/share/doc/mono-4.0-gac/copyright`, `/usr/share/doc/mono-gac/copyright`, `/usr/share/doc/mono-llvm-support/copyright`, `/usr/share/doc/mono-runtime/copyright`, `/usr/share/doc/mono-runtime-common/copyright`, `/usr/share/doc/mono-runtime-sgen/copyright`)
 
@@ -1178,10 +1235,10 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates-mono/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mono=6.4.0.198-0xamarin3+debian9b1
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.4.0.198-0xamarin3+debian9b1.dsc' mono_6.4.0.198-0xamarin3+debian9b1.dsc 18977 SHA256:83dfcfd2629a89bd5c98771acae4dc820985f765001af0b2e2aeb9b62ca86047
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.4.0.198.orig.tar.xz' mono_6.4.0.198.orig.tar.xz 230056560 SHA256:d00852822525e36f9f8b3e0f537d3a41c7a718cac22d06fc63ea64988877c2ea
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.4.0.198-0xamarin3+debian9b1.debian.tar.xz' mono_6.4.0.198-0xamarin3+debian9b1.debian.tar.xz 155552 SHA256:2c6ba6083efe2b25a87e789f0fd2c4d35fae868be9fb86f4c95f416803bbe933
+$ apt-get source -qq --print-uris mono=6.6.0.161-0xamarin7+debian9b1
+'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.6.0.161-0xamarin7+debian9b1.dsc' mono_6.6.0.161-0xamarin7+debian9b1.dsc 18990 SHA256:8dea610174ce59b232aec225e26fec562fefd083f211c65aa8046ab1ebf30665
+'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.6.0.161.orig.tar.xz' mono_6.6.0.161.orig.tar.xz 240548512 SHA256:6c64f70d9a8e666d26c8f66e490bd43c5530345fae831172e09489f2e4d256fe
+'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.6.0.161-0xamarin7+debian9b1.debian.tar.xz' mono_6.6.0.161-0xamarin7+debian9b1.debian.tar.xz 156228 SHA256:a1d38a0dbc599e48b4fc6a7deed6070dd7c5326b05d6b3c5e2617866e803b52f
 ```
 
 ### `dpkg` source package: `ncurses=6.0+20161126-1+deb9u2`
