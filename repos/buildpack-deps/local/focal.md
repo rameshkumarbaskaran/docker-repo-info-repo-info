@@ -104,13 +104,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.9.4
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.4.dsc' apt_1.9.4.dsc 2744 SHA256:fef428ea8f433254dc126558c0e708a40d26402778c2cf7429fd8203cbf75728
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.4.tar.xz' apt_1.9.4.tar.xz 2170120 SHA256:85ae8d5beb44fa02ed88af32137f4c97e7a68e5d9ba4164eab515988105ba292
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/1.9.4/
+
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -292,14 +292,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.33.1-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33.1-1ubuntu1.dsc' binutils_2.33.1-1ubuntu1.dsc 8543 SHA256:5bfb501601ab21e0c0448484a42f3b97f8dbfa1072308b418c00a0c7938a07ba
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33.1.orig.tar.xz' binutils_2.33.1.orig.tar.xz 21490848 SHA256:ab66fc2d1c3ec0359b8e08843c9f33b63e8707efdff5e4cc5c200eae24722cbf
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33.1-1ubuntu1.debian.tar.xz' binutils_2.33.1-1ubuntu1.debian.tar.xz 96192 SHA256:7a2a15a082c545fccd989e4ba73ce46b646a38ac7364d2cff66807e63f872e8e
-```
 
 ### `dpkg` source package: `bzip2=1.0.8-2`
 
@@ -2163,14 +2158,13 @@ Licenses: (parsed from: `/usr/share/doc/libsepol1/copyright`, `/usr/share/doc/li
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsepol=2.9-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9-2.dsc' libsepol_2.9-2.dsc 1792 SHA256:ce6ccf8445a11176f04116ce0c3a9e0bb1c14e4f7a5993a9e923b43fc8709848
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9.orig.tar.gz' libsepol_2.9.orig.tar.gz 474861 SHA256:a34b12b038d121e3e459b1cbaca3c9202e983137819c16baf63658390e3f1d5d
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9-2.debian.tar.xz' libsepol_2.9-2.debian.tar.xz 14148 SHA256:ce6b6e7944669009c774826c363568ee32846847d999f081f4a16d36506c9b66
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libsepol/2.9-2/
+
 
 ### `dpkg` source package: `libsigsegv=2.12-2`
 
@@ -2490,14 +2484,9 @@ Licenses: (parsed from: `/usr/share/doc/libxml2/copyright`, `/usr/share/doc/libx
 - `ISC`
 - `MIT-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-7ubuntu5
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-7ubuntu5.dsc' libxml2_2.9.4+dfsg1-7ubuntu5.dsc 3083 SHA256:d83cc02f10bb1a3fe4db58726676811bcb20c420681cfa39600651c672f0e147
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-7ubuntu5.debian.tar.xz' libxml2_2.9.4+dfsg1-7ubuntu5.debian.tar.xz 39052 SHA256:37a09e6ad86cfa269cbcb6f819b2c39b3ede64e9b01f682bd4d462e1e9cae871
-```
 
 ### `dpkg` source package: `libxrender=1:0.9.10-1`
 
@@ -3772,15 +3761,9 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `Unicode`
 - `Utfwidth`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.10.6-1build1
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.10.6-1build1.dsc' subversion_1.10.6-1build1.dsc 3355 SHA256:ca06af4a1aa729a4bcfe2ca33c1c1f9e634e660395562457fa4e014113ce62ff
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.10.6.orig.tar.gz' subversion_1.10.6.orig.tar.gz 11352043 SHA256:2ab75c61a62d96defc954b599585b79f627e4e235094a17da94dc55b564727c1
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.10.6.orig.tar.gz.asc' subversion_1.10.6.orig.tar.gz.asc 2121 SHA256:f485e3ffbe9b2ab287a813cb765904f41e0a499a9552f00c41a00a3169c4d418
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.10.6-1build1.debian.tar.xz' subversion_1.10.6-1build1.debian.tar.xz 435268 SHA256:f9523b5afa102e4f5e2a8eac7761072f287c620fdc9917dc15f6ab1c3b3ed43b
-```
 
 ### `dpkg` source package: `systemd=243-2ubuntu1`
 
