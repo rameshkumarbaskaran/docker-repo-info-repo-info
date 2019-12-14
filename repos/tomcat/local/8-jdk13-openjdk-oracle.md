@@ -1,10 +1,10 @@
-# `tomcat:8.5.49-jdk13-openjdk-oracle`
+# `tomcat:8.5.50-jdk13-openjdk-oracle`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ad0a2c327f863884facb98d569e3bf9d4a41334a82c49551b778cfc9954a9337`
-- Created: `2019-11-22T02:18:21.59049579Z`
-- Virtual Size: ~ 527.23 Mb  
+- Image ID: `sha256:ce482e6ea2abc180034b38cad0088e9e6f8939665cb9369f0fd6b3ab9bc72641`
+- Created: `2019-12-13T23:47:20.946238185Z`
+- Virtual Size: ~ 527.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -20,8 +20,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.49`
-  - `TOMCAT_SHA512=263480a91a3678120bd3150e6a2b4cc48881bfe110eeb91c01f89ee13e2ef3c9f149bc7bdcbb3187f80ecaa3bad42c77ad38d56675b64af1afc4c4ca1d1eb9e6`
+  - `TOMCAT_VERSION=8.5.50`
+  - `TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -559,15 +559,15 @@ $ yumdownloader --quiet --source --urls libffi-3.0.13-18.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libffi-3.0.13-18.el7.src.rpm
 ```
 
-### `rpm` package: `libgcc-4.8.5-39.0.1.el7.x86_64`
+### `rpm` package: `libgcc-4.8.5-39.0.3.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libgcc-4.8.5-39.0.1.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/gcc-4.8.5-39.0.1.el7.src.rpm
+$ yumdownloader --quiet --source --urls libgcc-4.8.5-39.0.3.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/gcc-4.8.5-39.0.3.el7.src.rpm
 ```
 
 ### `rpm` package: `libgcrypt-1.5.3-14.el7.x86_64`
