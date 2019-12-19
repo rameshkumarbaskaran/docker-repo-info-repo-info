@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d9212e1f10f95a442f134d0d371059427057f51524b1efbb2d36bc0bd520b3a0`
-- Created: `2019-12-06T03:14:14.050142224Z`
-- Virtual Size: ~ 732.51 Mb  
+- Image ID: `sha256:2b6ad2e10711743a1d5b9b5a9046fa18fee57c7c2252b0d2ca5a114368455e34`
+- Created: `2019-12-19T06:25:06.655535889Z`
+- Virtual Size: ~ 732.56 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -21,10 +21,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.25`
-  - `PHP_URL=https://www.php.net/get/php-7.2.25.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.25.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=746efeedc38e6ff7b1ec1432440f5fa801537adf6cd21e4afb3f040e5b0760a9`
+  - `PHP_VERSION=7.2.26`
+  - `PHP_URL=https://www.php.net/get/php-7.2.26.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.26.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=1dd3bc875e105f5c9d21fb4dc240670bd2c22037820ff03890f5ab883c88b78d`
   - `PHP_MD5=`
   - `MEDIAWIKI_MAJOR_VERSION=1.33`
   - `MEDIAWIKI_BRANCH=REL1_33`
@@ -1557,12 +1557,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gdk-pixbuf/2.38.1+dfsg-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gdk-pixbuf/2.38.1+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `git=1:2.20.1-2`
+### `dpkg` source package: `git=1:2.20.1-2+deb10u1`
 
 Binary Packages:
 
-- `git=1:2.20.1-2`
-- `git-man=1:2.20.1-2`
+- `git=1:2.20.1-2+deb10u1`
+- `git-man=1:2.20.1-2+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -1588,17 +1588,17 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris git=1:2.20.1-2
-'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1-2.dsc' git_2.20.1-2.dsc 2891 SHA256:05971601e99a48887028ea96b283366e9da603d608a63595f0c3e1afb9b56c21
-'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1.orig.tar.xz' git_2.20.1.orig.tar.xz 5359872 SHA256:9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9
-'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1-2.debian.tar.xz' git_2.20.1-2.debian.tar.xz 599520 SHA256:3dab9ff6c5f0251a84726da1e360b85663cfcde0268641b2b7ac535400c79a95
+$ apt-get source -qq --print-uris git=1:2.20.1-2+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1-2+deb10u1.dsc' git_2.20.1-2+deb10u1.dsc 2923 SHA256:d019a11d3826d5dc1f004cfcfeaad392c22cbd86956bca53271252014b0bd874
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1.orig.tar.xz' git_2.20.1.orig.tar.xz 5359872 SHA256:9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1-2+deb10u1.debian.tar.xz' git_2.20.1-2+deb10u1.debian.tar.xz 632804 SHA256:3fe13b0b41f04e9029d6f3e396a610ddf79271c285cc8b0b7f644b563b6f1368
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/git/1:2.20.1-2/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.20.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.20.1-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/git/1:2.20.1-2+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/git/1:2.20.1-2+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/git/1:2.20.1-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib-networking=2.58.0-2`
 
