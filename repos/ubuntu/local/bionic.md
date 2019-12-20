@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:775349758637aff77bf85e2ff0597e86e3e859183ef0baba8b3e8fc8d3cba51c`
-- Created: `2019-10-31T22:20:37.714423666Z`
+- Image ID: `sha256:549b9b86cb8d75a2b668c21c50ee092716d070f129fd1493f95ab7e43767eab8`
+- Created: `2019-12-19T04:21:28.456258914Z`
 - Virtual Size: ~ 64.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1168,12 +1168,12 @@ $ apt-get source -qq --print-uris shadow=1:4.5-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1ubuntu2.debian.tar.xz' shadow_4.5-1ubuntu2.debian.tar.xz 471472 SHA256:0025e344b478aae6e2d9ad7657b5e1fd0ebd1fda7a55e7fc144840f75b92d358
 ```
 
-### `dpkg` source package: `systemd=237-3ubuntu10.31`
+### `dpkg` source package: `systemd=237-3ubuntu10.33`
 
 Binary Packages:
 
-- `libsystemd0:amd64=237-3ubuntu10.31`
-- `libudev1:amd64=237-3ubuntu10.31`
+- `libsystemd0:amd64=237-3ubuntu10.33`
+- `libudev1:amd64=237-3ubuntu10.33`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1185,9 +1185,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=237-3ubuntu10.33
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.33.dsc' systemd_237-3ubuntu10.33.dsc 5182 SHA256:78101584287f635d1212912eff26b4fd9bcec505f73e38e2f8fd09506577df55
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.33.debian.tar.xz' systemd_237-3ubuntu10.33.debian.tar.xz 237528 SHA256:7530e3de2264645ba057564dbb4d6c23a34362292441ebb075839e11963c38c7
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 

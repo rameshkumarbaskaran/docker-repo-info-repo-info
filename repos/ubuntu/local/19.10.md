@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c351ab52170e57e284ef537d34c45e81f1050df7b09c64a1a21e6cb5a86b8f23`
-- Created: `2019-11-27T00:22:03.785091981Z`
+- Image ID: `sha256:548c7e9c93af86a9630170bc8d4bef43669b9766df42a6b56444f3c73fc380bc`
+- Created: `2019-12-19T04:22:56.155964355Z`
 - Virtual Size: ~ 72.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1201,12 +1201,12 @@ $ apt-get source -qq --print-uris shadow=1:4.5-1.1ubuntu4
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1.1ubuntu4.debian.tar.xz' shadow_4.5-1.1ubuntu4.debian.tar.xz 472436 SHA256:4eaa200a5d65a63bc53761be36ac0f2b972f8758fd47c405714875d14d37d0d4
 ```
 
-### `dpkg` source package: `systemd=242-7ubuntu3`
+### `dpkg` source package: `systemd=242-7ubuntu3.2`
 
 Binary Packages:
 
-- `libsystemd0:amd64=242-7ubuntu3`
-- `libudev1:amd64=242-7ubuntu3`
+- `libsystemd0:amd64=242-7ubuntu3.2`
+- `libudev1:amd64=242-7ubuntu3.2`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1221,10 +1221,10 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris systemd=242-7ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242-7ubuntu3.dsc' systemd_242-7ubuntu3.dsc 5122 SHA256:785831cf46ea0dafea74715e90e0efb57577659415f31b61a4cc15b84f8d9a42
+$ apt-get source -qq --print-uris systemd=242-7ubuntu3.2
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242-7ubuntu3.2.dsc' systemd_242-7ubuntu3.2.dsc 5163 SHA256:473a242f1acf2f8998c40de5b6d80c99d1147b067cf7c20ec4eefe3dfcc09f74
 'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242.orig.tar.gz' systemd_242.orig.tar.gz 7831435 SHA256:ec22be9a5dd94c9640e6348ed8391d1499af8ca2c2f01109198a414cff6c6cba
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242-7ubuntu3.debian.tar.xz' systemd_242-7ubuntu3.debian.tar.xz 188432 SHA256:7bc7f63108254ac490b0edb5c190191f42c5cf52aa6fe8c15a3088ac5c617d7e
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242-7ubuntu3.2.debian.tar.xz' systemd_242-7ubuntu3.2.debian.tar.xz 198996 SHA256:40d5c61cf19dae649f88e24ad49017a476cd71356a1277fbf0ee6b133cce7425
 ```
 
 ### `dpkg` source package: `sysvinit=2.95-5ubuntu2`
