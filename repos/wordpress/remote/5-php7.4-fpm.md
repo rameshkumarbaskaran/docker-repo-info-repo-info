@@ -1,7 +1,7 @@
 ## `wordpress:5-php7.4-fpm`
 
 ```console
-$ docker pull wordpress@sha256:78f059c16557adf78eb974c1c1729e2d4c44486294d4dc2748f871f7e5144228
+$ docker pull wordpress@sha256:4df239caea47588972709442c13c95a86046696b5c6362cbc5886a326d711abb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull wordpress@sha256:78f059c16557adf78eb974c1c1729e2d4c44486294d4dc274
 ### `wordpress:5-php7.4-fpm` - linux; amd64
 
 ```console
-$ docker pull wordpress@sha256:bdf65a9c7857be12b71c80df64ee5accdaace6f3ff3c41a6be0a1607867c49bf
+$ docker pull wordpress@sha256:7d4f647e1cec11a86516b1a60a24fb28bb84ebeba3826e310147c81ed914cd1c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **181.4 MB (181436908 bytes)**  
+-	Total Size: **181.4 MB (181438422 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:29a85a10ad21720bdc3e35a273ff566199ef0c65402b39876ec27b49f935b425`
+-	Image ID: `sha256:a4e3bda2bf0665a930b7567faecbbf009d15118009784dc0aa2757cf3d6b8f68`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -90,17 +90,17 @@ RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_
 RUN { 		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; 		echo 'display_errors = Off'; 		echo 'display_startup_errors = Off'; 		echo 'log_errors = On'; 		echo 'error_log = /dev/stderr'; 		echo 'log_errors_max_len = 1024'; 		echo 'ignore_repeated_errors = On'; 		echo 'ignore_repeated_source = Off'; 		echo 'html_errors = Off'; 	} > /usr/local/etc/php/conf.d/error-logging.ini
 # Thu, 19 Dec 2019 05:54:53 GMT
 VOLUME [/var/www/html]
-# Thu, 19 Dec 2019 05:54:53 GMT
-ENV WORDPRESS_VERSION=5.3.1
-# Thu, 19 Dec 2019 05:54:53 GMT
-ENV WORDPRESS_SHA1=3c635c9f6546782e0bb315784d4663d0e47f872e
-# Thu, 19 Dec 2019 05:54:57 GMT
+# Fri, 20 Dec 2019 01:51:29 GMT
+ENV WORDPRESS_VERSION=5.3.2
+# Fri, 20 Dec 2019 01:51:29 GMT
+ENV WORDPRESS_SHA1=fded476f112dbab14e3b5acddd2bcfa550e7b01b
+# Fri, 20 Dec 2019 01:51:37 GMT
 RUN set -ex; 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; 	echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c -; 	tar -xzf wordpress.tar.gz -C /usr/src/; 	rm wordpress.tar.gz; 	chown -R www-data:www-data /usr/src/wordpress
-# Thu, 19 Dec 2019 05:54:57 GMT
+# Fri, 20 Dec 2019 01:51:37 GMT
 COPY file:d93be233af180b81b8838a1d00e9f930eb82172c751ffaafb4732db4a09a7534 in /usr/local/bin/ 
-# Thu, 19 Dec 2019 05:54:57 GMT
+# Fri, 20 Dec 2019 01:51:37 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 05:54:57 GMT
+# Fri, 20 Dec 2019 01:51:37 GMT
 CMD ["php-fpm"]
 ```
 
@@ -161,26 +161,26 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 19 Dec 2019 06:03:11 GMT  
 		Size: 393.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bca7ba02d60c0ccc0a3ee7a0c6366eca37bb87d9bf19af5e6d04039f3de6f2b7`  
-		Last Modified: Thu, 19 Dec 2019 06:03:19 GMT  
-		Size: 12.2 MB (12226360 bytes)  
+	-	`sha256:d03d2d3b141d8225fe44c78e29e974cc5fd57ebea4779801b6bc45ac1ca08acc`  
+		Last Modified: Fri, 20 Dec 2019 01:54:49 GMT  
+		Size: 12.2 MB (12227874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fbb6ff4d6dd051c1876270dcf70621feb266d7405bc3a9607099121c666dbb1`  
-		Last Modified: Thu, 19 Dec 2019 06:03:11 GMT  
+	-	`sha256:270cbfc8da6ee7ad7467d44b73e12e9e7390a0aeca8b6f25235dde0311c63a5a`  
+		Last Modified: Fri, 20 Dec 2019 01:54:46 GMT  
 		Size: 3.9 KB (3891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `wordpress:5-php7.4-fpm` - linux; arm variant v5
 
 ```console
-$ docker pull wordpress@sha256:3d860b69920aa5dc06d4c347fab13b4bc7a8b21a9554c1380d98d72c4016c2d4
+$ docker pull wordpress@sha256:86fdbab3825e0bdac8208df8b07f9e9c1214af14e65644077f414e0351e5a14a
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.4 MB (158370375 bytes)**  
+-	Total Size: **158.4 MB (158371874 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0887123d14c451d113b7a671f325ed799e693a3f7a945c8e46e6c37cf5c35488`
+-	Image ID: `sha256:3033c88fe6abaccfbbdebca7db2e4d01a909670a70b5a48c676146bf296d8569`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -247,17 +247,17 @@ RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_
 RUN { 		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; 		echo 'display_errors = Off'; 		echo 'display_startup_errors = Off'; 		echo 'log_errors = On'; 		echo 'error_log = /dev/stderr'; 		echo 'log_errors_max_len = 1024'; 		echo 'ignore_repeated_errors = On'; 		echo 'ignore_repeated_source = Off'; 		echo 'html_errors = Off'; 	} > /usr/local/etc/php/conf.d/error-logging.ini
 # Thu, 19 Dec 2019 04:12:52 GMT
 VOLUME [/var/www/html]
-# Thu, 19 Dec 2019 04:12:56 GMT
-ENV WORDPRESS_VERSION=5.3.1
-# Thu, 19 Dec 2019 04:12:58 GMT
-ENV WORDPRESS_SHA1=3c635c9f6546782e0bb315784d4663d0e47f872e
-# Thu, 19 Dec 2019 04:13:06 GMT
+# Fri, 20 Dec 2019 01:16:05 GMT
+ENV WORDPRESS_VERSION=5.3.2
+# Fri, 20 Dec 2019 01:16:07 GMT
+ENV WORDPRESS_SHA1=fded476f112dbab14e3b5acddd2bcfa550e7b01b
+# Fri, 20 Dec 2019 01:16:18 GMT
 RUN set -ex; 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; 	echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c -; 	tar -xzf wordpress.tar.gz -C /usr/src/; 	rm wordpress.tar.gz; 	chown -R www-data:www-data /usr/src/wordpress
-# Thu, 19 Dec 2019 04:13:07 GMT
+# Fri, 20 Dec 2019 01:16:21 GMT
 COPY file:d93be233af180b81b8838a1d00e9f930eb82172c751ffaafb4732db4a09a7534 in /usr/local/bin/ 
-# Thu, 19 Dec 2019 04:13:08 GMT
+# Fri, 20 Dec 2019 01:16:22 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 04:13:09 GMT
+# Fri, 20 Dec 2019 01:16:23 GMT
 CMD ["php-fpm"]
 ```
 
@@ -318,12 +318,12 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 19 Dec 2019 04:16:56 GMT  
 		Size: 391.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1f3ee2fe58cb7222c74a516d0fdc825b3f3cfbb5ca26916b480ccd77c423368`  
-		Last Modified: Thu, 19 Dec 2019 04:17:00 GMT  
-		Size: 12.2 MB (12226383 bytes)  
+	-	`sha256:f9fc1df912af2bccfb6a37b472bdaa2f7d0896933c17785e0d5e42a06b23462d`  
+		Last Modified: Fri, 20 Dec 2019 01:21:18 GMT  
+		Size: 12.2 MB (12227882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:43f1e349ca4e5e217235efa71f6f0d06bcfe208aaad396e336e4c4f736845049`  
-		Last Modified: Thu, 19 Dec 2019 04:16:56 GMT  
+	-	`sha256:26a9b34d0f0a98e5789022a2ba49decc62271c5a42ecbbeb7eb65e09a6af7859`  
+		Last Modified: Fri, 20 Dec 2019 01:21:12 GMT  
 		Size: 3.9 KB (3891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -644,14 +644,14 @@ CMD ["php-fpm"]
 ### `wordpress:5-php7.4-fpm` - linux; 386
 
 ```console
-$ docker pull wordpress@sha256:f96db9e6d8323fef212f15d4db194588fd30c74e9adacb684fe30c7defb2379d
+$ docker pull wordpress@sha256:6e9ed0d2921f44e80afdcf4d996f995c4782bd04ede3162c1a8d7410fba42153
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.8 MB (186817171 bytes)**  
+-	Total Size: **186.8 MB (186818686 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e6d2bc1ca9718ab72369efcda1f2908e472a0268664c584a56ffe112dda568b2`
+-	Image ID: `sha256:12926b2176cdbf41d30178419590948dd7e5a552f0052103c00993a3583bba68`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -718,17 +718,17 @@ RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_
 RUN { 		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; 		echo 'display_errors = Off'; 		echo 'display_startup_errors = Off'; 		echo 'log_errors = On'; 		echo 'error_log = /dev/stderr'; 		echo 'log_errors_max_len = 1024'; 		echo 'ignore_repeated_errors = On'; 		echo 'ignore_repeated_source = Off'; 		echo 'html_errors = Off'; 	} > /usr/local/etc/php/conf.d/error-logging.ini
 # Thu, 19 Dec 2019 06:33:25 GMT
 VOLUME [/var/www/html]
-# Thu, 19 Dec 2019 06:33:26 GMT
-ENV WORDPRESS_VERSION=5.3.1
-# Thu, 19 Dec 2019 06:33:26 GMT
-ENV WORDPRESS_SHA1=3c635c9f6546782e0bb315784d4663d0e47f872e
-# Thu, 19 Dec 2019 06:33:30 GMT
+# Fri, 20 Dec 2019 01:46:02 GMT
+ENV WORDPRESS_VERSION=5.3.2
+# Fri, 20 Dec 2019 01:46:02 GMT
+ENV WORDPRESS_SHA1=fded476f112dbab14e3b5acddd2bcfa550e7b01b
+# Fri, 20 Dec 2019 01:46:12 GMT
 RUN set -ex; 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; 	echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c -; 	tar -xzf wordpress.tar.gz -C /usr/src/; 	rm wordpress.tar.gz; 	chown -R www-data:www-data /usr/src/wordpress
-# Thu, 19 Dec 2019 06:33:31 GMT
+# Fri, 20 Dec 2019 01:46:12 GMT
 COPY file:d93be233af180b81b8838a1d00e9f930eb82172c751ffaafb4732db4a09a7534 in /usr/local/bin/ 
-# Thu, 19 Dec 2019 06:33:31 GMT
+# Fri, 20 Dec 2019 01:46:12 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 06:33:31 GMT
+# Fri, 20 Dec 2019 01:46:13 GMT
 CMD ["php-fpm"]
 ```
 
@@ -789,26 +789,26 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 19 Dec 2019 06:41:45 GMT  
 		Size: 395.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab9422bc4706848cebdded3b5f44624e0036f12f21f290fdd103307ae66f7e82`  
-		Last Modified: Thu, 19 Dec 2019 06:41:51 GMT  
-		Size: 12.2 MB (12226356 bytes)  
+	-	`sha256:7b32ddcddab364bfc53aba4b5bc2c84f073df8dbaec3a6a12658ac26d3e7298b`  
+		Last Modified: Fri, 20 Dec 2019 01:49:39 GMT  
+		Size: 12.2 MB (12227873 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4388688e4938443d796915a97350f288422c2c2ccfe0f09d29996bb2a9100247`  
-		Last Modified: Thu, 19 Dec 2019 06:41:44 GMT  
-		Size: 3.9 KB (3894 bytes)  
+	-	`sha256:2f506ca939062cf4dd706284ae3e22f33ac4e0ac8f8f5f2fbfd41064251b6acb`  
+		Last Modified: Fri, 20 Dec 2019 01:49:35 GMT  
+		Size: 3.9 KB (3892 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `wordpress:5-php7.4-fpm` - linux; ppc64le
 
 ```console
-$ docker pull wordpress@sha256:f6412b7e71f37bfe6de48e46db076b44e1fc0faae558e3c369ce59e83da277eb
+$ docker pull wordpress@sha256:e9dae107eea03b35c27aabeb6990c67ff7521d7eefd1069e33a93393cec4532f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **192.8 MB (192803169 bytes)**  
+-	Total Size: **192.8 MB (192804664 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7d7c306f6877e9aaf6c71f1f4c9579ab004ca6850249ea27710afcba31a981ef`
+-	Image ID: `sha256:16fca5830deb4a8e0504b3b964fcefa6df36108352e6a8d8d0636a19d6072979`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -875,17 +875,17 @@ RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_
 RUN { 		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; 		echo 'display_errors = Off'; 		echo 'display_startup_errors = Off'; 		echo 'log_errors = On'; 		echo 'error_log = /dev/stderr'; 		echo 'log_errors_max_len = 1024'; 		echo 'ignore_repeated_errors = On'; 		echo 'ignore_repeated_source = Off'; 		echo 'html_errors = Off'; 	} > /usr/local/etc/php/conf.d/error-logging.ini
 # Thu, 19 Dec 2019 07:49:49 GMT
 VOLUME [/var/www/html]
-# Thu, 19 Dec 2019 07:49:51 GMT
-ENV WORDPRESS_VERSION=5.3.1
-# Thu, 19 Dec 2019 07:49:53 GMT
-ENV WORDPRESS_SHA1=3c635c9f6546782e0bb315784d4663d0e47f872e
-# Thu, 19 Dec 2019 07:50:00 GMT
+# Fri, 20 Dec 2019 02:07:17 GMT
+ENV WORDPRESS_VERSION=5.3.2
+# Fri, 20 Dec 2019 02:07:19 GMT
+ENV WORDPRESS_SHA1=fded476f112dbab14e3b5acddd2bcfa550e7b01b
+# Fri, 20 Dec 2019 02:07:27 GMT
 RUN set -ex; 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; 	echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c -; 	tar -xzf wordpress.tar.gz -C /usr/src/; 	rm wordpress.tar.gz; 	chown -R www-data:www-data /usr/src/wordpress
-# Thu, 19 Dec 2019 07:50:01 GMT
+# Fri, 20 Dec 2019 02:07:29 GMT
 COPY file:d93be233af180b81b8838a1d00e9f930eb82172c751ffaafb4732db4a09a7534 in /usr/local/bin/ 
-# Thu, 19 Dec 2019 07:50:03 GMT
+# Fri, 20 Dec 2019 02:07:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 07:50:05 GMT
+# Fri, 20 Dec 2019 02:07:35 GMT
 CMD ["php-fpm"]
 ```
 
@@ -946,11 +946,11 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 19 Dec 2019 08:05:04 GMT  
 		Size: 395.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b8d63d7405dd598fa2e4f0ad5775c8dfb21a7899e46c9c4e63b065b9b6e1a818`  
-		Last Modified: Thu, 19 Dec 2019 08:05:10 GMT  
-		Size: 12.2 MB (12226381 bytes)  
+	-	`sha256:1d706989090c1ac1e656ddb2110c8c4b743f6fb6b21572d88e523cb9709af9eb`  
+		Last Modified: Fri, 20 Dec 2019 02:14:22 GMT  
+		Size: 12.2 MB (12227876 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b99e0a376bbaec18135bbd6a5e002496457fb9ad1b4d6159f3b080fbfc76202c`  
-		Last Modified: Thu, 19 Dec 2019 08:05:04 GMT  
+	-	`sha256:166c3bec826cf5bb53e2224ba6dd3c52a1ece1aa6c751078da7b82c7579533c0`  
+		Last Modified: Fri, 20 Dec 2019 02:14:19 GMT  
 		Size: 3.9 KB (3895 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
