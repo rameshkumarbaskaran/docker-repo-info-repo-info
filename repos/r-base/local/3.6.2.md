@@ -2244,20 +2244,13 @@ Licenses: (parsed from: `/usr/share/doc/libsemanage-common/copyright`, `/usr/sha
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsemanage=2.9-3
-'http://deb.debian.org/debian/pool/main/libs/libsemanage/libsemanage_2.9-3.dsc' libsemanage_2.9-3.dsc 2305 SHA256:9aa1a41fd7e7746e15fffa762344e76f4189d53f57a260a8190b4a287955f4cb
-'http://deb.debian.org/debian/pool/main/libs/libsemanage/libsemanage_2.9.orig.tar.gz' libsemanage_2.9.orig.tar.gz 157690 SHA256:2576349d344492e73b468059767268dec1dabd8c35f3c7222c3ec2448737bc1c
-'http://deb.debian.org/debian/pool/main/libs/libsemanage/libsemanage_2.9-3.debian.tar.xz' libsemanage_2.9-3.debian.tar.xz 17208 SHA256:6d8f01aa874e8222be268d860eacc4f19cbdf6a1785db4fc9f229d6cf6d6401f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libsemanage/2.9-3/
 
-- https://sources.debian.net/src/libsemanage/2.9-3/ (for browsing the source)
-- https://sources.debian.net/src/libsemanage/2.9-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libsemanage/2.9-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libsepol=2.9-2`
 
@@ -2529,14 +2522,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxcrypt=1:4.4.10-5
-'http://http.debian.net/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.10-5.dsc' libxcrypt_4.4.10-5.dsc 1979 SHA256:8bd7f727f12f1071dadf4d2064a86b0b1af031eb6de551a1cc81f5976c594e2a
-'http://http.debian.net/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.10.orig.tar.xz' libxcrypt_4.4.10.orig.tar.xz 372652 SHA256:f790a8eac4e4af3124d2844a24a7afb3a972368e4dff63d701599c2f2d065fd3
-'http://http.debian.net/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.10-5.debian.tar.xz' libxcrypt_4.4.10-5.debian.tar.xz 3992 SHA256:98476520ff3057162e019148bb16b7f66e95be655925cf7d782edb26eca13e9f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libxcrypt/1:4.4.10-5/
+
 
 ### `dpkg` source package: `libxdmcp=1:1.1.2-3`
 
@@ -3416,14 +3408,13 @@ Licenses: (parsed from: `/usr/share/doc/r-base/copyright`, `/usr/share/doc/r-bas
 - `LGPL-2.1`
 - `LGPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-base=3.6.2-1
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.2-1.dsc' r-base_3.6.2-1.dsc 3016 SHA256:5d9e31f26575fbb104a6e38138e3f7727af7643897ecd1144685864fac6ba1ae
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.2.orig.tar.gz' r-base_3.6.2.orig.tar.gz 33311930 SHA256:bd65a45cddfb88f37370fbcee4ac8dd3f1aebeebe47c2f968fd9770ba2bbc954
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.2-1.debian.tar.xz' r-base_3.6.2-1.debian.tar.xz 96184 SHA256:bc34b3a96f4f3e68739ef949da6c2669dae555d7cc01fddb5c4c15ad4477ac1f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/r-base/3.6.2-1/
+
 
 ### `dpkg` source package: `r-cran-class=7.3-15-1`
 
