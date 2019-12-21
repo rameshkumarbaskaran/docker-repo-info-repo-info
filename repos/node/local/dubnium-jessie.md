@@ -1,18 +1,18 @@
-# `node:10.17.0-jessie`
+# `node:10.18.0-jessie`
 
 ## Docker Metadata
 
-- Image ID: `sha256:48b88f03a78a8789a4657cae4974cc10323e9f7d75ebc1c5411cb844f2074740`
-- Created: `2019-11-23T14:18:54.190418591Z`
-- Virtual Size: ~ 683.36 Mb  
+- Image ID: `sha256:e8b7295637a5d5f57a6dcbb9d182b27c2b9283c6f332c6246715ef431585a826`
+- Created: `2019-12-18T16:27:51.728571614Z`
+- Virtual Size: ~ 688.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.17.0`
-  - `YARN_VERSION=1.19.1`
+  - `NODE_VERSION=10.18.0`
+  - `YARN_VERSION=1.21.1`
 
 ## `dpkg` (`.deb`-based packages)
 
