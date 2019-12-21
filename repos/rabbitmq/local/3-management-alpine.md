@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:48fb9efd14f8fab9f24a6e0618e2588c3b9eb59c95f8fc859e0f3bf3ca2f397d`
-- Created: `2019-12-11T01:12:59.785137584Z`
-- Virtual Size: ~ 139.62 Mb  
+- Image ID: `sha256:a06db85fd28f68e17d6cda6de7ab621b832f9132d0d7596ff76dbfa71e7c4e91`
+- Created: `2019-12-20T00:53:14.70499748Z`
+- Virtual Size: ~ 139.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,8 +14,8 @@
   - `OPENSSL_VERSION=1.1.1d`
   - `OPENSSL_SOURCE_SHA256=1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2`
   - `OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D`
-  - `OTP_VERSION=22.2`
-  - `OTP_SOURCE_SHA256=232c37a502c7e491a9cbf86acb7af64fbc1a793fcbcbd0093cb029cf1c3830a7`
+  - `OTP_VERSION=22.2.1`
+  - `OTP_SOURCE_SHA256=65ab58ce79181895afc66716cc735a0ada4a3b705a525407d7e1d4c5deb95e72`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
   - `RABBITMQ_VERSION=3.8.2`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
@@ -457,16 +457,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r1 description:
+sqlite-libs-3.28.0-r2 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r1 webpage:
+sqlite-libs-3.28.0-r2 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r1 installed size:
+sqlite-libs-3.28.0-r2 installed size:
 925696
 
-sqlite-libs-3.28.0-r1 license:
+sqlite-libs-3.28.0-r2 license:
 Public-Domain
 
 ```

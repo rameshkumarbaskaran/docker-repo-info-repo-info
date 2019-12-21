@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6bd1749b81979df668b3e0109b7d876dd27dd2a9795d27a3fb70b3f6ec066c17`
-- Created: `2019-12-11T00:59:41.471129858Z`
-- Virtual Size: ~ 180.83 Mb  
+- Image ID: `sha256:db695e07d0d75c0f6368c7fb5d8666214c3c9a81e1226028a22a3c01d87b730c`
+- Created: `2019-12-20T00:43:28.549257467Z`
+- Virtual Size: ~ 180.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,8 +14,8 @@
   - `OPENSSL_VERSION=1.1.1d`
   - `OPENSSL_SOURCE_SHA256=1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2`
   - `OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D`
-  - `OTP_VERSION=22.2`
-  - `OTP_SOURCE_SHA256=232c37a502c7e491a9cbf86acb7af64fbc1a793fcbcbd0093cb029cf1c3830a7`
+  - `OTP_VERSION=22.2.1`
+  - `OTP_SOURCE_SHA256=65ab58ce79181895afc66716cc735a0ada4a3b705a525407d7e1d4c5deb95e72`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
   - `RABBITMQ_VERSION=3.8.2`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
@@ -1245,14 +1245,14 @@ $ apt-get source -qq --print-uris python-defaults=2.7.15~rc1-1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python-defaults/python-defaults_2.7.15~rc1-1.tar.gz' python-defaults_2.7.15~rc1-1.tar.gz 1958015 SHA256:f3bed2b81091821d2e514c2e17c6846f7e744487fd15f7d3c48fa1c91b9cd49b
 ```
 
-### `dpkg` source package: `python2.7=2.7.15-4ubuntu4~18.04.2`
+### `dpkg` source package: `python2.7=2.7.17-1~18.04`
 
 Binary Packages:
 
-- `libpython2.7-minimal:amd64=2.7.15-4ubuntu4~18.04.2`
-- `libpython2.7-stdlib:amd64=2.7.15-4ubuntu4~18.04.2`
-- `python2.7=2.7.15-4ubuntu4~18.04.2`
-- `python2.7-minimal=2.7.15-4ubuntu4~18.04.2`
+- `libpython2.7-minimal:amd64=2.7.17-1~18.04`
+- `libpython2.7-stdlib:amd64=2.7.17-1~18.04`
+- `python2.7=2.7.17-1~18.04`
+- `python2.7-minimal=2.7.17-1~18.04`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
 
@@ -1276,10 +1276,10 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python2.7=2.7.15-4ubuntu4~18.04.2
-'http://security.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.2.dsc' python2.7_2.7.15-4ubuntu4~18.04.2.dsc 3476 SHA256:3876165628c986dc5f9dc128aeccc1d238cfea95f3dd67ac3ab23f6d00823bdc
-'http://security.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15.orig.tar.gz' python2.7_2.7.15.orig.tar.gz 17496336 SHA256:18617d1f15a380a919d517630a9cd85ce17ea602f9bbdc58ddc672df4b0239db
-'http://security.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.2.diff.gz' python2.7_2.7.15-4ubuntu4~18.04.2.diff.gz 557289 SHA256:f23200e92acf8276eed8c0b90f0f71d9d0956e91efea40d3166f1b468d142ffa
+$ apt-get source -qq --print-uris python2.7=2.7.17-1~18.04
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1~18.04.dsc' python2.7_2.7.17-1~18.04.dsc 3388 SHA256:6d68c4706e44e567668345435b521190cc8b8e8ee78a38078d16223c19ddb15d
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17.orig.tar.gz' python2.7_2.7.17.orig.tar.gz 17535962 SHA256:f22059d09cdf9625e0a7284d24a13062044f5bf59d93a7f3382190dfa94cecde
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1~18.04.diff.gz' python2.7_2.7.17-1~18.04.diff.gz 287074 SHA256:d2088da2c791fbdf4e209593f82cc05f08711efa2b9050abc62f204db966e16e
 ```
 
 ### `dpkg` source package: `readline=7.0-3`
@@ -1386,12 +1386,12 @@ $ apt-get source -qq --print-uris sqlite3=3.22.0-1ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1ubuntu0.2.debian.tar.xz' sqlite3_3.22.0-1ubuntu0.2.debian.tar.xz 38128 SHA256:1695ce72e9415445e3f6399b8a89a0f0df59982527dd9b7d54a892a47582fe14
 ```
 
-### `dpkg` source package: `systemd=237-3ubuntu10.31`
+### `dpkg` source package: `systemd=237-3ubuntu10.33`
 
 Binary Packages:
 
-- `libsystemd0:amd64=237-3ubuntu10.31`
-- `libudev1:amd64=237-3ubuntu10.31`
+- `libsystemd0:amd64=237-3ubuntu10.33`
+- `libudev1:amd64=237-3ubuntu10.33`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1403,9 +1403,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=237-3ubuntu10.33
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.33.dsc' systemd_237-3ubuntu10.33.dsc 5182 SHA256:78101584287f635d1212912eff26b4fd9bcec505f73e38e2f8fd09506577df55
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.33.debian.tar.xz' systemd_237-3ubuntu10.33.debian.tar.xz 237528 SHA256:7530e3de2264645ba057564dbb4d6c23a34362292441ebb075839e11963c38c7
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
