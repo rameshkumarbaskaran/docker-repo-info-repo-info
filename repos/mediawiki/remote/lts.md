@@ -1,7 +1,7 @@
 ## `mediawiki:lts`
 
 ```console
-$ docker pull mediawiki@sha256:8447110c1bf53b7f5d1ffaa886216ec94b354c74de904b75993a65df5911f938
+$ docker pull mediawiki@sha256:8e39c15f98c0a4b4a13c9006658fa405734fcb935d4165f7d7c4cdcb3f405926
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -553,14 +553,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:lts` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:dcb808bb5b2f7600085b0e6ca9e0ed198e0444ca7c5a555d079523e48b19152c
+$ docker pull mediawiki@sha256:b5828f32e9741b1ad084cb69717d3dd9599ac628b31affc2d37edc5aa9605a5d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **241.7 MB (241653332 bytes)**  
+-	Total Size: **241.6 MB (241649609 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e757c410b5063edcbf75ab69517882d119e40b163338160a906f9b7fa16261ae`
+-	Image ID: `sha256:54af1631d4dced5cceea58ca016c137d56ba5a47ca8195bbf1fe583ab60d32bf`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -643,11 +643,11 @@ RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
 ENV MEDIAWIKI_MAJOR_VERSION=1.31
 # Thu, 19 Dec 2019 07:11:32 GMT
 ENV MEDIAWIKI_BRANCH=REL1_31
-# Thu, 19 Dec 2019 07:11:32 GMT
-ENV MEDIAWIKI_VERSION=1.31.5
-# Thu, 19 Dec 2019 07:11:33 GMT
-ENV MEDIAWIKI_SHA512=7a14a54423ca67a0b881620980131671df99fb8a044fd4b0af421105f24b438838075bf144b85c7ff81a01f18d30bab518d707baf982865bb1768f32fcc2fcfd
-# Thu, 19 Dec 2019 07:11:48 GMT
+# Sat, 21 Dec 2019 02:09:23 GMT
+ENV MEDIAWIKI_VERSION=1.31.6
+# Sat, 21 Dec 2019 02:09:24 GMT
+ENV MEDIAWIKI_SHA512=4c6431edc591357f30cba1174825540efd721dccd365d704a704cb1ad03ce6541074074a37f6cb9f30ec8289e00a768ab3592c4b8e74f67ae828a0bb8669baab
+# Sat, 21 Dec 2019 02:09:39 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -724,9 +724,9 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Thu, 19 Dec 2019 07:13:10 GMT  
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f2c4f4a0bb878631b8f92e80d4971e38e959f8a9a6e1598963cd27532e2dba8`  
-		Last Modified: Thu, 19 Dec 2019 07:13:26 GMT  
-		Size: 35.8 MB (35760150 bytes)  
+	-	`sha256:811d0f8eb883919508c17e01141b17bbb35fe4c6226e7a58d7cbe1ef1b9bc245`  
+		Last Modified: Sat, 21 Dec 2019 02:11:24 GMT  
+		Size: 35.8 MB (35756427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:lts` - linux; 386
