@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:73b4dab7be47887e2a7b4a84cb0af4855c19dc53249e41dd3f26efa7baff7965`
-- Created: `2019-12-16T23:33:35.702111285Z`
+- Image ID: `sha256:ea67485cfa3159d017d4b8db98c18587cd2ec3ecc31b90f089fecdd3c78193e8`
+- Created: `2019-12-19T08:56:19.7516605Z`
 - Virtual Size: ~ 1.51 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -734,12 +734,12 @@ $ apt-get source -qq --print-uris gdbm=1.8.3-13.1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.8.3-13.1.debian.tar.xz' gdbm_1.8.3-13.1.debian.tar.xz 14748 SHA256:251401e1f5210226f384e936b1b7ea1df40119a918d9f3dbf48b2e51d4df8983
 ```
 
-### `dpkg` source package: `git=1:2.7.4-0ubuntu1.6`
+### `dpkg` source package: `git=1:2.7.4-0ubuntu1.7`
 
 Binary Packages:
 
-- `git=1:2.7.4-0ubuntu1.6`
-- `git-man=1:2.7.4-0ubuntu1.6`
+- `git=1:2.7.4-0ubuntu1.7`
+- `git-man=1:2.7.4-0ubuntu1.7`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -762,9 +762,14 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris git=1:2.7.4-0ubuntu1.7
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.7.4-0ubuntu1.7.dsc' git_2.7.4-0ubuntu1.7.dsc 2897 SHA256:9c7bbc0d0c62089eb82903854c2fde86798ffce1804e4429b09411ac1152bc33
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.7.4.orig.tar.xz' git_2.7.4.orig.tar.xz 3909636 SHA256:dee574defbe05ec7356a0842ddbda51315926f2fa7e39c2539f2c3dcc52e457b
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.7.4-0ubuntu1.7.debian.tar.xz' git_2.7.4-0ubuntu1.7.debian.tar.xz 561208 SHA256:447494552284888dd996223954ecf6c71fefc8c5d41783a35641a5b66f4dc769
+```
 
 ### `dpkg` source package: `glib2.0=2.48.2-0ubuntu4.4`
 
@@ -1774,20 +1779,25 @@ $ apt-get source -qq --print-uris linux-atm=1:2.5.1-1.5
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux-atm/linux-atm_2.5.1-1.5.debian.tar.gz' linux-atm_2.5.1-1.5.debian.tar.gz 10723 SHA256:9b2325859b3fd008b588a3897e713f52137abae08d1f5a44f5661f45a87f4d29
 ```
 
-### `dpkg` source package: `linux=4.4.0-169.198`
+### `dpkg` source package: `linux=4.4.0-170.199`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-169.198`
+- `linux-libc-dev:amd64=4.4.0-170.199`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-170.199
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-170.199.dsc' linux_4.4.0-170.199.dsc 11946 SHA256:27e0e9ffd97bc9e404a4cf6c61834501fe783c90580a3eab0cb2f1f34e93f230
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-170.199.diff.gz' linux_4.4.0-170.199.diff.gz 15990238 SHA256:3651e2c6c33a8b6987231e5cde7ee34a41d55862355b62d2fcf9208d7964fd62
+```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
@@ -2528,11 +2538,11 @@ $ apt-get source -qq --print-uris shared-mime-info=1.5-2ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shared-mime-info/shared-mime-info_1.5-2ubuntu0.2.debian.tar.xz' shared-mime-info_1.5-2ubuntu0.2.debian.tar.xz 10548 SHA256:7687ced629abcb5e53fb5686403393c99a89dec08a8a8070b9818242b0bf4b92
 ```
 
-### `dpkg` source package: `sqlite3=3.11.0-1ubuntu1.2`
+### `dpkg` source package: `sqlite3=3.11.0-1ubuntu1.3`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.11.0-1ubuntu1.2`
+- `libsqlite3-0:amd64=3.11.0-1ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -2540,18 +2550,24 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris sqlite3=3.11.0-1ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.3.dsc' sqlite3_3.11.0-1ubuntu1.3.dsc 2609 SHA256:e01bda25539cd0ed16a8c03be7a7a0894bdc9201220feedea163aa56a9bf97e6
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig-www.tar.xz' sqlite3_3.11.0.orig-www.tar.xz 3135012 SHA256:99843a91a1da29cf07269df49b37b0cd8a75035a88aacdb1186f94a9a217bab3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig.tar.xz' sqlite3_3.11.0.orig.tar.xz 5122440 SHA256:79fb8800b8744337d5317270899a5a40612bb76f81517e131bf496c26b044490
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.3.debian.tar.xz' sqlite3_3.11.0-1ubuntu1.3.debian.tar.xz 38916 SHA256:27519465c095855423a0959c287f32e7d25bbaea1ef1bcc49a6d7f9187dd83e6
+```
 
-### `dpkg` source package: `systemd=229-4ubuntu21.22`
+### `dpkg` source package: `systemd=229-4ubuntu21.23`
 
 Binary Packages:
 
-- `libsystemd0:amd64=229-4ubuntu21.22`
-- `libudev1:amd64=229-4ubuntu21.22`
-- `systemd=229-4ubuntu21.22`
-- `systemd-sysv=229-4ubuntu21.22`
+- `libsystemd0:amd64=229-4ubuntu21.23`
+- `libudev1:amd64=229-4ubuntu21.23`
+- `systemd=229-4ubuntu21.23`
+- `systemd-sysv=229-4ubuntu21.23`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`, `/usr/share/doc/systemd/copyright`, `/usr/share/doc/systemd-sysv/copyright`)
 
@@ -2563,9 +2579,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=229-4ubuntu21.23
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229-4ubuntu21.23.dsc' systemd_229-4ubuntu21.23.dsc 4610 SHA256:b39984f374bb4f913eb53aacc22135458325d1345d22b9ce941d09d250289c71
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229.orig.tar.gz' systemd_229.orig.tar.gz 4319173 SHA256:b51b0a48d1beb388d95bd6a98d62be05490335d4bb388aefecdcb576e91e0741
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229-4ubuntu21.23.debian.tar.xz' systemd_229-4ubuntu21.23.debian.tar.xz 302036 SHA256:632fc97934fef2aad6665c3cf54abc973664847bd0bd97fba955398c96a2453e
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.3ubuntu2`
 
