@@ -1,4 +1,4 @@
-# `kong:1.4.0-ubuntu`
+# `kong:1.4.2-ubuntu`
 
 ## Docker Metadata
 
