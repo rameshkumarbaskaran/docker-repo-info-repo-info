@@ -1,7 +1,7 @@
 ## `golang:rc`
 
 ```console
-$ docker pull golang@sha256:b47f7734e65121d01a2350600103a1be7391b94496eb58c015ea08a2fa0c7863
+$ docker pull golang@sha256:0ed97810ed77f7004d3a47d1c4644231127b83903dd14cc2c64a854b7a0fb096
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -228,70 +228,70 @@ WORKDIR /go
 ### `golang:rc` - linux; 386
 
 ```console
-$ docker pull golang@sha256:44a0bce8d56b61e5dccafa2a1a9d7700c759fdc9d0ac6133cefa0e3a5f85ba99
+$ docker pull golang@sha256:e05f7390647fe2ba0da4974b9e9a22f332690e37c1f9e07d8d995c61e5144572
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **300.7 MB (300660894 bytes)**  
+-	Total Size: **300.7 MB (300683281 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c661ef15f5825169f251c5f7be1c69395ce9fe89a3642e22e96d6ae099193a9f`
+-	Image ID: `sha256:b8392e3c17e00c5310277bc6103175979ab7465cfc5a14c278621ebb2a0a8129`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Fri, 22 Nov 2019 16:49:50 GMT
-ADD file:637dd256233b11c890b47c64e1116a873db07060c542d65ed8c5e1f1692b93c5 in / 
-# Fri, 22 Nov 2019 16:49:51 GMT
+# Sat, 28 Dec 2019 04:39:20 GMT
+ADD file:c2d3c2cbbc436161afbcdcab7f07d11962ae8a6e99f8ed2c4ff2bcc92455a406 in / 
+# Sat, 28 Dec 2019 04:39:21 GMT
 CMD ["bash"]
-# Sat, 23 Nov 2019 00:39:34 GMT
+# Sat, 28 Dec 2019 05:21:12 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Sat, 23 Nov 2019 00:39:44 GMT
+# Sat, 28 Dec 2019 05:21:20 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Sat, 23 Nov 2019 00:40:11 GMT
+# Sat, 28 Dec 2019 05:21:58 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Sat, 23 Nov 2019 14:37:08 GMT
+# Sat, 28 Dec 2019 23:42:56 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		g++ 		gcc 		libc6-dev 		make 		pkg-config 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 18 Dec 2019 00:38:28 GMT
+# Sat, 28 Dec 2019 23:42:57 GMT
 ENV GOLANG_VERSION=1.14beta1
-# Wed, 18 Dec 2019 00:38:44 GMT
+# Sat, 28 Dec 2019 23:43:11 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) goRelArch='linux-amd64'; goRelSha256='ebe68aa4219b673dbd060b8a6d9a339b6b6b0383772aa4349c8183f0a8f339e4' ;; 		armhf) goRelArch='linux-armv6l'; goRelSha256='f0542513b997ef6b5f6ff4b9a2b9502fe6743746f2639ffd48dd53d7cb958f6d' ;; 		arm64) goRelArch='linux-arm64'; goRelSha256='91a92cfb7644c59c4b51d50fb7225b898675effaa65659a71c06aa6a42c0ada5' ;; 		i386) goRelArch='linux-386'; goRelSha256='bcbfb2ea92cfef54c587427435ae5cbe50473d9158beef97aa5d5edd43d1a9d8' ;; 		ppc64el) goRelArch='linux-ppc64le'; goRelSha256='69f8d16e13912cd3caa2fe70addae9929d518d6c875cfd581bd914e0ce2d6d80' ;; 		s390x) goRelArch='linux-s390x'; goRelSha256='3252c14611af17e435a5160467c581acc31b4a4ce4e8e17688befabba3ba710f' ;; 		*) goRelArch='src'; goRelSha256='af952217fcb408180006f29e77f1c3b871192fba7f99abd5aa421cf2f0358fea'; 			echo >&2; echo >&2 "warning: current architecture ($dpkgArch) does not have a corresponding Go binary release; will be building from source"; echo >&2 ;; 	esac; 		url="https://golang.org/dl/go${GOLANG_VERSION}.${goRelArch}.tar.gz"; 	wget -O go.tgz "$url"; 	echo "${goRelSha256} *go.tgz" | sha256sum -c -; 	tar -C /usr/local -xzf go.tgz; 	rm go.tgz; 		if [ "$goRelArch" = 'src' ]; then 		echo >&2; 		echo >&2 'error: UNIMPLEMENTED'; 		echo >&2 'TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)'; 		echo >&2; 		exit 1; 	fi; 		export PATH="/usr/local/go/bin:$PATH"; 	go version
-# Wed, 18 Dec 2019 00:38:44 GMT
+# Sat, 28 Dec 2019 23:43:11 GMT
 ENV GOPATH=/go
-# Wed, 18 Dec 2019 00:38:45 GMT
+# Sat, 28 Dec 2019 23:43:11 GMT
 ENV PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 18 Dec 2019 00:38:45 GMT
+# Sat, 28 Dec 2019 23:43:12 GMT
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
-# Wed, 18 Dec 2019 00:38:46 GMT
+# Sat, 28 Dec 2019 23:43:12 GMT
 WORKDIR /go
 ```
 
 -	Layers:
-	-	`sha256:d34dc3661e80ce84b97704f402da563467559a0af488425969a76a38a8761a63`  
-		Last Modified: Fri, 22 Nov 2019 16:58:09 GMT  
-		Size: 51.1 MB (51141757 bytes)  
+	-	`sha256:b3ff5188aae7f0986a4e7385f8249878f585ef70be99706b3262795514448afc`  
+		Last Modified: Sat, 28 Dec 2019 04:44:08 GMT  
+		Size: 51.1 MB (51141961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6a002a28e7af0825b2efeca76651a2e3e98ba4d0ee10eed07b3d1495cc86a50`  
-		Last Modified: Sat, 23 Nov 2019 01:01:39 GMT  
-		Size: 8.0 MB (7981294 bytes)  
+	-	`sha256:d3ce66610fca410f78bdf9696c36dad06eb8fef98a4ee82be162c290ea2ce84d`  
+		Last Modified: Sat, 28 Dec 2019 05:42:36 GMT  
+		Size: 8.0 MB (7981460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d521d3b916711e34309354077f7f65c55009c0845fcce1b34ec7de57e3d97435`  
-		Last Modified: Sat, 23 Nov 2019 01:01:39 GMT  
-		Size: 10.3 MB (10338436 bytes)  
+	-	`sha256:231bee61098f24ddd35c94c0c20c114d27580e01b7b1ffe2d17e72a4e07f5c6d`  
+		Last Modified: Sat, 28 Dec 2019 05:42:37 GMT  
+		Size: 10.3 MB (10338380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:307a5cecf8b6e164d82cc59bf21e9316e3e5e98d21dab1a969d690c117d83ae2`  
-		Last Modified: Sat, 23 Nov 2019 01:02:01 GMT  
-		Size: 53.4 MB (53358180 bytes)  
+	-	`sha256:f6754bbf3b185bf94056033b3f6950dedefaff4d60696107a39dd57a45dd8079`  
+		Last Modified: Sat, 28 Dec 2019 05:42:57 GMT  
+		Size: 53.4 MB (53380265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcd053d9a6a8927796f0725b5dd47c4b2cc0607ac6776d36dbd265e3aa83b5a2`  
-		Last Modified: Sat, 23 Nov 2019 14:39:46 GMT  
-		Size: 73.4 MB (73391940 bytes)  
+	-	`sha256:c997b3f410c94d19ba97dc1effb638a588457a84c8877bac58e15ea893284621`  
+		Last Modified: Sat, 28 Dec 2019 23:46:11 GMT  
+		Size: 73.4 MB (73391860 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a236c00b65da32154fe381a20e9d064eab220fe8aef85bd96d5e503bd22430f`  
-		Last Modified: Wed, 18 Dec 2019 00:43:59 GMT  
-		Size: 104.4 MB (104449161 bytes)  
+	-	`sha256:cbc98d2c073e9712f4f8833de2b923cdfc007508684210e9b30cce3c63156a6e`  
+		Last Modified: Sat, 28 Dec 2019 23:46:15 GMT  
+		Size: 104.4 MB (104449229 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a8f123f4b44e3906417d31d30df12ed35bd53b2cee8825b7dffdc692abe80abd`  
-		Last Modified: Wed, 18 Dec 2019 00:43:35 GMT  
+	-	`sha256:7f03e5ec73296583c5b297b4d33cf12ca828867f4f8b49109a6efcfe0ce045cb`  
+		Last Modified: Sat, 28 Dec 2019 23:45:45 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
