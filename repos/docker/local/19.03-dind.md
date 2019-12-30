@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ba63cfbc76778322c00026aa3dd95002fb50da4312955b8a544269b9f8c0a2db`
-- Created: `2019-12-11T23:21:07.599255765Z`
-- Virtual Size: ~ 236.61 Mb  
+- Image ID: `sha256:a90db1182c9918852511b20856a6526a32e704bbfa3e342b8022fc00f1e63e94`
+- Created: `2019-12-26T21:22:33.40303661Z`
+- Virtual Size: ~ 236.71 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
@@ -20,16 +20,16 @@
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.1.2-r0 description:
+alpine-baselayout-3.2.0-r3 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.1.2-r0 webpage:
+alpine-baselayout-3.2.0-r3 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.1.2-r0 installed size:
-405504
+alpine-baselayout-3.2.0-r3 installed size:
+413696
 
-alpine-baselayout-3.1.2-r0 license:
+alpine-baselayout-3.2.0-r3 license:
 GPL-2.0-only
 
 ```
@@ -54,16 +54,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r2 description:
+apk-tools-2.10.4-r3 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r2 webpage:
+apk-tools-2.10.4-r3 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r2 installed size:
+apk-tools-2.10.4-r3 installed size:
 262144
 
-apk-tools-2.10.4-r2 license:
+apk-tools-2.10.4-r3 license:
 GPL2
 
 ```
@@ -71,16 +71,16 @@ GPL2
 ### `apk` package: `btrfs-progs`
 
 ```console
-btrfs-progs-5.1.1-r0 description:
+btrfs-progs-5.4-r0 description:
 BTRFS filesystem utilities
 
-btrfs-progs-5.1.1-r0 webpage:
+btrfs-progs-5.4-r0 webpage:
 https://btrfs.wiki.kernel.org
 
-btrfs-progs-5.1.1-r0 installed size:
-1212416
+btrfs-progs-5.4-r0 installed size:
+1269760
 
-btrfs-progs-5.1.1-r0 license:
+btrfs-progs-5.4-r0 license:
 GPL-2.0-or-later LGPL-3.0-or-later
 
 ```
@@ -88,33 +88,33 @@ GPL-2.0-or-later LGPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.30.1-r2 description:
+busybox-1.31.1-r8 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.30.1-r2 webpage:
+busybox-1.31.1-r8 webpage:
 https://busybox.net/
 
-busybox-1.30.1-r2 installed size:
-942080
+busybox-1.31.1-r8 installed size:
+962560
 
-busybox-1.30.1-r2 license:
-GPL-2.0
+busybox-1.31.1-r8 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20190108-r0 description:
+ca-certificates-20191127-r0 description:
 Common CA certificates PEM files
 
-ca-certificates-20190108-r0 webpage:
+ca-certificates-20191127-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20190108-r0 installed size:
-737280
+ca-certificates-20191127-r0 installed size:
+741376
 
-ca-certificates-20190108-r0 license:
+ca-certificates-20191127-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -122,16 +122,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
-ca-certificates-cacert-20190108-r0 description:
+ca-certificates-cacert-20191127-r0 description:
 Mozilla bundled certificates
 
-ca-certificates-cacert-20190108-r0 webpage:
+ca-certificates-cacert-20191127-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-cacert-20190108-r0 installed size:
+ca-certificates-cacert-20191127-r0 installed size:
 245760
 
-ca-certificates-cacert-20190108-r0 license:
+ca-certificates-cacert-20191127-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -139,16 +139,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `e2fsprogs`
 
 ```console
-e2fsprogs-1.45.2-r1 description:
+e2fsprogs-1.45.4-r0 description:
 Standard Ext2/3/4 filesystem utilities
 
-e2fsprogs-1.45.2-r1 webpage:
+e2fsprogs-1.45.4-r0 webpage:
 http://e2fsprogs.sourceforge.net
 
-e2fsprogs-1.45.2-r1 installed size:
+e2fsprogs-1.45.4-r0 installed size:
 421888
 
-e2fsprogs-1.45.2-r1 license:
+e2fsprogs-1.45.4-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -156,16 +156,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `e2fsprogs-extra`
 
 ```console
-e2fsprogs-extra-1.45.2-r1 description:
+e2fsprogs-extra-1.45.4-r0 description:
 Ext2/3/4 filesystem extra utilities
 
-e2fsprogs-extra-1.45.2-r1 webpage:
+e2fsprogs-extra-1.45.4-r0 webpage:
 http://e2fsprogs.sourceforge.net
 
-e2fsprogs-extra-1.45.2-r1 installed size:
+e2fsprogs-extra-1.45.4-r0 installed size:
 700416
 
-e2fsprogs-extra-1.45.2-r1 license:
+e2fsprogs-extra-1.45.4-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -173,16 +173,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `e2fsprogs-libs`
 
 ```console
-e2fsprogs-libs-1.45.2-r1 description:
+e2fsprogs-libs-1.45.4-r0 description:
 Standard Ext2/3/4 filesystem utilities (libraries)
 
-e2fsprogs-libs-1.45.2-r1 webpage:
+e2fsprogs-libs-1.45.4-r0 webpage:
 http://e2fsprogs.sourceforge.net
 
-e2fsprogs-libs-1.45.2-r1 installed size:
+e2fsprogs-libs-1.45.4-r0 installed size:
 454656
 
-e2fsprogs-libs-1.45.2-r1 license:
+e2fsprogs-libs-1.45.4-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -190,16 +190,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `iptables`
 
 ```console
-iptables-1.8.3-r0 description:
+iptables-1.8.3-r1 description:
 Linux kernel firewall, NAT and packet mangling tools
 
-iptables-1.8.3-r0 webpage:
+iptables-1.8.3-r1 webpage:
 https://www.netfilter.org/projects/iptables/index.html
 
-iptables-1.8.3-r0 installed size:
-2220032
+iptables-1.8.3-r1 installed size:
+2215936
 
-iptables-1.8.3-r0 license:
+iptables-1.8.3-r1 license:
 GPL-2.0-or-later
 
 ```
@@ -207,16 +207,16 @@ GPL-2.0-or-later
 ### `apk` package: `keyutils-libs`
 
 ```console
-keyutils-libs-1.6-r1 description:
+keyutils-libs-1.6.1-r0 description:
 Key utilities library
 
-keyutils-libs-1.6-r1 webpage:
+keyutils-libs-1.6.1-r0 webpage:
 http://people.redhat.com/~dhowells/keyutils/
 
-keyutils-libs-1.6-r1 installed size:
-36864
+keyutils-libs-1.6.1-r0 installed size:
+40960
 
-keyutils-libs-1.6-r1 license:
+keyutils-libs-1.6.1-r0 license:
 GPL-2.0-or-later LGPL-2.0-or-later
 
 ```
@@ -241,16 +241,16 @@ MIT
 ### `apk` package: `krb5-libs`
 
 ```console
-krb5-libs-1.17-r0 description:
+krb5-libs-1.17.1-r0 description:
 The shared libraries used by Kerberos 5
 
-krb5-libs-1.17-r0 webpage:
+krb5-libs-1.17.1-r0 webpage:
 https://web.mit.edu/kerberos/www/
 
-krb5-libs-1.17-r0 installed size:
+krb5-libs-1.17.1-r0 installed size:
 2023424
 
-krb5-libs-1.17-r0 license:
+krb5-libs-1.17.1-r0 license:
 MIT
 
 ```
@@ -258,16 +258,16 @@ MIT
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.33.2-r0 description:
+libblkid-2.34-r1 description:
 Block device identification library from util-linux
 
-libblkid-2.33.2-r0 webpage:
+libblkid-2.34-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.33.2-r0 installed size:
-307200
+libblkid-2.34-r1 installed size:
+311296
 
-libblkid-2.33.2-r0 license:
+libblkid-2.34-r1 license:
 GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 
 ```
@@ -275,16 +275,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libc-utils`
 
 ```console
-libc-utils-0.7.1-r0 description:
+libc-utils-0.7.2-r0 description:
 Meta package to pull in correct libc
 
-libc-utils-0.7.1-r0 webpage:
+libc-utils-0.7.2-r0 webpage:
 http://alpinelinux.org
 
-libc-utils-0.7.1-r0 installed size:
+libc-utils-0.7.2-r0 installed size:
 4096
 
-libc-utils-0.7.1-r0 license:
+libc-utils-0.7.2-r0 license:
 BSD
 
 ```
@@ -292,16 +292,16 @@ BSD
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.45.2-r1 description:
+libcom_err-1.45.4-r0 description:
 Common error description library
 
-libcom_err-1.45.2-r1 webpage:
+libcom_err-1.45.4-r0 webpage:
 http://e2fsprogs.sourceforge.net
 
-libcom_err-1.45.2-r1 installed size:
+libcom_err-1.45.4-r0 installed size:
 24576
 
-libcom_err-1.45.2-r1 license:
+libcom_err-1.45.4-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -309,16 +309,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r0 description:
+libcrypto1.1-1.1.1d-r2 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r0 webpage:
+libcrypto1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1d-r0 installed size:
-2736128
+libcrypto1.1-1.1.1d-r2 installed size:
+2748416
 
-libcrypto1.1-1.1.1d-r0 license:
+libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -326,16 +326,16 @@ OpenSSL
 ### `apk` package: `libedit`
 
 ```console
-libedit-20190324.3.1-r0 description:
+libedit-20191211.3.1-r0 description:
 BSD line editing library
 
-libedit-20190324.3.1-r0 webpage:
+libedit-20191211.3.1-r0 webpage:
 https://www.thrysoee.dk/editline
 
-libedit-20190324.3.1-r0 installed size:
+libedit-20191211.3.1-r0 installed size:
 200704
 
-libedit-20190324.3.1-r0 license:
+libedit-20191211.3.1-r0 license:
 BSD-3-Clause
 
 ```
@@ -343,17 +343,17 @@ BSD-3-Clause
 ### `apk` package: `libintl`
 
 ```console
-libintl-0.19.8.1-r4 description:
+libintl-0.20.1-r2 description:
 GNU gettext runtime library
 
-libintl-0.19.8.1-r4 webpage:
+libintl-0.20.1-r2 webpage:
 https://www.gnu.org/software/gettext/gettext.html
 
-libintl-0.19.8.1-r4 installed size:
-73728
+libintl-0.20.1-r2 installed size:
+57344
 
-libintl-0.19.8.1-r4 license:
-LGPL-2.1+
+libintl-0.20.1-r2 license:
+LGPL-2.1-or-later
 
 ```
 
@@ -377,16 +377,16 @@ GPL
 ### `apk` package: `libnftnl-libs`
 
 ```console
-libnftnl-libs-1.1.3-r0 description:
+libnftnl-libs-1.1.5-r0 description:
 Netfilter library providing interface to the nf_tables subsystem (libraries)
 
-libnftnl-libs-1.1.3-r0 webpage:
+libnftnl-libs-1.1.5-r0 webpage:
 https://netfilter.org/projects/libnftnl
 
-libnftnl-libs-1.1.3-r0 installed size:
-184320
+libnftnl-libs-1.1.5-r0 installed size:
+196608
 
-libnftnl-libs-1.1.3-r0 license:
+libnftnl-libs-1.1.5-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -394,16 +394,16 @@ GPL-2.0-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r0 description:
+libssl1.1-1.1.1d-r2 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r0 webpage:
+libssl1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1d-r0 installed size:
-532480
+libssl1.1-1.1.1d-r2 installed size:
+536576
 
-libssl1.1-1.1.1d-r0 license:
+libssl1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -445,16 +445,16 @@ ISC
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.33.2-r0 description:
+libuuid-2.34-r1 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.33.2-r0 webpage:
+libuuid-2.34-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.33.2-r0 installed size:
+libuuid-2.34-r1 installed size:
 40960
 
-libuuid-2.33.2-r0 license:
+libuuid-2.34-r1 license:
 GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 
 ```
@@ -462,16 +462,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libverto`
 
 ```console
-libverto-0.3.1-r0 description:
+libverto-0.3.1-r1 description:
 Main loop abstraction library
 
-libverto-0.3.1-r0 webpage:
+libverto-0.3.1-r1 webpage:
 https://github.com/npmccallum/libverto
 
-libverto-0.3.1-r0 installed size:
+libverto-0.3.1-r1 installed size:
 36864
 
-libverto-0.3.1-r0 license:
+libverto-0.3.1-r1 license:
 MIT
 
 ```
@@ -496,16 +496,16 @@ GPL
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r3 description:
+musl-1.1.24-r0 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r3 webpage:
+musl-1.1.24-r0 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r3 installed size:
-598016
+musl-1.1.24-r0 installed size:
+610304
 
-musl-1.1.22-r3 license:
+musl-1.1.24-r0 license:
 MIT
 
 ```
@@ -513,16 +513,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r3 description:
+musl-utils-1.1.24-r0 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r3 webpage:
+musl-utils-1.1.24-r0 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r3 installed size:
+musl-utils-1.1.24-r0 installed size:
 147456
 
-musl-utils-1.1.22-r3 license:
+musl-utils-1.1.24-r0 license:
 MIT BSD GPL2+
 
 ```
@@ -530,16 +530,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20190518-r0 description:
+ncurses-libs-6.1_p20191130-r0 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20190518-r0 webpage:
-https://www.gnu.org/software/ncurses/
+ncurses-libs-6.1_p20191130-r0 webpage:
+https://invisible-island.net/ncurses/
 
-ncurses-libs-6.1_p20190518-r0 installed size:
-503808
+ncurses-libs-6.1_p20191130-r0 installed size:
+507904
 
-ncurses-libs-6.1_p20190518-r0 license:
+ncurses-libs-6.1_p20191130-r0 license:
 MIT
 
 ```
@@ -547,16 +547,16 @@ MIT
 ### `apk` package: `ncurses-terminfo`
 
 ```console
-ncurses-terminfo-6.1_p20190518-r0 description:
+ncurses-terminfo-6.1_p20191130-r0 description:
 Console display library (other terminfo files)
 
-ncurses-terminfo-6.1_p20190518-r0 webpage:
-https://www.gnu.org/software/ncurses/
+ncurses-terminfo-6.1_p20191130-r0 webpage:
+https://invisible-island.net/ncurses/
 
-ncurses-terminfo-6.1_p20190518-r0 installed size:
-7307264
+ncurses-terminfo-6.1_p20191130-r0 installed size:
+7348224
 
-ncurses-terminfo-6.1_p20190518-r0 license:
+ncurses-terminfo-6.1_p20191130-r0 license:
 MIT
 
 ```
@@ -564,16 +564,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20190518-r0 description:
+ncurses-terminfo-base-6.1_p20191130-r0 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20190518-r0 webpage:
-https://www.gnu.org/software/ncurses/
+ncurses-terminfo-base-6.1_p20191130-r0 webpage:
+https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.1_p20190518-r0 installed size:
+ncurses-terminfo-base-6.1_p20191130-r0 installed size:
 94208
 
-ncurses-terminfo-base-6.1_p20190518-r0 license:
+ncurses-terminfo-base-6.1_p20191130-r0 license:
 MIT
 
 ```
@@ -588,7 +588,7 @@ openssh-client-8.1_p1-r0 webpage:
 https://www.openssh.com/portable.html
 
 openssh-client-8.1_p1-r0 installed size:
-3485696
+3497984
 
 openssh-client-8.1_p1-r0 license:
 BSD
@@ -615,16 +615,16 @@ BSD
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1d-r0 description:
+openssl-1.1.1d-r3 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1d-r0 webpage:
+openssl-1.1.1d-r3 webpage:
 https://www.openssl.org
 
-openssl-1.1.1d-r0 installed size:
-679936
+openssl-1.1.1d-r3 installed size:
+675840
 
-openssl-1.1.1d-r0 license:
+openssl-1.1.1d-r3 license:
 OpenSSL
 
 ```
@@ -639,7 +639,7 @@ pigz-2.4-r0 webpage:
 http://zlib.net/pigz/
 
 pigz-2.4-r0 installed size:
-249856
+241664
 
 pigz-2.4-r0 license:
 zlib
@@ -649,67 +649,67 @@ zlib
 ### `apk` package: `scanelf`
 
 ```console
-scanelf-1.2.3-r0 description:
+scanelf-1.2.4-r0 description:
 Scan ELF binaries for stuff
 
-scanelf-1.2.3-r0 webpage:
+scanelf-1.2.4-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
-scanelf-1.2.3-r0 installed size:
-98304
+scanelf-1.2.4-r0 installed size:
+94208
 
-scanelf-1.2.3-r0 license:
-GPL-2.0
+scanelf-1.2.4-r0 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `shadow-uidmap`
 
 ```console
-shadow-uidmap-4.6-r2 description:
+shadow-uidmap-4.7-r1 description:
 Utilities for using subordinate UIDs and GIDs
 
-shadow-uidmap-4.6-r2 webpage:
+shadow-uidmap-4.7-r1 webpage:
 http://pkg-shadow.alioth.debian.org/
 
-shadow-uidmap-4.6-r2 installed size:
-90112
+shadow-uidmap-4.7-r1 installed size:
+98304
 
-shadow-uidmap-4.6-r2 license:
-GPL
+shadow-uidmap-4.7-r1 license:
+BSD-3-Clause
 
 ```
 
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.30.1-r2 description:
+ssl_client-1.31.1-r8 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.30.1-r2 webpage:
+ssl_client-1.31.1-r8 webpage:
 https://busybox.net/
 
-ssl_client-1.30.1-r2 installed size:
+ssl_client-1.31.1-r8 installed size:
 28672
 
-ssl_client-1.30.1-r2 license:
-GPL-2.0
+ssl_client-1.31.1-r8 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `xfsprogs`
 
 ```console
-xfsprogs-5.0.0-r0 description:
+xfsprogs-5.3.0-r0 description:
 XFS filesystem utilities
 
-xfsprogs-5.0.0-r0 webpage:
+xfsprogs-5.3.0-r0 webpage:
 http://xfs.org/index.php/Main_Page
 
-xfsprogs-5.0.0-r0 installed size:
-1122304
+xfsprogs-5.3.0-r0 installed size:
+1142784
 
-xfsprogs-5.0.0-r0 license:
+xfsprogs-5.3.0-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -751,16 +751,16 @@ GPL-2.0-or-later Public-Domain
 ### `apk` package: `zfs`
 
 ```console
-zfs-0.8.2-r0 description:
+zfs-0.8.2-r1 description:
 ZFS for Linux
 
-zfs-0.8.2-r0 webpage:
+zfs-0.8.2-r1 webpage:
 http://zfsonlinux.org
 
-zfs-0.8.2-r0 installed size:
-1236992
+zfs-0.8.2-r1 installed size:
+1241088
 
-zfs-0.8.2-r0 license:
+zfs-0.8.2-r1 license:
 CDDL-1.0
 
 ```
@@ -768,16 +768,16 @@ CDDL-1.0
 ### `apk` package: `zfs-libs`
 
 ```console
-zfs-libs-0.8.2-r0 description:
+zfs-libs-0.8.2-r1 description:
 ZFS for Linux (libraries)
 
-zfs-libs-0.8.2-r0 webpage:
+zfs-libs-0.8.2-r1 webpage:
 http://zfsonlinux.org
 
-zfs-libs-0.8.2-r0 installed size:
-3108864
+zfs-libs-0.8.2-r1 installed size:
+3121152
 
-zfs-libs-0.8.2-r0 license:
+zfs-libs-0.8.2-r1 license:
 CDDL-1.0
 
 ```
@@ -785,16 +785,16 @@ CDDL-1.0
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.11-r1 description:
+zlib-1.2.11-r3 description:
 A compression/decompression Library
 
-zlib-1.2.11-r1 webpage:
-http://zlib.net
+zlib-1.2.11-r3 webpage:
+https://zlib.net/
 
-zlib-1.2.11-r1 installed size:
+zlib-1.2.11-r3 installed size:
 110592
 
-zlib-1.2.11-r1 license:
-zlib
+zlib-1.2.11-r3 license:
+Zlib
 
 ```
