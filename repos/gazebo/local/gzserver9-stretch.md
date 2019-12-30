@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8ee5a922f831136470a09a1fe7511e0c57e09c6b8baff71e7e4e8c7b4dfa184a`
-- Created: `2019-11-23T00:41:41.894189473Z`
+- Image ID: `sha256:0a1c9c3b52690ce396201a031277bf003b9a76b39605dfb5b86a0f6c88326240`
+- Created: `2019-12-28T23:04:55.783333869Z`
 - Virtual Size: ~ 806.69 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -818,13 +818,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/curl/7.52.1-5+deb9u9/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/curl/7.52.1-5+deb9u9/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3`
+### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3+deb9u1`
 
 Binary Packages:
 
-- `libsasl2-2:amd64=2.1.27~101-g0780600+dfsg-3`
-- `libsasl2-modules:amd64=2.1.27~101-g0780600+dfsg-3`
-- `libsasl2-modules-db:amd64=2.1.27~101-g0780600+dfsg-3`
+- `libsasl2-2:amd64=2.1.27~101-g0780600+dfsg-3+deb9u1`
+- `libsasl2-modules:amd64=2.1.27~101-g0780600+dfsg-3+deb9u1`
+- `libsasl2-modules-db:amd64=2.1.27~101-g0780600+dfsg-3+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/libsasl2-modules/copyright`, `/usr/share/doc/libsasl2-modules-db/copyright`)
 
@@ -835,17 +835,17 @@ Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/l
 Source:
 
 ```console
-$ apt-get source -qq --print-uris cyrus-sasl2=2.1.27~101-g0780600+dfsg-3
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg-3.dsc' cyrus-sasl2_2.1.27~101-g0780600+dfsg-3.dsc 3176 SHA256:abc0b2b0e8757195689821a724037c2017f8d06d63d357e1663d679226ef71d4
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg.orig.tar.xz' cyrus-sasl2_2.1.27~101-g0780600+dfsg.orig.tar.xz 1143888 SHA256:69f34971f768e7ee6a6b647ec2d16a5a72a854ecd4602b019d5f79ba61063fdc
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg-3.debian.tar.xz' cyrus-sasl2_2.1.27~101-g0780600+dfsg-3.debian.tar.xz 94664 SHA256:5094c002044588381e417c112f0f85d33242651f2739783b4dbd673321e7a386
+$ apt-get source -qq --print-uris cyrus-sasl2=2.1.27~101-g0780600+dfsg-3+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg-3+deb9u1.dsc' cyrus-sasl2_2.1.27~101-g0780600+dfsg-3+deb9u1.dsc 3381 SHA256:a331441098ece65be5bf13d871b486115af68daf06a0145adf6cda8ef71d73e4
+'http://security.debian.org/debian-security/pool/updates/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg.orig.tar.xz' cyrus-sasl2_2.1.27~101-g0780600+dfsg.orig.tar.xz 1143888 SHA256:69f34971f768e7ee6a6b647ec2d16a5a72a854ecd4602b019d5f79ba61063fdc
+'http://security.debian.org/debian-security/pool/updates/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg-3+deb9u1.debian.tar.xz' cyrus-sasl2_2.1.27~101-g0780600+dfsg-3+deb9u1.debian.tar.xz 94992 SHA256:be1ba4b3bfcc4740354342686deac73ca2e46c4871219599229efe8cfe98df6f
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/cyrus-sasl2/2.1.27~101-g0780600+dfsg-3/ (for browsing the source)
-- https://sources.debian.net/src/cyrus-sasl2/2.1.27~101-g0780600+dfsg-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/cyrus-sasl2/2.1.27~101-g0780600+dfsg-3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/cyrus-sasl2/2.1.27~101-g0780600+dfsg-3+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/cyrus-sasl2/2.1.27~101-g0780600+dfsg-3+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/cyrus-sasl2/2.1.27~101-g0780600+dfsg-3+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `d-conf=0.26.0-2`
 
@@ -1491,11 +1491,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/fonts-dejavu/2.37-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/fonts-dejavu/2.37-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `freeimage=3.17.0+ds1-5`
+### `dpkg` source package: `freeimage=3.17.0+ds1-5+deb9u1`
 
 Binary Packages:
 
-- `libfreeimage3:amd64=3.17.0+ds1-5`
+- `libfreeimage3:amd64=3.17.0+ds1-5+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libfreeimage3/copyright`)
 
@@ -1508,17 +1508,17 @@ Licenses: (parsed from: `/usr/share/doc/libfreeimage3/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris freeimage=3.17.0+ds1-5
-'http://deb.debian.org/debian/pool/main/f/freeimage/freeimage_3.17.0+ds1-5.dsc' freeimage_3.17.0+ds1-5.dsc 2707 SHA256:12463483abe58b3a46ba3a5262e89ba801273a060278c22b2411149578d0f770
-'http://deb.debian.org/debian/pool/main/f/freeimage/freeimage_3.17.0+ds1.orig.tar.xz' freeimage_3.17.0+ds1.orig.tar.xz 1277296 SHA256:7742f3d4edf9bc7f3a3f6c5baa9f5546e85cffa575944455e0dc10e3c13263db
-'http://deb.debian.org/debian/pool/main/f/freeimage/freeimage_3.17.0+ds1-5.debian.tar.xz' freeimage_3.17.0+ds1-5.debian.tar.xz 23500 SHA256:0517461afdfc5feb5bdb25fd581f1f49cc10cf2cae8b5691428efb6d4b5b486e
+$ apt-get source -qq --print-uris freeimage=3.17.0+ds1-5+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/f/freeimage/freeimage_3.17.0+ds1-5+deb9u1.dsc' freeimage_3.17.0+ds1-5+deb9u1.dsc 2561 SHA256:3b65f9492f0fa5fb288fae8d217be8a7d82a26f4b6a075de460a8e2dbc9a9ab8
+'http://security.debian.org/debian-security/pool/updates/main/f/freeimage/freeimage_3.17.0+ds1.orig.tar.xz' freeimage_3.17.0+ds1.orig.tar.xz 1277296 SHA256:7742f3d4edf9bc7f3a3f6c5baa9f5546e85cffa575944455e0dc10e3c13263db
+'http://security.debian.org/debian-security/pool/updates/main/f/freeimage/freeimage_3.17.0+ds1-5+deb9u1.debian.tar.xz' freeimage_3.17.0+ds1-5+deb9u1.debian.tar.xz 25452 SHA256:91cfbea15a5b82e5cc0a00aee947d7ddc58789a85d882f5ba44c11bae13b3f0d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/freeimage/3.17.0+ds1-5/ (for browsing the source)
-- https://sources.debian.net/src/freeimage/3.17.0+ds1-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/freeimage/3.17.0+ds1-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/freeimage/3.17.0+ds1-5+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/freeimage/3.17.0+ds1-5+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/freeimage/3.17.0+ds1-5+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `freetype=2.6.3-3.2`
 
@@ -4975,11 +4975,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libvorbis/1.3.5-4+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libvorbis/1.3.5-4+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libvpx=1.6.1-3+deb9u1`
+### `dpkg` source package: `libvpx=1.6.1-3+deb9u2`
 
 Binary Packages:
 
-- `libvpx4:amd64=1.6.1-3+deb9u1`
+- `libvpx4:amd64=1.6.1-3+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/libvpx4/copyright`)
 
@@ -4990,17 +4990,17 @@ Licenses: (parsed from: `/usr/share/doc/libvpx4/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libvpx=1.6.1-3+deb9u1
-'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.6.1-3+deb9u1.dsc' libvpx_1.6.1-3+deb9u1.dsc 2300 SHA256:3fe979f54ed735ea878a73ca1504bed86bb5067eee977a7a421cccef0b91a381
-'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.6.1.orig.tar.gz' libvpx_1.6.1.orig.tar.gz 2493087 SHA256:cda8bb6f0e4848c018177d3a576fa83ed96d762554d7010fe4cfb9d70c22e588
-'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.6.1-3+deb9u1.debian.tar.xz' libvpx_1.6.1-3+deb9u1.debian.tar.xz 12056 SHA256:842dbf42a5ad4a0a318bea48fda8355980b52321e18b7c71a42f1aefafd1323b
+$ apt-get source -qq --print-uris libvpx=1.6.1-3+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/libv/libvpx/libvpx_1.6.1-3+deb9u2.dsc' libvpx_1.6.1-3+deb9u2.dsc 2300 SHA256:eba391dfc6e6d4d1412fd43de406eb0b11d7adfdc3edb9416eeaa35575a37bfd
+'http://security.debian.org/debian-security/pool/updates/main/libv/libvpx/libvpx_1.6.1.orig.tar.gz' libvpx_1.6.1.orig.tar.gz 2493087 SHA256:cda8bb6f0e4848c018177d3a576fa83ed96d762554d7010fe4cfb9d70c22e588
+'http://security.debian.org/debian-security/pool/updates/main/libv/libvpx/libvpx_1.6.1-3+deb9u2.debian.tar.xz' libvpx_1.6.1-3+deb9u2.debian.tar.xz 13908 SHA256:71ea0477d6cde9600ecd5f79ef903f0139f5f89947f321e3125b0bc5c1aa4408
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libvpx/1.6.1-3+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/libvpx/1.6.1-3+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libvpx/1.6.1-3+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libvpx/1.6.1-3+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/libvpx/1.6.1-3+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libvpx/1.6.1-3+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libwacom=0.22-1`
 
@@ -6531,11 +6531,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl1.0=1.0.2t-1~deb9u1`
+### `dpkg` source package: `openssl1.0=1.0.2u-1~deb9u1`
 
 Binary Packages:
 
-- `libssl1.0.2:amd64=1.0.2t-1~deb9u1`
+- `libssl1.0.2:amd64=1.0.2u-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -6544,18 +6544,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl1.0=1.0.2t-1~deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2t-1~deb9u1.dsc' openssl1.0_1.0.2t-1~deb9u1.dsc 2383 SHA256:dfa5f8434bf6ca3c681077e8106d95e890df6ef124ffafe4d3e40d2e2785fde1
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2t.orig.tar.gz' openssl1.0_1.0.2t.orig.tar.gz 5355422 SHA256:14cb464efe7ac6b54799b34456bd69558a749a4931ecfd9cf9f71d7881cac7bc
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2t.orig.tar.gz.asc' openssl1.0_1.0.2t.orig.tar.gz.asc 488 SHA256:b202f0bf9c3114e1977becdb17263265cf40a6d37b263cb70f3d81d5b0512b1d
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2t-1~deb9u1.debian.tar.xz' openssl1.0_1.0.2t-1~deb9u1.debian.tar.xz 94732 SHA256:d2806222974f4b7ea2e84a65db619b4f1e6f3f76731e76789f17e1f62cdd71e2
+$ apt-get source -qq --print-uris openssl1.0=1.0.2u-1~deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u-1~deb9u1.dsc' openssl1.0_1.0.2u-1~deb9u1.dsc 2383 SHA256:35e2627956512ce933f91e66ecb4a276200d8d1ab67ee599fc1a8dd7ae0a183a
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u.orig.tar.gz' openssl1.0_1.0.2u.orig.tar.gz 5355412 SHA256:ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u.orig.tar.gz.asc' openssl1.0_1.0.2u.orig.tar.gz.asc 488 SHA256:84d7a8b23df5567e80e3732f69c5428ee533a2bc7c3c2264dd8390a7af2a8620
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u-1~deb9u1.debian.tar.xz' openssl1.0_1.0.2u-1~deb9u1.debian.tar.xz 94808 SHA256:2b3beb8c675e7ede236e7f54ebad5df277c995722c9a85ca6e0033896119db7c
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl1.0/1.0.2t-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl1.0/1.0.2t-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl1.0/1.0.2t-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl1.0/1.0.2u-1~deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/openssl1.0/1.0.2u-1~deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl1.0/1.0.2u-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.0l-1~deb9u1`
 
