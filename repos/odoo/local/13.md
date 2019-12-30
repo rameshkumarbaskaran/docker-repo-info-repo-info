@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1237eb1e48916ae801b58351d66188413ab891728beef3dcc5c9667da0d55da0`
-- Created: `2019-11-23T01:18:56.03925772Z`
+- Image ID: `sha256:22ccea1d7411082a0901faee1d9b6747216ca21fc8381849716eb2775408088a`
+- Created: `2019-12-28T20:31:46.530472986Z`
 - Virtual Size: ~ 1.12 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -512,12 +512,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/curl/7.64.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/curl/7.64.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
+### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1+deb10u1`
 
 Binary Packages:
 
-- `libsasl2-2:amd64=2.1.27+dfsg-1`
-- `libsasl2-modules-db:amd64=2.1.27+dfsg-1`
+- `libsasl2-2:amd64=2.1.27+dfsg-1+deb10u1`
+- `libsasl2-modules-db:amd64=2.1.27+dfsg-1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/libsasl2-modules-db/copyright`)
 
@@ -528,17 +528,17 @@ Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/l
 Source:
 
 ```console
-$ apt-get source -qq --print-uris cyrus-sasl2=2.1.27+dfsg-1
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-1.dsc' cyrus-sasl2_2.1.27+dfsg-1.dsc 3523 SHA256:21ff8887f688917ba77cee10f9e7295f00a7fa99d815eeafe40f321ed085d0bc
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg.orig.tar.xz' cyrus-sasl2_2.1.27+dfsg.orig.tar.xz 2058596 SHA256:108b0c691c423837264f05abb559ea76c3dfdd91246555e8abe87c129a6e37cd
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-1.debian.tar.xz' cyrus-sasl2_2.1.27+dfsg-1.debian.tar.xz 99624 SHA256:d0f8305c97cb430bed5127c2809c98c510c74cb5ec404ed66f7f1fa97851324c
+$ apt-get source -qq --print-uris cyrus-sasl2=2.1.27+dfsg-1+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-1+deb10u1.dsc' cyrus-sasl2_2.1.27+dfsg-1+deb10u1.dsc 3580 SHA256:4537e3acdf1e009c402110aa47d6f5acef87594b4ad7e13733d3956d85b2d110
+'http://security.debian.org/debian-security/pool/updates/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg.orig.tar.xz' cyrus-sasl2_2.1.27+dfsg.orig.tar.xz 2058596 SHA256:108b0c691c423837264f05abb559ea76c3dfdd91246555e8abe87c129a6e37cd
+'http://security.debian.org/debian-security/pool/updates/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-1+deb10u1.debian.tar.xz' cyrus-sasl2_2.1.27+dfsg-1+deb10u1.debian.tar.xz 99972 SHA256:df71d3cd6c623702c5daeab440c91899c8d4e7955cf632e6bd07de3a65cb8538
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/cyrus-sasl2/2.1.27+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/cyrus-sasl2/2.1.27+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/cyrus-sasl2/2.1.27+dfsg-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/cyrus-sasl2/2.1.27+dfsg-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/cyrus-sasl2/2.1.27+dfsg-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/cyrus-sasl2/2.1.27+dfsg-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dash=0.5.10.2-5`
 
@@ -10971,11 +10971,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python-watchdog/0.9.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python-watchdog/0.9.0-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python-werkzeug=0.14.1+dfsg1-4+deb10u1`
+### `dpkg` source package: `python-werkzeug=0.16.0+dfsg1-1`
 
 Binary Packages:
 
-- `python3-werkzeug=0.14.1+dfsg1-4+deb10u1`
+- `python3-werkzeug=0.16.0+dfsg1-1`
 
 Licenses: (parsed from: `/usr/share/doc/python3-werkzeug/copyright`)
 
@@ -10985,17 +10985,11 @@ Licenses: (parsed from: `/usr/share/doc/python3-werkzeug/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python-werkzeug=0.14.1+dfsg1-4+deb10u1
-'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_0.14.1+dfsg1-4+deb10u1.dsc' python-werkzeug_0.14.1+dfsg1-4+deb10u1.dsc 2609 SHA256:27d29fb178e897d6fea0dc61cd5b96456fdd942c85de05d0c22360f3828a5134
-'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_0.14.1+dfsg1.orig.tar.gz' python-werkzeug_0.14.1+dfsg1.orig.tar.gz 1109469 SHA256:45b0e29d86735cad912ed19ac137308d3dd91526ac78b5607f5384745519ab3e
-'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_0.14.1+dfsg1-4+deb10u1.debian.tar.xz' python-werkzeug_0.14.1+dfsg1-4+deb10u1.debian.tar.xz 8824 SHA256:08d97bd48f399e195d8df91575e243225efea0fa5ca5435e911f560c8732bb4d
+$ apt-get source -qq --print-uris python-werkzeug=0.16.0+dfsg1-1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/python-werkzeug/python-werkzeug_0.16.0+dfsg1-1.dsc' python-werkzeug_0.16.0+dfsg1-1.dsc 2630 SHA256:2e97bb56e5ed35803979c61fa1205fc682ae7c9476418f4b453c254e9d928fd3
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/python-werkzeug/python-werkzeug_0.16.0+dfsg1.orig.tar.xz' python-werkzeug_0.16.0+dfsg1.orig.tar.xz 751144 SHA256:29d81b8eee442961398d99a52b2b91aab29c9060dae9f21f25f6b55fe6e57276
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/python-werkzeug/python-werkzeug_0.16.0+dfsg1-1.debian.tar.xz' python-werkzeug_0.16.0+dfsg1-1.debian.tar.xz 6884 SHA256:6ca5395c68efd7e095619bb12fa8a01656e7398ffe86aaaea960392877a634e5
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/python-werkzeug/0.14.1+dfsg1-4+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/python-werkzeug/0.14.1+dfsg1-4+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python-werkzeug/0.14.1+dfsg1-4+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python-xlrd=1.1.0-1`
 
