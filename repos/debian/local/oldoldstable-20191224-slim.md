@@ -1,10 +1,10 @@
-# `debian:jessie-slim`
+# `debian:oldoldstable-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:02461709b73602620529e0f0fa44aed9b68b2d730e6dcee3264e58dfafcbb33d`
-- Created: `2019-11-22T14:56:04.45322748Z`
-- Virtual Size: ~ 81.35 Mb  
+- Image ID: `sha256:19aa3120f3a5ac0583a7b0ff1bf9e9ed5118e603ef744bb9e86cf2f7bc6dfb01`
+- Created: `2019-12-28T04:22:10.774162413Z`
+- Virtual Size: ~ 81.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
