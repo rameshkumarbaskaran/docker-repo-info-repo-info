@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4a15622cfdd5f6fc74e308898d55073939fdb42f4e27816c35b07c8c62e5dc0d`
-- Created: `2019-12-27T04:15:49.684787859Z`
-- Virtual Size: ~ 100.69 Mb  
+- Image ID: `sha256:550e37546d0a2d06359774fb2875536b0a53280b60c278f461808591151c91bf`
+- Created: `2019-12-31T02:20:05.153279137Z`
+- Virtual Size: ~ 101.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,11 +17,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.26`
-  - `PHP_URL=https://www.php.net/get/php-7.2.26.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.26.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=1dd3bc875e105f5c9d21fb4dc240670bd2c22037820ff03890f5ab883c88b78d`
+  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
+  - `PHP_VERSION=7.3.13`
+  - `PHP_URL=https://www.php.net/get/php-7.3.13.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.13.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=57ac55fe442d2da650abeb9e6fa161bd3a98ba6528c029f076f8bba43dd5c228`
   - `PHP_MD5=`
   - `DRUPAL_VERSION=7.69`
   - `DRUPAL_MD5=292290a2fb1f5fc919291dc3949cdf7c`
@@ -450,6 +450,23 @@ libxml2-2.9.10-r1 installed size:
 
 libxml2-2.9.10-r1 license:
 MIT
+
+```
+
+### `apk` package: `libzip`
+
+```console
+libzip-1.5.2-r0 description:
+C library for manipulating zip archives
+
+libzip-1.5.2-r0 webpage:
+http://www.nih.at/libzip/index.html
+
+libzip-1.5.2-r0 installed size:
+122880
+
+libzip-1.5.2-r0 license:
+BSD-3-Clause
 
 ```
 
