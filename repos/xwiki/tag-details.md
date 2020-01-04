@@ -35,7 +35,7 @@
 ## `xwiki:10`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -45,14 +45,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:10` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -97,41 +97,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -164,47 +164,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -214,14 +214,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:10.11` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -266,41 +266,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -333,47 +333,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11.10`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -383,14 +383,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:10.11.10` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -435,41 +435,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -502,47 +502,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11.10-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba881f7d110399
+$ docker pull xwiki@sha256:d95b3e4e859b5e5b6ba4d86172b3170b5b34648317278f3e013ca6b8754a8363
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -552,14 +552,14 @@ $ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba8
 ### `xwiki:10.11.10-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:f98aa8c81653fb9666afa7ccf64d774147564d25289d7f46db0036fbcb605cca
+$ docker pull xwiki@sha256:654af1dc85228ccf0ee3edabe1e4eac6f4eea77e11a4de63652ec1fe2264bb28
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582531422 bytes)**  
+-	Total Size: **582.5 MB (582530583 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72e21d1c403a538177acd77eb3d28c1b702f36fb2c498f9398af6b7796ca5ee5`
+-	Image ID: `sha256:6d9604d7539e6ba4094dedfee7acf59e4812bb3a7d78c5a84250986418a7765c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -604,41 +604,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:20 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:34:59 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:35:02 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 CMD ["xwiki"]
 ```
 
@@ -671,47 +671,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb902e6c6f49874baa982d195c2fb9a0f35626795c41c35a812e4d57952d60d0`  
-		Last Modified: Thu, 19 Dec 2019 11:39:32 GMT  
-		Size: 179.6 MB (179561790 bytes)  
+	-	`sha256:15c489f5a9a9b5ec4e0e4c3c6f90d32e7746311055e2faf6a1be2f25c5df5d46`  
+		Last Modified: Sat, 04 Jan 2020 06:19:04 GMT  
+		Size: 179.6 MB (179561395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce10bd4c892de3cb5c92b26d75ddfcd0cd4e0bb3227e156288959f6991431285`  
-		Last Modified: Thu, 19 Dec 2019 11:39:34 GMT  
-		Size: 245.9 MB (245948291 bytes)  
+	-	`sha256:60a3f9c43e9cfcdd2d572902cdeb326d6d3a9f76dba5f0069648fd3b7424bf79`  
+		Last Modified: Sat, 04 Jan 2020 06:18:44 GMT  
+		Size: 245.9 MB (245947677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f0dfb6ef6e2413e90aeb6a3137b55d20ee0a433ed7d595f42b0942cdf7ae0d6`  
-		Last Modified: Thu, 19 Dec 2019 11:39:00 GMT  
-		Size: 618.9 KB (618862 bytes)  
+	-	`sha256:316ad27ff3362fda2cfcc8ff92683bc64d81273564969e414675b2c8158961c2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edb946f4daf4e74b50dc53ecff1f874754d68b8869bd6b5a3475ad42e14ae51e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 1.3 KB (1342 bytes)  
+	-	`sha256:5f66a4937cae3698311961aa050f64ee8716d712e4e3842c3e7bcf5eec4fa8cf`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e62c6c0bc3b6dfd611cad0a1e098e905558aa21aeab161a51bad65622175351`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2484 bytes)  
+	-	`sha256:9484d1d3001f14d0e5335fa5bcfdffab44f3589ae63ba50aaca5b86080bc9f80`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2486 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:478816a5266fd1955eee53d0536c997efab1ff47f5a1582fcac9bfd34838dd2d`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:ebd0d305f402d76400fbfb1495b0ed36a35348b12520963d0b91a45252901fcb`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b24f2dade4a3e2c2e4b308b3c511a7de8fca644c6fe973c797b8698abab7dd32`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:7c8bd4d2e682e10f344b60b600ec0928d1cc3647ff552164b10cbdc2c66e6bb2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba881f7d110399
+$ docker pull xwiki@sha256:d95b3e4e859b5e5b6ba4d86172b3170b5b34648317278f3e013ca6b8754a8363
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -721,14 +721,14 @@ $ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba8
 ### `xwiki:10.11-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:f98aa8c81653fb9666afa7ccf64d774147564d25289d7f46db0036fbcb605cca
+$ docker pull xwiki@sha256:654af1dc85228ccf0ee3edabe1e4eac6f4eea77e11a4de63652ec1fe2264bb28
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582531422 bytes)**  
+-	Total Size: **582.5 MB (582530583 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72e21d1c403a538177acd77eb3d28c1b702f36fb2c498f9398af6b7796ca5ee5`
+-	Image ID: `sha256:6d9604d7539e6ba4094dedfee7acf59e4812bb3a7d78c5a84250986418a7765c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -773,41 +773,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:20 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:34:59 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:35:02 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 CMD ["xwiki"]
 ```
 
@@ -840,47 +840,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb902e6c6f49874baa982d195c2fb9a0f35626795c41c35a812e4d57952d60d0`  
-		Last Modified: Thu, 19 Dec 2019 11:39:32 GMT  
-		Size: 179.6 MB (179561790 bytes)  
+	-	`sha256:15c489f5a9a9b5ec4e0e4c3c6f90d32e7746311055e2faf6a1be2f25c5df5d46`  
+		Last Modified: Sat, 04 Jan 2020 06:19:04 GMT  
+		Size: 179.6 MB (179561395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce10bd4c892de3cb5c92b26d75ddfcd0cd4e0bb3227e156288959f6991431285`  
-		Last Modified: Thu, 19 Dec 2019 11:39:34 GMT  
-		Size: 245.9 MB (245948291 bytes)  
+	-	`sha256:60a3f9c43e9cfcdd2d572902cdeb326d6d3a9f76dba5f0069648fd3b7424bf79`  
+		Last Modified: Sat, 04 Jan 2020 06:18:44 GMT  
+		Size: 245.9 MB (245947677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f0dfb6ef6e2413e90aeb6a3137b55d20ee0a433ed7d595f42b0942cdf7ae0d6`  
-		Last Modified: Thu, 19 Dec 2019 11:39:00 GMT  
-		Size: 618.9 KB (618862 bytes)  
+	-	`sha256:316ad27ff3362fda2cfcc8ff92683bc64d81273564969e414675b2c8158961c2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edb946f4daf4e74b50dc53ecff1f874754d68b8869bd6b5a3475ad42e14ae51e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 1.3 KB (1342 bytes)  
+	-	`sha256:5f66a4937cae3698311961aa050f64ee8716d712e4e3842c3e7bcf5eec4fa8cf`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e62c6c0bc3b6dfd611cad0a1e098e905558aa21aeab161a51bad65622175351`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2484 bytes)  
+	-	`sha256:9484d1d3001f14d0e5335fa5bcfdffab44f3589ae63ba50aaca5b86080bc9f80`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2486 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:478816a5266fd1955eee53d0536c997efab1ff47f5a1582fcac9bfd34838dd2d`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:ebd0d305f402d76400fbfb1495b0ed36a35348b12520963d0b91a45252901fcb`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b24f2dade4a3e2c2e4b308b3c511a7de8fca644c6fe973c797b8698abab7dd32`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:7c8bd4d2e682e10f344b60b600ec0928d1cc3647ff552164b10cbdc2c66e6bb2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -890,14 +890,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:10-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -942,41 +942,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -1009,47 +1009,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba881f7d110399
+$ docker pull xwiki@sha256:d95b3e4e859b5e5b6ba4d86172b3170b5b34648317278f3e013ca6b8754a8363
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1059,14 +1059,14 @@ $ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba8
 ### `xwiki:10-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:f98aa8c81653fb9666afa7ccf64d774147564d25289d7f46db0036fbcb605cca
+$ docker pull xwiki@sha256:654af1dc85228ccf0ee3edabe1e4eac6f4eea77e11a4de63652ec1fe2264bb28
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582531422 bytes)**  
+-	Total Size: **582.5 MB (582530583 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72e21d1c403a538177acd77eb3d28c1b702f36fb2c498f9398af6b7796ca5ee5`
+-	Image ID: `sha256:6d9604d7539e6ba4094dedfee7acf59e4812bb3a7d78c5a84250986418a7765c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1111,41 +1111,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:20 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:34:59 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:35:02 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 CMD ["xwiki"]
 ```
 
@@ -1178,47 +1178,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb902e6c6f49874baa982d195c2fb9a0f35626795c41c35a812e4d57952d60d0`  
-		Last Modified: Thu, 19 Dec 2019 11:39:32 GMT  
-		Size: 179.6 MB (179561790 bytes)  
+	-	`sha256:15c489f5a9a9b5ec4e0e4c3c6f90d32e7746311055e2faf6a1be2f25c5df5d46`  
+		Last Modified: Sat, 04 Jan 2020 06:19:04 GMT  
+		Size: 179.6 MB (179561395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce10bd4c892de3cb5c92b26d75ddfcd0cd4e0bb3227e156288959f6991431285`  
-		Last Modified: Thu, 19 Dec 2019 11:39:34 GMT  
-		Size: 245.9 MB (245948291 bytes)  
+	-	`sha256:60a3f9c43e9cfcdd2d572902cdeb326d6d3a9f76dba5f0069648fd3b7424bf79`  
+		Last Modified: Sat, 04 Jan 2020 06:18:44 GMT  
+		Size: 245.9 MB (245947677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f0dfb6ef6e2413e90aeb6a3137b55d20ee0a433ed7d595f42b0942cdf7ae0d6`  
-		Last Modified: Thu, 19 Dec 2019 11:39:00 GMT  
-		Size: 618.9 KB (618862 bytes)  
+	-	`sha256:316ad27ff3362fda2cfcc8ff92683bc64d81273564969e414675b2c8158961c2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edb946f4daf4e74b50dc53ecff1f874754d68b8869bd6b5a3475ad42e14ae51e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 1.3 KB (1342 bytes)  
+	-	`sha256:5f66a4937cae3698311961aa050f64ee8716d712e4e3842c3e7bcf5eec4fa8cf`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e62c6c0bc3b6dfd611cad0a1e098e905558aa21aeab161a51bad65622175351`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2484 bytes)  
+	-	`sha256:9484d1d3001f14d0e5335fa5bcfdffab44f3589ae63ba50aaca5b86080bc9f80`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2486 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:478816a5266fd1955eee53d0536c997efab1ff47f5a1582fcac9bfd34838dd2d`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:ebd0d305f402d76400fbfb1495b0ed36a35348b12520963d0b91a45252901fcb`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b24f2dade4a3e2c2e4b308b3c511a7de8fca644c6fe973c797b8698abab7dd32`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:7c8bd4d2e682e10f344b60b600ec0928d1cc3647ff552164b10cbdc2c66e6bb2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1228,14 +1228,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:11` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1282,41 +1282,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -1349,47 +1349,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.10`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1399,14 +1399,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:11.10` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1453,41 +1453,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -1520,47 +1520,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.10.2`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1570,14 +1570,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:11.10.2` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1624,41 +1624,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -1691,47 +1691,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.10.2-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1741,14 +1741,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:11.10.2-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1795,41 +1795,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -1862,47 +1862,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.10.2-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01da98362425c1
+$ docker pull xwiki@sha256:2e8efcce22d37127a58a3458560153aea1988a675111dc4064cb68a26b452280
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1913,14 +1913,14 @@ $ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01d
 ### `xwiki:11.10.2-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:0128a583b7288b0865b500947d80b2efa708f5b181909aae19fe515939437e22
+$ docker pull xwiki@sha256:b596024fcdba8d250b77e0adb12a4f10d249c800c0067431f20be855508844be
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714230125 bytes)**  
+-	Total Size: **714.2 MB (714230412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31e96d56097033237ac87a78c63dd6e86d816d5329b12fae8f560d310aa491fb`
+-	Image ID: `sha256:488b8232fc17d6559d4895cd496603d319e0f0a9466d570ecd7428c3b9e00bdf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1967,41 +1967,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:37:25 GMT
+# Sat, 04 Jan 2020 06:16:32 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:42:16 GMT
+# Sat, 04 Jan 2020 06:17:05 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:42:17 GMT
+# Sat, 04 Jan 2020 06:17:06 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 CMD ["xwiki"]
 ```
 
@@ -2034,41 +2034,41 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69943fde18eac83505490ef3c735f32ebcf733b9fad6f5591e62603830c12381`  
-		Last Modified: Thu, 19 Dec 2019 11:41:29 GMT  
-		Size: 179.6 MB (179561789 bytes)  
+	-	`sha256:75b419c858fdac97b1977148f2107b68131010442ab7262f02accfaa3e75ad30`  
+		Last Modified: Sat, 04 Jan 2020 06:20:43 GMT  
+		Size: 179.6 MB (179562004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:527da95d62edba631cf27dd01987742e71deb8b34a162a572570c80b67aec82c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:25 GMT  
-		Size: 284.9 MB (284876821 bytes)  
+	-	`sha256:1bba4df6f471992afb3a8fa4b1a3f9c051e7622dce1dc87ee2ad9902b8588258`  
+		Last Modified: Sat, 04 Jan 2020 06:20:29 GMT  
+		Size: 284.9 MB (284876762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86fe190d48e30ec9bfe1e3c23695aae75211cfecc7b1a18a1389923d410ae37d`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 618.9 KB (618856 bytes)  
+	-	`sha256:ff9af4ab6e6d912fdcaa6472f59a6a554c23f45bf7ab88f512be9f221edee93d`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 618.9 KB (618861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f321d198dad7ace7cc1e5dbbdd00d59070fa88395f65aaf10a3140a03fb609c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 1.3 KB (1346 bytes)  
+	-	`sha256:4c66e0da127791c6b9447788bf28ba04f51d9432d0aa6b5c26c7ee19e27150d8`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:530973a5d0cdd654b5d9247dc18b12060e959acfb21b42db8261a8b98d3a7f67`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2473 bytes)  
+	-	`sha256:b0151db145630571c06ec3949b35dbefe0d8c647009300a7c1bfca196db0f8ae`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f3535df20ec083fb948720caa4e4d91668686e74712471d47bdce1bc4ca5eb5`  
-		Last Modified: Mon, 30 Dec 2019 23:43:08 GMT  
-		Size: 4.3 KB (4265 bytes)  
+	-	`sha256:ea80cd948c8855d2e07dbf854a59712bd3f90230534ac6d7092633feb3b4bd61`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 4.3 KB (4263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff17f10dc72be95766c1dd811b547f5ef0b2720bc7f71756fa6253514e1a8ba6`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2459 bytes)  
+	-	`sha256:88262df13c14e7137331eff632cc53571ac66d5574a5a86aec4bf0938ce6cde3`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:11.10.2-postgres-tomcat` - linux; arm64 variant v8
@@ -2235,7 +2235,7 @@ CMD ["xwiki"]
 ## `xwiki:11.10-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2245,14 +2245,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:11.10-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2299,41 +2299,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -2366,47 +2366,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.10-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01da98362425c1
+$ docker pull xwiki@sha256:2e8efcce22d37127a58a3458560153aea1988a675111dc4064cb68a26b452280
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2417,14 +2417,14 @@ $ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01d
 ### `xwiki:11.10-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:0128a583b7288b0865b500947d80b2efa708f5b181909aae19fe515939437e22
+$ docker pull xwiki@sha256:b596024fcdba8d250b77e0adb12a4f10d249c800c0067431f20be855508844be
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714230125 bytes)**  
+-	Total Size: **714.2 MB (714230412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31e96d56097033237ac87a78c63dd6e86d816d5329b12fae8f560d310aa491fb`
+-	Image ID: `sha256:488b8232fc17d6559d4895cd496603d319e0f0a9466d570ecd7428c3b9e00bdf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2471,41 +2471,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:37:25 GMT
+# Sat, 04 Jan 2020 06:16:32 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:42:16 GMT
+# Sat, 04 Jan 2020 06:17:05 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:42:17 GMT
+# Sat, 04 Jan 2020 06:17:06 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 CMD ["xwiki"]
 ```
 
@@ -2538,41 +2538,41 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69943fde18eac83505490ef3c735f32ebcf733b9fad6f5591e62603830c12381`  
-		Last Modified: Thu, 19 Dec 2019 11:41:29 GMT  
-		Size: 179.6 MB (179561789 bytes)  
+	-	`sha256:75b419c858fdac97b1977148f2107b68131010442ab7262f02accfaa3e75ad30`  
+		Last Modified: Sat, 04 Jan 2020 06:20:43 GMT  
+		Size: 179.6 MB (179562004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:527da95d62edba631cf27dd01987742e71deb8b34a162a572570c80b67aec82c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:25 GMT  
-		Size: 284.9 MB (284876821 bytes)  
+	-	`sha256:1bba4df6f471992afb3a8fa4b1a3f9c051e7622dce1dc87ee2ad9902b8588258`  
+		Last Modified: Sat, 04 Jan 2020 06:20:29 GMT  
+		Size: 284.9 MB (284876762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86fe190d48e30ec9bfe1e3c23695aae75211cfecc7b1a18a1389923d410ae37d`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 618.9 KB (618856 bytes)  
+	-	`sha256:ff9af4ab6e6d912fdcaa6472f59a6a554c23f45bf7ab88f512be9f221edee93d`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 618.9 KB (618861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f321d198dad7ace7cc1e5dbbdd00d59070fa88395f65aaf10a3140a03fb609c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 1.3 KB (1346 bytes)  
+	-	`sha256:4c66e0da127791c6b9447788bf28ba04f51d9432d0aa6b5c26c7ee19e27150d8`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:530973a5d0cdd654b5d9247dc18b12060e959acfb21b42db8261a8b98d3a7f67`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2473 bytes)  
+	-	`sha256:b0151db145630571c06ec3949b35dbefe0d8c647009300a7c1bfca196db0f8ae`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f3535df20ec083fb948720caa4e4d91668686e74712471d47bdce1bc4ca5eb5`  
-		Last Modified: Mon, 30 Dec 2019 23:43:08 GMT  
-		Size: 4.3 KB (4265 bytes)  
+	-	`sha256:ea80cd948c8855d2e07dbf854a59712bd3f90230534ac6d7092633feb3b4bd61`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 4.3 KB (4263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff17f10dc72be95766c1dd811b547f5ef0b2720bc7f71756fa6253514e1a8ba6`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2459 bytes)  
+	-	`sha256:88262df13c14e7137331eff632cc53571ac66d5574a5a86aec4bf0938ce6cde3`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:11.10-postgres-tomcat` - linux; arm64 variant v8
@@ -2739,7 +2739,7 @@ CMD ["xwiki"]
 ## `xwiki:11-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2749,14 +2749,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:11-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2803,41 +2803,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -2870,47 +2870,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01da98362425c1
+$ docker pull xwiki@sha256:2e8efcce22d37127a58a3458560153aea1988a675111dc4064cb68a26b452280
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2921,14 +2921,14 @@ $ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01d
 ### `xwiki:11-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:0128a583b7288b0865b500947d80b2efa708f5b181909aae19fe515939437e22
+$ docker pull xwiki@sha256:b596024fcdba8d250b77e0adb12a4f10d249c800c0067431f20be855508844be
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714230125 bytes)**  
+-	Total Size: **714.2 MB (714230412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31e96d56097033237ac87a78c63dd6e86d816d5329b12fae8f560d310aa491fb`
+-	Image ID: `sha256:488b8232fc17d6559d4895cd496603d319e0f0a9466d570ecd7428c3b9e00bdf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2975,41 +2975,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:37:25 GMT
+# Sat, 04 Jan 2020 06:16:32 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:42:16 GMT
+# Sat, 04 Jan 2020 06:17:05 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:42:17 GMT
+# Sat, 04 Jan 2020 06:17:06 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 CMD ["xwiki"]
 ```
 
@@ -3042,41 +3042,41 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69943fde18eac83505490ef3c735f32ebcf733b9fad6f5591e62603830c12381`  
-		Last Modified: Thu, 19 Dec 2019 11:41:29 GMT  
-		Size: 179.6 MB (179561789 bytes)  
+	-	`sha256:75b419c858fdac97b1977148f2107b68131010442ab7262f02accfaa3e75ad30`  
+		Last Modified: Sat, 04 Jan 2020 06:20:43 GMT  
+		Size: 179.6 MB (179562004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:527da95d62edba631cf27dd01987742e71deb8b34a162a572570c80b67aec82c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:25 GMT  
-		Size: 284.9 MB (284876821 bytes)  
+	-	`sha256:1bba4df6f471992afb3a8fa4b1a3f9c051e7622dce1dc87ee2ad9902b8588258`  
+		Last Modified: Sat, 04 Jan 2020 06:20:29 GMT  
+		Size: 284.9 MB (284876762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86fe190d48e30ec9bfe1e3c23695aae75211cfecc7b1a18a1389923d410ae37d`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 618.9 KB (618856 bytes)  
+	-	`sha256:ff9af4ab6e6d912fdcaa6472f59a6a554c23f45bf7ab88f512be9f221edee93d`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 618.9 KB (618861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f321d198dad7ace7cc1e5dbbdd00d59070fa88395f65aaf10a3140a03fb609c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 1.3 KB (1346 bytes)  
+	-	`sha256:4c66e0da127791c6b9447788bf28ba04f51d9432d0aa6b5c26c7ee19e27150d8`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:530973a5d0cdd654b5d9247dc18b12060e959acfb21b42db8261a8b98d3a7f67`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2473 bytes)  
+	-	`sha256:b0151db145630571c06ec3949b35dbefe0d8c647009300a7c1bfca196db0f8ae`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f3535df20ec083fb948720caa4e4d91668686e74712471d47bdce1bc4ca5eb5`  
-		Last Modified: Mon, 30 Dec 2019 23:43:08 GMT  
-		Size: 4.3 KB (4265 bytes)  
+	-	`sha256:ea80cd948c8855d2e07dbf854a59712bd3f90230534ac6d7092633feb3b4bd61`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 4.3 KB (4263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff17f10dc72be95766c1dd811b547f5ef0b2720bc7f71756fa6253514e1a8ba6`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2459 bytes)  
+	-	`sha256:88262df13c14e7137331eff632cc53571ac66d5574a5a86aec4bf0938ce6cde3`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:11-postgres-tomcat` - linux; arm64 variant v8
@@ -3243,7 +3243,7 @@ CMD ["xwiki"]
 ## `xwiki:latest`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3253,14 +3253,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:latest` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3307,41 +3307,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -3374,47 +3374,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3424,14 +3424,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:lts` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3476,41 +3476,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -3543,47 +3543,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-mysql`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3593,14 +3593,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:lts-mysql` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3645,41 +3645,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -3712,47 +3712,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3762,14 +3762,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:lts-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3814,41 +3814,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -3881,47 +3881,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-postgres`
 
 ```console
-$ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba881f7d110399
+$ docker pull xwiki@sha256:d95b3e4e859b5e5b6ba4d86172b3170b5b34648317278f3e013ca6b8754a8363
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3931,14 +3931,14 @@ $ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba8
 ### `xwiki:lts-postgres` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:f98aa8c81653fb9666afa7ccf64d774147564d25289d7f46db0036fbcb605cca
+$ docker pull xwiki@sha256:654af1dc85228ccf0ee3edabe1e4eac6f4eea77e11a4de63652ec1fe2264bb28
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582531422 bytes)**  
+-	Total Size: **582.5 MB (582530583 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72e21d1c403a538177acd77eb3d28c1b702f36fb2c498f9398af6b7796ca5ee5`
+-	Image ID: `sha256:6d9604d7539e6ba4094dedfee7acf59e4812bb3a7d78c5a84250986418a7765c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3983,41 +3983,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:20 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:34:59 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:35:02 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 CMD ["xwiki"]
 ```
 
@@ -4050,47 +4050,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb902e6c6f49874baa982d195c2fb9a0f35626795c41c35a812e4d57952d60d0`  
-		Last Modified: Thu, 19 Dec 2019 11:39:32 GMT  
-		Size: 179.6 MB (179561790 bytes)  
+	-	`sha256:15c489f5a9a9b5ec4e0e4c3c6f90d32e7746311055e2faf6a1be2f25c5df5d46`  
+		Last Modified: Sat, 04 Jan 2020 06:19:04 GMT  
+		Size: 179.6 MB (179561395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce10bd4c892de3cb5c92b26d75ddfcd0cd4e0bb3227e156288959f6991431285`  
-		Last Modified: Thu, 19 Dec 2019 11:39:34 GMT  
-		Size: 245.9 MB (245948291 bytes)  
+	-	`sha256:60a3f9c43e9cfcdd2d572902cdeb326d6d3a9f76dba5f0069648fd3b7424bf79`  
+		Last Modified: Sat, 04 Jan 2020 06:18:44 GMT  
+		Size: 245.9 MB (245947677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f0dfb6ef6e2413e90aeb6a3137b55d20ee0a433ed7d595f42b0942cdf7ae0d6`  
-		Last Modified: Thu, 19 Dec 2019 11:39:00 GMT  
-		Size: 618.9 KB (618862 bytes)  
+	-	`sha256:316ad27ff3362fda2cfcc8ff92683bc64d81273564969e414675b2c8158961c2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edb946f4daf4e74b50dc53ecff1f874754d68b8869bd6b5a3475ad42e14ae51e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 1.3 KB (1342 bytes)  
+	-	`sha256:5f66a4937cae3698311961aa050f64ee8716d712e4e3842c3e7bcf5eec4fa8cf`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e62c6c0bc3b6dfd611cad0a1e098e905558aa21aeab161a51bad65622175351`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2484 bytes)  
+	-	`sha256:9484d1d3001f14d0e5335fa5bcfdffab44f3589ae63ba50aaca5b86080bc9f80`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2486 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:478816a5266fd1955eee53d0536c997efab1ff47f5a1582fcac9bfd34838dd2d`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:ebd0d305f402d76400fbfb1495b0ed36a35348b12520963d0b91a45252901fcb`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b24f2dade4a3e2c2e4b308b3c511a7de8fca644c6fe973c797b8698abab7dd32`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:7c8bd4d2e682e10f344b60b600ec0928d1cc3647ff552164b10cbdc2c66e6bb2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba881f7d110399
+$ docker pull xwiki@sha256:d95b3e4e859b5e5b6ba4d86172b3170b5b34648317278f3e013ca6b8754a8363
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4100,14 +4100,14 @@ $ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba8
 ### `xwiki:lts-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:f98aa8c81653fb9666afa7ccf64d774147564d25289d7f46db0036fbcb605cca
+$ docker pull xwiki@sha256:654af1dc85228ccf0ee3edabe1e4eac6f4eea77e11a4de63652ec1fe2264bb28
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582531422 bytes)**  
+-	Total Size: **582.5 MB (582530583 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72e21d1c403a538177acd77eb3d28c1b702f36fb2c498f9398af6b7796ca5ee5`
+-	Image ID: `sha256:6d9604d7539e6ba4094dedfee7acf59e4812bb3a7d78c5a84250986418a7765c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4152,41 +4152,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:20 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:34:59 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:35:02 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 CMD ["xwiki"]
 ```
 
@@ -4219,47 +4219,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb902e6c6f49874baa982d195c2fb9a0f35626795c41c35a812e4d57952d60d0`  
-		Last Modified: Thu, 19 Dec 2019 11:39:32 GMT  
-		Size: 179.6 MB (179561790 bytes)  
+	-	`sha256:15c489f5a9a9b5ec4e0e4c3c6f90d32e7746311055e2faf6a1be2f25c5df5d46`  
+		Last Modified: Sat, 04 Jan 2020 06:19:04 GMT  
+		Size: 179.6 MB (179561395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce10bd4c892de3cb5c92b26d75ddfcd0cd4e0bb3227e156288959f6991431285`  
-		Last Modified: Thu, 19 Dec 2019 11:39:34 GMT  
-		Size: 245.9 MB (245948291 bytes)  
+	-	`sha256:60a3f9c43e9cfcdd2d572902cdeb326d6d3a9f76dba5f0069648fd3b7424bf79`  
+		Last Modified: Sat, 04 Jan 2020 06:18:44 GMT  
+		Size: 245.9 MB (245947677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f0dfb6ef6e2413e90aeb6a3137b55d20ee0a433ed7d595f42b0942cdf7ae0d6`  
-		Last Modified: Thu, 19 Dec 2019 11:39:00 GMT  
-		Size: 618.9 KB (618862 bytes)  
+	-	`sha256:316ad27ff3362fda2cfcc8ff92683bc64d81273564969e414675b2c8158961c2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edb946f4daf4e74b50dc53ecff1f874754d68b8869bd6b5a3475ad42e14ae51e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 1.3 KB (1342 bytes)  
+	-	`sha256:5f66a4937cae3698311961aa050f64ee8716d712e4e3842c3e7bcf5eec4fa8cf`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e62c6c0bc3b6dfd611cad0a1e098e905558aa21aeab161a51bad65622175351`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2484 bytes)  
+	-	`sha256:9484d1d3001f14d0e5335fa5bcfdffab44f3589ae63ba50aaca5b86080bc9f80`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2486 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:478816a5266fd1955eee53d0536c997efab1ff47f5a1582fcac9bfd34838dd2d`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:ebd0d305f402d76400fbfb1495b0ed36a35348b12520963d0b91a45252901fcb`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b24f2dade4a3e2c2e4b308b3c511a7de8fca644c6fe973c797b8698abab7dd32`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:7c8bd4d2e682e10f344b60b600ec0928d1cc3647ff552164b10cbdc2c66e6bb2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd86a877a30c09
+$ docker pull xwiki@sha256:7880c448d9cbafc992fcd9c56e5ff117ffe361f7b0e12f90b0058e5c090adc04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4269,14 +4269,14 @@ $ docker pull xwiki@sha256:c5f193adb873679ef66c3f1dc923605ef35234a999510e6343cd8
 ### `xwiki:mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:673b1a2884c3dfecabdc59e1637edbcce9d7a27823ffdda941fcd4365d4a24d2
+$ docker pull xwiki@sha256:5bd7ab97e6981abec6fece83ab071869639c3ccf914063e9e01d00f90ab23b4e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583203795 bytes)**  
+-	Total Size: **583.2 MB (583203193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1621377d5bc3923a0cc5d64fc2904c259e512e9fa27e847eea7b27002b45967e`
+-	Image ID: `sha256:213e16b07752e4feeca42f4db99f87ff0a6a0b5fc82e9bad63ed0d886ed2b010`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4321,41 +4321,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:33:02 GMT
+# Sat, 04 Jan 2020 06:11:51 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:33:03 GMT
+# Sat, 04 Jan 2020 06:11:52 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:22 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:33:34 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:33:35 GMT
+# Sat, 04 Jan 2020 06:12:25 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:26 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:33:36 GMT
+# Sat, 04 Jan 2020 06:12:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -4388,47 +4388,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5c2ebe2fddc325517743f6cb40c1ec6ab8869520f11bd8148f592d36859e081e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:50 GMT  
-		Size: 179.9 MB (179897623 bytes)  
+	-	`sha256:381feae0599836272b5fa6045aeaa128af36c1768d260f5cd2948f64778d3072`  
+		Last Modified: Sat, 04 Jan 2020 06:18:12 GMT  
+		Size: 179.9 MB (179897364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17c3d51f6f66cfa3c8b6e5c28315daf47f86efaa0c3cc0207bf171450c33397e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:37 GMT  
-		Size: 245.9 MB (245948226 bytes)  
+	-	`sha256:e65f2cf6560d0afe7fc528ed30ac3f3453b43af0f296b5f076c634eb63a16dd7`  
+		Last Modified: Sat, 04 Jan 2020 06:17:56 GMT  
+		Size: 245.9 MB (245947718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:599d9899a35b4ee225e1760874abae7b7987d1d39b32b30a2970e0b45090a60f`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:82d98526b40b0f84552c54b375cdd10456641e8262bab934496c58f1be2bb03d`  
+		Last Modified: Sat, 04 Jan 2020 06:17:34 GMT  
 		Size: 955.6 KB (955601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aec8d54e5a60ec249f0b1efa6a5159b3e4ec929dd27e4b0ee6829d554eaa3820`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:5e7b16140b23b512625c00ada2a516ca6b51d80fa6151a4b39a9b5430ed6c0fe`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d162923d09b2043f12ddabe02e0cbe2dad755b7540ccfcc46e078c2d9575e27`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 2.3 KB (2343 bytes)  
+	-	`sha256:b58ee24730e811aac8390324d0dc2fe4155223007f7aca0fc778b12f946c2a1a`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 2.3 KB (2345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c879c5136943b62701d27d42a0695992052843538fba397f6fdb7bcde77c7ea`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:89eb95828af809708fcca08eceae0068f5a0b2a68988d120156dd2ce73a12e49`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab197f8b5382f91a5aac7b5159f4358d35357be2c5cfb4c00ae066041ac6fed8`  
-		Last Modified: Thu, 19 Dec 2019 11:38:18 GMT  
+	-	`sha256:f16a53e10da7854db4297db949526c4ddcb67e5a759050c6a5e8bb44ac27c852`  
+		Last Modified: Sat, 04 Jan 2020 06:17:33 GMT  
 		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba881f7d110399
+$ docker pull xwiki@sha256:d95b3e4e859b5e5b6ba4d86172b3170b5b34648317278f3e013ca6b8754a8363
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4438,14 +4438,14 @@ $ docker pull xwiki@sha256:4529279b6e198f3fd5812dbe45719e6901678713c2082fe1d2ba8
 ### `xwiki:postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:f98aa8c81653fb9666afa7ccf64d774147564d25289d7f46db0036fbcb605cca
+$ docker pull xwiki@sha256:654af1dc85228ccf0ee3edabe1e4eac6f4eea77e11a4de63652ec1fe2264bb28
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582531422 bytes)**  
+-	Total Size: **582.5 MB (582530583 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72e21d1c403a538177acd77eb3d28c1b702f36fb2c498f9398af6b7796ca5ee5`
+-	Image ID: `sha256:6d9604d7539e6ba4094dedfee7acf59e4812bb3a7d78c5a84250986418a7765c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4490,41 +4490,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:02:00 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:02:38 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:08:37 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:02:40 GMT
+# Sat, 04 Jan 2020 05:08:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:31:29 GMT
+# Sat, 04 Jan 2020 06:09:50 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:20 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 19 Dec 2019 11:34:29 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_VERSION=10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10
-# Thu, 19 Dec 2019 11:34:30 GMT
+# Sat, 04 Jan 2020 06:13:21 GMT
 ENV XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7
-# Thu, 19 Dec 2019 11:34:59 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 19 Dec 2019 11:35:02 GMT
+# Sat, 04 Jan 2020 06:13:49 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 19 Dec 2019 11:35:03 GMT
+# Sat, 04 Jan 2020 06:13:50 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:53 GMT
 COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 19 Dec 2019 11:35:04 GMT
+# Sat, 04 Jan 2020 06:13:54 GMT
 CMD ["xwiki"]
 ```
 
@@ -4557,47 +4557,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:49 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60f7e2eec54aa3018522efe592252c41d7dc1046d306c64bd0b002886c329499`  
-		Last Modified: Thu, 19 Dec 2019 10:06:18 GMT  
-		Size: 11.3 MB (11290426 bytes)  
+	-	`sha256:9e3482ecc21b3fd04f3f612135898f4e630acc2dc5b712373f4ccce9500f8576`  
+		Last Modified: Sat, 04 Jan 2020 05:19:13 GMT  
+		Size: 11.3 MB (11290591 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08c6e56851d23d673537a79706b89e76324cc2192f277907a086ddea4f15e21c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:17 GMT  
-		Size: 134.0 B  
+	-	`sha256:082ab4158cb48e032f2ae4d294a2bf48deb7286c3f528f7286cc083747433589`  
+		Last Modified: Sat, 04 Jan 2020 05:19:11 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb902e6c6f49874baa982d195c2fb9a0f35626795c41c35a812e4d57952d60d0`  
-		Last Modified: Thu, 19 Dec 2019 11:39:32 GMT  
-		Size: 179.6 MB (179561790 bytes)  
+	-	`sha256:15c489f5a9a9b5ec4e0e4c3c6f90d32e7746311055e2faf6a1be2f25c5df5d46`  
+		Last Modified: Sat, 04 Jan 2020 06:19:04 GMT  
+		Size: 179.6 MB (179561395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce10bd4c892de3cb5c92b26d75ddfcd0cd4e0bb3227e156288959f6991431285`  
-		Last Modified: Thu, 19 Dec 2019 11:39:34 GMT  
-		Size: 245.9 MB (245948291 bytes)  
+	-	`sha256:60a3f9c43e9cfcdd2d572902cdeb326d6d3a9f76dba5f0069648fd3b7424bf79`  
+		Last Modified: Sat, 04 Jan 2020 06:18:44 GMT  
+		Size: 245.9 MB (245947677 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f0dfb6ef6e2413e90aeb6a3137b55d20ee0a433ed7d595f42b0942cdf7ae0d6`  
-		Last Modified: Thu, 19 Dec 2019 11:39:00 GMT  
-		Size: 618.9 KB (618862 bytes)  
+	-	`sha256:316ad27ff3362fda2cfcc8ff92683bc64d81273564969e414675b2c8158961c2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edb946f4daf4e74b50dc53ecff1f874754d68b8869bd6b5a3475ad42e14ae51e`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 1.3 KB (1342 bytes)  
+	-	`sha256:5f66a4937cae3698311961aa050f64ee8716d712e4e3842c3e7bcf5eec4fa8cf`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e62c6c0bc3b6dfd611cad0a1e098e905558aa21aeab161a51bad65622175351`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2484 bytes)  
+	-	`sha256:9484d1d3001f14d0e5335fa5bcfdffab44f3589ae63ba50aaca5b86080bc9f80`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2486 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:478816a5266fd1955eee53d0536c997efab1ff47f5a1582fcac9bfd34838dd2d`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 3.8 KB (3838 bytes)  
+	-	`sha256:ebd0d305f402d76400fbfb1495b0ed36a35348b12520963d0b91a45252901fcb`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 3.8 KB (3841 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b24f2dade4a3e2c2e4b308b3c511a7de8fca644c6fe973c797b8698abab7dd32`  
-		Last Modified: Thu, 19 Dec 2019 11:38:59 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:7c8bd4d2e682e10f344b60b600ec0928d1cc3647ff552164b10cbdc2c66e6bb2`  
+		Last Modified: Sat, 04 Jan 2020 06:18:24 GMT  
+		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4607,14 +4607,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:stable` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4661,41 +4661,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -4728,47 +4728,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable-mysql`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4778,14 +4778,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:stable-mysql` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4832,41 +4832,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -4899,47 +4899,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef0de23982b91
+$ docker pull xwiki@sha256:d296409d17b175de4293a441303c6bc4d5f436517fc49f534ce6859ac2456aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4949,14 +4949,14 @@ $ docker pull xwiki@sha256:24e6a5445e7e15c76a849c3612e1208f1b29368d88a904b00ddef
 ### `xwiki:stable-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:634cd4aea463813c1c798b90235feecf4d979e1c70636d016a522f4463875bd8
+$ docker pull xwiki@sha256:d8311892793daeab7f46873ba5cafb7c9d4c35a4b60a1bd5acbe898d3fe2bfd6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.9 MB (714902312 bytes)**  
+-	Total Size: **714.9 MB (714902742 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d90d7a595b8d8a45da59c6c6c38c99be40d0f4c8f24d46022ef224116c49324a`
+-	Image ID: `sha256:6acf4013f56908973ae2fbd75d67f891f53bc4b7737788b5408afcfa67c29fc2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -5003,41 +5003,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:35:57 GMT
+# Sat, 04 Jan 2020 06:14:48 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:40:50 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:40:51 GMT
+# Sat, 04 Jan 2020 06:14:49 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:41:31 GMT
+# Sat, 04 Jan 2020 06:15:38 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:41:32 GMT
+# Sat, 04 Jan 2020 06:15:39 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:41:33 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:41:34 GMT
+# Sat, 04 Jan 2020 06:15:40 GMT
 CMD ["xwiki"]
 ```
 
@@ -5070,47 +5070,47 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0258ffffcc748d158d335ddeaa2e79c0fa75a27d916680e09018e6dcf25cbecc`  
-		Last Modified: Thu, 19 Dec 2019 11:40:36 GMT  
-		Size: 179.9 MB (179897337 bytes)  
+	-	`sha256:0f9903c6155e6ad0aefb28626c87850f451dc8e4a383d632f2a3e2956e1ef2e0`  
+		Last Modified: Sat, 04 Jan 2020 06:19:50 GMT  
+		Size: 179.9 MB (179897706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e0250a349e96934cef522f4ecc6a9ec5467660744c1c5f0a5c666e3d17db842`  
-		Last Modified: Mon, 30 Dec 2019 23:42:57 GMT  
-		Size: 284.9 MB (284876853 bytes)  
+	-	`sha256:3bc4694f7e5fb10c60473158c18f5028995dc869182c231af3ed2fe716ca4bda`  
+		Last Modified: Sat, 04 Jan 2020 06:19:35 GMT  
+		Size: 284.9 MB (284876790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac3a3982a366cb9fbce07e8253638b98c4550da613f2c223f53ee4e422ac9ad3`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 955.6 KB (955604 bytes)  
+	-	`sha256:ecc5512df1c57afa6f4b14eb7e445e729690c99567f01b4493053a70e151e4ff`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 955.6 KB (955600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1e9ac24def7298ab66e7a7cf79783f6a627f39675cb7a3ffda75084b8f5c04a`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 1.3 KB (1347 bytes)  
+	-	`sha256:629a4bee4f17113b462bd90b53a0ad944cae2df25baf314ba094e28973da94d2`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23593d1f3b0937d3a94a9d923e64e1387047f5cabcef55796bc0e10c95300260`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:f0c97245c95771a33d3f160690a25f01db3da189ce2ba36a46946b833a034662`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.3 KB (2336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9284daff2b6eb2f0920e8938c746356f386129d2c6654f4ecc3cf794296cdf93`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 4.3 KB (4266 bytes)  
+	-	`sha256:042789ae9aaed43cc84eeecb8a95c21cd7885301ce6ec05b469a73db8a0c283f`  
+		Last Modified: Sat, 04 Jan 2020 06:19:14 GMT  
+		Size: 4.3 KB (4265 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:816132b223c80d953e3c29f0eb115067021892e3a9b1275edf7ccaf1bee2d7f9`  
-		Last Modified: Mon, 30 Dec 2019 23:42:39 GMT  
-		Size: 2.5 KB (2455 bytes)  
+	-	`sha256:974d4dc5623e714d3663f77836edf60bda9f292857717ebf38c3665870cb64a6`  
+		Last Modified: Sat, 04 Jan 2020 06:19:13 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable-postgres`
 
 ```console
-$ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01da98362425c1
+$ docker pull xwiki@sha256:2e8efcce22d37127a58a3458560153aea1988a675111dc4064cb68a26b452280
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5121,14 +5121,14 @@ $ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01d
 ### `xwiki:stable-postgres` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:0128a583b7288b0865b500947d80b2efa708f5b181909aae19fe515939437e22
+$ docker pull xwiki@sha256:b596024fcdba8d250b77e0adb12a4f10d249c800c0067431f20be855508844be
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714230125 bytes)**  
+-	Total Size: **714.2 MB (714230412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31e96d56097033237ac87a78c63dd6e86d816d5329b12fae8f560d310aa491fb`
+-	Image ID: `sha256:488b8232fc17d6559d4895cd496603d319e0f0a9466d570ecd7428c3b9e00bdf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -5175,41 +5175,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:37:25 GMT
+# Sat, 04 Jan 2020 06:16:32 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:42:16 GMT
+# Sat, 04 Jan 2020 06:17:05 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:42:17 GMT
+# Sat, 04 Jan 2020 06:17:06 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 CMD ["xwiki"]
 ```
 
@@ -5242,41 +5242,41 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69943fde18eac83505490ef3c735f32ebcf733b9fad6f5591e62603830c12381`  
-		Last Modified: Thu, 19 Dec 2019 11:41:29 GMT  
-		Size: 179.6 MB (179561789 bytes)  
+	-	`sha256:75b419c858fdac97b1977148f2107b68131010442ab7262f02accfaa3e75ad30`  
+		Last Modified: Sat, 04 Jan 2020 06:20:43 GMT  
+		Size: 179.6 MB (179562004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:527da95d62edba631cf27dd01987742e71deb8b34a162a572570c80b67aec82c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:25 GMT  
-		Size: 284.9 MB (284876821 bytes)  
+	-	`sha256:1bba4df6f471992afb3a8fa4b1a3f9c051e7622dce1dc87ee2ad9902b8588258`  
+		Last Modified: Sat, 04 Jan 2020 06:20:29 GMT  
+		Size: 284.9 MB (284876762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86fe190d48e30ec9bfe1e3c23695aae75211cfecc7b1a18a1389923d410ae37d`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 618.9 KB (618856 bytes)  
+	-	`sha256:ff9af4ab6e6d912fdcaa6472f59a6a554c23f45bf7ab88f512be9f221edee93d`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 618.9 KB (618861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f321d198dad7ace7cc1e5dbbdd00d59070fa88395f65aaf10a3140a03fb609c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 1.3 KB (1346 bytes)  
+	-	`sha256:4c66e0da127791c6b9447788bf28ba04f51d9432d0aa6b5c26c7ee19e27150d8`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:530973a5d0cdd654b5d9247dc18b12060e959acfb21b42db8261a8b98d3a7f67`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2473 bytes)  
+	-	`sha256:b0151db145630571c06ec3949b35dbefe0d8c647009300a7c1bfca196db0f8ae`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f3535df20ec083fb948720caa4e4d91668686e74712471d47bdce1bc4ca5eb5`  
-		Last Modified: Mon, 30 Dec 2019 23:43:08 GMT  
-		Size: 4.3 KB (4265 bytes)  
+	-	`sha256:ea80cd948c8855d2e07dbf854a59712bd3f90230534ac6d7092633feb3b4bd61`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 4.3 KB (4263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff17f10dc72be95766c1dd811b547f5ef0b2720bc7f71756fa6253514e1a8ba6`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2459 bytes)  
+	-	`sha256:88262df13c14e7137331eff632cc53571ac66d5574a5a86aec4bf0938ce6cde3`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:stable-postgres` - linux; arm64 variant v8
@@ -5443,7 +5443,7 @@ CMD ["xwiki"]
 ## `xwiki:stable-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01da98362425c1
+$ docker pull xwiki@sha256:2e8efcce22d37127a58a3458560153aea1988a675111dc4064cb68a26b452280
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5454,14 +5454,14 @@ $ docker pull xwiki@sha256:e53f3094a83033b5bc56e6e55799e48361624c52c8885eb63b01d
 ### `xwiki:stable-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:0128a583b7288b0865b500947d80b2efa708f5b181909aae19fe515939437e22
+$ docker pull xwiki@sha256:b596024fcdba8d250b77e0adb12a4f10d249c800c0067431f20be855508844be
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714230125 bytes)**  
+-	Total Size: **714.2 MB (714230412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31e96d56097033237ac87a78c63dd6e86d816d5329b12fae8f560d310aa491fb`
+-	Image ID: `sha256:488b8232fc17d6559d4895cd496603d319e0f0a9466d570ecd7428c3b9e00bdf`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -5508,41 +5508,41 @@ ENV TOMCAT_MAJOR=8
 ENV TOMCAT_VERSION=8.5.50
 # Thu, 19 Dec 2019 10:00:18 GMT
 ENV TOMCAT_SHA512=ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90
-# Thu, 19 Dec 2019 10:00:51 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:56 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
+# Sat, 04 Jan 2020 05:03:58 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 EXPOSE 8080
-# Thu, 19 Dec 2019 10:00:53 GMT
+# Sat, 04 Jan 2020 05:03:58 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 19 Dec 2019 11:35:11 GMT
+# Sat, 04 Jan 2020 06:14:03 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Thu, 19 Dec 2019 11:37:25 GMT
+# Sat, 04 Jan 2020 06:16:32 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_VERSION=11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10.2
-# Mon, 30 Dec 2019 23:41:44 GMT
+# Sat, 04 Jan 2020 06:16:33 GMT
 ENV XWIKI_DOWNLOAD_SHA256=a904633ccebb9570c50349479818f67fcb3482c7baa1666616f19f389dacb727
-# Mon, 30 Dec 2019 23:42:16 GMT
+# Sat, 04 Jan 2020 06:17:05 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Mon, 30 Dec 2019 23:42:17 GMT
+# Sat, 04 Jan 2020 06:17:06 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Mon, 30 Dec 2019 23:42:18 GMT
+# Sat, 04 Jan 2020 06:17:07 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 COPY file:1aeb90632849dc8f47315bba1c63b571b0f210b5f223333b3a494c471e4b9743 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 VOLUME [/usr/local/xwiki]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:42:19 GMT
+# Sat, 04 Jan 2020 06:17:08 GMT
 CMD ["xwiki"]
 ```
 
@@ -5575,41 +5575,41 @@ CMD ["xwiki"]
 		Last Modified: Thu, 19 Dec 2019 10:05:38 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbc4533e46bdd27c17a28cabd4317add264d6f59fb638ab1b95671062a2d75c`  
-		Last Modified: Thu, 19 Dec 2019 10:06:04 GMT  
-		Size: 11.3 MB (11290564 bytes)  
+	-	`sha256:6738ab7ba275331d243ba292e7bea55619f347d436f923256b543e2e53811bff`  
+		Last Modified: Sat, 04 Jan 2020 05:18:29 GMT  
+		Size: 11.3 MB (11290689 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:553c751188238a7a12fcada06b7f83a3b5aa27be8d77781f938d246bf262d61a`  
-		Last Modified: Thu, 19 Dec 2019 10:06:02 GMT  
+	-	`sha256:adf574e854268609c20e8d12ec11ae7690989e04389c8ed38ba956e96a457695`  
+		Last Modified: Sat, 04 Jan 2020 05:18:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69943fde18eac83505490ef3c735f32ebcf733b9fad6f5591e62603830c12381`  
-		Last Modified: Thu, 19 Dec 2019 11:41:29 GMT  
-		Size: 179.6 MB (179561789 bytes)  
+	-	`sha256:75b419c858fdac97b1977148f2107b68131010442ab7262f02accfaa3e75ad30`  
+		Last Modified: Sat, 04 Jan 2020 06:20:43 GMT  
+		Size: 179.6 MB (179562004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:527da95d62edba631cf27dd01987742e71deb8b34a162a572570c80b67aec82c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:25 GMT  
-		Size: 284.9 MB (284876821 bytes)  
+	-	`sha256:1bba4df6f471992afb3a8fa4b1a3f9c051e7622dce1dc87ee2ad9902b8588258`  
+		Last Modified: Sat, 04 Jan 2020 06:20:29 GMT  
+		Size: 284.9 MB (284876762 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86fe190d48e30ec9bfe1e3c23695aae75211cfecc7b1a18a1389923d410ae37d`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 618.9 KB (618856 bytes)  
+	-	`sha256:ff9af4ab6e6d912fdcaa6472f59a6a554c23f45bf7ab88f512be9f221edee93d`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 618.9 KB (618861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f321d198dad7ace7cc1e5dbbdd00d59070fa88395f65aaf10a3140a03fb609c`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 1.3 KB (1346 bytes)  
+	-	`sha256:4c66e0da127791c6b9447788bf28ba04f51d9432d0aa6b5c26c7ee19e27150d8`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:530973a5d0cdd654b5d9247dc18b12060e959acfb21b42db8261a8b98d3a7f67`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2473 bytes)  
+	-	`sha256:b0151db145630571c06ec3949b35dbefe0d8c647009300a7c1bfca196db0f8ae`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f3535df20ec083fb948720caa4e4d91668686e74712471d47bdce1bc4ca5eb5`  
-		Last Modified: Mon, 30 Dec 2019 23:43:08 GMT  
-		Size: 4.3 KB (4265 bytes)  
+	-	`sha256:ea80cd948c8855d2e07dbf854a59712bd3f90230534ac6d7092633feb3b4bd61`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 4.3 KB (4263 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff17f10dc72be95766c1dd811b547f5ef0b2720bc7f71756fa6253514e1a8ba6`  
-		Last Modified: Mon, 30 Dec 2019 23:43:07 GMT  
-		Size: 2.5 KB (2459 bytes)  
+	-	`sha256:88262df13c14e7137331eff632cc53571ac66d5574a5a86aec4bf0938ce6cde3`  
+		Last Modified: Sat, 04 Jan 2020 06:20:06 GMT  
+		Size: 2.5 KB (2460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:stable-postgres-tomcat` - linux; arm64 variant v8
