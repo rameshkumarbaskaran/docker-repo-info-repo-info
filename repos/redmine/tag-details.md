@@ -33,7 +33,7 @@
 ## `redmine:3`
 
 ```console
-$ docker pull redmine@sha256:033227ec2e3aca6aaa0b51be040a94c0431e4795c834e3cf6eac0e62cb12d240
+$ docker pull redmine@sha256:f5f6fe7d6a780b34b0fb57470c0edced7e96a2b0c366fc9e811855220548e288
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -49,14 +49,14 @@ $ docker pull redmine@sha256:033227ec2e3aca6aaa0b51be040a94c0431e4795c834e3cf6ea
 ### `redmine:3` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:a18abf35a5be656951a45e210483ac24f495c1a5df24e1ce669787df0560a7f8
+$ docker pull redmine@sha256:119b76be3af44f91e95543690d8103a0b692ab8ed2ac4132564ef9980404b3f3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **207.3 MB (207295332 bytes)**  
+-	Total Size: **207.3 MB (207294668 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b4f6aa8bf7b027b11382ed34d406f9c42d373db3d1397f8dc1a5f3399dfc04af`
+-	Image ID: `sha256:b16780d942cc7598029ccdd911b0318fad9fdb19501ba2724f362c50818dc452`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -81,45 +81,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:09:05 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:30 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:30 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:15:01 GMT
+# Tue, 07 Jan 2020 02:52:41 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:15:25 GMT
+# Tue, 07 Jan 2020 02:53:05 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 10:15:35 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 10:15:38 GMT
+# Tue, 07 Jan 2020 02:53:21 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:43 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -140,54 +140,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:19:25 GMT  
 		Size: 22.0 MB (22006052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf7ed038d9fa741fda2e8ddeb01753ce707e0cae7dfb1e0afdd5a8abef3cc626`  
-		Last Modified: Sat, 28 Dec 2019 15:19:23 GMT  
-		Size: 141.0 B  
+	-	`sha256:60fd0e5c830a620f7adbe8dbf517f558bd629236c05e30a81562e627d41af933`  
+		Last Modified: Tue, 07 Jan 2020 02:23:51 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cce90543a3876fddd4438d1b6284a95c909e6da35360ee9bcb045aabc415dece`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
+	-	`sha256:dda27aa91ecfc255aa8888f23781a4fd6c446c38b13fcf945d933d697868399d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
 		Size: 1.7 KB (1745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbac23a354a345a4bfe16bd0fec71ddeed231ad669e8c004e05248f9c74a08b7`  
-		Last Modified: Sun, 29 Dec 2019 10:19:34 GMT  
-		Size: 80.2 MB (80161087 bytes)  
+	-	`sha256:3047b43ab05eab0353c1e221caf7d98300915f73d638eeb5fc32c8c542f9f979`  
+		Last Modified: Tue, 07 Jan 2020 03:00:49 GMT  
+		Size: 80.2 MB (80161214 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c396033fc30729fd4f2b9091fb004eb4a1a093ed769bbfd9e8d50f1df1454d4c`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
-		Size: 1.3 MB (1296459 bytes)  
+	-	`sha256:d379f55b07e46100b9811c56dc34b9488eeb5029cd6d5b5aa1d0d952db4585f4`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 1.3 MB (1296456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12f9c99bb2cf922a43bdb2bacf16d1d7a8ad79e0665fa80bb81ae87f73c139ca`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d615b50742767a48c5a2f96cb4848af939353414d875d60e5bfd09828138869`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35cb577e4c2912f79466eda9710bbe2a608b7c7dab640583ac548006f0fedb8b`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
+	-	`sha256:bb64db6c7eb6d20bd9906e4c0a451b94d1f042f1e8724e096a58608af75e4570`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3328121c04bb938bfe72be534108a4f0a4efb277a0fa57d1153250be2fe414eb`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.5 MB (2463470 bytes)  
+	-	`sha256:26258bfd510bef8a8d430c8304327ee816f16c1d11e96b4e9d3127b00eb7611a`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 2.5 MB (2463473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6439a252658249aa849c9671dd68793631e88f66e655db4dc2d45a317a19a8ae`  
-		Last Modified: Sun, 29 Dec 2019 10:19:27 GMT  
-		Size: 61.7 MB (61731823 bytes)  
+	-	`sha256:4b80fabc89fcfab19c12ce28cfa8af8c1b8f3ca9195bd784948130522613e288`  
+		Last Modified: Tue, 07 Jan 2020 03:00:40 GMT  
+		Size: 61.7 MB (61731033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff022abc9fda760e638ca6d18ff098b96266a65cc62d717fd48fb5c018a8eb1`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:c00267155666c541f482465d85c8c226c984e7025799e47f969b7e792eb95c19`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:3180f193da0c674a22d5a0900521f0cd4edeac62bcb4da4197ab0b4632966c01
+$ docker pull redmine@sha256:592be99df2eeb2b89817f4dbd88715c8889cf826af27c727f3b9409fbc9a2395
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.2 MB (197189096 bytes)**  
+-	Total Size: **197.2 MB (197200329 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bcfce32e9c6709d04ea37d76f6833990615b161f22e4b5b1c8515332cdc7ed7d`
+-	Image ID: `sha256:c2b841d7f9649720647e06ddc374c74b3cd84c9fd69b8dbe31d2d3159a8b1261`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -212,45 +212,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 07:01:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 07:01:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 07:02:01 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:02:06 GMT
+# Tue, 07 Jan 2020 02:50:18 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:50:19 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:50:21 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 07:02:08 GMT
+# Tue, 07 Jan 2020 02:50:22 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 19:00:30 GMT
+# Tue, 07 Jan 2020 03:31:12 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 19:01:35 GMT
+# Tue, 07 Jan 2020 03:32:22 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 19:01:56 GMT
+# Tue, 07 Jan 2020 03:32:52 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:01:57 GMT
+# Tue, 07 Jan 2020 03:32:52 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 19:01:57 GMT
+# Tue, 07 Jan 2020 03:32:53 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 19:01:58 GMT
+# Tue, 07 Jan 2020 03:32:54 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 19:01:59 GMT
+# Tue, 07 Jan 2020 03:32:55 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 19:02:00 GMT
+# Tue, 07 Jan 2020 03:32:56 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 19:02:00 GMT
+# Tue, 07 Jan 2020 03:32:56 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 19:02:07 GMT
+# Tue, 07 Jan 2020 03:33:01 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 19:07:48 GMT
+# Tue, 07 Jan 2020 03:39:10 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:07:50 GMT
+# Tue, 07 Jan 2020 03:39:11 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 19:07:51 GMT
+# Tue, 07 Jan 2020 03:39:11 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 19:07:51 GMT
+# Tue, 07 Jan 2020 03:39:12 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 19:07:52 GMT
+# Tue, 07 Jan 2020 03:39:13 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 19:07:53 GMT
+# Tue, 07 Jan 2020 03:39:14 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -271,54 +271,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:21:41 GMT  
 		Size: 21.3 MB (21338146 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32fa900f11d869a56c26a13a2fdb660f006d6a4d8387913588bcbff2a3627ced`  
-		Last Modified: Sat, 28 Dec 2019 07:21:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:4b868894943aa585f5a8dc2447f4b7455766a9449cc14a0ddd9d71722f959c11`  
+		Last Modified: Tue, 07 Jan 2020 02:52:57 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea8b43a7fd4782f63df2cfa200b82df7c3c10771814b4fc796ea997ed5f5820b`  
-		Last Modified: Sat, 28 Dec 2019 19:08:50 GMT  
-		Size: 1.7 KB (1736 bytes)  
+	-	`sha256:c85a5f722baa4843d2a0219a018a24853b1f04c9341d332207f1726128d393a8`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 1.7 KB (1735 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3907ad96d609fc92bd86610b1b202fb324f8f61a1f0be599b681a05db6ace4a`  
-		Last Modified: Sat, 28 Dec 2019 19:09:22 GMT  
-		Size: 76.0 MB (76024733 bytes)  
+	-	`sha256:f4f8e2d8b2182583bbba9b225ad290dcdc1bafefbc70b5b3c884dfb0a0b6d28a`  
+		Last Modified: Tue, 07 Jan 2020 03:41:10 GMT  
+		Size: 76.0 MB (76024671 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f72907fc09dbfebe6d35429384bce14790c97319d2e299140c1feabbad98c45b`  
-		Last Modified: Sat, 28 Dec 2019 19:08:50 GMT  
-		Size: 1.3 MB (1254373 bytes)  
+	-	`sha256:65dbbe78d535355aca1fb790e9717d4b275079110c51a33398012f4afcfc6184`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 1.3 MB (1254466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:181af13b49f2f44a0e52889d7c4de9d90a295551fbe3d9999fd30b4d3d0ee690`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
-		Size: 171.0 B  
+	-	`sha256:7c64fada9178fb227b7a6b8169a5bde982287a38b9c252513991974a8b96d169`  
+		Last Modified: Tue, 07 Jan 2020 03:40:41 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87534dc88738bc474d0dec6da4d7b1f0c049bbabc752571d1ff1baea6df39699`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
+	-	`sha256:c43c34b59602d9131cbe262bdf7cebb5327ebfc692b035ba6e989f4d003a13c6`  
+		Last Modified: Tue, 07 Jan 2020 03:40:41 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3e4b19d51eb8c7d30817333c1085c6e9c48098a6dddd5d8f57d5724db9826ebd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:49 GMT  
-		Size: 2.5 MB (2463873 bytes)  
+	-	`sha256:1520f449a7acaeecbc2cac59b5447df08cbd47e26ee5b512eb463d249e16985a`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 2.5 MB (2463877 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c72cb48610eedf6c30cf00e28f026c12838009c3c46da4be94e2754224c72436`  
-		Last Modified: Sat, 28 Dec 2019 19:09:03 GMT  
-		Size: 60.9 MB (60947813 bytes)  
+	-	`sha256:32f9a0e157d8a66d81f3bbb50ee2f7917397f092b097443c70a908fb5655ec34`  
+		Last Modified: Tue, 07 Jan 2020 03:41:08 GMT  
+		Size: 61.0 MB (60959011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e4655117829eff0b0afb396e82b870300c38318009c78fe78ed31d53b3ece4d`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:f95312ba3ed88a08c80ab235b516f8bde4d5671d2ce1ed0ad2799229f4ceeb05`  
+		Last Modified: Tue, 07 Jan 2020 03:40:42 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:bcc9afd012be30bea6c1b226ee40a2f29dc622651a35ccce7a92533c822128b5
+$ docker pull redmine@sha256:dbed830c0f3107f110344a2fc27e9e4d7506240cbff89da7cabfeee50fb8d2c1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **190.6 MB (190591035 bytes)**  
+-	Total Size: **190.6 MB (190603605 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4649f2cfa713d889f75848614647384fc23216256dae7f634055a5bc720c65b4`
+-	Image ID: `sha256:1956f67fe0d16feb115b7d5278c09ee56dbdc6b86e1530187c2fe6bc432ccfad`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -343,45 +343,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:57:49 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:57:50 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:57:50 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:57:52 GMT
+# Tue, 07 Jan 2020 03:15:36 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:15:37 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:15:40 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:57:53 GMT
+# Tue, 07 Jan 2020 03:15:41 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:23:45 GMT
+# Tue, 07 Jan 2020 03:52:03 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:24:40 GMT
+# Tue, 07 Jan 2020 03:52:58 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:24:57 GMT
+# Tue, 07 Jan 2020 03:53:17 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:24:57 GMT
+# Tue, 07 Jan 2020 03:53:17 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:24:58 GMT
+# Tue, 07 Jan 2020 03:53:18 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:24:58 GMT
+# Tue, 07 Jan 2020 03:53:18 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:25:00 GMT
+# Tue, 07 Jan 2020 03:53:20 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 08:25:01 GMT
+# Tue, 07 Jan 2020 03:53:20 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 08:25:01 GMT
+# Tue, 07 Jan 2020 03:53:21 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 08:25:07 GMT
+# Tue, 07 Jan 2020 03:53:26 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 08:30:23 GMT
+# Tue, 07 Jan 2020 03:58:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:30:26 GMT
+# Tue, 07 Jan 2020 03:58:32 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 08:30:28 GMT
+# Tue, 07 Jan 2020 03:58:33 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 08:30:29 GMT
+# Tue, 07 Jan 2020 03:58:34 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 08:30:30 GMT
+# Tue, 07 Jan 2020 03:58:35 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 08:30:32 GMT
+# Tue, 07 Jan 2020 03:58:35 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -402,54 +402,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:15:15 GMT  
 		Size: 21.3 MB (21261197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b44cc905eb5617a8f0ca832c9e6e75b7b0ad017276b12e382514255472c92ac6`  
-		Last Modified: Sat, 28 Dec 2019 22:15:11 GMT  
-		Size: 175.0 B  
+	-	`sha256:7799af941ea6a75fd00ff583cd811459d9aa1ebf9bbfe53c690c886f22090c7b`  
+		Last Modified: Tue, 07 Jan 2020 03:19:29 GMT  
+		Size: 177.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20c807c42e70030c30e917101596ae4fca33cb871c17ed70b407fabdab6407f6`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 1.7 KB (1735 bytes)  
+	-	`sha256:0c215c6dca6c1749986f1b9558c12d97e3b6165c10c6adcd3dcab432b34a1afa`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 1.7 KB (1736 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d2daca3564f0b33447ae50ecb0f696d01f7a0d978ee3f4c54a457e40eb2564c`  
-		Last Modified: Sun, 29 Dec 2019 08:31:53 GMT  
-		Size: 72.4 MB (72370638 bytes)  
+	-	`sha256:4d8f67953faffb1c4e8fffb1caa9217a25357829e1bbc3542405026627994e64`  
+		Last Modified: Tue, 07 Jan 2020 04:00:42 GMT  
+		Size: 72.4 MB (72370843 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbceba08b3ae8a67ecee1d09bfa7b5ecf059b821cd53f08129824e5c715e5924`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 1.2 MB (1243506 bytes)  
+	-	`sha256:99638607df68e0caa80b678073b2bc1ab6bed1e6e765fbd58b4988e0a71017b4`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 1.2 MB (1243561 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7004abe2f635ca99c1d50247c52337362198f2966a3d777c4487474455a47a8b`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
-		Size: 171.0 B  
+	-	`sha256:78977b4c3dfedf84fb120dbfa4e54e630246641aa0d57ede77b71d350a609774`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4728fba32caa05f6f15cef04709cc408c711e720c2f0ce107004cb96d0a30d76`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
+	-	`sha256:fe0a66cd3e3ab71fca594f8aff62bbba677266975b1a11f481c8ae2965e5ca51`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d84eb8a1cf6149f5694adf4278fb672ecaa1e96627fb01be1b96301cf75910f9`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 2.5 MB (2463869 bytes)  
+	-	`sha256:4b76411581c7df4e2b0a02012d441a45291a6285744c35eb2744a942f54b7560`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 2.5 MB (2463868 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:018eb68ca05e75c4a02ad8bb7a87619d30ac19a30fe8f44f8c97c9041a48c346`  
-		Last Modified: Sun, 29 Dec 2019 08:31:46 GMT  
-		Size: 60.7 MB (60700828 bytes)  
+	-	`sha256:c90217c80e5186c5e33b91dec56d4e46549d476630b91372e3cde2949a99ecc9`  
+		Last Modified: Tue, 07 Jan 2020 04:00:32 GMT  
+		Size: 60.7 MB (60713140 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e84d88f02930ef452aadf816206126a3afb75cb02623e1fb4b7f108e6e7df39f`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:06f9cac3d2e8e2c896bf7a5443a823b2123904ddde6f488b29980e9dcb3fa1d9`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
+		Size: 2.1 KB (2051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:d1048a63c89ff3a90bfd411261008c3b173b2b72606cc9140e1c1734b7940a55
+$ docker pull redmine@sha256:b7392b639b00caa21b2fbeadfc28ac4b28b459c3f8655d78802f65f580abe28d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **203.1 MB (203138440 bytes)**  
+-	Total Size: **203.1 MB (203145661 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0659aa0c0f4deb2c1b8542ab168a5e87d107edbfd37b7add088379aa12fe85ea`
+-	Image ID: `sha256:5e4004ebd93fb3c507e8e76949b496bb0862c205d5e632e91651f0ebbfde783b`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -474,45 +474,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 23:09:42 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 23:09:43 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 23:09:43 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 23:09:45 GMT
+# Tue, 07 Jan 2020 02:43:05 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:43:05 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:43:07 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 23:09:45 GMT
+# Tue, 07 Jan 2020 02:43:07 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:27:42 GMT
+# Tue, 07 Jan 2020 03:22:13 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:28:29 GMT
+# Tue, 07 Jan 2020 03:23:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:28:48 GMT
+# Tue, 07 Jan 2020 03:23:40 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:28:48 GMT
+# Tue, 07 Jan 2020 03:23:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:28:49 GMT
+# Tue, 07 Jan 2020 03:23:41 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:28:50 GMT
+# Tue, 07 Jan 2020 03:23:41 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:28:51 GMT
+# Tue, 07 Jan 2020 03:23:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 09:28:52 GMT
+# Tue, 07 Jan 2020 03:23:44 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 09:28:52 GMT
+# Tue, 07 Jan 2020 03:23:44 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 09:28:58 GMT
+# Tue, 07 Jan 2020 03:23:50 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 09:33:54 GMT
+# Tue, 07 Jan 2020 03:30:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:33:56 GMT
+# Tue, 07 Jan 2020 03:30:35 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 09:33:57 GMT
+# Tue, 07 Jan 2020 03:30:38 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 09:33:58 GMT
+# Tue, 07 Jan 2020 03:30:42 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 09:33:59 GMT
+# Tue, 07 Jan 2020 03:30:47 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 09:34:00 GMT
+# Tue, 07 Jan 2020 03:30:54 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -533,54 +533,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:25:14 GMT  
 		Size: 21.9 MB (21879231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:085e2a054c5628aa6d20227a55cee14b80ba7cfd77d42ff607833aea03f57539`  
-		Last Modified: Sat, 28 Dec 2019 23:25:10 GMT  
+	-	`sha256:c771ed92dd7985dfe7f891a2a1dcd20a4924b1c897760f5a84805f5996ecfbe4`  
+		Last Modified: Tue, 07 Jan 2020 02:46:44 GMT  
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:281f22dfff6b554fcef38444769e8ec981f4263a12f2ca14108ccea70218324e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:54 GMT  
-		Size: 1.7 KB (1748 bytes)  
+	-	`sha256:2f143af2012a522002d49c8c5e35ad2f785ea557182fc369a45b1f83f18ed178`  
+		Last Modified: Tue, 07 Jan 2020 03:32:12 GMT  
+		Size: 1.8 KB (1752 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34d7995c60361e24fcfb98c3a8cb770d3217dd926d7ae9f717b7211199067c28`  
-		Last Modified: Sun, 29 Dec 2019 09:35:17 GMT  
-		Size: 78.8 MB (78781660 bytes)  
+	-	`sha256:7ae138bc962325d1988fa72ea2f6ee74ee8549c9a467873a8624a810371df69e`  
+		Last Modified: Tue, 07 Jan 2020 03:32:34 GMT  
+		Size: 78.8 MB (78782045 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d230c3396636bdd8ad0d78b32988b98a290b6eecb6d365ab22fa49f9d0cb6ba`  
-		Last Modified: Sun, 29 Dec 2019 09:34:53 GMT  
-		Size: 1.2 MB (1228520 bytes)  
+	-	`sha256:f8add249b39c3d8ec3f40de3ca3f3fa8c28484688f18f819e44be255a154b9f6`  
+		Last Modified: Tue, 07 Jan 2020 03:32:12 GMT  
+		Size: 1.2 MB (1228475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3af9bff8b55b5c0cd16d119556906fb7110c3676e759d253e15f6dea91cb8722`  
-		Last Modified: Sun, 29 Dec 2019 09:34:52 GMT  
-		Size: 170.0 B  
+	-	`sha256:0f7b17f7c48aaa1d7dffac2d6c94b30b55b46051c58d9102d265a3e694d7a736`  
+		Last Modified: Tue, 07 Jan 2020 03:32:10 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29a986ab61f4fa19868f04ef091bc804b3f3d17d3df73fca3486b299673569bb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:51 GMT  
-		Size: 158.0 B  
+	-	`sha256:b0e80fe221a061826ce2e5104101ae09f094f093004bc6b7735d85ef712d7781`  
+		Last Modified: Tue, 07 Jan 2020 03:32:09 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:91f8761595264c56c95eb1676259c8ae05fd90ada2e779a3a78464c7e8ca4c4c`  
-		Last Modified: Sun, 29 Dec 2019 09:34:53 GMT  
-		Size: 2.5 MB (2463872 bytes)  
+	-	`sha256:1c5178963f7abb7582e65919deb0614e9014cb4d013df72194bb2d91201ceaf8`  
+		Last Modified: Tue, 07 Jan 2020 03:32:10 GMT  
+		Size: 2.5 MB (2463878 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10a75d1be52b09dd543aa094e96ac04cbebe88af46907c49f43a743cd0bbcc75`  
-		Last Modified: Sun, 29 Dec 2019 09:35:06 GMT  
-		Size: 61.7 MB (61685260 bytes)  
+	-	`sha256:247a387f118f77e7e8b09f6684752f927519e1dc4a9548d02897b2a6bc79d3f3`  
+		Last Modified: Tue, 07 Jan 2020 03:32:26 GMT  
+		Size: 61.7 MB (61692129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc7c3dda66630dd11faa6f348593814f5a9811960a0b041d174a7f31bf789106`  
-		Last Modified: Sun, 29 Dec 2019 09:34:52 GMT  
+	-	`sha256:311402aec172be869fec35542cf36f694a6722befc15a9fc6cbda449d568fcf8`  
+		Last Modified: Tue, 07 Jan 2020 03:32:09 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:a34a3cdcc75829c565ecee078913ec189a73a02f7e46a00e43b66c25b3cc7e25
+$ docker pull redmine@sha256:6d477efde23969831b038b436d966deb4165dd7fd3c0da1c7dbca8782dab030b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **212.7 MB (212743899 bytes)**  
+-	Total Size: **212.8 MB (212752377 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:255a7a6d207ea7eb7e7e0c4935088c7bfcd5c762a3b5a547912a8d10e1991a43`
+-	Image ID: `sha256:291adcdcad39466b6dcde1bda6fb2b26ab5c28d882b82109ab3165bdbe7060cf`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -605,45 +605,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 16:30:36 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 16:30:36 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 16:30:37 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 16:30:38 GMT
+# Tue, 07 Jan 2020 02:40:06 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:40:06 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:40:07 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 16:30:38 GMT
+# Tue, 07 Jan 2020 02:40:07 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:41:29 GMT
+# Tue, 07 Jan 2020 03:07:34 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:42:17 GMT
+# Tue, 07 Jan 2020 03:08:03 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:42:33 GMT
+# Tue, 07 Jan 2020 03:08:13 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:13 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:14 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:14 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 00:42:39 GMT
+# Tue, 07 Jan 2020 03:08:17 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 00:47:29 GMT
+# Tue, 07 Jan 2020 03:10:55 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:47:29 GMT
+# Tue, 07 Jan 2020 03:10:55 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 00:47:31 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -664,54 +664,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:46:27 GMT  
 		Size: 21.5 MB (21545961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056d4923ac5e1933dafba339f876885900d1066d0e29dd1cbc6d1ba3ee096e7c`  
-		Last Modified: Sat, 28 Dec 2019 16:46:20 GMT  
-		Size: 143.0 B  
+	-	`sha256:33387c53c9ce779731032ff2f975ff7bbf0a16cd0551530997c664fec29ffb9a`  
+		Last Modified: Tue, 07 Jan 2020 02:42:33 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbf23a1087d01d3fa955e3aba0661e29b7abf3862adfce99a38eef6d68ab1805`  
-		Last Modified: Sun, 29 Dec 2019 00:48:55 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:ffdbef8b208533e2164c865470a9f1eb7ff708ecf888e79a7a884f20f5d93a45`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51042fbcd941a7922247c7dc277b71ae99338988063a179fd5211a8d0c4aea4e`  
-		Last Modified: Sun, 29 Dec 2019 00:49:40 GMT  
-		Size: 81.6 MB (81574712 bytes)  
+	-	`sha256:57ab5be34e7c4dc9dacc59a617b7f06eb1eb3ad229c4eb52da844415056b5f70`  
+		Last Modified: Tue, 07 Jan 2020 03:12:17 GMT  
+		Size: 81.6 MB (81574487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b358a609eed190215ef42f06286c022f7ed44e2fecdcaa293b1d4981a58128e`  
-		Last Modified: Sun, 29 Dec 2019 00:48:55 GMT  
-		Size: 1.3 MB (1261089 bytes)  
+	-	`sha256:902840c7a384de1512dc1b47ecb4131fd83059a1ec3573014a974cecc6de24dd`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 1.3 MB (1261121 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1d78ba93f7d114b0b3c2b73991c8aa3a090a9e8c3bbbe4919ee0388081cb995`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
-		Size: 137.0 B  
+	-	`sha256:1807d33df93b1be2b8457093bccf02a94b6497f02105ec86c2408ac7cd8feccf`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:144d0e6cd7412edd7579fbe673c46955c66f6985d1dd9cf8a481453ed5054d30`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
+	-	`sha256:2991d075bf2bd2e85f753f498185dd38bfec5885dc0da5ad01c74c1e0d34ee1e`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b93350405968b1cea71e3249bbbf411f0e2fbe43f01fb2be1060df9c32baec5`  
-		Last Modified: Sun, 29 Dec 2019 00:48:56 GMT  
-		Size: 2.5 MB (2463473 bytes)  
+	-	`sha256:50a7f65bcaf193982883ff7c676cf3acd30476b7bf836c6fa410fd0bc7b7f645`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 2.5 MB (2463470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97dbf9909bcc9496cfb594c71825064f0673ce3c5f8064ae23d7c0d6e41b6dd8`  
-		Last Modified: Sun, 29 Dec 2019 00:49:21 GMT  
-		Size: 60.9 MB (60941242 bytes)  
+	-	`sha256:cc7b59f76cad543599a03a16562ae67b5752a7ddbba7208f42587d5bf23305be`  
+		Last Modified: Tue, 07 Jan 2020 03:12:07 GMT  
+		Size: 60.9 MB (60949908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12a385a1b150edec093b17d62ca842e5b94ef5e1c179a31fee0f4dc110d442e6`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:1098c974b5918d1236f291e16a1198dcd586e94c0bc63161025ad7a094109f7b`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:ff8aac014587804d20eb205cd2d275bd372a466061c638970e0d381965ee5397
+$ docker pull redmine@sha256:4a7ce0173c86625baced725dfcd697b2263b404365342409b5a8d8a4e5676778
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **218.5 MB (218497700 bytes)**  
+-	Total Size: **218.5 MB (218505036 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:225b70be7f0639025bd7f8e977694f346196f24bd354a8e530907bdccffbd349`
+-	Image ID: `sha256:10d2e6afdede677beb28b8a1b07eb4eebf76678f95a87c241d2856975bc68b33`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -736,45 +736,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 05:17:01 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 05:17:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 05:17:08 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 05:17:12 GMT
+# Tue, 07 Jan 2020 02:22:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:22:46 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:22:55 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 05:17:15 GMT
+# Tue, 07 Jan 2020 02:22:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:47:53 GMT
+# Tue, 07 Jan 2020 03:16:32 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:49:36 GMT
+# Tue, 07 Jan 2020 03:18:51 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:50:11 GMT
+# Tue, 07 Jan 2020 03:19:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:50:13 GMT
+# Tue, 07 Jan 2020 03:19:36 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:50:15 GMT
+# Tue, 07 Jan 2020 03:19:38 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:50:17 GMT
+# Tue, 07 Jan 2020 03:19:41 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:50:21 GMT
+# Tue, 07 Jan 2020 03:19:45 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 05:50:23 GMT
+# Tue, 07 Jan 2020 03:19:47 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 05:50:25 GMT
+# Tue, 07 Jan 2020 03:19:49 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 05:50:33 GMT
+# Tue, 07 Jan 2020 03:19:56 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 05:57:51 GMT
+# Tue, 07 Jan 2020 03:28:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:57:55 GMT
+# Tue, 07 Jan 2020 03:28:41 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 05:57:56 GMT
+# Tue, 07 Jan 2020 03:28:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 05:57:58 GMT
+# Tue, 07 Jan 2020 03:28:49 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 05:58:00 GMT
+# Tue, 07 Jan 2020 03:28:54 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 05:58:02 GMT
+# Tue, 07 Jan 2020 03:28:59 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -795,54 +795,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:31:10 GMT  
 		Size: 22.5 MB (22518813 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12d308668ee4bde2169b385246d0328cda3b886a23f79034792c60f2cf8cddd3`  
-		Last Modified: Sat, 28 Dec 2019 05:31:07 GMT  
-		Size: 176.0 B  
+	-	`sha256:7f17dc85665a35195e0378cddb30197da86e7d824c5330302c8b74d2dc7bd254`  
+		Last Modified: Tue, 07 Jan 2020 02:30:07 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c662ad3ac05901d1234c3726938dc76463d4689461c44258b2296fe821d0fba6`  
-		Last Modified: Sat, 28 Dec 2019 05:59:23 GMT  
-		Size: 1.7 KB (1743 bytes)  
+	-	`sha256:d7ff712870942f8f279111b569dd620512940f713de5a18702909c666b82283d`  
+		Last Modified: Tue, 07 Jan 2020 03:31:00 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:186cb74495e1db9ce740453c35aa6bd5d7bc70cf8e5bc9b7fd1152c5b95ffd5b`  
-		Last Modified: Sat, 28 Dec 2019 05:59:42 GMT  
-		Size: 86.8 MB (86837700 bytes)  
+	-	`sha256:815827d563f9f23bf0c3e35c713e3b20f90ccdb1d3d9bc9411efe6507d2c229f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:24 GMT  
+		Size: 86.8 MB (86837755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5472fe7f907a63065603a1950a8a64283756eb1a0a491da2b87de66f658faf9`  
-		Last Modified: Sat, 28 Dec 2019 05:59:23 GMT  
-		Size: 1.2 MB (1217994 bytes)  
+	-	`sha256:f077a99d3a54521280a74467d75d74dc098e16cc5401d15524c42adce16819a7`  
+		Last Modified: Tue, 07 Jan 2020 03:31:00 GMT  
+		Size: 1.2 MB (1218174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8031146fd4eaf15324aa96b01bcc2e2611c86d3c47525f2cea77aef1a4efa23`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
-		Size: 170.0 B  
+	-	`sha256:c0de3d5e5366fabf9fdc6c1f4eb2c2f92afde26d760575faf726ff770be38799`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f0a8013a6ed1755d3d6ba1c569fff201ea4d87e00c32089afe11b5b582dbe78`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
+	-	`sha256:374d354d8b463223158de295e4a199502ea29b7f1b51c490c7cdd3e01e560cd7`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1308272e0c05172bd35ccbafb9cbe63168c3c3c55fd7ee040de6c7446f51956f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:21 GMT  
-		Size: 2.5 MB (2463877 bytes)  
+	-	`sha256:931d1fd1f3723fb7145a7656f58f20ae8c7267107e777d38e479d92163e07abd`  
+		Last Modified: Tue, 07 Jan 2020 03:30:57 GMT  
+		Size: 2.5 MB (2463873 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:565c6bf1e6b45da1a238816f3ef3c696def7b7d6f4e65e01c97ced96d92a4dfe`  
-		Last Modified: Sat, 28 Dec 2019 05:59:30 GMT  
-		Size: 62.2 MB (62248397 bytes)  
+	-	`sha256:6bafa23919eae122474021d8f2fd9c056f2746325bc49b87a9d538cee4982f95`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 62.3 MB (62255490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b692c2bbf10c38e8567a275330971cfdb96b24c7d79dc310b81dcfc7acee9f1`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:cdbc1e3ab6e7dbfe966be97627b51faab13232d19d815b290241ed5b904c1110`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:9f1dc665428d341f9ca83e6609c2e568fc28290be7bf2dfa5767fecdede23bde
+$ docker pull redmine@sha256:48332d5aa30ab7dcbbba476598a5e47cbdfa2773d476d3d378c3334e932f1f5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.5 MB (202472290 bytes)**  
+-	Total Size: **202.5 MB (202480038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:eb74cc30e41a4817544979f0c1d7dffc228b2a313b5cae81239e77df24780b3b`
+-	Image ID: `sha256:4d1835cc8e7815e892e963c98ab382007c7b15dfb460c44afb228c52e5b4d8ba`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -867,45 +867,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:24:13 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:24:13 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:24:13 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:24:14 GMT
+# Tue, 07 Jan 2020 02:52:44 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:52:44 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:52:45 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:24:14 GMT
+# Tue, 07 Jan 2020 02:52:45 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:28:04 GMT
+# Tue, 07 Jan 2020 03:18:01 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:28:27 GMT
+# Tue, 07 Jan 2020 03:18:25 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 14:28:53 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 14:28:56 GMT
+# Tue, 07 Jan 2020 03:18:43 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 14:32:01 GMT
+# Tue, 07 Jan 2020 03:21:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:40 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 14:32:03 GMT
+# Tue, 07 Jan 2020 03:21:40 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -926,47 +926,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:31:50 GMT  
 		Size: 22.2 MB (22151386 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0d5f4b7e1579339117bfb37333f8fcfc1abf7fec81882a6a0258fe8543544e8`  
-		Last Modified: Sat, 28 Dec 2019 10:31:48 GMT  
+	-	`sha256:f800df51f5ddb8b08e78de4400cfd42c3727dce20ae3486f49436b6784397a86`  
+		Last Modified: Tue, 07 Jan 2020 02:54:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb1fec0204177c5983a700691da62ce8bce6b51cc7a50e5d9701b81598a7775`  
-		Last Modified: Sat, 28 Dec 2019 14:32:33 GMT  
-		Size: 1.7 KB (1742 bytes)  
+	-	`sha256:a40bb45dcd93a69ce0f15edb400d7fc7adfd1147c7e5045fea054a83a0412111`  
+		Last Modified: Tue, 07 Jan 2020 03:22:31 GMT  
+		Size: 1.7 KB (1747 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59132cea93619bccdd5e47df19be07e0a22b4616c7f0148bad512f599fe1951b`  
-		Last Modified: Sat, 28 Dec 2019 14:32:44 GMT  
-		Size: 77.9 MB (77925143 bytes)  
+	-	`sha256:7ede9592d5ee2f8fd41644381ad4c9c29f192968b3e7688520f7bf7ce5e686c7`  
+		Last Modified: Tue, 07 Jan 2020 03:22:41 GMT  
+		Size: 77.9 MB (77926322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba8ac2a08b26c20e80994c00b95a5406ee362dd150e7aa44c1518311c16f1c63`  
-		Last Modified: Sat, 28 Dec 2019 14:32:33 GMT  
-		Size: 1.3 MB (1283285 bytes)  
+	-	`sha256:8b3570effb4a3e64252ae722ca089dbbda4b5afd95b1c8888d96cb698c4f2d6f`  
+		Last Modified: Tue, 07 Jan 2020 03:22:30 GMT  
+		Size: 1.3 MB (1283294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c897acc4b1f1686e21cb54f96134afbf4c6e7396df67965a25989f0e0f85b39f`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
+	-	`sha256:5f77103fc90919a28c05527e4b3461b0ea30b02987ab3f57f465f86b65bb0355`  
+		Last Modified: Tue, 07 Jan 2020 03:22:28 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8c0d670b5d47705bef6e9ee6211876609d5d55994de22bccb933981823e54fd`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 129.0 B  
+	-	`sha256:4c1967cf2b222f7663b1aca09904f2ae566af10cd1add3a6738b3ad1302a803c`  
+		Last Modified: Tue, 07 Jan 2020 03:22:29 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:399b5c16294d3e0a21715d04279a4e72deec5b2cf9621d30d5bb323151718aa4`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 2.5 MB (2463471 bytes)  
+	-	`sha256:f2865094d82f0cf3a041bdae1775bedf308f1716f595f5519dc30c348d7e4348`  
+		Last Modified: Tue, 07 Jan 2020 03:22:29 GMT  
+		Size: 2.5 MB (2463470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0be788f097304a3f2f506270047c241b8d362a9b055420d53ba2dfbf1671e18`  
-		Last Modified: Sat, 28 Dec 2019 14:32:38 GMT  
-		Size: 62.1 MB (62145066 bytes)  
+	-	`sha256:6da42df059f8ff475477c5f70670643c733f2fbc88f10237c46b4aa9dbe31417`  
+		Last Modified: Tue, 07 Jan 2020 03:22:35 GMT  
+		Size: 62.2 MB (62151623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd9e58bedec6c03bde60019c24f9d1582314ad1c990ff05adaef54f13c927152`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:71fc4bd173e7ca8e651e5418dcd5034e021d08444f0d5d80f901f4c80549f039`  
+		Last Modified: Tue, 07 Jan 2020 03:22:28 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3.4`
 
 ```console
-$ docker pull redmine@sha256:033227ec2e3aca6aaa0b51be040a94c0431e4795c834e3cf6eac0e62cb12d240
+$ docker pull redmine@sha256:f5f6fe7d6a780b34b0fb57470c0edced7e96a2b0c366fc9e811855220548e288
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -982,14 +982,14 @@ $ docker pull redmine@sha256:033227ec2e3aca6aaa0b51be040a94c0431e4795c834e3cf6ea
 ### `redmine:3.4` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:a18abf35a5be656951a45e210483ac24f495c1a5df24e1ce669787df0560a7f8
+$ docker pull redmine@sha256:119b76be3af44f91e95543690d8103a0b692ab8ed2ac4132564ef9980404b3f3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **207.3 MB (207295332 bytes)**  
+-	Total Size: **207.3 MB (207294668 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b4f6aa8bf7b027b11382ed34d406f9c42d373db3d1397f8dc1a5f3399dfc04af`
+-	Image ID: `sha256:b16780d942cc7598029ccdd911b0318fad9fdb19501ba2724f362c50818dc452`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1014,45 +1014,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:09:05 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:30 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:30 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:15:01 GMT
+# Tue, 07 Jan 2020 02:52:41 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:15:25 GMT
+# Tue, 07 Jan 2020 02:53:05 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 10:15:35 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 10:15:38 GMT
+# Tue, 07 Jan 2020 02:53:21 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:43 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -1073,54 +1073,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:19:25 GMT  
 		Size: 22.0 MB (22006052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf7ed038d9fa741fda2e8ddeb01753ce707e0cae7dfb1e0afdd5a8abef3cc626`  
-		Last Modified: Sat, 28 Dec 2019 15:19:23 GMT  
-		Size: 141.0 B  
+	-	`sha256:60fd0e5c830a620f7adbe8dbf517f558bd629236c05e30a81562e627d41af933`  
+		Last Modified: Tue, 07 Jan 2020 02:23:51 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cce90543a3876fddd4438d1b6284a95c909e6da35360ee9bcb045aabc415dece`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
+	-	`sha256:dda27aa91ecfc255aa8888f23781a4fd6c446c38b13fcf945d933d697868399d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
 		Size: 1.7 KB (1745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbac23a354a345a4bfe16bd0fec71ddeed231ad669e8c004e05248f9c74a08b7`  
-		Last Modified: Sun, 29 Dec 2019 10:19:34 GMT  
-		Size: 80.2 MB (80161087 bytes)  
+	-	`sha256:3047b43ab05eab0353c1e221caf7d98300915f73d638eeb5fc32c8c542f9f979`  
+		Last Modified: Tue, 07 Jan 2020 03:00:49 GMT  
+		Size: 80.2 MB (80161214 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c396033fc30729fd4f2b9091fb004eb4a1a093ed769bbfd9e8d50f1df1454d4c`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
-		Size: 1.3 MB (1296459 bytes)  
+	-	`sha256:d379f55b07e46100b9811c56dc34b9488eeb5029cd6d5b5aa1d0d952db4585f4`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 1.3 MB (1296456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12f9c99bb2cf922a43bdb2bacf16d1d7a8ad79e0665fa80bb81ae87f73c139ca`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d615b50742767a48c5a2f96cb4848af939353414d875d60e5bfd09828138869`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35cb577e4c2912f79466eda9710bbe2a608b7c7dab640583ac548006f0fedb8b`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
+	-	`sha256:bb64db6c7eb6d20bd9906e4c0a451b94d1f042f1e8724e096a58608af75e4570`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3328121c04bb938bfe72be534108a4f0a4efb277a0fa57d1153250be2fe414eb`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.5 MB (2463470 bytes)  
+	-	`sha256:26258bfd510bef8a8d430c8304327ee816f16c1d11e96b4e9d3127b00eb7611a`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 2.5 MB (2463473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6439a252658249aa849c9671dd68793631e88f66e655db4dc2d45a317a19a8ae`  
-		Last Modified: Sun, 29 Dec 2019 10:19:27 GMT  
-		Size: 61.7 MB (61731823 bytes)  
+	-	`sha256:4b80fabc89fcfab19c12ce28cfa8af8c1b8f3ca9195bd784948130522613e288`  
+		Last Modified: Tue, 07 Jan 2020 03:00:40 GMT  
+		Size: 61.7 MB (61731033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff022abc9fda760e638ca6d18ff098b96266a65cc62d717fd48fb5c018a8eb1`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:c00267155666c541f482465d85c8c226c984e7025799e47f969b7e792eb95c19`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:3180f193da0c674a22d5a0900521f0cd4edeac62bcb4da4197ab0b4632966c01
+$ docker pull redmine@sha256:592be99df2eeb2b89817f4dbd88715c8889cf826af27c727f3b9409fbc9a2395
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.2 MB (197189096 bytes)**  
+-	Total Size: **197.2 MB (197200329 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bcfce32e9c6709d04ea37d76f6833990615b161f22e4b5b1c8515332cdc7ed7d`
+-	Image ID: `sha256:c2b841d7f9649720647e06ddc374c74b3cd84c9fd69b8dbe31d2d3159a8b1261`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1145,45 +1145,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 07:01:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 07:01:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 07:02:01 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:02:06 GMT
+# Tue, 07 Jan 2020 02:50:18 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:50:19 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:50:21 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 07:02:08 GMT
+# Tue, 07 Jan 2020 02:50:22 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 19:00:30 GMT
+# Tue, 07 Jan 2020 03:31:12 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 19:01:35 GMT
+# Tue, 07 Jan 2020 03:32:22 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 19:01:56 GMT
+# Tue, 07 Jan 2020 03:32:52 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:01:57 GMT
+# Tue, 07 Jan 2020 03:32:52 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 19:01:57 GMT
+# Tue, 07 Jan 2020 03:32:53 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 19:01:58 GMT
+# Tue, 07 Jan 2020 03:32:54 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 19:01:59 GMT
+# Tue, 07 Jan 2020 03:32:55 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 19:02:00 GMT
+# Tue, 07 Jan 2020 03:32:56 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 19:02:00 GMT
+# Tue, 07 Jan 2020 03:32:56 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 19:02:07 GMT
+# Tue, 07 Jan 2020 03:33:01 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 19:07:48 GMT
+# Tue, 07 Jan 2020 03:39:10 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:07:50 GMT
+# Tue, 07 Jan 2020 03:39:11 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 19:07:51 GMT
+# Tue, 07 Jan 2020 03:39:11 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 19:07:51 GMT
+# Tue, 07 Jan 2020 03:39:12 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 19:07:52 GMT
+# Tue, 07 Jan 2020 03:39:13 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 19:07:53 GMT
+# Tue, 07 Jan 2020 03:39:14 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -1204,54 +1204,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:21:41 GMT  
 		Size: 21.3 MB (21338146 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32fa900f11d869a56c26a13a2fdb660f006d6a4d8387913588bcbff2a3627ced`  
-		Last Modified: Sat, 28 Dec 2019 07:21:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:4b868894943aa585f5a8dc2447f4b7455766a9449cc14a0ddd9d71722f959c11`  
+		Last Modified: Tue, 07 Jan 2020 02:52:57 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea8b43a7fd4782f63df2cfa200b82df7c3c10771814b4fc796ea997ed5f5820b`  
-		Last Modified: Sat, 28 Dec 2019 19:08:50 GMT  
-		Size: 1.7 KB (1736 bytes)  
+	-	`sha256:c85a5f722baa4843d2a0219a018a24853b1f04c9341d332207f1726128d393a8`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 1.7 KB (1735 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3907ad96d609fc92bd86610b1b202fb324f8f61a1f0be599b681a05db6ace4a`  
-		Last Modified: Sat, 28 Dec 2019 19:09:22 GMT  
-		Size: 76.0 MB (76024733 bytes)  
+	-	`sha256:f4f8e2d8b2182583bbba9b225ad290dcdc1bafefbc70b5b3c884dfb0a0b6d28a`  
+		Last Modified: Tue, 07 Jan 2020 03:41:10 GMT  
+		Size: 76.0 MB (76024671 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f72907fc09dbfebe6d35429384bce14790c97319d2e299140c1feabbad98c45b`  
-		Last Modified: Sat, 28 Dec 2019 19:08:50 GMT  
-		Size: 1.3 MB (1254373 bytes)  
+	-	`sha256:65dbbe78d535355aca1fb790e9717d4b275079110c51a33398012f4afcfc6184`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 1.3 MB (1254466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:181af13b49f2f44a0e52889d7c4de9d90a295551fbe3d9999fd30b4d3d0ee690`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
-		Size: 171.0 B  
+	-	`sha256:7c64fada9178fb227b7a6b8169a5bde982287a38b9c252513991974a8b96d169`  
+		Last Modified: Tue, 07 Jan 2020 03:40:41 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87534dc88738bc474d0dec6da4d7b1f0c049bbabc752571d1ff1baea6df39699`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
+	-	`sha256:c43c34b59602d9131cbe262bdf7cebb5327ebfc692b035ba6e989f4d003a13c6`  
+		Last Modified: Tue, 07 Jan 2020 03:40:41 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3e4b19d51eb8c7d30817333c1085c6e9c48098a6dddd5d8f57d5724db9826ebd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:49 GMT  
-		Size: 2.5 MB (2463873 bytes)  
+	-	`sha256:1520f449a7acaeecbc2cac59b5447df08cbd47e26ee5b512eb463d249e16985a`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 2.5 MB (2463877 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c72cb48610eedf6c30cf00e28f026c12838009c3c46da4be94e2754224c72436`  
-		Last Modified: Sat, 28 Dec 2019 19:09:03 GMT  
-		Size: 60.9 MB (60947813 bytes)  
+	-	`sha256:32f9a0e157d8a66d81f3bbb50ee2f7917397f092b097443c70a908fb5655ec34`  
+		Last Modified: Tue, 07 Jan 2020 03:41:08 GMT  
+		Size: 61.0 MB (60959011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e4655117829eff0b0afb396e82b870300c38318009c78fe78ed31d53b3ece4d`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:f95312ba3ed88a08c80ab235b516f8bde4d5671d2ce1ed0ad2799229f4ceeb05`  
+		Last Modified: Tue, 07 Jan 2020 03:40:42 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:bcc9afd012be30bea6c1b226ee40a2f29dc622651a35ccce7a92533c822128b5
+$ docker pull redmine@sha256:dbed830c0f3107f110344a2fc27e9e4d7506240cbff89da7cabfeee50fb8d2c1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **190.6 MB (190591035 bytes)**  
+-	Total Size: **190.6 MB (190603605 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4649f2cfa713d889f75848614647384fc23216256dae7f634055a5bc720c65b4`
+-	Image ID: `sha256:1956f67fe0d16feb115b7d5278c09ee56dbdc6b86e1530187c2fe6bc432ccfad`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1276,45 +1276,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:57:49 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:57:50 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:57:50 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:57:52 GMT
+# Tue, 07 Jan 2020 03:15:36 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:15:37 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:15:40 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:57:53 GMT
+# Tue, 07 Jan 2020 03:15:41 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:23:45 GMT
+# Tue, 07 Jan 2020 03:52:03 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:24:40 GMT
+# Tue, 07 Jan 2020 03:52:58 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:24:57 GMT
+# Tue, 07 Jan 2020 03:53:17 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:24:57 GMT
+# Tue, 07 Jan 2020 03:53:17 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:24:58 GMT
+# Tue, 07 Jan 2020 03:53:18 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:24:58 GMT
+# Tue, 07 Jan 2020 03:53:18 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:25:00 GMT
+# Tue, 07 Jan 2020 03:53:20 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 08:25:01 GMT
+# Tue, 07 Jan 2020 03:53:20 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 08:25:01 GMT
+# Tue, 07 Jan 2020 03:53:21 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 08:25:07 GMT
+# Tue, 07 Jan 2020 03:53:26 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 08:30:23 GMT
+# Tue, 07 Jan 2020 03:58:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:30:26 GMT
+# Tue, 07 Jan 2020 03:58:32 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 08:30:28 GMT
+# Tue, 07 Jan 2020 03:58:33 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 08:30:29 GMT
+# Tue, 07 Jan 2020 03:58:34 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 08:30:30 GMT
+# Tue, 07 Jan 2020 03:58:35 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 08:30:32 GMT
+# Tue, 07 Jan 2020 03:58:35 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -1335,54 +1335,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:15:15 GMT  
 		Size: 21.3 MB (21261197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b44cc905eb5617a8f0ca832c9e6e75b7b0ad017276b12e382514255472c92ac6`  
-		Last Modified: Sat, 28 Dec 2019 22:15:11 GMT  
-		Size: 175.0 B  
+	-	`sha256:7799af941ea6a75fd00ff583cd811459d9aa1ebf9bbfe53c690c886f22090c7b`  
+		Last Modified: Tue, 07 Jan 2020 03:19:29 GMT  
+		Size: 177.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20c807c42e70030c30e917101596ae4fca33cb871c17ed70b407fabdab6407f6`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 1.7 KB (1735 bytes)  
+	-	`sha256:0c215c6dca6c1749986f1b9558c12d97e3b6165c10c6adcd3dcab432b34a1afa`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 1.7 KB (1736 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d2daca3564f0b33447ae50ecb0f696d01f7a0d978ee3f4c54a457e40eb2564c`  
-		Last Modified: Sun, 29 Dec 2019 08:31:53 GMT  
-		Size: 72.4 MB (72370638 bytes)  
+	-	`sha256:4d8f67953faffb1c4e8fffb1caa9217a25357829e1bbc3542405026627994e64`  
+		Last Modified: Tue, 07 Jan 2020 04:00:42 GMT  
+		Size: 72.4 MB (72370843 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbceba08b3ae8a67ecee1d09bfa7b5ecf059b821cd53f08129824e5c715e5924`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 1.2 MB (1243506 bytes)  
+	-	`sha256:99638607df68e0caa80b678073b2bc1ab6bed1e6e765fbd58b4988e0a71017b4`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 1.2 MB (1243561 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7004abe2f635ca99c1d50247c52337362198f2966a3d777c4487474455a47a8b`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
-		Size: 171.0 B  
+	-	`sha256:78977b4c3dfedf84fb120dbfa4e54e630246641aa0d57ede77b71d350a609774`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4728fba32caa05f6f15cef04709cc408c711e720c2f0ce107004cb96d0a30d76`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
+	-	`sha256:fe0a66cd3e3ab71fca594f8aff62bbba677266975b1a11f481c8ae2965e5ca51`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d84eb8a1cf6149f5694adf4278fb672ecaa1e96627fb01be1b96301cf75910f9`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 2.5 MB (2463869 bytes)  
+	-	`sha256:4b76411581c7df4e2b0a02012d441a45291a6285744c35eb2744a942f54b7560`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 2.5 MB (2463868 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:018eb68ca05e75c4a02ad8bb7a87619d30ac19a30fe8f44f8c97c9041a48c346`  
-		Last Modified: Sun, 29 Dec 2019 08:31:46 GMT  
-		Size: 60.7 MB (60700828 bytes)  
+	-	`sha256:c90217c80e5186c5e33b91dec56d4e46549d476630b91372e3cde2949a99ecc9`  
+		Last Modified: Tue, 07 Jan 2020 04:00:32 GMT  
+		Size: 60.7 MB (60713140 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e84d88f02930ef452aadf816206126a3afb75cb02623e1fb4b7f108e6e7df39f`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:06f9cac3d2e8e2c896bf7a5443a823b2123904ddde6f488b29980e9dcb3fa1d9`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
+		Size: 2.1 KB (2051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:d1048a63c89ff3a90bfd411261008c3b173b2b72606cc9140e1c1734b7940a55
+$ docker pull redmine@sha256:b7392b639b00caa21b2fbeadfc28ac4b28b459c3f8655d78802f65f580abe28d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **203.1 MB (203138440 bytes)**  
+-	Total Size: **203.1 MB (203145661 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0659aa0c0f4deb2c1b8542ab168a5e87d107edbfd37b7add088379aa12fe85ea`
+-	Image ID: `sha256:5e4004ebd93fb3c507e8e76949b496bb0862c205d5e632e91651f0ebbfde783b`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1407,45 +1407,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 23:09:42 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 23:09:43 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 23:09:43 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 23:09:45 GMT
+# Tue, 07 Jan 2020 02:43:05 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:43:05 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:43:07 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 23:09:45 GMT
+# Tue, 07 Jan 2020 02:43:07 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:27:42 GMT
+# Tue, 07 Jan 2020 03:22:13 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:28:29 GMT
+# Tue, 07 Jan 2020 03:23:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:28:48 GMT
+# Tue, 07 Jan 2020 03:23:40 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:28:48 GMT
+# Tue, 07 Jan 2020 03:23:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:28:49 GMT
+# Tue, 07 Jan 2020 03:23:41 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:28:50 GMT
+# Tue, 07 Jan 2020 03:23:41 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:28:51 GMT
+# Tue, 07 Jan 2020 03:23:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 09:28:52 GMT
+# Tue, 07 Jan 2020 03:23:44 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 09:28:52 GMT
+# Tue, 07 Jan 2020 03:23:44 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 09:28:58 GMT
+# Tue, 07 Jan 2020 03:23:50 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 09:33:54 GMT
+# Tue, 07 Jan 2020 03:30:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:33:56 GMT
+# Tue, 07 Jan 2020 03:30:35 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 09:33:57 GMT
+# Tue, 07 Jan 2020 03:30:38 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 09:33:58 GMT
+# Tue, 07 Jan 2020 03:30:42 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 09:33:59 GMT
+# Tue, 07 Jan 2020 03:30:47 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 09:34:00 GMT
+# Tue, 07 Jan 2020 03:30:54 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -1466,54 +1466,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:25:14 GMT  
 		Size: 21.9 MB (21879231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:085e2a054c5628aa6d20227a55cee14b80ba7cfd77d42ff607833aea03f57539`  
-		Last Modified: Sat, 28 Dec 2019 23:25:10 GMT  
+	-	`sha256:c771ed92dd7985dfe7f891a2a1dcd20a4924b1c897760f5a84805f5996ecfbe4`  
+		Last Modified: Tue, 07 Jan 2020 02:46:44 GMT  
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:281f22dfff6b554fcef38444769e8ec981f4263a12f2ca14108ccea70218324e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:54 GMT  
-		Size: 1.7 KB (1748 bytes)  
+	-	`sha256:2f143af2012a522002d49c8c5e35ad2f785ea557182fc369a45b1f83f18ed178`  
+		Last Modified: Tue, 07 Jan 2020 03:32:12 GMT  
+		Size: 1.8 KB (1752 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34d7995c60361e24fcfb98c3a8cb770d3217dd926d7ae9f717b7211199067c28`  
-		Last Modified: Sun, 29 Dec 2019 09:35:17 GMT  
-		Size: 78.8 MB (78781660 bytes)  
+	-	`sha256:7ae138bc962325d1988fa72ea2f6ee74ee8549c9a467873a8624a810371df69e`  
+		Last Modified: Tue, 07 Jan 2020 03:32:34 GMT  
+		Size: 78.8 MB (78782045 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d230c3396636bdd8ad0d78b32988b98a290b6eecb6d365ab22fa49f9d0cb6ba`  
-		Last Modified: Sun, 29 Dec 2019 09:34:53 GMT  
-		Size: 1.2 MB (1228520 bytes)  
+	-	`sha256:f8add249b39c3d8ec3f40de3ca3f3fa8c28484688f18f819e44be255a154b9f6`  
+		Last Modified: Tue, 07 Jan 2020 03:32:12 GMT  
+		Size: 1.2 MB (1228475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3af9bff8b55b5c0cd16d119556906fb7110c3676e759d253e15f6dea91cb8722`  
-		Last Modified: Sun, 29 Dec 2019 09:34:52 GMT  
-		Size: 170.0 B  
+	-	`sha256:0f7b17f7c48aaa1d7dffac2d6c94b30b55b46051c58d9102d265a3e694d7a736`  
+		Last Modified: Tue, 07 Jan 2020 03:32:10 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29a986ab61f4fa19868f04ef091bc804b3f3d17d3df73fca3486b299673569bb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:51 GMT  
-		Size: 158.0 B  
+	-	`sha256:b0e80fe221a061826ce2e5104101ae09f094f093004bc6b7735d85ef712d7781`  
+		Last Modified: Tue, 07 Jan 2020 03:32:09 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:91f8761595264c56c95eb1676259c8ae05fd90ada2e779a3a78464c7e8ca4c4c`  
-		Last Modified: Sun, 29 Dec 2019 09:34:53 GMT  
-		Size: 2.5 MB (2463872 bytes)  
+	-	`sha256:1c5178963f7abb7582e65919deb0614e9014cb4d013df72194bb2d91201ceaf8`  
+		Last Modified: Tue, 07 Jan 2020 03:32:10 GMT  
+		Size: 2.5 MB (2463878 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10a75d1be52b09dd543aa094e96ac04cbebe88af46907c49f43a743cd0bbcc75`  
-		Last Modified: Sun, 29 Dec 2019 09:35:06 GMT  
-		Size: 61.7 MB (61685260 bytes)  
+	-	`sha256:247a387f118f77e7e8b09f6684752f927519e1dc4a9548d02897b2a6bc79d3f3`  
+		Last Modified: Tue, 07 Jan 2020 03:32:26 GMT  
+		Size: 61.7 MB (61692129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc7c3dda66630dd11faa6f348593814f5a9811960a0b041d174a7f31bf789106`  
-		Last Modified: Sun, 29 Dec 2019 09:34:52 GMT  
+	-	`sha256:311402aec172be869fec35542cf36f694a6722befc15a9fc6cbda449d568fcf8`  
+		Last Modified: Tue, 07 Jan 2020 03:32:09 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:a34a3cdcc75829c565ecee078913ec189a73a02f7e46a00e43b66c25b3cc7e25
+$ docker pull redmine@sha256:6d477efde23969831b038b436d966deb4165dd7fd3c0da1c7dbca8782dab030b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **212.7 MB (212743899 bytes)**  
+-	Total Size: **212.8 MB (212752377 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:255a7a6d207ea7eb7e7e0c4935088c7bfcd5c762a3b5a547912a8d10e1991a43`
+-	Image ID: `sha256:291adcdcad39466b6dcde1bda6fb2b26ab5c28d882b82109ab3165bdbe7060cf`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1538,45 +1538,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 16:30:36 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 16:30:36 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 16:30:37 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 16:30:38 GMT
+# Tue, 07 Jan 2020 02:40:06 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:40:06 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:40:07 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 16:30:38 GMT
+# Tue, 07 Jan 2020 02:40:07 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:41:29 GMT
+# Tue, 07 Jan 2020 03:07:34 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:42:17 GMT
+# Tue, 07 Jan 2020 03:08:03 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:42:33 GMT
+# Tue, 07 Jan 2020 03:08:13 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:13 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:14 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:14 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 00:42:39 GMT
+# Tue, 07 Jan 2020 03:08:17 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 00:47:29 GMT
+# Tue, 07 Jan 2020 03:10:55 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:47:29 GMT
+# Tue, 07 Jan 2020 03:10:55 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 00:47:31 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -1597,54 +1597,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:46:27 GMT  
 		Size: 21.5 MB (21545961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056d4923ac5e1933dafba339f876885900d1066d0e29dd1cbc6d1ba3ee096e7c`  
-		Last Modified: Sat, 28 Dec 2019 16:46:20 GMT  
-		Size: 143.0 B  
+	-	`sha256:33387c53c9ce779731032ff2f975ff7bbf0a16cd0551530997c664fec29ffb9a`  
+		Last Modified: Tue, 07 Jan 2020 02:42:33 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbf23a1087d01d3fa955e3aba0661e29b7abf3862adfce99a38eef6d68ab1805`  
-		Last Modified: Sun, 29 Dec 2019 00:48:55 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:ffdbef8b208533e2164c865470a9f1eb7ff708ecf888e79a7a884f20f5d93a45`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51042fbcd941a7922247c7dc277b71ae99338988063a179fd5211a8d0c4aea4e`  
-		Last Modified: Sun, 29 Dec 2019 00:49:40 GMT  
-		Size: 81.6 MB (81574712 bytes)  
+	-	`sha256:57ab5be34e7c4dc9dacc59a617b7f06eb1eb3ad229c4eb52da844415056b5f70`  
+		Last Modified: Tue, 07 Jan 2020 03:12:17 GMT  
+		Size: 81.6 MB (81574487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b358a609eed190215ef42f06286c022f7ed44e2fecdcaa293b1d4981a58128e`  
-		Last Modified: Sun, 29 Dec 2019 00:48:55 GMT  
-		Size: 1.3 MB (1261089 bytes)  
+	-	`sha256:902840c7a384de1512dc1b47ecb4131fd83059a1ec3573014a974cecc6de24dd`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 1.3 MB (1261121 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1d78ba93f7d114b0b3c2b73991c8aa3a090a9e8c3bbbe4919ee0388081cb995`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
-		Size: 137.0 B  
+	-	`sha256:1807d33df93b1be2b8457093bccf02a94b6497f02105ec86c2408ac7cd8feccf`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:144d0e6cd7412edd7579fbe673c46955c66f6985d1dd9cf8a481453ed5054d30`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
+	-	`sha256:2991d075bf2bd2e85f753f498185dd38bfec5885dc0da5ad01c74c1e0d34ee1e`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b93350405968b1cea71e3249bbbf411f0e2fbe43f01fb2be1060df9c32baec5`  
-		Last Modified: Sun, 29 Dec 2019 00:48:56 GMT  
-		Size: 2.5 MB (2463473 bytes)  
+	-	`sha256:50a7f65bcaf193982883ff7c676cf3acd30476b7bf836c6fa410fd0bc7b7f645`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 2.5 MB (2463470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97dbf9909bcc9496cfb594c71825064f0673ce3c5f8064ae23d7c0d6e41b6dd8`  
-		Last Modified: Sun, 29 Dec 2019 00:49:21 GMT  
-		Size: 60.9 MB (60941242 bytes)  
+	-	`sha256:cc7b59f76cad543599a03a16562ae67b5752a7ddbba7208f42587d5bf23305be`  
+		Last Modified: Tue, 07 Jan 2020 03:12:07 GMT  
+		Size: 60.9 MB (60949908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12a385a1b150edec093b17d62ca842e5b94ef5e1c179a31fee0f4dc110d442e6`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:1098c974b5918d1236f291e16a1198dcd586e94c0bc63161025ad7a094109f7b`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:ff8aac014587804d20eb205cd2d275bd372a466061c638970e0d381965ee5397
+$ docker pull redmine@sha256:4a7ce0173c86625baced725dfcd697b2263b404365342409b5a8d8a4e5676778
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **218.5 MB (218497700 bytes)**  
+-	Total Size: **218.5 MB (218505036 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:225b70be7f0639025bd7f8e977694f346196f24bd354a8e530907bdccffbd349`
+-	Image ID: `sha256:10d2e6afdede677beb28b8a1b07eb4eebf76678f95a87c241d2856975bc68b33`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1669,45 +1669,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 05:17:01 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 05:17:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 05:17:08 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 05:17:12 GMT
+# Tue, 07 Jan 2020 02:22:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:22:46 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:22:55 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 05:17:15 GMT
+# Tue, 07 Jan 2020 02:22:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:47:53 GMT
+# Tue, 07 Jan 2020 03:16:32 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:49:36 GMT
+# Tue, 07 Jan 2020 03:18:51 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:50:11 GMT
+# Tue, 07 Jan 2020 03:19:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:50:13 GMT
+# Tue, 07 Jan 2020 03:19:36 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:50:15 GMT
+# Tue, 07 Jan 2020 03:19:38 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:50:17 GMT
+# Tue, 07 Jan 2020 03:19:41 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:50:21 GMT
+# Tue, 07 Jan 2020 03:19:45 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 05:50:23 GMT
+# Tue, 07 Jan 2020 03:19:47 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 05:50:25 GMT
+# Tue, 07 Jan 2020 03:19:49 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 05:50:33 GMT
+# Tue, 07 Jan 2020 03:19:56 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 05:57:51 GMT
+# Tue, 07 Jan 2020 03:28:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:57:55 GMT
+# Tue, 07 Jan 2020 03:28:41 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 05:57:56 GMT
+# Tue, 07 Jan 2020 03:28:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 05:57:58 GMT
+# Tue, 07 Jan 2020 03:28:49 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 05:58:00 GMT
+# Tue, 07 Jan 2020 03:28:54 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 05:58:02 GMT
+# Tue, 07 Jan 2020 03:28:59 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -1728,54 +1728,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:31:10 GMT  
 		Size: 22.5 MB (22518813 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12d308668ee4bde2169b385246d0328cda3b886a23f79034792c60f2cf8cddd3`  
-		Last Modified: Sat, 28 Dec 2019 05:31:07 GMT  
-		Size: 176.0 B  
+	-	`sha256:7f17dc85665a35195e0378cddb30197da86e7d824c5330302c8b74d2dc7bd254`  
+		Last Modified: Tue, 07 Jan 2020 02:30:07 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c662ad3ac05901d1234c3726938dc76463d4689461c44258b2296fe821d0fba6`  
-		Last Modified: Sat, 28 Dec 2019 05:59:23 GMT  
-		Size: 1.7 KB (1743 bytes)  
+	-	`sha256:d7ff712870942f8f279111b569dd620512940f713de5a18702909c666b82283d`  
+		Last Modified: Tue, 07 Jan 2020 03:31:00 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:186cb74495e1db9ce740453c35aa6bd5d7bc70cf8e5bc9b7fd1152c5b95ffd5b`  
-		Last Modified: Sat, 28 Dec 2019 05:59:42 GMT  
-		Size: 86.8 MB (86837700 bytes)  
+	-	`sha256:815827d563f9f23bf0c3e35c713e3b20f90ccdb1d3d9bc9411efe6507d2c229f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:24 GMT  
+		Size: 86.8 MB (86837755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5472fe7f907a63065603a1950a8a64283756eb1a0a491da2b87de66f658faf9`  
-		Last Modified: Sat, 28 Dec 2019 05:59:23 GMT  
-		Size: 1.2 MB (1217994 bytes)  
+	-	`sha256:f077a99d3a54521280a74467d75d74dc098e16cc5401d15524c42adce16819a7`  
+		Last Modified: Tue, 07 Jan 2020 03:31:00 GMT  
+		Size: 1.2 MB (1218174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8031146fd4eaf15324aa96b01bcc2e2611c86d3c47525f2cea77aef1a4efa23`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
-		Size: 170.0 B  
+	-	`sha256:c0de3d5e5366fabf9fdc6c1f4eb2c2f92afde26d760575faf726ff770be38799`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f0a8013a6ed1755d3d6ba1c569fff201ea4d87e00c32089afe11b5b582dbe78`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
+	-	`sha256:374d354d8b463223158de295e4a199502ea29b7f1b51c490c7cdd3e01e560cd7`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1308272e0c05172bd35ccbafb9cbe63168c3c3c55fd7ee040de6c7446f51956f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:21 GMT  
-		Size: 2.5 MB (2463877 bytes)  
+	-	`sha256:931d1fd1f3723fb7145a7656f58f20ae8c7267107e777d38e479d92163e07abd`  
+		Last Modified: Tue, 07 Jan 2020 03:30:57 GMT  
+		Size: 2.5 MB (2463873 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:565c6bf1e6b45da1a238816f3ef3c696def7b7d6f4e65e01c97ced96d92a4dfe`  
-		Last Modified: Sat, 28 Dec 2019 05:59:30 GMT  
-		Size: 62.2 MB (62248397 bytes)  
+	-	`sha256:6bafa23919eae122474021d8f2fd9c056f2746325bc49b87a9d538cee4982f95`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 62.3 MB (62255490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b692c2bbf10c38e8567a275330971cfdb96b24c7d79dc310b81dcfc7acee9f1`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:cdbc1e3ab6e7dbfe966be97627b51faab13232d19d815b290241ed5b904c1110`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:9f1dc665428d341f9ca83e6609c2e568fc28290be7bf2dfa5767fecdede23bde
+$ docker pull redmine@sha256:48332d5aa30ab7dcbbba476598a5e47cbdfa2773d476d3d378c3334e932f1f5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.5 MB (202472290 bytes)**  
+-	Total Size: **202.5 MB (202480038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:eb74cc30e41a4817544979f0c1d7dffc228b2a313b5cae81239e77df24780b3b`
+-	Image ID: `sha256:4d1835cc8e7815e892e963c98ab382007c7b15dfb460c44afb228c52e5b4d8ba`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1800,45 +1800,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:24:13 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:24:13 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:24:13 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:24:14 GMT
+# Tue, 07 Jan 2020 02:52:44 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:52:44 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:52:45 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:24:14 GMT
+# Tue, 07 Jan 2020 02:52:45 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:28:04 GMT
+# Tue, 07 Jan 2020 03:18:01 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:28:27 GMT
+# Tue, 07 Jan 2020 03:18:25 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 14:28:53 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 14:28:56 GMT
+# Tue, 07 Jan 2020 03:18:43 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 14:32:01 GMT
+# Tue, 07 Jan 2020 03:21:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:40 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 14:32:03 GMT
+# Tue, 07 Jan 2020 03:21:40 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -1859,47 +1859,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:31:50 GMT  
 		Size: 22.2 MB (22151386 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0d5f4b7e1579339117bfb37333f8fcfc1abf7fec81882a6a0258fe8543544e8`  
-		Last Modified: Sat, 28 Dec 2019 10:31:48 GMT  
+	-	`sha256:f800df51f5ddb8b08e78de4400cfd42c3727dce20ae3486f49436b6784397a86`  
+		Last Modified: Tue, 07 Jan 2020 02:54:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb1fec0204177c5983a700691da62ce8bce6b51cc7a50e5d9701b81598a7775`  
-		Last Modified: Sat, 28 Dec 2019 14:32:33 GMT  
-		Size: 1.7 KB (1742 bytes)  
+	-	`sha256:a40bb45dcd93a69ce0f15edb400d7fc7adfd1147c7e5045fea054a83a0412111`  
+		Last Modified: Tue, 07 Jan 2020 03:22:31 GMT  
+		Size: 1.7 KB (1747 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59132cea93619bccdd5e47df19be07e0a22b4616c7f0148bad512f599fe1951b`  
-		Last Modified: Sat, 28 Dec 2019 14:32:44 GMT  
-		Size: 77.9 MB (77925143 bytes)  
+	-	`sha256:7ede9592d5ee2f8fd41644381ad4c9c29f192968b3e7688520f7bf7ce5e686c7`  
+		Last Modified: Tue, 07 Jan 2020 03:22:41 GMT  
+		Size: 77.9 MB (77926322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba8ac2a08b26c20e80994c00b95a5406ee362dd150e7aa44c1518311c16f1c63`  
-		Last Modified: Sat, 28 Dec 2019 14:32:33 GMT  
-		Size: 1.3 MB (1283285 bytes)  
+	-	`sha256:8b3570effb4a3e64252ae722ca089dbbda4b5afd95b1c8888d96cb698c4f2d6f`  
+		Last Modified: Tue, 07 Jan 2020 03:22:30 GMT  
+		Size: 1.3 MB (1283294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c897acc4b1f1686e21cb54f96134afbf4c6e7396df67965a25989f0e0f85b39f`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
+	-	`sha256:5f77103fc90919a28c05527e4b3461b0ea30b02987ab3f57f465f86b65bb0355`  
+		Last Modified: Tue, 07 Jan 2020 03:22:28 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8c0d670b5d47705bef6e9ee6211876609d5d55994de22bccb933981823e54fd`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 129.0 B  
+	-	`sha256:4c1967cf2b222f7663b1aca09904f2ae566af10cd1add3a6738b3ad1302a803c`  
+		Last Modified: Tue, 07 Jan 2020 03:22:29 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:399b5c16294d3e0a21715d04279a4e72deec5b2cf9621d30d5bb323151718aa4`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 2.5 MB (2463471 bytes)  
+	-	`sha256:f2865094d82f0cf3a041bdae1775bedf308f1716f595f5519dc30c348d7e4348`  
+		Last Modified: Tue, 07 Jan 2020 03:22:29 GMT  
+		Size: 2.5 MB (2463470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0be788f097304a3f2f506270047c241b8d362a9b055420d53ba2dfbf1671e18`  
-		Last Modified: Sat, 28 Dec 2019 14:32:38 GMT  
-		Size: 62.1 MB (62145066 bytes)  
+	-	`sha256:6da42df059f8ff475477c5f70670643c733f2fbc88f10237c46b4aa9dbe31417`  
+		Last Modified: Tue, 07 Jan 2020 03:22:35 GMT  
+		Size: 62.2 MB (62151623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd9e58bedec6c03bde60019c24f9d1582314ad1c990ff05adaef54f13c927152`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:71fc4bd173e7ca8e651e5418dcd5034e021d08444f0d5d80f901f4c80549f039`  
+		Last Modified: Tue, 07 Jan 2020 03:22:28 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3.4.13`
 
 ```console
-$ docker pull redmine@sha256:033227ec2e3aca6aaa0b51be040a94c0431e4795c834e3cf6eac0e62cb12d240
+$ docker pull redmine@sha256:f5f6fe7d6a780b34b0fb57470c0edced7e96a2b0c366fc9e811855220548e288
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1915,14 +1915,14 @@ $ docker pull redmine@sha256:033227ec2e3aca6aaa0b51be040a94c0431e4795c834e3cf6ea
 ### `redmine:3.4.13` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:a18abf35a5be656951a45e210483ac24f495c1a5df24e1ce669787df0560a7f8
+$ docker pull redmine@sha256:119b76be3af44f91e95543690d8103a0b692ab8ed2ac4132564ef9980404b3f3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **207.3 MB (207295332 bytes)**  
+-	Total Size: **207.3 MB (207294668 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b4f6aa8bf7b027b11382ed34d406f9c42d373db3d1397f8dc1a5f3399dfc04af`
+-	Image ID: `sha256:b16780d942cc7598029ccdd911b0318fad9fdb19501ba2724f362c50818dc452`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -1947,45 +1947,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:09:05 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:30 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:30 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:15:01 GMT
+# Tue, 07 Jan 2020 02:52:41 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:15:25 GMT
+# Tue, 07 Jan 2020 02:53:05 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 10:15:35 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 10:15:38 GMT
+# Tue, 07 Jan 2020 02:53:21 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:43 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2006,54 +2006,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:19:25 GMT  
 		Size: 22.0 MB (22006052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf7ed038d9fa741fda2e8ddeb01753ce707e0cae7dfb1e0afdd5a8abef3cc626`  
-		Last Modified: Sat, 28 Dec 2019 15:19:23 GMT  
-		Size: 141.0 B  
+	-	`sha256:60fd0e5c830a620f7adbe8dbf517f558bd629236c05e30a81562e627d41af933`  
+		Last Modified: Tue, 07 Jan 2020 02:23:51 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cce90543a3876fddd4438d1b6284a95c909e6da35360ee9bcb045aabc415dece`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
+	-	`sha256:dda27aa91ecfc255aa8888f23781a4fd6c446c38b13fcf945d933d697868399d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
 		Size: 1.7 KB (1745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbac23a354a345a4bfe16bd0fec71ddeed231ad669e8c004e05248f9c74a08b7`  
-		Last Modified: Sun, 29 Dec 2019 10:19:34 GMT  
-		Size: 80.2 MB (80161087 bytes)  
+	-	`sha256:3047b43ab05eab0353c1e221caf7d98300915f73d638eeb5fc32c8c542f9f979`  
+		Last Modified: Tue, 07 Jan 2020 03:00:49 GMT  
+		Size: 80.2 MB (80161214 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c396033fc30729fd4f2b9091fb004eb4a1a093ed769bbfd9e8d50f1df1454d4c`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
-		Size: 1.3 MB (1296459 bytes)  
+	-	`sha256:d379f55b07e46100b9811c56dc34b9488eeb5029cd6d5b5aa1d0d952db4585f4`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 1.3 MB (1296456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12f9c99bb2cf922a43bdb2bacf16d1d7a8ad79e0665fa80bb81ae87f73c139ca`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d615b50742767a48c5a2f96cb4848af939353414d875d60e5bfd09828138869`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35cb577e4c2912f79466eda9710bbe2a608b7c7dab640583ac548006f0fedb8b`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
+	-	`sha256:bb64db6c7eb6d20bd9906e4c0a451b94d1f042f1e8724e096a58608af75e4570`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3328121c04bb938bfe72be534108a4f0a4efb277a0fa57d1153250be2fe414eb`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.5 MB (2463470 bytes)  
+	-	`sha256:26258bfd510bef8a8d430c8304327ee816f16c1d11e96b4e9d3127b00eb7611a`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 2.5 MB (2463473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6439a252658249aa849c9671dd68793631e88f66e655db4dc2d45a317a19a8ae`  
-		Last Modified: Sun, 29 Dec 2019 10:19:27 GMT  
-		Size: 61.7 MB (61731823 bytes)  
+	-	`sha256:4b80fabc89fcfab19c12ce28cfa8af8c1b8f3ca9195bd784948130522613e288`  
+		Last Modified: Tue, 07 Jan 2020 03:00:40 GMT  
+		Size: 61.7 MB (61731033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff022abc9fda760e638ca6d18ff098b96266a65cc62d717fd48fb5c018a8eb1`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:c00267155666c541f482465d85c8c226c984e7025799e47f969b7e792eb95c19`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4.13` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:3180f193da0c674a22d5a0900521f0cd4edeac62bcb4da4197ab0b4632966c01
+$ docker pull redmine@sha256:592be99df2eeb2b89817f4dbd88715c8889cf826af27c727f3b9409fbc9a2395
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.2 MB (197189096 bytes)**  
+-	Total Size: **197.2 MB (197200329 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bcfce32e9c6709d04ea37d76f6833990615b161f22e4b5b1c8515332cdc7ed7d`
+-	Image ID: `sha256:c2b841d7f9649720647e06ddc374c74b3cd84c9fd69b8dbe31d2d3159a8b1261`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -2078,45 +2078,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 07:01:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 07:01:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 07:02:01 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:02:06 GMT
+# Tue, 07 Jan 2020 02:50:18 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:50:19 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:50:21 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 07:02:08 GMT
+# Tue, 07 Jan 2020 02:50:22 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 19:00:30 GMT
+# Tue, 07 Jan 2020 03:31:12 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 19:01:35 GMT
+# Tue, 07 Jan 2020 03:32:22 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 19:01:56 GMT
+# Tue, 07 Jan 2020 03:32:52 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:01:57 GMT
+# Tue, 07 Jan 2020 03:32:52 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 19:01:57 GMT
+# Tue, 07 Jan 2020 03:32:53 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 19:01:58 GMT
+# Tue, 07 Jan 2020 03:32:54 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 19:01:59 GMT
+# Tue, 07 Jan 2020 03:32:55 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 19:02:00 GMT
+# Tue, 07 Jan 2020 03:32:56 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 19:02:00 GMT
+# Tue, 07 Jan 2020 03:32:56 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 19:02:07 GMT
+# Tue, 07 Jan 2020 03:33:01 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 19:07:48 GMT
+# Tue, 07 Jan 2020 03:39:10 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:07:50 GMT
+# Tue, 07 Jan 2020 03:39:11 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 19:07:51 GMT
+# Tue, 07 Jan 2020 03:39:11 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 19:07:51 GMT
+# Tue, 07 Jan 2020 03:39:12 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 19:07:52 GMT
+# Tue, 07 Jan 2020 03:39:13 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 19:07:53 GMT
+# Tue, 07 Jan 2020 03:39:14 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2137,54 +2137,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:21:41 GMT  
 		Size: 21.3 MB (21338146 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32fa900f11d869a56c26a13a2fdb660f006d6a4d8387913588bcbff2a3627ced`  
-		Last Modified: Sat, 28 Dec 2019 07:21:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:4b868894943aa585f5a8dc2447f4b7455766a9449cc14a0ddd9d71722f959c11`  
+		Last Modified: Tue, 07 Jan 2020 02:52:57 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea8b43a7fd4782f63df2cfa200b82df7c3c10771814b4fc796ea997ed5f5820b`  
-		Last Modified: Sat, 28 Dec 2019 19:08:50 GMT  
-		Size: 1.7 KB (1736 bytes)  
+	-	`sha256:c85a5f722baa4843d2a0219a018a24853b1f04c9341d332207f1726128d393a8`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 1.7 KB (1735 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3907ad96d609fc92bd86610b1b202fb324f8f61a1f0be599b681a05db6ace4a`  
-		Last Modified: Sat, 28 Dec 2019 19:09:22 GMT  
-		Size: 76.0 MB (76024733 bytes)  
+	-	`sha256:f4f8e2d8b2182583bbba9b225ad290dcdc1bafefbc70b5b3c884dfb0a0b6d28a`  
+		Last Modified: Tue, 07 Jan 2020 03:41:10 GMT  
+		Size: 76.0 MB (76024671 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f72907fc09dbfebe6d35429384bce14790c97319d2e299140c1feabbad98c45b`  
-		Last Modified: Sat, 28 Dec 2019 19:08:50 GMT  
-		Size: 1.3 MB (1254373 bytes)  
+	-	`sha256:65dbbe78d535355aca1fb790e9717d4b275079110c51a33398012f4afcfc6184`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 1.3 MB (1254466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:181af13b49f2f44a0e52889d7c4de9d90a295551fbe3d9999fd30b4d3d0ee690`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
-		Size: 171.0 B  
+	-	`sha256:7c64fada9178fb227b7a6b8169a5bde982287a38b9c252513991974a8b96d169`  
+		Last Modified: Tue, 07 Jan 2020 03:40:41 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87534dc88738bc474d0dec6da4d7b1f0c049bbabc752571d1ff1baea6df39699`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
+	-	`sha256:c43c34b59602d9131cbe262bdf7cebb5327ebfc692b035ba6e989f4d003a13c6`  
+		Last Modified: Tue, 07 Jan 2020 03:40:41 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3e4b19d51eb8c7d30817333c1085c6e9c48098a6dddd5d8f57d5724db9826ebd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:49 GMT  
-		Size: 2.5 MB (2463873 bytes)  
+	-	`sha256:1520f449a7acaeecbc2cac59b5447df08cbd47e26ee5b512eb463d249e16985a`  
+		Last Modified: Tue, 07 Jan 2020 03:40:44 GMT  
+		Size: 2.5 MB (2463877 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c72cb48610eedf6c30cf00e28f026c12838009c3c46da4be94e2754224c72436`  
-		Last Modified: Sat, 28 Dec 2019 19:09:03 GMT  
-		Size: 60.9 MB (60947813 bytes)  
+	-	`sha256:32f9a0e157d8a66d81f3bbb50ee2f7917397f092b097443c70a908fb5655ec34`  
+		Last Modified: Tue, 07 Jan 2020 03:41:08 GMT  
+		Size: 61.0 MB (60959011 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e4655117829eff0b0afb396e82b870300c38318009c78fe78ed31d53b3ece4d`  
-		Last Modified: Sat, 28 Dec 2019 19:08:48 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:f95312ba3ed88a08c80ab235b516f8bde4d5671d2ce1ed0ad2799229f4ceeb05`  
+		Last Modified: Tue, 07 Jan 2020 03:40:42 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4.13` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:bcc9afd012be30bea6c1b226ee40a2f29dc622651a35ccce7a92533c822128b5
+$ docker pull redmine@sha256:dbed830c0f3107f110344a2fc27e9e4d7506240cbff89da7cabfeee50fb8d2c1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **190.6 MB (190591035 bytes)**  
+-	Total Size: **190.6 MB (190603605 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4649f2cfa713d889f75848614647384fc23216256dae7f634055a5bc720c65b4`
+-	Image ID: `sha256:1956f67fe0d16feb115b7d5278c09ee56dbdc6b86e1530187c2fe6bc432ccfad`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -2209,45 +2209,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:57:49 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:57:50 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:57:50 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:57:52 GMT
+# Tue, 07 Jan 2020 03:15:36 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:15:37 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:15:40 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:57:53 GMT
+# Tue, 07 Jan 2020 03:15:41 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:23:45 GMT
+# Tue, 07 Jan 2020 03:52:03 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:24:40 GMT
+# Tue, 07 Jan 2020 03:52:58 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:24:57 GMT
+# Tue, 07 Jan 2020 03:53:17 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:24:57 GMT
+# Tue, 07 Jan 2020 03:53:17 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:24:58 GMT
+# Tue, 07 Jan 2020 03:53:18 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:24:58 GMT
+# Tue, 07 Jan 2020 03:53:18 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:25:00 GMT
+# Tue, 07 Jan 2020 03:53:20 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 08:25:01 GMT
+# Tue, 07 Jan 2020 03:53:20 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 08:25:01 GMT
+# Tue, 07 Jan 2020 03:53:21 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 08:25:07 GMT
+# Tue, 07 Jan 2020 03:53:26 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 08:30:23 GMT
+# Tue, 07 Jan 2020 03:58:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:30:26 GMT
+# Tue, 07 Jan 2020 03:58:32 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 08:30:28 GMT
+# Tue, 07 Jan 2020 03:58:33 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 08:30:29 GMT
+# Tue, 07 Jan 2020 03:58:34 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 08:30:30 GMT
+# Tue, 07 Jan 2020 03:58:35 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 08:30:32 GMT
+# Tue, 07 Jan 2020 03:58:35 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2268,54 +2268,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:15:15 GMT  
 		Size: 21.3 MB (21261197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b44cc905eb5617a8f0ca832c9e6e75b7b0ad017276b12e382514255472c92ac6`  
-		Last Modified: Sat, 28 Dec 2019 22:15:11 GMT  
-		Size: 175.0 B  
+	-	`sha256:7799af941ea6a75fd00ff583cd811459d9aa1ebf9bbfe53c690c886f22090c7b`  
+		Last Modified: Tue, 07 Jan 2020 03:19:29 GMT  
+		Size: 177.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20c807c42e70030c30e917101596ae4fca33cb871c17ed70b407fabdab6407f6`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 1.7 KB (1735 bytes)  
+	-	`sha256:0c215c6dca6c1749986f1b9558c12d97e3b6165c10c6adcd3dcab432b34a1afa`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 1.7 KB (1736 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d2daca3564f0b33447ae50ecb0f696d01f7a0d978ee3f4c54a457e40eb2564c`  
-		Last Modified: Sun, 29 Dec 2019 08:31:53 GMT  
-		Size: 72.4 MB (72370638 bytes)  
+	-	`sha256:4d8f67953faffb1c4e8fffb1caa9217a25357829e1bbc3542405026627994e64`  
+		Last Modified: Tue, 07 Jan 2020 04:00:42 GMT  
+		Size: 72.4 MB (72370843 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbceba08b3ae8a67ecee1d09bfa7b5ecf059b821cd53f08129824e5c715e5924`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 1.2 MB (1243506 bytes)  
+	-	`sha256:99638607df68e0caa80b678073b2bc1ab6bed1e6e765fbd58b4988e0a71017b4`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 1.2 MB (1243561 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7004abe2f635ca99c1d50247c52337362198f2966a3d777c4487474455a47a8b`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
-		Size: 171.0 B  
+	-	`sha256:78977b4c3dfedf84fb120dbfa4e54e630246641aa0d57ede77b71d350a609774`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4728fba32caa05f6f15cef04709cc408c711e720c2f0ce107004cb96d0a30d76`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
+	-	`sha256:fe0a66cd3e3ab71fca594f8aff62bbba677266975b1a11f481c8ae2965e5ca51`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d84eb8a1cf6149f5694adf4278fb672ecaa1e96627fb01be1b96301cf75910f9`  
-		Last Modified: Sun, 29 Dec 2019 08:31:33 GMT  
-		Size: 2.5 MB (2463869 bytes)  
+	-	`sha256:4b76411581c7df4e2b0a02012d441a45291a6285744c35eb2744a942f54b7560`  
+		Last Modified: Tue, 07 Jan 2020 04:00:20 GMT  
+		Size: 2.5 MB (2463868 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:018eb68ca05e75c4a02ad8bb7a87619d30ac19a30fe8f44f8c97c9041a48c346`  
-		Last Modified: Sun, 29 Dec 2019 08:31:46 GMT  
-		Size: 60.7 MB (60700828 bytes)  
+	-	`sha256:c90217c80e5186c5e33b91dec56d4e46549d476630b91372e3cde2949a99ecc9`  
+		Last Modified: Tue, 07 Jan 2020 04:00:32 GMT  
+		Size: 60.7 MB (60713140 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e84d88f02930ef452aadf816206126a3afb75cb02623e1fb4b7f108e6e7df39f`  
-		Last Modified: Sun, 29 Dec 2019 08:31:31 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:06f9cac3d2e8e2c896bf7a5443a823b2123904ddde6f488b29980e9dcb3fa1d9`  
+		Last Modified: Tue, 07 Jan 2020 04:00:18 GMT  
+		Size: 2.1 KB (2051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4.13` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:d1048a63c89ff3a90bfd411261008c3b173b2b72606cc9140e1c1734b7940a55
+$ docker pull redmine@sha256:b7392b639b00caa21b2fbeadfc28ac4b28b459c3f8655d78802f65f580abe28d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **203.1 MB (203138440 bytes)**  
+-	Total Size: **203.1 MB (203145661 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0659aa0c0f4deb2c1b8542ab168a5e87d107edbfd37b7add088379aa12fe85ea`
+-	Image ID: `sha256:5e4004ebd93fb3c507e8e76949b496bb0862c205d5e632e91651f0ebbfde783b`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -2340,45 +2340,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 23:09:42 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 23:09:43 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 23:09:43 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 23:09:45 GMT
+# Tue, 07 Jan 2020 02:43:05 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:43:05 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:43:07 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 23:09:45 GMT
+# Tue, 07 Jan 2020 02:43:07 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:27:42 GMT
+# Tue, 07 Jan 2020 03:22:13 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:28:29 GMT
+# Tue, 07 Jan 2020 03:23:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:28:48 GMT
+# Tue, 07 Jan 2020 03:23:40 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:28:48 GMT
+# Tue, 07 Jan 2020 03:23:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:28:49 GMT
+# Tue, 07 Jan 2020 03:23:41 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:28:50 GMT
+# Tue, 07 Jan 2020 03:23:41 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:28:51 GMT
+# Tue, 07 Jan 2020 03:23:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 09:28:52 GMT
+# Tue, 07 Jan 2020 03:23:44 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 09:28:52 GMT
+# Tue, 07 Jan 2020 03:23:44 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 09:28:58 GMT
+# Tue, 07 Jan 2020 03:23:50 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 09:33:54 GMT
+# Tue, 07 Jan 2020 03:30:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:33:56 GMT
+# Tue, 07 Jan 2020 03:30:35 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 09:33:57 GMT
+# Tue, 07 Jan 2020 03:30:38 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 09:33:58 GMT
+# Tue, 07 Jan 2020 03:30:42 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 09:33:59 GMT
+# Tue, 07 Jan 2020 03:30:47 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 09:34:00 GMT
+# Tue, 07 Jan 2020 03:30:54 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2399,54 +2399,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:25:14 GMT  
 		Size: 21.9 MB (21879231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:085e2a054c5628aa6d20227a55cee14b80ba7cfd77d42ff607833aea03f57539`  
-		Last Modified: Sat, 28 Dec 2019 23:25:10 GMT  
+	-	`sha256:c771ed92dd7985dfe7f891a2a1dcd20a4924b1c897760f5a84805f5996ecfbe4`  
+		Last Modified: Tue, 07 Jan 2020 02:46:44 GMT  
 		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:281f22dfff6b554fcef38444769e8ec981f4263a12f2ca14108ccea70218324e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:54 GMT  
-		Size: 1.7 KB (1748 bytes)  
+	-	`sha256:2f143af2012a522002d49c8c5e35ad2f785ea557182fc369a45b1f83f18ed178`  
+		Last Modified: Tue, 07 Jan 2020 03:32:12 GMT  
+		Size: 1.8 KB (1752 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34d7995c60361e24fcfb98c3a8cb770d3217dd926d7ae9f717b7211199067c28`  
-		Last Modified: Sun, 29 Dec 2019 09:35:17 GMT  
-		Size: 78.8 MB (78781660 bytes)  
+	-	`sha256:7ae138bc962325d1988fa72ea2f6ee74ee8549c9a467873a8624a810371df69e`  
+		Last Modified: Tue, 07 Jan 2020 03:32:34 GMT  
+		Size: 78.8 MB (78782045 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5d230c3396636bdd8ad0d78b32988b98a290b6eecb6d365ab22fa49f9d0cb6ba`  
-		Last Modified: Sun, 29 Dec 2019 09:34:53 GMT  
-		Size: 1.2 MB (1228520 bytes)  
+	-	`sha256:f8add249b39c3d8ec3f40de3ca3f3fa8c28484688f18f819e44be255a154b9f6`  
+		Last Modified: Tue, 07 Jan 2020 03:32:12 GMT  
+		Size: 1.2 MB (1228475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3af9bff8b55b5c0cd16d119556906fb7110c3676e759d253e15f6dea91cb8722`  
-		Last Modified: Sun, 29 Dec 2019 09:34:52 GMT  
-		Size: 170.0 B  
+	-	`sha256:0f7b17f7c48aaa1d7dffac2d6c94b30b55b46051c58d9102d265a3e694d7a736`  
+		Last Modified: Tue, 07 Jan 2020 03:32:10 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29a986ab61f4fa19868f04ef091bc804b3f3d17d3df73fca3486b299673569bb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:51 GMT  
-		Size: 158.0 B  
+	-	`sha256:b0e80fe221a061826ce2e5104101ae09f094f093004bc6b7735d85ef712d7781`  
+		Last Modified: Tue, 07 Jan 2020 03:32:09 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:91f8761595264c56c95eb1676259c8ae05fd90ada2e779a3a78464c7e8ca4c4c`  
-		Last Modified: Sun, 29 Dec 2019 09:34:53 GMT  
-		Size: 2.5 MB (2463872 bytes)  
+	-	`sha256:1c5178963f7abb7582e65919deb0614e9014cb4d013df72194bb2d91201ceaf8`  
+		Last Modified: Tue, 07 Jan 2020 03:32:10 GMT  
+		Size: 2.5 MB (2463878 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10a75d1be52b09dd543aa094e96ac04cbebe88af46907c49f43a743cd0bbcc75`  
-		Last Modified: Sun, 29 Dec 2019 09:35:06 GMT  
-		Size: 61.7 MB (61685260 bytes)  
+	-	`sha256:247a387f118f77e7e8b09f6684752f927519e1dc4a9548d02897b2a6bc79d3f3`  
+		Last Modified: Tue, 07 Jan 2020 03:32:26 GMT  
+		Size: 61.7 MB (61692129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc7c3dda66630dd11faa6f348593814f5a9811960a0b041d174a7f31bf789106`  
-		Last Modified: Sun, 29 Dec 2019 09:34:52 GMT  
+	-	`sha256:311402aec172be869fec35542cf36f694a6722befc15a9fc6cbda449d568fcf8`  
+		Last Modified: Tue, 07 Jan 2020 03:32:09 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4.13` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:a34a3cdcc75829c565ecee078913ec189a73a02f7e46a00e43b66c25b3cc7e25
+$ docker pull redmine@sha256:6d477efde23969831b038b436d966deb4165dd7fd3c0da1c7dbca8782dab030b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **212.7 MB (212743899 bytes)**  
+-	Total Size: **212.8 MB (212752377 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:255a7a6d207ea7eb7e7e0c4935088c7bfcd5c762a3b5a547912a8d10e1991a43`
+-	Image ID: `sha256:291adcdcad39466b6dcde1bda6fb2b26ab5c28d882b82109ab3165bdbe7060cf`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -2471,45 +2471,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 16:30:36 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 16:30:36 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 16:30:37 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 16:30:38 GMT
+# Tue, 07 Jan 2020 02:40:06 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:40:06 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:40:07 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 16:30:38 GMT
+# Tue, 07 Jan 2020 02:40:07 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:41:29 GMT
+# Tue, 07 Jan 2020 03:07:34 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:42:17 GMT
+# Tue, 07 Jan 2020 03:08:03 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:42:32 GMT
+# Tue, 07 Jan 2020 03:08:12 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:42:33 GMT
+# Tue, 07 Jan 2020 03:08:13 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:13 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:14 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 00:42:34 GMT
+# Tue, 07 Jan 2020 03:08:14 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 00:42:39 GMT
+# Tue, 07 Jan 2020 03:08:17 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 00:47:29 GMT
+# Tue, 07 Jan 2020 03:10:55 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:47:29 GMT
+# Tue, 07 Jan 2020 03:10:55 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 00:47:30 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 00:47:31 GMT
+# Tue, 07 Jan 2020 03:10:56 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2530,54 +2530,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:46:27 GMT  
 		Size: 21.5 MB (21545961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056d4923ac5e1933dafba339f876885900d1066d0e29dd1cbc6d1ba3ee096e7c`  
-		Last Modified: Sat, 28 Dec 2019 16:46:20 GMT  
-		Size: 143.0 B  
+	-	`sha256:33387c53c9ce779731032ff2f975ff7bbf0a16cd0551530997c664fec29ffb9a`  
+		Last Modified: Tue, 07 Jan 2020 02:42:33 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbf23a1087d01d3fa955e3aba0661e29b7abf3862adfce99a38eef6d68ab1805`  
-		Last Modified: Sun, 29 Dec 2019 00:48:55 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:ffdbef8b208533e2164c865470a9f1eb7ff708ecf888e79a7a884f20f5d93a45`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51042fbcd941a7922247c7dc277b71ae99338988063a179fd5211a8d0c4aea4e`  
-		Last Modified: Sun, 29 Dec 2019 00:49:40 GMT  
-		Size: 81.6 MB (81574712 bytes)  
+	-	`sha256:57ab5be34e7c4dc9dacc59a617b7f06eb1eb3ad229c4eb52da844415056b5f70`  
+		Last Modified: Tue, 07 Jan 2020 03:12:17 GMT  
+		Size: 81.6 MB (81574487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b358a609eed190215ef42f06286c022f7ed44e2fecdcaa293b1d4981a58128e`  
-		Last Modified: Sun, 29 Dec 2019 00:48:55 GMT  
-		Size: 1.3 MB (1261089 bytes)  
+	-	`sha256:902840c7a384de1512dc1b47ecb4131fd83059a1ec3573014a974cecc6de24dd`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 1.3 MB (1261121 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1d78ba93f7d114b0b3c2b73991c8aa3a090a9e8c3bbbe4919ee0388081cb995`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
-		Size: 137.0 B  
+	-	`sha256:1807d33df93b1be2b8457093bccf02a94b6497f02105ec86c2408ac7cd8feccf`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:144d0e6cd7412edd7579fbe673c46955c66f6985d1dd9cf8a481453ed5054d30`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
+	-	`sha256:2991d075bf2bd2e85f753f498185dd38bfec5885dc0da5ad01c74c1e0d34ee1e`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b93350405968b1cea71e3249bbbf411f0e2fbe43f01fb2be1060df9c32baec5`  
-		Last Modified: Sun, 29 Dec 2019 00:48:56 GMT  
-		Size: 2.5 MB (2463473 bytes)  
+	-	`sha256:50a7f65bcaf193982883ff7c676cf3acd30476b7bf836c6fa410fd0bc7b7f645`  
+		Last Modified: Tue, 07 Jan 2020 03:11:56 GMT  
+		Size: 2.5 MB (2463470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97dbf9909bcc9496cfb594c71825064f0673ce3c5f8064ae23d7c0d6e41b6dd8`  
-		Last Modified: Sun, 29 Dec 2019 00:49:21 GMT  
-		Size: 60.9 MB (60941242 bytes)  
+	-	`sha256:cc7b59f76cad543599a03a16562ae67b5752a7ddbba7208f42587d5bf23305be`  
+		Last Modified: Tue, 07 Jan 2020 03:12:07 GMT  
+		Size: 60.9 MB (60949908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12a385a1b150edec093b17d62ca842e5b94ef5e1c179a31fee0f4dc110d442e6`  
-		Last Modified: Sun, 29 Dec 2019 00:48:52 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:1098c974b5918d1236f291e16a1198dcd586e94c0bc63161025ad7a094109f7b`  
+		Last Modified: Tue, 07 Jan 2020 03:11:54 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4.13` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:ff8aac014587804d20eb205cd2d275bd372a466061c638970e0d381965ee5397
+$ docker pull redmine@sha256:4a7ce0173c86625baced725dfcd697b2263b404365342409b5a8d8a4e5676778
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **218.5 MB (218497700 bytes)**  
+-	Total Size: **218.5 MB (218505036 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:225b70be7f0639025bd7f8e977694f346196f24bd354a8e530907bdccffbd349`
+-	Image ID: `sha256:10d2e6afdede677beb28b8a1b07eb4eebf76678f95a87c241d2856975bc68b33`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -2602,45 +2602,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 05:17:01 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 05:17:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 05:17:08 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 05:17:12 GMT
+# Tue, 07 Jan 2020 02:22:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:22:46 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:22:55 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 05:17:15 GMT
+# Tue, 07 Jan 2020 02:22:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:47:53 GMT
+# Tue, 07 Jan 2020 03:16:32 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:49:36 GMT
+# Tue, 07 Jan 2020 03:18:51 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:50:11 GMT
+# Tue, 07 Jan 2020 03:19:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:50:13 GMT
+# Tue, 07 Jan 2020 03:19:36 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:50:15 GMT
+# Tue, 07 Jan 2020 03:19:38 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:50:17 GMT
+# Tue, 07 Jan 2020 03:19:41 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:50:21 GMT
+# Tue, 07 Jan 2020 03:19:45 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 05:50:23 GMT
+# Tue, 07 Jan 2020 03:19:47 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 05:50:25 GMT
+# Tue, 07 Jan 2020 03:19:49 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 05:50:33 GMT
+# Tue, 07 Jan 2020 03:19:56 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 05:57:51 GMT
+# Tue, 07 Jan 2020 03:28:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:57:55 GMT
+# Tue, 07 Jan 2020 03:28:41 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 05:57:56 GMT
+# Tue, 07 Jan 2020 03:28:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 05:57:58 GMT
+# Tue, 07 Jan 2020 03:28:49 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 05:58:00 GMT
+# Tue, 07 Jan 2020 03:28:54 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 05:58:02 GMT
+# Tue, 07 Jan 2020 03:28:59 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2661,54 +2661,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:31:10 GMT  
 		Size: 22.5 MB (22518813 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12d308668ee4bde2169b385246d0328cda3b886a23f79034792c60f2cf8cddd3`  
-		Last Modified: Sat, 28 Dec 2019 05:31:07 GMT  
-		Size: 176.0 B  
+	-	`sha256:7f17dc85665a35195e0378cddb30197da86e7d824c5330302c8b74d2dc7bd254`  
+		Last Modified: Tue, 07 Jan 2020 02:30:07 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c662ad3ac05901d1234c3726938dc76463d4689461c44258b2296fe821d0fba6`  
-		Last Modified: Sat, 28 Dec 2019 05:59:23 GMT  
-		Size: 1.7 KB (1743 bytes)  
+	-	`sha256:d7ff712870942f8f279111b569dd620512940f713de5a18702909c666b82283d`  
+		Last Modified: Tue, 07 Jan 2020 03:31:00 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:186cb74495e1db9ce740453c35aa6bd5d7bc70cf8e5bc9b7fd1152c5b95ffd5b`  
-		Last Modified: Sat, 28 Dec 2019 05:59:42 GMT  
-		Size: 86.8 MB (86837700 bytes)  
+	-	`sha256:815827d563f9f23bf0c3e35c713e3b20f90ccdb1d3d9bc9411efe6507d2c229f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:24 GMT  
+		Size: 86.8 MB (86837755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5472fe7f907a63065603a1950a8a64283756eb1a0a491da2b87de66f658faf9`  
-		Last Modified: Sat, 28 Dec 2019 05:59:23 GMT  
-		Size: 1.2 MB (1217994 bytes)  
+	-	`sha256:f077a99d3a54521280a74467d75d74dc098e16cc5401d15524c42adce16819a7`  
+		Last Modified: Tue, 07 Jan 2020 03:31:00 GMT  
+		Size: 1.2 MB (1218174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8031146fd4eaf15324aa96b01bcc2e2611c86d3c47525f2cea77aef1a4efa23`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
-		Size: 170.0 B  
+	-	`sha256:c0de3d5e5366fabf9fdc6c1f4eb2c2f92afde26d760575faf726ff770be38799`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f0a8013a6ed1755d3d6ba1c569fff201ea4d87e00c32089afe11b5b582dbe78`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
+	-	`sha256:374d354d8b463223158de295e4a199502ea29b7f1b51c490c7cdd3e01e560cd7`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1308272e0c05172bd35ccbafb9cbe63168c3c3c55fd7ee040de6c7446f51956f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:21 GMT  
-		Size: 2.5 MB (2463877 bytes)  
+	-	`sha256:931d1fd1f3723fb7145a7656f58f20ae8c7267107e777d38e479d92163e07abd`  
+		Last Modified: Tue, 07 Jan 2020 03:30:57 GMT  
+		Size: 2.5 MB (2463873 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:565c6bf1e6b45da1a238816f3ef3c696def7b7d6f4e65e01c97ced96d92a4dfe`  
-		Last Modified: Sat, 28 Dec 2019 05:59:30 GMT  
-		Size: 62.2 MB (62248397 bytes)  
+	-	`sha256:6bafa23919eae122474021d8f2fd9c056f2746325bc49b87a9d538cee4982f95`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 62.3 MB (62255490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b692c2bbf10c38e8567a275330971cfdb96b24c7d79dc310b81dcfc7acee9f1`  
-		Last Modified: Sat, 28 Dec 2019 05:59:20 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:cdbc1e3ab6e7dbfe966be97627b51faab13232d19d815b290241ed5b904c1110`  
+		Last Modified: Tue, 07 Jan 2020 03:30:56 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:3.4.13` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:9f1dc665428d341f9ca83e6609c2e568fc28290be7bf2dfa5767fecdede23bde
+$ docker pull redmine@sha256:48332d5aa30ab7dcbbba476598a5e47cbdfa2773d476d3d378c3334e932f1f5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.5 MB (202472290 bytes)**  
+-	Total Size: **202.5 MB (202480038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:eb74cc30e41a4817544979f0c1d7dffc228b2a313b5cae81239e77df24780b3b`
+-	Image ID: `sha256:4d1835cc8e7815e892e963c98ab382007c7b15dfb460c44afb228c52e5b4d8ba`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -2733,45 +2733,45 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:24:13 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:24:13 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:24:13 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:24:14 GMT
+# Tue, 07 Jan 2020 02:52:44 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:52:44 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:52:45 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:24:14 GMT
+# Tue, 07 Jan 2020 02:52:45 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:28:04 GMT
+# Tue, 07 Jan 2020 03:18:01 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:28:27 GMT
+# Tue, 07 Jan 2020 03:18:25 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:28:51 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:39 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 14:28:52 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sat, 28 Dec 2019 14:28:53 GMT
+# Tue, 07 Jan 2020 03:18:40 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sat, 28 Dec 2019 14:28:56 GMT
+# Tue, 07 Jan 2020 03:18:43 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 14:32:01 GMT
+# Tue, 07 Jan 2020 03:21:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:39 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 14:32:02 GMT
+# Tue, 07 Jan 2020 03:21:40 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 14:32:03 GMT
+# Tue, 07 Jan 2020 03:21:40 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2792,47 +2792,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:31:50 GMT  
 		Size: 22.2 MB (22151386 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0d5f4b7e1579339117bfb37333f8fcfc1abf7fec81882a6a0258fe8543544e8`  
-		Last Modified: Sat, 28 Dec 2019 10:31:48 GMT  
+	-	`sha256:f800df51f5ddb8b08e78de4400cfd42c3727dce20ae3486f49436b6784397a86`  
+		Last Modified: Tue, 07 Jan 2020 02:54:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb1fec0204177c5983a700691da62ce8bce6b51cc7a50e5d9701b81598a7775`  
-		Last Modified: Sat, 28 Dec 2019 14:32:33 GMT  
-		Size: 1.7 KB (1742 bytes)  
+	-	`sha256:a40bb45dcd93a69ce0f15edb400d7fc7adfd1147c7e5045fea054a83a0412111`  
+		Last Modified: Tue, 07 Jan 2020 03:22:31 GMT  
+		Size: 1.7 KB (1747 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59132cea93619bccdd5e47df19be07e0a22b4616c7f0148bad512f599fe1951b`  
-		Last Modified: Sat, 28 Dec 2019 14:32:44 GMT  
-		Size: 77.9 MB (77925143 bytes)  
+	-	`sha256:7ede9592d5ee2f8fd41644381ad4c9c29f192968b3e7688520f7bf7ce5e686c7`  
+		Last Modified: Tue, 07 Jan 2020 03:22:41 GMT  
+		Size: 77.9 MB (77926322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba8ac2a08b26c20e80994c00b95a5406ee362dd150e7aa44c1518311c16f1c63`  
-		Last Modified: Sat, 28 Dec 2019 14:32:33 GMT  
-		Size: 1.3 MB (1283285 bytes)  
+	-	`sha256:8b3570effb4a3e64252ae722ca089dbbda4b5afd95b1c8888d96cb698c4f2d6f`  
+		Last Modified: Tue, 07 Jan 2020 03:22:30 GMT  
+		Size: 1.3 MB (1283294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c897acc4b1f1686e21cb54f96134afbf4c6e7396df67965a25989f0e0f85b39f`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
+	-	`sha256:5f77103fc90919a28c05527e4b3461b0ea30b02987ab3f57f465f86b65bb0355`  
+		Last Modified: Tue, 07 Jan 2020 03:22:28 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8c0d670b5d47705bef6e9ee6211876609d5d55994de22bccb933981823e54fd`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 129.0 B  
+	-	`sha256:4c1967cf2b222f7663b1aca09904f2ae566af10cd1add3a6738b3ad1302a803c`  
+		Last Modified: Tue, 07 Jan 2020 03:22:29 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:399b5c16294d3e0a21715d04279a4e72deec5b2cf9621d30d5bb323151718aa4`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 2.5 MB (2463471 bytes)  
+	-	`sha256:f2865094d82f0cf3a041bdae1775bedf308f1716f595f5519dc30c348d7e4348`  
+		Last Modified: Tue, 07 Jan 2020 03:22:29 GMT  
+		Size: 2.5 MB (2463470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0be788f097304a3f2f506270047c241b8d362a9b055420d53ba2dfbf1671e18`  
-		Last Modified: Sat, 28 Dec 2019 14:32:38 GMT  
-		Size: 62.1 MB (62145066 bytes)  
+	-	`sha256:6da42df059f8ff475477c5f70670643c733f2fbc88f10237c46b4aa9dbe31417`  
+		Last Modified: Tue, 07 Jan 2020 03:22:35 GMT  
+		Size: 62.2 MB (62151623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd9e58bedec6c03bde60019c24f9d1582314ad1c990ff05adaef54f13c927152`  
-		Last Modified: Sat, 28 Dec 2019 14:32:32 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:71fc4bd173e7ca8e651e5418dcd5034e021d08444f0d5d80f901f4c80549f039`  
+		Last Modified: Tue, 07 Jan 2020 03:22:28 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3.4.13-alpine`
 
 ```console
-$ docker pull redmine@sha256:ecb4b4999f7d37264cc49f1424e21c29568ecaf61ce8076967bca5fcf7737a57
+$ docker pull redmine@sha256:d1c8cfaf1d836a6a87df3aebfdfe656d1aa2d00e40bf180aef3f8d6e6b29a3f1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2842,14 +2842,14 @@ $ docker pull redmine@sha256:ecb4b4999f7d37264cc49f1424e21c29568ecaf61ce8076967b
 ### `redmine:3.4.13-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:d7ee82870579c4dac0df531988616ba765f8e3413d99a467496e46ca3828687b
+$ docker pull redmine@sha256:5b6e38dabe1fac398f23e14ae5d1356daab3aea8b5dca98b346f9f50dd640a23
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.7 MB (158726216 bytes)**  
+-	Total Size: **157.7 MB (157746294 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1637c4df87e8ef34bc9a13e069bc701e623280b089298d158763fe05398767f6`
+-	Image ID: `sha256:bf1878f03b06943d8edd0e525585fe51365cbff7dfb905f5350f4ecda0faf1da`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -2874,43 +2874,43 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:17:54 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:17:54 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:17:54 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:17:55 GMT
+# Tue, 07 Jan 2020 02:21:48 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:48 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:49 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:17:55 GMT
+# Tue, 07 Jan 2020 02:21:49 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:19:00 GMT
+# Tue, 07 Jan 2020 02:56:20 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:19:14 GMT
+# Tue, 07 Jan 2020 02:56:28 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:19:14 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Fri, 20 Dec 2019 20:50:55 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 ENV REDMINE_VERSION=3.4.13
-# Fri, 20 Dec 2019 20:50:55 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Fri, 20 Dec 2019 20:50:59 GMT
+# Tue, 07 Jan 2020 02:56:34 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Fri, 20 Dec 2019 20:52:40 GMT
+# Tue, 07 Jan 2020 02:58:18 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 VOLUME [/usr/src/redmine/files]
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 EXPOSE 3000
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:20 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -2931,43 +2931,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:19:18 GMT  
 		Size: 22.8 MB (22821666 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01bffc3c4cd48352111d40a39696c9312cad871602c37c606c6ed836b264bc9`  
-		Last Modified: Mon, 21 Oct 2019 22:19:15 GMT  
-		Size: 140.0 B  
+	-	`sha256:1d895efade31778dfc201e5f71f131307c75f086f4fbadb2fafefb06ec21dc40`  
+		Last Modified: Tue, 07 Jan 2020 02:24:07 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b93518721e462ec0c04937bea423be1ec9a5d12b5b9431dc342fc2b1805a4d78`  
-		Last Modified: Tue, 22 Oct 2019 00:23:05 GMT  
-		Size: 1.2 KB (1213 bytes)  
+	-	`sha256:eef03bd8a224cc9372aeb8ba6d5edb935b7fe19fca827d6588898af539084316`  
+		Last Modified: Tue, 07 Jan 2020 03:01:06 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6489848611e0aa67d9d39e5ace2857ac855d962e6da7f1f325bf3061e78c44a6`  
-		Last Modified: Tue, 22 Oct 2019 00:23:20 GMT  
-		Size: 65.7 MB (65707047 bytes)  
+	-	`sha256:6f7a9de01e0a8eccb653a9e2b072201a9fa078383c9a693e2e2831c360213a4a`  
+		Last Modified: Tue, 07 Jan 2020 03:01:24 GMT  
+		Size: 65.7 MB (65727276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d23957730fa68af54485d0a3f725ecf25320ef76bc42aaef5e27f28c603c73d`  
-		Last Modified: Tue, 22 Oct 2019 00:23:04 GMT  
+	-	`sha256:79e302037548c4c1b81925ed4412b5e693b075f83641f7d58c552a6b31dcfec3`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
 		Size: 135.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:42e6b2f1c717bd1b7de90b219651bcf1f0b15e8a8e8e58749a4808ba34842595`  
-		Last Modified: Tue, 22 Oct 2019 00:23:04 GMT  
+	-	`sha256:a872a7351f984ad5ac591a6a20c0db7bb3180172c08d59ede427c0bada673c45`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82c6022309c375ca1667640e4868e21d378927616dd76c3fae36df63fd91e32f`  
-		Last Modified: Fri, 20 Dec 2019 20:54:03 GMT  
-		Size: 2.5 MB (2464147 bytes)  
+	-	`sha256:6908b9b925fca1fc9cb425f3dae666d123523c4d7f7edb25c2b749a7cf521b39`  
+		Last Modified: Tue, 07 Jan 2020 03:01:08 GMT  
+		Size: 2.5 MB (2464377 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbac9764861b67739e850de3e79e5c112644e3f082d72d0da72a4e8a8f175ea`  
-		Last Modified: Fri, 20 Dec 2019 20:54:09 GMT  
-		Size: 63.9 MB (63912070 bytes)  
+	-	`sha256:5b700584a938a09b2a418993c70d63849d1fd1eaa45067b1585ed8bb3c6b4ca6`  
+		Last Modified: Tue, 07 Jan 2020 03:01:16 GMT  
+		Size: 62.9 MB (62911680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3806e1d58ad67ccee9408de3cc681b504974e6b0a1b70cd287056ff9d891930`  
-		Last Modified: Fri, 20 Dec 2019 20:54:02 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:ac8325e5ef9c897382cb5ad3a1f4bd7adf6503675363963f094d8811f8a3d872`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3.4.13-passenger`
 
 ```console
-$ docker pull redmine@sha256:3e85ddd2d36bfd2de0e58b3d7d8d8d44efff230ff0f3774de94543cb26ec84d5
+$ docker pull redmine@sha256:a388861eb4a97dd783d32ef77a308499164e96fb7bc74fab70188a5c6ed1d9a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2977,14 +2977,14 @@ $ docker pull redmine@sha256:3e85ddd2d36bfd2de0e58b3d7d8d8d44efff230ff0f3774de94
 ### `redmine:3.4.13-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:185e62d805487a92eb65c6b507555517554117c86993dd2bfb2c321462c960f6
+$ docker pull redmine@sha256:2c42b6e2b2e4093bc31549faed36f4d8636089230662bb69c313d382dc99169f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **232.2 MB (232150423 bytes)**  
+-	Total Size: **232.1 MB (232149814 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e01bdbd1c479f821690e883e84115bb5955c230abeb481e90b66747d5e47c055`
+-	Image ID: `sha256:459b387f60648cbd190c7fffe1d4ea70915596739ad11fc046f713c29aebaf02`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -3009,55 +3009,55 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:09:05 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:30 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:30 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:15:01 GMT
+# Tue, 07 Jan 2020 02:52:41 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:15:25 GMT
+# Tue, 07 Jan 2020 02:53:05 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 10:15:35 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 10:15:38 GMT
+# Tue, 07 Jan 2020 02:53:21 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:43 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sun, 29 Dec 2019 10:18:15 GMT
+# Tue, 07 Jan 2020 02:55:55 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Sun, 29 Dec 2019 10:18:32 GMT
+# Tue, 07 Jan 2020 02:56:11 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -3078,55 +3078,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:19:25 GMT  
 		Size: 22.0 MB (22006052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf7ed038d9fa741fda2e8ddeb01753ce707e0cae7dfb1e0afdd5a8abef3cc626`  
-		Last Modified: Sat, 28 Dec 2019 15:19:23 GMT  
-		Size: 141.0 B  
+	-	`sha256:60fd0e5c830a620f7adbe8dbf517f558bd629236c05e30a81562e627d41af933`  
+		Last Modified: Tue, 07 Jan 2020 02:23:51 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cce90543a3876fddd4438d1b6284a95c909e6da35360ee9bcb045aabc415dece`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
+	-	`sha256:dda27aa91ecfc255aa8888f23781a4fd6c446c38b13fcf945d933d697868399d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
 		Size: 1.7 KB (1745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbac23a354a345a4bfe16bd0fec71ddeed231ad669e8c004e05248f9c74a08b7`  
-		Last Modified: Sun, 29 Dec 2019 10:19:34 GMT  
-		Size: 80.2 MB (80161087 bytes)  
+	-	`sha256:3047b43ab05eab0353c1e221caf7d98300915f73d638eeb5fc32c8c542f9f979`  
+		Last Modified: Tue, 07 Jan 2020 03:00:49 GMT  
+		Size: 80.2 MB (80161214 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c396033fc30729fd4f2b9091fb004eb4a1a093ed769bbfd9e8d50f1df1454d4c`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
-		Size: 1.3 MB (1296459 bytes)  
+	-	`sha256:d379f55b07e46100b9811c56dc34b9488eeb5029cd6d5b5aa1d0d952db4585f4`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 1.3 MB (1296456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12f9c99bb2cf922a43bdb2bacf16d1d7a8ad79e0665fa80bb81ae87f73c139ca`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d615b50742767a48c5a2f96cb4848af939353414d875d60e5bfd09828138869`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35cb577e4c2912f79466eda9710bbe2a608b7c7dab640583ac548006f0fedb8b`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
+	-	`sha256:bb64db6c7eb6d20bd9906e4c0a451b94d1f042f1e8724e096a58608af75e4570`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3328121c04bb938bfe72be534108a4f0a4efb277a0fa57d1153250be2fe414eb`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.5 MB (2463470 bytes)  
+	-	`sha256:26258bfd510bef8a8d430c8304327ee816f16c1d11e96b4e9d3127b00eb7611a`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 2.5 MB (2463473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6439a252658249aa849c9671dd68793631e88f66e655db4dc2d45a317a19a8ae`  
-		Last Modified: Sun, 29 Dec 2019 10:19:27 GMT  
-		Size: 61.7 MB (61731823 bytes)  
+	-	`sha256:4b80fabc89fcfab19c12ce28cfa8af8c1b8f3ca9195bd784948130522613e288`  
+		Last Modified: Tue, 07 Jan 2020 03:00:40 GMT  
+		Size: 61.7 MB (61731033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff022abc9fda760e638ca6d18ff098b96266a65cc62d717fd48fb5c018a8eb1`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:c00267155666c541f482465d85c8c226c984e7025799e47f969b7e792eb95c19`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e20f4e1dd6abd54fa473e7c82b4d7254eb3e8d014a0dc6c126feecb417b298e9`  
-		Last Modified: Sun, 29 Dec 2019 10:19:42 GMT  
-		Size: 19.9 MB (19937243 bytes)  
+	-	`sha256:df3fcb86695055e0bf06c52d01273c3ba111408280b8f2f936cc79c24ddbea34`  
+		Last Modified: Tue, 07 Jan 2020 03:01:00 GMT  
+		Size: 19.9 MB (19937294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bbbcd1a535f34c7e534705ded1473fb4f3c76119f4de43e5cf318da1bbb291e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:40 GMT  
-		Size: 4.9 MB (4917848 bytes)  
+	-	`sha256:4ca670d3fe69455761a1a8ef15ce410b97f7f24e98790191f968fcae09c899e9`  
+		Last Modified: Tue, 07 Jan 2020 03:00:55 GMT  
+		Size: 4.9 MB (4917852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3.4-alpine`
 
 ```console
-$ docker pull redmine@sha256:ecb4b4999f7d37264cc49f1424e21c29568ecaf61ce8076967bca5fcf7737a57
+$ docker pull redmine@sha256:d1c8cfaf1d836a6a87df3aebfdfe656d1aa2d00e40bf180aef3f8d6e6b29a3f1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3136,14 +3136,14 @@ $ docker pull redmine@sha256:ecb4b4999f7d37264cc49f1424e21c29568ecaf61ce8076967b
 ### `redmine:3.4-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:d7ee82870579c4dac0df531988616ba765f8e3413d99a467496e46ca3828687b
+$ docker pull redmine@sha256:5b6e38dabe1fac398f23e14ae5d1356daab3aea8b5dca98b346f9f50dd640a23
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.7 MB (158726216 bytes)**  
+-	Total Size: **157.7 MB (157746294 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1637c4df87e8ef34bc9a13e069bc701e623280b089298d158763fe05398767f6`
+-	Image ID: `sha256:bf1878f03b06943d8edd0e525585fe51365cbff7dfb905f5350f4ecda0faf1da`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -3168,43 +3168,43 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:17:54 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:17:54 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:17:54 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:17:55 GMT
+# Tue, 07 Jan 2020 02:21:48 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:48 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:49 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:17:55 GMT
+# Tue, 07 Jan 2020 02:21:49 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:19:00 GMT
+# Tue, 07 Jan 2020 02:56:20 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:19:14 GMT
+# Tue, 07 Jan 2020 02:56:28 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:19:14 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Fri, 20 Dec 2019 20:50:55 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 ENV REDMINE_VERSION=3.4.13
-# Fri, 20 Dec 2019 20:50:55 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Fri, 20 Dec 2019 20:50:59 GMT
+# Tue, 07 Jan 2020 02:56:34 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Fri, 20 Dec 2019 20:52:40 GMT
+# Tue, 07 Jan 2020 02:58:18 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 VOLUME [/usr/src/redmine/files]
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 EXPOSE 3000
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:20 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -3225,43 +3225,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:19:18 GMT  
 		Size: 22.8 MB (22821666 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01bffc3c4cd48352111d40a39696c9312cad871602c37c606c6ed836b264bc9`  
-		Last Modified: Mon, 21 Oct 2019 22:19:15 GMT  
-		Size: 140.0 B  
+	-	`sha256:1d895efade31778dfc201e5f71f131307c75f086f4fbadb2fafefb06ec21dc40`  
+		Last Modified: Tue, 07 Jan 2020 02:24:07 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b93518721e462ec0c04937bea423be1ec9a5d12b5b9431dc342fc2b1805a4d78`  
-		Last Modified: Tue, 22 Oct 2019 00:23:05 GMT  
-		Size: 1.2 KB (1213 bytes)  
+	-	`sha256:eef03bd8a224cc9372aeb8ba6d5edb935b7fe19fca827d6588898af539084316`  
+		Last Modified: Tue, 07 Jan 2020 03:01:06 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6489848611e0aa67d9d39e5ace2857ac855d962e6da7f1f325bf3061e78c44a6`  
-		Last Modified: Tue, 22 Oct 2019 00:23:20 GMT  
-		Size: 65.7 MB (65707047 bytes)  
+	-	`sha256:6f7a9de01e0a8eccb653a9e2b072201a9fa078383c9a693e2e2831c360213a4a`  
+		Last Modified: Tue, 07 Jan 2020 03:01:24 GMT  
+		Size: 65.7 MB (65727276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d23957730fa68af54485d0a3f725ecf25320ef76bc42aaef5e27f28c603c73d`  
-		Last Modified: Tue, 22 Oct 2019 00:23:04 GMT  
+	-	`sha256:79e302037548c4c1b81925ed4412b5e693b075f83641f7d58c552a6b31dcfec3`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
 		Size: 135.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:42e6b2f1c717bd1b7de90b219651bcf1f0b15e8a8e8e58749a4808ba34842595`  
-		Last Modified: Tue, 22 Oct 2019 00:23:04 GMT  
+	-	`sha256:a872a7351f984ad5ac591a6a20c0db7bb3180172c08d59ede427c0bada673c45`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82c6022309c375ca1667640e4868e21d378927616dd76c3fae36df63fd91e32f`  
-		Last Modified: Fri, 20 Dec 2019 20:54:03 GMT  
-		Size: 2.5 MB (2464147 bytes)  
+	-	`sha256:6908b9b925fca1fc9cb425f3dae666d123523c4d7f7edb25c2b749a7cf521b39`  
+		Last Modified: Tue, 07 Jan 2020 03:01:08 GMT  
+		Size: 2.5 MB (2464377 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbac9764861b67739e850de3e79e5c112644e3f082d72d0da72a4e8a8f175ea`  
-		Last Modified: Fri, 20 Dec 2019 20:54:09 GMT  
-		Size: 63.9 MB (63912070 bytes)  
+	-	`sha256:5b700584a938a09b2a418993c70d63849d1fd1eaa45067b1585ed8bb3c6b4ca6`  
+		Last Modified: Tue, 07 Jan 2020 03:01:16 GMT  
+		Size: 62.9 MB (62911680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3806e1d58ad67ccee9408de3cc681b504974e6b0a1b70cd287056ff9d891930`  
-		Last Modified: Fri, 20 Dec 2019 20:54:02 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:ac8325e5ef9c897382cb5ad3a1f4bd7adf6503675363963f094d8811f8a3d872`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3.4-passenger`
 
 ```console
-$ docker pull redmine@sha256:3e85ddd2d36bfd2de0e58b3d7d8d8d44efff230ff0f3774de94543cb26ec84d5
+$ docker pull redmine@sha256:a388861eb4a97dd783d32ef77a308499164e96fb7bc74fab70188a5c6ed1d9a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3271,14 +3271,14 @@ $ docker pull redmine@sha256:3e85ddd2d36bfd2de0e58b3d7d8d8d44efff230ff0f3774de94
 ### `redmine:3.4-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:185e62d805487a92eb65c6b507555517554117c86993dd2bfb2c321462c960f6
+$ docker pull redmine@sha256:2c42b6e2b2e4093bc31549faed36f4d8636089230662bb69c313d382dc99169f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **232.2 MB (232150423 bytes)**  
+-	Total Size: **232.1 MB (232149814 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e01bdbd1c479f821690e883e84115bb5955c230abeb481e90b66747d5e47c055`
+-	Image ID: `sha256:459b387f60648cbd190c7fffe1d4ea70915596739ad11fc046f713c29aebaf02`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -3303,55 +3303,55 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:09:05 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:30 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:30 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:15:01 GMT
+# Tue, 07 Jan 2020 02:52:41 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:15:25 GMT
+# Tue, 07 Jan 2020 02:53:05 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 10:15:35 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 10:15:38 GMT
+# Tue, 07 Jan 2020 02:53:21 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:43 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sun, 29 Dec 2019 10:18:15 GMT
+# Tue, 07 Jan 2020 02:55:55 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Sun, 29 Dec 2019 10:18:32 GMT
+# Tue, 07 Jan 2020 02:56:11 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -3372,55 +3372,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:19:25 GMT  
 		Size: 22.0 MB (22006052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf7ed038d9fa741fda2e8ddeb01753ce707e0cae7dfb1e0afdd5a8abef3cc626`  
-		Last Modified: Sat, 28 Dec 2019 15:19:23 GMT  
-		Size: 141.0 B  
+	-	`sha256:60fd0e5c830a620f7adbe8dbf517f558bd629236c05e30a81562e627d41af933`  
+		Last Modified: Tue, 07 Jan 2020 02:23:51 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cce90543a3876fddd4438d1b6284a95c909e6da35360ee9bcb045aabc415dece`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
+	-	`sha256:dda27aa91ecfc255aa8888f23781a4fd6c446c38b13fcf945d933d697868399d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
 		Size: 1.7 KB (1745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbac23a354a345a4bfe16bd0fec71ddeed231ad669e8c004e05248f9c74a08b7`  
-		Last Modified: Sun, 29 Dec 2019 10:19:34 GMT  
-		Size: 80.2 MB (80161087 bytes)  
+	-	`sha256:3047b43ab05eab0353c1e221caf7d98300915f73d638eeb5fc32c8c542f9f979`  
+		Last Modified: Tue, 07 Jan 2020 03:00:49 GMT  
+		Size: 80.2 MB (80161214 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c396033fc30729fd4f2b9091fb004eb4a1a093ed769bbfd9e8d50f1df1454d4c`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
-		Size: 1.3 MB (1296459 bytes)  
+	-	`sha256:d379f55b07e46100b9811c56dc34b9488eeb5029cd6d5b5aa1d0d952db4585f4`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 1.3 MB (1296456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12f9c99bb2cf922a43bdb2bacf16d1d7a8ad79e0665fa80bb81ae87f73c139ca`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d615b50742767a48c5a2f96cb4848af939353414d875d60e5bfd09828138869`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35cb577e4c2912f79466eda9710bbe2a608b7c7dab640583ac548006f0fedb8b`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
+	-	`sha256:bb64db6c7eb6d20bd9906e4c0a451b94d1f042f1e8724e096a58608af75e4570`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3328121c04bb938bfe72be534108a4f0a4efb277a0fa57d1153250be2fe414eb`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.5 MB (2463470 bytes)  
+	-	`sha256:26258bfd510bef8a8d430c8304327ee816f16c1d11e96b4e9d3127b00eb7611a`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 2.5 MB (2463473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6439a252658249aa849c9671dd68793631e88f66e655db4dc2d45a317a19a8ae`  
-		Last Modified: Sun, 29 Dec 2019 10:19:27 GMT  
-		Size: 61.7 MB (61731823 bytes)  
+	-	`sha256:4b80fabc89fcfab19c12ce28cfa8af8c1b8f3ca9195bd784948130522613e288`  
+		Last Modified: Tue, 07 Jan 2020 03:00:40 GMT  
+		Size: 61.7 MB (61731033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff022abc9fda760e638ca6d18ff098b96266a65cc62d717fd48fb5c018a8eb1`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:c00267155666c541f482465d85c8c226c984e7025799e47f969b7e792eb95c19`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e20f4e1dd6abd54fa473e7c82b4d7254eb3e8d014a0dc6c126feecb417b298e9`  
-		Last Modified: Sun, 29 Dec 2019 10:19:42 GMT  
-		Size: 19.9 MB (19937243 bytes)  
+	-	`sha256:df3fcb86695055e0bf06c52d01273c3ba111408280b8f2f936cc79c24ddbea34`  
+		Last Modified: Tue, 07 Jan 2020 03:01:00 GMT  
+		Size: 19.9 MB (19937294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bbbcd1a535f34c7e534705ded1473fb4f3c76119f4de43e5cf318da1bbb291e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:40 GMT  
-		Size: 4.9 MB (4917848 bytes)  
+	-	`sha256:4ca670d3fe69455761a1a8ef15ce410b97f7f24e98790191f968fcae09c899e9`  
+		Last Modified: Tue, 07 Jan 2020 03:00:55 GMT  
+		Size: 4.9 MB (4917852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3-alpine`
 
 ```console
-$ docker pull redmine@sha256:ecb4b4999f7d37264cc49f1424e21c29568ecaf61ce8076967bca5fcf7737a57
+$ docker pull redmine@sha256:d1c8cfaf1d836a6a87df3aebfdfe656d1aa2d00e40bf180aef3f8d6e6b29a3f1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3430,14 +3430,14 @@ $ docker pull redmine@sha256:ecb4b4999f7d37264cc49f1424e21c29568ecaf61ce8076967b
 ### `redmine:3-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:d7ee82870579c4dac0df531988616ba765f8e3413d99a467496e46ca3828687b
+$ docker pull redmine@sha256:5b6e38dabe1fac398f23e14ae5d1356daab3aea8b5dca98b346f9f50dd640a23
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.7 MB (158726216 bytes)**  
+-	Total Size: **157.7 MB (157746294 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1637c4df87e8ef34bc9a13e069bc701e623280b089298d158763fe05398767f6`
+-	Image ID: `sha256:bf1878f03b06943d8edd0e525585fe51365cbff7dfb905f5350f4ecda0faf1da`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -3462,43 +3462,43 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:17:54 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:17:54 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:17:54 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:17:55 GMT
+# Tue, 07 Jan 2020 02:21:48 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:48 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:49 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:17:55 GMT
+# Tue, 07 Jan 2020 02:21:49 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:19:00 GMT
+# Tue, 07 Jan 2020 02:56:20 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:19:14 GMT
+# Tue, 07 Jan 2020 02:56:28 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:19:14 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:29 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:19:15 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Fri, 20 Dec 2019 20:50:55 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 ENV REDMINE_VERSION=3.4.13
-# Fri, 20 Dec 2019 20:50:55 GMT
+# Tue, 07 Jan 2020 02:56:30 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Fri, 20 Dec 2019 20:50:59 GMT
+# Tue, 07 Jan 2020 02:56:34 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Fri, 20 Dec 2019 20:52:40 GMT
+# Tue, 07 Jan 2020 02:58:18 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 VOLUME [/usr/src/redmine/files]
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:19 GMT
 EXPOSE 3000
-# Fri, 20 Dec 2019 20:52:41 GMT
+# Tue, 07 Jan 2020 02:58:20 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -3519,43 +3519,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:19:18 GMT  
 		Size: 22.8 MB (22821666 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01bffc3c4cd48352111d40a39696c9312cad871602c37c606c6ed836b264bc9`  
-		Last Modified: Mon, 21 Oct 2019 22:19:15 GMT  
-		Size: 140.0 B  
+	-	`sha256:1d895efade31778dfc201e5f71f131307c75f086f4fbadb2fafefb06ec21dc40`  
+		Last Modified: Tue, 07 Jan 2020 02:24:07 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b93518721e462ec0c04937bea423be1ec9a5d12b5b9431dc342fc2b1805a4d78`  
-		Last Modified: Tue, 22 Oct 2019 00:23:05 GMT  
-		Size: 1.2 KB (1213 bytes)  
+	-	`sha256:eef03bd8a224cc9372aeb8ba6d5edb935b7fe19fca827d6588898af539084316`  
+		Last Modified: Tue, 07 Jan 2020 03:01:06 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6489848611e0aa67d9d39e5ace2857ac855d962e6da7f1f325bf3061e78c44a6`  
-		Last Modified: Tue, 22 Oct 2019 00:23:20 GMT  
-		Size: 65.7 MB (65707047 bytes)  
+	-	`sha256:6f7a9de01e0a8eccb653a9e2b072201a9fa078383c9a693e2e2831c360213a4a`  
+		Last Modified: Tue, 07 Jan 2020 03:01:24 GMT  
+		Size: 65.7 MB (65727276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d23957730fa68af54485d0a3f725ecf25320ef76bc42aaef5e27f28c603c73d`  
-		Last Modified: Tue, 22 Oct 2019 00:23:04 GMT  
+	-	`sha256:79e302037548c4c1b81925ed4412b5e693b075f83641f7d58c552a6b31dcfec3`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
 		Size: 135.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:42e6b2f1c717bd1b7de90b219651bcf1f0b15e8a8e8e58749a4808ba34842595`  
-		Last Modified: Tue, 22 Oct 2019 00:23:04 GMT  
+	-	`sha256:a872a7351f984ad5ac591a6a20c0db7bb3180172c08d59ede427c0bada673c45`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:82c6022309c375ca1667640e4868e21d378927616dd76c3fae36df63fd91e32f`  
-		Last Modified: Fri, 20 Dec 2019 20:54:03 GMT  
-		Size: 2.5 MB (2464147 bytes)  
+	-	`sha256:6908b9b925fca1fc9cb425f3dae666d123523c4d7f7edb25c2b749a7cf521b39`  
+		Last Modified: Tue, 07 Jan 2020 03:01:08 GMT  
+		Size: 2.5 MB (2464377 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cbac9764861b67739e850de3e79e5c112644e3f082d72d0da72a4e8a8f175ea`  
-		Last Modified: Fri, 20 Dec 2019 20:54:09 GMT  
-		Size: 63.9 MB (63912070 bytes)  
+	-	`sha256:5b700584a938a09b2a418993c70d63849d1fd1eaa45067b1585ed8bb3c6b4ca6`  
+		Last Modified: Tue, 07 Jan 2020 03:01:16 GMT  
+		Size: 62.9 MB (62911680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3806e1d58ad67ccee9408de3cc681b504974e6b0a1b70cd287056ff9d891930`  
-		Last Modified: Fri, 20 Dec 2019 20:54:02 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:ac8325e5ef9c897382cb5ad3a1f4bd7adf6503675363963f094d8811f8a3d872`  
+		Last Modified: Tue, 07 Jan 2020 03:01:05 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:3-passenger`
 
 ```console
-$ docker pull redmine@sha256:3e85ddd2d36bfd2de0e58b3d7d8d8d44efff230ff0f3774de94543cb26ec84d5
+$ docker pull redmine@sha256:a388861eb4a97dd783d32ef77a308499164e96fb7bc74fab70188a5c6ed1d9a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3565,14 +3565,14 @@ $ docker pull redmine@sha256:3e85ddd2d36bfd2de0e58b3d7d8d8d44efff230ff0f3774de94
 ### `redmine:3-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:185e62d805487a92eb65c6b507555517554117c86993dd2bfb2c321462c960f6
+$ docker pull redmine@sha256:2c42b6e2b2e4093bc31549faed36f4d8636089230662bb69c313d382dc99169f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **232.2 MB (232150423 bytes)**  
+-	Total Size: **232.1 MB (232149814 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e01bdbd1c479f821690e883e84115bb5955c230abeb481e90b66747d5e47c055`
+-	Image ID: `sha256:459b387f60648cbd190c7fffe1d4ea70915596739ad11fc046f713c29aebaf02`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -3597,55 +3597,55 @@ ENV RUBYGEMS_VERSION=3.0.3
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	ruby -e 'exit(Gem::Version.create(ENV["RUBYGEMS_VERSION"]) > Gem::Version.create(Gem::VERSION))'; 	gem update --system "$RUBYGEMS_VERSION" && rm -r /root/.gem/; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:09:05 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:09:05 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:21:29 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:21:30 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:09:06 GMT
+# Tue, 07 Jan 2020 02:21:30 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:15:01 GMT
+# Tue, 07 Jan 2020 02:52:41 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:15:25 GMT
+# Tue, 07 Jan 2020 02:53:05 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:15:33 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:14 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:15:34 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_VERSION=3.4.13
-# Sun, 29 Dec 2019 10:15:35 GMT
+# Tue, 07 Jan 2020 02:53:15 GMT
 ENV REDMINE_DOWNLOAD_MD5=5f17b35dfe73118067f63fb535332cfb
-# Sun, 29 Dec 2019 10:15:38 GMT
+# Tue, 07 Jan 2020 02:53:21 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:43 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:17:57 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:17:58 GMT
+# Tue, 07 Jan 2020 02:55:44 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sun, 29 Dec 2019 10:18:15 GMT
+# Tue, 07 Jan 2020 02:55:55 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Sun, 29 Dec 2019 10:18:32 GMT
+# Tue, 07 Jan 2020 02:56:11 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sun, 29 Dec 2019 10:18:33 GMT
+# Tue, 07 Jan 2020 02:56:13 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -3666,55 +3666,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:19:25 GMT  
 		Size: 22.0 MB (22006052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf7ed038d9fa741fda2e8ddeb01753ce707e0cae7dfb1e0afdd5a8abef3cc626`  
-		Last Modified: Sat, 28 Dec 2019 15:19:23 GMT  
-		Size: 141.0 B  
+	-	`sha256:60fd0e5c830a620f7adbe8dbf517f558bd629236c05e30a81562e627d41af933`  
+		Last Modified: Tue, 07 Jan 2020 02:23:51 GMT  
+		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cce90543a3876fddd4438d1b6284a95c909e6da35360ee9bcb045aabc415dece`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
+	-	`sha256:dda27aa91ecfc255aa8888f23781a4fd6c446c38b13fcf945d933d697868399d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
 		Size: 1.7 KB (1745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbac23a354a345a4bfe16bd0fec71ddeed231ad669e8c004e05248f9c74a08b7`  
-		Last Modified: Sun, 29 Dec 2019 10:19:34 GMT  
-		Size: 80.2 MB (80161087 bytes)  
+	-	`sha256:3047b43ab05eab0353c1e221caf7d98300915f73d638eeb5fc32c8c542f9f979`  
+		Last Modified: Tue, 07 Jan 2020 03:00:49 GMT  
+		Size: 80.2 MB (80161214 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c396033fc30729fd4f2b9091fb004eb4a1a093ed769bbfd9e8d50f1df1454d4c`  
-		Last Modified: Sun, 29 Dec 2019 10:19:20 GMT  
-		Size: 1.3 MB (1296459 bytes)  
+	-	`sha256:d379f55b07e46100b9811c56dc34b9488eeb5029cd6d5b5aa1d0d952db4585f4`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 1.3 MB (1296456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12f9c99bb2cf922a43bdb2bacf16d1d7a8ad79e0665fa80bb81ae87f73c139ca`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d615b50742767a48c5a2f96cb4848af939353414d875d60e5bfd09828138869`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35cb577e4c2912f79466eda9710bbe2a608b7c7dab640583ac548006f0fedb8b`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
+	-	`sha256:bb64db6c7eb6d20bd9906e4c0a451b94d1f042f1e8724e096a58608af75e4570`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
 		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3328121c04bb938bfe72be534108a4f0a4efb277a0fa57d1153250be2fe414eb`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.5 MB (2463470 bytes)  
+	-	`sha256:26258bfd510bef8a8d430c8304327ee816f16c1d11e96b4e9d3127b00eb7611a`  
+		Last Modified: Tue, 07 Jan 2020 03:00:29 GMT  
+		Size: 2.5 MB (2463473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6439a252658249aa849c9671dd68793631e88f66e655db4dc2d45a317a19a8ae`  
-		Last Modified: Sun, 29 Dec 2019 10:19:27 GMT  
-		Size: 61.7 MB (61731823 bytes)  
+	-	`sha256:4b80fabc89fcfab19c12ce28cfa8af8c1b8f3ca9195bd784948130522613e288`  
+		Last Modified: Tue, 07 Jan 2020 03:00:40 GMT  
+		Size: 61.7 MB (61731033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff022abc9fda760e638ca6d18ff098b96266a65cc62d717fd48fb5c018a8eb1`  
-		Last Modified: Sun, 29 Dec 2019 10:19:19 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:c00267155666c541f482465d85c8c226c984e7025799e47f969b7e792eb95c19`  
+		Last Modified: Tue, 07 Jan 2020 03:00:28 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e20f4e1dd6abd54fa473e7c82b4d7254eb3e8d014a0dc6c126feecb417b298e9`  
-		Last Modified: Sun, 29 Dec 2019 10:19:42 GMT  
-		Size: 19.9 MB (19937243 bytes)  
+	-	`sha256:df3fcb86695055e0bf06c52d01273c3ba111408280b8f2f936cc79c24ddbea34`  
+		Last Modified: Tue, 07 Jan 2020 03:01:00 GMT  
+		Size: 19.9 MB (19937294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bbbcd1a535f34c7e534705ded1473fb4f3c76119f4de43e5cf318da1bbb291e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:40 GMT  
-		Size: 4.9 MB (4917848 bytes)  
+	-	`sha256:4ca670d3fe69455761a1a8ef15ce410b97f7f24e98790191f968fcae09c899e9`  
+		Last Modified: Tue, 07 Jan 2020 03:00:55 GMT  
+		Size: 4.9 MB (4917852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4`
 
 ```console
-$ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d04497b30c2a5de119
+$ docker pull redmine@sha256:622a9ea0e5e5ce59fb6c876bd79ece0dfaa0ffbc7452e02a49d5b54b5f8950ea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3730,14 +3730,14 @@ $ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d0449
 ### `redmine:4` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:902e699d87d6e9c5fed087388bfb09cd56b3ccbb0cc37ca41eeee1135b3a54ea
+$ docker pull redmine@sha256:187551f0e16d9a5c8c90a961ea69098b4270a98c386c2e4fdefc4d7b64658519
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.7 MB (202716488 bytes)**  
+-	Total Size: **202.7 MB (202733924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5eb3ccf68fca5937641b161fa4de4bbc2173680aff170e799eb3544766f544fd`
+-	Image ID: `sha256:1afbfb924539f2ae972502b921d03bbf0cb6bd0e1836229082890799b893c30d`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -3760,45 +3760,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -3819,54 +3819,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:729a35828b6c84c8eb85e0ed04bdb98ecf727b4f9d7eb30e569d300be248fa8f
+$ docker pull redmine@sha256:4906dab58ba5ee17643e992870e9fc53345328b9339b88d665e72ecfcc12836f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **192.4 MB (192393368 bytes)**  
+-	Total Size: **192.4 MB (192404507 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:80a5980107786d00cbc00e6c60b9aa9f2f6fb095ebcd61827597a5b7e649507a`
+-	Image ID: `sha256:76efdeb04144612cfe937c97093ca042cd7473c6050c0c67631cf0c567d9d74e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -3889,45 +3889,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 06:21:10 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:11 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:12 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 06:21:13 GMT
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:49:03 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 06:21:14 GMT
+# Tue, 07 Jan 2020 02:49:03 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 18:52:39 GMT
+# Tue, 07 Jan 2020 03:13:58 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 18:54:05 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 18:54:25 GMT
+# Tue, 07 Jan 2020 03:16:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 18:54:26 GMT
+# Tue, 07 Jan 2020 03:16:23 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:24 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:25 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 18:54:30 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:30 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:33 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:54:56 GMT
+# Tue, 07 Jan 2020 03:16:42 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:00:30 GMT
+# Tue, 07 Jan 2020 03:22:51 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:00:32 GMT
+# Tue, 07 Jan 2020 03:22:56 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:00:33 GMT
+# Tue, 07 Jan 2020 03:22:57 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:00:34 GMT
+# Tue, 07 Jan 2020 03:22:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:00:35 GMT
+# Tue, 07 Jan 2020 03:22:59 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:00:38 GMT
+# Tue, 07 Jan 2020 03:23:00 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -3948,54 +3948,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:19:48 GMT  
 		Size: 20.7 MB (20712825 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a1abd10ed01f4676d01f9620fefa1b776da2696d3e8122db559411e1bcf31a5`  
-		Last Modified: Sat, 28 Dec 2019 07:19:43 GMT  
-		Size: 177.0 B  
+	-	`sha256:339d13f87ffb8e7206ef67a9df0490843eb23c62c24d4f6e4987b4988de4bfa4`  
+		Last Modified: Tue, 07 Jan 2020 02:52:02 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0a7c2743b41303e80e8acd0f8dc6caa37bb0875ea8f69ba90b23d783d1a1576`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.7 KB (1730 bytes)  
+	-	`sha256:17f97b318b29436f18fd49df95209eeaeb49250ffbafffaee6d4c48c6c50f8a3`  
+		Last Modified: Tue, 07 Jan 2020 03:39:42 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce30b0c7067a61af709a70b8a9e7d2bb903a7c0bda27f1c2eb2eb9252bd582f5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:38 GMT  
-		Size: 76.0 MB (76024356 bytes)  
+	-	`sha256:f288be7cde7b6a6a81e3accc68decd3aa798fa1f0cef89c3953fb86ebf7d8b31`  
+		Last Modified: Tue, 07 Jan 2020 03:40:07 GMT  
+		Size: 76.0 MB (76024941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45f4f5374736951cb6a48b25326fb7b30f73b9d9301055de28d367fbf8d3e1eb`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.3 MB (1254316 bytes)  
+	-	`sha256:c37ce11948573b9edac8f826ad594138ddfaacc192079b3eb80b4e287ff914f7`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 1.3 MB (1254343 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dec0a6576283611b4db08a85251e4201ea40ed2ab3daa8f85e467c41b24974fd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 172.0 B  
+	-	`sha256:7704ca0edea2430982c5b21980b5af780b93b80630b113085d80b4f8048b3ab6`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4485bfb4d90b4b15e23b20a445354a6f1f841f36e008923b342d3c81cb867ed6`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
+	-	`sha256:cca896ec85003a248d1a78bde07d0361b690c9008a1f61f76a5f1da30224cc1b`  
+		Last Modified: Tue, 07 Jan 2020 03:39:40 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ba76fb0086e0bcced450bcacf50b8398f7a6552e9d6121524f7667940e0a4e1`  
-		Last Modified: Mon, 30 Dec 2019 23:01:08 GMT  
-		Size: 2.7 MB (2735851 bytes)  
+	-	`sha256:3b045ff2645e4284302419c8ffc27fb6887b64144d7d2da2bd55575f8e9ad9ec`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 2.7 MB (2735863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4d77c1da7d08b62f52bb3950c5139620ec8364340a9642ce723237855e4c3d5`  
-		Last Modified: Mon, 30 Dec 2019 23:01:20 GMT  
-		Size: 56.5 MB (56505864 bytes)  
+	-	`sha256:fb518d1c9cf765ad42d08c8a3f35755bade189212248505fd3ecc448640bfbf8`  
+		Last Modified: Tue, 07 Jan 2020 03:39:54 GMT  
+		Size: 56.5 MB (56516373 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47819d85c69c98e77433ce438a7ac09a04f37903e5870770b71e121de752a6ff`  
-		Last Modified: Mon, 30 Dec 2019 23:01:06 GMT  
+	-	`sha256:26c4354bff4552a216e99b31445586cac3c2f96a5a406c2795e8de47b1d7785d`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:4f117bf7ab1b894e4371f4b6da7d4eb42f1aed579e058c11358f223f45af8488
+$ docker pull redmine@sha256:003ba4181360c67d22ffdc6e8c3395e7efcdfec81a890fc2ba2d137b107ac514
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **185.8 MB (185795962 bytes)**  
+-	Total Size: **185.8 MB (185802956 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:32064522b2976e7cba2666f2e24fafb7f4ce00b2fc9fd8c755d477a4a82b66f8`
+-	Image ID: `sha256:b3b8d529a83484db6b68ae816b129f07be45d5cc4e4621fc99ebbad0a580e7c5`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4018,45 +4018,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:22:59 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:22:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:23:00 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:23:01 GMT
+# Tue, 07 Jan 2020 03:12:46 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:12:47 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:12:50 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:23:02 GMT
+# Tue, 07 Jan 2020 03:12:51 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:16:55 GMT
+# Tue, 07 Jan 2020 03:39:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:17:46 GMT
+# Tue, 07 Jan 2020 03:40:34 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:18:03 GMT
+# Tue, 07 Jan 2020 03:40:59 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:18:04 GMT
+# Tue, 07 Jan 2020 03:41:00 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:18:05 GMT
+# Tue, 07 Jan 2020 03:41:01 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:18:06 GMT
+# Tue, 07 Jan 2020 03:41:02 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:41:04 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:06:51 GMT
+# Tue, 07 Jan 2020 03:41:05 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:06:52 GMT
+# Tue, 07 Jan 2020 03:41:07 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:06:58 GMT
+# Tue, 07 Jan 2020 03:41:12 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:11:25 GMT
+# Tue, 07 Jan 2020 03:46:26 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:11:27 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4077,54 +4077,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:13:25 GMT  
 		Size: 20.6 MB (20620161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:158be611acd1464ed169ba02f406468d7ba338ee3bb447aee4115317b6f84478`  
-		Last Modified: Sat, 28 Dec 2019 22:13:20 GMT  
+	-	`sha256:5fe49bcffa8c82983470bbf0074d2412dacbf1f325bcc2ffb85fddcbda7c7da8`  
+		Last Modified: Tue, 07 Jan 2020 03:17:58 GMT  
 		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fdd79f36888d0a15667a5d2a333408886aa5313ddd41b011ef2583c604644f8`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.7 KB (1737 bytes)  
+	-	`sha256:67711a5ad765c81e93b31a6b9e1b763d7d8448315399ea1765bf97971567bfcb`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:060aab585d09a8861a4cc045480e04a098de3eff59e488f3303b3857ba1bd189`  
-		Last Modified: Sun, 29 Dec 2019 08:31:19 GMT  
-		Size: 72.4 MB (72370630 bytes)  
+	-	`sha256:05d74eecc06d13134c138c9df69b88fae2a875703f36a0fb2fd26e740242128b`  
+		Last Modified: Tue, 07 Jan 2020 03:59:24 GMT  
+		Size: 72.4 MB (72371109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5f67f581ba225fd56401856418bea0ecbd2f16ff6d5d1aa879672235dc2052e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.2 MB (1243523 bytes)  
+	-	`sha256:13558994cbeb5acd84e3d5cbd289b63aa49eb00c519c44df85c8eb739e1aecdc`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.2 MB (1243608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:001e2d72a3770aa4210e8d94abd7f170d1cbe938357d4150a2849b82404aedb9`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 170.0 B  
+	-	`sha256:0071ee240d8a61e07f23310aaa0abd958805870c68cc9a980486c0af09abd8de`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acb379f61d4d54ba729ad2756b2014a59555ad5d0754045879d06a7c343e951`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
+	-	`sha256:5d4a08ec220f99917007502db7459ff7d23e8e699418f7728948b9785f8ad389`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81977844a21f7d088bf08816511656c3aa4032b826af7b1c6e420e6d0e9fc54b`  
-		Last Modified: Mon, 30 Dec 2019 23:12:00 GMT  
-		Size: 2.7 MB (2735861 bytes)  
+	-	`sha256:62b0ce8bb2dfaebcc4e96f6b821ef98f59479efbe6c8df4c76c972154ba04943`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 2.7 MB (2735857 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c031777c700bf79981cce268d5355c2838204e3901e1813ff78aeae0dd31bb0f`  
-		Last Modified: Mon, 30 Dec 2019 23:12:11 GMT  
-		Size: 56.3 MB (56274789 bytes)  
+	-	`sha256:c46673c4a93ee40dd7786754c0771f6bb456490a8c112878b3e2de069fc1a140`  
+		Last Modified: Tue, 07 Jan 2020 03:59:13 GMT  
+		Size: 56.3 MB (56281218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1a19afff9cfa8d924ca5849af17b1700503d8949f61bc9c8d38f26f45081a52`  
-		Last Modified: Mon, 30 Dec 2019 23:11:59 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:41faf231a7a4832e0583b60a49cdfc3043f30326ca897992f8a5db9573069bf1`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:fabf57addb340358fb703e7bd9412cdf3fcd09a8a95ad29137f555c4f71593c1
+$ docker pull redmine@sha256:0e01d80fa0358939a16aa0384d58bc564309036dd7b171886b5362f5b420b761
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **198.5 MB (198495882 bytes)**  
+-	Total Size: **198.5 MB (198510271 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f755fa98271fb0e936401651fa91c67b9150480b06b31500fcd73bd2a573d6d1`
+-	Image ID: `sha256:bc9198dcbb168ae0e85796be70bf4ef5e25194b47f52b85e30a40d0853281092`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4147,45 +4147,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 22:32:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 22:33:02 GMT
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:41:13 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 22:33:03 GMT
+# Tue, 07 Jan 2020 02:41:14 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:19:51 GMT
+# Tue, 07 Jan 2020 03:06:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:20:40 GMT
+# Tue, 07 Jan 2020 03:07:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:21:01 GMT
+# Tue, 07 Jan 2020 03:08:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:21:03 GMT
+# Tue, 07 Jan 2020 03:08:35 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:38 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:08:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:46:49 GMT
+# Tue, 07 Jan 2020 03:08:44 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:46:50 GMT
+# Tue, 07 Jan 2020 03:08:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:46:55 GMT
+# Tue, 07 Jan 2020 03:08:51 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:52:13 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:52:14 GMT
+# Tue, 07 Jan 2020 03:16:00 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:52:15 GMT
+# Tue, 07 Jan 2020 03:16:01 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:52:16 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:52:17 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:52:18 GMT
+# Tue, 07 Jan 2020 03:16:05 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4206,54 +4206,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:23:41 GMT  
 		Size: 21.3 MB (21281931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3866dedbd8f45e73eb720d06e31b7b404c7f341945bac9e36c94b3debf5e2469`  
-		Last Modified: Sat, 28 Dec 2019 23:23:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:6f1828050bdff9d08ad357e12a1bd0639c7818f955a59966e76a48d90c55ccc2`  
+		Last Modified: Tue, 07 Jan 2020 02:45:23 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de07b264b3e1232fcca516dbdf000d3896f1ff7e80bf820ec728c928b757d443`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.8 KB (1751 bytes)  
+	-	`sha256:ebec8c6749d85258e801554c4c6b4d94f96e6ca4909194be6fc4aa78f0ba7caf`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.8 KB (1759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0fa545ca828ef3682e6175a8eff7187e466949b96d0b581058dbe26d77878cb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:42 GMT  
-		Size: 78.8 MB (78781403 bytes)  
+	-	`sha256:d7616f60ca94ba9dd9d5ec4a4672df90a8f21683b3f5e363ecbb6c56cd57b34f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:38 GMT  
+		Size: 78.8 MB (78781946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb8f0ebf113189284a9f5e6486d0a5ea70731e394f9d0c3bd9eb1fea3d66ecc1`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.2 MB (1228577 bytes)  
+	-	`sha256:ed90e7447acdd79b625fff5e37d6b9567b24b0ec16826357c12a1f1047c0e96a`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.2 MB (1228684 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7562512ba5b7faaf680e4f47310868434d855eda2c8b4178e154d45ef9bccd0`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
-		Size: 172.0 B  
+	-	`sha256:bc9cb5aa81f92922c768a7f7f77d66adc87edf01e2ce3986835401c20d683c11`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc767004d48c8e0659f28c1244254ab17aa8c7419a8ca4e7070c4d84e1333d7e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:fe15bb660b67ad397ff5dced96f6c5a667bc63dd0d23a82b5d30347018e9c15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8830e451754177ad85457b14008acff225ee6ddd5392d42df5a5f2d68a4a0246`  
-		Last Modified: Mon, 30 Dec 2019 22:52:44 GMT  
-		Size: 2.7 MB (2735842 bytes)  
+	-	`sha256:777acea1a0afb276a342110a4f57a84fb05496ee8781d1527c1d369f93756259`  
+		Last Modified: Tue, 07 Jan 2020 03:31:09 GMT  
+		Size: 2.7 MB (2735859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6eeeca614a63e5a2f46f2bbc363f45fc41f4468eedfbdb5845e525bf2fa349e8`  
-		Last Modified: Mon, 30 Dec 2019 22:52:55 GMT  
-		Size: 57.4 MB (57368226 bytes)  
+	-	`sha256:8214399d3be2b4d772486eb11b58fd4cd18ed7a9c09036024ac8c51d2cc63ba1`  
+		Last Modified: Tue, 07 Jan 2020 03:31:22 GMT  
+		Size: 57.4 MB (57381944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:daf326086b6cd33176d8b5f405f97bf478f03878dc7f4a99094dbcfc83c3c6a1`  
-		Last Modified: Mon, 30 Dec 2019 22:52:43 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:1c2aa5015caadc0c6e7f6f3681de219f1e25b99784b94677a7ae484876af9f0f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 2.1 KB (2051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:9528337d6b248cb6458728b6f2403b6c6c34c8c2769540495f1c78971dae1310
+$ docker pull redmine@sha256:d1b3cc39d6fd83267ea5ff7559dce11abcb676d6eeb15b373e234f20282bcd5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **208.0 MB (207953654 bytes)**  
+-	Total Size: **208.0 MB (207971236 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:869326ffcd9043b9fcf5059252033ce06dbd6bd9ad09738867a053f99564f918`
+-	Image ID: `sha256:427cdfe5a66aa35124e1226f327c747117e7b85e2866531b7863a89d4a08bbd7`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4276,45 +4276,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:48:29 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:07 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:39:08 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:39:08 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:08 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:35:25 GMT
+# Tue, 07 Jan 2020 03:00:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:36:01 GMT
+# Tue, 07 Jan 2020 03:01:23 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:41:53 GMT
+# Tue, 07 Jan 2020 03:01:40 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:44:09 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4335,54 +4335,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:44:44 GMT  
 		Size: 20.9 MB (20885521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17d698d757862d4c6e9742e6794e0e071637015bdb38321f25b825ec0f9fcbb2`  
-		Last Modified: Sat, 28 Dec 2019 16:44:37 GMT  
-		Size: 144.0 B  
+	-	`sha256:b0c53ce40fd432336a5365d519861a9d64c7cf858412dd402f939e5f6cb0ed3f`  
+		Last Modified: Tue, 07 Jan 2020 02:41:40 GMT  
+		Size: 141.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:096b2fd689438f0bac3f7636511f338e5de2dfedc3d09046b407bc8414b71fef`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:2b71e9da85871d84768b7e4ee95650087a03f4db095955f62e526335b0c09aa4`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 1.7 KB (1740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1abae356afaeb4eb2314f0986f093ec2c8c466f46c9895b63c2adf384c1b8543`  
-		Last Modified: Sun, 29 Dec 2019 00:48:44 GMT  
-		Size: 81.6 MB (81574496 bytes)  
+	-	`sha256:9a3ccb3b9a12325f66d08313505167fa8d7a46ab42c2e89625e485c5ac43ca78`  
+		Last Modified: Tue, 07 Jan 2020 03:11:33 GMT  
+		Size: 81.6 MB (81574872 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2199cf4d500212beef54799d49b397ab7fae50956f80ca93bc3e46f9d2d1ac04`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.3 MB (1261040 bytes)  
+	-	`sha256:f8085aa370c294355492d62d20997a91dce32290fb39f7ff46d2ea9f79c9cac7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:09 GMT  
+		Size: 1.3 MB (1261083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8616ae50f35dda86452ca27a4dce70e4609360e329786c45255b8efe28d87101`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 137.0 B  
+	-	`sha256:9ca155252736682989c07106e5bb0eeaaf8b2372c1366aa1cdc83c0575ff1a54`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:835b0f14c08317511b0d06b0dbf1f4db9174521435ebed17189bf86b6e00dd55`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 127.0 B  
+	-	`sha256:67b530bf833967827e0f2848925236be5bb8b6284da960ded962768f10853d79`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62600d65605e7e512b0fa5346221567b0a96dd5c0a6bd9d5de04f117c512e9f0`  
-		Last Modified: Mon, 30 Dec 2019 22:44:34 GMT  
-		Size: 2.7 MB (2735393 bytes)  
+	-	`sha256:4fa27b3327360715b1a90ecc14add5758c5d9957680bf8b92411a19e69a75a9d`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 2.7 MB (2735394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:585c641449ff7f5ec017308bee789435a2c9470e4c42105108fcd4ed40a117d8`  
-		Last Modified: Mon, 30 Dec 2019 22:44:42 GMT  
-		Size: 56.5 MB (56539780 bytes)  
+	-	`sha256:248f5b6cb2691da13b2af50a6e5583e121b4a1d905af8cbcce41603d28e89e5c`  
+		Last Modified: Tue, 07 Jan 2020 03:11:20 GMT  
+		Size: 56.6 MB (56556937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d64a44fe2bb4bca3528befeb42a432dc580aa7936c0894ac5a3bbba3efb87cf6`  
-		Last Modified: Mon, 30 Dec 2019 22:44:33 GMT  
+	-	`sha256:7b6a7aaefac27d5bfd18f5c25b161cd26dc7246970ed4cd4d94616a75c1f0a05`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:53a91922096f1584d65d44dc1c5f3910416a502798e6ebdda6eed4c7c21f91d1
+$ docker pull redmine@sha256:7fc04b9687fc429b47d5ae618128cc9eea47f3e85e83fa0963f5a928c2d9a5c9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **214.0 MB (213976566 bytes)**  
+-	Total Size: **214.0 MB (213986551 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d0cc2ab7001628e0f9d1edf73d1e702b53e75e9fc6c4536d9dd52dbd1d03ae5a`
+-	Image ID: `sha256:a0f08be72159bc4dc39fd51d2b1f30c4925ac7651c9fccc427f8c527d7debcfc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4405,45 +4405,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 04:49:02 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:03 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:06 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 04:49:16 GMT
+# Tue, 07 Jan 2020 02:18:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:18:45 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:18:54 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 04:49:20 GMT
+# Tue, 07 Jan 2020 02:18:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:35:48 GMT
+# Tue, 07 Jan 2020 02:52:26 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:37:37 GMT
+# Tue, 07 Jan 2020 02:56:12 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:38:10 GMT
+# Tue, 07 Jan 2020 02:57:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:38:12 GMT
+# Tue, 07 Jan 2020 02:57:19 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:38:14 GMT
+# Tue, 07 Jan 2020 02:57:25 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:38:15 GMT
+# Tue, 07 Jan 2020 02:57:31 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:38:20 GMT
+# Tue, 07 Jan 2020 02:57:38 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:19:02 GMT
+# Tue, 07 Jan 2020 02:57:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:19:03 GMT
+# Tue, 07 Jan 2020 02:57:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:19:11 GMT
+# Tue, 07 Jan 2020 02:57:57 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:26:02 GMT
+# Tue, 07 Jan 2020 03:07:18 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:26:08 GMT
+# Tue, 07 Jan 2020 03:07:22 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:26:09 GMT
+# Tue, 07 Jan 2020 03:07:23 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:26:11 GMT
+# Tue, 07 Jan 2020 03:07:26 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:26:12 GMT
+# Tue, 07 Jan 2020 03:07:28 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:26:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4464,54 +4464,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:29:59 GMT  
 		Size: 22.0 MB (21968340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcdef1db578dfb59ea162f659338a2ab021d2839d6727f80e64bb67e6a440c8f`  
-		Last Modified: Sat, 28 Dec 2019 05:29:51 GMT  
-		Size: 175.0 B  
+	-	`sha256:88418e7313544081130ec82f1125b007f6673672ed6fe3f2815a8bc0836d834d`  
+		Last Modified: Tue, 07 Jan 2020 02:27:35 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d107d4bd078e8cdadd410658f8b2b9a49551e5963f8990280e0c333125be1c5`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:c811e39d17ef5178d803832537e4b94505620908b40d2ece5c639ebc74bb249c`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a612640847c9d0e0735e41875007ad7f8bfad5510cdf8badc050102844aac3f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:02 GMT  
-		Size: 86.8 MB (86836986 bytes)  
+	-	`sha256:759f2cb97aba0fe1a2f1053949514cc564ab7e2cfc06feb29ff83f1a25204a75`  
+		Last Modified: Tue, 07 Jan 2020 03:30:06 GMT  
+		Size: 86.8 MB (86837114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1f66358e7c44f05b25d225eb2d4908b94b2dd1c1e3f2dc1ecb2bd6ba79b8353`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.2 MB (1217951 bytes)  
+	-	`sha256:3b6f7850a6e18d809176a36601f044b1e81f00e83669c91e047608f68e15fe76`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.2 MB (1218315 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d7bb190f232d859b513e53f0ab37b7dedc500668034b02d0eabba16dc7488a6`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 169.0 B  
+	-	`sha256:8d6322666aa095fbbcc93f7c9b4120792fc53d3d10e016d2f5b886ebaf9a71dd`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa186ef829d9161ba8520eb43c24ff82a504b79e9a14ff653a64adc2be34f00c`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
+	-	`sha256:4ff21de5e70292bac1732e4d68af3d870e59b1973fe11a6f7f5f8e2584d35433`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9422b1bcc68565fc1af7c6bbcfe4297773ec66af13eefe03a2279ae9170b302f`  
-		Last Modified: Mon, 30 Dec 2019 23:26:48 GMT  
-		Size: 2.7 MB (2735858 bytes)  
+	-	`sha256:148c6e08afe9243221a3614c147b175f00fca39aa7398b226b9c81c4c0920475`  
+		Last Modified: Tue, 07 Jan 2020 03:29:29 GMT  
+		Size: 2.7 MB (2735864 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f99fb700361fa147bc16d36063b515a5fc8723b5842a7f00d46853e1129ba33e`  
-		Last Modified: Mon, 30 Dec 2019 23:26:56 GMT  
-		Size: 58.0 MB (58006510 bytes)  
+	-	`sha256:938befb09e3321da4912a40c548f49be67885cfe7251b037f26bfb0d6d458b79`  
+		Last Modified: Tue, 07 Jan 2020 03:29:40 GMT  
+		Size: 58.0 MB (58015986 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e97b3645452ed96ccaae652a1e86ee973a644bd2fe89a2f2243198927489f577`  
-		Last Modified: Mon, 30 Dec 2019 23:26:47 GMT  
+	-	`sha256:fddfa9af92446656e844a27e9376151265369cb9617d4a4b2e3d256bb5330d66`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:33be1d63aace90501f22952050c53cb1996aa2d7216e513bcdf10bf360d65c0b
+$ docker pull redmine@sha256:69f3f8e2a27d1a90f10eb1689b33242d0ed1972c7263f72c9605fc793f3dfdc2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.9 MB (197872422 bytes)**  
+-	Total Size: **197.9 MB (197889710 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:11aa0dc978025b2d4647e5f920288158ea2c8178d2442473a602cc34e24737e7`
+-	Image ID: `sha256:905f9063b57e0b7090a73b94a99f945d28455373c7fde4e8812d257016ede9a4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4534,45 +4534,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:08:18 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:37 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:51:38 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:51:38 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:38 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:23:44 GMT
+# Tue, 07 Jan 2020 03:10:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:24:09 GMT
+# Tue, 07 Jan 2020 03:11:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:51:20 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:51:21 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:51:23 GMT
+# Tue, 07 Jan 2020 03:11:26 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:27 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4593,47 +4593,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:30:40 GMT  
 		Size: 21.6 MB (21592480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79735b8aa359aed9b6ee2a64febed41202c437579b9c8ad025676cfd66f20fed`  
-		Last Modified: Sat, 28 Dec 2019 10:30:38 GMT  
+	-	`sha256:15818d45572da0ffbfd7b7c213011e34026a9b2483d38923e1bc970d8ba5190e`  
+		Last Modified: Tue, 07 Jan 2020 02:53:53 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af8a0bb70baf552440dff2f8f94aa31ba6768cb32f5a3da6970781643923fdde`  
-		Last Modified: Sat, 28 Dec 2019 14:32:13 GMT  
+	-	`sha256:427ecfe31dba9c1596393d2ff44b1755e2e5e759c7f232ca85092cec7f54f2b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:56 GMT  
 		Size: 1.7 KB (1746 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f1a973c70c53b47609efe91db858666ef988043d215cddc6f9751c55b0fd392`  
-		Last Modified: Sat, 28 Dec 2019 14:32:23 GMT  
-		Size: 77.9 MB (77925088 bytes)  
+	-	`sha256:2f7e3e94b67c1cda303409e25d8cb94365a5f5f14afd3555c76c769848de8e40`  
+		Last Modified: Tue, 07 Jan 2020 03:22:09 GMT  
+		Size: 77.9 MB (77925465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0294c12814d551aa6eb69a5a560222343a852e986115d315fc8429c84eb715da`  
-		Last Modified: Sat, 28 Dec 2019 14:32:12 GMT  
-		Size: 1.3 MB (1283271 bytes)  
+	-	`sha256:3439ec6ad867494e2250f152a883df214ce113074bbf9de627d2257fa0d7f1b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:55 GMT  
+		Size: 1.3 MB (1283337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01ed275456f3eeabe48efca226847c8108a6085fa2453fb91c765f16812e0e3`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 138.0 B  
+	-	`sha256:a4f1e85279851de1e1b0ac45b00c5e4a1489fe9a74ead59e4538c7ae50d2c426`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d27738cc26c1fc745448e52175e3cdaec01770748fd659b3740fe797605d06a9`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 128.0 B  
+	-	`sha256:932423e08f42b141be99ffdcc5a4a4d294eeebab50b0b3bafcc30018f4b90fc6`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2635060451cdb1b2f30dd74855940436ffc225bf87a20e98a3c1edc897462350`  
-		Last Modified: Mon, 30 Dec 2019 22:54:52 GMT  
-		Size: 2.7 MB (2735410 bytes)  
+	-	`sha256:34a9e085efa61f8efd49e767d660100fe122d0bab73baa627319beeb54421be1`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:506869fc6cb29b04e025c3e597eca0676ee0c31d6925d3c741276223711ec4bb`  
-		Last Modified: Mon, 30 Dec 2019 22:54:57 GMT  
-		Size: 57.8 MB (57832231 bytes)  
+	-	`sha256:c8c2fe0236b69548e1fa52ddc7810cf2d4513c4a2064646e25be0d07599aef03`  
+		Last Modified: Tue, 07 Jan 2020 03:22:01 GMT  
+		Size: 57.8 MB (57849101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7c6927bf80cb705b8e0d2e0f375e3b27ba150e06fe0aaf45dc178139d43ce00`  
-		Last Modified: Mon, 30 Dec 2019 22:54:51 GMT  
+	-	`sha256:88ec7c79caf544feee1c047a9432d3ff6758f06e78631b1bd2e8a75cd582312a`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.0`
 
 ```console
-$ docker pull redmine@sha256:1830423c11ef739bad8f06e5ef00747bd07483616cd4d4302ccd4ccb5926a21f
+$ docker pull redmine@sha256:446c44ad5d83005f40d58ca1e924273f9b1de4f41134cd1fc696c39523c2a6b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4649,14 +4649,14 @@ $ docker pull redmine@sha256:1830423c11ef739bad8f06e5ef00747bd07483616cd4d4302cc
 ### `redmine:4.0` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:1958f4862020581c184440b6cdf6f2a7094f378271651c84ff853907f876ad95
+$ docker pull redmine@sha256:6c6ecafdafc7880eb04e8d0b68592dcc34f00fba00ba1bf624c130b46ebebf77
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **206.1 MB (206129663 bytes)**  
+-	Total Size: **206.2 MB (206152020 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a34ffa7d0f4d9ce1804e973fe340af1e81e70c23d8fa8cff88f4bf286736eb12`
+-	Image ID: `sha256:a7bfd9663dc23d0fdf706fea06b76f971d444bcdbb7dfcf7c19d8bd7fd11730c`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4679,45 +4679,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 10:11:43 GMT
+# Tue, 07 Jan 2020 02:47:35 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4738,54 +4738,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51c51636301f966c645dc4f7e4fdb5272cd1def23fb6c7ad8693b32a057cf468`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 2.5 MB (2534068 bytes)  
+	-	`sha256:e4afc1770bdcd5ce4d9bdd3587987b09053f042cd48c8f5810cfcaa87a16b5a9`  
+		Last Modified: Tue, 07 Jan 2020 02:59:47 GMT  
+		Size: 2.5 MB (2534060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:931e95ecd10926bb3b1587ddd74dda0767c64d02915eb409e7250a0057ec8cfc`  
-		Last Modified: Sun, 29 Dec 2019 10:18:58 GMT  
-		Size: 61.1 MB (61055982 bytes)  
+	-	`sha256:f3021ea3a73603775149dab7dad56524184be935c404ee634fc3342e116542d8`  
+		Last Modified: Tue, 07 Jan 2020 02:59:56 GMT  
+		Size: 61.1 MB (61077693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8dc23b9dbfe2a8b2a3c12ad4b94c5bc5b0c396baaf2ebe208164b45b8baea22a`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:4117ba73b272c8622eab18cc70499b20571dcf410b5f4c36442c451109308c06`  
+		Last Modified: Tue, 07 Jan 2020 02:59:45 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:fc72eb410f6357dea1fc1656313297008ea23248757b7f29ee58dfab9a8dab54
+$ docker pull redmine@sha256:b311f49957f73c54231dc1ea7855bb7454acfc4286154fcbcacc981e55beeed5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.8 MB (195848534 bytes)**  
+-	Total Size: **195.9 MB (195860344 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7f9df0219daba3100fb27ca8da9aaf5ad99009b757301d24db1095dd23e12a24`
+-	Image ID: `sha256:b8efc6a65ae0813b542eae25a64afeade6ac6ad3cc7da3be55e0d901d87b18e9`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4808,45 +4808,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 06:21:10 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:11 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:12 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 06:21:13 GMT
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:49:03 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 06:21:14 GMT
+# Tue, 07 Jan 2020 02:49:03 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 18:52:39 GMT
+# Tue, 07 Jan 2020 03:13:58 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 18:54:05 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 18:54:25 GMT
+# Tue, 07 Jan 2020 03:16:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 18:54:26 GMT
+# Tue, 07 Jan 2020 03:16:23 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:24 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:25 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 18:54:30 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 18:54:31 GMT
+# Tue, 07 Jan 2020 03:23:20 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sat, 28 Dec 2019 18:54:32 GMT
+# Tue, 07 Jan 2020 03:23:21 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sat, 28 Dec 2019 18:54:38 GMT
+# Tue, 07 Jan 2020 03:23:27 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 19:00:14 GMT
+# Tue, 07 Jan 2020 03:30:37 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:00:18 GMT
+# Tue, 07 Jan 2020 03:30:42 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 19:00:18 GMT
+# Tue, 07 Jan 2020 03:30:45 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 19:00:19 GMT
+# Tue, 07 Jan 2020 03:30:48 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 19:00:19 GMT
+# Tue, 07 Jan 2020 03:30:54 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 19:00:20 GMT
+# Tue, 07 Jan 2020 03:30:57 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4867,54 +4867,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:19:48 GMT  
 		Size: 20.7 MB (20712825 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a1abd10ed01f4676d01f9620fefa1b776da2696d3e8122db559411e1bcf31a5`  
-		Last Modified: Sat, 28 Dec 2019 07:19:43 GMT  
-		Size: 177.0 B  
+	-	`sha256:339d13f87ffb8e7206ef67a9df0490843eb23c62c24d4f6e4987b4988de4bfa4`  
+		Last Modified: Tue, 07 Jan 2020 02:52:02 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0a7c2743b41303e80e8acd0f8dc6caa37bb0875ea8f69ba90b23d783d1a1576`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.7 KB (1730 bytes)  
+	-	`sha256:17f97b318b29436f18fd49df95209eeaeb49250ffbafffaee6d4c48c6c50f8a3`  
+		Last Modified: Tue, 07 Jan 2020 03:39:42 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce30b0c7067a61af709a70b8a9e7d2bb903a7c0bda27f1c2eb2eb9252bd582f5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:38 GMT  
-		Size: 76.0 MB (76024356 bytes)  
+	-	`sha256:f288be7cde7b6a6a81e3accc68decd3aa798fa1f0cef89c3953fb86ebf7d8b31`  
+		Last Modified: Tue, 07 Jan 2020 03:40:07 GMT  
+		Size: 76.0 MB (76024941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45f4f5374736951cb6a48b25326fb7b30f73b9d9301055de28d367fbf8d3e1eb`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.3 MB (1254316 bytes)  
+	-	`sha256:c37ce11948573b9edac8f826ad594138ddfaacc192079b3eb80b4e287ff914f7`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 1.3 MB (1254343 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dec0a6576283611b4db08a85251e4201ea40ed2ab3daa8f85e467c41b24974fd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 172.0 B  
+	-	`sha256:7704ca0edea2430982c5b21980b5af780b93b80630b113085d80b4f8048b3ab6`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4485bfb4d90b4b15e23b20a445354a6f1f841f36e008923b342d3c81cb867ed6`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
+	-	`sha256:cca896ec85003a248d1a78bde07d0361b690c9008a1f61f76a5f1da30224cc1b`  
+		Last Modified: Tue, 07 Jan 2020 03:39:40 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24149b50efe495f26abd57b309002a487f54abeb32032532c522e7d675843ecc`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 2.5 MB (2534558 bytes)  
+	-	`sha256:7a6832e18cdab365564a97eab518b9c1e74a33359eb17e7b3c5150bab015594a`  
+		Last Modified: Tue, 07 Jan 2020 03:40:19 GMT  
+		Size: 2.5 MB (2534560 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e654c61309b166c14b3c190e212c7e46e15327b12e1f7c0e5aff505bd49db5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:25 GMT  
-		Size: 60.2 MB (60162326 bytes)  
+	-	`sha256:84d956f27c0a13d802712ed22623a8f86cc3c9826edb352757638169f49999ed`  
+		Last Modified: Tue, 07 Jan 2020 03:40:34 GMT  
+		Size: 60.2 MB (60173513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:00da1ff4fd94048e4ee2fcac80c566c3daeb2dfe83e480124e3163110844b212`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 2.1 KB (2051 bytes)  
+	-	`sha256:6e0ea23394b641c149290f556dd51b7bb7e6b644ef9365332691ed6b09d14d52`  
+		Last Modified: Tue, 07 Jan 2020 03:40:18 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:ef669df09928f23babf9a209c7c9f052edd21255138e8ee0083bbe823c151a50
+$ docker pull redmine@sha256:d917f6c3c580fb68231ad7aa27c5969fef04ddb555c94022efbea759fa193e5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **189.2 MB (189218565 bytes)**  
+-	Total Size: **189.2 MB (189224767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5df0635edfa435b60db717e8e67265c3f9286c096a145b8a2887642e426e85a4`
+-	Image ID: `sha256:84838c8a333140d0bf51db7b51e606f6f1e9757a54df9eb1dfeea7b236bbbb47`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -4937,45 +4937,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:22:59 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:22:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:23:00 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:23:01 GMT
+# Tue, 07 Jan 2020 03:12:46 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:12:47 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:12:50 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:23:02 GMT
+# Tue, 07 Jan 2020 03:12:51 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:16:55 GMT
+# Tue, 07 Jan 2020 03:39:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:17:46 GMT
+# Tue, 07 Jan 2020 03:40:34 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:18:03 GMT
+# Tue, 07 Jan 2020 03:40:59 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:18:04 GMT
+# Tue, 07 Jan 2020 03:41:00 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:18:05 GMT
+# Tue, 07 Jan 2020 03:41:01 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:18:06 GMT
+# Tue, 07 Jan 2020 03:41:02 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:41:04 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:46:42 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 08:18:09 GMT
+# Tue, 07 Jan 2020 03:46:43 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 08:18:16 GMT
+# Tue, 07 Jan 2020 03:46:48 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 08:23:20 GMT
+# Tue, 07 Jan 2020 03:51:48 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:23:22 GMT
+# Tue, 07 Jan 2020 03:51:51 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 08:23:23 GMT
+# Tue, 07 Jan 2020 03:51:52 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 08:23:24 GMT
+# Tue, 07 Jan 2020 03:51:53 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 08:23:24 GMT
+# Tue, 07 Jan 2020 03:51:54 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 08:23:25 GMT
+# Tue, 07 Jan 2020 03:51:54 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -4996,54 +4996,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:13:25 GMT  
 		Size: 20.6 MB (20620161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:158be611acd1464ed169ba02f406468d7ba338ee3bb447aee4115317b6f84478`  
-		Last Modified: Sat, 28 Dec 2019 22:13:20 GMT  
+	-	`sha256:5fe49bcffa8c82983470bbf0074d2412dacbf1f325bcc2ffb85fddcbda7c7da8`  
+		Last Modified: Tue, 07 Jan 2020 03:17:58 GMT  
 		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fdd79f36888d0a15667a5d2a333408886aa5313ddd41b011ef2583c604644f8`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.7 KB (1737 bytes)  
+	-	`sha256:67711a5ad765c81e93b31a6b9e1b763d7d8448315399ea1765bf97971567bfcb`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:060aab585d09a8861a4cc045480e04a098de3eff59e488f3303b3857ba1bd189`  
-		Last Modified: Sun, 29 Dec 2019 08:31:19 GMT  
-		Size: 72.4 MB (72370630 bytes)  
+	-	`sha256:05d74eecc06d13134c138c9df69b88fae2a875703f36a0fb2fd26e740242128b`  
+		Last Modified: Tue, 07 Jan 2020 03:59:24 GMT  
+		Size: 72.4 MB (72371109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5f67f581ba225fd56401856418bea0ecbd2f16ff6d5d1aa879672235dc2052e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.2 MB (1243523 bytes)  
+	-	`sha256:13558994cbeb5acd84e3d5cbd289b63aa49eb00c519c44df85c8eb739e1aecdc`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.2 MB (1243608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:001e2d72a3770aa4210e8d94abd7f170d1cbe938357d4150a2849b82404aedb9`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 170.0 B  
+	-	`sha256:0071ee240d8a61e07f23310aaa0abd958805870c68cc9a980486c0af09abd8de`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acb379f61d4d54ba729ad2756b2014a59555ad5d0754045879d06a7c343e951`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
+	-	`sha256:5d4a08ec220f99917007502db7459ff7d23e8e699418f7728948b9785f8ad389`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21309a82699614d95c7a7e10071c8e1b69508c65c4d338b53ce0cd591fcf163e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:56 GMT  
-		Size: 2.5 MB (2534556 bytes)  
+	-	`sha256:a0d7e0dc0053822770819d959cac7513a859d9618ae56b44f8d33b3f5b2df4f1`  
+		Last Modified: Tue, 07 Jan 2020 03:59:37 GMT  
+		Size: 2.5 MB (2534562 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb12db426b4ff7d822c7e19712f9782f34cae9de155bc86df4dc75980610e02b`  
-		Last Modified: Sun, 29 Dec 2019 08:31:09 GMT  
-		Size: 59.9 MB (59898696 bytes)  
+	-	`sha256:fa06922e5d4a3de4ed3363b48bd989cb1a9b7f4ea6f358de950d907a9a1e6b6d`  
+		Last Modified: Tue, 07 Jan 2020 03:59:56 GMT  
+		Size: 59.9 MB (59904325 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30bab4fb6bbd5f31886fcc0aa353fd430786e3be1705687b3eb819080ffa40e7`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:0fe32bd74c6043c232cfb85af73f804e43aaf87445b9877f167d1e5340e8b0e5`  
+		Last Modified: Tue, 07 Jan 2020 03:59:35 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:d3b75e15bf5f352a83ddfe6cb05f4a10deb872e77efb81d629c4c5820a6ab27b
+$ docker pull redmine@sha256:ea9ec005d491ca2528d1e2af93dc51dc0baf6e090ea15c2f5ef389f5c0f7cdec
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **201.9 MB (201907460 bytes)**  
+-	Total Size: **201.9 MB (201914448 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:541dd22eacf15820a1f4ca88b07824cacd3daa244f13454e4971f042e9c3d50f`
+-	Image ID: `sha256:262c31f8aae656b02bfeebca09d9c886823022dba71c58fac90451bb7abed775`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5066,45 +5066,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 22:32:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 22:33:02 GMT
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:41:13 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 22:33:03 GMT
+# Tue, 07 Jan 2020 02:41:14 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:19:51 GMT
+# Tue, 07 Jan 2020 03:06:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:20:40 GMT
+# Tue, 07 Jan 2020 03:07:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:21:01 GMT
+# Tue, 07 Jan 2020 03:08:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:21:03 GMT
+# Tue, 07 Jan 2020 03:08:35 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:38 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:08:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:16:20 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 09:21:08 GMT
+# Tue, 07 Jan 2020 03:16:21 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 09:21:13 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 09:27:23 GMT
+# Tue, 07 Jan 2020 03:21:47 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:27:25 GMT
+# Tue, 07 Jan 2020 03:21:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 09:27:26 GMT
+# Tue, 07 Jan 2020 03:21:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 09:27:26 GMT
+# Tue, 07 Jan 2020 03:21:51 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 09:27:27 GMT
+# Tue, 07 Jan 2020 03:21:52 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 09:27:28 GMT
+# Tue, 07 Jan 2020 03:21:52 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -5125,54 +5125,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:23:41 GMT  
 		Size: 21.3 MB (21281931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3866dedbd8f45e73eb720d06e31b7b404c7f341945bac9e36c94b3debf5e2469`  
-		Last Modified: Sat, 28 Dec 2019 23:23:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:6f1828050bdff9d08ad357e12a1bd0639c7818f955a59966e76a48d90c55ccc2`  
+		Last Modified: Tue, 07 Jan 2020 02:45:23 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de07b264b3e1232fcca516dbdf000d3896f1ff7e80bf820ec728c928b757d443`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.8 KB (1751 bytes)  
+	-	`sha256:ebec8c6749d85258e801554c4c6b4d94f96e6ca4909194be6fc4aa78f0ba7caf`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.8 KB (1759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0fa545ca828ef3682e6175a8eff7187e466949b96d0b581058dbe26d77878cb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:42 GMT  
-		Size: 78.8 MB (78781403 bytes)  
+	-	`sha256:d7616f60ca94ba9dd9d5ec4a4672df90a8f21683b3f5e363ecbb6c56cd57b34f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:38 GMT  
+		Size: 78.8 MB (78781946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb8f0ebf113189284a9f5e6486d0a5ea70731e394f9d0c3bd9eb1fea3d66ecc1`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.2 MB (1228577 bytes)  
+	-	`sha256:ed90e7447acdd79b625fff5e37d6b9567b24b0ec16826357c12a1f1047c0e96a`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.2 MB (1228684 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7562512ba5b7faaf680e4f47310868434d855eda2c8b4178e154d45ef9bccd0`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
-		Size: 172.0 B  
+	-	`sha256:bc9cb5aa81f92922c768a7f7f77d66adc87edf01e2ce3986835401c20d683c11`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc767004d48c8e0659f28c1244254ab17aa8c7419a8ca4e7070c4d84e1333d7e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:fe15bb660b67ad397ff5dced96f6c5a667bc63dd0d23a82b5d30347018e9c15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e1e7ab6e81f43b5d15b670b9b2852b288d66ee6b92c0f6b584f45dc0e20a132`  
-		Last Modified: Sun, 29 Dec 2019 09:34:18 GMT  
-		Size: 2.5 MB (2534551 bytes)  
+	-	`sha256:5bb9da5aaab24a2becc2b052f105f1d4d9a237cab2fb743aa0b7f9e9a711b15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:50 GMT  
+		Size: 2.5 MB (2534554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:845bc2406c901532299e89a0106d6587cee0aaa67b8161f1080cd67e7696ba76`  
-		Last Modified: Sun, 29 Dec 2019 09:34:31 GMT  
-		Size: 61.0 MB (60981095 bytes)  
+	-	`sha256:ad86e98e6cf2e9444078028cd75f112236617e972584bbf489766f0637707e79`  
+		Last Modified: Tue, 07 Jan 2020 03:32:03 GMT  
+		Size: 61.0 MB (60987423 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5db52f3e695ac9514d49326facc67a7c438b870518d6a510fa2f766ea853be8`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:6a78f1d2375bd732b1df8e23816444a68a3862a950e75bc8cda891eff625d248`  
+		Last Modified: Tue, 07 Jan 2020 03:31:48 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:654baa53b696de8d0c487e9fc79610e9b451a4542551a33dd58d4af32b6d4cee
+$ docker pull redmine@sha256:afdd29f187f6bd90676bf65dd4dc724d1941c948f10750be46e0e875a261b794
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **211.4 MB (211387933 bytes)**  
+-	Total Size: **211.4 MB (211383101 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:03bb96ace450ca74fda13dd6448d4a632f1fbe397a85f13156b9bb6b933bf60e`
+-	Image ID: `sha256:70b742dec9557653aae1233ed22ec193e889aed1f038e376ab6341e068443927`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5195,45 +5195,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:48:29 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:07 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:39:08 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:39:08 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:08 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:35:25 GMT
+# Tue, 07 Jan 2020 03:00:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:36:01 GMT
+# Tue, 07 Jan 2020 03:01:23 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:04:48 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 00:36:19 GMT
+# Tue, 07 Jan 2020 03:04:49 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 00:36:24 GMT
+# Tue, 07 Jan 2020 03:04:52 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 00:41:13 GMT
+# Tue, 07 Jan 2020 03:07:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:41:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 00:41:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 00:41:15 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 00:41:15 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 00:41:15 GMT
+# Tue, 07 Jan 2020 03:07:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -5254,54 +5254,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:44:44 GMT  
 		Size: 20.9 MB (20885521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17d698d757862d4c6e9742e6794e0e071637015bdb38321f25b825ec0f9fcbb2`  
-		Last Modified: Sat, 28 Dec 2019 16:44:37 GMT  
-		Size: 144.0 B  
+	-	`sha256:b0c53ce40fd432336a5365d519861a9d64c7cf858412dd402f939e5f6cb0ed3f`  
+		Last Modified: Tue, 07 Jan 2020 02:41:40 GMT  
+		Size: 141.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:096b2fd689438f0bac3f7636511f338e5de2dfedc3d09046b407bc8414b71fef`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:2b71e9da85871d84768b7e4ee95650087a03f4db095955f62e526335b0c09aa4`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 1.7 KB (1740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1abae356afaeb4eb2314f0986f093ec2c8c466f46c9895b63c2adf384c1b8543`  
-		Last Modified: Sun, 29 Dec 2019 00:48:44 GMT  
-		Size: 81.6 MB (81574496 bytes)  
+	-	`sha256:9a3ccb3b9a12325f66d08313505167fa8d7a46ab42c2e89625e485c5ac43ca78`  
+		Last Modified: Tue, 07 Jan 2020 03:11:33 GMT  
+		Size: 81.6 MB (81574872 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2199cf4d500212beef54799d49b397ab7fae50956f80ca93bc3e46f9d2d1ac04`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.3 MB (1261040 bytes)  
+	-	`sha256:f8085aa370c294355492d62d20997a91dce32290fb39f7ff46d2ea9f79c9cac7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:09 GMT  
+		Size: 1.3 MB (1261083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8616ae50f35dda86452ca27a4dce70e4609360e329786c45255b8efe28d87101`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 137.0 B  
+	-	`sha256:9ca155252736682989c07106e5bb0eeaaf8b2372c1366aa1cdc83c0575ff1a54`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:835b0f14c08317511b0d06b0dbf1f4db9174521435ebed17189bf86b6e00dd55`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 127.0 B  
+	-	`sha256:67b530bf833967827e0f2848925236be5bb8b6284da960ded962768f10853d79`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5899fa74506e91d57ac7be80f82629186032abd38d752505b4f72bd61c5e4c1a`  
-		Last Modified: Sun, 29 Dec 2019 00:48:01 GMT  
-		Size: 2.5 MB (2534059 bytes)  
+	-	`sha256:4f2d9c5e5ea62422bf45c92473bc5a3da00f61b8c50620eb2d3498e6b0a3b55a`  
+		Last Modified: Tue, 07 Jan 2020 03:11:41 GMT  
+		Size: 2.5 MB (2534064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1b64bd7059f4f5a3f2849c71268d9b047e7e4dc7b20c046baac97c724c041cb`  
-		Last Modified: Sun, 29 Dec 2019 00:48:22 GMT  
-		Size: 60.2 MB (60175393 bytes)  
+	-	`sha256:2eeabf47c597ac78311fc1c2fde0c195f205701267be3f46e1316504ebcee999`  
+		Last Modified: Tue, 07 Jan 2020 03:11:50 GMT  
+		Size: 60.2 MB (60170132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ba2ae9aeb6d023c3d505bb5698f5c20617cac811768007bca8f4ea2509f54bb`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
+	-	`sha256:079c07d38691e261bdaa3b7a21446bffa9c2286cad07a66e4fad886b089b8ea7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:40 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:f872ee30ee7367a6db131dba8c89a17d471d0c3a62c596dffbcdf61860dd28b3
+$ docker pull redmine@sha256:3b72c00508a43a0fd8834418421c68c043e44c514a8485b5c6b66131e66491c5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **217.4 MB (217439900 bytes)**  
+-	Total Size: **217.5 MB (217460663 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0cc67159e26ef87daf0a6327a9bb76c410bc39ef52e17c686479fcfc67fbde03`
+-	Image ID: `sha256:91e63660e1732865b6eb5767d0f41f2c380bad8dba2b0f54f4c0fc772a979853`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5324,45 +5324,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 04:49:02 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:03 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:06 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 04:49:16 GMT
+# Tue, 07 Jan 2020 02:18:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:18:45 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:18:54 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 04:49:20 GMT
+# Tue, 07 Jan 2020 02:18:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:35:48 GMT
+# Tue, 07 Jan 2020 02:52:26 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:37:37 GMT
+# Tue, 07 Jan 2020 02:56:12 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:38:10 GMT
+# Tue, 07 Jan 2020 02:57:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:38:12 GMT
+# Tue, 07 Jan 2020 02:57:19 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:38:14 GMT
+# Tue, 07 Jan 2020 02:57:25 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:38:15 GMT
+# Tue, 07 Jan 2020 02:57:31 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:38:20 GMT
+# Tue, 07 Jan 2020 02:57:38 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 05:38:21 GMT
+# Tue, 07 Jan 2020 03:08:01 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sat, 28 Dec 2019 05:38:23 GMT
+# Tue, 07 Jan 2020 03:08:03 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sat, 28 Dec 2019 05:38:29 GMT
+# Tue, 07 Jan 2020 03:08:11 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 05:47:15 GMT
+# Tue, 07 Jan 2020 03:16:01 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:47:19 GMT
+# Tue, 07 Jan 2020 03:16:06 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 05:47:20 GMT
+# Tue, 07 Jan 2020 03:16:07 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 05:47:23 GMT
+# Tue, 07 Jan 2020 03:16:11 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 05:47:25 GMT
+# Tue, 07 Jan 2020 03:16:13 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 05:47:28 GMT
+# Tue, 07 Jan 2020 03:16:15 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -5383,54 +5383,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:29:59 GMT  
 		Size: 22.0 MB (21968340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcdef1db578dfb59ea162f659338a2ab021d2839d6727f80e64bb67e6a440c8f`  
-		Last Modified: Sat, 28 Dec 2019 05:29:51 GMT  
-		Size: 175.0 B  
+	-	`sha256:88418e7313544081130ec82f1125b007f6673672ed6fe3f2815a8bc0836d834d`  
+		Last Modified: Tue, 07 Jan 2020 02:27:35 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d107d4bd078e8cdadd410658f8b2b9a49551e5963f8990280e0c333125be1c5`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:c811e39d17ef5178d803832537e4b94505620908b40d2ece5c639ebc74bb249c`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a612640847c9d0e0735e41875007ad7f8bfad5510cdf8badc050102844aac3f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:02 GMT  
-		Size: 86.8 MB (86836986 bytes)  
+	-	`sha256:759f2cb97aba0fe1a2f1053949514cc564ab7e2cfc06feb29ff83f1a25204a75`  
+		Last Modified: Tue, 07 Jan 2020 03:30:06 GMT  
+		Size: 86.8 MB (86837114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1f66358e7c44f05b25d225eb2d4908b94b2dd1c1e3f2dc1ecb2bd6ba79b8353`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.2 MB (1217951 bytes)  
+	-	`sha256:3b6f7850a6e18d809176a36601f044b1e81f00e83669c91e047608f68e15fe76`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.2 MB (1218315 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d7bb190f232d859b513e53f0ab37b7dedc500668034b02d0eabba16dc7488a6`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 169.0 B  
+	-	`sha256:8d6322666aa095fbbcc93f7c9b4120792fc53d3d10e016d2f5b886ebaf9a71dd`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa186ef829d9161ba8520eb43c24ff82a504b79e9a14ff653a64adc2be34f00c`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
+	-	`sha256:4ff21de5e70292bac1732e4d68af3d870e59b1973fe11a6f7f5f8e2584d35433`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31b1d4be8d4e3087a98589c64b5f2c6391b13f7471271b0ed517a10c92d734df`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 2.5 MB (2534553 bytes)  
+	-	`sha256:633b566a1dbe8eeef0d0b5c4732d6ac66eda4587e3b21599312cd29761361e8b`  
+		Last Modified: Tue, 07 Jan 2020 03:30:31 GMT  
+		Size: 2.5 MB (2534555 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9ed3dbaf662e30c7663536f7e9db1d2baf1fbc1c4afa92292684c6a1741d4ff`  
-		Last Modified: Sat, 28 Dec 2019 05:58:41 GMT  
-		Size: 61.7 MB (61671149 bytes)  
+	-	`sha256:5f337b238cf11085e841cb2b678ee52427fbe3fed15d77af9f53390d8f381638`  
+		Last Modified: Tue, 07 Jan 2020 03:30:43 GMT  
+		Size: 61.7 MB (61691408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a587aa4dcc42b3dc1e84eeee3144cd47ab1b6a7bb55f07df90e9235aa16a265`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:9eb4a9c44493483860c49221185018fc6e650c32c0e163d7245bc19258a6e820`  
+		Last Modified: Tue, 07 Jan 2020 03:30:29 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:e1dad5632b7ea30285b8a488316ce2935d347970593d59242ddcdadb4a763bf1
+$ docker pull redmine@sha256:bafed96d3360d8f9e5e149d9a18d47db82988aca105fd7ae6d1d23b2c98b9237
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **201.3 MB (201338007 bytes)**  
+-	Total Size: **201.3 MB (201345055 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f238208d6d2ab8568ba7204843fff2f063c253c7848aacafc716a7e5f20b76b3`
+-	Image ID: `sha256:0cac3801012f6f928ff779ec8b03c0fe41dbf1e49783d9db2a9b717353a622e4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5453,45 +5453,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:08:18 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:37 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:51:38 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:51:38 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:38 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:23:44 GMT
+# Tue, 07 Jan 2020 03:10:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:24:09 GMT
+# Tue, 07 Jan 2020 03:11:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:14:42 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:14:42 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sat, 28 Dec 2019 14:24:32 GMT
+# Tue, 07 Jan 2020 03:14:45 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 14:27:48 GMT
+# Tue, 07 Jan 2020 03:17:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 14:27:50 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -5512,47 +5512,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:30:40 GMT  
 		Size: 21.6 MB (21592480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79735b8aa359aed9b6ee2a64febed41202c437579b9c8ad025676cfd66f20fed`  
-		Last Modified: Sat, 28 Dec 2019 10:30:38 GMT  
+	-	`sha256:15818d45572da0ffbfd7b7c213011e34026a9b2483d38923e1bc970d8ba5190e`  
+		Last Modified: Tue, 07 Jan 2020 02:53:53 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af8a0bb70baf552440dff2f8f94aa31ba6768cb32f5a3da6970781643923fdde`  
-		Last Modified: Sat, 28 Dec 2019 14:32:13 GMT  
+	-	`sha256:427ecfe31dba9c1596393d2ff44b1755e2e5e759c7f232ca85092cec7f54f2b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:56 GMT  
 		Size: 1.7 KB (1746 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f1a973c70c53b47609efe91db858666ef988043d215cddc6f9751c55b0fd392`  
-		Last Modified: Sat, 28 Dec 2019 14:32:23 GMT  
-		Size: 77.9 MB (77925088 bytes)  
+	-	`sha256:2f7e3e94b67c1cda303409e25d8cb94365a5f5f14afd3555c76c769848de8e40`  
+		Last Modified: Tue, 07 Jan 2020 03:22:09 GMT  
+		Size: 77.9 MB (77925465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0294c12814d551aa6eb69a5a560222343a852e986115d315fc8429c84eb715da`  
-		Last Modified: Sat, 28 Dec 2019 14:32:12 GMT  
-		Size: 1.3 MB (1283271 bytes)  
+	-	`sha256:3439ec6ad867494e2250f152a883df214ce113074bbf9de627d2257fa0d7f1b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:55 GMT  
+		Size: 1.3 MB (1283337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01ed275456f3eeabe48efca226847c8108a6085fa2453fb91c765f16812e0e3`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 138.0 B  
+	-	`sha256:a4f1e85279851de1e1b0ac45b00c5e4a1489fe9a74ead59e4538c7ae50d2c426`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d27738cc26c1fc745448e52175e3cdaec01770748fd659b3740fe797605d06a9`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 128.0 B  
+	-	`sha256:932423e08f42b141be99ffdcc5a4a4d294eeebab50b0b3bafcc30018f4b90fc6`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a132222f48f27563e10c51d064ec95fd5186dd2960b045203cd8f271a9491db`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 2.5 MB (2534080 bytes)  
+	-	`sha256:db09560a8fd871aadc9f47c7e7cf8858532ce8081c0b84fa715b91125547f34d`  
+		Last Modified: Tue, 07 Jan 2020 03:22:17 GMT  
+		Size: 2.5 MB (2534077 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ee834d094da2f3e58c0c1e9645b900caadf9fa9a71ee89430b7ef2d198fd268`  
-		Last Modified: Sat, 28 Dec 2019 14:32:25 GMT  
-		Size: 61.5 MB (61499148 bytes)  
+	-	`sha256:8acb4385711e5ed46d21508dcdefbb82dbfdf5394a23467b08a33f39dafdb37b`  
+		Last Modified: Tue, 07 Jan 2020 03:22:23 GMT  
+		Size: 61.5 MB (61505758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32afdf86ea8a7e935b26c2ba35d80aa16302ce8a1d946e6237bc8a68e8eae8df`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
+	-	`sha256:3b56b639c2141c18b907be0f104a57203844fc123bef6f90bd28cd3ecc8252ab`  
+		Last Modified: Tue, 07 Jan 2020 03:22:16 GMT  
 		Size: 2.1 KB (2052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.0.6`
 
 ```console
-$ docker pull redmine@sha256:1830423c11ef739bad8f06e5ef00747bd07483616cd4d4302ccd4ccb5926a21f
+$ docker pull redmine@sha256:446c44ad5d83005f40d58ca1e924273f9b1de4f41134cd1fc696c39523c2a6b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5568,14 +5568,14 @@ $ docker pull redmine@sha256:1830423c11ef739bad8f06e5ef00747bd07483616cd4d4302cc
 ### `redmine:4.0.6` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:1958f4862020581c184440b6cdf6f2a7094f378271651c84ff853907f876ad95
+$ docker pull redmine@sha256:6c6ecafdafc7880eb04e8d0b68592dcc34f00fba00ba1bf624c130b46ebebf77
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **206.1 MB (206129663 bytes)**  
+-	Total Size: **206.2 MB (206152020 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a34ffa7d0f4d9ce1804e973fe340af1e81e70c23d8fa8cff88f4bf286736eb12`
+-	Image ID: `sha256:a7bfd9663dc23d0fdf706fea06b76f971d444bcdbb7dfcf7c19d8bd7fd11730c`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5598,45 +5598,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 10:11:43 GMT
+# Tue, 07 Jan 2020 02:47:35 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -5657,54 +5657,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51c51636301f966c645dc4f7e4fdb5272cd1def23fb6c7ad8693b32a057cf468`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 2.5 MB (2534068 bytes)  
+	-	`sha256:e4afc1770bdcd5ce4d9bdd3587987b09053f042cd48c8f5810cfcaa87a16b5a9`  
+		Last Modified: Tue, 07 Jan 2020 02:59:47 GMT  
+		Size: 2.5 MB (2534060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:931e95ecd10926bb3b1587ddd74dda0767c64d02915eb409e7250a0057ec8cfc`  
-		Last Modified: Sun, 29 Dec 2019 10:18:58 GMT  
-		Size: 61.1 MB (61055982 bytes)  
+	-	`sha256:f3021ea3a73603775149dab7dad56524184be935c404ee634fc3342e116542d8`  
+		Last Modified: Tue, 07 Jan 2020 02:59:56 GMT  
+		Size: 61.1 MB (61077693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8dc23b9dbfe2a8b2a3c12ad4b94c5bc5b0c396baaf2ebe208164b45b8baea22a`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:4117ba73b272c8622eab18cc70499b20571dcf410b5f4c36442c451109308c06`  
+		Last Modified: Tue, 07 Jan 2020 02:59:45 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0.6` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:fc72eb410f6357dea1fc1656313297008ea23248757b7f29ee58dfab9a8dab54
+$ docker pull redmine@sha256:b311f49957f73c54231dc1ea7855bb7454acfc4286154fcbcacc981e55beeed5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.8 MB (195848534 bytes)**  
+-	Total Size: **195.9 MB (195860344 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7f9df0219daba3100fb27ca8da9aaf5ad99009b757301d24db1095dd23e12a24`
+-	Image ID: `sha256:b8efc6a65ae0813b542eae25a64afeade6ac6ad3cc7da3be55e0d901d87b18e9`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5727,45 +5727,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 06:21:10 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:11 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:12 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 06:21:13 GMT
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:49:03 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 06:21:14 GMT
+# Tue, 07 Jan 2020 02:49:03 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 18:52:39 GMT
+# Tue, 07 Jan 2020 03:13:58 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 18:54:05 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 18:54:25 GMT
+# Tue, 07 Jan 2020 03:16:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 18:54:26 GMT
+# Tue, 07 Jan 2020 03:16:23 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:24 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:25 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 18:54:30 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 18:54:31 GMT
+# Tue, 07 Jan 2020 03:23:20 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sat, 28 Dec 2019 18:54:32 GMT
+# Tue, 07 Jan 2020 03:23:21 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sat, 28 Dec 2019 18:54:38 GMT
+# Tue, 07 Jan 2020 03:23:27 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 19:00:14 GMT
+# Tue, 07 Jan 2020 03:30:37 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 19:00:18 GMT
+# Tue, 07 Jan 2020 03:30:42 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 19:00:18 GMT
+# Tue, 07 Jan 2020 03:30:45 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 19:00:19 GMT
+# Tue, 07 Jan 2020 03:30:48 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 19:00:19 GMT
+# Tue, 07 Jan 2020 03:30:54 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 19:00:20 GMT
+# Tue, 07 Jan 2020 03:30:57 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -5786,54 +5786,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:19:48 GMT  
 		Size: 20.7 MB (20712825 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a1abd10ed01f4676d01f9620fefa1b776da2696d3e8122db559411e1bcf31a5`  
-		Last Modified: Sat, 28 Dec 2019 07:19:43 GMT  
-		Size: 177.0 B  
+	-	`sha256:339d13f87ffb8e7206ef67a9df0490843eb23c62c24d4f6e4987b4988de4bfa4`  
+		Last Modified: Tue, 07 Jan 2020 02:52:02 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0a7c2743b41303e80e8acd0f8dc6caa37bb0875ea8f69ba90b23d783d1a1576`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.7 KB (1730 bytes)  
+	-	`sha256:17f97b318b29436f18fd49df95209eeaeb49250ffbafffaee6d4c48c6c50f8a3`  
+		Last Modified: Tue, 07 Jan 2020 03:39:42 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce30b0c7067a61af709a70b8a9e7d2bb903a7c0bda27f1c2eb2eb9252bd582f5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:38 GMT  
-		Size: 76.0 MB (76024356 bytes)  
+	-	`sha256:f288be7cde7b6a6a81e3accc68decd3aa798fa1f0cef89c3953fb86ebf7d8b31`  
+		Last Modified: Tue, 07 Jan 2020 03:40:07 GMT  
+		Size: 76.0 MB (76024941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45f4f5374736951cb6a48b25326fb7b30f73b9d9301055de28d367fbf8d3e1eb`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.3 MB (1254316 bytes)  
+	-	`sha256:c37ce11948573b9edac8f826ad594138ddfaacc192079b3eb80b4e287ff914f7`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 1.3 MB (1254343 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dec0a6576283611b4db08a85251e4201ea40ed2ab3daa8f85e467c41b24974fd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 172.0 B  
+	-	`sha256:7704ca0edea2430982c5b21980b5af780b93b80630b113085d80b4f8048b3ab6`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4485bfb4d90b4b15e23b20a445354a6f1f841f36e008923b342d3c81cb867ed6`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
+	-	`sha256:cca896ec85003a248d1a78bde07d0361b690c9008a1f61f76a5f1da30224cc1b`  
+		Last Modified: Tue, 07 Jan 2020 03:39:40 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24149b50efe495f26abd57b309002a487f54abeb32032532c522e7d675843ecc`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 2.5 MB (2534558 bytes)  
+	-	`sha256:7a6832e18cdab365564a97eab518b9c1e74a33359eb17e7b3c5150bab015594a`  
+		Last Modified: Tue, 07 Jan 2020 03:40:19 GMT  
+		Size: 2.5 MB (2534560 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e654c61309b166c14b3c190e212c7e46e15327b12e1f7c0e5aff505bd49db5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:25 GMT  
-		Size: 60.2 MB (60162326 bytes)  
+	-	`sha256:84d956f27c0a13d802712ed22623a8f86cc3c9826edb352757638169f49999ed`  
+		Last Modified: Tue, 07 Jan 2020 03:40:34 GMT  
+		Size: 60.2 MB (60173513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:00da1ff4fd94048e4ee2fcac80c566c3daeb2dfe83e480124e3163110844b212`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 2.1 KB (2051 bytes)  
+	-	`sha256:6e0ea23394b641c149290f556dd51b7bb7e6b644ef9365332691ed6b09d14d52`  
+		Last Modified: Tue, 07 Jan 2020 03:40:18 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0.6` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:ef669df09928f23babf9a209c7c9f052edd21255138e8ee0083bbe823c151a50
+$ docker pull redmine@sha256:d917f6c3c580fb68231ad7aa27c5969fef04ddb555c94022efbea759fa193e5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **189.2 MB (189218565 bytes)**  
+-	Total Size: **189.2 MB (189224767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5df0635edfa435b60db717e8e67265c3f9286c096a145b8a2887642e426e85a4`
+-	Image ID: `sha256:84838c8a333140d0bf51db7b51e606f6f1e9757a54df9eb1dfeea7b236bbbb47`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5856,45 +5856,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:22:59 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:22:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:23:00 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:23:01 GMT
+# Tue, 07 Jan 2020 03:12:46 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:12:47 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:12:50 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:23:02 GMT
+# Tue, 07 Jan 2020 03:12:51 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:16:55 GMT
+# Tue, 07 Jan 2020 03:39:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:17:46 GMT
+# Tue, 07 Jan 2020 03:40:34 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:18:03 GMT
+# Tue, 07 Jan 2020 03:40:59 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:18:04 GMT
+# Tue, 07 Jan 2020 03:41:00 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:18:05 GMT
+# Tue, 07 Jan 2020 03:41:01 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:18:06 GMT
+# Tue, 07 Jan 2020 03:41:02 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:41:04 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:46:42 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 08:18:09 GMT
+# Tue, 07 Jan 2020 03:46:43 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 08:18:16 GMT
+# Tue, 07 Jan 2020 03:46:48 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 08:23:20 GMT
+# Tue, 07 Jan 2020 03:51:48 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:23:22 GMT
+# Tue, 07 Jan 2020 03:51:51 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 08:23:23 GMT
+# Tue, 07 Jan 2020 03:51:52 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 08:23:24 GMT
+# Tue, 07 Jan 2020 03:51:53 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 08:23:24 GMT
+# Tue, 07 Jan 2020 03:51:54 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 08:23:25 GMT
+# Tue, 07 Jan 2020 03:51:54 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -5915,54 +5915,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:13:25 GMT  
 		Size: 20.6 MB (20620161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:158be611acd1464ed169ba02f406468d7ba338ee3bb447aee4115317b6f84478`  
-		Last Modified: Sat, 28 Dec 2019 22:13:20 GMT  
+	-	`sha256:5fe49bcffa8c82983470bbf0074d2412dacbf1f325bcc2ffb85fddcbda7c7da8`  
+		Last Modified: Tue, 07 Jan 2020 03:17:58 GMT  
 		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fdd79f36888d0a15667a5d2a333408886aa5313ddd41b011ef2583c604644f8`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.7 KB (1737 bytes)  
+	-	`sha256:67711a5ad765c81e93b31a6b9e1b763d7d8448315399ea1765bf97971567bfcb`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:060aab585d09a8861a4cc045480e04a098de3eff59e488f3303b3857ba1bd189`  
-		Last Modified: Sun, 29 Dec 2019 08:31:19 GMT  
-		Size: 72.4 MB (72370630 bytes)  
+	-	`sha256:05d74eecc06d13134c138c9df69b88fae2a875703f36a0fb2fd26e740242128b`  
+		Last Modified: Tue, 07 Jan 2020 03:59:24 GMT  
+		Size: 72.4 MB (72371109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5f67f581ba225fd56401856418bea0ecbd2f16ff6d5d1aa879672235dc2052e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.2 MB (1243523 bytes)  
+	-	`sha256:13558994cbeb5acd84e3d5cbd289b63aa49eb00c519c44df85c8eb739e1aecdc`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.2 MB (1243608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:001e2d72a3770aa4210e8d94abd7f170d1cbe938357d4150a2849b82404aedb9`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 170.0 B  
+	-	`sha256:0071ee240d8a61e07f23310aaa0abd958805870c68cc9a980486c0af09abd8de`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acb379f61d4d54ba729ad2756b2014a59555ad5d0754045879d06a7c343e951`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
+	-	`sha256:5d4a08ec220f99917007502db7459ff7d23e8e699418f7728948b9785f8ad389`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21309a82699614d95c7a7e10071c8e1b69508c65c4d338b53ce0cd591fcf163e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:56 GMT  
-		Size: 2.5 MB (2534556 bytes)  
+	-	`sha256:a0d7e0dc0053822770819d959cac7513a859d9618ae56b44f8d33b3f5b2df4f1`  
+		Last Modified: Tue, 07 Jan 2020 03:59:37 GMT  
+		Size: 2.5 MB (2534562 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb12db426b4ff7d822c7e19712f9782f34cae9de155bc86df4dc75980610e02b`  
-		Last Modified: Sun, 29 Dec 2019 08:31:09 GMT  
-		Size: 59.9 MB (59898696 bytes)  
+	-	`sha256:fa06922e5d4a3de4ed3363b48bd989cb1a9b7f4ea6f358de950d907a9a1e6b6d`  
+		Last Modified: Tue, 07 Jan 2020 03:59:56 GMT  
+		Size: 59.9 MB (59904325 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30bab4fb6bbd5f31886fcc0aa353fd430786e3be1705687b3eb819080ffa40e7`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:0fe32bd74c6043c232cfb85af73f804e43aaf87445b9877f167d1e5340e8b0e5`  
+		Last Modified: Tue, 07 Jan 2020 03:59:35 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0.6` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:d3b75e15bf5f352a83ddfe6cb05f4a10deb872e77efb81d629c4c5820a6ab27b
+$ docker pull redmine@sha256:ea9ec005d491ca2528d1e2af93dc51dc0baf6e090ea15c2f5ef389f5c0f7cdec
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **201.9 MB (201907460 bytes)**  
+-	Total Size: **201.9 MB (201914448 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:541dd22eacf15820a1f4ca88b07824cacd3daa244f13454e4971f042e9c3d50f`
+-	Image ID: `sha256:262c31f8aae656b02bfeebca09d9c886823022dba71c58fac90451bb7abed775`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -5985,45 +5985,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 22:32:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 22:33:02 GMT
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:41:13 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 22:33:03 GMT
+# Tue, 07 Jan 2020 02:41:14 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:19:51 GMT
+# Tue, 07 Jan 2020 03:06:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:20:40 GMT
+# Tue, 07 Jan 2020 03:07:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:21:01 GMT
+# Tue, 07 Jan 2020 03:08:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:21:03 GMT
+# Tue, 07 Jan 2020 03:08:35 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:38 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:08:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:16:20 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 09:21:08 GMT
+# Tue, 07 Jan 2020 03:16:21 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 09:21:13 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 09:27:23 GMT
+# Tue, 07 Jan 2020 03:21:47 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:27:25 GMT
+# Tue, 07 Jan 2020 03:21:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 09:27:26 GMT
+# Tue, 07 Jan 2020 03:21:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 09:27:26 GMT
+# Tue, 07 Jan 2020 03:21:51 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 09:27:27 GMT
+# Tue, 07 Jan 2020 03:21:52 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 09:27:28 GMT
+# Tue, 07 Jan 2020 03:21:52 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -6044,54 +6044,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:23:41 GMT  
 		Size: 21.3 MB (21281931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3866dedbd8f45e73eb720d06e31b7b404c7f341945bac9e36c94b3debf5e2469`  
-		Last Modified: Sat, 28 Dec 2019 23:23:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:6f1828050bdff9d08ad357e12a1bd0639c7818f955a59966e76a48d90c55ccc2`  
+		Last Modified: Tue, 07 Jan 2020 02:45:23 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de07b264b3e1232fcca516dbdf000d3896f1ff7e80bf820ec728c928b757d443`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.8 KB (1751 bytes)  
+	-	`sha256:ebec8c6749d85258e801554c4c6b4d94f96e6ca4909194be6fc4aa78f0ba7caf`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.8 KB (1759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0fa545ca828ef3682e6175a8eff7187e466949b96d0b581058dbe26d77878cb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:42 GMT  
-		Size: 78.8 MB (78781403 bytes)  
+	-	`sha256:d7616f60ca94ba9dd9d5ec4a4672df90a8f21683b3f5e363ecbb6c56cd57b34f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:38 GMT  
+		Size: 78.8 MB (78781946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb8f0ebf113189284a9f5e6486d0a5ea70731e394f9d0c3bd9eb1fea3d66ecc1`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.2 MB (1228577 bytes)  
+	-	`sha256:ed90e7447acdd79b625fff5e37d6b9567b24b0ec16826357c12a1f1047c0e96a`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.2 MB (1228684 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7562512ba5b7faaf680e4f47310868434d855eda2c8b4178e154d45ef9bccd0`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
-		Size: 172.0 B  
+	-	`sha256:bc9cb5aa81f92922c768a7f7f77d66adc87edf01e2ce3986835401c20d683c11`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc767004d48c8e0659f28c1244254ab17aa8c7419a8ca4e7070c4d84e1333d7e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:fe15bb660b67ad397ff5dced96f6c5a667bc63dd0d23a82b5d30347018e9c15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e1e7ab6e81f43b5d15b670b9b2852b288d66ee6b92c0f6b584f45dc0e20a132`  
-		Last Modified: Sun, 29 Dec 2019 09:34:18 GMT  
-		Size: 2.5 MB (2534551 bytes)  
+	-	`sha256:5bb9da5aaab24a2becc2b052f105f1d4d9a237cab2fb743aa0b7f9e9a711b15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:50 GMT  
+		Size: 2.5 MB (2534554 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:845bc2406c901532299e89a0106d6587cee0aaa67b8161f1080cd67e7696ba76`  
-		Last Modified: Sun, 29 Dec 2019 09:34:31 GMT  
-		Size: 61.0 MB (60981095 bytes)  
+	-	`sha256:ad86e98e6cf2e9444078028cd75f112236617e972584bbf489766f0637707e79`  
+		Last Modified: Tue, 07 Jan 2020 03:32:03 GMT  
+		Size: 61.0 MB (60987423 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5db52f3e695ac9514d49326facc67a7c438b870518d6a510fa2f766ea853be8`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:6a78f1d2375bd732b1df8e23816444a68a3862a950e75bc8cda891eff625d248`  
+		Last Modified: Tue, 07 Jan 2020 03:31:48 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0.6` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:654baa53b696de8d0c487e9fc79610e9b451a4542551a33dd58d4af32b6d4cee
+$ docker pull redmine@sha256:afdd29f187f6bd90676bf65dd4dc724d1941c948f10750be46e0e875a261b794
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **211.4 MB (211387933 bytes)**  
+-	Total Size: **211.4 MB (211383101 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:03bb96ace450ca74fda13dd6448d4a632f1fbe397a85f13156b9bb6b933bf60e`
+-	Image ID: `sha256:70b742dec9557653aae1233ed22ec193e889aed1f038e376ab6341e068443927`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -6114,45 +6114,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:48:29 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:07 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:39:08 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:39:08 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:08 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:35:25 GMT
+# Tue, 07 Jan 2020 03:00:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:36:01 GMT
+# Tue, 07 Jan 2020 03:01:23 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:04:48 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 00:36:19 GMT
+# Tue, 07 Jan 2020 03:04:49 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 00:36:24 GMT
+# Tue, 07 Jan 2020 03:04:52 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 00:41:13 GMT
+# Tue, 07 Jan 2020 03:07:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:41:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 00:41:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 00:41:15 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 00:41:15 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 00:41:15 GMT
+# Tue, 07 Jan 2020 03:07:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -6173,54 +6173,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:44:44 GMT  
 		Size: 20.9 MB (20885521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17d698d757862d4c6e9742e6794e0e071637015bdb38321f25b825ec0f9fcbb2`  
-		Last Modified: Sat, 28 Dec 2019 16:44:37 GMT  
-		Size: 144.0 B  
+	-	`sha256:b0c53ce40fd432336a5365d519861a9d64c7cf858412dd402f939e5f6cb0ed3f`  
+		Last Modified: Tue, 07 Jan 2020 02:41:40 GMT  
+		Size: 141.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:096b2fd689438f0bac3f7636511f338e5de2dfedc3d09046b407bc8414b71fef`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:2b71e9da85871d84768b7e4ee95650087a03f4db095955f62e526335b0c09aa4`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 1.7 KB (1740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1abae356afaeb4eb2314f0986f093ec2c8c466f46c9895b63c2adf384c1b8543`  
-		Last Modified: Sun, 29 Dec 2019 00:48:44 GMT  
-		Size: 81.6 MB (81574496 bytes)  
+	-	`sha256:9a3ccb3b9a12325f66d08313505167fa8d7a46ab42c2e89625e485c5ac43ca78`  
+		Last Modified: Tue, 07 Jan 2020 03:11:33 GMT  
+		Size: 81.6 MB (81574872 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2199cf4d500212beef54799d49b397ab7fae50956f80ca93bc3e46f9d2d1ac04`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.3 MB (1261040 bytes)  
+	-	`sha256:f8085aa370c294355492d62d20997a91dce32290fb39f7ff46d2ea9f79c9cac7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:09 GMT  
+		Size: 1.3 MB (1261083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8616ae50f35dda86452ca27a4dce70e4609360e329786c45255b8efe28d87101`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 137.0 B  
+	-	`sha256:9ca155252736682989c07106e5bb0eeaaf8b2372c1366aa1cdc83c0575ff1a54`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:835b0f14c08317511b0d06b0dbf1f4db9174521435ebed17189bf86b6e00dd55`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 127.0 B  
+	-	`sha256:67b530bf833967827e0f2848925236be5bb8b6284da960ded962768f10853d79`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5899fa74506e91d57ac7be80f82629186032abd38d752505b4f72bd61c5e4c1a`  
-		Last Modified: Sun, 29 Dec 2019 00:48:01 GMT  
-		Size: 2.5 MB (2534059 bytes)  
+	-	`sha256:4f2d9c5e5ea62422bf45c92473bc5a3da00f61b8c50620eb2d3498e6b0a3b55a`  
+		Last Modified: Tue, 07 Jan 2020 03:11:41 GMT  
+		Size: 2.5 MB (2534064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1b64bd7059f4f5a3f2849c71268d9b047e7e4dc7b20c046baac97c724c041cb`  
-		Last Modified: Sun, 29 Dec 2019 00:48:22 GMT  
-		Size: 60.2 MB (60175393 bytes)  
+	-	`sha256:2eeabf47c597ac78311fc1c2fde0c195f205701267be3f46e1316504ebcee999`  
+		Last Modified: Tue, 07 Jan 2020 03:11:50 GMT  
+		Size: 60.2 MB (60170132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ba2ae9aeb6d023c3d505bb5698f5c20617cac811768007bca8f4ea2509f54bb`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
+	-	`sha256:079c07d38691e261bdaa3b7a21446bffa9c2286cad07a66e4fad886b089b8ea7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:40 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0.6` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:f872ee30ee7367a6db131dba8c89a17d471d0c3a62c596dffbcdf61860dd28b3
+$ docker pull redmine@sha256:3b72c00508a43a0fd8834418421c68c043e44c514a8485b5c6b66131e66491c5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **217.4 MB (217439900 bytes)**  
+-	Total Size: **217.5 MB (217460663 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0cc67159e26ef87daf0a6327a9bb76c410bc39ef52e17c686479fcfc67fbde03`
+-	Image ID: `sha256:91e63660e1732865b6eb5767d0f41f2c380bad8dba2b0f54f4c0fc772a979853`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -6243,45 +6243,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 04:49:02 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:03 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:06 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 04:49:16 GMT
+# Tue, 07 Jan 2020 02:18:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:18:45 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:18:54 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 04:49:20 GMT
+# Tue, 07 Jan 2020 02:18:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:35:48 GMT
+# Tue, 07 Jan 2020 02:52:26 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:37:37 GMT
+# Tue, 07 Jan 2020 02:56:12 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:38:10 GMT
+# Tue, 07 Jan 2020 02:57:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:38:12 GMT
+# Tue, 07 Jan 2020 02:57:19 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:38:14 GMT
+# Tue, 07 Jan 2020 02:57:25 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:38:15 GMT
+# Tue, 07 Jan 2020 02:57:31 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:38:20 GMT
+# Tue, 07 Jan 2020 02:57:38 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 05:38:21 GMT
+# Tue, 07 Jan 2020 03:08:01 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sat, 28 Dec 2019 05:38:23 GMT
+# Tue, 07 Jan 2020 03:08:03 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sat, 28 Dec 2019 05:38:29 GMT
+# Tue, 07 Jan 2020 03:08:11 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 05:47:15 GMT
+# Tue, 07 Jan 2020 03:16:01 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:47:19 GMT
+# Tue, 07 Jan 2020 03:16:06 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 05:47:20 GMT
+# Tue, 07 Jan 2020 03:16:07 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 05:47:23 GMT
+# Tue, 07 Jan 2020 03:16:11 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 05:47:25 GMT
+# Tue, 07 Jan 2020 03:16:13 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 05:47:28 GMT
+# Tue, 07 Jan 2020 03:16:15 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -6302,54 +6302,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:29:59 GMT  
 		Size: 22.0 MB (21968340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcdef1db578dfb59ea162f659338a2ab021d2839d6727f80e64bb67e6a440c8f`  
-		Last Modified: Sat, 28 Dec 2019 05:29:51 GMT  
-		Size: 175.0 B  
+	-	`sha256:88418e7313544081130ec82f1125b007f6673672ed6fe3f2815a8bc0836d834d`  
+		Last Modified: Tue, 07 Jan 2020 02:27:35 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d107d4bd078e8cdadd410658f8b2b9a49551e5963f8990280e0c333125be1c5`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:c811e39d17ef5178d803832537e4b94505620908b40d2ece5c639ebc74bb249c`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a612640847c9d0e0735e41875007ad7f8bfad5510cdf8badc050102844aac3f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:02 GMT  
-		Size: 86.8 MB (86836986 bytes)  
+	-	`sha256:759f2cb97aba0fe1a2f1053949514cc564ab7e2cfc06feb29ff83f1a25204a75`  
+		Last Modified: Tue, 07 Jan 2020 03:30:06 GMT  
+		Size: 86.8 MB (86837114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1f66358e7c44f05b25d225eb2d4908b94b2dd1c1e3f2dc1ecb2bd6ba79b8353`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.2 MB (1217951 bytes)  
+	-	`sha256:3b6f7850a6e18d809176a36601f044b1e81f00e83669c91e047608f68e15fe76`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.2 MB (1218315 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d7bb190f232d859b513e53f0ab37b7dedc500668034b02d0eabba16dc7488a6`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 169.0 B  
+	-	`sha256:8d6322666aa095fbbcc93f7c9b4120792fc53d3d10e016d2f5b886ebaf9a71dd`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa186ef829d9161ba8520eb43c24ff82a504b79e9a14ff653a64adc2be34f00c`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
+	-	`sha256:4ff21de5e70292bac1732e4d68af3d870e59b1973fe11a6f7f5f8e2584d35433`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31b1d4be8d4e3087a98589c64b5f2c6391b13f7471271b0ed517a10c92d734df`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 2.5 MB (2534553 bytes)  
+	-	`sha256:633b566a1dbe8eeef0d0b5c4732d6ac66eda4587e3b21599312cd29761361e8b`  
+		Last Modified: Tue, 07 Jan 2020 03:30:31 GMT  
+		Size: 2.5 MB (2534555 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9ed3dbaf662e30c7663536f7e9db1d2baf1fbc1c4afa92292684c6a1741d4ff`  
-		Last Modified: Sat, 28 Dec 2019 05:58:41 GMT  
-		Size: 61.7 MB (61671149 bytes)  
+	-	`sha256:5f337b238cf11085e841cb2b678ee52427fbe3fed15d77af9f53390d8f381638`  
+		Last Modified: Tue, 07 Jan 2020 03:30:43 GMT  
+		Size: 61.7 MB (61691408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a587aa4dcc42b3dc1e84eeee3144cd47ab1b6a7bb55f07df90e9235aa16a265`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:9eb4a9c44493483860c49221185018fc6e650c32c0e163d7245bc19258a6e820`  
+		Last Modified: Tue, 07 Jan 2020 03:30:29 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.0.6` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:e1dad5632b7ea30285b8a488316ce2935d347970593d59242ddcdadb4a763bf1
+$ docker pull redmine@sha256:bafed96d3360d8f9e5e149d9a18d47db82988aca105fd7ae6d1d23b2c98b9237
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **201.3 MB (201338007 bytes)**  
+-	Total Size: **201.3 MB (201345055 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f238208d6d2ab8568ba7204843fff2f063c253c7848aacafc716a7e5f20b76b3`
+-	Image ID: `sha256:0cac3801012f6f928ff779ec8b03c0fe41dbf1e49783d9db2a9b717353a622e4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -6372,45 +6372,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:08:18 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:37 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:51:38 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:51:38 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:38 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:23:44 GMT
+# Tue, 07 Jan 2020 03:10:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:24:09 GMT
+# Tue, 07 Jan 2020 03:11:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:14:42 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:14:42 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sat, 28 Dec 2019 14:24:32 GMT
+# Tue, 07 Jan 2020 03:14:45 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sat, 28 Dec 2019 14:27:48 GMT
+# Tue, 07 Jan 2020 03:17:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sat, 28 Dec 2019 14:27:49 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 EXPOSE 3000
-# Sat, 28 Dec 2019 14:27:50 GMT
+# Tue, 07 Jan 2020 03:17:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -6431,47 +6431,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:30:40 GMT  
 		Size: 21.6 MB (21592480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79735b8aa359aed9b6ee2a64febed41202c437579b9c8ad025676cfd66f20fed`  
-		Last Modified: Sat, 28 Dec 2019 10:30:38 GMT  
+	-	`sha256:15818d45572da0ffbfd7b7c213011e34026a9b2483d38923e1bc970d8ba5190e`  
+		Last Modified: Tue, 07 Jan 2020 02:53:53 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af8a0bb70baf552440dff2f8f94aa31ba6768cb32f5a3da6970781643923fdde`  
-		Last Modified: Sat, 28 Dec 2019 14:32:13 GMT  
+	-	`sha256:427ecfe31dba9c1596393d2ff44b1755e2e5e759c7f232ca85092cec7f54f2b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:56 GMT  
 		Size: 1.7 KB (1746 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f1a973c70c53b47609efe91db858666ef988043d215cddc6f9751c55b0fd392`  
-		Last Modified: Sat, 28 Dec 2019 14:32:23 GMT  
-		Size: 77.9 MB (77925088 bytes)  
+	-	`sha256:2f7e3e94b67c1cda303409e25d8cb94365a5f5f14afd3555c76c769848de8e40`  
+		Last Modified: Tue, 07 Jan 2020 03:22:09 GMT  
+		Size: 77.9 MB (77925465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0294c12814d551aa6eb69a5a560222343a852e986115d315fc8429c84eb715da`  
-		Last Modified: Sat, 28 Dec 2019 14:32:12 GMT  
-		Size: 1.3 MB (1283271 bytes)  
+	-	`sha256:3439ec6ad867494e2250f152a883df214ce113074bbf9de627d2257fa0d7f1b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:55 GMT  
+		Size: 1.3 MB (1283337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01ed275456f3eeabe48efca226847c8108a6085fa2453fb91c765f16812e0e3`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 138.0 B  
+	-	`sha256:a4f1e85279851de1e1b0ac45b00c5e4a1489fe9a74ead59e4538c7ae50d2c426`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d27738cc26c1fc745448e52175e3cdaec01770748fd659b3740fe797605d06a9`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 128.0 B  
+	-	`sha256:932423e08f42b141be99ffdcc5a4a4d294eeebab50b0b3bafcc30018f4b90fc6`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a132222f48f27563e10c51d064ec95fd5186dd2960b045203cd8f271a9491db`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 2.5 MB (2534080 bytes)  
+	-	`sha256:db09560a8fd871aadc9f47c7e7cf8858532ce8081c0b84fa715b91125547f34d`  
+		Last Modified: Tue, 07 Jan 2020 03:22:17 GMT  
+		Size: 2.5 MB (2534077 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ee834d094da2f3e58c0c1e9645b900caadf9fa9a71ee89430b7ef2d198fd268`  
-		Last Modified: Sat, 28 Dec 2019 14:32:25 GMT  
-		Size: 61.5 MB (61499148 bytes)  
+	-	`sha256:8acb4385711e5ed46d21508dcdefbb82dbfdf5394a23467b08a33f39dafdb37b`  
+		Last Modified: Tue, 07 Jan 2020 03:22:23 GMT  
+		Size: 61.5 MB (61505758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32afdf86ea8a7e935b26c2ba35d80aa16302ce8a1d946e6237bc8a68e8eae8df`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
+	-	`sha256:3b56b639c2141c18b907be0f104a57203844fc123bef6f90bd28cd3ecc8252ab`  
+		Last Modified: Tue, 07 Jan 2020 03:22:16 GMT  
 		Size: 2.1 KB (2052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.0.6-alpine`
 
 ```console
-$ docker pull redmine@sha256:580b78ee9c93690d667b12be10022c1169f6aae273a6d221a927af500a281926
+$ docker pull redmine@sha256:967e5fc4ebad184f3695772b34ea736700b594aced10dd68db5a3f19600ef50c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6481,14 +6481,14 @@ $ docker pull redmine@sha256:580b78ee9c93690d667b12be10022c1169f6aae273a6d221a92
 ### `redmine:4.0.6-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:2a5f97c250cbfb32575d888278dcaca75b9de002971d705b325fa6e1a0a536c5
+$ docker pull redmine@sha256:8dce54fc1c016fc718ce6b45f40fa9aeb821d5b03143f028173b87bf8cff8bc2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.9 MB (156914135 bytes)**  
+-	Total Size: **155.9 MB (155925820 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:75b8f694ca2d69086b6ebf5735524bbad7efbf36a25d848b24d4d62e3f3abd78`
+-	Image ID: `sha256:d689d3a0c757c0b7c7bcc1a74087e88eeee3ef4e26d51d70df7349d0c6819c5f`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -6511,43 +6511,43 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:10:21 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:51 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:52 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:52 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:53 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:15:38 GMT
+# Tue, 07 Jan 2020 02:45:33 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:15:52 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:15:55 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Fri, 20 Dec 2019 20:45:32 GMT
+# Tue, 07 Jan 2020 02:50:41 GMT
 ENV REDMINE_VERSION=4.0.6
-# Fri, 20 Dec 2019 20:45:32 GMT
+# Tue, 07 Jan 2020 02:50:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Fri, 20 Dec 2019 20:45:35 GMT
+# Tue, 07 Jan 2020 02:50:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:29 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 VOLUME [/usr/src/redmine/files]
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 20 Dec 2019 20:47:33 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 EXPOSE 3000
-# Fri, 20 Dec 2019 20:47:33 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -6568,43 +6568,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:18:56 GMT  
 		Size: 22.1 MB (22078313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd1c732d3e5fb94758eb2b795ba475ac8328d70f510c3b46f10e1636970e3283`  
-		Last Modified: Mon, 21 Oct 2019 22:18:52 GMT  
-		Size: 140.0 B  
+	-	`sha256:65bcdf6fd7b3340afcb28784448e4ffd63d0ca5bcce1984225e3f5058f5187f1`  
+		Last Modified: Tue, 07 Jan 2020 02:23:15 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2429943e49fda8d0b38c92fb22def8816e414ff531070ffe85fb3356171cd8a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
+	-	`sha256:bc32f1a4b310e131bac96512ae35d2fe68a96013cf584f37a80b082e3cedcab6`  
+		Last Modified: Tue, 07 Jan 2020 02:59:23 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa16fea0ab94a4aaa762fd2c276d3e1e0a7b478a8d7e454b4831a72bd2c9d626`  
-		Last Modified: Tue, 22 Oct 2019 00:22:57 GMT  
-		Size: 65.7 MB (65706757 bytes)  
+	-	`sha256:ca40216dafae72ee12e2fcd5e34d3899b38a331528bbadbd50a2859036154c9d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:40 GMT  
+		Size: 65.7 MB (65727222 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6a2209a1bc5fbbe15328db89bf1e4c8b455b5ec7ce14f3cfcd1ba300b88decd`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 135.0 B  
+	-	`sha256:b8c98d46a8484d79c65fbc8d92060bee7b89268ecaee756540d8082d973b00c1`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100f192d75b912d6572c5640429c3cb1825cbae17c830be3b3c22ae6b68c479a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 128.0 B  
+	-	`sha256:66d2b433c999b6bb6b960f110c02bc74a0dc87744441b3f54047d375e9c5b427`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f566998079eab6652337b6ab32b0b2b69d2b6ee36b6e425950eb7dfe0f0d1d4`  
-		Last Modified: Fri, 20 Dec 2019 20:53:26 GMT  
-		Size: 2.5 MB (2535275 bytes)  
+	-	`sha256:2af9d3ec5692f636c36c6145d84e4b4057708a91b31bb399a1374ccd712d037b`  
+		Last Modified: Tue, 07 Jan 2020 03:00:13 GMT  
+		Size: 2.5 MB (2535777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2033284f3bcfe9960bfe03aa32c964d6b996d699e88406d2901175c056f72e8b`  
-		Last Modified: Fri, 20 Dec 2019 20:53:35 GMT  
-		Size: 62.8 MB (62772502 bytes)  
+	-	`sha256:2e618efa93e32d1a30366b56cf8294580a0d4f69f291f3db4b4ba8818f73a7d1`  
+		Last Modified: Tue, 07 Jan 2020 03:00:23 GMT  
+		Size: 61.8 MB (61763218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee1f3ba8ac413239b9a7a9afa0d7b3e9cbe7bedd98190359f3394ea557222318`  
-		Last Modified: Fri, 20 Dec 2019 20:53:25 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:268870ff202d6acbb414518f5f13c3c5298d1de9eb64e39f530b03ce4744c49d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:11 GMT  
+		Size: 2.0 KB (2050 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.0.6-passenger`
 
 ```console
-$ docker pull redmine@sha256:7dc80335051da10d021ad03a6eb370955fac8c08d408a9c4a86e2b52a68db3e3
+$ docker pull redmine@sha256:059c8787556e370ada6538994a66b7bf8bee7b7bf4c497290d0e54b90b730e3d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6614,14 +6614,14 @@ $ docker pull redmine@sha256:7dc80335051da10d021ad03a6eb370955fac8c08d408a9c4a86
 ### `redmine:4.0.6-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:126edc1edfa7399eaf6b8cb2f97c9a00b80a7ba6ac4982f8bbaa94c9061282fe
+$ docker pull redmine@sha256:ff5d9a6a6025d0ba6c4c745b2d962f04b66dba6eb798f3f702fe6f4fa1d07eca
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **231.0 MB (230987155 bytes)**  
+-	Total Size: **231.0 MB (231009614 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a105dc2dd997d79ede172716f38357ad27612e0f6817c352ffca7cf55a897c24`
+-	Image ID: `sha256:dae36f21e992122b4bc308cd262ac0aa94300d48133828ab406c3c9c2aa17b25`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -6644,55 +6644,55 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 10:11:43 GMT
+# Tue, 07 Jan 2020 02:47:35 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sun, 29 Dec 2019 10:14:33 GMT
+# Tue, 07 Jan 2020 02:50:17 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Sun, 29 Dec 2019 10:14:50 GMT
+# Tue, 07 Jan 2020 02:50:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:14:52 GMT
+# Tue, 07 Jan 2020 02:50:35 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sun, 29 Dec 2019 10:14:52 GMT
+# Tue, 07 Jan 2020 02:50:35 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sun, 29 Dec 2019 10:14:52 GMT
+# Tue, 07 Jan 2020 02:50:35 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -6713,55 +6713,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51c51636301f966c645dc4f7e4fdb5272cd1def23fb6c7ad8693b32a057cf468`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 2.5 MB (2534068 bytes)  
+	-	`sha256:e4afc1770bdcd5ce4d9bdd3587987b09053f042cd48c8f5810cfcaa87a16b5a9`  
+		Last Modified: Tue, 07 Jan 2020 02:59:47 GMT  
+		Size: 2.5 MB (2534060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:931e95ecd10926bb3b1587ddd74dda0767c64d02915eb409e7250a0057ec8cfc`  
-		Last Modified: Sun, 29 Dec 2019 10:18:58 GMT  
-		Size: 61.1 MB (61055982 bytes)  
+	-	`sha256:f3021ea3a73603775149dab7dad56524184be935c404ee634fc3342e116542d8`  
+		Last Modified: Tue, 07 Jan 2020 02:59:56 GMT  
+		Size: 61.1 MB (61077693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8dc23b9dbfe2a8b2a3c12ad4b94c5bc5b0c396baaf2ebe208164b45b8baea22a`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:4117ba73b272c8622eab18cc70499b20571dcf410b5f4c36442c451109308c06`  
+		Last Modified: Tue, 07 Jan 2020 02:59:45 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7afa6df684ed09bb0324ef38f9e0f83253c1b910f6f91588da895a3b144f5853`  
-		Last Modified: Sun, 29 Dec 2019 10:19:13 GMT  
-		Size: 19.9 MB (19939645 bytes)  
+	-	`sha256:19b7cc800e65c24671975c7b6441e7f368d5c4c0535b6a0c3e3405ba42f18648`  
+		Last Modified: Tue, 07 Jan 2020 03:00:06 GMT  
+		Size: 19.9 MB (19939741 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0265d7976f01038e0a8310805071f66025faca3ebd9ddd02304dbe5da81ee3da`  
-		Last Modified: Sun, 29 Dec 2019 10:19:11 GMT  
-		Size: 4.9 MB (4917847 bytes)  
+	-	`sha256:74bbf76ada5c46700ecfa85db34aef0d1eb15cc4fea32647c34a17b42c03c22b`  
+		Last Modified: Tue, 07 Jan 2020 03:00:03 GMT  
+		Size: 4.9 MB (4917853 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.0-alpine`
 
 ```console
-$ docker pull redmine@sha256:580b78ee9c93690d667b12be10022c1169f6aae273a6d221a927af500a281926
+$ docker pull redmine@sha256:967e5fc4ebad184f3695772b34ea736700b594aced10dd68db5a3f19600ef50c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6771,14 +6771,14 @@ $ docker pull redmine@sha256:580b78ee9c93690d667b12be10022c1169f6aae273a6d221a92
 ### `redmine:4.0-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:2a5f97c250cbfb32575d888278dcaca75b9de002971d705b325fa6e1a0a536c5
+$ docker pull redmine@sha256:8dce54fc1c016fc718ce6b45f40fa9aeb821d5b03143f028173b87bf8cff8bc2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.9 MB (156914135 bytes)**  
+-	Total Size: **155.9 MB (155925820 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:75b8f694ca2d69086b6ebf5735524bbad7efbf36a25d848b24d4d62e3f3abd78`
+-	Image ID: `sha256:d689d3a0c757c0b7c7bcc1a74087e88eeee3ef4e26d51d70df7349d0c6819c5f`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -6801,43 +6801,43 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:10:21 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:51 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:52 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:52 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:53 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:15:38 GMT
+# Tue, 07 Jan 2020 02:45:33 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:15:52 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:15:55 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Fri, 20 Dec 2019 20:45:32 GMT
+# Tue, 07 Jan 2020 02:50:41 GMT
 ENV REDMINE_VERSION=4.0.6
-# Fri, 20 Dec 2019 20:45:32 GMT
+# Tue, 07 Jan 2020 02:50:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Fri, 20 Dec 2019 20:45:35 GMT
+# Tue, 07 Jan 2020 02:50:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:29 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 VOLUME [/usr/src/redmine/files]
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Fri, 20 Dec 2019 20:47:32 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 20 Dec 2019 20:47:33 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 EXPOSE 3000
-# Fri, 20 Dec 2019 20:47:33 GMT
+# Tue, 07 Jan 2020 02:52:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -6858,43 +6858,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:18:56 GMT  
 		Size: 22.1 MB (22078313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd1c732d3e5fb94758eb2b795ba475ac8328d70f510c3b46f10e1636970e3283`  
-		Last Modified: Mon, 21 Oct 2019 22:18:52 GMT  
-		Size: 140.0 B  
+	-	`sha256:65bcdf6fd7b3340afcb28784448e4ffd63d0ca5bcce1984225e3f5058f5187f1`  
+		Last Modified: Tue, 07 Jan 2020 02:23:15 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2429943e49fda8d0b38c92fb22def8816e414ff531070ffe85fb3356171cd8a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
+	-	`sha256:bc32f1a4b310e131bac96512ae35d2fe68a96013cf584f37a80b082e3cedcab6`  
+		Last Modified: Tue, 07 Jan 2020 02:59:23 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa16fea0ab94a4aaa762fd2c276d3e1e0a7b478a8d7e454b4831a72bd2c9d626`  
-		Last Modified: Tue, 22 Oct 2019 00:22:57 GMT  
-		Size: 65.7 MB (65706757 bytes)  
+	-	`sha256:ca40216dafae72ee12e2fcd5e34d3899b38a331528bbadbd50a2859036154c9d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:40 GMT  
+		Size: 65.7 MB (65727222 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6a2209a1bc5fbbe15328db89bf1e4c8b455b5ec7ce14f3cfcd1ba300b88decd`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 135.0 B  
+	-	`sha256:b8c98d46a8484d79c65fbc8d92060bee7b89268ecaee756540d8082d973b00c1`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100f192d75b912d6572c5640429c3cb1825cbae17c830be3b3c22ae6b68c479a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 128.0 B  
+	-	`sha256:66d2b433c999b6bb6b960f110c02bc74a0dc87744441b3f54047d375e9c5b427`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f566998079eab6652337b6ab32b0b2b69d2b6ee36b6e425950eb7dfe0f0d1d4`  
-		Last Modified: Fri, 20 Dec 2019 20:53:26 GMT  
-		Size: 2.5 MB (2535275 bytes)  
+	-	`sha256:2af9d3ec5692f636c36c6145d84e4b4057708a91b31bb399a1374ccd712d037b`  
+		Last Modified: Tue, 07 Jan 2020 03:00:13 GMT  
+		Size: 2.5 MB (2535777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2033284f3bcfe9960bfe03aa32c964d6b996d699e88406d2901175c056f72e8b`  
-		Last Modified: Fri, 20 Dec 2019 20:53:35 GMT  
-		Size: 62.8 MB (62772502 bytes)  
+	-	`sha256:2e618efa93e32d1a30366b56cf8294580a0d4f69f291f3db4b4ba8818f73a7d1`  
+		Last Modified: Tue, 07 Jan 2020 03:00:23 GMT  
+		Size: 61.8 MB (61763218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee1f3ba8ac413239b9a7a9afa0d7b3e9cbe7bedd98190359f3394ea557222318`  
-		Last Modified: Fri, 20 Dec 2019 20:53:25 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:268870ff202d6acbb414518f5f13c3c5298d1de9eb64e39f530b03ce4744c49d`  
+		Last Modified: Tue, 07 Jan 2020 03:00:11 GMT  
+		Size: 2.0 KB (2050 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.0-passenger`
 
 ```console
-$ docker pull redmine@sha256:7dc80335051da10d021ad03a6eb370955fac8c08d408a9c4a86e2b52a68db3e3
+$ docker pull redmine@sha256:059c8787556e370ada6538994a66b7bf8bee7b7bf4c497290d0e54b90b730e3d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6904,14 +6904,14 @@ $ docker pull redmine@sha256:7dc80335051da10d021ad03a6eb370955fac8c08d408a9c4a86
 ### `redmine:4.0-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:126edc1edfa7399eaf6b8cb2f97c9a00b80a7ba6ac4982f8bbaa94c9061282fe
+$ docker pull redmine@sha256:ff5d9a6a6025d0ba6c4c745b2d962f04b66dba6eb798f3f702fe6f4fa1d07eca
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **231.0 MB (230987155 bytes)**  
+-	Total Size: **231.0 MB (231009614 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a105dc2dd997d79ede172716f38357ad27612e0f6817c352ffca7cf55a897c24`
+-	Image ID: `sha256:dae36f21e992122b4bc308cd262ac0aa94300d48133828ab406c3c9c2aa17b25`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -6934,55 +6934,55 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_VERSION=4.0.6
-# Sun, 29 Dec 2019 10:11:40 GMT
+# Tue, 07 Jan 2020 02:47:32 GMT
 ENV REDMINE_DOWNLOAD_MD5=897bfcaa4a49539b10d0529ce103f919
-# Sun, 29 Dec 2019 10:11:43 GMT
+# Tue, 07 Jan 2020 02:47:35 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 VOLUME [/usr/src/redmine/files]
-# Sun, 29 Dec 2019 10:14:22 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 EXPOSE 3000
-# Sun, 29 Dec 2019 10:14:23 GMT
+# Tue, 07 Jan 2020 02:49:58 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sun, 29 Dec 2019 10:14:33 GMT
+# Tue, 07 Jan 2020 02:50:17 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Sun, 29 Dec 2019 10:14:50 GMT
+# Tue, 07 Jan 2020 02:50:33 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:14:52 GMT
+# Tue, 07 Jan 2020 02:50:35 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sun, 29 Dec 2019 10:14:52 GMT
+# Tue, 07 Jan 2020 02:50:35 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sun, 29 Dec 2019 10:14:52 GMT
+# Tue, 07 Jan 2020 02:50:35 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -7003,55 +7003,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51c51636301f966c645dc4f7e4fdb5272cd1def23fb6c7ad8693b32a057cf468`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 2.5 MB (2534068 bytes)  
+	-	`sha256:e4afc1770bdcd5ce4d9bdd3587987b09053f042cd48c8f5810cfcaa87a16b5a9`  
+		Last Modified: Tue, 07 Jan 2020 02:59:47 GMT  
+		Size: 2.5 MB (2534060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:931e95ecd10926bb3b1587ddd74dda0767c64d02915eb409e7250a0057ec8cfc`  
-		Last Modified: Sun, 29 Dec 2019 10:18:58 GMT  
-		Size: 61.1 MB (61055982 bytes)  
+	-	`sha256:f3021ea3a73603775149dab7dad56524184be935c404ee634fc3342e116542d8`  
+		Last Modified: Tue, 07 Jan 2020 02:59:56 GMT  
+		Size: 61.1 MB (61077693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8dc23b9dbfe2a8b2a3c12ad4b94c5bc5b0c396baaf2ebe208164b45b8baea22a`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:4117ba73b272c8622eab18cc70499b20571dcf410b5f4c36442c451109308c06`  
+		Last Modified: Tue, 07 Jan 2020 02:59:45 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7afa6df684ed09bb0324ef38f9e0f83253c1b910f6f91588da895a3b144f5853`  
-		Last Modified: Sun, 29 Dec 2019 10:19:13 GMT  
-		Size: 19.9 MB (19939645 bytes)  
+	-	`sha256:19b7cc800e65c24671975c7b6441e7f368d5c4c0535b6a0c3e3405ba42f18648`  
+		Last Modified: Tue, 07 Jan 2020 03:00:06 GMT  
+		Size: 19.9 MB (19939741 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0265d7976f01038e0a8310805071f66025faca3ebd9ddd02304dbe5da81ee3da`  
-		Last Modified: Sun, 29 Dec 2019 10:19:11 GMT  
-		Size: 4.9 MB (4917847 bytes)  
+	-	`sha256:74bbf76ada5c46700ecfa85db34aef0d1eb15cc4fea32647c34a17b42c03c22b`  
+		Last Modified: Tue, 07 Jan 2020 03:00:03 GMT  
+		Size: 4.9 MB (4917853 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1`
 
 ```console
-$ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d04497b30c2a5de119
+$ docker pull redmine@sha256:622a9ea0e5e5ce59fb6c876bd79ece0dfaa0ffbc7452e02a49d5b54b5f8950ea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7067,14 +7067,14 @@ $ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d0449
 ### `redmine:4.1` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:902e699d87d6e9c5fed087388bfb09cd56b3ccbb0cc37ca41eeee1135b3a54ea
+$ docker pull redmine@sha256:187551f0e16d9a5c8c90a961ea69098b4270a98c386c2e4fdefc4d7b64658519
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.7 MB (202716488 bytes)**  
+-	Total Size: **202.7 MB (202733924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5eb3ccf68fca5937641b161fa4de4bbc2173680aff170e799eb3544766f544fd`
+-	Image ID: `sha256:1afbfb924539f2ae972502b921d03bbf0cb6bd0e1836229082890799b893c30d`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -7097,45 +7097,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -7156,54 +7156,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:729a35828b6c84c8eb85e0ed04bdb98ecf727b4f9d7eb30e569d300be248fa8f
+$ docker pull redmine@sha256:4906dab58ba5ee17643e992870e9fc53345328b9339b88d665e72ecfcc12836f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **192.4 MB (192393368 bytes)**  
+-	Total Size: **192.4 MB (192404507 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:80a5980107786d00cbc00e6c60b9aa9f2f6fb095ebcd61827597a5b7e649507a`
+-	Image ID: `sha256:76efdeb04144612cfe937c97093ca042cd7473c6050c0c67631cf0c567d9d74e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -7226,45 +7226,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 06:21:10 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:11 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:12 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 06:21:13 GMT
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:49:03 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 06:21:14 GMT
+# Tue, 07 Jan 2020 02:49:03 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 18:52:39 GMT
+# Tue, 07 Jan 2020 03:13:58 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 18:54:05 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 18:54:25 GMT
+# Tue, 07 Jan 2020 03:16:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 18:54:26 GMT
+# Tue, 07 Jan 2020 03:16:23 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:24 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:25 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 18:54:30 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:30 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:33 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:54:56 GMT
+# Tue, 07 Jan 2020 03:16:42 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:00:30 GMT
+# Tue, 07 Jan 2020 03:22:51 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:00:32 GMT
+# Tue, 07 Jan 2020 03:22:56 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:00:33 GMT
+# Tue, 07 Jan 2020 03:22:57 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:00:34 GMT
+# Tue, 07 Jan 2020 03:22:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:00:35 GMT
+# Tue, 07 Jan 2020 03:22:59 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:00:38 GMT
+# Tue, 07 Jan 2020 03:23:00 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -7285,54 +7285,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:19:48 GMT  
 		Size: 20.7 MB (20712825 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a1abd10ed01f4676d01f9620fefa1b776da2696d3e8122db559411e1bcf31a5`  
-		Last Modified: Sat, 28 Dec 2019 07:19:43 GMT  
-		Size: 177.0 B  
+	-	`sha256:339d13f87ffb8e7206ef67a9df0490843eb23c62c24d4f6e4987b4988de4bfa4`  
+		Last Modified: Tue, 07 Jan 2020 02:52:02 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0a7c2743b41303e80e8acd0f8dc6caa37bb0875ea8f69ba90b23d783d1a1576`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.7 KB (1730 bytes)  
+	-	`sha256:17f97b318b29436f18fd49df95209eeaeb49250ffbafffaee6d4c48c6c50f8a3`  
+		Last Modified: Tue, 07 Jan 2020 03:39:42 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce30b0c7067a61af709a70b8a9e7d2bb903a7c0bda27f1c2eb2eb9252bd582f5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:38 GMT  
-		Size: 76.0 MB (76024356 bytes)  
+	-	`sha256:f288be7cde7b6a6a81e3accc68decd3aa798fa1f0cef89c3953fb86ebf7d8b31`  
+		Last Modified: Tue, 07 Jan 2020 03:40:07 GMT  
+		Size: 76.0 MB (76024941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45f4f5374736951cb6a48b25326fb7b30f73b9d9301055de28d367fbf8d3e1eb`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.3 MB (1254316 bytes)  
+	-	`sha256:c37ce11948573b9edac8f826ad594138ddfaacc192079b3eb80b4e287ff914f7`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 1.3 MB (1254343 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dec0a6576283611b4db08a85251e4201ea40ed2ab3daa8f85e467c41b24974fd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 172.0 B  
+	-	`sha256:7704ca0edea2430982c5b21980b5af780b93b80630b113085d80b4f8048b3ab6`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4485bfb4d90b4b15e23b20a445354a6f1f841f36e008923b342d3c81cb867ed6`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
+	-	`sha256:cca896ec85003a248d1a78bde07d0361b690c9008a1f61f76a5f1da30224cc1b`  
+		Last Modified: Tue, 07 Jan 2020 03:39:40 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ba76fb0086e0bcced450bcacf50b8398f7a6552e9d6121524f7667940e0a4e1`  
-		Last Modified: Mon, 30 Dec 2019 23:01:08 GMT  
-		Size: 2.7 MB (2735851 bytes)  
+	-	`sha256:3b045ff2645e4284302419c8ffc27fb6887b64144d7d2da2bd55575f8e9ad9ec`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 2.7 MB (2735863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4d77c1da7d08b62f52bb3950c5139620ec8364340a9642ce723237855e4c3d5`  
-		Last Modified: Mon, 30 Dec 2019 23:01:20 GMT  
-		Size: 56.5 MB (56505864 bytes)  
+	-	`sha256:fb518d1c9cf765ad42d08c8a3f35755bade189212248505fd3ecc448640bfbf8`  
+		Last Modified: Tue, 07 Jan 2020 03:39:54 GMT  
+		Size: 56.5 MB (56516373 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47819d85c69c98e77433ce438a7ac09a04f37903e5870770b71e121de752a6ff`  
-		Last Modified: Mon, 30 Dec 2019 23:01:06 GMT  
+	-	`sha256:26c4354bff4552a216e99b31445586cac3c2f96a5a406c2795e8de47b1d7785d`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:4f117bf7ab1b894e4371f4b6da7d4eb42f1aed579e058c11358f223f45af8488
+$ docker pull redmine@sha256:003ba4181360c67d22ffdc6e8c3395e7efcdfec81a890fc2ba2d137b107ac514
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **185.8 MB (185795962 bytes)**  
+-	Total Size: **185.8 MB (185802956 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:32064522b2976e7cba2666f2e24fafb7f4ce00b2fc9fd8c755d477a4a82b66f8`
+-	Image ID: `sha256:b3b8d529a83484db6b68ae816b129f07be45d5cc4e4621fc99ebbad0a580e7c5`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -7355,45 +7355,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:22:59 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:22:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:23:00 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:23:01 GMT
+# Tue, 07 Jan 2020 03:12:46 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:12:47 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:12:50 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:23:02 GMT
+# Tue, 07 Jan 2020 03:12:51 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:16:55 GMT
+# Tue, 07 Jan 2020 03:39:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:17:46 GMT
+# Tue, 07 Jan 2020 03:40:34 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:18:03 GMT
+# Tue, 07 Jan 2020 03:40:59 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:18:04 GMT
+# Tue, 07 Jan 2020 03:41:00 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:18:05 GMT
+# Tue, 07 Jan 2020 03:41:01 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:18:06 GMT
+# Tue, 07 Jan 2020 03:41:02 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:41:04 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:06:51 GMT
+# Tue, 07 Jan 2020 03:41:05 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:06:52 GMT
+# Tue, 07 Jan 2020 03:41:07 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:06:58 GMT
+# Tue, 07 Jan 2020 03:41:12 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:11:25 GMT
+# Tue, 07 Jan 2020 03:46:26 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:11:27 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -7414,54 +7414,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:13:25 GMT  
 		Size: 20.6 MB (20620161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:158be611acd1464ed169ba02f406468d7ba338ee3bb447aee4115317b6f84478`  
-		Last Modified: Sat, 28 Dec 2019 22:13:20 GMT  
+	-	`sha256:5fe49bcffa8c82983470bbf0074d2412dacbf1f325bcc2ffb85fddcbda7c7da8`  
+		Last Modified: Tue, 07 Jan 2020 03:17:58 GMT  
 		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fdd79f36888d0a15667a5d2a333408886aa5313ddd41b011ef2583c604644f8`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.7 KB (1737 bytes)  
+	-	`sha256:67711a5ad765c81e93b31a6b9e1b763d7d8448315399ea1765bf97971567bfcb`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:060aab585d09a8861a4cc045480e04a098de3eff59e488f3303b3857ba1bd189`  
-		Last Modified: Sun, 29 Dec 2019 08:31:19 GMT  
-		Size: 72.4 MB (72370630 bytes)  
+	-	`sha256:05d74eecc06d13134c138c9df69b88fae2a875703f36a0fb2fd26e740242128b`  
+		Last Modified: Tue, 07 Jan 2020 03:59:24 GMT  
+		Size: 72.4 MB (72371109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5f67f581ba225fd56401856418bea0ecbd2f16ff6d5d1aa879672235dc2052e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.2 MB (1243523 bytes)  
+	-	`sha256:13558994cbeb5acd84e3d5cbd289b63aa49eb00c519c44df85c8eb739e1aecdc`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.2 MB (1243608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:001e2d72a3770aa4210e8d94abd7f170d1cbe938357d4150a2849b82404aedb9`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 170.0 B  
+	-	`sha256:0071ee240d8a61e07f23310aaa0abd958805870c68cc9a980486c0af09abd8de`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acb379f61d4d54ba729ad2756b2014a59555ad5d0754045879d06a7c343e951`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
+	-	`sha256:5d4a08ec220f99917007502db7459ff7d23e8e699418f7728948b9785f8ad389`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81977844a21f7d088bf08816511656c3aa4032b826af7b1c6e420e6d0e9fc54b`  
-		Last Modified: Mon, 30 Dec 2019 23:12:00 GMT  
-		Size: 2.7 MB (2735861 bytes)  
+	-	`sha256:62b0ce8bb2dfaebcc4e96f6b821ef98f59479efbe6c8df4c76c972154ba04943`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 2.7 MB (2735857 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c031777c700bf79981cce268d5355c2838204e3901e1813ff78aeae0dd31bb0f`  
-		Last Modified: Mon, 30 Dec 2019 23:12:11 GMT  
-		Size: 56.3 MB (56274789 bytes)  
+	-	`sha256:c46673c4a93ee40dd7786754c0771f6bb456490a8c112878b3e2de069fc1a140`  
+		Last Modified: Tue, 07 Jan 2020 03:59:13 GMT  
+		Size: 56.3 MB (56281218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1a19afff9cfa8d924ca5849af17b1700503d8949f61bc9c8d38f26f45081a52`  
-		Last Modified: Mon, 30 Dec 2019 23:11:59 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:41faf231a7a4832e0583b60a49cdfc3043f30326ca897992f8a5db9573069bf1`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:fabf57addb340358fb703e7bd9412cdf3fcd09a8a95ad29137f555c4f71593c1
+$ docker pull redmine@sha256:0e01d80fa0358939a16aa0384d58bc564309036dd7b171886b5362f5b420b761
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **198.5 MB (198495882 bytes)**  
+-	Total Size: **198.5 MB (198510271 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f755fa98271fb0e936401651fa91c67b9150480b06b31500fcd73bd2a573d6d1`
+-	Image ID: `sha256:bc9198dcbb168ae0e85796be70bf4ef5e25194b47f52b85e30a40d0853281092`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -7484,45 +7484,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 22:32:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 22:33:02 GMT
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:41:13 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 22:33:03 GMT
+# Tue, 07 Jan 2020 02:41:14 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:19:51 GMT
+# Tue, 07 Jan 2020 03:06:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:20:40 GMT
+# Tue, 07 Jan 2020 03:07:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:21:01 GMT
+# Tue, 07 Jan 2020 03:08:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:21:03 GMT
+# Tue, 07 Jan 2020 03:08:35 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:38 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:08:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:46:49 GMT
+# Tue, 07 Jan 2020 03:08:44 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:46:50 GMT
+# Tue, 07 Jan 2020 03:08:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:46:55 GMT
+# Tue, 07 Jan 2020 03:08:51 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:52:13 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:52:14 GMT
+# Tue, 07 Jan 2020 03:16:00 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:52:15 GMT
+# Tue, 07 Jan 2020 03:16:01 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:52:16 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:52:17 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:52:18 GMT
+# Tue, 07 Jan 2020 03:16:05 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -7543,54 +7543,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:23:41 GMT  
 		Size: 21.3 MB (21281931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3866dedbd8f45e73eb720d06e31b7b404c7f341945bac9e36c94b3debf5e2469`  
-		Last Modified: Sat, 28 Dec 2019 23:23:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:6f1828050bdff9d08ad357e12a1bd0639c7818f955a59966e76a48d90c55ccc2`  
+		Last Modified: Tue, 07 Jan 2020 02:45:23 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de07b264b3e1232fcca516dbdf000d3896f1ff7e80bf820ec728c928b757d443`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.8 KB (1751 bytes)  
+	-	`sha256:ebec8c6749d85258e801554c4c6b4d94f96e6ca4909194be6fc4aa78f0ba7caf`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.8 KB (1759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0fa545ca828ef3682e6175a8eff7187e466949b96d0b581058dbe26d77878cb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:42 GMT  
-		Size: 78.8 MB (78781403 bytes)  
+	-	`sha256:d7616f60ca94ba9dd9d5ec4a4672df90a8f21683b3f5e363ecbb6c56cd57b34f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:38 GMT  
+		Size: 78.8 MB (78781946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb8f0ebf113189284a9f5e6486d0a5ea70731e394f9d0c3bd9eb1fea3d66ecc1`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.2 MB (1228577 bytes)  
+	-	`sha256:ed90e7447acdd79b625fff5e37d6b9567b24b0ec16826357c12a1f1047c0e96a`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.2 MB (1228684 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7562512ba5b7faaf680e4f47310868434d855eda2c8b4178e154d45ef9bccd0`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
-		Size: 172.0 B  
+	-	`sha256:bc9cb5aa81f92922c768a7f7f77d66adc87edf01e2ce3986835401c20d683c11`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc767004d48c8e0659f28c1244254ab17aa8c7419a8ca4e7070c4d84e1333d7e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:fe15bb660b67ad397ff5dced96f6c5a667bc63dd0d23a82b5d30347018e9c15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8830e451754177ad85457b14008acff225ee6ddd5392d42df5a5f2d68a4a0246`  
-		Last Modified: Mon, 30 Dec 2019 22:52:44 GMT  
-		Size: 2.7 MB (2735842 bytes)  
+	-	`sha256:777acea1a0afb276a342110a4f57a84fb05496ee8781d1527c1d369f93756259`  
+		Last Modified: Tue, 07 Jan 2020 03:31:09 GMT  
+		Size: 2.7 MB (2735859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6eeeca614a63e5a2f46f2bbc363f45fc41f4468eedfbdb5845e525bf2fa349e8`  
-		Last Modified: Mon, 30 Dec 2019 22:52:55 GMT  
-		Size: 57.4 MB (57368226 bytes)  
+	-	`sha256:8214399d3be2b4d772486eb11b58fd4cd18ed7a9c09036024ac8c51d2cc63ba1`  
+		Last Modified: Tue, 07 Jan 2020 03:31:22 GMT  
+		Size: 57.4 MB (57381944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:daf326086b6cd33176d8b5f405f97bf478f03878dc7f4a99094dbcfc83c3c6a1`  
-		Last Modified: Mon, 30 Dec 2019 22:52:43 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:1c2aa5015caadc0c6e7f6f3681de219f1e25b99784b94677a7ae484876af9f0f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 2.1 KB (2051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:9528337d6b248cb6458728b6f2403b6c6c34c8c2769540495f1c78971dae1310
+$ docker pull redmine@sha256:d1b3cc39d6fd83267ea5ff7559dce11abcb676d6eeb15b373e234f20282bcd5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **208.0 MB (207953654 bytes)**  
+-	Total Size: **208.0 MB (207971236 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:869326ffcd9043b9fcf5059252033ce06dbd6bd9ad09738867a053f99564f918`
+-	Image ID: `sha256:427cdfe5a66aa35124e1226f327c747117e7b85e2866531b7863a89d4a08bbd7`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -7613,45 +7613,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:48:29 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:07 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:39:08 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:39:08 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:08 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:35:25 GMT
+# Tue, 07 Jan 2020 03:00:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:36:01 GMT
+# Tue, 07 Jan 2020 03:01:23 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:41:53 GMT
+# Tue, 07 Jan 2020 03:01:40 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:44:09 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -7672,54 +7672,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:44:44 GMT  
 		Size: 20.9 MB (20885521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17d698d757862d4c6e9742e6794e0e071637015bdb38321f25b825ec0f9fcbb2`  
-		Last Modified: Sat, 28 Dec 2019 16:44:37 GMT  
-		Size: 144.0 B  
+	-	`sha256:b0c53ce40fd432336a5365d519861a9d64c7cf858412dd402f939e5f6cb0ed3f`  
+		Last Modified: Tue, 07 Jan 2020 02:41:40 GMT  
+		Size: 141.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:096b2fd689438f0bac3f7636511f338e5de2dfedc3d09046b407bc8414b71fef`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:2b71e9da85871d84768b7e4ee95650087a03f4db095955f62e526335b0c09aa4`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 1.7 KB (1740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1abae356afaeb4eb2314f0986f093ec2c8c466f46c9895b63c2adf384c1b8543`  
-		Last Modified: Sun, 29 Dec 2019 00:48:44 GMT  
-		Size: 81.6 MB (81574496 bytes)  
+	-	`sha256:9a3ccb3b9a12325f66d08313505167fa8d7a46ab42c2e89625e485c5ac43ca78`  
+		Last Modified: Tue, 07 Jan 2020 03:11:33 GMT  
+		Size: 81.6 MB (81574872 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2199cf4d500212beef54799d49b397ab7fae50956f80ca93bc3e46f9d2d1ac04`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.3 MB (1261040 bytes)  
+	-	`sha256:f8085aa370c294355492d62d20997a91dce32290fb39f7ff46d2ea9f79c9cac7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:09 GMT  
+		Size: 1.3 MB (1261083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8616ae50f35dda86452ca27a4dce70e4609360e329786c45255b8efe28d87101`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 137.0 B  
+	-	`sha256:9ca155252736682989c07106e5bb0eeaaf8b2372c1366aa1cdc83c0575ff1a54`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:835b0f14c08317511b0d06b0dbf1f4db9174521435ebed17189bf86b6e00dd55`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 127.0 B  
+	-	`sha256:67b530bf833967827e0f2848925236be5bb8b6284da960ded962768f10853d79`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62600d65605e7e512b0fa5346221567b0a96dd5c0a6bd9d5de04f117c512e9f0`  
-		Last Modified: Mon, 30 Dec 2019 22:44:34 GMT  
-		Size: 2.7 MB (2735393 bytes)  
+	-	`sha256:4fa27b3327360715b1a90ecc14add5758c5d9957680bf8b92411a19e69a75a9d`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 2.7 MB (2735394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:585c641449ff7f5ec017308bee789435a2c9470e4c42105108fcd4ed40a117d8`  
-		Last Modified: Mon, 30 Dec 2019 22:44:42 GMT  
-		Size: 56.5 MB (56539780 bytes)  
+	-	`sha256:248f5b6cb2691da13b2af50a6e5583e121b4a1d905af8cbcce41603d28e89e5c`  
+		Last Modified: Tue, 07 Jan 2020 03:11:20 GMT  
+		Size: 56.6 MB (56556937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d64a44fe2bb4bca3528befeb42a432dc580aa7936c0894ac5a3bbba3efb87cf6`  
-		Last Modified: Mon, 30 Dec 2019 22:44:33 GMT  
+	-	`sha256:7b6a7aaefac27d5bfd18f5c25b161cd26dc7246970ed4cd4d94616a75c1f0a05`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:53a91922096f1584d65d44dc1c5f3910416a502798e6ebdda6eed4c7c21f91d1
+$ docker pull redmine@sha256:7fc04b9687fc429b47d5ae618128cc9eea47f3e85e83fa0963f5a928c2d9a5c9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **214.0 MB (213976566 bytes)**  
+-	Total Size: **214.0 MB (213986551 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d0cc2ab7001628e0f9d1edf73d1e702b53e75e9fc6c4536d9dd52dbd1d03ae5a`
+-	Image ID: `sha256:a0f08be72159bc4dc39fd51d2b1f30c4925ac7651c9fccc427f8c527d7debcfc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -7742,45 +7742,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 04:49:02 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:03 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:06 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 04:49:16 GMT
+# Tue, 07 Jan 2020 02:18:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:18:45 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:18:54 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 04:49:20 GMT
+# Tue, 07 Jan 2020 02:18:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:35:48 GMT
+# Tue, 07 Jan 2020 02:52:26 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:37:37 GMT
+# Tue, 07 Jan 2020 02:56:12 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:38:10 GMT
+# Tue, 07 Jan 2020 02:57:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:38:12 GMT
+# Tue, 07 Jan 2020 02:57:19 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:38:14 GMT
+# Tue, 07 Jan 2020 02:57:25 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:38:15 GMT
+# Tue, 07 Jan 2020 02:57:31 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:38:20 GMT
+# Tue, 07 Jan 2020 02:57:38 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:19:02 GMT
+# Tue, 07 Jan 2020 02:57:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:19:03 GMT
+# Tue, 07 Jan 2020 02:57:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:19:11 GMT
+# Tue, 07 Jan 2020 02:57:57 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:26:02 GMT
+# Tue, 07 Jan 2020 03:07:18 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:26:08 GMT
+# Tue, 07 Jan 2020 03:07:22 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:26:09 GMT
+# Tue, 07 Jan 2020 03:07:23 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:26:11 GMT
+# Tue, 07 Jan 2020 03:07:26 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:26:12 GMT
+# Tue, 07 Jan 2020 03:07:28 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:26:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -7801,54 +7801,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:29:59 GMT  
 		Size: 22.0 MB (21968340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcdef1db578dfb59ea162f659338a2ab021d2839d6727f80e64bb67e6a440c8f`  
-		Last Modified: Sat, 28 Dec 2019 05:29:51 GMT  
-		Size: 175.0 B  
+	-	`sha256:88418e7313544081130ec82f1125b007f6673672ed6fe3f2815a8bc0836d834d`  
+		Last Modified: Tue, 07 Jan 2020 02:27:35 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d107d4bd078e8cdadd410658f8b2b9a49551e5963f8990280e0c333125be1c5`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:c811e39d17ef5178d803832537e4b94505620908b40d2ece5c639ebc74bb249c`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a612640847c9d0e0735e41875007ad7f8bfad5510cdf8badc050102844aac3f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:02 GMT  
-		Size: 86.8 MB (86836986 bytes)  
+	-	`sha256:759f2cb97aba0fe1a2f1053949514cc564ab7e2cfc06feb29ff83f1a25204a75`  
+		Last Modified: Tue, 07 Jan 2020 03:30:06 GMT  
+		Size: 86.8 MB (86837114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1f66358e7c44f05b25d225eb2d4908b94b2dd1c1e3f2dc1ecb2bd6ba79b8353`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.2 MB (1217951 bytes)  
+	-	`sha256:3b6f7850a6e18d809176a36601f044b1e81f00e83669c91e047608f68e15fe76`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.2 MB (1218315 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d7bb190f232d859b513e53f0ab37b7dedc500668034b02d0eabba16dc7488a6`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 169.0 B  
+	-	`sha256:8d6322666aa095fbbcc93f7c9b4120792fc53d3d10e016d2f5b886ebaf9a71dd`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa186ef829d9161ba8520eb43c24ff82a504b79e9a14ff653a64adc2be34f00c`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
+	-	`sha256:4ff21de5e70292bac1732e4d68af3d870e59b1973fe11a6f7f5f8e2584d35433`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9422b1bcc68565fc1af7c6bbcfe4297773ec66af13eefe03a2279ae9170b302f`  
-		Last Modified: Mon, 30 Dec 2019 23:26:48 GMT  
-		Size: 2.7 MB (2735858 bytes)  
+	-	`sha256:148c6e08afe9243221a3614c147b175f00fca39aa7398b226b9c81c4c0920475`  
+		Last Modified: Tue, 07 Jan 2020 03:29:29 GMT  
+		Size: 2.7 MB (2735864 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f99fb700361fa147bc16d36063b515a5fc8723b5842a7f00d46853e1129ba33e`  
-		Last Modified: Mon, 30 Dec 2019 23:26:56 GMT  
-		Size: 58.0 MB (58006510 bytes)  
+	-	`sha256:938befb09e3321da4912a40c548f49be67885cfe7251b037f26bfb0d6d458b79`  
+		Last Modified: Tue, 07 Jan 2020 03:29:40 GMT  
+		Size: 58.0 MB (58015986 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e97b3645452ed96ccaae652a1e86ee973a644bd2fe89a2f2243198927489f577`  
-		Last Modified: Mon, 30 Dec 2019 23:26:47 GMT  
+	-	`sha256:fddfa9af92446656e844a27e9376151265369cb9617d4a4b2e3d256bb5330d66`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:33be1d63aace90501f22952050c53cb1996aa2d7216e513bcdf10bf360d65c0b
+$ docker pull redmine@sha256:69f3f8e2a27d1a90f10eb1689b33242d0ed1972c7263f72c9605fc793f3dfdc2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.9 MB (197872422 bytes)**  
+-	Total Size: **197.9 MB (197889710 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:11aa0dc978025b2d4647e5f920288158ea2c8178d2442473a602cc34e24737e7`
+-	Image ID: `sha256:905f9063b57e0b7090a73b94a99f945d28455373c7fde4e8812d257016ede9a4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -7871,45 +7871,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:08:18 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:37 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:51:38 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:51:38 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:38 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:23:44 GMT
+# Tue, 07 Jan 2020 03:10:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:24:09 GMT
+# Tue, 07 Jan 2020 03:11:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:51:20 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:51:21 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:51:23 GMT
+# Tue, 07 Jan 2020 03:11:26 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:27 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -7930,47 +7930,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:30:40 GMT  
 		Size: 21.6 MB (21592480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79735b8aa359aed9b6ee2a64febed41202c437579b9c8ad025676cfd66f20fed`  
-		Last Modified: Sat, 28 Dec 2019 10:30:38 GMT  
+	-	`sha256:15818d45572da0ffbfd7b7c213011e34026a9b2483d38923e1bc970d8ba5190e`  
+		Last Modified: Tue, 07 Jan 2020 02:53:53 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af8a0bb70baf552440dff2f8f94aa31ba6768cb32f5a3da6970781643923fdde`  
-		Last Modified: Sat, 28 Dec 2019 14:32:13 GMT  
+	-	`sha256:427ecfe31dba9c1596393d2ff44b1755e2e5e759c7f232ca85092cec7f54f2b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:56 GMT  
 		Size: 1.7 KB (1746 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f1a973c70c53b47609efe91db858666ef988043d215cddc6f9751c55b0fd392`  
-		Last Modified: Sat, 28 Dec 2019 14:32:23 GMT  
-		Size: 77.9 MB (77925088 bytes)  
+	-	`sha256:2f7e3e94b67c1cda303409e25d8cb94365a5f5f14afd3555c76c769848de8e40`  
+		Last Modified: Tue, 07 Jan 2020 03:22:09 GMT  
+		Size: 77.9 MB (77925465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0294c12814d551aa6eb69a5a560222343a852e986115d315fc8429c84eb715da`  
-		Last Modified: Sat, 28 Dec 2019 14:32:12 GMT  
-		Size: 1.3 MB (1283271 bytes)  
+	-	`sha256:3439ec6ad867494e2250f152a883df214ce113074bbf9de627d2257fa0d7f1b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:55 GMT  
+		Size: 1.3 MB (1283337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01ed275456f3eeabe48efca226847c8108a6085fa2453fb91c765f16812e0e3`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 138.0 B  
+	-	`sha256:a4f1e85279851de1e1b0ac45b00c5e4a1489fe9a74ead59e4538c7ae50d2c426`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d27738cc26c1fc745448e52175e3cdaec01770748fd659b3740fe797605d06a9`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 128.0 B  
+	-	`sha256:932423e08f42b141be99ffdcc5a4a4d294eeebab50b0b3bafcc30018f4b90fc6`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2635060451cdb1b2f30dd74855940436ffc225bf87a20e98a3c1edc897462350`  
-		Last Modified: Mon, 30 Dec 2019 22:54:52 GMT  
-		Size: 2.7 MB (2735410 bytes)  
+	-	`sha256:34a9e085efa61f8efd49e767d660100fe122d0bab73baa627319beeb54421be1`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:506869fc6cb29b04e025c3e597eca0676ee0c31d6925d3c741276223711ec4bb`  
-		Last Modified: Mon, 30 Dec 2019 22:54:57 GMT  
-		Size: 57.8 MB (57832231 bytes)  
+	-	`sha256:c8c2fe0236b69548e1fa52ddc7810cf2d4513c4a2064646e25be0d07599aef03`  
+		Last Modified: Tue, 07 Jan 2020 03:22:01 GMT  
+		Size: 57.8 MB (57849101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7c6927bf80cb705b8e0d2e0f375e3b27ba150e06fe0aaf45dc178139d43ce00`  
-		Last Modified: Mon, 30 Dec 2019 22:54:51 GMT  
+	-	`sha256:88ec7c79caf544feee1c047a9432d3ff6758f06e78631b1bd2e8a75cd582312a`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1.0`
 
 ```console
-$ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d04497b30c2a5de119
+$ docker pull redmine@sha256:622a9ea0e5e5ce59fb6c876bd79ece0dfaa0ffbc7452e02a49d5b54b5f8950ea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7986,14 +7986,14 @@ $ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d0449
 ### `redmine:4.1.0` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:902e699d87d6e9c5fed087388bfb09cd56b3ccbb0cc37ca41eeee1135b3a54ea
+$ docker pull redmine@sha256:187551f0e16d9a5c8c90a961ea69098b4270a98c386c2e4fdefc4d7b64658519
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.7 MB (202716488 bytes)**  
+-	Total Size: **202.7 MB (202733924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5eb3ccf68fca5937641b161fa4de4bbc2173680aff170e799eb3544766f544fd`
+-	Image ID: `sha256:1afbfb924539f2ae972502b921d03bbf0cb6bd0e1836229082890799b893c30d`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8016,45 +8016,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8075,54 +8075,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1.0` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:729a35828b6c84c8eb85e0ed04bdb98ecf727b4f9d7eb30e569d300be248fa8f
+$ docker pull redmine@sha256:4906dab58ba5ee17643e992870e9fc53345328b9339b88d665e72ecfcc12836f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **192.4 MB (192393368 bytes)**  
+-	Total Size: **192.4 MB (192404507 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:80a5980107786d00cbc00e6c60b9aa9f2f6fb095ebcd61827597a5b7e649507a`
+-	Image ID: `sha256:76efdeb04144612cfe937c97093ca042cd7473c6050c0c67631cf0c567d9d74e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8145,45 +8145,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 06:21:10 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:11 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:12 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 06:21:13 GMT
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:49:03 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 06:21:14 GMT
+# Tue, 07 Jan 2020 02:49:03 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 18:52:39 GMT
+# Tue, 07 Jan 2020 03:13:58 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 18:54:05 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 18:54:25 GMT
+# Tue, 07 Jan 2020 03:16:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 18:54:26 GMT
+# Tue, 07 Jan 2020 03:16:23 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:24 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:25 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 18:54:30 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:30 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:33 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:54:56 GMT
+# Tue, 07 Jan 2020 03:16:42 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:00:30 GMT
+# Tue, 07 Jan 2020 03:22:51 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:00:32 GMT
+# Tue, 07 Jan 2020 03:22:56 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:00:33 GMT
+# Tue, 07 Jan 2020 03:22:57 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:00:34 GMT
+# Tue, 07 Jan 2020 03:22:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:00:35 GMT
+# Tue, 07 Jan 2020 03:22:59 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:00:38 GMT
+# Tue, 07 Jan 2020 03:23:00 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8204,54 +8204,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:19:48 GMT  
 		Size: 20.7 MB (20712825 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a1abd10ed01f4676d01f9620fefa1b776da2696d3e8122db559411e1bcf31a5`  
-		Last Modified: Sat, 28 Dec 2019 07:19:43 GMT  
-		Size: 177.0 B  
+	-	`sha256:339d13f87ffb8e7206ef67a9df0490843eb23c62c24d4f6e4987b4988de4bfa4`  
+		Last Modified: Tue, 07 Jan 2020 02:52:02 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0a7c2743b41303e80e8acd0f8dc6caa37bb0875ea8f69ba90b23d783d1a1576`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.7 KB (1730 bytes)  
+	-	`sha256:17f97b318b29436f18fd49df95209eeaeb49250ffbafffaee6d4c48c6c50f8a3`  
+		Last Modified: Tue, 07 Jan 2020 03:39:42 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce30b0c7067a61af709a70b8a9e7d2bb903a7c0bda27f1c2eb2eb9252bd582f5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:38 GMT  
-		Size: 76.0 MB (76024356 bytes)  
+	-	`sha256:f288be7cde7b6a6a81e3accc68decd3aa798fa1f0cef89c3953fb86ebf7d8b31`  
+		Last Modified: Tue, 07 Jan 2020 03:40:07 GMT  
+		Size: 76.0 MB (76024941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45f4f5374736951cb6a48b25326fb7b30f73b9d9301055de28d367fbf8d3e1eb`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.3 MB (1254316 bytes)  
+	-	`sha256:c37ce11948573b9edac8f826ad594138ddfaacc192079b3eb80b4e287ff914f7`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 1.3 MB (1254343 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dec0a6576283611b4db08a85251e4201ea40ed2ab3daa8f85e467c41b24974fd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 172.0 B  
+	-	`sha256:7704ca0edea2430982c5b21980b5af780b93b80630b113085d80b4f8048b3ab6`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4485bfb4d90b4b15e23b20a445354a6f1f841f36e008923b342d3c81cb867ed6`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
+	-	`sha256:cca896ec85003a248d1a78bde07d0361b690c9008a1f61f76a5f1da30224cc1b`  
+		Last Modified: Tue, 07 Jan 2020 03:39:40 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ba76fb0086e0bcced450bcacf50b8398f7a6552e9d6121524f7667940e0a4e1`  
-		Last Modified: Mon, 30 Dec 2019 23:01:08 GMT  
-		Size: 2.7 MB (2735851 bytes)  
+	-	`sha256:3b045ff2645e4284302419c8ffc27fb6887b64144d7d2da2bd55575f8e9ad9ec`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 2.7 MB (2735863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4d77c1da7d08b62f52bb3950c5139620ec8364340a9642ce723237855e4c3d5`  
-		Last Modified: Mon, 30 Dec 2019 23:01:20 GMT  
-		Size: 56.5 MB (56505864 bytes)  
+	-	`sha256:fb518d1c9cf765ad42d08c8a3f35755bade189212248505fd3ecc448640bfbf8`  
+		Last Modified: Tue, 07 Jan 2020 03:39:54 GMT  
+		Size: 56.5 MB (56516373 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47819d85c69c98e77433ce438a7ac09a04f37903e5870770b71e121de752a6ff`  
-		Last Modified: Mon, 30 Dec 2019 23:01:06 GMT  
+	-	`sha256:26c4354bff4552a216e99b31445586cac3c2f96a5a406c2795e8de47b1d7785d`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1.0` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:4f117bf7ab1b894e4371f4b6da7d4eb42f1aed579e058c11358f223f45af8488
+$ docker pull redmine@sha256:003ba4181360c67d22ffdc6e8c3395e7efcdfec81a890fc2ba2d137b107ac514
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **185.8 MB (185795962 bytes)**  
+-	Total Size: **185.8 MB (185802956 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:32064522b2976e7cba2666f2e24fafb7f4ce00b2fc9fd8c755d477a4a82b66f8`
+-	Image ID: `sha256:b3b8d529a83484db6b68ae816b129f07be45d5cc4e4621fc99ebbad0a580e7c5`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8274,45 +8274,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:22:59 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:22:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:23:00 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:23:01 GMT
+# Tue, 07 Jan 2020 03:12:46 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:12:47 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:12:50 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:23:02 GMT
+# Tue, 07 Jan 2020 03:12:51 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:16:55 GMT
+# Tue, 07 Jan 2020 03:39:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:17:46 GMT
+# Tue, 07 Jan 2020 03:40:34 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:18:03 GMT
+# Tue, 07 Jan 2020 03:40:59 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:18:04 GMT
+# Tue, 07 Jan 2020 03:41:00 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:18:05 GMT
+# Tue, 07 Jan 2020 03:41:01 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:18:06 GMT
+# Tue, 07 Jan 2020 03:41:02 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:41:04 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:06:51 GMT
+# Tue, 07 Jan 2020 03:41:05 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:06:52 GMT
+# Tue, 07 Jan 2020 03:41:07 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:06:58 GMT
+# Tue, 07 Jan 2020 03:41:12 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:11:25 GMT
+# Tue, 07 Jan 2020 03:46:26 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:11:27 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8333,54 +8333,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:13:25 GMT  
 		Size: 20.6 MB (20620161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:158be611acd1464ed169ba02f406468d7ba338ee3bb447aee4115317b6f84478`  
-		Last Modified: Sat, 28 Dec 2019 22:13:20 GMT  
+	-	`sha256:5fe49bcffa8c82983470bbf0074d2412dacbf1f325bcc2ffb85fddcbda7c7da8`  
+		Last Modified: Tue, 07 Jan 2020 03:17:58 GMT  
 		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fdd79f36888d0a15667a5d2a333408886aa5313ddd41b011ef2583c604644f8`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.7 KB (1737 bytes)  
+	-	`sha256:67711a5ad765c81e93b31a6b9e1b763d7d8448315399ea1765bf97971567bfcb`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:060aab585d09a8861a4cc045480e04a098de3eff59e488f3303b3857ba1bd189`  
-		Last Modified: Sun, 29 Dec 2019 08:31:19 GMT  
-		Size: 72.4 MB (72370630 bytes)  
+	-	`sha256:05d74eecc06d13134c138c9df69b88fae2a875703f36a0fb2fd26e740242128b`  
+		Last Modified: Tue, 07 Jan 2020 03:59:24 GMT  
+		Size: 72.4 MB (72371109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5f67f581ba225fd56401856418bea0ecbd2f16ff6d5d1aa879672235dc2052e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.2 MB (1243523 bytes)  
+	-	`sha256:13558994cbeb5acd84e3d5cbd289b63aa49eb00c519c44df85c8eb739e1aecdc`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.2 MB (1243608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:001e2d72a3770aa4210e8d94abd7f170d1cbe938357d4150a2849b82404aedb9`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 170.0 B  
+	-	`sha256:0071ee240d8a61e07f23310aaa0abd958805870c68cc9a980486c0af09abd8de`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acb379f61d4d54ba729ad2756b2014a59555ad5d0754045879d06a7c343e951`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
+	-	`sha256:5d4a08ec220f99917007502db7459ff7d23e8e699418f7728948b9785f8ad389`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81977844a21f7d088bf08816511656c3aa4032b826af7b1c6e420e6d0e9fc54b`  
-		Last Modified: Mon, 30 Dec 2019 23:12:00 GMT  
-		Size: 2.7 MB (2735861 bytes)  
+	-	`sha256:62b0ce8bb2dfaebcc4e96f6b821ef98f59479efbe6c8df4c76c972154ba04943`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 2.7 MB (2735857 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c031777c700bf79981cce268d5355c2838204e3901e1813ff78aeae0dd31bb0f`  
-		Last Modified: Mon, 30 Dec 2019 23:12:11 GMT  
-		Size: 56.3 MB (56274789 bytes)  
+	-	`sha256:c46673c4a93ee40dd7786754c0771f6bb456490a8c112878b3e2de069fc1a140`  
+		Last Modified: Tue, 07 Jan 2020 03:59:13 GMT  
+		Size: 56.3 MB (56281218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1a19afff9cfa8d924ca5849af17b1700503d8949f61bc9c8d38f26f45081a52`  
-		Last Modified: Mon, 30 Dec 2019 23:11:59 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:41faf231a7a4832e0583b60a49cdfc3043f30326ca897992f8a5db9573069bf1`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:fabf57addb340358fb703e7bd9412cdf3fcd09a8a95ad29137f555c4f71593c1
+$ docker pull redmine@sha256:0e01d80fa0358939a16aa0384d58bc564309036dd7b171886b5362f5b420b761
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **198.5 MB (198495882 bytes)**  
+-	Total Size: **198.5 MB (198510271 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f755fa98271fb0e936401651fa91c67b9150480b06b31500fcd73bd2a573d6d1`
+-	Image ID: `sha256:bc9198dcbb168ae0e85796be70bf4ef5e25194b47f52b85e30a40d0853281092`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8403,45 +8403,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 22:32:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 22:33:02 GMT
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:41:13 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 22:33:03 GMT
+# Tue, 07 Jan 2020 02:41:14 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:19:51 GMT
+# Tue, 07 Jan 2020 03:06:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:20:40 GMT
+# Tue, 07 Jan 2020 03:07:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:21:01 GMT
+# Tue, 07 Jan 2020 03:08:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:21:03 GMT
+# Tue, 07 Jan 2020 03:08:35 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:38 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:08:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:46:49 GMT
+# Tue, 07 Jan 2020 03:08:44 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:46:50 GMT
+# Tue, 07 Jan 2020 03:08:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:46:55 GMT
+# Tue, 07 Jan 2020 03:08:51 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:52:13 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:52:14 GMT
+# Tue, 07 Jan 2020 03:16:00 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:52:15 GMT
+# Tue, 07 Jan 2020 03:16:01 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:52:16 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:52:17 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:52:18 GMT
+# Tue, 07 Jan 2020 03:16:05 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8462,54 +8462,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:23:41 GMT  
 		Size: 21.3 MB (21281931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3866dedbd8f45e73eb720d06e31b7b404c7f341945bac9e36c94b3debf5e2469`  
-		Last Modified: Sat, 28 Dec 2019 23:23:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:6f1828050bdff9d08ad357e12a1bd0639c7818f955a59966e76a48d90c55ccc2`  
+		Last Modified: Tue, 07 Jan 2020 02:45:23 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de07b264b3e1232fcca516dbdf000d3896f1ff7e80bf820ec728c928b757d443`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.8 KB (1751 bytes)  
+	-	`sha256:ebec8c6749d85258e801554c4c6b4d94f96e6ca4909194be6fc4aa78f0ba7caf`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.8 KB (1759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0fa545ca828ef3682e6175a8eff7187e466949b96d0b581058dbe26d77878cb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:42 GMT  
-		Size: 78.8 MB (78781403 bytes)  
+	-	`sha256:d7616f60ca94ba9dd9d5ec4a4672df90a8f21683b3f5e363ecbb6c56cd57b34f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:38 GMT  
+		Size: 78.8 MB (78781946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb8f0ebf113189284a9f5e6486d0a5ea70731e394f9d0c3bd9eb1fea3d66ecc1`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.2 MB (1228577 bytes)  
+	-	`sha256:ed90e7447acdd79b625fff5e37d6b9567b24b0ec16826357c12a1f1047c0e96a`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.2 MB (1228684 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7562512ba5b7faaf680e4f47310868434d855eda2c8b4178e154d45ef9bccd0`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
-		Size: 172.0 B  
+	-	`sha256:bc9cb5aa81f92922c768a7f7f77d66adc87edf01e2ce3986835401c20d683c11`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc767004d48c8e0659f28c1244254ab17aa8c7419a8ca4e7070c4d84e1333d7e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:fe15bb660b67ad397ff5dced96f6c5a667bc63dd0d23a82b5d30347018e9c15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8830e451754177ad85457b14008acff225ee6ddd5392d42df5a5f2d68a4a0246`  
-		Last Modified: Mon, 30 Dec 2019 22:52:44 GMT  
-		Size: 2.7 MB (2735842 bytes)  
+	-	`sha256:777acea1a0afb276a342110a4f57a84fb05496ee8781d1527c1d369f93756259`  
+		Last Modified: Tue, 07 Jan 2020 03:31:09 GMT  
+		Size: 2.7 MB (2735859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6eeeca614a63e5a2f46f2bbc363f45fc41f4468eedfbdb5845e525bf2fa349e8`  
-		Last Modified: Mon, 30 Dec 2019 22:52:55 GMT  
-		Size: 57.4 MB (57368226 bytes)  
+	-	`sha256:8214399d3be2b4d772486eb11b58fd4cd18ed7a9c09036024ac8c51d2cc63ba1`  
+		Last Modified: Tue, 07 Jan 2020 03:31:22 GMT  
+		Size: 57.4 MB (57381944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:daf326086b6cd33176d8b5f405f97bf478f03878dc7f4a99094dbcfc83c3c6a1`  
-		Last Modified: Mon, 30 Dec 2019 22:52:43 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:1c2aa5015caadc0c6e7f6f3681de219f1e25b99784b94677a7ae484876af9f0f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 2.1 KB (2051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1.0` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:9528337d6b248cb6458728b6f2403b6c6c34c8c2769540495f1c78971dae1310
+$ docker pull redmine@sha256:d1b3cc39d6fd83267ea5ff7559dce11abcb676d6eeb15b373e234f20282bcd5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **208.0 MB (207953654 bytes)**  
+-	Total Size: **208.0 MB (207971236 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:869326ffcd9043b9fcf5059252033ce06dbd6bd9ad09738867a053f99564f918`
+-	Image ID: `sha256:427cdfe5a66aa35124e1226f327c747117e7b85e2866531b7863a89d4a08bbd7`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8532,45 +8532,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:48:29 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:07 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:39:08 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:39:08 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:08 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:35:25 GMT
+# Tue, 07 Jan 2020 03:00:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:36:01 GMT
+# Tue, 07 Jan 2020 03:01:23 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:41:53 GMT
+# Tue, 07 Jan 2020 03:01:40 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:44:09 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8591,54 +8591,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:44:44 GMT  
 		Size: 20.9 MB (20885521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17d698d757862d4c6e9742e6794e0e071637015bdb38321f25b825ec0f9fcbb2`  
-		Last Modified: Sat, 28 Dec 2019 16:44:37 GMT  
-		Size: 144.0 B  
+	-	`sha256:b0c53ce40fd432336a5365d519861a9d64c7cf858412dd402f939e5f6cb0ed3f`  
+		Last Modified: Tue, 07 Jan 2020 02:41:40 GMT  
+		Size: 141.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:096b2fd689438f0bac3f7636511f338e5de2dfedc3d09046b407bc8414b71fef`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:2b71e9da85871d84768b7e4ee95650087a03f4db095955f62e526335b0c09aa4`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 1.7 KB (1740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1abae356afaeb4eb2314f0986f093ec2c8c466f46c9895b63c2adf384c1b8543`  
-		Last Modified: Sun, 29 Dec 2019 00:48:44 GMT  
-		Size: 81.6 MB (81574496 bytes)  
+	-	`sha256:9a3ccb3b9a12325f66d08313505167fa8d7a46ab42c2e89625e485c5ac43ca78`  
+		Last Modified: Tue, 07 Jan 2020 03:11:33 GMT  
+		Size: 81.6 MB (81574872 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2199cf4d500212beef54799d49b397ab7fae50956f80ca93bc3e46f9d2d1ac04`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.3 MB (1261040 bytes)  
+	-	`sha256:f8085aa370c294355492d62d20997a91dce32290fb39f7ff46d2ea9f79c9cac7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:09 GMT  
+		Size: 1.3 MB (1261083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8616ae50f35dda86452ca27a4dce70e4609360e329786c45255b8efe28d87101`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 137.0 B  
+	-	`sha256:9ca155252736682989c07106e5bb0eeaaf8b2372c1366aa1cdc83c0575ff1a54`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:835b0f14c08317511b0d06b0dbf1f4db9174521435ebed17189bf86b6e00dd55`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 127.0 B  
+	-	`sha256:67b530bf833967827e0f2848925236be5bb8b6284da960ded962768f10853d79`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62600d65605e7e512b0fa5346221567b0a96dd5c0a6bd9d5de04f117c512e9f0`  
-		Last Modified: Mon, 30 Dec 2019 22:44:34 GMT  
-		Size: 2.7 MB (2735393 bytes)  
+	-	`sha256:4fa27b3327360715b1a90ecc14add5758c5d9957680bf8b92411a19e69a75a9d`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 2.7 MB (2735394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:585c641449ff7f5ec017308bee789435a2c9470e4c42105108fcd4ed40a117d8`  
-		Last Modified: Mon, 30 Dec 2019 22:44:42 GMT  
-		Size: 56.5 MB (56539780 bytes)  
+	-	`sha256:248f5b6cb2691da13b2af50a6e5583e121b4a1d905af8cbcce41603d28e89e5c`  
+		Last Modified: Tue, 07 Jan 2020 03:11:20 GMT  
+		Size: 56.6 MB (56556937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d64a44fe2bb4bca3528befeb42a432dc580aa7936c0894ac5a3bbba3efb87cf6`  
-		Last Modified: Mon, 30 Dec 2019 22:44:33 GMT  
+	-	`sha256:7b6a7aaefac27d5bfd18f5c25b161cd26dc7246970ed4cd4d94616a75c1f0a05`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1.0` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:53a91922096f1584d65d44dc1c5f3910416a502798e6ebdda6eed4c7c21f91d1
+$ docker pull redmine@sha256:7fc04b9687fc429b47d5ae618128cc9eea47f3e85e83fa0963f5a928c2d9a5c9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **214.0 MB (213976566 bytes)**  
+-	Total Size: **214.0 MB (213986551 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d0cc2ab7001628e0f9d1edf73d1e702b53e75e9fc6c4536d9dd52dbd1d03ae5a`
+-	Image ID: `sha256:a0f08be72159bc4dc39fd51d2b1f30c4925ac7651c9fccc427f8c527d7debcfc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8661,45 +8661,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 04:49:02 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:03 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:06 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 04:49:16 GMT
+# Tue, 07 Jan 2020 02:18:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:18:45 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:18:54 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 04:49:20 GMT
+# Tue, 07 Jan 2020 02:18:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:35:48 GMT
+# Tue, 07 Jan 2020 02:52:26 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:37:37 GMT
+# Tue, 07 Jan 2020 02:56:12 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:38:10 GMT
+# Tue, 07 Jan 2020 02:57:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:38:12 GMT
+# Tue, 07 Jan 2020 02:57:19 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:38:14 GMT
+# Tue, 07 Jan 2020 02:57:25 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:38:15 GMT
+# Tue, 07 Jan 2020 02:57:31 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:38:20 GMT
+# Tue, 07 Jan 2020 02:57:38 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:19:02 GMT
+# Tue, 07 Jan 2020 02:57:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:19:03 GMT
+# Tue, 07 Jan 2020 02:57:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:19:11 GMT
+# Tue, 07 Jan 2020 02:57:57 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:26:02 GMT
+# Tue, 07 Jan 2020 03:07:18 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:26:08 GMT
+# Tue, 07 Jan 2020 03:07:22 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:26:09 GMT
+# Tue, 07 Jan 2020 03:07:23 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:26:11 GMT
+# Tue, 07 Jan 2020 03:07:26 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:26:12 GMT
+# Tue, 07 Jan 2020 03:07:28 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:26:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8720,54 +8720,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:29:59 GMT  
 		Size: 22.0 MB (21968340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcdef1db578dfb59ea162f659338a2ab021d2839d6727f80e64bb67e6a440c8f`  
-		Last Modified: Sat, 28 Dec 2019 05:29:51 GMT  
-		Size: 175.0 B  
+	-	`sha256:88418e7313544081130ec82f1125b007f6673672ed6fe3f2815a8bc0836d834d`  
+		Last Modified: Tue, 07 Jan 2020 02:27:35 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d107d4bd078e8cdadd410658f8b2b9a49551e5963f8990280e0c333125be1c5`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:c811e39d17ef5178d803832537e4b94505620908b40d2ece5c639ebc74bb249c`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a612640847c9d0e0735e41875007ad7f8bfad5510cdf8badc050102844aac3f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:02 GMT  
-		Size: 86.8 MB (86836986 bytes)  
+	-	`sha256:759f2cb97aba0fe1a2f1053949514cc564ab7e2cfc06feb29ff83f1a25204a75`  
+		Last Modified: Tue, 07 Jan 2020 03:30:06 GMT  
+		Size: 86.8 MB (86837114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1f66358e7c44f05b25d225eb2d4908b94b2dd1c1e3f2dc1ecb2bd6ba79b8353`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.2 MB (1217951 bytes)  
+	-	`sha256:3b6f7850a6e18d809176a36601f044b1e81f00e83669c91e047608f68e15fe76`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.2 MB (1218315 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d7bb190f232d859b513e53f0ab37b7dedc500668034b02d0eabba16dc7488a6`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 169.0 B  
+	-	`sha256:8d6322666aa095fbbcc93f7c9b4120792fc53d3d10e016d2f5b886ebaf9a71dd`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa186ef829d9161ba8520eb43c24ff82a504b79e9a14ff653a64adc2be34f00c`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
+	-	`sha256:4ff21de5e70292bac1732e4d68af3d870e59b1973fe11a6f7f5f8e2584d35433`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9422b1bcc68565fc1af7c6bbcfe4297773ec66af13eefe03a2279ae9170b302f`  
-		Last Modified: Mon, 30 Dec 2019 23:26:48 GMT  
-		Size: 2.7 MB (2735858 bytes)  
+	-	`sha256:148c6e08afe9243221a3614c147b175f00fca39aa7398b226b9c81c4c0920475`  
+		Last Modified: Tue, 07 Jan 2020 03:29:29 GMT  
+		Size: 2.7 MB (2735864 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f99fb700361fa147bc16d36063b515a5fc8723b5842a7f00d46853e1129ba33e`  
-		Last Modified: Mon, 30 Dec 2019 23:26:56 GMT  
-		Size: 58.0 MB (58006510 bytes)  
+	-	`sha256:938befb09e3321da4912a40c548f49be67885cfe7251b037f26bfb0d6d458b79`  
+		Last Modified: Tue, 07 Jan 2020 03:29:40 GMT  
+		Size: 58.0 MB (58015986 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e97b3645452ed96ccaae652a1e86ee973a644bd2fe89a2f2243198927489f577`  
-		Last Modified: Mon, 30 Dec 2019 23:26:47 GMT  
+	-	`sha256:fddfa9af92446656e844a27e9376151265369cb9617d4a4b2e3d256bb5330d66`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:4.1.0` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:33be1d63aace90501f22952050c53cb1996aa2d7216e513bcdf10bf360d65c0b
+$ docker pull redmine@sha256:69f3f8e2a27d1a90f10eb1689b33242d0ed1972c7263f72c9605fc793f3dfdc2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.9 MB (197872422 bytes)**  
+-	Total Size: **197.9 MB (197889710 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:11aa0dc978025b2d4647e5f920288158ea2c8178d2442473a602cc34e24737e7`
+-	Image ID: `sha256:905f9063b57e0b7090a73b94a99f945d28455373c7fde4e8812d257016ede9a4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8790,45 +8790,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:08:18 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:37 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:51:38 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:51:38 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:38 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:23:44 GMT
+# Tue, 07 Jan 2020 03:10:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:24:09 GMT
+# Tue, 07 Jan 2020 03:11:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:51:20 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:51:21 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:51:23 GMT
+# Tue, 07 Jan 2020 03:11:26 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:27 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8849,47 +8849,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:30:40 GMT  
 		Size: 21.6 MB (21592480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79735b8aa359aed9b6ee2a64febed41202c437579b9c8ad025676cfd66f20fed`  
-		Last Modified: Sat, 28 Dec 2019 10:30:38 GMT  
+	-	`sha256:15818d45572da0ffbfd7b7c213011e34026a9b2483d38923e1bc970d8ba5190e`  
+		Last Modified: Tue, 07 Jan 2020 02:53:53 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af8a0bb70baf552440dff2f8f94aa31ba6768cb32f5a3da6970781643923fdde`  
-		Last Modified: Sat, 28 Dec 2019 14:32:13 GMT  
+	-	`sha256:427ecfe31dba9c1596393d2ff44b1755e2e5e759c7f232ca85092cec7f54f2b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:56 GMT  
 		Size: 1.7 KB (1746 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f1a973c70c53b47609efe91db858666ef988043d215cddc6f9751c55b0fd392`  
-		Last Modified: Sat, 28 Dec 2019 14:32:23 GMT  
-		Size: 77.9 MB (77925088 bytes)  
+	-	`sha256:2f7e3e94b67c1cda303409e25d8cb94365a5f5f14afd3555c76c769848de8e40`  
+		Last Modified: Tue, 07 Jan 2020 03:22:09 GMT  
+		Size: 77.9 MB (77925465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0294c12814d551aa6eb69a5a560222343a852e986115d315fc8429c84eb715da`  
-		Last Modified: Sat, 28 Dec 2019 14:32:12 GMT  
-		Size: 1.3 MB (1283271 bytes)  
+	-	`sha256:3439ec6ad867494e2250f152a883df214ce113074bbf9de627d2257fa0d7f1b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:55 GMT  
+		Size: 1.3 MB (1283337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01ed275456f3eeabe48efca226847c8108a6085fa2453fb91c765f16812e0e3`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 138.0 B  
+	-	`sha256:a4f1e85279851de1e1b0ac45b00c5e4a1489fe9a74ead59e4538c7ae50d2c426`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d27738cc26c1fc745448e52175e3cdaec01770748fd659b3740fe797605d06a9`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 128.0 B  
+	-	`sha256:932423e08f42b141be99ffdcc5a4a4d294eeebab50b0b3bafcc30018f4b90fc6`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2635060451cdb1b2f30dd74855940436ffc225bf87a20e98a3c1edc897462350`  
-		Last Modified: Mon, 30 Dec 2019 22:54:52 GMT  
-		Size: 2.7 MB (2735410 bytes)  
+	-	`sha256:34a9e085efa61f8efd49e767d660100fe122d0bab73baa627319beeb54421be1`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:506869fc6cb29b04e025c3e597eca0676ee0c31d6925d3c741276223711ec4bb`  
-		Last Modified: Mon, 30 Dec 2019 22:54:57 GMT  
-		Size: 57.8 MB (57832231 bytes)  
+	-	`sha256:c8c2fe0236b69548e1fa52ddc7810cf2d4513c4a2064646e25be0d07599aef03`  
+		Last Modified: Tue, 07 Jan 2020 03:22:01 GMT  
+		Size: 57.8 MB (57849101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7c6927bf80cb705b8e0d2e0f375e3b27ba150e06fe0aaf45dc178139d43ce00`  
-		Last Modified: Mon, 30 Dec 2019 22:54:51 GMT  
+	-	`sha256:88ec7c79caf544feee1c047a9432d3ff6758f06e78631b1bd2e8a75cd582312a`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1.0-alpine`
 
 ```console
-$ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900aee89340e3a9ec9
+$ docker pull redmine@sha256:9881654c703f5ac143328a56d6af4d5d0b2bb05f4e777908a983980d11df254b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8899,14 +8899,14 @@ $ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900ae
 ### `redmine:4.1.0-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:565553b54661d93b1a8fc68c4c693b3300e0d20b60ed587b3df7200dd9a3783e
+$ docker pull redmine@sha256:d4488d717d7ed9bade98b50714430e9188139cb77917db588947d419201a11af
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **155.1 MB (155056434 bytes)**  
+-	Total Size: **152.5 MB (152470486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c694f4a650c98037c231fb541bba077c4ac025ce4e958ec10d6cef8a92e273e`
+-	Image ID: `sha256:bf81687f1858b7e3e68cb96429e13784daab9529bcdd17245a342687cf999877`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -8929,43 +8929,43 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:10:21 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:51 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:52 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:52 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:53 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:15:38 GMT
+# Tue, 07 Jan 2020 02:45:33 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:15:52 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:15:55 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:34:41 GMT
+# Tue, 07 Jan 2020 02:45:47 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:36:12 GMT
+# Tue, 07 Jan 2020 02:47:19 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -8986,43 +8986,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:18:56 GMT  
 		Size: 22.1 MB (22078313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd1c732d3e5fb94758eb2b795ba475ac8328d70f510c3b46f10e1636970e3283`  
-		Last Modified: Mon, 21 Oct 2019 22:18:52 GMT  
-		Size: 140.0 B  
+	-	`sha256:65bcdf6fd7b3340afcb28784448e4ffd63d0ca5bcce1984225e3f5058f5187f1`  
+		Last Modified: Tue, 07 Jan 2020 02:23:15 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2429943e49fda8d0b38c92fb22def8816e414ff531070ffe85fb3356171cd8a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
+	-	`sha256:bc32f1a4b310e131bac96512ae35d2fe68a96013cf584f37a80b082e3cedcab6`  
+		Last Modified: Tue, 07 Jan 2020 02:59:23 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa16fea0ab94a4aaa762fd2c276d3e1e0a7b478a8d7e454b4831a72bd2c9d626`  
-		Last Modified: Tue, 22 Oct 2019 00:22:57 GMT  
-		Size: 65.7 MB (65706757 bytes)  
+	-	`sha256:ca40216dafae72ee12e2fcd5e34d3899b38a331528bbadbd50a2859036154c9d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:40 GMT  
+		Size: 65.7 MB (65727222 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6a2209a1bc5fbbe15328db89bf1e4c8b455b5ec7ce14f3cfcd1ba300b88decd`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 135.0 B  
+	-	`sha256:b8c98d46a8484d79c65fbc8d92060bee7b89268ecaee756540d8082d973b00c1`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100f192d75b912d6572c5640429c3cb1825cbae17c830be3b3c22ae6b68c479a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 128.0 B  
+	-	`sha256:66d2b433c999b6bb6b960f110c02bc74a0dc87744441b3f54047d375e9c5b427`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:acbe0cce3dfba0b2f8a715e31a139c068ed88514d1a68523e2a1f81ec4e4e84e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:22 GMT  
-		Size: 2.7 MB (2736260 bytes)  
+	-	`sha256:b7f8c4557aaa7ae9d4c6a4c724f503e6edb8d4bf1e46353679c3a2fe0161b86e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:24 GMT  
+		Size: 2.7 MB (2736253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9acd455e7f060747138b6b4a3aa79b49e04ff6c350585eacf091f4fb3506a1df`  
-		Last Modified: Mon, 30 Dec 2019 23:37:28 GMT  
-		Size: 60.7 MB (60713816 bytes)  
+	-	`sha256:2e066b9aa868563c09ed29687a57c29e7bde07b503e39e24a5899564048e57d5`  
+		Last Modified: Tue, 07 Jan 2020 02:59:32 GMT  
+		Size: 58.1 MB (58107405 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b1f16fc85324145749168a0fe5b45bb4a989be3049f9ed291f00067485011aa`  
-		Last Modified: Mon, 30 Dec 2019 23:37:21 GMT  
+	-	`sha256:93a6be9cbbd8a69c863532484ae6706962cc699f8eec6f734ce9c5657871a797`  
+		Last Modified: Tue, 07 Jan 2020 02:59:22 GMT  
 		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1.0-passenger`
 
 ```console
-$ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b7442b5278f77e586
+$ docker pull redmine@sha256:5ee92e2825d3c34b53275d114faa8ab2dd8d64c33cb159180760cbd73d9d5773
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9032,14 +9032,14 @@ $ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b744
 ### `redmine:4.1.0-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:d3e55f454a6430f036800c0ea72482b1611bd8b5e0c3b2b37e092c2e390908e1
+$ docker pull redmine@sha256:839a3a18136b125b801a0087da8e0144a3c08a5034fcbb4ae1e7871b1008b9d3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.6 MB (227573820 bytes)**  
+-	Total Size: **227.6 MB (227591454 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:34c776fa58cd25ef119dd61e13703314662a135814b57abf22272d001f0d08f9`
+-	Image ID: `sha256:e44b9d8763f86032d60bad24264398011de266231319789776bd6d4568684c8e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -9062,55 +9062,55 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Mon, 30 Dec 2019 23:34:14 GMT
+# Tue, 07 Jan 2020 02:45:09 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Mon, 30 Dec 2019 23:34:30 GMT
+# Tue, 07 Jan 2020 02:45:25 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -9131,55 +9131,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b22fc29ab0817d197084839a7ce9adc28f98720df6b2b2b383538492e5927a1e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:14 GMT  
-		Size: 19.9 MB (19939483 bytes)  
+	-	`sha256:5456de7c962054bb4ea86ced01d166966461a6aa2574be8944906db77981f60e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:16 GMT  
+		Size: 19.9 MB (19939678 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e9a6c65a4b4a9ff7b720414baee38d915aacd037b3dcc68850a26e165b70c503`  
-		Last Modified: Mon, 30 Dec 2019 23:37:12 GMT  
-		Size: 4.9 MB (4917849 bytes)  
+	-	`sha256:2c92af5cd02625f9c31357bd66d5b4600edcddbb6a3a6f731b1874916dcebc7d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:12 GMT  
+		Size: 4.9 MB (4917852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1-alpine`
 
 ```console
-$ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900aee89340e3a9ec9
+$ docker pull redmine@sha256:9881654c703f5ac143328a56d6af4d5d0b2bb05f4e777908a983980d11df254b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9189,14 +9189,14 @@ $ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900ae
 ### `redmine:4.1-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:565553b54661d93b1a8fc68c4c693b3300e0d20b60ed587b3df7200dd9a3783e
+$ docker pull redmine@sha256:d4488d717d7ed9bade98b50714430e9188139cb77917db588947d419201a11af
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **155.1 MB (155056434 bytes)**  
+-	Total Size: **152.5 MB (152470486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c694f4a650c98037c231fb541bba077c4ac025ce4e958ec10d6cef8a92e273e`
+-	Image ID: `sha256:bf81687f1858b7e3e68cb96429e13784daab9529bcdd17245a342687cf999877`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -9219,43 +9219,43 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:10:21 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:51 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:52 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:52 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:53 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:15:38 GMT
+# Tue, 07 Jan 2020 02:45:33 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:15:52 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:15:55 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:34:41 GMT
+# Tue, 07 Jan 2020 02:45:47 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:36:12 GMT
+# Tue, 07 Jan 2020 02:47:19 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -9276,43 +9276,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:18:56 GMT  
 		Size: 22.1 MB (22078313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd1c732d3e5fb94758eb2b795ba475ac8328d70f510c3b46f10e1636970e3283`  
-		Last Modified: Mon, 21 Oct 2019 22:18:52 GMT  
-		Size: 140.0 B  
+	-	`sha256:65bcdf6fd7b3340afcb28784448e4ffd63d0ca5bcce1984225e3f5058f5187f1`  
+		Last Modified: Tue, 07 Jan 2020 02:23:15 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2429943e49fda8d0b38c92fb22def8816e414ff531070ffe85fb3356171cd8a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
+	-	`sha256:bc32f1a4b310e131bac96512ae35d2fe68a96013cf584f37a80b082e3cedcab6`  
+		Last Modified: Tue, 07 Jan 2020 02:59:23 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa16fea0ab94a4aaa762fd2c276d3e1e0a7b478a8d7e454b4831a72bd2c9d626`  
-		Last Modified: Tue, 22 Oct 2019 00:22:57 GMT  
-		Size: 65.7 MB (65706757 bytes)  
+	-	`sha256:ca40216dafae72ee12e2fcd5e34d3899b38a331528bbadbd50a2859036154c9d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:40 GMT  
+		Size: 65.7 MB (65727222 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6a2209a1bc5fbbe15328db89bf1e4c8b455b5ec7ce14f3cfcd1ba300b88decd`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 135.0 B  
+	-	`sha256:b8c98d46a8484d79c65fbc8d92060bee7b89268ecaee756540d8082d973b00c1`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100f192d75b912d6572c5640429c3cb1825cbae17c830be3b3c22ae6b68c479a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 128.0 B  
+	-	`sha256:66d2b433c999b6bb6b960f110c02bc74a0dc87744441b3f54047d375e9c5b427`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:acbe0cce3dfba0b2f8a715e31a139c068ed88514d1a68523e2a1f81ec4e4e84e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:22 GMT  
-		Size: 2.7 MB (2736260 bytes)  
+	-	`sha256:b7f8c4557aaa7ae9d4c6a4c724f503e6edb8d4bf1e46353679c3a2fe0161b86e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:24 GMT  
+		Size: 2.7 MB (2736253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9acd455e7f060747138b6b4a3aa79b49e04ff6c350585eacf091f4fb3506a1df`  
-		Last Modified: Mon, 30 Dec 2019 23:37:28 GMT  
-		Size: 60.7 MB (60713816 bytes)  
+	-	`sha256:2e066b9aa868563c09ed29687a57c29e7bde07b503e39e24a5899564048e57d5`  
+		Last Modified: Tue, 07 Jan 2020 02:59:32 GMT  
+		Size: 58.1 MB (58107405 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b1f16fc85324145749168a0fe5b45bb4a989be3049f9ed291f00067485011aa`  
-		Last Modified: Mon, 30 Dec 2019 23:37:21 GMT  
+	-	`sha256:93a6be9cbbd8a69c863532484ae6706962cc699f8eec6f734ce9c5657871a797`  
+		Last Modified: Tue, 07 Jan 2020 02:59:22 GMT  
 		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1-passenger`
 
 ```console
-$ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b7442b5278f77e586
+$ docker pull redmine@sha256:5ee92e2825d3c34b53275d114faa8ab2dd8d64c33cb159180760cbd73d9d5773
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9322,14 +9322,14 @@ $ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b744
 ### `redmine:4.1-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:d3e55f454a6430f036800c0ea72482b1611bd8b5e0c3b2b37e092c2e390908e1
+$ docker pull redmine@sha256:839a3a18136b125b801a0087da8e0144a3c08a5034fcbb4ae1e7871b1008b9d3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.6 MB (227573820 bytes)**  
+-	Total Size: **227.6 MB (227591454 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:34c776fa58cd25ef119dd61e13703314662a135814b57abf22272d001f0d08f9`
+-	Image ID: `sha256:e44b9d8763f86032d60bad24264398011de266231319789776bd6d4568684c8e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -9352,55 +9352,55 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Mon, 30 Dec 2019 23:34:14 GMT
+# Tue, 07 Jan 2020 02:45:09 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Mon, 30 Dec 2019 23:34:30 GMT
+# Tue, 07 Jan 2020 02:45:25 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -9421,55 +9421,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b22fc29ab0817d197084839a7ce9adc28f98720df6b2b2b383538492e5927a1e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:14 GMT  
-		Size: 19.9 MB (19939483 bytes)  
+	-	`sha256:5456de7c962054bb4ea86ced01d166966461a6aa2574be8944906db77981f60e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:16 GMT  
+		Size: 19.9 MB (19939678 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e9a6c65a4b4a9ff7b720414baee38d915aacd037b3dcc68850a26e165b70c503`  
-		Last Modified: Mon, 30 Dec 2019 23:37:12 GMT  
-		Size: 4.9 MB (4917849 bytes)  
+	-	`sha256:2c92af5cd02625f9c31357bd66d5b4600edcddbb6a3a6f731b1874916dcebc7d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:12 GMT  
+		Size: 4.9 MB (4917852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4-alpine`
 
 ```console
-$ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900aee89340e3a9ec9
+$ docker pull redmine@sha256:9881654c703f5ac143328a56d6af4d5d0b2bb05f4e777908a983980d11df254b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9479,14 +9479,14 @@ $ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900ae
 ### `redmine:4-alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:565553b54661d93b1a8fc68c4c693b3300e0d20b60ed587b3df7200dd9a3783e
+$ docker pull redmine@sha256:d4488d717d7ed9bade98b50714430e9188139cb77917db588947d419201a11af
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **155.1 MB (155056434 bytes)**  
+-	Total Size: **152.5 MB (152470486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c694f4a650c98037c231fb541bba077c4ac025ce4e958ec10d6cef8a92e273e`
+-	Image ID: `sha256:bf81687f1858b7e3e68cb96429e13784daab9529bcdd17245a342687cf999877`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -9509,43 +9509,43 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:10:21 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:51 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:52 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:52 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:53 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:15:38 GMT
+# Tue, 07 Jan 2020 02:45:33 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:15:52 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:15:55 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:34:41 GMT
+# Tue, 07 Jan 2020 02:45:47 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:36:12 GMT
+# Tue, 07 Jan 2020 02:47:19 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -9566,43 +9566,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:18:56 GMT  
 		Size: 22.1 MB (22078313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd1c732d3e5fb94758eb2b795ba475ac8328d70f510c3b46f10e1636970e3283`  
-		Last Modified: Mon, 21 Oct 2019 22:18:52 GMT  
-		Size: 140.0 B  
+	-	`sha256:65bcdf6fd7b3340afcb28784448e4ffd63d0ca5bcce1984225e3f5058f5187f1`  
+		Last Modified: Tue, 07 Jan 2020 02:23:15 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2429943e49fda8d0b38c92fb22def8816e414ff531070ffe85fb3356171cd8a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
+	-	`sha256:bc32f1a4b310e131bac96512ae35d2fe68a96013cf584f37a80b082e3cedcab6`  
+		Last Modified: Tue, 07 Jan 2020 02:59:23 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa16fea0ab94a4aaa762fd2c276d3e1e0a7b478a8d7e454b4831a72bd2c9d626`  
-		Last Modified: Tue, 22 Oct 2019 00:22:57 GMT  
-		Size: 65.7 MB (65706757 bytes)  
+	-	`sha256:ca40216dafae72ee12e2fcd5e34d3899b38a331528bbadbd50a2859036154c9d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:40 GMT  
+		Size: 65.7 MB (65727222 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6a2209a1bc5fbbe15328db89bf1e4c8b455b5ec7ce14f3cfcd1ba300b88decd`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 135.0 B  
+	-	`sha256:b8c98d46a8484d79c65fbc8d92060bee7b89268ecaee756540d8082d973b00c1`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100f192d75b912d6572c5640429c3cb1825cbae17c830be3b3c22ae6b68c479a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 128.0 B  
+	-	`sha256:66d2b433c999b6bb6b960f110c02bc74a0dc87744441b3f54047d375e9c5b427`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:acbe0cce3dfba0b2f8a715e31a139c068ed88514d1a68523e2a1f81ec4e4e84e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:22 GMT  
-		Size: 2.7 MB (2736260 bytes)  
+	-	`sha256:b7f8c4557aaa7ae9d4c6a4c724f503e6edb8d4bf1e46353679c3a2fe0161b86e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:24 GMT  
+		Size: 2.7 MB (2736253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9acd455e7f060747138b6b4a3aa79b49e04ff6c350585eacf091f4fb3506a1df`  
-		Last Modified: Mon, 30 Dec 2019 23:37:28 GMT  
-		Size: 60.7 MB (60713816 bytes)  
+	-	`sha256:2e066b9aa868563c09ed29687a57c29e7bde07b503e39e24a5899564048e57d5`  
+		Last Modified: Tue, 07 Jan 2020 02:59:32 GMT  
+		Size: 58.1 MB (58107405 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b1f16fc85324145749168a0fe5b45bb4a989be3049f9ed291f00067485011aa`  
-		Last Modified: Mon, 30 Dec 2019 23:37:21 GMT  
+	-	`sha256:93a6be9cbbd8a69c863532484ae6706962cc699f8eec6f734ce9c5657871a797`  
+		Last Modified: Tue, 07 Jan 2020 02:59:22 GMT  
 		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4-passenger`
 
 ```console
-$ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b7442b5278f77e586
+$ docker pull redmine@sha256:5ee92e2825d3c34b53275d114faa8ab2dd8d64c33cb159180760cbd73d9d5773
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9612,14 +9612,14 @@ $ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b744
 ### `redmine:4-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:d3e55f454a6430f036800c0ea72482b1611bd8b5e0c3b2b37e092c2e390908e1
+$ docker pull redmine@sha256:839a3a18136b125b801a0087da8e0144a3c08a5034fcbb4ae1e7871b1008b9d3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.6 MB (227573820 bytes)**  
+-	Total Size: **227.6 MB (227591454 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:34c776fa58cd25ef119dd61e13703314662a135814b57abf22272d001f0d08f9`
+-	Image ID: `sha256:e44b9d8763f86032d60bad24264398011de266231319789776bd6d4568684c8e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -9642,55 +9642,55 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Mon, 30 Dec 2019 23:34:14 GMT
+# Tue, 07 Jan 2020 02:45:09 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Mon, 30 Dec 2019 23:34:30 GMT
+# Tue, 07 Jan 2020 02:45:25 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -9711,55 +9711,55 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b22fc29ab0817d197084839a7ce9adc28f98720df6b2b2b383538492e5927a1e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:14 GMT  
-		Size: 19.9 MB (19939483 bytes)  
+	-	`sha256:5456de7c962054bb4ea86ced01d166966461a6aa2574be8944906db77981f60e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:16 GMT  
+		Size: 19.9 MB (19939678 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e9a6c65a4b4a9ff7b720414baee38d915aacd037b3dcc68850a26e165b70c503`  
-		Last Modified: Mon, 30 Dec 2019 23:37:12 GMT  
-		Size: 4.9 MB (4917849 bytes)  
+	-	`sha256:2c92af5cd02625f9c31357bd66d5b4600edcddbb6a3a6f731b1874916dcebc7d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:12 GMT  
+		Size: 4.9 MB (4917852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:alpine`
 
 ```console
-$ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900aee89340e3a9ec9
+$ docker pull redmine@sha256:9881654c703f5ac143328a56d6af4d5d0b2bb05f4e777908a983980d11df254b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9769,14 +9769,14 @@ $ docker pull redmine@sha256:f6acfe95b1e168862ec4a30c40daf724261db9e658d6c6900ae
 ### `redmine:alpine` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:565553b54661d93b1a8fc68c4c693b3300e0d20b60ed587b3df7200dd9a3783e
+$ docker pull redmine@sha256:d4488d717d7ed9bade98b50714430e9188139cb77917db588947d419201a11af
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **155.1 MB (155056434 bytes)**  
+-	Total Size: **152.5 MB (152470486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c694f4a650c98037c231fb541bba077c4ac025ce4e958ec10d6cef8a92e273e`
+-	Image ID: `sha256:bf81687f1858b7e3e68cb96429e13784daab9529bcdd17245a342687cf999877`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -9799,43 +9799,43 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps 		$runDeps 		bzip2 		ca-certificates 		libffi-dev 		procps 		yaml-dev 		zlib-dev 	; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	! apk --no-network list --installed 		| grep -v '^[.]ruby-rundeps' 		| grep -i ruby 	; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Mon, 21 Oct 2019 22:10:21 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Mon, 21 Oct 2019 22:10:21 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:51 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:52 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:52 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Mon, 21 Oct 2019 22:10:22 GMT
+# Tue, 07 Jan 2020 02:20:53 GMT
 CMD ["irb"]
-# Tue, 22 Oct 2019 00:15:38 GMT
+# Tue, 07 Jan 2020 02:45:33 GMT
 RUN addgroup -S -g 1000 redmine && adduser -S -H -G redmine -u 999 redmine
-# Tue, 22 Oct 2019 00:15:52 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 RUN set -eux; 	apk add --no-cache 		bash 		ca-certificates 		su-exec 		tini 		tzdata 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				ghostscript-fonts 		imagemagick6 	;
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV RAILS_ENV=production
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 WORKDIR /usr/src/redmine
-# Tue, 22 Oct 2019 00:15:53 GMT
+# Tue, 07 Jan 2020 02:45:42 GMT
 ENV HOME=/home/redmine
-# Tue, 22 Oct 2019 00:15:55 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:34:38 GMT
+# Tue, 07 Jan 2020 02:45:43 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:34:41 GMT
+# Tue, 07 Jan 2020 02:45:47 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:36:12 GMT
+# Tue, 07 Jan 2020 02:47:19 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetds-dev 		gcc 		imagemagick6-dev 		make 		mariadb-dev 		musl-dev 		patch 		postgresql-dev 		sqlite-dev 		ttf2ufm 		zlib-dev 	; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		su-exec redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		rm /usr/local/bundle/gems/rbpdf-font-1.19.*/lib/fonts/ttf2ufm/ttf2ufm; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .redmine-rundeps $runDeps; 	apk del --no-network .build-deps
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 COPY file:74f57a1bf0a912dc2879462a72c1d654c2450fd1e1dad78bffaafda2974d3e97 in / 
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:36:13 GMT
+# Tue, 07 Jan 2020 02:47:20 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -9856,43 +9856,43 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Mon, 21 Oct 2019 22:18:56 GMT  
 		Size: 22.1 MB (22078313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd1c732d3e5fb94758eb2b795ba475ac8328d70f510c3b46f10e1636970e3283`  
-		Last Modified: Mon, 21 Oct 2019 22:18:52 GMT  
-		Size: 140.0 B  
+	-	`sha256:65bcdf6fd7b3340afcb28784448e4ffd63d0ca5bcce1984225e3f5058f5187f1`  
+		Last Modified: Tue, 07 Jan 2020 02:23:15 GMT  
+		Size: 144.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2429943e49fda8d0b38c92fb22def8816e414ff531070ffe85fb3356171cd8a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
+	-	`sha256:bc32f1a4b310e131bac96512ae35d2fe68a96013cf584f37a80b082e3cedcab6`  
+		Last Modified: Tue, 07 Jan 2020 02:59:23 GMT  
+		Size: 1.2 KB (1217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa16fea0ab94a4aaa762fd2c276d3e1e0a7b478a8d7e454b4831a72bd2c9d626`  
-		Last Modified: Tue, 22 Oct 2019 00:22:57 GMT  
-		Size: 65.7 MB (65706757 bytes)  
+	-	`sha256:ca40216dafae72ee12e2fcd5e34d3899b38a331528bbadbd50a2859036154c9d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:40 GMT  
+		Size: 65.7 MB (65727222 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6a2209a1bc5fbbe15328db89bf1e4c8b455b5ec7ce14f3cfcd1ba300b88decd`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 135.0 B  
+	-	`sha256:b8c98d46a8484d79c65fbc8d92060bee7b89268ecaee756540d8082d973b00c1`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100f192d75b912d6572c5640429c3cb1825cbae17c830be3b3c22ae6b68c479a`  
-		Last Modified: Tue, 22 Oct 2019 00:22:42 GMT  
-		Size: 128.0 B  
+	-	`sha256:66d2b433c999b6bb6b960f110c02bc74a0dc87744441b3f54047d375e9c5b427`  
+		Last Modified: Tue, 07 Jan 2020 02:59:21 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:acbe0cce3dfba0b2f8a715e31a139c068ed88514d1a68523e2a1f81ec4e4e84e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:22 GMT  
-		Size: 2.7 MB (2736260 bytes)  
+	-	`sha256:b7f8c4557aaa7ae9d4c6a4c724f503e6edb8d4bf1e46353679c3a2fe0161b86e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:24 GMT  
+		Size: 2.7 MB (2736253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9acd455e7f060747138b6b4a3aa79b49e04ff6c350585eacf091f4fb3506a1df`  
-		Last Modified: Mon, 30 Dec 2019 23:37:28 GMT  
-		Size: 60.7 MB (60713816 bytes)  
+	-	`sha256:2e066b9aa868563c09ed29687a57c29e7bde07b503e39e24a5899564048e57d5`  
+		Last Modified: Tue, 07 Jan 2020 02:59:32 GMT  
+		Size: 58.1 MB (58107405 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b1f16fc85324145749168a0fe5b45bb4a989be3049f9ed291f00067485011aa`  
-		Last Modified: Mon, 30 Dec 2019 23:37:21 GMT  
+	-	`sha256:93a6be9cbbd8a69c863532484ae6706962cc699f8eec6f734ce9c5657871a797`  
+		Last Modified: Tue, 07 Jan 2020 02:59:22 GMT  
 		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:latest`
 
 ```console
-$ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d04497b30c2a5de119
+$ docker pull redmine@sha256:622a9ea0e5e5ce59fb6c876bd79ece0dfaa0ffbc7452e02a49d5b54b5f8950ea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9908,14 +9908,14 @@ $ docker pull redmine@sha256:ddfe7935fa6c7a83aa07be99de959c5294872237754de2d0449
 ### `redmine:latest` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:902e699d87d6e9c5fed087388bfb09cd56b3ccbb0cc37ca41eeee1135b3a54ea
+$ docker pull redmine@sha256:187551f0e16d9a5c8c90a961ea69098b4270a98c386c2e4fdefc4d7b64658519
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.7 MB (202716488 bytes)**  
+-	Total Size: **202.7 MB (202733924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5eb3ccf68fca5937641b161fa4de4bbc2173680aff170e799eb3544766f544fd`
+-	Image ID: `sha256:1afbfb924539f2ae972502b921d03bbf0cb6bd0e1836229082890799b893c30d`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -9938,45 +9938,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -9997,54 +9997,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:latest` - linux; arm variant v5
 
 ```console
-$ docker pull redmine@sha256:729a35828b6c84c8eb85e0ed04bdb98ecf727b4f9d7eb30e569d300be248fa8f
+$ docker pull redmine@sha256:4906dab58ba5ee17643e992870e9fc53345328b9339b88d665e72ecfcc12836f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **192.4 MB (192393368 bytes)**  
+-	Total Size: **192.4 MB (192404507 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:80a5980107786d00cbc00e6c60b9aa9f2f6fb095ebcd61827597a5b7e649507a`
+-	Image ID: `sha256:76efdeb04144612cfe937c97093ca042cd7473c6050c0c67631cf0c567d9d74e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -10067,45 +10067,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 06:21:10 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:11 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 06:21:12 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 06:21:13 GMT
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:49:01 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:49:03 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 06:21:14 GMT
+# Tue, 07 Jan 2020 02:49:03 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 18:52:39 GMT
+# Tue, 07 Jan 2020 03:13:58 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 18:54:05 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 18:54:25 GMT
+# Tue, 07 Jan 2020 03:16:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 18:54:26 GMT
+# Tue, 07 Jan 2020 03:16:23 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:24 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 18:54:27 GMT
+# Tue, 07 Jan 2020 03:16:25 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 18:54:30 GMT
+# Tue, 07 Jan 2020 03:16:28 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:30 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:54:47 GMT
+# Tue, 07 Jan 2020 03:16:33 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:54:56 GMT
+# Tue, 07 Jan 2020 03:16:42 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:00:30 GMT
+# Tue, 07 Jan 2020 03:22:51 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:00:32 GMT
+# Tue, 07 Jan 2020 03:22:56 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:00:33 GMT
+# Tue, 07 Jan 2020 03:22:57 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:00:34 GMT
+# Tue, 07 Jan 2020 03:22:58 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:00:35 GMT
+# Tue, 07 Jan 2020 03:22:59 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:00:38 GMT
+# Tue, 07 Jan 2020 03:23:00 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -10126,54 +10126,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 07:19:48 GMT  
 		Size: 20.7 MB (20712825 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a1abd10ed01f4676d01f9620fefa1b776da2696d3e8122db559411e1bcf31a5`  
-		Last Modified: Sat, 28 Dec 2019 07:19:43 GMT  
-		Size: 177.0 B  
+	-	`sha256:339d13f87ffb8e7206ef67a9df0490843eb23c62c24d4f6e4987b4988de4bfa4`  
+		Last Modified: Tue, 07 Jan 2020 02:52:02 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b0a7c2743b41303e80e8acd0f8dc6caa37bb0875ea8f69ba90b23d783d1a1576`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.7 KB (1730 bytes)  
+	-	`sha256:17f97b318b29436f18fd49df95209eeaeb49250ffbafffaee6d4c48c6c50f8a3`  
+		Last Modified: Tue, 07 Jan 2020 03:39:42 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce30b0c7067a61af709a70b8a9e7d2bb903a7c0bda27f1c2eb2eb9252bd582f5`  
-		Last Modified: Sat, 28 Dec 2019 19:08:38 GMT  
-		Size: 76.0 MB (76024356 bytes)  
+	-	`sha256:f288be7cde7b6a6a81e3accc68decd3aa798fa1f0cef89c3953fb86ebf7d8b31`  
+		Last Modified: Tue, 07 Jan 2020 03:40:07 GMT  
+		Size: 76.0 MB (76024941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45f4f5374736951cb6a48b25326fb7b30f73b9d9301055de28d367fbf8d3e1eb`  
-		Last Modified: Sat, 28 Dec 2019 19:08:11 GMT  
-		Size: 1.3 MB (1254316 bytes)  
+	-	`sha256:c37ce11948573b9edac8f826ad594138ddfaacc192079b3eb80b4e287ff914f7`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 1.3 MB (1254343 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dec0a6576283611b4db08a85251e4201ea40ed2ab3daa8f85e467c41b24974fd`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
-		Size: 172.0 B  
+	-	`sha256:7704ca0edea2430982c5b21980b5af780b93b80630b113085d80b4f8048b3ab6`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4485bfb4d90b4b15e23b20a445354a6f1f841f36e008923b342d3c81cb867ed6`  
-		Last Modified: Sat, 28 Dec 2019 19:08:09 GMT  
+	-	`sha256:cca896ec85003a248d1a78bde07d0361b690c9008a1f61f76a5f1da30224cc1b`  
+		Last Modified: Tue, 07 Jan 2020 03:39:40 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ba76fb0086e0bcced450bcacf50b8398f7a6552e9d6121524f7667940e0a4e1`  
-		Last Modified: Mon, 30 Dec 2019 23:01:08 GMT  
-		Size: 2.7 MB (2735851 bytes)  
+	-	`sha256:3b045ff2645e4284302419c8ffc27fb6887b64144d7d2da2bd55575f8e9ad9ec`  
+		Last Modified: Tue, 07 Jan 2020 03:39:41 GMT  
+		Size: 2.7 MB (2735863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4d77c1da7d08b62f52bb3950c5139620ec8364340a9642ce723237855e4c3d5`  
-		Last Modified: Mon, 30 Dec 2019 23:01:20 GMT  
-		Size: 56.5 MB (56505864 bytes)  
+	-	`sha256:fb518d1c9cf765ad42d08c8a3f35755bade189212248505fd3ecc448640bfbf8`  
+		Last Modified: Tue, 07 Jan 2020 03:39:54 GMT  
+		Size: 56.5 MB (56516373 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:47819d85c69c98e77433ce438a7ac09a04f37903e5870770b71e121de752a6ff`  
-		Last Modified: Mon, 30 Dec 2019 23:01:06 GMT  
+	-	`sha256:26c4354bff4552a216e99b31445586cac3c2f96a5a406c2795e8de47b1d7785d`  
+		Last Modified: Tue, 07 Jan 2020 03:39:39 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:latest` - linux; arm variant v7
 
 ```console
-$ docker pull redmine@sha256:4f117bf7ab1b894e4371f4b6da7d4eb42f1aed579e058c11358f223f45af8488
+$ docker pull redmine@sha256:003ba4181360c67d22ffdc6e8c3395e7efcdfec81a890fc2ba2d137b107ac514
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **185.8 MB (185795962 bytes)**  
+-	Total Size: **185.8 MB (185802956 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:32064522b2976e7cba2666f2e24fafb7f4ce00b2fc9fd8c755d477a4a82b66f8`
+-	Image ID: `sha256:b3b8d529a83484db6b68ae816b129f07be45d5cc4e4621fc99ebbad0a580e7c5`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -10196,45 +10196,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 21:22:59 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 21:22:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 21:23:00 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 21:23:01 GMT
+# Tue, 07 Jan 2020 03:12:46 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 03:12:47 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 03:12:50 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 21:23:02 GMT
+# Tue, 07 Jan 2020 03:12:51 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 08:16:55 GMT
+# Tue, 07 Jan 2020 03:39:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 08:17:46 GMT
+# Tue, 07 Jan 2020 03:40:34 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 08:18:03 GMT
+# Tue, 07 Jan 2020 03:40:59 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 08:18:04 GMT
+# Tue, 07 Jan 2020 03:41:00 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 08:18:05 GMT
+# Tue, 07 Jan 2020 03:41:01 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 08:18:06 GMT
+# Tue, 07 Jan 2020 03:41:02 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 08:18:08 GMT
+# Tue, 07 Jan 2020 03:41:04 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:06:51 GMT
+# Tue, 07 Jan 2020 03:41:05 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:06:52 GMT
+# Tue, 07 Jan 2020 03:41:07 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:06:58 GMT
+# Tue, 07 Jan 2020 03:41:12 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:11:25 GMT
+# Tue, 07 Jan 2020 03:46:26 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:11:27 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:11:28 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:11:29 GMT
+# Tue, 07 Jan 2020 03:46:30 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -10255,54 +10255,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 22:13:25 GMT  
 		Size: 20.6 MB (20620161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:158be611acd1464ed169ba02f406468d7ba338ee3bb447aee4115317b6f84478`  
-		Last Modified: Sat, 28 Dec 2019 22:13:20 GMT  
+	-	`sha256:5fe49bcffa8c82983470bbf0074d2412dacbf1f325bcc2ffb85fddcbda7c7da8`  
+		Last Modified: Tue, 07 Jan 2020 03:17:58 GMT  
 		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fdd79f36888d0a15667a5d2a333408886aa5313ddd41b011ef2583c604644f8`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.7 KB (1737 bytes)  
+	-	`sha256:67711a5ad765c81e93b31a6b9e1b763d7d8448315399ea1765bf97971567bfcb`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.7 KB (1739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:060aab585d09a8861a4cc045480e04a098de3eff59e488f3303b3857ba1bd189`  
-		Last Modified: Sun, 29 Dec 2019 08:31:19 GMT  
-		Size: 72.4 MB (72370630 bytes)  
+	-	`sha256:05d74eecc06d13134c138c9df69b88fae2a875703f36a0fb2fd26e740242128b`  
+		Last Modified: Tue, 07 Jan 2020 03:59:24 GMT  
+		Size: 72.4 MB (72371109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5f67f581ba225fd56401856418bea0ecbd2f16ff6d5d1aa879672235dc2052e`  
-		Last Modified: Sun, 29 Dec 2019 08:30:57 GMT  
-		Size: 1.2 MB (1243523 bytes)  
+	-	`sha256:13558994cbeb5acd84e3d5cbd289b63aa49eb00c519c44df85c8eb739e1aecdc`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 1.2 MB (1243608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:001e2d72a3770aa4210e8d94abd7f170d1cbe938357d4150a2849b82404aedb9`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
-		Size: 170.0 B  
+	-	`sha256:0071ee240d8a61e07f23310aaa0abd958805870c68cc9a980486c0af09abd8de`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acb379f61d4d54ba729ad2756b2014a59555ad5d0754045879d06a7c343e951`  
-		Last Modified: Sun, 29 Dec 2019 08:30:55 GMT  
+	-	`sha256:5d4a08ec220f99917007502db7459ff7d23e8e699418f7728948b9785f8ad389`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81977844a21f7d088bf08816511656c3aa4032b826af7b1c6e420e6d0e9fc54b`  
-		Last Modified: Mon, 30 Dec 2019 23:12:00 GMT  
-		Size: 2.7 MB (2735861 bytes)  
+	-	`sha256:62b0ce8bb2dfaebcc4e96f6b821ef98f59479efbe6c8df4c76c972154ba04943`  
+		Last Modified: Tue, 07 Jan 2020 03:59:01 GMT  
+		Size: 2.7 MB (2735857 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c031777c700bf79981cce268d5355c2838204e3901e1813ff78aeae0dd31bb0f`  
-		Last Modified: Mon, 30 Dec 2019 23:12:11 GMT  
-		Size: 56.3 MB (56274789 bytes)  
+	-	`sha256:c46673c4a93ee40dd7786754c0771f6bb456490a8c112878b3e2de069fc1a140`  
+		Last Modified: Tue, 07 Jan 2020 03:59:13 GMT  
+		Size: 56.3 MB (56281218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1a19afff9cfa8d924ca5849af17b1700503d8949f61bc9c8d38f26f45081a52`  
-		Last Modified: Mon, 30 Dec 2019 23:11:59 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:41faf231a7a4832e0583b60a49cdfc3043f30326ca897992f8a5db9573069bf1`  
+		Last Modified: Tue, 07 Jan 2020 03:58:59 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull redmine@sha256:fabf57addb340358fb703e7bd9412cdf3fcd09a8a95ad29137f555c4f71593c1
+$ docker pull redmine@sha256:0e01d80fa0358939a16aa0384d58bc564309036dd7b171886b5362f5b420b761
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **198.5 MB (198495882 bytes)**  
+-	Total Size: **198.5 MB (198510271 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f755fa98271fb0e936401651fa91c67b9150480b06b31500fcd73bd2a573d6d1`
+-	Image ID: `sha256:bc9198dcbb168ae0e85796be70bf4ef5e25194b47f52b85e30a40d0853281092`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -10325,45 +10325,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 22:32:58 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 22:32:59 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 22:33:02 GMT
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:41:11 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:41:13 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 22:33:03 GMT
+# Tue, 07 Jan 2020 02:41:14 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 09:19:51 GMT
+# Tue, 07 Jan 2020 03:06:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 09:20:40 GMT
+# Tue, 07 Jan 2020 03:07:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 09:21:01 GMT
+# Tue, 07 Jan 2020 03:08:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 09:21:03 GMT
+# Tue, 07 Jan 2020 03:08:35 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:38 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 09:21:04 GMT
+# Tue, 07 Jan 2020 03:08:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 09:21:07 GMT
+# Tue, 07 Jan 2020 03:08:43 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:46:49 GMT
+# Tue, 07 Jan 2020 03:08:44 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:46:50 GMT
+# Tue, 07 Jan 2020 03:08:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:46:55 GMT
+# Tue, 07 Jan 2020 03:08:51 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:52:13 GMT
+# Tue, 07 Jan 2020 03:15:53 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:52:14 GMT
+# Tue, 07 Jan 2020 03:16:00 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:52:15 GMT
+# Tue, 07 Jan 2020 03:16:01 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:52:16 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:52:17 GMT
+# Tue, 07 Jan 2020 03:16:03 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:52:18 GMT
+# Tue, 07 Jan 2020 03:16:05 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -10384,54 +10384,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 23:23:41 GMT  
 		Size: 21.3 MB (21281931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3866dedbd8f45e73eb720d06e31b7b404c7f341945bac9e36c94b3debf5e2469`  
-		Last Modified: Sat, 28 Dec 2019 23:23:36 GMT  
-		Size: 175.0 B  
+	-	`sha256:6f1828050bdff9d08ad357e12a1bd0639c7818f955a59966e76a48d90c55ccc2`  
+		Last Modified: Tue, 07 Jan 2020 02:45:23 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de07b264b3e1232fcca516dbdf000d3896f1ff7e80bf820ec728c928b757d443`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.8 KB (1751 bytes)  
+	-	`sha256:ebec8c6749d85258e801554c4c6b4d94f96e6ca4909194be6fc4aa78f0ba7caf`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.8 KB (1759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0fa545ca828ef3682e6175a8eff7187e466949b96d0b581058dbe26d77878cb`  
-		Last Modified: Sun, 29 Dec 2019 09:34:42 GMT  
-		Size: 78.8 MB (78781403 bytes)  
+	-	`sha256:d7616f60ca94ba9dd9d5ec4a4672df90a8f21683b3f5e363ecbb6c56cd57b34f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:38 GMT  
+		Size: 78.8 MB (78781946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb8f0ebf113189284a9f5e6486d0a5ea70731e394f9d0c3bd9eb1fea3d66ecc1`  
-		Last Modified: Sun, 29 Dec 2019 09:34:19 GMT  
-		Size: 1.2 MB (1228577 bytes)  
+	-	`sha256:ed90e7447acdd79b625fff5e37d6b9567b24b0ec16826357c12a1f1047c0e96a`  
+		Last Modified: Tue, 07 Jan 2020 03:31:11 GMT  
+		Size: 1.2 MB (1228684 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7562512ba5b7faaf680e4f47310868434d855eda2c8b4178e154d45ef9bccd0`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
-		Size: 172.0 B  
+	-	`sha256:bc9cb5aa81f92922c768a7f7f77d66adc87edf01e2ce3986835401c20d683c11`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc767004d48c8e0659f28c1244254ab17aa8c7419a8ca4e7070c4d84e1333d7e`  
-		Last Modified: Sun, 29 Dec 2019 09:34:17 GMT  
+	-	`sha256:fe15bb660b67ad397ff5dced96f6c5a667bc63dd0d23a82b5d30347018e9c15f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
 		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8830e451754177ad85457b14008acff225ee6ddd5392d42df5a5f2d68a4a0246`  
-		Last Modified: Mon, 30 Dec 2019 22:52:44 GMT  
-		Size: 2.7 MB (2735842 bytes)  
+	-	`sha256:777acea1a0afb276a342110a4f57a84fb05496ee8781d1527c1d369f93756259`  
+		Last Modified: Tue, 07 Jan 2020 03:31:09 GMT  
+		Size: 2.7 MB (2735859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6eeeca614a63e5a2f46f2bbc363f45fc41f4468eedfbdb5845e525bf2fa349e8`  
-		Last Modified: Mon, 30 Dec 2019 22:52:55 GMT  
-		Size: 57.4 MB (57368226 bytes)  
+	-	`sha256:8214399d3be2b4d772486eb11b58fd4cd18ed7a9c09036024ac8c51d2cc63ba1`  
+		Last Modified: Tue, 07 Jan 2020 03:31:22 GMT  
+		Size: 57.4 MB (57381944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:daf326086b6cd33176d8b5f405f97bf478f03878dc7f4a99094dbcfc83c3c6a1`  
-		Last Modified: Mon, 30 Dec 2019 22:52:43 GMT  
-		Size: 2.1 KB (2054 bytes)  
+	-	`sha256:1c2aa5015caadc0c6e7f6f3681de219f1e25b99784b94677a7ae484876af9f0f`  
+		Last Modified: Tue, 07 Jan 2020 03:31:08 GMT  
+		Size: 2.1 KB (2051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:latest` - linux; 386
 
 ```console
-$ docker pull redmine@sha256:9528337d6b248cb6458728b6f2403b6c6c34c8c2769540495f1c78971dae1310
+$ docker pull redmine@sha256:d1b3cc39d6fd83267ea5ff7559dce11abcb676d6eeb15b373e234f20282bcd5f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **208.0 MB (207953654 bytes)**  
+-	Total Size: **208.0 MB (207971236 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:869326ffcd9043b9fcf5059252033ce06dbd6bd9ad09738867a053f99564f918`
+-	Image ID: `sha256:427cdfe5a66aa35124e1226f327c747117e7b85e2866531b7863a89d4a08bbd7`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -10454,45 +10454,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 15:48:29 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 15:48:30 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:07 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:39:08 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:39:08 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 15:48:31 GMT
+# Tue, 07 Jan 2020 02:39:08 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 00:35:25 GMT
+# Tue, 07 Jan 2020 03:00:48 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 00:36:01 GMT
+# Tue, 07 Jan 2020 03:01:23 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 00:36:16 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 00:36:17 GMT
+# Tue, 07 Jan 2020 03:01:34 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 00:36:18 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:41:49 GMT
+# Tue, 07 Jan 2020 03:01:35 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:41:53 GMT
+# Tue, 07 Jan 2020 03:01:40 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:44:09 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:31 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:44:10 GMT
+# Tue, 07 Jan 2020 03:04:32 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -10513,54 +10513,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 16:44:44 GMT  
 		Size: 20.9 MB (20885521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17d698d757862d4c6e9742e6794e0e071637015bdb38321f25b825ec0f9fcbb2`  
-		Last Modified: Sat, 28 Dec 2019 16:44:37 GMT  
-		Size: 144.0 B  
+	-	`sha256:b0c53ce40fd432336a5365d519861a9d64c7cf858412dd402f939e5f6cb0ed3f`  
+		Last Modified: Tue, 07 Jan 2020 02:41:40 GMT  
+		Size: 141.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:096b2fd689438f0bac3f7636511f338e5de2dfedc3d09046b407bc8414b71fef`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:2b71e9da85871d84768b7e4ee95650087a03f4db095955f62e526335b0c09aa4`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 1.7 KB (1740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1abae356afaeb4eb2314f0986f093ec2c8c466f46c9895b63c2adf384c1b8543`  
-		Last Modified: Sun, 29 Dec 2019 00:48:44 GMT  
-		Size: 81.6 MB (81574496 bytes)  
+	-	`sha256:9a3ccb3b9a12325f66d08313505167fa8d7a46ab42c2e89625e485c5ac43ca78`  
+		Last Modified: Tue, 07 Jan 2020 03:11:33 GMT  
+		Size: 81.6 MB (81574872 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2199cf4d500212beef54799d49b397ab7fae50956f80ca93bc3e46f9d2d1ac04`  
-		Last Modified: Sun, 29 Dec 2019 00:47:56 GMT  
-		Size: 1.3 MB (1261040 bytes)  
+	-	`sha256:f8085aa370c294355492d62d20997a91dce32290fb39f7ff46d2ea9f79c9cac7`  
+		Last Modified: Tue, 07 Jan 2020 03:11:09 GMT  
+		Size: 1.3 MB (1261083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8616ae50f35dda86452ca27a4dce70e4609360e329786c45255b8efe28d87101`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 137.0 B  
+	-	`sha256:9ca155252736682989c07106e5bb0eeaaf8b2372c1366aa1cdc83c0575ff1a54`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:835b0f14c08317511b0d06b0dbf1f4db9174521435ebed17189bf86b6e00dd55`  
-		Last Modified: Sun, 29 Dec 2019 00:47:54 GMT  
-		Size: 127.0 B  
+	-	`sha256:67b530bf833967827e0f2848925236be5bb8b6284da960ded962768f10853d79`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
+		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62600d65605e7e512b0fa5346221567b0a96dd5c0a6bd9d5de04f117c512e9f0`  
-		Last Modified: Mon, 30 Dec 2019 22:44:34 GMT  
-		Size: 2.7 MB (2735393 bytes)  
+	-	`sha256:4fa27b3327360715b1a90ecc14add5758c5d9957680bf8b92411a19e69a75a9d`  
+		Last Modified: Tue, 07 Jan 2020 03:11:10 GMT  
+		Size: 2.7 MB (2735394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:585c641449ff7f5ec017308bee789435a2c9470e4c42105108fcd4ed40a117d8`  
-		Last Modified: Mon, 30 Dec 2019 22:44:42 GMT  
-		Size: 56.5 MB (56539780 bytes)  
+	-	`sha256:248f5b6cb2691da13b2af50a6e5583e121b4a1d905af8cbcce41603d28e89e5c`  
+		Last Modified: Tue, 07 Jan 2020 03:11:20 GMT  
+		Size: 56.6 MB (56556937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d64a44fe2bb4bca3528befeb42a432dc580aa7936c0894ac5a3bbba3efb87cf6`  
-		Last Modified: Mon, 30 Dec 2019 22:44:33 GMT  
+	-	`sha256:7b6a7aaefac27d5bfd18f5c25b161cd26dc7246970ed4cd4d94616a75c1f0a05`  
+		Last Modified: Tue, 07 Jan 2020 03:11:08 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:latest` - linux; ppc64le
 
 ```console
-$ docker pull redmine@sha256:53a91922096f1584d65d44dc1c5f3910416a502798e6ebdda6eed4c7c21f91d1
+$ docker pull redmine@sha256:7fc04b9687fc429b47d5ae618128cc9eea47f3e85e83fa0963f5a928c2d9a5c9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **214.0 MB (213976566 bytes)**  
+-	Total Size: **214.0 MB (213986551 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d0cc2ab7001628e0f9d1edf73d1e702b53e75e9fc6c4536d9dd52dbd1d03ae5a`
+-	Image ID: `sha256:a0f08be72159bc4dc39fd51d2b1f30c4925ac7651c9fccc427f8c527d7debcfc`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -10583,45 +10583,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 04:49:02 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:03 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 04:49:06 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 04:49:16 GMT
+# Tue, 07 Jan 2020 02:18:42 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:18:45 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:18:54 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 04:49:20 GMT
+# Tue, 07 Jan 2020 02:18:58 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 05:35:48 GMT
+# Tue, 07 Jan 2020 02:52:26 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 05:37:37 GMT
+# Tue, 07 Jan 2020 02:56:12 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 05:38:10 GMT
+# Tue, 07 Jan 2020 02:57:12 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 05:38:12 GMT
+# Tue, 07 Jan 2020 02:57:19 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 05:38:14 GMT
+# Tue, 07 Jan 2020 02:57:25 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 05:38:15 GMT
+# Tue, 07 Jan 2020 02:57:31 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 05:38:20 GMT
+# Tue, 07 Jan 2020 02:57:38 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:19:02 GMT
+# Tue, 07 Jan 2020 02:57:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:19:03 GMT
+# Tue, 07 Jan 2020 02:57:45 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:19:11 GMT
+# Tue, 07 Jan 2020 02:57:57 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:26:02 GMT
+# Tue, 07 Jan 2020 03:07:18 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:26:08 GMT
+# Tue, 07 Jan 2020 03:07:22 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:26:09 GMT
+# Tue, 07 Jan 2020 03:07:23 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:26:11 GMT
+# Tue, 07 Jan 2020 03:07:26 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:26:12 GMT
+# Tue, 07 Jan 2020 03:07:28 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:26:14 GMT
+# Tue, 07 Jan 2020 03:07:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -10642,54 +10642,54 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 05:29:59 GMT  
 		Size: 22.0 MB (21968340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fcdef1db578dfb59ea162f659338a2ab021d2839d6727f80e64bb67e6a440c8f`  
-		Last Modified: Sat, 28 Dec 2019 05:29:51 GMT  
-		Size: 175.0 B  
+	-	`sha256:88418e7313544081130ec82f1125b007f6673672ed6fe3f2815a8bc0836d834d`  
+		Last Modified: Tue, 07 Jan 2020 02:27:35 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d107d4bd078e8cdadd410658f8b2b9a49551e5963f8990280e0c333125be1c5`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:c811e39d17ef5178d803832537e4b94505620908b40d2ece5c639ebc74bb249c`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.8 KB (1754 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a612640847c9d0e0735e41875007ad7f8bfad5510cdf8badc050102844aac3f`  
-		Last Modified: Sat, 28 Dec 2019 05:59:02 GMT  
-		Size: 86.8 MB (86836986 bytes)  
+	-	`sha256:759f2cb97aba0fe1a2f1053949514cc564ab7e2cfc06feb29ff83f1a25204a75`  
+		Last Modified: Tue, 07 Jan 2020 03:30:06 GMT  
+		Size: 86.8 MB (86837114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1f66358e7c44f05b25d225eb2d4908b94b2dd1c1e3f2dc1ecb2bd6ba79b8353`  
-		Last Modified: Sat, 28 Dec 2019 05:58:27 GMT  
-		Size: 1.2 MB (1217951 bytes)  
+	-	`sha256:3b6f7850a6e18d809176a36601f044b1e81f00e83669c91e047608f68e15fe76`  
+		Last Modified: Tue, 07 Jan 2020 03:29:32 GMT  
+		Size: 1.2 MB (1218315 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d7bb190f232d859b513e53f0ab37b7dedc500668034b02d0eabba16dc7488a6`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
-		Size: 169.0 B  
+	-	`sha256:8d6322666aa095fbbcc93f7c9b4120792fc53d3d10e016d2f5b886ebaf9a71dd`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa186ef829d9161ba8520eb43c24ff82a504b79e9a14ff653a64adc2be34f00c`  
-		Last Modified: Sat, 28 Dec 2019 05:58:22 GMT  
+	-	`sha256:4ff21de5e70292bac1732e4d68af3d870e59b1973fe11a6f7f5f8e2584d35433`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 158.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9422b1bcc68565fc1af7c6bbcfe4297773ec66af13eefe03a2279ae9170b302f`  
-		Last Modified: Mon, 30 Dec 2019 23:26:48 GMT  
-		Size: 2.7 MB (2735858 bytes)  
+	-	`sha256:148c6e08afe9243221a3614c147b175f00fca39aa7398b226b9c81c4c0920475`  
+		Last Modified: Tue, 07 Jan 2020 03:29:29 GMT  
+		Size: 2.7 MB (2735864 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f99fb700361fa147bc16d36063b515a5fc8723b5842a7f00d46853e1129ba33e`  
-		Last Modified: Mon, 30 Dec 2019 23:26:56 GMT  
-		Size: 58.0 MB (58006510 bytes)  
+	-	`sha256:938befb09e3321da4912a40c548f49be67885cfe7251b037f26bfb0d6d458b79`  
+		Last Modified: Tue, 07 Jan 2020 03:29:40 GMT  
+		Size: 58.0 MB (58015986 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e97b3645452ed96ccaae652a1e86ee973a644bd2fe89a2f2243198927489f577`  
-		Last Modified: Mon, 30 Dec 2019 23:26:47 GMT  
+	-	`sha256:fddfa9af92446656e844a27e9376151265369cb9617d4a4b2e3d256bb5330d66`  
+		Last Modified: Tue, 07 Jan 2020 03:29:26 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redmine:latest` - linux; s390x
 
 ```console
-$ docker pull redmine@sha256:33be1d63aace90501f22952050c53cb1996aa2d7216e513bcdf10bf360d65c0b
+$ docker pull redmine@sha256:69f3f8e2a27d1a90f10eb1689b33242d0ed1972c7263f72c9605fc793f3dfdc2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.9 MB (197872422 bytes)**  
+-	Total Size: **197.9 MB (197889710 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:11aa0dc978025b2d4647e5f920288158ea2c8178d2442473a602cc34e24737e7`
+-	Image ID: `sha256:905f9063b57e0b7090a73b94a99f945d28455373c7fde4e8812d257016ede9a4`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["rails","server","-b","0.0.0.0"]`
 
@@ -10712,45 +10712,45 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 10:08:18 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 10:08:18 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:37 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:51:38 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:51:38 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 10:08:19 GMT
+# Tue, 07 Jan 2020 02:51:38 GMT
 CMD ["irb"]
-# Sat, 28 Dec 2019 14:23:44 GMT
+# Tue, 07 Jan 2020 03:10:38 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sat, 28 Dec 2019 14:24:09 GMT
+# Tue, 07 Jan 2020 03:11:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV RAILS_ENV=production
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 WORKDIR /usr/src/redmine
-# Sat, 28 Dec 2019 14:24:28 GMT
+# Tue, 07 Jan 2020 03:11:22 GMT
 ENV HOME=/home/redmine
-# Sat, 28 Dec 2019 14:24:29 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 22:51:20 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 22:51:21 GMT
+# Tue, 07 Jan 2020 03:11:23 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 22:51:23 GMT
+# Tue, 07 Jan 2020 03:11:26 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:27 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 22:54:33 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:28 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 22:54:34 GMT
+# Tue, 07 Jan 2020 03:14:29 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
 ```
 
@@ -10771,47 +10771,47 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Last Modified: Sat, 28 Dec 2019 10:30:40 GMT  
 		Size: 21.6 MB (21592480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79735b8aa359aed9b6ee2a64febed41202c437579b9c8ad025676cfd66f20fed`  
-		Last Modified: Sat, 28 Dec 2019 10:30:38 GMT  
+	-	`sha256:15818d45572da0ffbfd7b7c213011e34026a9b2483d38923e1bc970d8ba5190e`  
+		Last Modified: Tue, 07 Jan 2020 02:53:53 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af8a0bb70baf552440dff2f8f94aa31ba6768cb32f5a3da6970781643923fdde`  
-		Last Modified: Sat, 28 Dec 2019 14:32:13 GMT  
+	-	`sha256:427ecfe31dba9c1596393d2ff44b1755e2e5e759c7f232ca85092cec7f54f2b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:56 GMT  
 		Size: 1.7 KB (1746 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f1a973c70c53b47609efe91db858666ef988043d215cddc6f9751c55b0fd392`  
-		Last Modified: Sat, 28 Dec 2019 14:32:23 GMT  
-		Size: 77.9 MB (77925088 bytes)  
+	-	`sha256:2f7e3e94b67c1cda303409e25d8cb94365a5f5f14afd3555c76c769848de8e40`  
+		Last Modified: Tue, 07 Jan 2020 03:22:09 GMT  
+		Size: 77.9 MB (77925465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0294c12814d551aa6eb69a5a560222343a852e986115d315fc8429c84eb715da`  
-		Last Modified: Sat, 28 Dec 2019 14:32:12 GMT  
-		Size: 1.3 MB (1283271 bytes)  
+	-	`sha256:3439ec6ad867494e2250f152a883df214ce113074bbf9de627d2257fa0d7f1b4`  
+		Last Modified: Tue, 07 Jan 2020 03:21:55 GMT  
+		Size: 1.3 MB (1283337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b01ed275456f3eeabe48efca226847c8108a6085fa2453fb91c765f16812e0e3`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 138.0 B  
+	-	`sha256:a4f1e85279851de1e1b0ac45b00c5e4a1489fe9a74ead59e4538c7ae50d2c426`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d27738cc26c1fc745448e52175e3cdaec01770748fd659b3740fe797605d06a9`  
-		Last Modified: Sat, 28 Dec 2019 14:32:11 GMT  
-		Size: 128.0 B  
+	-	`sha256:932423e08f42b141be99ffdcc5a4a4d294eeebab50b0b3bafcc30018f4b90fc6`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 127.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2635060451cdb1b2f30dd74855940436ffc225bf87a20e98a3c1edc897462350`  
-		Last Modified: Mon, 30 Dec 2019 22:54:52 GMT  
-		Size: 2.7 MB (2735410 bytes)  
+	-	`sha256:34a9e085efa61f8efd49e767d660100fe122d0bab73baa627319beeb54421be1`  
+		Last Modified: Tue, 07 Jan 2020 03:21:54 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:506869fc6cb29b04e025c3e597eca0676ee0c31d6925d3c741276223711ec4bb`  
-		Last Modified: Mon, 30 Dec 2019 22:54:57 GMT  
-		Size: 57.8 MB (57832231 bytes)  
+	-	`sha256:c8c2fe0236b69548e1fa52ddc7810cf2d4513c4a2064646e25be0d07599aef03`  
+		Last Modified: Tue, 07 Jan 2020 03:22:01 GMT  
+		Size: 57.8 MB (57849101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7c6927bf80cb705b8e0d2e0f375e3b27ba150e06fe0aaf45dc178139d43ce00`  
-		Last Modified: Mon, 30 Dec 2019 22:54:51 GMT  
+	-	`sha256:88ec7c79caf544feee1c047a9432d3ff6758f06e78631b1bd2e8a75cd582312a`  
+		Last Modified: Tue, 07 Jan 2020 03:21:53 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:passenger`
 
 ```console
-$ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b7442b5278f77e586
+$ docker pull redmine@sha256:5ee92e2825d3c34b53275d114faa8ab2dd8d64c33cb159180760cbd73d9d5773
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10821,14 +10821,14 @@ $ docker pull redmine@sha256:9876e215a555e9db9618eaa7f012d6bc431043614ad17b1b744
 ### `redmine:passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:d3e55f454a6430f036800c0ea72482b1611bd8b5e0c3b2b37e092c2e390908e1
+$ docker pull redmine@sha256:839a3a18136b125b801a0087da8e0144a3c08a5034fcbb4ae1e7871b1008b9d3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.6 MB (227573820 bytes)**  
+-	Total Size: **227.6 MB (227591454 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:34c776fa58cd25ef119dd61e13703314662a135814b57abf22272d001f0d08f9`
+-	Image ID: `sha256:e44b9d8763f86032d60bad24264398011de266231319789776bd6d4568684c8e`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -10851,55 +10851,55 @@ ENV RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c3119
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Sat, 28 Dec 2019 14:39:44 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:44 GMT
-ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Sat, 28 Dec 2019 14:39:45 GMT
-ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 14:39:46 GMT
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Tue, 07 Jan 2020 02:20:33 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 07 Jan 2020 02:20:34 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Sat, 28 Dec 2019 14:39:47 GMT
+# Tue, 07 Jan 2020 02:20:34 GMT
 CMD ["irb"]
-# Sun, 29 Dec 2019 10:11:03 GMT
+# Tue, 07 Jan 2020 02:41:39 GMT
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
-# Sun, 29 Dec 2019 10:11:29 GMT
+# Tue, 07 Jan 2020 02:42:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		wget 				bzr 		git 		mercurial 		openssh-client 		subversion 				gsfonts 		imagemagick 	; 	rm -rf /var/lib/apt/lists/*
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:39 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 	; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		export GOSU_VERSION='1.11'; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true; 		export TINI_VERSION='0.18.0'; 	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 6380DC428747F6C393FEACA59A84159D7001A4E5; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini; 	tini -h; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV RAILS_ENV=production
-# Sun, 29 Dec 2019 10:11:38 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 WORKDIR /usr/src/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:40 GMT
 ENV HOME=/home/redmine
-# Sun, 29 Dec 2019 10:11:39 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Mon, 30 Dec 2019 23:31:59 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_VERSION=4.1.0
-# Mon, 30 Dec 2019 23:32:00 GMT
+# Tue, 07 Jan 2020 02:42:41 GMT
 ENV REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf
-# Mon, 30 Dec 2019 23:32:03 GMT
+# Tue, 07 Jan 2020 02:42:44 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 VOLUME [/usr/src/redmine/files]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 30 Dec 2019 23:34:05 GMT
+# Tue, 07 Jan 2020 02:44:50 GMT
 EXPOSE 3000
-# Mon, 30 Dec 2019 23:34:06 GMT
+# Tue, 07 Jan 2020 02:44:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Mon, 30 Dec 2019 23:34:14 GMT
+# Tue, 07 Jan 2020 02:45:09 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Mon, 30 Dec 2019 23:34:30 GMT
+# Tue, 07 Jan 2020 02:45:25 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Mon, 30 Dec 2019 23:34:32 GMT
+# Tue, 07 Jan 2020 02:45:27 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -10920,47 +10920,47 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 28 Dec 2019 15:18:25 GMT  
 		Size: 21.4 MB (21445640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d18e1cb85888a863f90117924a9d38336e21a198d25f873ca0473bdbf9223b21`  
-		Last Modified: Sat, 28 Dec 2019 15:18:22 GMT  
+	-	`sha256:99fd40d9a9ace0f7aed9e5a259d44332d8449577afa416ece494654eebfea1e0`  
+		Last Modified: Tue, 07 Jan 2020 02:22:59 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cc07dfdc40a3bc8e9618ea3311a79ba53af2ed4a9792001a91cefd3951cb510`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.7 KB (1745 bytes)  
+	-	`sha256:4d57bbb61ed5d5be2c4bcad836a9ca7c8585b621afa2d63929ca63ed54bba5b6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.8 KB (1750 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c7520aadb09667ab654248c54dba29cc1023dd3511fd5c7bf12ce0cdb1bd8e`  
-		Last Modified: Sun, 29 Dec 2019 10:19:05 GMT  
-		Size: 80.2 MB (80161049 bytes)  
+	-	`sha256:68c8c66f527fafb06b837048b77a717c5c453f36789591051417d3730279253a`  
+		Last Modified: Tue, 07 Jan 2020 02:59:05 GMT  
+		Size: 80.2 MB (80161685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bfd350260277a9d405723f8a310f383de9c6cf3972277b794f5192c44a5cf36`  
-		Last Modified: Sun, 29 Dec 2019 10:18:50 GMT  
-		Size: 1.3 MB (1296483 bytes)  
+	-	`sha256:f0e48374f11ea16d535dab197d7559592d994ed6d63b0ad3369f9e3bc9f03bc6`  
+		Last Modified: Tue, 07 Jan 2020 02:58:46 GMT  
+		Size: 1.3 MB (1296495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e56662731219538ec1f8c38bd586e0479ec51acc42ee7265f2d84eccc973474`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 138.0 B  
+	-	`sha256:030ef176d155013b441d3aa61066b961412df315989dafee3b72f9ba5dd31538`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 137.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf620baa60ab17da00349398578fc42a8d79db098d4b1f428f1c2e407b0fb490`  
-		Last Modified: Sun, 29 Dec 2019 10:18:49 GMT  
-		Size: 127.0 B  
+	-	`sha256:bfcc35189da5025b89745e7680b1bcdb34cdf9f51d54e3e0b46fff097d0b34ae`  
+		Last Modified: Tue, 07 Jan 2020 02:58:45 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfb80271189bb77791223acda34963b67f267ab4556ea0a481e685e6368f5994`  
-		Last Modified: Mon, 30 Dec 2019 23:36:58 GMT  
-		Size: 2.7 MB (2735407 bytes)  
+	-	`sha256:145ea56722d144cb3b2ca4b6c49bee2e0ce685c2eaf01647d254c81c7fd716c0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:47 GMT  
+		Size: 2.7 MB (2735387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9963a61e98269ad733542deb2e46134185feb3ec93e27a7e91536560a66c865`  
-		Last Modified: Mon, 30 Dec 2019 23:37:04 GMT  
-		Size: 57.4 MB (57441467 bytes)  
+	-	`sha256:05fb33afc9bea64b8cd6bbb36f23c410d830f2184ddeb9befd2c2f4611ff60d0`  
+		Last Modified: Tue, 07 Jan 2020 02:58:55 GMT  
+		Size: 57.5 MB (57458269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2bc748c788d5551652471ccaab222e3a5cfe1df91b4f9c8d8fec96612e251095`  
-		Last Modified: Mon, 30 Dec 2019 23:36:57 GMT  
-		Size: 2.1 KB (2053 bytes)  
+	-	`sha256:a1be706d7c227180efe03248f9709eec7d7e3e648c14f4424802d1fc9a009ebf`  
+		Last Modified: Tue, 07 Jan 2020 02:58:44 GMT  
+		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b22fc29ab0817d197084839a7ce9adc28f98720df6b2b2b383538492e5927a1e`  
-		Last Modified: Mon, 30 Dec 2019 23:37:14 GMT  
-		Size: 19.9 MB (19939483 bytes)  
+	-	`sha256:5456de7c962054bb4ea86ced01d166966461a6aa2574be8944906db77981f60e`  
+		Last Modified: Tue, 07 Jan 2020 02:59:16 GMT  
+		Size: 19.9 MB (19939678 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e9a6c65a4b4a9ff7b720414baee38d915aacd037b3dcc68850a26e165b70c503`  
-		Last Modified: Mon, 30 Dec 2019 23:37:12 GMT  
-		Size: 4.9 MB (4917849 bytes)  
+	-	`sha256:2c92af5cd02625f9c31357bd66d5b4600edcddbb6a3a6f731b1874916dcebc7d`  
+		Last Modified: Tue, 07 Jan 2020 02:59:12 GMT  
+		Size: 4.9 MB (4917852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
