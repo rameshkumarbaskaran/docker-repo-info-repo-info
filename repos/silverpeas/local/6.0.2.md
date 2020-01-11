@@ -1180,14 +1180,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The main library is licensed under GNU Lesser`
 - `nonstandard, see below`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.4.10-4ubuntu1.5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.5.dsc' gnutls28_3.4.10-4ubuntu1.5.dsc 3090 SHA256:787f0b78c07848901525fa8227a128f2f782cf078065ae52b1a2d82a3e3c01a8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10.orig.tar.xz' gnutls28_3.4.10.orig.tar.xz 6645892 SHA256:6a32c2b4acbd33ff7eefcbd1357009da04c94c60146ef61320b6c076b1bdf59f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.5.debian.tar.xz' gnutls28_3.4.10-4ubuntu1.5.debian.tar.xz 99968 SHA256:87f45b54868c256fb4cbc4cfd1e4786da1e05a3e9fad41002ee717fce4b9044b
-```
 
 ### `dpkg` source package: `graphite2=1.3.10-0ubuntu0.16.04.1`
 
@@ -3698,14 +3693,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.28.4-0ubuntu0.16.04.9
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4-0ubuntu0.16.04.9.dsc' nss_3.28.4-0ubuntu0.16.04.9.dsc 2428 SHA256:fabe2bacd82a5172e60ec4a9724423a2f49fa2ab7a9f48b347ddea474fedd794
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4.orig.tar.gz' nss_3.28.4.orig.tar.gz 7453282 SHA256:d5d4761778b8d4c378b2174c9e13e7abd20a6961f557d4fcc029af723ffd7189
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4-0ubuntu0.16.04.9.debian.tar.xz' nss_3.28.4-0ubuntu0.16.04.9.debian.tar.xz 43456 SHA256:90212d9c9cbcafadb9363fe0b24af52144d19bbfcb64190a840ff8f40a032b69
-```
 
 ### `dpkg` source package: `numactl=2.0.11-1ubuntu1.1`
 
