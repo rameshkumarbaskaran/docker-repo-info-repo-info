@@ -721,7 +721,7 @@ CMD ["kong" "docker-start"]
 ## `kong:1.2`
 
 ```console
-$ docker pull kong@sha256:830cc509df7d57483deefcb8c45ad792b4dd6595ab3080eac3b619113c748563
+$ docker pull kong@sha256:901f645a13623b91116449657627f4ca6388849e9e73e9ad77d926ab3f8e294e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -731,14 +731,14 @@ $ docker pull kong@sha256:830cc509df7d57483deefcb8c45ad792b4dd6595ab3080eac3b619
 ### `kong:1.2` - linux; amd64
 
 ```console
-$ docker pull kong@sha256:743606c61df7e14be01fe832357ffee48b666392f89780a70f501c9c3674f315
+$ docker pull kong@sha256:d2e7dfc4e5cfb3db17a271302625a65047a1cf407b3abc1d638a5551ea35efa2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.5 MB (44478555 bytes)**  
+-	Total Size: **44.5 MB (44479290 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8f661e7ecc71bca013089489a717852a7588e597f97f9760ef64cc1c8154cc95`
+-	Image ID: `sha256:7b5ce71b9b43451567b55df11ed3b67b3cd066783a679180ae92068d60f83135`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["kong","docker-start"]`
 
@@ -749,21 +749,21 @@ ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in /
 CMD ["/bin/sh"]
 # Mon, 21 Oct 2019 18:58:07 GMT
 LABEL maintainer=Kong Core Team <team-core@konghq.com>
-# Mon, 21 Oct 2019 18:58:56 GMT
-ENV KONG_VERSION=1.2.2
-# Mon, 21 Oct 2019 18:58:56 GMT
-ENV KONG_SHA256=76183d7e8ff084c86767b917da441001d0d779d35fa2464275b74226029a46bf
-# Mon, 21 Oct 2019 18:59:04 GMT
+# Tue, 14 Jan 2020 01:25:00 GMT
+ENV KONG_VERSION=1.2.3
+# Tue, 14 Jan 2020 01:25:01 GMT
+ENV KONG_SHA256=4633380fdf5cc3706f53f8697e9789b57aaf06c6bdc67d31bc0dd043453947c3
+# Tue, 14 Jan 2020 01:25:13 GMT
 RUN adduser -Su 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& apk add --no-cache --virtual .build-deps wget tar ca-certificates 	&& apk add --no-cache libgcc openssl pcre perl tzdata curl libcap su-exec zip 	&& wget -O kong.tar.gz "https://bintray.com/kong/kong-alpine-tar/download_file?file_path=kong-$KONG_VERSION.apk.tar.gz" 	&& echo "$KONG_SHA256 *kong.tar.gz" | sha256sum -c - 	&& tar -xzf kong.tar.gz -C /tmp 	&& rm -f kong.tar.gz 	&& cp -R /tmp/usr / 	&& rm -rf /tmp/usr 	&& cp -R /tmp/etc / 	&& rm -rf /tmp/etc 	&& apk del .build-deps 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
-# Mon, 21 Oct 2019 18:59:05 GMT
+# Tue, 14 Jan 2020 01:25:14 GMT
 COPY file:fe196e90eb453e834bdc492372019ad9f95e35142fa279d1622c213f32592fe9 in /docker-entrypoint.sh 
-# Mon, 21 Oct 2019 18:59:05 GMT
+# Tue, 14 Jan 2020 01:25:14 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 21 Oct 2019 18:59:05 GMT
+# Tue, 14 Jan 2020 01:25:14 GMT
 EXPOSE 8000 8001 8443 8444
-# Mon, 21 Oct 2019 18:59:05 GMT
+# Tue, 14 Jan 2020 01:25:15 GMT
 STOPSIGNAL SIGQUIT
-# Mon, 21 Oct 2019 18:59:05 GMT
+# Tue, 14 Jan 2020 01:25:15 GMT
 CMD ["kong" "docker-start"]
 ```
 
@@ -772,48 +772,162 @@ CMD ["kong" "docker-start"]
 		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
 		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db20d60030a7829f45890ffe512dec17f21080e557336653dde4c6f83df2a0f3`  
-		Last Modified: Mon, 21 Oct 2019 19:00:53 GMT  
-		Size: 41.7 MB (41690825 bytes)  
+	-	`sha256:7de646e638f964e612ccb314e6fa8fcac3fa80dae3c3b833a6034ce5004a6b27`  
+		Last Modified: Tue, 14 Jan 2020 01:28:28 GMT  
+		Size: 41.7 MB (41691558 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea8706a175048b410b2421a5829c9d02fbd967d085f0954800d3be6f226ecf82`  
-		Last Modified: Mon, 21 Oct 2019 19:00:44 GMT  
-		Size: 596.0 B  
+	-	`sha256:1ef3ec75b7225eefb0390eca4e5ba885a8e2dcf22598b152426ae37497bb2499`  
+		Last Modified: Tue, 14 Jan 2020 01:28:16 GMT  
+		Size: 598.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kong:1.2.3`
 
-**does not exist** (yet?)
-
-## `kong:1.2.3-alpine`
-
-**does not exist** (yet?)
-
-## `kong:1.2.3-centos`
-
-**does not exist** (yet?)
-
-## `kong:1.2-centos`
-
 ```console
-$ docker pull kong@sha256:8bb92d8ba69740aa221105fc73837adb97a7e971a6a1c09210b9f338d3867ae1
+$ docker pull kong@sha256:901f645a13623b91116449657627f4ca6388849e9e73e9ad77d926ab3f8e294e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
 	-	linux; amd64
 
-### `kong:1.2-centos` - linux; amd64
+### `kong:1.2.3` - linux; amd64
 
 ```console
-$ docker pull kong@sha256:70094e479290a0962ac8c3591fa1f7f02ae223818f04f66c30bf5c707d661f4f
+$ docker pull kong@sha256:d2e7dfc4e5cfb3db17a271302625a65047a1cf407b3abc1d638a5551ea35efa2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **150.5 MB (150532146 bytes)**  
+-	Total Size: **44.5 MB (44479290 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:910ad4f48f37a4caf763c06e6fce6c74056908c7fea41f547512070afc01a8be`
+-	Image ID: `sha256:7b5ce71b9b43451567b55df11ed3b67b3cd066783a679180ae92068d60f83135`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["kong","docker-start"]`
+
+```dockerfile
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
+CMD ["/bin/sh"]
+# Mon, 21 Oct 2019 18:58:07 GMT
+LABEL maintainer=Kong Core Team <team-core@konghq.com>
+# Tue, 14 Jan 2020 01:25:00 GMT
+ENV KONG_VERSION=1.2.3
+# Tue, 14 Jan 2020 01:25:01 GMT
+ENV KONG_SHA256=4633380fdf5cc3706f53f8697e9789b57aaf06c6bdc67d31bc0dd043453947c3
+# Tue, 14 Jan 2020 01:25:13 GMT
+RUN adduser -Su 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& apk add --no-cache --virtual .build-deps wget tar ca-certificates 	&& apk add --no-cache libgcc openssl pcre perl tzdata curl libcap su-exec zip 	&& wget -O kong.tar.gz "https://bintray.com/kong/kong-alpine-tar/download_file?file_path=kong-$KONG_VERSION.apk.tar.gz" 	&& echo "$KONG_SHA256 *kong.tar.gz" | sha256sum -c - 	&& tar -xzf kong.tar.gz -C /tmp 	&& rm -f kong.tar.gz 	&& cp -R /tmp/usr / 	&& rm -rf /tmp/usr 	&& cp -R /tmp/etc / 	&& rm -rf /tmp/etc 	&& apk del .build-deps 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
+# Tue, 14 Jan 2020 01:25:14 GMT
+COPY file:fe196e90eb453e834bdc492372019ad9f95e35142fa279d1622c213f32592fe9 in /docker-entrypoint.sh 
+# Tue, 14 Jan 2020 01:25:14 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Tue, 14 Jan 2020 01:25:14 GMT
+EXPOSE 8000 8001 8443 8444
+# Tue, 14 Jan 2020 01:25:15 GMT
+STOPSIGNAL SIGQUIT
+# Tue, 14 Jan 2020 01:25:15 GMT
+CMD ["kong" "docker-start"]
+```
+
+-	Layers:
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7de646e638f964e612ccb314e6fa8fcac3fa80dae3c3b833a6034ce5004a6b27`  
+		Last Modified: Tue, 14 Jan 2020 01:28:28 GMT  
+		Size: 41.7 MB (41691558 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1ef3ec75b7225eefb0390eca4e5ba885a8e2dcf22598b152426ae37497bb2499`  
+		Last Modified: Tue, 14 Jan 2020 01:28:16 GMT  
+		Size: 598.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `kong:1.2.3-alpine`
+
+```console
+$ docker pull kong@sha256:901f645a13623b91116449657627f4ca6388849e9e73e9ad77d926ab3f8e294e
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; amd64
+
+### `kong:1.2.3-alpine` - linux; amd64
+
+```console
+$ docker pull kong@sha256:d2e7dfc4e5cfb3db17a271302625a65047a1cf407b3abc1d638a5551ea35efa2
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **44.5 MB (44479290 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7b5ce71b9b43451567b55df11ed3b67b3cd066783a679180ae92068d60f83135`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["kong","docker-start"]`
+
+```dockerfile
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
+CMD ["/bin/sh"]
+# Mon, 21 Oct 2019 18:58:07 GMT
+LABEL maintainer=Kong Core Team <team-core@konghq.com>
+# Tue, 14 Jan 2020 01:25:00 GMT
+ENV KONG_VERSION=1.2.3
+# Tue, 14 Jan 2020 01:25:01 GMT
+ENV KONG_SHA256=4633380fdf5cc3706f53f8697e9789b57aaf06c6bdc67d31bc0dd043453947c3
+# Tue, 14 Jan 2020 01:25:13 GMT
+RUN adduser -Su 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& apk add --no-cache --virtual .build-deps wget tar ca-certificates 	&& apk add --no-cache libgcc openssl pcre perl tzdata curl libcap su-exec zip 	&& wget -O kong.tar.gz "https://bintray.com/kong/kong-alpine-tar/download_file?file_path=kong-$KONG_VERSION.apk.tar.gz" 	&& echo "$KONG_SHA256 *kong.tar.gz" | sha256sum -c - 	&& tar -xzf kong.tar.gz -C /tmp 	&& rm -f kong.tar.gz 	&& cp -R /tmp/usr / 	&& rm -rf /tmp/usr 	&& cp -R /tmp/etc / 	&& rm -rf /tmp/etc 	&& apk del .build-deps 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
+# Tue, 14 Jan 2020 01:25:14 GMT
+COPY file:fe196e90eb453e834bdc492372019ad9f95e35142fa279d1622c213f32592fe9 in /docker-entrypoint.sh 
+# Tue, 14 Jan 2020 01:25:14 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Tue, 14 Jan 2020 01:25:14 GMT
+EXPOSE 8000 8001 8443 8444
+# Tue, 14 Jan 2020 01:25:15 GMT
+STOPSIGNAL SIGQUIT
+# Tue, 14 Jan 2020 01:25:15 GMT
+CMD ["kong" "docker-start"]
+```
+
+-	Layers:
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7de646e638f964e612ccb314e6fa8fcac3fa80dae3c3b833a6034ce5004a6b27`  
+		Last Modified: Tue, 14 Jan 2020 01:28:28 GMT  
+		Size: 41.7 MB (41691558 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1ef3ec75b7225eefb0390eca4e5ba885a8e2dcf22598b152426ae37497bb2499`  
+		Last Modified: Tue, 14 Jan 2020 01:28:16 GMT  
+		Size: 598.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `kong:1.2.3-centos`
+
+```console
+$ docker pull kong@sha256:35e90d094395d28a4fa21beb37c1fa7f31d5d7e2350e8ee7db86159ecea19876
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; amd64
+
+### `kong:1.2.3-centos` - linux; amd64
+
+```console
+$ docker pull kong@sha256:9fbe2dcafb4d4587ac3644caf7b0e8a12382c656575c8b0b1f483cc331e790cd
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **150.5 MB (150529184 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:ec4f48a350f29f77cd006fa37cb3c197a87a4da3e6ec7a3d3ce8b3927f627e5b`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["kong","docker-start"]`
 
@@ -826,27 +940,27 @@ LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Imag
 CMD ["/bin/bash"]
 # Tue, 12 Nov 2019 02:32:03 GMT
 LABEL maintainer=Kong Core Team <team-core@konghq.com>
-# Tue, 12 Nov 2019 02:34:18 GMT
-ENV KONG_VERSION=1.2.2
-# Tue, 12 Nov 2019 02:34:19 GMT
+# Tue, 14 Jan 2020 01:25:22 GMT
+ENV KONG_VERSION=1.2.3
+# Tue, 14 Jan 2020 01:25:22 GMT
 ARG SU_EXEC_VERSION=0.2
-# Tue, 12 Nov 2019 02:34:19 GMT
+# Tue, 14 Jan 2020 01:25:22 GMT
 ARG SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz
-# Tue, 12 Nov 2019 02:34:59 GMT
+# Tue, 14 Jan 2020 01:26:08 GMT
 # ARGS: SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz SU_EXEC_VERSION=0.2
 RUN yum install -y -q gcc make unzip 	&& curl -sL "${SU_EXEC_URL}" | tar -C /tmp -zxf - 	&& make -C "/tmp/su-exec-${SU_EXEC_VERSION}" 	&& cp "/tmp/su-exec-${SU_EXEC_VERSION}/su-exec" /usr/bin 	&& rm -fr "/tmp/su-exec-${SU_EXEC_VERSION}" 	&& yum autoremove -y -q gcc make 	&& yum clean all -q 	&& rm -fr /var/cache/yum/* /tmp/yum_save*.yumtx /root/.pki
-# Tue, 12 Nov 2019 02:35:16 GMT
+# Tue, 14 Jan 2020 01:26:29 GMT
 # ARGS: SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz SU_EXEC_VERSION=0.2
 RUN useradd --uid 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& yum install -y https://bintray.com/kong/kong-rpm/download_file?file_path=centos/7/kong-$KONG_VERSION.el7.noarch.rpm 	&& yum clean all 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
-# Tue, 12 Nov 2019 02:35:17 GMT
+# Tue, 14 Jan 2020 01:26:30 GMT
 COPY file:d93f710041d3a08d241deecc7328da1e955b07a618f0d374125d417e8a7e1640 in /docker-entrypoint.sh 
-# Tue, 12 Nov 2019 02:35:17 GMT
+# Tue, 14 Jan 2020 01:26:30 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 12 Nov 2019 02:35:17 GMT
+# Tue, 14 Jan 2020 01:26:30 GMT
 EXPOSE 8000 8001 8443 8444
-# Tue, 12 Nov 2019 02:35:17 GMT
+# Tue, 14 Jan 2020 01:26:31 GMT
 STOPSIGNAL SIGQUIT
-# Tue, 12 Nov 2019 02:35:17 GMT
+# Tue, 14 Jan 2020 01:26:31 GMT
 CMD ["kong" "docker-start"]
 ```
 
@@ -855,16 +969,91 @@ CMD ["kong" "docker-start"]
 		Last Modified: Tue, 12 Nov 2019 00:23:38 GMT  
 		Size: 75.8 MB (75780712 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7084c5184f6cd2d991c9ad33750308e3cb7e59c30c7a7d49afdd36b02153433`  
-		Last Modified: Tue, 12 Nov 2019 02:38:22 GMT  
-		Size: 6.5 MB (6513631 bytes)  
+	-	`sha256:da74f69b2b613d1d7fdc7003ff0e60ea281bbb2d3040295d20db649b5fae130a`  
+		Last Modified: Tue, 14 Jan 2020 01:28:37 GMT  
+		Size: 6.5 MB (6509482 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f092f7a681deb628b1cc1f5a8e44a214e99091a1797b2dc3b948a452b7a71a22`  
-		Last Modified: Tue, 12 Nov 2019 02:38:33 GMT  
-		Size: 68.2 MB (68237208 bytes)  
+	-	`sha256:af9b50a96728cd2bbc68096c87fcade81ae10f7f29df20b14a4635921d049973`  
+		Last Modified: Tue, 14 Jan 2020 01:28:54 GMT  
+		Size: 68.2 MB (68238395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:210412ab16c42dae662ef46a2e9f7c7d4acbbacc1b650384d4dc1e73e4cef17a`  
-		Last Modified: Tue, 12 Nov 2019 02:38:20 GMT  
+	-	`sha256:1764843998abefc7e6097ec1a381531feb27213c68f32414758a5eb0eaf73e1c`  
+		Last Modified: Tue, 14 Jan 2020 01:28:35 GMT  
+		Size: 595.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `kong:1.2-centos`
+
+```console
+$ docker pull kong@sha256:35e90d094395d28a4fa21beb37c1fa7f31d5d7e2350e8ee7db86159ecea19876
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; amd64
+
+### `kong:1.2-centos` - linux; amd64
+
+```console
+$ docker pull kong@sha256:9fbe2dcafb4d4587ac3644caf7b0e8a12382c656575c8b0b1f483cc331e790cd
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **150.5 MB (150529184 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:ec4f48a350f29f77cd006fa37cb3c197a87a4da3e6ec7a3d3ce8b3927f627e5b`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["kong","docker-start"]`
+
+```dockerfile
+# Tue, 12 Nov 2019 00:20:33 GMT
+ADD file:45a381049c52b5664e5e911dead277b25fadbae689c0bb35be3c42dff0f2dffe in / 
+# Tue, 12 Nov 2019 00:20:33 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20191001
+# Tue, 12 Nov 2019 00:20:33 GMT
+CMD ["/bin/bash"]
+# Tue, 12 Nov 2019 02:32:03 GMT
+LABEL maintainer=Kong Core Team <team-core@konghq.com>
+# Tue, 14 Jan 2020 01:25:22 GMT
+ENV KONG_VERSION=1.2.3
+# Tue, 14 Jan 2020 01:25:22 GMT
+ARG SU_EXEC_VERSION=0.2
+# Tue, 14 Jan 2020 01:25:22 GMT
+ARG SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz
+# Tue, 14 Jan 2020 01:26:08 GMT
+# ARGS: SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz SU_EXEC_VERSION=0.2
+RUN yum install -y -q gcc make unzip 	&& curl -sL "${SU_EXEC_URL}" | tar -C /tmp -zxf - 	&& make -C "/tmp/su-exec-${SU_EXEC_VERSION}" 	&& cp "/tmp/su-exec-${SU_EXEC_VERSION}/su-exec" /usr/bin 	&& rm -fr "/tmp/su-exec-${SU_EXEC_VERSION}" 	&& yum autoremove -y -q gcc make 	&& yum clean all -q 	&& rm -fr /var/cache/yum/* /tmp/yum_save*.yumtx /root/.pki
+# Tue, 14 Jan 2020 01:26:29 GMT
+# ARGS: SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz SU_EXEC_VERSION=0.2
+RUN useradd --uid 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& yum install -y https://bintray.com/kong/kong-rpm/download_file?file_path=centos/7/kong-$KONG_VERSION.el7.noarch.rpm 	&& yum clean all 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
+# Tue, 14 Jan 2020 01:26:30 GMT
+COPY file:d93f710041d3a08d241deecc7328da1e955b07a618f0d374125d417e8a7e1640 in /docker-entrypoint.sh 
+# Tue, 14 Jan 2020 01:26:30 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Tue, 14 Jan 2020 01:26:30 GMT
+EXPOSE 8000 8001 8443 8444
+# Tue, 14 Jan 2020 01:26:31 GMT
+STOPSIGNAL SIGQUIT
+# Tue, 14 Jan 2020 01:26:31 GMT
+CMD ["kong" "docker-start"]
+```
+
+-	Layers:
+	-	`sha256:ab5ef0e5819490abe86106fd9f4381123e37a03e80e650be39f7938d30ecb530`  
+		Last Modified: Tue, 12 Nov 2019 00:23:38 GMT  
+		Size: 75.8 MB (75780712 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:da74f69b2b613d1d7fdc7003ff0e60ea281bbb2d3040295d20db649b5fae130a`  
+		Last Modified: Tue, 14 Jan 2020 01:28:37 GMT  
+		Size: 6.5 MB (6509482 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:af9b50a96728cd2bbc68096c87fcade81ae10f7f29df20b14a4635921d049973`  
+		Last Modified: Tue, 14 Jan 2020 01:28:54 GMT  
+		Size: 68.2 MB (68238395 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1764843998abefc7e6097ec1a381531feb27213c68f32414758a5eb0eaf73e1c`  
+		Last Modified: Tue, 14 Jan 2020 01:28:35 GMT  
 		Size: 595.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -2145,7 +2334,7 @@ CMD ["kong" "docker-start"]
 ## `kong:2.0.0rc1`
 
 ```console
-$ docker pull kong@sha256:df9ba2537a2c04fc9a6b67d723475cb570563d709ffc076af1a85e03e108c15a
+$ docker pull kong@sha256:791d2914334b0f74ab386d28a590712506b1d9da10f51f4b1fa7917974bb194e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2155,14 +2344,14 @@ $ docker pull kong@sha256:df9ba2537a2c04fc9a6b67d723475cb570563d709ffc076af1a85e
 ### `kong:2.0.0rc1` - linux; amd64
 
 ```console
-$ docker pull kong@sha256:cda8bf01aa100f176baa44e757b4638928261a6e88f26d39d228dba8292f4086
+$ docker pull kong@sha256:4eeb223ad8544a07bc1e3e477c96c620707ca65cb1d1c2be1fbc54838948ce12
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **48.1 MB (48093329 bytes)**  
+-	Total Size: **48.1 MB (48126839 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2b5ff217aa6e5c9d798e1f01963d5de61b79e9ff598c9093d72014522166f056`
+-	Image ID: `sha256:501fa5d56512f6a4dc7435100248102c0b6e27b304b2cd99a7b419bfcdb510ba`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["kong","docker-start"]`
 
@@ -2173,21 +2362,21 @@ ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in /
 CMD ["/bin/sh"]
 # Mon, 21 Oct 2019 18:58:07 GMT
 LABEL maintainer=Kong Core Team <team-core@konghq.com>
-# Mon, 23 Dec 2019 23:19:50 GMT
-ENV KONG_VERSION=2.0.0rc1
-# Mon, 23 Dec 2019 23:19:50 GMT
-ENV KONG_SHA256=d4914705ea5a02db71e8ab7376d046ea5b05c52bb2fc17ee977c11f710673dc2
-# Mon, 23 Dec 2019 23:19:58 GMT
+# Tue, 14 Jan 2020 01:21:49 GMT
+ENV KONG_VERSION=2.0.0rc2
+# Tue, 14 Jan 2020 01:21:49 GMT
+ENV KONG_SHA256=fcfa87d8bdd3d8216e782f595ca4bfb1f38f83ae4a65722fff95781a54ed7f88
+# Tue, 14 Jan 2020 01:22:03 GMT
 RUN adduser -Su 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& apk add --no-cache --virtual .build-deps curl wget tar ca-certificates 	&& apk add --no-cache libgcc openssl pcre perl tzdata libcap su-exec zip 	&& wget -O kong.tar.gz "https://bintray.com/kong/kong-alpine-tar/download_file?file_path=kong-$KONG_VERSION.amd64.apk.tar.gz" 	&& echo "$KONG_SHA256 *kong.tar.gz" | sha256sum -c - 	&& tar -xzf kong.tar.gz -C /tmp 	&& rm -f kong.tar.gz 	&& cp -R /tmp/usr / 	&& rm -rf /tmp/usr 	&& cp -R /tmp/etc / 	&& rm -rf /tmp/etc 	&& apk del .build-deps 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
-# Mon, 23 Dec 2019 23:19:59 GMT
+# Tue, 14 Jan 2020 01:22:04 GMT
 COPY file:fe196e90eb453e834bdc492372019ad9f95e35142fa279d1622c213f32592fe9 in /docker-entrypoint.sh 
-# Mon, 23 Dec 2019 23:19:59 GMT
+# Tue, 14 Jan 2020 01:22:04 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Mon, 23 Dec 2019 23:19:59 GMT
+# Tue, 14 Jan 2020 01:22:04 GMT
 EXPOSE 8000 8001 8443 8444
-# Mon, 23 Dec 2019 23:19:59 GMT
+# Tue, 14 Jan 2020 01:22:04 GMT
 STOPSIGNAL SIGQUIT
-# Mon, 23 Dec 2019 23:19:59 GMT
+# Tue, 14 Jan 2020 01:22:05 GMT
 CMD ["kong" "docker-start"]
 ```
 
@@ -2196,26 +2385,301 @@ CMD ["kong" "docker-start"]
 		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
 		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a8454288fc481bc12fc9a07fab28e3db96a4e5fa2464c8a191223b030338b03b`  
-		Last Modified: Mon, 23 Dec 2019 23:22:07 GMT  
-		Size: 45.3 MB (45305599 bytes)  
+	-	`sha256:aec080c0721be38d4bbf73655c980bdc261ced135960c852b9a6a67355066bf5`  
+		Last Modified: Tue, 14 Jan 2020 01:27:31 GMT  
+		Size: 45.3 MB (45339109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:454b9957e6c2460b11c73bc255a8464c68c34fb517b39f306c17827ed28ac219`  
-		Last Modified: Mon, 23 Dec 2019 23:21:57 GMT  
+	-	`sha256:522beee030e2e72c87ad5e35fbc396f116e4f7537c372770eeb9db7330919bc1`  
+		Last Modified: Tue, 14 Jan 2020 01:27:19 GMT  
 		Size: 596.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kong:2.0.0rc2-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull kong@sha256:791d2914334b0f74ab386d28a590712506b1d9da10f51f4b1fa7917974bb194e
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; amd64
+
+### `kong:2.0.0rc2-alpine` - linux; amd64
+
+```console
+$ docker pull kong@sha256:4eeb223ad8544a07bc1e3e477c96c620707ca65cb1d1c2be1fbc54838948ce12
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **48.1 MB (48126839 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:501fa5d56512f6a4dc7435100248102c0b6e27b304b2cd99a7b419bfcdb510ba`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["kong","docker-start"]`
+
+```dockerfile
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
+CMD ["/bin/sh"]
+# Mon, 21 Oct 2019 18:58:07 GMT
+LABEL maintainer=Kong Core Team <team-core@konghq.com>
+# Tue, 14 Jan 2020 01:21:49 GMT
+ENV KONG_VERSION=2.0.0rc2
+# Tue, 14 Jan 2020 01:21:49 GMT
+ENV KONG_SHA256=fcfa87d8bdd3d8216e782f595ca4bfb1f38f83ae4a65722fff95781a54ed7f88
+# Tue, 14 Jan 2020 01:22:03 GMT
+RUN adduser -Su 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& apk add --no-cache --virtual .build-deps curl wget tar ca-certificates 	&& apk add --no-cache libgcc openssl pcre perl tzdata libcap su-exec zip 	&& wget -O kong.tar.gz "https://bintray.com/kong/kong-alpine-tar/download_file?file_path=kong-$KONG_VERSION.amd64.apk.tar.gz" 	&& echo "$KONG_SHA256 *kong.tar.gz" | sha256sum -c - 	&& tar -xzf kong.tar.gz -C /tmp 	&& rm -f kong.tar.gz 	&& cp -R /tmp/usr / 	&& rm -rf /tmp/usr 	&& cp -R /tmp/etc / 	&& rm -rf /tmp/etc 	&& apk del .build-deps 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
+# Tue, 14 Jan 2020 01:22:04 GMT
+COPY file:fe196e90eb453e834bdc492372019ad9f95e35142fa279d1622c213f32592fe9 in /docker-entrypoint.sh 
+# Tue, 14 Jan 2020 01:22:04 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Tue, 14 Jan 2020 01:22:04 GMT
+EXPOSE 8000 8001 8443 8444
+# Tue, 14 Jan 2020 01:22:04 GMT
+STOPSIGNAL SIGQUIT
+# Tue, 14 Jan 2020 01:22:05 GMT
+CMD ["kong" "docker-start"]
+```
+
+-	Layers:
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:aec080c0721be38d4bbf73655c980bdc261ced135960c852b9a6a67355066bf5`  
+		Last Modified: Tue, 14 Jan 2020 01:27:31 GMT  
+		Size: 45.3 MB (45339109 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:522beee030e2e72c87ad5e35fbc396f116e4f7537c372770eeb9db7330919bc1`  
+		Last Modified: Tue, 14 Jan 2020 01:27:19 GMT  
+		Size: 596.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kong:2.0.0rc2-centos`
 
-**does not exist** (yet?)
+```console
+$ docker pull kong@sha256:aec9a9e6b3853b33a34b11c9810564a37162100c7f3426073b25d1b0a8ce60ac
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; amd64
+
+### `kong:2.0.0rc2-centos` - linux; amd64
+
+```console
+$ docker pull kong@sha256:3d0cb900bbf12978b29b7caf476660cbaf4fd878eeded6c53ea2ba8c88554ebf
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **158.1 MB (158137403 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:4365ddbaa647a728666f6326652948097a536bbedf0f4b70368e4d180cbc3fdb`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["kong","docker-start"]`
+
+```dockerfile
+# Tue, 12 Nov 2019 00:20:33 GMT
+ADD file:45a381049c52b5664e5e911dead277b25fadbae689c0bb35be3c42dff0f2dffe in / 
+# Tue, 12 Nov 2019 00:20:33 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20191001
+# Tue, 12 Nov 2019 00:20:33 GMT
+CMD ["/bin/bash"]
+# Tue, 12 Nov 2019 02:32:03 GMT
+LABEL maintainer=Kong Core Team <team-core@konghq.com>
+# Tue, 14 Jan 2020 01:23:03 GMT
+ENV KONG_VERSION=2.0.0rc2
+# Tue, 14 Jan 2020 01:23:03 GMT
+ARG SU_EXEC_VERSION=0.2
+# Tue, 14 Jan 2020 01:23:04 GMT
+ARG SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz
+# Tue, 14 Jan 2020 01:23:51 GMT
+# ARGS: SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz SU_EXEC_VERSION=0.2
+RUN yum install -y -q gcc make unzip 	&& curl -sL "${SU_EXEC_URL}" | tar -C /tmp -zxf - 	&& make -C "/tmp/su-exec-${SU_EXEC_VERSION}" 	&& cp "/tmp/su-exec-${SU_EXEC_VERSION}/su-exec" /usr/bin 	&& rm -fr "/tmp/su-exec-${SU_EXEC_VERSION}" 	&& yum autoremove -y -q gcc make 	&& yum clean all -q 	&& rm -fr /var/cache/yum/* /tmp/yum_save*.yumtx /root/.pki
+# Tue, 14 Jan 2020 01:24:16 GMT
+# ARGS: SU_EXEC_URL=https://github.com/ncopa/su-exec/archive/v0.2.tar.gz SU_EXEC_VERSION=0.2
+RUN useradd --uid 1337 kong 	&& mkdir -p "/usr/local/kong" 	&& yum install -y https://bintray.com/kong/kong-rpm/download_file?file_path=centos/7/kong-$KONG_VERSION.el7.amd64.rpm 	&& yum clean all 	&& chown -R kong:0 /usr/local/kong 	&& chmod -R g=u /usr/local/kong
+# Tue, 14 Jan 2020 01:24:17 GMT
+COPY file:d93f710041d3a08d241deecc7328da1e955b07a618f0d374125d417e8a7e1640 in /docker-entrypoint.sh 
+# Tue, 14 Jan 2020 01:24:17 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Tue, 14 Jan 2020 01:24:17 GMT
+EXPOSE 8000 8001 8443 8444
+# Tue, 14 Jan 2020 01:24:17 GMT
+STOPSIGNAL SIGQUIT
+# Tue, 14 Jan 2020 01:24:18 GMT
+CMD ["kong" "docker-start"]
+```
+
+-	Layers:
+	-	`sha256:ab5ef0e5819490abe86106fd9f4381123e37a03e80e650be39f7938d30ecb530`  
+		Last Modified: Tue, 12 Nov 2019 00:23:38 GMT  
+		Size: 75.8 MB (75780712 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:afab0a6c0877d2e2c319d33f407882516fcad2726645dcdbcf00996caa554eef`  
+		Last Modified: Tue, 14 Jan 2020 01:27:56 GMT  
+		Size: 6.5 MB (6509474 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c978147d859fee56dc18999fa0af0631a9b567eb4715c8ff9be64fdd214a03c4`  
+		Last Modified: Tue, 14 Jan 2020 01:28:08 GMT  
+		Size: 75.8 MB (75846620 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a609a0c37417a30c0936ed6eca421c94e092673d115b8f637eb1a0757ac7c1f5`  
+		Last Modified: Tue, 14 Jan 2020 01:27:52 GMT  
+		Size: 597.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kong:2.0.0rc2-ubuntu`
 
-**does not exist** (yet?)
+```console
+$ docker pull kong@sha256:79e57e09f249ca0e177ac648c7e5ddee482038cc1f4d72055fd84b11f32f9e3b
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; amd64
+	-	linux; arm64 variant v8
+
+### `kong:2.0.0rc2-ubuntu` - linux; amd64
+
+```console
+$ docker pull kong@sha256:296c06fa4ab2d39ac275a5a231c9d919a77e86f90b90b06f53a635894d507efb
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **84.7 MB (84687370 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:faf6f03a60a9dd2558e713342747f238c20f06feeefdda8d320454f6aacab854`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["kong","docker-start"]`
+
+```dockerfile
+# Thu, 19 Dec 2019 04:24:35 GMT
+ADD file:f0b8eaa718bc3965b1e8395f5a6bea97c16651b50614e676bb3eaf31335a0045 in / 
+# Thu, 19 Dec 2019 04:24:36 GMT
+RUN rm -rf /var/lib/apt/lists/*
+# Thu, 19 Dec 2019 04:24:37 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Thu, 19 Dec 2019 04:24:38 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Thu, 19 Dec 2019 04:24:38 GMT
+CMD ["/bin/bash"]
+# Thu, 19 Dec 2019 07:51:55 GMT
+LABEL maintainer=Kong Core Team <team-core@konghq.com>
+# Tue, 14 Jan 2020 01:22:09 GMT
+ENV KONG_VERSION=2.0.0rc2
+# Tue, 14 Jan 2020 01:22:56 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends ca-certificates curl perl unzip     && rm -rf /var/lib/apt/lists/*     && curl -fsSLo kong.deb https://bintray.com/kong/kong-deb/download_file?file_path=kong-${KONG_VERSION}.xenial.$(dpkg --print-architecture).deb     && apt-get purge -y --auto-remove ca-certificates curl 	&& dpkg -i kong.deb 	&& rm -rf kong.deb
+# Tue, 14 Jan 2020 01:22:57 GMT
+COPY file:a4763218d814cc99d340cb11497461af1e7b06c7ec7d19308fb1d59952ad34a4 in /docker-entrypoint.sh 
+# Tue, 14 Jan 2020 01:22:57 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Tue, 14 Jan 2020 01:22:57 GMT
+EXPOSE 8000 8001 8443 8444
+# Tue, 14 Jan 2020 01:22:58 GMT
+STOPSIGNAL SIGQUIT
+# Tue, 14 Jan 2020 01:22:58 GMT
+CMD ["kong" "docker-start"]
+```
+
+-	Layers:
+	-	`sha256:3386e6af03b043219225367632569465e5ecd47391d1f99a6d265e51bd463a83`  
+		Last Modified: Thu, 12 Dec 2019 08:26:09 GMT  
+		Size: 44.1 MB (44123254 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:49ac0bbe6c8eeb959337b336ceaa5c3bbbae81e316025f9b94ede453540f2377`  
+		Last Modified: Thu, 19 Dec 2019 04:26:00 GMT  
+		Size: 529.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d1983a67e104e801fceb1850a375a71fe6b62636ba7a8403d9644f308a6a43f9`  
+		Last Modified: Thu, 19 Dec 2019 04:26:00 GMT  
+		Size: 849.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1a0f3a523f04f61db942018321ae122f90d8e3303e243b005e8de9817daf7028`  
+		Last Modified: Thu, 19 Dec 2019 04:25:59 GMT  
+		Size: 169.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8b42a48a2b0579e77f4148db66ddec003343de05751bea4e79ef96b09891147a`  
+		Last Modified: Tue, 14 Jan 2020 01:27:48 GMT  
+		Size: 40.6 MB (40562260 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d6931541f539bfcdeccd68e090b009095fe58eb12522a788cd48a3769b85136c`  
+		Last Modified: Tue, 14 Jan 2020 01:27:36 GMT  
+		Size: 309.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `kong:2.0.0rc2-ubuntu` - linux; arm64 variant v8
+
+```console
+$ docker pull kong@sha256:059cacfb4d544ac4b6d5b0366bd68fbb5707a8fd29b2c36842edb3367470062b
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **79.1 MB (79111622 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:930b95f1babf9bd1549c1207abb692351c3024d6fd88876579f3fb1e254075f1`
+-	Entrypoint: `["\/docker-entrypoint.sh"]`
+-	Default Command: `["kong","docker-start"]`
+
+```dockerfile
+# Thu, 19 Dec 2019 03:54:56 GMT
+ADD file:ef40ad352b3111bab843b916e802c7cb18aeccc96a65fe9a7a5330572431e7c7 in / 
+# Thu, 19 Dec 2019 03:54:59 GMT
+RUN rm -rf /var/lib/apt/lists/*
+# Thu, 19 Dec 2019 03:55:03 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Thu, 19 Dec 2019 03:55:09 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Thu, 19 Dec 2019 03:55:11 GMT
+CMD ["/bin/bash"]
+# Thu, 19 Dec 2019 07:46:45 GMT
+LABEL maintainer=Kong Core Team <team-core@konghq.com>
+# Tue, 14 Jan 2020 01:39:40 GMT
+ENV KONG_VERSION=2.0.0rc2
+# Tue, 14 Jan 2020 01:40:39 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends ca-certificates curl perl unzip     && rm -rf /var/lib/apt/lists/*     && curl -fsSLo kong.deb https://bintray.com/kong/kong-deb/download_file?file_path=kong-${KONG_VERSION}.xenial.$(dpkg --print-architecture).deb     && apt-get purge -y --auto-remove ca-certificates curl 	&& dpkg -i kong.deb 	&& rm -rf kong.deb
+# Tue, 14 Jan 2020 01:40:50 GMT
+COPY file:a4763218d814cc99d340cb11497461af1e7b06c7ec7d19308fb1d59952ad34a4 in /docker-entrypoint.sh 
+# Tue, 14 Jan 2020 01:40:55 GMT
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# Tue, 14 Jan 2020 01:40:56 GMT
+EXPOSE 8000 8001 8443 8444
+# Tue, 14 Jan 2020 01:40:59 GMT
+STOPSIGNAL SIGQUIT
+# Tue, 14 Jan 2020 01:41:01 GMT
+CMD ["kong" "docker-start"]
+```
+
+-	Layers:
+	-	`sha256:b8d9a83fac1745f67aed1e924445fc9a89cd885fe70d0e1e335cbe4791f490b5`  
+		Last Modified: Thu, 19 Dec 2019 03:57:28 GMT  
+		Size: 39.9 MB (39875399 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:22b9cc76ef947c73adaf3c9e2dd2f8da166e815b37d431b9baae7aebe84096fe`  
+		Last Modified: Thu, 19 Dec 2019 03:57:19 GMT  
+		Size: 469.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0e0d286195ea15592986e2820cc7366deda87cc2802b6cfe82a6f5388aceb4a4`  
+		Last Modified: Thu, 19 Dec 2019 03:57:18 GMT  
+		Size: 850.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:120fa5dd162f3d2fa3a1452a4d909074c6ffcba06016d39e5781581ec1ec5f88`  
+		Last Modified: Thu, 19 Dec 2019 03:57:18 GMT  
+		Size: 168.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:56e636b302d6481b80e0d81fd0bdbeb865e1aa347c001425efdd227e5428495a`  
+		Last Modified: Tue, 14 Jan 2020 01:41:40 GMT  
+		Size: 39.2 MB (39234425 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b8547f62f0a88f450760f4fa633db0c5872c3cf793233d285be85e475c777f2d`  
+		Last Modified: Tue, 14 Jan 2020 01:41:26 GMT  
+		Size: 311.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kong:alpine`
 
