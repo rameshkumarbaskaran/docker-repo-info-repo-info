@@ -753,21 +753,13 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.45.4-1
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.4-1.dsc' e2fsprogs_1.45.4-1.dsc 2920 SHA256:170b4c2de6417b5fa380dc1101b672f2bdeaee9ddb343ab53816d3e08eeda045
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.4.orig.tar.gz' e2fsprogs_1.45.4.orig.tar.gz 7930961 SHA256:e69c69839cf80cb55afa18b9a99ed8f2e559db0313e3d15ac5497ed7e1a34c4b
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.4.orig.tar.gz.asc' e2fsprogs_1.45.4.orig.tar.gz.asc 488 SHA256:4b1777d8ae7907e205f10d2b06459637f467acd14f4e50f0b520cf23cd22f97b
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.4-1.debian.tar.xz' e2fsprogs_1.45.4-1.debian.tar.xz 79088 SHA256:b71e98efcd6d2ff58723b092fc4ac4b96b14a3509a040b1b204f37b3f4f1ef86
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/e2fsprogs/1.45.4-1/
 
-- https://sources.debian.net/src/e2fsprogs/1.45.4-1/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.45.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.45.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ed=1.15-1`
 
@@ -2765,20 +2757,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.3.15-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.3.15-1.dsc' linux_5.3.15-1.dsc 197690 SHA256:93dac7b4919fbfca18891458d074e4bff3a11aa7770fdbffda435a52982f0c20
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.3.15.orig.tar.xz' linux_5.3.15.orig.tar.xz 112805288 SHA256:5c6e245c423e53ccba19ddb22b67d1ad4beca8cba5d07b6dcec909ebc7f14178
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.3.15-1.debian.tar.xz' linux_5.3.15-1.debian.tar.xz 1187612 SHA256:3bb01c611bb061df9c815024efde4fb1c2abb31fa090410700aab0921dba97e5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/5.3.15-1/
 
-- https://sources.debian.net/src/linux/5.3.15-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/5.3.15-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/5.3.15-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `littler=0.3.9-1`
 
@@ -3898,20 +3883,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff5/copyright`)
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.1.0+git191117-1
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117-1.dsc' tiff_4.1.0+git191117-1.dsc 2242 SHA256:719b2652bb6ac2bfe0cb6728cfdb267b320a8dc7c1250940ce567e022876b867
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117.orig.tar.xz' tiff_4.1.0+git191117.orig.tar.xz 1533524 SHA256:67e1d045e994adb7144b0cca228d70dd6d520aaf8c75c342064bc0fd601e6e42
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117-1.debian.tar.xz' tiff_4.1.0+git191117-1.debian.tar.xz 18896 SHA256:15bfa5a520c58b41a67b6ac211feae21159a02acd45965ceb1831a5fd06ebf33
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.1.0+git191117-1/
 
-- https://sources.debian.net/src/tiff/4.1.0+git191117-1/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.1.0+git191117-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.1.0+git191117-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tk8.6=8.6.10-1`
 
