@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1699154d1b2ed74a72bfe55878b208e8c7702cfca7af687879f5b72bbdf42423`
-- Created: `2020-01-15T00:25:05.794429375Z`
-- Virtual Size: ~ 332.90 Mb  
+- Image ID: `sha256:d5ad3977720e35ba9625d8a62939a4dd9a73b2b1bb93cec862ba687816b5e523`
+- Created: `2020-01-18T06:14:52.360243969Z`
+- Virtual Size: ~ 342.49 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node","current/index.js"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.18.1`
+  - `NODE_VERSION=12.14.1`
   - `YARN_VERSION=1.21.1`
   - `NODE_ENV=production`
   - `GHOST_CLI_VERSION=1.13.1`
@@ -92,16 +92,16 @@ GPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.31.1-r8 description:
+busybox-1.31.1-r9 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.31.1-r8 webpage:
+busybox-1.31.1-r9 webpage:
 https://busybox.net/
 
-busybox-1.31.1-r8 installed size:
+busybox-1.31.1-r9 installed size:
 962560
 
-busybox-1.31.1-r8 license:
+busybox-1.31.1-r9 license:
 GPL-2.0-only
 
 ```
@@ -143,16 +143,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r2 description:
+libcrypto1.1-1.1.1d-r3 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r2 webpage:
+libcrypto1.1-1.1.1d-r3 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1d-r2 installed size:
+libcrypto1.1-1.1.1d-r3 installed size:
 2748416
 
-libcrypto1.1-1.1.1d-r2 license:
+libcrypto1.1-1.1.1d-r3 license:
 OpenSSL
 
 ```
@@ -177,16 +177,16 @@ GPL LGPL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r2 description:
+libssl1.1-1.1.1d-r3 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r2 webpage:
+libssl1.1-1.1.1d-r3 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1d-r2 installed size:
+libssl1.1-1.1.1d-r3 installed size:
 536576
 
-libssl1.1-1.1.1d-r2 license:
+libssl1.1-1.1.1d-r3 license:
 OpenSSL
 
 ```
@@ -347,16 +347,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.31.1-r8 description:
+ssl_client-1.31.1-r9 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.31.1-r8 webpage:
+ssl_client-1.31.1-r9 webpage:
 https://busybox.net/
 
-ssl_client-1.31.1-r8 installed size:
+ssl_client-1.31.1-r9 installed size:
 28672
 
-ssl_client-1.31.1-r8 license:
+ssl_client-1.31.1-r9 license:
 GPL-2.0-only
 
 ```
