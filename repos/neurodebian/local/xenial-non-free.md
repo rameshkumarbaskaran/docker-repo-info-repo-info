@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e1271206a58881cfd55939e59adee3892244ae224128aa7542e4f11870a80ab7`
-- Created: `2019-12-19T07:49:04.583411994Z`
-- Virtual Size: ~ 124.11 Mb  
+- Image ID: `sha256:6c6d433871142f4bda9164e538c7bdde4ea10d31028efea34b7248f02bdf1968`
+- Created: `2020-01-16T02:49:50.750506032Z`
+- Virtual Size: ~ 124.44 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -678,20 +678,25 @@ $ apt-get source -qq --print-uris libeatmydata=105-3
 'http://archive.ubuntu.com/ubuntu/pool/main/libe/libeatmydata/libeatmydata_105-3.debian.tar.xz' libeatmydata_105-3.debian.tar.xz 45804 SHA256:b2b79660876282416193535e72b72ba490c447c3bd0c922f25865acde6807c5d
 ```
 
-### `dpkg` source package: `libgcrypt20=1.6.5-2ubuntu0.5`
+### `dpkg` source package: `libgcrypt20=1.6.5-2ubuntu0.6`
 
 Binary Packages:
 
-- `libgcrypt20:amd64=1.6.5-2ubuntu0.5`
+- `libgcrypt20:amd64=1.6.5-2ubuntu0.6`
 
 Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 
 - `GPL-2`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libgcrypt20=1.6.5-2ubuntu0.6
+'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.6.5-2ubuntu0.6.dsc' libgcrypt20_1.6.5-2ubuntu0.6.dsc 2653 SHA256:9a49e72112a7a42d54960a8f170117970d5751ecad0ccdb186dfea360fdd3fe4
+'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.6.5.orig.tar.bz2' libgcrypt20_1.6.5.orig.tar.bz2 2549601 SHA256:f49ebc5842d455ae7019def33eb5a014a0f07a2a8353dc3aa50a76fd1dafa924
+'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.6.5-2ubuntu0.6.debian.tar.xz' libgcrypt20_1.6.5-2ubuntu0.6.debian.tar.xz 38412 SHA256:1024930d785a1d5a4345821e923cde1fe20bdfd1aa3a46689374e9822472df9d
+```
 
 ### `dpkg` source package: `libgpg-error=1.21-2ubuntu1`
 
