@@ -355,14 +355,9 @@ Licenses: (parsed from: `/usr/share/doc/bzr/copyright`, `/usr/share/doc/python-b
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bzr=2.7.0+bzr6622-17ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/universe/b/bzr/bzr_2.7.0+bzr6622-17ubuntu1.dsc' bzr_2.7.0+bzr6622-17ubuntu1.dsc 2921 SHA256:7829358bac6c2765241a85216334d8aceef4d51ace678bdaa07de8e4b1fa3583
-'http://archive.ubuntu.com/ubuntu/pool/universe/b/bzr/bzr_2.7.0+bzr6622.orig.tar.gz' bzr_2.7.0+bzr6622.orig.tar.gz 10948360 SHA256:08bba3e76cba9beb6b686e71253045beeab9db94753ddbcafa0f8ed1cba377ff
-'http://archive.ubuntu.com/ubuntu/pool/universe/b/bzr/bzr_2.7.0+bzr6622-17ubuntu1.debian.tar.xz' bzr_2.7.0+bzr6622-17ubuntu1.debian.tar.xz 71040 SHA256:4ea2afef7cbd263a30891480dece7b1368204b00548c39f4478c53c6a67a564e
-```
 
 ### `dpkg` source package: `ca-certificates=20190110`
 
@@ -1031,14 +1026,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.24.0-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0-1ubuntu1.dsc' git_2.24.0-1ubuntu1.dsc 2969 SHA256:6f451c542d8325236b27c12a258b9c71883b161f5cbfc937c367c0c661b1b9d8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0.orig.tar.xz' git_2.24.0.orig.tar.xz 5766056 SHA256:9f71d61973626d8b28c4cdf8e2484b4bf13870ed643fed982d68b2cfd754371b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0-1ubuntu1.debian.tar.xz' git_2.24.0-1ubuntu1.debian.tar.xz 629624 SHA256:76a10c89f966e336a5328553515db590675123256acb7e3cd050068e3829e43f
-```
 
 ### `dpkg` source package: `glib2.0=2.63.1-2ubuntu1`
 
@@ -2411,14 +2401,9 @@ Licenses: (parsed from: `/usr/share/doc/libwmf-dev/copyright`, `/usr/share/doc/l
 
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libwmf=0.2.8.4-15ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-15ubuntu1.dsc' libwmf_0.2.8.4-15ubuntu1.dsc 2329 SHA256:18a53170ac7d0f5f912dbf888e0e33dd476a37b706b248877e30b5afdab86882
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4.orig.tar.gz' libwmf_0.2.8.4.orig.tar.gz 2169375 SHA256:5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-15ubuntu1.debian.tar.xz' libwmf_0.2.8.4-15ubuntu1.debian.tar.xz 12836 SHA256:a7be255896e272aa648c7d5e0e65d2e1ea53e272a762dcb34d9abddf26efc2c3
-```
 
 ### `dpkg` source package: `libx11=2:1.6.8-1`
 
@@ -2887,14 +2872,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-8.0=8.0.18-0ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.18-0ubuntu4.dsc' mysql-8.0_8.0.18-0ubuntu4.dsc 3439 SHA256:fa9cb754110ca6acdbbd938cee312c463623d90492e0e00481fbb7f5ce0d5a74
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.18.orig.tar.gz' mysql-8.0_8.0.18.orig.tar.gz 194953221 SHA256:0eccd9d79c04ba0ca661136bb29085e3833d9c48ed022d0b9aba12236994186b
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.18-0ubuntu4.debian.tar.xz' mysql-8.0_8.0.18-0ubuntu4.debian.tar.xz 157260 SHA256:f9f104beb5ff91820e5d58853e8352bceaa6215757803ad7d7b3648b96176e02
-```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5ubuntu2`
 
@@ -3717,14 +3697,9 @@ Licenses: (parsed from: `/usr/share/doc/python-six/copyright`)
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris six=1.12.0-2build1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.12.0-2build1.dsc' six_1.12.0-2build1.dsc 2375 SHA256:04473e77c157f7c85a28e6e478293418dce7d21b42d6347898eff49aac902c7e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.12.0.orig.tar.gz' six_1.12.0.orig.tar.gz 32725 SHA256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.12.0-2build1.debian.tar.xz' six_1.12.0-2build1.debian.tar.xz 4192 SHA256:7e22ff8603fcd41a0f97030b0272ee79a237dcec9cd1e4c91c590c1a583984cc
-```
 
 ### `dpkg` source package: `sqlite3=3.30.1-1ubuntu1`
 
@@ -3771,15 +3746,13 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `Unicode`
 - `Utfwidth`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.13.0-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.13.0-1.dsc' subversion_1.13.0-1.dsc 3642 SHA256:d8f4bc1d90b56e429158bdee1dfa083fcf8713de2a6524d5f91a48dee683bc8f
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.13.0.orig.tar.gz' subversion_1.13.0.orig.tar.gz 11544359 SHA256:daad440c03b8a86fcca804ea82217bb1902cfcae1b7d28c624143c58dcb96931
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.13.0.orig.tar.gz.asc' subversion_1.13.0.orig.tar.gz.asc 2954 SHA256:ed4f87b947b8172fcaa4c741d8ccc7929914b18cf1ccffc32b4f159fdee3070d
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.13.0-1.debian.tar.xz' subversion_1.13.0-1.debian.tar.xz 420392 SHA256:1a25d666bd2f302c4aa2e8c542b9c5b8decd681177d588ef4b6b4471d781e669
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/subversion/1.13.0-1/
+
 
 ### `dpkg` source package: `systemd=243-3ubuntu1`
 
@@ -4002,14 +3975,9 @@ Licenses: (parsed from: `/usr/share/doc/libblkid-dev/copyright`, `/usr/share/doc
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.34-0.1ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu4.dsc' util-linux_2.34-0.1ubuntu4.dsc 4063 SHA256:008f382db9570a3412d20ec621bd9c5d4bc499201840d81e73b293c396597696
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34.orig.tar.xz' util-linux_2.34.orig.tar.xz 4974812 SHA256:743f9d0c7252b6db246b659c1e1ce0bd45d8d4508b4dfa427bbb4a3e9b9f62b5
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu4.debian.tar.xz' util-linux_2.34-0.1ubuntu4.debian.tar.xz 86132 SHA256:ea49c33a3636c36f6a0fde35ad2f8f1ac48117c868f0c16454dbdc4625f2f866
-```
 
 ### `dpkg` source package: `wget=1.20.3-1ubuntu1`
 

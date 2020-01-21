@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:829d8beab018be9d68f41bd8e1fb74b4ae849410f69a5429e534158e10477e34`
-- Created: `2019-12-19T07:28:27.632535059Z`
-- Virtual Size: ~ 658.19 Mb  
+- Image ID: `sha256:a3b19411789d817b0506826cc3a59f5b210b77007e8fba4b244937825a5b7cb0`
+- Created: `2020-01-16T03:09:11.470533471Z`
+- Virtual Size: ~ 658.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -1870,11 +1870,11 @@ $ apt-get source -qq --print-uris libffi=3.2.1-9
 'http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi_3.2.1-9.debian.tar.xz' libffi_3.2.1-9.debian.tar.xz 17148 SHA256:26e3cfd358733832da251778bc615a42b908d7779cf8b8d7fc2bdee4660bbbce
 ```
 
-### `dpkg` source package: `libgcrypt20=1.8.4-3ubuntu1`
+### `dpkg` source package: `libgcrypt20=1.8.4-3ubuntu1.1`
 
 Binary Packages:
 
-- `libgcrypt20:amd64=1.8.4-3ubuntu1`
+- `libgcrypt20:amd64=1.8.4-3ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 
@@ -1884,11 +1884,11 @@ Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libgcrypt20=1.8.4-3ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-3ubuntu1.dsc' libgcrypt20_1.8.4-3ubuntu1.dsc 2999 SHA256:c2eec14c7dc75d3ef5bb0e73e2fd030d0b7d8daa2bdfa1c0e9f7aef86172c8a3
+$ apt-get source -qq --print-uris libgcrypt20=1.8.4-3ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-3ubuntu1.1.dsc' libgcrypt20_1.8.4-3ubuntu1.1.dsc 2978 SHA256:0659e81dde9874e95c9d0eb89e2e8f55a36f39758f33a5bf43fae4aab3c2e24a
 'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2' libgcrypt20_1.8.4.orig.tar.bz2 2990108 SHA256:f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227
 'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2.asc' libgcrypt20_1.8.4.orig.tar.bz2.asc 534 SHA256:97df94317ad273cffce4e78ad34ad0664819b44496f6528818a4298a691209a3
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-3ubuntu1.debian.tar.xz' libgcrypt20_1.8.4-3ubuntu1.debian.tar.xz 29840 SHA256:aacd4f738d13bff7ffaf8f2d9d259dd08d0a739fc78e29aa83e471db9b5c9e21
+'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-3ubuntu1.1.debian.tar.xz' libgcrypt20_1.8.4-3ubuntu1.1.debian.tar.xz 31824 SHA256:fea50bd9edba80d8cc068489109199d0cc9c63fcf5934bf764c8986ff1f3282b
 ```
 
 ### `dpkg` source package: `libgpg-error=1.35-1`
@@ -2689,19 +2689,24 @@ $ apt-get source -qq --print-uris libzstd=1.3.8+dfsg-3
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.8+dfsg-3.debian.tar.xz' libzstd_1.3.8+dfsg-3.debian.tar.xz 10396 SHA256:392a971d6bba30b6cb3e5ff04efb10c45b052e458dfc6631ede9e024341321f9
 ```
 
-### `dpkg` source package: `linux=5.0.0-37.40`
+### `dpkg` source package: `linux=5.0.0-38.41`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.0.0-37.40`
+- `linux-libc-dev:amd64=5.0.0-38.41`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.0.0-38.41
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-38.41.dsc' linux_5.0.0-38.41.dsc 7253 SHA256:f5e4fec8d1f66e3aa12f0556bf85de704611dcb926cefdb6ef2803c04f4dd14f
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0.orig.tar.gz' linux_5.0.0.orig.tar.gz 162593848 SHA256:d9dcf8bafdd5778274c3f9d2634500d4cc186f3ba80fc71ea1a1a100aa65ad6f
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-38.41.diff.gz' linux_5.0.0-38.41.diff.gz 6329479 SHA256:aefb84ec14634d13270391ee9a73ef64ff52f068e742743dfec2fa31e9d7e1fd
+```
 
 ### `dpkg` source package: `lsb=10.2019031300ubuntu1`
 

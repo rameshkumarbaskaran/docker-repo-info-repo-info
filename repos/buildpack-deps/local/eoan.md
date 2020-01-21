@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:44eae30e9129f0ea5477f83b5877029a8c4d629c33d039a5e03526b1b9b35d36`
-- Created: `2019-12-19T07:31:43.091486781Z`
-- Virtual Size: ~ 676.96 Mb  
+- Image ID: `sha256:07746d98a6eb614ee458c45c77e2b1562ca9559fb1d95cd017292543b5dc64c4`
+- Created: `2020-01-16T03:12:38.652462723Z`
+- Virtual Size: ~ 677.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -237,11 +237,11 @@ $ apt-get source -qq --print-uris autotools-dev=20180224.1
 'http://archive.ubuntu.com/ubuntu/pool/main/a/autotools-dev/autotools-dev_20180224.1.tar.xz' autotools-dev_20180224.1.tar.xz 68256 SHA256:355a4d8461dfedebd2c5194603197712a10f71e20de73a35ab6e90b7acf3e837
 ```
 
-### `dpkg` source package: `base-files=10.2ubuntu7`
+### `dpkg` source package: `base-files=10.2ubuntu7.19.10.0`
 
 Binary Packages:
 
-- `base-files=10.2ubuntu7`
+- `base-files=10.2ubuntu7.19.10.0`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
@@ -250,9 +250,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris base-files=10.2ubuntu7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu7.dsc' base-files_10.2ubuntu7.dsc 1612 SHA256:b433eca00e150c98bce405bdb210ca73b030a2bad099d629ee4056b532c217f5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu7.tar.xz' base-files_10.2ubuntu7.tar.xz 78752 SHA256:9444f38b331a2e3a8ec15f708f49102c3403e70588f08b74fcd16ddee09f5940
+$ apt-get source -qq --print-uris base-files=10.2ubuntu7.19.10.0
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu7.19.10.0.dsc' base-files_10.2ubuntu7.19.10.0.dsc 1644 SHA256:ae6db5ad352b49788bfe1df9eced5df89e316975e5655312fa29703736563a86
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu7.19.10.0.tar.xz' base-files_10.2ubuntu7.19.10.0.tar.xz 78784 SHA256:252d0b65c1984d737b80056ed18f0e5b09ac63cfa2e936d8fe8d973b0f2c6521
 ```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
@@ -293,14 +293,14 @@ $ apt-get source -qq --print-uris bash=5.0-4ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-4ubuntu1.debian.tar.xz' bash_5.0-4ubuntu1.debian.tar.xz 67512 SHA256:25c5b39768e4570b8f66252242e710cc4eb3f682d287f393dc982e40a6d91a75
 ```
 
-### `dpkg` source package: `binutils=2.33-2ubuntu1`
+### `dpkg` source package: `binutils=2.33-2ubuntu1.2`
 
 Binary Packages:
 
-- `binutils=2.33-2ubuntu1`
-- `binutils-common:amd64=2.33-2ubuntu1`
-- `binutils-x86-64-linux-gnu=2.33-2ubuntu1`
-- `libbinutils:amd64=2.33-2ubuntu1`
+- `binutils=2.33-2ubuntu1.2`
+- `binutils-common:amd64=2.33-2ubuntu1.2`
+- `binutils-x86-64-linux-gnu=2.33-2ubuntu1.2`
+- `libbinutils:amd64=2.33-2ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/binutils-common/copyright`, `/usr/share/doc/binutils-x86-64-linux-gnu/copyright`, `/usr/share/doc/libbinutils/copyright`)
 
@@ -311,10 +311,10 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 Source:
 
 ```console
-$ apt-get source -qq --print-uris binutils=2.33-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33-2ubuntu1.dsc' binutils_2.33-2ubuntu1.dsc 8532 SHA256:fc738633e777c9b0c0e34deaebf94d952ac9b17a49822131d09623a8fd367083
+$ apt-get source -qq --print-uris binutils=2.33-2ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33-2ubuntu1.2.dsc' binutils_2.33-2ubuntu1.2.dsc 8594 SHA256:1dc2cca424dc944247c3c1e2429a5ae7aabd211d6006e2e79e6dd45f9d1b2731
 'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33.orig.tar.xz' binutils_2.33.orig.tar.xz 21023972 SHA256:64f129a116ecb48a26e24565585936768aadf4002e245149d0dd6f62d898f056
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33-2ubuntu1.debian.tar.xz' binutils_2.33-2ubuntu1.debian.tar.xz 105924 SHA256:ec7829fcf264f108a1e19bfd1f6facccaedad78b7d568e7484d2ad02da01d852
+'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.33-2ubuntu1.2.debian.tar.xz' binutils_2.33-2ubuntu1.2.debian.tar.xz 106248 SHA256:50fd6f529ba1fb650b7bcd1ed1f9d09797cef5107ae81c8778659df4ec9124ab
 ```
 
 ### `dpkg` source package: `bzip2=1.0.6-9.2`
@@ -1269,11 +1269,11 @@ $ apt-get source -qq --print-uris grep=3.3-1build1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/grep/grep_3.3-1build1.debian.tar.xz' grep_3.3-1build1.debian.tar.xz 104360 SHA256:a08e6e88ada40dc5e0195dfea04f4c8aea9e2b57a3272185fedc85a2ad575d23
 ```
 
-### `dpkg` source package: `gzip=1.10-0ubuntu3`
+### `dpkg` source package: `gzip=1.10-0ubuntu3.1`
 
 Binary Packages:
 
-- `gzip=1.10-0ubuntu3`
+- `gzip=1.10-0ubuntu3.1`
 
 Licenses: (parsed from: `/usr/share/doc/gzip/copyright`)
 
@@ -1282,10 +1282,10 @@ Licenses: (parsed from: `/usr/share/doc/gzip/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gzip=1.10-0ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu3.dsc' gzip_1.10-0ubuntu3.dsc 2074 SHA256:93339de815b59c0c677ff3099c449c1de52b717389fc9a46372d5e7386dc453a
+$ apt-get source -qq --print-uris gzip=1.10-0ubuntu3.1
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu3.1.dsc' gzip_1.10-0ubuntu3.1.dsc 2142 SHA256:04c4893f91149a98fdf657a83010d942859c519881c82a908e0fc967883c7ef4
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10.orig.tar.gz' gzip_1.10.orig.tar.gz 1201421 SHA256:c91f74430bf7bc20402e1f657d0b252cb80aa66ba333a25704512af346633c68
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu3.debian.tar.xz' gzip_1.10-0ubuntu3.debian.tar.xz 26464 SHA256:560bbe53c94934a09f0c883df5a160b31ea3fdee30e495769368be32fab368d8
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu3.1.debian.tar.xz' gzip_1.10-0ubuntu3.1.debian.tar.xz 26540 SHA256:56a14d90d897b271209c2fbe1478e42bf4e45b89bfd942ef56be76d24f9c7a4c
 ```
 
 ### `dpkg` source package: `harfbuzz=2.6.1-3`
@@ -1847,11 +1847,11 @@ $ apt-get source -qq --print-uris libffi=3.2.1-9
 'http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi_3.2.1-9.debian.tar.xz' libffi_3.2.1-9.debian.tar.xz 17148 SHA256:26e3cfd358733832da251778bc615a42b908d7779cf8b8d7fc2bdee4660bbbce
 ```
 
-### `dpkg` source package: `libgcrypt20=1.8.4-5ubuntu2`
+### `dpkg` source package: `libgcrypt20=1.8.4-5ubuntu2.1`
 
 Binary Packages:
 
-- `libgcrypt20:amd64=1.8.4-5ubuntu2`
+- `libgcrypt20:amd64=1.8.4-5ubuntu2.1`
 
 Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 
@@ -1861,11 +1861,11 @@ Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libgcrypt20=1.8.4-5ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5ubuntu2.dsc' libgcrypt20_1.8.4-5ubuntu2.dsc 2944 SHA256:a818fd1ce169cee16636ebd9b1c6975a74dd7d1b9500d9a6437432c96c0f95e5
+$ apt-get source -qq --print-uris libgcrypt20=1.8.4-5ubuntu2.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5ubuntu2.1.dsc' libgcrypt20_1.8.4-5ubuntu2.1.dsc 2915 SHA256:ff79b270d5b94a109d7104357848b077bc8067895b82c958c807926705a7aff9
 'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2' libgcrypt20_1.8.4.orig.tar.bz2 2990108 SHA256:f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227
 'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2.asc' libgcrypt20_1.8.4.orig.tar.bz2.asc 534 SHA256:97df94317ad273cffce4e78ad34ad0664819b44496f6528818a4298a691209a3
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5ubuntu2.debian.tar.xz' libgcrypt20_1.8.4-5ubuntu2.debian.tar.xz 30064 SHA256:bce32bd9dfa7e5bd8af10085deb84bc6526a2327003a84f89352264ff1d9c99c
+'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5ubuntu2.1.debian.tar.xz' libgcrypt20_1.8.4-5ubuntu2.1.debian.tar.xz 31980 SHA256:23e0e8dab2003f6d9c14536b7c4fb55495a036af78e3f63818744031b0737d98
 ```
 
 ### `dpkg` source package: `libgpg-error=1.36-7`
@@ -2666,19 +2666,24 @@ $ apt-get source -qq --print-uris libzstd=1.4.3+dfsg-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.3+dfsg-1.debian.tar.xz' libzstd_1.4.3+dfsg-1.debian.tar.xz 16108 SHA256:3dbb5f5d3e6c4c0f43a5f6d6803327bf9c330efdb0b3da461613971af506796b
 ```
 
-### `dpkg` source package: `linux=5.3.0-24.26`
+### `dpkg` source package: `linux=5.3.0-26.28`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.3.0-24.26`
+- `linux-libc-dev:amd64=5.3.0-26.28`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.3.0-26.28
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-26.28.dsc' linux_5.3.0-26.28.dsc 8286 SHA256:ccae48b374cffb53450b5dded3784ad685dfb8c000ce404a39b76dab020cfd90
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0.orig.tar.gz' linux_5.3.0.orig.tar.gz 168029263 SHA256:44edffd835819ac7156f2f4bb7512d25f8cf6eab098b09c9ef0c3c06a01148ef
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-26.28.diff.gz' linux_5.3.0-26.28.diff.gz 3174537 SHA256:da8e85b7b516c63edb37521488d754fb26d8c7570c14a4645321c8137642e64a
+```
 
 ### `dpkg` source package: `lsb=11.0.1ubuntu1`
 
@@ -3186,14 +3191,14 @@ $ apt-get source -qq --print-uris p11-kit=0.23.17-2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.17-2.debian.tar.xz' p11-kit_0.23.17-2.debian.tar.xz 21676 SHA256:069dde62ee1917be5fb8dca316c00c1c27e1686ef6b1cc30028a68733ab40136
 ```
 
-### `dpkg` source package: `pam=1.3.1-5ubuntu1`
+### `dpkg` source package: `pam=1.3.1-5ubuntu1.19.10.0`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.3.1-5ubuntu1`
-- `libpam-modules-bin=1.3.1-5ubuntu1`
-- `libpam-runtime=1.3.1-5ubuntu1`
-- `libpam0g:amd64=1.3.1-5ubuntu1`
+- `libpam-modules:amd64=1.3.1-5ubuntu1.19.10.0`
+- `libpam-modules-bin=1.3.1-5ubuntu1.19.10.0`
+- `libpam-runtime=1.3.1-5ubuntu1.19.10.0`
+- `libpam0g:amd64=1.3.1-5ubuntu1.19.10.0`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
@@ -3202,10 +3207,10 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 Source:
 
 ```console
-$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu1.dsc' pam_1.3.1-5ubuntu1.dsc 2736 SHA256:353c2f0c7d99f900e0dace4ab21386024cfa281d4709bd40e74ac7cae45d12b8
+$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu1.19.10.0
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu1.19.10.0.dsc' pam_1.3.1-5ubuntu1.19.10.0.dsc 2731 SHA256:7e6f0d1b40d6b741adc020d13e629d2972555582c72892a4e7ff0f0db992fca0
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1.orig.tar.xz' pam_1.3.1.orig.tar.xz 912332 SHA256:eff47a4ecd833fbf18de9686632a70ee8d0794b79aecb217ebd0ce11db4cd0db
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu1.debian.tar.xz' pam_1.3.1-5ubuntu1.debian.tar.xz 158852 SHA256:344d8334b8f91cd14187d0f687a0b1e43270f850991c618fdba8a928630887f7
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu1.19.10.0.debian.tar.xz' pam_1.3.1-5ubuntu1.19.10.0.debian.tar.xz 159316 SHA256:7363b23a0088634f1562b16434cdd99074e951a886a3c25c72a3edcc34c2a622
 ```
 
 ### `dpkg` source package: `pango1.0=1.42.4-7`
