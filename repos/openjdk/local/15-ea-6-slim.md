@@ -1,20 +1,20 @@
-# `openjdk:14-ea-31-jdk-slim-buster`
+# `openjdk:15-ea-6-jdk-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:67514bf9b2f8a59072f456f548c6212df7fff0b3cce4eae8b22bc88e3a387114`
-- Created: `2020-01-15T21:28:15.711341821Z`
-- Virtual Size: ~ 413.72 Mb  
+- Image ID: `sha256:f6501800c11892c5cb0e850914918e745ee905a98bfd28dede5be4765c28e507`
+- Created: `2020-01-17T23:40:14.551532128Z`
+- Virtual Size: ~ 413.44 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
 - Environment:
-  - `PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/java/openjdk-14`
-  - `JAVA_VERSION=14-ea+31`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk14/31/GPL/openjdk-14-ea+31_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=4c77b7d01ed49aa787df11034df7270ed4bc755a79f0850711db7b5920f9d582`
+  - `JAVA_HOME=/usr/java/openjdk-15`
+  - `JAVA_VERSION=15-ea+6`
+  - `JAVA_URL=https://download.java.net/java/early_access/jdk15/6/GPL/openjdk-15-ea+6_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=122a306f4bcf97ab06653d804fb6ff2cba6ef1943331a341193ec5d2b0f87587`
 
 ## `dpkg` (`.deb`-based packages)
 
