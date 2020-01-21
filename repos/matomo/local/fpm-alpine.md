@@ -1,10 +1,10 @@
-# `matomo:3.13.0-fpm-alpine`
+# `matomo:3.13.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e3a23d92fae8403a0002c1359434370e8d8909caf43e376f3ac7b5d3b49adc82`
-- Created: `2019-12-27T04:04:12.031614522Z`
-- Virtual Size: ~ 203.13 Mb  
+- Image ID: `sha256:0e3d2d56a062133e39de839a7f17140b523cef0d9aa27f09fd5a16d0a348b84c`
+- Created: `2020-01-18T05:30:51.883359541Z`
+- Virtual Size: ~ 144.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,13 +17,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.13`
-  - `PHP_URL=https://www.php.net/get/php-7.3.13.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.13.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=57ac55fe442d2da650abeb9e6fa161bd3a98ba6528c029f076f8bba43dd5c228`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.1`
+  - `PHP_URL=https://www.php.net/get/php-7.4.1.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.4.1.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=561bb866bdd509094be00f4ece7c3543ec971c4d878645ee81437e291cffc762`
   - `PHP_MD5=`
-  - `MATOMO_VERSION=3.13.0`
+  - `MATOMO_VERSION=3.13.1`
 - Labels:
   - `maintainer=pierre@piwik.org`
 
@@ -100,16 +100,16 @@ Apache-2.0 CC0-1.0
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.31.1-r8 description:
+busybox-1.31.1-r9 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.31.1-r8 webpage:
+busybox-1.31.1-r9 webpage:
 https://busybox.net/
 
-busybox-1.31.1-r8 installed size:
+busybox-1.31.1-r9 installed size:
 962560
 
-busybox-1.31.1-r8 license:
+busybox-1.31.1-r9 license:
 GPL-2.0-only
 
 ```
@@ -304,16 +304,16 @@ BSD-3-Clause
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.3-r0 description:
+libjpeg-turbo-2.0.4-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.3-r0 webpage:
+libjpeg-turbo-2.0.4-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.3-r0 installed size:
+libjpeg-turbo-2.0.4-r0 installed size:
 1355776
 
-libjpeg-turbo-2.0.3-r0 license:
+libjpeg-turbo-2.0.4-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -556,6 +556,23 @@ MIT
 
 ```
 
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.4-r0 description:
+a regular expressions library
+
+oniguruma-6.9.4-r0 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.4-r0 installed size:
+561152
+
+oniguruma-6.9.4-r0 license:
+BSD-2-Clause
+
+```
+
 ### `apk` package: `openssl`
 
 ```console
@@ -610,16 +627,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.31.1-r8 description:
+ssl_client-1.31.1-r9 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.31.1-r8 webpage:
+ssl_client-1.31.1-r9 webpage:
 https://busybox.net/
 
-ssl_client-1.31.1-r8 installed size:
+ssl_client-1.31.1-r9 installed size:
 28672
 
-ssl_client-1.31.1-r8 license:
+ssl_client-1.31.1-r9 license:
 GPL-2.0-only
 
 ```
