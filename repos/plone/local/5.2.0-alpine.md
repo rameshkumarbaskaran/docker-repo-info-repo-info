@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:efe431f69b0de1dc01ff9e76e6a88acba07a4df057e3feae7b8ad00a9c6d90a6`
-- Created: `2020-01-04T05:55:28.805648307Z`
-- Virtual Size: ~ 499.90 Mb  
+- Image ID: `sha256:c28a0aa288337ce0403d431242b8f536814824f4ba4d039e42703349711a787c`
+- Created: `2020-01-18T05:01:23.230541635Z`
+- Virtual Size: ~ 496.40 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -106,16 +106,16 @@ GPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.31.1-r8 description:
+busybox-1.31.1-r9 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.31.1-r8 webpage:
+busybox-1.31.1-r9 webpage:
 https://busybox.net/
 
-busybox-1.31.1-r8 installed size:
+busybox-1.31.1-r9 installed size:
 962560
 
-busybox-1.31.1-r8 license:
+busybox-1.31.1-r9 license:
 GPL-2.0-only
 
 ```
@@ -293,16 +293,16 @@ BSD
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.45.4-r0 description:
+libcom_err-1.45.5-r0 description:
 Common error description library
 
-libcom_err-1.45.4-r0 webpage:
+libcom_err-1.45.5-r0 webpage:
 http://e2fsprogs.sourceforge.net
 
-libcom_err-1.45.4-r0 installed size:
+libcom_err-1.45.5-r0 installed size:
 24576
 
-libcom_err-1.45.4-r0 license:
+libcom_err-1.45.5-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -395,16 +395,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.3-r0 description:
+libjpeg-turbo-2.0.4-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.3-r0 webpage:
+libjpeg-turbo-2.0.4-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.3-r0 installed size:
+libjpeg-turbo-2.0.4-r0 installed size:
 1355776
 
-libjpeg-turbo-2.0.3-r0 license:
+libjpeg-turbo-2.0.4-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -718,16 +718,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.31.1-r8 description:
+ssl_client-1.31.1-r9 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.31.1-r8 webpage:
+ssl_client-1.31.1-r9 webpage:
 https://busybox.net/
 
-ssl_client-1.31.1-r8 installed size:
+ssl_client-1.31.1-r9 installed size:
 28672
 
-ssl_client-1.31.1-r8 license:
+ssl_client-1.31.1-r9 license:
 GPL-2.0-only
 
 ```
