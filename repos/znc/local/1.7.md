@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:106524333051dbfb302b77f30f10aa6f0eaf6bf99941512564e9c8e10943a236`
-- Created: `2019-10-21T22:24:08.974520878Z`
+- Image ID: `sha256:f9846126f9a1644eac75ca66a376fceb1ed1cd2907da04d5b026fd27a62f8df2`
+- Created: `2020-01-24T06:10:09.990600504Z`
 - Virtual Size: ~ 418.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -664,16 +664,16 @@ none
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.30.1-r2 description:
+busybox-1.30.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.30.1-r2 webpage:
+busybox-1.30.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.30.1-r2 installed size:
+busybox-1.30.1-r3 installed size:
 942080
 
-busybox-1.30.1-r2 license:
+busybox-1.30.1-r3 license:
 GPL-2.0
 
 ```
@@ -732,16 +732,16 @@ BSD-3-Clause
 ### `apk` package: `cyrus-sasl`
 
 ```console
-cyrus-sasl-2.1.27-r3 description:
+cyrus-sasl-2.1.27-r4 description:
 Cyrus Simple Authentication Service Layer (SASL)
 
-cyrus-sasl-2.1.27-r3 webpage:
+cyrus-sasl-2.1.27-r4 webpage:
 https://cyrusimap.org/
 
-cyrus-sasl-2.1.27-r3 installed size:
+cyrus-sasl-2.1.27-r4 installed size:
 167936
 
-cyrus-sasl-2.1.27-r3 license:
+cyrus-sasl-2.1.27-r4 license:
 custom
 
 ```
@@ -783,16 +783,16 @@ MIT
 ### `apk` package: `file`
 
 ```console
-file-5.37-r0 description:
+file-5.37-r1 description:
 File type identification utility
 
-file-5.37-r0 webpage:
+file-5.37-r1 webpage:
 https://www.darwinsys.com/file
 
-file-5.37-r0 installed size:
+file-5.37-r1 installed size:
 40960
 
-file-5.37-r0 license:
+file-5.37-r1 license:
 BSD-2-Clause
 
 ```
@@ -1004,16 +1004,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libarchive`
 
 ```console
-libarchive-3.3.3-r0 description:
+libarchive-3.3.3-r1 description:
 library that can create and read several streaming archive formats
 
-libarchive-3.3.3-r0 webpage:
+libarchive-3.3.3-r1 webpage:
 https://libarchive.org/
 
-libarchive-3.3.3-r0 installed size:
+libarchive-3.3.3-r1 installed size:
 622592
 
-libarchive-3.3.3-r0 license:
+libarchive-3.3.3-r1 license:
 BSD-2-Clause BSD-3-Clause Apache-2.0
 
 ```
@@ -1089,16 +1089,16 @@ BSD
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.45.2-r1 description:
+libcom_err-1.45.5-r0 description:
 Common error description library
 
-libcom_err-1.45.2-r1 webpage:
+libcom_err-1.45.5-r0 webpage:
 http://e2fsprogs.sourceforge.net
 
-libcom_err-1.45.2-r1 installed size:
+libcom_err-1.45.5-r0 installed size:
 24576
 
-libcom_err-1.45.2-r1 license:
+libcom_err-1.45.5-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -1106,16 +1106,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r0 description:
+libcrypto1.1-1.1.1d-r2 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r0 webpage:
+libcrypto1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1d-r0 installed size:
-2736128
+libcrypto1.1-1.1.1d-r2 installed size:
+2740224
 
-libcrypto1.1-1.1.1d-r0 license:
+libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -1191,16 +1191,16 @@ GPL LGPL
 ### `apk` package: `libmagic`
 
 ```console
-libmagic-5.37-r0 description:
+libmagic-5.37-r1 description:
 File type identification library
 
-libmagic-5.37-r0 webpage:
+libmagic-5.37-r1 webpage:
 https://www.darwinsys.com/file
 
-libmagic-5.37-r0 installed size:
+libmagic-5.37-r1 installed size:
 5775360
 
-libmagic-5.37-r0 license:
+libmagic-5.37-r1 license:
 BSD-2-Clause
 
 ```
@@ -1293,16 +1293,16 @@ custom
 ### `apk` package: `libsasl`
 
 ```console
-libsasl-2.1.27-r3 description:
+libsasl-2.1.27-r4 description:
 Cyrus Simple Authentication and Security Layer (SASL) library
 
-libsasl-2.1.27-r3 webpage:
+libsasl-2.1.27-r4 webpage:
 https://cyrusimap.org/
 
-libsasl-2.1.27-r3 installed size:
+libsasl-2.1.27-r4 installed size:
 180224
 
-libsasl-2.1.27-r3 license:
+libsasl-2.1.27-r4 license:
 custom
 
 ```
@@ -1310,16 +1310,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r0 description:
+libssl1.1-1.1.1d-r2 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r0 webpage:
+libssl1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1d-r0 installed size:
+libssl1.1-1.1.1d-r2 installed size:
 532480
 
-libssl1.1-1.1.1d-r0 license:
+libssl1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -1599,16 +1599,16 @@ ISC
 ### `apk` package: `python2`
 
 ```console
-python2-2.7.16-r1 description:
+python2-2.7.16-r2 description:
 A high-level scripting language
 
-python2-2.7.16-r1 webpage:
+python2-2.7.16-r2 webpage:
 https://www.python.org
 
-python2-2.7.16-r1 installed size:
+python2-2.7.16-r2 installed size:
 39821312
 
-python2-2.7.16-r1 license:
+python2-2.7.16-r2 license:
 custom
 
 ```
@@ -1667,16 +1667,16 @@ custom
 ### `apk` package: `runtime-dependencies`
 
 ```console
-runtime-dependencies-20191021.221933 description:
+runtime-dependencies-20200124.060343 description:
 virtual meta package
 
-runtime-dependencies-20191021.221933 webpage:
+runtime-dependencies-20200124.060343 webpage:
 
 
-runtime-dependencies-20191021.221933 installed size:
+runtime-dependencies-20200124.060343 installed size:
 0
 
-runtime-dependencies-20191021.221933 license:
+runtime-dependencies-20200124.060343 license:
 
 
 ```
@@ -1701,16 +1701,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r1 description:
+sqlite-libs-3.28.0-r2 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r1 webpage:
+sqlite-libs-3.28.0-r2 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r1 installed size:
+sqlite-libs-3.28.0-r2 installed size:
 925696
 
-sqlite-libs-3.28.0-r1 license:
+sqlite-libs-3.28.0-r2 license:
 Public-Domain
 
 ```
@@ -1718,16 +1718,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.30.1-r2 description:
+ssl_client-1.30.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.30.1-r2 webpage:
+ssl_client-1.30.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.30.1-r2 installed size:
+ssl_client-1.30.1-r3 installed size:
 28672
 
-ssl_client-1.30.1-r2 license:
+ssl_client-1.30.1-r3 license:
 GPL-2.0
 
 ```
