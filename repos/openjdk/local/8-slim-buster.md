@@ -1,10 +1,10 @@
-# `openjdk:8u232-jdk-slim-buster`
+# `openjdk:8u242-jdk-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a0b0dea106ddb684193af2fd6618fa2541785d189a6f4092904eea9d6ebc9eda`
-- Created: `2019-12-28T08:56:51.219513734Z`
-- Virtual Size: ~ 284.03 Mb  
+- Image ID: `sha256:b7b5fa383ded6fa3023e79d78534d09fb1ae19b7527b08b06d919ee05b23b185`
+- Created: `2020-01-23T00:40:26.286806222Z`
+- Virtual Size: ~ 284.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u232`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_`
-  - `JAVA_URL_VERSION=8u232b09`
+  - `JAVA_VERSION=8u242`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_`
+  - `JAVA_URL_VERSION=8u242b08`
 
 ## `dpkg` (`.deb`-based packages)
 
