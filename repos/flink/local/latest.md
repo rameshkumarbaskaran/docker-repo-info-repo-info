@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:45cf4b2b2049842827e7b608a41615eb64a62c3942aede4af22749f5074edf95`
-- Created: `2019-12-29T09:08:33.47081106Z`
-- Virtual Size: ~ 531.82 Mb  
+- Image ID: `sha256:c195ac7847aa0ffcfdc44e5b85d864bdf03725a531c6cba0d7e98c7e9250668b`
+- Created: `2020-01-23T03:07:09.730997504Z`
+- Virtual Size: ~ 531.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -13,9 +13,9 @@
   - `PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u232`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_`
-  - `JAVA_URL_VERSION=8u232b09`
+  - `JAVA_VERSION=8u242`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jre_`
+  - `JAVA_URL_VERSION=8u242b08`
   - `GOSU_VERSION=1.11`
   - `FLINK_VERSION=1.9.1`
   - `SCALA_VERSION=2.12`
