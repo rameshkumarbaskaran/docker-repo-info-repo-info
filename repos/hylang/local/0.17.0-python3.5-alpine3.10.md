@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9f0e634bd455fec1af11e2437942ffc8e22ccd2dc2cf40bd4297ee3c4c9e9a81`
-- Created: `2020-01-04T05:59:09.682370242Z`
-- Virtual Size: ~ 99.36 Mb  
+- Image ID: `sha256:fd16495092bc5f760e1ff6b58586118cff7b1a6fd9555d815275689c4056dcaf`
+- Created: `2020-01-25T03:38:53.082924643Z`
+- Virtual Size: ~ 96.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -13,9 +13,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=97FC712E4C024BBEA48A61ED3A5CA953F73C700D`
   - `PYTHON_VERSION=3.5.9`
-  - `PYTHON_PIP_VERSION=19.3.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
+  - `PYTHON_PIP_VERSION=20.0.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/42ad3426cb1ef05863521d7988d5f7fec0c99560/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=da288fc002d0bb2b90f6fbabc91048c1fa18d567ad067ee713c6e331d3a32b45`
   - `HY_VERSION=0.17.0`
 
 ## `apk` (`.apk`-based packages)
@@ -74,16 +74,16 @@ GPL2
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.30.1-r2 description:
+busybox-1.30.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.30.1-r2 webpage:
+busybox-1.30.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.30.1-r2 installed size:
+busybox-1.30.1-r3 installed size:
 942080
 
-busybox-1.30.1-r2 license:
+busybox-1.30.1-r3 license:
 GPL-2.0
 
 ```
@@ -397,16 +397,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.30.1-r2 description:
+ssl_client-1.30.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.30.1-r2 webpage:
+ssl_client-1.30.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.30.1-r2 installed size:
+ssl_client-1.30.1-r3 installed size:
 28672
 
-ssl_client-1.30.1-r2 license:
+ssl_client-1.30.1-r3 license:
 GPL-2.0
 
 ```
