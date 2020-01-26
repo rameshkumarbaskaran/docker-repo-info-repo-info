@@ -1,10 +1,10 @@
-# `mongo:3.6.16-xenial`
+# `mongo:3.6.17-xenial`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e7f4a190b0a94f3d176d42654b32ecf843424466f63dd19388ec04e0fd0e0d1e`
-- Created: `2020-01-17T23:30:19.442506957Z`
-- Virtual Size: ~ 437.49 Mb  
+- Image ID: `sha256:dfea1506b0d373e6223035c0d49451b88f9722f8ea0bf854ea9d3f53b2e116a2`
+- Created: `2020-01-25T02:28:35.287622843Z`
+- Virtual Size: ~ 437.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=3.6`
-  - `MONGO_VERSION=3.6.16`
+  - `MONGO_VERSION=3.6.17`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -425,14 +425,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2f
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.42.13-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.1.dsc' e2fsprogs_1.42.13-1ubuntu1.1.dsc 2606 SHA256:da94f9eb8dc9ecd99a79d2773a95d79b7ab062b3b404f33c25d53f15bfb958a2
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13.orig.tar.gz' e2fsprogs_1.42.13.orig.tar.gz 6511931 SHA256:59993ff3a44f82e504561e0ebf95e8c8fa9f9f5746eb6a7182239605d2a4e2d4
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.1.debian.tar.xz' e2fsprogs_1.42.13-1ubuntu1.1.debian.tar.xz 71176 SHA256:2765f0d7ddb32e08b91966376093b833a0b8abec6958d59a715dc1de98f98e82
-```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20160126-2`
 
@@ -969,15 +964,15 @@ $ apt-get source -qq --print-uris mawk=1.3.3-17ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mawk/mawk_1.3.3-17ubuntu2.diff.gz' mawk_1.3.3-17ubuntu2.diff.gz 63882 SHA256:670103046767474be29e80f2143dc67e3d0b958972f5942c3df94883f978eded
 ```
 
-### `dpkg` source package: `mongodb-org=3.6.16`
+### `dpkg` source package: `mongodb-org=3.6.17`
 
 Binary Packages:
 
-- `mongodb-org=3.6.16`
-- `mongodb-org-mongos=3.6.16`
-- `mongodb-org-server=3.6.16`
-- `mongodb-org-shell=3.6.16`
-- `mongodb-org-tools=3.6.16`
+- `mongodb-org=3.6.17`
+- `mongodb-org-mongos=3.6.17`
+- `mongodb-org-server=3.6.17`
+- `mongodb-org-shell=3.6.17`
+- `mongodb-org-tools=3.6.17`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
