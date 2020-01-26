@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f32a97de94e13d29835a19851acd6cbc7979d1d50f703725541e44bb89a1ce91`
-- Created: `2019-03-08T02:46:39.207047736Z`
-- Virtual Size: ~ 25.78 Mb  
+- Image ID: `sha256:708bc6af7e5e539bdb59707bbf1053cc2166622f5e1b17666f0ba5829ca6aaea`
+- Created: `2020-01-23T22:44:17.947050047Z`
+- Virtual Size: ~ 25.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -51,16 +51,16 @@ MIT
 ### `apk` package: `apache2-utils`
 
 ```console
-apache2-utils-2.4.38-r3 description:
+apache2-utils-2.4.41-r0 description:
 Apache utility programs for webservers
 
-apache2-utils-2.4.38-r3 webpage:
+apache2-utils-2.4.41-r0 webpage:
 https://httpd.apache.org/
 
-apache2-utils-2.4.38-r3 installed size:
+apache2-utils-2.4.41-r0 installed size:
 221184
 
-apache2-utils-2.4.38-r3 license:
+apache2-utils-2.4.41-r0 license:
 Apache-2.0
 
 ```
@@ -136,16 +136,16 @@ GPL-2.0
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20171114-r3 description:
+ca-certificates-20190108-r0 description:
 Common CA certificates PEM files
 
-ca-certificates-20171114-r3 webpage:
+ca-certificates-20190108-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20171114-r3 installed size:
-741376
+ca-certificates-20190108-r0 installed size:
+733184
 
-ca-certificates-20171114-r3 license:
+ca-certificates-20190108-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -153,16 +153,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.5-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.5-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.5-r0 installed size:
+expat-2.2.8-r0 installed size:
 176128
 
-expat-2.2.5-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -255,16 +255,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.19-r10 description:
+musl-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-1.1.19-r10 webpage:
+musl-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.19-r10 installed size:
+musl-1.1.19-r11 installed size:
 602112
 
-musl-1.1.19-r10 license:
+musl-1.1.19-r11 license:
 MIT
 
 ```
@@ -272,16 +272,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.19-r10 description:
+musl-utils-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.19-r10 webpage:
+musl-utils-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.19-r10 installed size:
+musl-utils-1.1.19-r11 installed size:
 122880
 
-musl-utils-1.1.19-r10 license:
+musl-utils-1.1.19-r11 license:
 MIT BSD GPL2+
 
 ```
