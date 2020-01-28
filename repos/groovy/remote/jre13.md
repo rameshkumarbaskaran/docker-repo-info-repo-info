@@ -1,7 +1,7 @@
 ## `groovy:jre13`
 
 ```console
-$ docker pull groovy@sha256:e3a872989255245b9d4b296a7dacf3b20ca6863d6ccc7855142062f4a9b5e3dc
+$ docker pull groovy@sha256:001b40680e8df9d0f26b9e6b33fb579481328b4b3856970559d56b8c85a39063
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -112,14 +112,14 @@ RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && g
 ### `groovy:jre13` - linux; arm64 variant v8
 
 ```console
-$ docker pull groovy@sha256:ade4eecb9ee78b8d5fef7d8a7bdd2e898b68bf4f30fe3f74c818779fdf32624a
+$ docker pull groovy@sha256:dd3def8931998dcb3b78225eb991d4a79df7a16122e99e9a3615841a477b232f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **115.5 MB (115465474 bytes)**  
+-	Total Size: **115.5 MB (115457183 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:faefd4f588d1b29fa8363f549f9ba3df3408ffb0ef6228c7455d4a106552a741`
+-	Image ID: `sha256:5dca566a0eb2229b964f91f264ac529972ad954192d10da6baa425744f8fdb2c`
 -	Default Command: `["groovysh"]`
 
 ```dockerfile
@@ -137,31 +137,31 @@ CMD ["/bin/bash"]
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 # Thu, 16 Jan 2020 01:01:26 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 16 Jan 2020 01:02:05 GMT
-ENV JAVA_VERSION=jdk-13.0.1+9
-# Thu, 16 Jan 2020 01:03:04 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='58e841a26c1b3a0cf15f052797e5a6a91f8b65c78d0eb84e4eb6310b3af5b9ec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jre_aarch64_linux_hotspot_13.0.1_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='c6258058557fd0ec6f0426c4671ad78e7b665cf8d487e5d07b690e792121b2f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jre_ppc64le_linux_hotspot_13.0.1_9.tar.gz';          ;;        s390x)          ESUM='e866aa35889358bb134675a079510b0cc279737c3fb26f30e229a69726833f5b';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jre_s390x_linux_hotspot_13.0.1_9.tar.gz';          ;;        amd64|x86_64)          ESUM='5bd06d9df1f76d953658fbe36812809b43e2d9dd00093e023aded64846f7af5a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jre_x64_linux_hotspot_13.0.1_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 16 Jan 2020 01:03:11 GMT
+# Mon, 27 Jan 2020 23:41:01 GMT
+ENV JAVA_VERSION=jdk-13.0.2+8
+# Mon, 27 Jan 2020 23:41:47 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='6c4b69d1609f4c65c576c80d6aa101de80048f8ce5566f890e8fff5349228bae';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jre_aarch64_linux_hotspot_13.0.2_8.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='43d6fb71bdf7b6ad9295087c46dfc9b00bf26db1b5cdcff0c418cbe43b49904a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jre_ppc64le_linux_hotspot_13.0.2_8.tar.gz';          ;;        s390x)          ESUM='ac07703f9b9aed0676ae751f2b5b2346285566944ba89d0d8833790f83b00163';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jre_s390x_linux_hotspot_13.0.2_8.tar.gz';          ;;        amd64|x86_64)          ESUM='897f16fe8e056395209e35d2384013bd1ff250e717465769079e3f4793628c34';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jre_x64_linux_hotspot_13.0.2_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Mon, 27 Jan 2020 23:41:48 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 25 Jan 2020 01:44:32 GMT
+# Tue, 28 Jan 2020 00:05:28 GMT
 CMD ["groovysh"]
-# Sat, 25 Jan 2020 01:44:33 GMT
+# Tue, 28 Jan 2020 00:05:28 GMT
 ENV GROOVY_HOME=/opt/groovy
-# Sat, 25 Jan 2020 01:44:35 GMT
+# Tue, 28 Jan 2020 00:05:31 GMT
 RUN set -o errexit -o nounset     && echo "Adding groovy user and group"     && groupadd --system --gid 1000 groovy     && useradd --system --gid groovy --uid 1000 --shell /bin/bash --create-home groovy     && mkdir --parents /home/groovy/.groovy/grapes     && chown --recursive groovy:groovy /home/groovy         && echo "Symlinking root .groovy to groovy .groovy"     && ln --symbolic /home/groovy/.groovy /root/.groovy
-# Sat, 25 Jan 2020 01:44:36 GMT
+# Tue, 28 Jan 2020 00:05:31 GMT
 VOLUME [/home/groovy/.groovy/grapes]
-# Sat, 25 Jan 2020 01:44:36 GMT
+# Tue, 28 Jan 2020 00:05:32 GMT
 WORKDIR /home/groovy
-# Sat, 25 Jan 2020 01:44:49 GMT
+# Tue, 28 Jan 2020 00:05:48 GMT
 RUN apt-get update     && echo "Installing build dependencies"     && apt-get install --yes --no-install-recommends         dirmngr         fontconfig         gnupg         unzip         wget     && rm --recursive --force /var/lib/apt/lists/*
-# Sat, 25 Jan 2020 01:44:50 GMT
+# Tue, 28 Jan 2020 00:05:49 GMT
 ENV GROOVY_VERSION=2.5.9
-# Sat, 25 Jan 2020 01:44:54 GMT
+# Tue, 28 Jan 2020 00:05:54 GMT
 RUN set -o errexit -o nounset     && echo "Downloading Groovy"     && wget --no-verbose --output-document=groovy.zip "https://dist.apache.org/repos/dist/release/groovy/${GROOVY_VERSION}/distribution/apache-groovy-binary-${GROOVY_VERSION}.zip"         && echo "Importing keys listed in http://www.apache.org/dist/groovy/KEYS from key server"     && export GNUPGHOME="$(mktemp -d)";     for key in         "7FAA0F2206DE228F0DB01AD741321490758AAD6F"         "331224E1D7BE883D16E8A685825C06C827AF6B66"         "34441E504A937F43EB0DAEF96A65176A0FB1CD0B"         "9A810E3B766E089FFB27C70F11B595CEDC4AEBB5"         "81CABC23EECA0790E8989B361FF96E10F0E13706"     ; do         for server in             "ha.pool.sks-keyservers.net"             "hkp://p80.pool.sks-keyservers.net:80"             "pgp.mit.edu"         ; do             echo "  Trying ${server}";             if gpg --batch --no-tty --keyserver "${server}" --recv-keys "${key}"; then                 break;             fi;         done;     done;     if [ $(gpg --batch --no-tty --list-keys | grep --count "pub ") -ne 5 ]; then         echo "ERROR: Failed to fetch GPG keys" >&2;         exit 1;     fi         && echo "Checking download signature"     && wget --no-verbose --output-document=groovy.zip.asc "https://dist.apache.org/repos/dist/release/groovy/${GROOVY_VERSION}/distribution/apache-groovy-binary-${GROOVY_VERSION}.zip.asc"     && gpg --batch --no-tty --verify groovy.zip.asc groovy.zip     && rm --recursive --force "${GNUPGHOME}"     && rm groovy.zip.asc         && echo "Installing Groovy"     && unzip groovy.zip     && rm groovy.zip     && mv "groovy-${GROOVY_VERSION}" "${GROOVY_HOME}/"     && ln --symbolic "${GROOVY_HOME}/bin/grape" /usr/bin/grape     && ln --symbolic "${GROOVY_HOME}/bin/groovy" /usr/bin/groovy     && ln --symbolic "${GROOVY_HOME}/bin/groovyc" /usr/bin/groovyc     && ln --symbolic "${GROOVY_HOME}/bin/groovyConsole" /usr/bin/groovyConsole     && ln --symbolic "${GROOVY_HOME}/bin/groovydoc" /usr/bin/groovydoc     && ln --symbolic "${GROOVY_HOME}/bin/groovysh" /usr/bin/groovysh     && ln --symbolic "${GROOVY_HOME}/bin/java2groovy" /usr/bin/java2groovy         && echo "Editing startGroovy to include java.xml.bind module"     && sed --in-place 's|startGroovy ( ) {|startGroovy ( ) {\n    JAVA_OPTS="$JAVA_OPTS --add-modules=ALL-SYSTEM"|' "${GROOVY_HOME}/bin/startGroovy"
-# Sat, 25 Jan 2020 01:44:54 GMT
+# Tue, 28 Jan 2020 00:05:56 GMT
 USER groovy
-# Sat, 25 Jan 2020 01:45:08 GMT
+# Tue, 28 Jan 2020 00:05:58 GMT
 RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && groovy --version
 ```
 
@@ -186,25 +186,25 @@ RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && g
 		Last Modified: Thu, 16 Jan 2020 01:03:43 GMT  
 		Size: 12.7 MB (12732288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ebcf88767b9d1a605545bcf0c966c444fde571285b98b62cb51e7c2536d0e09`  
-		Last Modified: Thu, 16 Jan 2020 01:04:40 GMT  
-		Size: 45.5 MB (45469648 bytes)  
+	-	`sha256:3b038f496fd7b6fa3de9200b5e0a07e3daf9d2a5a6226cd708b1e0e62548daba`  
+		Last Modified: Mon, 27 Jan 2020 23:44:52 GMT  
+		Size: 45.5 MB (45461332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c03e2b1e1d19b91669604a4996c2be1ca724c7f5893d77ca15be1890ec3cc69`  
-		Last Modified: Sat, 25 Jan 2020 01:46:55 GMT  
-		Size: 4.5 KB (4546 bytes)  
+	-	`sha256:b60660a45561ab087e8b84ef1e62e7e1dbc1cc628b76f85943912764f486a29b`  
+		Last Modified: Tue, 28 Jan 2020 00:07:47 GMT  
+		Size: 4.5 KB (4544 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5a262b3902e286499f8837bb048e57f7e9e5dea482cc62ec2d60a4e06cf53411`  
-		Last Modified: Sat, 25 Jan 2020 01:46:56 GMT  
-		Size: 3.2 MB (3175230 bytes)  
+	-	`sha256:2b05a45f5d96d3cac3cb0ca7452cf79a5b0279920a1fca855a13a94bd3e51931`  
+		Last Modified: Tue, 28 Jan 2020 00:07:48 GMT  
+		Size: 3.2 MB (3175281 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db81e3d4ec1bdfefd749766bee8fb340429a52e18f1301ee8341c736d8972a13`  
-		Last Modified: Sat, 25 Jan 2020 01:46:58 GMT  
-		Size: 30.3 MB (30327851 bytes)  
+	-	`sha256:918713314bf808be755119787bde9c10f01c2a8daf57edbfde82484651674de7`  
+		Last Modified: Tue, 28 Jan 2020 00:07:51 GMT  
+		Size: 30.3 MB (30327829 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cec2b8efc0616468d0118e02339279bf5048918c1eca9a99602977a62f87be06`  
-		Last Modified: Sat, 25 Jan 2020 01:46:55 GMT  
-		Size: 174.0 B  
+	-	`sha256:35a4364f45659b410a64a964c5b07de5f089c2018ad80cb4b93ddb6672bed3c6`  
+		Last Modified: Tue, 28 Jan 2020 00:07:47 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `groovy:jre13` - linux; ppc64le
