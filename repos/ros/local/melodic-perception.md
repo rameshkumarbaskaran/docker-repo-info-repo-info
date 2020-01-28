@@ -6366,9 +6366,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=4.15.0-74.84
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-74.84.dsc' linux_4.15.0-74.84.dsc 7304 SHA256:f49dfeefa80b097d44f0c43d36091749673ece58266eaf898880da397c11f1d8
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-74.84.diff.gz' linux_4.15.0-74.84.diff.gz 8882248 SHA256:3ae820395b55ec97a5f8994d6c4eccf46dda562b727a9852ea6d1f5a945ef9c1
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-74.84.dsc' linux_4.15.0-74.84.dsc 7304 SHA256:f49dfeefa80b097d44f0c43d36091749673ece58266eaf898880da397c11f1d8
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-74.84.diff.gz' linux_4.15.0-74.84.diff.gz 8882248 SHA256:3ae820395b55ec97a5f8994d6c4eccf46dda562b727a9852ea6d1f5a945ef9c1
 ```
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-2`
@@ -6953,14 +6953,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-5.7=5.7.28-0ubuntu0.18.04.4
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.28-0ubuntu0.18.04.4.dsc' mysql-5.7_5.7.28-0ubuntu0.18.04.4.dsc 3446 SHA256:051504630ad6237cd39fffa4ee9d664f2a27680f66ee904e5e76868ae037fb34
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.28.orig.tar.gz' mysql-5.7_5.7.28.orig.tar.gz 51409668 SHA256:f16399315212117c08f9bdf8a0d682728b2ce82d691bcfbf25a770f413b6f2da
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.28-0ubuntu0.18.04.4.debian.tar.xz' mysql-5.7_5.7.28-0ubuntu0.18.04.4.debian.tar.xz 156144 SHA256:b93f24d495ac92745dc1c3882b62d2b3d03801e2d06ca952c1980319a2f5447b
-```
 
 ### `dpkg` source package: `mysql-defaults=1.0.4`
 
@@ -8368,14 +8363,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.15-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.15-1.debian.tar.xz' python-catkin-pkg-modules_0.4.15-1.debian.tar.xz 1948 SHA512:803bd349d0d1da907fb091e4d0fc3169769d5c06a43a7be60f458b15d4a91f991e61381ec522833106ee8d0b2c9a24be307bce2eb757c24450cfd0dfe67856bd
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.15-1.dsc' python-catkin-pkg-modules_0.4.15-1.dsc 998 SHA512:201460972b0593bc554ea11b05a789955716265d5b1b077384712f23b732342f694ef8f199e693b9a2decf7f77b88dea760bc0f8eb5e9c3101de9ec05635857b
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.15.orig.tar.gz' python-catkin-pkg-modules_0.4.15.orig.tar.gz 60785 SHA512:e2ac249135d95c944828f5436a55ee56c82fb334581afcc1e3922b2fe0ee160da20dea598cbedfea2d56bc07766724cc616af3c441fe0732033c66fb9f0b7fd9
-```
 
 ### `dpkg` source package: `python-catkin-pkg=0.4.15-100`
 
@@ -8387,14 +8377,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg=0.4.15-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.15-100.debian.tar.xz' python-catkin-pkg_0.4.15-100.debian.tar.xz 1936 SHA512:da7fe6bb4be1dbe38c96ec4fce41ae875bd57197f9f1f2516f34e5ddf0d277d434b94acfea602210136bcdd8840fc1cb69c0db6ab11196d03bf032763666cce4
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.15-100.dsc' python-catkin-pkg_0.4.15-100.dsc 938 SHA512:9b605c98c3b2b6b87f7d58ca694fb527f625930c421d9b6e77f5f79f97589c15a8e2b0d16cc1ed0c8a6808fa1f691b7d87f77669b391ee69a71a303bb0693994
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.15.orig.tar.gz' python-catkin-pkg_0.4.15.orig.tar.gz 13677 SHA512:2586a739971b7f10bb4b8b71023b6eb88f1a6c34cba38937a4224d8cc3373c0170568d9da4130443608ce8195b3e8ceb2631730dd216cc32cd16f6d3fc6d5706
-```
 
 ### `dpkg` source package: `python-cbor=1.0.0-1`
 

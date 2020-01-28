@@ -856,14 +856,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2f
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.42.13-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.1.dsc' e2fsprogs_1.42.13-1ubuntu1.1.dsc 2606 SHA256:da94f9eb8dc9ecd99a79d2773a95d79b7ab062b3b404f33c25d53f15bfb958a2
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13.orig.tar.gz' e2fsprogs_1.42.13.orig.tar.gz 6511931 SHA256:59993ff3a44f82e504561e0ebf95e8c8fa9f9f5746eb6a7182239605d2a4e2d4
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.1.debian.tar.xz' e2fsprogs_1.42.13-1ubuntu1.1.debian.tar.xz 71176 SHA256:2765f0d7ddb32e08b91966376093b833a0b8abec6958d59a715dc1de98f98e82
-```
 
 ### `dpkg` source package: `empy=3.3.2-1build1`
 
@@ -1295,14 +1290,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The main library is licensed under GNU Lesser`
 - `nonstandard, see below`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.4.10-4ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.6.dsc' gnutls28_3.4.10-4ubuntu1.6.dsc 3093 SHA256:c987b0a0b88ba31d461adf96458fc16b2098ce02e0da7ea62fa7be511fd682d6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10.orig.tar.xz' gnutls28_3.4.10.orig.tar.xz 6645892 SHA256:6a32c2b4acbd33ff7eefcbd1357009da04c94c60146ef61320b6c076b1bdf59f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.6.debian.tar.xz' gnutls28_3.4.10-4ubuntu1.6.debian.tar.xz 109988 SHA256:874de01dff5466abf309bbd5b3b3c0c350ebc5448bcbfc956b02de11ddce7bc6
-```
 
 ### `dpkg` source package: `google-mock=1.7.0-18092013-1`
 
@@ -2984,14 +2974,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.15-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.15-1.debian.tar.xz' python-catkin-pkg-modules_0.4.15-1.debian.tar.xz 1948 SHA512:803bd349d0d1da907fb091e4d0fc3169769d5c06a43a7be60f458b15d4a91f991e61381ec522833106ee8d0b2c9a24be307bce2eb757c24450cfd0dfe67856bd
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.15-1.dsc' python-catkin-pkg-modules_0.4.15-1.dsc 998 SHA512:201460972b0593bc554ea11b05a789955716265d5b1b077384712f23b732342f694ef8f199e693b9a2decf7f77b88dea760bc0f8eb5e9c3101de9ec05635857b
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.15.orig.tar.gz' python-catkin-pkg-modules_0.4.15.orig.tar.gz 60785 SHA512:e2ac249135d95c944828f5436a55ee56c82fb334581afcc1e3922b2fe0ee160da20dea598cbedfea2d56bc07766724cc616af3c441fe0732033c66fb9f0b7fd9
-```
 
 ### `dpkg` source package: `python-catkin-pkg=0.4.15-100`
 
@@ -3003,14 +2988,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg=0.4.15-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.15-100.debian.tar.xz' python-catkin-pkg_0.4.15-100.debian.tar.xz 1936 SHA512:da7fe6bb4be1dbe38c96ec4fce41ae875bd57197f9f1f2516f34e5ddf0d277d434b94acfea602210136bcdd8840fc1cb69c0db6ab11196d03bf032763666cce4
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.15-100.dsc' python-catkin-pkg_0.4.15-100.dsc 938 SHA512:9b605c98c3b2b6b87f7d58ca694fb527f625930c421d9b6e77f5f79f97589c15a8e2b0d16cc1ed0c8a6808fa1f691b7d87f77669b391ee69a71a303bb0693994
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.15.orig.tar.gz' python-catkin-pkg_0.4.15.orig.tar.gz 13677 SHA512:2586a739971b7f10bb4b8b71023b6eb88f1a6c34cba38937a4224d8cc3373c0170568d9da4130443608ce8195b3e8ceb2631730dd216cc32cd16f6d3fc6d5706
-```
 
 ### `dpkg` source package: `python-crypto=2.6.1-6ubuntu0.16.04.3`
 
