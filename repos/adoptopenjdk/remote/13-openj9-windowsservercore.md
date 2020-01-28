@@ -1,26 +1,25 @@
 ## `adoptopenjdk:13-openj9-windowsservercore`
 
 ```console
-$ docker pull adoptopenjdk@sha256:b5a5d93dc2743dc58e5da26c02ee62ce0db2de5bb0c13d9f0c9fec055c29f77e
+$ docker pull adoptopenjdk@sha256:eb62a8d2ebac0ef245d78e5fc5b95d213ca4ffd503a8d03fc807ed3875f33181
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
 	-	windows version 10.0.14393.3443; amd64
 	-	windows version 10.0.17763.973; amd64
-	-	windows version 10.0.17134.1246; amd64
 
 ### `adoptopenjdk:13-openj9-windowsservercore` - windows version 10.0.14393.3443; amd64
 
 ```console
-$ docker pull adoptopenjdk@sha256:9c3acb956f48b93eaa6d4912bfd41f24fefdcbda5d1098312ea9d267b473c766
+$ docker pull adoptopenjdk@sha256:3b57b93dfd3ebb58d1574999ff3f1f0fe86a87a4a6d44ab2545004d7617d1179
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.1 GB (6126280418 bytes)**  
+-	Total Size: **6.1 GB (6124969749 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f0219761896c92ffe2846ad3ed3fe3d4a4c18ddf89d54d3e0effdfe068160482`
+-	Image ID: `sha256:5b67579476b34b8b010284a770f59eb7abac834eb8ba72133849ec30b43b40ec`
 -	Default Command: `["jshell"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
@@ -31,13 +30,13 @@ RUN Apply image 1607-RTM-amd64
 RUN Install update ltsc2016-amd64
 # Tue, 14 Jan 2020 23:50:17 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Wed, 15 Jan 2020 20:15:19 GMT
-ENV JAVA_VERSION=jdk-13.0.1+9_openj9-0.17.0
-# Wed, 15 Jan 2020 20:19:09 GMT
-RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9_openj9-0.17.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.1_9_openj9-0.17.0.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9_openj9-0.17.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.1_9_openj9-0.17.0.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (bdcd3349615c7f6ab2102686d2ed1704b1e033bbbb227d278b9c280913af778f) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'bdcd3349615c7f6ab2102686d2ed1704b1e033bbbb227d278b9c280913af778f') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
-# Wed, 15 Jan 2020 20:19:11 GMT
+# Tue, 28 Jan 2020 01:04:18 GMT
+ENV JAVA_VERSION=jdk-13.0.2+8_openj9-0.18.0
+# Tue, 28 Jan 2020 01:07:39 GMT
+RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.2_8_openj9-0.18.0.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.2_8_openj9-0.18.0.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (b96fdec7f69ff3a36ed3b03774d7ad3fc9385c80de7d8df9c4e6b4fbec70dcd9) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'b96fdec7f69ff3a36ed3b03774d7ad3fc9385c80de7d8df9c4e6b4fbec70dcd9') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
+# Tue, 28 Jan 2020 01:07:41 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Wed, 15 Jan 2020 20:19:13 GMT
+# Tue, 28 Jan 2020 01:07:43 GMT
 CMD ["jshell"]
 ```
 
@@ -53,34 +52,34 @@ CMD ["jshell"]
 		Last Modified: Wed, 15 Jan 2020 01:46:47 GMT  
 		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f9bb369721fbfab5dfc8bc6f35e269226bf84258ab9d0b668f35920d7f7befe7`  
-		Last Modified: Wed, 15 Jan 2020 21:24:50 GMT  
-		Size: 1.2 KB (1187 bytes)  
+	-	`sha256:6edf61d83ec6b9a99ed21ade22344e502cd3e75ea3cbc3b4a41b2bca95b22d32`  
+		Last Modified: Tue, 28 Jan 2020 01:33:43 GMT  
+		Size: 1.2 KB (1193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b428982b1374d9aa3479908d4eeadc4fb569e88b748706e841375b988b37cb60`  
-		Last Modified: Wed, 15 Jan 2020 21:25:47 GMT  
-		Size: 401.7 MB (401676354 bytes)  
+	-	`sha256:0119eb4c7d6ae66113c104722d68457e9c3a1693915ee155d325c55a3178f042`  
+		Last Modified: Tue, 28 Jan 2020 01:34:53 GMT  
+		Size: 400.4 MB (400365683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a040f0eff555d0185efd51af87f5f3bff994583ce08ab159e9a217e60f5a6840`  
-		Last Modified: Wed, 15 Jan 2020 21:24:49 GMT  
-		Size: 1.2 KB (1207 bytes)  
+	-	`sha256:1c7551925f86ca80f33f13f426a1e10801cb79a72b05db4463e5bfb70e3b0617`  
+		Last Modified: Tue, 28 Jan 2020 01:33:43 GMT  
+		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b870a7285749d4757f8a7cc7b79bc0f4f5a7ca2bf39cf442e392ef1add3021a`  
-		Last Modified: Wed, 15 Jan 2020 21:24:50 GMT  
-		Size: 1.2 KB (1186 bytes)  
+	-	`sha256:ae0738aeecfceaee4036c8a1ecc6a8e70eee3f4d3a14703e45a0f9c2768e0008`  
+		Last Modified: Tue, 28 Jan 2020 01:33:43 GMT  
+		Size: 1.2 KB (1181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:13-openj9-windowsservercore` - windows version 10.0.17763.973; amd64
 
 ```console
-$ docker pull adoptopenjdk@sha256:e9ce55fda4e2402680a8dd056a1c6ea6b71b177aba3bef0babe55f51fe7685a6
+$ docker pull adoptopenjdk@sha256:8ab5cd96f97eeef8f1e098aad0cc9e1ca5b9ea0abf857b52579e36830ed3d7d3
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2613798938 bytes)**  
+-	Total Size: **2.6 GB (2612509069 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6e0eb9de60ee0f2b761d9c937f2021052202cc19ed02c66b618fb43d49e4b46b`
+-	Image ID: `sha256:d780878e3e6f706c835342e69ce0fbb0ac8465db784177552f08204198469c95`
 -	Default Command: `["jshell"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
@@ -91,13 +90,13 @@ RUN Apply image 1809-RTM-amd64
 RUN Install update 1809-amd64
 # Tue, 14 Jan 2020 23:46:02 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Wed, 15 Jan 2020 20:19:42 GMT
-ENV JAVA_VERSION=jdk-13.0.1+9_openj9-0.17.0
-# Wed, 15 Jan 2020 20:22:43 GMT
-RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9_openj9-0.17.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.1_9_openj9-0.17.0.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9_openj9-0.17.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.1_9_openj9-0.17.0.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (bdcd3349615c7f6ab2102686d2ed1704b1e033bbbb227d278b9c280913af778f) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'bdcd3349615c7f6ab2102686d2ed1704b1e033bbbb227d278b9c280913af778f') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
-# Wed, 15 Jan 2020 20:22:45 GMT
+# Tue, 28 Jan 2020 01:08:07 GMT
+ENV JAVA_VERSION=jdk-13.0.2+8_openj9-0.18.0
+# Tue, 28 Jan 2020 01:11:02 GMT
+RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.2_8_openj9-0.18.0.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.2_8_openj9-0.18.0.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (b96fdec7f69ff3a36ed3b03774d7ad3fc9385c80de7d8df9c4e6b4fbec70dcd9) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'b96fdec7f69ff3a36ed3b03774d7ad3fc9385c80de7d8df9c4e6b4fbec70dcd9') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
+# Tue, 28 Jan 2020 01:11:04 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Wed, 15 Jan 2020 20:22:47 GMT
+# Tue, 28 Jan 2020 01:11:06 GMT
 CMD ["jshell"]
 ```
 
@@ -113,79 +112,19 @@ CMD ["jshell"]
 		Last Modified: Wed, 15 Jan 2020 01:45:20 GMT  
 		Size: 1.2 KB (1193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae26f7e32434d2a6acbea9e5e24e67205157f5cc80c527faa5a5d444d4c711f8`  
-		Last Modified: Wed, 15 Jan 2020 21:26:28 GMT  
-		Size: 1.2 KB (1180 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3842b4a16ff2163495456336a33e0c3fb418bd83a606fff5523b66dea9528b46`  
-		Last Modified: Wed, 15 Jan 2020 21:27:14 GMT  
-		Size: 396.4 MB (396382954 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:28edf52f03840e53647709a105693c24bcf96a0a1c3eddf33d5ca3f68ae54bfe`  
-		Last Modified: Wed, 15 Jan 2020 21:26:28 GMT  
-		Size: 1.2 KB (1205 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6c487e222b4a62727b91c4953f8a216ccc913137bec315d604fb4c0327812a3`  
-		Last Modified: Wed, 15 Jan 2020 21:26:28 GMT  
-		Size: 1.2 KB (1210 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-### `adoptopenjdk:13-openj9-windowsservercore` - windows version 10.0.17134.1246; amd64
-
-```console
-$ docker pull adoptopenjdk@sha256:7d888f4515cd7d4fb299d55ebd14ad73254756b6c2563977004d3d74ae80aafa
-```
-
--	Docker Version: 18.03.1-ee-4
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.8 GB (2755658127 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d832d262b034f160b6e5dc1b86e11360f42d95dbddea72b026d316b09f3e14e3`
--	Default Command: `["jshell"]`
--	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
-
-```dockerfile
-# Thu, 12 Apr 2018 09:20:54 GMT
-RUN Apply image 1803-RTM-amd64
-# Wed, 08 Jan 2020 15:30:02 GMT
-RUN Install update 1803-amd64
-# Wed, 15 Jan 2020 18:58:01 GMT
-SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Wed, 15 Jan 2020 20:24:06 GMT
-ENV JAVA_VERSION=jdk-13.0.1+9_openj9-0.17.0
-# Wed, 15 Jan 2020 20:27:32 GMT
-RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9_openj9-0.17.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.1_9_openj9-0.17.0.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9_openj9-0.17.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.1_9_openj9-0.17.0.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (bdcd3349615c7f6ab2102686d2ed1704b1e033bbbb227d278b9c280913af778f) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'bdcd3349615c7f6ab2102686d2ed1704b1e033bbbb227d278b9c280913af778f') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
-# Wed, 15 Jan 2020 20:27:36 GMT
-ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Wed, 15 Jan 2020 20:27:37 GMT
-CMD ["jshell"]
-```
-
--	Layers:
-	-	`sha256:d9e8b01179bfc94a5bdb1810fbd76b999aa52016001ace2d3a4c4bc7065a9601`  
-		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
-		Size: 1.7 GB (1659688273 bytes)  
-		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:270ec3ad3fc7d52c0dd086b32f7751131c799e25cdcd4686cc33cbf2b607c34e`  
-		Size: 699.2 MB (699246147 bytes)  
-		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:4b8ccd780af5210d26057ebca3a11489d01a7a0151f175a60af96d3719ce8bc9`  
-		Last Modified: Wed, 15 Jan 2020 20:45:08 GMT  
-		Size: 1.2 KB (1212 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3218a63d80774c0da421c3095e552ba76b044b25d0a2416e58c5beca8c3c974b`  
-		Last Modified: Wed, 15 Jan 2020 21:27:54 GMT  
-		Size: 1.2 KB (1183 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346ce2fd4277a7decba9be1101ab4dd0ed7aa2bec6a054cfbab10ca30f82c041`  
-		Last Modified: Wed, 15 Jan 2020 21:28:30 GMT  
-		Size: 396.7 MB (396718910 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fba9994e9abca5b8df540b93ff3b40451f84d3841ec615179ea51a6383629b5`  
-		Last Modified: Wed, 15 Jan 2020 21:27:54 GMT  
+	-	`sha256:9e42fbe353db7328d1803da4a72630c38ef8e7e8327c19d821703459f3872627`  
+		Last Modified: Tue, 28 Jan 2020 01:35:33 GMT  
 		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96f0885976ccddf00bde1336f14afed0a3a764f58190b8f5da604916e7082915`  
-		Last Modified: Wed, 15 Jan 2020 21:27:54 GMT  
-		Size: 1.2 KB (1199 bytes)  
+	-	`sha256:3a27522ed56486c496f13f65a636b4146ce2d0c0867166131db58a8ff61a2ce5`  
+		Last Modified: Tue, 28 Jan 2020 01:37:00 GMT  
+		Size: 395.1 MB (395093111 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e159058282fb11c359cb9b69eb57728e49ce40952bd94fddc0436f1c45ecb86c`  
+		Last Modified: Tue, 28 Jan 2020 01:35:32 GMT  
+		Size: 1.2 KB (1162 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f5c771050916fe86b27a5c4c5876f1f2b65f68769fe4d0a7a9959e62693e3d64`  
+		Last Modified: Tue, 28 Jan 2020 01:35:33 GMT  
+		Size: 1.2 KB (1204 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip

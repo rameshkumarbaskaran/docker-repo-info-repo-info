@@ -1,7 +1,7 @@
 ## `adoptopenjdk:8-jdk-openj9-windowsservercore-1809`
 
 ```console
-$ docker pull adoptopenjdk@sha256:33e9f25b28d035724c1e8db0099801eacf4ac52398cad3cf0f5e4a3678800761
+$ docker pull adoptopenjdk@sha256:a88a83665a7a42f5ea4dd0ed4c21d34efe2cd82c6c9cdc5ffbbe136a301f71ea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull adoptopenjdk@sha256:33e9f25b28d035724c1e8db0099801eacf4ac52398cad3
 ### `adoptopenjdk:8-jdk-openj9-windowsservercore-1809` - windows version 10.0.17763.973; amd64
 
 ```console
-$ docker pull adoptopenjdk@sha256:a18bdfbb12c1220c77bb262c7a14c022b9298e6f0d1977afd14b39c7173014f3
+$ docker pull adoptopenjdk@sha256:66e61f2bc837b4036f0f34cb21bc6ae1b5af2628fe2f5a8c1cfa75bef4c1abf9
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2440505634 bytes)**  
+-	Total Size: **2.4 GB (2440956002 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:43a997c946b5e9ad32c67ea665eabcf47979227adbb79ce901d13d8b9ed47530`
+-	Image ID: `sha256:c0b7de1fd9e4dc30d742532bf82b67344cb0f1600c960ee68a29a7f3950ae190`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
@@ -29,11 +29,11 @@ RUN Apply image 1809-RTM-amd64
 RUN Install update 1809-amd64
 # Tue, 14 Jan 2020 23:46:02 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Wed, 15 Jan 2020 19:44:12 GMT
-ENV JAVA_VERSION=jdk8u232-b09_openj9-0.17.0
-# Wed, 15 Jan 2020 19:46:32 GMT
-RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09_openj9-0.17.0/OpenJDK8U-jdk_x64_windows_openj9_8u232b09_openj9-0.17.0.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09_openj9-0.17.0/OpenJDK8U-jdk_x64_windows_openj9_8u232b09_openj9-0.17.0.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (c0c64822a4b657f2ac2b2185a7113070d57380153d2e1d6c20e04aa33cb295ae) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'c0c64822a4b657f2ac2b2185a7113070d57380153d2e1d6c20e04aa33cb295ae') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
-# Wed, 15 Jan 2020 19:46:34 GMT
+# Tue, 28 Jan 2020 00:47:05 GMT
+ENV JAVA_VERSION=jdk8u242-b08_openj9-0.18.1
+# Tue, 28 Jan 2020 00:49:21 GMT
+RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08_openj9-0.18.1/OpenJDK8U-jdk_x64_windows_openj9_8u242b08_openj9-0.18.1.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08_openj9-0.18.1/OpenJDK8U-jdk_x64_windows_openj9_8u242b08_openj9-0.18.1.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (6f96ba6016c26f3486b089631cd5cd8f436b9b4a13cca98c1b5a17ff980dadc5) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne '6f96ba6016c26f3486b089631cd5cd8f436b9b4a13cca98c1b5a17ff980dadc5') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
+# Tue, 28 Jan 2020 00:49:23 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
 ```
 
@@ -49,15 +49,15 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Last Modified: Wed, 15 Jan 2020 01:45:20 GMT  
 		Size: 1.2 KB (1193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49f7f34aeef7bc124cee5ae348bf3699c55ca933eaf3f8a83c12f1165092a6c3`  
-		Last Modified: Wed, 15 Jan 2020 21:05:29 GMT  
-		Size: 1.2 KB (1186 bytes)  
+	-	`sha256:9a10b9c8a0d2d742474d6b77a79300231bf976a0bc1b00b08c8762db8a8a52f0`  
+		Last Modified: Tue, 28 Jan 2020 01:27:20 GMT  
+		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:48f8fbe5eacb837ce29255e2a5bdba8baec9ae207a86e4377ad74fd51162a851`  
-		Last Modified: Wed, 15 Jan 2020 21:06:25 GMT  
-		Size: 223.1 MB (223090868 bytes)  
+	-	`sha256:ffe85b30ce8856d38cd89daae2ef46d4bd4a390b68be12b2848cfe7ea01d8dea`  
+		Last Modified: Tue, 28 Jan 2020 01:27:44 GMT  
+		Size: 223.5 MB (223541206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b6f61249259e2331fe83bdffb8f124ca180a5b4c7471f6981960b7bb8f0d400`  
-		Last Modified: Wed, 15 Jan 2020 21:05:29 GMT  
-		Size: 1.2 KB (1191 bytes)  
+	-	`sha256:1837cfdeb9c642fd6aef748696a75d481c5e46693c5f08ccf0682b9871e7ffd0`  
+		Last Modified: Tue, 28 Jan 2020 01:27:20 GMT  
+		Size: 1.2 KB (1204 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
