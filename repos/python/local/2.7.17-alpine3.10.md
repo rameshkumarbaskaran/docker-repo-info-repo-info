@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a9588f67eb213dbef206dff21faf377098573071c981e3dd96c863fb6e05efff`
-- Created: `2019-12-21T07:25:14.814365977Z`
-- Virtual Size: ~ 70.93 Mb  
+- Image ID: `sha256:5b3195ae5a2b2fd36a74f0356fe5516c0745c6403522c872da701fc539666903`
+- Created: `2020-01-25T02:55:31.336392355Z`
+- Virtual Size: ~ 71.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python2"]`
@@ -14,9 +14,9 @@
   - `PYTHONIOENCODING=UTF-8`
   - `GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF`
   - `PYTHON_VERSION=2.7.17`
-  - `PYTHON_PIP_VERSION=19.3.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
+  - `PYTHON_PIP_VERSION=20.0.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/42ad3426cb1ef05863521d7988d5f7fec0c99560/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=da288fc002d0bb2b90f6fbabc91048c1fa18d567ad067ee713c6e331d3a32b45`
 
 ## `apk` (`.apk`-based packages)
 
@@ -74,16 +74,16 @@ GPL2
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.30.1-r2 description:
+busybox-1.30.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.30.1-r2 webpage:
+busybox-1.30.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.30.1-r2 installed size:
+busybox-1.30.1-r3 installed size:
 942080
 
-busybox-1.30.1-r2 license:
+busybox-1.30.1-r3 license:
 GPL-2.0
 
 ```
@@ -244,16 +244,16 @@ BSD
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.45.2-r1 description:
+libcom_err-1.45.5-r0 description:
 Common error description library
 
-libcom_err-1.45.2-r1 webpage:
+libcom_err-1.45.5-r0 webpage:
 http://e2fsprogs.sourceforge.net
 
-libcom_err-1.45.2-r1 installed size:
+libcom_err-1.45.5-r0 installed size:
 24576
 
-libcom_err-1.45.2-r1 license:
+libcom_err-1.45.5-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -261,16 +261,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r0 description:
+libcrypto1.1-1.1.1d-r2 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r0 webpage:
+libcrypto1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1d-r0 installed size:
-2736128
+libcrypto1.1-1.1.1d-r2 installed size:
+2740224
 
-libcrypto1.1-1.1.1d-r0 license:
+libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -329,16 +329,16 @@ LGPL-2.0-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r0 description:
+libssl1.1-1.1.1d-r2 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r0 webpage:
+libssl1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1d-r0 installed size:
+libssl1.1-1.1.1d-r2 installed size:
 532480
 
-libssl1.1-1.1.1d-r0 license:
+libssl1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -533,16 +533,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.30.1-r2 description:
+ssl_client-1.30.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.30.1-r2 webpage:
+ssl_client-1.30.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.30.1-r2 installed size:
+ssl_client-1.30.1-r3 installed size:
 28672
 
-ssl_client-1.30.1-r2 license:
+ssl_client-1.30.1-r3 license:
 GPL-2.0
 
 ```
