@@ -1,10 +1,10 @@
-# `php:7.4.1-cli-alpine3.10`
+# `php:7.4.2-cli-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:80fb0f3898e20799aa0a8191dd126084a1cbcb42a7468dc27c1e3cbb45bf66b2`
-- Created: `2019-12-18T22:44:33.624600595Z`
-- Virtual Size: ~ 83.39 Mb  
+- Image ID: `sha256:28f5ef697be2cc1515f8bdfe7e344619d5512f9b9b152997e8cef120c2b46be0`
+- Created: `2020-01-24T07:31:51.498895188Z`
+- Virtual Size: ~ 83.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.1`
-  - `PHP_URL=https://www.php.net/get/php-7.4.1.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.4.1.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=561bb866bdd509094be00f4ece7c3543ec971c4d878645ee81437e291cffc762`
+  - `PHP_VERSION=7.4.2`
+  - `PHP_URL=https://www.php.net/get/php-7.4.2.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.4.2.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=98284deac017da0d426117ecae7599a1f1bf62ae3911e8bc16c4403a8f4bdf13`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -96,16 +96,16 @@ Apache-2.0 CC0-1.0
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.30.1-r2 description:
+busybox-1.30.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.30.1-r2 webpage:
+busybox-1.30.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.30.1-r2 installed size:
+busybox-1.30.1-r3 installed size:
 942080
 
-busybox-1.30.1-r2 license:
+busybox-1.30.1-r3 license:
 GPL-2.0
 
 ```
@@ -181,16 +181,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r0 description:
+libcrypto1.1-1.1.1d-r2 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r0 webpage:
+libcrypto1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1d-r0 installed size:
-2736128
+libcrypto1.1-1.1.1d-r2 installed size:
+2740224
 
-libcrypto1.1-1.1.1d-r0 license:
+libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -249,16 +249,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r0 description:
+libssl1.1-1.1.1d-r2 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r0 webpage:
+libssl1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1d-r0 installed size:
+libssl1.1-1.1.1d-r2 installed size:
 532480
 
-libssl1.1-1.1.1d-r0 license:
+libssl1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -283,16 +283,16 @@ ISC
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.9-r2 description:
+libxml2-2.9.9-r3 description:
 XML parsing library, version 2
 
-libxml2-2.9.9-r2 webpage:
+libxml2-2.9.9-r3 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.9-r2 installed size:
+libxml2-2.9.9-r3 installed size:
 1216512
 
-libxml2-2.9.9-r2 license:
+libxml2-2.9.9-r3 license:
 MIT
 
 ```
@@ -419,16 +419,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1d-r0 description:
+openssl-1.1.1d-r2 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1d-r0 webpage:
+openssl-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-openssl-1.1.1d-r0 installed size:
+openssl-1.1.1d-r2 installed size:
 679936
 
-openssl-1.1.1d-r0 license:
+openssl-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -470,16 +470,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.30.1-r2 description:
+ssl_client-1.30.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.30.1-r2 webpage:
+ssl_client-1.30.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.30.1-r2 installed size:
+ssl_client-1.30.1-r3 installed size:
 28672
 
-ssl_client-1.30.1-r2 license:
+ssl_client-1.30.1-r3 license:
 GPL-2.0
 
 ```
