@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:61c55d0793c656ad421bd952f3f897b6d6db45d72410440e81c59b08304102c9`
-- Created: `2019-11-20T00:19:56.05850086Z`
-- Virtual Size: ~ 117.38 Mb  
+- Image ID: `sha256:164bbdb6a7fe8a25f1afcee4c22ed6756bc4fbc73fe5da42edc0c3518d205d16`
+- Created: `2020-01-23T17:15:42.382761235Z`
+- Virtual Size: ~ 116.69 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -240,16 +240,16 @@ GPL
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1b-r1 description:
+libcrypto1.1-1.1.1d-r2 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1b-r1 webpage:
+libcrypto1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1b-r1 installed size:
+libcrypto1.1-1.1.1d-r2 installed size:
 2748416
 
-libcrypto1.1-1.1.1b-r1 license:
+libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -291,16 +291,16 @@ BSD
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1b-r1 description:
+libssl1.1-1.1.1d-r2 description:
 SSL shared libraries
 
-libssl1.1-1.1.1b-r1 webpage:
+libssl1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1b-r1 installed size:
+libssl1.1-1.1.1d-r2 installed size:
 536576
 
-libssl1.1-1.1.1b-r1 license:
+libssl1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -376,16 +376,16 @@ MIT
 ### `apk` package: `oniguruma`
 
 ```console
-oniguruma-6.9.3-r0 description:
+oniguruma-6.9.4-r0 description:
 a regular expressions library
 
-oniguruma-6.9.3-r0 webpage:
+oniguruma-6.9.4-r0 webpage:
 http://www.geocities.jp/kosako3/oniguruma/
 
-oniguruma-6.9.3-r0 installed size:
-561152
+oniguruma-6.9.4-r0 installed size:
+565248
 
-oniguruma-6.9.3-r0 license:
+oniguruma-6.9.4-r0 license:
 BSD
 
 ```

@@ -1,17 +1,17 @@
-# `consul:1.7.0-beta2`
+# `consul:1.7.0-beta3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3316e51951bf5ffff445a07cb3adc8b8eb6863fb1fdfa63ddbd078f9bdc80434`
-- Created: `2019-12-20T21:19:30.102995833Z`
-- Virtual Size: ~ 126.09 Mb  
+- Image ID: `sha256:d8949e63490759fd19f817bd2da890d809aaa5869aeec8e18326c009bf8ad914`
+- Created: `2020-01-25T02:21:22.642604302Z`
+- Virtual Size: ~ 125.73 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["agent","-dev","-client","0.0.0.0"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `CONSUL_VERSION=1.7.0-beta2`
+  - `CONSUL_VERSION=1.7.0-beta3`
   - `HASHICORP_RELEASES=https://releases.hashicorp.com`
 
 ## `apk` (`.apk`-based packages)
@@ -240,16 +240,16 @@ GPL
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1b-r1 description:
+libcrypto1.1-1.1.1d-r2 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1b-r1 webpage:
+libcrypto1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1b-r1 installed size:
+libcrypto1.1-1.1.1d-r2 installed size:
 2748416
 
-libcrypto1.1-1.1.1b-r1 license:
+libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -291,16 +291,16 @@ BSD
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1b-r1 description:
+libssl1.1-1.1.1d-r2 description:
 SSL shared libraries
 
-libssl1.1-1.1.1b-r1 webpage:
+libssl1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1b-r1 installed size:
+libssl1.1-1.1.1d-r2 installed size:
 536576
 
-libssl1.1-1.1.1b-r1 license:
+libssl1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
