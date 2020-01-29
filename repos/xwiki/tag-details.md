@@ -11,6 +11,12 @@
 -	[`xwiki:11.10-postgres-tomcat`](#xwiki1110-postgres-tomcat)
 -	[`xwiki:11-mysql-tomcat`](#xwiki11-mysql-tomcat)
 -	[`xwiki:11-postgres-tomcat`](#xwiki11-postgres-tomcat)
+-	[`xwiki:12`](#xwiki12)
+-	[`xwiki:12.0`](#xwiki120)
+-	[`xwiki:12.0-mysql-tomcat`](#xwiki120-mysql-tomcat)
+-	[`xwiki:12.0-postgres-tomcat`](#xwiki120-postgres-tomcat)
+-	[`xwiki:12-mysql-tomcat`](#xwiki12-mysql-tomcat)
+-	[`xwiki:12-postgres-tomcat`](#xwiki12-postgres-tomcat)
 -	[`xwiki:latest`](#xwikilatest)
 -	[`xwiki:lts`](#xwikilts)
 -	[`xwiki:lts-mysql`](#xwikilts-mysql)
@@ -2049,6 +2055,60 @@ CMD ["xwiki"]
 		Last Modified: Mon, 30 Dec 2019 22:59:21 GMT  
 		Size: 2.5 KB (2454 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `xwiki:12`
+
+```console
+$ docker pull xwiki@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `xwiki:12.0`
+
+```console
+$ docker pull xwiki@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `xwiki:12.0-mysql-tomcat`
+
+```console
+$ docker pull xwiki@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `xwiki:12.0-postgres-tomcat`
+
+```console
+$ docker pull xwiki@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `xwiki:12-mysql-tomcat`
+
+```console
+$ docker pull xwiki@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `xwiki:12-postgres-tomcat`
+
+```console
+$ docker pull xwiki@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `xwiki:latest`
 
