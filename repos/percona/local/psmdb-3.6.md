@@ -1,49 +1,51 @@
-# `percona:psmdb-3.6.12`
+# `percona:psmdb-3.6.16`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6191b90e11dbf2422550427bf427f48165967b97716bb7a42a29ff99eec636e4`
-- Created: `2019-11-12T02:22:50.318988368Z`
-- Virtual Size: ~ 485.55 Mb  
+- Image ID: `sha256:0c13f4a85937ed8fc5d1cf8ca167808ebf58987b27f278ec366517892eda1b05`
+- Created: `2020-01-29T19:39:39.901659164Z`
+- Virtual Size: ~ 429.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["mongod"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `PERCONA_MAJOR=36`
-  - `PERCONA_VERSION=3.6.12-3.2.el7`
-  - `K8S_TOOLS_VERSION=0.4.1`
+  - `PSMDB_VERSION=3.6.16-3.6`
+  - `OS_VER=el7`
+  - `FULL_PERCONA_VERSION=3.6.16-3.6.el7`
+  - `K8S_TOOLS_VERSION=0.4.2`
 - Labels:
   - `org.label-schema.build-date=20191001`
-  - `org.label-schema.license=GPLv2`
-  - `org.label-schema.name=CentOS Base Image`
-  - `org.label-schema.schema-version=1.0`
-  - `org.label-schema.vendor=CentOS`
+  - `org.label-schema.description=Percona Server for MongoDB is our free and open-source drop-in replacement for MongoDB Community Edition. It offers all the features and benefits of MongoDB Community Edition, plus additional enterprise-grade functionality.`
+  - `org.label-schema.license=SSPLv1`
+  - `org.label-schema.name=Percona Server for MongoDB`
+  - `org.label-schema.schema-version=3.6.16-3.6`
+  - `org.label-schema.vendor=Percona`
+  - `org.opencontainers.image.authors=info@percona.com`
+  - `org.opencontainers.image.description=Percona Server for MongoDB is our free and open-source drop-in replacement for MongoDB Community Edition. It offers all the features and benefits of MongoDB Community Edition, plus additional enterprise-grade functionality.`
+  - `org.opencontainers.image.license=SSPLv1`
+  - `org.opencontainers.image.title=Percona Server for MongoDB`
+  - `org.opencontainers.image.vendor=Percona`
+  - `org.opencontainers.image.version=3.6.16-3.6`
 
 ## `rpm` (`.rpm`-based packages)
 
-### `rpm` package: `Percona-Server-MongoDB-36-mongos-3.6.12-3.2.el7.x86_64`
+### `rpm` package: `Percona-Server-MongoDB-36-mongos-3.6.16-3.6.el7.x86_64`
 
-Licenses (from `rpm --query`): AGPL
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `Percona-Server-MongoDB-36-server-3.6.12-3.2.el7.x86_64`
-
-Licenses (from `rpm --query`): AGPL
+Licenses (from `rpm --query`): SSPL
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-MongoDB-36-shell-3.6.12-3.2.el7.x86_64`
+### `rpm` package: `Percona-Server-MongoDB-36-server-3.6.16-3.6.el7.x86_64`
 
-Licenses (from `rpm --query`): AGPL
+Licenses (from `rpm --query`): SSPL
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-MongoDB-36-tools-3.6.12-3.2.el7.x86_64`
+### `rpm` package: `Percona-Server-MongoDB-36-shell-3.6.16-3.6.el7.x86_64`
 
-Licenses (from `rpm --query`): AGPL
+Licenses (from `rpm --query`): SSPL
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
@@ -55,7 +57,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.51-14.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -70,7 +71,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls audit-libs-2.8.5-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -85,7 +85,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls basesystem-10.0-7.el7.centos.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -100,7 +99,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls bash-4.2.46-33.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -115,7 +113,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls bind-license-9.11.4-9.P2.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -130,7 +127,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls binutils-2.27-41.base.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -145,7 +141,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls bzip2-libs-1.0.6-13.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -160,7 +155,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ca-certificates-2018.2.22-70.0.el7_5.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -175,7 +169,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls centos-release-7-7.1908.0.el7.centos
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -190,7 +183,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls chkconfig-1.7.4-1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -205,7 +197,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls coreutils-8.22-24.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -220,7 +211,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cpio-2.11-27.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -235,7 +225,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cracklib-2.9.0-11.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -250,7 +239,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cracklib-dicts-2.9.0-11.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -265,26 +253,24 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cryptsetup-libs-2.0.3-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/cryptsetup-2.0.3-5.el7.src.rpm
 ```
 
-### `rpm` package: `curl-7.29.0-54.el7.x86_64`
+### `rpm` package: `curl-7.29.0-54.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls curl-7.29.0-54.el7
-Enabling epel-source repository
+$ yumdownloader --quiet --source --urls curl-7.29.0-54.el7_7.1
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/curl-7.29.0-54.el7.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/curl-7.29.0-54.el7_7.1.src.rpm
 ```
 
 ### `rpm` package: `cyrus-sasl-lib-2.1.26-23.el7.x86_64`
@@ -295,7 +281,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cyrus-sasl-lib-2.1.26-23.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -310,7 +295,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-1.10.24-13.el7_6
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -325,7 +309,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-glib-0.100-7.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -340,7 +323,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-libs-1.10.24-13.el7_6
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -355,7 +337,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-python-1.1.1-9.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -370,7 +351,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls device-mapper-1.02.158-2.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -385,7 +365,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls device-mapper-libs-1.02.158-2.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -400,7 +379,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls diffutils-3.3-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -415,7 +393,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dracut-033-564.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -430,7 +407,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls elfutils-default-yama-scope-0.176-2.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -445,7 +421,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls elfutils-libelf-0.176-2.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -460,26 +435,10 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls elfutils-libs-0.176-2.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/elfutils-0.176-2.el7.src.rpm
-```
-
-### `rpm` package: `epel-release-7-12.noarch`
-
-Licenses (from `rpm --query`): GPLv2
-
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls epel-release-7-12.noarch
-Enabling epel-source repository
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/epel/7/SRPMS//Packages/e/epel-release-7-12.src.rpm
 ```
 
 ### `rpm` package: `expat-2.1.0-10.el7_3.x86_64`
@@ -490,7 +449,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls expat-2.1.0-10.el7_3
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -505,7 +463,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls file-libs-5.11-35.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -520,7 +477,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls filesystem-3.2-25.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -535,7 +491,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls findutils-4.5.11-6.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -550,7 +505,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gawk-4.0.2-4.el7_3.1
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -565,7 +519,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gdbm-1.10-8.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -580,7 +533,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls geoipupdate-2.5.0-1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -595,7 +547,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls glib2-2.56.1-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -610,7 +561,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls glibc-2.17-292.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -625,7 +575,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls glibc-common-2.17-292.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -640,7 +589,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gmp-6.0.0-15.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -655,7 +603,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gnupg2-2.0.22-5.el7_5
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -670,7 +617,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gobject-introspection-1.56.1-1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -709,7 +655,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gpgme-1.3.2-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -724,7 +669,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls grep-2.20-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -739,7 +683,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gzip-1.5-10.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -754,7 +697,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls hardlink-1.0-19.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -769,7 +711,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls hostname-3.13-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -784,7 +725,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls info-5.1-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -799,14 +739,13 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls iputils-20160308-10.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/iputils-20160308-10.el7.src.rpm
 ```
 
-### `rpm` package: `jq-1.5-1.el7.x86_64`
+### `rpm` package: `jq-1.6-1.el7.x86_64`
 
 Licenses (from `rpm --query`): MIT and ASL 2.0 and CC-BY and GPLv3
 
@@ -820,7 +759,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls json-c-0.11-4.el7_0
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -835,7 +773,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls keyutils-libs-1.5.8-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -850,7 +787,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls kmod-20-25.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -865,7 +801,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls kmod-libs-20-25.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -880,7 +815,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls kpartx-0.4.9-127.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -895,7 +829,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.el7_7.2
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -910,7 +843,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libacl-2.2.51-14.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -925,7 +857,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libassuan-2.1.0-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -940,7 +871,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libattr-2.4.46-13.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -955,7 +885,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libblkid-2.23.2-61.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -970,7 +899,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libcap-2.22-10.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -985,7 +913,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libcap-ng-0.7.5-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1000,26 +927,24 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libcom_err-1.42.9-16.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/e2fsprogs-1.42.9-16.el7.src.rpm
 ```
 
-### `rpm` package: `libcurl-7.29.0-54.el7.x86_64`
+### `rpm` package: `libcurl-7.29.0-54.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libcurl-7.29.0-54.el7
-Enabling epel-source repository
+$ yumdownloader --quiet --source --urls libcurl-7.29.0-54.el7_7.1
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/curl-7.29.0-54.el7.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/curl-7.29.0-54.el7_7.1.src.rpm
 ```
 
 ### `rpm` package: `libdb-5.3.21-25.el7.x86_64`
@@ -1030,7 +955,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libdb-5.3.21-25.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1045,7 +969,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libdb-utils-5.3.21-25.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1060,7 +983,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libffi-3.0.13-18.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1075,7 +997,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libgcc-4.8.5-39.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1090,7 +1011,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libgcrypt-1.5.3-14.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1105,7 +1025,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libgpg-error-1.12-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1120,7 +1039,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libidn-1.28-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1135,26 +1053,10 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libmount-2.23.2-61.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/util-linux-2.23.2-61.el7.src.rpm
-```
-
-### `rpm` package: `libpcap-1.5.3-11.el7.x86_64`
-
-Licenses (from `rpm --query`): BSD with advertising
-
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libpcap-1.5.3-11.el7
-Enabling epel-source repository
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/libpcap-1.5.3-11.el7.src.rpm
 ```
 
 ### `rpm` package: `libpwquality-1.2.3-5.el7.x86_64`
@@ -1165,7 +1067,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libpwquality-1.2.3-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1180,22 +1081,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libselinux-2.5-14.1.el7
-Enabling epel-source repository
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/libselinux-2.5-14.1.el7.src.rpm
-```
-
-### `rpm` package: `libselinux-utils-2.5-14.1.el7.x86_64`
-
-Licenses (from `rpm --query`): Public Domain
-
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libselinux-utils-2.5-14.1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1210,7 +1095,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libsemanage-2.5-14.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1225,7 +1109,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libsepol-2.5-10.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1240,7 +1123,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libsmartcols-2.23.2-61.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1255,7 +1137,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libssh2-1.8.0-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1270,7 +1151,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libstdc++-4.8.5-39.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1285,7 +1165,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libtasn1-4.10-1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1300,7 +1179,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libuser-0.60-9.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1315,7 +1193,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libutempter-1.1.6-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1330,7 +1207,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libuuid-2.23.2-61.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1345,7 +1221,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libverto-0.2.5-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1360,7 +1235,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libxml2-2.9.1-6.el7_2.3
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1375,7 +1249,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libxml2-python-2.9.1-6.el7_2.3
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1390,7 +1263,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls lua-5.1.4-15.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1405,7 +1277,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls lz4-1.7.5-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1420,7 +1291,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ncurses-5.9-14.20130511.el7_4
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1435,7 +1305,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ncurses-base-5.9-14.20130511.el7_4.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1450,7 +1319,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ncurses-libs-5.9-14.20130511.el7_4
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1465,7 +1333,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nspr-4.21.0-1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1480,7 +1347,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-3.44.0-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1495,7 +1361,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-pem-1.0.3-7.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1510,7 +1375,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-softokn-3.44.0-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1525,7 +1389,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-softokn-freebl-3.44.0-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1540,7 +1403,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-sysinit-3.44.0-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1555,7 +1417,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-tools-3.44.0-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1570,7 +1431,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-util-3.44.0-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1581,16 +1441,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/nss-util-3.44.0-3.el7.src.
 
 Licenses (from `rpm --query`): BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls oniguruma-5.9.5-3.el7
-Enabling epel-source repository
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/epel/7/SRPMS//Packages/o/oniguruma-5.9.5-3.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `openldap-2.4.44-21.el7_6.x86_64`
 
@@ -1600,7 +1451,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls openldap-2.4.44-21.el7_6
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1615,7 +1465,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1630,7 +1479,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls p11-kit-0.23.5-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1645,7 +1493,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls p11-kit-trust-0.23.5-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1660,7 +1507,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pam-1.1.8-22.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1675,7 +1521,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls passwd-0.79-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1690,14 +1535,13 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pcre-8.32-17.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/pcre-8.32-17.el7.src.rpm
 ```
 
-### `rpm` package: `percona-release-1.0-7.noarch`
+### `rpm` package: `percona-release-1.0-14.noarch`
 
 Licenses (from `rpm --query`): GPL-3.0+
 
@@ -1711,7 +1555,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pinentry-0.8.1-17.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1726,7 +1569,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pkgconfig-0.27.1-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1741,7 +1583,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls policycoreutils-2.5-33.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1756,26 +1597,24 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls popt-1.13-16.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/popt-1.13-16.el7.src.rpm
 ```
 
-### `rpm` package: `procps-ng-3.3.10-26.el7.x86_64`
+### `rpm` package: `procps-ng-3.3.10-26.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): GPL+ and GPLv2 and GPLv2+ and GPLv3+ and LGPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls procps-ng-3.3.10-26.el7
-Enabling epel-source repository
+$ yumdownloader --quiet --source --urls procps-ng-3.3.10-26.el7_7.1
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/procps-ng-3.3.10-26.el7.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/procps-ng-3.3.10-26.el7_7.1.src.rpm
 ```
 
 ### `rpm` package: `pth-2.0.7-23.el7.x86_64`
@@ -1786,7 +1625,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pth-2.0.7-23.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1801,7 +1639,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pygpgme-0.3-9.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1816,7 +1653,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pyliblzma-0.5.3-11.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1831,7 +1667,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-2.7.5-86.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1846,7 +1681,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-chardet-2.2.1-3.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1861,7 +1695,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-gobject-base-3.22.0-1.el7_4.1
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1876,7 +1709,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-iniparse-0.4-9.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1891,7 +1723,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-kitchen-1.1.1-5.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1906,7 +1737,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-libs-2.7.5-86.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1921,7 +1751,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-pycurl-7.19.0-19.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1936,7 +1765,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-urlgrabber-3.10-9.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1951,7 +1779,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pyxattr-0.5.1-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1966,7 +1793,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls qrencode-libs-3.4.1-3.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1981,7 +1807,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls readline-6.2-11.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1996,7 +1821,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rootfiles-8.1-11.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2011,7 +1835,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-4.11.3-40.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2026,7 +1849,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-build-libs-4.11.3-40.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2041,7 +1863,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-libs-4.11.3-40.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2056,7 +1877,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-python-4.11.3-40.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2071,7 +1891,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls sed-4.2.2-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2086,7 +1905,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls setup-2.8.71-10.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2101,7 +1919,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls shadow-utils-4.6-5.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2116,7 +1933,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls shared-mime-info-1.8-4.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2131,7 +1947,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls sqlite-3.7.17-8.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2146,7 +1961,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls systemd-219-67.el7_7.1
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2161,7 +1975,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls systemd-libs-219-67.el7_7.1
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2176,7 +1989,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls tar-1.26-35.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2191,7 +2003,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls tzdata-2019b-1.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2206,7 +2017,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ustr-1.0.4-16.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2221,7 +2031,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls util-linux-2.23.2-61.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2236,7 +2045,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls vim-minimal-7.4.629-6.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2251,7 +2059,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls xz-5.2.2-1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2266,7 +2073,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls xz-libs-5.2.2-1.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2281,7 +2087,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-3.4.3-163.el7.centos.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2296,7 +2101,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-metadata-parser-1.1.4-10.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2311,7 +2115,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-plugin-fastestmirror-1.1.31-52.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2326,7 +2129,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-plugin-ovl-1.1.31-52.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2341,7 +2143,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-utils-1.1.31-52.el7.noarch
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2356,7 +2157,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls zlib-1.2.7-18.el7
-Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
