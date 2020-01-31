@@ -194,13 +194,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.7.dsc' base-files_10.1ubuntu2.7.dsc 1620 SHA256:86ce800b82d3968e5c81c1b154d4a515778193c0a516e92f17d3bc2d3c6d2457
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.7.tar.xz' base-files_10.1ubuntu2.7.tar.xz 78340 SHA256:17f7892cf87ec084ac4c8553f8884130127312d6b953345aa3c7e847b2ac4d0b
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -1982,14 +1978,9 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jre-headless/copyright`)
 - `LGPL-2`
 - `LGPL-2-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjdk-lts=11.0.5+10-0ubuntu1.1~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.5+10-0ubuntu1.1~18.04.dsc' openjdk-lts_11.0.5+10-0ubuntu1.1~18.04.dsc 4968 SHA256:63ac754b216c3fa9de80e245f4aa703f9a5c32dea1aea77da55327dd86068a5c
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.5+10.orig.tar.xz' openjdk-lts_11.0.5+10.orig.tar.xz 74954064 SHA256:fb0cf872ca14e0f4d22eb59b899f8c4500b7ff7d6da2b2d03542730faf1f6812
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.5+10-0ubuntu1.1~18.04.debian.tar.xz' openjdk-lts_11.0.5+10-0ubuntu1.1~18.04.debian.tar.xz 172744 SHA256:58dc57e82fc989a672007bd5c3c1bc62d32e80a72d3f855014fe9531faeff3b6
-```
 
 ### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.4`
 
