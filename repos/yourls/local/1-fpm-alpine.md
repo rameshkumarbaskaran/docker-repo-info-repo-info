@@ -1,10 +1,10 @@
-# `yourls:1.7.4-fpm-alpine`
+# `yourls:1.7.5-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2b4e60b1c7d38fc68338fa98541504ebf5a839295c33e7f1de2a421494dbc2d9`
-- Created: `2020-01-24T10:51:25.023254253Z`
-- Virtual Size: ~ 84.32 Mb  
+- Image ID: `sha256:22fa09543500501ddd080f4f4d3901c214c54ffbfb3b053105c0115f66a4067d`
+- Created: `2020-01-30T02:21:45.075318561Z`
+- Virtual Size: ~ 84.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -23,8 +23,8 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.2.27.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=7bd0fb9e3b63cfe53176d1f3565cd686f90b3926217158de5ba57091f49e4c32`
   - `PHP_MD5=`
-  - `YOURLS_VERSION=1.7.4`
-  - `YOURLS_SHA256=ffdf0f94b66cdbeaaa62bed3fde14d4eeb2bb1669c3c342eef369ce6165a0276`
+  - `YOURLS_VERSION=1.7.5`
+  - `YOURLS_SHA256=e8251bc99def425f647577b066d3489725a3cefde7a72f83ceab0b68e9910e9c`
 
 ## `apk` (`.apk`-based packages)
 
