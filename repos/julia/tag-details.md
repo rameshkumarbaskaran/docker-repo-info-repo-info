@@ -383,7 +383,7 @@ CMD ["julia"]
 ## `julia:1.0`
 
 ```console
-$ docker pull julia@sha256:90199a252c8daf016d69442dd165b03849320b5d2e5e2409896dc8b22fe9b70c
+$ docker pull julia@sha256:a59616778bb0e3970fbfcf48b28ae8b0124654f2af43fbf3f545776338c79307
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -446,49 +446,49 @@ CMD ["julia"]
 ### `julia:1.0` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:a49295a694aef484f71be0f1b8a3d6808e53a7463378dfad81a58db1da6d8e7b
+$ docker pull julia@sha256:cbc7614d5a92feb0ca4404ad482167d63379f25aaf56d92f9bc5900f40002e76
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.6 MB (113611628 bytes)**  
+-	Total Size: **113.6 MB (113611428 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8729cfa58a1302900e0947074c136ca27ddb966b1897cf1d2243d6e08356c589`
+-	Image ID: `sha256:c1dd8319f47f3697802fc53c9e3d1bad2a14bc63e82a4816f51765ecceda7cf2`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 07:19:58 GMT
+# Sat, 01 Feb 2020 18:35:54 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 07:20:40 GMT
+# Sat, 01 Feb 2020 18:36:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 07:20:42 GMT
+# Sat, 01 Feb 2020 18:36:27 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dda6283c965b91522251410ef2aaa39778b654e30900a77050d00ceedb84380f`  
-		Last Modified: Sat, 28 Dec 2019 07:24:17 GMT  
-		Size: 87.1 MB (87128846 bytes)  
+	-	`sha256:b5bbbd51a5a2ebc2fe01a4f1ed00d0b4bb0e95927722b6b5c0378276c301a88a`  
+		Last Modified: Sat, 01 Feb 2020 18:40:30 GMT  
+		Size: 87.1 MB (87128752 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.0` - linux; arm64 variant v8
@@ -542,49 +542,49 @@ CMD ["julia"]
 ### `julia:1.0` - linux; 386
 
 ```console
-$ docker pull julia@sha256:2ef97be28b5900decb0e5745f2f28725e2f3139ff3a236237fd6f9741975c581
+$ docker pull julia@sha256:211507853c43982a89cf6b67722e7cebfda737f0fefee0c743701d123ff0f92a
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **124.8 MB (124831701 bytes)**  
+-	Total Size: **124.8 MB (124831683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98296bbfc9b873a4a987be558936799fff6f96dcff0d39b04018fbace6fb3152`
+-	Image ID: `sha256:e7b9c3b83ca57d995decdc0cea980a5860c1de8e76bdf0647d5da27540d2fd7d`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 08:50:10 GMT
+# Sat, 01 Feb 2020 17:49:09 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 08:50:34 GMT
+# Sat, 01 Feb 2020 17:49:29 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 08:50:35 GMT
+# Sat, 01 Feb 2020 17:49:30 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69f35bc71977264124c999e3e7f3fa8a53767d9e5ebcfa86c554f12a21e38c93`  
-		Last Modified: Sat, 28 Dec 2019 08:52:50 GMT  
-		Size: 92.5 MB (92498430 bytes)  
+	-	`sha256:a3b7071c057fb0734e5ad480624c6bba061b176061abb89754f0cd811971e939`  
+		Last Modified: Sat, 01 Feb 2020 17:52:33 GMT  
+		Size: 92.5 MB (92498394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.0` - windows version 10.0.14393.3443; amd64
@@ -710,7 +710,7 @@ CMD ["julia"]
 ## `julia:1.0.5`
 
 ```console
-$ docker pull julia@sha256:90199a252c8daf016d69442dd165b03849320b5d2e5e2409896dc8b22fe9b70c
+$ docker pull julia@sha256:a59616778bb0e3970fbfcf48b28ae8b0124654f2af43fbf3f545776338c79307
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -773,49 +773,49 @@ CMD ["julia"]
 ### `julia:1.0.5` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:a49295a694aef484f71be0f1b8a3d6808e53a7463378dfad81a58db1da6d8e7b
+$ docker pull julia@sha256:cbc7614d5a92feb0ca4404ad482167d63379f25aaf56d92f9bc5900f40002e76
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.6 MB (113611628 bytes)**  
+-	Total Size: **113.6 MB (113611428 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8729cfa58a1302900e0947074c136ca27ddb966b1897cf1d2243d6e08356c589`
+-	Image ID: `sha256:c1dd8319f47f3697802fc53c9e3d1bad2a14bc63e82a4816f51765ecceda7cf2`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 07:19:58 GMT
+# Sat, 01 Feb 2020 18:35:54 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 07:20:40 GMT
+# Sat, 01 Feb 2020 18:36:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 07:20:42 GMT
+# Sat, 01 Feb 2020 18:36:27 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dda6283c965b91522251410ef2aaa39778b654e30900a77050d00ceedb84380f`  
-		Last Modified: Sat, 28 Dec 2019 07:24:17 GMT  
-		Size: 87.1 MB (87128846 bytes)  
+	-	`sha256:b5bbbd51a5a2ebc2fe01a4f1ed00d0b4bb0e95927722b6b5c0378276c301a88a`  
+		Last Modified: Sat, 01 Feb 2020 18:40:30 GMT  
+		Size: 87.1 MB (87128752 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.0.5` - linux; arm64 variant v8
@@ -869,49 +869,49 @@ CMD ["julia"]
 ### `julia:1.0.5` - linux; 386
 
 ```console
-$ docker pull julia@sha256:2ef97be28b5900decb0e5745f2f28725e2f3139ff3a236237fd6f9741975c581
+$ docker pull julia@sha256:211507853c43982a89cf6b67722e7cebfda737f0fefee0c743701d123ff0f92a
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **124.8 MB (124831701 bytes)**  
+-	Total Size: **124.8 MB (124831683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98296bbfc9b873a4a987be558936799fff6f96dcff0d39b04018fbace6fb3152`
+-	Image ID: `sha256:e7b9c3b83ca57d995decdc0cea980a5860c1de8e76bdf0647d5da27540d2fd7d`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 08:50:10 GMT
+# Sat, 01 Feb 2020 17:49:09 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 08:50:34 GMT
+# Sat, 01 Feb 2020 17:49:29 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 08:50:35 GMT
+# Sat, 01 Feb 2020 17:49:30 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69f35bc71977264124c999e3e7f3fa8a53767d9e5ebcfa86c554f12a21e38c93`  
-		Last Modified: Sat, 28 Dec 2019 08:52:50 GMT  
-		Size: 92.5 MB (92498430 bytes)  
+	-	`sha256:a3b7071c057fb0734e5ad480624c6bba061b176061abb89754f0cd811971e939`  
+		Last Modified: Sat, 01 Feb 2020 17:52:33 GMT  
+		Size: 92.5 MB (92498394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.0.5` - windows version 10.0.14393.3443; amd64
@@ -1037,7 +1037,7 @@ CMD ["julia"]
 ## `julia:1.0.5-buster`
 
 ```console
-$ docker pull julia@sha256:a0bb84f50ea2d3915b6084243708a4e96646bc37654d663f72cd3565acfa757f
+$ docker pull julia@sha256:e46df443c064666e009c79b28cf7b3b8c7384e011406af544eb5cc0b6b077829
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1098,49 +1098,49 @@ CMD ["julia"]
 ### `julia:1.0.5-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:a49295a694aef484f71be0f1b8a3d6808e53a7463378dfad81a58db1da6d8e7b
+$ docker pull julia@sha256:cbc7614d5a92feb0ca4404ad482167d63379f25aaf56d92f9bc5900f40002e76
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.6 MB (113611628 bytes)**  
+-	Total Size: **113.6 MB (113611428 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8729cfa58a1302900e0947074c136ca27ddb966b1897cf1d2243d6e08356c589`
+-	Image ID: `sha256:c1dd8319f47f3697802fc53c9e3d1bad2a14bc63e82a4816f51765ecceda7cf2`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 07:19:58 GMT
+# Sat, 01 Feb 2020 18:35:54 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 07:20:40 GMT
+# Sat, 01 Feb 2020 18:36:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 07:20:42 GMT
+# Sat, 01 Feb 2020 18:36:27 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dda6283c965b91522251410ef2aaa39778b654e30900a77050d00ceedb84380f`  
-		Last Modified: Sat, 28 Dec 2019 07:24:17 GMT  
-		Size: 87.1 MB (87128846 bytes)  
+	-	`sha256:b5bbbd51a5a2ebc2fe01a4f1ed00d0b4bb0e95927722b6b5c0378276c301a88a`  
+		Last Modified: Sat, 01 Feb 2020 18:40:30 GMT  
+		Size: 87.1 MB (87128752 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.0.5-buster` - linux; arm64 variant v8
@@ -1194,55 +1194,55 @@ CMD ["julia"]
 ### `julia:1.0.5-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:2ef97be28b5900decb0e5745f2f28725e2f3139ff3a236237fd6f9741975c581
+$ docker pull julia@sha256:211507853c43982a89cf6b67722e7cebfda737f0fefee0c743701d123ff0f92a
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **124.8 MB (124831701 bytes)**  
+-	Total Size: **124.8 MB (124831683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98296bbfc9b873a4a987be558936799fff6f96dcff0d39b04018fbace6fb3152`
+-	Image ID: `sha256:e7b9c3b83ca57d995decdc0cea980a5860c1de8e76bdf0647d5da27540d2fd7d`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 08:50:10 GMT
+# Sat, 01 Feb 2020 17:49:09 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 08:50:34 GMT
+# Sat, 01 Feb 2020 17:49:29 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 08:50:35 GMT
+# Sat, 01 Feb 2020 17:49:30 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69f35bc71977264124c999e3e7f3fa8a53767d9e5ebcfa86c554f12a21e38c93`  
-		Last Modified: Sat, 28 Dec 2019 08:52:50 GMT  
-		Size: 92.5 MB (92498430 bytes)  
+	-	`sha256:a3b7071c057fb0734e5ad480624c6bba061b176061abb89754f0cd811971e939`  
+		Last Modified: Sat, 01 Feb 2020 17:52:33 GMT  
+		Size: 92.5 MB (92498394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.0.5-stretch`
 
 ```console
-$ docker pull julia@sha256:eb9fcba7b0855cff3c05ccfb3885722f06b77537ab1391f86a8c1aac75ddb107
+$ docker pull julia@sha256:b0c7febb6d709d63dd9438f529c7f63ab48c29badd92e430ed5cf50ceb70e268
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1303,48 +1303,48 @@ CMD ["julia"]
 ### `julia:1.0.5-stretch` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:1eaec24bd9d8f9a9b420b12311c32e2b8db6daa00051a963b9a58c8cd1541f6e
+$ docker pull julia@sha256:71098ca432cbf235081b6b2b28dd81a8ab291ad7581a53e75f5dcab6cadf9ec8
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **137.5 MB (137482287 bytes)**  
+-	Total Size: **137.5 MB (137482565 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3d4687ada79f4395ad16d264fb6ee1895db9f563502c4da3ecd6b9cc6d41e46a`
+-	Image ID: `sha256:ba9c39311b41b7800a637fea918bf627ff27a92c65d19def105c4d52c32f6d8c`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 05:03:19 GMT
-ADD file:5692a55e4805d33baa21e559cc0bb86fb91422171345ddd332fa5514285a3401 in / 
-# Sat, 28 Dec 2019 05:03:25 GMT
+# Sat, 01 Feb 2020 17:04:08 GMT
+ADD file:b7fc54d004d962f2cfb469a1aaa9e689e46dfa2554e0cf44c33981d688adc31b in / 
+# Sat, 01 Feb 2020 17:04:09 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:21:30 GMT
+# Sat, 01 Feb 2020 18:37:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:21:31 GMT
+# Sat, 01 Feb 2020 18:37:03 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:21:33 GMT
+# Sat, 01 Feb 2020 18:37:05 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:21:35 GMT
+# Sat, 01 Feb 2020 18:37:06 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 07:21:38 GMT
+# Sat, 01 Feb 2020 18:37:08 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 07:22:11 GMT
+# Sat, 01 Feb 2020 18:37:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 07:22:13 GMT
+# Sat, 01 Feb 2020 18:37:43 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:b531ae4a39253d883a11291e842b7e1aa9dae38f9d9b77ddea55b2625ce986e3`  
-		Last Modified: Sat, 28 Dec 2019 05:10:53 GMT  
-		Size: 42.1 MB (42108124 bytes)  
+	-	`sha256:cc3b08e804cce7e88d9df954b76be506569775afe9cf36316f2fa6c5c9bf3d5c`  
+		Last Modified: Sat, 01 Feb 2020 17:11:13 GMT  
+		Size: 42.1 MB (42108370 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4339b2e8a253b34da59d19e85713853c80ab489b5d7517def1cbf7f6f3a4a8e`  
-		Last Modified: Sat, 28 Dec 2019 07:24:26 GMT  
-		Size: 8.2 MB (8236215 bytes)  
+	-	`sha256:576c1224aa4096f88b3b19b00b02659f34701b6307343c1668a0a3eb5f71982e`  
+		Last Modified: Sat, 01 Feb 2020 18:40:39 GMT  
+		Size: 8.2 MB (8236247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b7460d030fe6a1314ba1915be64d74d828a7d4c1001a806a08948325160c22d0`  
-		Last Modified: Sat, 28 Dec 2019 07:24:57 GMT  
+	-	`sha256:dfb7a0bc53c5dff92996e98a635c27cfe3d578ffa15a3411e651b705d3f813d1`  
+		Last Modified: Sat, 01 Feb 2020 18:41:04 GMT  
 		Size: 87.1 MB (87137948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1399,49 +1399,49 @@ CMD ["julia"]
 ### `julia:1.0.5-stretch` - linux; 386
 
 ```console
-$ docker pull julia@sha256:322dab8f873eeeda09e3a92b556cb0b13cebb19d8d6e722d5383535e74fcc7f0
+$ docker pull julia@sha256:095ecede6f4e0cd029534f1de48d19a29c31f63ab994d255b168469d3fdad03c
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **148.1 MB (148120234 bytes)**  
+-	Total Size: **148.1 MB (148120226 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1969a5f02b2da88e75a9dc30bdc1d137742d1fd946d16252c26a77c92781e9d2`
+-	Image ID: `sha256:93518e41492f768c7cb431ce56a77c2bd3a7f824078511092dce0b4e1182ee33`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:41:51 GMT
-ADD file:f348ed8c5f7efee9f7e88d9a9bd1d57bca1bf445d486996cb6168da85c0bd43b in / 
-# Sat, 28 Dec 2019 04:41:51 GMT
+# Sat, 01 Feb 2020 16:41:53 GMT
+ADD file:bae1646c4e3069e717d1ee4f6c312c249e96a21d795a639cdfaf338d645c8be9 in / 
+# Sat, 01 Feb 2020 16:41:53 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:50 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:50 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:50 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:51 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:51 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 08:51:17 GMT
+# Sat, 01 Feb 2020 17:50:09 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 08:51:18 GMT
+# Sat, 01 Feb 2020 17:50:10 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:410821d7ff8b427b8dfb93dcf31b1836a617f5c09be71f83a16ef2c5946ee700`  
-		Last Modified: Sat, 28 Dec 2019 04:47:20 GMT  
-		Size: 46.1 MB (46100094 bytes)  
+	-	`sha256:97067fdacc0601fe58a5f782cd09d3c58a214c43b8629a2d92bd7025f46fd265`  
+		Last Modified: Sat, 01 Feb 2020 16:47:15 GMT  
+		Size: 46.1 MB (46100017 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:936f68ad6644aca0dde6c90e930510d2bd83256bc60d180e64d44b98b5f8dda7`  
-		Last Modified: Sat, 28 Dec 2019 08:52:56 GMT  
-		Size: 9.5 MB (9518296 bytes)  
+	-	`sha256:9c7c630539a70bdcfe1e0f106527e7be5b6c3cd7e3deb8efe8d043e7a0722274`  
+		Last Modified: Sat, 01 Feb 2020 17:52:40 GMT  
+		Size: 9.5 MB (9518348 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61401a0e0ee6099b228e043b032f7904f4ed09e7c766813d209d11a72084051d`  
-		Last Modified: Sat, 28 Dec 2019 08:53:17 GMT  
-		Size: 92.5 MB (92501844 bytes)  
+	-	`sha256:77fd11d9dccdde2b5d0a67fdfd1416e0e5298483a7572ad2deec55fea264400d`  
+		Last Modified: Sat, 01 Feb 2020 17:53:02 GMT  
+		Size: 92.5 MB (92501861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.0.5-windowsservercore-1809`
@@ -1587,7 +1587,7 @@ CMD ["julia"]
 ## `julia:1.0-buster`
 
 ```console
-$ docker pull julia@sha256:a0bb84f50ea2d3915b6084243708a4e96646bc37654d663f72cd3565acfa757f
+$ docker pull julia@sha256:e46df443c064666e009c79b28cf7b3b8c7384e011406af544eb5cc0b6b077829
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1648,49 +1648,49 @@ CMD ["julia"]
 ### `julia:1.0-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:a49295a694aef484f71be0f1b8a3d6808e53a7463378dfad81a58db1da6d8e7b
+$ docker pull julia@sha256:cbc7614d5a92feb0ca4404ad482167d63379f25aaf56d92f9bc5900f40002e76
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.6 MB (113611628 bytes)**  
+-	Total Size: **113.6 MB (113611428 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8729cfa58a1302900e0947074c136ca27ddb966b1897cf1d2243d6e08356c589`
+-	Image ID: `sha256:c1dd8319f47f3697802fc53c9e3d1bad2a14bc63e82a4816f51765ecceda7cf2`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 07:19:58 GMT
+# Sat, 01 Feb 2020 18:35:54 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 07:20:40 GMT
+# Sat, 01 Feb 2020 18:36:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 07:20:42 GMT
+# Sat, 01 Feb 2020 18:36:27 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dda6283c965b91522251410ef2aaa39778b654e30900a77050d00ceedb84380f`  
-		Last Modified: Sat, 28 Dec 2019 07:24:17 GMT  
-		Size: 87.1 MB (87128846 bytes)  
+	-	`sha256:b5bbbd51a5a2ebc2fe01a4f1ed00d0b4bb0e95927722b6b5c0378276c301a88a`  
+		Last Modified: Sat, 01 Feb 2020 18:40:30 GMT  
+		Size: 87.1 MB (87128752 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.0-buster` - linux; arm64 variant v8
@@ -1744,55 +1744,55 @@ CMD ["julia"]
 ### `julia:1.0-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:2ef97be28b5900decb0e5745f2f28725e2f3139ff3a236237fd6f9741975c581
+$ docker pull julia@sha256:211507853c43982a89cf6b67722e7cebfda737f0fefee0c743701d123ff0f92a
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **124.8 MB (124831701 bytes)**  
+-	Total Size: **124.8 MB (124831683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98296bbfc9b873a4a987be558936799fff6f96dcff0d39b04018fbace6fb3152`
+-	Image ID: `sha256:e7b9c3b83ca57d995decdc0cea980a5860c1de8e76bdf0647d5da27540d2fd7d`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 08:50:10 GMT
+# Sat, 01 Feb 2020 17:49:09 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 08:50:34 GMT
+# Sat, 01 Feb 2020 17:49:29 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 08:50:35 GMT
+# Sat, 01 Feb 2020 17:49:30 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69f35bc71977264124c999e3e7f3fa8a53767d9e5ebcfa86c554f12a21e38c93`  
-		Last Modified: Sat, 28 Dec 2019 08:52:50 GMT  
-		Size: 92.5 MB (92498430 bytes)  
+	-	`sha256:a3b7071c057fb0734e5ad480624c6bba061b176061abb89754f0cd811971e939`  
+		Last Modified: Sat, 01 Feb 2020 17:52:33 GMT  
+		Size: 92.5 MB (92498394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.0-stretch`
 
 ```console
-$ docker pull julia@sha256:eb9fcba7b0855cff3c05ccfb3885722f06b77537ab1391f86a8c1aac75ddb107
+$ docker pull julia@sha256:b0c7febb6d709d63dd9438f529c7f63ab48c29badd92e430ed5cf50ceb70e268
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1853,48 +1853,48 @@ CMD ["julia"]
 ### `julia:1.0-stretch` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:1eaec24bd9d8f9a9b420b12311c32e2b8db6daa00051a963b9a58c8cd1541f6e
+$ docker pull julia@sha256:71098ca432cbf235081b6b2b28dd81a8ab291ad7581a53e75f5dcab6cadf9ec8
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **137.5 MB (137482287 bytes)**  
+-	Total Size: **137.5 MB (137482565 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3d4687ada79f4395ad16d264fb6ee1895db9f563502c4da3ecd6b9cc6d41e46a`
+-	Image ID: `sha256:ba9c39311b41b7800a637fea918bf627ff27a92c65d19def105c4d52c32f6d8c`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 05:03:19 GMT
-ADD file:5692a55e4805d33baa21e559cc0bb86fb91422171345ddd332fa5514285a3401 in / 
-# Sat, 28 Dec 2019 05:03:25 GMT
+# Sat, 01 Feb 2020 17:04:08 GMT
+ADD file:b7fc54d004d962f2cfb469a1aaa9e689e46dfa2554e0cf44c33981d688adc31b in / 
+# Sat, 01 Feb 2020 17:04:09 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:21:30 GMT
+# Sat, 01 Feb 2020 18:37:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:21:31 GMT
+# Sat, 01 Feb 2020 18:37:03 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:21:33 GMT
+# Sat, 01 Feb 2020 18:37:05 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:21:35 GMT
+# Sat, 01 Feb 2020 18:37:06 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 07:21:38 GMT
+# Sat, 01 Feb 2020 18:37:08 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 07:22:11 GMT
+# Sat, 01 Feb 2020 18:37:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 07:22:13 GMT
+# Sat, 01 Feb 2020 18:37:43 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:b531ae4a39253d883a11291e842b7e1aa9dae38f9d9b77ddea55b2625ce986e3`  
-		Last Modified: Sat, 28 Dec 2019 05:10:53 GMT  
-		Size: 42.1 MB (42108124 bytes)  
+	-	`sha256:cc3b08e804cce7e88d9df954b76be506569775afe9cf36316f2fa6c5c9bf3d5c`  
+		Last Modified: Sat, 01 Feb 2020 17:11:13 GMT  
+		Size: 42.1 MB (42108370 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4339b2e8a253b34da59d19e85713853c80ab489b5d7517def1cbf7f6f3a4a8e`  
-		Last Modified: Sat, 28 Dec 2019 07:24:26 GMT  
-		Size: 8.2 MB (8236215 bytes)  
+	-	`sha256:576c1224aa4096f88b3b19b00b02659f34701b6307343c1668a0a3eb5f71982e`  
+		Last Modified: Sat, 01 Feb 2020 18:40:39 GMT  
+		Size: 8.2 MB (8236247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b7460d030fe6a1314ba1915be64d74d828a7d4c1001a806a08948325160c22d0`  
-		Last Modified: Sat, 28 Dec 2019 07:24:57 GMT  
+	-	`sha256:dfb7a0bc53c5dff92996e98a635c27cfe3d578ffa15a3411e651b705d3f813d1`  
+		Last Modified: Sat, 01 Feb 2020 18:41:04 GMT  
 		Size: 87.1 MB (87137948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1949,49 +1949,49 @@ CMD ["julia"]
 ### `julia:1.0-stretch` - linux; 386
 
 ```console
-$ docker pull julia@sha256:322dab8f873eeeda09e3a92b556cb0b13cebb19d8d6e722d5383535e74fcc7f0
+$ docker pull julia@sha256:095ecede6f4e0cd029534f1de48d19a29c31f63ab994d255b168469d3fdad03c
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **148.1 MB (148120234 bytes)**  
+-	Total Size: **148.1 MB (148120226 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1969a5f02b2da88e75a9dc30bdc1d137742d1fd946d16252c26a77c92781e9d2`
+-	Image ID: `sha256:93518e41492f768c7cb431ce56a77c2bd3a7f824078511092dce0b4e1182ee33`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:41:51 GMT
-ADD file:f348ed8c5f7efee9f7e88d9a9bd1d57bca1bf445d486996cb6168da85c0bd43b in / 
-# Sat, 28 Dec 2019 04:41:51 GMT
+# Sat, 01 Feb 2020 16:41:53 GMT
+ADD file:bae1646c4e3069e717d1ee4f6c312c249e96a21d795a639cdfaf338d645c8be9 in / 
+# Sat, 01 Feb 2020 16:41:53 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:50 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:50 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:50 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:51 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Sat, 28 Dec 2019 08:50:55 GMT
+# Sat, 01 Feb 2020 17:49:51 GMT
 ENV JULIA_VERSION=1.0.5
-# Sat, 28 Dec 2019 08:51:17 GMT
+# Sat, 01 Feb 2020 17:50:09 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9dedd613777ba6ebd8aee5796915ff50aa6188ea03ed143cb687fc2aefd76b03' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='cfb2712765db90f0e4fa27e57a88c6d994ebcf1781f8673ebb17b5df7962d0c5' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='41cea1336ed8861413bb945740e567360e26f241eb3e10b3bb0fccd25655ed28' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='67c8f31699b79df96ce95926a363cd24ffa5bb4d9a814e071b1e8c8ff33e5a8f' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Sat, 28 Dec 2019 08:51:18 GMT
+# Sat, 01 Feb 2020 17:50:10 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:410821d7ff8b427b8dfb93dcf31b1836a617f5c09be71f83a16ef2c5946ee700`  
-		Last Modified: Sat, 28 Dec 2019 04:47:20 GMT  
-		Size: 46.1 MB (46100094 bytes)  
+	-	`sha256:97067fdacc0601fe58a5f782cd09d3c58a214c43b8629a2d92bd7025f46fd265`  
+		Last Modified: Sat, 01 Feb 2020 16:47:15 GMT  
+		Size: 46.1 MB (46100017 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:936f68ad6644aca0dde6c90e930510d2bd83256bc60d180e64d44b98b5f8dda7`  
-		Last Modified: Sat, 28 Dec 2019 08:52:56 GMT  
-		Size: 9.5 MB (9518296 bytes)  
+	-	`sha256:9c7c630539a70bdcfe1e0f106527e7be5b6c3cd7e3deb8efe8d043e7a0722274`  
+		Last Modified: Sat, 01 Feb 2020 17:52:40 GMT  
+		Size: 9.5 MB (9518348 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61401a0e0ee6099b228e043b032f7904f4ed09e7c766813d209d11a72084051d`  
-		Last Modified: Sat, 28 Dec 2019 08:53:17 GMT  
-		Size: 92.5 MB (92501844 bytes)  
+	-	`sha256:77fd11d9dccdde2b5d0a67fdfd1416e0e5298483a7572ad2deec55fea264400d`  
+		Last Modified: Sat, 01 Feb 2020 17:53:02 GMT  
+		Size: 92.5 MB (92501861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.0-windowsservercore-1809`
@@ -2137,7 +2137,7 @@ CMD ["julia"]
 ## `julia:1.3`
 
 ```console
-$ docker pull julia@sha256:2c989fee466e331c445984e8d0a63b03c3c7ef0cc80664cbf0648f43c262bdca
+$ docker pull julia@sha256:9e076744f44c796dd27309c4e750839632134c3efe26763da7aea239512993b0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2200,49 +2200,49 @@ CMD ["julia"]
 ### `julia:1.3` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:17df7cc0ea214590efbf9d01b43366c2a28d49c1bd9a8eda8ee524a07475abef
+$ docker pull julia@sha256:1bfe9380ebd44f7fd18c3290a71e25f6278faa39c77562e1b18d3e9b119c7732
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **120.3 MB (120290471 bytes)**  
+-	Total Size: **120.3 MB (120290287 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1dce18d7f1e3ff32f3648ba972e32809f39d76ad5253b6e2d88250760cf351aa`
+-	Image ID: `sha256:4595b8f6040b4ad375efa056027ac9e606ee0ae623de6a3c7a706ca5e5898da4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 22:59:32 GMT
+# Sat, 01 Feb 2020 18:34:09 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:03 GMT
+# Sat, 01 Feb 2020 18:34:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:05 GMT
+# Sat, 01 Feb 2020 18:34:40 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63fe4217d5c5566f8890db4bbbb168d89e769348735300638278d5d17f26e02a`  
-		Last Modified: Tue, 07 Jan 2020 23:01:59 GMT  
-		Size: 93.8 MB (93807689 bytes)  
+	-	`sha256:cc33c18856b9c29ce25a2e310ac0179b18efac98365c421059a8fa3a5dac678c`  
+		Last Modified: Sat, 01 Feb 2020 18:39:18 GMT  
+		Size: 93.8 MB (93807611 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3` - linux; arm64 variant v8
@@ -2296,49 +2296,49 @@ CMD ["julia"]
 ### `julia:1.3` - linux; 386
 
 ```console
-$ docker pull julia@sha256:6cff5ce6cef2f5ca6169ab25e3f253a5e3db71f344c843e2886a0ec5286a2aa8
+$ docker pull julia@sha256:15adafbd1bfc00363d5b663c28446058a374b89be8e9fca338aa3c8cdcab0fa7
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.6 MB (131608240 bytes)**  
+-	Total Size: **131.6 MB (131608207 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22733d1c835db9e9a5cc8f3b0d5332fdd86abb7f1842aaee49b6637385a7fcf8`
+-	Image ID: `sha256:a30e007a155af8717d6b257bc5496c6212ad47689fda6e7f4ec0d02094817f19`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:42:46 GMT
+# Sat, 01 Feb 2020 17:48:00 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:191e0b734fe44388c9f11c06825cbfa2193e3c6873a8405a1806a4fd16f1909e`  
-		Last Modified: Tue, 07 Jan 2020 22:40:06 GMT  
-		Size: 99.3 MB (99274969 bytes)  
+	-	`sha256:ca0d35c9e0909ce80f8e46e986854da5cd06baece621bb8529d4ab7cd66e6c2b`  
+		Last Modified: Sat, 01 Feb 2020 17:51:28 GMT  
+		Size: 99.3 MB (99274918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3` - windows version 10.0.14393.3443; amd64
@@ -2464,7 +2464,7 @@ CMD ["julia"]
 ## `julia:1.3.1`
 
 ```console
-$ docker pull julia@sha256:2c989fee466e331c445984e8d0a63b03c3c7ef0cc80664cbf0648f43c262bdca
+$ docker pull julia@sha256:9e076744f44c796dd27309c4e750839632134c3efe26763da7aea239512993b0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2527,49 +2527,49 @@ CMD ["julia"]
 ### `julia:1.3.1` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:17df7cc0ea214590efbf9d01b43366c2a28d49c1bd9a8eda8ee524a07475abef
+$ docker pull julia@sha256:1bfe9380ebd44f7fd18c3290a71e25f6278faa39c77562e1b18d3e9b119c7732
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **120.3 MB (120290471 bytes)**  
+-	Total Size: **120.3 MB (120290287 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1dce18d7f1e3ff32f3648ba972e32809f39d76ad5253b6e2d88250760cf351aa`
+-	Image ID: `sha256:4595b8f6040b4ad375efa056027ac9e606ee0ae623de6a3c7a706ca5e5898da4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 22:59:32 GMT
+# Sat, 01 Feb 2020 18:34:09 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:03 GMT
+# Sat, 01 Feb 2020 18:34:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:05 GMT
+# Sat, 01 Feb 2020 18:34:40 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63fe4217d5c5566f8890db4bbbb168d89e769348735300638278d5d17f26e02a`  
-		Last Modified: Tue, 07 Jan 2020 23:01:59 GMT  
-		Size: 93.8 MB (93807689 bytes)  
+	-	`sha256:cc33c18856b9c29ce25a2e310ac0179b18efac98365c421059a8fa3a5dac678c`  
+		Last Modified: Sat, 01 Feb 2020 18:39:18 GMT  
+		Size: 93.8 MB (93807611 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3.1` - linux; arm64 variant v8
@@ -2623,49 +2623,49 @@ CMD ["julia"]
 ### `julia:1.3.1` - linux; 386
 
 ```console
-$ docker pull julia@sha256:6cff5ce6cef2f5ca6169ab25e3f253a5e3db71f344c843e2886a0ec5286a2aa8
+$ docker pull julia@sha256:15adafbd1bfc00363d5b663c28446058a374b89be8e9fca338aa3c8cdcab0fa7
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.6 MB (131608240 bytes)**  
+-	Total Size: **131.6 MB (131608207 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22733d1c835db9e9a5cc8f3b0d5332fdd86abb7f1842aaee49b6637385a7fcf8`
+-	Image ID: `sha256:a30e007a155af8717d6b257bc5496c6212ad47689fda6e7f4ec0d02094817f19`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:42:46 GMT
+# Sat, 01 Feb 2020 17:48:00 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:191e0b734fe44388c9f11c06825cbfa2193e3c6873a8405a1806a4fd16f1909e`  
-		Last Modified: Tue, 07 Jan 2020 22:40:06 GMT  
-		Size: 99.3 MB (99274969 bytes)  
+	-	`sha256:ca0d35c9e0909ce80f8e46e986854da5cd06baece621bb8529d4ab7cd66e6c2b`  
+		Last Modified: Sat, 01 Feb 2020 17:51:28 GMT  
+		Size: 99.3 MB (99274918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3.1` - windows version 10.0.14393.3443; amd64
@@ -2791,7 +2791,7 @@ CMD ["julia"]
 ## `julia:1.3.1-buster`
 
 ```console
-$ docker pull julia@sha256:8a24442a4e64a349254c89cd1f43b347a768f7813b42780d420eb3274c09c76d
+$ docker pull julia@sha256:7a0bd398bd2404ebaa79e695839c2dd9f05ff9a38e91151b0d8d45c2aadad25e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2852,49 +2852,49 @@ CMD ["julia"]
 ### `julia:1.3.1-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:17df7cc0ea214590efbf9d01b43366c2a28d49c1bd9a8eda8ee524a07475abef
+$ docker pull julia@sha256:1bfe9380ebd44f7fd18c3290a71e25f6278faa39c77562e1b18d3e9b119c7732
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **120.3 MB (120290471 bytes)**  
+-	Total Size: **120.3 MB (120290287 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1dce18d7f1e3ff32f3648ba972e32809f39d76ad5253b6e2d88250760cf351aa`
+-	Image ID: `sha256:4595b8f6040b4ad375efa056027ac9e606ee0ae623de6a3c7a706ca5e5898da4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 22:59:32 GMT
+# Sat, 01 Feb 2020 18:34:09 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:03 GMT
+# Sat, 01 Feb 2020 18:34:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:05 GMT
+# Sat, 01 Feb 2020 18:34:40 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63fe4217d5c5566f8890db4bbbb168d89e769348735300638278d5d17f26e02a`  
-		Last Modified: Tue, 07 Jan 2020 23:01:59 GMT  
-		Size: 93.8 MB (93807689 bytes)  
+	-	`sha256:cc33c18856b9c29ce25a2e310ac0179b18efac98365c421059a8fa3a5dac678c`  
+		Last Modified: Sat, 01 Feb 2020 18:39:18 GMT  
+		Size: 93.8 MB (93807611 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3.1-buster` - linux; arm64 variant v8
@@ -2948,55 +2948,55 @@ CMD ["julia"]
 ### `julia:1.3.1-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:6cff5ce6cef2f5ca6169ab25e3f253a5e3db71f344c843e2886a0ec5286a2aa8
+$ docker pull julia@sha256:15adafbd1bfc00363d5b663c28446058a374b89be8e9fca338aa3c8cdcab0fa7
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.6 MB (131608240 bytes)**  
+-	Total Size: **131.6 MB (131608207 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22733d1c835db9e9a5cc8f3b0d5332fdd86abb7f1842aaee49b6637385a7fcf8`
+-	Image ID: `sha256:a30e007a155af8717d6b257bc5496c6212ad47689fda6e7f4ec0d02094817f19`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:42:46 GMT
+# Sat, 01 Feb 2020 17:48:00 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:191e0b734fe44388c9f11c06825cbfa2193e3c6873a8405a1806a4fd16f1909e`  
-		Last Modified: Tue, 07 Jan 2020 22:40:06 GMT  
-		Size: 99.3 MB (99274969 bytes)  
+	-	`sha256:ca0d35c9e0909ce80f8e46e986854da5cd06baece621bb8529d4ab7cd66e6c2b`  
+		Last Modified: Sat, 01 Feb 2020 17:51:28 GMT  
+		Size: 99.3 MB (99274918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.3.1-stretch`
 
 ```console
-$ docker pull julia@sha256:6cf06d1df77d576f41f5b220af773e60bdb2f8c5a5d3a3cf0f81ad026c478821
+$ docker pull julia@sha256:625b5d38825934988741cfcb76072f0655709cc088466c429b0384f65f4b5b6e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3057,49 +3057,49 @@ CMD ["julia"]
 ### `julia:1.3.1-stretch` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:1ec4b1564b3b6fe17573af55f0ee1d3090af511247fa54ad0ccba3dd2548a933
+$ docker pull julia@sha256:c96aa5ec4099d65d449554fe6255b743ea25cfab5a1aa847a3cffca734f0f0ab
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **119.4 MB (119407000 bytes)**  
+-	Total Size: **119.4 MB (119407020 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95d364e5a73929433ea0eeb90c891c784993c7e5e83ded145aed443db2927fff`
+-	Image ID: `sha256:facee1409787ff6bc644dbfa70a17b807cf03b1a47fae35a99ecd4234ab3e1fa`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 05:03:51 GMT
-ADD file:2002ba672e32ae75369830ed6a4734ce62e0118e42390b4d657f0985d6b7fd6a in / 
-# Sat, 28 Dec 2019 05:03:53 GMT
+# Sat, 01 Feb 2020 17:04:29 GMT
+ADD file:6ac430a42a1f2a6cc8b0a3565e518bd0e3a47b01d524b86cd3dd4e7f4606fd53 in / 
+# Sat, 01 Feb 2020 17:04:31 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:18:50 GMT
+# Sat, 01 Feb 2020 18:35:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:18:55 GMT
+# Sat, 01 Feb 2020 18:35:11 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:18:57 GMT
+# Sat, 01 Feb 2020 18:35:12 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:19:00 GMT
+# Sat, 01 Feb 2020 18:35:13 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 23:00:14 GMT
+# Sat, 01 Feb 2020 18:35:14 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:52 GMT
+# Sat, 01 Feb 2020 18:35:45 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:55 GMT
+# Sat, 01 Feb 2020 18:35:46 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:77cf262539006c8df77496f500f74a8c1edd158062440fd94d43d5b1292cefee`  
-		Last Modified: Sat, 28 Dec 2019 05:11:13 GMT  
-		Size: 19.3 MB (19311587 bytes)  
+	-	`sha256:6bc458b0813423b9e351a5604c0d71a4853d970ea22b23fedc8683af12dbc13c`  
+		Last Modified: Sat, 01 Feb 2020 17:11:31 GMT  
+		Size: 19.3 MB (19311624 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb0783fc1ae8b983df527b7bde20d53d363608c4f157358a6ec43edec3c2d9b9`  
-		Last Modified: Sat, 28 Dec 2019 07:23:16 GMT  
-		Size: 6.3 MB (6292128 bytes)  
+	-	`sha256:d9840e48d64ced9020e882cefaf8fe5cd26dc391522b6acd18cd09eccad69e07`  
+		Last Modified: Sat, 01 Feb 2020 18:39:27 GMT  
+		Size: 6.3 MB (6292143 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bc272393ed8ad3ebe10fdf1904d82cd54d3a31a5a0e8ce4aa32eb861855ac0b`  
-		Last Modified: Tue, 07 Jan 2020 23:02:42 GMT  
-		Size: 93.8 MB (93803285 bytes)  
+	-	`sha256:8331cb5b72ee568b3cf598db9f378382b4cc073daabb288e06f54994ca3f6ae7`  
+		Last Modified: Sat, 01 Feb 2020 18:39:55 GMT  
+		Size: 93.8 MB (93803253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3.1-stretch` - linux; arm64 variant v8
@@ -3153,49 +3153,49 @@ CMD ["julia"]
 ### `julia:1.3.1-stretch` - linux; 386
 
 ```console
-$ docker pull julia@sha256:baa4d646c110dad3bf768309c371b53546cb0859f22ec7b03bde6d9b7c3cbaf9
+$ docker pull julia@sha256:80af7ef3c4f85fc04cbfa89589a63190f25e1f777664ff9df018dd2def1d5c1b
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **130.0 MB (130011783 bytes)**  
+-	Total Size: **130.0 MB (130011823 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8775200f00a81e5f43c26d68f30cbe88ce8369db91d45a6e00c9337a8a8e2dab`
+-	Image ID: `sha256:3c3b9bf8739ffa78559670835476d3ecc66c66598265715bdc8f0a0841ed6579`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:42:05 GMT
-ADD file:d43798bcf0e72b342c261b8585dde072d9363d19fab4b8d9f08f15db189f287b in / 
-# Sat, 28 Dec 2019 04:42:05 GMT
+# Sat, 01 Feb 2020 16:42:07 GMT
+ADD file:c9b4696be461d46d96c760441f34e219e229f90bc6946125b2f809218c3456ce in / 
+# Sat, 01 Feb 2020 16:42:07 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:36 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:36 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:37 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:44 GMT
+# Sat, 01 Feb 2020 17:48:37 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:43:10 GMT
+# Sat, 01 Feb 2020 17:48:38 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:39:18 GMT
+# Sat, 01 Feb 2020 17:48:59 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:39:18 GMT
+# Sat, 01 Feb 2020 17:48:59 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:2cb401c016d2f9802d5ef9cf6c6dc07251e9f87757a0de0a8df318fb7f00385c`  
-		Last Modified: Sat, 28 Dec 2019 04:47:36 GMT  
-		Size: 23.2 MB (23152142 bytes)  
+	-	`sha256:4f51b031b74b1f7fab6310c197fd7534181ba2db1f0cec6686fb9e9a82abbb9c`  
+		Last Modified: Sat, 01 Feb 2020 16:47:27 GMT  
+		Size: 23.2 MB (23152156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac678d514844f6878e3aea38bf67468dde5568f022bd6450d93c65628e3cc30a`  
-		Last Modified: Sat, 28 Dec 2019 08:51:58 GMT  
-		Size: 7.6 MB (7582356 bytes)  
+	-	`sha256:fc3eada1d3458b1595fb3469dbe1f9a16519fe362c19186c018a3f71a94b9b38`  
+		Last Modified: Sat, 01 Feb 2020 17:51:37 GMT  
+		Size: 7.6 MB (7582401 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb328500e6d47016cc9f907f4bc624afa9ae8c7f9dfc57bf5f2b582db5bcd845`  
-		Last Modified: Tue, 07 Jan 2020 22:40:35 GMT  
-		Size: 99.3 MB (99277285 bytes)  
+	-	`sha256:4259c4d7471ff49be69dbeb9e909fbfe48ba5fb8252a848e9634ba0b6ec8dbc8`  
+		Last Modified: Sat, 01 Feb 2020 17:52:03 GMT  
+		Size: 99.3 MB (99277266 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.3.1-windowsservercore-1809`
@@ -3341,7 +3341,7 @@ CMD ["julia"]
 ## `julia:1.3-buster`
 
 ```console
-$ docker pull julia@sha256:8a24442a4e64a349254c89cd1f43b347a768f7813b42780d420eb3274c09c76d
+$ docker pull julia@sha256:7a0bd398bd2404ebaa79e695839c2dd9f05ff9a38e91151b0d8d45c2aadad25e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3402,49 +3402,49 @@ CMD ["julia"]
 ### `julia:1.3-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:17df7cc0ea214590efbf9d01b43366c2a28d49c1bd9a8eda8ee524a07475abef
+$ docker pull julia@sha256:1bfe9380ebd44f7fd18c3290a71e25f6278faa39c77562e1b18d3e9b119c7732
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **120.3 MB (120290471 bytes)**  
+-	Total Size: **120.3 MB (120290287 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1dce18d7f1e3ff32f3648ba972e32809f39d76ad5253b6e2d88250760cf351aa`
+-	Image ID: `sha256:4595b8f6040b4ad375efa056027ac9e606ee0ae623de6a3c7a706ca5e5898da4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 22:59:32 GMT
+# Sat, 01 Feb 2020 18:34:09 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:03 GMT
+# Sat, 01 Feb 2020 18:34:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:05 GMT
+# Sat, 01 Feb 2020 18:34:40 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63fe4217d5c5566f8890db4bbbb168d89e769348735300638278d5d17f26e02a`  
-		Last Modified: Tue, 07 Jan 2020 23:01:59 GMT  
-		Size: 93.8 MB (93807689 bytes)  
+	-	`sha256:cc33c18856b9c29ce25a2e310ac0179b18efac98365c421059a8fa3a5dac678c`  
+		Last Modified: Sat, 01 Feb 2020 18:39:18 GMT  
+		Size: 93.8 MB (93807611 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3-buster` - linux; arm64 variant v8
@@ -3498,55 +3498,55 @@ CMD ["julia"]
 ### `julia:1.3-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:6cff5ce6cef2f5ca6169ab25e3f253a5e3db71f344c843e2886a0ec5286a2aa8
+$ docker pull julia@sha256:15adafbd1bfc00363d5b663c28446058a374b89be8e9fca338aa3c8cdcab0fa7
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.6 MB (131608240 bytes)**  
+-	Total Size: **131.6 MB (131608207 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22733d1c835db9e9a5cc8f3b0d5332fdd86abb7f1842aaee49b6637385a7fcf8`
+-	Image ID: `sha256:a30e007a155af8717d6b257bc5496c6212ad47689fda6e7f4ec0d02094817f19`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:42:46 GMT
+# Sat, 01 Feb 2020 17:48:00 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:191e0b734fe44388c9f11c06825cbfa2193e3c6873a8405a1806a4fd16f1909e`  
-		Last Modified: Tue, 07 Jan 2020 22:40:06 GMT  
-		Size: 99.3 MB (99274969 bytes)  
+	-	`sha256:ca0d35c9e0909ce80f8e46e986854da5cd06baece621bb8529d4ab7cd66e6c2b`  
+		Last Modified: Sat, 01 Feb 2020 17:51:28 GMT  
+		Size: 99.3 MB (99274918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.3-stretch`
 
 ```console
-$ docker pull julia@sha256:6cf06d1df77d576f41f5b220af773e60bdb2f8c5a5d3a3cf0f81ad026c478821
+$ docker pull julia@sha256:625b5d38825934988741cfcb76072f0655709cc088466c429b0384f65f4b5b6e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3607,49 +3607,49 @@ CMD ["julia"]
 ### `julia:1.3-stretch` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:1ec4b1564b3b6fe17573af55f0ee1d3090af511247fa54ad0ccba3dd2548a933
+$ docker pull julia@sha256:c96aa5ec4099d65d449554fe6255b743ea25cfab5a1aa847a3cffca734f0f0ab
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **119.4 MB (119407000 bytes)**  
+-	Total Size: **119.4 MB (119407020 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95d364e5a73929433ea0eeb90c891c784993c7e5e83ded145aed443db2927fff`
+-	Image ID: `sha256:facee1409787ff6bc644dbfa70a17b807cf03b1a47fae35a99ecd4234ab3e1fa`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 05:03:51 GMT
-ADD file:2002ba672e32ae75369830ed6a4734ce62e0118e42390b4d657f0985d6b7fd6a in / 
-# Sat, 28 Dec 2019 05:03:53 GMT
+# Sat, 01 Feb 2020 17:04:29 GMT
+ADD file:6ac430a42a1f2a6cc8b0a3565e518bd0e3a47b01d524b86cd3dd4e7f4606fd53 in / 
+# Sat, 01 Feb 2020 17:04:31 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:18:50 GMT
+# Sat, 01 Feb 2020 18:35:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:18:55 GMT
+# Sat, 01 Feb 2020 18:35:11 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:18:57 GMT
+# Sat, 01 Feb 2020 18:35:12 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:19:00 GMT
+# Sat, 01 Feb 2020 18:35:13 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 23:00:14 GMT
+# Sat, 01 Feb 2020 18:35:14 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:52 GMT
+# Sat, 01 Feb 2020 18:35:45 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:55 GMT
+# Sat, 01 Feb 2020 18:35:46 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:77cf262539006c8df77496f500f74a8c1edd158062440fd94d43d5b1292cefee`  
-		Last Modified: Sat, 28 Dec 2019 05:11:13 GMT  
-		Size: 19.3 MB (19311587 bytes)  
+	-	`sha256:6bc458b0813423b9e351a5604c0d71a4853d970ea22b23fedc8683af12dbc13c`  
+		Last Modified: Sat, 01 Feb 2020 17:11:31 GMT  
+		Size: 19.3 MB (19311624 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb0783fc1ae8b983df527b7bde20d53d363608c4f157358a6ec43edec3c2d9b9`  
-		Last Modified: Sat, 28 Dec 2019 07:23:16 GMT  
-		Size: 6.3 MB (6292128 bytes)  
+	-	`sha256:d9840e48d64ced9020e882cefaf8fe5cd26dc391522b6acd18cd09eccad69e07`  
+		Last Modified: Sat, 01 Feb 2020 18:39:27 GMT  
+		Size: 6.3 MB (6292143 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bc272393ed8ad3ebe10fdf1904d82cd54d3a31a5a0e8ce4aa32eb861855ac0b`  
-		Last Modified: Tue, 07 Jan 2020 23:02:42 GMT  
-		Size: 93.8 MB (93803285 bytes)  
+	-	`sha256:8331cb5b72ee568b3cf598db9f378382b4cc073daabb288e06f54994ca3f6ae7`  
+		Last Modified: Sat, 01 Feb 2020 18:39:55 GMT  
+		Size: 93.8 MB (93803253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.3-stretch` - linux; arm64 variant v8
@@ -3703,49 +3703,49 @@ CMD ["julia"]
 ### `julia:1.3-stretch` - linux; 386
 
 ```console
-$ docker pull julia@sha256:baa4d646c110dad3bf768309c371b53546cb0859f22ec7b03bde6d9b7c3cbaf9
+$ docker pull julia@sha256:80af7ef3c4f85fc04cbfa89589a63190f25e1f777664ff9df018dd2def1d5c1b
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **130.0 MB (130011783 bytes)**  
+-	Total Size: **130.0 MB (130011823 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8775200f00a81e5f43c26d68f30cbe88ce8369db91d45a6e00c9337a8a8e2dab`
+-	Image ID: `sha256:3c3b9bf8739ffa78559670835476d3ecc66c66598265715bdc8f0a0841ed6579`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:42:05 GMT
-ADD file:d43798bcf0e72b342c261b8585dde072d9363d19fab4b8d9f08f15db189f287b in / 
-# Sat, 28 Dec 2019 04:42:05 GMT
+# Sat, 01 Feb 2020 16:42:07 GMT
+ADD file:c9b4696be461d46d96c760441f34e219e229f90bc6946125b2f809218c3456ce in / 
+# Sat, 01 Feb 2020 16:42:07 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:36 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:36 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:37 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:44 GMT
+# Sat, 01 Feb 2020 17:48:37 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:43:10 GMT
+# Sat, 01 Feb 2020 17:48:38 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:39:18 GMT
+# Sat, 01 Feb 2020 17:48:59 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:39:18 GMT
+# Sat, 01 Feb 2020 17:48:59 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:2cb401c016d2f9802d5ef9cf6c6dc07251e9f87757a0de0a8df318fb7f00385c`  
-		Last Modified: Sat, 28 Dec 2019 04:47:36 GMT  
-		Size: 23.2 MB (23152142 bytes)  
+	-	`sha256:4f51b031b74b1f7fab6310c197fd7534181ba2db1f0cec6686fb9e9a82abbb9c`  
+		Last Modified: Sat, 01 Feb 2020 16:47:27 GMT  
+		Size: 23.2 MB (23152156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac678d514844f6878e3aea38bf67468dde5568f022bd6450d93c65628e3cc30a`  
-		Last Modified: Sat, 28 Dec 2019 08:51:58 GMT  
-		Size: 7.6 MB (7582356 bytes)  
+	-	`sha256:fc3eada1d3458b1595fb3469dbe1f9a16519fe362c19186c018a3f71a94b9b38`  
+		Last Modified: Sat, 01 Feb 2020 17:51:37 GMT  
+		Size: 7.6 MB (7582401 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb328500e6d47016cc9f907f4bc624afa9ae8c7f9dfc57bf5f2b582db5bcd845`  
-		Last Modified: Tue, 07 Jan 2020 22:40:35 GMT  
-		Size: 99.3 MB (99277285 bytes)  
+	-	`sha256:4259c4d7471ff49be69dbeb9e909fbfe48ba5fb8252a848e9634ba0b6ec8dbc8`  
+		Last Modified: Sat, 01 Feb 2020 17:52:03 GMT  
+		Size: 99.3 MB (99277266 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.3-windowsservercore-1809`
@@ -3891,7 +3891,7 @@ CMD ["julia"]
 ## `julia:1.4`
 
 ```console
-$ docker pull julia@sha256:75c015a4961175103438456b56f610aa33a9062db05f17683d752f920415fa3f
+$ docker pull julia@sha256:0d985dd8555272b5b11db679b3c612d854e842dbd92bf92d203ba5fb85b9f8a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3954,49 +3954,49 @@ CMD ["julia"]
 ### `julia:1.4` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4` - linux; arm64 variant v8
@@ -4050,49 +4050,49 @@ CMD ["julia"]
 ### `julia:1.4` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4` - windows version 10.0.14393.3443; amd64
@@ -4218,7 +4218,7 @@ CMD ["julia"]
 ## `julia:1.4.0`
 
 ```console
-$ docker pull julia@sha256:75c015a4961175103438456b56f610aa33a9062db05f17683d752f920415fa3f
+$ docker pull julia@sha256:0d985dd8555272b5b11db679b3c612d854e842dbd92bf92d203ba5fb85b9f8a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4281,49 +4281,49 @@ CMD ["julia"]
 ### `julia:1.4.0` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4.0` - linux; arm64 variant v8
@@ -4377,49 +4377,49 @@ CMD ["julia"]
 ### `julia:1.4.0` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4.0` - windows version 10.0.14393.3443; amd64
@@ -4545,7 +4545,7 @@ CMD ["julia"]
 ## `julia:1.4.0-buster`
 
 ```console
-$ docker pull julia@sha256:e5274cc6befbd9dc3398972bd69581f73400ccd8ff79f0bf59b5953852656130
+$ docker pull julia@sha256:6a0d9b0eab2a991b7fa7b2ee00bf66a3be38a4aff835cadd15e44f352404c697
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4606,49 +4606,49 @@ CMD ["julia"]
 ### `julia:1.4.0-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4.0-buster` - linux; arm64 variant v8
@@ -4702,55 +4702,55 @@ CMD ["julia"]
 ### `julia:1.4.0-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.4.0-rc1`
 
 ```console
-$ docker pull julia@sha256:75c015a4961175103438456b56f610aa33a9062db05f17683d752f920415fa3f
+$ docker pull julia@sha256:0d985dd8555272b5b11db679b3c612d854e842dbd92bf92d203ba5fb85b9f8a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4813,49 +4813,49 @@ CMD ["julia"]
 ### `julia:1.4.0-rc1` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4.0-rc1` - linux; arm64 variant v8
@@ -4909,49 +4909,49 @@ CMD ["julia"]
 ### `julia:1.4.0-rc1` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4.0-rc1` - windows version 10.0.14393.3443; amd64
@@ -5077,7 +5077,7 @@ CMD ["julia"]
 ## `julia:1.4.0-rc1-buster`
 
 ```console
-$ docker pull julia@sha256:e5274cc6befbd9dc3398972bd69581f73400ccd8ff79f0bf59b5953852656130
+$ docker pull julia@sha256:6a0d9b0eab2a991b7fa7b2ee00bf66a3be38a4aff835cadd15e44f352404c697
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5138,49 +5138,49 @@ CMD ["julia"]
 ### `julia:1.4.0-rc1-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4.0-rc1-buster` - linux; arm64 variant v8
@@ -5234,49 +5234,49 @@ CMD ["julia"]
 ### `julia:1.4.0-rc1-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.4.0-rc1-windowsservercore-1809`
@@ -5562,7 +5562,7 @@ CMD ["julia"]
 ## `julia:1.4-buster`
 
 ```console
-$ docker pull julia@sha256:e5274cc6befbd9dc3398972bd69581f73400ccd8ff79f0bf59b5953852656130
+$ docker pull julia@sha256:6a0d9b0eab2a991b7fa7b2ee00bf66a3be38a4aff835cadd15e44f352404c697
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5623,49 +5623,49 @@ CMD ["julia"]
 ### `julia:1.4-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4-buster` - linux; arm64 variant v8
@@ -5719,55 +5719,55 @@ CMD ["julia"]
 ### `julia:1.4-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.4-rc`
 
 ```console
-$ docker pull julia@sha256:75c015a4961175103438456b56f610aa33a9062db05f17683d752f920415fa3f
+$ docker pull julia@sha256:0d985dd8555272b5b11db679b3c612d854e842dbd92bf92d203ba5fb85b9f8a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5830,49 +5830,49 @@ CMD ["julia"]
 ### `julia:1.4-rc` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4-rc` - linux; arm64 variant v8
@@ -5926,49 +5926,49 @@ CMD ["julia"]
 ### `julia:1.4-rc` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4-rc` - windows version 10.0.14393.3443; amd64
@@ -6094,7 +6094,7 @@ CMD ["julia"]
 ## `julia:1.4-rc-buster`
 
 ```console
-$ docker pull julia@sha256:e5274cc6befbd9dc3398972bd69581f73400ccd8ff79f0bf59b5953852656130
+$ docker pull julia@sha256:6a0d9b0eab2a991b7fa7b2ee00bf66a3be38a4aff835cadd15e44f352404c697
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6155,49 +6155,49 @@ CMD ["julia"]
 ### `julia:1.4-rc-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:1.4-rc-buster` - linux; arm64 variant v8
@@ -6251,49 +6251,49 @@ CMD ["julia"]
 ### `julia:1.4-rc-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:1.4-rc-windowsservercore-1809`
@@ -7129,7 +7129,7 @@ CMD ["julia"]
 ## `julia:buster`
 
 ```console
-$ docker pull julia@sha256:8a24442a4e64a349254c89cd1f43b347a768f7813b42780d420eb3274c09c76d
+$ docker pull julia@sha256:7a0bd398bd2404ebaa79e695839c2dd9f05ff9a38e91151b0d8d45c2aadad25e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7190,49 +7190,49 @@ CMD ["julia"]
 ### `julia:buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:17df7cc0ea214590efbf9d01b43366c2a28d49c1bd9a8eda8ee524a07475abef
+$ docker pull julia@sha256:1bfe9380ebd44f7fd18c3290a71e25f6278faa39c77562e1b18d3e9b119c7732
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **120.3 MB (120290471 bytes)**  
+-	Total Size: **120.3 MB (120290287 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1dce18d7f1e3ff32f3648ba972e32809f39d76ad5253b6e2d88250760cf351aa`
+-	Image ID: `sha256:4595b8f6040b4ad375efa056027ac9e606ee0ae623de6a3c7a706ca5e5898da4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 22:59:32 GMT
+# Sat, 01 Feb 2020 18:34:09 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:03 GMT
+# Sat, 01 Feb 2020 18:34:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:05 GMT
+# Sat, 01 Feb 2020 18:34:40 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63fe4217d5c5566f8890db4bbbb168d89e769348735300638278d5d17f26e02a`  
-		Last Modified: Tue, 07 Jan 2020 23:01:59 GMT  
-		Size: 93.8 MB (93807689 bytes)  
+	-	`sha256:cc33c18856b9c29ce25a2e310ac0179b18efac98365c421059a8fa3a5dac678c`  
+		Last Modified: Sat, 01 Feb 2020 18:39:18 GMT  
+		Size: 93.8 MB (93807611 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:buster` - linux; arm64 variant v8
@@ -7286,55 +7286,55 @@ CMD ["julia"]
 ### `julia:buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:6cff5ce6cef2f5ca6169ab25e3f253a5e3db71f344c843e2886a0ec5286a2aa8
+$ docker pull julia@sha256:15adafbd1bfc00363d5b663c28446058a374b89be8e9fca338aa3c8cdcab0fa7
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.6 MB (131608240 bytes)**  
+-	Total Size: **131.6 MB (131608207 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22733d1c835db9e9a5cc8f3b0d5332fdd86abb7f1842aaee49b6637385a7fcf8`
+-	Image ID: `sha256:a30e007a155af8717d6b257bc5496c6212ad47689fda6e7f4ec0d02094817f19`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:42:46 GMT
+# Sat, 01 Feb 2020 17:48:00 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:191e0b734fe44388c9f11c06825cbfa2193e3c6873a8405a1806a4fd16f1909e`  
-		Last Modified: Tue, 07 Jan 2020 22:40:06 GMT  
-		Size: 99.3 MB (99274969 bytes)  
+	-	`sha256:ca0d35c9e0909ce80f8e46e986854da5cd06baece621bb8529d4ab7cd66e6c2b`  
+		Last Modified: Sat, 01 Feb 2020 17:51:28 GMT  
+		Size: 99.3 MB (99274918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:latest`
 
 ```console
-$ docker pull julia@sha256:2c989fee466e331c445984e8d0a63b03c3c7ef0cc80664cbf0648f43c262bdca
+$ docker pull julia@sha256:9e076744f44c796dd27309c4e750839632134c3efe26763da7aea239512993b0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7397,49 +7397,49 @@ CMD ["julia"]
 ### `julia:latest` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:17df7cc0ea214590efbf9d01b43366c2a28d49c1bd9a8eda8ee524a07475abef
+$ docker pull julia@sha256:1bfe9380ebd44f7fd18c3290a71e25f6278faa39c77562e1b18d3e9b119c7732
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **120.3 MB (120290471 bytes)**  
+-	Total Size: **120.3 MB (120290287 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1dce18d7f1e3ff32f3648ba972e32809f39d76ad5253b6e2d88250760cf351aa`
+-	Image ID: `sha256:4595b8f6040b4ad375efa056027ac9e606ee0ae623de6a3c7a706ca5e5898da4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 22:59:32 GMT
+# Sat, 01 Feb 2020 18:34:09 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:03 GMT
+# Sat, 01 Feb 2020 18:34:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:05 GMT
+# Sat, 01 Feb 2020 18:34:40 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63fe4217d5c5566f8890db4bbbb168d89e769348735300638278d5d17f26e02a`  
-		Last Modified: Tue, 07 Jan 2020 23:01:59 GMT  
-		Size: 93.8 MB (93807689 bytes)  
+	-	`sha256:cc33c18856b9c29ce25a2e310ac0179b18efac98365c421059a8fa3a5dac678c`  
+		Last Modified: Sat, 01 Feb 2020 18:39:18 GMT  
+		Size: 93.8 MB (93807611 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:latest` - linux; arm64 variant v8
@@ -7493,49 +7493,49 @@ CMD ["julia"]
 ### `julia:latest` - linux; 386
 
 ```console
-$ docker pull julia@sha256:6cff5ce6cef2f5ca6169ab25e3f253a5e3db71f344c843e2886a0ec5286a2aa8
+$ docker pull julia@sha256:15adafbd1bfc00363d5b663c28446058a374b89be8e9fca338aa3c8cdcab0fa7
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **131.6 MB (131608240 bytes)**  
+-	Total Size: **131.6 MB (131608207 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22733d1c835db9e9a5cc8f3b0d5332fdd86abb7f1842aaee49b6637385a7fcf8`
+-	Image ID: `sha256:a30e007a155af8717d6b257bc5496c6212ad47689fda6e7f4ec0d02094817f19`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:42:46 GMT
+# Sat, 01 Feb 2020 17:48:00 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:38:53 GMT
+# Sat, 01 Feb 2020 17:48:19 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:191e0b734fe44388c9f11c06825cbfa2193e3c6873a8405a1806a4fd16f1909e`  
-		Last Modified: Tue, 07 Jan 2020 22:40:06 GMT  
-		Size: 99.3 MB (99274969 bytes)  
+	-	`sha256:ca0d35c9e0909ce80f8e46e986854da5cd06baece621bb8529d4ab7cd66e6c2b`  
+		Last Modified: Sat, 01 Feb 2020 17:51:28 GMT  
+		Size: 99.3 MB (99274918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:latest` - windows version 10.0.14393.3443; amd64
@@ -7661,7 +7661,7 @@ CMD ["julia"]
 ## `julia:rc`
 
 ```console
-$ docker pull julia@sha256:75c015a4961175103438456b56f610aa33a9062db05f17683d752f920415fa3f
+$ docker pull julia@sha256:0d985dd8555272b5b11db679b3c612d854e842dbd92bf92d203ba5fb85b9f8a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7724,49 +7724,49 @@ CMD ["julia"]
 ### `julia:rc` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:rc` - linux; arm64 variant v8
@@ -7820,49 +7820,49 @@ CMD ["julia"]
 ### `julia:rc` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:rc` - windows version 10.0.14393.3443; amd64
@@ -7988,7 +7988,7 @@ CMD ["julia"]
 ## `julia:rc-buster`
 
 ```console
-$ docker pull julia@sha256:e5274cc6befbd9dc3398972bd69581f73400ccd8ff79f0bf59b5953852656130
+$ docker pull julia@sha256:6a0d9b0eab2a991b7fa7b2ee00bf66a3be38a4aff835cadd15e44f352404c697
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8049,49 +8049,49 @@ CMD ["julia"]
 ### `julia:rc-buster` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:c85b5b93193d3bc2e46bdabab92cbae7325f7e2b54c25ddb066b52c7e58e3a52
+$ docker pull julia@sha256:8a954e215423396846a6bf3f7a20edd7040e2a478442e0b8ba9858b9cdba85d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.2 MB (123189219 bytes)**  
+-	Total Size: **123.2 MB (123188966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a23857a69b79a6b7f83ad89869cbe253384b09603b24994c17f5a913bbbd9b6`
+-	Image ID: `sha256:bb27f1eb6324be2a1cdd4aa7a9aa55c9acd36ab353156ffbc44b0931f3b53ad4`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:59:06 GMT
-ADD file:d252ae1c97d5c80e71e64a51cc4d137a901e0e6cdc4aec29faa917fa9bcf3242 in / 
-# Sat, 28 Dec 2019 04:59:08 GMT
+# Sat, 01 Feb 2020 17:00:28 GMT
+ADD file:8658fd39d2726b84ace6e940a73e3f5fdf03b339f01e8cca3166e44abe3f9ac3 in / 
+# Sat, 01 Feb 2020 17:00:29 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:17:25 GMT
+# Sat, 01 Feb 2020 18:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:17:28 GMT
+# Sat, 01 Feb 2020 18:33:21 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:17:29 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:17:31 GMT
+# Sat, 01 Feb 2020 18:33:22 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:59:31 GMT
+# Sat, 01 Feb 2020 18:33:23 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 02:00:04 GMT
+# Sat, 01 Feb 2020 18:33:57 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 02:00:06 GMT
+# Sat, 01 Feb 2020 18:33:58 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:c4f8e1e649d2e7938fbe832f157cfb695319ee625a8bc06c619219a87d550949`  
-		Last Modified: Sat, 28 Dec 2019 05:07:32 GMT  
-		Size: 22.7 MB (22699129 bytes)  
+	-	`sha256:0c7074b2d47c15922db5c0eda14250224eb72756c800081d2b0627ffb369568d`  
+		Last Modified: Sat, 01 Feb 2020 17:07:47 GMT  
+		Size: 22.7 MB (22699138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:773ce6798cdb73902d408ae8fbe361566caf17339b1ab2768daa58391934d97e`  
-		Last Modified: Sat, 28 Dec 2019 07:22:37 GMT  
-		Size: 3.8 MB (3783653 bytes)  
+	-	`sha256:46a6429cb88079b2fb8e762443ca0cc696ca55d3c1f0fe3c3a674c6719879848`  
+		Last Modified: Sat, 01 Feb 2020 18:38:05 GMT  
+		Size: 3.8 MB (3783538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55059c74f67fb5c29c16be2e9d64458fc8678d4e504257e34ff413763b444464`  
-		Last Modified: Thu, 30 Jan 2020 02:01:18 GMT  
-		Size: 96.7 MB (96706437 bytes)  
+	-	`sha256:1f9324c8e014d9183150a1d11982cb169f4c44d13d2f393dfb91d167d0a8b31f`  
+		Last Modified: Sat, 01 Feb 2020 18:38:35 GMT  
+		Size: 96.7 MB (96706290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:rc-buster` - linux; arm64 variant v8
@@ -8145,49 +8145,49 @@ CMD ["julia"]
 ### `julia:rc-buster` - linux; 386
 
 ```console
-$ docker pull julia@sha256:0796d7a456b10ae993fbb888a6f731656f80812311102cc518922c2e0690f970
+$ docker pull julia@sha256:4ef5a19cba48c3cc6af71a93b505901b0765307fefe967d08aa99865e7332e7e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **135.6 MB (135625940 bytes)**  
+-	Total Size: **135.6 MB (135625924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d66ab1cc56ae1e5dc48ab81783fe5607381551dd1160534e3d4ed866d2c48ca6`
+-	Image ID: `sha256:af27c6c53789c4558eb65b4e59ce29123cc6de5139d173dbf4ce93aab854431a`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:39:35 GMT
-ADD file:447f0758c9f5653f03d964e54a38c18f24cf4c43e05fc38e7a76aebd6d6bafa8 in / 
-# Sat, 28 Dec 2019 04:39:35 GMT
+# Sat, 01 Feb 2020 16:39:35 GMT
+ADD file:be03c936f8d9737b4167f6563785971b009f05e4e508eb8249b365a9fae7b0e8 in / 
+# Sat, 01 Feb 2020 16:39:35 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:02 GMT
+# Sat, 01 Feb 2020 17:47:30 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:03 GMT
+# Sat, 01 Feb 2020 17:47:31 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Thu, 30 Jan 2020 01:38:34 GMT
+# Sat, 01 Feb 2020 17:47:32 GMT
 ENV JULIA_VERSION=1.4.0-rc1
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:52 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='9996a9dc0547a97da5157536354645f9a2729b22f35c3d0d9cb42190e6fe3c64' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='a23f735c44f2d5bd60107a6f14c06c528aaffce8dc97a635e5f60f30c8ea7eaf' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='9d1a9c5616b35dc8363cf57833b4538a0825429d18cf7287ffe80edf72b4c884' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='7f6b7888bb77d2959035ffbb27bd7fc91fc2da77e5c678c74bb0723acf730e1d' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Thu, 30 Jan 2020 01:38:55 GMT
+# Sat, 01 Feb 2020 17:47:53 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:5536417213b9f46f2118943c1151912954d6077afe03a32e68521774cc358095`  
-		Last Modified: Sat, 28 Dec 2019 04:44:24 GMT  
-		Size: 27.7 MB (27747020 bytes)  
+	-	`sha256:57b164929d223abf41064de94f9f53ca37ec9f09843646c80344ff10c302051a`  
+		Last Modified: Sat, 01 Feb 2020 16:44:32 GMT  
+		Size: 27.7 MB (27747052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1a5251298374bdf9bfe3b3a619b615e1348635244eacfb6f22cb986ec8a7c01`  
-		Last Modified: Sat, 28 Dec 2019 08:51:29 GMT  
-		Size: 4.6 MB (4586251 bytes)  
+	-	`sha256:79a1a114e65b3510d2a6aa01898ca3e6b2b23a6bef40822567b76c876e82d9c8`  
+		Last Modified: Sat, 01 Feb 2020 17:50:28 GMT  
+		Size: 4.6 MB (4586237 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92850268f4b05387cc28db3c9f893221fc7ccf5cb67442e92e02ae856737c11e`  
-		Last Modified: Thu, 30 Jan 2020 01:39:47 GMT  
-		Size: 103.3 MB (103292669 bytes)  
+	-	`sha256:17b4bb9e23c25e585467e1e235b9a6ca199c106976763a371043f2d7262289d2`  
+		Last Modified: Sat, 01 Feb 2020 17:50:54 GMT  
+		Size: 103.3 MB (103292635 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:rc-windowsservercore-1809`
@@ -8333,7 +8333,7 @@ CMD ["julia"]
 ## `julia:stretch`
 
 ```console
-$ docker pull julia@sha256:6cf06d1df77d576f41f5b220af773e60bdb2f8c5a5d3a3cf0f81ad026c478821
+$ docker pull julia@sha256:625b5d38825934988741cfcb76072f0655709cc088466c429b0384f65f4b5b6e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8394,49 +8394,49 @@ CMD ["julia"]
 ### `julia:stretch` - linux; arm variant v7
 
 ```console
-$ docker pull julia@sha256:1ec4b1564b3b6fe17573af55f0ee1d3090af511247fa54ad0ccba3dd2548a933
+$ docker pull julia@sha256:c96aa5ec4099d65d449554fe6255b743ea25cfab5a1aa847a3cffca734f0f0ab
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **119.4 MB (119407000 bytes)**  
+-	Total Size: **119.4 MB (119407020 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95d364e5a73929433ea0eeb90c891c784993c7e5e83ded145aed443db2927fff`
+-	Image ID: `sha256:facee1409787ff6bc644dbfa70a17b807cf03b1a47fae35a99ecd4234ab3e1fa`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 05:03:51 GMT
-ADD file:2002ba672e32ae75369830ed6a4734ce62e0118e42390b4d657f0985d6b7fd6a in / 
-# Sat, 28 Dec 2019 05:03:53 GMT
+# Sat, 01 Feb 2020 17:04:29 GMT
+ADD file:6ac430a42a1f2a6cc8b0a3565e518bd0e3a47b01d524b86cd3dd4e7f4606fd53 in / 
+# Sat, 01 Feb 2020 17:04:31 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 07:18:50 GMT
+# Sat, 01 Feb 2020 18:35:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 07:18:55 GMT
+# Sat, 01 Feb 2020 18:35:11 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 07:18:57 GMT
+# Sat, 01 Feb 2020 18:35:12 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 07:19:00 GMT
+# Sat, 01 Feb 2020 18:35:13 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Tue, 07 Jan 2020 23:00:14 GMT
+# Sat, 01 Feb 2020 18:35:14 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 23:00:52 GMT
+# Sat, 01 Feb 2020 18:35:45 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 23:00:55 GMT
+# Sat, 01 Feb 2020 18:35:46 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:77cf262539006c8df77496f500f74a8c1edd158062440fd94d43d5b1292cefee`  
-		Last Modified: Sat, 28 Dec 2019 05:11:13 GMT  
-		Size: 19.3 MB (19311587 bytes)  
+	-	`sha256:6bc458b0813423b9e351a5604c0d71a4853d970ea22b23fedc8683af12dbc13c`  
+		Last Modified: Sat, 01 Feb 2020 17:11:31 GMT  
+		Size: 19.3 MB (19311624 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb0783fc1ae8b983df527b7bde20d53d363608c4f157358a6ec43edec3c2d9b9`  
-		Last Modified: Sat, 28 Dec 2019 07:23:16 GMT  
-		Size: 6.3 MB (6292128 bytes)  
+	-	`sha256:d9840e48d64ced9020e882cefaf8fe5cd26dc391522b6acd18cd09eccad69e07`  
+		Last Modified: Sat, 01 Feb 2020 18:39:27 GMT  
+		Size: 6.3 MB (6292143 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bc272393ed8ad3ebe10fdf1904d82cd54d3a31a5a0e8ce4aa32eb861855ac0b`  
-		Last Modified: Tue, 07 Jan 2020 23:02:42 GMT  
-		Size: 93.8 MB (93803285 bytes)  
+	-	`sha256:8331cb5b72ee568b3cf598db9f378382b4cc073daabb288e06f54994ca3f6ae7`  
+		Last Modified: Sat, 01 Feb 2020 18:39:55 GMT  
+		Size: 93.8 MB (93803253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `julia:stretch` - linux; arm64 variant v8
@@ -8490,49 +8490,49 @@ CMD ["julia"]
 ### `julia:stretch` - linux; 386
 
 ```console
-$ docker pull julia@sha256:baa4d646c110dad3bf768309c371b53546cb0859f22ec7b03bde6d9b7c3cbaf9
+$ docker pull julia@sha256:80af7ef3c4f85fc04cbfa89589a63190f25e1f777664ff9df018dd2def1d5c1b
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **130.0 MB (130011783 bytes)**  
+-	Total Size: **130.0 MB (130011823 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8775200f00a81e5f43c26d68f30cbe88ce8369db91d45a6e00c9337a8a8e2dab`
+-	Image ID: `sha256:3c3b9bf8739ffa78559670835476d3ecc66c66598265715bdc8f0a0841ed6579`
 -	Default Command: `["julia"]`
 
 ```dockerfile
-# Sat, 28 Dec 2019 04:42:05 GMT
-ADD file:d43798bcf0e72b342c261b8585dde072d9363d19fab4b8d9f08f15db189f287b in / 
-# Sat, 28 Dec 2019 04:42:05 GMT
+# Sat, 01 Feb 2020 16:42:07 GMT
+ADD file:c9b4696be461d46d96c760441f34e219e229f90bc6946125b2f809218c3456ce in / 
+# Sat, 01 Feb 2020 16:42:07 GMT
 CMD ["bash"]
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:36 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:36 GMT
 ENV JULIA_PATH=/usr/local/julia
-# Sat, 28 Dec 2019 08:49:43 GMT
+# Sat, 01 Feb 2020 17:48:37 GMT
 ENV PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 Dec 2019 08:49:44 GMT
+# Sat, 01 Feb 2020 17:48:37 GMT
 ENV JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495
-# Fri, 03 Jan 2020 01:43:10 GMT
+# Sat, 01 Feb 2020 17:48:38 GMT
 ENV JULIA_VERSION=1.3.1
-# Tue, 07 Jan 2020 22:39:18 GMT
+# Sat, 01 Feb 2020 17:48:59 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='faa707c8343780a6fe5eaf13490355e8190acf8e2c189b9e7ecbddb0fa2643ad' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='965c8fab2214f8ce1b3d449d088561a6de61be42543b48c3bbadaed5b02bf824' ;; 		arm64) tarArch='aarch64'; dirArch='aarch64'; sha256='e028e64f29faa823557819cf4d5887c0b41c28b5225b60f5f2e5e2f38d453458' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='2cef14e892ac317707b39d2afd9ad57a39fb77445ffb7c461a341a4cdf34141a' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
-# Tue, 07 Jan 2020 22:39:18 GMT
+# Sat, 01 Feb 2020 17:48:59 GMT
 CMD ["julia"]
 ```
 
 -	Layers:
-	-	`sha256:2cb401c016d2f9802d5ef9cf6c6dc07251e9f87757a0de0a8df318fb7f00385c`  
-		Last Modified: Sat, 28 Dec 2019 04:47:36 GMT  
-		Size: 23.2 MB (23152142 bytes)  
+	-	`sha256:4f51b031b74b1f7fab6310c197fd7534181ba2db1f0cec6686fb9e9a82abbb9c`  
+		Last Modified: Sat, 01 Feb 2020 16:47:27 GMT  
+		Size: 23.2 MB (23152156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac678d514844f6878e3aea38bf67468dde5568f022bd6450d93c65628e3cc30a`  
-		Last Modified: Sat, 28 Dec 2019 08:51:58 GMT  
-		Size: 7.6 MB (7582356 bytes)  
+	-	`sha256:fc3eada1d3458b1595fb3469dbe1f9a16519fe362c19186c018a3f71a94b9b38`  
+		Last Modified: Sat, 01 Feb 2020 17:51:37 GMT  
+		Size: 7.6 MB (7582401 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb328500e6d47016cc9f907f4bc624afa9ae8c7f9dfc57bf5f2b582db5bcd845`  
-		Last Modified: Tue, 07 Jan 2020 22:40:35 GMT  
-		Size: 99.3 MB (99277285 bytes)  
+	-	`sha256:4259c4d7471ff49be69dbeb9e909fbfe48ba5fb8252a848e9634ba0b6ec8dbc8`  
+		Last Modified: Sat, 01 Feb 2020 17:52:03 GMT  
+		Size: 99.3 MB (99277266 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `julia:windowsservercore-1809`
