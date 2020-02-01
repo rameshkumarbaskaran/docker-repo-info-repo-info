@@ -1,9 +1,9 @@
-# `joomla:3.9.14-php7.4-apache`
+# `joomla:3.9.15-php7.4-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:91156bc95b9c4bd3074fbfa8f402323069f7ae9bb505ac78aba1cd0d3eb4df2e`
-- Created: `2020-01-24T11:15:28.754440301Z`
+- Image ID: `sha256:00c79c56d7a5c5c4f73814ee372668b8a58324c51614d8abb6215ddc3e7f08f1`
+- Created: `2020-01-29T19:31:21.818890731Z`
 - Virtual Size: ~ 461.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -27,8 +27,8 @@
   - `PHP_SHA256=98284deac017da0d426117ecae7599a1f1bf62ae3911e8bc16c4403a8f4bdf13`
   - `PHP_MD5=`
   - `JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1`
-  - `JOOMLA_VERSION=3.9.14`
-  - `JOOMLA_SHA512=e7807256f40330fa857d37bd00b91e76c7a0ee24d21a1c3fbe95af90cf80b01fcee15845b9cbdc75a3eec0e36b140e87d78fbe491ee6851abbc74be621cb719a`
+  - `JOOMLA_VERSION=3.9.15`
+  - `JOOMLA_SHA512=d68e32de6cfe9af92ff7f7991c9253a4487832e55e32e6f74f2b4d592a4777f3b4d8bd74dcd0b10d4262c5e39bdad1e9f7698dedb2ef2989dbc06aa7ab2f6c69`
 - Labels:
   - `maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)`
 
