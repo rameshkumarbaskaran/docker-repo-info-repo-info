@@ -1,61 +1,26 @@
-# `percona:5.7.26-centos`
+# `percona:8.0.18-9-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2e7138331e55af84f13f4ff4dc5e86cfff60cfd1bd3e0b386c8898ba98bcf395`
-- Created: `2019-11-12T02:19:55.759077505Z`
-- Virtual Size: ~ 586.73 Mb  
+- Image ID: `sha256:9988e1470d5bdeaef521ccf2c3a6fc9f6fe5827bc55ff92e52c10148e0e1d9e7`
+- Created: `2020-01-30T23:34:01.295662067Z`
+- Virtual Size: ~ 719.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["mysqld"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `PERCONA_VERSION=5.7.26-29.1.el7`
+  - `PERCONA_VERSION=8.0.18-9.1.el7`
 - Labels:
   - `org.label-schema.build-date=20191001`
   - `org.label-schema.license=GPLv2`
   - `org.label-schema.name=CentOS Base Image`
   - `org.label-schema.schema-version=1.0`
   - `org.label-schema.vendor=CentOS`
+  - `org.opencontainers.image.authors=info@percona.com`
 
 ## `rpm` (`.rpm`-based packages)
-
-### `rpm` package: `Percona-Server-client-57-5.7.26-29.1.el7.x86_64`
-
-Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `Percona-Server-rocksdb-57-5.7.26-29.1.el7.x86_64`
-
-Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `Percona-Server-server-57-5.7.26-29.1.el7.x86_64`
-
-Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `Percona-Server-shared-57-5.7.26-29.1.el7.x86_64`
-
-Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `Percona-Server-shared-compat-57-5.7.27-30.1.el7.x86_64`
-
-Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `Percona-Server-tokudb-57-5.7.26-29.1.el7.x86_64`
-
-Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `acl-2.2.51-14.el7.x86_64`
 
@@ -65,9 +30,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.51-14.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -82,9 +44,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls audit-libs-2.8.5-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -99,9 +58,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls basesystem-10.0-7.el7.centos.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -116,9 +72,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls bash-4.2.46-33.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -133,9 +86,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls bind-license-9.11.4-9.P2.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -150,9 +100,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls binutils-2.27-41.base.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -167,9 +114,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls bzip2-libs-1.0.6-13.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -184,9 +128,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ca-certificates-2018.2.22-70.0.el7_5.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -201,9 +142,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls centos-release-7-7.1908.0.el7.centos
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -218,9 +156,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls chkconfig-1.7.4-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -235,9 +170,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls coreutils-8.22-24.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -252,9 +184,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cpio-2.11-27.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -269,9 +198,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cracklib-2.9.0-11.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -286,9 +212,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cracklib-dicts-2.9.0-11.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -303,9 +226,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cryptsetup-libs-2.0.3-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -320,9 +240,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls curl-7.29.0-54.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -337,9 +254,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls cyrus-sasl-lib-2.1.26-23.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -354,9 +268,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-1.10.24-13.el7_6
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -371,9 +282,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-glib-0.100-7.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -388,9 +296,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-libs-1.10.24-13.el7_6
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -405,9 +310,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dbus-python-1.1.1-9.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -422,9 +324,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls device-mapper-1.02.158-2.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -439,9 +338,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls device-mapper-libs-1.02.158-2.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -456,9 +352,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls diffutils-3.3-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -473,9 +366,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls dracut-033-564.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -490,9 +380,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls elfutils-default-yama-scope-0.176-2.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -507,9 +394,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls elfutils-libelf-0.176-2.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -524,9 +408,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls elfutils-libs-0.176-2.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -541,9 +422,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls expat-2.1.0-10.el7_3
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -558,9 +436,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls file-libs-5.11-35.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -575,9 +450,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls filesystem-3.2-25.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -592,9 +464,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls findutils-4.5.11-6.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -609,9 +478,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gawk-4.0.2-4.el7_3.1
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -626,9 +492,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gdbm-1.10-8.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -643,9 +506,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls geoipupdate-2.5.0-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -660,9 +520,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls glib2-2.56.1-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -677,9 +534,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls glibc-2.17-292.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -694,9 +548,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls glibc-common-2.17-292.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -711,9 +562,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gmp-6.0.0-15.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -728,9 +576,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gnupg2-2.0.22-5.el7_5
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -745,9 +590,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gobject-introspection-1.56.1-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -780,9 +622,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gpgme-1.3.2-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -797,9 +636,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls grep-2.20-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -814,9 +650,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls groff-base-1.22.2-8.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -831,9 +664,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls gzip-1.5-10.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -848,9 +678,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls hardlink-1.0-19.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -865,9 +692,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls hostname-3.13-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -882,9 +706,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls info-5.1-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -899,31 +720,17 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls iputils-20160308-10.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/iputils-20160308-10.el7.src.rpm
 ```
 
-### `rpm` package: `jemalloc-3.6.0-1.el7.x86_64`
+### `rpm` package: `jemalloc-3.6.0-3.el7.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls jemalloc-3.6.0-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://repo.percona.com/percona/yum/release/7/SRPMS//jemalloc-3.6.0-1.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `json-c-0.11-4.el7_0.x86_64`
 
@@ -933,9 +740,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls json-c-0.11-4.el7_0
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -950,9 +754,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls keyutils-libs-1.5.8-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -967,9 +768,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls kmod-20-25.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -984,9 +782,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls kmod-libs-20-25.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1001,9 +796,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls kpartx-0.4.9-127.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1018,9 +810,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.el7_7.2
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1035,9 +824,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libacl-2.2.51-14.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1052,9 +838,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libaio-0.3.109-13.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1069,9 +852,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libassuan-2.1.0-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1086,9 +866,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libattr-2.4.46-13.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1103,9 +880,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libblkid-2.23.2-61.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1120,9 +894,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libcap-2.22-10.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1137,9 +908,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libcap-ng-0.7.5-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1154,9 +922,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libcom_err-1.42.9-16.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1171,9 +936,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libcurl-7.29.0-54.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1188,9 +950,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libdb-5.3.21-25.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1205,9 +964,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libdb-utils-5.3.21-25.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1222,9 +978,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libffi-3.0.13-18.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1239,9 +992,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libgcc-4.8.5-39.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1256,9 +1006,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libgcrypt-1.5.3-14.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1273,9 +1020,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libgpg-error-1.12-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1290,9 +1034,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libidn-1.28-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1307,9 +1048,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libmount-2.23.2-61.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1324,9 +1062,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libpwquality-1.2.3-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1341,9 +1076,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libselinux-2.5-14.1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1358,9 +1090,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libselinux-utils-2.5-14.1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1375,9 +1104,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libsemanage-2.5-14.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1392,9 +1118,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libsepol-2.5-10.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1409,9 +1132,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libsmartcols-2.23.2-61.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1426,9 +1146,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libssh2-1.8.0-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1443,9 +1160,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libstdc++-4.8.5-39.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1460,9 +1174,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libtasn1-4.10-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1477,9 +1188,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libuser-0.60-9.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1494,9 +1202,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libutempter-1.1.6-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1511,9 +1216,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libuuid-2.23.2-61.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1528,9 +1230,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libverto-0.2.5-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1545,9 +1244,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libxml2-2.9.1-6.el7_2.3
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1562,9 +1258,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls libxml2-python-2.9.1-6.el7_2.3
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1579,9 +1272,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls lua-5.1.4-15.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1596,9 +1286,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls lz4-1.7.5-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1613,9 +1300,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ncurses-5.9-14.20130511.el7_4
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1630,9 +1314,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ncurses-base-5.9-14.20130511.el7_4.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1647,9 +1328,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ncurses-libs-5.9-14.20130511.el7_4
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1664,9 +1342,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls net-tools-2.0-0.25.20131004git.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1681,9 +1356,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nspr-4.21.0-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1698,9 +1370,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-3.44.0-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1715,9 +1384,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-pem-1.0.3-7.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1732,9 +1398,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-softokn-3.44.0-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1749,9 +1412,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-softokn-freebl-3.44.0-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1766,9 +1426,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-sysinit-3.44.0-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1783,9 +1440,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-tools-3.44.0-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1800,30 +1454,24 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls nss-util-3.44.0-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/nss-util-3.44.0-3.el7.src.rpm
 ```
 
-### `rpm` package: `numactl-libs-2.0.12-3.el7.x86_64`
+### `rpm` package: `numactl-libs-2.0.12-3.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2 and GPLv2
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls numactl-libs-2.0.12-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
+$ yumdownloader --quiet --source --urls numactl-libs-2.0.12-3.el7_7.1
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/numactl-2.0.12-3.el7.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/numactl-2.0.12-3.el7_7.1.src.rpm
 ```
 
 ### `rpm` package: `openldap-2.4.44-21.el7_6.x86_64`
@@ -1834,9 +1482,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls openldap-2.4.44-21.el7_6
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1851,9 +1496,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1868,9 +1510,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls p11-kit-0.23.5-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1885,9 +1524,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls p11-kit-trust-0.23.5-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1902,9 +1538,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pam-1.1.8-22.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1919,9 +1552,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls passwd-0.79-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1936,31 +1566,53 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pcre-8.32-17.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/pcre-8.32-17.el7.src.rpm
 ```
 
-### `rpm` package: `percona-release-0.1-10.noarch`
+### `rpm` package: `percona-release-1.0-14.noarch`
 
 Licenses (from `rpm --query`): GPL-3.0+
 
-Source:
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-```console
-$ yumdownloader --quiet --source --urls percona-release-0.1-10.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://repo.percona.com/percona/yum/release/7/SRPMS//percona-release-0.1-10.src.rpm
-```
+### `rpm` package: `percona-server-client-8.0.18-9.1.el7.x86_64`
+
+Licenses (from `rpm --query`): Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved. Under GPLv2 license as shown in the Description field..
+
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+
+### `rpm` package: `percona-server-rocksdb-8.0.18-9.1.el7.x86_64`
+
+Licenses (from `rpm --query`): Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved. Under GPLv2 license as shown in the Description field..
+
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+
+### `rpm` package: `percona-server-server-8.0.18-9.1.el7.x86_64`
+
+Licenses (from `rpm --query`): Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved. Under GPLv2 license as shown in the Description field..
+
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+
+### `rpm` package: `percona-server-shared-8.0.18-9.1.el7.x86_64`
+
+Licenses (from `rpm --query`): Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved. Under GPLv2 license as shown in the Description field..
+
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+
+### `rpm` package: `percona-server-shared-compat-8.0.18-9.1.el7.x86_64`
+
+Licenses (from `rpm --query`): Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved. Under GPLv2 license as shown in the Description field..
+
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+
+### `rpm` package: `percona-server-tokudb-8.0.18-9.1.el7.x86_64`
+
+Licenses (from `rpm --query`): Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved. Under GPLv2 license as shown in the Description field..
+
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `perl-5.16.3-294.el7_6.x86_64`
 
@@ -1970,9 +1622,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-5.16.3-294.el7_6
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -1987,9 +1636,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Carp-1.26-244.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2004,9 +1650,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Encode-2.51-7.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2021,9 +1664,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Exporter-5.68-3.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2038,9 +1678,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-File-Path-2.09-2.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2055,9 +1692,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-File-Temp-0.23.01-3.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2072,9 +1706,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Filter-1.49-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2089,9 +1720,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Getopt-Long-2.40-3.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2106,9 +1734,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-HTTP-Tiny-0.033-3.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2123,9 +1748,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-PathTools-3.40-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2140,9 +1762,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Pod-Escapes-1.04-294.el7_6.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2157,9 +1776,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Pod-Perldoc-3.20-4.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2174,9 +1790,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Pod-Simple-3.28-4.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2191,9 +1804,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Pod-Usage-1.63-3.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2208,9 +1818,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Scalar-List-Utils-1.27-248.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2225,9 +1832,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Socket-2.010-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2242,9 +1846,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Storable-2.45-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2259,9 +1860,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Text-ParseWords-3.29-4.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2276,9 +1874,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Time-HiRes-1.9725-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2293,9 +1888,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-Time-Local-1.2300-2.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2310,9 +1902,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-constant-1.27-2.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2327,9 +1916,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-libs-5.16.3-294.el7_6
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2344,9 +1930,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-macros-5.16.3-294.el7_6
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2361,9 +1944,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-parent-0.225-244.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2378,9 +1958,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-podlators-2.5.1-3.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2395,9 +1972,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-threads-1.87-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2412,9 +1986,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls perl-threads-shared-1.43-6.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2429,9 +2000,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pinentry-0.8.1-17.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2446,9 +2014,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pkgconfig-0.27.1-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2463,9 +2028,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls policycoreutils-2.5-33.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2480,9 +2042,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls popt-1.13-16.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2497,9 +2056,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls procps-ng-3.3.10-26.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2514,9 +2070,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pth-2.0.7-23.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2531,9 +2084,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pygpgme-0.3-9.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2548,9 +2098,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pyliblzma-0.5.3-11.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2565,9 +2112,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-2.7.5-86.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2582,9 +2126,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-chardet-2.2.1-3.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2599,9 +2140,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-gobject-base-3.22.0-1.el7_4.1
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2616,9 +2154,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-iniparse-0.4-9.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2633,9 +2168,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-kitchen-1.1.1-5.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2650,9 +2182,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-libs-2.7.5-86.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2667,9 +2196,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-pycurl-7.19.0-19.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2684,9 +2210,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls python-urlgrabber-3.10-9.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2701,9 +2224,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls pyxattr-0.5.1-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2718,9 +2238,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls qrencode-libs-3.4.1-3.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2735,9 +2252,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls readline-6.2-11.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2752,9 +2266,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rootfiles-8.1-11.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2769,9 +2280,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-4.11.3-40.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2786,9 +2294,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-build-libs-4.11.3-40.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2803,9 +2308,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-libs-4.11.3-40.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2820,9 +2322,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls rpm-python-4.11.3-40.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2837,30 +2336,10 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls sed-4.2.2-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/sed-4.2.2-5.el7.src.rpm
-```
-
-### `rpm` package: `selinux-policy-3.13.1-252.el7.1.noarch`
-
-Licenses (from `rpm --query`): GPLv2+
-
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls selinux-policy-3.13.1-252.el7.1.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/selinux-policy-3.13.1-252.el7.1.src.rpm
 ```
 
 ### `rpm` package: `setup-2.8.71-10.el7.noarch`
@@ -2871,9 +2350,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls setup-2.8.71-10.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2888,9 +2364,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls shadow-utils-4.6-5.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2905,9 +2378,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls shared-mime-info-1.8-4.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2922,9 +2392,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls sqlite-3.7.17-8.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2939,9 +2406,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls systemd-219-67.el7_7.1
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2956,9 +2420,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls systemd-libs-219-67.el7_7.1
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2973,9 +2434,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls tar-1.26-35.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -2990,9 +2448,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls tzdata-2019b-1.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3007,9 +2462,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls ustr-1.0.4-16.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3024,9 +2476,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls util-linux-2.23.2-61.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3041,9 +2490,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls vim-minimal-7.4.629-6.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3058,9 +2504,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls which-2.20-7.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3075,9 +2518,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls xz-5.2.2-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3092,9 +2532,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls xz-libs-5.2.2-1.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3109,9 +2546,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-3.4.3-163.el7.centos.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3126,9 +2560,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-metadata-parser-1.1.4-10.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3143,9 +2574,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-plugin-fastestmirror-1.1.31-52.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3160,9 +2588,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-plugin-ovl-1.1.31-52.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3177,9 +2602,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls yum-utils-1.1.31-52.el7.noarch
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
@@ -3194,9 +2616,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls zlib-1.2.7-18.el7
-Repository percona-release-x86_64 is listed more than once in the configuration
-Repository percona-release-noarch is listed more than once in the configuration
-Repository percona-release-sources is listed more than once in the configuration
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
