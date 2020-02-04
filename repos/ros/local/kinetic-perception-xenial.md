@@ -10079,14 +10079,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sudo=1.8.16-0ubuntu1.8
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sudo/sudo_1.8.16-0ubuntu1.8.dsc' sudo_1.8.16-0ubuntu1.8.dsc 2106 SHA256:7aba2aa5cf3e7096d3f370357784badf2765c389fb9a71d400f1510c5e5278a9
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sudo/sudo_1.8.16.orig.tar.gz' sudo_1.8.16.orig.tar.gz 2707358 SHA256:2d83826fc5125bf073acc203dbda1cf2abeee017090ccc9dddb0431a53d5064d
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sudo/sudo_1.8.16-0ubuntu1.8.debian.tar.xz' sudo_1.8.16-0ubuntu1.8.debian.tar.xz 41572 SHA256:c1c3ba4ac5037d4ea46b58994242767a6c1713eb45403befba2b594407043f54
-```
 
 ### `dpkg` source package: `superlu=4.3+dfsg-3`
 
@@ -10551,14 +10546,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.9
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.dsc' util-linux_2.27.1-6ubuntu3.9.dsc 3586 SHA256:184c6e918aab02046b1f8769e488013a4da2c59d9108123447ead31ee9270d72
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.debian.tar.xz' util-linux_2.27.1-6ubuntu3.9.debian.tar.xz 88260 SHA256:6d82ba9a363e1c5aa96b8ee964808d5678bb1749547bc173a701e70082e223bd
-```
 
 ### `dpkg` source package: `vtk6=6.2.0+dfsg1-10build1+debian11.1+osrf1`
 

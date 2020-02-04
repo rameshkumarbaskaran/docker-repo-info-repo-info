@@ -373,13 +373,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.7.dsc' base-files_10.1ubuntu2.7.dsc 1620 SHA256:86ce800b82d3968e5c81c1b154d4a515778193c0a516e92f17d3bc2d3c6d2457
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.7.tar.xz' base-files_10.1ubuntu2.7.tar.xz 78340 SHA256:17f7892cf87ec084ac4c8553f8884130127312d6b953345aa3c7e847b2ac4d0b
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -7897,14 +7893,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sudo=1.8.21p2-3ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sudo/sudo_1.8.21p2-3ubuntu1.1.dsc' sudo_1.8.21p2-3ubuntu1.1.dsc 2129 SHA256:cb67615ee80f33f881be05aebb8b24f4f6bced7a200753de5fb2d16e32c8e05c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sudo/sudo_1.8.21p2.orig.tar.gz' sudo_1.8.21p2.orig.tar.gz 3008808 SHA256:0d17b4b1c720de4150f5e1d35627cf8b3a6495041cb0d842f3172eeeb459359d
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sudo/sudo_1.8.21p2-3ubuntu1.1.debian.tar.xz' sudo_1.8.21p2-3ubuntu1.1.debian.tar.xz 33208 SHA256:edc90553872e231e776cb681c077b28924a2191b7e36bb59c062847dab090588
-```
 
 ### `dpkg` source package: `systemd=237-3ubuntu10.33`
 
@@ -8205,14 +8196,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.31.1-0.4ubuntu3.4
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.4.dsc' util-linux_2.31.1-0.4ubuntu3.4.dsc 3777 SHA256:a831e841fc31bd3209086f6cbacbd151dc223c0fcbd3c9d6e66130df2787f384
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1.orig.tar.xz' util-linux_2.31.1.orig.tar.xz 4514032 SHA256:cfd5789570e9ff75e079471faeca1511ade1607f650523a6ad25d1e26516ae4e
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.4.debian.tar.xz' util-linux_2.31.1-0.4ubuntu3.4.debian.tar.xz 100008 SHA256:15d990f699466be03ab16e2ff8e30f3629c0314a038aa79f98e02085cc2eebc1
-```
 
 ### `dpkg` source package: `wayland=1.16.0-1ubuntu1.1~18.04.1`
 
