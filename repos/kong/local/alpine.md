@@ -1,18 +1,18 @@
-# `kong:1.4.3-alpine`
+# `kong:2.0.0-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1d3341b21bcafe79da28bf06bb9400b8f3401182efab139f6faefd165a60037d`
-- Created: `2020-01-23T19:22:25.471367427Z`
-- Virtual Size: ~ 128.80 Mb  
+- Image ID: `sha256:13f14d790da47c6305729a26c41752272e2d0d86166cca4b2cb8409b918e35bc`
+- Created: `2020-01-23T19:21:24.015796137Z`
+- Virtual Size: ~ 144.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["kong","docker-start"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `KONG_VERSION=1.4.3`
-  - `KONG_SHA256=419d4e3d19f2d5c35ec6367e736b0d5509be4a7577d203008514a90f8dd5fdf1`
+  - `KONG_VERSION=2.0.0`
+  - `KONG_SHA256=5af1178111958b2e325c5b18690f4e7ddf064d28139ff38188b1e2e432ea99ff`
 - Labels:
   - `maintainer=Kong Core Team <team-core@konghq.com>`
 
@@ -86,6 +86,23 @@ GPL-2.0
 
 ```
 
+### `apk` package: `ca-certificates`
+
+```console
+ca-certificates-20190108-r0 description:
+Common CA certificates PEM files
+
+ca-certificates-20190108-r0 webpage:
+https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
+
+ca-certificates-20190108-r0 installed size:
+737280
+
+ca-certificates-20190108-r0 license:
+MPL-2.0 GPL-2.0-or-later
+
+```
+
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
@@ -100,6 +117,23 @@ ca-certificates-cacert-20190108-r0 installed size:
 
 ca-certificates-cacert-20190108-r0 license:
 MPL-2.0 GPL-2.0-or-later
+
+```
+
+### `apk` package: `curl`
+
+```console
+curl-7.66.0-r0 description:
+URL retrival utility and library
+
+curl-7.66.0-r0 webpage:
+https://curl.haxx.se/
+
+curl-7.66.0-r0 installed size:
+225280
+
+curl-7.66.0-r0 license:
+MIT
 
 ```
 
@@ -168,6 +202,23 @@ libcrypto1.1-1.1.1d-r2 installed size:
 
 libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
+
+```
+
+### `apk` package: `libcurl`
+
+```console
+libcurl-7.66.0-r0 description:
+The multiprotocol file transfer library
+
+libcurl-7.66.0-r0 webpage:
+https://curl.haxx.se/
+
+libcurl-7.66.0-r0 installed size:
+454656
+
+libcurl-7.66.0-r0 license:
+MIT
 
 ```
 
@@ -253,6 +304,23 @@ musl-utils-1.1.22-r3 installed size:
 
 musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
+
+```
+
+### `apk` package: `nghttp2-libs`
+
+```console
+nghttp2-libs-1.39.2-r0 description:
+Experimental HTTP/2 client, server and proxy (libraries)
+
+nghttp2-libs-1.39.2-r0 webpage:
+https://nghttp2.org
+
+nghttp2-libs-1.39.2-r0 installed size:
+155648
+
+nghttp2-libs-1.39.2-r0 license:
+MIT
 
 ```
 
@@ -358,6 +426,23 @@ MIT
 
 ```
 
+### `apk` package: `tar`
+
+```console
+tar-1.32-r0 description:
+Utility used to store, backup, and transport files
+
+tar-1.32-r0 webpage:
+https://www.gnu.org
+
+tar-1.32-r0 installed size:
+491520
+
+tar-1.32-r0 license:
+GPL
+
+```
+
 ### `apk` package: `tzdata`
 
 ```console
@@ -389,6 +474,23 @@ unzip-6.0-r4 installed size:
 
 unzip-6.0-r4 license:
 custom
+
+```
+
+### `apk` package: `wget`
+
+```console
+wget-1.20.3-r0 description:
+A network utility to retrieve files from the Web
+
+wget-1.20.3-r0 webpage:
+https://www.gnu.org/software/wget/wget.html
+
+wget-1.20.3-r0 installed size:
+475136
+
+wget-1.20.3-r0 license:
+GPL-3.0-or-later
 
 ```
 
