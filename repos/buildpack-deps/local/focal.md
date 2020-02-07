@@ -210,14 +210,9 @@ Licenses: (parsed from: `/usr/share/doc/automake/copyright`)
 - `GPL-3+`
 - `permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris automake-1.16=1:1.16.1-4ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/a/automake-1.16/automake-1.16_1.16.1-4ubuntu3.dsc' automake-1.16_1.16.1-4ubuntu3.dsc 2334 SHA256:1705b3f133b71906898771c9657a478473706402d07c10a681ae9ac9a67fef54
-'http://archive.ubuntu.com/ubuntu/pool/main/a/automake-1.16/automake-1.16_1.16.1.orig.tar.xz' automake-1.16_1.16.1.orig.tar.xz 1534936 SHA256:5d05bb38a23fd3312b10aea93840feec685bdf4a41146e78882848165d3ae921
-'http://archive.ubuntu.com/ubuntu/pool/main/a/automake-1.16/automake-1.16_1.16.1-4ubuntu3.debian.tar.xz' automake-1.16_1.16.1-4ubuntu3.debian.tar.xz 15060 SHA256:9d7edaf15badc1d071315d59a31a18ba195a3e1cc9a879c63a47a37a621a220f
-```
 
 ### `dpkg` source package: `autotools-dev=20180224.1`
 
@@ -448,13 +443,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cdebconf=0.250ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.250ubuntu2.dsc' cdebconf_0.250ubuntu2.dsc 2858 SHA256:03967c55bd64adb678410b8ba7cad32fcb884e3d2dadf3f4c400d91115803056
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.250ubuntu2.tar.xz' cdebconf_0.250ubuntu2.tar.xz 276660 SHA256:7e1ef956d2d3ac312a23faf707aed33ac37fb2a98f13c1b78822e9f35d5138fc
-```
 
 ### `dpkg` source package: `configobj=5.0.6-3build1`
 
@@ -1111,14 +1102,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.24.0-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0-1ubuntu2.dsc' git_2.24.0-1ubuntu2.dsc 3023 SHA256:fafa9bb71aa55861561e70f524efa47f22d8746d435cdfe4299d7f9f4c173e1f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0.orig.tar.xz' git_2.24.0.orig.tar.xz 5766056 SHA256:9f71d61973626d8b28c4cdf8e2484b4bf13870ed643fed982d68b2cfd754371b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0-1ubuntu2.debian.tar.xz' git_2.24.0-1ubuntu2.debian.tar.xz 629736 SHA256:1134f8e9bd7aa0c0aafd28c589f030ab44b9e2da52adece7382d02fa05151a1d
-```
 
 ### `dpkg` source package: `glib2.0=2.63.3-3`
 
@@ -2567,14 +2553,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxcb=1.13.1-3build1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13.1-3build1.dsc' libxcb_1.13.1-3build1.dsc 4661 SHA256:be97212976b6708cde1966514ca4bb13fcc6f6691cf5c9e12d4f976f028490c6
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13.1.orig.tar.gz' libxcb_1.13.1.orig.tar.gz 636748 SHA256:f09a76971437780a602303170fd51b5f7474051722bc39d566a272d2c4bde1b5
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13.1-3build1.diff.gz' libxcb_1.13.1-3build1.diff.gz 25679 SHA256:6dfe93e43ac554500cbce760135cc574029467d2b2db7b2a3c8e494dea3a96f0
-```
 
 ### `dpkg` source package: `libxdmcp=1:1.1.3-0ubuntu1`
 

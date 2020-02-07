@@ -326,13 +326,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cdebconf=0.250ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.250ubuntu2.dsc' cdebconf_0.250ubuntu2.dsc 2858 SHA256:03967c55bd64adb678410b8ba7cad32fcb884e3d2dadf3f4c400d91115803056
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.250ubuntu2.tar.xz' cdebconf_0.250ubuntu2.tar.xz 276660 SHA256:7e1ef956d2d3ac312a23faf707aed33ac37fb2a98f13c1b78822e9f35d5138fc
-```
 
 ### `dpkg` source package: `configobj=5.0.6-3build1`
 
@@ -691,14 +687,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.24.0-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0-1ubuntu2.dsc' git_2.24.0-1ubuntu2.dsc 3023 SHA256:fafa9bb71aa55861561e70f524efa47f22d8746d435cdfe4299d7f9f4c173e1f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0.orig.tar.xz' git_2.24.0.orig.tar.xz 5766056 SHA256:9f71d61973626d8b28c4cdf8e2484b4bf13870ed643fed982d68b2cfd754371b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.24.0-1ubuntu2.debian.tar.xz' git_2.24.0-1ubuntu2.debian.tar.xz 629736 SHA256:1134f8e9bd7aa0c0aafd28c589f030ab44b9e2da52adece7382d02fa05151a1d
-```
 
 ### `dpkg` source package: `glibc=2.30-0ubuntu3`
 

@@ -1517,20 +1517,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-freedesktop/copyright`, `/usr/sha
 - `LGPL-2+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gobject-introspection=1.62.0-4
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.62.0-4.dsc' gobject-introspection_1.62.0-4.dsc 3043 SHA256:1f5e0948e3a6a6d4d1cd0d11164cbd87e8c236988c905227fd64324e9c05e132
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.62.0.orig.tar.xz' gobject-introspection_1.62.0.orig.tar.xz 980732 SHA256:b1ee7ed257fdbc008702bdff0ff3e78a660e7e602efa8f211dc89b9d1e7d90a2
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.62.0-4.debian.tar.xz' gobject-introspection_1.62.0-4.debian.tar.xz 22424 SHA256:d1ec1785015950b77408a23626e979de7a2919d97762bb6f9bd714064de3675e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gobject-introspection/1.62.0-4/
 
-- https://sources.debian.net/src/gobject-introspection/1.62.0-4/ (for browsing the source)
-- https://sources.debian.net/src/gobject-introspection/1.62.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gobject-introspection/1.62.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.13-11`
 
@@ -3268,20 +3261,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxcb=1.13.1-3
-'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.13.1-3.dsc' libxcb_1.13.1-3.dsc 5381 SHA256:facfba6ed9b772c5aa13443b38b7b18143f0b849bf4ce585b2a1d4a7d02a5014
-'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.13.1.orig.tar.gz' libxcb_1.13.1.orig.tar.gz 636748 SHA256:f09a76971437780a602303170fd51b5f7474051722bc39d566a272d2c4bde1b5
-'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.13.1-3.diff.gz' libxcb_1.13.1-3.diff.gz 25451 SHA256:5681aa49ceb77f4c0ed4a644377e791e751ad6460a5dbcdcd5750d20ab5d8ac4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxcb/1.13.1-3/
 
-- https://sources.debian.net/src/libxcb/1.13.1-3/ (for browsing the source)
-- https://sources.debian.net/src/libxcb/1.13.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxcb/1.13.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxcrypt=1:4.4.10-10`
 
@@ -4169,20 +4155,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.48+dfsg-1
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.48+dfsg-1.dsc' openldap_2.4.48+dfsg-1.dsc 2879 SHA256:b227535c79454100aac32e526b0f4e2730f05087f0e9ffd4a78f35d81b012e66
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.48+dfsg.orig.tar.gz' openldap_2.4.48+dfsg.orig.tar.gz 4875429 SHA256:8645601c28f094b01baed02a604479b175a45ba010e407212d214313bc6a80ba
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.48+dfsg-1.debian.tar.xz' openldap_2.4.48+dfsg-1.debian.tar.xz 166116 SHA256:bdd3e8ac25748be6a8f248d787aff9ad591e0d3ea0b3e176a5cd54f11dc8e90e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.4.48+dfsg-1/
 
-- https://sources.debian.net/src/openldap/2.4.48+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.48+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.48+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssh=1:8.1p1-5`
 
