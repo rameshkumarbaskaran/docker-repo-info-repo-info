@@ -1,10 +1,10 @@
-# `tomcat:7.0.99-jdk8-corretto`
+# `tomcat:7.0.100-jdk8-corretto`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d2d900fc09a5313b3350621c849c2284fe57ca8e14325bfb2a0daa0db434553e`
-- Created: `2020-01-21T21:45:14.95467705Z`
-- Virtual Size: ~ 438.96 Mb  
+- Image ID: `sha256:32dd05e8fa97f44342b53cba8977038c6e96fe557fac2decef7f6f0e3ad4b8fc`
+- Created: `2020-02-15T02:00:26.90336133Z`
+- Virtual Size: ~ 441.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -16,8 +16,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=7`
-  - `TOMCAT_VERSION=7.0.99`
-  - `TOMCAT_SHA512=f53fb4fe6e568afe03fcf23043a3125b0c0ad99872146ff150a30333be92e6322b2278bfcfb2cce67112f09c3aa464086442bb8a79280548b179127ed1abbca9`
+  - `TOMCAT_VERSION=7.0.100`
+  - `TOMCAT_SHA512=c81fbd42e47e269ceae530ab75f9eacba59dbbad1fc608a90cd4dad0b25202df81f006f3270f5691eb22aae4eed760435beb616b469e30e0f8c6f8fe2a183eec`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -435,16 +435,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/a97e7c9a94ee8a483012b5478e1d4fe20f2e6c0f1a6077ef24b97c3ca3586b3d//../../../../../blobstore/1579dc52bd90d64e68d663da4dfa4462afa9df1cfbef30d47b64add0dd12210e/keyutils-1.5.8-3.amzn2.0.2.src.rpm
 ```
 
-### `rpm` package: `krb5-libs-1.15.1-37.amzn2.2.1.x86_64`
+### `rpm` package: `krb5-libs-1.15.1-37.amzn2.2.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.amzn2.2.1
+$ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.amzn2.2.2
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/a97e7c9a94ee8a483012b5478e1d4fe20f2e6c0f1a6077ef24b97c3ca3586b3d//../../../../../blobstore/e714e4857d1e4610af39bdfeca2ef2ba1ff8f9fb1b24f99a8e55ab7952b1f2d1/krb5-1.15.1-37.amzn2.2.1.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/a97e7c9a94ee8a483012b5478e1d4fe20f2e6c0f1a6077ef24b97c3ca3586b3d//../../../../../blobstore/a4ae5281a860a9566b9d0533461f0a65858cb1cea7cc82eb94f5b0ca59ef8020/krb5-1.15.1-37.amzn2.2.2.src.rpm
 ```
 
 ### `rpm` package: `libacl-2.2.51-14.amzn2.x86_64`
