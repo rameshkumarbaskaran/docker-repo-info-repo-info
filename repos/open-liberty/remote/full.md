@@ -1,7 +1,7 @@
 ## `open-liberty:full`
 
 ```console
-$ docker pull open-liberty@sha256:a8d9d9877275e2878120d15247019901854d78b3cca8f2c0695c6ea49c6d55c8
+$ docker pull open-liberty@sha256:e4ae6d58f849defabb58e5ca1e56b45edb8ff80cae3553cfe80c7a63aeb1de10
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,14 +13,14 @@ $ docker pull open-liberty@sha256:a8d9d9877275e2878120d15247019901854d78b3cca8f2
 ### `open-liberty:full` - linux; amd64
 
 ```console
-$ docker pull open-liberty@sha256:07dd0016b1aecc2d2c222129d69cfc98f95c0c5829febff7dd0c7b600c0e3a8e
+$ docker pull open-liberty@sha256:6bac95538edf136106d5557189094b65302e5351937ee83adbe1630cad76c392
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **245.7 MB (245677749 bytes)**  
+-	Total Size: **251.5 MB (251520789 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:55a69a63ad698fcd5015a18f7e2095eb0048181b2f62b925c4bd3a0f3e383d84`
+-	Image ID: `sha256:92652506af358096183cfeec29e18b795653a26fa2fda35f4340df436559f119`
 -	Entrypoint: `["\/opt\/ol\/helpers\/runtime\/docker-server.sh"]`
 -	Default Command: `["\/opt\/ol\/wlp\/bin\/server","run","defaultServer"]`
 
@@ -47,45 +47,45 @@ RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in    
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 28 Jan 2020 00:21:01 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Tue, 28 Jan 2020 01:47:01 GMT
-ARG LIBERTY_VERSION=20.0.0.1
-# Tue, 28 Jan 2020 01:47:01 GMT
-ARG LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5
-# Tue, 28 Jan 2020 01:47:01 GMT
-ARG LIBERTY_BUILD_LABEL=cl200120200108-0300
-# Tue, 28 Jan 2020 01:47:01 GMT
-ARG LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip
-# Fri, 31 Jan 2020 18:20:00 GMT
+# Sat, 15 Feb 2020 02:19:56 GMT
+ARG LIBERTY_VERSION=20.0.0.2
+# Sat, 15 Feb 2020 02:19:56 GMT
+ARG LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27
+# Sat, 15 Feb 2020 02:19:56 GMT
+ARG LIBERTY_BUILD_LABEL=cl200220200204-1746
+# Sat, 15 Feb 2020 02:19:56 GMT
+ARG LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip
+# Sat, 15 Feb 2020 02:19:56 GMT
 ARG OPENJ9_SCC=true
-# Fri, 31 Jan 2020 18:20:00 GMT
-LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=Open Liberty org.opencontainers.image.url=https://openliberty.io/ org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker org.opencontainers.image.revision=cl200120200108-0300
-# Fri, 31 Jan 2020 18:20:00 GMT
-COPY dir:fe6aa72dc0da400f52c8b30760d1e3b37700e0ca389f7866b61ba648236b45cb in /opt/ol/helpers 
-# Fri, 31 Jan 2020 18:20:16 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1 OPENJ9_SCC=true
+# Sat, 15 Feb 2020 02:19:56 GMT
+LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=Open Liberty org.opencontainers.image.url=https://openliberty.io/ org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker org.opencontainers.image.revision=cl200220200204-1746
+# Sat, 15 Feb 2020 02:19:57 GMT
+COPY dir:92edf87ff36a28deb44423cedc481e8f3edbfce3ca916022efe817ed914a7795 in /opt/ol/helpers 
+# Sat, 15 Feb 2020 02:20:10 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2 OPENJ9_SCC=true
 RUN apt-get update     && apt-get install -y --no-install-recommends unzip openssl wget     && rm -rf /var/lib/apt/lists/*     && wget -q $LIBERTY_DOWNLOAD_URL -U UA-Open-Liberty-Docker -O /tmp/wlp.zip     && echo "$LIBERTY_SHA  /tmp/wlp.zip" > /tmp/wlp.zip.sha1     && sha1sum -c /tmp/wlp.zip.sha1     && unzip -q /tmp/wlp.zip -d /opt/ol     && rm /tmp/wlp.zip     && rm /tmp/wlp.zip.sha1     && apt-get remove -y unzip     && apt-get remove -y wget     && rm -rf /var/lib/apt/lists/*     && useradd -u 1001 -r -g 0 -s /usr/sbin/nologin default     && chown -R 1001:0 /opt/ol/wlp     && chmod -R g+rw /opt/ol/wlp
-# Fri, 31 Jan 2020 18:20:17 GMT
+# Sat, 15 Feb 2020 02:20:10 GMT
 ENV PATH=/opt/ol/wlp/bin:/opt/ol/docker/:/opt/ol/helpers/build:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin LOG_DIR=/logs WLP_OUTPUT_DIR=/opt/ol/wlp/output WLP_SKIP_MAXPERMSIZE=true OPENJ9_SCC=true
-# Fri, 31 Jan 2020 18:20:18 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 02:20:11 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN /opt/ol/wlp/bin/server create     && rm -rf $WLP_OUTPUT_DIR/.classCache /output/workarea
-# Fri, 31 Jan 2020 18:20:19 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 02:20:12 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN mkdir /logs     && mkdir -p /opt/ol/wlp/usr/shared/resources/lib.index.cache     && ln -s /opt/ol/wlp/usr/shared/resources/lib.index.cache /lib.index.cache     && mkdir -p $WLP_OUTPUT_DIR/defaultServer     && ln -s $WLP_OUTPUT_DIR/defaultServer /output     && ln -s /opt/ol/wlp/usr/servers/defaultServer /config     && mkdir -p /config/configDropins/defaults     && mkdir -p /config/configDropins/overrides     && ln -s /opt/ol/wlp /liberty     && chown -R 1001:0 /config     && chmod -R g+rw /config     && chown -R 1001:0 /logs     && chmod -R g+rw /logs     && chown -R 1001:0 /opt/ol/wlp/usr     && chmod -R g+rw /opt/ol/wlp/usr     && chown -R 1001:0 /opt/ol/wlp/output     && chmod -R g+rw /opt/ol/wlp/output     && chown -R 1001:0 /opt/ol/helpers     && chmod -R g+rw /opt/ol/helpers     && mkdir /etc/wlp     && chown -R 1001:0 /etc/wlp     && chmod -R g+rw /etc/wlp     && echo "<server description=\"Default Server\"><httpEndpoint id=\"defaultHttpEndpoint\" host=\"*\" /></server>" > /config/configDropins/defaults/open-default-port.xml
-# Fri, 31 Jan 2020 18:20:35 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 02:20:31 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN if [ "$OPENJ9_SCC" = "true" ]; then populate_scc.sh; fi     && rm -rf /output/messaging /logs/* $WLP_OUTPUT_DIR/.classCache     && chown -R 1001:0 /opt/ol/wlp/output     && chmod -R g+rwx /opt/ol/wlp/output
-# Fri, 31 Jan 2020 18:20:35 GMT
+# Sat, 15 Feb 2020 02:20:31 GMT
 ENV RANDFILE=/tmp/.rnd IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ 
-# Fri, 31 Jan 2020 18:20:35 GMT
+# Sat, 15 Feb 2020 02:20:31 GMT
 USER 1001
-# Fri, 31 Jan 2020 18:20:36 GMT
+# Sat, 15 Feb 2020 02:20:31 GMT
 EXPOSE 9080 9443
-# Fri, 31 Jan 2020 18:20:36 GMT
+# Sat, 15 Feb 2020 02:20:31 GMT
 ENTRYPOINT ["/opt/ol/helpers/runtime/docker-server.sh"]
-# Fri, 31 Jan 2020 18:20:36 GMT
+# Sat, 15 Feb 2020 02:20:31 GMT
 CMD ["/opt/ol/wlp/bin/server" "run" "defaultServer"]
-# Fri, 31 Jan 2020 18:20:46 GMT
+# Sat, 15 Feb 2020 02:20:43 GMT
 RUN cp /opt/ol/wlp/templates/servers/javaee8/server.xml /config/server.xml
 ```
 
@@ -114,42 +114,42 @@ RUN cp /opt/ol/wlp/templates/servers/javaee8/server.xml /config/server.xml
 		Last Modified: Tue, 28 Jan 2020 00:24:37 GMT  
 		Size: 49.5 MB (49460261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f26efae205d7d7cc5f81b9d86d376949bf564370d331bb262d8e86bca0da592c`  
-		Last Modified: Fri, 31 Jan 2020 18:23:38 GMT  
-		Size: 3.7 KB (3680 bytes)  
+	-	`sha256:a06607ad29aff69e4fc483b89ce96e7c44af23ec60c496d8e05fe9bb84625662`  
+		Last Modified: Sat, 15 Feb 2020 02:27:20 GMT  
+		Size: 3.7 KB (3717 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:004dbb829fab8c362f164c1b16e3c543bb0b6b704543002dc5c0adc236d6db62`  
-		Last Modified: Fri, 31 Jan 2020 18:23:52 GMT  
-		Size: 155.0 MB (155005735 bytes)  
+	-	`sha256:fd5621da402db7e3f1bf71e0555a50775d06e2d5b270c59a53d35a051346e412`  
+		Last Modified: Sat, 15 Feb 2020 02:27:40 GMT  
+		Size: 154.9 MB (154862324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0fcb9fe8b161e0354b822a1564648593d7edf43af7edb37ea5cb2cb7ddd3e77`  
-		Last Modified: Fri, 31 Jan 2020 18:23:38 GMT  
-		Size: 936.0 B  
+	-	`sha256:bf49c22c5f63827c3cb9ac36484e84db628c9b47231ac945e049a998be7154dd`  
+		Last Modified: Sat, 15 Feb 2020 02:27:21 GMT  
+		Size: 934.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:544bd74fa4cb8386dd0dceac9d4797dfa8a488eac2e85921488699e1d87d1d60`  
-		Last Modified: Fri, 31 Jan 2020 18:23:39 GMT  
-		Size: 4.6 KB (4590 bytes)  
+	-	`sha256:e66d1d72bc4e184262aedad9d3876058647697b76ff3c522a61ca115e0a9236e`  
+		Last Modified: Sat, 15 Feb 2020 02:27:20 GMT  
+		Size: 4.6 KB (4617 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68f28a8da6da74a18a0ef7b04cd4dd5acf27c2d70c07b48dc85159e29bf3be50`  
-		Last Modified: Fri, 31 Jan 2020 18:23:38 GMT  
-		Size: 1.2 MB (1151750 bytes)  
+	-	`sha256:725ade9103b3265ce1354e3f825ecc4a8fd5d78305b076977477138c89b9d75f`  
+		Last Modified: Sat, 15 Feb 2020 02:27:21 GMT  
+		Size: 7.1 MB (7138138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81983f9e5a2c4495227192c22bd8ff8a009afe4559630707c1a7e0c6b8bab7d2`  
-		Last Modified: Fri, 31 Jan 2020 18:23:56 GMT  
-		Size: 964.0 B  
+	-	`sha256:bceeada7bf1d624dd90ebefa7ece981516f60c5d29445e5703e5205d86164f72`  
+		Last Modified: Sat, 15 Feb 2020 02:28:03 GMT  
+		Size: 965.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `open-liberty:full` - linux; ppc64le
 
 ```console
-$ docker pull open-liberty@sha256:8e506e023653e1c0aa40a29ba3d69b18556de88c4cc9a5fb1921fdb24c9d2a33
+$ docker pull open-liberty@sha256:ed6b9f7f40bb4c63fc331677b9a1ce9c02f572057833012bba3707af09945a60
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **249.0 MB (248988623 bytes)**  
+-	Total Size: **253.9 MB (253949104 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dc5bdc9b6ebcc01f2a958df533e3e1d90b3194f3929c3889d3d0b39b374f1d82`
+-	Image ID: `sha256:465359b627fb5d481e8dee6fd5deeb8e6a850fdca822e6d5331c32b3da0f20ba`
 -	Entrypoint: `["\/opt\/ol\/helpers\/runtime\/docker-server.sh"]`
 -	Default Command: `["\/opt\/ol\/wlp\/bin\/server","run","defaultServer"]`
 
@@ -176,45 +176,45 @@ RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in    
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Tue, 28 Jan 2020 00:23:11 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Tue, 28 Jan 2020 02:04:17 GMT
-ARG LIBERTY_VERSION=20.0.0.1
-# Tue, 28 Jan 2020 02:04:18 GMT
-ARG LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5
-# Tue, 28 Jan 2020 02:04:21 GMT
-ARG LIBERTY_BUILD_LABEL=cl200120200108-0300
-# Tue, 28 Jan 2020 02:04:23 GMT
-ARG LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip
-# Fri, 31 Jan 2020 18:39:42 GMT
+# Sat, 15 Feb 2020 02:16:42 GMT
+ARG LIBERTY_VERSION=20.0.0.2
+# Sat, 15 Feb 2020 02:16:45 GMT
+ARG LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27
+# Sat, 15 Feb 2020 02:16:47 GMT
+ARG LIBERTY_BUILD_LABEL=cl200220200204-1746
+# Sat, 15 Feb 2020 02:16:53 GMT
+ARG LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip
+# Sat, 15 Feb 2020 02:16:55 GMT
 ARG OPENJ9_SCC=true
-# Fri, 31 Jan 2020 18:39:45 GMT
-LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=Open Liberty org.opencontainers.image.url=https://openliberty.io/ org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker org.opencontainers.image.revision=cl200120200108-0300
-# Fri, 31 Jan 2020 18:39:49 GMT
-COPY dir:fe6aa72dc0da400f52c8b30760d1e3b37700e0ca389f7866b61ba648236b45cb in /opt/ol/helpers 
-# Fri, 31 Jan 2020 18:41:28 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1 OPENJ9_SCC=true
+# Sat, 15 Feb 2020 02:16:58 GMT
+LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=Open Liberty org.opencontainers.image.url=https://openliberty.io/ org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker org.opencontainers.image.revision=cl200220200204-1746
+# Sat, 15 Feb 2020 02:17:00 GMT
+COPY dir:92edf87ff36a28deb44423cedc481e8f3edbfce3ca916022efe817ed914a7795 in /opt/ol/helpers 
+# Sat, 15 Feb 2020 02:17:34 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2 OPENJ9_SCC=true
 RUN apt-get update     && apt-get install -y --no-install-recommends unzip openssl wget     && rm -rf /var/lib/apt/lists/*     && wget -q $LIBERTY_DOWNLOAD_URL -U UA-Open-Liberty-Docker -O /tmp/wlp.zip     && echo "$LIBERTY_SHA  /tmp/wlp.zip" > /tmp/wlp.zip.sha1     && sha1sum -c /tmp/wlp.zip.sha1     && unzip -q /tmp/wlp.zip -d /opt/ol     && rm /tmp/wlp.zip     && rm /tmp/wlp.zip.sha1     && apt-get remove -y unzip     && apt-get remove -y wget     && rm -rf /var/lib/apt/lists/*     && useradd -u 1001 -r -g 0 -s /usr/sbin/nologin default     && chown -R 1001:0 /opt/ol/wlp     && chmod -R g+rw /opt/ol/wlp
-# Fri, 31 Jan 2020 18:41:36 GMT
+# Sat, 15 Feb 2020 02:17:41 GMT
 ENV PATH=/opt/ol/wlp/bin:/opt/ol/docker/:/opt/ol/helpers/build:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin LOG_DIR=/logs WLP_OUTPUT_DIR=/opt/ol/wlp/output WLP_SKIP_MAXPERMSIZE=true OPENJ9_SCC=true
-# Fri, 31 Jan 2020 18:41:49 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 02:17:56 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN /opt/ol/wlp/bin/server create     && rm -rf $WLP_OUTPUT_DIR/.classCache /output/workarea
-# Fri, 31 Jan 2020 18:41:58 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 02:18:03 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN mkdir /logs     && mkdir -p /opt/ol/wlp/usr/shared/resources/lib.index.cache     && ln -s /opt/ol/wlp/usr/shared/resources/lib.index.cache /lib.index.cache     && mkdir -p $WLP_OUTPUT_DIR/defaultServer     && ln -s $WLP_OUTPUT_DIR/defaultServer /output     && ln -s /opt/ol/wlp/usr/servers/defaultServer /config     && mkdir -p /config/configDropins/defaults     && mkdir -p /config/configDropins/overrides     && ln -s /opt/ol/wlp /liberty     && chown -R 1001:0 /config     && chmod -R g+rw /config     && chown -R 1001:0 /logs     && chmod -R g+rw /logs     && chown -R 1001:0 /opt/ol/wlp/usr     && chmod -R g+rw /opt/ol/wlp/usr     && chown -R 1001:0 /opt/ol/wlp/output     && chmod -R g+rw /opt/ol/wlp/output     && chown -R 1001:0 /opt/ol/helpers     && chmod -R g+rw /opt/ol/helpers     && mkdir /etc/wlp     && chown -R 1001:0 /etc/wlp     && chmod -R g+rw /etc/wlp     && echo "<server description=\"Default Server\"><httpEndpoint id=\"defaultHttpEndpoint\" host=\"*\" /></server>" > /config/configDropins/defaults/open-default-port.xml
-# Fri, 31 Jan 2020 18:42:26 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 02:18:36 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN if [ "$OPENJ9_SCC" = "true" ]; then populate_scc.sh; fi     && rm -rf /output/messaging /logs/* $WLP_OUTPUT_DIR/.classCache     && chown -R 1001:0 /opt/ol/wlp/output     && chmod -R g+rwx /opt/ol/wlp/output
-# Fri, 31 Jan 2020 18:42:28 GMT
+# Sat, 15 Feb 2020 02:18:40 GMT
 ENV RANDFILE=/tmp/.rnd IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ 
-# Fri, 31 Jan 2020 18:42:31 GMT
+# Sat, 15 Feb 2020 02:18:43 GMT
 USER 1001
-# Fri, 31 Jan 2020 18:42:34 GMT
+# Sat, 15 Feb 2020 02:18:46 GMT
 EXPOSE 9080 9443
-# Fri, 31 Jan 2020 18:42:36 GMT
+# Sat, 15 Feb 2020 02:18:50 GMT
 ENTRYPOINT ["/opt/ol/helpers/runtime/docker-server.sh"]
-# Fri, 31 Jan 2020 18:42:38 GMT
+# Sat, 15 Feb 2020 02:18:52 GMT
 CMD ["/opt/ol/wlp/bin/server" "run" "defaultServer"]
-# Fri, 31 Jan 2020 18:42:58 GMT
+# Sat, 15 Feb 2020 02:19:11 GMT
 RUN cp /opt/ol/wlp/templates/servers/javaee8/server.xml /config/server.xml
 ```
 
@@ -243,42 +243,42 @@ RUN cp /opt/ol/wlp/templates/servers/javaee8/server.xml /config/server.xml
 		Last Modified: Tue, 28 Jan 2020 00:29:47 GMT  
 		Size: 48.4 MB (48421548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2000e15c9598bd6e9998e0442de10f02996b25755edb3d24ed104a9c63e4d03e`  
-		Last Modified: Fri, 31 Jan 2020 18:45:36 GMT  
-		Size: 3.7 KB (3717 bytes)  
+	-	`sha256:2c13c882eb6a8f31e2ea63d621e72cc4b265b033f47ae164cc067c33ec5f2938`  
+		Last Modified: Sat, 15 Feb 2020 02:36:38 GMT  
+		Size: 3.7 KB (3739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97ca8e0a3c80856817d36cbc35db92e58bea7f515639f6950636d45a65fd1189`  
-		Last Modified: Fri, 31 Jan 2020 18:45:53 GMT  
-		Size: 155.0 MB (155005885 bytes)  
+	-	`sha256:57d9843f8a056652cb379b2f061c1f744d3545860f5765b3d8567c9336dc9d79`  
+		Last Modified: Sat, 15 Feb 2020 02:36:54 GMT  
+		Size: 154.9 MB (154862981 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2fe39259d445b8093a46fea71017a43d2bb17d7fae80388ae6d59f19937347af`  
-		Last Modified: Fri, 31 Jan 2020 18:45:36 GMT  
-		Size: 997.0 B  
+	-	`sha256:74dc348fbcbe99364bd3eaeb807fd06663bfd01c9781a0e74af0cefbcbc6f538`  
+		Last Modified: Sat, 15 Feb 2020 02:36:39 GMT  
+		Size: 996.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f470b897e5c438a1189d66ce2edd0a5a13c5f36066ee309263f12d827e6bd730`  
-		Last Modified: Fri, 31 Jan 2020 18:45:36 GMT  
-		Size: 4.7 KB (4693 bytes)  
+	-	`sha256:608abb62317860794df1461c604c8059beeaf1274e08026f72552cd2d185a33f`  
+		Last Modified: Sat, 15 Feb 2020 02:36:39 GMT  
+		Size: 4.7 KB (4717 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b920cecdb4575eb1c7f394ddd2070c5f03ab8dc970950c380efc092afd49d38`  
-		Last Modified: Fri, 31 Jan 2020 18:45:37 GMT  
-		Size: 1.1 MB (1144839 bytes)  
+	-	`sha256:8f4ab0b8c05716e44830136c84a1c8e5f72c63022d41ac93ac7fbf49933e90f7`  
+		Last Modified: Sat, 15 Feb 2020 02:36:40 GMT  
+		Size: 6.2 MB (6248176 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f2196f6cd394f4ff0732fdf9cff8bba162722581db70fe118e50356efc2f65f`  
-		Last Modified: Fri, 31 Jan 2020 18:46:06 GMT  
-		Size: 964.0 B  
+	-	`sha256:f8a0a576fee4b2722019c708ec57831de2e6bb8d81a74df35160c33d031ea6a5`  
+		Last Modified: Sat, 15 Feb 2020 02:37:06 GMT  
+		Size: 967.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `open-liberty:full` - linux; s390x
 
 ```console
-$ docker pull open-liberty@sha256:f6e7e0bfefd7630fa1b6c2c394911537ddc9fd99d55a6c410ff301050c89ed57
+$ docker pull open-liberty@sha256:c305ef10fc9e39497195aff8bd5eeb3d125f7497067d3ef5aa0b7d842075b9a5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **243.0 MB (243014541 bytes)**  
+-	Total Size: **250.2 MB (250213041 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:02bd9897d5e14666f7c8290dcb520fdb182a2e3be577175430a7602cd72c9e06`
+-	Image ID: `sha256:311d84b81b57945d7050b5c859a500714ab24cf9cdd2c8011bccf23157dd0d0d`
 -	Entrypoint: `["\/opt\/ol\/helpers\/runtime\/docker-server.sh"]`
 -	Default Command: `["\/opt\/ol\/wlp\/bin\/server","run","defaultServer"]`
 
@@ -305,45 +305,45 @@ RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in    
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 08 Nov 2019 02:43:02 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Wed, 22 Jan 2020 23:49:32 GMT
-ARG LIBERTY_VERSION=20.0.0.1
-# Wed, 22 Jan 2020 23:49:32 GMT
-ARG LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5
-# Wed, 22 Jan 2020 23:49:32 GMT
-ARG LIBERTY_BUILD_LABEL=cl200120200108-0300
-# Wed, 22 Jan 2020 23:49:33 GMT
-ARG LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip
-# Fri, 31 Jan 2020 17:49:27 GMT
+# Sat, 15 Feb 2020 01:55:41 GMT
+ARG LIBERTY_VERSION=20.0.0.2
+# Sat, 15 Feb 2020 01:55:41 GMT
+ARG LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27
+# Sat, 15 Feb 2020 01:55:41 GMT
+ARG LIBERTY_BUILD_LABEL=cl200220200204-1746
+# Sat, 15 Feb 2020 01:55:41 GMT
+ARG LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip
+# Sat, 15 Feb 2020 01:55:41 GMT
 ARG OPENJ9_SCC=true
-# Fri, 31 Jan 2020 17:49:27 GMT
-LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=Open Liberty org.opencontainers.image.url=https://openliberty.io/ org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker org.opencontainers.image.revision=cl200120200108-0300
-# Fri, 31 Jan 2020 17:49:28 GMT
-COPY dir:fe6aa72dc0da400f52c8b30760d1e3b37700e0ca389f7866b61ba648236b45cb in /opt/ol/helpers 
-# Fri, 31 Jan 2020 17:50:40 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1 OPENJ9_SCC=true
+# Sat, 15 Feb 2020 01:55:42 GMT
+LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=Open Liberty org.opencontainers.image.url=https://openliberty.io/ org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker org.opencontainers.image.revision=cl200220200204-1746
+# Sat, 15 Feb 2020 01:55:42 GMT
+COPY dir:92edf87ff36a28deb44423cedc481e8f3edbfce3ca916022efe817ed914a7795 in /opt/ol/helpers 
+# Sat, 15 Feb 2020 01:56:01 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2 OPENJ9_SCC=true
 RUN apt-get update     && apt-get install -y --no-install-recommends unzip openssl wget     && rm -rf /var/lib/apt/lists/*     && wget -q $LIBERTY_DOWNLOAD_URL -U UA-Open-Liberty-Docker -O /tmp/wlp.zip     && echo "$LIBERTY_SHA  /tmp/wlp.zip" > /tmp/wlp.zip.sha1     && sha1sum -c /tmp/wlp.zip.sha1     && unzip -q /tmp/wlp.zip -d /opt/ol     && rm /tmp/wlp.zip     && rm /tmp/wlp.zip.sha1     && apt-get remove -y unzip     && apt-get remove -y wget     && rm -rf /var/lib/apt/lists/*     && useradd -u 1001 -r -g 0 -s /usr/sbin/nologin default     && chown -R 1001:0 /opt/ol/wlp     && chmod -R g+rw /opt/ol/wlp
-# Fri, 31 Jan 2020 17:50:42 GMT
+# Sat, 15 Feb 2020 01:56:04 GMT
 ENV PATH=/opt/ol/wlp/bin:/opt/ol/docker/:/opt/ol/helpers/build:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin LOG_DIR=/logs WLP_OUTPUT_DIR=/opt/ol/wlp/output WLP_SKIP_MAXPERMSIZE=true OPENJ9_SCC=true
-# Fri, 31 Jan 2020 17:50:44 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 01:56:05 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN /opt/ol/wlp/bin/server create     && rm -rf $WLP_OUTPUT_DIR/.classCache /output/workarea
-# Fri, 31 Jan 2020 17:50:45 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 01:56:06 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN mkdir /logs     && mkdir -p /opt/ol/wlp/usr/shared/resources/lib.index.cache     && ln -s /opt/ol/wlp/usr/shared/resources/lib.index.cache /lib.index.cache     && mkdir -p $WLP_OUTPUT_DIR/defaultServer     && ln -s $WLP_OUTPUT_DIR/defaultServer /output     && ln -s /opt/ol/wlp/usr/servers/defaultServer /config     && mkdir -p /config/configDropins/defaults     && mkdir -p /config/configDropins/overrides     && ln -s /opt/ol/wlp /liberty     && chown -R 1001:0 /config     && chmod -R g+rw /config     && chown -R 1001:0 /logs     && chmod -R g+rw /logs     && chown -R 1001:0 /opt/ol/wlp/usr     && chmod -R g+rw /opt/ol/wlp/usr     && chown -R 1001:0 /opt/ol/wlp/output     && chmod -R g+rw /opt/ol/wlp/output     && chown -R 1001:0 /opt/ol/helpers     && chmod -R g+rw /opt/ol/helpers     && mkdir /etc/wlp     && chown -R 1001:0 /etc/wlp     && chmod -R g+rw /etc/wlp     && echo "<server description=\"Default Server\"><httpEndpoint id=\"defaultHttpEndpoint\" host=\"*\" /></server>" > /config/configDropins/defaults/open-default-port.xml
-# Fri, 31 Jan 2020 17:50:55 GMT
-# ARGS: LIBERTY_BUILD_LABEL=cl200120200108-0300 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.1/openliberty-runtime-20.0.0.1.zip LIBERTY_SHA=dfededade132ba37fabbcf07d5004773ee9f3be5 LIBERTY_VERSION=20.0.0.1
+# Sat, 15 Feb 2020 01:56:23 GMT
+# ARGS: LIBERTY_BUILD_LABEL=cl200220200204-1746 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/20.0.0.2/openliberty-runtime-20.0.0.2.zip LIBERTY_SHA=c552f97593fd1ca8adb04ea8f70ed616aa7d6d27 LIBERTY_VERSION=20.0.0.2
 RUN if [ "$OPENJ9_SCC" = "true" ]; then populate_scc.sh; fi     && rm -rf /output/messaging /logs/* $WLP_OUTPUT_DIR/.classCache     && chown -R 1001:0 /opt/ol/wlp/output     && chmod -R g+rwx /opt/ol/wlp/output
-# Fri, 31 Jan 2020 17:50:56 GMT
+# Sat, 15 Feb 2020 01:56:23 GMT
 ENV RANDFILE=/tmp/.rnd IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ 
-# Fri, 31 Jan 2020 17:50:56 GMT
+# Sat, 15 Feb 2020 01:56:24 GMT
 USER 1001
-# Fri, 31 Jan 2020 17:50:56 GMT
+# Sat, 15 Feb 2020 01:56:24 GMT
 EXPOSE 9080 9443
-# Fri, 31 Jan 2020 17:50:56 GMT
+# Sat, 15 Feb 2020 01:56:24 GMT
 ENTRYPOINT ["/opt/ol/helpers/runtime/docker-server.sh"]
-# Fri, 31 Jan 2020 17:50:56 GMT
+# Sat, 15 Feb 2020 01:56:24 GMT
 CMD ["/opt/ol/wlp/bin/server" "run" "defaultServer"]
-# Fri, 31 Jan 2020 17:51:14 GMT
+# Sat, 15 Feb 2020 01:56:37 GMT
 RUN cp /opt/ol/wlp/templates/servers/javaee8/server.xml /config/server.xml
 ```
 
@@ -372,27 +372,27 @@ RUN cp /opt/ol/wlp/templates/servers/javaee8/server.xml /config/server.xml
 		Last Modified: Fri, 08 Nov 2019 02:45:58 GMT  
 		Size: 48.1 MB (48137321 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fb077bd59c71043fb933cd66d6f83834f67fe51e1e4eca116aba6a497859fd6`  
-		Last Modified: Fri, 31 Jan 2020 17:53:50 GMT  
-		Size: 3.7 KB (3708 bytes)  
+	-	`sha256:4daf1887418227714bb036167c577ba658a59d520b62c8f65291c55627515b7f`  
+		Last Modified: Sat, 15 Feb 2020 02:03:33 GMT  
+		Size: 3.7 KB (3740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd48e65d0ee3fd2317318aaf46dc18d65b7433f01752a4ab817d181230d0a0ee`  
-		Last Modified: Fri, 31 Jan 2020 17:54:56 GMT  
-		Size: 155.3 MB (155316531 bytes)  
+	-	`sha256:2358943437995851f58f4cfe7f280ff9e3baf054dc8983265dc5cef1dbdfdb38`  
+		Last Modified: Sat, 15 Feb 2020 02:03:40 GMT  
+		Size: 155.2 MB (155176511 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bbe0b66edd052ee6346381535ee33f0f961781b258b0875bd5f95aa7d1d5adb`  
-		Last Modified: Fri, 31 Jan 2020 17:53:50 GMT  
-		Size: 997.0 B  
+	-	`sha256:c380f7a1fc0ae55f9bb1cc9a299076492b65d0c677adac398bd4d027598a9686`  
+		Last Modified: Sat, 15 Feb 2020 02:03:49 GMT  
+		Size: 998.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1bfad4c4181eae95d5b046eabbd6578139a71eb1bd87a6efd210758aab02d3b4`  
-		Last Modified: Fri, 31 Jan 2020 17:54:05 GMT  
-		Size: 4.7 KB (4682 bytes)  
+	-	`sha256:e428bec546c00eb5071d6494d999cfb6db7588ad5412dcf0230800da4d21ee00`  
+		Last Modified: Sat, 15 Feb 2020 02:03:34 GMT  
+		Size: 4.7 KB (4704 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc1afbab9b159f539edfd9c7778d42e4f46928a2c8243ea10416a7ed128933dd`  
-		Last Modified: Fri, 31 Jan 2020 17:54:06 GMT  
-		Size: 1.1 MB (1107676 bytes)  
+	-	`sha256:3e2a4497a0cdd35d3c0cd1db417f74e37edc4e7793056e5f12aaa5d17730efce`  
+		Last Modified: Sat, 15 Feb 2020 02:03:50 GMT  
+		Size: 8.4 MB (8446139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:359fb37d348ffcb4fce12859da1deeb61eb8ebf579bb11a98077a0650e116903`  
-		Last Modified: Fri, 31 Jan 2020 17:55:02 GMT  
-		Size: 964.0 B  
+	-	`sha256:5fcfbef19f953a2f5fc550626693ec091b9afc90262e7619277dac9e2704fb53`  
+		Last Modified: Sat, 15 Feb 2020 02:03:55 GMT  
+		Size: 966.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
