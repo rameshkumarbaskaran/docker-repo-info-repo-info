@@ -1,49 +1,49 @@
-# `percona:psmdb-3.6.16`
+# `percona:psmdb-3.6.17`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0c13f4a85937ed8fc5d1cf8ca167808ebf58987b27f278ec366517892eda1b05`
-- Created: `2020-01-29T19:39:39.901659164Z`
-- Virtual Size: ~ 429.53 Mb  
+- Image ID: `sha256:883a53a9e34d6aff5f88d4c7e1a5305962dc7d28a16d099d9a37c3dd6b0b8b8d`
+- Created: `2020-02-15T02:35:55.454366285Z`
+- Virtual Size: ~ 429.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["mongod"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `PSMDB_VERSION=3.6.16-3.6`
+  - `PSMDB_VERSION=3.6.17-4.0`
   - `OS_VER=el7`
-  - `FULL_PERCONA_VERSION=3.6.16-3.6.el7`
+  - `FULL_PERCONA_VERSION=3.6.17-4.0.el7`
   - `K8S_TOOLS_VERSION=0.4.2`
 - Labels:
   - `org.label-schema.build-date=20191001`
   - `org.label-schema.description=Percona Server for MongoDB is our free and open-source drop-in replacement for MongoDB Community Edition. It offers all the features and benefits of MongoDB Community Edition, plus additional enterprise-grade functionality.`
   - `org.label-schema.license=SSPLv1`
   - `org.label-schema.name=Percona Server for MongoDB`
-  - `org.label-schema.schema-version=3.6.16-3.6`
+  - `org.label-schema.schema-version=3.6.17-4.0`
   - `org.label-schema.vendor=Percona`
   - `org.opencontainers.image.authors=info@percona.com`
   - `org.opencontainers.image.description=Percona Server for MongoDB is our free and open-source drop-in replacement for MongoDB Community Edition. It offers all the features and benefits of MongoDB Community Edition, plus additional enterprise-grade functionality.`
   - `org.opencontainers.image.license=SSPLv1`
   - `org.opencontainers.image.title=Percona Server for MongoDB`
   - `org.opencontainers.image.vendor=Percona`
-  - `org.opencontainers.image.version=3.6.16-3.6`
+  - `org.opencontainers.image.version=3.6.17-4.0`
 
 ## `rpm` (`.rpm`-based packages)
 
-### `rpm` package: `Percona-Server-MongoDB-36-mongos-3.6.16-3.6.el7.x86_64`
+### `rpm` package: `Percona-Server-MongoDB-36-mongos-3.6.17-4.0.el7.x86_64`
 
 Licenses (from `rpm --query`): SSPL
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-MongoDB-36-server-3.6.16-3.6.el7.x86_64`
+### `rpm` package: `Percona-Server-MongoDB-36-server-3.6.17-4.0.el7.x86_64`
 
 Licenses (from `rpm --query`): SSPL
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-MongoDB-36-shell-3.6.16-3.6.el7.x86_64`
+### `rpm` package: `Percona-Server-MongoDB-36-shell-3.6.17-4.0.el7.x86_64`
 
 Licenses (from `rpm --query`): SSPL
 
@@ -259,18 +259,18 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/cryptsetup-2.0.3-5.el7.src.rpm
 ```
 
-### `rpm` package: `curl-7.29.0-54.el7_7.1.x86_64`
+### `rpm` package: `curl-7.29.0-54.el7_7.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls curl-7.29.0-54.el7_7.1
+$ yumdownloader --quiet --source --urls curl-7.29.0-54.el7_7.2
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/curl-7.29.0-54.el7_7.1.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/curl-7.29.0-54.el7_7.2.src.rpm
 ```
 
 ### `rpm` package: `cyrus-sasl-lib-2.1.26-23.el7.x86_64`
@@ -933,18 +933,18 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/e2fsprogs-1.42.9-16.el7.src.rpm
 ```
 
-### `rpm` package: `libcurl-7.29.0-54.el7_7.1.x86_64`
+### `rpm` package: `libcurl-7.29.0-54.el7_7.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libcurl-7.29.0-54.el7_7.1
+$ yumdownloader --quiet --source --urls libcurl-7.29.0-54.el7_7.2
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/curl-7.29.0-54.el7_7.1.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/curl-7.29.0-54.el7_7.2.src.rpm
 ```
 
 ### `rpm` package: `libdb-5.3.21-25.el7.x86_64`
