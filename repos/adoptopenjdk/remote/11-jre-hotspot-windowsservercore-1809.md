@@ -1,37 +1,37 @@
 ## `adoptopenjdk:11-jre-hotspot-windowsservercore-1809`
 
 ```console
-$ docker pull adoptopenjdk@sha256:f7172187237cd67b2d6c48b133d6b3904c1559350397a8d776dcc3612b971601
+$ docker pull adoptopenjdk@sha256:6116cc04c6005989512cab9a4957c6b62399e57e4c60daa10ba98b8705af6809
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17763.973; amd64
+	-	windows version 10.0.17763.1040; amd64
 
-### `adoptopenjdk:11-jre-hotspot-windowsservercore-1809` - windows version 10.0.17763.973; amd64
+### `adoptopenjdk:11-jre-hotspot-windowsservercore-1809` - windows version 10.0.17763.1040; amd64
 
 ```console
-$ docker pull adoptopenjdk@sha256:08ebcdd26546a7582c415ac01db12fce7a61c29088674dcd345877479c2fa97f
+$ docker pull adoptopenjdk@sha256:c6fcda42700ab1959fbf2df10823feba4091877c39c561cfc3a5c8463c0e4e7e
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.3 GB (2293268100 bytes)**  
+-	Total Size: **2.3 GB (2306356380 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:615b05afaaaf308a5ec978d3e45285f6ccf616173bcf01b5d4a19391f726b10d`
+-	Image ID: `sha256:c1ce15762cf82e2fede6b34966d03c9c2674695348e1da46c66b31cca169c735`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
 ```dockerfile
 # Sat, 15 Sep 2018 09:10:26 GMT
 RUN Apply image 1809-RTM-amd64
-# Sat, 11 Jan 2020 05:23:25 GMT
+# Mon, 17 Feb 2020 06:57:13 GMT
 RUN Install update 1809-amd64
-# Tue, 14 Jan 2020 23:46:02 GMT
+# Thu, 20 Feb 2020 01:13:40 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Tue, 28 Jan 2020 00:26:33 GMT
+# Thu, 20 Feb 2020 10:52:19 GMT
 ENV JAVA_VERSION=jdk-11.0.6+10
-# Tue, 28 Jan 2020 00:33:11 GMT
+# Thu, 20 Feb 2020 10:59:06 GMT
 RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jre_x64_windows_hotspot_11.0.6_10.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jre_x64_windows_hotspot_11.0.6_10.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (d550fbc8348d84ddb15b2deaf322dc3433b933444eaf086ff1a8185e36ffa863) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'd550fbc8348d84ddb15b2deaf322dc3433b933444eaf086ff1a8185e36ffa863') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
 ```
 
@@ -40,18 +40,18 @@ RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk11-binaries/
 		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
 		Size: 1.5 GB (1534685324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:edbd72df76b46e904108d2f61a63c295b3e3d8092dbd5a03bbeb2fb4d34a3e55`  
-		Size: 682.7 MB (682725872 bytes)  
+	-	`sha256:b5405b7580792436b60c664b5fa766ea57f5a60c1d9a8c522cf53e99e4813355`  
+		Size: 695.8 MB (695818606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:e9d323e253cb21832421dda4ec57dbd597bd4f934e62c162b9dec8b96e06e818`  
-		Last Modified: Wed, 15 Jan 2020 01:45:20 GMT  
-		Size: 1.2 KB (1193 bytes)  
+	-	`sha256:2061e035d6ba931d9f00238104b970d3410f4ef0d9603b4f074c7052858e01e3`  
+		Last Modified: Thu, 20 Feb 2020 03:03:21 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31cf73548e199875407178b99b31a312a6820f6449ee911e3179517c8dc1752a`  
-		Last Modified: Tue, 28 Jan 2020 01:18:19 GMT  
-		Size: 1.2 KB (1183 bytes)  
+	-	`sha256:0f08e0ab17bf33ea69e3cd0c0170bf2c75878d25e17da954cb5b840534df2d50`  
+		Last Modified: Thu, 20 Feb 2020 11:55:29 GMT  
+		Size: 1.2 KB (1201 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf6392a1379b07137b8333ddff122faf29eb7241281045ec4cf824bc447bc95c`  
-		Last Modified: Tue, 28 Jan 2020 01:21:23 GMT  
-		Size: 75.9 MB (75854528 bytes)  
+	-	`sha256:7b00bd2c157fdd1331c8ec35da5f276ca5ad6587c14bf4e9654871b2a238e588`  
+		Last Modified: Thu, 20 Feb 2020 11:58:12 GMT  
+		Size: 75.9 MB (75850062 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
