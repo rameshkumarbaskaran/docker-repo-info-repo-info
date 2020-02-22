@@ -1030,10 +1030,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris fribidi=1.0.8-2
-'http://http.debian.net/debian/pool/main/f/fribidi/fribidi_1.0.8-2.dsc' fribidi_1.0.8-2.dsc 1987 SHA256:f1b396620cda57e93799725abad47089902429295f7b3555bc3d5b3f00a79340
-'http://http.debian.net/debian/pool/main/f/fribidi/fribidi_1.0.8.orig.tar.bz2' fribidi_1.0.8.orig.tar.bz2 2077095 SHA256:94c7b68d86ad2a9613b4dcffe7bbeb03523d63b5b37918bdf2e4ef34195c1e6c
-'http://http.debian.net/debian/pool/main/f/fribidi/fribidi_1.0.8-2.debian.tar.xz' fribidi_1.0.8-2.debian.tar.xz 8980 SHA256:898fc0b48625ce31e29d2f9501f17b9991b16b03816db6467faaedb85d22f00b
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.8-2.dsc' fribidi_1.0.8-2.dsc 1987 SHA256:f1b396620cda57e93799725abad47089902429295f7b3555bc3d5b3f00a79340
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.8.orig.tar.bz2' fribidi_1.0.8.orig.tar.bz2 2077095 SHA256:94c7b68d86ad2a9613b4dcffe7bbeb03523d63b5b37918bdf2e4ef34195c1e6c
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.8-2.debian.tar.xz' fribidi_1.0.8-2.debian.tar.xz 8980 SHA256:898fc0b48625ce31e29d2f9501f17b9991b16b03816db6467faaedb85d22f00b
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/fribidi/1.0.8-2/ (for browsing the source)
+- https://sources.debian.net/src/fribidi/1.0.8-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/fribidi/1.0.8-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-9=9.2.1-25`
 
@@ -1830,20 +1836,13 @@ Licenses: (parsed from: `/usr/share/doc/libcap2/copyright`, `/usr/share/doc/libc
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libcap2=1:2.27-1
-'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.27-1.dsc' libcap2_2.27-1.dsc 2197 SHA256:4bb4eec00b2378bd1b534ddc1028ce7257166b8970d18b58bbc2717d2dc72905
-'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.27.orig.tar.xz' libcap2_2.27.orig.tar.xz 67780 SHA256:dac1792d0118bee6aae6ba7fb93ff1602c6a9bda812fd63916eee1435b9c486a
-'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.27-1.debian.tar.xz' libcap2_2.27-1.debian.tar.xz 26476 SHA256:b8988a52b96a4e7de2ae2b4afcb108fc441c5f016d5f6bcc470e8b4534826d2a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libcap2/1:2.27-1/
 
-- https://sources.debian.net/src/libcap2/1:2.27-1/ (for browsing the source)
-- https://sources.debian.net/src/libcap2/1:2.27-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libcap2/1:2.27-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libdatrie=0.2.12-3`
 
@@ -3186,10 +3185,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pango1.0=1.42.4-8
-'http://http.debian.net/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8.dsc' pango1.0_1.42.4-8.dsc 3428 SHA256:e754f04afe84a7794b461e1cb9baf65fe2fc6e63e74f96378f8a4cd49118e8c3
-'http://http.debian.net/debian/pool/main/p/pango1.0/pango1.0_1.42.4.orig.tar.xz' pango1.0_1.42.4.orig.tar.xz 833876 SHA256:1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d
-'http://http.debian.net/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8.debian.tar.xz' pango1.0_1.42.4-8.debian.tar.xz 51148 SHA256:5c82cabf356785d8a6688643472e421da35db1208266453f876db6585d53d5b6
+'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8.dsc' pango1.0_1.42.4-8.dsc 3428 SHA256:e754f04afe84a7794b461e1cb9baf65fe2fc6e63e74f96378f8a4cd49118e8c3
+'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4.orig.tar.xz' pango1.0_1.42.4.orig.tar.xz 833876 SHA256:1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d
+'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8.debian.tar.xz' pango1.0_1.42.4-8.debian.tar.xz 51148 SHA256:5c82cabf356785d8a6688643472e421da35db1208266453f876db6585d53d5b6
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/pango1.0/1.42.4-8/ (for browsing the source)
+- https://sources.debian.net/src/pango1.0/1.42.4-8/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/pango1.0/1.42.4-8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `patch=2.7.6-6`
 
