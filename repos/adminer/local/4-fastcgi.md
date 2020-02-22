@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f894c56f8bea377d752a7839e5b2af6ffeab97af51d7b9b54e8c3113a954b088`
-- Created: `2020-01-31T17:19:35.438538026Z`
-- Virtual Size: ~ 87.78 Mb  
+- Image ID: `sha256:51fae65dda58c95c33eaca475f7939c065052d5c60e6a1b8c689fe44d7a1b106`
+- Created: `2020-02-21T04:45:42.494945517Z`
+- Virtual Size: ~ 87.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh","docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.2`
-  - `PHP_URL=https://www.php.net/get/php-7.4.2.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.4.2.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=98284deac017da0d426117ecae7599a1f1bf62ae3911e8bc16c4403a8f4bdf13`
+  - `PHP_VERSION=7.4.3`
+  - `PHP_URL=https://www.php.net/get/php-7.4.3.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.4.3.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=cf1f856d877c268124ded1ede40c9fb6142b125fdaafdc54f855120b8bc6982a`
   - `PHP_MD5=`
   - `ADMINER_VERSION=4.7.6`
   - `ADMINER_DOWNLOAD_SHA256=78f718f3b60faa1d1765af6c0010465f8d780fcaf8990a9e9223ce9c716de2d2`
@@ -287,16 +287,16 @@ custom
 ### `apk` package: `libpq`
 
 ```console
-libpq-12.1-r0 description:
+libpq-12.2-r0 description:
 PostgreSQL libraries
 
-libpq-12.1-r0 webpage:
+libpq-12.2-r0 webpage:
 https://www.postgresql.org/
 
-libpq-12.1-r0 installed size:
+libpq-12.2-r0 installed size:
 327680
 
-libpq-12.1-r0 license:
+libpq-12.2-r0 license:
 PostgreSQL
 
 ```
@@ -372,16 +372,16 @@ ISC
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r1 description:
+libxml2-2.9.10-r2 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r1 webpage:
+libxml2-2.9.10-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r1 installed size:
+libxml2-2.9.10-r2 installed size:
 1220608
 
-libxml2-2.9.10-r1 license:
+libxml2-2.9.10-r2 license:
 MIT
 
 ```
