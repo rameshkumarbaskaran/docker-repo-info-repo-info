@@ -799,16 +799,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ed=1.15-1
-'http://deb.debian.org/debian/pool/main/e/ed/ed_1.15-1.dsc' ed_1.15-1.dsc 1812 SHA256:d35971d9500f0b80f697bc7d83f8f660d4e66dd5051743816df84cb4b65a4c72
-'http://deb.debian.org/debian/pool/main/e/ed/ed_1.15.orig.tar.gz' ed_1.15.orig.tar.gz 89274 SHA256:e829e81399f467a7070728cfb1bf894713125935f539e6a0e4a5c5f3be637873
-'http://deb.debian.org/debian/pool/main/e/ed/ed_1.15-1.debian.tar.xz' ed_1.15-1.debian.tar.xz 8384 SHA256:624980719d5de2f4ee059d7f50b1a633062e7bb132cb5a3e3bea8b230f835c30
+'http://http.debian.net/debian/pool/main/e/ed/ed_1.15-1.dsc' ed_1.15-1.dsc 1812 SHA256:d35971d9500f0b80f697bc7d83f8f660d4e66dd5051743816df84cb4b65a4c72
+'http://http.debian.net/debian/pool/main/e/ed/ed_1.15.orig.tar.gz' ed_1.15.orig.tar.gz 89274 SHA256:e829e81399f467a7070728cfb1bf894713125935f539e6a0e4a5c5f3be637873
+'http://http.debian.net/debian/pool/main/e/ed/ed_1.15-1.debian.tar.xz' ed_1.15-1.debian.tar.xz 8384 SHA256:624980719d5de2f4ee059d7f50b1a633062e7bb132cb5a3e3bea8b230f835c30
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/ed/1.15-1/ (for browsing the source)
-- https://sources.debian.net/src/ed/1.15-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ed/1.15-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `elfutils=0.176-1.1`
 
@@ -1560,20 +1554,13 @@ Licenses: (parsed from: `/usr/share/doc/libisl22/copyright`)
 - `LGPL-2.1+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris isl=0.22-2
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.22-2.dsc' isl_0.22-2.dsc 1846 SHA256:c203abb2d44658dc3f5cfa2dc9d7bc301f4ac8ec1c8cb791e781c5e675d14f18
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.22.orig.tar.xz' isl_0.22.orig.tar.xz 1676992 SHA256:6c8bc56c477affecba9c59e2c9f026967ac8bad01b51bdd07916db40a517b9fa
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.22-2.debian.tar.xz' isl_0.22-2.debian.tar.xz 25228 SHA256:547c8c8c452a31247be532fcfe65efee98ef9c8351a35662308e6ec385c6a7c9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/isl/0.22-2/
 
-- https://sources.debian.net/src/isl/0.22-2/ (for browsing the source)
-- https://sources.debian.net/src/isl/0.22-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/isl/0.22-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `jbigkit=2.1-3.1`
 
@@ -1714,20 +1701,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-lattice/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lattice=0.20-38-1
-'http://deb.debian.org/debian/pool/main/l/lattice/lattice_0.20-38-1.dsc' lattice_0.20-38-1.dsc 1839 SHA256:1f9dd0241cfde5fc35a4bcc50b9911807bf7d3f5296f8c3bf97f98d82a917215
-'http://deb.debian.org/debian/pool/main/l/lattice/lattice_0.20-38.orig.tar.gz' lattice_0.20-38.orig.tar.gz 359031 SHA256:fdeb5e3e50dbbd9d3c5e2fa3eef865132b3eef30fbe53a10c24c7b7dfe5c0a2d
-'http://deb.debian.org/debian/pool/main/l/lattice/lattice_0.20-38-1.debian.tar.xz' lattice_0.20-38-1.debian.tar.xz 5120 SHA256:9b863452c0c431244bd38a810f3cfcc96d61a0ac3f0880e2c1650c79b006b235
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lattice/0.20-38-1/
 
-- https://sources.debian.net/src/lattice/0.20-38-1/ (for browsing the source)
-- https://sources.debian.net/src/lattice/0.20-38-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lattice/0.20-38-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `less=551-1`
 
