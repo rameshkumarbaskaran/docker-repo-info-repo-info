@@ -1,7 +1,7 @@
 ## `mariadb:latest`
 
 ```console
-$ docker pull mariadb@sha256:05b8bf8e3c5cefddb6e7190ff8a5e720872728a9f6b27e5e90a16ebe984091c1
+$ docker pull mariadb@sha256:d1ceee944c90ee3b596266de1b0ac25d2f34adbe9c35156b75bcb9a7047c7545
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,14 +13,14 @@ $ docker pull mariadb@sha256:05b8bf8e3c5cefddb6e7190ff8a5e720872728a9f6b27e5e90a
 ### `mariadb:latest` - linux; amd64
 
 ```console
-$ docker pull mariadb@sha256:b3116f425f51353e2ba71b04647977b035c2c578d276e2d4285bd2798e8199ae
+$ docker pull mariadb@sha256:62ceaa3606756ccc321941e69f9cbfe0458efed921354cbae10dfb3ca2df8b5b
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.4 MB (113361879 bytes)**  
+-	Total Size: **113.4 MB (113361916 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a90e8f717676870bb9b3fdeee8be5d025a7d80819b4b9c87febc7e2e6fe6458e`
+-	Image ID: `sha256:1fd0e719c4952e22a99e30662fdd7daad53e7e53fbe135d543cc6b82be213951`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
@@ -61,15 +61,15 @@ RUN set -e;	echo "deb http://ftp.osuosl.org/pub/mariadb/repo/$MARIADB_MAJOR/ubun
 RUN set -ex; 	{ 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password password 'unused'; 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" 		mariadb-backup 		socat 	; 	rm -rf /var/lib/apt/lists/*; 	sed -ri 's/^user\s/#&/' /etc/mysql/my.cnf /etc/mysql/conf.d/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log)/#&/'; 	echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf
 # Fri, 21 Feb 2020 23:54:41 GMT
 VOLUME [/var/lib/mysql]
-# Fri, 21 Feb 2020 23:54:41 GMT
-COPY file:b50ad8ff787b4cfa95592fcec7d18449b174968f9d6a562653cbe39fe9022863 in /usr/local/bin/ 
-# Fri, 21 Feb 2020 23:54:42 GMT
+# Wed, 04 Mar 2020 17:27:11 GMT
+COPY file:11e6bb0ed0a4518785c4affa0b36a550b4858cf10b7b87cc4d99296eaeabe9f2 in /usr/local/bin/ 
+# Wed, 04 Mar 2020 17:27:12 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
-# Fri, 21 Feb 2020 23:54:42 GMT
+# Wed, 04 Mar 2020 17:27:12 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 21 Feb 2020 23:54:42 GMT
+# Wed, 04 Mar 2020 17:27:12 GMT
 EXPOSE 3306
-# Fri, 21 Feb 2020 23:54:42 GMT
+# Wed, 04 Mar 2020 17:27:12 GMT
 CMD ["mysqld"]
 ```
 
@@ -122,26 +122,26 @@ CMD ["mysqld"]
 		Last Modified: Fri, 21 Feb 2020 23:57:16 GMT  
 		Size: 80.0 MB (80016708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac908ac8219c33ea8a87021faf90c16cf1cfad1f2bee630ab472dadd325b162`  
-		Last Modified: Fri, 21 Feb 2020 23:57:03 GMT  
-		Size: 4.7 KB (4722 bytes)  
+	-	`sha256:1b16e5f6713ac110b498c09dd9e7a16ca7bd958e7fa9d12cedd284d82bf17e2d`  
+		Last Modified: Wed, 04 Mar 2020 17:27:55 GMT  
+		Size: 4.8 KB (4759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62be07fe3c17cf59d6779391fab8bf6273d3ad98a308df89fd32704eced89cf7`  
-		Last Modified: Fri, 21 Feb 2020 23:57:02 GMT  
+	-	`sha256:3465aee3f57dd2924390c60c15ff16fb162913924c5be3f09ba45d5dd4d56fd1`  
+		Last Modified: Wed, 04 Mar 2020 17:27:56 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mariadb:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull mariadb@sha256:319f5b1d4d92d0c6c8215e279f5e67a15af58632ebcc03744adc5198497d8746
+$ docker pull mariadb@sha256:59fa57a7a1029ef92f4fd96d44bf6d752e2e882a876fd1bb28df8698424c11c3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.6 MB (108608223 bytes)**  
+-	Total Size: **108.6 MB (108608264 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:691cf3e810dd8253cabcfd364334b66d8438be110f0bb0eb1d75fdee46130547`
+-	Image ID: `sha256:af7f84ddfd635f055729d8818fa028bdb06d6a1c7bc035848d26d5a8ed87052c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
@@ -182,15 +182,15 @@ RUN set -e;	echo "deb http://ftp.osuosl.org/pub/mariadb/repo/$MARIADB_MAJOR/ubun
 RUN set -ex; 	{ 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password password 'unused'; 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" 		mariadb-backup 		socat 	; 	rm -rf /var/lib/apt/lists/*; 	sed -ri 's/^user\s/#&/' /etc/mysql/my.cnf /etc/mysql/conf.d/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log)/#&/'; 	echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf
 # Fri, 21 Feb 2020 22:14:41 GMT
 VOLUME [/var/lib/mysql]
-# Fri, 21 Feb 2020 22:14:42 GMT
-COPY file:b50ad8ff787b4cfa95592fcec7d18449b174968f9d6a562653cbe39fe9022863 in /usr/local/bin/ 
-# Fri, 21 Feb 2020 22:14:43 GMT
+# Wed, 04 Mar 2020 17:55:27 GMT
+COPY file:11e6bb0ed0a4518785c4affa0b36a550b4858cf10b7b87cc4d99296eaeabe9f2 in /usr/local/bin/ 
+# Wed, 04 Mar 2020 17:55:29 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
-# Fri, 21 Feb 2020 22:14:44 GMT
+# Wed, 04 Mar 2020 17:55:29 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 21 Feb 2020 22:14:45 GMT
+# Wed, 04 Mar 2020 17:55:30 GMT
 EXPOSE 3306
-# Fri, 21 Feb 2020 22:14:45 GMT
+# Wed, 04 Mar 2020 17:55:31 GMT
 CMD ["mysqld"]
 ```
 
@@ -243,26 +243,26 @@ CMD ["mysqld"]
 		Last Modified: Fri, 21 Feb 2020 22:19:18 GMT  
 		Size: 78.7 MB (78691443 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e241d11070e8cfbb380b459c7caca52b891c6ac2ecd94e00fe7a4a77b5c16d2`  
-		Last Modified: Fri, 21 Feb 2020 22:18:53 GMT  
-		Size: 4.7 KB (4718 bytes)  
+	-	`sha256:485d3056132d4038e92d01fbb81f3e0d27c9f99477898502102ca50963dc42a5`  
+		Last Modified: Wed, 04 Mar 2020 17:56:42 GMT  
+		Size: 4.8 KB (4759 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:493ab64296260c6b129b92c433ba88c346c1f46bdb6efa25e36fc2741b69e350`  
-		Last Modified: Fri, 21 Feb 2020 22:18:53 GMT  
+	-	`sha256:2b452a762b9676c3a694fda092303824caf846a7b66517510bc23a28466cde7b`  
+		Last Modified: Wed, 04 Mar 2020 17:56:42 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mariadb:latest` - linux; ppc64le
 
 ```console
-$ docker pull mariadb@sha256:574b8fbd1139ab062b50e6669e480a2b3b3b62cea5a25362c086e40aed01aeec
+$ docker pull mariadb@sha256:6e0f0e54e2a37d173f552374acaf159e3e8395df41b49ed7637e4108a1336301
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **121.1 MB (121067391 bytes)**  
+-	Total Size: **121.1 MB (121067433 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c07494469266b5db85add1f6c80a6edfb7a772128fd40c625cc8812d8a5b4c3f`
+-	Image ID: `sha256:f5c3a46352dcacc07fac34b0f423d4b1630f536e3611caf7a4a38c7454a17dd9`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
@@ -303,15 +303,15 @@ RUN set -e;	echo "deb http://ftp.osuosl.org/pub/mariadb/repo/$MARIADB_MAJOR/ubun
 RUN set -ex; 	{ 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password password 'unused'; 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password_again password 'unused'; 	} | debconf-set-selections; 	apt-get update; 	apt-get install -y 		"mariadb-server=$MARIADB_VERSION" 		mariadb-backup 		socat 	; 	rm -rf /var/lib/apt/lists/*; 	sed -ri 's/^user\s/#&/' /etc/mysql/my.cnf /etc/mysql/conf.d/*; 	rm -rf /var/lib/mysql; 	mkdir -p /var/lib/mysql /var/run/mysqld; 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; 	chmod 777 /var/run/mysqld; 	find /etc/mysql/ -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log)/#&/'; 	echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf
 # Sat, 22 Feb 2020 00:21:11 GMT
 VOLUME [/var/lib/mysql]
-# Sat, 22 Feb 2020 00:21:14 GMT
-COPY file:b50ad8ff787b4cfa95592fcec7d18449b174968f9d6a562653cbe39fe9022863 in /usr/local/bin/ 
-# Sat, 22 Feb 2020 00:21:21 GMT
+# Wed, 04 Mar 2020 17:40:25 GMT
+COPY file:11e6bb0ed0a4518785c4affa0b36a550b4858cf10b7b87cc4d99296eaeabe9f2 in /usr/local/bin/ 
+# Wed, 04 Mar 2020 17:40:36 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
-# Sat, 22 Feb 2020 00:21:23 GMT
+# Wed, 04 Mar 2020 17:40:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 22 Feb 2020 00:21:26 GMT
+# Wed, 04 Mar 2020 17:40:44 GMT
 EXPOSE 3306
-# Sat, 22 Feb 2020 00:21:29 GMT
+# Wed, 04 Mar 2020 17:40:46 GMT
 CMD ["mysqld"]
 ```
 
@@ -364,11 +364,11 @@ CMD ["mysqld"]
 		Last Modified: Sat, 22 Feb 2020 00:30:14 GMT  
 		Size: 83.2 MB (83222208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe998ada4103990c55692ab4022543d2ce968992e18e4fb18b2c6e72cb84c222`  
-		Last Modified: Sat, 22 Feb 2020 00:29:55 GMT  
-		Size: 4.7 KB (4719 bytes)  
+	-	`sha256:202c9a34dcde6ff31a324247ab1e15f759c4ec0e79c49115a29c2513418cf681`  
+		Last Modified: Wed, 04 Mar 2020 17:42:55 GMT  
+		Size: 4.8 KB (4761 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ac6089580988ca3fc8c95532596168c5d67f491f4185162110ed51f50dd54a4`  
-		Last Modified: Sat, 22 Feb 2020 00:29:55 GMT  
+	-	`sha256:f7254ae7117f85a3068e40e25d8ec14b30c6f744883d998c23a2e69a1fa05aa8`  
+		Last Modified: Wed, 04 Mar 2020 17:42:55 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
