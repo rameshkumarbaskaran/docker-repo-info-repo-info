@@ -12,8 +12,14 @@
 -	[`traefik:2.1.6`](#traefik216)
 -	[`traefik:2.1.6-windowsservercore-1809`](#traefik216-windowsservercore-1809)
 -	[`traefik:2.1-windowsservercore-1809`](#traefik21-windowsservercore-1809)
+-	[`traefik:2.2`](#traefik22)
+-	[`traefik:2.2.0-rc1`](#traefik220-rc1)
+-	[`traefik:2.2.0-rc1-windowsservercore-1809`](#traefik220-rc1-windowsservercore-1809)
+-	[`traefik:2.2-windowsservercore-1809`](#traefik22-windowsservercore-1809)
 -	[`traefik:cantal`](#traefikcantal)
 -	[`traefik:cantal-windowsservercore-1809`](#traefikcantal-windowsservercore-1809)
+-	[`traefik:chevrotin`](#traefikchevrotin)
+-	[`traefik:chevrotin-windowsservercore-1809`](#traefikchevrotin-windowsservercore-1809)
 -	[`traefik:latest`](#traefiklatest)
 -	[`traefik:maroilles`](#traefikmaroilles)
 -	[`traefik:maroilles-alpine`](#traefikmaroilles-alpine)
@@ -28,6 +34,10 @@
 -	[`traefik:v2.1.6`](#traefikv216)
 -	[`traefik:v2.1.6-windowsservercore-1809`](#traefikv216-windowsservercore-1809)
 -	[`traefik:v2.1-windowsservercore-1809`](#traefikv21-windowsservercore-1809)
+-	[`traefik:v2.2`](#traefikv22)
+-	[`traefik:v2.2.0-rc1`](#traefikv220-rc1)
+-	[`traefik:v2.2.0-rc1-windowsservercore-1809`](#traefikv220-rc1-windowsservercore-1809)
+-	[`traefik:v2.2-windowsservercore-1809`](#traefikv22-windowsservercore-1809)
 -	[`traefik:windowsservercore-1809`](#traefikwindowsservercore-1809)
 
 ## `traefik:1.7`
@@ -1282,6 +1292,22 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `traefik:2.2`
+
+**does not exist** (yet?)
+
+## `traefik:2.2.0-rc1`
+
+**does not exist** (yet?)
+
+## `traefik:2.2.0-rc1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:2.2-windowsservercore-1809`
+
+**does not exist** (yet?)
+
 ## `traefik:cantal`
 
 ```console
@@ -1522,6 +1548,14 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 		Last Modified: Fri, 28 Feb 2020 23:24:53 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:chevrotin`
+
+**does not exist** (yet?)
+
+## `traefik:chevrotin-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:latest`
 
@@ -3330,6 +3364,22 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 		Last Modified: Fri, 28 Feb 2020 23:24:53 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:v2.2`
+
+**does not exist** (yet?)
+
+## `traefik:v2.2.0-rc1`
+
+**does not exist** (yet?)
+
+## `traefik:v2.2.0-rc1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:v2.2-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:windowsservercore-1809`
 
