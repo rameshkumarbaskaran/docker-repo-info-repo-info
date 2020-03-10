@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:07991a9e97a0a0ba1ebca2fc97e927a10391e4a3717768bc6b8df922b0d3be54`
-- Created: `2020-01-28T21:36:06.079618129Z`
+- Image ID: `sha256:fd84774952b5a3e67f3c5550152af9e4b8d5f7f9d9cf7a7f300e01ddd8466ef8`
+- Created: `2020-03-10T02:20:40.033928833Z`
 - Virtual Size: ~ 118.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -101,15 +101,15 @@ $ yumdownloader --quiet --source --urls cpio-2.11-27.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/cpio-2.11-27.el7.src.rpm
 ```
 
-### `rpm` package: `curl-7.29.0-54.0.1.el7_7.1.x86_64`
+### `rpm` package: `curl-7.29.0-54.0.5.el7_7.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls curl-7.29.0-54.0.1.el7_7.1
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-54.0.1.el7_7.1.src.rpm
+$ yumdownloader --quiet --source --urls curl-7.29.0-54.0.5.el7_7.2
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-54.0.5.el7_7.2.src.rpm
 ```
 
 ### `rpm` package: `cyrus-sasl-lib-2.1.26-23.el7.x86_64`
@@ -415,15 +415,15 @@ $ yumdownloader --quiet --source --urls libcom_err-1.42.9-16.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/e2fsprogs-1.42.9-16.el7.src.rpm
 ```
 
-### `rpm` package: `libcurl-7.29.0-54.0.1.el7_7.1.x86_64`
+### `rpm` package: `libcurl-7.29.0-54.0.5.el7_7.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libcurl-7.29.0-54.0.1.el7_7.1
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-54.0.1.el7_7.1.src.rpm
+$ yumdownloader --quiet --source --urls libcurl-7.29.0-54.0.5.el7_7.2
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-54.0.5.el7_7.2.src.rpm
 ```
 
 ### `rpm` package: `libdb-5.3.21-25.el7.x86_64`
