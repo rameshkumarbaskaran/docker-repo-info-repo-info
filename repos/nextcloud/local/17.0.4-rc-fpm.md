@@ -1,10 +1,10 @@
-# `nextcloud:17.0.4RC1-fpm`
+# `nextcloud:17.0.4RC2-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:96b26cf5fae1f2a940de11282cca40522c4cb878c03e0d391d573059ee558952`
-- Created: `2020-03-07T00:23:16.434604658Z`
-- Virtual Size: ~ 672.13 Mb  
+- Image ID: `sha256:ffe2ca3351bf2050e4ed5b246bb56552bd16fd960abfee0e5f38b718a84a2ebb`
+- Created: `2020-03-10T00:42:01.871409158Z`
+- Virtual Size: ~ 672.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.15.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=de7ae7cf3d1dbb2824975b26b32991dac2b732886ec22075b8c53b261b018166`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=17.0.4RC1`
+  - `NEXTCLOUD_VERSION=17.0.4RC2`
 
 ## `dpkg` (`.deb`-based packages)
 
