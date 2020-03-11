@@ -1,17 +1,17 @@
-# `kong:2.0.1-ubuntu`
+# `kong:2.0.2-ubuntu`
 
 ## Docker Metadata
 
-- Image ID: `sha256:10032c0185ac4c470fbf652a91c2789a6e2316c1a5bb2fd98c52edc7dab058f1`
-- Created: `2020-02-21T23:59:09.774244421Z`
-- Virtual Size: ~ 258.32 Mb  
+- Image ID: `sha256:143dad1a9d8e1dbed979d0a4cb563d35518cd7d5284fee334bea8e761d9610c0`
+- Created: `2020-03-09T23:25:29.966669241Z`
+- Virtual Size: ~ 258.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["kong","docker-start"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `KONG_VERSION=2.0.1`
+  - `KONG_VERSION=2.0.2`
 - Labels:
   - `maintainer=Kong Core Team <team-core@konghq.com>`
 
@@ -658,11 +658,11 @@ $ apt-get source -qq --print-uris kmod=22-1ubuntu5.2
 'http://archive.ubuntu.com/ubuntu/pool/main/k/kmod/kmod_22-1ubuntu5.2.debian.tar.xz' kmod_22-1ubuntu5.2.debian.tar.xz 14524 SHA256:f8dd1134e6cff72a458e66d2e86ef413be07a29cc66c87d02544bb5c2037bfb7
 ```
 
-### `dpkg` source package: `kong=2.0.1`
+### `dpkg` source package: `kong=2.0.2`
 
 Binary Packages:
 
-- `kong=2.0.1`
+- `kong=2.0.2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
