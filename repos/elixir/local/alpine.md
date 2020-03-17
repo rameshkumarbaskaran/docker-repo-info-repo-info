@@ -2,20 +2,20 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2e210c9b734909045d2a761230ce6ef4da9e6c1f8178dfabdcc298560078036e`
-- Created: `2020-03-06T23:28:39.203424931Z`
-- Virtual Size: ~ 83.71 Mb  
+- Image ID: `sha256:8f9766cc9ee1aa78eb93eebb24920c068dce23bbea76a97e8ca3fec3fcfeae83`
+- Created: `2020-03-17T03:25:58.334853427Z`
+- Virtual Size: ~ 84.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=22.2.8`
+  - `OTP_VERSION=22.3`
   - `REBAR3_VERSION=3.13.1`
   - `ELIXIR_VERSION=v1.10.2`
   - `LANG=C.UTF-8`
 - Labels:
-  - `org.opencontainers.image.version=22.2.8`
+  - `org.opencontainers.image.version=22.3`
 
 ## `apk` (`.apk`-based packages)
 
@@ -226,16 +226,16 @@ GPL-2.0-only AND LGPL-2.1-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r0 description:
+musl-1.1.24-r1 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r0 webpage:
-http://www.musl-libc.org/
+musl-1.1.24-r1 webpage:
+https://musl.libc.org/
 
-musl-1.1.24-r0 installed size:
-610304
+musl-1.1.24-r1 installed size:
+614400
 
-musl-1.1.24-r0 license:
+musl-1.1.24-r1 license:
 MIT
 
 ```
