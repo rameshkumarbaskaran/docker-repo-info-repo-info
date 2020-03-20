@@ -6,12 +6,15 @@
 -	[`mongo:3.6`](#mongo36)
 -	[`mongo:3.6.17`](#mongo3617)
 -	[`mongo:3.6.17-windowsservercore`](#mongo3617-windowsservercore)
+-	[`mongo:3.6.17-windowsservercore-1809`](#mongo3617-windowsservercore-1809)
 -	[`mongo:3.6.17-windowsservercore-ltsc2016`](#mongo3617-windowsservercore-ltsc2016)
 -	[`mongo:3.6.17-xenial`](#mongo3617-xenial)
 -	[`mongo:3.6-windowsservercore`](#mongo36-windowsservercore)
+-	[`mongo:3.6-windowsservercore-1809`](#mongo36-windowsservercore-1809)
 -	[`mongo:3.6-windowsservercore-ltsc2016`](#mongo36-windowsservercore-ltsc2016)
 -	[`mongo:3.6-xenial`](#mongo36-xenial)
 -	[`mongo:3-windowsservercore`](#mongo3-windowsservercore)
+-	[`mongo:3-windowsservercore-1809`](#mongo3-windowsservercore-1809)
 -	[`mongo:3-windowsservercore-ltsc2016`](#mongo3-windowsservercore-ltsc2016)
 -	[`mongo:3-xenial`](#mongo3-xenial)
 -	[`mongo:4`](#mongo4)
@@ -1141,6 +1144,10 @@ CMD ["mongod" "--bind_ip_all"]
 		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `mongo:3.6.17-windowsservercore-1809`
+
+**does not exist** (yet?)
+
 ## `mongo:3.6.17-windowsservercore-ltsc2016`
 
 ```console
@@ -1574,6 +1581,10 @@ CMD ["mongod" "--bind_ip_all"]
 		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `mongo:3.6-windowsservercore-1809`
+
+**does not exist** (yet?)
+
 ## `mongo:3.6-windowsservercore-ltsc2016`
 
 ```console
@@ -2006,6 +2017,10 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Wed, 18 Mar 2020 15:44:51 GMT  
 		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `mongo:3-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `mongo:3-windowsservercore-ltsc2016`
 
