@@ -1,10 +1,10 @@
-# `drupal:8.8.3-fpm`
+# `drupal:8.8.4-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:236d71ad21bceab021d49f384e75eddba36da00fd8bf26fad3322145538b6668`
-- Created: `2020-03-06T00:20:26.621525686Z`
-- Virtual Size: ~ 443.93 Mb  
+- Image ID: `sha256:58a9646b73846cdc2a9c553ac95d3d95c6cc08860e4e6f258a5f3c5dd2a7985c`
+- Created: `2020-03-20T04:02:15.339804428Z`
+- Virtual Size: ~ 444.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,13 +18,13 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.15`
-  - `PHP_URL=https://www.php.net/get/php-7.3.15.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.15.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=de7ae7cf3d1dbb2824975b26b32991dac2b732886ec22075b8c53b261b018166`
+  - `PHP_VERSION=7.3.16`
+  - `PHP_URL=https://www.php.net/get/php-7.3.16.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.16.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=91aaee3dbdc71b69b4f3292f9d99211172a2fa926c3f3bbdb0e85dab03dd2bcb`
   - `PHP_MD5=`
-  - `DRUPAL_VERSION=8.8.3`
-  - `DRUPAL_MD5=f524df904f9d4ba5586eed8203e1c58c`
+  - `DRUPAL_VERSION=8.8.4`
+  - `DRUPAL_MD5=3d08163b296ed947c4337992d439094a`
 
 ## `dpkg` (`.deb`-based packages)
 
