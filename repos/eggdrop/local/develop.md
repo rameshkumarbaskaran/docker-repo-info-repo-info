@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:37f275da570aba93576c2ece3440e19a461da1c25fb2dfde7d0ada3d0a98a1d5`
-- Created: `2020-03-17T22:12:35.414141679Z`
-- Virtual Size: ~ 33.38 Mb  
+- Image ID: `sha256:03a4ededa2642b05e7e4f04aefbab25030c5a3d703400cbfb15e11ea0ef12f9f`
+- Created: `2020-03-23T22:03:45.427419641Z`
+- Virtual Size: ~ 32.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/home/eggdrop/eggdrop/entrypoint.sh"]`
@@ -110,16 +110,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
-ca-certificates-cacert-20191127-r0 description:
+ca-certificates-cacert-20191127-r1 description:
 Mozilla bundled certificates
 
-ca-certificates-cacert-20191127-r0 webpage:
+ca-certificates-cacert-20191127-r1 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-cacert-20191127-r0 installed size:
+ca-certificates-cacert-20191127-r1 installed size:
 245760
 
-ca-certificates-cacert-20191127-r0 license:
+ca-certificates-cacert-20191127-r1 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -195,16 +195,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r1 description:
+musl-1.1.24-r2 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r1 webpage:
+musl-1.1.24-r2 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r1 installed size:
+musl-1.1.24-r2 installed size:
 614400
 
-musl-1.1.24-r1 license:
+musl-1.1.24-r2 license:
 MIT
 
 ```
@@ -212,16 +212,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.24-r0 description:
+musl-utils-1.1.24-r2 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.24-r0 webpage:
-http://www.musl-libc.org/
+musl-utils-1.1.24-r2 webpage:
+https://musl.libc.org/
 
-musl-utils-1.1.24-r0 installed size:
-147456
+musl-utils-1.1.24-r2 installed size:
+151552
 
-musl-utils-1.1.24-r0 license:
+musl-utils-1.1.24-r2 license:
 MIT BSD GPL2+
 
 ```
