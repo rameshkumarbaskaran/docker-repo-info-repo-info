@@ -2026,13 +2026,9 @@ Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris neurodebian=0.39.0~nd14.04+1
-'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.39.0~nd14.04+1.dsc' neurodebian_0.39.0~nd14.04+1.dsc 1435 SHA256:c91e354770cff43f3c08fc6054b9580f42ebef9a4b25c5a46d71b4fd1ecf5f06
-'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.39.0~nd14.04+1.tar.gz' neurodebian_0.39.0~nd14.04+1.tar.gz 8818856 SHA256:bef8b4af8279806811b58932383ee3066c502d89aa66b8b1b9f7ef39ba6349f5
-```
 
 ### `dpkg` source package: `newt=0.52.15-2ubuntu5`
 

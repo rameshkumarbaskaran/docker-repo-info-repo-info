@@ -952,13 +952,9 @@ Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris neurodebian=0.39.0~nd16.04+1
-'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.39.0~nd16.04+1.dsc' neurodebian_0.39.0~nd16.04+1.dsc 1485 SHA256:aa6097c804b5d3c9abd6e94d17fc25bd5a23168cf3d8e8514e87c6b6c8c425f4
-'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.39.0~nd16.04+1.tar.xz' neurodebian_0.39.0~nd16.04+1.tar.xz 8322212 SHA256:81dd31d67cb608543e26f392ec2e4d6dad0cca36d7ce0c88a47e16bebe7c3ce9
-```
 
 ### `dpkg` source package: `pam=1.1.8-3.2ubuntu2.1`
 
