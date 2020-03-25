@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0116e96b7f64566491d867af71ba45087692a5bbc71c53cc5e674673a59c4fbd`
-- Created: `2020-03-20T05:04:55.618761495Z`
-- Virtual Size: ~ 128.54 Mb  
+- Image ID: `sha256:ed1b92b601b3bdcf9499d213c24ae10f4970d7ea6485556c2cf369bff7fc8156`
+- Created: `2020-03-24T04:46:08.010895892Z`
+- Virtual Size: ~ 127.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -136,16 +136,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r0 description:
+ca-certificates-20191127-r1 description:
 Common CA certificates PEM files
 
-ca-certificates-20191127-r0 webpage:
+ca-certificates-20191127-r1 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r0 installed size:
+ca-certificates-20191127-r1 installed size:
 741376
 
-ca-certificates-20191127-r0 license:
+ca-certificates-20191127-r1 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -153,16 +153,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
-ca-certificates-cacert-20191127-r0 description:
+ca-certificates-cacert-20191127-r1 description:
 Mozilla bundled certificates
 
-ca-certificates-cacert-20191127-r0 webpage:
+ca-certificates-cacert-20191127-r1 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-cacert-20191127-r0 installed size:
+ca-certificates-cacert-20191127-r1 installed size:
 245760
 
-ca-certificates-cacert-20191127-r0 license:
+ca-certificates-cacert-20191127-r1 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -306,16 +306,16 @@ BSD-3-Clause
 ### `apk` package: `libgcc`
 
 ```console
-libgcc-9.2.0-r3 description:
+libgcc-9.2.0-r4 description:
 GNU C compiler runtime libraries
 
-libgcc-9.2.0-r3 webpage:
+libgcc-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-libgcc-9.2.0-r3 installed size:
+libgcc-9.2.0-r4 installed size:
 90112
 
-libgcc-9.2.0-r3 license:
+libgcc-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -459,16 +459,16 @@ OpenSSL
 ### `apk` package: `libstdc++`
 
 ```console
-libstdc++-9.2.0-r3 description:
+libstdc++-9.2.0-r4 description:
 GNU C++ standard runtime library
 
-libstdc++-9.2.0-r3 webpage:
+libstdc++-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-libstdc++-9.2.0-r3 installed size:
+libstdc++-9.2.0-r4 installed size:
 1671168
 
-libstdc++-9.2.0-r3 license:
+libstdc++-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -510,16 +510,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r1 description:
+musl-1.1.24-r2 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r1 webpage:
+musl-1.1.24-r2 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r1 installed size:
+musl-1.1.24-r2 installed size:
 614400
 
-musl-1.1.24-r1 license:
+musl-1.1.24-r2 license:
 MIT
 
 ```
@@ -527,16 +527,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.24-r0 description:
+musl-utils-1.1.24-r2 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.24-r0 webpage:
-http://www.musl-libc.org/
+musl-utils-1.1.24-r2 webpage:
+https://musl.libc.org/
 
-musl-utils-1.1.24-r0 installed size:
-147456
+musl-utils-1.1.24-r2 installed size:
+151552
 
-musl-utils-1.1.24-r0 license:
+musl-utils-1.1.24-r2 license:
 MIT BSD GPL2+
 
 ```
