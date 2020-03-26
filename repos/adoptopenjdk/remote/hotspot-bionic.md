@@ -1,7 +1,7 @@
 ## `adoptopenjdk:hotspot-bionic`
 
 ```console
-$ docker pull adoptopenjdk@sha256:8554927713e137bba82a6dcb4a57feea550ff78c59794c42e67da42495fa23dc
+$ docker pull adoptopenjdk@sha256:5bc98528c81a56f3284bd5a4faec50e55bf633824ca2e53dc1db8c211b3fcd2b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15,14 +15,14 @@ $ docker pull adoptopenjdk@sha256:8554927713e137bba82a6dcb4a57feea550ff78c59794c
 ### `adoptopenjdk:hotspot-bionic` - linux; amd64
 
 ```console
-$ docker pull adoptopenjdk@sha256:2f5394e07ef96fe6f56ce55bbe96572bb67c03f30f620a6da418a4891bc6fa15
+$ docker pull adoptopenjdk@sha256:a28676ad7de2545bf97ae068d0e427d6e904b80c5380e6308cf5d1eb7fc113c6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **248.6 MB (248554731 bytes)**  
+-	Total Size: **257.5 MB (257453911 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9cc748ad177e0ffc22ea491b60d46160276b6cdb8ecec3871c6a4d86dd534455`
+-	Image ID: `sha256:bd59f1490762d43649f69ef2941f9c286fc7181516271ad3ec809ef824200341`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -40,13 +40,13 @@ CMD ["/bin/bash"]
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 # Fri, 20 Mar 2020 19:37:33 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 20 Mar 2020 19:38:18 GMT
-ENV JAVA_VERSION=jdk-13.0.2+8
-# Fri, 20 Mar 2020 19:38:31 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0e6081cb51f8a6f3062bef4f4c45dbe1fccfd3f3b4b5d52522a3edb76581e3af';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.2_8.tar.gz';          ;;        armhf)          ESUM='9beec080f2b2a7f6883b024272f4e8d5a0b027325e83647be318215781af1d1a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_arm_linux_hotspot_13.0.2_8.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fb3362e34aac091a4682394d20dcdc3daea51995d369d62c28424573e0fc04aa';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_ppc64le_linux_hotspot_13.0.2_8.tar.gz';          ;;        s390x)          ESUM='1b9e7cd7fdde10fe3534988ef58c36f132b12f814503a034461c95735057467f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_s390x_linux_hotspot_13.0.2_8.tar.gz';          ;;        amd64|x86_64)          ESUM='9ccc063569f19899fd08e41466f8c4cd4e05058abdb5178fa374cb365dcf5998';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_linux_hotspot_13.0.2_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 20 Mar 2020 19:38:31 GMT
+# Thu, 26 Mar 2020 18:20:25 GMT
+ENV JAVA_VERSION=jdk-14+36
+# Thu, 26 Mar 2020 18:20:37 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='902899c9c4781a5ef16fc79bf153e9decff595a6597e39e2e4672faf2ec9c99f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_aarch64_linux_hotspot_14_36.tar.gz';          ;;        armhf|armv7l)          ESUM='fa958d9eebb37c0767fce4446e73f40a82e43bcfc447c4b5279e35aa159894ac';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_arm_linux_hotspot_14_36.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='1439630557d2045727708d838325a54c8423cb13eb8837315f2cc8f084b07f03';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_ppc64le_linux_hotspot_14_36.tar.gz';          ;;        s390x)          ESUM='b000a725e10293841e49183902f73b91f475f2f0876a26084b7983224c0a8dc6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_s390x_linux_hotspot_14_36.tar.gz';          ;;        amd64|x86_64)          ESUM='6c06853332585ab58834d9e8a02774b388e6e062ef6c4084b4f058c67f2e81b5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_linux_hotspot_14_36.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Thu, 26 Mar 2020 18:20:37 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 20 Mar 2020 19:38:31 GMT
+# Thu, 26 Mar 2020 18:20:38 GMT
 CMD ["jshell"]
 ```
 
@@ -71,22 +71,22 @@ CMD ["jshell"]
 		Last Modified: Fri, 20 Mar 2020 19:40:17 GMT  
 		Size: 13.3 MB (13325178 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b18bd36903cd9a93abf8bd5984922b1bde814606e214e028be5583903bf46d7f`  
-		Last Modified: Fri, 20 Mar 2020 19:41:53 GMT  
-		Size: 208.5 MB (208502584 bytes)  
+	-	`sha256:243f239cfe1506a1bd28d660f4ca645c47d39b8d9774525a77eb953fdea49ff9`  
+		Last Modified: Thu, 26 Mar 2020 18:24:26 GMT  
+		Size: 217.4 MB (217401764 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:hotspot-bionic` - linux; arm variant v7
 
 ```console
-$ docker pull adoptopenjdk@sha256:352eda2909ca54ae1e8dd9c8eeba8b8189d6ce970e5667fd604238ad4b20224d
+$ docker pull adoptopenjdk@sha256:ee88901d1b07d99112b00209d77e264460b8a7fae3c15ea60710c69f778b4fa1
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.3 MB (227305316 bytes)**  
+-	Total Size: **224.6 MB (224625128 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f7c8923dc2c88820d5992f96ca1f90ee3b0251d24dbfbd445ec5dcf67062c232`
+-	Image ID: `sha256:90dc9cf601c141c4043d3d67a52dc6d565f4983d6a54eefbcf4830107cde6c71`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -104,13 +104,13 @@ CMD ["/bin/bash"]
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 # Fri, 20 Mar 2020 19:28:54 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 20 Mar 2020 19:29:23 GMT
-ENV JAVA_VERSION=jdk-13.0.2+8
-# Fri, 20 Mar 2020 19:29:41 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0e6081cb51f8a6f3062bef4f4c45dbe1fccfd3f3b4b5d52522a3edb76581e3af';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.2_8.tar.gz';          ;;        armhf)          ESUM='9beec080f2b2a7f6883b024272f4e8d5a0b027325e83647be318215781af1d1a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_arm_linux_hotspot_13.0.2_8.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fb3362e34aac091a4682394d20dcdc3daea51995d369d62c28424573e0fc04aa';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_ppc64le_linux_hotspot_13.0.2_8.tar.gz';          ;;        s390x)          ESUM='1b9e7cd7fdde10fe3534988ef58c36f132b12f814503a034461c95735057467f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_s390x_linux_hotspot_13.0.2_8.tar.gz';          ;;        amd64|x86_64)          ESUM='9ccc063569f19899fd08e41466f8c4cd4e05058abdb5178fa374cb365dcf5998';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_linux_hotspot_13.0.2_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 20 Mar 2020 19:29:42 GMT
+# Thu, 26 Mar 2020 18:58:47 GMT
+ENV JAVA_VERSION=jdk-14+36
+# Thu, 26 Mar 2020 18:59:05 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='902899c9c4781a5ef16fc79bf153e9decff595a6597e39e2e4672faf2ec9c99f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_aarch64_linux_hotspot_14_36.tar.gz';          ;;        armhf|armv7l)          ESUM='fa958d9eebb37c0767fce4446e73f40a82e43bcfc447c4b5279e35aa159894ac';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_arm_linux_hotspot_14_36.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='1439630557d2045727708d838325a54c8423cb13eb8837315f2cc8f084b07f03';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_ppc64le_linux_hotspot_14_36.tar.gz';          ;;        s390x)          ESUM='b000a725e10293841e49183902f73b91f475f2f0876a26084b7983224c0a8dc6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_s390x_linux_hotspot_14_36.tar.gz';          ;;        amd64|x86_64)          ESUM='6c06853332585ab58834d9e8a02774b388e6e062ef6c4084b4f058c67f2e81b5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_linux_hotspot_14_36.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Thu, 26 Mar 2020 18:59:08 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 20 Mar 2020 19:29:43 GMT
+# Thu, 26 Mar 2020 18:59:08 GMT
 CMD ["jshell"]
 ```
 
@@ -135,22 +135,22 @@ CMD ["jshell"]
 		Last Modified: Fri, 20 Mar 2020 19:30:08 GMT  
 		Size: 12.3 MB (12268934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f68af5cd4cf19fb8308f56381c0c5bca404a92d3f6224851ae2872ec33b8cca6`  
-		Last Modified: Fri, 20 Mar 2020 19:31:18 GMT  
-		Size: 192.7 MB (192724417 bytes)  
+	-	`sha256:4e83b07ea7198106d5dab9666ad8546a92ab3a628c68daa80b2d9c053d7fe7d9`  
+		Last Modified: Thu, 26 Mar 2020 19:02:36 GMT  
+		Size: 190.0 MB (190044229 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:hotspot-bionic` - linux; arm64 variant v8
 
 ```console
-$ docker pull adoptopenjdk@sha256:c8da047fa75a430bd3ccfa882fecb0ab6b2366bde32105d4a81544e82fd44965
+$ docker pull adoptopenjdk@sha256:87290712ef55f08a992b1697ceb30ba814c9e519fccf09e8adeb6f5c0c840c57
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **243.5 MB (243462541 bytes)**  
+-	Total Size: **251.3 MB (251255526 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e79d3e20734ea8900139bcf51f7472c01cdfa7c96632f22f72c3b96dc36b6918`
+-	Image ID: `sha256:4f86f4a6cdcd0b51a746924ff4f4ffecf75c54579823d14e6650d9e50458c39e`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -168,13 +168,13 @@ CMD ["/bin/bash"]
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 # Fri, 20 Mar 2020 19:04:37 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 20 Mar 2020 19:05:45 GMT
-ENV JAVA_VERSION=jdk-13.0.2+8
-# Fri, 20 Mar 2020 19:05:58 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0e6081cb51f8a6f3062bef4f4c45dbe1fccfd3f3b4b5d52522a3edb76581e3af';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.2_8.tar.gz';          ;;        armhf)          ESUM='9beec080f2b2a7f6883b024272f4e8d5a0b027325e83647be318215781af1d1a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_arm_linux_hotspot_13.0.2_8.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fb3362e34aac091a4682394d20dcdc3daea51995d369d62c28424573e0fc04aa';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_ppc64le_linux_hotspot_13.0.2_8.tar.gz';          ;;        s390x)          ESUM='1b9e7cd7fdde10fe3534988ef58c36f132b12f814503a034461c95735057467f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_s390x_linux_hotspot_13.0.2_8.tar.gz';          ;;        amd64|x86_64)          ESUM='9ccc063569f19899fd08e41466f8c4cd4e05058abdb5178fa374cb365dcf5998';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_linux_hotspot_13.0.2_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 20 Mar 2020 19:06:00 GMT
+# Thu, 26 Mar 2020 18:41:03 GMT
+ENV JAVA_VERSION=jdk-14+36
+# Thu, 26 Mar 2020 18:41:17 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='902899c9c4781a5ef16fc79bf153e9decff595a6597e39e2e4672faf2ec9c99f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_aarch64_linux_hotspot_14_36.tar.gz';          ;;        armhf|armv7l)          ESUM='fa958d9eebb37c0767fce4446e73f40a82e43bcfc447c4b5279e35aa159894ac';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_arm_linux_hotspot_14_36.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='1439630557d2045727708d838325a54c8423cb13eb8837315f2cc8f084b07f03';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_ppc64le_linux_hotspot_14_36.tar.gz';          ;;        s390x)          ESUM='b000a725e10293841e49183902f73b91f475f2f0876a26084b7983224c0a8dc6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_s390x_linux_hotspot_14_36.tar.gz';          ;;        amd64|x86_64)          ESUM='6c06853332585ab58834d9e8a02774b388e6e062ef6c4084b4f058c67f2e81b5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_linux_hotspot_14_36.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Thu, 26 Mar 2020 18:41:19 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 20 Mar 2020 19:06:01 GMT
+# Thu, 26 Mar 2020 18:41:19 GMT
 CMD ["jshell"]
 ```
 
@@ -199,22 +199,22 @@ CMD ["jshell"]
 		Last Modified: Fri, 20 Mar 2020 19:06:41 GMT  
 		Size: 12.7 MB (12733586 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93e4dcac7e36670fcb83adc54511b1c588d1bea50262196fc8c18d16ecc60fe5`  
-		Last Modified: Fri, 20 Mar 2020 19:09:00 GMT  
-		Size: 207.0 MB (206972490 bytes)  
+	-	`sha256:d268304e9a792419e2c77e39741c99a75a546d1d46e93e7cb236939f7eec524f`  
+		Last Modified: Thu, 26 Mar 2020 18:44:53 GMT  
+		Size: 214.8 MB (214765475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:hotspot-bionic` - linux; ppc64le
 
 ```console
-$ docker pull adoptopenjdk@sha256:24a25b665f2ea7d3f77f6f834a75fcdcad27f58371e5f4dfbfd7b1b4825d4c40
+$ docker pull adoptopenjdk@sha256:e84e12ed9815d55aa30d3ceeed652922a7a8c4f93535e8bdeed5281342672c9e
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **235.5 MB (235519474 bytes)**  
+-	Total Size: **243.3 MB (243253113 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ffe5f99107344e2c8432fb51f0dbe1409f96bd18f75679393a67987b1533cc52`
+-	Image ID: `sha256:76e0cf69c67e7006ab81a66f00f7aa36a0edb32803e694c5b851f2913f30ab65`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -232,13 +232,13 @@ CMD ["/bin/bash"]
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 # Fri, 20 Mar 2020 19:44:04 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 20 Mar 2020 19:46:06 GMT
-ENV JAVA_VERSION=jdk-13.0.2+8
-# Fri, 20 Mar 2020 19:46:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0e6081cb51f8a6f3062bef4f4c45dbe1fccfd3f3b4b5d52522a3edb76581e3af';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.2_8.tar.gz';          ;;        armhf)          ESUM='9beec080f2b2a7f6883b024272f4e8d5a0b027325e83647be318215781af1d1a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_arm_linux_hotspot_13.0.2_8.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fb3362e34aac091a4682394d20dcdc3daea51995d369d62c28424573e0fc04aa';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_ppc64le_linux_hotspot_13.0.2_8.tar.gz';          ;;        s390x)          ESUM='1b9e7cd7fdde10fe3534988ef58c36f132b12f814503a034461c95735057467f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_s390x_linux_hotspot_13.0.2_8.tar.gz';          ;;        amd64|x86_64)          ESUM='9ccc063569f19899fd08e41466f8c4cd4e05058abdb5178fa374cb365dcf5998';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_linux_hotspot_13.0.2_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 20 Mar 2020 19:46:40 GMT
+# Thu, 26 Mar 2020 18:18:49 GMT
+ENV JAVA_VERSION=jdk-14+36
+# Thu, 26 Mar 2020 18:19:14 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='902899c9c4781a5ef16fc79bf153e9decff595a6597e39e2e4672faf2ec9c99f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_aarch64_linux_hotspot_14_36.tar.gz';          ;;        armhf|armv7l)          ESUM='fa958d9eebb37c0767fce4446e73f40a82e43bcfc447c4b5279e35aa159894ac';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_arm_linux_hotspot_14_36.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='1439630557d2045727708d838325a54c8423cb13eb8837315f2cc8f084b07f03';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_ppc64le_linux_hotspot_14_36.tar.gz';          ;;        s390x)          ESUM='b000a725e10293841e49183902f73b91f475f2f0876a26084b7983224c0a8dc6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_s390x_linux_hotspot_14_36.tar.gz';          ;;        amd64|x86_64)          ESUM='6c06853332585ab58834d9e8a02774b388e6e062ef6c4084b4f058c67f2e81b5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_linux_hotspot_14_36.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Thu, 26 Mar 2020 18:19:19 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 20 Mar 2020 19:46:43 GMT
+# Thu, 26 Mar 2020 18:19:22 GMT
 CMD ["jshell"]
 ```
 
@@ -263,22 +263,22 @@ CMD ["jshell"]
 		Last Modified: Fri, 20 Mar 2020 19:52:26 GMT  
 		Size: 14.0 MB (13970663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:849c61436567fde15047e3e7e1aa37b67ff230210424cc5e8485c46a6952868b`  
-		Last Modified: Fri, 20 Mar 2020 19:54:19 GMT  
-		Size: 191.1 MB (191112647 bytes)  
+	-	`sha256:1eda4350b4ca207f5f6562274afc094439a6d5753c65d01dd75ad98cef1a0a4b`  
+		Last Modified: Thu, 26 Mar 2020 18:25:39 GMT  
+		Size: 198.8 MB (198846286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:hotspot-bionic` - linux; s390x
 
 ```console
-$ docker pull adoptopenjdk@sha256:bff1762c1f257a77585985b7426ddeca37b341e9f0b10b1a91aaaa18e1379402
+$ docker pull adoptopenjdk@sha256:25df4e3c9084cad8c1c5c62e216a34c6e4362a1186b543c3bf947193e843b408
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **224.0 MB (224014961 bytes)**  
+-	Total Size: **228.3 MB (228299750 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f729bb673f4c5fd2735487f8555305e90eaf69284926700c1071fb6ded9b2151`
+-	Image ID: `sha256:a68a638d7e3210f2beb0005e93cf561cf1750b8821d0dfb705e139c90d960fcf`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -296,13 +296,13 @@ CMD ["/bin/bash"]
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 # Fri, 20 Mar 2020 19:38:50 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 20 Mar 2020 19:39:43 GMT
-ENV JAVA_VERSION=jdk-13.0.2+8
-# Fri, 20 Mar 2020 19:39:59 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0e6081cb51f8a6f3062bef4f4c45dbe1fccfd3f3b4b5d52522a3edb76581e3af';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.2_8.tar.gz';          ;;        armhf)          ESUM='9beec080f2b2a7f6883b024272f4e8d5a0b027325e83647be318215781af1d1a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_arm_linux_hotspot_13.0.2_8.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fb3362e34aac091a4682394d20dcdc3daea51995d369d62c28424573e0fc04aa';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_ppc64le_linux_hotspot_13.0.2_8.tar.gz';          ;;        s390x)          ESUM='1b9e7cd7fdde10fe3534988ef58c36f132b12f814503a034461c95735057467f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_s390x_linux_hotspot_13.0.2_8.tar.gz';          ;;        amd64|x86_64)          ESUM='9ccc063569f19899fd08e41466f8c4cd4e05058abdb5178fa374cb365dcf5998';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_linux_hotspot_13.0.2_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 20 Mar 2020 19:40:03 GMT
+# Thu, 26 Mar 2020 18:43:38 GMT
+ENV JAVA_VERSION=jdk-14+36
+# Thu, 26 Mar 2020 18:43:52 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='902899c9c4781a5ef16fc79bf153e9decff595a6597e39e2e4672faf2ec9c99f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_aarch64_linux_hotspot_14_36.tar.gz';          ;;        armhf|armv7l)          ESUM='fa958d9eebb37c0767fce4446e73f40a82e43bcfc447c4b5279e35aa159894ac';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_arm_linux_hotspot_14_36.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='1439630557d2045727708d838325a54c8423cb13eb8837315f2cc8f084b07f03';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_ppc64le_linux_hotspot_14_36.tar.gz';          ;;        s390x)          ESUM='b000a725e10293841e49183902f73b91f475f2f0876a26084b7983224c0a8dc6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_s390x_linux_hotspot_14_36.tar.gz';          ;;        amd64|x86_64)          ESUM='6c06853332585ab58834d9e8a02774b388e6e062ef6c4084b4f058c67f2e81b5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_linux_hotspot_14_36.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Thu, 26 Mar 2020 18:44:01 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 20 Mar 2020 19:40:03 GMT
+# Thu, 26 Mar 2020 18:44:01 GMT
 CMD ["jshell"]
 ```
 
@@ -327,7 +327,7 @@ CMD ["jshell"]
 		Last Modified: Fri, 20 Mar 2020 19:42:19 GMT  
 		Size: 13.0 MB (13043890 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57dea77d639a329f7351b6e6d198422e82da02ec05cdecc984db9f66473d75f1`  
-		Last Modified: Fri, 20 Mar 2020 19:43:34 GMT  
-		Size: 185.6 MB (185569246 bytes)  
+	-	`sha256:7fa18dc78edfc58e12d51168a12e731f6fc4435a700cd9e9930c0e057dfd11b4`  
+		Last Modified: Thu, 26 Mar 2020 18:48:57 GMT  
+		Size: 189.9 MB (189854035 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
