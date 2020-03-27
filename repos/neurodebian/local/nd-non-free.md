@@ -70,19 +70,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.8.4
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.4.dsc' apt_1.8.4.dsc 2766 SHA256:492d4d6de28a26d46b63ac360c3ea3bcc106970a6521f3812dd86ae33cbeaccc
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.4.tar.xz' apt_1.8.4.tar.xz 2188876 SHA256:f40fe4475f3ab775a915569911326ff31c12c09eb8518bd82ba87aa570d6c43e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/1.8.4/
 
-- https://sources.debian.net/src/apt/1.8.4/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.8.4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.8.4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -1604,19 +1598,13 @@ Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris neurodebian=0.39.0
-'http://deb.debian.org/debian/pool/main/n/neurodebian/neurodebian_0.39.0.dsc' neurodebian_0.39.0.dsc 2078 SHA256:2aae2d0fdb7ce96a281bedf165784e948761be7b714cec06efc3c1652aac7e57
-'http://deb.debian.org/debian/pool/main/n/neurodebian/neurodebian_0.39.0.tar.xz' neurodebian_0.39.0.tar.xz 8326284 SHA256:42f2e7734e2d0d023bf05c64bf913fbba8ad400de5fc37c338fbec35163372d0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/neurodebian/0.39.0/
 
-- https://sources.debian.net/src/neurodebian/0.39.0/ (for browsing the source)
-- https://sources.debian.net/src/neurodebian/0.39.0/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/neurodebian/0.39.0/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `npth=1.6-1`
 
