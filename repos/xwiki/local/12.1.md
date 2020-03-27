@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cb8af789d1e9d6dd751c26c44ed636dee2d131088f0a73880578f90348910105`
-- Created: `2020-03-20T22:31:43.862727322Z`
+- Image ID: `sha256:740611db14ed5dcb80dc2b3919963983afc08a24a085f0fad033cbfcfabf04b9`
+- Created: `2020-03-26T19:51:17.379033636Z`
 - Virtual Size: ~ 1.29 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -959,19 +959,24 @@ $ apt-get source -qq --print-uris glib-networking=2.56.0-1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/glib-networking/glib-networking_2.56.0-1.debian.tar.xz' glib-networking_2.56.0-1.debian.tar.xz 7972 SHA256:d7508951b05952bea47dbbee1ddb6433b96875fc7801a9d9c47fcc256041dadd
 ```
 
-### `dpkg` source package: `glib2.0=2.56.4-0ubuntu0.18.04.4`
+### `dpkg` source package: `glib2.0=2.56.4-0ubuntu0.18.04.6`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.56.4-0ubuntu0.18.04.4`
+- `libglib2.0-0:amd64=2.56.4-0ubuntu0.18.04.6`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris glib2.0=2.56.4-0ubuntu0.18.04.6
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.6.dsc' glib2.0_2.56.4-0ubuntu0.18.04.6.dsc 3301 SHA256:a4cc68dbc3255f458789213e5eaa1ff1c409d8fc49688c9b136cfa4ef30dafa1
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4.orig.tar.xz' glib2.0_2.56.4.orig.tar.xz 7029768 SHA256:27f703d125efb07f8a743666b580df0b4095c59fc8750e8890132c91d437504c
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.6.debian.tar.xz' glib2.0_2.56.4-0ubuntu0.18.04.6.debian.tar.xz 89540 SHA256:57f17e1760946894ae729e988798ac11339460e8ee71421c6b0a5b6cdde9af36
+```
 
 ### `dpkg` source package: `glibc=2.27-3ubuntu1`
 
@@ -4130,11 +4135,10 @@ Binary Packages:
 - `libfdisk1:amd64=2.31.1-0.4ubuntu3.5`
 - `libmount1:amd64=2.31.1-0.4ubuntu3.5`
 - `libsmartcols1:amd64=2.31.1-0.4ubuntu3.5`
-- `libuuid1:amd64=2.31.1-0.4ubuntu3.5`
 - `mount=2.31.1-0.4ubuntu3.5`
 - `util-linux=2.31.1-0.4ubuntu3.5`
 
-Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdisk/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
+Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdisk/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
 
 - `BSD-2-clause`
 - `BSD-3-clause`
@@ -4156,6 +4160,40 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `util-linux=2.31.1-0.4ubuntu3.6`
+
+Binary Packages:
+
+- `libuuid1:amd64=2.31.1-0.4ubuntu3.6`
+
+Licenses: (parsed from: `/usr/share/doc/libuuid1/copyright`)
+
+- `BSD-2-clause`
+- `BSD-3-clause`
+- `BSD-4-clause`
+- `GPL-2`
+- `GPL-2+`
+- `GPL-3`
+- `GPL-3+`
+- `LGPL`
+- `LGPL-2`
+- `LGPL-2+`
+- `LGPL-2.1`
+- `LGPL-2.1+`
+- `LGPL-3`
+- `LGPL-3+`
+- `MIT`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris util-linux=2.31.1-0.4ubuntu3.6
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.6.dsc' util-linux_2.31.1-0.4ubuntu3.6.dsc 4147 SHA256:e1bd0d6290ebeefdeb6b2f4925d04c01b833292efcf59441343254db51f7bbf0
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1.orig.tar.xz' util-linux_2.31.1.orig.tar.xz 4514032 SHA256:cfd5789570e9ff75e079471faeca1511ade1607f650523a6ad25d1e26516ae4e
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.6.debian.tar.xz' util-linux_2.31.1-0.4ubuntu3.6.debian.tar.xz 101672 SHA256:b019ef3e51f6dee11811afb6943bacc59fb8fb961785bfc6448a92c4a5c0f8c2
+```
 
 ### `dpkg` source package: `wayland=1.16.0-1ubuntu1.1~18.04.3`
 
