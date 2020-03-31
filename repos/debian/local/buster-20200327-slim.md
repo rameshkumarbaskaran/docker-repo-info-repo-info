@@ -1,9 +1,9 @@
-# `debian:stable-slim`
+# `debian:buster-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6ada26695be8f84e6371531025cd6d94ca58d33a3b4b87effce6f86f2a7285c9`
-- Created: `2020-02-26T00:40:58.177220048Z`
+- Image ID: `sha256:8e022c70c28bb0b42f965bbf2bebdc2d8f6bce4c2ac785be6dd6ede1c00a0007`
+- Created: `2020-03-31T01:21:01.742975719Z`
 - Virtual Size: ~ 69.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
