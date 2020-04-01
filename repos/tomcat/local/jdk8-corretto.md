@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5a03e49d4e655d38916f26fd57f6dd98d4e5d016be10955c1018f70ec96c2ef7`
-- Created: `2020-03-17T23:18:01.807562204Z`
-- Virtual Size: ~ 418.38 Mb  
+- Image ID: `sha256:11c151d0b707d1b7e7499dfe10de1fc1b1015e459bc26f8a7f565d5114db62e2`
+- Created: `2020-04-01T14:13:09.974664231Z`
+- Virtual Size: ~ 421.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -21,16 +21,16 @@
 
 ## `rpm` (`.rpm`-based packages)
 
-### `rpm` package: `amazon-linux-extras-1.6.9-2.amzn2.noarch`
+### `rpm` package: `amazon-linux-extras-1.6.10-1.amzn2.noarch`
 
 Licenses (from `rpm --query`): GPLv2
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls amazon-linux-extras-1.6.9-2.amzn2.noarch
+$ yumdownloader --quiet --source --urls amazon-linux-extras-1.6.10-1.amzn2.noarch
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/8c4823a58ce91b90efcd1bbd1c352b185181176cb177e2d3a5ec4bf558cc7c54/amazon-linux-extras-1.6.9-2.amzn2.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/047fac2a9c969964b5ad31e5e18a6c829eb2cf09c6dfe956ddded5b04b9707a6/amazon-linux-extras-1.6.10-1.amzn2.src.rpm
 ```
 
 ### `rpm` package: `apr-1.6.3-5.amzn2.0.2.x86_64`
@@ -213,16 +213,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/c1bdb520a838326c15c1c86b0a1314c9e44f7689de956010d7a8e4bfda7d34e4/filesystem-3.2-25.amzn2.0.4.src.rpm
 ```
 
-### `rpm` package: `findutils-4.5.11-5.amzn2.0.2.x86_64`
+### `rpm` package: `findutils-4.5.11-6.amzn2.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls findutils-4.5.11-5.amzn2.0.2
+$ yumdownloader --quiet --source --urls findutils-4.5.11-6.amzn2
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/4b4dd07c4b9e904dae4540e155dbd56a5181ad587a63fbf6c8df33dedbec292d/findutils-4.5.11-5.amzn2.0.2.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/8cb38ddd3353da1ca38e2748e4affeb61a422044bf26c05f93cd0e20d83b125d/findutils-4.5.11-6.amzn2.src.rpm
 ```
 
 ### `rpm` package: `fontconfig-2.10.95-11.amzn2.0.2.x86_64`
@@ -927,16 +927,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/bb1f52cc8ca35d8145c9e154219a62a0a2c8c02f3252917b27c8ab176f7e368a/openldap-2.4.44-15.amzn2.src.rpm
 ```
 
-### `rpm` package: `openssl-libs-1.0.2k-19.amzn2.0.1.x86_64`
+### `rpm` package: `openssl-libs-1.0.2k-19.amzn2.0.3.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.amzn2.0.1
+$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.amzn2.0.3
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/27065039067c5bfb886c7d5f977c376be478154146494f3e99ab2cefa91d1a34/openssl-1.0.2k-19.amzn2.0.1.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/4c8d88f25c377a5c97923d9c1edff108f8cff85ac782a3d19414d8817d237d72/openssl-1.0.2k-19.amzn2.0.3.src.rpm
 ```
 
 ### `rpm` package: `p11-kit-0.23.5-3.amzn2.0.2.x86_64`
@@ -1179,16 +1179,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/6536ece4c46bf2ed9823a7e298728310689e54d535226819a7d7fe4b9eeadafd/sed-4.2.2-5.amzn2.0.2.src.rpm
 ```
 
-### `rpm` package: `setup-2.8.71-10.amzn2.noarch`
+### `rpm` package: `setup-2.8.71-10.amzn2.0.1.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls setup-2.8.71-10.amzn2.noarch
+$ yumdownloader --quiet --source --urls setup-2.8.71-10.amzn2.0.1.noarch
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/bf5a9c1ecca7e1d0effcaa5fb1ff60c2eaea346da760690c28ad5dd7614d26a7/setup-2.8.71-10.amzn2.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/a048edcb5e7a6552e092a3fd74a073fdd49e7269dd6f7b982088dc71a32cf631/setup-2.8.71-10.amzn2.0.1.src.rpm
 ```
 
 ### `rpm` package: `shared-mime-info-1.8-4.amzn2.x86_64`
@@ -1203,16 +1203,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/9e51e9ed398518c869e22c71a6cf809d331622958224ced40e8ebf31bf5e810f/shared-mime-info-1.8-4.amzn2.src.rpm
 ```
 
-### `rpm` package: `sqlite-3.7.17-8.amzn2.0.2.x86_64`
+### `rpm` package: `sqlite-3.7.17-8.amzn2.1.1.x86_64`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls sqlite-3.7.17-8.amzn2.0.2
+$ yumdownloader --quiet --source --urls sqlite-3.7.17-8.amzn2.1.1
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/5892b2c3bb4263ad853ba513add3c580d835202aeedbfdea4798d1d9775f7758/sqlite-3.7.17-8.amzn2.0.2.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/7ce4144ee5811cebf2dd357868877d291ee91fc96499192797c845dd582f6c3a//../../../../../blobstore/42efeeae9dcefd0c1a1b0eaafff80300a15588e03c1b5c3e727c2f8912fa8629/sqlite-3.7.17-8.amzn2.1.1.src.rpm
 ```
 
 ### `rpm` package: `stix-fonts-1.1.0-5.amzn2.noarch`
