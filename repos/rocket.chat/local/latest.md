@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7728f84df9068a67117840593324de244d2b8ab924e3fd0d0a2f48754dd0bb2`
-- Created: `2020-03-26T20:49:26.942732466Z`
-- Virtual Size: ~ 847.52 Mb  
+- Image ID: `sha256:d3ba52c2f25f689fc874c18881667fefec5d1b2ebb8c349e52239ad36f5b4f6b`
+- Created: `2020-03-31T20:35:04.49114589Z`
+- Virtual Size: ~ 847.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["node","main.js"]`
@@ -502,27 +502,34 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/dpkg/1.17.27/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/dpkg/1.17.27/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `e2fsprogs=1.42.12-2+deb8u1`
+### `dpkg` source package: `e2fsprogs=1.42.12-2+deb8u2`
 
 Binary Packages:
 
-- `e2fslibs:amd64=1.42.12-2+deb8u1`
-- `e2fsprogs=1.42.12-2+deb8u1`
-- `libcomerr2:amd64=1.42.12-2+deb8u1`
-- `libss2:amd64=1.42.12-2+deb8u1`
+- `e2fslibs:amd64=1.42.12-2+deb8u2`
+- `e2fsprogs=1.42.12-2+deb8u2`
+- `libcomerr2:amd64=1.42.12-2+deb8u2`
+- `libss2:amd64=1.42.12-2+deb8u2`
 
 Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/libcomerr2/copyright`, `/usr/share/doc/libss2/copyright`)
 
 - `GPL-2`
 - `LGPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris e2fsprogs=1.42.12-2+deb8u2
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u2.dsc' e2fsprogs_1.42.12-2+deb8u2.dsc 2747 SHA256:fb5ac1998defa86a99046f08f537a7ec22a41fc30401a7e28117107af3a2aea6
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12.orig.tar.gz' e2fsprogs_1.42.12.orig.tar.gz 6381695 SHA256:e17846d91a0edd89fa59b064bde8f8e5cec5851e35f587bcccb4014dbd63186c
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u2.debian.tar.xz' e2fsprogs_1.42.12-2+deb8u2.debian.tar.xz 71488 SHA256:a86df6f1b0734b42b79f0a06da52667666c73c79f394c66f9a4450e505f34848
+```
 
-- http://snapshot.debian.org/package/e2fsprogs/1.42.12-2+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/e2fsprogs/1.42.12-2+deb8u2/ (for browsing the source)
+- https://sources.debian.net/src/e2fsprogs/1.42.12-2+deb8u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/e2fsprogs/1.42.12-2+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `expat=2.1.0-6+deb8u6`
 
