@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0d1912561f046cb380fd05d8f5e679b32059c7167e150e991babfa7ba7f24c01`
-- Created: `2020-02-26T06:24:24.447283921Z`
-- Virtual Size: ~ 130.14 Mb  
+- Image ID: `sha256:c2cf405e863a434ac2bcba2494048185bcc6556c88671e26a98c0f0672155a59`
+- Created: `2020-03-31T20:50:12.932812141Z`
+- Virtual Size: ~ 130.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -493,27 +493,34 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/dpkg/1.17.27/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/dpkg/1.17.27/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `e2fsprogs=1.42.12-2+deb8u1`
+### `dpkg` source package: `e2fsprogs=1.42.12-2+deb8u2`
 
 Binary Packages:
 
-- `e2fslibs:amd64=1.42.12-2+deb8u1`
-- `e2fsprogs=1.42.12-2+deb8u1`
-- `libcomerr2:amd64=1.42.12-2+deb8u1`
-- `libss2:amd64=1.42.12-2+deb8u1`
+- `e2fslibs:amd64=1.42.12-2+deb8u2`
+- `e2fsprogs=1.42.12-2+deb8u2`
+- `libcomerr2:amd64=1.42.12-2+deb8u2`
+- `libss2:amd64=1.42.12-2+deb8u2`
 
 Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/libcomerr2/copyright`, `/usr/share/doc/libss2/copyright`)
 
 - `GPL-2`
 - `LGPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris e2fsprogs=1.42.12-2+deb8u2
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u2.dsc' e2fsprogs_1.42.12-2+deb8u2.dsc 2747 SHA256:fb5ac1998defa86a99046f08f537a7ec22a41fc30401a7e28117107af3a2aea6
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12.orig.tar.gz' e2fsprogs_1.42.12.orig.tar.gz 6381695 SHA256:e17846d91a0edd89fa59b064bde8f8e5cec5851e35f587bcccb4014dbd63186c
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u2.debian.tar.xz' e2fsprogs_1.42.12-2+deb8u2.debian.tar.xz 71488 SHA256:a86df6f1b0734b42b79f0a06da52667666c73c79f394c66f9a4450e505f34848
+```
 
-- http://snapshot.debian.org/package/e2fsprogs/1.42.12-2+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/e2fsprogs/1.42.12-2+deb8u2/ (for browsing the source)
+- https://sources.debian.net/src/e2fsprogs/1.42.12-2+deb8u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/e2fsprogs/1.42.12-2+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.4.2-9`
 
@@ -1430,11 +1437,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/2.7.1-5+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/2.7.1-5+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `neurodebian=0.39.0~nd80+1`
+### `dpkg` source package: `neurodebian=0.40.0~nd80+1`
 
 Binary Packages:
 
-- `neurodebian-freeze=0.39.0~nd80+1`
+- `neurodebian-freeze=0.40.0~nd80+1`
 
 Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 
@@ -1443,9 +1450,13 @@ Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris neurodebian=0.40.0~nd80+1
+'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.40.0~nd80+1.dsc' neurodebian_0.40.0~nd80+1.dsc 1629 SHA256:454c5fdd20470b21c9f47f0c352b16ef8d1725aa295bf491c695c0f47a36eb57
+'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.40.0~nd80+1.tar.xz' neurodebian_0.40.0~nd80+1.tar.xz 8313372 SHA256:4f4f2678a578bbf44db6a5ec48d4b821f5511c4bc37bfebd47abea184c925644
+```
 
 ### `dpkg` source package: `p11-kit=0.20.7-1`
 
