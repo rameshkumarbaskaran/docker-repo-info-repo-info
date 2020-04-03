@@ -1,18 +1,18 @@
-# `ruby:2.7.0-alpine3.10`
+# `ruby:2.7.1-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:78005ca97a7f6530825d9cc990d1366a52996169b8937303a1f65b09eb7e8be7`
-- Created: `2020-01-23T22:50:40.911062093Z`
-- Virtual Size: ~ 52.89 Mb  
+- Image ID: `sha256:760c7c26ac70f2dcc7f5a1f417740b5ba1d375f9c5afb393ff9bc4f0920217a6`
+- Created: `2020-04-01T02:51:01.022760528Z`
+- Virtual Size: ~ 50.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.7`
-  - `RUBY_VERSION=2.7.0`
-  - `RUBY_DOWNLOAD_SHA256=27d350a52a02b53034ca0794efe518667d558f152656c2baaf08f3d0c8b02343`
+  - `RUBY_VERSION=2.7.1`
+  - `RUBY_DOWNLOAD_SHA256=b224f9844646cc92765df8288a46838511c1cec5b550d8874bd4686a904fcee7`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -430,33 +430,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20190518-r0 description:
+ncurses-libs-6.1_p20190518-r2 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20190518-r0 webpage:
+ncurses-libs-6.1_p20190518-r2 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-libs-6.1_p20190518-r0 installed size:
+ncurses-libs-6.1_p20190518-r2 installed size:
 503808
 
-ncurses-libs-6.1_p20190518-r0 license:
-MIT
-
-```
-
-### `apk` package: `ncurses-terminfo`
-
-```console
-ncurses-terminfo-6.1_p20190518-r0 description:
-Console display library (other terminfo files)
-
-ncurses-terminfo-6.1_p20190518-r0 webpage:
-https://www.gnu.org/software/ncurses/
-
-ncurses-terminfo-6.1_p20190518-r0 installed size:
-7307264
-
-ncurses-terminfo-6.1_p20190518-r0 license:
+ncurses-libs-6.1_p20190518-r2 license:
 MIT
 
 ```
@@ -464,16 +447,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20190518-r0 description:
+ncurses-terminfo-base-6.1_p20190518-r2 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20190518-r0 webpage:
+ncurses-terminfo-base-6.1_p20190518-r2 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-terminfo-base-6.1_p20190518-r0 installed size:
-94208
+ncurses-terminfo-base-6.1_p20190518-r2 installed size:
+212992
 
-ncurses-terminfo-base-6.1_p20190518-r0 license:
+ncurses-terminfo-base-6.1_p20190518-r2 license:
 MIT
 
 ```

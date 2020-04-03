@@ -1,18 +1,18 @@
-# `ruby:2.7.0-buster`
+# `ruby:2.7.1-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:556e761e192c4354fc0477020ca4c1bc70908e14040e61d82204a2a8b05e49a6`
-- Created: `2020-02-26T18:34:33.392282937Z`
-- Virtual Size: ~ 841.85 Mb  
+- Image ID: `sha256:578602b0a84c6d5d5e3dd303ee5ebf3ecfd213fb904cb4b3c84538aaa88a9601`
+- Created: `2020-04-01T02:40:57.222787409Z`
+- Virtual Size: ~ 841.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.7`
-  - `RUBY_VERSION=2.7.0`
-  - `RUBY_DOWNLOAD_SHA256=27d350a52a02b53034ca0794efe518667d558f152656c2baaf08f3d0c8b02343`
+  - `RUBY_VERSION=2.7.1`
+  - `RUBY_DOWNLOAD_SHA256=b224f9844646cc92765df8288a46838511c1cec5b550d8874bd4686a904fcee7`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -1673,13 +1673,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/hostname/3.21/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/hostname/3.21/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `icu=63.1-6`
+### `dpkg` source package: `icu=63.1-6+deb10u1`
 
 Binary Packages:
 
-- `icu-devtools=63.1-6`
-- `libicu-dev:amd64=63.1-6`
-- `libicu63:amd64=63.1-6`
+- `icu-devtools=63.1-6+deb10u1`
+- `libicu-dev:amd64=63.1-6+deb10u1`
+- `libicu63:amd64=63.1-6+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1688,17 +1688,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris icu=63.1-6
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1-6.dsc' icu_63.1-6.dsc 1965 SHA256:dfb3387f8e80c7de6704967694cf74ef7dd407c562b8cc7653156308e924404f
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1.orig.tar.xz' icu_63.1.orig.tar.xz 13638120 SHA256:347d0e6c39c3538b812c10c6c83815d4a089d578380387ae7d94c5b820948e82
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1-6.debian.tar.xz' icu_63.1-6.debian.tar.xz 24624 SHA256:c63fc607cb6420136d78f706baf17b7ca68346386e82ca4f30dacc81e1e56681
+$ apt-get source -qq --print-uris icu=63.1-6+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u1.dsc' icu_63.1-6+deb10u1.dsc 1997 SHA256:c33329e44a83af47cdfd6ca2639611d960b163a5cce39e71945b0ed4b6971ec9
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1.orig.tar.xz' icu_63.1.orig.tar.xz 13638120 SHA256:347d0e6c39c3538b812c10c6c83815d4a089d578380387ae7d94c5b820948e82
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u1.debian.tar.xz' icu_63.1-6+deb10u1.debian.tar.xz 25004 SHA256:d65fde3a61d0ba935b493b46fd42addeb24e0398b8d778124cb489770ec50a6d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/icu/63.1-6/ (for browsing the source)
-- https://sources.debian.net/src/icu/63.1-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/63.1-6/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/icu/63.1-6+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/icu/63.1-6+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/icu/63.1-6+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ilmbase=2.2.1-2`
 
