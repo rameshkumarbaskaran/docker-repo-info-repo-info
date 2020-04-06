@@ -1,7 +1,7 @@
 ## `tomee:8-jre-8.0.1-plume`
 
 ```console
-$ docker pull tomee@sha256:1bde633a8119776d5898a1dc5a2d59e6a7673fcd1df2c24330bd3bf9bf64cb8e
+$ docker pull tomee@sha256:1413bc483b87a40b00cd3d1a4225a8fbbe2277be4df4840c59f6f811cc52378f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull tomee@sha256:1bde633a8119776d5898a1dc5a2d59e6a7673fcd1df2c24330bd3
 ### `tomee:8-jre-8.0.1-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:a7d024d003065ea24d4a5bd18ce9ccf3077fb82a0e3077ec610f35d74aa37fb8
+$ docker pull tomee@sha256:7c1d242caa5824106c910a217a2bb4b20fcfb57ea2d52c074df6cd3147aba44c
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **182.6 MB (182550009 bytes)**  
+-	Total Size: **182.5 MB (182547309 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3a1ad9b9ee8cdcf119caae314e5fa1619be967a3c859004021ace2a2f3b035c3`
+-	Image ID: `sha256:b0b5e58f6e330536755e5a85edb3a90e6d6fe153b2f4057c561794252f35df94`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
@@ -62,13 +62,11 @@ RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp:
 ENV TOMEE_VER=8.0.1
 # Wed, 01 Apr 2020 08:37:39 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 01 Apr 2020 08:37:43 GMT
-RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz* 	&& useradd tomee 	&& chown -R tomee:tomee /usr/local/tomee
-# Wed, 01 Apr 2020 08:37:44 GMT
-USER tomee
-# Wed, 01 Apr 2020 08:37:44 GMT
+# Mon, 06 Apr 2020 21:16:23 GMT
+RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
+# Mon, 06 Apr 2020 21:16:24 GMT
 EXPOSE 8080
-# Wed, 01 Apr 2020 08:37:44 GMT
+# Mon, 06 Apr 2020 21:16:24 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -105,7 +103,7 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 01 Apr 2020 08:38:54 GMT  
 		Size: 20.9 KB (20939 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b16a43774a947f94eda104a1332df215eb410d5e87b9dc0c4c881dfb82b73dda`  
-		Last Modified: Wed, 01 Apr 2020 08:39:57 GMT  
-		Size: 68.6 MB (68621244 bytes)  
+	-	`sha256:843ab63b0344d7db2c0b7cb0791eba4c97dc60964b91d80493886438e41299c8`  
+		Last Modified: Mon, 06 Apr 2020 21:19:53 GMT  
+		Size: 68.6 MB (68618544 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
