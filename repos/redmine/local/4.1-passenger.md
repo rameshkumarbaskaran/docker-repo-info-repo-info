@@ -1,10 +1,10 @@
-# `redmine:4.1.0-passenger`
+# `redmine:4.1.1-passenger`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6c8dc3c5c492e268f7424bf21814c24e759da0d79d53f9d6745854b656dba87d`
-- Created: `2020-02-27T06:05:17.198270887Z`
-- Virtual Size: ~ 609.55 Mb  
+- Image ID: `sha256:22fe7dded1d81c023e909d88da09e6946d2921ab700608035e40effeb999bdbd`
+- Created: `2020-04-06T20:58:37.419438249Z`
+- Virtual Size: ~ 611.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,15 +12,15 @@
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.6`
-  - `RUBY_VERSION=2.6.5`
-  - `RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c31190abe01a62`
+  - `RUBY_VERSION=2.6.6`
+  - `RUBY_DOWNLOAD_SHA256=5db187882b7ac34016cd48d7032e197f07e4968f406b0690e20193b9b424841f`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
   - `HOME=/home/redmine`
-  - `REDMINE_VERSION=4.1.0`
-  - `REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf`
+  - `REDMINE_VERSION=4.1.1`
+  - `REDMINE_DOWNLOAD_MD5=a15a25dec7b866e213bbd4b041f05f17`
   - `PASSENGER_VERSION=6.0.4`
   - `PASSENGER_PID_FILE=tmp/pids/server.pid`
 
@@ -1284,11 +1284,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gnupg2/2.2.12-1+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gnupg2/2.2.12-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gnutls28=3.6.7-4+deb10u2`
+### `dpkg` source package: `gnutls28=3.6.7-4+deb10u3`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.6.7-4+deb10u2`
+- `libgnutls30:amd64=3.6.7-4+deb10u3`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -1307,18 +1307,18 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gnutls28=3.6.7-4+deb10u2
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4+deb10u2.dsc' gnutls28_3.6.7-4+deb10u2.dsc 3354 SHA256:e7d5063186b5773fa91de22fa2ff34a13400a012cbd239b51d882971b2d9efca
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz.asc' gnutls28_3.6.7.orig.tar.xz.asc 534 SHA256:a14d0a7b9295b65ae797a70f8e765024a2e363dca03d008bfce0aec2b3f292b0
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4+deb10u2.debian.tar.xz' gnutls28_3.6.7-4+deb10u2.debian.tar.xz 77516 SHA256:72cd1e02b3b3c39c79f69da00a958d906d0332f15067d5c1b4e40bcd897a0d2e
+$ apt-get source -qq --print-uris gnutls28=3.6.7-4+deb10u3
+'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7-4+deb10u3.dsc' gnutls28_3.6.7-4+deb10u3.dsc 3509 SHA256:a5acd2ff3e275baabbe42f949f9ce365e9fd53ea4a14a306be395dae2a7589d5
+'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
+'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz.asc' gnutls28_3.6.7.orig.tar.xz.asc 534 SHA256:a14d0a7b9295b65ae797a70f8e765024a2e363dca03d008bfce0aec2b3f292b0
+'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7-4+deb10u3.debian.tar.xz' gnutls28_3.6.7-4+deb10u3.debian.tar.xz 77948 SHA256:cd03a0f7f16b7bdff8b7ecd0ebccd6c51b2ba6615df88de4a63a87bd47a8998e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.6.7-4+deb10u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u3/ (for browsing the source)
+- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gnutls28/3.6.7-4+deb10u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `grep=3.3-1`
 
@@ -1446,11 +1446,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/hostname/3.21/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/hostname/3.21/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `icu=63.1-6`
+### `dpkg` source package: `icu=63.1-6+deb10u1`
 
 Binary Packages:
 
-- `libicu63:amd64=63.1-6`
+- `libicu63:amd64=63.1-6+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1459,17 +1459,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris icu=63.1-6
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1-6.dsc' icu_63.1-6.dsc 1965 SHA256:dfb3387f8e80c7de6704967694cf74ef7dd407c562b8cc7653156308e924404f
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1.orig.tar.xz' icu_63.1.orig.tar.xz 13638120 SHA256:347d0e6c39c3538b812c10c6c83815d4a089d578380387ae7d94c5b820948e82
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1-6.debian.tar.xz' icu_63.1-6.debian.tar.xz 24624 SHA256:c63fc607cb6420136d78f706baf17b7ca68346386e82ca4f30dacc81e1e56681
+$ apt-get source -qq --print-uris icu=63.1-6+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u1.dsc' icu_63.1-6+deb10u1.dsc 1997 SHA256:c33329e44a83af47cdfd6ca2639611d960b163a5cce39e71945b0ed4b6971ec9
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1.orig.tar.xz' icu_63.1.orig.tar.xz 13638120 SHA256:347d0e6c39c3538b812c10c6c83815d4a089d578380387ae7d94c5b820948e82
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u1.debian.tar.xz' icu_63.1-6+deb10u1.debian.tar.xz 25004 SHA256:d65fde3a61d0ba935b493b46fd42addeb24e0398b8d778124cb489770ec50a6d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/icu/63.1-6/ (for browsing the source)
-- https://sources.debian.net/src/icu/63.1-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/63.1-6/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/icu/63.1-6+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/icu/63.1-6+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/icu/63.1-6+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ijs=0.35-14`
 

@@ -1,10 +1,10 @@
-# `redmine:4.1.0-alpine`
+# `redmine:4.1.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0aea4d9afbc8b24ba2b8683642b3634cb4af5a361967bf5da6fcafaa4ae3a439`
-- Created: `2020-01-25T03:04:25.595703767Z`
-- Virtual Size: ~ 366.13 Mb  
+- Image ID: `sha256:c19729cc389de7c0534cc3f517ba371ef834c482831650b487c3832aa6ff98bf`
+- Created: `2020-04-06T21:01:26.463354244Z`
+- Virtual Size: ~ 363.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,15 +12,15 @@
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.6`
-  - `RUBY_VERSION=2.6.5`
-  - `RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c31190abe01a62`
+  - `RUBY_VERSION=2.6.6`
+  - `RUBY_DOWNLOAD_SHA256=5db187882b7ac34016cd48d7032e197f07e4968f406b0690e20193b9b424841f`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
   - `HOME=/home/redmine`
-  - `REDMINE_VERSION=4.1.0`
-  - `REDMINE_DOWNLOAD_MD5=32c7b9ce4c419092da439b540cbc1dbf`
+  - `REDMINE_VERSION=4.1.1`
+  - `REDMINE_DOWNLOAD_MD5=a15a25dec7b866e213bbd4b041f05f17`
 
 ## `apk` (`.apk`-based packages)
 
@@ -520,16 +520,16 @@ LGPL-3.0
 ### `apk` package: `gnutls`
 
 ```console
-gnutls-3.6.8-r0 description:
+gnutls-3.6.8-r1 description:
 A TLS protocol implementation
 
-gnutls-3.6.8-r0 webpage:
+gnutls-3.6.8-r1 webpage:
 https://www.gnutls.org/
 
-gnutls-3.6.8-r0 installed size:
+gnutls-3.6.8-r1 installed size:
 1581056
 
-gnutls-3.6.8-r0 license:
+gnutls-3.6.8-r1 license:
 GPL-3.0-or-later
 
 ```
@@ -979,16 +979,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.6-r0 description:
+libpq-11.7-r0 description:
 PostgreSQL libraries
 
-libpq-11.6-r0 webpage:
+libpq-11.7-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.6-r0 installed size:
+libpq-11.7-r0 installed size:
 315392
 
-libpq-11.6-r0 license:
+libpq-11.7-r0 license:
 PostgreSQL
 
 ```
@@ -1013,17 +1013,17 @@ GPL-2.0 LGPL-2.1+
 ### `apk` package: `librsvg`
 
 ```console
-librsvg-2.40.20-r0 description:
+librsvg-2.40.21-r0 description:
 SAX-based renderer for SVG files into a GdkPixbuf
 
-librsvg-2.40.20-r0 webpage:
+librsvg-2.40.21-r0 webpage:
 http://live.gnome.org/LibRsvg
 
-librsvg-2.40.20-r0 installed size:
+librsvg-2.40.21-r0 installed size:
 294912
 
-librsvg-2.40.20-r0 license:
-LGPL-2.0+
+librsvg-2.40.21-r0 license:
+LGPL-2.0-or-later
 
 ```
 
@@ -1319,16 +1319,16 @@ GPL-2.0-only
 ### `apk` package: `lz4-libs`
 
 ```console
-lz4-libs-1.9.1-r0 description:
+lz4-libs-1.9.1-r1 description:
 LZ4 is lossless compression algorithm with fast decoder @ multiple GB/s per core. (libraries)
 
-lz4-libs-1.9.1-r0 webpage:
+lz4-libs-1.9.1-r1 webpage:
 https://github.com/lz4/lz4
 
-lz4-libs-1.9.1-r0 installed size:
+lz4-libs-1.9.1-r1 installed size:
 126976
 
-lz4-libs-1.9.1-r0 license:
+lz4-libs-1.9.1-r1 license:
 BSD-2-Clause GPL-2.0-only
 
 ```
@@ -1404,33 +1404,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20190518-r0 description:
+ncurses-libs-6.1_p20190518-r2 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20190518-r0 webpage:
+ncurses-libs-6.1_p20190518-r2 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-libs-6.1_p20190518-r0 installed size:
+ncurses-libs-6.1_p20190518-r2 installed size:
 503808
 
-ncurses-libs-6.1_p20190518-r0 license:
-MIT
-
-```
-
-### `apk` package: `ncurses-terminfo`
-
-```console
-ncurses-terminfo-6.1_p20190518-r0 description:
-Console display library (other terminfo files)
-
-ncurses-terminfo-6.1_p20190518-r0 webpage:
-https://www.gnu.org/software/ncurses/
-
-ncurses-terminfo-6.1_p20190518-r0 installed size:
-7307264
-
-ncurses-terminfo-6.1_p20190518-r0 license:
+ncurses-libs-6.1_p20190518-r2 license:
 MIT
 
 ```
@@ -1438,16 +1421,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20190518-r0 description:
+ncurses-terminfo-base-6.1_p20190518-r2 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20190518-r0 webpage:
+ncurses-terminfo-base-6.1_p20190518-r2 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-terminfo-base-6.1_p20190518-r0 installed size:
-94208
+ncurses-terminfo-base-6.1_p20190518-r2 installed size:
+212992
 
-ncurses-terminfo-base-6.1_p20190518-r0 license:
+ncurses-terminfo-base-6.1_p20190518-r2 license:
 MIT
 
 ```

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e8259090d178e8fb12df9f3d4e431bd79e8270029500b7797ee8cfc1d018a660`
-- Created: `2020-01-25T03:14:37.107110552Z`
-- Virtual Size: ~ 370.94 Mb  
+- Image ID: `sha256:9a885411a8d766fec05c5769e5e287f8e7c36a9eb15c30918bf80a199fc1099f`
+- Created: `2020-04-01T04:08:55.002096847Z`
+- Virtual Size: ~ 368.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,8 +12,8 @@
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.4`
-  - `RUBY_VERSION=2.4.9`
-  - `RUBY_DOWNLOAD_SHA256=0c4e000253ef7187feeb940a01a1c7594f28d63aa16f978e892a0e2864f58614`
+  - `RUBY_VERSION=2.4.10`
+  - `RUBY_DOWNLOAD_SHA256=d5668ed11544db034f70aec37d11e157538d639ed0d0a968e2f587191fc530df`
   - `RUBYGEMS_VERSION=3.0.3`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
@@ -521,16 +521,16 @@ LGPL-3.0
 ### `apk` package: `gnutls`
 
 ```console
-gnutls-3.6.8-r0 description:
+gnutls-3.6.8-r1 description:
 A TLS protocol implementation
 
-gnutls-3.6.8-r0 webpage:
+gnutls-3.6.8-r1 webpage:
 https://www.gnutls.org/
 
-gnutls-3.6.8-r0 installed size:
+gnutls-3.6.8-r1 installed size:
 1581056
 
-gnutls-3.6.8-r0 license:
+gnutls-3.6.8-r1 license:
 GPL-3.0-or-later
 
 ```
@@ -963,16 +963,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.6-r0 description:
+libpq-11.7-r0 description:
 PostgreSQL libraries
 
-libpq-11.6-r0 webpage:
+libpq-11.7-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.6-r0 installed size:
+libpq-11.7-r0 installed size:
 315392
 
-libpq-11.6-r0 license:
+libpq-11.7-r0 license:
 PostgreSQL
 
 ```
@@ -997,17 +997,17 @@ GPL-2.0 LGPL-2.1+
 ### `apk` package: `librsvg`
 
 ```console
-librsvg-2.40.20-r0 description:
+librsvg-2.40.21-r0 description:
 SAX-based renderer for SVG files into a GdkPixbuf
 
-librsvg-2.40.20-r0 webpage:
+librsvg-2.40.21-r0 webpage:
 http://live.gnome.org/LibRsvg
 
-librsvg-2.40.20-r0 installed size:
+librsvg-2.40.21-r0 installed size:
 294912
 
-librsvg-2.40.20-r0 license:
-LGPL-2.0+
+librsvg-2.40.21-r0 license:
+LGPL-2.0-or-later
 
 ```
 
@@ -1286,16 +1286,16 @@ GPL-2.0-only
 ### `apk` package: `lz4-libs`
 
 ```console
-lz4-libs-1.9.1-r0 description:
+lz4-libs-1.9.1-r1 description:
 LZ4 is lossless compression algorithm with fast decoder @ multiple GB/s per core. (libraries)
 
-lz4-libs-1.9.1-r0 webpage:
+lz4-libs-1.9.1-r1 webpage:
 https://github.com/lz4/lz4
 
-lz4-libs-1.9.1-r0 installed size:
+lz4-libs-1.9.1-r1 installed size:
 126976
 
-lz4-libs-1.9.1-r0 license:
+lz4-libs-1.9.1-r1 license:
 BSD-2-Clause GPL-2.0-only
 
 ```
@@ -1371,33 +1371,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20190518-r0 description:
+ncurses-libs-6.1_p20190518-r2 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20190518-r0 webpage:
+ncurses-libs-6.1_p20190518-r2 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-libs-6.1_p20190518-r0 installed size:
+ncurses-libs-6.1_p20190518-r2 installed size:
 503808
 
-ncurses-libs-6.1_p20190518-r0 license:
-MIT
-
-```
-
-### `apk` package: `ncurses-terminfo`
-
-```console
-ncurses-terminfo-6.1_p20190518-r0 description:
-Console display library (other terminfo files)
-
-ncurses-terminfo-6.1_p20190518-r0 webpage:
-https://www.gnu.org/software/ncurses/
-
-ncurses-terminfo-6.1_p20190518-r0 installed size:
-7307264
-
-ncurses-terminfo-6.1_p20190518-r0 license:
+ncurses-libs-6.1_p20190518-r2 license:
 MIT
 
 ```
@@ -1405,16 +1388,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20190518-r0 description:
+ncurses-terminfo-base-6.1_p20190518-r2 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20190518-r0 webpage:
+ncurses-terminfo-base-6.1_p20190518-r2 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-terminfo-base-6.1_p20190518-r0 installed size:
-94208
+ncurses-terminfo-base-6.1_p20190518-r2 installed size:
+212992
 
-ncurses-terminfo-base-6.1_p20190518-r0 license:
+ncurses-terminfo-base-6.1_p20190518-r2 license:
 MIT
 
 ```
