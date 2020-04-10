@@ -1,10 +1,10 @@
-# `openjdk:15-ea-17-jdk-oraclelinux7`
+# `openjdk:15-ea-18-jdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c2fe98d27ae06c277ccf37ee110804ed352a9985e78a8a5eb422beb6b7a46013`
-- Created: `2020-04-06T23:22:50.735544894Z`
-- Virtual Size: ~ 494.41 Mb  
+- Image ID: `sha256:ce01a6d87f2c1a8799937a3f66513ac6928197a9daa1fb061d270aa6c596600c`
+- Created: `2020-04-10T03:15:42.362410086Z`
+- Virtual Size: ~ 492.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-15`
-  - `JAVA_VERSION=15-ea+17`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk15/17/GPL/openjdk-15-ea+17_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=e8022a7a00c3f8cc7518cbe89f7023356322c2583ce884e2c727218c07595b1a`
+  - `JAVA_VERSION=15-ea+18`
+  - `JAVA_URL=https://download.java.net/java/early_access/jdk15/18/GPL/openjdk-15-ea+18_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=b5a60c62d325c8808978848fd7e21f2cce765ae97cf8361a7e136b36b6bd73bf`
 
 ## `rpm` (`.rpm`-based packages)
 
