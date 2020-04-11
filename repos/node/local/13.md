@@ -3383,9 +3383,20 @@ Licenses: (parsed from: `/usr/share/doc/libwmf-dev/copyright`, `/usr/share/doc/l
 
 - `LGPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libwmf=0.2.8.4-10.6
+'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4-10.6.dsc' libwmf_0.2.8.4-10.6.dsc 2064 SHA256:860bbc5b3cd947b837961155b511e54e6fa75f935d0aed6872e5c9884b0c8aac
+'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4.orig.tar.gz' libwmf_0.2.8.4.orig.tar.gz 2169375 SHA256:5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8
+'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4-10.6.debian.tar.xz' libwmf_0.2.8.4-10.6.debian.tar.xz 11252 SHA256:081524291f605a7cb3ef1fe519e7da77b3b7c13d925f4368edcc72cb2c6fa259
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libwmf/0.2.8.4-10.6/ (for browsing the source)
+- https://sources.debian.net/src/libwmf/0.2.8.4-10.6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libwmf/0.2.8.4-10.6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libx11=2:1.6.4-3+deb9u1`
 
@@ -3455,13 +3466,20 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxcb=1.12-1
+'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.12-1.dsc' libxcb_1.12-1.dsc 6558 SHA256:d6ed3f5ef255a692c9654d954da4421c535e02f21e56a657383ea9d52389080d
+'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.12.orig.tar.gz' libxcb_1.12.orig.tar.gz 745984 SHA256:092f147149d8a6410647a848378aaae749304d5b73e028ccb8306aa8a9e26f06
+'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.12-1.diff.gz' libxcb_1.12-1.diff.gz 25044 SHA256:e2af982573638874bca1f4159139e2bffa0ee51148544b4c3b09bad84622648c
+```
 
-- http://snapshot.debian.org/package/libxcb/1.12-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxcb/1.12-1/ (for browsing the source)
+- https://sources.debian.net/src/libxcb/1.12-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxcb/1.12-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxcomposite=1:0.4.4-2`
 
