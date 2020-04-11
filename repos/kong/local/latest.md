@@ -1,18 +1,18 @@
-# `kong:2.0.2-alpine`
+# `kong:2.0.3-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:abec1dd8af91867d1d02f6ef349df6b95137e20202a42c83512da12f8cafb4a8`
-- Created: `2020-03-09T23:24:49.626198243Z`
-- Virtual Size: ~ 144.42 Mb  
+- Image ID: `sha256:b70bcb7b250ea0e5774060ddb6b207e932256686cab64edf45fa59a1a40f9dbf`
+- Created: `2020-04-08T21:28:13.874667221Z`
+- Virtual Size: ~ 144.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["kong","docker-start"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `KONG_VERSION=2.0.2`
-  - `KONG_SHA256=befe736bfde51e27ae51a0d6a827df44a1669099dea459d430aef0d570cc4db7`
+  - `KONG_VERSION=2.0.3`
+  - `KONG_SHA256=db6a8ac847c347fb4d49c4763181c529bb9584187cdccdcc657ce00d605c99ac`
 - Labels:
   - `maintainer=Kong Core Team <team-core@konghq.com>`
 
@@ -463,16 +463,16 @@ Public-Domain
 ### `apk` package: `unzip`
 
 ```console
-unzip-6.0-r4 description:
+unzip-6.0-r6 description:
 Extract PKZIP-compatible .zip files
 
-unzip-6.0-r4 webpage:
+unzip-6.0-r6 webpage:
 http://www.info-zip.org/UnZip.html
 
-unzip-6.0-r4 installed size:
-352256
+unzip-6.0-r6 installed size:
+356352
 
-unzip-6.0-r4 license:
+unzip-6.0-r6 license:
 custom
 
 ```
