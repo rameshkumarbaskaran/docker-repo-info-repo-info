@@ -1,17 +1,17 @@
-# `influxdb:1.7-alpine`
+# `influxdb:1.8-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:11022dc8112fc93d26bcb9d7c4bcac7f115b57890fff650d8a29afdd735cecd1`
-- Created: `2020-02-25T01:21:58.655259818Z`
-- Virtual Size: ~ 189.62 Mb  
+- Image ID: `sha256:05a626f0c208cc90144620b8ab430bc9d53416e7e1eb73e063bb7b8bd6e503fd`
+- Created: `2020-04-13T22:21:24.234686535Z`
+- Virtual Size: ~ 182.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["influxd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `INFLUXDB_VERSION=1.7.10`
+  - `INFLUXDB_VERSION=1.8.0`
 
 ## `apk` (`.apk`-based packages)
 
