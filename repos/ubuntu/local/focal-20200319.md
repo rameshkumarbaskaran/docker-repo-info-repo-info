@@ -336,13 +336,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.7ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.7ubuntu2.dsc' dpkg_1.19.7ubuntu2.dsc 2262 SHA256:579516f6ebccc399f7bc1b1ed49c298ecdea0511e4c3ad68f083486bb1abd3cb
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.7ubuntu2.tar.xz' dpkg_1.19.7ubuntu2.tar.xz 4730708 SHA256:972f148f1404b3382002d919c35fabfdfa74161492882a8f8af33e7f534af977
-```
 
 ### `dpkg` source package: `e2fsprogs=1.45.5-2ubuntu1`
 
@@ -423,14 +419,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.31-0ubuntu6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu6.dsc' glibc_2.31-0ubuntu6.dsc 9250 SHA256:0a92d7d91e0b18b8b49ab8c8e7dba219acf2a978c8e90eb312317b96abc83429
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17317924 SHA256:2b22c7b04a36747d6c74796a73193a6f8856bfd1efc551b5db96baefa053fe5e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu6.debian.tar.xz' glibc_2.31-0ubuntu6.debian.tar.xz 836788 SHA256:68efa34a3bc3a9531d543a87659ceda8813b79fe7092c7a658b3c86b53732778
-```
 
 ### `dpkg` source package: `gmp=2:6.2.0+dfsg-4`
 
@@ -506,15 +497,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.6.11.1-2ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.11.1-2ubuntu2.dsc' gnutls28_3.6.11.1-2ubuntu2.dsc 3606 SHA256:d038b5ec39e60b63a2cd7d98dcabdeb01a7222a20c63cfc551ce078b693a4025
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.11.1.orig.tar.xz' gnutls28_3.6.11.1.orig.tar.xz 5902328 SHA256:fbba12f3db9a55dbf027e14111755817ec44b57eabec3e8089aac8ac6f533cf8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.11.1.orig.tar.xz.asc' gnutls28_3.6.11.1.orig.tar.xz.asc 488 SHA256:d294c3bf26e5b4bbd15909570ab0fc37a84af01bee960a6cd8cbb193a66cdc9a
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.11.1-2ubuntu2.debian.tar.xz' gnutls28_3.6.11.1-2ubuntu2.debian.tar.xz 64232 SHA256:7362b7224a636af67d879bc55d95743a55f5d28a0180169e701cb2acee99c309
-```
 
 ### `dpkg` source package: `grep=3.4-1`
 
@@ -714,14 +699,9 @@ Licenses: (parsed from: `/usr/share/doc/libseccomp2/copyright`)
 
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libseccomp=2.4.3-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3-0ubuntu2.dsc' libseccomp_2.4.3-0ubuntu2.dsc 2576 SHA256:b5ff48695ad2a1450e701863708c5eada28f46d2ccb8e55107d9b1e9f1906250
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3.orig.tar.gz' libseccomp_2.4.3.orig.tar.gz 598147 SHA256:cf15d1421997fac45b936515af61d209c4fd788af11005d212b3d0fd71e7991d
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3-0ubuntu2.debian.tar.xz' libseccomp_2.4.3-0ubuntu2.debian.tar.xz 12832 SHA256:46140a35b7272ee3863cd2e50676aff51d8d82b1b27c188ccf341e923f2c2bcb
-```
 
 ### `dpkg` source package: `libselinux=3.0-1build1`
 
@@ -1188,14 +1168,9 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris shadow=1:4.8.1-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-1ubuntu3.dsc' shadow_4.8.1-1ubuntu3.dsc 2378 SHA256:319ae9ff41a612520f82327059d9dbd371c6921798e343de15e7a2bdf0a8cebb
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1.orig.tar.xz' shadow_4.8.1.orig.tar.xz 1611196 SHA256:a3ad4630bdc41372f02a647278a8c3514844295d36eefe68ece6c3a641c1ae62
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-1ubuntu3.debian.tar.xz' shadow_4.8.1-1ubuntu3.debian.tar.xz 85156 SHA256:fb673a59be6280bc9ebc0f446c3c9fb2e72e1728b8c30a73dfea854b18d09a0c
-```
 
 ### `dpkg` source package: `systemd=244.3-1ubuntu1`
 
@@ -1309,14 +1284,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.34-0.1ubuntu8
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu8.dsc' util-linux_2.34-0.1ubuntu8.dsc 4034 SHA256:79c48566092bbd00a2fc963cbd1d62f9c4acbc6e6160aaf2f7dce85903761339
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34.orig.tar.xz' util-linux_2.34.orig.tar.xz 4974812 SHA256:743f9d0c7252b6db246b659c1e1ce0bd45d8d4508b4dfa427bbb4a3e9b9f62b5
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu8.debian.tar.xz' util-linux_2.34-0.1ubuntu8.debian.tar.xz 88340 SHA256:16a6f71e2b9a3a6e7659fe8f080ebb8d8b2dfc12d308e7d4f5d622f83bffebb2
-```
 
 ### `dpkg` source package: `xz-utils=5.2.4-1`
 
