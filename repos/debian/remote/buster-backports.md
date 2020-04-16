@@ -1,7 +1,7 @@
 ## `debian:buster-backports`
 
 ```console
-$ docker pull debian@sha256:f384f53c7f845fe2778c08124c4febc6dd96b74a3d6b3057e0543b5d94927935
+$ docker pull debian@sha256:e1e3099aadf377f8f94bc0de5b1deb65d76dc9a30bb45ddbd3dbf6c33d39119f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,38 +11,39 @@ $ docker pull debian@sha256:f384f53c7f845fe2778c08124c4febc6dd96b74a3d6b3057e054
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
+	-	linux; mips64le
 	-	linux; ppc64le
 	-	linux; s390x
 
 ### `debian:buster-backports` - linux; amd64
 
 ```console
-$ docker pull debian@sha256:f0c2855d0b57e9a946cea7e2fba492a24f2a0dccfb1259b3b5f5cbed2d8a2ab7
+$ docker pull debian@sha256:f0e34c2c7a043b8de82762fe72670d289d73d963b53edf674b00eb1b3f6f8b31
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **50.4 MB (50382266 bytes)**  
+-	Total Size: **50.4 MB (50383182 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e4d52125ecff47bd91f0d443d2115e40c8d95a1d49b10f0adbafe2ef4fa3b1a`
+-	Image ID: `sha256:f6559296fe7262a22285a84438d05fd3e3694ffa59038d45a22a4233780385e8`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:20:44 GMT
-ADD file:c027885123a178148eb4f51f10f4924740859f1f6e941e55580517f6d234e935 in / 
-# Tue, 31 Mar 2020 01:20:45 GMT
+# Thu, 16 Apr 2020 03:22:03 GMT
+ADD file:a0c8e81c4c7fa85b43d4a9daaed7ba25964a0bf494711b6911cd4b7f5201a17f in / 
+# Thu, 16 Apr 2020 03:22:03 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 01:20:50 GMT
+# Thu, 16 Apr 2020 03:22:10 GMT
 RUN echo 'deb http://deb.debian.org/debian buster-backports main' > /etc/apt/sources.list.d/backports.list
 ```
 
 -	Layers:
-	-	`sha256:f15005b0235fa8bd31cc6988c4f2758016fe412d696e81aecf73e52be079f19e`  
-		Last Modified: Tue, 31 Mar 2020 01:26:22 GMT  
-		Size: 50.4 MB (50382041 bytes)  
+	-	`sha256:7e2b2a5af8f65687add6d864d5841067e23bd435eb1a051be6fe1ea2384946b4`  
+		Last Modified: Thu, 16 Apr 2020 03:31:27 GMT  
+		Size: 50.4 MB (50382957 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:015b10e4a311063b414bffee359df40e4e9375486d3b6814701b497c11ebfd61`  
-		Last Modified: Tue, 31 Mar 2020 01:26:28 GMT  
+	-	`sha256:ab0beef368fc7de10fccda26c14efb91b4fad3f138ceb213b6d2af8640ab4b35`  
+		Last Modified: Thu, 16 Apr 2020 03:31:34 GMT  
 		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -172,6 +173,38 @@ RUN echo 'deb http://deb.debian.org/debian buster-backports main' > /etc/apt/sou
 	-	`sha256:0b0f25765fe05fcbc153d8e5000bb7e7a66a71594744a793f598dea84ffc9e19`  
 		Last Modified: Thu, 16 Apr 2020 01:46:08 GMT  
 		Size: 224.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:buster-backports` - linux; mips64le
+
+```console
+$ docker pull debian@sha256:28ad434fd39157713ccf746dc3b9ba90e031524b4a14140409e247c1106491c9
+```
+
+-	Docker Version: 19.03.8
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **49.0 MB (49019393 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:70d97d37c94fd57aac4b50af1846fa2ab004f0d416a8e5285149edf30772dcbd`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Thu, 16 Apr 2020 03:30:04 GMT
+ADD file:dbf70dae7766ac8359a9b7eaeb438ecc109d3622097f3003b8520b1cabc754c6 in / 
+# Thu, 16 Apr 2020 03:30:06 GMT
+CMD ["bash"]
+# Thu, 16 Apr 2020 03:30:12 GMT
+RUN echo 'deb http://deb.debian.org/debian buster-backports main' > /etc/apt/sources.list.d/backports.list
+```
+
+-	Layers:
+	-	`sha256:6e78cab9698d138941c3838a9153c6a0bac08790291a111677e8db68f80af8f3`  
+		Last Modified: Thu, 16 Apr 2020 03:56:06 GMT  
+		Size: 49.0 MB (49019170 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e9182beab83ca453a4053d14a0ebff800ffbc8be8e6dbc80720f2b71cd023be7`  
+		Last Modified: Thu, 16 Apr 2020 03:56:22 GMT  
+		Size: 223.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:buster-backports` - linux; ppc64le

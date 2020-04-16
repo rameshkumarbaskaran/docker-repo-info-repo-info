@@ -1,7 +1,7 @@
 ## `debian:oldstable-backports`
 
 ```console
-$ docker pull debian@sha256:13d8d5a78b3110089f0f3c09f6862f7c461fa378ca01962993fe7cb663198d0a
+$ docker pull debian@sha256:147ac2511e03b56b3e7660b2ce8688c676305f30d6a14ff3cfcc8453b76775bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,38 +11,39 @@ $ docker pull debian@sha256:13d8d5a78b3110089f0f3c09f6862f7c461fa378ca01962993fe
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
+	-	linux; mips64le
 	-	linux; ppc64le
 	-	linux; s390x
 
 ### `debian:oldstable-backports` - linux; amd64
 
 ```console
-$ docker pull debian@sha256:790e046d7d94efa0d895e27863c0a5914d7d22c507c797fcdca4760ab4e5d644
+$ docker pull debian@sha256:552520a88ed93aa33cec4368950cf92ac26d52269d6eafd3a5273e5a143925a6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **45.4 MB (45376163 bytes)**  
+-	Total Size: **45.4 MB (45376143 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7057e98a796b2d442e422efd22c22b9a1c9104fb3cbbee08bb98ed811118e394`
+-	Image ID: `sha256:2d804a0e29dee34137a7fbf6496ad2b7777a600adf52ade7a3cfb9a02ef5fcb9`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:22:14 GMT
-ADD file:69f5027533cc1339a22a59ca6300ca7f9805aae39b104bc7910aecac86f212ab in / 
-# Tue, 31 Mar 2020 01:22:15 GMT
+# Thu, 16 Apr 2020 03:24:37 GMT
+ADD file:b4bec3445f92b1ae0bcfea88059e0655438aa0b7150fcff19c4b9be730b30f21 in / 
+# Thu, 16 Apr 2020 03:24:37 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 01:22:21 GMT
+# Thu, 16 Apr 2020 03:24:43 GMT
 RUN echo 'deb http://deb.debian.org/debian oldstable-backports main' > /etc/apt/sources.list.d/backports.list
 ```
 
 -	Layers:
-	-	`sha256:6d9d1acdfc21f12880d6ded21c7bf0d165bd42a39e5b0abd2f429e8d208ec4d0`  
-		Last Modified: Tue, 31 Mar 2020 01:27:52 GMT  
-		Size: 45.4 MB (45375937 bytes)  
+	-	`sha256:8e23be3017ef2eaddaff9ffd24b45ae3d9a84d3c8b2b2e064ce4c6f39e83d1b2`  
+		Last Modified: Thu, 16 Apr 2020 03:33:12 GMT  
+		Size: 45.4 MB (45375917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a5951dc98a28279786b34b5ae0f8eee8aab6bafcbb288beb5016b92efaedc7`  
-		Last Modified: Tue, 31 Mar 2020 01:27:56 GMT  
+	-	`sha256:134795b976a33e80a0cdf1ce5a337f7d5c7710efc2e7b353d49fe964b1ba53d5`  
+		Last Modified: Thu, 16 Apr 2020 03:33:18 GMT  
 		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -172,6 +173,38 @@ RUN echo 'deb http://deb.debian.org/debian oldstable-backports main' > /etc/apt/
 	-	`sha256:02f0664461f08b2efb7f0a09b5aa031867ffa89b5aa255eb03080ad61cce627b`  
 		Last Modified: Thu, 16 Apr 2020 01:47:50 GMT  
 		Size: 223.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:oldstable-backports` - linux; mips64le
+
+```console
+$ docker pull debian@sha256:a468d987757f9e3aa4c74dde33d9702477cc7db4b94dd5093d933eab895444fc
+```
+
+-	Docker Version: 19.03.8
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **45.0 MB (45049104 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:afb2c21b3d28a9a2d8e318160f802e1872b86fc207d45a6a429d947217ba6e09`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Thu, 16 Apr 2020 03:31:02 GMT
+ADD file:2b21526a09639fd548682b900bf085ad1dfdaecff67f3a5cb414c75f734fe3d7 in / 
+# Thu, 16 Apr 2020 03:31:03 GMT
+CMD ["bash"]
+# Thu, 16 Apr 2020 03:31:09 GMT
+RUN echo 'deb http://deb.debian.org/debian oldstable-backports main' > /etc/apt/sources.list.d/backports.list
+```
+
+-	Layers:
+	-	`sha256:b1e90befbbaf60ce1884c7bceecb131d0f1609823f54dbfd8bb3bd14090fe4ac`  
+		Last Modified: Thu, 16 Apr 2020 03:57:36 GMT  
+		Size: 45.0 MB (45048880 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1c0c4ab5fcd923bb4a854b883f38a4ba3280de1a6256543a7bb023f5ea983ace`  
+		Last Modified: Thu, 16 Apr 2020 03:57:46 GMT  
+		Size: 224.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:oldstable-backports` - linux; ppc64le

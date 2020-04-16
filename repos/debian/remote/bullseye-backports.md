@@ -1,7 +1,7 @@
 ## `debian:bullseye-backports`
 
 ```console
-$ docker pull debian@sha256:f4992c8385372f8a4c57c0c4f73a78672f8500fbbf5b61e938a0aa067c660bdd
+$ docker pull debian@sha256:f8decf1b4b9d22ca56dc5f27073b8b7707376ef9c30f52955d17baf112332025
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,38 +11,39 @@ $ docker pull debian@sha256:f4992c8385372f8a4c57c0c4f73a78672f8500fbbf5b61e938a0
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
+	-	linux; mips64le
 	-	linux; ppc64le
 	-	linux; s390x
 
 ### `debian:bullseye-backports` - linux; amd64
 
 ```console
-$ docker pull debian@sha256:7a918861d75b362de95fc215845b3aa5fb2f1db3a63b360d969e1aa84d4ca334
+$ docker pull debian@sha256:6ac059ad1d2dce31bcc87fdcadc2b3d40bcf4667d349c637c335ebb6cdbc6685
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **51.9 MB (51922913 bytes)**  
+-	Total Size: **52.0 MB (51968565 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9d0f0fa6c3ab8882e11e334e5a6531bbb2da48d77259187be64cd2d8bf3f2c46`
+-	Image ID: `sha256:41ea44894e25721e876936961d48210784ff68ba28c15a5c0ee2e16cd010e7c8`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:20:09 GMT
-ADD file:edfe2fd644e397f293f4634d48f0fbdadcbf9e5d3f226da6daa213811d4bfb90 in / 
-# Tue, 31 Mar 2020 01:20:09 GMT
+# Thu, 16 Apr 2020 03:21:21 GMT
+ADD file:d8f8a66e04b091b1ee6d1d330b5cd80472768f8cef96db861ba4dfaa2472fe20 in / 
+# Thu, 16 Apr 2020 03:21:21 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 01:20:17 GMT
+# Thu, 16 Apr 2020 03:21:27 GMT
 RUN echo 'deb http://deb.debian.org/debian bullseye-backports main' > /etc/apt/sources.list.d/backports.list
 ```
 
 -	Layers:
-	-	`sha256:ac0531d9afaea848836097ce37941ab7f0d2533a1b6c1cec0eefed4bb8d4d9cc`  
-		Last Modified: Tue, 31 Mar 2020 01:25:55 GMT  
-		Size: 51.9 MB (51922687 bytes)  
+	-	`sha256:3d9ec154a243cb2fcf510aa97241fa4d7c075add5b018b19db3f1dca9f93c83a`  
+		Last Modified: Thu, 16 Apr 2020 03:30:54 GMT  
+		Size: 52.0 MB (51968339 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4534143be9195563db68b0593b4e2c321272d57eac692558d021988570cb5162`  
-		Last Modified: Tue, 31 Mar 2020 01:25:59 GMT  
+	-	`sha256:266223d7a2a2e50ef7dc8d26be12b2b06d24e0a2c4f3c33050e4ce67014b4fd7`  
+		Last Modified: Thu, 16 Apr 2020 03:30:59 GMT  
 		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -172,6 +173,38 @@ RUN echo 'deb http://deb.debian.org/debian bullseye-backports main' > /etc/apt/s
 	-	`sha256:d1e1e866c8903963fd81c76bca4bbe02a9dcbf15874463f721f03fd6402808f0`  
 		Last Modified: Thu, 16 Apr 2020 01:45:31 GMT  
 		Size: 225.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:bullseye-backports` - linux; mips64le
+
+```console
+$ docker pull debian@sha256:ca3829a27732d5a8d1a3ea7e91911ea1413cfaf4f934f4eabbb0317bab844ba9
+```
+
+-	Docker Version: 19.03.8
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **50.7 MB (50679069 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:b7ebbf7d9f5b8cc9c847766ae84b16a93221df43591b87c96433ee1737150480`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Thu, 16 Apr 2020 03:29:03 GMT
+ADD file:571d620a73f63f0bce6937ced0e2a2f7dbd127e0fecf9e97790d0941cc6bce5b in / 
+# Thu, 16 Apr 2020 03:29:05 GMT
+CMD ["bash"]
+# Thu, 16 Apr 2020 03:29:11 GMT
+RUN echo 'deb http://deb.debian.org/debian bullseye-backports main' > /etc/apt/sources.list.d/backports.list
+```
+
+-	Layers:
+	-	`sha256:02267d0e0eb88e51f19069b5cba14fd409e92034ffa2d476e3692b85e83addca`  
+		Last Modified: Thu, 16 Apr 2020 03:54:44 GMT  
+		Size: 50.7 MB (50678841 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6b63e220ca8ff5247c29fc5f904377a80efef4831e8bda9d1275631a1e1c7db3`  
+		Last Modified: Thu, 16 Apr 2020 03:54:54 GMT  
+		Size: 228.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:bullseye-backports` - linux; ppc64le
