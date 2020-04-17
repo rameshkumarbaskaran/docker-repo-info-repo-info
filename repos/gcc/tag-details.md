@@ -19,7 +19,7 @@
 ## `gcc:6`
 
 ```console
-$ docker pull gcc@sha256:928577b48eae30aa334a5d76aa3d860bc4c9fe6b14d4e70d3bafe77ab2c3e975
+$ docker pull gcc@sha256:a6cd9fe2afa309171a56e02b596a8f37093412d39c9419c078a52012525ba608
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -187,85 +187,85 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:6` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:e7133c318bf32a8e6208bd47aeace7f099f89c98649f8253e3b4d0cd6ab0cf51
+$ docker pull gcc@sha256:7e1fe480e3871588b59a06cb5bdd16cd320bdf2714dc7345291cf5b5cd04606a
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **286.6 MB (286638822 bytes)**  
+-	Total Size: **286.6 MB (286639688 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9ae42be3f712c1f4bcc0f3516bb61ecfa8dfa614a7239d3fb6fc16aed7f99c2a`
+-	Image ID: `sha256:fbe2230e03ed0c2aecde2f7ae8854c40bc0af58f97e64ec79229910d242eac57`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:48:35 GMT
-ADD file:3345f549ac73be9cbff84c9a9992a29c6a50a098e6ec75781abd7e752f2e4905 in / 
-# Tue, 31 Mar 2020 01:48:38 GMT
+# Thu, 16 Apr 2020 01:00:13 GMT
+ADD file:0b08b600835a16058b725946cb7ae338fea6a14cf6998584f9728d2c62324f1e in / 
+# Thu, 16 Apr 2020 01:00:16 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:43:39 GMT
+# Thu, 16 Apr 2020 01:44:09 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:43:43 GMT
+# Thu, 16 Apr 2020 01:44:11 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:45:25 GMT
+# Thu, 16 Apr 2020 01:45:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:48:35 GMT
+# Thu, 16 Apr 2020 01:48:56 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 20:29:40 GMT
+# Thu, 16 Apr 2020 19:09:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 20:29:40 GMT
+# Thu, 16 Apr 2020 19:09:14 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 20:29:43 GMT
+# Thu, 16 Apr 2020 19:09:16 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 20:29:44 GMT
+# Thu, 16 Apr 2020 19:09:17 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 20:29:45 GMT
+# Thu, 16 Apr 2020 19:09:18 GMT
 ENV GCC_VERSION=6.5.0
-# Tue, 31 Mar 2020 21:08:44 GMT
+# Thu, 16 Apr 2020 19:48:36 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:08:46 GMT
+# Thu, 16 Apr 2020 19:48:42 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:08:48 GMT
+# Thu, 16 Apr 2020 19:48:45 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:b42378553088c1b5fa4e7b74e80d9e3bc23e8120256271a16a71718555bb74a9`  
-		Last Modified: Tue, 31 Mar 2020 01:56:46 GMT  
-		Size: 50.3 MB (50303700 bytes)  
+	-	`sha256:cc084eacfbe394e053f99559ca63f9d660d60dad0b70a31347e5088af534b2e9`  
+		Last Modified: Thu, 16 Apr 2020 01:09:20 GMT  
+		Size: 50.3 MB (50304312 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bcd7396438102c898ad52f1a70f57579ff2986e776b6305e87017a39204c1fb0`  
-		Last Modified: Tue, 31 Mar 2020 04:02:07 GMT  
-		Size: 16.7 MB (16723402 bytes)  
+	-	`sha256:c2753eba5d276059ffd460d19c6e651040079c4a18c7d6a93682bef3e285c0b9`  
+		Last Modified: Thu, 16 Apr 2020 01:58:21 GMT  
+		Size: 16.7 MB (16723352 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abce9473207298579845f5680e3c4deb2fa262abfd526e63c2e7052a79513b36`  
-		Last Modified: Tue, 31 Mar 2020 04:02:30 GMT  
-		Size: 39.8 MB (39775371 bytes)  
+	-	`sha256:aff41b20f0ffb69690b5b8efa517a6db82e30df6bbb8a1ba31dda7369f437c9a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:41 GMT  
+		Size: 39.8 MB (39777408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0dfb8c8682f67b7ad9263b5faf8e31dbd100b35ec33f8d8491f25e2d70b4166a`  
-		Last Modified: Tue, 31 Mar 2020 04:03:09 GMT  
-		Size: 114.6 MB (114620156 bytes)  
+	-	`sha256:ead15096fd044e35c9129cdaa284dd871825323849b5ca80a56d9994411a00a4`  
+		Last Modified: Thu, 16 Apr 2020 01:59:18 GMT  
+		Size: 114.6 MB (114620187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f6582c2b2f30d175b1496f2467eb637748e416f66fb8aec3849ab5673ea83cb6`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 116.6 KB (116632 bytes)  
+	-	`sha256:14798ae6c62c8d2f2586c36a9f8b5026a7161ec27cfca70e8d9bffb7df82c47e`  
+		Last Modified: Thu, 16 Apr 2020 22:15:20 GMT  
+		Size: 116.6 KB (116633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c63f821d4bd8513d4439834e6020bd4a3fa5115fa09bd11a0ffd4ad103733d0`  
-		Last Modified: Tue, 31 Mar 2020 23:25:12 GMT  
-		Size: 65.1 MB (65087300 bytes)  
+	-	`sha256:031cd7b18a13a22e221718990ed08b6eff8062c918167830ee43788c640097a7`  
+		Last Modified: Thu, 16 Apr 2020 22:16:16 GMT  
+		Size: 65.1 MB (65085550 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af02a52cfbbe7facf32c5838b0286f29eb38fc82cbe9caafa2da3d97ca6a1276`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 10.6 KB (10640 bytes)  
+	-	`sha256:f1b2db08f630265e46f6acf055bdd6832cd189a988db3b458a7754c401156203`  
+		Last Modified: Thu, 16 Apr 2020 22:15:21 GMT  
+		Size: 10.6 KB (10632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c44606bf2a6bd108a2f6d868e687f02c68e987e8daa1f70291d9fe87896c6e4d`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 1.6 KB (1621 bytes)  
+	-	`sha256:a888367f9ce661f89e6b798dd0453d410b83c5b7d957bebdd963822da78a33b2`  
+		Last Modified: Thu, 16 Apr 2020 22:15:21 GMT  
+		Size: 1.6 KB (1614 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `gcc:6.5`
 
 ```console
-$ docker pull gcc@sha256:928577b48eae30aa334a5d76aa3d860bc4c9fe6b14d4e70d3bafe77ab2c3e975
+$ docker pull gcc@sha256:a6cd9fe2afa309171a56e02b596a8f37093412d39c9419c078a52012525ba608
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -433,85 +433,85 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:6.5` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:e7133c318bf32a8e6208bd47aeace7f099f89c98649f8253e3b4d0cd6ab0cf51
+$ docker pull gcc@sha256:7e1fe480e3871588b59a06cb5bdd16cd320bdf2714dc7345291cf5b5cd04606a
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **286.6 MB (286638822 bytes)**  
+-	Total Size: **286.6 MB (286639688 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9ae42be3f712c1f4bcc0f3516bb61ecfa8dfa614a7239d3fb6fc16aed7f99c2a`
+-	Image ID: `sha256:fbe2230e03ed0c2aecde2f7ae8854c40bc0af58f97e64ec79229910d242eac57`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:48:35 GMT
-ADD file:3345f549ac73be9cbff84c9a9992a29c6a50a098e6ec75781abd7e752f2e4905 in / 
-# Tue, 31 Mar 2020 01:48:38 GMT
+# Thu, 16 Apr 2020 01:00:13 GMT
+ADD file:0b08b600835a16058b725946cb7ae338fea6a14cf6998584f9728d2c62324f1e in / 
+# Thu, 16 Apr 2020 01:00:16 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:43:39 GMT
+# Thu, 16 Apr 2020 01:44:09 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:43:43 GMT
+# Thu, 16 Apr 2020 01:44:11 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:45:25 GMT
+# Thu, 16 Apr 2020 01:45:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:48:35 GMT
+# Thu, 16 Apr 2020 01:48:56 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 20:29:40 GMT
+# Thu, 16 Apr 2020 19:09:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 20:29:40 GMT
+# Thu, 16 Apr 2020 19:09:14 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 20:29:43 GMT
+# Thu, 16 Apr 2020 19:09:16 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 20:29:44 GMT
+# Thu, 16 Apr 2020 19:09:17 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 20:29:45 GMT
+# Thu, 16 Apr 2020 19:09:18 GMT
 ENV GCC_VERSION=6.5.0
-# Tue, 31 Mar 2020 21:08:44 GMT
+# Thu, 16 Apr 2020 19:48:36 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:08:46 GMT
+# Thu, 16 Apr 2020 19:48:42 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:08:48 GMT
+# Thu, 16 Apr 2020 19:48:45 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:b42378553088c1b5fa4e7b74e80d9e3bc23e8120256271a16a71718555bb74a9`  
-		Last Modified: Tue, 31 Mar 2020 01:56:46 GMT  
-		Size: 50.3 MB (50303700 bytes)  
+	-	`sha256:cc084eacfbe394e053f99559ca63f9d660d60dad0b70a31347e5088af534b2e9`  
+		Last Modified: Thu, 16 Apr 2020 01:09:20 GMT  
+		Size: 50.3 MB (50304312 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bcd7396438102c898ad52f1a70f57579ff2986e776b6305e87017a39204c1fb0`  
-		Last Modified: Tue, 31 Mar 2020 04:02:07 GMT  
-		Size: 16.7 MB (16723402 bytes)  
+	-	`sha256:c2753eba5d276059ffd460d19c6e651040079c4a18c7d6a93682bef3e285c0b9`  
+		Last Modified: Thu, 16 Apr 2020 01:58:21 GMT  
+		Size: 16.7 MB (16723352 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abce9473207298579845f5680e3c4deb2fa262abfd526e63c2e7052a79513b36`  
-		Last Modified: Tue, 31 Mar 2020 04:02:30 GMT  
-		Size: 39.8 MB (39775371 bytes)  
+	-	`sha256:aff41b20f0ffb69690b5b8efa517a6db82e30df6bbb8a1ba31dda7369f437c9a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:41 GMT  
+		Size: 39.8 MB (39777408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0dfb8c8682f67b7ad9263b5faf8e31dbd100b35ec33f8d8491f25e2d70b4166a`  
-		Last Modified: Tue, 31 Mar 2020 04:03:09 GMT  
-		Size: 114.6 MB (114620156 bytes)  
+	-	`sha256:ead15096fd044e35c9129cdaa284dd871825323849b5ca80a56d9994411a00a4`  
+		Last Modified: Thu, 16 Apr 2020 01:59:18 GMT  
+		Size: 114.6 MB (114620187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f6582c2b2f30d175b1496f2467eb637748e416f66fb8aec3849ab5673ea83cb6`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 116.6 KB (116632 bytes)  
+	-	`sha256:14798ae6c62c8d2f2586c36a9f8b5026a7161ec27cfca70e8d9bffb7df82c47e`  
+		Last Modified: Thu, 16 Apr 2020 22:15:20 GMT  
+		Size: 116.6 KB (116633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c63f821d4bd8513d4439834e6020bd4a3fa5115fa09bd11a0ffd4ad103733d0`  
-		Last Modified: Tue, 31 Mar 2020 23:25:12 GMT  
-		Size: 65.1 MB (65087300 bytes)  
+	-	`sha256:031cd7b18a13a22e221718990ed08b6eff8062c918167830ee43788c640097a7`  
+		Last Modified: Thu, 16 Apr 2020 22:16:16 GMT  
+		Size: 65.1 MB (65085550 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af02a52cfbbe7facf32c5838b0286f29eb38fc82cbe9caafa2da3d97ca6a1276`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 10.6 KB (10640 bytes)  
+	-	`sha256:f1b2db08f630265e46f6acf055bdd6832cd189a988db3b458a7754c401156203`  
+		Last Modified: Thu, 16 Apr 2020 22:15:21 GMT  
+		Size: 10.6 KB (10632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c44606bf2a6bd108a2f6d868e687f02c68e987e8daa1f70291d9fe87896c6e4d`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 1.6 KB (1621 bytes)  
+	-	`sha256:a888367f9ce661f89e6b798dd0453d410b83c5b7d957bebdd963822da78a33b2`  
+		Last Modified: Thu, 16 Apr 2020 22:15:21 GMT  
+		Size: 1.6 KB (1614 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `gcc:6.5.0`
 
 ```console
-$ docker pull gcc@sha256:928577b48eae30aa334a5d76aa3d860bc4c9fe6b14d4e70d3bafe77ab2c3e975
+$ docker pull gcc@sha256:a6cd9fe2afa309171a56e02b596a8f37093412d39c9419c078a52012525ba608
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -679,85 +679,85 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:6.5.0` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:e7133c318bf32a8e6208bd47aeace7f099f89c98649f8253e3b4d0cd6ab0cf51
+$ docker pull gcc@sha256:7e1fe480e3871588b59a06cb5bdd16cd320bdf2714dc7345291cf5b5cd04606a
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **286.6 MB (286638822 bytes)**  
+-	Total Size: **286.6 MB (286639688 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9ae42be3f712c1f4bcc0f3516bb61ecfa8dfa614a7239d3fb6fc16aed7f99c2a`
+-	Image ID: `sha256:fbe2230e03ed0c2aecde2f7ae8854c40bc0af58f97e64ec79229910d242eac57`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:48:35 GMT
-ADD file:3345f549ac73be9cbff84c9a9992a29c6a50a098e6ec75781abd7e752f2e4905 in / 
-# Tue, 31 Mar 2020 01:48:38 GMT
+# Thu, 16 Apr 2020 01:00:13 GMT
+ADD file:0b08b600835a16058b725946cb7ae338fea6a14cf6998584f9728d2c62324f1e in / 
+# Thu, 16 Apr 2020 01:00:16 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:43:39 GMT
+# Thu, 16 Apr 2020 01:44:09 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:43:43 GMT
+# Thu, 16 Apr 2020 01:44:11 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:45:25 GMT
+# Thu, 16 Apr 2020 01:45:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:48:35 GMT
+# Thu, 16 Apr 2020 01:48:56 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 20:29:40 GMT
+# Thu, 16 Apr 2020 19:09:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 20:29:40 GMT
+# Thu, 16 Apr 2020 19:09:14 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 20:29:43 GMT
+# Thu, 16 Apr 2020 19:09:16 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 20:29:44 GMT
+# Thu, 16 Apr 2020 19:09:17 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 20:29:45 GMT
+# Thu, 16 Apr 2020 19:09:18 GMT
 ENV GCC_VERSION=6.5.0
-# Tue, 31 Mar 2020 21:08:44 GMT
+# Thu, 16 Apr 2020 19:48:36 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:08:46 GMT
+# Thu, 16 Apr 2020 19:48:42 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:08:48 GMT
+# Thu, 16 Apr 2020 19:48:45 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:b42378553088c1b5fa4e7b74e80d9e3bc23e8120256271a16a71718555bb74a9`  
-		Last Modified: Tue, 31 Mar 2020 01:56:46 GMT  
-		Size: 50.3 MB (50303700 bytes)  
+	-	`sha256:cc084eacfbe394e053f99559ca63f9d660d60dad0b70a31347e5088af534b2e9`  
+		Last Modified: Thu, 16 Apr 2020 01:09:20 GMT  
+		Size: 50.3 MB (50304312 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bcd7396438102c898ad52f1a70f57579ff2986e776b6305e87017a39204c1fb0`  
-		Last Modified: Tue, 31 Mar 2020 04:02:07 GMT  
-		Size: 16.7 MB (16723402 bytes)  
+	-	`sha256:c2753eba5d276059ffd460d19c6e651040079c4a18c7d6a93682bef3e285c0b9`  
+		Last Modified: Thu, 16 Apr 2020 01:58:21 GMT  
+		Size: 16.7 MB (16723352 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abce9473207298579845f5680e3c4deb2fa262abfd526e63c2e7052a79513b36`  
-		Last Modified: Tue, 31 Mar 2020 04:02:30 GMT  
-		Size: 39.8 MB (39775371 bytes)  
+	-	`sha256:aff41b20f0ffb69690b5b8efa517a6db82e30df6bbb8a1ba31dda7369f437c9a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:41 GMT  
+		Size: 39.8 MB (39777408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0dfb8c8682f67b7ad9263b5faf8e31dbd100b35ec33f8d8491f25e2d70b4166a`  
-		Last Modified: Tue, 31 Mar 2020 04:03:09 GMT  
-		Size: 114.6 MB (114620156 bytes)  
+	-	`sha256:ead15096fd044e35c9129cdaa284dd871825323849b5ca80a56d9994411a00a4`  
+		Last Modified: Thu, 16 Apr 2020 01:59:18 GMT  
+		Size: 114.6 MB (114620187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f6582c2b2f30d175b1496f2467eb637748e416f66fb8aec3849ab5673ea83cb6`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 116.6 KB (116632 bytes)  
+	-	`sha256:14798ae6c62c8d2f2586c36a9f8b5026a7161ec27cfca70e8d9bffb7df82c47e`  
+		Last Modified: Thu, 16 Apr 2020 22:15:20 GMT  
+		Size: 116.6 KB (116633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c63f821d4bd8513d4439834e6020bd4a3fa5115fa09bd11a0ffd4ad103733d0`  
-		Last Modified: Tue, 31 Mar 2020 23:25:12 GMT  
-		Size: 65.1 MB (65087300 bytes)  
+	-	`sha256:031cd7b18a13a22e221718990ed08b6eff8062c918167830ee43788c640097a7`  
+		Last Modified: Thu, 16 Apr 2020 22:16:16 GMT  
+		Size: 65.1 MB (65085550 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af02a52cfbbe7facf32c5838b0286f29eb38fc82cbe9caafa2da3d97ca6a1276`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 10.6 KB (10640 bytes)  
+	-	`sha256:f1b2db08f630265e46f6acf055bdd6832cd189a988db3b458a7754c401156203`  
+		Last Modified: Thu, 16 Apr 2020 22:15:21 GMT  
+		Size: 10.6 KB (10632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c44606bf2a6bd108a2f6d868e687f02c68e987e8daa1f70291d9fe87896c6e4d`  
-		Last Modified: Tue, 31 Mar 2020 23:24:49 GMT  
-		Size: 1.6 KB (1621 bytes)  
+	-	`sha256:a888367f9ce661f89e6b798dd0453d410b83c5b7d957bebdd963822da78a33b2`  
+		Last Modified: Thu, 16 Apr 2020 22:15:21 GMT  
+		Size: 1.6 KB (1614 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `gcc:7`
 
 ```console
-$ docker pull gcc@sha256:4458d3b7b1df2fa5237052beec25ab7c7822ef36ac4963babdc8f0a6408a36c4
+$ docker pull gcc@sha256:8e3ab990c71643b15cd3401802b7f2e8c2e2a12fb4a409d769a924200085b004
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -936,165 +936,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:7` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:1e156e5fcdfa32f9a47fb6d66c3a8315af4e1f9c7f3579fe761c744eb302700a
+$ docker pull gcc@sha256:f66fe4d061fbc86543dea456c9cca63601e85790fc6a0248f2952676f2b003ae
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **350.4 MB (350357814 bytes)**  
+-	Total Size: **350.4 MB (350390563 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e44b345e6e6ed98807b38bb825ae38ae0564ac7df8c7c49828573d3ecce77e5f`
+-	Image ID: `sha256:3866b45a00371b29d9852a1bc2ecc1290c8132deef5bdc462bdfdcedad13bd3c`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:12 GMT
 ENV GCC_VERSION=7.5.0
-# Tue, 31 Mar 2020 21:49:30 GMT
+# Thu, 16 Apr 2020 20:31:34 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:49:35 GMT
+# Thu, 16 Apr 2020 20:31:46 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:49:38 GMT
+# Thu, 16 Apr 2020 20:31:49 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebd2fa2b6fa90f2e678303ca963a5a355393c96c21932123a49acddcad591db7`  
-		Last Modified: Tue, 31 Mar 2020 23:25:43 GMT  
-		Size: 72.3 MB (72327654 bytes)  
+	-	`sha256:4979cb736d198e03a56d7348db50a23506fdb5671b0c20231a67a690e54f2d71`  
+		Last Modified: Thu, 16 Apr 2020 22:16:54 GMT  
+		Size: 72.3 MB (72330874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2102ca73e6ce16a2fd713dc000fd39a97fa470c80cc7e18baaf36c1633dffa3d`  
-		Last Modified: Tue, 31 Mar 2020 23:25:20 GMT  
-		Size: 11.2 KB (11230 bytes)  
+	-	`sha256:bd2bf5f15f14044a906da686beca05e4ec7ea619ac52fa3eb0fe8a139d290711`  
+		Last Modified: Thu, 16 Apr 2020 22:16:24 GMT  
+		Size: 11.2 KB (11236 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f5606793450076703c2713fffea1ae3dcfdb1f19511e4ce7e2b8663a95bf126`  
-		Last Modified: Tue, 31 Mar 2020 23:25:20 GMT  
-		Size: 2.0 KB (1951 bytes)  
+	-	`sha256:febca82a6b2cffa87f91b2c0b3f69c1b8182f5706693c5fcbfbe519fd43aefd8`  
+		Last Modified: Thu, 16 Apr 2020 22:16:24 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:5f6c274d2881e86a96612885aefb0da16ae262c60b7143a59a9fab02fb70d7ad
+$ docker pull gcc@sha256:ddde1ae3d65d5aa5632b2c12d25b5788c429d7ba122a76dda0ee9cf9042c4a3f
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **381.3 MB (381313623 bytes)**  
+-	Total Size: **381.4 MB (381366767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9917f6d333e7bda71f146cee3a541e659d094002ea8f1ccba4fe36d922b4c2d5`
+-	Image ID: `sha256:faf834d0aae908dbb137b9b82ac61b391a1f53a8925296cd0edde2831bf7d909`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:25:45 GMT
+# Thu, 16 Apr 2020 20:27:38 GMT
 ENV GCC_VERSION=7.5.0
-# Tue, 31 Mar 2020 21:58:07 GMT
+# Thu, 16 Apr 2020 21:05:21 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:58:11 GMT
+# Thu, 16 Apr 2020 21:05:26 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:58:13 GMT
+# Thu, 16 Apr 2020 21:05:29 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf4e2f31b1e3777b6f70e305d31d881dc586a750ffa81307c15fb097ebb7fe2a`  
-		Last Modified: Tue, 31 Mar 2020 23:22:59 GMT  
-		Size: 78.6 MB (78641172 bytes)  
+	-	`sha256:4b83463c105d2945f9ba615d6cdec6c15818379f91975311cec079860a63aa69`  
+		Last Modified: Thu, 16 Apr 2020 22:34:23 GMT  
+		Size: 78.6 MB (78640829 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f11718e1ba8b194c1fa877abdd5d179192ca6292f8924bc6716c4c617a54dc`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.4 KB (11368 bytes)  
+	-	`sha256:c37b06f6aa5dcfc92e5dc297efd7b423aaeb56314f18d7c33502b2cb4ad1ad14`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.3 KB (11336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df9ec84bccc8c7e8c06a0e241685b012b20da773a3ee8f6e61649511f21cc364`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 1.9 KB (1940 bytes)  
+	-	`sha256:349c48755eda3c6dfc9c8e4f365e5fc273dc3b559df7435a38c910fb0ef3e22e`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 1.9 KB (1943 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7` - linux; ppc64le
@@ -1264,7 +1264,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:7.5`
 
 ```console
-$ docker pull gcc@sha256:4458d3b7b1df2fa5237052beec25ab7c7822ef36ac4963babdc8f0a6408a36c4
+$ docker pull gcc@sha256:8e3ab990c71643b15cd3401802b7f2e8c2e2a12fb4a409d769a924200085b004
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1443,165 +1443,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:7.5` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:1e156e5fcdfa32f9a47fb6d66c3a8315af4e1f9c7f3579fe761c744eb302700a
+$ docker pull gcc@sha256:f66fe4d061fbc86543dea456c9cca63601e85790fc6a0248f2952676f2b003ae
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **350.4 MB (350357814 bytes)**  
+-	Total Size: **350.4 MB (350390563 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e44b345e6e6ed98807b38bb825ae38ae0564ac7df8c7c49828573d3ecce77e5f`
+-	Image ID: `sha256:3866b45a00371b29d9852a1bc2ecc1290c8132deef5bdc462bdfdcedad13bd3c`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:12 GMT
 ENV GCC_VERSION=7.5.0
-# Tue, 31 Mar 2020 21:49:30 GMT
+# Thu, 16 Apr 2020 20:31:34 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:49:35 GMT
+# Thu, 16 Apr 2020 20:31:46 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:49:38 GMT
+# Thu, 16 Apr 2020 20:31:49 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebd2fa2b6fa90f2e678303ca963a5a355393c96c21932123a49acddcad591db7`  
-		Last Modified: Tue, 31 Mar 2020 23:25:43 GMT  
-		Size: 72.3 MB (72327654 bytes)  
+	-	`sha256:4979cb736d198e03a56d7348db50a23506fdb5671b0c20231a67a690e54f2d71`  
+		Last Modified: Thu, 16 Apr 2020 22:16:54 GMT  
+		Size: 72.3 MB (72330874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2102ca73e6ce16a2fd713dc000fd39a97fa470c80cc7e18baaf36c1633dffa3d`  
-		Last Modified: Tue, 31 Mar 2020 23:25:20 GMT  
-		Size: 11.2 KB (11230 bytes)  
+	-	`sha256:bd2bf5f15f14044a906da686beca05e4ec7ea619ac52fa3eb0fe8a139d290711`  
+		Last Modified: Thu, 16 Apr 2020 22:16:24 GMT  
+		Size: 11.2 KB (11236 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f5606793450076703c2713fffea1ae3dcfdb1f19511e4ce7e2b8663a95bf126`  
-		Last Modified: Tue, 31 Mar 2020 23:25:20 GMT  
-		Size: 2.0 KB (1951 bytes)  
+	-	`sha256:febca82a6b2cffa87f91b2c0b3f69c1b8182f5706693c5fcbfbe519fd43aefd8`  
+		Last Modified: Thu, 16 Apr 2020 22:16:24 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7.5` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:5f6c274d2881e86a96612885aefb0da16ae262c60b7143a59a9fab02fb70d7ad
+$ docker pull gcc@sha256:ddde1ae3d65d5aa5632b2c12d25b5788c429d7ba122a76dda0ee9cf9042c4a3f
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **381.3 MB (381313623 bytes)**  
+-	Total Size: **381.4 MB (381366767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9917f6d333e7bda71f146cee3a541e659d094002ea8f1ccba4fe36d922b4c2d5`
+-	Image ID: `sha256:faf834d0aae908dbb137b9b82ac61b391a1f53a8925296cd0edde2831bf7d909`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:25:45 GMT
+# Thu, 16 Apr 2020 20:27:38 GMT
 ENV GCC_VERSION=7.5.0
-# Tue, 31 Mar 2020 21:58:07 GMT
+# Thu, 16 Apr 2020 21:05:21 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:58:11 GMT
+# Thu, 16 Apr 2020 21:05:26 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:58:13 GMT
+# Thu, 16 Apr 2020 21:05:29 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf4e2f31b1e3777b6f70e305d31d881dc586a750ffa81307c15fb097ebb7fe2a`  
-		Last Modified: Tue, 31 Mar 2020 23:22:59 GMT  
-		Size: 78.6 MB (78641172 bytes)  
+	-	`sha256:4b83463c105d2945f9ba615d6cdec6c15818379f91975311cec079860a63aa69`  
+		Last Modified: Thu, 16 Apr 2020 22:34:23 GMT  
+		Size: 78.6 MB (78640829 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f11718e1ba8b194c1fa877abdd5d179192ca6292f8924bc6716c4c617a54dc`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.4 KB (11368 bytes)  
+	-	`sha256:c37b06f6aa5dcfc92e5dc297efd7b423aaeb56314f18d7c33502b2cb4ad1ad14`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.3 KB (11336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df9ec84bccc8c7e8c06a0e241685b012b20da773a3ee8f6e61649511f21cc364`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 1.9 KB (1940 bytes)  
+	-	`sha256:349c48755eda3c6dfc9c8e4f365e5fc273dc3b559df7435a38c910fb0ef3e22e`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 1.9 KB (1943 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7.5` - linux; ppc64le
@@ -1771,7 +1771,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:7.5.0`
 
 ```console
-$ docker pull gcc@sha256:4458d3b7b1df2fa5237052beec25ab7c7822ef36ac4963babdc8f0a6408a36c4
+$ docker pull gcc@sha256:8e3ab990c71643b15cd3401802b7f2e8c2e2a12fb4a409d769a924200085b004
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1950,165 +1950,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:7.5.0` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:1e156e5fcdfa32f9a47fb6d66c3a8315af4e1f9c7f3579fe761c744eb302700a
+$ docker pull gcc@sha256:f66fe4d061fbc86543dea456c9cca63601e85790fc6a0248f2952676f2b003ae
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **350.4 MB (350357814 bytes)**  
+-	Total Size: **350.4 MB (350390563 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e44b345e6e6ed98807b38bb825ae38ae0564ac7df8c7c49828573d3ecce77e5f`
+-	Image ID: `sha256:3866b45a00371b29d9852a1bc2ecc1290c8132deef5bdc462bdfdcedad13bd3c`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:12 GMT
 ENV GCC_VERSION=7.5.0
-# Tue, 31 Mar 2020 21:49:30 GMT
+# Thu, 16 Apr 2020 20:31:34 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:49:35 GMT
+# Thu, 16 Apr 2020 20:31:46 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:49:38 GMT
+# Thu, 16 Apr 2020 20:31:49 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebd2fa2b6fa90f2e678303ca963a5a355393c96c21932123a49acddcad591db7`  
-		Last Modified: Tue, 31 Mar 2020 23:25:43 GMT  
-		Size: 72.3 MB (72327654 bytes)  
+	-	`sha256:4979cb736d198e03a56d7348db50a23506fdb5671b0c20231a67a690e54f2d71`  
+		Last Modified: Thu, 16 Apr 2020 22:16:54 GMT  
+		Size: 72.3 MB (72330874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2102ca73e6ce16a2fd713dc000fd39a97fa470c80cc7e18baaf36c1633dffa3d`  
-		Last Modified: Tue, 31 Mar 2020 23:25:20 GMT  
-		Size: 11.2 KB (11230 bytes)  
+	-	`sha256:bd2bf5f15f14044a906da686beca05e4ec7ea619ac52fa3eb0fe8a139d290711`  
+		Last Modified: Thu, 16 Apr 2020 22:16:24 GMT  
+		Size: 11.2 KB (11236 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f5606793450076703c2713fffea1ae3dcfdb1f19511e4ce7e2b8663a95bf126`  
-		Last Modified: Tue, 31 Mar 2020 23:25:20 GMT  
-		Size: 2.0 KB (1951 bytes)  
+	-	`sha256:febca82a6b2cffa87f91b2c0b3f69c1b8182f5706693c5fcbfbe519fd43aefd8`  
+		Last Modified: Thu, 16 Apr 2020 22:16:24 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7.5.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:5f6c274d2881e86a96612885aefb0da16ae262c60b7143a59a9fab02fb70d7ad
+$ docker pull gcc@sha256:ddde1ae3d65d5aa5632b2c12d25b5788c429d7ba122a76dda0ee9cf9042c4a3f
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **381.3 MB (381313623 bytes)**  
+-	Total Size: **381.4 MB (381366767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9917f6d333e7bda71f146cee3a541e659d094002ea8f1ccba4fe36d922b4c2d5`
+-	Image ID: `sha256:faf834d0aae908dbb137b9b82ac61b391a1f53a8925296cd0edde2831bf7d909`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:25:45 GMT
+# Thu, 16 Apr 2020 20:27:38 GMT
 ENV GCC_VERSION=7.5.0
-# Tue, 31 Mar 2020 21:58:07 GMT
+# Thu, 16 Apr 2020 21:05:21 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 21:58:11 GMT
+# Thu, 16 Apr 2020 21:05:26 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 21:58:13 GMT
+# Thu, 16 Apr 2020 21:05:29 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf4e2f31b1e3777b6f70e305d31d881dc586a750ffa81307c15fb097ebb7fe2a`  
-		Last Modified: Tue, 31 Mar 2020 23:22:59 GMT  
-		Size: 78.6 MB (78641172 bytes)  
+	-	`sha256:4b83463c105d2945f9ba615d6cdec6c15818379f91975311cec079860a63aa69`  
+		Last Modified: Thu, 16 Apr 2020 22:34:23 GMT  
+		Size: 78.6 MB (78640829 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8f11718e1ba8b194c1fa877abdd5d179192ca6292f8924bc6716c4c617a54dc`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.4 KB (11368 bytes)  
+	-	`sha256:c37b06f6aa5dcfc92e5dc297efd7b423aaeb56314f18d7c33502b2cb4ad1ad14`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.3 KB (11336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df9ec84bccc8c7e8c06a0e241685b012b20da773a3ee8f6e61649511f21cc364`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 1.9 KB (1940 bytes)  
+	-	`sha256:349c48755eda3c6dfc9c8e4f365e5fc273dc3b559df7435a38c910fb0ef3e22e`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 1.9 KB (1943 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7.5.0` - linux; ppc64le
@@ -2278,7 +2278,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:8`
 
 ```console
-$ docker pull gcc@sha256:551a623a1a669ffd0c00b532fb051dbb216f3aaaa6accfe870a782250f1b22a5
+$ docker pull gcc@sha256:7a86245c9afca02472f4b46d6d069bfa39662993053c409101f14b1d3805612c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2457,165 +2457,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:8` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:075b19c08dae72c7cdc61d95628d85ed3af67c56b29db33a11c202f63774ad03
+$ docker pull gcc@sha256:7095dce09e4084821e96ed044201d673e4e1d3ab90746d606544620956732ddf
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **353.7 MB (353733586 bytes)**  
+-	Total Size: **353.8 MB (353768082 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2f21730f62c7de34c79c6fa9360d5c0c8f081a5201b56f377f48eb30182106c1`
+-	Image ID: `sha256:383ec29aac18ec025db22a7f860cc686fadd66fbcc1acdc32b869990d7d1884a`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:49:54 GMT
+# Thu, 16 Apr 2020 20:32:03 GMT
 ENV GCC_VERSION=8.4.0
-# Tue, 31 Mar 2020 22:36:15 GMT
+# Thu, 16 Apr 2020 21:23:38 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 22:36:19 GMT
+# Thu, 16 Apr 2020 21:23:45 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 22:36:24 GMT
+# Thu, 16 Apr 2020 21:23:51 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df915673d8da50858fb2f11b402e6935d99ee9e565deae46b63e792561bbc03a`  
-		Last Modified: Tue, 31 Mar 2020 23:26:29 GMT  
-		Size: 75.7 MB (75703473 bytes)  
+	-	`sha256:f2c8d35f5918efe9fd7b33fa124efd04d5744bc242c2a90c34623ac487b99b6b`  
+		Last Modified: Thu, 16 Apr 2020 22:17:26 GMT  
+		Size: 75.7 MB (75708470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5bb5617ad7e9fc669ffac013ecfceebeba25a438c8ce6fb03325de08ecb6d7a8`  
-		Last Modified: Tue, 31 Mar 2020 23:26:06 GMT  
-		Size: 11.2 KB (11180 bytes)  
+	-	`sha256:7059069053d41f01f0028b757d519f2b432ec90f52e7a9b5d10d505104c4a10e`  
+		Last Modified: Thu, 16 Apr 2020 22:17:02 GMT  
+		Size: 11.2 KB (11160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f0e95c13f54775b971013c83c2ad077d76b27a35126b13b50840258c8815c2b`  
-		Last Modified: Tue, 31 Mar 2020 23:26:07 GMT  
-		Size: 2.0 KB (1954 bytes)  
+	-	`sha256:6cff6ded429f75c90bebb12cba42860531798e9731815f0ae2a494252e5e9cb8`  
+		Last Modified: Thu, 16 Apr 2020 22:17:02 GMT  
+		Size: 1.9 KB (1939 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:dd40e95d5bedeb77cd3948739c781d11a9d4d3067bc613c2a70e511088ceec0d
+$ docker pull gcc@sha256:d06d9f80aacc44b0cbc489bcbe6ca8081018b057e5c6510f9939ad29fe6124b1
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **385.8 MB (385819498 bytes)**  
+-	Total Size: **385.9 MB (385872122 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f07672905f334c78e044117d5cb1ce6a384ae298f8d1d16c6093b48528c5ea9f`
+-	Image ID: `sha256:d45b3766f96cec57e52b61b63318eb410536fc84b703c04bb9784780daf93edb`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:58:33 GMT
+# Thu, 16 Apr 2020 21:05:37 GMT
 ENV GCC_VERSION=8.4.0
-# Tue, 31 Mar 2020 22:39:10 GMT
+# Thu, 16 Apr 2020 21:51:15 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 22:39:14 GMT
+# Thu, 16 Apr 2020 21:51:29 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 22:39:16 GMT
+# Thu, 16 Apr 2020 21:51:33 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a413e00f11863d1d93840b2dde07d2026fc29db2375b4f979d5722d23b33ef7b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:32 GMT  
-		Size: 83.1 MB (83147066 bytes)  
+	-	`sha256:6875a322a524e0e46cedd03807334db9b3e6b9451f119b77d8dcb72313e32901`  
+		Last Modified: Thu, 16 Apr 2020 22:34:56 GMT  
+		Size: 83.1 MB (83146203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e3d248da29b7efd169e404bbfdb908d36ab711ce4a243b121f8ed7d08085277`  
-		Last Modified: Tue, 31 Mar 2020 23:23:07 GMT  
-		Size: 11.3 KB (11350 bytes)  
+	-	`sha256:07abcb0f38b359a8d39a72e8fd682f01dc3995e97f01f777bcc5961f72ed95ae`  
+		Last Modified: Thu, 16 Apr 2020 22:34:31 GMT  
+		Size: 11.3 KB (11319 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:126b8ac93eb80eb4194a3d0b28382e1d2c95aff46407064eead2b81acc58873b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:06 GMT  
-		Size: 1.9 KB (1939 bytes)  
+	-	`sha256:6fffa4cd0bb5f803ff8ced10d46d45a08198ddcb36a625b02c2c1230434b5c39`  
+		Last Modified: Thu, 16 Apr 2020 22:34:32 GMT  
+		Size: 1.9 KB (1941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8` - linux; ppc64le
@@ -2785,7 +2785,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:8.4`
 
 ```console
-$ docker pull gcc@sha256:551a623a1a669ffd0c00b532fb051dbb216f3aaaa6accfe870a782250f1b22a5
+$ docker pull gcc@sha256:7a86245c9afca02472f4b46d6d069bfa39662993053c409101f14b1d3805612c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2964,165 +2964,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:8.4` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:075b19c08dae72c7cdc61d95628d85ed3af67c56b29db33a11c202f63774ad03
+$ docker pull gcc@sha256:7095dce09e4084821e96ed044201d673e4e1d3ab90746d606544620956732ddf
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **353.7 MB (353733586 bytes)**  
+-	Total Size: **353.8 MB (353768082 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2f21730f62c7de34c79c6fa9360d5c0c8f081a5201b56f377f48eb30182106c1`
+-	Image ID: `sha256:383ec29aac18ec025db22a7f860cc686fadd66fbcc1acdc32b869990d7d1884a`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:49:54 GMT
+# Thu, 16 Apr 2020 20:32:03 GMT
 ENV GCC_VERSION=8.4.0
-# Tue, 31 Mar 2020 22:36:15 GMT
+# Thu, 16 Apr 2020 21:23:38 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 22:36:19 GMT
+# Thu, 16 Apr 2020 21:23:45 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 22:36:24 GMT
+# Thu, 16 Apr 2020 21:23:51 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df915673d8da50858fb2f11b402e6935d99ee9e565deae46b63e792561bbc03a`  
-		Last Modified: Tue, 31 Mar 2020 23:26:29 GMT  
-		Size: 75.7 MB (75703473 bytes)  
+	-	`sha256:f2c8d35f5918efe9fd7b33fa124efd04d5744bc242c2a90c34623ac487b99b6b`  
+		Last Modified: Thu, 16 Apr 2020 22:17:26 GMT  
+		Size: 75.7 MB (75708470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5bb5617ad7e9fc669ffac013ecfceebeba25a438c8ce6fb03325de08ecb6d7a8`  
-		Last Modified: Tue, 31 Mar 2020 23:26:06 GMT  
-		Size: 11.2 KB (11180 bytes)  
+	-	`sha256:7059069053d41f01f0028b757d519f2b432ec90f52e7a9b5d10d505104c4a10e`  
+		Last Modified: Thu, 16 Apr 2020 22:17:02 GMT  
+		Size: 11.2 KB (11160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f0e95c13f54775b971013c83c2ad077d76b27a35126b13b50840258c8815c2b`  
-		Last Modified: Tue, 31 Mar 2020 23:26:07 GMT  
-		Size: 2.0 KB (1954 bytes)  
+	-	`sha256:6cff6ded429f75c90bebb12cba42860531798e9731815f0ae2a494252e5e9cb8`  
+		Last Modified: Thu, 16 Apr 2020 22:17:02 GMT  
+		Size: 1.9 KB (1939 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:dd40e95d5bedeb77cd3948739c781d11a9d4d3067bc613c2a70e511088ceec0d
+$ docker pull gcc@sha256:d06d9f80aacc44b0cbc489bcbe6ca8081018b057e5c6510f9939ad29fe6124b1
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **385.8 MB (385819498 bytes)**  
+-	Total Size: **385.9 MB (385872122 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f07672905f334c78e044117d5cb1ce6a384ae298f8d1d16c6093b48528c5ea9f`
+-	Image ID: `sha256:d45b3766f96cec57e52b61b63318eb410536fc84b703c04bb9784780daf93edb`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:58:33 GMT
+# Thu, 16 Apr 2020 21:05:37 GMT
 ENV GCC_VERSION=8.4.0
-# Tue, 31 Mar 2020 22:39:10 GMT
+# Thu, 16 Apr 2020 21:51:15 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 22:39:14 GMT
+# Thu, 16 Apr 2020 21:51:29 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 22:39:16 GMT
+# Thu, 16 Apr 2020 21:51:33 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a413e00f11863d1d93840b2dde07d2026fc29db2375b4f979d5722d23b33ef7b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:32 GMT  
-		Size: 83.1 MB (83147066 bytes)  
+	-	`sha256:6875a322a524e0e46cedd03807334db9b3e6b9451f119b77d8dcb72313e32901`  
+		Last Modified: Thu, 16 Apr 2020 22:34:56 GMT  
+		Size: 83.1 MB (83146203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e3d248da29b7efd169e404bbfdb908d36ab711ce4a243b121f8ed7d08085277`  
-		Last Modified: Tue, 31 Mar 2020 23:23:07 GMT  
-		Size: 11.3 KB (11350 bytes)  
+	-	`sha256:07abcb0f38b359a8d39a72e8fd682f01dc3995e97f01f777bcc5961f72ed95ae`  
+		Last Modified: Thu, 16 Apr 2020 22:34:31 GMT  
+		Size: 11.3 KB (11319 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:126b8ac93eb80eb4194a3d0b28382e1d2c95aff46407064eead2b81acc58873b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:06 GMT  
-		Size: 1.9 KB (1939 bytes)  
+	-	`sha256:6fffa4cd0bb5f803ff8ced10d46d45a08198ddcb36a625b02c2c1230434b5c39`  
+		Last Modified: Thu, 16 Apr 2020 22:34:32 GMT  
+		Size: 1.9 KB (1941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8.4` - linux; ppc64le
@@ -3292,7 +3292,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:8.4.0`
 
 ```console
-$ docker pull gcc@sha256:551a623a1a669ffd0c00b532fb051dbb216f3aaaa6accfe870a782250f1b22a5
+$ docker pull gcc@sha256:7a86245c9afca02472f4b46d6d069bfa39662993053c409101f14b1d3805612c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3471,165 +3471,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:8.4.0` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:075b19c08dae72c7cdc61d95628d85ed3af67c56b29db33a11c202f63774ad03
+$ docker pull gcc@sha256:7095dce09e4084821e96ed044201d673e4e1d3ab90746d606544620956732ddf
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **353.7 MB (353733586 bytes)**  
+-	Total Size: **353.8 MB (353768082 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2f21730f62c7de34c79c6fa9360d5c0c8f081a5201b56f377f48eb30182106c1`
+-	Image ID: `sha256:383ec29aac18ec025db22a7f860cc686fadd66fbcc1acdc32b869990d7d1884a`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:49:54 GMT
+# Thu, 16 Apr 2020 20:32:03 GMT
 ENV GCC_VERSION=8.4.0
-# Tue, 31 Mar 2020 22:36:15 GMT
+# Thu, 16 Apr 2020 21:23:38 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 22:36:19 GMT
+# Thu, 16 Apr 2020 21:23:45 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 22:36:24 GMT
+# Thu, 16 Apr 2020 21:23:51 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df915673d8da50858fb2f11b402e6935d99ee9e565deae46b63e792561bbc03a`  
-		Last Modified: Tue, 31 Mar 2020 23:26:29 GMT  
-		Size: 75.7 MB (75703473 bytes)  
+	-	`sha256:f2c8d35f5918efe9fd7b33fa124efd04d5744bc242c2a90c34623ac487b99b6b`  
+		Last Modified: Thu, 16 Apr 2020 22:17:26 GMT  
+		Size: 75.7 MB (75708470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5bb5617ad7e9fc669ffac013ecfceebeba25a438c8ce6fb03325de08ecb6d7a8`  
-		Last Modified: Tue, 31 Mar 2020 23:26:06 GMT  
-		Size: 11.2 KB (11180 bytes)  
+	-	`sha256:7059069053d41f01f0028b757d519f2b432ec90f52e7a9b5d10d505104c4a10e`  
+		Last Modified: Thu, 16 Apr 2020 22:17:02 GMT  
+		Size: 11.2 KB (11160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f0e95c13f54775b971013c83c2ad077d76b27a35126b13b50840258c8815c2b`  
-		Last Modified: Tue, 31 Mar 2020 23:26:07 GMT  
-		Size: 2.0 KB (1954 bytes)  
+	-	`sha256:6cff6ded429f75c90bebb12cba42860531798e9731815f0ae2a494252e5e9cb8`  
+		Last Modified: Thu, 16 Apr 2020 22:17:02 GMT  
+		Size: 1.9 KB (1939 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8.4.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:dd40e95d5bedeb77cd3948739c781d11a9d4d3067bc613c2a70e511088ceec0d
+$ docker pull gcc@sha256:d06d9f80aacc44b0cbc489bcbe6ca8081018b057e5c6510f9939ad29fe6124b1
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **385.8 MB (385819498 bytes)**  
+-	Total Size: **385.9 MB (385872122 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f07672905f334c78e044117d5cb1ce6a384ae298f8d1d16c6093b48528c5ea9f`
+-	Image ID: `sha256:d45b3766f96cec57e52b61b63318eb410536fc84b703c04bb9784780daf93edb`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 21:58:33 GMT
+# Thu, 16 Apr 2020 21:05:37 GMT
 ENV GCC_VERSION=8.4.0
-# Tue, 31 Mar 2020 22:39:10 GMT
+# Thu, 16 Apr 2020 21:51:15 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 22:39:14 GMT
+# Thu, 16 Apr 2020 21:51:29 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 22:39:16 GMT
+# Thu, 16 Apr 2020 21:51:33 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a413e00f11863d1d93840b2dde07d2026fc29db2375b4f979d5722d23b33ef7b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:32 GMT  
-		Size: 83.1 MB (83147066 bytes)  
+	-	`sha256:6875a322a524e0e46cedd03807334db9b3e6b9451f119b77d8dcb72313e32901`  
+		Last Modified: Thu, 16 Apr 2020 22:34:56 GMT  
+		Size: 83.1 MB (83146203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e3d248da29b7efd169e404bbfdb908d36ab711ce4a243b121f8ed7d08085277`  
-		Last Modified: Tue, 31 Mar 2020 23:23:07 GMT  
-		Size: 11.3 KB (11350 bytes)  
+	-	`sha256:07abcb0f38b359a8d39a72e8fd682f01dc3995e97f01f777bcc5961f72ed95ae`  
+		Last Modified: Thu, 16 Apr 2020 22:34:31 GMT  
+		Size: 11.3 KB (11319 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:126b8ac93eb80eb4194a3d0b28382e1d2c95aff46407064eead2b81acc58873b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:06 GMT  
-		Size: 1.9 KB (1939 bytes)  
+	-	`sha256:6fffa4cd0bb5f803ff8ced10d46d45a08198ddcb36a625b02c2c1230434b5c39`  
+		Last Modified: Thu, 16 Apr 2020 22:34:32 GMT  
+		Size: 1.9 KB (1941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8.4.0` - linux; ppc64le
@@ -3799,7 +3799,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:9`
 
 ```console
-$ docker pull gcc@sha256:fa0f1c44d0f2a28980f4e0b834524c20e4722f009c45e2f3674aee5be94376a5
+$ docker pull gcc@sha256:d4d887258b895b6728873c8f65484fbcf178eef9770f6c80d1dc5e4e10aa44d6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3978,165 +3978,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:9` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:ae318ee9c7d9cab787915a09ac020ed30da4a2be29673626047b8f24a8f7bb5c
+$ docker pull gcc@sha256:036b4ea797884f8131376e7e27991c4b5834f245e4d21c34177ced9ebc9611a9
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **356.6 MB (356619006 bytes)**  
+-	Total Size: **356.6 MB (356648351 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e17f42aa3a00279a40a26e8e273ae0007725a1b847be5e023d5bb6d72a52c35d`
+-	Image ID: `sha256:8dd6e80434aaf079cd62761aab94e79ff639a4abc71a1600b9202d05e108028b`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:36:40 GMT
+# Thu, 16 Apr 2020 21:24:02 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:24:24 GMT
+# Thu, 16 Apr 2020 22:14:51 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:24:30 GMT
+# Thu, 16 Apr 2020 22:14:55 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:24:35 GMT
+# Thu, 16 Apr 2020 22:14:59 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97c7b2b7b05855498fe8fdde4aee9526c51b2220cfc661223cc94c2d7590ac04`  
-		Last Modified: Tue, 31 Mar 2020 23:27:04 GMT  
-		Size: 78.6 MB (78588905 bytes)  
+	-	`sha256:1a908f050cb682799f9b34c283e18e2f0e6d55dd38f3ed477740eb16c10a9a03`  
+		Last Modified: Thu, 16 Apr 2020 22:18:06 GMT  
+		Size: 78.6 MB (78588737 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:465028cfa76048d200937272a38edad6a02e2d140db1816102be98122ff83f05`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 11.2 KB (11167 bytes)  
+	-	`sha256:0b861befa8d928736a77304f8b28add0cb5e45b0bfc77469083da977d9f2660a`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 11.2 KB (11159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb8f3d42f79128415d2a63c9721cad3a241bb3e287d3a5a041d90fe70d788a87`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 2.0 KB (1955 bytes)  
+	-	`sha256:d0c039d8cb71e345134853b28a092c80267503445260af858b8586d9a9a7160d`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 1.9 KB (1942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:7af6d1185351a113a3a220c296ac0071751074474e694860ae550500f2a352fd
+$ docker pull gcc@sha256:128a2201527cfb0da7ff6f61fc2e1cef35e54b8b46d16064b41984f222f31315
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **389.2 MB (389195074 bytes)**  
+-	Total Size: **389.2 MB (389249653 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b61edab1ba3e575dbd337b16e6f84ed1352d81b74ce3f971d74a5665bac56114`
+-	Image ID: `sha256:146b38cce962b384bd538114b6ab1fb8cfd7bda0785bf683f7c976d815173a0f`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:39:32 GMT
+# Thu, 16 Apr 2020 21:51:54 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:22:06 GMT
+# Thu, 16 Apr 2020 22:33:30 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:22:09 GMT
+# Thu, 16 Apr 2020 22:33:34 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:22:11 GMT
+# Thu, 16 Apr 2020 22:33:36 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecd6b6d0d41a30a1bf487ab0fd97e8c31d806206a2bdba1a254213cd41787b21`  
-		Last Modified: Tue, 31 Mar 2020 23:24:08 GMT  
-		Size: 86.5 MB (86522635 bytes)  
+	-	`sha256:b50a2f2596fbece4155876a44b92f5392a22254aa9c2c8f2bb93867a5f3bf2c7`  
+		Last Modified: Thu, 16 Apr 2020 22:35:39 GMT  
+		Size: 86.5 MB (86523728 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6437998aa6bda35b5f08f969efae30bbc0ff75b1d539da545081c102cf78e40b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 11.4 KB (11358 bytes)  
+	-	`sha256:5ddaffd43a760bddf63fe9fb7dfc5b0e672932025b2daf9addf528ca56100dc2`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 11.3 KB (11322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd14cde8f53859e2b3817f26ea8ad1dcce2ae095944f5ace6041e2a98ec79d0f`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 1.9 KB (1938 bytes)  
+	-	`sha256:26276f00b899da43635337874010f62a99c71c31d653be7f1b96658ec50307d3`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 1.9 KB (1944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9` - linux; ppc64le
@@ -4306,7 +4306,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:9.3`
 
 ```console
-$ docker pull gcc@sha256:fa0f1c44d0f2a28980f4e0b834524c20e4722f009c45e2f3674aee5be94376a5
+$ docker pull gcc@sha256:d4d887258b895b6728873c8f65484fbcf178eef9770f6c80d1dc5e4e10aa44d6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4485,165 +4485,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:9.3` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:ae318ee9c7d9cab787915a09ac020ed30da4a2be29673626047b8f24a8f7bb5c
+$ docker pull gcc@sha256:036b4ea797884f8131376e7e27991c4b5834f245e4d21c34177ced9ebc9611a9
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **356.6 MB (356619006 bytes)**  
+-	Total Size: **356.6 MB (356648351 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e17f42aa3a00279a40a26e8e273ae0007725a1b847be5e023d5bb6d72a52c35d`
+-	Image ID: `sha256:8dd6e80434aaf079cd62761aab94e79ff639a4abc71a1600b9202d05e108028b`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:36:40 GMT
+# Thu, 16 Apr 2020 21:24:02 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:24:24 GMT
+# Thu, 16 Apr 2020 22:14:51 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:24:30 GMT
+# Thu, 16 Apr 2020 22:14:55 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:24:35 GMT
+# Thu, 16 Apr 2020 22:14:59 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97c7b2b7b05855498fe8fdde4aee9526c51b2220cfc661223cc94c2d7590ac04`  
-		Last Modified: Tue, 31 Mar 2020 23:27:04 GMT  
-		Size: 78.6 MB (78588905 bytes)  
+	-	`sha256:1a908f050cb682799f9b34c283e18e2f0e6d55dd38f3ed477740eb16c10a9a03`  
+		Last Modified: Thu, 16 Apr 2020 22:18:06 GMT  
+		Size: 78.6 MB (78588737 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:465028cfa76048d200937272a38edad6a02e2d140db1816102be98122ff83f05`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 11.2 KB (11167 bytes)  
+	-	`sha256:0b861befa8d928736a77304f8b28add0cb5e45b0bfc77469083da977d9f2660a`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 11.2 KB (11159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb8f3d42f79128415d2a63c9721cad3a241bb3e287d3a5a041d90fe70d788a87`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 2.0 KB (1955 bytes)  
+	-	`sha256:d0c039d8cb71e345134853b28a092c80267503445260af858b8586d9a9a7160d`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 1.9 KB (1942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:7af6d1185351a113a3a220c296ac0071751074474e694860ae550500f2a352fd
+$ docker pull gcc@sha256:128a2201527cfb0da7ff6f61fc2e1cef35e54b8b46d16064b41984f222f31315
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **389.2 MB (389195074 bytes)**  
+-	Total Size: **389.2 MB (389249653 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b61edab1ba3e575dbd337b16e6f84ed1352d81b74ce3f971d74a5665bac56114`
+-	Image ID: `sha256:146b38cce962b384bd538114b6ab1fb8cfd7bda0785bf683f7c976d815173a0f`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:39:32 GMT
+# Thu, 16 Apr 2020 21:51:54 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:22:06 GMT
+# Thu, 16 Apr 2020 22:33:30 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:22:09 GMT
+# Thu, 16 Apr 2020 22:33:34 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:22:11 GMT
+# Thu, 16 Apr 2020 22:33:36 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecd6b6d0d41a30a1bf487ab0fd97e8c31d806206a2bdba1a254213cd41787b21`  
-		Last Modified: Tue, 31 Mar 2020 23:24:08 GMT  
-		Size: 86.5 MB (86522635 bytes)  
+	-	`sha256:b50a2f2596fbece4155876a44b92f5392a22254aa9c2c8f2bb93867a5f3bf2c7`  
+		Last Modified: Thu, 16 Apr 2020 22:35:39 GMT  
+		Size: 86.5 MB (86523728 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6437998aa6bda35b5f08f969efae30bbc0ff75b1d539da545081c102cf78e40b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 11.4 KB (11358 bytes)  
+	-	`sha256:5ddaffd43a760bddf63fe9fb7dfc5b0e672932025b2daf9addf528ca56100dc2`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 11.3 KB (11322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd14cde8f53859e2b3817f26ea8ad1dcce2ae095944f5ace6041e2a98ec79d0f`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 1.9 KB (1938 bytes)  
+	-	`sha256:26276f00b899da43635337874010f62a99c71c31d653be7f1b96658ec50307d3`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 1.9 KB (1944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9.3` - linux; ppc64le
@@ -4813,7 +4813,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:9.3.0`
 
 ```console
-$ docker pull gcc@sha256:fa0f1c44d0f2a28980f4e0b834524c20e4722f009c45e2f3674aee5be94376a5
+$ docker pull gcc@sha256:d4d887258b895b6728873c8f65484fbcf178eef9770f6c80d1dc5e4e10aa44d6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4992,165 +4992,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:9.3.0` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:ae318ee9c7d9cab787915a09ac020ed30da4a2be29673626047b8f24a8f7bb5c
+$ docker pull gcc@sha256:036b4ea797884f8131376e7e27991c4b5834f245e4d21c34177ced9ebc9611a9
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **356.6 MB (356619006 bytes)**  
+-	Total Size: **356.6 MB (356648351 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e17f42aa3a00279a40a26e8e273ae0007725a1b847be5e023d5bb6d72a52c35d`
+-	Image ID: `sha256:8dd6e80434aaf079cd62761aab94e79ff639a4abc71a1600b9202d05e108028b`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:36:40 GMT
+# Thu, 16 Apr 2020 21:24:02 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:24:24 GMT
+# Thu, 16 Apr 2020 22:14:51 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:24:30 GMT
+# Thu, 16 Apr 2020 22:14:55 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:24:35 GMT
+# Thu, 16 Apr 2020 22:14:59 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97c7b2b7b05855498fe8fdde4aee9526c51b2220cfc661223cc94c2d7590ac04`  
-		Last Modified: Tue, 31 Mar 2020 23:27:04 GMT  
-		Size: 78.6 MB (78588905 bytes)  
+	-	`sha256:1a908f050cb682799f9b34c283e18e2f0e6d55dd38f3ed477740eb16c10a9a03`  
+		Last Modified: Thu, 16 Apr 2020 22:18:06 GMT  
+		Size: 78.6 MB (78588737 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:465028cfa76048d200937272a38edad6a02e2d140db1816102be98122ff83f05`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 11.2 KB (11167 bytes)  
+	-	`sha256:0b861befa8d928736a77304f8b28add0cb5e45b0bfc77469083da977d9f2660a`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 11.2 KB (11159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb8f3d42f79128415d2a63c9721cad3a241bb3e287d3a5a041d90fe70d788a87`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 2.0 KB (1955 bytes)  
+	-	`sha256:d0c039d8cb71e345134853b28a092c80267503445260af858b8586d9a9a7160d`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 1.9 KB (1942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9.3.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:7af6d1185351a113a3a220c296ac0071751074474e694860ae550500f2a352fd
+$ docker pull gcc@sha256:128a2201527cfb0da7ff6f61fc2e1cef35e54b8b46d16064b41984f222f31315
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **389.2 MB (389195074 bytes)**  
+-	Total Size: **389.2 MB (389249653 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b61edab1ba3e575dbd337b16e6f84ed1352d81b74ce3f971d74a5665bac56114`
+-	Image ID: `sha256:146b38cce962b384bd538114b6ab1fb8cfd7bda0785bf683f7c976d815173a0f`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:39:32 GMT
+# Thu, 16 Apr 2020 21:51:54 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:22:06 GMT
+# Thu, 16 Apr 2020 22:33:30 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:22:09 GMT
+# Thu, 16 Apr 2020 22:33:34 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:22:11 GMT
+# Thu, 16 Apr 2020 22:33:36 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecd6b6d0d41a30a1bf487ab0fd97e8c31d806206a2bdba1a254213cd41787b21`  
-		Last Modified: Tue, 31 Mar 2020 23:24:08 GMT  
-		Size: 86.5 MB (86522635 bytes)  
+	-	`sha256:b50a2f2596fbece4155876a44b92f5392a22254aa9c2c8f2bb93867a5f3bf2c7`  
+		Last Modified: Thu, 16 Apr 2020 22:35:39 GMT  
+		Size: 86.5 MB (86523728 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6437998aa6bda35b5f08f969efae30bbc0ff75b1d539da545081c102cf78e40b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 11.4 KB (11358 bytes)  
+	-	`sha256:5ddaffd43a760bddf63fe9fb7dfc5b0e672932025b2daf9addf528ca56100dc2`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 11.3 KB (11322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd14cde8f53859e2b3817f26ea8ad1dcce2ae095944f5ace6041e2a98ec79d0f`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 1.9 KB (1938 bytes)  
+	-	`sha256:26276f00b899da43635337874010f62a99c71c31d653be7f1b96658ec50307d3`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 1.9 KB (1944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9.3.0` - linux; ppc64le
@@ -5320,7 +5320,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:latest`
 
 ```console
-$ docker pull gcc@sha256:fa0f1c44d0f2a28980f4e0b834524c20e4722f009c45e2f3674aee5be94376a5
+$ docker pull gcc@sha256:d4d887258b895b6728873c8f65484fbcf178eef9770f6c80d1dc5e4e10aa44d6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5499,165 +5499,165 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:latest` - linux; arm variant v7
 
 ```console
-$ docker pull gcc@sha256:ae318ee9c7d9cab787915a09ac020ed30da4a2be29673626047b8f24a8f7bb5c
+$ docker pull gcc@sha256:036b4ea797884f8131376e7e27991c4b5834f245e4d21c34177ced9ebc9611a9
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **356.6 MB (356619006 bytes)**  
+-	Total Size: **356.6 MB (356648351 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e17f42aa3a00279a40a26e8e273ae0007725a1b847be5e023d5bb6d72a52c35d`
+-	Image ID: `sha256:8dd6e80434aaf079cd62761aab94e79ff639a4abc71a1600b9202d05e108028b`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 01:47:44 GMT
-ADD file:57841d22461f051368fcd3488aab2f2ce27ec7583af772026a228feeb5d00cd9 in / 
-# Tue, 31 Mar 2020 01:47:47 GMT
+# Thu, 16 Apr 2020 00:59:14 GMT
+ADD file:c2369e5669e570f90abaa1fd4fcea4ae1e6654bbd81e8fa070a5b2484c03ee74 in / 
+# Thu, 16 Apr 2020 00:59:15 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 03:38:12 GMT
+# Thu, 16 Apr 2020 01:38:22 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:38:29 GMT
+# Thu, 16 Apr 2020 01:38:36 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 03:39:16 GMT
+# Thu, 16 Apr 2020 01:39:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 03:41:45 GMT
+# Thu, 16 Apr 2020 01:42:11 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:08:59 GMT
+# Thu, 16 Apr 2020 19:49:06 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:09:00 GMT
+# Thu, 16 Apr 2020 19:49:07 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:09:03 GMT
+# Thu, 16 Apr 2020 19:49:10 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:09:04 GMT
+# Thu, 16 Apr 2020 19:49:11 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:36:40 GMT
+# Thu, 16 Apr 2020 21:24:02 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:24:24 GMT
+# Thu, 16 Apr 2020 22:14:51 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:24:30 GMT
+# Thu, 16 Apr 2020 22:14:55 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:24:35 GMT
+# Thu, 16 Apr 2020 22:14:59 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a893843c75627d21c8a132a2b8559c62371e185dc82e30169102b547264b4f20`  
-		Last Modified: Tue, 31 Mar 2020 01:56:02 GMT  
-		Size: 45.9 MB (45862803 bytes)  
+	-	`sha256:020b29c91094d59c5eb128b7bc2b0b835e2ba4414358664e467428fe8b95bf52`  
+		Last Modified: Thu, 16 Apr 2020 01:08:38 GMT  
+		Size: 45.9 MB (45864371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dc1ccae1d4101dbc423377c1f13fb143fc7f5f566816f142268a0b9eede632c`  
-		Last Modified: Tue, 31 Mar 2020 04:00:06 GMT  
-		Size: 7.1 MB (7096554 bytes)  
+	-	`sha256:f878eece65f73163f26e0755d7bf2d0280b635e9354ee5ac677dd0e1c3b9f485`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 7.1 MB (7096553 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1d70cde97b6034a1ace45418fd5089f2085511e27ce09ceecf11de34da5f286`  
-		Last Modified: Tue, 31 Mar 2020 04:00:05 GMT  
-		Size: 9.3 MB (9343329 bytes)  
+	-	`sha256:070c5585774beab3cf31d2f66df886bd4295763a00c5f013aab32f261a9559fb`  
+		Last Modified: Thu, 16 Apr 2020 01:56:53 GMT  
+		Size: 9.3 MB (9343267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0366079d8c5e32134b3904853bf6d4d06f84f999018179add69b5cc225bf6194`  
-		Last Modified: Tue, 31 Mar 2020 04:00:30 GMT  
-		Size: 47.3 MB (47315564 bytes)  
+	-	`sha256:e454adb17af2402de86f3b7834eb2d85a7ab8d1199be3963a7ddf802e25a5480`  
+		Last Modified: Thu, 16 Apr 2020 01:57:17 GMT  
+		Size: 47.3 MB (47343806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59ad4e0176e960edef3cfe18dba1604d1f3a1796121d15ae58ebe789daf3d3de`  
-		Last Modified: Tue, 31 Mar 2020 04:01:34 GMT  
-		Size: 168.4 MB (168387138 bytes)  
+	-	`sha256:4738ef48ef8e257a70acb1ee91104ca66fe43781630b6fe4ed8ce6dc244c918a`  
+		Last Modified: Thu, 16 Apr 2020 01:58:08 GMT  
+		Size: 168.4 MB (168386912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bb8f5deb54affc38c701d94d3d070b271bd878510834ca2712891646d79c42b`  
-		Last Modified: Tue, 31 Mar 2020 23:25:19 GMT  
-		Size: 11.6 KB (11591 bytes)  
+	-	`sha256:a28ca17d612987dc355a8b03c64c291f810902d7c3ad694660a97424a8d73877`  
+		Last Modified: Thu, 16 Apr 2020 22:16:25 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97c7b2b7b05855498fe8fdde4aee9526c51b2220cfc661223cc94c2d7590ac04`  
-		Last Modified: Tue, 31 Mar 2020 23:27:04 GMT  
-		Size: 78.6 MB (78588905 bytes)  
+	-	`sha256:1a908f050cb682799f9b34c283e18e2f0e6d55dd38f3ed477740eb16c10a9a03`  
+		Last Modified: Thu, 16 Apr 2020 22:18:06 GMT  
+		Size: 78.6 MB (78588737 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:465028cfa76048d200937272a38edad6a02e2d140db1816102be98122ff83f05`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 11.2 KB (11167 bytes)  
+	-	`sha256:0b861befa8d928736a77304f8b28add0cb5e45b0bfc77469083da977d9f2660a`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 11.2 KB (11159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb8f3d42f79128415d2a63c9721cad3a241bb3e287d3a5a041d90fe70d788a87`  
-		Last Modified: Tue, 31 Mar 2020 23:26:38 GMT  
-		Size: 2.0 KB (1955 bytes)  
+	-	`sha256:d0c039d8cb71e345134853b28a092c80267503445260af858b8586d9a9a7160d`  
+		Last Modified: Thu, 16 Apr 2020 22:17:34 GMT  
+		Size: 1.9 KB (1942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull gcc@sha256:7af6d1185351a113a3a220c296ac0071751074474e694860ae550500f2a352fd
+$ docker pull gcc@sha256:128a2201527cfb0da7ff6f61fc2e1cef35e54b8b46d16064b41984f222f31315
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **389.2 MB (389195074 bytes)**  
+-	Total Size: **389.2 MB (389249653 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b61edab1ba3e575dbd337b16e6f84ed1352d81b74ce3f971d74a5665bac56114`
+-	Image ID: `sha256:146b38cce962b384bd538114b6ab1fb8cfd7bda0785bf683f7c976d815173a0f`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 31 Mar 2020 02:05:07 GMT
-ADD file:d0df7ac13226f8d35c078941a20d8a465b09a4e226c5ca37709fa23599cd56dc in / 
-# Tue, 31 Mar 2020 02:05:09 GMT
+# Thu, 16 Apr 2020 02:41:20 GMT
+ADD file:02afb66e938cbc67271aaf8cbee75def87458a21d961d02e86383e0ed36b0c71 in / 
+# Thu, 16 Apr 2020 02:41:24 GMT
 CMD ["bash"]
-# Tue, 31 Mar 2020 04:33:05 GMT
+# Thu, 16 Apr 2020 03:13:43 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:33:18 GMT
+# Thu, 16 Apr 2020 03:13:55 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 04:33:56 GMT
+# Thu, 16 Apr 2020 03:14:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 04:36:32 GMT
+# Thu, 16 Apr 2020 03:16:52 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 31 Mar 2020 21:25:35 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 31 Mar 2020 21:25:36 GMT
+# Thu, 16 Apr 2020 20:27:33 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Tue, 31 Mar 2020 21:25:43 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Tue, 31 Mar 2020 21:25:44 GMT
+# Thu, 16 Apr 2020 20:27:37 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Tue, 31 Mar 2020 22:39:32 GMT
+# Thu, 16 Apr 2020 21:51:54 GMT
 ENV GCC_VERSION=9.3.0
-# Tue, 31 Mar 2020 23:22:06 GMT
+# Thu, 16 Apr 2020 22:33:30 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 31 Mar 2020 23:22:09 GMT
+# Thu, 16 Apr 2020 22:33:34 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Tue, 31 Mar 2020 23:22:11 GMT
+# Thu, 16 Apr 2020 22:33:36 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:5767fbcc7692f25971758138978eed9bd3add831a79561cd58bf281e60a5159f`  
-		Last Modified: Tue, 31 Mar 2020 02:11:54 GMT  
-		Size: 49.2 MB (49169998 bytes)  
+	-	`sha256:d080dad46627d4103daddf54c89f2ef0a0b72ba8270066c50e95ffbf4a79362e`  
+		Last Modified: Thu, 16 Apr 2020 02:48:36 GMT  
+		Size: 49.2 MB (49169521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b632de0573ae234fd668631d1aba00e13ea3a66cdd1732e58533b119480e4e9`  
-		Last Modified: Tue, 31 Mar 2020 04:46:42 GMT  
-		Size: 7.7 MB (7681336 bytes)  
+	-	`sha256:0d8c76f347939ef96b2815e45f9fa43995940a8d4a01525012b2bce1adcbfc3a`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 7.7 MB (7681332 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84f852028d4482a56b904b98dfe16c9781cb55380b9a7f6b6cf59622e3ef0de0`  
-		Last Modified: Tue, 31 Mar 2020 04:46:38 GMT  
-		Size: 10.0 MB (9983948 bytes)  
+	-	`sha256:454b6b37aa5fec6dcadc18e45dc6d58e4cf4b967540152c4f44030737e2f5351`  
+		Last Modified: Thu, 16 Apr 2020 03:27:53 GMT  
+		Size: 10.0 MB (9983908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ac5b037e60412fbff475fee9a38acf16d3117f0709631a272dd03197bf45378`  
-		Last Modified: Tue, 31 Mar 2020 04:47:07 GMT  
-		Size: 52.1 MB (52102789 bytes)  
+	-	`sha256:0caa3b2294305ed3cf1d91d1fe2e2dbf3e294a694a4f636dea6bf733975e237a`  
+		Last Modified: Thu, 16 Apr 2020 03:28:16 GMT  
+		Size: 52.2 MB (52155917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa75c42217ab345f45884ba59a72cd4358c8440e2ded8b877bfb9072ac5f61a4`  
-		Last Modified: Tue, 31 Mar 2020 04:48:01 GMT  
-		Size: 183.7 MB (183709470 bytes)  
+	-	`sha256:781c72d22e41051b6112fcf26da1ff478afa45e9da91b07bad2dfd425666c2b4`  
+		Last Modified: Thu, 16 Apr 2020 03:29:13 GMT  
+		Size: 183.7 MB (183710378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff722e5149e90cbccf9da05b90759a51b19877c2b65cec8f258e6ab486258145`  
-		Last Modified: Tue, 31 Mar 2020 23:22:33 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:c1d2397b23eca338fb0fd47b68a8b5e9ec48412dd270fe1b49080ff0bfbad8fe`  
+		Last Modified: Thu, 16 Apr 2020 22:33:58 GMT  
+		Size: 11.6 KB (11603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecd6b6d0d41a30a1bf487ab0fd97e8c31d806206a2bdba1a254213cd41787b21`  
-		Last Modified: Tue, 31 Mar 2020 23:24:08 GMT  
-		Size: 86.5 MB (86522635 bytes)  
+	-	`sha256:b50a2f2596fbece4155876a44b92f5392a22254aa9c2c8f2bb93867a5f3bf2c7`  
+		Last Modified: Thu, 16 Apr 2020 22:35:39 GMT  
+		Size: 86.5 MB (86523728 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6437998aa6bda35b5f08f969efae30bbc0ff75b1d539da545081c102cf78e40b`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 11.4 KB (11358 bytes)  
+	-	`sha256:5ddaffd43a760bddf63fe9fb7dfc5b0e672932025b2daf9addf528ca56100dc2`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 11.3 KB (11322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd14cde8f53859e2b3817f26ea8ad1dcce2ae095944f5ace6041e2a98ec79d0f`  
-		Last Modified: Tue, 31 Mar 2020 23:23:41 GMT  
-		Size: 1.9 KB (1938 bytes)  
+	-	`sha256:26276f00b899da43635337874010f62a99c71c31d653be7f1b96658ec50307d3`  
+		Last Modified: Thu, 16 Apr 2020 22:35:16 GMT  
+		Size: 1.9 KB (1944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:latest` - linux; ppc64le
