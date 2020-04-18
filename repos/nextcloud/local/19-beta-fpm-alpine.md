@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8aefbed23259632477dbf84172449228f41727d51a498e4bdbffdc30a468c3eb`
-- Created: `2020-04-10T20:21:24.338276586Z`
-- Virtual Size: ~ 412.06 Mb  
+- Image ID: `sha256:090434035f0030c350b04849b900037cba8ee257200fd9545d11a19278d1eea8`
+- Created: `2020-04-17T16:15:05.227157878Z`
+- Virtual Size: ~ 412.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -16,12 +16,12 @@
   - `PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi`
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
-  - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
+  - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.16`
-  - `PHP_URL=https://www.php.net/get/php-7.3.16.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.16.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=91aaee3dbdc71b69b4f3292f9d99211172a2fa926c3f3bbdb0e85dab03dd2bcb`
+  - `PHP_VERSION=7.3.17`
+  - `PHP_URL=https://www.php.net/get/php-7.3.17.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.17.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=6a30304c27f7e7a94538f5ffec599f600ee93aedbbecad8aa4f8bec539b10ad8`
   - `PHP_MD5=`
   - `NEXTCLOUD_VERSION=19.0.0beta2`
 
@@ -251,16 +251,16 @@ LGPL-3.0
 ### `apk` package: `icu-libs`
 
 ```console
-icu-libs-64.2-r0 description:
+icu-libs-64.2-r1 description:
 International Components for Unicode library (libraries)
 
-icu-libs-64.2-r0 webpage:
+icu-libs-64.2-r1 webpage:
 http://www.icu-project.org/
 
-icu-libs-64.2-r0 installed size:
+icu-libs-64.2-r1 installed size:
 32149504
 
-icu-libs-64.2-r0 license:
+icu-libs-64.2-r1 license:
 MIT ICU Unicode-TOU
 
 ```
@@ -812,16 +812,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20200118-r2 description:
+ncurses-libs-6.1_p20200118-r3 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20200118-r2 webpage:
+ncurses-libs-6.1_p20200118-r3 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.1_p20200118-r2 installed size:
+ncurses-libs-6.1_p20200118-r3 installed size:
 507904
 
-ncurses-libs-6.1_p20200118-r2 license:
+ncurses-libs-6.1_p20200118-r3 license:
 MIT
 
 ```
@@ -829,16 +829,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20200118-r2 description:
+ncurses-terminfo-base-6.1_p20200118-r3 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20200118-r2 webpage:
+ncurses-terminfo-base-6.1_p20200118-r3 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.1_p20200118-r2 installed size:
+ncurses-terminfo-base-6.1_p20200118-r3 installed size:
 217088
 
-ncurses-terminfo-base-6.1_p20200118-r2 license:
+ncurses-terminfo-base-6.1_p20200118-r3 license:
 MIT
 
 ```
