@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:caab76bf1dc3ce9c6bfce2e53d2860edcfb9096bd4bc270992a882e6128d1720`
-- Created: `2020-03-20T20:38:24.702547634Z`
-- Virtual Size: ~ 449.36 Mb  
+- Image ID: `sha256:fcb590b96b24bbf5c7ea0f941c1e1d433577b0e54fd2448ebe5c8477b5e7cc43`
+- Created: `2020-04-17T11:21:19.207460853Z`
+- Virtual Size: ~ 449.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -47,13 +47,9 @@ Licenses: (parsed from: `/usr/share/doc/adduser/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris adduser=3.118ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu1.dsc' adduser_3.118ubuntu1.dsc 1808 SHA256:415e093e945d4a37679504f4f54e0fcd903c4f524dd90526440965aea7bba77c
-'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu1.tar.xz' adduser_3.118ubuntu1.tar.xz 217300 SHA256:16e8d59231d814af0701a24195246f169a26df1b39d59e3cea04db882a31973a
-```
 
 ### `dpkg` source package: `alsa-lib=1.2.2-2.1`
 
@@ -425,11 +421,11 @@ $ apt-get source -qq --print-uris e2fsprogs=1.45.5-2ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.5-2ubuntu1.debian.tar.xz' e2fsprogs_1.45.5-2ubuntu1.debian.tar.xz 81528 SHA256:bcf259dd0480b50996580a765fded85f89a0a6041f6c81cbbcce94f58944c51b
 ```
 
-### `dpkg` source package: `expat=2.2.9-1`
+### `dpkg` source package: `expat=2.2.9-1build1`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.9-1`
+- `libexpat1:amd64=2.2.9-1build1`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
@@ -438,7 +434,7 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.9-1
+$ apt-get source -qq --print-uris expat=2.2.9-1build1
 'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9-1build1.dsc' expat_2.2.9-1build1.dsc 1998 SHA256:9f2d2e3bf2aec22907e3bf818fac7acc5f1e917821907bdea016f69a5cfe4da0
 'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9.orig.tar.gz' expat_2.2.9.orig.tar.gz 8273174 SHA256:c341ac8c79e021cc3392a6d76e138e62d1dd287592cb455148540331756a2208
 'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.9-1build1.debian.tar.xz' expat_2.2.9-1build1.debian.tar.xz 10780 SHA256:400872937adfb41255914391a172237cfe317e57f129562ff2ec66773b2b5bbf
@@ -465,20 +461,25 @@ $ apt-get source -qq --print-uris findutils=4.7.0-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.7.0-1ubuntu1.debian.tar.xz' findutils_4.7.0-1ubuntu1.debian.tar.xz 27700 SHA256:dfb2329fd141384c2d76409c2e99f164cc25954115529245d80d5d41e3167731
 ```
 
-### `dpkg` source package: `fontconfig=2.13.1-2ubuntu2`
+### `dpkg` source package: `fontconfig=2.13.1-2ubuntu3`
 
 Binary Packages:
 
-- `fontconfig-config=2.13.1-2ubuntu2`
-- `libfontconfig1:amd64=2.13.1-2ubuntu2`
+- `fontconfig-config=2.13.1-2ubuntu3`
+- `libfontconfig1:amd64=2.13.1-2ubuntu3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris fontconfig=2.13.1-2ubuntu3
+'http://archive.ubuntu.com/ubuntu/pool/main/f/fontconfig/fontconfig_2.13.1-2ubuntu3.dsc' fontconfig_2.13.1-2ubuntu3.dsc 1959 SHA256:a9eebf6e6e88aa64d33fb3852c97718c212579f9714afd67cb6a9b8b116dd7aa
+'http://archive.ubuntu.com/ubuntu/pool/main/f/fontconfig/fontconfig_2.13.1.orig.tar.bz2' fontconfig_2.13.1.orig.tar.bz2 1723639 SHA256:f655dd2a986d7aa97e052261b36aa67b0a64989496361eca8d604e6414006741
+'http://archive.ubuntu.com/ubuntu/pool/main/f/fontconfig/fontconfig_2.13.1-2ubuntu3.debian.tar.xz' fontconfig_2.13.1-2ubuntu3.debian.tar.xz 26344 SHA256:342671f6a1e6d392958a6eec27541c6bdffc6498b469dcc46eca66c9d23a863a
+```
 
 ### `dpkg` source package: `fonts-dejavu=2.37-1`
 
@@ -1173,19 +1174,24 @@ $ apt-get source -qq --print-uris libxau=1:1.0.9-0ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxau/libxau_1.0.9-0ubuntu1.diff.gz' libxau_1.0.9-0ubuntu1.diff.gz 15142 SHA256:cf7e9d50c3b3b8dde3486ee6fcf9bb96585e2af32924e91c10c8612e48b5dce5
 ```
 
-### `dpkg` source package: `libxcb=1.13.1-5build1`
+### `dpkg` source package: `libxcb=1.14-2`
 
 Binary Packages:
 
-- `libxcb1:amd64=1.13.1-5build1`
+- `libxcb1:amd64=1.14-2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libxcb=1.14-2
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.14-2.dsc' libxcb_1.14-2.dsc 5344 SHA256:997dfadefa35a243a7160b62d628bb25e45439f61687459d581502905bcf1fb2
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.14.orig.tar.gz' libxcb_1.14.orig.tar.gz 640322 SHA256:2c7fcddd1da34d9b238c9caeda20d3bd7486456fc50b3cc6567185dbd5b0ad02
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.14-2.diff.gz' libxcb_1.14-2.diff.gz 25716 SHA256:92d7e0a80c3c7f2a5b5afd0c0702183f1c483338d678d67d8d0e61fd8989ba85
+```
 
 ### `dpkg` source package: `libxcrypt=1:4.4.10-10ubuntu4`
 
@@ -1457,23 +1463,24 @@ $ apt-get source -qq --print-uris npth=1.6-1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/npth/npth_1.6-1.debian.tar.xz' npth_1.6-1.debian.tar.xz 10532 SHA256:d312d4a3cf1d082e2f2cf3ea752c41d34f7e120f77a941c6c1680e6093834353
 ```
 
-### `dpkg` source package: `nspr=2:4.24-1`
+### `dpkg` source package: `nspr=2:4.25-1`
 
 Binary Packages:
 
-- `libnspr4:amd64=2:4.24-1`
+- `libnspr4:amd64=2:4.25-1`
 
 Licenses: (parsed from: `/usr/share/doc/libnspr4/copyright`)
 
 - `MPL-2.0`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/nspr/2:4.24-1/
-
+```console
+$ apt-get source -qq --print-uris nspr=2:4.25-1
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nspr/nspr_4.25-1.dsc' nspr_4.25-1.dsc 1988 SHA256:ce30a697467b115fb2fe9d909ed4ca03ef0a03bef5aaa89be770bc6ef195e98b
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nspr/nspr_4.25.orig.tar.gz' nspr_4.25.orig.tar.gz 1079633 SHA256:0bc309be21f91da4474c56df90415101c7f0c7c7cab2943cd943cd7896985256
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nspr/nspr_4.25-1.debian.tar.xz' nspr_4.25-1.debian.tar.xz 10684 SHA256:c0d680968c3bb80f3c66e658a29c27608f22923bfcabccbac11fc5ff40f96d08
+```
 
 ### `dpkg` source package: `nss=2:3.49.1-1ubuntu1`
 
@@ -1529,15 +1536,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1d-2ubuntu6
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1d-2ubuntu6.dsc' openssl_1.1.1d-2ubuntu6.dsc 2702 SHA256:8c36ae00a404ccfb08a889a6438da89c97839404e4fc3ec2ad7f87ddf19e26fa
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1d-2ubuntu6.debian.tar.xz' openssl_1.1.1d-2ubuntu6.debian.tar.xz 1206416 SHA256:92d1e09cf0021a8de3712d4608d38d33bd2cb645932ef66177d2a3955d3f136b
-```
 
 ### `dpkg` source package: `p11-kit=0.23.20-1build1`
 
@@ -1736,11 +1737,11 @@ $ apt-get source -qq --print-uris readline=8.0-4
 'http://archive.ubuntu.com/ubuntu/pool/main/r/readline/readline_8.0-4.debian.tar.xz' readline_8.0-4.debian.tar.xz 30408 SHA256:60ed18dab6d6b7fc998a263d917f06d9cce6e1ccd19cd8bf4a9d33c5350cf8d6
 ```
 
-### `dpkg` source package: `sapmachine-14-jdk=14`
+### `dpkg` source package: `sapmachine-14-jdk=14.0.1`
 
 Binary Packages:
 
-- `sapmachine-14-jdk=14`
+- `sapmachine-14-jdk=14.0.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
