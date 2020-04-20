@@ -1,7 +1,7 @@
 ## `python:2-alpine3.10`
 
 ```console
-$ docker pull python@sha256:7847a79a67a40f0fa6654e3b4a7eec197ed7fd782f007dc0efc6c0a57cd6da8f
+$ docker pull python@sha256:a69112ef85c0cb84921897cef924a73a90bcbda396bbca049f000cc4050c9cc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -265,14 +265,14 @@ CMD ["python2"]
 ### `python:2-alpine3.10` - linux; 386
 
 ```console
-$ docker pull python@sha256:05a4df79dcc5469c9d36ffb099972c30cd90ec2d0fc51b9fe7ad637b1f630142
+$ docker pull python@sha256:1dff1cd4523d40ab50040cc96c209384cd16058b527b29c152111cb3ba72f3c0
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **24.2 MB (24229765 bytes)**  
+-	Total Size: **23.8 MB (23800635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9f43c3b5effb8ef4246ef7589c177eb3237262156b84941fe8dc482975264bea`
+-	Image ID: `sha256:7e8ff2430e8fdbadf8295490c9069bbc8aff6cc34f6c5011a03410b408465308`
 -	Default Command: `["python2"]`
 
 ```dockerfile
@@ -290,19 +290,19 @@ ENV PYTHONIOENCODING=UTF-8
 RUN apk add --no-cache ca-certificates
 # Fri, 24 Jan 2020 03:34:16 GMT
 ENV GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF
-# Fri, 24 Jan 2020 03:34:16 GMT
-ENV PYTHON_VERSION=2.7.17
-# Fri, 24 Jan 2020 03:40:05 GMT
+# Mon, 20 Apr 2020 19:02:37 GMT
+ENV PYTHON_VERSION=2.7.18
+# Mon, 20 Apr 2020 19:09:17 GMT
 RUN set -ex 	&& apk add --no-cache --virtual .fetch-deps 		gnupg 		tar 		xz 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& apk add --no-cache --virtual .build-deps  		bzip2-dev 		coreutils 		dpkg-dev dpkg 		expat-dev 		findutils 		gcc 		gdbm-dev 		libc-dev 		libffi-dev 		libnsl-dev 		libtirpc-dev 		linux-headers 		make 		ncurses-dev 		openssl-dev 		pax-utils 		readline-dev 		sqlite-dev 		tcl-dev 		tk 		tk-dev 		zlib-dev 	&& apk del .fetch-deps 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--enable-unicode=ucs4 		--with-system-expat 		--with-system-ffi 	&& make -j "$(nproc)" 		EXTRA_CFLAGS="-DTHREAD_STACK_SIZE=0x100000" 		PROFILE_TASK='-m test.regrtest --pgo 			test_array 			test_base64 			test_binascii 			test_binhex 			test_binop 			test_bytes 			test_c_locale_coercion 			test_class 			test_cmath 			test_codecs 			test_compile 			test_complex 			test_csv 			test_decimal 			test_dict 			test_float 			test_fstring 			test_hashlib 			test_io 			test_iter 			test_json 			test_long 			test_math 			test_memoryview 			test_pickle 			test_re 			test_set 			test_slice 			test_struct 			test_threading 			test_time 			test_traceback 			test_unicode 		' 	&& make install 		&& find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';' 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		| xargs -rt apk add --no-cache --virtual .python-rundeps 	&& apk del .build-deps 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' + 	&& rm -rf /usr/src/python 		&& python2 --version
-# Sat, 25 Jan 2020 02:03:24 GMT
+# Mon, 20 Apr 2020 19:09:17 GMT
 ENV PYTHON_PIP_VERSION=20.0.2
-# Thu, 06 Feb 2020 00:54:36 GMT
+# Mon, 20 Apr 2020 19:09:18 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/d59197a3c169cef378a22428a3fa99d33e080a5d/get-pip.py
-# Thu, 06 Feb 2020 00:54:37 GMT
+# Mon, 20 Apr 2020 19:09:18 GMT
 ENV PYTHON_GET_PIP_SHA256=421ac1d44c0cf9730a088e337867d974b91bdce4ea2636099275071878cc189e
-# Thu, 06 Feb 2020 00:54:43 GMT
+# Mon, 20 Apr 2020 19:09:25 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Thu, 06 Feb 2020 00:54:43 GMT
+# Mon, 20 Apr 2020 19:09:25 GMT
 CMD ["python2"]
 ```
 
@@ -315,13 +315,13 @@ CMD ["python2"]
 		Last Modified: Fri, 24 Jan 2020 03:44:53 GMT  
 		Size: 302.3 KB (302331 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b2f643d55ebf53e59f401e4a6fe4d6f4e83ace48de029cc0f379a803beb60e7`  
-		Last Modified: Fri, 24 Jan 2020 03:44:57 GMT  
-		Size: 19.3 MB (19253701 bytes)  
+	-	`sha256:411b501c5aa2c1cc61c07a97b408b4e105e206fad22f2adff8032326b98a5458`  
+		Last Modified: Mon, 20 Apr 2020 19:11:33 GMT  
+		Size: 18.8 MB (18824439 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a1457d48d84df2264d2204d6256cdba6497f5bc708ea86ac0d1e7f90fd9ef09`  
-		Last Modified: Thu, 06 Feb 2020 00:58:45 GMT  
-		Size: 1.9 MB (1887872 bytes)  
+	-	`sha256:392ccb92ddbf89b36c4c3054411fd0fde67dac9808bb7ea99bff0f3eda61d964`  
+		Last Modified: Mon, 20 Apr 2020 19:11:27 GMT  
+		Size: 1.9 MB (1888004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:2-alpine3.10` - linux; ppc64le
