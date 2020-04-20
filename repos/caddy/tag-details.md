@@ -5,9 +5,15 @@
 -	[`caddy:2.0.0-rc.3`](#caddy200-rc3)
 -	[`caddy:2.0.0-rc.3-alpine`](#caddy200-rc3-alpine)
 -	[`caddy:2.0.0-rc.3-builder`](#caddy200-rc3-builder)
+-	[`caddy:2.0.0-rc.3-windowsservercore`](#caddy200-rc3-windowsservercore)
+-	[`caddy:2.0.0-rc.3-windowsservercore-1809`](#caddy200-rc3-windowsservercore-1809)
+-	[`caddy:2.0.0-rc.3-windowsservercore-ltsc2016`](#caddy200-rc3-windowsservercore-ltsc2016)
 -	[`caddy:alpine`](#caddyalpine)
 -	[`caddy:builder`](#caddybuilder)
 -	[`caddy:latest`](#caddylatest)
+-	[`caddy:windowsservercore`](#caddywindowsservercore)
+-	[`caddy:windowsservercore-1809`](#caddywindowsservercore-1809)
+-	[`caddy:windowsservercore-ltsc2016`](#caddywindowsservercore-ltsc2016)
 
 ## `caddy:2.0.0-rc.3`
 
@@ -1080,6 +1086,18 @@ WORKDIR /src/custom-caddy/cmd/caddy
 		Size: 183.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `caddy:2.0.0-rc.3-windowsservercore`
+
+**does not exist** (yet?)
+
+## `caddy:2.0.0-rc.3-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `caddy:2.0.0-rc.3-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `caddy:alpine`
 
 ```console
@@ -2150,3 +2168,15 @@ CMD ["caddy" "run" "--config" "/etc/caddy/Caddyfile" "--adapter" "caddyfile"]
 		Last Modified: Thu, 16 Apr 2020 00:40:15 GMT  
 		Size: 22.1 MB (22061857 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `caddy:windowsservercore`
+
+**does not exist** (yet?)
+
+## `caddy:windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `caddy:windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
