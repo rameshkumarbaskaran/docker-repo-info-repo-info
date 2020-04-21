@@ -1,7 +1,7 @@
 ## `buildpack-deps:bionic`
 
 ```console
-$ docker pull buildpack-deps@sha256:bcbaac1727cec5ea06cc78a62135cd47c8f87c195446579273f7cd6a4cdd831c
+$ docker pull buildpack-deps@sha256:b5cd716a31436b1e02f4125f32701f500ea31432ad517387b9a0780557bd1795
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -288,14 +288,14 @@ RUN set -ex; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive 	apt-get install -
 ### `buildpack-deps:bionic` - linux; ppc64le
 
 ```console
-$ docker pull buildpack-deps@sha256:55ae349eeb85bb8a3c1a1c86c95ed4cac04cff17167ab186b8a1a919af4af009
+$ docker pull buildpack-deps@sha256:5cc9d01ddf6c5b390650daaaa21e7132588d0bc74150cbf41af2a35f7b2efbf2
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **245.4 MB (245429537 bytes)**  
+-	Total Size: **246.1 MB (246139404 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:324d244361e296bff8102fcfa93486eda89804f2b7bd138a2ccba2846f88acde`
+-	Image ID: `sha256:66953cb64e1b9a75f2124274605c8b0f0f7d4ac0475128095c02c170d02d5657`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
@@ -315,8 +315,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificat
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 # Fri, 20 Mar 2020 20:15:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Fri, 20 Mar 2020 20:24:35 GMT
-RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
+# Tue, 21 Apr 2020 01:42:26 GMT
+RUN set -ex; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
 ```
 
 -	Layers:
@@ -348,9 +348,9 @@ RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		auto
 		Last Modified: Fri, 20 Mar 2020 20:52:09 GMT  
 		Size: 53.6 MB (53586557 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bdc4f5442fec9a8348ee741f968a3ee5e0028dbf6c0a31c1a80599e14bc5f54`  
-		Last Modified: Fri, 20 Mar 2020 20:52:50 GMT  
-		Size: 151.3 MB (151252084 bytes)  
+	-	`sha256:63e6d1c628b524105757dd6cd9e878dbcef61ae4a667c443b50c105ae3888e9e`  
+		Last Modified: Tue, 21 Apr 2020 02:45:02 GMT  
+		Size: 152.0 MB (151961951 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `buildpack-deps:bionic` - linux; s390x
