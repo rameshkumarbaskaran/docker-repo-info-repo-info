@@ -1,10 +1,10 @@
-# `openjdk:15-ea-18-jdk-buster`
+# `openjdk:15-ea-19-jdk-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5762e4b33d30c2a027571b05630920fa5ecf1de435dcac91e3050ea74a1d73b9`
-- Created: `2020-04-16T10:15:56.026729704Z`
-- Virtual Size: ~ 664.66 Mb  
+- Image ID: `sha256:0a009abc0fda121116cb9550f9bab88b594f5ac83d359890efa76a36c66d548a`
+- Created: `2020-04-20T18:26:30.763636963Z`
+- Virtual Size: ~ 664.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-15`
-  - `JAVA_VERSION=15-ea+18`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk15/18/GPL/openjdk-15-ea+18_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=b5a60c62d325c8808978848fd7e21f2cce765ae97cf8361a7e136b36b6bd73bf`
+  - `JAVA_VERSION=15-ea+19`
+  - `JAVA_URL=https://download.java.net/java/early_access/jdk15/19/GPL/openjdk-15-ea+19_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=bb111954337ae9a48c7928f5638096c82d681a20a64f630efaebf2172bf7c924`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -945,20 +945,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.20.1-2+deb10u2
-'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1-2+deb10u2.dsc' git_2.20.1-2+deb10u2.dsc 2923 SHA256:6aabffbb0392172cbe82c9f585c0e7b7a98e1741d7280310f212e44e1731413a
-'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1.orig.tar.xz' git_2.20.1.orig.tar.xz 5359872 SHA256:9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9
-'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1-2+deb10u2.debian.tar.xz' git_2.20.1-2+deb10u2.debian.tar.xz 636904 SHA256:6ab6020d82ef9991c4fe2bc1bc2c517c744c21e0e541a094e1952dff39c55357
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.20.1-2+deb10u2/
 
-- https://sources.debian.net/src/git/1:2.20.1-2+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.20.1-2+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.20.1-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.28-10`
 
