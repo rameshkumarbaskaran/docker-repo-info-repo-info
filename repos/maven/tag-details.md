@@ -5,6 +5,13 @@
 -	[`maven:3`](#maven3)
 -	[`maven:3.6`](#maven36)
 -	[`maven:3.6.3`](#maven363)
+-	[`maven:3.6.3-adoptopenjdk`](#maven363-adoptopenjdk)
+-	[`maven:3.6.3-adoptopenjdk-11`](#maven363-adoptopenjdk-11)
+-	[`maven:3.6.3-adoptopenjdk-11-openj9`](#maven363-adoptopenjdk-11-openj9)
+-	[`maven:3.6.3-adoptopenjdk-14`](#maven363-adoptopenjdk-14)
+-	[`maven:3.6.3-adoptopenjdk-14-openj9`](#maven363-adoptopenjdk-14-openj9)
+-	[`maven:3.6.3-adoptopenjdk-8`](#maven363-adoptopenjdk-8)
+-	[`maven:3.6.3-adoptopenjdk-8-openj9`](#maven363-adoptopenjdk-8-openj9)
 -	[`maven:3.6.3-amazoncorretto`](#maven363-amazoncorretto)
 -	[`maven:3.6.3-amazoncorretto-11`](#maven363-amazoncorretto-11)
 -	[`maven:3.6.3-amazoncorretto-8`](#maven363-amazoncorretto-8)
@@ -19,8 +26,22 @@
 -	[`maven:3.6.3-jdk-8`](#maven363-jdk-8)
 -	[`maven:3.6.3-jdk-8-openj9`](#maven363-jdk-8-openj9)
 -	[`maven:3.6.3-jdk-8-slim`](#maven363-jdk-8-slim)
+-	[`maven:3.6.3-openjdk`](#maven363-openjdk)
+-	[`maven:3.6.3-openjdk-11`](#maven363-openjdk-11)
+-	[`maven:3.6.3-openjdk-11-slim`](#maven363-openjdk-11-slim)
+-	[`maven:3.6.3-openjdk-14`](#maven363-openjdk-14)
+-	[`maven:3.6.3-openjdk-14-slim`](#maven363-openjdk-14-slim)
 -	[`maven:3.6.3-openjdk-15`](#maven363-openjdk-15)
+-	[`maven:3.6.3-openjdk-8`](#maven363-openjdk-8)
+-	[`maven:3.6.3-openjdk-8-slim`](#maven363-openjdk-8-slim)
 -	[`maven:3.6.3-slim`](#maven363-slim)
+-	[`maven:3.6-adoptopenjdk`](#maven36-adoptopenjdk)
+-	[`maven:3.6-adoptopenjdk-11`](#maven36-adoptopenjdk-11)
+-	[`maven:3.6-adoptopenjdk-11-openj9`](#maven36-adoptopenjdk-11-openj9)
+-	[`maven:3.6-adoptopenjdk-14`](#maven36-adoptopenjdk-14)
+-	[`maven:3.6-adoptopenjdk-14-openj9`](#maven36-adoptopenjdk-14-openj9)
+-	[`maven:3.6-adoptopenjdk-8`](#maven36-adoptopenjdk-8)
+-	[`maven:3.6-adoptopenjdk-8-openj9`](#maven36-adoptopenjdk-8-openj9)
 -	[`maven:3.6-amazoncorretto`](#maven36-amazoncorretto)
 -	[`maven:3.6-amazoncorretto-11`](#maven36-amazoncorretto-11)
 -	[`maven:3.6-amazoncorretto-8`](#maven36-amazoncorretto-8)
@@ -35,8 +56,22 @@
 -	[`maven:3.6-jdk-8`](#maven36-jdk-8)
 -	[`maven:3.6-jdk-8-openj9`](#maven36-jdk-8-openj9)
 -	[`maven:3.6-jdk-8-slim`](#maven36-jdk-8-slim)
+-	[`maven:3.6-openjdk`](#maven36-openjdk)
+-	[`maven:3.6-openjdk-11`](#maven36-openjdk-11)
+-	[`maven:3.6-openjdk-11-slim`](#maven36-openjdk-11-slim)
+-	[`maven:3.6-openjdk-14`](#maven36-openjdk-14)
+-	[`maven:3.6-openjdk-14-slim`](#maven36-openjdk-14-slim)
 -	[`maven:3.6-openjdk-15`](#maven36-openjdk-15)
+-	[`maven:3.6-openjdk-8`](#maven36-openjdk-8)
+-	[`maven:3.6-openjdk-8-slim`](#maven36-openjdk-8-slim)
 -	[`maven:3.6-slim`](#maven36-slim)
+-	[`maven:3-adoptopenjdk`](#maven3-adoptopenjdk)
+-	[`maven:3-adoptopenjdk-11`](#maven3-adoptopenjdk-11)
+-	[`maven:3-adoptopenjdk-11-openj9`](#maven3-adoptopenjdk-11-openj9)
+-	[`maven:3-adoptopenjdk-14`](#maven3-adoptopenjdk-14)
+-	[`maven:3-adoptopenjdk-14-openj9`](#maven3-adoptopenjdk-14-openj9)
+-	[`maven:3-adoptopenjdk-8`](#maven3-adoptopenjdk-8)
+-	[`maven:3-adoptopenjdk-8-openj9`](#maven3-adoptopenjdk-8-openj9)
 -	[`maven:3-amazoncorretto`](#maven3-amazoncorretto)
 -	[`maven:3-amazoncorretto-11`](#maven3-amazoncorretto-11)
 -	[`maven:3-amazoncorretto-8`](#maven3-amazoncorretto-8)
@@ -50,11 +85,20 @@
 -	[`maven:3-jdk-8`](#maven3-jdk-8)
 -	[`maven:3-jdk-8-openj9`](#maven3-jdk-8-openj9)
 -	[`maven:3-jdk-8-slim`](#maven3-jdk-8-slim)
+-	[`maven:3-openjdk`](#maven3-openjdk)
+-	[`maven:3-openjdk-11`](#maven3-openjdk-11)
+-	[`maven:3-openjdk-11-slim`](#maven3-openjdk-11-slim)
+-	[`maven:3-openjdk-14`](#maven3-openjdk-14)
+-	[`maven:3-openjdk-14-slim`](#maven3-openjdk-14-slim)
 -	[`maven:3-openjdk-15`](#maven3-openjdk-15)
+-	[`maven:3-openjdk-8`](#maven3-openjdk-8)
+-	[`maven:3-openjdk-8-slim`](#maven3-openjdk-8-slim)
+-	[`maven:adoptopenjdk`](#mavenadoptopenjdk)
 -	[`maven:amazoncorretto`](#mavenamazoncorretto)
 -	[`maven:ibmjava`](#mavenibmjava)
 -	[`maven:ibmjava-alpine`](#mavenibmjava-alpine)
 -	[`maven:latest`](#mavenlatest)
+-	[`maven:openjdk`](#mavenopenjdk)
 -	[`maven:slim`](#mavenslim)
 
 ## `maven:3`
@@ -356,6 +400,34 @@ CMD ["mvn"]
 		Last Modified: Tue, 14 Apr 2020 22:12:43 GMT  
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.6.3-adoptopenjdk`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-adoptopenjdk-11`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-adoptopenjdk-11-openj9`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-adoptopenjdk-14`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-adoptopenjdk-14-openj9`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-adoptopenjdk-8`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-adoptopenjdk-8-openj9`
+
+**does not exist** (yet?)
 
 ## `maven:3.6.3-amazoncorretto`
 
@@ -3295,6 +3367,26 @@ CMD ["mvn"]
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.6.3-openjdk`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-openjdk-11`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-openjdk-11-slim`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-openjdk-14`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-openjdk-14-slim`
+
+**does not exist** (yet?)
+
 ## `maven:3.6.3-openjdk-15`
 
 ```console
@@ -3394,6 +3486,14 @@ CMD ["mvn"]
 		Last Modified: Mon, 20 Apr 2020 19:07:11 GMT  
 		Size: 361.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.6.3-openjdk-8`
+
+**does not exist** (yet?)
+
+## `maven:3.6.3-openjdk-8-slim`
+
+**does not exist** (yet?)
 
 ## `maven:3.6.3-slim`
 
@@ -3607,6 +3707,34 @@ CMD ["mvn"]
 		Last Modified: Fri, 17 Apr 2020 03:36:46 GMT  
 		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.6-adoptopenjdk`
+
+**does not exist** (yet?)
+
+## `maven:3.6-adoptopenjdk-11`
+
+**does not exist** (yet?)
+
+## `maven:3.6-adoptopenjdk-11-openj9`
+
+**does not exist** (yet?)
+
+## `maven:3.6-adoptopenjdk-14`
+
+**does not exist** (yet?)
+
+## `maven:3.6-adoptopenjdk-14-openj9`
+
+**does not exist** (yet?)
+
+## `maven:3.6-adoptopenjdk-8`
+
+**does not exist** (yet?)
+
+## `maven:3.6-adoptopenjdk-8-openj9`
+
+**does not exist** (yet?)
 
 ## `maven:3.6-amazoncorretto`
 
@@ -6546,6 +6674,26 @@ CMD ["mvn"]
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.6-openjdk`
+
+**does not exist** (yet?)
+
+## `maven:3.6-openjdk-11`
+
+**does not exist** (yet?)
+
+## `maven:3.6-openjdk-11-slim`
+
+**does not exist** (yet?)
+
+## `maven:3.6-openjdk-14`
+
+**does not exist** (yet?)
+
+## `maven:3.6-openjdk-14-slim`
+
+**does not exist** (yet?)
+
 ## `maven:3.6-openjdk-15`
 
 ```console
@@ -6645,6 +6793,14 @@ CMD ["mvn"]
 		Last Modified: Mon, 20 Apr 2020 19:07:11 GMT  
 		Size: 361.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.6-openjdk-8`
+
+**does not exist** (yet?)
+
+## `maven:3.6-openjdk-8-slim`
+
+**does not exist** (yet?)
 
 ## `maven:3.6-slim`
 
@@ -6858,6 +7014,34 @@ CMD ["mvn"]
 		Last Modified: Fri, 17 Apr 2020 03:36:46 GMT  
 		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-adoptopenjdk`
+
+**does not exist** (yet?)
+
+## `maven:3-adoptopenjdk-11`
+
+**does not exist** (yet?)
+
+## `maven:3-adoptopenjdk-11-openj9`
+
+**does not exist** (yet?)
+
+## `maven:3-adoptopenjdk-14`
+
+**does not exist** (yet?)
+
+## `maven:3-adoptopenjdk-14-openj9`
+
+**does not exist** (yet?)
+
+## `maven:3-adoptopenjdk-8`
+
+**does not exist** (yet?)
+
+## `maven:3-adoptopenjdk-8-openj9`
+
+**does not exist** (yet?)
 
 ## `maven:3-amazoncorretto`
 
@@ -9695,6 +9879,26 @@ CMD ["mvn"]
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-openjdk`
+
+**does not exist** (yet?)
+
+## `maven:3-openjdk-11`
+
+**does not exist** (yet?)
+
+## `maven:3-openjdk-11-slim`
+
+**does not exist** (yet?)
+
+## `maven:3-openjdk-14`
+
+**does not exist** (yet?)
+
+## `maven:3-openjdk-14-slim`
+
+**does not exist** (yet?)
+
 ## `maven:3-openjdk-15`
 
 ```console
@@ -9794,6 +9998,18 @@ CMD ["mvn"]
 		Last Modified: Mon, 20 Apr 2020 19:07:11 GMT  
 		Size: 361.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-openjdk-8`
+
+**does not exist** (yet?)
+
+## `maven:3-openjdk-8-slim`
+
+**does not exist** (yet?)
+
+## `maven:adoptopenjdk`
+
+**does not exist** (yet?)
 
 ## `maven:amazoncorretto`
 
@@ -10572,6 +10788,10 @@ CMD ["mvn"]
 		Last Modified: Tue, 14 Apr 2020 22:12:43 GMT  
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:openjdk`
+
+**does not exist** (yet?)
 
 ## `maven:slim`
 
