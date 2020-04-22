@@ -1,21 +1,21 @@
-# `maven:3.6.3-jdk-11-slim`
+# `maven:3.6.3-openjdk-14-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f80d3f51d58dc4864be7265057588f820ce231845e3b6b8e2d6a50edf2a89cc4`
-- Created: `2020-04-17T09:20:20.939684173Z`
-- Virtual Size: ~ 419.73 Mb  
+- Image ID: `sha256:66ba5bb8f1554278b19ecb162ece6651a5224c7d40393af8b57636794590e5dd`
+- Created: `2020-04-21T18:47:30.130237475Z`
+- Virtual Size: ~ 431.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
 - Command: `["mvn"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.7`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.7%2B10/OpenJDK11U-jdk_`
-  - `JAVA_URL_VERSION=11.0.7_10`
+  - `JAVA_HOME=/usr/java/openjdk-14`
+  - `JAVA_VERSION=14.0.1`
+  - `JAVA_URL=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
 

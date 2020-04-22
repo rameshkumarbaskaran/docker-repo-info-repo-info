@@ -1,10 +1,10 @@
-# `maven:3.6.3-jdk-8-openj9`
+# `maven:3.6.3-adoptopenjdk-14-openj9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d5bf886443a4f48a53c0d7e01f6b101d19b64a8e197ad8ed7948eaeef1e3a42d`
-- Created: `2020-04-20T19:06:04.251453953Z`
-- Virtual Size: ~ 362.90 Mb  
+- Image ID: `sha256:8eb12a68508ddf3f9e61179cf4db9d6073c35ff9ad7948a7419ac81353759123`
+- Created: `2020-04-21T18:48:28.789985554Z`
+- Virtual Size: ~ 431.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u252-b09_openj9-0.20.0`
+  - `JAVA_VERSION=jdk-14.0.1+7_openj9-0.20.0`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle`
   - `MAVEN_HOME=/usr/share/maven`
