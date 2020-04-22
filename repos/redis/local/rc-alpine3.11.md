@@ -1,19 +1,19 @@
-# `redis:6.0-rc3-alpine`
+# `redis:6.0-rc4-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f10d3d1e2d79b07da1b8019ccbade29a44569edbe7c175ddf99ec3f7e448b5cb`
-- Created: `2020-04-01T13:37:37.309157822Z`
-- Virtual Size: ~ 31.49 Mb  
+- Image ID: `sha256:80f9622b43113ca828cacc3533253b06d90e07e34aac2d975563ded8891bc408`
+- Created: `2020-04-20T18:34:41.259062674Z`
+- Virtual Size: ~ 31.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["redis-server"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `REDIS_VERSION=6.0-rc3`
-  - `REDIS_DOWNLOAD_URL=https://github.com/antirez/redis/archive/6.0-rc3.tar.gz`
-  - `REDIS_DOWNLOAD_SHA=a81f92ed0aeb2ecab1488ce916725da1283fa86c3ff43828430e77ce8e612534`
+  - `REDIS_VERSION=6.0-rc4`
+  - `REDIS_DOWNLOAD_URL=https://github.com/antirez/redis/archive/6.0-rc4.tar.gz`
+  - `REDIS_DOWNLOAD_SHA=dac1ad1253337c06adf2af7f6ec7d2f54371e6b37b3c3d1c9d8fb4b7713d12a7`
 
 ## `apk` (`.apk`-based packages)
 
