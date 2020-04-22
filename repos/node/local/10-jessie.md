@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7c7c854268663135eaea9e6be581ca0b60af555190cc80dc3c46f76b4a0942f0`
-- Created: `2020-04-13T23:25:07.167947543Z`
-- Virtual Size: ~ 691.45 Mb  
+- Image ID: `sha256:a1232c87fbccb45a772cfd0fef66ad7a68aff61aca97e3509a8e3b3f658c14c4`
+- Created: `2020-04-21T10:25:33.351695835Z`
+- Virtual Size: ~ 691.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -1324,12 +1324,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gdk-pixbuf/2.31.1-2+deb8u9/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gdk-pixbuf/2.31.1-2+deb8u9/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `git=1:2.1.4-2.1+deb8u8`
+### `dpkg` source package: `git=1:2.1.4-2.1+deb8u9`
 
 Binary Packages:
 
-- `git=1:2.1.4-2.1+deb8u8`
-- `git-man=1:2.1.4-2.1+deb8u8`
+- `git=1:2.1.4-2.1+deb8u9`
+- `git-man=1:2.1.4-2.1+deb8u9`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -1352,13 +1352,20 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris git=1:2.1.4-2.1+deb8u9
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.1.4-2.1+deb8u9.dsc' git_2.1.4-2.1+deb8u9.dsc 2817 SHA256:66b76ef5b296c76061b4ec0a5c990c58da6917b8d07f5ba05fcbed2ac9e3ae68
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.1.4.orig.tar.xz' git_2.1.4.orig.tar.xz 3544804 SHA256:a04968b9b10cbcb31a7054aa3a0d11ac47c83556ecd270ddef1987df5d3d053e
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.1.4-2.1+deb8u9.debian.tar.xz' git_2.1.4-2.1+deb8u9.debian.tar.xz 528040 SHA256:9e68630994676d3fd68ca55c1014114f624ff8cbbdb1d21e789e23ed208610b1
+```
 
-- http://snapshot.debian.org/package/git/1:2.1.4-2.1+deb8u8/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/git/1:2.1.4-2.1+deb8u9/ (for browsing the source)
+- https://sources.debian.net/src/git/1:2.1.4-2.1+deb8u9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/git/1:2.1.4-2.1+deb8u9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.42.1-1+deb8u3`
 
