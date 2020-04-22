@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6aec62b94b0fdc911598bc34b243dff16f1c6293ed300a2480f76c2f00a58d2c`
-- Created: `2020-04-15T00:19:52.943109822Z`
-- Virtual Size: ~ 390.44 Mb  
+- Image ID: `sha256:fca9a3e39e19c7dfba41edf0b29297fd3f28e65a2a2c0afe6b6039a8bb934e29`
+- Created: `2020-04-21T18:51:22.341459641Z`
+- Virtual Size: ~ 390.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -338,16 +338,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/4d436615aefdd0d8a8d45796e199ece0aad2da971ea8e49eadab08174361c568//../../../../../blobstore/712fffd161eb394310f7fe5f7d41ae2aae07cdcce27ca119bf04c6f056eb2b4d/gmp-6.0.0-15.amzn2.0.2.src.rpm
 ```
 
-### `rpm` package: `gnupg2-2.0.22-5.amzn2.0.3.x86_64`
+### `rpm` package: `gnupg2-2.0.22-5.amzn2.0.4.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls gnupg2-2.0.22-5.amzn2.0.3
+$ yumdownloader --quiet --source --urls gnupg2-2.0.22-5.amzn2.0.4
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/4d436615aefdd0d8a8d45796e199ece0aad2da971ea8e49eadab08174361c568//../../../../../blobstore/1462513d101ab1acbeb7c849948ebaeaa282316958d94c0bb97b5fbcdd752199/gnupg2-2.0.22-5.amzn2.0.3.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/4d436615aefdd0d8a8d45796e199ece0aad2da971ea8e49eadab08174361c568//../../../../../blobstore/cf2f89347d3eba84fb17d1d713b4a18aa7b15bfaace0b19464780208135b493f/gnupg2-2.0.22-5.amzn2.0.4.src.rpm
 ```
 
 ### `rpm` package: `gpg-pubkey-b04f24e3-5de94a19`
@@ -908,16 +908,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/4d436615aefdd0d8a8d45796e199ece0aad2da971ea8e49eadab08174361c568//../../../../../blobstore/bb1f52cc8ca35d8145c9e154219a62a0a2c8c02f3252917b27c8ab176f7e368a/openldap-2.4.44-15.amzn2.src.rpm
 ```
 
-### `rpm` package: `openssl-libs-1.0.2k-19.amzn2.0.1.x86_64`
+### `rpm` package: `openssl-libs-1.0.2k-19.amzn2.0.3.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.amzn2.0.1
+$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.amzn2.0.3
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/4d436615aefdd0d8a8d45796e199ece0aad2da971ea8e49eadab08174361c568//../../../../../blobstore/27065039067c5bfb886c7d5f977c376be478154146494f3e99ab2cefa91d1a34/openssl-1.0.2k-19.amzn2.0.1.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/4d436615aefdd0d8a8d45796e199ece0aad2da971ea8e49eadab08174361c568//../../../../../blobstore/4c8d88f25c377a5c97923d9c1edff108f8cff85ac782a3d19414d8817d237d72/openssl-1.0.2k-19.amzn2.0.3.src.rpm
 ```
 
 ### `rpm` package: `p11-kit-0.23.5-3.amzn2.0.2.x86_64`
