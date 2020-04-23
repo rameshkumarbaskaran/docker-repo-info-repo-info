@@ -4033,14 +4033,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.5=3.5.2-2ubuntu0~16.04.9
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.9.dsc' python3.5_3.5.2-2ubuntu0~16.04.9.dsc 3387 SHA256:88db0290ffa4bc764969ae695618824e8f2bae746793edc2602894914a304c39
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2.orig.tar.xz' python3.5_3.5.2.orig.tar.xz 15222676 SHA256:0010f56100b9b74259ebcd5d4b295a32324b58b517403a10d1a2aa7cb22bca40
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.9.debian.tar.xz' python3.5_3.5.2-2ubuntu0~16.04.9.debian.tar.xz 232852 SHA256:9454a5fce93ca6f44bc9775512e82a5f083eb5c726d29a1f642192aeb71d8b33
-```
 
 ### `dpkg` source package: `qt-at-spi=0.4.0-3`
 
