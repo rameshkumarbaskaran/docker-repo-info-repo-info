@@ -1587,7 +1587,12 @@ CMD ["/bin/bash"]
 
 ## `ubuntu:bionic-20200403`
 
-**does not exist** (yet?)
+```console
+$ docker pull ubuntu@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `ubuntu:devel`
 
@@ -2104,7 +2109,12 @@ CMD ["/bin/bash"]
 
 ## `ubuntu:eoan-20200410`
 
-**does not exist** (yet?)
+```console
+$ docker pull ubuntu@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `ubuntu:focal`
 
@@ -2342,7 +2352,12 @@ CMD ["/bin/bash"]
 
 ## `ubuntu:focal-20200423`
 
-**does not exist** (yet?)
+```console
+$ docker pull ubuntu@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `ubuntu:latest`
 
@@ -3611,4 +3626,9 @@ CMD ["/bin/bash"]
 
 ## `ubuntu:xenial-20200326`
 
-**does not exist** (yet?)
+```console
+$ docker pull ubuntu@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
