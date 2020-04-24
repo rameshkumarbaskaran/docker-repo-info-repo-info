@@ -1,7 +1,7 @@
 ## `memcached:alpine`
 
 ```console
-$ docker pull memcached@sha256:6b911a99f7536d1b2cf9c19bc5711535c61af0eedd4ddd30f0f6e7ac6d8f809b
+$ docker pull memcached@sha256:a711866b0ed8d111ae8f6dfe88ab0e5777365adcc56fd3f1b6485fbe7b922993
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -362,69 +362,69 @@ CMD ["memcached"]
 ### `memcached:alpine` - linux; ppc64le
 
 ```console
-$ docker pull memcached@sha256:3797459b34cdce19dc5c399b9c197be9e7ba49a5f24eb0519aafb09597505922
+$ docker pull memcached@sha256:90c4016f3fda33920862008a5278d874f8383633bad2e865fff01ed7d900d1c0
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **4.4 MB (4448507 bytes)**  
+-	Total Size: **4.5 MB (4450322 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bf7465343178ddd65e795fcbffde4546ce34a20537d50c03bf12dc86eb96e1e0`
+-	Image ID: `sha256:2edb83f0573ab043b0d92c05a4c7aeb17036f6bd9fa98c65ed0ce3a53cfd4f1b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["memcached"]`
 
 ```dockerfile
-# Mon, 23 Mar 2020 21:21:29 GMT
-ADD file:4b35131542b9682214e1c2c72fe3cea215a10e2f775e87befecd80fe2228d5a0 in / 
-# Mon, 23 Mar 2020 21:21:32 GMT
+# Thu, 23 Apr 2020 20:39:04 GMT
+ADD file:1aaebe252dfb1885e066fcbc84aaa915bae149c3608f19600855ad1d4f7450c1 in / 
+# Thu, 23 Apr 2020 20:39:06 GMT
 CMD ["/bin/sh"]
-# Tue, 24 Mar 2020 02:24:20 GMT
+# Fri, 24 Apr 2020 06:58:53 GMT
 RUN addgroup -g 11211 memcache && adduser -D -u 11211 -G memcache memcache
-# Tue, 24 Mar 2020 02:24:25 GMT
+# Fri, 24 Apr 2020 06:59:15 GMT
 RUN apk add --no-cache cyrus-sasl-plain
-# Tue, 14 Apr 2020 00:42:05 GMT
+# Fri, 24 Apr 2020 06:59:21 GMT
 ENV MEMCACHED_VERSION=1.6.5
-# Tue, 14 Apr 2020 00:42:08 GMT
+# Fri, 24 Apr 2020 06:59:28 GMT
 ENV MEMCACHED_SHA1=1ddb5f37f69946b63512ad0f89dc448ff7ba5713
-# Tue, 14 Apr 2020 00:50:46 GMT
+# Fri, 24 Apr 2020 07:08:21 GMT
 RUN set -x 		&& apk add --no-cache --virtual .build-deps 		ca-certificates 		coreutils 		cyrus-sasl-dev 		dpkg-dev dpkg 		gcc 		libc-dev 		libevent-dev 		linux-headers 		make 		openssl 		openssl-dev 		perl 		perl-io-socket-ssl 		perl-utils 		tar 		wget 		&& wget -O memcached.tar.gz "https://memcached.org/files/memcached-$MEMCACHED_VERSION.tar.gz" 	&& echo "$MEMCACHED_SHA1  memcached.tar.gz" | sha1sum -c - 	&& mkdir -p /usr/src/memcached 	&& tar -xzf memcached.tar.gz -C /usr/src/memcached --strip-components=1 	&& rm memcached.tar.gz 		&& cd /usr/src/memcached 		&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& enableExtstore="$( 		case "$gnuArch" in 			s390x-*) ;; 			*) echo '--enable-extstore' ;; 		esac 	)" 	&& ./configure 		--build="$gnuArch" 		--enable-sasl 		--enable-sasl-pwdb 		--enable-tls 		$enableExtstore 	&& make -j "$(nproc)" 		&& make test 	&& make install 		&& cd / && rm -rf /usr/src/memcached 		&& runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)" 	&& apk add --no-network --virtual .memcached-rundeps $runDeps 	&& apk del --no-network .build-deps 		&& memcached -V
-# Tue, 14 Apr 2020 00:50:47 GMT
+# Fri, 24 Apr 2020 07:08:26 GMT
 COPY file:bf641b13ea5b37f5830b299ebe9d72f194ee5d897db14faf8b133dc7a66a48ad in /usr/local/bin/ 
-# Tue, 14 Apr 2020 00:51:01 GMT
+# Fri, 24 Apr 2020 07:08:44 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Tue, 14 Apr 2020 00:51:07 GMT
+# Fri, 24 Apr 2020 07:08:51 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 14 Apr 2020 00:51:11 GMT
+# Fri, 24 Apr 2020 07:08:58 GMT
 USER memcache
-# Tue, 14 Apr 2020 00:51:15 GMT
+# Fri, 24 Apr 2020 07:09:04 GMT
 EXPOSE 11211
-# Tue, 14 Apr 2020 00:51:17 GMT
+# Fri, 24 Apr 2020 07:09:11 GMT
 CMD ["memcached"]
 ```
 
 -	Layers:
-	-	`sha256:bc1c99f4ba60de0d3ca52dc6855483e24c91884e33df71f502bbff6eb909d9b9`  
-		Last Modified: Mon, 23 Mar 2020 21:22:12 GMT  
-		Size: 2.8 MB (2820052 bytes)  
+	-	`sha256:9a8fdc5b698322331ee7eba7dd6f66f3a4e956554db22dd1e834d519415b4f8e`  
+		Last Modified: Thu, 23 Apr 2020 20:41:33 GMT  
+		Size: 2.8 MB (2821843 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c50bd2ca891d67079878bf06e36ba609e8528e83369265c92fbd3b03e6e839f1`  
-		Last Modified: Tue, 24 Mar 2020 02:34:02 GMT  
-		Size: 1.3 KB (1263 bytes)  
+	-	`sha256:8003ab8fdd2231d50550cbe8a4e5715a79d4707174e50e5208a3525a93b88d58`  
+		Last Modified: Fri, 24 Apr 2020 07:09:36 GMT  
+		Size: 1.3 KB (1264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a4704e4e496c0d18b40f484fc715146c1f427050210b40271112edcf751a698`  
-		Last Modified: Tue, 24 Mar 2020 02:34:02 GMT  
-		Size: 16.1 KB (16131 bytes)  
+	-	`sha256:0cf79da4de605128ba727e77467d72e9e1045bdd33fef6b7e4be6beb023816b1`  
+		Last Modified: Fri, 24 Apr 2020 07:09:36 GMT  
+		Size: 16.1 KB (16137 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a082e2e1ac7786e3860912de8517980c8e08afb1ffa80d05d52240fbb673698`  
-		Last Modified: Tue, 14 Apr 2020 00:51:52 GMT  
-		Size: 1.6 MB (1610653 bytes)  
+	-	`sha256:b747ed97ad4df5a4b7c87e75b9df6cbd8e80cca2318b6ba49f6565e0a13abc29`  
+		Last Modified: Fri, 24 Apr 2020 07:09:37 GMT  
+		Size: 1.6 MB (1610672 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b1bdbb7103a9b4c5d777d6f23357bc31745b28dba327fa333173e2306e8ba5c`  
-		Last Modified: Tue, 14 Apr 2020 00:51:51 GMT  
-		Size: 287.0 B  
+	-	`sha256:eddfdbf0368225d39442c7fd411ae489ac0e211fc2ac682b75d3023084110aca`  
+		Last Modified: Fri, 24 Apr 2020 07:09:36 GMT  
+		Size: 285.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a958ecfb0c40b2251cf63426a688c563e8432efc39006acc5192e8fe59b23ab`  
-		Last Modified: Tue, 14 Apr 2020 00:51:51 GMT  
+	-	`sha256:06a46a063e5e1e9324bacfb85d49c5f48b921b80e935a96ae0283bbd65c21a11`  
+		Last Modified: Fri, 24 Apr 2020 07:09:37 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
