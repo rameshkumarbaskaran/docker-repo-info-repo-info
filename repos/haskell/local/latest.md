@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:095b182d90778dce00f58059b7e82546ef6b6af7e892d3e3af3a4604016cf9ca`
-- Created: `2020-04-16T09:51:16.986697451Z`
+- Image ID: `sha256:b595e371319cf0954a527ab340abe162aa577ed0a1a14f951b2b46ea0046f06f`
+- Created: `2020-04-23T01:38:10.414267877Z`
 - Virtual Size: ~ 1.47 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -824,12 +824,12 @@ $ apt-get source -qq --print-uris ghc-8.8.3=8.8.3-17~deb9
 'http://downloads.haskell.org/debian/pool/main/g/ghc-8.8.3/ghc-8.8.3_8.8.3-17~deb9.debian.tar.xz' ghc-8.8.3_8.8.3-17~deb9.debian.tar.xz 7560 SHA256:dd932a8a803e547922697440824ce06848732094c76588bf55ee3ad15f25be8d
 ```
 
-### `dpkg` source package: `git=1:2.11.0-3+deb9u6`
+### `dpkg` source package: `git=1:2.11.0-3+deb9u7`
 
 Binary Packages:
 
-- `git=1:2.11.0-3+deb9u6`
-- `git-man=1:2.11.0-3+deb9u6`
+- `git=1:2.11.0-3+deb9u7`
+- `git-man=1:2.11.0-3+deb9u7`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -852,13 +852,20 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris git=1:2.11.0-3+deb9u7
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.11.0-3+deb9u7.dsc' git_2.11.0-3+deb9u7.dsc 2944 SHA256:7f2be1b1709c216ad06590687cc8fc0ff6b55a6c3e0ad6ec32b2567ce10adec1
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.11.0.orig.tar.xz' git_2.11.0.orig.tar.xz 4197984 SHA256:7e7e8d69d494892373b87007674be5820a4bc1ef596a0117d03ea3169119fd0b
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.11.0-3+deb9u7.debian.tar.xz' git_2.11.0-3+deb9u7.debian.tar.xz 610188 SHA256:3f54b7ea7b8cda477ddb559c63de063c5bd49d8ab772330c05c79ace546ce38d
+```
 
-- http://snapshot.debian.org/package/git/1:2.11.0-3+deb9u6/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/git/1:2.11.0-3+deb9u7/ (for browsing the source)
+- https://sources.debian.net/src/git/1:2.11.0-3+deb9u7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/git/1:2.11.0-3+deb9u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.50.3-2+deb9u2`
 
