@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2d0f50ca7829aa85a5af485cba2c6f70f7ac4513909e032fa6595ef63c02d39b`
-- Created: `2020-02-07T23:30:44.775206466Z`
-- Virtual Size: ~ 44.87 Mb  
+- Image ID: `sha256:ec77776ad237484ae2ba463aa4246f529828e3a7dae22f59328fb310ca0d3591`
+- Created: `2020-04-24T13:23:55.378693897Z`
+- Virtual Size: ~ 44.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/bin/entrypoint.sh"]`
@@ -92,16 +92,16 @@ GPL-2.0
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20190108-r0 description:
+ca-certificates-20191127-r0 description:
 Common CA certificates PEM files
 
-ca-certificates-20190108-r0 webpage:
+ca-certificates-20191127-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20190108-r0 installed size:
-737280
+ca-certificates-20191127-r0 installed size:
+741376
 
-ca-certificates-20190108-r0 license:
+ca-certificates-20191127-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -109,16 +109,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
-ca-certificates-cacert-20190108-r0 description:
+ca-certificates-cacert-20191127-r0 description:
 Mozilla bundled certificates
 
-ca-certificates-cacert-20190108-r0 webpage:
+ca-certificates-cacert-20191127-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-cacert-20190108-r0 installed size:
+ca-certificates-cacert-20191127-r0 installed size:
 245760
 
-ca-certificates-cacert-20190108-r0 license:
+ca-certificates-cacert-20191127-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -160,16 +160,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r2 description:
+libcrypto1.1-1.1.1g-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r2 webpage:
+libcrypto1.1-1.1.1g-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1d-r2 installed size:
-2748416
+libcrypto1.1-1.1.1g-r0 installed size:
+2760704
 
-libcrypto1.1-1.1.1d-r2 license:
+libcrypto1.1-1.1.1g-r0 license:
 OpenSSL
 
 ```
@@ -177,16 +177,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r2 description:
+libssl1.1-1.1.1g-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r2 webpage:
+libssl1.1-1.1.1g-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1d-r2 installed size:
+libssl1.1-1.1.1g-r0 installed size:
 536576
 
-libssl1.1-1.1.1d-r2 license:
+libssl1.1-1.1.1g-r0 license:
 OpenSSL
 
 ```
@@ -313,16 +313,16 @@ GPL
 ### `apk` package: `ruby`
 
 ```console
-ruby-2.5.7-r0 description:
+ruby-2.5.8-r0 description:
 An object-oriented language for quick and easy programming
 
-ruby-2.5.7-r0 webpage:
+ruby-2.5.8-r0 webpage:
 http://www.ruby-lang.org/en/
 
-ruby-2.5.7-r0 installed size:
+ruby-2.5.8-r0 installed size:
 40960
 
-ruby-2.5.7-r0 license:
+ruby-2.5.8-r0 license:
 Ruby BSD-2-Clause
 
 ```
@@ -330,16 +330,16 @@ Ruby BSD-2-Clause
 ### `apk` package: `ruby-etc`
 
 ```console
-ruby-etc-2.5.7-r0 description:
+ruby-etc-2.5.8-r0 description:
 Provides access to information typically stored in UNIX /etc directory
 
-ruby-etc-2.5.7-r0 webpage:
+ruby-etc-2.5.8-r0 webpage:
 http://www.ruby-lang.org/en/
 
-ruby-etc-2.5.7-r0 installed size:
+ruby-etc-2.5.8-r0 installed size:
 77824
 
-ruby-etc-2.5.7-r0 license:
+ruby-etc-2.5.8-r0 license:
 BSD-2-Clause
 
 ```
@@ -347,16 +347,16 @@ BSD-2-Clause
 ### `apk` package: `ruby-irb`
 
 ```console
-ruby-irb-2.5.7-r0 description:
+ruby-irb-2.5.8-r0 description:
 The Interactive Ruby
 
-ruby-irb-2.5.7-r0 webpage:
+ruby-irb-2.5.8-r0 webpage:
 http://www.ruby-lang.org/en/
 
-ruby-irb-2.5.7-r0 installed size:
+ruby-irb-2.5.8-r0 installed size:
 319488
 
-ruby-irb-2.5.7-r0 license:
+ruby-irb-2.5.8-r0 license:
 Ruby BSD-2-Clause
 
 ```
@@ -364,16 +364,16 @@ Ruby BSD-2-Clause
 ### `apk` package: `ruby-libs`
 
 ```console
-ruby-libs-2.5.7-r0 description:
+ruby-libs-2.5.8-r0 description:
 Libraries necessary to run Ruby
 
-ruby-libs-2.5.7-r0 webpage:
+ruby-libs-2.5.8-r0 webpage:
 http://www.ruby-lang.org/en/
 
-ruby-libs-2.5.7-r0 installed size:
-13094912
+ruby-libs-2.5.8-r0 installed size:
+13099008
 
-ruby-libs-2.5.7-r0 license:
+ruby-libs-2.5.8-r0 license:
 Ruby BSD-2-Clause
 
 ```
@@ -381,16 +381,16 @@ Ruby BSD-2-Clause
 ### `apk` package: `ruby-webrick`
 
 ```console
-ruby-webrick-2.5.7-r0 description:
+ruby-webrick-2.5.8-r0 description:
 HTTP server toolkit for Ruby
 
-ruby-webrick-2.5.7-r0 webpage:
+ruby-webrick-2.5.8-r0 webpage:
 http://www.ruby-lang.org/en/
 
-ruby-webrick-2.5.7-r0 installed size:
+ruby-webrick-2.5.8-r0 installed size:
 315392
 
-ruby-webrick-2.5.7-r0 license:
+ruby-webrick-2.5.8-r0 license:
 BSD-2-Clause
 
 ```
