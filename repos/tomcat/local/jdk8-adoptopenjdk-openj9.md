@@ -1,10 +1,10 @@
-# `tomcat:8.5.54-jdk8-adoptopenjdk-openj9`
+# `tomcat:9.0.34-jdk8-adoptopenjdk-openj9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:446dc92f0b0fc10269b4099cf10c5b13d511d4396b592c17906e5172caebf9ff`
-- Created: `2020-04-20T19:16:17.662538629Z`
-- Virtual Size: ~ 344.23 Mb  
+- Image ID: `sha256:c55cfc4786fc7ef0c64f3591a6e8652dd32563f473460195a31b897ff7cd9d20`
+- Created: `2020-04-24T23:56:02.516503489Z`
+- Virtual Size: ~ 343.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -19,10 +19,10 @@
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
-  - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
-  - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.54`
-  - `TOMCAT_SHA512=dc3ba0183d1e6f6006e5430e91abbc0758bdb719efebea5809f7034c9a28c590a764d8fcf2528a27a98cb86531e94cd9dc5a92cdbcae36e808ced0e5f1c665b8`
+  - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
+  - `TOMCAT_MAJOR=9`
+  - `TOMCAT_VERSION=9.0.34`
+  - `TOMCAT_SHA512=9cb32f8807c0e8d2457d52ac032bb496ae7921e1ea0a0c8e6082bf8da60bb57c317a3f2376589962123dd803fdd2816ff960339cb851d9859b2241165fbc278e`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1686,49 +1686,21 @@ $ apt-get source -qq --print-uris ucf=3.0038
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ucf/ucf_3.0038.tar.xz' ucf_3.0038.tar.xz 65416 SHA256:262ccd52637c869ac851838a176d76e90db8d3f12373e3b62eb89e217f93fe7e
 ```
 
-### `dpkg` source package: `util-linux=2.31.1-0.4ubuntu3.5`
-
-Binary Packages:
-
-- `bsdutils=1:2.31.1-0.4ubuntu3.5`
-- `fdisk=2.31.1-0.4ubuntu3.5`
-- `libblkid1:amd64=2.31.1-0.4ubuntu3.5`
-- `libfdisk1:amd64=2.31.1-0.4ubuntu3.5`
-- `libmount1:amd64=2.31.1-0.4ubuntu3.5`
-- `libsmartcols1:amd64=2.31.1-0.4ubuntu3.5`
-- `mount=2.31.1-0.4ubuntu3.5`
-- `util-linux=2.31.1-0.4ubuntu3.5`
-
-Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdisk/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
-
-- `BSD-2-clause`
-- `BSD-3-clause`
-- `BSD-4-clause`
-- `GPL-2`
-- `GPL-2+`
-- `GPL-3`
-- `GPL-3+`
-- `LGPL`
-- `LGPL-2`
-- `LGPL-2+`
-- `LGPL-2.1`
-- `LGPL-2.1+`
-- `LGPL-3`
-- `LGPL-3+`
-- `MIT`
-- `public-domain`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-
 ### `dpkg` source package: `util-linux=2.31.1-0.4ubuntu3.6`
 
 Binary Packages:
 
+- `bsdutils=1:2.31.1-0.4ubuntu3.6`
+- `fdisk=2.31.1-0.4ubuntu3.6`
+- `libblkid1:amd64=2.31.1-0.4ubuntu3.6`
+- `libfdisk1:amd64=2.31.1-0.4ubuntu3.6`
+- `libmount1:amd64=2.31.1-0.4ubuntu3.6`
+- `libsmartcols1:amd64=2.31.1-0.4ubuntu3.6`
 - `libuuid1:amd64=2.31.1-0.4ubuntu3.6`
+- `mount=2.31.1-0.4ubuntu3.6`
+- `util-linux=2.31.1-0.4ubuntu3.6`
 
-Licenses: (parsed from: `/usr/share/doc/libuuid1/copyright`)
+Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdisk/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
 
 - `BSD-2-clause`
 - `BSD-3-clause`

@@ -1,10 +1,10 @@
-# `tomcat:8.5.54-jdk11-openjdk`
+# `tomcat:9.0.34-jdk11-openjdk`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a6846ef7ac66fdfe5e6736cfa1381994245f135883d95a3de5f71dec61ac6638`
-- Created: `2020-04-17T10:23:04.12353322Z`
-- Virtual Size: ~ 646.19 Mb  
+- Image ID: `sha256:927899a31456255c1e1a73b97d9a94451c4fcffedab4e0cf18b1c6c4fe4b84ff`
+- Created: `2020-04-24T23:49:21.75003165Z`
+- Virtual Size: ~ 647.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -18,10 +18,10 @@
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
-  - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
-  - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.54`
-  - `TOMCAT_SHA512=dc3ba0183d1e6f6006e5430e91abbc0758bdb719efebea5809f7034c9a28c590a764d8fcf2528a27a98cb86531e94cd9dc5a92cdbcae36e808ced0e5f1c665b8`
+  - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
+  - `TOMCAT_MAJOR=9`
+  - `TOMCAT_VERSION=9.0.34`
+  - `TOMCAT_SHA512=9cb32f8807c0e8d2457d52ac032bb496ae7921e1ea0a0c8e6082bf8da60bb57c317a3f2376589962123dd803fdd2816ff960339cb851d9859b2241165fbc278e`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -894,12 +894,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gdbm/1.18.1-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gdbm/1.18.1-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `git=1:2.20.1-2+deb10u2`
+### `dpkg` source package: `git=1:2.20.1-2+deb10u3`
 
 Binary Packages:
 
-- `git=1:2.20.1-2+deb10u2`
-- `git-man=1:2.20.1-2+deb10u2`
+- `git=1:2.20.1-2+deb10u3`
+- `git-man=1:2.20.1-2+deb10u3`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -922,13 +922,20 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris git=1:2.20.1-2+deb10u3
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1-2+deb10u3.dsc' git_2.20.1-2+deb10u3.dsc 2923 SHA256:6322d0dbe9b867a6cd1cd75f95a4a20335faa2030c38688f460ddaaaacbd4d06
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1.orig.tar.xz' git_2.20.1.orig.tar.xz 5359872 SHA256:9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9
+'http://security.debian.org/debian-security/pool/updates/main/g/git/git_2.20.1-2+deb10u3.debian.tar.xz' git_2.20.1-2+deb10u3.debian.tar.xz 646216 SHA256:3c6e2f8495350bccd0981d579d4d1cac6b0e051e1f7ba8b1d22c842bd4cb3453
+```
 
-- http://snapshot.debian.org/package/git/1:2.20.1-2+deb10u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/git/1:2.20.1-2+deb10u3/ (for browsing the source)
+- https://sources.debian.net/src/git/1:2.20.1-2+deb10u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/git/1:2.20.1-2+deb10u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.28-10`
 
@@ -2276,12 +2283,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openssh/1:7.9p1-10+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openssh/1:7.9p1-10+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.1d-0+deb10u2`
+### `dpkg` source package: `openssl=1.1.1d-0+deb10u3`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1d-0+deb10u2`
-- `openssl=1.1.1d-0+deb10u2`
+- `libssl1.1:amd64=1.1.1d-0+deb10u3`
+- `openssl=1.1.1d-0+deb10u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2290,18 +2297,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u2
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0+deb10u2.dsc' openssl_1.1.1d-0+deb10u2.dsc 2472 SHA256:cfeb4085016d29b14c2e0b1c204fd95a6fe20be3c12b669b8b0d6553eb2108a9
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0+deb10u2.debian.tar.xz' openssl_1.1.1d-0+deb10u2.debian.tar.xz 84848 SHA256:418f08b2182c54bad5f049d8b17433055e146c84c793794ebca3d74231b53389
+$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u3
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u3.dsc' openssl_1.1.1d-0+deb10u3.dsc 2472 SHA256:7dc19c6d2bf8ee424b3a39d49edd975e2a8b87655eb0a6a81431efde57a44b14
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u3.debian.tar.xz' openssl_1.1.1d-0+deb10u3.debian.tar.xz 86692 SHA256:59db3dc3bf8e8abee0dc6dd6c62b644e57ac7a0e3ab98ace563885a4f3b205cd
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u3/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2`
 
