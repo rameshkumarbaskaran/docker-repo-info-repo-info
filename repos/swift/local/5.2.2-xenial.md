@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b2d5ef911d05e3b9cc7b67463163d8b6e63d0d569af0a8d68041d607a1ba1c29`
-- Created: `2020-04-17T20:31:59.031560177Z`
+- Image ID: `sha256:355e296a553eb797aaddb8b86117c93f286b4008033db7b6e050a578ea016a2a`
+- Created: `2020-04-24T21:28:23.859152051Z`
 - Virtual Size: ~ 1.67 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -734,12 +734,12 @@ $ apt-get source -qq --print-uris gdbm=1.8.3-13.1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.8.3-13.1.debian.tar.xz' gdbm_1.8.3-13.1.debian.tar.xz 14748 SHA256:251401e1f5210226f384e936b1b7ea1df40119a918d9f3dbf48b2e51d4df8983
 ```
 
-### `dpkg` source package: `git=1:2.7.4-0ubuntu1.7`
+### `dpkg` source package: `git=1:2.7.4-0ubuntu1.9`
 
 Binary Packages:
 
-- `git=1:2.7.4-0ubuntu1.7`
-- `git-man=1:2.7.4-0ubuntu1.7`
+- `git=1:2.7.4-0ubuntu1.9`
+- `git-man=1:2.7.4-0ubuntu1.9`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -762,24 +762,34 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris git=1:2.7.4-0ubuntu1.9
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.7.4-0ubuntu1.9.dsc' git_2.7.4-0ubuntu1.9.dsc 2897 SHA256:a7c83276d876be29656f08a3e1f6ef153c21f6556b31bb0abb9cbb15c0fd0b03
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.7.4.orig.tar.xz' git_2.7.4.orig.tar.xz 3909636 SHA256:dee574defbe05ec7356a0842ddbda51315926f2fa7e39c2539f2c3dcc52e457b
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.7.4-0ubuntu1.9.debian.tar.xz' git_2.7.4-0ubuntu1.9.debian.tar.xz 572052 SHA256:2ab39ce8a9d1d94a549be4d086e6b59ae2c4201bc022dd1368a38eebe98cdf24
+```
 
-### `dpkg` source package: `glib2.0=2.48.2-0ubuntu4.4`
+### `dpkg` source package: `glib2.0=2.48.2-0ubuntu4.6`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.48.2-0ubuntu4.4`
-- `libglib2.0-data=2.48.2-0ubuntu4.4`
+- `libglib2.0-0:amd64=2.48.2-0ubuntu4.6`
+- `libglib2.0-data=2.48.2-0ubuntu4.6`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc/libglib2.0-data/copyright`)
 
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris glib2.0=2.48.2-0ubuntu4.6
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.6.dsc' glib2.0_2.48.2-0ubuntu4.6.dsc 2865 SHA256:a60904a518cd721a2d69730c568bccc2664d90486eecbfaca96afc2ab0ad0051
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2.orig.tar.xz' glib2.0_2.48.2.orig.tar.xz 6408644 SHA256:f25e751589cb1a58826eac24fbd4186cda4518af772806b666a3f91f66e6d3f4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.6.debian.tar.xz' glib2.0_2.48.2-0ubuntu4.6.debian.tar.xz 77696 SHA256:1ee4dc4c0d01e438beca989c6b49f2a73150db2c861ab3b751c833806b8bf48c
+```
 
 ### `dpkg` source package: `glibc=2.23-0ubuntu11`
 
@@ -961,19 +971,24 @@ $ apt-get source -qq --print-uris hostname=3.16ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/h/hostname/hostname_3.16ubuntu2.tar.gz' hostname_3.16ubuntu2.tar.gz 14378 SHA256:e0a38fa03b66abd428e119e5af2cccb78a0462cdb58e2e540e66d964e2719195
 ```
 
-### `dpkg` source package: `icu=55.1-7ubuntu0.4`
+### `dpkg` source package: `icu=55.1-7ubuntu0.5`
 
 Binary Packages:
 
-- `libicu55:amd64=55.1-7ubuntu0.4`
+- `libicu55:amd64=55.1-7ubuntu0.5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris icu=55.1-7ubuntu0.5
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_55.1-7ubuntu0.5.dsc' icu_55.1-7ubuntu0.5.dsc 2162 SHA256:caf3f1a7de6e0f4c75128d7f3aec0e1e1e532739220ab0626ca3a256243584b0
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_55.1.orig.tar.gz' icu_55.1.orig.tar.gz 25600847 SHA256:e16b22cbefdd354bec114541f7849a12f8fc2015320ca5282ee4fd787571457b
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_55.1-7ubuntu0.5.debian.tar.xz' icu_55.1-7ubuntu0.5.debian.tar.xz 32320 SHA256:9bcc091972d7de4cd6589578b91a090c0f8f1b05d1344f10923ac2c339188c7f
+```
 
 ### `dpkg` source package: `ifupdown=0.8.10ubuntu1.4`
 
@@ -1764,20 +1779,25 @@ $ apt-get source -qq --print-uris linux-atm=1:2.5.1-1.5
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux-atm/linux-atm_2.5.1-1.5.debian.tar.gz' linux-atm_2.5.1-1.5.debian.tar.gz 10723 SHA256:9b2325859b3fd008b588a3897e713f52137abae08d1f5a44f5661f45a87f4d29
 ```
 
-### `dpkg` source package: `linux=4.4.0-174.204`
+### `dpkg` source package: `linux=4.4.0-177.207`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-174.204`
+- `linux-libc-dev:amd64=4.4.0-177.207`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-177.207
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-177.207.dsc' linux_4.4.0-177.207.dsc 11909 SHA256:e0c048e6d9e2aa61075c558103d78b19f5c2f7b9e72f8325b8a2ae1532cfcfd4
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-177.207.diff.gz' linux_4.4.0-177.207.diff.gz 16353617 SHA256:13b110ceb95d5da60f9b04014a3be9624f0110c2213f3d79adfbcfad68efe9b0
+```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
@@ -2283,12 +2303,12 @@ $ apt-get source -qq --print-uris popt=1.16-10
 'http://archive.ubuntu.com/ubuntu/pool/main/p/popt/popt_1.16-10.debian.tar.xz' popt_1.16-10.debian.tar.xz 14136 SHA256:8300cbb47148f59fc6edc2f8ebe227a319b080ed26d17db846d1e346f0614899
 ```
 
-### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.4`
+### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.5`
 
 Binary Packages:
 
-- `libprocps4:amd64=2:3.3.10-4ubuntu2.4`
-- `procps=2:3.3.10-4ubuntu2.4`
+- `libprocps4:amd64=2:3.3.10-4ubuntu2.5`
+- `procps=2:3.3.10-4ubuntu2.5`
 
 Licenses: (parsed from: `/usr/share/doc/libprocps4/copyright`, `/usr/share/doc/procps/copyright`)
 
@@ -2302,19 +2322,19 @@ Licenses: (parsed from: `/usr/share/doc/libprocps4/copyright`, `/usr/share/doc/p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris procps=2:3.3.10-4ubuntu2.4
-'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.4.dsc' procps_3.3.10-4ubuntu2.4.dsc 2243 SHA256:f7f14b0b818e21ad1f1f4be7fdedbd375b9c19b7f3ecf92a94f3bc4a1a625f5f
-'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10.orig.tar.xz' procps_3.3.10.orig.tar.xz 814816 SHA256:40a3d2b0489e057d85564f4f304083b24fc699b39ea828610183fb9f0a6ebe97
-'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.4.debian.tar.xz' procps_3.3.10-4ubuntu2.4.debian.tar.xz 44376 SHA256:99854cab3c75853ec70cdda95d09fc22ee431c828e16dcdb9a0feaf65a3f74d1
+$ apt-get source -qq --print-uris procps=2:3.3.10-4ubuntu2.5
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.5.dsc' procps_3.3.10-4ubuntu2.5.dsc 2227 SHA256:bf17eb5a055ff767dcc10ce3696f2e7622da96bbe8ac3c9d2d5aa92697a23282
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10.orig.tar.xz' procps_3.3.10.orig.tar.xz 814816 SHA256:40a3d2b0489e057d85564f4f304083b24fc699b39ea828610183fb9f0a6ebe97
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.5.debian.tar.xz' procps_3.3.10-4ubuntu2.5.debian.tar.xz 44704 SHA256:e0f01bc3e2569fbe3780f0c5943d916e8f9c0a74bd065b3f328383bf8ff10a40
 ```
 
-### `dpkg` source package: `python2.7=2.7.12-1ubuntu0~16.04.9`
+### `dpkg` source package: `python2.7=2.7.12-1ubuntu0~16.04.11`
 
 Binary Packages:
 
-- `libpython2.7:amd64=2.7.12-1ubuntu0~16.04.9`
-- `libpython2.7-minimal:amd64=2.7.12-1ubuntu0~16.04.9`
-- `libpython2.7-stdlib:amd64=2.7.12-1ubuntu0~16.04.9`
+- `libpython2.7:amd64=2.7.12-1ubuntu0~16.04.11`
+- `libpython2.7-minimal:amd64=2.7.12-1ubuntu0~16.04.11`
+- `libpython2.7-stdlib:amd64=2.7.12-1ubuntu0~16.04.11`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`)
 
@@ -2335,9 +2355,14 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python2.7=2.7.12-1ubuntu0~16.04.11
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.11.dsc' python2.7_2.7.12-1ubuntu0~16.04.11.dsc 3391 SHA256:e3f7a2d1e2236a16c68923b1ebfd3b2155b00a6cd202df5a0a45c5cd41db36c0
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12.orig.tar.gz' python2.7_2.7.12.orig.tar.gz 16935960 SHA256:3cb522d17463dfa69a155ab18cffa399b358c966c0363d6c8b5b3bf1384da4b6
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.11.diff.gz' python2.7_2.7.12-1ubuntu0~16.04.11.diff.gz 307242 SHA256:480ce1e226cf617faf0c830a68fb54b40e3ea78d3614dc21270253ab2725bc38
+```
 
 ### `dpkg` source package: `readline6=6.3-8ubuntu2`
 

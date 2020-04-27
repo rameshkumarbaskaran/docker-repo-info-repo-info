@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:31b632cc38177d3d5701db7c1d741ac6a96d7e6c66bbbfd47dcd65e130064236`
-- Created: `2020-04-17T20:34:49.756551336Z`
-- Virtual Size: ~ 270.00 Mb  
+- Image ID: `sha256:af9633669555d4641ad16dea6b1594b9900b55c06dccdc673f11aeab0acb73af`
+- Created: `2020-04-24T21:31:30.579688292Z`
+- Virtual Size: ~ 270.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -731,19 +731,24 @@ $ apt-get source -qq --print-uris hostname=3.16ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/h/hostname/hostname_3.16ubuntu2.tar.gz' hostname_3.16ubuntu2.tar.gz 14378 SHA256:e0a38fa03b66abd428e119e5af2cccb78a0462cdb58e2e540e66d964e2719195
 ```
 
-### `dpkg` source package: `icu=55.1-7ubuntu0.4`
+### `dpkg` source package: `icu=55.1-7ubuntu0.5`
 
 Binary Packages:
 
-- `libicu55:amd64=55.1-7ubuntu0.4`
+- `libicu55:amd64=55.1-7ubuntu0.5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris icu=55.1-7ubuntu0.5
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_55.1-7ubuntu0.5.dsc' icu_55.1-7ubuntu0.5.dsc 2162 SHA256:caf3f1a7de6e0f4c75128d7f3aec0e1e1e532739220ab0626ca3a256243584b0
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_55.1.orig.tar.gz' icu_55.1.orig.tar.gz 25600847 SHA256:e16b22cbefdd354bec114541f7849a12f8fc2015320ca5282ee4fd787571457b
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_55.1-7ubuntu0.5.debian.tar.xz' icu_55.1-7ubuntu0.5.debian.tar.xz 32320 SHA256:9bcc091972d7de4cd6589578b91a090c0f8f1b05d1344f10923ac2c339188c7f
+```
 
 ### `dpkg` source package: `init-system-helpers=1.29ubuntu4`
 
@@ -1400,12 +1405,12 @@ $ apt-get source -qq --print-uris perl=5.22.1-9ubuntu0.6
 'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1-9ubuntu0.6.debian.tar.xz' perl_5.22.1-9ubuntu0.6.debian.tar.xz 161972 SHA256:8ada4467517b405493c876ba78121ff4ec25eed15cfbbc65682da461050a1f6b
 ```
 
-### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.4`
+### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.5`
 
 Binary Packages:
 
-- `libprocps4:amd64=2:3.3.10-4ubuntu2.4`
-- `procps=2:3.3.10-4ubuntu2.4`
+- `libprocps4:amd64=2:3.3.10-4ubuntu2.5`
+- `procps=2:3.3.10-4ubuntu2.5`
 
 Licenses: (parsed from: `/usr/share/doc/libprocps4/copyright`, `/usr/share/doc/procps/copyright`)
 
@@ -1419,10 +1424,10 @@ Licenses: (parsed from: `/usr/share/doc/libprocps4/copyright`, `/usr/share/doc/p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris procps=2:3.3.10-4ubuntu2.4
-'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.4.dsc' procps_3.3.10-4ubuntu2.4.dsc 2243 SHA256:f7f14b0b818e21ad1f1f4be7fdedbd375b9c19b7f3ecf92a94f3bc4a1a625f5f
-'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10.orig.tar.xz' procps_3.3.10.orig.tar.xz 814816 SHA256:40a3d2b0489e057d85564f4f304083b24fc699b39ea828610183fb9f0a6ebe97
-'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.4.debian.tar.xz' procps_3.3.10-4ubuntu2.4.debian.tar.xz 44376 SHA256:99854cab3c75853ec70cdda95d09fc22ee431c828e16dcdb9a0feaf65a3f74d1
+$ apt-get source -qq --print-uris procps=2:3.3.10-4ubuntu2.5
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.5.dsc' procps_3.3.10-4ubuntu2.5.dsc 2227 SHA256:bf17eb5a055ff767dcc10ce3696f2e7622da96bbe8ac3c9d2d5aa92697a23282
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10.orig.tar.xz' procps_3.3.10.orig.tar.xz 814816 SHA256:40a3d2b0489e057d85564f4f304083b24fc699b39ea828610183fb9f0a6ebe97
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.10-4ubuntu2.5.debian.tar.xz' procps_3.3.10-4ubuntu2.5.debian.tar.xz 44704 SHA256:e0f01bc3e2569fbe3780f0c5943d916e8f9c0a74bd065b3f328383bf8ff10a40
 ```
 
 ### `dpkg` source package: `readline6=6.3-8ubuntu2`
@@ -1540,11 +1545,11 @@ $ apt-get source -qq --print-uris shadow=1:4.2-3.1ubuntu5.4
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.2-3.1ubuntu5.4.debian.tar.xz' shadow_4.2-3.1ubuntu5.4.debian.tar.xz 506364 SHA256:50ccd266ff5bdc8577fe090b04c9be675340bf59b44fa843cd20174055540a15
 ```
 
-### `dpkg` source package: `sqlite3=3.11.0-1ubuntu1.3`
+### `dpkg` source package: `sqlite3=3.11.0-1ubuntu1.4`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.11.0-1ubuntu1.3`
+- `libsqlite3-0:amd64=3.11.0-1ubuntu1.4`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -1552,9 +1557,15 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris sqlite3=3.11.0-1ubuntu1.4
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.4.dsc' sqlite3_3.11.0-1ubuntu1.4.dsc 2625 SHA256:27faea84fc3f08501a8d650a1e9d28621138353732282d0c5553a8299de961e0
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig-www.tar.xz' sqlite3_3.11.0.orig-www.tar.xz 3135012 SHA256:99843a91a1da29cf07269df49b37b0cd8a75035a88aacdb1186f94a9a217bab3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig.tar.xz' sqlite3_3.11.0.orig.tar.xz 5122440 SHA256:79fb8800b8744337d5317270899a5a40612bb76f81517e131bf496c26b044490
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.4.debian.tar.xz' sqlite3_3.11.0-1ubuntu1.4.debian.tar.xz 43992 SHA256:1fb43634500681355c3fa916c8fbaec4a5a45566d6a40bd506e27a9cf0947cc7
+```
 
 ### `dpkg` source package: `systemd=229-4ubuntu21.27`
 
