@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9ae6daca675b8efb6ebf8eb66736153b061e05b70fa06c98452183afb7d98e71`
-- Created: `2020-01-23T22:42:29.623117986Z`
-- Virtual Size: ~ 99.18 Mb  
+- Image ID: `sha256:13a272458d9eccb35ca3b03d8f9e3a84f145a3eb483c9fd00ef273afdfa5b7e9`
+- Created: `2020-04-24T17:02:14.338109598Z`
+- Virtual Size: ~ 99.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["perl6"]`
@@ -85,16 +85,16 @@ GPL-2.0
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
-ca-certificates-cacert-20190108-r0 description:
+ca-certificates-cacert-20191127-r0 description:
 Mozilla bundled certificates
 
-ca-certificates-cacert-20190108-r0 webpage:
+ca-certificates-cacert-20191127-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-cacert-20190108-r0 installed size:
+ca-certificates-cacert-20191127-r0 installed size:
 245760
 
-ca-certificates-cacert-20190108-r0 license:
+ca-certificates-cacert-20191127-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -119,16 +119,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r2 description:
+libcrypto1.1-1.1.1g-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r2 webpage:
+libcrypto1.1-1.1.1g-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1d-r2 installed size:
-2740224
+libcrypto1.1-1.1.1g-r0 installed size:
+2756608
 
-libcrypto1.1-1.1.1d-r2 license:
+libcrypto1.1-1.1.1g-r0 license:
 OpenSSL
 
 ```
@@ -136,16 +136,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r2 description:
+libssl1.1-1.1.1g-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r2 webpage:
+libssl1.1-1.1.1g-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1d-r2 installed size:
-532480
+libssl1.1-1.1.1g-r0 installed size:
+536576
 
-libssl1.1-1.1.1d-r2 license:
+libssl1.1-1.1.1g-r0 license:
 OpenSSL
 
 ```
