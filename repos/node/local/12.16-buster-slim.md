@@ -1,17 +1,17 @@
-# `node:12.16.2-buster-slim`
+# `node:12.16.3-buster-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3693d160492da5b3897831500a8b87f76420fa56a76942f79ca23ef221075316`
-- Created: `2020-04-16T17:40:14.871723728Z`
-- Virtual Size: ~ 153.67 Mb  
+- Image ID: `sha256:a6ec15104913820cfc87788ffc94a5435fbed220588ec5fb048de46f2e14ed9e`
+- Created: `2020-04-29T02:27:36.749773063Z`
+- Virtual Size: ~ 153.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=12.16.2`
+  - `NODE_VERSION=12.16.3`
   - `YARN_VERSION=1.22.4`
 
 ## `dpkg` (`.deb`-based packages)
