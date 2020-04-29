@@ -296,9 +296,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris brotli=1.0.7-6
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-6.dsc' brotli_1.0.7-6.dsc 2267 SHA256:5fc1691617c3d77056877f67aacb3ffa44462d6cabd16012bc3905881f44edd2
+'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-6.1.dsc' brotli_1.0.7-6.1.dsc 2300 SHA256:c67ed3b56c0fd15f4b2e407aa775305f35c609349f40a5159e049e132981a946
 'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7.orig.tar.gz' brotli_1.0.7.orig.tar.gz 23827908 SHA256:4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-6.debian.tar.xz' brotli_1.0.7-6.debian.tar.xz 4344 SHA256:0717dafec2519f55f4b27f92ada9b5fb2294d8b29f93c3aa4007e4027130147a
+'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-6.1.debian.tar.xz' brotli_1.0.7-6.1.debian.tar.xz 4460 SHA256:4a1a47922f8c92d7cd98bfd7ff3597247f808a14c5b792500413e6ba68f4d6d0
 ```
 
 Other potentially useful URLs:
@@ -908,10 +908,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris fontconfig=2.13.1-4
-'http://http.debian.net/debian/pool/main/f/fontconfig/fontconfig_2.13.1-4.dsc' fontconfig_2.13.1-4.dsc 2679 SHA256:e34a62dfba5c4b76931c765fb9c1a02aff2ccd97cc5f80f9e596b2b86b4ca248
-'http://http.debian.net/debian/pool/main/f/fontconfig/fontconfig_2.13.1.orig.tar.bz2' fontconfig_2.13.1.orig.tar.bz2 1723639 SHA256:f655dd2a986d7aa97e052261b36aa67b0a64989496361eca8d604e6414006741
-'http://http.debian.net/debian/pool/main/f/fontconfig/fontconfig_2.13.1-4.debian.tar.xz' fontconfig_2.13.1-4.debian.tar.xz 54668 SHA256:1dfe0c5ce24ba822e0d4ac2ed5bad77d14ce587234ae37df3cd631186b8a063b
+'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.13.1-4.dsc' fontconfig_2.13.1-4.dsc 2679 SHA256:e34a62dfba5c4b76931c765fb9c1a02aff2ccd97cc5f80f9e596b2b86b4ca248
+'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.13.1.orig.tar.bz2' fontconfig_2.13.1.orig.tar.bz2 1723639 SHA256:f655dd2a986d7aa97e052261b36aa67b0a64989496361eca8d604e6414006741
+'http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.13.1-4.debian.tar.xz' fontconfig_2.13.1-4.debian.tar.xz 54668 SHA256:1dfe0c5ce24ba822e0d4ac2ed5bad77d14ce587234ae37df3cd631186b8a063b
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/fontconfig/2.13.1-4/ (for browsing the source)
+- https://sources.debian.net/src/fontconfig/2.13.1-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/fontconfig/2.13.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `foreign=0.8.76-1`
 
