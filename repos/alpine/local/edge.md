@@ -1,10 +1,10 @@
-# `alpine:20200319`
+# `alpine:20200428`
 
 ## Docker Metadata
 
-- Image ID: `sha256:24cae4d038c0d43d75994a08181150170b991b7e4331a23fe74cf9d4c1115962`
-- Created: `2020-03-20T03:25:08.131782336Z`
-- Virtual Size: ~ 5.58 Mb  
+- Image ID: `sha256:5737d7d248e94253fc6166108e25950882ff192588b4de972ce321cc71dac49b`
+- Created: `2020-04-29T02:19:48.629550836Z`
+- Virtual Size: ~ 5.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -67,16 +67,16 @@ GPL2
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.31.1-r13 description:
+busybox-1.31.1-r14 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.31.1-r13 webpage:
+busybox-1.31.1-r14 webpage:
 https://busybox.net/
 
-busybox-1.31.1-r13 installed size:
+busybox-1.31.1-r14 installed size:
 962560
 
-busybox-1.31.1-r13 license:
+busybox-1.31.1-r14 license:
 GPL-2.0-only
 
 ```
@@ -101,16 +101,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `libc-utils`
 
 ```console
-libc-utils-0.7.2-r1 description:
+libc-utils-0.7.2-r3 description:
 Meta package to pull in correct libc
 
-libc-utils-0.7.2-r1 webpage:
+libc-utils-0.7.2-r3 webpage:
 https://alpinelinux.org
 
-libc-utils-0.7.2-r1 installed size:
+libc-utils-0.7.2-r3 installed size:
 4096
 
-libc-utils-0.7.2-r1 license:
+libc-utils-0.7.2-r3 license:
 BSD-2-Clause AND BSD-3-Clause
 
 ```
@@ -118,16 +118,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1d-r5 description:
+libcrypto1.1-1.1.1g-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1d-r5 webpage:
+libcrypto1.1-1.1.1g-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1d-r5 installed size:
-2748416
+libcrypto1.1-1.1.1g-r0 installed size:
+2760704
 
-libcrypto1.1-1.1.1d-r5 license:
+libcrypto1.1-1.1.1g-r0 license:
 OpenSSL
 
 ```
@@ -135,16 +135,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1d-r5 description:
+libssl1.1-1.1.1g-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1d-r5 webpage:
+libssl1.1-1.1.1g-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1d-r5 installed size:
-536576
+libssl1.1-1.1.1g-r0 installed size:
+540672
 
-libssl1.1-1.1.1d-r5 license:
+libssl1.1-1.1.1g-r0 license:
 OpenSSL
 
 ```
@@ -152,16 +152,16 @@ OpenSSL
 ### `apk` package: `libtls-standalone`
 
 ```console
-libtls-standalone-2.9.1-r0 description:
+libtls-standalone-2.9.1-r1 description:
 libtls extricated from libressl sources
 
-libtls-standalone-2.9.1-r0 webpage:
+libtls-standalone-2.9.1-r1 webpage:
 https://www.libressl.org/
 
-libtls-standalone-2.9.1-r0 installed size:
+libtls-standalone-2.9.1-r1 installed size:
 110592
 
-libtls-standalone-2.9.1-r0 license:
+libtls-standalone-2.9.1-r1 license:
 ISC
 
 ```
@@ -169,16 +169,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r2 description:
+musl-1.1.24-r6 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r2 webpage:
+musl-1.1.24-r6 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r2 installed size:
+musl-1.1.24-r6 installed size:
 614400
 
-musl-1.1.24-r2 license:
+musl-1.1.24-r6 license:
 MIT
 
 ```
@@ -186,16 +186,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.24-r2 description:
+musl-utils-1.1.24-r6 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.24-r2 webpage:
+musl-utils-1.1.24-r6 webpage:
 https://musl.libc.org/
 
-musl-utils-1.1.24-r2 installed size:
+musl-utils-1.1.24-r6 installed size:
 151552
 
-musl-utils-1.1.24-r2 license:
+musl-utils-1.1.24-r6 license:
 MIT BSD GPL2+
 
 ```
@@ -203,16 +203,16 @@ MIT BSD GPL2+
 ### `apk` package: `scanelf`
 
 ```console
-scanelf-1.2.5-r0 description:
+scanelf-1.2.5-r2 description:
 Scan ELF binaries for stuff
 
-scanelf-1.2.5-r0 webpage:
+scanelf-1.2.5-r2 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
-scanelf-1.2.5-r0 installed size:
+scanelf-1.2.5-r2 installed size:
 94208
 
-scanelf-1.2.5-r0 license:
+scanelf-1.2.5-r2 license:
 GPL-2.0-only
 
 ```
@@ -220,16 +220,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.31.1-r13 description:
+ssl_client-1.31.1-r14 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.31.1-r13 webpage:
+ssl_client-1.31.1-r14 webpage:
 https://busybox.net/
 
-ssl_client-1.31.1-r13 installed size:
+ssl_client-1.31.1-r14 installed size:
 28672
 
-ssl_client-1.31.1-r13 license:
+ssl_client-1.31.1-r14 license:
 GPL-2.0-only
 
 ```
