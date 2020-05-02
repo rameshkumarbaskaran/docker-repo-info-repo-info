@@ -6,6 +6,8 @@
 -	[`open-liberty:19.0.0.12-kernel-java8-openj9`](#open-liberty190012-kernel-java8-openj9)
 -	[`open-liberty:20.0.0.3-full-java8-openj9`](#open-liberty20003-full-java8-openj9)
 -	[`open-liberty:20.0.0.3-kernel-java8-openj9`](#open-liberty20003-kernel-java8-openj9)
+-	[`open-liberty:20.0.0.4-full-java8-openj9`](#open-liberty20004-full-java8-openj9)
+-	[`open-liberty:20.0.0.4-kernel-java8-openj9`](#open-liberty20004-kernel-java8-openj9)
 -	[`open-liberty:full`](#open-libertyfull)
 -	[`open-liberty:full-java8-openj9`](#open-libertyfull-java8-openj9)
 -	[`open-liberty:kernel`](#open-libertykernel)
@@ -1517,6 +1519,24 @@ CMD ["/opt/ol/wlp/bin/server" "run" "defaultServer"]
 		Last Modified: Fri, 24 Apr 2020 11:09:32 GMT  
 		Size: 7.4 MB (7431808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `open-liberty:20.0.0.4-full-java8-openj9`
+
+```console
+$ docker pull open-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `open-liberty:20.0.0.4-kernel-java8-openj9`
+
+```console
+$ docker pull open-liberty@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `open-liberty:full`
 
