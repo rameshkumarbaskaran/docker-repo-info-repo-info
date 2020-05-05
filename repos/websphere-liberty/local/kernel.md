@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7c0ff3ca8f9680d59029ae3bfc55721232f0a86f1109f5d538d56efaa1345a9b`
-- Created: `2020-04-29T04:47:30.474497706Z`
+- Image ID: `sha256:3787492e196b16b21b8dec4afcd74cc1142aac6f46c3aa74bafb4fa5f4551d64`
+- Created: `2020-05-02T00:35:59.530643045Z`
 - Virtual Size: ~ 311.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -25,8 +25,10 @@
   - `ProductName=WebSphere Application Server Liberty`
   - `ProductVersion=20.0.0.4`
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter`
+  - `org.opencontainers.image.description=This image contains the WebSphere Liberty runtime with IBM's Java and Ubuntu as the base OS.  For more information on this image please see https://github.com/WASdev/ci.docker#building-an-application-image`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
   - `org.opencontainers.image.revision=cl200420200401-1714`
+  - `org.opencontainers.image.title=IBM WebSphere Liberty`
   - `org.opencontainers.image.url=http://wasdev.net`
   - `org.opencontainers.image.vendor=IBM`
   - `org.opencontainers.image.version=20.0.0.4`
