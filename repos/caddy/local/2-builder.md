@@ -1,10 +1,10 @@
-# `caddy:2.0.0-rc.3-builder`
+# `caddy:2.0.0-builder`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c2aae53e7832b665791c8bcccd6000512aa2ecfb7cb4124615198be0048438ed`
-- Created: `2020-04-24T22:56:48.978242927Z`
-- Virtual Size: ~ 822.43 Mb  
+- Image ID: `sha256:c3f459aeeb070c0235758c31ed9a327801de7388aa467764e53e342672cba0bf`
+- Created: `2020-05-04T19:21:15.075250461Z`
+- Virtual Size: ~ 822.34 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -12,7 +12,7 @@
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GOLANG_VERSION=1.14.2`
   - `GOPATH=/go`
-  - `CADDY_SOURCE_VERSION=v2.0.0-rc.3`
+  - `CADDY_SOURCE_VERSION=v2.0.0`
 
 ## `apk` (`.apk`-based packages)
 
