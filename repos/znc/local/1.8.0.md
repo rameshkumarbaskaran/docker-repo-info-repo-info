@@ -1,33 +1,33 @@
-# `znc:1.7.5`
+# `znc:1.8.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5277a89190339af2aa249a091ab62b4b6098e4e8b39ccf0a683000c98572f1ce`
-- Created: `2020-04-24T14:12:45.080869054Z`
-- Virtual Size: ~ 416.64 Mb  
+- Image ID: `sha256:05f12fd7620d74121b7ce5bee69bc6eb75381cd91d2a6cf90f3afdc8be9bbb78`
+- Created: `2020-05-04T19:26:50.535034001Z`
+- Virtual Size: ~ 432.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E`
-  - `ZNC_VERSION=1.7.5`
+  - `ZNC_VERSION=1.8.0`
 
 ## `apk` (`.apk`-based packages)
 
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.1.2-r0 description:
+alpine-baselayout-3.2.0-r3 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.1.2-r0 webpage:
+alpine-baselayout-3.2.0-r3 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.1.2-r0 installed size:
-405504
+alpine-baselayout-3.2.0-r3 installed size:
+413696
 
-alpine-baselayout-3.1.2-r0 license:
+alpine-baselayout-3.2.0-r3 license:
 GPL-2.0-only
 
 ```
@@ -52,16 +52,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r2 description:
+apk-tools-2.10.5-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r2 webpage:
+apk-tools-2.10.5-r0 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r2 installed size:
+apk-tools-2.10.5-r0 installed size:
 262144
 
-apk-tools-2.10.4-r2 license:
+apk-tools-2.10.5-r0 license:
 GPL2
 
 ```
@@ -69,16 +69,16 @@ GPL2
 ### `apk` package: `binutils`
 
 ```console
-binutils-2.32-r0 description:
+binutils-2.33.1-r0 description:
 Tools necessary to build programs
 
-binutils-2.32-r0 webpage:
+binutils-2.33.1-r0 webpage:
 https://www.gnu.org/software/binutils/
 
-binutils-2.32-r0 installed size:
-10403840
+binutils-2.33.1-r0 installed size:
+9953280
 
-binutils-2.32-r0 license:
+binutils-2.33.1-r0 license:
 GPL-2.0 GPL-3.0-or-later LGPL-2.0 BSD
 
 ```
@@ -86,16 +86,16 @@ GPL-2.0 GPL-3.0-or-later LGPL-2.0 BSD
 ### `apk` package: `boost`
 
 ```console
-boost-1.69.0-r4 description:
+boost-1.71.0-r1 description:
 Free peer-reviewed portable C++ source libraries
 
-boost-1.69.0-r4 webpage:
+boost-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-1.69.0-r4 installed size:
-823296
+boost-1.71.0-r1 installed size:
+897024
 
-boost-1.69.0-r4 license:
+boost-1.71.0-r1 license:
 custom
 
 ```
@@ -103,16 +103,16 @@ custom
 ### `apk` package: `boost-atomic`
 
 ```console
-boost-atomic-1.69.0-r4 description:
+boost-atomic-1.71.0-r1 description:
 Boost atomic shared library
 
-boost-atomic-1.69.0-r4 webpage:
+boost-atomic-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-atomic-1.69.0-r4 installed size:
+boost-atomic-1.71.0-r1 installed size:
 28672
 
-boost-atomic-1.69.0-r4 license:
+boost-atomic-1.71.0-r1 license:
 custom
 
 ```
@@ -120,16 +120,16 @@ custom
 ### `apk` package: `boost-chrono`
 
 ```console
-boost-chrono-1.69.0-r4 description:
+boost-chrono-1.71.0-r1 description:
 Boost chrono shared library
 
-boost-chrono-1.69.0-r4 webpage:
+boost-chrono-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-chrono-1.69.0-r4 installed size:
-61440
+boost-chrono-1.71.0-r1 installed size:
+65536
 
-boost-chrono-1.69.0-r4 license:
+boost-chrono-1.71.0-r1 license:
 custom
 
 ```
@@ -137,16 +137,16 @@ custom
 ### `apk` package: `boost-container`
 
 ```console
-boost-container-1.69.0-r4 description:
+boost-container-1.71.0-r1 description:
 Boost container shared library
 
-boost-container-1.69.0-r4 webpage:
+boost-container-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-container-1.69.0-r4 installed size:
+boost-container-1.71.0-r1 installed size:
 98304
 
-boost-container-1.69.0-r4 license:
+boost-container-1.71.0-r1 license:
 custom
 
 ```
@@ -154,16 +154,16 @@ custom
 ### `apk` package: `boost-context`
 
 ```console
-boost-context-1.69.0-r4 description:
+boost-context-1.71.0-r1 description:
 Boost context shared library
 
-boost-context-1.69.0-r4 webpage:
+boost-context-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-context-1.69.0-r4 installed size:
+boost-context-1.71.0-r1 installed size:
 28672
 
-boost-context-1.69.0-r4 license:
+boost-context-1.71.0-r1 license:
 custom
 
 ```
@@ -171,16 +171,16 @@ custom
 ### `apk` package: `boost-contract`
 
 ```console
-boost-contract-1.69.0-r4 description:
+boost-contract-1.71.0-r1 description:
 Boost contract shared library
 
-boost-contract-1.69.0-r4 webpage:
+boost-contract-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-contract-1.69.0-r4 installed size:
-151552
+boost-contract-1.71.0-r1 installed size:
+163840
 
-boost-contract-1.69.0-r4 license:
+boost-contract-1.71.0-r1 license:
 custom
 
 ```
@@ -188,16 +188,16 @@ custom
 ### `apk` package: `boost-coroutine`
 
 ```console
-boost-coroutine-1.69.0-r4 description:
+boost-coroutine-1.71.0-r1 description:
 Boost coroutine shared library
 
-boost-coroutine-1.69.0-r4 webpage:
+boost-coroutine-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-coroutine-1.69.0-r4 installed size:
-77824
+boost-coroutine-1.71.0-r1 installed size:
+73728
 
-boost-coroutine-1.69.0-r4 license:
+boost-coroutine-1.71.0-r1 license:
 custom
 
 ```
@@ -205,16 +205,16 @@ custom
 ### `apk` package: `boost-date_time`
 
 ```console
-boost-date_time-1.69.0-r4 description:
+boost-date_time-1.71.0-r1 description:
 Boost date_time shared library
 
-boost-date_time-1.69.0-r4 webpage:
+boost-date_time-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-date_time-1.69.0-r4 installed size:
-90112
+boost-date_time-1.71.0-r1 installed size:
+86016
 
-boost-date_time-1.69.0-r4 license:
+boost-date_time-1.71.0-r1 license:
 custom
 
 ```
@@ -222,16 +222,16 @@ custom
 ### `apk` package: `boost-fiber`
 
 ```console
-boost-fiber-1.69.0-r4 description:
+boost-fiber-1.71.0-r1 description:
 Boost fiber shared library
 
-boost-fiber-1.69.0-r4 webpage:
+boost-fiber-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-fiber-1.69.0-r4 installed size:
-98304
+boost-fiber-1.71.0-r1 installed size:
+90112
 
-boost-fiber-1.69.0-r4 license:
+boost-fiber-1.71.0-r1 license:
 custom
 
 ```
@@ -239,16 +239,16 @@ custom
 ### `apk` package: `boost-filesystem`
 
 ```console
-boost-filesystem-1.69.0-r4 description:
+boost-filesystem-1.71.0-r1 description:
 Boost filesystem shared library
 
-boost-filesystem-1.69.0-r4 webpage:
+boost-filesystem-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-filesystem-1.69.0-r4 installed size:
+boost-filesystem-1.71.0-r1 installed size:
 135168
 
-boost-filesystem-1.69.0-r4 license:
+boost-filesystem-1.71.0-r1 license:
 custom
 
 ```
@@ -256,16 +256,16 @@ custom
 ### `apk` package: `boost-graph`
 
 ```console
-boost-graph-1.69.0-r4 description:
+boost-graph-1.71.0-r1 description:
 Boost graph shared library
 
-boost-graph-1.69.0-r4 webpage:
+boost-graph-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-graph-1.69.0-r4 installed size:
-286720
+boost-graph-1.71.0-r1 installed size:
+335872
 
-boost-graph-1.69.0-r4 license:
+boost-graph-1.71.0-r1 license:
 custom
 
 ```
@@ -273,16 +273,16 @@ custom
 ### `apk` package: `boost-iostreams`
 
 ```console
-boost-iostreams-1.69.0-r4 description:
+boost-iostreams-1.71.0-r1 description:
 Boost iostreams shared library
 
-boost-iostreams-1.69.0-r4 webpage:
+boost-iostreams-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-iostreams-1.69.0-r4 installed size:
-163840
+boost-iostreams-1.71.0-r1 installed size:
+147456
 
-boost-iostreams-1.69.0-r4 license:
+boost-iostreams-1.71.0-r1 license:
 custom
 
 ```
@@ -290,16 +290,16 @@ custom
 ### `apk` package: `boost-libs`
 
 ```console
-boost-libs-1.69.0-r4 description:
+boost-libs-1.71.0-r1 description:
 Boost shared libraries
 
-boost-libs-1.69.0-r4 webpage:
+boost-libs-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-libs-1.69.0-r4 installed size:
+boost-libs-1.71.0-r1 installed size:
 4096
 
-boost-libs-1.69.0-r4 license:
+boost-libs-1.71.0-r1 license:
 custom
 
 ```
@@ -307,16 +307,16 @@ custom
 ### `apk` package: `boost-locale`
 
 ```console
-boost-locale-1.69.0-r4 description:
+boost-locale-1.71.0-r1 description:
 Boost locale shared library
 
-boost-locale-1.69.0-r4 webpage:
+boost-locale-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-locale-1.69.0-r4 installed size:
-638976
+boost-locale-1.71.0-r1 installed size:
+659456
 
-boost-locale-1.69.0-r4 license:
+boost-locale-1.71.0-r1 license:
 custom
 
 ```
@@ -324,16 +324,16 @@ custom
 ### `apk` package: `boost-log`
 
 ```console
-boost-log-1.69.0-r4 description:
+boost-log-1.71.0-r1 description:
 Boost log shared library
 
-boost-log-1.69.0-r4 webpage:
+boost-log-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-log-1.69.0-r4 installed size:
-1024000
+boost-log-1.71.0-r1 installed size:
+1036288
 
-boost-log-1.69.0-r4 license:
+boost-log-1.71.0-r1 license:
 custom
 
 ```
@@ -341,16 +341,16 @@ custom
 ### `apk` package: `boost-log_setup`
 
 ```console
-boost-log_setup-1.69.0-r4 description:
+boost-log_setup-1.71.0-r1 description:
 Boost log_setup shared library
 
-boost-log_setup-1.69.0-r4 webpage:
+boost-log_setup-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-log_setup-1.69.0-r4 installed size:
-720896
+boost-log_setup-1.71.0-r1 installed size:
+778240
 
-boost-log_setup-1.69.0-r4 license:
+boost-log_setup-1.71.0-r1 license:
 custom
 
 ```
@@ -358,16 +358,16 @@ custom
 ### `apk` package: `boost-math`
 
 ```console
-boost-math-1.69.0-r4 description:
+boost-math-1.71.0-r1 description:
 Boost math shared library
 
-boost-math-1.69.0-r4 webpage:
+boost-math-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-math-1.69.0-r4 installed size:
-1126400
+boost-math-1.71.0-r1 installed size:
+1290240
 
-boost-math-1.69.0-r4 license:
+boost-math-1.71.0-r1 license:
 custom
 
 ```
@@ -375,16 +375,16 @@ custom
 ### `apk` package: `boost-prg_exec_monitor`
 
 ```console
-boost-prg_exec_monitor-1.69.0-r4 description:
+boost-prg_exec_monitor-1.71.0-r1 description:
 Boost prg_exec_monitor shared library
 
-boost-prg_exec_monitor-1.69.0-r4 webpage:
+boost-prg_exec_monitor-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-prg_exec_monitor-1.69.0-r4 installed size:
+boost-prg_exec_monitor-1.71.0-r1 installed size:
 102400
 
-boost-prg_exec_monitor-1.69.0-r4 license:
+boost-prg_exec_monitor-1.71.0-r1 license:
 custom
 
 ```
@@ -392,16 +392,16 @@ custom
 ### `apk` package: `boost-program_options`
 
 ```console
-boost-program_options-1.69.0-r4 description:
+boost-program_options-1.71.0-r1 description:
 Boost program_options shared library
 
-boost-program_options-1.69.0-r4 webpage:
+boost-program_options-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-program_options-1.69.0-r4 installed size:
-569344
+boost-program_options-1.71.0-r1 installed size:
+593920
 
-boost-program_options-1.69.0-r4 license:
+boost-program_options-1.71.0-r1 license:
 custom
 
 ```
@@ -409,16 +409,16 @@ custom
 ### `apk` package: `boost-python2`
 
 ```console
-boost-python2-1.69.0-r4 description:
+boost-python2-1.71.0-r1 description:
 Boost python2 shared library
 
-boost-python2-1.69.0-r4 webpage:
+boost-python2-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-python2-1.69.0-r4 installed size:
-282624
+boost-python2-1.71.0-r1 installed size:
+278528
 
-boost-python2-1.69.0-r4 license:
+boost-python2-1.71.0-r1 license:
 custom
 
 ```
@@ -426,16 +426,16 @@ custom
 ### `apk` package: `boost-python3`
 
 ```console
-boost-python3-1.69.0-r4 description:
+boost-python3-1.71.0-r1 description:
 Boost python3 shared library
 
-boost-python3-1.69.0-r4 webpage:
+boost-python3-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-python3-1.69.0-r4 installed size:
+boost-python3-1.71.0-r1 installed size:
 274432
 
-boost-python3-1.69.0-r4 license:
+boost-python3-1.71.0-r1 license:
 custom
 
 ```
@@ -443,16 +443,16 @@ custom
 ### `apk` package: `boost-random`
 
 ```console
-boost-random-1.69.0-r4 description:
+boost-random-1.71.0-r1 description:
 Boost random shared library
 
-boost-random-1.69.0-r4 webpage:
+boost-random-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-random-1.69.0-r4 installed size:
-57344
+boost-random-1.71.0-r1 installed size:
+61440
 
-boost-random-1.69.0-r4 license:
+boost-random-1.71.0-r1 license:
 custom
 
 ```
@@ -460,16 +460,16 @@ custom
 ### `apk` package: `boost-regex`
 
 ```console
-boost-regex-1.69.0-r4 description:
+boost-regex-1.71.0-r1 description:
 Boost regex shared library
 
-boost-regex-1.69.0-r4 webpage:
+boost-regex-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-regex-1.69.0-r4 installed size:
-921600
+boost-regex-1.71.0-r1 installed size:
+1060864
 
-boost-regex-1.69.0-r4 license:
+boost-regex-1.71.0-r1 license:
 custom
 
 ```
@@ -477,16 +477,16 @@ custom
 ### `apk` package: `boost-serialization`
 
 ```console
-boost-serialization-1.69.0-r4 description:
+boost-serialization-1.71.0-r1 description:
 Boost serialization shared library
 
-boost-serialization-1.69.0-r4 webpage:
+boost-serialization-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-serialization-1.69.0-r4 installed size:
-290816
+boost-serialization-1.71.0-r1 installed size:
+286720
 
-boost-serialization-1.69.0-r4 license:
+boost-serialization-1.71.0-r1 license:
 custom
 
 ```
@@ -494,16 +494,16 @@ custom
 ### `apk` package: `boost-stacktrace_basic`
 
 ```console
-boost-stacktrace_basic-1.69.0-r4 description:
+boost-stacktrace_basic-1.71.0-r1 description:
 Boost stacktrace_basic shared library
 
-boost-stacktrace_basic-1.69.0-r4 webpage:
+boost-stacktrace_basic-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-stacktrace_basic-1.69.0-r4 installed size:
+boost-stacktrace_basic-1.71.0-r1 installed size:
 32768
 
-boost-stacktrace_basic-1.69.0-r4 license:
+boost-stacktrace_basic-1.71.0-r1 license:
 custom
 
 ```
@@ -511,16 +511,16 @@ custom
 ### `apk` package: `boost-stacktrace_noop`
 
 ```console
-boost-stacktrace_noop-1.69.0-r4 description:
+boost-stacktrace_noop-1.71.0-r1 description:
 Boost stacktrace_noop shared library
 
-boost-stacktrace_noop-1.69.0-r4 webpage:
+boost-stacktrace_noop-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-stacktrace_noop-1.69.0-r4 installed size:
+boost-stacktrace_noop-1.71.0-r1 installed size:
 28672
 
-boost-stacktrace_noop-1.69.0-r4 license:
+boost-stacktrace_noop-1.71.0-r1 license:
 custom
 
 ```
@@ -528,16 +528,16 @@ custom
 ### `apk` package: `boost-system`
 
 ```console
-boost-system-1.69.0-r4 description:
+boost-system-1.71.0-r1 description:
 Boost system shared library
 
-boost-system-1.69.0-r4 webpage:
+boost-system-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-system-1.69.0-r4 installed size:
+boost-system-1.71.0-r1 installed size:
 28672
 
-boost-system-1.69.0-r4 license:
+boost-system-1.71.0-r1 license:
 custom
 
 ```
@@ -545,16 +545,16 @@ custom
 ### `apk` package: `boost-thread`
 
 ```console
-boost-thread-1.69.0-r4 description:
+boost-thread-1.71.0-r1 description:
 Boost thread shared library
 
-boost-thread-1.69.0-r4 webpage:
+boost-thread-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-thread-1.69.0-r4 installed size:
-167936
+boost-thread-1.71.0-r1 installed size:
+192512
 
-boost-thread-1.69.0-r4 license:
+boost-thread-1.71.0-r1 license:
 custom
 
 ```
@@ -562,16 +562,16 @@ custom
 ### `apk` package: `boost-timer`
 
 ```console
-boost-timer-1.69.0-r4 description:
+boost-timer-1.71.0-r1 description:
 Boost timer shared library
 
-boost-timer-1.69.0-r4 webpage:
+boost-timer-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-timer-1.69.0-r4 installed size:
+boost-timer-1.71.0-r1 installed size:
 49152
 
-boost-timer-1.69.0-r4 license:
+boost-timer-1.71.0-r1 license:
 custom
 
 ```
@@ -579,16 +579,16 @@ custom
 ### `apk` package: `boost-type_erasure`
 
 ```console
-boost-type_erasure-1.69.0-r4 description:
+boost-type_erasure-1.71.0-r1 description:
 Boost type_erasure shared library
 
-boost-type_erasure-1.69.0-r4 webpage:
+boost-type_erasure-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-type_erasure-1.69.0-r4 installed size:
-102400
+boost-type_erasure-1.71.0-r1 installed size:
+98304
 
-boost-type_erasure-1.69.0-r4 license:
+boost-type_erasure-1.71.0-r1 license:
 custom
 
 ```
@@ -596,16 +596,16 @@ custom
 ### `apk` package: `boost-unit_test_framework`
 
 ```console
-boost-unit_test_framework-1.69.0-r4 description:
+boost-unit_test_framework-1.71.0-r1 description:
 Boost unit_test_framework shared library
 
-boost-unit_test_framework-1.69.0-r4 webpage:
+boost-unit_test_framework-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-unit_test_framework-1.69.0-r4 installed size:
-708608
+boost-unit_test_framework-1.71.0-r1 installed size:
+741376
 
-boost-unit_test_framework-1.69.0-r4 license:
+boost-unit_test_framework-1.71.0-r1 license:
 custom
 
 ```
@@ -613,16 +613,16 @@ custom
 ### `apk` package: `boost-wave`
 
 ```console
-boost-wave-1.69.0-r4 description:
+boost-wave-1.71.0-r1 description:
 Boost wave shared library
 
-boost-wave-1.69.0-r4 webpage:
+boost-wave-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-wave-1.69.0-r4 installed size:
-864256
+boost-wave-1.71.0-r1 installed size:
+892928
 
-boost-wave-1.69.0-r4 license:
+boost-wave-1.71.0-r1 license:
 custom
 
 ```
@@ -630,16 +630,16 @@ custom
 ### `apk` package: `boost-wserialization`
 
 ```console
-boost-wserialization-1.69.0-r4 description:
+boost-wserialization-1.71.0-r1 description:
 Boost wserialization shared library
 
-boost-wserialization-1.69.0-r4 webpage:
+boost-wserialization-1.71.0-r1 webpage:
 http://www.boost.org/
 
-boost-wserialization-1.69.0-r4 installed size:
-204800
+boost-wserialization-1.71.0-r1 installed size:
+200704
 
-boost-wserialization-1.69.0-r4 license:
+boost-wserialization-1.71.0-r1 license:
 custom
 
 ```
@@ -664,33 +664,33 @@ none
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.30.1-r3 description:
+busybox-1.31.1-r9 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.30.1-r3 webpage:
+busybox-1.31.1-r9 webpage:
 https://busybox.net/
 
-busybox-1.30.1-r3 installed size:
-942080
+busybox-1.31.1-r9 installed size:
+962560
 
-busybox-1.30.1-r3 license:
-GPL-2.0
+busybox-1.31.1-r9 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r0 description:
+ca-certificates-20191127-r1 description:
 Common CA certificates PEM files
 
-ca-certificates-20191127-r0 webpage:
+ca-certificates-20191127-r1 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r0 installed size:
+ca-certificates-20191127-r1 installed size:
 741376
 
-ca-certificates-20191127-r0 license:
+ca-certificates-20191127-r1 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -698,16 +698,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
-ca-certificates-cacert-20191127-r0 description:
+ca-certificates-cacert-20191127-r1 description:
 Mozilla bundled certificates
 
-ca-certificates-cacert-20191127-r0 webpage:
+ca-certificates-cacert-20191127-r1 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-cacert-20191127-r0 installed size:
+ca-certificates-cacert-20191127-r1 installed size:
 245760
 
-ca-certificates-cacert-20191127-r0 license:
+ca-certificates-cacert-20191127-r1 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -715,16 +715,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `cmake`
 
 ```console
-cmake-3.14.5-r0 description:
+cmake-3.15.5-r0 description:
 Cross-platform, open-source make system
 
-cmake-3.14.5-r0 webpage:
-https://www.cmake.org
+cmake-3.15.5-r0 webpage:
+https://www.cmake.org/
 
-cmake-3.14.5-r0 installed size:
-27877376
+cmake-3.15.5-r0 installed size:
+28323840
 
-cmake-3.14.5-r0 license:
+cmake-3.15.5-r0 license:
 BSD-3-Clause
 
 ```
@@ -732,16 +732,16 @@ BSD-3-Clause
 ### `apk` package: `cyrus-sasl`
 
 ```console
-cyrus-sasl-2.1.27-r4 description:
+cyrus-sasl-2.1.27-r5 description:
 Cyrus Simple Authentication Service Layer (SASL)
 
-cyrus-sasl-2.1.27-r4 webpage:
+cyrus-sasl-2.1.27-r5 webpage:
 https://cyrusimap.org/
 
-cyrus-sasl-2.1.27-r4 installed size:
+cyrus-sasl-2.1.27-r5 installed size:
 167936
 
-cyrus-sasl-2.1.27-r4 license:
+cyrus-sasl-2.1.27-r5 license:
 custom
 
 ```
@@ -756,7 +756,7 @@ db-5.3.28-r1 webpage:
 https://www.oracle.com/technology/software/products/berkeley-db/index.html
 
 db-5.3.28-r1 installed size:
-1556480
+1564672
 
 db-5.3.28-r1 license:
 custom
@@ -766,16 +766,16 @@ custom
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.8-r0 description:
+expat-2.2.9-r1 description:
 An XML Parser library written in C
 
-expat-2.2.8-r0 webpage:
+expat-2.2.9-r1 webpage:
 http://www.libexpat.org/
 
-expat-2.2.8-r0 installed size:
-184320
+expat-2.2.9-r1 installed size:
+188416
 
-expat-2.2.8-r0 license:
+expat-2.2.9-r1 license:
 MIT
 
 ```
@@ -817,16 +817,16 @@ BSD-0
 ### `apk` package: `g++`
 
 ```console
-g++-8.3.0-r0 description:
+g++-9.2.0-r4 description:
 GNU C++ standard library and compiler
 
-g++-8.3.0-r0 webpage:
+g++-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-g++-8.3.0-r0 installed size:
-57909248
+g++-9.2.0-r4 installed size:
+62349312
 
-g++-8.3.0-r0 license:
+g++-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -834,16 +834,16 @@ GPL LGPL
 ### `apk` package: `gcc`
 
 ```console
-gcc-8.3.0-r0 description:
+gcc-9.2.0-r4 description:
 The GNU Compiler Collection
 
-gcc-8.3.0-r0 webpage:
+gcc-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-gcc-8.3.0-r0 installed size:
-75997184
+gcc-9.2.0-r4 installed size:
+85360640
 
-gcc-8.3.0-r0 license:
+gcc-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -885,16 +885,16 @@ LGPL-3.0
 ### `apk` package: `heimdal-libs`
 
 ```console
-heimdal-libs-7.5.0-r5 description:
+heimdal-libs-7.7.0-r0 description:
 Heimdal libraries
 
-heimdal-libs-7.5.0-r5 webpage:
+heimdal-libs-7.7.0-r0 webpage:
 http://www.h5l.org/
 
-heimdal-libs-7.5.0-r5 installed size:
-3170304
+heimdal-libs-7.7.0-r0 installed size:
+3178496
 
-heimdal-libs-7.5.0-r5 license:
+heimdal-libs-7.7.0-r0 license:
 BSD-3-Clause
 
 ```
@@ -943,7 +943,7 @@ icu-libs-64.2-r1 webpage:
 http://www.icu-project.org/
 
 icu-libs-64.2-r1 installed size:
-32145408
+32149504
 
 icu-libs-64.2-r1 license:
 MIT ICU Unicode-TOU
@@ -987,16 +987,16 @@ MIT
 ### `apk` package: `libacl`
 
 ```console
-libacl-2.2.52-r6 description:
+libacl-2.2.53-r0 description:
 Dynamic library for access control list support
 
-libacl-2.2.52-r6 webpage:
+libacl-2.2.53-r0 webpage:
 https://savannah.nongnu.org/projects/acl
 
-libacl-2.2.52-r6 installed size:
-53248
+libacl-2.2.53-r0 installed size:
+45056
 
-libacl-2.2.52-r6 license:
+libacl-2.2.53-r0 license:
 LGPL-2.1-or-later AND GPL-2.0-or-later
 
 ```
@@ -1004,33 +1004,33 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libarchive`
 
 ```console
-libarchive-3.3.3-r2 description:
+libarchive-3.4.2-r0 description:
 library that can create and read several streaming archive formats
 
-libarchive-3.3.3-r2 webpage:
+libarchive-3.4.2-r0 webpage:
 https://libarchive.org/
 
-libarchive-3.3.3-r2 installed size:
-622592
+libarchive-3.4.2-r0 installed size:
+671744
 
-libarchive-3.3.3-r2 license:
-BSD-2-Clause BSD-3-Clause Apache-2.0
+libarchive-3.4.2-r0 license:
+BSD-2-Clause AND BSD-3-Clause AND Public-Domain
 
 ```
 
 ### `apk` package: `libatomic`
 
 ```console
-libatomic-8.3.0-r0 description:
+libatomic-9.2.0-r4 description:
 GCC Atomic library
 
-libatomic-8.3.0-r0 webpage:
+libatomic-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-libatomic-8.3.0-r0 installed size:
+libatomic-9.2.0-r4 installed size:
 40960
 
-libatomic-8.3.0-r0 license:
+libatomic-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -1038,33 +1038,33 @@ GPL LGPL
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r7 description:
+libbz2-1.0.8-r1 description:
 Shared library for bz2
 
-libbz2-1.0.6-r7 webpage:
+libbz2-1.0.8-r1 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r7 installed size:
+libbz2-1.0.8-r1 installed size:
 73728
 
-libbz2-1.0.6-r7 license:
-BSD
+libbz2-1.0.8-r1 license:
+bzip2-1.0.6
 
 ```
 
 ### `apk` package: `libc-dev`
 
 ```console
-libc-dev-0.7.1-r0 description:
+libc-dev-0.7.2-r0 description:
 Meta package to pull in correct libc
 
-libc-dev-0.7.1-r0 webpage:
+libc-dev-0.7.2-r0 webpage:
 http://alpinelinux.org
 
-libc-dev-0.7.1-r0 installed size:
+libc-dev-0.7.2-r0 installed size:
 4096
 
-libc-dev-0.7.1-r0 license:
+libc-dev-0.7.2-r0 license:
 BSD
 
 ```
@@ -1072,16 +1072,16 @@ BSD
 ### `apk` package: `libc-utils`
 
 ```console
-libc-utils-0.7.1-r0 description:
+libc-utils-0.7.2-r0 description:
 Meta package to pull in correct libc
 
-libc-utils-0.7.1-r0 webpage:
+libc-utils-0.7.2-r0 webpage:
 http://alpinelinux.org
 
-libc-utils-0.7.1-r0 installed size:
+libc-utils-0.7.2-r0 installed size:
 4096
 
-libc-utils-0.7.1-r0 license:
+libc-utils-0.7.2-r0 license:
 BSD
 
 ```
@@ -1113,7 +1113,7 @@ libcrypto1.1-1.1.1g-r0 webpage:
 https://www.openssl.org
 
 libcrypto1.1-1.1.1g-r0 installed size:
-2756608
+2760704
 
 libcrypto1.1-1.1.1g-r0 license:
 OpenSSL
@@ -1123,16 +1123,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.66.0-r0 description:
+libcurl-7.67.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.66.0-r0 webpage:
+libcurl-7.67.0-r0 webpage:
 https://curl.haxx.se/
 
-libcurl-7.66.0-r0 installed size:
-454656
+libcurl-7.67.0-r0 installed size:
+458752
 
-libcurl-7.66.0-r0 license:
+libcurl-7.67.0-r0 license:
 MIT
 
 ```
@@ -1157,16 +1157,16 @@ MIT
 ### `apk` package: `libgcc`
 
 ```console
-libgcc-8.3.0-r0 description:
+libgcc-9.2.0-r4 description:
 GNU C compiler runtime libraries
 
-libgcc-8.3.0-r0 webpage:
+libgcc-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-libgcc-8.3.0-r0 installed size:
+libgcc-9.2.0-r4 installed size:
 90112
 
-libgcc-8.3.0-r0 license:
+libgcc-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -1174,16 +1174,16 @@ GPL LGPL
 ### `apk` package: `libgomp`
 
 ```console
-libgomp-8.3.0-r0 description:
+libgomp-9.2.0-r4 description:
 GCC shared-memory parallel programming API library
 
-libgomp-8.3.0-r0 webpage:
+libgomp-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-libgomp-8.3.0-r0 installed size:
-155648
+libgomp-9.2.0-r4 installed size:
+184320
 
-libgomp-8.3.0-r0 license:
+libgomp-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -1208,16 +1208,16 @@ BSD-2-Clause
 ### `apk` package: `libressl`
 
 ```console
-libressl-2.7.5-r0 description:
+libressl-3.0.2-r0 description:
 Version of the TLS/crypto stack forked from OpenSSL
 
-libressl-2.7.5-r0 webpage:
+libressl-3.0.2-r0 webpage:
 http://www.libressl.org/
 
-libressl-2.7.5-r0 installed size:
-495616
+libressl-3.0.2-r0 installed size:
+507904
 
-libressl-2.7.5-r0 license:
+libressl-3.0.2-r0 license:
 custom
 
 ```
@@ -1225,67 +1225,67 @@ custom
 ### `apk` package: `libressl-dev`
 
 ```console
-libressl-dev-2.7.5-r0 description:
+libressl-dev-3.0.2-r0 description:
 Version of the TLS/crypto stack forked from OpenSSL (development files)
 
-libressl-dev-2.7.5-r0 webpage:
+libressl-dev-3.0.2-r0 webpage:
 http://www.libressl.org/
 
-libressl-dev-2.7.5-r0 installed size:
-16859136
+libressl-dev-3.0.2-r0 installed size:
+17719296
 
-libressl-dev-2.7.5-r0 license:
+libressl-dev-3.0.2-r0 license:
 custom
 
 ```
 
-### `apk` package: `libressl2.7-libcrypto`
+### `apk` package: `libressl3.0-libcrypto`
 
 ```console
-libressl2.7-libcrypto-2.7.5-r0 description:
+libressl3.0-libcrypto-3.0.2-r0 description:
 libressl libcrypto library
 
-libressl2.7-libcrypto-2.7.5-r0 webpage:
+libressl3.0-libcrypto-3.0.2-r0 webpage:
 http://www.libressl.org/
 
-libressl2.7-libcrypto-2.7.5-r0 installed size:
-2113536
+libressl3.0-libcrypto-3.0.2-r0 installed size:
+1789952
 
-libressl2.7-libcrypto-2.7.5-r0 license:
+libressl3.0-libcrypto-3.0.2-r0 license:
 custom
 
 ```
 
-### `apk` package: `libressl2.7-libssl`
+### `apk` package: `libressl3.0-libssl`
 
 ```console
-libressl2.7-libssl-2.7.5-r0 description:
+libressl3.0-libssl-3.0.2-r0 description:
 libressl libssl library
 
-libressl2.7-libssl-2.7.5-r0 webpage:
+libressl3.0-libssl-3.0.2-r0 webpage:
 http://www.libressl.org/
 
-libressl2.7-libssl-2.7.5-r0 installed size:
-319488
+libressl3.0-libssl-3.0.2-r0 installed size:
+352256
 
-libressl2.7-libssl-2.7.5-r0 license:
+libressl3.0-libssl-3.0.2-r0 license:
 custom
 
 ```
 
-### `apk` package: `libressl2.7-libtls`
+### `apk` package: `libressl3.0-libtls`
 
 ```console
-libressl2.7-libtls-2.7.5-r0 description:
+libressl3.0-libtls-3.0.2-r0 description:
 libressl libtls library
 
-libressl2.7-libtls-2.7.5-r0 webpage:
+libressl3.0-libtls-3.0.2-r0 webpage:
 http://www.libressl.org/
 
-libressl2.7-libtls-2.7.5-r0 installed size:
-81920
+libressl3.0-libtls-3.0.2-r0 installed size:
+86016
 
-libressl2.7-libtls-2.7.5-r0 license:
+libressl3.0-libtls-3.0.2-r0 license:
 custom
 
 ```
@@ -1293,16 +1293,16 @@ custom
 ### `apk` package: `libsasl`
 
 ```console
-libsasl-2.1.27-r4 description:
+libsasl-2.1.27-r5 description:
 Cyrus Simple Authentication and Security Layer (SASL) library
 
-libsasl-2.1.27-r4 webpage:
+libsasl-2.1.27-r5 webpage:
 https://cyrusimap.org/
 
-libsasl-2.1.27-r4 installed size:
+libsasl-2.1.27-r5 installed size:
 180224
 
-libsasl-2.1.27-r4 license:
+libsasl-2.1.27-r5 license:
 custom
 
 ```
@@ -1317,7 +1317,7 @@ libssl1.1-1.1.1g-r0 webpage:
 https://www.openssl.org
 
 libssl1.1-1.1.1g-r0 installed size:
-536576
+540672
 
 libssl1.1-1.1.1g-r0 license:
 OpenSSL
@@ -1327,16 +1327,16 @@ OpenSSL
 ### `apk` package: `libstdc++`
 
 ```console
-libstdc++-8.3.0-r0 description:
+libstdc++-9.2.0-r4 description:
 GNU C++ standard runtime library
 
-libstdc++-8.3.0-r0 webpage:
+libstdc++-9.2.0-r4 webpage:
 http://gcc.gnu.org
 
-libstdc++-8.3.0-r0 installed size:
-1392640
+libstdc++-9.2.0-r4 installed size:
+1671168
 
-libstdc++-8.3.0-r0 license:
+libstdc++-9.2.0-r4 license:
 GPL LGPL
 
 ```
@@ -1361,33 +1361,33 @@ ISC
 ### `apk` package: `libuv`
 
 ```console
-libuv-1.29.1-r0 description:
+libuv-1.34.0-r0 description:
 Cross-platform asychronous I/O
 
-libuv-1.29.1-r0 webpage:
+libuv-1.34.0-r0 webpage:
 https://libuv.org
 
-libuv-1.29.1-r0 installed size:
-192512
+libuv-1.34.0-r0 installed size:
+196608
 
-libuv-1.29.1-r0 license:
-MIT BSD ISC
+libuv-1.34.0-r0 license:
+MIT AND ISC
 
 ```
 
 ### `apk` package: `lz4-libs`
 
 ```console
-lz4-libs-1.9.1-r1 description:
+lz4-libs-1.9.2-r0 description:
 LZ4 is lossless compression algorithm with fast decoder @ multiple GB/s per core. (libraries)
 
-lz4-libs-1.9.1-r1 webpage:
+lz4-libs-1.9.2-r0 webpage:
 https://github.com/lz4/lz4
 
-lz4-libs-1.9.1-r1 installed size:
-126976
+lz4-libs-1.9.2-r0 installed size:
+221184
 
-lz4-libs-1.9.1-r1 license:
+lz4-libs-1.9.2-r0 license:
 BSD-2-Clause GPL-2.0-only
 
 ```
@@ -1412,33 +1412,33 @@ GPL-3.0-or-later
 ### `apk` package: `mpc1`
 
 ```console
-mpc1-1.1.0-r0 description:
+mpc1-1.1.0-r1 description:
 Multiprecision C library
 
-mpc1-1.1.0-r0 webpage:
+mpc1-1.1.0-r1 webpage:
 http://www.multiprecision.org/
 
-mpc1-1.1.0-r0 installed size:
-106496
+mpc1-1.1.0-r1 installed size:
+102400
 
-mpc1-1.1.0-r0 license:
+mpc1-1.1.0-r1 license:
 LGPL-3.0-or-later
 
 ```
 
-### `apk` package: `mpfr3`
+### `apk` package: `mpfr4`
 
 ```console
-mpfr3-3.1.5-r1 description:
+mpfr4-4.0.2-r1 description:
 multiple-precision floating-point library
 
-mpfr3-3.1.5-r1 webpage:
+mpfr4-4.0.2-r1 webpage:
 http://www.mpfr.org/
 
-mpfr3-3.1.5-r1 installed size:
-360448
+mpfr4-4.0.2-r1 installed size:
+450560
 
-mpfr3-3.1.5-r1 license:
+mpfr4-4.0.2-r1 license:
 GPL LGPL
 
 ```
@@ -1446,16 +1446,16 @@ GPL LGPL
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r3 description:
+musl-1.1.24-r2 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r3 webpage:
-http://www.musl-libc.org/
+musl-1.1.24-r2 webpage:
+https://musl.libc.org/
 
-musl-1.1.22-r3 installed size:
-598016
+musl-1.1.24-r2 installed size:
+614400
 
-musl-1.1.22-r3 license:
+musl-1.1.24-r2 license:
 MIT
 
 ```
@@ -1463,16 +1463,16 @@ MIT
 ### `apk` package: `musl-dev`
 
 ```console
-musl-dev-1.1.22-r3 description:
+musl-dev-1.1.24-r2 description:
 the musl c library (libc) implementation (development files)
 
-musl-dev-1.1.22-r3 webpage:
-http://www.musl-libc.org/
+musl-dev-1.1.24-r2 webpage:
+https://musl.libc.org/
 
-musl-dev-1.1.22-r3 installed size:
-11112448
+musl-dev-1.1.24-r2 installed size:
+11268096
 
-musl-dev-1.1.22-r3 license:
+musl-dev-1.1.24-r2 license:
 MIT
 
 ```
@@ -1480,16 +1480,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r3 description:
+musl-utils-1.1.24-r2 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r3 webpage:
-http://www.musl-libc.org/
+musl-utils-1.1.24-r2 webpage:
+https://musl.libc.org/
 
-musl-utils-1.1.22-r3 installed size:
-147456
+musl-utils-1.1.24-r2 installed size:
+151552
 
-musl-utils-1.1.22-r3 license:
+musl-utils-1.1.24-r2 license:
 MIT BSD GPL2+
 
 ```
@@ -1497,16 +1497,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20190518-r2 description:
+ncurses-libs-6.1_p20200118-r4 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20190518-r2 webpage:
-https://www.gnu.org/software/ncurses/
+ncurses-libs-6.1_p20200118-r4 webpage:
+https://invisible-island.net/ncurses/
 
-ncurses-libs-6.1_p20190518-r2 installed size:
-503808
+ncurses-libs-6.1_p20200118-r4 installed size:
+507904
 
-ncurses-libs-6.1_p20190518-r2 license:
+ncurses-libs-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -1514,16 +1514,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20190518-r2 description:
+ncurses-terminfo-base-6.1_p20200118-r4 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20190518-r2 webpage:
-https://www.gnu.org/software/ncurses/
+ncurses-terminfo-base-6.1_p20200118-r4 webpage:
+https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.1_p20190518-r2 installed size:
-212992
+ncurses-terminfo-base-6.1_p20200118-r4 installed size:
+217088
 
-ncurses-terminfo-base-6.1_p20190518-r2 license:
+ncurses-terminfo-base-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -1531,16 +1531,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.39.2-r0 description:
+nghttp2-libs-1.40.0-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.39.2-r0 webpage:
+nghttp2-libs-1.40.0-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.39.2-r0 installed size:
-155648
+nghttp2-libs-1.40.0-r0 installed size:
+159744
 
-nghttp2-libs-1.39.2-r0 license:
+nghttp2-libs-1.40.0-r0 license:
 MIT
 
 ```
@@ -1548,16 +1548,16 @@ MIT
 ### `apk` package: `perl`
 
 ```console
-perl-5.28.2-r1 description:
+perl-5.30.1-r0 description:
 Larry Wall's Practical Extraction and Report Language
 
-perl-5.28.2-r1 webpage:
-http://www.perl.org/
+perl-5.30.1-r0 webpage:
+https://www.perl.org/
 
-perl-5.28.2-r1 installed size:
-40112128
+perl-5.30.1-r0 installed size:
+38596608
 
-perl-5.28.2-r1 license:
+perl-5.30.1-r0 license:
 Artistic GPL-2.0
 
 ```
@@ -1565,16 +1565,16 @@ Artistic GPL-2.0
 ### `apk` package: `pkgconf`
 
 ```console
-pkgconf-1.6.1-r1 description:
+pkgconf-1.6.3-r0 description:
 development framework configuration tools
 
-pkgconf-1.6.1-r1 webpage:
+pkgconf-1.6.3-r0 webpage:
 https://git.dereferenced.org/pkgconf/pkgconf
 
-pkgconf-1.6.1-r1 installed size:
+pkgconf-1.6.3-r0 installed size:
 143360
 
-pkgconf-1.6.1-r1 license:
+pkgconf-1.6.3-r0 license:
 ISC
 
 ```
@@ -1582,16 +1582,16 @@ ISC
 ### `apk` package: `python2`
 
 ```console
-python2-2.7.16-r2 description:
+python2-2.7.18-r0 description:
 A high-level scripting language
 
-python2-2.7.16-r2 webpage:
-https://www.python.org
+python2-2.7.18-r0 webpage:
+https://www.python.org/
 
-python2-2.7.16-r2 installed size:
-39821312
+python2-2.7.18-r0 installed size:
+39944192
 
-python2-2.7.16-r2 license:
+python2-2.7.18-r0 license:
 custom
 
 ```
@@ -1599,50 +1599,50 @@ custom
 ### `apk` package: `python3`
 
 ```console
-python3-3.7.5-r1 description:
+python3-3.8.2-r0 description:
 A high-level scripting language
 
-python3-3.7.5-r1 webpage:
-https://www.python.org
+python3-3.8.2-r0 webpage:
+https://www.python.org/
 
-python3-3.7.5-r1 installed size:
-57450496
+python3-3.8.2-r0 installed size:
+58839040
 
-python3-3.7.5-r1 license:
-custom
+python3-3.8.2-r0 license:
+PSF-2.0
 
 ```
 
 ### `apk` package: `readline`
 
 ```console
-readline-8.0.0-r0 description:
+readline-8.0.1-r0 description:
 GNU readline library
 
-readline-8.0.0-r0 webpage:
+readline-8.0.1-r0 webpage:
 https://tiswww.cwru.edu/php/chet/readline/rltop.html
 
-readline-8.0.0-r0 installed size:
+readline-8.0.1-r0 installed size:
 299008
 
-readline-8.0.0-r0 license:
-GPL
+readline-8.0.1-r0 license:
+GPL-2.0-or-later
 
 ```
 
 ### `apk` package: `rhash-libs`
 
 ```console
-rhash-libs-1.3.8-r0 description:
+rhash-libs-1.3.9-r0 description:
 Utility for calculation and verification of hash sums and magnet links (libraries)
 
-rhash-libs-1.3.8-r0 webpage:
+rhash-libs-1.3.9-r0 webpage:
 http://rhash.anz.ru
 
-rhash-libs-1.3.8-r0 installed size:
+rhash-libs-1.3.9-r0 installed size:
 208896
 
-rhash-libs-1.3.8-r0 license:
+rhash-libs-1.3.9-r0 license:
 custom
 
 ```
@@ -1650,16 +1650,16 @@ custom
 ### `apk` package: `runtime-dependencies`
 
 ```console
-runtime-dependencies-20200424.140807 description:
+runtime-dependencies-20200504.192212 description:
 virtual meta package
 
-runtime-dependencies-20200424.140807 webpage:
+runtime-dependencies-20200504.192212 webpage:
 
 
-runtime-dependencies-20200424.140807 installed size:
+runtime-dependencies-20200504.192212 installed size:
 0
 
-runtime-dependencies-20200424.140807 license:
+runtime-dependencies-20200504.192212 license:
 
 
 ```
@@ -1667,33 +1667,33 @@ runtime-dependencies-20200424.140807 license:
 ### `apk` package: `scanelf`
 
 ```console
-scanelf-1.2.3-r0 description:
+scanelf-1.2.4-r0 description:
 Scan ELF binaries for stuff
 
-scanelf-1.2.3-r0 webpage:
+scanelf-1.2.4-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
-scanelf-1.2.3-r0 installed size:
-98304
+scanelf-1.2.4-r0 installed size:
+94208
 
-scanelf-1.2.3-r0 license:
-GPL-2.0
+scanelf-1.2.4-r0 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r2 description:
+sqlite-libs-3.30.1-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r2 webpage:
+sqlite-libs-3.30.1-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r2 installed size:
-925696
+sqlite-libs-3.30.1-r1 installed size:
+937984
 
-sqlite-libs-3.28.0-r2 license:
+sqlite-libs-3.30.1-r1 license:
 Public-Domain
 
 ```
@@ -1701,33 +1701,33 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.30.1-r3 description:
+ssl_client-1.31.1-r9 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.30.1-r3 webpage:
+ssl_client-1.31.1-r9 webpage:
 https://busybox.net/
 
-ssl_client-1.30.1-r3 installed size:
+ssl_client-1.31.1-r9 installed size:
 28672
 
-ssl_client-1.30.1-r3 license:
-GPL-2.0
+ssl_client-1.31.1-r9 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `su-exec`
 
 ```console
-su-exec-0.2-r0 description:
+su-exec-0.2-r1 description:
 switch user and group id, setgroups and exec
 
-su-exec-0.2-r0 webpage:
+su-exec-0.2-r1 webpage:
 https://github.com/ncopa/su-exec
 
-su-exec-0.2-r0 installed size:
+su-exec-0.2-r1 installed size:
 24576
 
-su-exec-0.2-r0 license:
+su-exec-0.2-r1 license:
 MIT
 
 ```
@@ -1752,16 +1752,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019c-r0 description:
+tzdata-2020a-r0 description:
 Timezone data
 
-tzdata-2019c-r0 webpage:
+tzdata-2020a-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019c-r0 installed size:
-3538944
+tzdata-2020a-r0 installed size:
+3526656
 
-tzdata-2019c-r0 license:
+tzdata-2020a-r0 license:
 Public-Domain
 
 ```
@@ -1786,33 +1786,33 @@ GPL-2.0-or-later Public-Domain
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.11-r1 description:
+zlib-1.2.11-r3 description:
 A compression/decompression Library
 
-zlib-1.2.11-r1 webpage:
-http://zlib.net
+zlib-1.2.11-r3 webpage:
+https://zlib.net/
 
-zlib-1.2.11-r1 installed size:
+zlib-1.2.11-r3 installed size:
 110592
 
-zlib-1.2.11-r1 license:
-zlib
+zlib-1.2.11-r3 license:
+Zlib
 
 ```
 
 ### `apk` package: `zstd-libs`
 
 ```console
-zstd-libs-1.4.0-r0 description:
+zstd-libs-1.4.4-r1 description:
 Zstandard - Fast real-time compression algorithm (libraries)
 
-zstd-libs-1.4.0-r0 webpage:
-http://www.zstd.net
+zstd-libs-1.4.4-r1 webpage:
+https://www.zstd.net
 
-zstd-libs-1.4.0-r0 installed size:
-675840
+zstd-libs-1.4.4-r1 installed size:
+745472
 
-zstd-libs-1.4.0-r0 license:
+zstd-libs-1.4.4-r1 license:
 BSD-3-Clause GPL-2.0-or-later
 
 ```
