@@ -1,4 +1,4 @@
-## `openjdk:15-ea-oraclelinux7`
+## `openjdk:15-ea-22-jdk`
 
 ```console
 $ docker pull openjdk@sha256:a195dca548ce85e22aef20b009ebe8ccb8800e5e694006d9a7122c9290e64fd7
@@ -8,7 +8,7 @@ $ docker pull openjdk@sha256:a195dca548ce85e22aef20b009ebe8ccb8800e5e694006d9a71
 -	Platforms:
 	-	linux; amd64
 
-### `openjdk:15-ea-oraclelinux7` - linux; amd64
+### `openjdk:15-ea-22-jdk` - linux; amd64
 
 ```console
 $ docker pull openjdk@sha256:f558aa608f39eae320f0d7877ea86fba24e1c5707f99a8450d5f7680edbe91e1
