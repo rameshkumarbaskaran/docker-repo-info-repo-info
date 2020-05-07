@@ -1,7 +1,7 @@
 ## `maven:ibmjava-alpine`
 
 ```console
-$ docker pull maven@sha256:bf0734c4dc3d0620e17293e604c86cdb9dc7e5d16d44901cb13d1e11bbe18de0
+$ docker pull maven@sha256:05ca682d48dd0acd6cd6d4da916b6df9941083af729f61cf7283010e1a13e779
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull maven@sha256:bf0734c4dc3d0620e17293e604c86cdb9dc7e5d16d44901cb13d1
 ### `maven:ibmjava-alpine` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:ede809078205e8bf2a3d5ab593c99e40c07ed6eb0a36d926781c1aafe1308c18
+$ docker pull maven@sha256:36a4440196f2adbff4154abdfcfa329ae1c683e3f40553dfeffae1f74ed3a5be
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.1 MB (187087583 bytes)**  
+-	Total Size: **187.1 MB (187080661 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0c7cd631c107a21f73785e0d2204e971839ed3d1bbe4d783afbad6444d28d9f0`
+-	Image ID: `sha256:f6cf8a984cec00395382338de648082ff69a4c66440ac51bf07c53899d9c6b42`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -33,36 +33,36 @@ MAINTAINER Jayashree Gopi <jayasg12@in.ibm.com> (@jayasg12)
 COPY file:3ca1cc706ceed4c671485bfc9a5f46a78571aaf829b0ab9fbb88c9d48e27ccd3 in /etc/apk/keys 
 # Fri, 24 Apr 2020 14:40:42 GMT
 RUN apk add --no-cache --virtual .build-deps curl binutils     && GLIBC_VER="2.30-r0"     && ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download"     && GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-8.2.1%2B20180831-1-x86_64.pkg.tar.xz"     && GCC_LIBS_SHA256=e4b39fb1f5957c5aab5c2ce0c46e03d30426f3b94b9992b009d417ff2d56af4d     && curl -fLs https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /tmp/sgerrand.rsa.pub     && cmp -s /etc/apk/keys/sgerrand.rsa.pub /tmp/sgerrand.rsa.pub     && curl -fLs ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/${GLIBC_VER}.apk     && apk add /tmp/${GLIBC_VER}.apk     && curl -fLs ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.xz     && echo "${GCC_LIBS_SHA256}  /tmp/gcc-libs.tar.xz" | sha256sum -c -     && mkdir /tmp/gcc     && tar -xf /tmp/gcc-libs.tar.xz -C /tmp/gcc     && mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib     && strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*     && apk del --purge .build-deps     && apk add --no-cache ca-certificates openssl     && rm -rf /tmp/${GLIBC_VER}.apk /tmp/gcc /tmp/gcc-libs.tar.xz /var/cache/apk/* /tmp/*.pub
-# Fri, 24 Apr 2020 14:40:42 GMT
-ENV JAVA_VERSION=1.8.0_sr6fp7
-# Wed, 29 Apr 2020 03:27:32 GMT
-RUN set -eux;     apk --no-cache add --virtual .build-deps wget;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='3da063eb0142fd317ae8d2b72f07bcde1c3a4909c107f3fd39c297749f603ef9';          YML_FILE='sdk/linux/x86_64/index.yml';          ;;        i386)          ESUM='94ca02a6bb52e0ef335d234aeb0f626200a0c44988e1d175a9bebefb5303c976';          YML_FILE='sdk/linux/i386/index.yml';          ;;        ppc64el|ppc64le)          ESUM='9ede76a597af28c7f10c6f8a68788cc2dcd39fdab178c9bac56df8b3766ac717';          YML_FILE='sdk/linux/ppc64le/index.yml';          ;;        s390)          ESUM='04f0561bad3772669ed51ce8859f8ba41dee29015caca4ae5a5d1c4db86b2c09';          YML_FILE='sdk/linux/s390/index.yml';          ;;        s390x)          ESUM='a9b9d0bd2ee86fa8a51733da49ade862e9b83e6812463307743bd5de75236636';          YML_FILE='sdk/linux/s390x/index.yml';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     BASE_URL="https://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/meta/";     wget -q -U UA_IBM_JAVA_Docker -O /tmp/index.yml ${BASE_URL}/${YML_FILE};     JAVA_URL=$(sed -n '/^'${JAVA_VERSION}:'/{n;s/\s*uri:\s//p}'< /tmp/index.yml);     wget -q -U UA_IBM_JAVA_Docker -O /tmp/ibm-java.bin ${JAVA_URL};     echo "${ESUM}  /tmp/ibm-java.bin" | sha256sum -c -;     echo "INSTALLER_UI=silent" > /tmp/response.properties;     echo "USER_INSTALL_DIR=/opt/ibm/java" >> /tmp/response.properties;     echo "LICENSE_ACCEPTED=TRUE" >> /tmp/response.properties;     mkdir -p /opt/ibm;     chmod +x /tmp/ibm-java.bin;     /tmp/ibm-java.bin -i silent -f /tmp/response.properties;     rm -f /tmp/response.properties;     rm -f /tmp/index.yml;     rm -f /tmp/ibm-java.bin;     apk del .build-deps;
-# Wed, 29 Apr 2020 03:27:33 GMT
+# Wed, 06 May 2020 17:22:59 GMT
+ENV JAVA_VERSION=1.8.0_sr6fp10
+# Wed, 06 May 2020 17:26:41 GMT
+RUN set -eux;     apk --no-cache add --virtual .build-deps wget;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        amd64|x86_64)          ESUM='1a330b630b173fcecaeb730494612c1a28f7b73ea6a9b7eb41f29a9136ef3863';          YML_FILE='sdk/linux/x86_64/index.yml';          ;;        i386)          ESUM='94ea289890f9953f62d2f82cd8cfe4c69f8914c2b136e9bfe244b93f16a66ccd';          YML_FILE='sdk/linux/i386/index.yml';          ;;        ppc64el|ppc64le)          ESUM='ea99ab28dd300b08940882d178247e99aafe5a998b1621cf288dfb247394e067';          YML_FILE='sdk/linux/ppc64le/index.yml';          ;;        s390)          ESUM='25dcbae84e3a8e4a0cc30b5c6fcf985886e59fcaf450149a3f724ece8745f967';          YML_FILE='sdk/linux/s390/index.yml';          ;;        s390x)          ESUM='85685deb69e377e63a26c33fe913dd206d70d1b40a25f44ac991abfe45a35dc2';          YML_FILE='sdk/linux/s390x/index.yml';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     BASE_URL="https://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/meta/";     wget -q -U UA_IBM_JAVA_Docker -O /tmp/index.yml ${BASE_URL}/${YML_FILE};     JAVA_URL=$(sed -n '/^'${JAVA_VERSION}:'/{n;s/\s*uri:\s//p}'< /tmp/index.yml);     wget -q -U UA_IBM_JAVA_Docker -O /tmp/ibm-java.bin ${JAVA_URL};     echo "${ESUM}  /tmp/ibm-java.bin" | sha256sum -c -;     echo "INSTALLER_UI=silent" > /tmp/response.properties;     echo "USER_INSTALL_DIR=/opt/ibm/java" >> /tmp/response.properties;     echo "LICENSE_ACCEPTED=TRUE" >> /tmp/response.properties;     mkdir -p /opt/ibm;     chmod +x /tmp/ibm-java.bin;     /tmp/ibm-java.bin -i silent -f /tmp/response.properties;     rm -f /tmp/response.properties;     rm -f /tmp/index.yml;     rm -f /tmp/ibm-java.bin;     apk del .build-deps;
+# Wed, 06 May 2020 17:26:41 GMT
 ENV JAVA_HOME=/opt/ibm/java/jre PATH=/opt/ibm/java/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin IBM_JAVA_OPTIONS=-XX:+UseContainerSupport
-# Wed, 29 Apr 2020 04:43:29 GMT
+# Wed, 06 May 2020 18:54:08 GMT
 RUN apk add --no-cache curl tar bash procps
-# Wed, 29 Apr 2020 04:43:30 GMT
+# Wed, 06 May 2020 18:54:09 GMT
 ARG MAVEN_VERSION=3.6.3
-# Wed, 29 Apr 2020 04:43:30 GMT
+# Wed, 06 May 2020 18:54:09 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 29 Apr 2020 04:43:31 GMT
+# Wed, 06 May 2020 18:54:09 GMT
 ARG SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0
-# Wed, 29 Apr 2020 04:43:31 GMT
+# Wed, 06 May 2020 18:54:09 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.3/binaries
-# Wed, 29 Apr 2020 04:43:42 GMT
+# Wed, 06 May 2020 18:54:18 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.3/binaries MAVEN_VERSION=3.6.3 SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0 USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 29 Apr 2020 04:43:42 GMT
+# Wed, 06 May 2020 18:54:18 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 29 Apr 2020 04:43:42 GMT
+# Wed, 06 May 2020 18:54:18 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 29 Apr 2020 04:43:43 GMT
+# Wed, 06 May 2020 18:54:19 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 29 Apr 2020 04:43:44 GMT
+# Wed, 06 May 2020 18:54:19 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 29 Apr 2020 04:43:44 GMT
+# Wed, 06 May 2020 18:54:19 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 29 Apr 2020 04:43:44 GMT
+# Wed, 06 May 2020 18:54:19 GMT
 CMD ["mvn"]
 ```
 
@@ -79,23 +79,23 @@ CMD ["mvn"]
 		Last Modified: Wed, 29 Apr 2020 03:28:30 GMT  
 		Size: 5.6 MB (5565680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:626883dd314d9b33087e35cbe1798c905be153d424ee8913458bc8871b2879c4`  
-		Last Modified: Wed, 29 Apr 2020 03:31:06 GMT  
-		Size: 167.5 MB (167482510 bytes)  
+	-	`sha256:3e6cbe773ac95a7aa4719d3ccfaea671e656497c7a20ab40a85986a10bba2f97`  
+		Last Modified: Wed, 06 May 2020 18:35:09 GMT  
+		Size: 167.5 MB (167475558 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d64ae6fae0ba860aea78dd52dd49f1b6b500236f6dc4d8372402dd06f63b97aa`  
-		Last Modified: Wed, 29 Apr 2020 04:46:03 GMT  
-		Size: 1.7 MB (1660842 bytes)  
+	-	`sha256:f691a612501921495878061a477d57b0914539596f884b8ae991b440cd8cf433`  
+		Last Modified: Thu, 07 May 2020 21:24:59 GMT  
+		Size: 1.7 MB (1660860 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b732c67bf731c69fe20ff90a70f7c2b1d93b94233a69cf46a87f743d46bbf8c9`  
-		Last Modified: Wed, 29 Apr 2020 04:46:04 GMT  
-		Size: 9.6 MB (9581220 bytes)  
+	-	`sha256:0f0179205eee4dbde6377240f2a3f6dc10457c59476cca49f44d48e1803f6f91`  
+		Last Modified: Thu, 07 May 2020 21:25:00 GMT  
+		Size: 9.6 MB (9581232 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5ab6cd40fb9dbe5df87dbc7b19e6ec01ae7f97798512fdb1c4d9f1ff38a9be38`  
-		Last Modified: Wed, 29 Apr 2020 04:46:02 GMT  
+	-	`sha256:740066de9faf9b1194a350a819cfd6efeb993f124713a4569eabfb4a541c3c4c`  
+		Last Modified: Thu, 07 May 2020 21:24:59 GMT  
 		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ee25c8afb559ebab1de7ced18dd9ed758a21c04725cfac57d47ae6e9fb809c9`  
-		Last Modified: Wed, 29 Apr 2020 04:46:03 GMT  
+	-	`sha256:9f09307801ab23dfc3a68899d02073bd1309c6c99839e8387361bfc7ca92cb96`  
+		Last Modified: Thu, 07 May 2020 21:24:59 GMT  
 		Size: 355.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
