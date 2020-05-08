@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f6f1f65a5eeeec13615c2cde09c50a1ff3d626f00b18414072f4ffc42cced3f3`
-- Created: `2020-04-23T19:04:32.995279437Z`
+- Image ID: `sha256:ab56842655a727e30ea669f2af1c94e40463b9b1d7ee86d5a918ca29384e59b2`
+- Created: `2020-05-08T00:21:47.127970304Z`
 - Virtual Size: ~ 594.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUSTUP_HOME=/usr/local/rustup`
   - `CARGO_HOME=/usr/local/cargo`
-  - `RUST_VERSION=1.43.0`
+  - `RUST_VERSION=1.43.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1257,11 +1257,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.19.98-1`
+### `dpkg` source package: `linux=4.19.98-1+deb10u1`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.19.98-1`
+- `linux-libc-dev:amd64=4.19.98-1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1276,17 +1276,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.19.98-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.98-1.dsc' linux_4.19.98-1.dsc 189279 SHA256:1f361ae152e6e94e2b9a22f1071d3c49958d3071dc03e7c877a417b353a9359f
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.98.orig.tar.xz' linux_4.19.98.orig.tar.xz 107435812 SHA256:272bb85b0c443ebd2b7437084a75c0efa2c875357bd6b19d7eae019a01b61193
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.98-1.debian.tar.xz' linux_4.19.98-1.debian.tar.xz 1347332 SHA256:9cf1dd8231e5905b51d4ad7b7c9a77297bff75362c852614a8dc680d1e90f73e
+$ apt-get source -qq --print-uris linux=4.19.98-1+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.98-1+deb10u1.dsc' linux_4.19.98-1+deb10u1.dsc 189311 SHA256:bc7a6a3dc791bd322e6b7ef3fa26a8f40364796b33069dbcb397c1e49896805e
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.98.orig.tar.xz' linux_4.19.98.orig.tar.xz 107435812 SHA256:272bb85b0c443ebd2b7437084a75c0efa2c875357bd6b19d7eae019a01b61193
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.98-1+deb10u1.debian.tar.xz' linux_4.19.98-1+deb10u1.debian.tar.xz 3238304 SHA256:b8a48537ce0376c5f165e14313c6c4999e653ed6eb54ca03d95ac506aaf550f5
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.19.98-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.98-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.98-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.19.98-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.19.98-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.19.98-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.8.3-1`
 
