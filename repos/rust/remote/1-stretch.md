@@ -1,7 +1,7 @@
 ## `rust:1-stretch`
 
 ```console
-$ docker pull rust@sha256:9233400d04ef3003da58b85e05eaa7da01499a3a1d5d032eac934fabfb04febd
+$ docker pull rust@sha256:8e38d9b7682c05bcb468761dd2b8d5ef8d18ce69feb356e6b4dd130b1be59069
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -188,14 +188,14 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 ### `rust:1-stretch` - linux; 386
 
 ```console
-$ docker pull rust@sha256:f80ba6f791bffbca0a51e39b8ede1e3a5ac0978d4466c5ac73780e29d57a40cb
+$ docker pull rust@sha256:2f8261399ebbb8323f0d076fdced91105178960dcf7e7be2407a184c18d70a29
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **482.9 MB (482925443 bytes)**  
+-	Total Size: **482.9 MB (482943519 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:19a431a095d09f5381432e10129706726f725278484ca8b827ff257bba570a78`
+-	Image ID: `sha256:c842580be9a4c731333b0e4b0b295632a3b670d3c99e31e1666612bf1cb54e46`
 -	Default Command: `["bash"]`
 
 ```dockerfile
@@ -211,9 +211,9 @@ RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get 
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
 # Thu, 23 Apr 2020 01:57:52 GMT
 RUN set -ex; 	apt-get update; 	DEBIAN_FRONTEND=noninteractive 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 23 Apr 2020 19:05:35 GMT
-ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.43.0
-# Thu, 23 Apr 2020 19:05:56 GMT
+# Thu, 07 May 2020 23:38:44 GMT
+ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.43.1
+# Thu, 07 May 2020 23:39:03 GMT
 RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch##*-}" in         amd64) rustArch='x86_64-unknown-linux-gnu'; rustupSha256='ad1f8b5199b3b9e231472ed7aa08d2e5d1d539198a15c5b1e53c746aad81d27b' ;;         armhf) rustArch='armv7-unknown-linux-gnueabihf'; rustupSha256='6c6c3789dabf12171c7f500e06d21d8004b5318a5083df8b0b02c0e5ef1d017b' ;;         arm64) rustArch='aarch64-unknown-linux-gnu'; rustupSha256='26942c80234bac34b3c1352abbd9187d3e23b43dae3cf56a9f9c1ea8ee53076d' ;;         i386) rustArch='i686-unknown-linux-gnu'; rustupSha256='27ae12bc294a34e566579deba3e066245d09b8871dc021ef45fc715dced05297' ;;         *) echo >&2 "unsupported architecture: ${dpkgArch}"; exit 1 ;;     esac;     url="https://static.rust-lang.org/rustup/archive/1.21.1/${rustArch}/rustup-init";     wget "$url";     echo "${rustupSha256} *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION;     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;
 ```
 
@@ -238,7 +238,7 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Last Modified: Thu, 23 Apr 2020 02:05:34 GMT  
 		Size: 220.0 MB (219958135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:95a6459313410eb73cb99ef54db7926f33bbaba68b09d7b51012fb5e2160fe4f`  
-		Last Modified: Thu, 23 Apr 2020 19:08:55 GMT  
-		Size: 149.9 MB (149876874 bytes)  
+	-	`sha256:5f286f4d6a057405850385ce37dfae63fa273c2a8bd33e8fbb607b40fd5234ed`  
+		Last Modified: Thu, 07 May 2020 23:41:32 GMT  
+		Size: 149.9 MB (149894950 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
