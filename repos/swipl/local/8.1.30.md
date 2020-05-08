@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:82c8ee67c138430a4f53ec70d1d5c1ed00dcd745d6ac7ccc7b08703f069ced07`
-- Created: `2020-04-16T22:53:37.159035516Z`
-- Virtual Size: ~ 146.19 Mb  
+- Image ID: `sha256:f9bb018188abf8c4450bfe38a4f86dcb79b4291d413eb4bf0fbf069482593e7a`
+- Created: `2020-05-07T21:51:09.091277927Z`
+- Virtual Size: ~ 147.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["swipl"]`
@@ -1568,6 +1568,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxslt/1.1.29-2.1+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxslt/1.1.29-2.1+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `libyaml=0.1.7-2`
+
+Binary Packages:
+
+- `libyaml-0-2:amd64=0.1.7-2`
+- `libyaml-dev:amd64=0.1.7-2`
+
+Licenses: (parsed from: `/usr/share/doc/libyaml-0-2/copyright`, `/usr/share/doc/libyaml-dev/copyright`)
+
+- `Expat`
+- `permissive`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libyaml=0.1.7-2
+'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.1.7-2.dsc' libyaml_0.1.7-2.dsc 1820 SHA256:f2e599adcf8336c4be374987112a0c823b4609dc0f5a944e5827651241d91645
+'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.1.7.orig.tar.gz' libyaml_0.1.7.orig.tar.gz 527518 SHA256:8088e457264a98ba451a90b8661fcb4f9d6f478f7265d48322a196cec2480729
+'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.1.7-2.debian.tar.xz' libyaml_0.1.7-2.debian.tar.xz 4016 SHA256:6fc7065491dd6f86b46e6f231ae8ab60f8aafbef2dcf4721598644024485b801
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libyaml/0.1.7-2/ (for browsing the source)
+- https://sources.debian.net/src/libyaml/0.1.7-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libyaml/0.1.7-2/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `lsb=9.20161125`
 
 Binary Packages:
@@ -1835,12 +1862,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nghttp2/1.18.1-1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nghttp2/1.18.1-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u3`
+### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u4`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.44+dfsg-5+deb9u3`
-- `libldap-common=2.4.44+dfsg-5+deb9u3`
+- `libldap-2.4-2:amd64=2.4.44+dfsg-5+deb9u4`
+- `libldap-common=2.4.44+dfsg-5+deb9u4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1849,17 +1876,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.44+dfsg-5+deb9u3
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u3.dsc' openldap_2.4.44+dfsg-5+deb9u3.dsc 3009 SHA256:feff6977d4674bbbbe3c34c9d292edcfe6d895d10aa165910dbc96819a327abb
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg.orig.tar.gz' openldap_2.4.44+dfsg.orig.tar.gz 4826590 SHA256:d5187c229bec163c5d97845846e1b87917755f85b04f444c08836384f4bd7ffe
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u3.debian.tar.xz' openldap_2.4.44+dfsg-5+deb9u3.debian.tar.xz 168576 SHA256:926e2b00418901d9b52d314a6f6319f84c9dd04e12d085830ffc37bf3329c402
+$ apt-get source -qq --print-uris openldap=2.4.44+dfsg-5+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u4.dsc' openldap_2.4.44+dfsg-5+deb9u4.dsc 3143 SHA256:07ad0dadb47a8ed0ee5aa6a207859873fdd296511433ca170bc635fad659f02a
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.44+dfsg.orig.tar.gz' openldap_2.4.44+dfsg.orig.tar.gz 4826590 SHA256:d5187c229bec163c5d97845846e1b87917755f85b04f444c08836384f4bd7ffe
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u4.debian.tar.xz' openldap_2.4.44+dfsg-5+deb9u4.debian.tar.xz 169396 SHA256:03b7a898ea970c05c8a7f80505c6317e7570e87954ee21df00593c1f2c1412ab
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.0l-1~deb9u1`
 
