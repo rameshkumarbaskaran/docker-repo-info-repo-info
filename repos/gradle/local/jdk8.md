@@ -1,10 +1,10 @@
-# `gradle:6.3.0-jdk8`
+# `gradle:6.4.0-jdk8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6bbd9a5d91a761210f1db018858748fac367fa6fc7321955ea3277cc20073306`
-- Created: `2020-04-25T01:01:00.260426317Z`
-- Virtual Size: ~ 556.99 Mb  
+- Image ID: `sha256:26379ef5f4e2901947583ffa35295f5d9c1fab39c875ad7030ff36efabc8c231`
+- Created: `2020-05-06T16:21:57.814841759Z`
+- Virtual Size: ~ 557.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gradle"]`
@@ -16,7 +16,7 @@
   - `JAVA_VERSION=jdk8u252-b09`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GRADLE_HOME=/opt/gradle`
-  - `GRADLE_VERSION=6.3`
+  - `GRADLE_VERSION=6.4`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1567,14 +1567,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.4
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.4.dsc' openldap_2.4.45+dfsg-1ubuntu1.4.dsc 2884 SHA256:be157db46093f2d29357ec2176f96d831f64970bc6c578345c64ca609a797321
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.4.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.4.debian.tar.xz 177956 SHA256:8b70367ad26d644ca3d832a69683a6b748757593128bf6ab72cd3256ae5aca62
-```
 
 ### `dpkg` source package: `openssh=1:7.6p1-4ubuntu0.3`
 
