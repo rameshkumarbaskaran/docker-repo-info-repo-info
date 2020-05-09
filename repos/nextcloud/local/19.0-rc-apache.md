@@ -1,10 +1,10 @@
-# `nextcloud:19.0.0beta7-apache`
+# `nextcloud:19.0.0RC1-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:37ab9e253c60476de61bd45873960dc13b785b63485300caba525ca2626606ee`
-- Created: `2020-05-05T22:21:02.155514297Z`
-- Virtual Size: ~ 746.00 Mb  
+- Image ID: `sha256:5ec8efae25e7619fcce1cedac4076f530d1d81ba8e7c8cdc9097e655be481d65`
+- Created: `2020-05-08T22:55:50.378926895Z`
+- Virtual Size: ~ 746.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -22,11 +22,11 @@
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
   - `PHP_VERSION=7.3.17`
-  - `PHP_URL=https://www.php.net/get/php-7.3.17.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.17.tar.xz.asc/from/this/mirror`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.17.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.17.tar.xz.asc`
   - `PHP_SHA256=6a30304c27f7e7a94538f5ffec599f600ee93aedbbecad8aa4f8bec539b10ad8`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=19.0.0beta7`
+  - `NEXTCLOUD_VERSION=19.0.0RC1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -3007,7 +3007,6 @@ Other potentially useful URLs:
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u1`
 - `libldap-common=2.4.47+dfsg-3+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
@@ -3028,6 +3027,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u1/ (for browsing the source)
 - https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u2`
+
+Binary Packages:
+
+- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u2`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u2.dsc' openldap_2.4.47+dfsg-3+deb10u2.dsc 3022 SHA256:e909c6be4bfd1bacf644959bc18ebeebaa13606879f11a7876d044cd688a6f62
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u2.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u2.debian.tar.xz 168684 SHA256:0f6f81f18a2407bd1a6c6003659d8b33145f31033b6f7fd026607554f0bdfcb0
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1d-0+deb10u3`
 

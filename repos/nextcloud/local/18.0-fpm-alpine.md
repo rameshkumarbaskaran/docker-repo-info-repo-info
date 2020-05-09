@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d99ddc3efeb8fceaa55ee884a7b47f64e0b1db470ed66df600a59ac38fc537bc`
-- Created: `2020-04-24T22:46:32.350834134Z`
-- Virtual Size: ~ 393.69 Mb  
+- Image ID: `sha256:1358e441b77faf1bde0369d61c3030e4373891969514de9be5b3ad42b94e6acb`
+- Created: `2020-05-07T03:58:03.814903147Z`
+- Virtual Size: ~ 393.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -19,8 +19,8 @@
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
   - `PHP_VERSION=7.3.17`
-  - `PHP_URL=https://www.php.net/get/php-7.3.17.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.17.tar.xz.asc/from/this/mirror`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.17.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.17.tar.xz.asc`
   - `PHP_SHA256=6a30304c27f7e7a94538f5ffec599f600ee93aedbbecad8aa4f8bec539b10ad8`
   - `PHP_MD5=`
   - `NEXTCLOUD_VERSION=18.0.4`
@@ -744,16 +744,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r2 description:
+libxml2-2.9.10-r3 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r2 webpage:
+libxml2-2.9.10-r3 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r2 installed size:
+libxml2-2.9.10-r3 installed size:
 1220608
 
-libxml2-2.9.10-r2 license:
+libxml2-2.9.10-r3 license:
 MIT
 
 ```
@@ -812,16 +812,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20200118-r3 description:
+ncurses-libs-6.1_p20200118-r4 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20200118-r3 webpage:
+ncurses-libs-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.1_p20200118-r3 installed size:
+ncurses-libs-6.1_p20200118-r4 installed size:
 507904
 
-ncurses-libs-6.1_p20200118-r3 license:
+ncurses-libs-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -829,16 +829,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20200118-r3 description:
+ncurses-terminfo-base-6.1_p20200118-r4 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20200118-r3 webpage:
+ncurses-terminfo-base-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.1_p20200118-r3 installed size:
+ncurses-terminfo-base-6.1_p20200118-r4 installed size:
 217088
 
-ncurses-terminfo-base-6.1_p20200118-r3 license:
+ncurses-terminfo-base-6.1_p20200118-r4 license:
 MIT
 
 ```
