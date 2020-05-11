@@ -14,6 +14,9 @@
 -	[`buildpack-deps:20.04`](#buildpack-deps2004)
 -	[`buildpack-deps:20.04-curl`](#buildpack-deps2004-curl)
 -	[`buildpack-deps:20.04-scm`](#buildpack-deps2004-scm)
+-	[`buildpack-deps:20.10`](#buildpack-deps2010)
+-	[`buildpack-deps:20.10-curl`](#buildpack-deps2010-curl)
+-	[`buildpack-deps:20.10-scm`](#buildpack-deps2010-scm)
 -	[`buildpack-deps:bionic`](#buildpack-depsbionic)
 -	[`buildpack-deps:bionic-curl`](#buildpack-depsbionic-curl)
 -	[`buildpack-deps:bionic-scm`](#buildpack-depsbionic-scm)
@@ -30,6 +33,9 @@
 -	[`buildpack-deps:focal`](#buildpack-depsfocal)
 -	[`buildpack-deps:focal-curl`](#buildpack-depsfocal-curl)
 -	[`buildpack-deps:focal-scm`](#buildpack-depsfocal-scm)
+-	[`buildpack-deps:groovy`](#buildpack-depsgroovy)
+-	[`buildpack-deps:groovy-curl`](#buildpack-depsgroovy-curl)
+-	[`buildpack-deps:groovy-scm`](#buildpack-depsgroovy-scm)
 -	[`buildpack-deps:jessie`](#buildpack-depsjessie)
 -	[`buildpack-deps:jessie-curl`](#buildpack-depsjessie-curl)
 -	[`buildpack-deps:jessie-scm`](#buildpack-depsjessie-scm)
@@ -4442,6 +4448,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		m
 		Last Modified: Fri, 24 Apr 2020 07:56:25 GMT  
 		Size: 60.3 MB (60318036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `buildpack-deps:20.10`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:20.10-curl`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:20.10-scm`
+
+**does not exist** (yet?)
 
 ## `buildpack-deps:bionic`
 
@@ -10271,6 +10289,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		m
 		Last Modified: Fri, 24 Apr 2020 07:56:25 GMT  
 		Size: 60.3 MB (60318036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `buildpack-deps:groovy`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:groovy-curl`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:groovy-scm`
+
+**does not exist** (yet?)
 
 ## `buildpack-deps:jessie`
 
