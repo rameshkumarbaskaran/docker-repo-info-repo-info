@@ -2893,20 +2893,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-rsvg-2.0/copyright`, `/usr/share/
 - `Sun-permissive`
 - `Unlicense`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris librsvg=2.48.3-1
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.48.3-1.dsc' librsvg_2.48.3-1.dsc 2607 SHA256:445eb332c2e093312566eaf9d18cff8d99ef2de50c30b698321735b513554130
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.48.3.orig.tar.xz' librsvg_2.48.3.orig.tar.xz 10457880 SHA256:99f90b5eb6ae0244419634bbaab36c08778930bee8d9204e59b72730d73e285a
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.48.3-1.debian.tar.xz' librsvg_2.48.3-1.debian.tar.xz 23412 SHA256:ed6d236ab336603de6e9de1cfb9ab4124db9ca88d75a8f36fe5779188e3edac5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/librsvg/2.48.3-1/
 
-- https://sources.debian.net/src/librsvg/2.48.3-1/ (for browsing the source)
-- https://sources.debian.net/src/librsvg/2.48.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/librsvg/2.48.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libseccomp=2.4.3-1`
 
@@ -5217,19 +5210,13 @@ Licenses: (parsed from: `/usr/share/doc/ucf/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ucf=3.0038+nmu1
-'http://deb.debian.org/debian/pool/main/u/ucf/ucf_3.0038+nmu1.dsc' ucf_3.0038+nmu1.dsc 1420 SHA256:89b6f921a30e04a946f62e6996be7c16f2f7c383d20783cd4704b502c6d5b125
-'http://deb.debian.org/debian/pool/main/u/ucf/ucf_3.0038+nmu1.tar.xz' ucf_3.0038+nmu1.tar.xz 65860 SHA256:d00bc3dd8d2f91317f52b5352fe129023c72babad55bc0dd4ece7b34183c7436
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/ucf/3.0038+nmu1/
 
-- https://sources.debian.net/src/ucf/3.0038+nmu1/ (for browsing the source)
-- https://sources.debian.net/src/ucf/3.0038+nmu1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ucf/3.0038+nmu1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unbound=1.10.0-1`
 
