@@ -1,17 +1,17 @@
-# `percona:5.6.47-centos`
+# `percona:5.6.48-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:471de329f78861ad4d68f73434e2a365ddf71e8105a27a767ac6b9dbf3085c77`
-- Created: `2020-05-05T21:41:58.402529743Z`
-- Virtual Size: ~ 425.41 Mb  
+- Image ID: `sha256:d028c31a5e5d22d9b0abdf802091a0bbb39a6d3bbca5522c2b7e02111011c207`
+- Created: `2020-05-13T14:20:50.182808658Z`
+- Virtual Size: ~ 425.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["mysqld"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `PERCONA_VERSION=5.6.47-rel87.0.1.el7`
+  - `PERCONA_VERSION=5.6.48-rel88.0.1.el7`
 - Labels:
   - `org.label-schema.build-date=20200504`
   - `org.label-schema.license=GPLv2`
@@ -26,25 +26,25 @@
 
 ## `rpm` (`.rpm`-based packages)
 
-### `rpm` package: `Percona-Server-client-56-5.6.47-rel87.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-client-56-5.6.48-rel88.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-server-56-5.6.47-rel87.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-server-56-5.6.48-rel88.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-shared-56-5.6.47-rel87.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-shared-56-5.6.48-rel88.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-tokudb-56-5.6.47-rel87.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-tokudb-56-5.6.48-rel88.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
