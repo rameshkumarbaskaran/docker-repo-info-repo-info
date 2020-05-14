@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:79bfe878ae65dff4e225a85d1712b402e6a7586086d9779ae501837c5fe82979`
-- Created: `2020-04-23T16:25:44.37687735Z`
-- Virtual Size: ~ 166.45 Mb  
+- Image ID: `sha256:c5376935b19301623baf8c4aed0ed195c84e62ab557650c638b1287f64362cf6`
+- Created: `2020-05-13T23:35:23.633468888Z`
+- Virtual Size: ~ 166.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irssi"]`
@@ -152,23 +152,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=10.3+deb10u3`
+### `dpkg` source package: `base-files=10.3+deb10u4`
 
 Binary Packages:
 
-- `base-files=10.3+deb10u3`
+- `base-files=10.3+deb10u4`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=10.3+deb10u4
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u4.dsc' base-files_10.3+deb10u4.dsc 1103 SHA256:2e5caec958e2a302b3484100b559f85b4738758cb1a5eedfb71ee129cacafcf4
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u4.tar.xz' base-files_10.3+deb10u4.tar.xz 65396 SHA256:4147e6e65fb431fac69c7d8c43f03fa30a2fa63616e71cf6928f39fabfbebcdd
+```
 
-- http://snapshot.debian.org/package/base-files/10.3+deb10u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/10.3+deb10u4/ (for browsing the source)
+- https://sources.debian.net/src/base-files/10.3+deb10u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/10.3+deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -1198,11 +1204,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libdatetime-perl/2:1.50-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libdatetime-perl/2:1.50-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libdatetime-timezone-perl=1:2.23-1+2019c`
+### `dpkg` source package: `libdatetime-timezone-perl=1:2.23-1+2020a`
 
 Binary Packages:
 
-- `libdatetime-timezone-perl=1:2.23-1+2019c`
+- `libdatetime-timezone-perl=1:2.23-1+2020a`
 
 Licenses: (parsed from: `/usr/share/doc/libdatetime-timezone-perl/copyright`)
 
@@ -1213,17 +1219,17 @@ Licenses: (parsed from: `/usr/share/doc/libdatetime-timezone-perl/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libdatetime-timezone-perl=1:2.23-1+2019c
-'http://deb.debian.org/debian/pool/main/libd/libdatetime-timezone-perl/libdatetime-timezone-perl_2.23-1+2019c.dsc' libdatetime-timezone-perl_2.23-1+2019c.dsc 2647 SHA256:4704592eb02b3623848815a382479d7f35539e50d98fc1da9b100f5e5b749747
+$ apt-get source -qq --print-uris libdatetime-timezone-perl=1:2.23-1+2020a
+'http://deb.debian.org/debian/pool/main/libd/libdatetime-timezone-perl/libdatetime-timezone-perl_2.23-1+2020a.dsc' libdatetime-timezone-perl_2.23-1+2020a.dsc 2785 SHA256:dc736ae61524c8b88c780cfb95085a6a7ad6277b59ed6d40a12e4a368dc59ea8
 'http://deb.debian.org/debian/pool/main/libd/libdatetime-timezone-perl/libdatetime-timezone-perl_2.23.orig.tar.gz' libdatetime-timezone-perl_2.23.orig.tar.gz 965468 SHA256:6ae40286031853a4319c5b34516f1c09e429d5caa5f782165cc27175c89fe54f
-'http://deb.debian.org/debian/pool/main/libd/libdatetime-timezone-perl/libdatetime-timezone-perl_2.23-1+2019c.debian.tar.xz' libdatetime-timezone-perl_2.23-1+2019c.debian.tar.xz 43332 SHA256:121c16b0e19a02e2992ce2412ed005a1f53c0037d82bde5323db1c5c4aa7a68c
+'http://deb.debian.org/debian/pool/main/libd/libdatetime-timezone-perl/libdatetime-timezone-perl_2.23-1+2020a.debian.tar.xz' libdatetime-timezone-perl_2.23-1+2020a.debian.tar.xz 55164 SHA256:309797d51098ed980551478712ae23f722c13187afc95edb1ba4bfcc519b8207
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libdatetime-timezone-perl/1:2.23-1+2019c/ (for browsing the source)
-- https://sources.debian.net/src/libdatetime-timezone-perl/1:2.23-1+2019c/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libdatetime-timezone-perl/1:2.23-1+2019c/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libdatetime-timezone-perl/1:2.23-1+2020a/ (for browsing the source)
+- https://sources.debian.net/src/libdatetime-timezone-perl/1:2.23-1+2020a/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libdatetime-timezone-perl/1:2.23-1+2020a/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libdevel-callchecker-perl=0.008-1`
 
@@ -3195,12 +3201,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/shadow/1:4.5-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/shadow/1:4.5-1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=241-7~deb10u3`
+### `dpkg` source package: `systemd=241-7~deb10u4`
 
 Binary Packages:
 
-- `libsystemd0:amd64=241-7~deb10u3`
-- `libudev1:amd64=241-7~deb10u3`
+- `libsystemd0:amd64=241-7~deb10u4`
+- `libudev1:amd64=241-7~deb10u4`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -3212,13 +3218,20 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris systemd=241-7~deb10u4
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u4.dsc' systemd_241-7~deb10u4.dsc 4946 SHA256:52707608012c7b13d19ebbbfff704311e33f884f0f843811874e266dcf2faf71
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u4.debian.tar.xz' systemd_241-7~deb10u4.debian.tar.xz 178136 SHA256:ff8ed4b3d9c30e14659278f17ea4cfc63c4b1af199a98a861abc670dfdd991cb
+```
 
-- http://snapshot.debian.org/package/systemd/241-7~deb10u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/systemd/241-7~deb10u4/ (for browsing the source)
+- https://sources.debian.net/src/systemd/241-7~deb10u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/241-7~deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.93-8`
 
@@ -3273,11 +3286,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.30+dfsg-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.30+dfsg-6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2019c-0+deb10u1`
+### `dpkg` source package: `tzdata=2020a-0+deb10u1`
 
 Binary Packages:
 
-- `tzdata=2019c-0+deb10u1`
+- `tzdata=2020a-0+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3286,18 +3299,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tzdata=2019c-0+deb10u1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c-0+deb10u1.dsc' tzdata_2019c-0+deb10u1.dsc 2264 SHA256:983c27d24d78c52d8f213b1b5800aaa90a171a4f805451b0845752f97c6f924b
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c.orig.tar.gz' tzdata_2019c.orig.tar.gz 392087 SHA256:79c7806dab09072308da0e3d22c37d3b245015a591891ea147d3b133b60ffc7c
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c.orig.tar.gz.asc' tzdata_2019c.orig.tar.gz.asc 833 SHA256:cd31deaeee229d45e4f4b973441189e7619ef81679359e9c8b47b2a87aaf6a07
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c-0+deb10u1.debian.tar.xz' tzdata_2019c-0+deb10u1.debian.tar.xz 104932 SHA256:fa8071037767a7dfa054c26621c5079809ee038eddb32a58814faf3541d52d5a
+$ apt-get source -qq --print-uris tzdata=2020a-0+deb10u1
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a-0+deb10u1.dsc' tzdata_2020a-0+deb10u1.dsc 2264 SHA256:24c86ca3f4755af8bd1ce2cd985382a490476f20006806fe5ec5c0f6b2a417c9
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a.orig.tar.gz' tzdata_2020a.orig.tar.gz 397245 SHA256:547161eca24d344e0b5f96aff6a76b454da295dc14ed4ca50c2355043fb899a2
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a.orig.tar.gz.asc' tzdata_2020a.orig.tar.gz.asc 833 SHA256:a92f085fe1e7f8bc0f0a0bc4432f27e6cf2d69e64d4a90958bd023eb0ccf45f9
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a-0+deb10u1.debian.tar.xz' tzdata_2020a-0+deb10u1.debian.tar.xz 104936 SHA256:df174cf4f4414006677b626f15b51a04762a2a0ef0171ce2f0c6856710a16d53
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tzdata/2019c-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019c-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019c-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tzdata/2020a-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2020a-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2020a-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `util-linux=2.33.1-0.1`
 
