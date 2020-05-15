@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4ca2c88c36c7a539fbfaec289417346398c37b1beeb41a5377aaa9b7ff9787be`
-- Created: `2020-04-25T07:22:21.894415108Z`
-- Virtual Size: ~ 867.77 Mb  
+- Image ID: `sha256:9feb381e7af27fe12578fd617cd85869407f280594d09a4e1a87c79f7af9a76a`
+- Created: `2020-05-13T02:50:46.358552434Z`
+- Virtual Size: ~ 867.80 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -21,8 +21,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.54`
-  - `TOMCAT_SHA512=dc3ba0183d1e6f6006e5430e91abbc0758bdb719efebea5809f7034c9a28c590a764d8fcf2528a27a98cb86531e94cd9dc5a92cdbcae36e808ced0e5f1c665b8`
+  - `TOMCAT_VERSION=8.5.55`
+  - `TOMCAT_SHA512=996b653b4f81b40ae3620d6424593d23687e5ceb5cbd7357fc8d0e4b92f76903fe7fb20bf7316505e4e86269153fbfe62394bf45e59b4fb1cbc1bc95fad9eb7a`
   - `GN_FILE=geonetwork.war`
   - `DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data`
   - `JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC`
@@ -597,23 +597,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/diffutils/1:3.7-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/diffutils/1:3.7-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `distro-info-data=0.41+deb10u1`
+### `dpkg` source package: `distro-info-data=0.41+deb10u2`
 
 Binary Packages:
 
-- `distro-info-data=0.41+deb10u1`
+- `distro-info-data=0.41+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/distro-info-data/copyright`)
 
 - `ISC`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris distro-info-data=0.41+deb10u2
+'http://deb.debian.org/debian/pool/main/d/distro-info-data/distro-info-data_0.41+deb10u2.dsc' distro-info-data_0.41+deb10u2.dsc 1042 SHA256:4faffeb0f99bd24711711332940a0b59e6bf53e23851f954fdf0ba5f684edd88
+'http://deb.debian.org/debian/pool/main/d/distro-info-data/distro-info-data_0.41+deb10u2.tar.xz' distro-info-data_0.41+deb10u2.tar.xz 6968 SHA256:a17109fd09adf20b53ad2a287e8c7a59b8d31ce9401a183173c27ab86e4466a1
+```
 
-- http://snapshot.debian.org/package/distro-info-data/0.41+deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/distro-info-data/0.41+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/distro-info-data/0.41+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/distro-info-data/0.41+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dpkg=1.19.7`
 
