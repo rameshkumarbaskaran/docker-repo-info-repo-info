@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6909aa7de96f36d0590253d5925cb8d76a4d707338a20019c6b457d16fe02bad`
-- Created: `2020-04-23T02:27:02.011980806Z`
+- Image ID: `sha256:885f358fca443625c52b696fa2d328985d0d29ebbbf0910a39b081c566adec09`
+- Created: `2020-05-15T09:16:51.007627614Z`
 - Virtual Size: ~ 130.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -76,19 +76,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.0.9.8.5
-'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.0.9.8.5.dsc' apt_1.0.9.8.5.dsc 2396 SHA256:57375233b57c22cd93539ce6d9ab26c4f3f5dac604c0a9b1479dc4da7b60fda3
-'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.0.9.8.5.tar.xz' apt_1.0.9.8.5.tar.xz 1783540 SHA256:d4e9dc57b0704e713895aa10de821c804b9a5c367772c36667cddbef96e79bd2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/1.0.9.8.5/
 
-- https://sources.debian.net/src/apt/1.0.9.8.5/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.0.9.8.5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.0.9.8.5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.47-2`
 
@@ -1437,11 +1431,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/2.7.1-5+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/2.7.1-5+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `neurodebian=0.40.0~nd80+1`
+### `dpkg` source package: `neurodebian=0.40.1~nd80+1`
 
 Binary Packages:
 
-- `neurodebian-freeze=0.40.0~nd80+1`
+- `neurodebian-freeze=0.40.1~nd80+1`
 
 Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 
@@ -1450,9 +1444,13 @@ Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris neurodebian=0.40.1~nd80+1
+'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.40.1~nd80+1.dsc' neurodebian_0.40.1~nd80+1.dsc 1629 SHA256:cf7b4e966fef81e30b6b1bfaa59308833b756083dd1285b7194cd534f9835fad
+'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.40.1~nd80+1.tar.xz' neurodebian_0.40.1~nd80+1.tar.xz 8313652 SHA256:80513a2bb3b303f853507b67189b03b5ecd0ce07a32d95adbc4fa54f04f51733
+```
 
 ### `dpkg` source package: `p11-kit=0.20.7-1`
 
