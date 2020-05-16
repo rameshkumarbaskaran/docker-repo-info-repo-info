@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d2f78ff9a468a24ae5ca924c91f174d40663b96201065ffebbd829b587a923b5`
-- Created: `2020-05-11T15:19:23.451017109Z`
-- Virtual Size: ~ 89.63 Mb  
+- Image ID: `sha256:c82371ce08e4ab9467f76557769325992fa6c778ae04f97ad3d98aa4c99513d6`
+- Created: `2020-05-15T15:13:16.231467492Z`
+- Virtual Size: ~ 89.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh","docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.5`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.5.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.5.tar.xz.asc`
-  - `PHP_SHA256=d059fd7f55bdc4d2eada15a00a2976697010d3631ef6f83149cc5289e1f23c2c`
+  - `PHP_VERSION=7.4.6`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.6.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.6.tar.xz.asc`
+  - `PHP_SHA256=d740322f84f63019622b9f369d64ea5ab676547d2bdcf12be77a5a4cffd06832`
   - `PHP_MD5=`
   - `ADMINER_VERSION=4.7.7`
   - `ADMINER_DOWNLOAD_SHA256=566152a2d86186dcfb28856b4ed0dfdb60e355d93ab693f7931201f75868fff0`
@@ -286,16 +286,16 @@ BSD-3-Clause
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.48-r1 description:
+libldap-2.4.48-r2 description:
 OpenLDAP libraries
 
-libldap-2.4.48-r1 webpage:
+libldap-2.4.48-r2 webpage:
 http://www.openldap.org/
 
-libldap-2.4.48-r1 installed size:
+libldap-2.4.48-r2 installed size:
 626688
 
-libldap-2.4.48-r1 license:
+libldap-2.4.48-r2 license:
 custom
 
 ```
@@ -558,16 +558,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.30.1-r1 description:
+sqlite-libs-3.30.1-r2 description:
 Sqlite3 library
 
-sqlite-libs-3.30.1-r1 webpage:
+sqlite-libs-3.30.1-r2 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.30.1-r1 installed size:
+sqlite-libs-3.30.1-r2 installed size:
 937984
 
-sqlite-libs-3.30.1-r1 license:
+sqlite-libs-3.30.1-r2 license:
 Public-Domain
 
 ```
