@@ -1,10 +1,10 @@
-# `postgres:9.6.17-alpine`
+# `postgres:9.6.18-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:312f723f9cfd64956fcaa364d32f44196efb01b7b7d0641ca4393cc4d71d3ef4`
-- Created: `2020-04-24T17:29:08.867306805Z`
-- Virtual Size: ~ 36.15 Mb  
+- Image ID: `sha256:5d05f4fef80f4638d3e2a91df73719c13c7fbee566d15c8940666fafc37be38b`
+- Created: `2020-05-16T03:10:02.635038801Z`
+- Virtual Size: ~ 36.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=9.6`
-  - `PG_VERSION=9.6.17`
-  - `PG_SHA256=f6e1e32d32545f97c066f3c19f4d58dfab1205c01252cf85c5c92294ace1a0c2`
+  - `PG_VERSION=9.6.18`
+  - `PG_SHA256=517ec282b785e6d22f360c30ba0c5e2a506fca5ca07dcc545427511d94c89999`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -260,16 +260,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r2 description:
+libxml2-2.9.10-r3 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r2 webpage:
+libxml2-2.9.10-r3 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r2 installed size:
+libxml2-2.9.10-r3 installed size:
 1220608
 
-libxml2-2.9.10-r2 license:
+libxml2-2.9.10-r3 license:
 MIT
 
 ```
@@ -328,16 +328,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20200118-r3 description:
+ncurses-libs-6.1_p20200118-r4 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20200118-r3 webpage:
+ncurses-libs-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.1_p20200118-r3 installed size:
+ncurses-libs-6.1_p20200118-r4 installed size:
 507904
 
-ncurses-libs-6.1_p20200118-r3 license:
+ncurses-libs-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -345,16 +345,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20200118-r3 description:
+ncurses-terminfo-base-6.1_p20200118-r4 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20200118-r3 webpage:
+ncurses-terminfo-base-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.1_p20200118-r3 installed size:
+ncurses-terminfo-base-6.1_p20200118-r4 installed size:
 217088
 
-ncurses-terminfo-base-6.1_p20200118-r3 license:
+ncurses-terminfo-base-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -430,16 +430,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019c-r0 description:
+tzdata-2020a-r0 description:
 Timezone data
 
-tzdata-2019c-r0 webpage:
+tzdata-2020a-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019c-r0 installed size:
-3538944
+tzdata-2020a-r0 installed size:
+3526656
 
-tzdata-2019c-r0 license:
+tzdata-2020a-r0 license:
 Public-Domain
 
 ```

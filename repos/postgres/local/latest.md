@@ -1,10 +1,10 @@
-# `postgres:12.2`
+# `postgres:12.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0f10374e51702232025eaa819ccecc6defac472f784fe30e1b5a2f99422c12a4`
-- Created: `2020-04-23T16:28:16.052181269Z`
-- Virtual Size: ~ 313.75 Mb  
+- Image ID: `sha256:adf2b126dda8aa62b7ab2cb10c30e0a20bad35a21570da9b4d602c9cca548a0b`
+- Created: `2020-05-16T02:41:59.031221899Z`
+- Virtual Size: ~ 313.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.12`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=12`
-  - `PG_VERSION=12.2-2.pgdg100+1`
+  - `PG_VERSION=12.3-1.pgdg100+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -72,12 +72,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.118/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.118/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `apt=1.8.2`
+### `dpkg` source package: `apt=1.8.2.1`
 
 Binary Packages:
 
-- `apt=1.8.2`
-- `libapt-pkg5.0:amd64=1.8.2`
+- `apt=1.8.2.1`
+- `libapt-pkg5.0:amd64=1.8.2.1`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg5.0/copyright`)
 
@@ -87,16 +87,16 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apt=1.8.2
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.dsc' apt_1.8.2.dsc 2766 SHA256:891cc952f028b79e2eace3db6c19d55dee247ac19d934bbe43c3921104b01c3b
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.tar.xz' apt_1.8.2.tar.xz 2188344 SHA256:7f9a91c26624bc85733683ee239b0c0d971a593d670855cf7bcf693b08a37734
+$ apt-get source -qq --print-uris apt=1.8.2.1
+'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.8.2.1.dsc' apt_1.8.2.1.dsc 2774 SHA256:8e6af99e5eab948853dcffde8bf8b2cc9acdd53fcdadf3505a3c0234b69eabb1
+'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.8.2.1.tar.xz' apt_1.8.2.1.tar.xz 2189236 SHA256:6d447f2e9437ec24e78350b63bb0592bee1f050811d51990b0c783183b0983f8
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/apt/1.8.2/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.8.2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.8.2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/apt/1.8.2.1/ (for browsing the source)
+- https://sources.debian.net/src/apt/1.8.2.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apt/1.8.2.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -155,23 +155,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=10.3+deb10u3`
+### `dpkg` source package: `base-files=10.3+deb10u4`
 
 Binary Packages:
 
-- `base-files=10.3+deb10u3`
+- `base-files=10.3+deb10u4`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=10.3+deb10u4
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u4.dsc' base-files_10.3+deb10u4.dsc 1103 SHA256:2e5caec958e2a302b3484100b559f85b4738758cb1a5eedfb71ee129cacafcf4
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u4.tar.xz' base-files_10.3+deb10u4.tar.xz 65396 SHA256:4147e6e65fb431fac69c7d8c43f03fa30a2fa63616e71cf6928f39fabfbebcdd
+```
 
-- http://snapshot.debian.org/package/base-files/10.3+deb10u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/10.3+deb10u4/ (for browsing the source)
+- https://sources.debian.net/src/base-files/10.3+deb10u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/10.3+deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -1590,7 +1596,6 @@ Other potentially useful URLs:
 
 Binary Packages:
 
-- `libncurses6:amd64=6.1+20181013-2+deb10u2`
 - `libncursesw6:amd64=6.1+20181013-2+deb10u2`
 - `libtinfo6:amd64=6.1+20181013-2+deb10u2`
 - `ncurses-base=6.1+20181013-2+deb10u2`
@@ -1728,24 +1733,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nss-wrapper/1.1.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nss-wrapper/1.1.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u1`
+### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u2`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u1`
-- `libldap-common=2.4.47+dfsg-3+deb10u1`
+- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u2`
+- `libldap-common=2.4.47+dfsg-3+deb10u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3+deb10u2
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u2.dsc' openldap_2.4.47+dfsg-3+deb10u2.dsc 3022 SHA256:e909c6be4bfd1bacf644959bc18ebeebaa13606879f11a7876d044cd688a6f62
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u2.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u2.debian.tar.xz 168684 SHA256:0f6f81f18a2407bd1a6c6003659d8b33145f31033b6f7fd026607554f0bdfcb0
+```
 
-- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1d-0+deb10u3`
 
@@ -1960,13 +1972,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.1.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.1.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-12=12.2-2.pgdg100+1`
+### `dpkg` source package: `postgresql-12=12.3-1.pgdg100+1`
 
 Binary Packages:
 
-- `libpq5:amd64=12.2-2.pgdg100+1`
-- `postgresql-12=12.2-2.pgdg100+1`
-- `postgresql-client-12=12.2-2.pgdg100+1`
+- `libpq5:amd64=12.3-1.pgdg100+1`
+- `postgresql-12=12.3-1.pgdg100+1`
+- `postgresql-client-12=12.3-1.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-12/copyright`, `/usr/share/doc/postgresql-client-12/copyright`)
 
@@ -1986,16 +1998,21 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 - `nagaysau-ishii`
 - `rijndael`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris postgresql-12=12.3-1.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.3-1.pgdg100+1.dsc' postgresql-12_12.3-1.pgdg100+1.dsc 2776 SHA256:c58e10101d844d8707d7b28fbb9b27c0f9a47d9e0237dea600aa961eb1175bb2
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.3.orig.tar.bz2' postgresql-12_12.3.orig.tar.bz2 20439892 SHA256:94ed64a6179048190695c86ec707cc25d016056ce10fc9d229267d9a8f1dcf41
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.3-1.pgdg100+1.debian.tar.xz' postgresql-12_12.3-1.pgdg100+1.debian.tar.xz 23068 SHA256:01d1c1b9d86efee8ac388d1bab77fbd0772b8fed159cc0587339caf84cd9d713
+```
 
-### `dpkg` source package: `postgresql-common=213.pgdg100+1`
+### `dpkg` source package: `postgresql-common=215.pgdg100+1`
 
 Binary Packages:
 
-- `postgresql-client-common=213.pgdg100+1`
-- `postgresql-common=213.pgdg100+1`
+- `postgresql-client-common=215.pgdg100+1`
+- `postgresql-common=215.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/usr/share/doc/postgresql-common/copyright`)
 
@@ -2005,41 +2022,10 @@ Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/u
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-common=213.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_213.pgdg100+1.dsc' postgresql-common_213.pgdg100+1.dsc 1568 SHA256:bebd0c5e753e1f3969c6b3c92448e816ce398a41c077fc0d1057ea595afd97d1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_213.pgdg100+1.tar.xz' postgresql-common_213.pgdg100+1.tar.xz 216848 SHA256:48802d06a87a1b589c213bd94b76f3bbd250bd77852c85473e98adb2850635b9
+$ apt-get source -qq --print-uris postgresql-common=215.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_215.pgdg100+1.dsc' postgresql-common_215.pgdg100+1.dsc 1576 SHA256:bd3dbc8d0292e7813feaffcb89f5cdd8f00c2f65351a9ac592d2b5f1287208e7
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_215.pgdg100+1.tar.xz' postgresql-common_215.pgdg100+1.tar.xz 217448 SHA256:2c619553837e96b8cc75fe7429e62271da51faa0e6b281ac4d1fcf8f08d6f150
 ```
-
-### `dpkg` source package: `procps=2:3.3.15-2`
-
-Binary Packages:
-
-- `libprocps7:amd64=2:3.3.15-2`
-- `procps=2:3.3.15-2`
-
-Licenses: (parsed from: `/usr/share/doc/libprocps7/copyright`, `/usr/share/doc/procps/copyright`)
-
-- `GPL-2`
-- `GPL-2.0+`
-- `LGPL-2`
-- `LGPL-2.0+`
-- `LGPL-2.1`
-- `LGPL-2.1+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris procps=2:3.3.15-2
-'http://deb.debian.org/debian/pool/main/p/procps/procps_3.3.15-2.dsc' procps_3.3.15-2.dsc 2104 SHA256:c7f695ddba2fdf0c3b9de5c38de22713a7046dd9e4a141d59155f4dd62008b32
-'http://deb.debian.org/debian/pool/main/p/procps/procps_3.3.15.orig.tar.xz' procps_3.3.15.orig.tar.xz 903372 SHA256:82e8aa55b65eac116eee05f00d2a884a6374760d57100edd429d6e9b4953458d
-'http://deb.debian.org/debian/pool/main/p/procps/procps_3.3.15-2.debian.tar.xz' procps_3.3.15-2.debian.tar.xz 28060 SHA256:4e90c4129744b726929990239139fde29ab4e438d65d75f5d4c479ead2001aed
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/procps/2:3.3.15-2/ (for browsing the source)
-- https://sources.debian.net/src/procps/2:3.3.15-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/procps/2:3.3.15-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=7.0-5`
 
@@ -2199,12 +2185,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ssl-cert/1.0.39/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ssl-cert/1.0.39/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=241-7~deb10u3`
+### `dpkg` source package: `systemd=241-7~deb10u4`
 
 Binary Packages:
 
-- `libsystemd0:amd64=241-7~deb10u3`
-- `libudev1:amd64=241-7~deb10u3`
+- `libsystemd0:amd64=241-7~deb10u4`
+- `libudev1:amd64=241-7~deb10u4`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2216,13 +2202,20 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris systemd=241-7~deb10u4
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u4.dsc' systemd_241-7~deb10u4.dsc 4946 SHA256:52707608012c7b13d19ebbbfff704311e33f884f0f843811874e266dcf2faf71
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u4.debian.tar.xz' systemd_241-7~deb10u4.debian.tar.xz 178136 SHA256:ff8ed4b3d9c30e14659278f17ea4cfc63c4b1af199a98a861abc670dfdd991cb
+```
 
-- http://snapshot.debian.org/package/systemd/241-7~deb10u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/systemd/241-7~deb10u4/ (for browsing the source)
+- https://sources.debian.net/src/systemd/241-7~deb10u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/241-7~deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.93-8`
 
@@ -2277,11 +2270,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.30+dfsg-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.30+dfsg-6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2019c-0+deb10u1`
+### `dpkg` source package: `tzdata=2020a-0+deb10u1`
 
 Binary Packages:
 
-- `tzdata=2019c-0+deb10u1`
+- `tzdata=2020a-0+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2290,18 +2283,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tzdata=2019c-0+deb10u1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c-0+deb10u1.dsc' tzdata_2019c-0+deb10u1.dsc 2264 SHA256:983c27d24d78c52d8f213b1b5800aaa90a171a4f805451b0845752f97c6f924b
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c.orig.tar.gz' tzdata_2019c.orig.tar.gz 392087 SHA256:79c7806dab09072308da0e3d22c37d3b245015a591891ea147d3b133b60ffc7c
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c.orig.tar.gz.asc' tzdata_2019c.orig.tar.gz.asc 833 SHA256:cd31deaeee229d45e4f4b973441189e7619ef81679359e9c8b47b2a87aaf6a07
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c-0+deb10u1.debian.tar.xz' tzdata_2019c-0+deb10u1.debian.tar.xz 104932 SHA256:fa8071037767a7dfa054c26621c5079809ee038eddb32a58814faf3541d52d5a
+$ apt-get source -qq --print-uris tzdata=2020a-0+deb10u1
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a-0+deb10u1.dsc' tzdata_2020a-0+deb10u1.dsc 2264 SHA256:24c86ca3f4755af8bd1ce2cd985382a490476f20006806fe5ec5c0f6b2a417c9
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a.orig.tar.gz' tzdata_2020a.orig.tar.gz 397245 SHA256:547161eca24d344e0b5f96aff6a76b454da295dc14ed4ca50c2355043fb899a2
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a.orig.tar.gz.asc' tzdata_2020a.orig.tar.gz.asc 833 SHA256:a92f085fe1e7f8bc0f0a0bc4432f27e6cf2d69e64d4a90958bd023eb0ccf45f9
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020a-0+deb10u1.debian.tar.xz' tzdata_2020a-0+deb10u1.debian.tar.xz 104936 SHA256:df174cf4f4414006677b626f15b51a04762a2a0ef0171ce2f0c6856710a16d53
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tzdata/2019c-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019c-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019c-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tzdata/2020a-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2020a-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2020a-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0038+nmu1`
 
