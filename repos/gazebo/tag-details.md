@@ -6,6 +6,7 @@
 -	[`gazebo:gzserver10-bionic`](#gazebogzserver10-bionic)
 -	[`gazebo:gzserver11`](#gazebogzserver11)
 -	[`gazebo:gzserver11-bionic`](#gazebogzserver11-bionic)
+-	[`gazebo:gzserver11-focal`](#gazebogzserver11-focal)
 -	[`gazebo:gzserver7`](#gazebogzserver7)
 -	[`gazebo:gzserver7-xenial`](#gazebogzserver7-xenial)
 -	[`gazebo:gzserver9`](#gazebogzserver9)
@@ -17,6 +18,7 @@
 -	[`gazebo:libgazebo10-bionic`](#gazebolibgazebo10-bionic)
 -	[`gazebo:libgazebo11`](#gazebolibgazebo11)
 -	[`gazebo:libgazebo11-bionic`](#gazebolibgazebo11-bionic)
+-	[`gazebo:libgazebo11-focal`](#gazebolibgazebo11-focal)
 -	[`gazebo:libgazebo7`](#gazebolibgazebo7)
 -	[`gazebo:libgazebo7-xenial`](#gazebolibgazebo7-xenial)
 -	[`gazebo:libgazebo9`](#gazebolibgazebo9)
@@ -411,6 +413,10 @@ CMD ["gzserver"]
 		Last Modified: Fri, 24 Apr 2020 20:05:02 GMT  
 		Size: 187.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `gazebo:gzserver11-focal`
+
+**does not exist** (yet?)
 
 ## `gazebo:gzserver7`
 
@@ -1466,6 +1472,10 @@ RUN apt-get update && apt-get install -q -y     libgazebo11-dev=11.0.0-1*     &&
 		Last Modified: Fri, 24 Apr 2020 20:06:49 GMT  
 		Size: 300.9 MB (300894363 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `gazebo:libgazebo11-focal`
+
+**does not exist** (yet?)
 
 ## `gazebo:libgazebo7`
 
