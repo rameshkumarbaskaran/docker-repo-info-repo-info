@@ -78,13 +78,19 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris apt=2.1.2
+'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.2.dsc' apt_2.1.2.dsc 2756 SHA256:36e1c9a508439d01fdcce3a78be944b46159f8e0797f6cc9497293fb0a0f9e52
+'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.2.tar.xz' apt_2.1.2.tar.xz 2170192 SHA256:5de743e516705e4df2c9fc94481acc730ccbbf960db604193360145165a79e27
+```
 
-- http://snapshot.debian.org/package/apt/2.1.2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/apt/2.1.2/ (for browsing the source)
+- https://sources.debian.net/src/apt/2.1.2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apt/2.1.2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -1095,13 +1101,20 @@ Licenses: (parsed from: `/usr/share/doc/libcap2/copyright`, `/usr/share/doc/libc
 - `GPL-2`
 - `GPL-2+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libcap2=1:2.34-1
+'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.34-1.dsc' libcap2_2.34-1.dsc 2179 SHA256:bb16fea17ad82017cb662ff5105d6e38f36eb18ebf69335439b9d49c2ea25b62
+'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.34.orig.tar.xz' libcap2_2.34.orig.tar.xz 111556 SHA256:aecdd42015955068d3d94b7caa9590fcb2de5df53ce53c61a21b912bfc0b1611
+'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.34-1.debian.tar.xz' libcap2_2.34-1.debian.tar.xz 28128 SHA256:c8dfac7ce6fc9fbd1b4b5f6ae1c0ea1aac97b2caa4f7292bf5ef3944cde93526
+```
 
-- http://snapshot.debian.org/package/libcap2/1:2.34-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libcap2/1:2.34-1/ (for browsing the source)
+- https://sources.debian.net/src/libcap2/1:2.34-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libcap2/1:2.34-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libeatmydata=105-9`
 
@@ -2184,13 +2197,20 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris util-linux=2.35.1-5
+'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.1-5.dsc' util-linux_2.35.1-5.dsc 4232 SHA256:7062bda677ed760f1ce4074f3fe4ee16e42958dbaf6b6f87ac1bfcbe55f238ad
+'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.1.orig.tar.xz' util-linux_2.35.1.orig.tar.xz 5138360 SHA256:d9de3edd287366cd908e77677514b9387b22bc7b88f45b83e1922c3597f1d7f9
+'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.1-5.debian.tar.xz' util-linux_2.35.1-5.debian.tar.xz 95572 SHA256:f2f7ee584c3f4b896f4faa601015c8cacc193b84781594f18f470c8ccb36ac2f
+```
 
-- http://snapshot.debian.org/package/util-linux/2.35.1-5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/util-linux/2.35.1-5/ (for browsing the source)
+- https://sources.debian.net/src/util-linux/2.35.1-5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/util-linux/2.35.1-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xz-utils=5.2.4-1`
 

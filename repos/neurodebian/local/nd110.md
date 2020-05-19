@@ -78,19 +78,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.1.1
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.1.dsc' apt_2.1.1.dsc 2756 SHA256:dcd48c2691b74c277082ac6f38350588c37cbb5ad860b1fda2adf45d5c31994b
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.1.tar.xz' apt_2.1.1.tar.xz 2169316 SHA256:f49d33d9376eda440e8176e6171cb0edb070b2cfab9e27aa81aef6b7d46a5b49
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.1.1/
 
-- https://sources.debian.net/src/apt/2.1.1/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.1.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.1.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -2197,20 +2191,13 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.35.1-2
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.1-2.dsc' util-linux_2.35.1-2.dsc 4114 SHA256:2b9b941d2881bf41b7dad30e5d96761dae4a7200b2d9b97ea318a0147d86b278
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.1.orig.tar.xz' util-linux_2.35.1.orig.tar.xz 5138360 SHA256:d9de3edd287366cd908e77677514b9387b22bc7b88f45b83e1922c3597f1d7f9
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.1-2.debian.tar.xz' util-linux_2.35.1-2.debian.tar.xz 85920 SHA256:f71db701d31f7d01af525f2705543a19f04c7ac6a48d491a2707059d39b1c644
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/util-linux/2.35.1-2/
 
-- https://sources.debian.net/src/util-linux/2.35.1-2/ (for browsing the source)
-- https://sources.debian.net/src/util-linux/2.35.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/util-linux/2.35.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xz-utils=5.2.4-1`
 
