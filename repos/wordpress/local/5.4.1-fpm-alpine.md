@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:24b693122f2660a064e9c19ff9d17cf90e194a069b22b9933072e299b465a21a`
-- Created: `2020-05-07T04:36:07.402598494Z`
+- Image ID: `sha256:09b790ec7a3f64ad28a8133f291145b573e994204d2337ea0cc0d06117a249c9`
+- Created: `2020-05-15T17:10:56.906001004Z`
 - Virtual Size: ~ 193.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.17`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.17.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.17.tar.xz.asc`
-  - `PHP_SHA256=6a30304c27f7e7a94538f5ffec599f600ee93aedbbecad8aa4f8bec539b10ad8`
+  - `PHP_VERSION=7.3.18`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.18.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.18.tar.xz.asc`
+  - `PHP_SHA256=7b3e2479a8d6fd7666dcdef8aec50d49c4599cc6ee86e48d41724cfd99cc9e58`
   - `PHP_MD5=`
   - `WORDPRESS_VERSION=5.4.1`
   - `WORDPRESS_SHA1=9800c231828eb5cd76ba0b8aa6c1a74dfca2daff`
@@ -1000,16 +1000,16 @@ GPL-3.0+
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.30.1-r1 description:
+sqlite-libs-3.30.1-r2 description:
 Sqlite3 library
 
-sqlite-libs-3.30.1-r1 webpage:
+sqlite-libs-3.30.1-r2 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.30.1-r1 installed size:
+sqlite-libs-3.30.1-r2 installed size:
 937984
 
-sqlite-libs-3.30.1-r1 license:
+sqlite-libs-3.30.1-r2 license:
 Public-Domain
 
 ```

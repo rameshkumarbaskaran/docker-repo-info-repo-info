@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d6f4500845744bc610f462867c9f8f347fb27465263008807eb1f6d4a863c0d3`
-- Created: `2020-05-07T04:43:26.451058497Z`
-- Virtual Size: ~ 130.26 Mb  
+- Image ID: `sha256:91deafea77debfdb5725fc6347ed6dee2b9099336e44910750ad8b8befcd4b1b`
+- Created: `2020-05-15T17:18:05.188379344Z`
+- Virtual Size: ~ 130.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.30`
-  - `PHP_URL=https://www.php.net/distributions/php-7.2.30.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.2.30.tar.xz.asc`
-  - `PHP_SHA256=aa93df27b58a45d6c9800ac813245dfdca03490a918ebe515b3a70189b1bf8c3`
+  - `PHP_VERSION=7.2.31`
+  - `PHP_URL=https://www.php.net/distributions/php-7.2.31.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.2.31.tar.xz.asc`
+  - `PHP_SHA256=8beaa634bb878a96af9bc8643811ea46973f5f41ad2bfb6ab4cfd290e5a39806`
   - `PHP_MD5=`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.4.0`
@@ -660,16 +660,16 @@ MIT
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.4.12-r0 description:
+mariadb-client-10.4.13-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.4.12-r0 webpage:
+mariadb-client-10.4.13-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.4.12-r0 installed size:
+mariadb-client-10.4.13-r0 installed size:
 29749248
 
-mariadb-client-10.4.12-r0 license:
+mariadb-client-10.4.13-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -677,16 +677,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.4.12-r0 description:
+mariadb-common-10.4.13-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.4.12-r0 webpage:
+mariadb-common-10.4.13-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.4.12-r0 installed size:
+mariadb-common-10.4.13-r0 installed size:
 2265088
 
-mariadb-common-10.4.12-r0 license:
+mariadb-common-10.4.13-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -728,16 +728,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.4.12-r0 description:
+mysql-client-10.4.13-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.4.12-r0 webpage:
+mysql-client-10.4.13-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.4.12-r0 installed size:
+mysql-client-10.4.13-r0 installed size:
 4096
 
-mysql-client-10.4.12-r0 license:
+mysql-client-10.4.13-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -847,16 +847,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.30.1-r1 description:
+sqlite-libs-3.30.1-r2 description:
 Sqlite3 library
 
-sqlite-libs-3.30.1-r1 webpage:
+sqlite-libs-3.30.1-r2 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.30.1-r1 installed size:
+sqlite-libs-3.30.1-r2 installed size:
 937984
 
-sqlite-libs-3.30.1-r1 license:
+sqlite-libs-3.30.1-r2 license:
 Public-Domain
 
 ```
