@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:602990861831a3ce9b46e0032d78989d8bc88a70e6ccf99e2a3ee3b342d4e984`
-- Created: `2020-05-15T12:30:25.74760507Z`
-- Virtual Size: ~ 181.36 Mb  
+- Image ID: `sha256:daf571552d5bb5e53f256d47c24aedb0424a4e33dc9d0a34c5b24c7a015a7900`
+- Created: `2020-05-19T20:17:31.770666476Z`
+- Virtual Size: ~ 181.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -13,9 +13,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D`
   - `PYTHON_VERSION=3.6.10`
-  - `PYTHON_PIP_VERSION=20.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/1fe530e9e3d800be94e04f6428460fc4fb94f5a9/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=ce486cddac44e99496a702aa5c06c5028414ef48fdfd5242cd2fe559b13d4348`
+  - `PYTHON_PIP_VERSION=20.1.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/eff16c878c7fd6b688b9b4c4267695cf1a0bf01b/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=b3153ec0cf7b7bbf9556932aa37e4981c35dc2a2c501d70d91d2795aa532be79`
   - `HY_VERSION=0.18.0`
 
 ## `dpkg` (`.deb`-based packages)
