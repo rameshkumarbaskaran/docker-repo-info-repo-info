@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f40915e48cd98ce5670e71e31567c7f8364d2a64817f69926a1a717b73b7d356`
-- Created: `2020-05-15T21:01:15.401304993Z`
+- Image ID: `sha256:4d6f6cb24f7b2973d1d581618a1bfba251b1e32250d6ea71dd235be7c6c9063d`
+- Created: `2020-05-22T01:24:15.427382364Z`
 - Virtual Size: ~ 667.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,8 +13,6 @@
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-14`
   - `JAVA_VERSION=14.0.1`
-  - `JAVA_URL=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc`
 
 ## `dpkg` (`.deb`-based packages)
 
