@@ -1,10 +1,10 @@
-# `groovy:3.0.2-jdk14`
+# `groovy:3.0.4-jdk14`
 
 ## Docker Metadata
 
-- Image ID: `sha256:78c8576c25055d7b53f60d5e70a2b652f79459891b3ed70a5b90a3ddabac73bd`
-- Created: `2020-04-25T01:09:54.759443903Z`
-- Virtual Size: ~ 512.90 Mb  
+- Image ID: `sha256:87e7e0afbe4d49aa716502223deea903d9c072b54c8ff41df3ec4a751aa1b40e`
+- Created: `2020-05-22T19:20:37.833461366Z`
+- Virtual Size: ~ 513.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["groovysh"]`
@@ -16,7 +16,7 @@
   - `JAVA_VERSION=jdk-14.0.1+7`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GROOVY_HOME=/opt/groovy`
-  - `GROOVY_VERSION=3.0.2`
+  - `GROOVY_VERSION=3.0.4`
 
 ## `dpkg` (`.deb`-based packages)
 
