@@ -1,10 +1,10 @@
-# `nextcloud:19.0.0RC2-fpm-alpine`
+# `nextcloud:19.0.0RC3-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c88ba3aba8d1fe94ff62c29e63e7d5f4c92632f4c7844f9088245a109d2f9aff`
-- Created: `2020-05-20T00:21:48.623591335Z`
-- Virtual Size: ~ 413.31 Mb  
+- Image ID: `sha256:8328a6e46b0c3ffc4c5421bd7809d059bbae43c8af8b9064a9ca6231e6966b40`
+- Created: `2020-05-26T21:34:51.010576766Z`
+- Virtual Size: ~ 420.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,13 +17,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.18`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.18.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.18.tar.xz.asc`
-  - `PHP_SHA256=7b3e2479a8d6fd7666dcdef8aec50d49c4599cc6ee86e48d41724cfd99cc9e58`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.6`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.6.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.6.tar.xz.asc`
+  - `PHP_SHA256=d740322f84f63019622b9f369d64ea5ab676547d2bdcf12be77a5a4cffd06832`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=19.0.0RC2`
+  - `NEXTCLOUD_VERSION=19.0.0RC3`
 
 ## `apk` (`.apk`-based packages)
 
@@ -857,6 +857,23 @@ nghttp2-libs-1.40.0-r0 installed size:
 
 nghttp2-libs-1.40.0-r0 license:
 MIT
+
+```
+
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.4-r0 description:
+a regular expressions library
+
+oniguruma-6.9.4-r0 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.4-r0 installed size:
+561152
+
+oniguruma-6.9.4-r0 license:
+BSD-2-Clause
 
 ```
 
