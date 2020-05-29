@@ -5,6 +5,14 @@
 -	[`rethinkdb:2`](#rethinkdb2)
 -	[`rethinkdb:2.4`](#rethinkdb24)
 -	[`rethinkdb:2.4.0`](#rethinkdb240)
+-	[`rethinkdb:2.4.0-buster-slim`](#rethinkdb240-buster-slim)
+-	[`rethinkdb:2.4.0-centos`](#rethinkdb240-centos)
+-	[`rethinkdb:2.4-buster-slim`](#rethinkdb24-buster-slim)
+-	[`rethinkdb:2.4-centos`](#rethinkdb24-centos)
+-	[`rethinkdb:2-buster-slim`](#rethinkdb2-buster-slim)
+-	[`rethinkdb:2-centos`](#rethinkdb2-centos)
+-	[`rethinkdb:buster-slim`](#rethinkdbbuster-slim)
+-	[`rethinkdb:centos`](#rethinkdbcentos)
 -	[`rethinkdb:latest`](#rethinkdblatest)
 
 ## `rethinkdb:2`
@@ -264,6 +272,38 @@ EXPOSE 28015 29015 8080
 		Last Modified: Wed, 06 May 2020 19:19:50 GMT  
 		Size: 93.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rethinkdb:2.4.0-buster-slim`
+
+**does not exist** (yet?)
+
+## `rethinkdb:2.4.0-centos`
+
+**does not exist** (yet?)
+
+## `rethinkdb:2.4-buster-slim`
+
+**does not exist** (yet?)
+
+## `rethinkdb:2.4-centos`
+
+**does not exist** (yet?)
+
+## `rethinkdb:2-buster-slim`
+
+**does not exist** (yet?)
+
+## `rethinkdb:2-centos`
+
+**does not exist** (yet?)
+
+## `rethinkdb:buster-slim`
+
+**does not exist** (yet?)
+
+## `rethinkdb:centos`
+
+**does not exist** (yet?)
 
 ## `rethinkdb:latest`
 
