@@ -3304,7 +3304,7 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ## `redmine:4.0.7-passenger`
 
 ```console
-$ docker pull redmine@sha256:2fc7a45668af4562eefb73c46b7ac447af0bd7e6e31905a278d05705c10aa344
+$ docker pull redmine@sha256:6edf4e2f9b4224464da72b2838829375c12c7dea7aa4d7b0f427bdf571e4a37d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3314,14 +3314,14 @@ $ docker pull redmine@sha256:2fc7a45668af4562eefb73c46b7ac447af0bd7e6e31905a278d
 ### `redmine:4.0.7-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:669aa3c63091754d7ed6964a6df734d05417e4226600d06d6ee5f0ad906b143e
+$ docker pull redmine@sha256:c863b67e793d96c9abf389e83718523062ea724a104c24faf339d26bb65749e6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **230.9 MB (230910547 bytes)**  
+-	Total Size: **230.9 MB (230929109 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:43b718cbc62772b56623c08a1a52f86a4edcbd3eaa7c1dc6368f9e7131c599e2`
+-	Image ID: `sha256:6c82119c883a2f2dee0f46870876deb6c100e8ddbfb8e2377d505841e0b919e6`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -3384,15 +3384,15 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 3000
 # Sat, 16 May 2020 12:33:28 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sat, 16 May 2020 12:33:35 GMT
-ENV PASSENGER_VERSION=6.0.4
-# Sat, 16 May 2020 12:33:51 GMT
+# Sat, 30 May 2020 00:38:10 GMT
+ENV PASSENGER_VERSION=6.0.5
+# Sat, 30 May 2020 00:38:27 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 16 May 2020 12:33:53 GMT
+# Sat, 30 May 2020 00:38:28 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sat, 16 May 2020 12:33:53 GMT
+# Sat, 30 May 2020 00:38:28 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sat, 16 May 2020 12:33:53 GMT
+# Sat, 30 May 2020 00:38:29 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -3449,13 +3449,13 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 16 May 2020 12:34:43 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13de7b5a55743a6c02a55f342d6eae5a75d70f7ffee4825f767af553f4acff7b`  
-		Last Modified: Sat, 16 May 2020 12:35:05 GMT  
-		Size: 19.9 MB (19939946 bytes)  
+	-	`sha256:22abb0332a62214b8c7bb95ac17f14b87e709bc41e932646bfcd5e6898c4b8a3`  
+		Last Modified: Sat, 30 May 2020 00:39:06 GMT  
+		Size: 20.0 MB (19955890 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd07ae1c2db253f9cd1b4c3cfad7e0a60239f4a861320b24b2cf77eb1274c712`  
-		Last Modified: Sat, 16 May 2020 12:35:03 GMT  
-		Size: 4.9 MB (4917839 bytes)  
+	-	`sha256:a1e8ba5b78eb99a1823291d73df947091601c259a086b643fefa1f5b587e81d1`  
+		Last Modified: Sat, 30 May 2020 00:39:07 GMT  
+		Size: 4.9 MB (4920457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.0-alpine`
@@ -3594,7 +3594,7 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ## `redmine:4.0-passenger`
 
 ```console
-$ docker pull redmine@sha256:2fc7a45668af4562eefb73c46b7ac447af0bd7e6e31905a278d05705c10aa344
+$ docker pull redmine@sha256:6edf4e2f9b4224464da72b2838829375c12c7dea7aa4d7b0f427bdf571e4a37d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3604,14 +3604,14 @@ $ docker pull redmine@sha256:2fc7a45668af4562eefb73c46b7ac447af0bd7e6e31905a278d
 ### `redmine:4.0-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:669aa3c63091754d7ed6964a6df734d05417e4226600d06d6ee5f0ad906b143e
+$ docker pull redmine@sha256:c863b67e793d96c9abf389e83718523062ea724a104c24faf339d26bb65749e6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **230.9 MB (230910547 bytes)**  
+-	Total Size: **230.9 MB (230929109 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:43b718cbc62772b56623c08a1a52f86a4edcbd3eaa7c1dc6368f9e7131c599e2`
+-	Image ID: `sha256:6c82119c883a2f2dee0f46870876deb6c100e8ddbfb8e2377d505841e0b919e6`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -3674,15 +3674,15 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 3000
 # Sat, 16 May 2020 12:33:28 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sat, 16 May 2020 12:33:35 GMT
-ENV PASSENGER_VERSION=6.0.4
-# Sat, 16 May 2020 12:33:51 GMT
+# Sat, 30 May 2020 00:38:10 GMT
+ENV PASSENGER_VERSION=6.0.5
+# Sat, 30 May 2020 00:38:27 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 16 May 2020 12:33:53 GMT
+# Sat, 30 May 2020 00:38:28 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sat, 16 May 2020 12:33:53 GMT
+# Sat, 30 May 2020 00:38:28 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sat, 16 May 2020 12:33:53 GMT
+# Sat, 30 May 2020 00:38:29 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -3739,13 +3739,13 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 16 May 2020 12:34:43 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13de7b5a55743a6c02a55f342d6eae5a75d70f7ffee4825f767af553f4acff7b`  
-		Last Modified: Sat, 16 May 2020 12:35:05 GMT  
-		Size: 19.9 MB (19939946 bytes)  
+	-	`sha256:22abb0332a62214b8c7bb95ac17f14b87e709bc41e932646bfcd5e6898c4b8a3`  
+		Last Modified: Sat, 30 May 2020 00:39:06 GMT  
+		Size: 20.0 MB (19955890 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd07ae1c2db253f9cd1b4c3cfad7e0a60239f4a861320b24b2cf77eb1274c712`  
-		Last Modified: Sat, 16 May 2020 12:35:03 GMT  
-		Size: 4.9 MB (4917839 bytes)  
+	-	`sha256:a1e8ba5b78eb99a1823291d73df947091601c259a086b643fefa1f5b587e81d1`  
+		Last Modified: Sat, 30 May 2020 00:39:07 GMT  
+		Size: 4.9 MB (4920457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1`
@@ -5982,7 +5982,7 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ## `redmine:4.1.1-passenger`
 
 ```console
-$ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb82805a53ae7b7fef
+$ docker pull redmine@sha256:9a50574203c1744303eced6d8f1ef3c9ba18dd44ccff144853f1a94b038f7109
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5992,14 +5992,14 @@ $ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb828
 ### `redmine:4.1.1-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:2889c45281cc6abf4dc53b8c97b6127e3ca30a2f00f64412e5d3c02574c7538e
+$ docker pull redmine@sha256:4c9fc862d509df66a95f1514260b503231d2c545329f32dae59dd3ac518910cd
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.4 MB (240392453 bytes)**  
+-	Total Size: **240.4 MB (240413059 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c487b613eaeb66c048e359234c8fba637bd460073e8957e80b84874f6188485e`
+-	Image ID: `sha256:61935ec795dbb30b1059693b79fa818c8a7ca76d4a7a024273f681b4b7f7401a`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -6062,15 +6062,15 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 3000
 # Sat, 16 May 2020 12:29:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sat, 16 May 2020 12:30:05 GMT
-ENV PASSENGER_VERSION=6.0.4
-# Sat, 16 May 2020 12:30:22 GMT
+# Sat, 30 May 2020 00:37:37 GMT
+ENV PASSENGER_VERSION=6.0.5
+# Sat, 30 May 2020 00:37:54 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sat, 16 May 2020 12:30:24 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -6127,13 +6127,13 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 16 May 2020 12:34:09 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5a20445531b2167fc79e9f052b582fb845e63b358368abb9df9fe3b7c3bb233`  
-		Last Modified: Sat, 16 May 2020 12:34:36 GMT  
-		Size: 19.9 MB (19935192 bytes)  
+	-	`sha256:4cb3b41acc6c66d0fd0edd1da440953b77ea6080427a72dcb306b2616c6795e9`  
+		Last Modified: Sat, 30 May 2020 00:38:49 GMT  
+		Size: 20.0 MB (19953190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853416fc8e3c4aeb9367ae36bc4ed85d23a8e68a6586591f9ac319d95afd0994`  
-		Last Modified: Sat, 16 May 2020 12:34:34 GMT  
-		Size: 4.9 MB (4917848 bytes)  
+	-	`sha256:41147ac735fc826d0e1423fe3027601f85a57f55271e0df7f88d4e8c0f78406c`  
+		Last Modified: Sat, 30 May 2020 00:38:48 GMT  
+		Size: 4.9 MB (4920456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4.1-alpine`
@@ -6272,7 +6272,7 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ## `redmine:4.1-passenger`
 
 ```console
-$ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb82805a53ae7b7fef
+$ docker pull redmine@sha256:9a50574203c1744303eced6d8f1ef3c9ba18dd44ccff144853f1a94b038f7109
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6282,14 +6282,14 @@ $ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb828
 ### `redmine:4.1-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:2889c45281cc6abf4dc53b8c97b6127e3ca30a2f00f64412e5d3c02574c7538e
+$ docker pull redmine@sha256:4c9fc862d509df66a95f1514260b503231d2c545329f32dae59dd3ac518910cd
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.4 MB (240392453 bytes)**  
+-	Total Size: **240.4 MB (240413059 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c487b613eaeb66c048e359234c8fba637bd460073e8957e80b84874f6188485e`
+-	Image ID: `sha256:61935ec795dbb30b1059693b79fa818c8a7ca76d4a7a024273f681b4b7f7401a`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -6352,15 +6352,15 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 3000
 # Sat, 16 May 2020 12:29:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sat, 16 May 2020 12:30:05 GMT
-ENV PASSENGER_VERSION=6.0.4
-# Sat, 16 May 2020 12:30:22 GMT
+# Sat, 30 May 2020 00:37:37 GMT
+ENV PASSENGER_VERSION=6.0.5
+# Sat, 30 May 2020 00:37:54 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sat, 16 May 2020 12:30:24 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -6417,13 +6417,13 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 16 May 2020 12:34:09 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5a20445531b2167fc79e9f052b582fb845e63b358368abb9df9fe3b7c3bb233`  
-		Last Modified: Sat, 16 May 2020 12:34:36 GMT  
-		Size: 19.9 MB (19935192 bytes)  
+	-	`sha256:4cb3b41acc6c66d0fd0edd1da440953b77ea6080427a72dcb306b2616c6795e9`  
+		Last Modified: Sat, 30 May 2020 00:38:49 GMT  
+		Size: 20.0 MB (19953190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853416fc8e3c4aeb9367ae36bc4ed85d23a8e68a6586591f9ac319d95afd0994`  
-		Last Modified: Sat, 16 May 2020 12:34:34 GMT  
-		Size: 4.9 MB (4917848 bytes)  
+	-	`sha256:41147ac735fc826d0e1423fe3027601f85a57f55271e0df7f88d4e8c0f78406c`  
+		Last Modified: Sat, 30 May 2020 00:38:48 GMT  
+		Size: 4.9 MB (4920456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:4-alpine`
@@ -6562,7 +6562,7 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ## `redmine:4-passenger`
 
 ```console
-$ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb82805a53ae7b7fef
+$ docker pull redmine@sha256:9a50574203c1744303eced6d8f1ef3c9ba18dd44ccff144853f1a94b038f7109
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6572,14 +6572,14 @@ $ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb828
 ### `redmine:4-passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:2889c45281cc6abf4dc53b8c97b6127e3ca30a2f00f64412e5d3c02574c7538e
+$ docker pull redmine@sha256:4c9fc862d509df66a95f1514260b503231d2c545329f32dae59dd3ac518910cd
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.4 MB (240392453 bytes)**  
+-	Total Size: **240.4 MB (240413059 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c487b613eaeb66c048e359234c8fba637bd460073e8957e80b84874f6188485e`
+-	Image ID: `sha256:61935ec795dbb30b1059693b79fa818c8a7ca76d4a7a024273f681b4b7f7401a`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -6642,15 +6642,15 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 3000
 # Sat, 16 May 2020 12:29:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sat, 16 May 2020 12:30:05 GMT
-ENV PASSENGER_VERSION=6.0.4
-# Sat, 16 May 2020 12:30:22 GMT
+# Sat, 30 May 2020 00:37:37 GMT
+ENV PASSENGER_VERSION=6.0.5
+# Sat, 30 May 2020 00:37:54 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sat, 16 May 2020 12:30:24 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -6707,13 +6707,13 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 16 May 2020 12:34:09 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5a20445531b2167fc79e9f052b582fb845e63b358368abb9df9fe3b7c3bb233`  
-		Last Modified: Sat, 16 May 2020 12:34:36 GMT  
-		Size: 19.9 MB (19935192 bytes)  
+	-	`sha256:4cb3b41acc6c66d0fd0edd1da440953b77ea6080427a72dcb306b2616c6795e9`  
+		Last Modified: Sat, 30 May 2020 00:38:49 GMT  
+		Size: 20.0 MB (19953190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853416fc8e3c4aeb9367ae36bc4ed85d23a8e68a6586591f9ac319d95afd0994`  
-		Last Modified: Sat, 16 May 2020 12:34:34 GMT  
-		Size: 4.9 MB (4917848 bytes)  
+	-	`sha256:41147ac735fc826d0e1423fe3027601f85a57f55271e0df7f88d4e8c0f78406c`  
+		Last Modified: Sat, 30 May 2020 00:38:48 GMT  
+		Size: 4.9 MB (4920456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `redmine:alpine`
@@ -7901,7 +7901,7 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 ## `redmine:passenger`
 
 ```console
-$ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb82805a53ae7b7fef
+$ docker pull redmine@sha256:9a50574203c1744303eced6d8f1ef3c9ba18dd44ccff144853f1a94b038f7109
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7911,14 +7911,14 @@ $ docker pull redmine@sha256:277c54d2b0e8605964c0aca4374a18a318749ba1125757cb828
 ### `redmine:passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:2889c45281cc6abf4dc53b8c97b6127e3ca30a2f00f64412e5d3c02574c7538e
+$ docker pull redmine@sha256:4c9fc862d509df66a95f1514260b503231d2c545329f32dae59dd3ac518910cd
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.4 MB (240392453 bytes)**  
+-	Total Size: **240.4 MB (240413059 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c487b613eaeb66c048e359234c8fba637bd460073e8957e80b84874f6188485e`
+-	Image ID: `sha256:61935ec795dbb30b1059693b79fa818c8a7ca76d4a7a024273f681b4b7f7401a`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -7981,15 +7981,15 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 3000
 # Sat, 16 May 2020 12:29:51 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Sat, 16 May 2020 12:30:05 GMT
-ENV PASSENGER_VERSION=6.0.4
-# Sat, 16 May 2020 12:30:22 GMT
+# Sat, 30 May 2020 00:37:37 GMT
+ENV PASSENGER_VERSION=6.0.5
+# Sat, 30 May 2020 00:37:54 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Sat, 16 May 2020 12:30:23 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Sat, 16 May 2020 12:30:24 GMT
+# Sat, 30 May 2020 00:37:56 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -8046,11 +8046,11 @@ CMD ["passenger" "start"]
 		Last Modified: Sat, 16 May 2020 12:34:09 GMT  
 		Size: 2.1 KB (2054 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5a20445531b2167fc79e9f052b582fb845e63b358368abb9df9fe3b7c3bb233`  
-		Last Modified: Sat, 16 May 2020 12:34:36 GMT  
-		Size: 19.9 MB (19935192 bytes)  
+	-	`sha256:4cb3b41acc6c66d0fd0edd1da440953b77ea6080427a72dcb306b2616c6795e9`  
+		Last Modified: Sat, 30 May 2020 00:38:49 GMT  
+		Size: 20.0 MB (19953190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853416fc8e3c4aeb9367ae36bc4ed85d23a8e68a6586591f9ac319d95afd0994`  
-		Last Modified: Sat, 16 May 2020 12:34:34 GMT  
-		Size: 4.9 MB (4917848 bytes)  
+	-	`sha256:41147ac735fc826d0e1423fe3027601f85a57f55271e0df7f88d4e8c0f78406c`  
+		Last Modified: Sat, 30 May 2020 00:38:48 GMT  
+		Size: 4.9 MB (4920456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
