@@ -271,10 +271,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris boot=1.3-25-2
-'http://http.debian.net/debian/pool/main/b/boot/boot_1.3-25-2.dsc' boot_1.3-25-2.dsc 1796 SHA256:94fcdd9573d5576ea9f8ad389b8b0608853037fa5dc7fd3ec2ae4ba4c8a26676
-'http://http.debian.net/debian/pool/main/b/boot/boot_1.3-25.orig.tar.gz' boot_1.3-25.orig.tar.gz 235959 SHA256:464835fcb453072346ce49e4ae318e04c9dba682349be49db616623b6088fbbe
-'http://http.debian.net/debian/pool/main/b/boot/boot_1.3-25-2.debian.tar.xz' boot_1.3-25-2.debian.tar.xz 5212 SHA256:4760612eccd445c50fcd89a815e316b61697ccd45094da94bd568a3f2a057ba3
+'http://deb.debian.org/debian/pool/main/b/boot/boot_1.3-25-2.dsc' boot_1.3-25-2.dsc 1796 SHA256:94fcdd9573d5576ea9f8ad389b8b0608853037fa5dc7fd3ec2ae4ba4c8a26676
+'http://deb.debian.org/debian/pool/main/b/boot/boot_1.3-25.orig.tar.gz' boot_1.3-25.orig.tar.gz 235959 SHA256:464835fcb453072346ce49e4ae318e04c9dba682349be49db616623b6088fbbe
+'http://deb.debian.org/debian/pool/main/b/boot/boot_1.3-25-2.debian.tar.xz' boot_1.3-25-2.debian.tar.xz 5212 SHA256:4760612eccd445c50fcd89a815e316b61697ccd45094da94bd568a3f2a057ba3
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/boot/1.3-25-2/ (for browsing the source)
+- https://sources.debian.net/src/boot/1.3-25-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/boot/1.3-25-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `brotli=1.0.7-6.1`
 
@@ -468,10 +474,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris codetools=0.2-16-2
-'http://http.debian.net/debian/pool/main/c/codetools/codetools_0.2-16-2.dsc' codetools_0.2-16-2.dsc 1853 SHA256:c7a78ce6b13bfcd25f9a22b5c161e1e183d6944b53e5aecf4075fce35bdbdf96
-'http://http.debian.net/debian/pool/main/c/codetools/codetools_0.2-16.orig.tar.gz' codetools_0.2-16.orig.tar.gz 12996 SHA256:f67a66175cb5d8882457d1e9b91ea2f16813d554fa74f80c1fd6e17cf1877501
-'http://http.debian.net/debian/pool/main/c/codetools/codetools_0.2-16-2.debian.tar.xz' codetools_0.2-16-2.debian.tar.xz 2836 SHA256:39def42f17e751c5c6944eb568d35b20175499c781a682c77f69bd4d8874a02b
+'http://deb.debian.org/debian/pool/main/c/codetools/codetools_0.2-16-2.dsc' codetools_0.2-16-2.dsc 1853 SHA256:c7a78ce6b13bfcd25f9a22b5c161e1e183d6944b53e5aecf4075fce35bdbdf96
+'http://deb.debian.org/debian/pool/main/c/codetools/codetools_0.2-16.orig.tar.gz' codetools_0.2-16.orig.tar.gz 12996 SHA256:f67a66175cb5d8882457d1e9b91ea2f16813d554fa74f80c1fd6e17cf1877501
+'http://deb.debian.org/debian/pool/main/c/codetools/codetools_0.2-16-2.debian.tar.xz' codetools_0.2-16-2.debian.tar.xz 2836 SHA256:39def42f17e751c5c6944eb568d35b20175499c781a682c77f69bd4d8874a02b
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/codetools/0.2-16-2/ (for browsing the source)
+- https://sources.debian.net/src/codetools/0.2-16-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/codetools/0.2-16-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `coreutils=8.30-3`
 
@@ -928,10 +940,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris foreign=0.8.79-2
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.79-2.dsc' foreign_0.8.79-2.dsc 1832 SHA256:333bec4c674ec462bd6e2aaec9c33169ce96d07ac2c0d1a9993c519a7c2c7e19
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.79.orig.tar.gz' foreign_0.8.79.orig.tar.gz 362619 SHA256:af36b6945afbf849543ef7e432e27fecb66d5a8b3932b2428e59c2392699b9b4
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.79-2.debian.tar.xz' foreign_0.8.79-2.debian.tar.xz 4264 SHA256:bb972c50b1c4e1efd7525c5ddbfa9e975b9484d71560fa76b0bae534f04e6b01
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.79-2.dsc' foreign_0.8.79-2.dsc 1832 SHA256:333bec4c674ec462bd6e2aaec9c33169ce96d07ac2c0d1a9993c519a7c2c7e19
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.79.orig.tar.gz' foreign_0.8.79.orig.tar.gz 362619 SHA256:af36b6945afbf849543ef7e432e27fecb66d5a8b3932b2428e59c2392699b9b4
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.79-2.debian.tar.xz' foreign_0.8.79-2.debian.tar.xz 4264 SHA256:bb972c50b1c4e1efd7525c5ddbfa9e975b9484d71560fa76b0bae534f04e6b01
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/foreign/0.8.79-2/ (for browsing the source)
+- https://sources.debian.net/src/foreign/0.8.79-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/foreign/0.8.79-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `freetype=2.10.1-2`
 
@@ -3493,10 +3511,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris r-base=4.0.0-3
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.0.0-3.dsc' r-base_4.0.0-3.dsc 3016 SHA256:5a55beb2f73cae30492e499542c0ba1ac10a9295c06edfb73f078d9ee1fea204
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.0.0.orig.tar.gz' r-base_4.0.0.orig.tar.gz 33173947 SHA256:06beb0291b569978484eb0dcb5d2339665ec745737bdfb4e873e7a5a75492940
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.0.0-3.debian.tar.xz' r-base_4.0.0-3.debian.tar.xz 97136 SHA256:fdd61d4dc2d63402d125dc4d68450f7a5931b2d2adc572a7c79775e8e3cda414
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.0.0-3.dsc' r-base_4.0.0-3.dsc 3016 SHA256:5a55beb2f73cae30492e499542c0ba1ac10a9295c06edfb73f078d9ee1fea204
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.0.0.orig.tar.gz' r-base_4.0.0.orig.tar.gz 33173947 SHA256:06beb0291b569978484eb0dcb5d2339665ec745737bdfb4e873e7a5a75492940
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.0.0-3.debian.tar.xz' r-base_4.0.0-3.debian.tar.xz 97136 SHA256:fdd61d4dc2d63402d125dc4d68450f7a5931b2d2adc572a7c79775e8e3cda414
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/r-base/4.0.0-3/ (for browsing the source)
+- https://sources.debian.net/src/r-base/4.0.0-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/r-base/4.0.0-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-class=7.3-17-1`
 
