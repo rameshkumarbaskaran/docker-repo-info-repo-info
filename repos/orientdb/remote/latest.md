@@ -1,7 +1,7 @@
 ## `orientdb:latest`
 
 ```console
-$ docker pull orientdb@sha256:5562a69ad36d336547b43041c2b64a4538c9ec7ca12b9a58eedbb2afe490de8e
+$ docker pull orientdb@sha256:cdbc24e387c219807f431ce0890c19284c6db5591618d855c1fe96d4a5c93d93
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull orientdb@sha256:5562a69ad36d336547b43041c2b64a4538c9ec7ca12b9a58ee
 ### `orientdb:latest` - linux; amd64
 
 ```console
-$ docker pull orientdb@sha256:91c907773cafb397b2087a9edc69ac25709d7eeb7cfd2f6b0795ff1b7addd9cb
+$ docker pull orientdb@sha256:815df5f0c3d05c018cebbe9491961ade61bbd85161b58a05f503a5ebdd18e23c
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **174.7 MB (174679124 bytes)**  
+-	Total Size: **188.1 MB (188090320 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fd87965f3dd98a9eb984a885ad1bff6ce0d1daae51fc9b3d2640e01f3c5d4784`
+-	Image ID: `sha256:3277cc68ba99e61a832edb8093d0ec00d2beb7d0152cb1e450393495fb3e9add`
 -	Default Command: `["server.sh"]`
 
 ```dockerfile
@@ -48,29 +48,29 @@ RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		
 MAINTAINER OrientDB LTD (info@orientdb.com)
 # Sat, 16 May 2020 10:43:30 GMT
 ARG ORIENTDB_DOWNLOAD_SERVER
-# Sat, 16 May 2020 10:43:30 GMT
-ENV ORIENTDB_VERSION=3.0.31
-# Sat, 16 May 2020 10:43:30 GMT
-ENV ORIENTDB_DOWNLOAD_MD5=c37f5fd887ef552d1673af3a754a7bf8
-# Sat, 16 May 2020 10:43:30 GMT
-ENV ORIENTDB_DOWNLOAD_SHA1=08f2b6dfcfdcd33bbe9f2be8c50be8c1f507efff
-# Sat, 16 May 2020 10:43:30 GMT
-ENV ORIENTDB_DOWNLOAD_URL=https://repo1.maven.org/maven2/com/orientechnologies/orientdb-community/3.0.31/orientdb-community-3.0.31.tar.gz
-# Sat, 16 May 2020 10:43:36 GMT
+# Wed, 03 Jun 2020 18:31:09 GMT
+ENV ORIENTDB_VERSION=3.1.0
+# Wed, 03 Jun 2020 18:31:09 GMT
+ENV ORIENTDB_DOWNLOAD_MD5=b03f01b9a22f20346449613d18f41a08
+# Wed, 03 Jun 2020 18:31:10 GMT
+ENV ORIENTDB_DOWNLOAD_SHA1=87fb84959d1db9d9ca2277df34d7114b80446e0d
+# Wed, 03 Jun 2020 18:31:10 GMT
+ENV ORIENTDB_DOWNLOAD_URL=https://repo1.maven.org/maven2/com/orientechnologies/orientdb-community/3.1.0/orientdb-community-3.1.0.tar.gz
+# Wed, 03 Jun 2020 18:31:16 GMT
 RUN apt update     && apt install -y curl wget     && rm -rf /var/lib/apt/lists/*
-# Sat, 16 May 2020 10:43:40 GMT
+# Wed, 03 Jun 2020 18:31:20 GMT
 RUN mkdir /orientdb &&   wget  $ORIENTDB_DOWNLOAD_URL   && echo "$ORIENTDB_DOWNLOAD_MD5 *orientdb-community-$ORIENTDB_VERSION.tar.gz" | md5sum -c -   && echo "$ORIENTDB_DOWNLOAD_SHA1 *orientdb-community-$ORIENTDB_VERSION.tar.gz" | sha1sum -c -   && tar -xvzf orientdb-community-$ORIENTDB_VERSION.tar.gz -C /orientdb --strip-components=1   && rm orientdb-community-$ORIENTDB_VERSION.tar.gz   && rm -rf /orientdb/databases/*
-# Sat, 16 May 2020 10:43:40 GMT
+# Wed, 03 Jun 2020 18:31:20 GMT
 ENV PATH=/orientdb/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 16 May 2020 10:43:40 GMT
+# Wed, 03 Jun 2020 18:31:20 GMT
 VOLUME [/orientdb/backup /orientdb/databases /orientdb/config]
-# Sat, 16 May 2020 10:43:40 GMT
+# Wed, 03 Jun 2020 18:31:20 GMT
 WORKDIR /orientdb
-# Sat, 16 May 2020 10:43:41 GMT
+# Wed, 03 Jun 2020 18:31:21 GMT
 EXPOSE 2424
-# Sat, 16 May 2020 10:43:41 GMT
+# Wed, 03 Jun 2020 18:31:21 GMT
 EXPOSE 2480
-# Sat, 16 May 2020 10:43:41 GMT
+# Wed, 03 Jun 2020 18:31:21 GMT
 CMD ["server.sh"]
 ```
 
@@ -91,11 +91,11 @@ CMD ["server.sh"]
 		Last Modified: Fri, 15 May 2020 21:11:28 GMT  
 		Size: 104.7 MB (104718122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe83df629b48ce5cc2758e0d3e567c525d94ab2a413c61088bf8e51a8b92bc0b`  
-		Last Modified: Sat, 16 May 2020 10:44:53 GMT  
-		Size: 2.6 MB (2614631 bytes)  
+	-	`sha256:2662fd5d27334d77bfcd7fc487b6a54bf0268bb5924130d79dfee46de8fe09dd`  
+		Last Modified: Wed, 03 Jun 2020 18:32:12 GMT  
+		Size: 2.6 MB (2614657 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78014260ef62c382549119aaac0fab24ea7fa9cb045cc11edebd74603452b095`  
-		Last Modified: Sat, 16 May 2020 10:44:56 GMT  
-		Size: 37.0 MB (36998238 bytes)  
+	-	`sha256:0ac49ffd6f32f97bb922275745888e6d621754b5945edf4d66644e7f1be9f483`  
+		Last Modified: Wed, 03 Jun 2020 18:32:20 GMT  
+		Size: 50.4 MB (50409408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
