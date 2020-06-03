@@ -13,6 +13,10 @@
 -	[`orientdb:3.0.31`](#orientdb3031)
 -	[`orientdb:3.0.31-tp3`](#orientdb3031-tp3)
 -	[`orientdb:3.0-tp3`](#orientdb30-tp3)
+-	[`orientdb:3.1`](#orientdb31)
+-	[`orientdb:3.1.0`](#orientdb310)
+-	[`orientdb:3.1.0-tp3`](#orientdb310-tp3)
+-	[`orientdb:3.1-tp3`](#orientdb31-tp3)
 -	[`orientdb:latest`](#orientdblatest)
 
 ## `orientdb:2.0`
@@ -1172,6 +1176,22 @@ CMD ["server.sh"]
 		Last Modified: Sat, 16 May 2020 10:45:00 GMT  
 		Size: 1.4 KB (1376 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `orientdb:3.1`
+
+**does not exist** (yet?)
+
+## `orientdb:3.1.0`
+
+**does not exist** (yet?)
+
+## `orientdb:3.1.0-tp3`
+
+**does not exist** (yet?)
+
+## `orientdb:3.1-tp3`
+
+**does not exist** (yet?)
 
 ## `orientdb:latest`
 
