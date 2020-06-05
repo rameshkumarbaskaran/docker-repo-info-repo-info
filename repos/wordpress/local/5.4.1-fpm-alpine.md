@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d5a356f41b6affda593a8da0e27ede08aafbb9b389c2940f328b757a3d89088a`
-- Created: `2020-05-21T05:45:34.186810343Z`
-- Virtual Size: ~ 224.81 Mb  
+- Image ID: `sha256:7d5c7831b08d1d242c9f4dd86c3cfdcc725b2ab668af6ce94abac4fa49a70f0c`
+- Created: `2020-06-03T00:17:19.081208158Z`
+- Virtual Size: ~ 224.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -473,16 +473,16 @@ ImageMagick
 ### `apk` package: `jbig2dec`
 
 ```console
-jbig2dec-0.17-r0 description:
+jbig2dec-0.17-r2 description:
 JBIG2 image compression format decoder
 
-jbig2dec-0.17-r0 webpage:
+jbig2dec-0.17-r2 webpage:
 https://jbig2dec.com/
 
-jbig2dec-0.17-r0 installed size:
+jbig2dec-0.17-r2 installed size:
 143360
 
-jbig2dec-0.17-r0 license:
+jbig2dec-0.17-r2 license:
 GPL-2.0-or-later
 
 ```
