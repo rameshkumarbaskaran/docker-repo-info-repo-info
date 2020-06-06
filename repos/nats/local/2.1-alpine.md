@@ -2,12 +2,13 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9b00d537186867e873545576f2b3f2ec3c005bcea9ef9b7f9f79ae23fa7545d9`
-- Created: `2020-05-16T09:47:13.876619716Z`
+- Image ID: `sha256:d55057d2200ae8b71e69d563361a7c078b9959e2df3b828c14c5c852d7ee85e7`
+- Created: `2020-06-06T02:20:02.211353688Z`
 - Virtual Size: ~ 16.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["nats-server"]`
+- Entrypoint: `["docker-entrypoint.sh"]`
+- Command: `["nats-server","--config","/etc/nats/nats-server.conf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `NATS_SERVER=2.1.7`
