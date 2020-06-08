@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7871409a8fdbe949aa61924a0936994a5cd4ef032c337370451b6bfa53c2f7b`
-- Created: `2020-04-20T18:48:50.842348458Z`
-- Virtual Size: ~ 176.90 Mb  
+- Image ID: `sha256:7d849fdb12beaa69fb4c2145967a651f72fb2d5750ca0d3a302ba8d51e5c634f`
+- Created: `2020-06-04T17:20:41.8922775Z`
+- Virtual Size: ~ 176.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20200420`
+  - `build-date=20200604`
   - `name=SL7 Base Image`
   - `vendor=Scientific Linux`
 
@@ -69,43 +69,43 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bash-4.2.46-34.el7.src.rpm
 ```
 
-### `rpm` package: `bind-export-libs-9.11.4-16.P2.el7_8.2.x86_64`
+### `rpm` package: `bind-export-libs-9.11.4-16.P2.el7_8.6.x86_64`
 
 Licenses (from `rpm --query`): MPLv2.0
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls bind-export-libs-9.11.4-16.P2.el7_8.2
+$ yumdownloader --quiet --source --urls bind-export-libs-9.11.4-16.P2.el7_8.6
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bind-9.11.4-16.P2.el7_8.2.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bind-9.11.4-16.P2.el7_8.6.src.rpm
 ```
 
-### `rpm` package: `bind-license-9.11.4-16.P2.el7_8.2.noarch`
+### `rpm` package: `bind-license-9.11.4-16.P2.el7_8.6.noarch`
 
 Licenses (from `rpm --query`): MPLv2.0
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls bind-license-9.11.4-16.P2.el7_8.2.noarch
+$ yumdownloader --quiet --source --urls bind-license-9.11.4-16.P2.el7_8.6.noarch
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bind-9.11.4-16.P2.el7_8.2.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bind-9.11.4-16.P2.el7_8.6.src.rpm
 ```
 
-### `rpm` package: `binutils-2.27-43.base.el7.x86_64`
+### `rpm` package: `binutils-2.27-43.base.el7_8.1.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls binutils-2.27-43.base.el7
+$ yumdownloader --quiet --source --urls binutils-2.27-43.base.el7_8.1
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/binutils-2.27-43.base.el7.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/binutils-2.27-43.base.el7_8.1.src.rpm
 ```
 
 ### `rpm` package: `bzip2-1.0.6-13.el7.x86_64`
@@ -277,30 +277,30 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/dbus-1.10.24-13.el7_6.src.rpm
 ```
 
-### `rpm` package: `device-mapper-1.02.164-7.el7_8.1.x86_64`
+### `rpm` package: `device-mapper-1.02.164-7.el7_8.2.x86_64`
 
 Licenses (from `rpm --query`): GPLv2
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls device-mapper-1.02.164-7.el7_8.1
+$ yumdownloader --quiet --source --urls device-mapper-1.02.164-7.el7_8.2
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/lvm2-2.02.186-7.el7_8.1.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/lvm2-2.02.186-7.el7_8.2.src.rpm
 ```
 
-### `rpm` package: `device-mapper-libs-1.02.164-7.el7_8.1.x86_64`
+### `rpm` package: `device-mapper-libs-1.02.164-7.el7_8.2.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls device-mapper-libs-1.02.164-7.el7_8.1
+$ yumdownloader --quiet --source --urls device-mapper-libs-1.02.164-7.el7_8.2
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/lvm2-2.02.186-7.el7_8.1.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/lvm2-2.02.186-7.el7_8.2.src.rpm
 ```
 
 ### `rpm` package: `diffutils-3.3-5.el7.x86_64`
@@ -1706,30 +1706,30 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/sqlite-3.7.17-8.el7_7.1.src.rpm
 ```
 
-### `rpm` package: `systemd-219-73.el7_8.5.x86_64`
+### `rpm` package: `systemd-219-73.el7_8.6.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT and GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls systemd-219-73.el7_8.5
+$ yumdownloader --quiet --source --urls systemd-219-73.el7_8.6
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/systemd-219-73.el7_8.5.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/systemd-219-73.el7_8.6.src.rpm
 ```
 
-### `rpm` package: `systemd-libs-219-73.el7_8.5.x86_64`
+### `rpm` package: `systemd-libs-219-73.el7_8.6.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls systemd-libs-219-73.el7_8.5
+$ yumdownloader --quiet --source --urls systemd-libs-219-73.el7_8.6
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/systemd-219-73.el7_8.5.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/systemd-219-73.el7_8.6.src.rpm
 ```
 
 ### `rpm` package: `tar-1.26-35.el7.x86_64`
@@ -1745,17 +1745,17 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/tar-1.26-35.el7.src.rpm
 ```
 
-### `rpm` package: `tzdata-2019c-1.el7.noarch`
+### `rpm` package: `tzdata-2020a-1.el7.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls tzdata-2019c-1.el7.noarch
+$ yumdownloader --quiet --source --urls tzdata-2020a-1.el7.noarch
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/tzdata-2019c-1.el7.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/tzdata-2020a-1.el7.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
@@ -1875,17 +1875,17 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/yum-metadata-parser-1.1.4-10.el7.src.rpm
 ```
 
-### `rpm` package: `yum-plugin-ovl-1.1.31-53.el7.noarch`
+### `rpm` package: `yum-plugin-ovl-1.1.31-54.el7_8.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls yum-plugin-ovl-1.1.31-53.el7.noarch
+$ yumdownloader --quiet --source --urls yum-plugin-ovl-1.1.31-54.el7_8.noarch
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/yum-utils-1.1.31-53.el7.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/yum-utils-1.1.31-54.el7_8.src.rpm
 ```
 
 ### `rpm` package: `zlib-1.2.7-18.el7.x86_64`
