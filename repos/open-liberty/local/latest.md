@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d806902bd816ca31ab3171c8dda4d9cb0e8305b16e92f065902c9b1f8f66e408`
-- Created: `2020-05-16T08:10:37.580756643Z`
-- Virtual Size: ~ 490.06 Mb  
+- Image ID: `sha256:670b5d0aeeebc49e48faec6abf21ee10f53dc57ccecc1c5fd5b6beb539717771`
+- Created: `2020-06-06T01:21:27.561303479Z`
+- Virtual Size: ~ 491.69 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -26,12 +26,12 @@
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter`
   - `org.opencontainers.image.description=This image contains the Open Liberty runtime with AdoptOpenJDK with OpenJ9 and Ubuntu as the base OS.  For more information on this image please see https://github.com/OpenLiberty/ci.docker#building-an-application-image`
-  - `org.opencontainers.image.revision=cl200520200429-1655`
+  - `org.opencontainers.image.revision=cl200620200528-0414`
   - `org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker`
   - `org.opencontainers.image.title=Open Liberty`
   - `org.opencontainers.image.url=https://openliberty.io/`
   - `org.opencontainers.image.vendor=Open Liberty`
-  - `org.opencontainers.image.version=20.0.0.5`
+  - `org.opencontainers.image.version=20.0.0.6`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1310,7 +1310,6 @@ This is *usually* due to a new package version being released and the old versio
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.5`
-- `openssl=1.1.1-1ubuntu2.1~18.04.5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1319,6 +1318,26 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.6`
+
+Binary Packages:
+
+- `openssl=1.1.1-1ubuntu2.1~18.04.6`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.6.dsc' openssl_1.1.1-1ubuntu2.1~18.04.6.dsc 2754 SHA256:e35516df9f2b2798065730bbc87f1b5a6b87ff4716f5ae2d3ed4a2ce32f7029f
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA256:2836875a0f89c03d0fdf483941512613a50cfb421d6fd94b9f41d7279d586a3d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz.asc' openssl_1.1.1.orig.tar.gz.asc 488 SHA256:f3296150114069ea73a72eafbfdcbb295b770e7cbf3266f9590f3d0932498b3e
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.6.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.6.debian.tar.xz 104692 SHA256:8251b6f87af26364a341f7beeeef26ed99c7f90819804dba3c1e6bf2f698bb99
+```
 
 ### `dpkg` source package: `p11-kit=0.23.9-2`
 
