@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:05f12fd7620d74121b7ce5bee69bc6eb75381cd91d2a6cf90f3afdc8be9bbb78`
-- Created: `2020-05-04T19:26:50.535034001Z`
-- Virtual Size: ~ 432.17 Mb  
+- Image ID: `sha256:296c6bf2e7b733563835673ce63565322b6186e1049e6634d8dbc0f3f8df1f86`
+- Created: `2020-06-08T18:30:35.742703827Z`
+- Virtual Size: ~ 432.18 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E`
-  - `ZNC_VERSION=1.8.0`
+  - `ZNC_VERSION=1.8.1`
 
 ## `apk` (`.apk`-based packages)
 
@@ -681,16 +681,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r1 description:
-Common CA certificates PEM files
+ca-certificates-20191127-r2 description:
+Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r1 webpage:
+ca-certificates-20191127-r2 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r1 installed size:
-741376
+ca-certificates-20191127-r2 installed size:
+737280
 
-ca-certificates-20191127-r1 license:
+ca-certificates-20191127-r2 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -1650,16 +1650,16 @@ custom
 ### `apk` package: `runtime-dependencies`
 
 ```console
-runtime-dependencies-20200504.192212 description:
+runtime-dependencies-20200608.182557 description:
 virtual meta package
 
-runtime-dependencies-20200504.192212 webpage:
+runtime-dependencies-20200608.182557 webpage:
 
 
-runtime-dependencies-20200504.192212 installed size:
+runtime-dependencies-20200608.182557 installed size:
 0
 
-runtime-dependencies-20200504.192212 license:
+runtime-dependencies-20200608.182557 license:
 
 
 ```
@@ -1684,16 +1684,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.30.1-r1 description:
+sqlite-libs-3.30.1-r2 description:
 Sqlite3 library
 
-sqlite-libs-3.30.1-r1 webpage:
+sqlite-libs-3.30.1-r2 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.30.1-r1 installed size:
+sqlite-libs-3.30.1-r2 installed size:
 937984
 
-sqlite-libs-3.30.1-r1 license:
+sqlite-libs-3.30.1-r2 license:
 Public-Domain
 
 ```
