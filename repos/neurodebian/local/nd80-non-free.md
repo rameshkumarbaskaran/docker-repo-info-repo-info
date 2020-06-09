@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:885f358fca443625c52b696fa2d328985d0d29ebbbf0910a39b081c566adec09`
-- Created: `2020-05-15T09:16:51.007627614Z`
-- Virtual Size: ~ 130.15 Mb  
+- Image ID: `sha256:8e0d95eabf6cfa37a7adf1353f5e8329f06204c20de036827b9003a78d49570d`
+- Created: `2020-06-09T08:05:35.698957714Z`
+- Virtual Size: ~ 130.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -64,25 +64,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.113+nmu3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.113+nmu3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `apt=1.0.9.8.5`
+### `dpkg` source package: `apt=1.0.9.8.6`
 
 Binary Packages:
 
-- `apt=1.0.9.8.5`
-- `libapt-pkg4.12:amd64=1.0.9.8.5`
+- `apt=1.0.9.8.6`
+- `libapt-pkg4.12:amd64=1.0.9.8.6`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg4.12/copyright`)
 
 - `GPL-2`
 - `GPLv2+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris apt=1.0.9.8.6
+'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.0.9.8.6.dsc' apt_1.0.9.8.6.dsc 2396 SHA256:252f09e9a52a1470e1d38a98d313a7fe5e1737c775946f3348d0e10251d3ccfd
+'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.0.9.8.6.tar.xz' apt_1.0.9.8.6.tar.xz 1784448 SHA256:b1a430b0d2b54008f1cdc2b58e48a94bcc259f5b0c95cfa5450f00f5aa14e283
+```
 
-- http://snapshot.debian.org/package/apt/1.0.9.8.5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/apt/1.0.9.8.6/ (for browsing the source)
+- https://sources.debian.net/src/apt/1.0.9.8.6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apt/1.0.9.8.6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.47-2`
 
