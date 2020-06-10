@@ -1,7 +1,7 @@
 ## `tomcat:10-jdk8-adoptopenjdk-hotspot`
 
 ```console
-$ docker pull tomcat@sha256:d39b55ab6601c3eba9a466c9d3704ee3bec50e41d3c2860d5cbc8113a6e8633d
+$ docker pull tomcat@sha256:22ddfb35dcaef1c093046c834d39be57c26aa50cd2a6a67cd1ac502b44ba4626
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -321,14 +321,14 @@ CMD ["catalina.sh" "run"]
 ### `tomcat:10-jdk8-adoptopenjdk-hotspot` - linux; ppc64le
 
 ```console
-$ docker pull tomcat@sha256:a9635e0bd1f364d00271081de344d02b10f84fba604722ab4dd719d8f1e42979
+$ docker pull tomcat@sha256:57d849ea61fb5d87ecb18ca9b4f9d0c2f9e2823decbadefba7e76c3887a2ca63
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.3 MB (156325426 bytes)**  
+-	Total Size: **158.5 MB (158484333 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b273704261e687b3a28f9ef7282350a8334667be1d034981ea4c2198f9844999`
+-	Image ID: `sha256:c866db7cbae6cb3c5347a072accd93ee1d3d7f9e2e14e2f04689311183163526`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
@@ -368,17 +368,17 @@ ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
 ENV GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7
 # Fri, 24 Apr 2020 23:25:25 GMT
 ENV TOMCAT_MAJOR=10
-# Wed, 13 May 2020 01:44:24 GMT
-ENV TOMCAT_VERSION=10.0.0-M5
-# Wed, 13 May 2020 01:44:28 GMT
-ENV TOMCAT_SHA512=09d6d4c084857d3a7846fdb4ed562ef49402a164dbd140636a7d8fe1370f902f56144d8a20cc71b698189b873ce38cec2a12c38abedb6d7173b091eb46ea26a9
-# Wed, 13 May 2020 01:46:35 GMT
+# Wed, 10 Jun 2020 12:24:40 GMT
+ENV TOMCAT_VERSION=10.0.0-M6
+# Wed, 10 Jun 2020 12:24:45 GMT
+ENV TOMCAT_SHA512=4174a99075ef1366280598d08edc69c5e64aeffb4377c010a20d6decd2e5133cd29147f01510cf32ef1324a65701f25b4931e5b2e3e56dc7af969cdba2415b55
+# Wed, 10 Jun 2020 12:28:41 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 13 May 2020 01:46:46 GMT
+# Wed, 10 Jun 2020 12:29:01 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 13 May 2020 01:46:47 GMT
+# Wed, 10 Jun 2020 12:29:04 GMT
 EXPOSE 8080
-# Wed, 13 May 2020 01:46:49 GMT
+# Wed, 10 Jun 2020 12:29:06 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -411,13 +411,13 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Fri, 24 Apr 2020 16:39:01 GMT  
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29838d05d8e505471268ba4e39ec63e19e606b0bacd77d62173149218d5a763f`  
-		Last Modified: Wed, 13 May 2020 02:19:49 GMT  
-		Size: 12.1 MB (12050942 bytes)  
+	-	`sha256:0ee68bdb5619d487222cdd81727bc76d43c191c55cbdf758fd0df3ff5d98cc4d`  
+		Last Modified: Wed, 10 Jun 2020 13:18:59 GMT  
+		Size: 14.2 MB (14209850 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:785843b226eee4e62783692e8f2f288ce6caa1959ab5fe80559af676b02fcdd1`  
-		Last Modified: Wed, 13 May 2020 02:19:35 GMT  
-		Size: 165.0 B  
+	-	`sha256:d1534ad6f570c2298ea55578584f0abe0d6a96ba77982347ef5c100fdadb8608`  
+		Last Modified: Wed, 10 Jun 2020 13:18:56 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:10-jdk8-adoptopenjdk-hotspot` - linux; s390x
