@@ -11329,7 +11329,7 @@ CMD ["jshell"]
 ## `openjdk:14`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11341,51 +11341,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:14` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:14` - windows version 10.0.17763.1282; amd64
@@ -11558,7 +11558,7 @@ CMD ["jshell"]
 ## `openjdk:14.0`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11570,51 +11570,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:14.0` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:14.0` - windows version 10.0.17763.1282; amd64
@@ -11787,7 +11787,7 @@ CMD ["jshell"]
 ## `openjdk:14.0.1`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11799,51 +11799,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:14.0.1` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:14.0.1` - windows version 10.0.17763.1282; amd64
@@ -12098,7 +12098,7 @@ CMD ["jshell"]
 ## `openjdk:14.0.1-jdk`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12110,51 +12110,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:14.0.1-jdk` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:14.0.1-jdk` - windows version 10.0.17763.1282; amd64
@@ -12585,7 +12585,7 @@ CMD ["jshell"]
 ## `openjdk:14.0.1-jdk-oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12595,57 +12595,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0.1-jdk-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0.1-jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12655,51 +12655,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0.1-jdk-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0.1-jdk-slim`
@@ -13374,7 +13374,7 @@ CMD ["jshell"]
 ## `openjdk:14.0.1-oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13384,57 +13384,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0.1-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0.1-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13444,51 +13444,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0.1-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0.1-slim`
@@ -14069,7 +14069,7 @@ CMD ["jshell"]
 ## `openjdk:14.0-jdk`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14081,51 +14081,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:14.0-jdk` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:14.0-jdk` - windows version 10.0.17763.1282; amd64
@@ -14556,7 +14556,7 @@ CMD ["jshell"]
 ## `openjdk:14.0-jdk-oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14566,57 +14566,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0-jdk-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0-jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14626,51 +14626,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0-jdk-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0-jdk-slim`
@@ -15345,7 +15345,7 @@ CMD ["jshell"]
 ## `openjdk:14.0-oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15355,57 +15355,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15415,51 +15415,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14.0-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14.0-slim`
@@ -16040,7 +16040,7 @@ CMD ["jshell"]
 ## `openjdk:14-jdk`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16052,51 +16052,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:14-jdk` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:14-jdk` - windows version 10.0.17763.1282; amd64
@@ -16527,7 +16527,7 @@ CMD ["jshell"]
 ## `openjdk:14-jdk-oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16537,57 +16537,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14-jdk-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14-jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16597,51 +16597,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14-jdk-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14-jdk-slim`
@@ -17316,7 +17316,7 @@ CMD ["jshell"]
 ## `openjdk:14-oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17326,57 +17326,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17386,51 +17386,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:14-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:14-slim`
@@ -17929,7 +17929,7 @@ CMD ["jshell"]
 ## `openjdk:15`
 
 ```console
-$ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc98c1c45300576
+$ docker pull openjdk@sha256:4fdaad4aba2fa6a2144a72da432bc03d76ab28e851d44abf8643b284548dccc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17942,101 +17942,101 @@ $ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc
 ### `openjdk:15` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15` - windows version 10.0.17763.1282; amd64
@@ -18472,7 +18472,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea`
 
 ```console
-$ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc98c1c45300576
+$ docker pull openjdk@sha256:4fdaad4aba2fa6a2144a72da432bc03d76ab28e851d44abf8643b284548dccc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18485,101 +18485,101 @@ $ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc
 ### `openjdk:15-ea` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea` - windows version 10.0.17763.1282; amd64
@@ -18968,7 +18968,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea-26`
 
 ```console
-$ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc98c1c45300576
+$ docker pull openjdk@sha256:4fdaad4aba2fa6a2144a72da432bc03d76ab28e851d44abf8643b284548dccc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18981,101 +18981,101 @@ $ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc
 ### `openjdk:15-ea-26` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26` - windows version 10.0.17763.1282; amd64
@@ -19403,7 +19403,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea-26-jdk`
 
 ```console
-$ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc98c1c45300576
+$ docker pull openjdk@sha256:4fdaad4aba2fa6a2144a72da432bc03d76ab28e851d44abf8643b284548dccc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19416,101 +19416,101 @@ $ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc
 ### `openjdk:15-ea-26-jdk` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26-jdk` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26-jdk` - windows version 10.0.17763.1282; amd64
@@ -20014,7 +20014,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea-26-jdk-oracle`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20025,107 +20025,107 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-26-jdk-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26-jdk-oracle` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-26-jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20136,101 +20136,101 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-26-jdk-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26-jdk-oraclelinux7` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-26-jdk-slim`
@@ -21015,7 +21015,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea-26-oracle`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21026,107 +21026,107 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-26-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26-oracle` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-26-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21137,101 +21137,101 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-26-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-26-oraclelinux7` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-26-slim`
@@ -22103,7 +22103,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea-jdk`
 
 ```console
-$ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc98c1c45300576
+$ docker pull openjdk@sha256:4fdaad4aba2fa6a2144a72da432bc03d76ab28e851d44abf8643b284548dccc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22116,101 +22116,101 @@ $ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc
 ### `openjdk:15-ea-jdk` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-jdk` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-jdk` - windows version 10.0.17763.1282; amd64
@@ -22822,7 +22822,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea-jdk-oracle`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22833,107 +22833,107 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-jdk-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-jdk-oracle` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22944,101 +22944,101 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-jdk-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-jdk-oraclelinux7` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-jdk-slim`
@@ -23823,7 +23823,7 @@ CMD ["jshell"]
 ## `openjdk:15-ea-oracle`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23834,107 +23834,107 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-oracle` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23945,101 +23945,101 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-ea-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-ea-oraclelinux7` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-ea-slim`
@@ -24648,7 +24648,7 @@ CMD ["jshell"]
 ## `openjdk:15-jdk`
 
 ```console
-$ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc98c1c45300576
+$ docker pull openjdk@sha256:4fdaad4aba2fa6a2144a72da432bc03d76ab28e851d44abf8643b284548dccc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -24661,101 +24661,101 @@ $ docker pull openjdk@sha256:29f465857f2f369a15832ff017c5ee330f461e4023e3c8c8adc
 ### `openjdk:15-jdk` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-jdk` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-jdk` - windows version 10.0.17763.1282; amd64
@@ -25367,7 +25367,7 @@ CMD ["jshell"]
 ## `openjdk:15-jdk-oracle`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25378,107 +25378,107 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-jdk-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-jdk-oracle` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25489,101 +25489,101 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-jdk-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-jdk-oraclelinux7` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-jdk-slim`
@@ -26368,7 +26368,7 @@ CMD ["jshell"]
 ## `openjdk:15-oracle`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -26379,107 +26379,107 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-oracle` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d84615fa93d7d4
+$ docker pull openjdk@sha256:fb4878d307f1a467d36ecd59431d2e3b868a143f83dfa1347edb6bea35c4f1a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -26490,101 +26490,101 @@ $ docker pull openjdk@sha256:34044ca6e416f5ed820179f05dd223b3100d4ef673f81829a9d
 ### `openjdk:15-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:2e29e59770b60730cd7eaa7dc955379247bff92c1569c80b85fd03e72b59914a
+$ docker pull openjdk@sha256:d47f5fc124b61728e496dbce42e15a7183207298ab57fccb524e6241a7d762b8
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **253.6 MB (253615152 bytes)**  
+-	Total Size: **253.6 MB (253619447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea1fc5d9b54e06f6733fe05afd5a198685fe19208b40600151bcd584abe4a24b`
+-	Image ID: `sha256:0cb1e6a80b7f01f5a1ce15ecb99fd8af09521e28e85a772d7d202925d7b89c09`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 06:09:38 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 06:10:09 GMT
+# Wed, 10 Jun 2020 18:40:02 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 06:10:10 GMT
+# Wed, 10 Jun 2020 18:40:03 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccca2d115c0d31d3aa56cfa2ff9ae5e5d911d67eff72b86ca8f2b6301f1947de`  
-		Last Modified: Wed, 10 Jun 2020 06:13:02 GMT  
-		Size: 195.4 MB (195401593 bytes)  
+	-	`sha256:f8a0fac5732f5877d922153b5877e54ade6e9e77dc5598cd666cd3be9c7d1699`  
+		Last Modified: Wed, 10 Jun 2020 18:42:53 GMT  
+		Size: 195.4 MB (195401720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:15-oraclelinux7` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:499379d8024ac9a92427fa53ac5263e64456c8ade0f26b5f5313690c2a73ce34
+$ docker pull openjdk@sha256:9fe079fe4e6b07c279dae568ba688358006e74b9b9d782882c725731679008a3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **233.9 MB (233863626 bytes)**  
+-	Total Size: **233.8 MB (233845855 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3081ab16d3e44a5079a92f507f4bf52d906032a4360cf2b3cd2afa35d21d58d2`
+-	Image ID: `sha256:1e80470e0234f0cbe9268a2641e4fc82f98539e4dbb33b3d32096a27e2c74448`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Fri, 31 May 2019 21:40:52 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:42:34 GMT
-ADD file:b059ded860ba734fbe035c768d5c7e01a82decd7db5ca12f093672dab3b204c3 in / 
-# Mon, 04 May 2020 20:42:37 GMT
+# Wed, 10 Jun 2020 18:54:47 GMT
+ADD file:64c488ae0df14676929e149538eb50b12e9a99518a126c88ee9704e8a88424e5 in / 
+# Wed, 10 Jun 2020 18:54:49 GMT
 CMD ["/bin/bash"]
-# Fri, 22 May 2020 01:43:47 GMT
+# Wed, 10 Jun 2020 19:12:05 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Fri, 22 May 2020 01:43:48 GMT
+# Wed, 10 Jun 2020 19:12:06 GMT
 ENV LANG=en_US.UTF-8
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV JAVA_HOME=/usr/java/openjdk-15
-# Fri, 22 May 2020 01:43:49 GMT
+# Wed, 10 Jun 2020 19:12:07 GMT
 ENV PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jun 2020 03:29:08 GMT
+# Wed, 10 Jun 2020 19:12:08 GMT
 ENV JAVA_VERSION=15-ea+26
-# Wed, 10 Jun 2020 03:29:57 GMT
+# Wed, 10 Jun 2020 19:12:49 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		arm64 | aarch64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-aarch64_bin.tar.gz; 			downloadSha256=3167b538bffc43925847159facbf5b880321065db6e55e5d5baeaeff9dca4c2d; 			;; 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/early_access/jdk15/26/GPL/openjdk-15-ea+26_linux-x64_bin.tar.gz; 			downloadSha256=62fa98366f85cf37cba4758dfd6b683b397d60af3a130943de54dcddd3a4b1d8; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 10 Jun 2020 03:29:59 GMT
+# Wed, 10 Jun 2020 19:12:51 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:fa5299bfe4aa00db1c3f39321cc679889e30f51f690a75b8c75163698c4c7831`  
-		Last Modified: Mon, 04 May 2020 20:43:38 GMT  
-		Size: 44.1 MB (44074523 bytes)  
+	-	`sha256:9b791ce794f1b8ac779f7e2bb939c8f822209f7507dbc7f70d072d98b700e55a`  
+		Last Modified: Wed, 10 Jun 2020 18:55:52 GMT  
+		Size: 44.1 MB (44072411 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:342df9bce1d80b8bdf565c6ceb8cbb008ee180f7fd52e3006d84ae4f81d0dc67`  
-		Last Modified: Fri, 22 May 2020 01:48:19 GMT  
-		Size: 15.0 MB (15028449 bytes)  
+	-	`sha256:8e7857b3d293f1062b1c04189b86491b9bbfd2e793fec6975e1bdcabf4ef9ed3`  
+		Last Modified: Wed, 10 Jun 2020 19:14:19 GMT  
+		Size: 15.0 MB (15012793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d2304ee186664b836f68817ece73e48c47787df6b2b54e5f8b8463ca5fe70`  
-		Last Modified: Wed, 10 Jun 2020 03:33:14 GMT  
-		Size: 174.8 MB (174760654 bytes)  
+	-	`sha256:b76273a884f0acc206e01083748ca1c3160bccc41d3230919cc3fc8e4e89b724`  
+		Last Modified: Wed, 10 Jun 2020 19:14:50 GMT  
+		Size: 174.8 MB (174760651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:15-slim`
@@ -32807,7 +32807,7 @@ CMD ["jshell"]
 ## `openjdk:jdk`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -32819,51 +32819,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:jdk` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:jdk` - windows version 10.0.17763.1282; amd64
@@ -33294,7 +33294,7 @@ CMD ["jshell"]
 ## `openjdk:jdk-oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -33304,57 +33304,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:jdk-oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:jdk-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -33364,51 +33364,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:jdk-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:jdk-slim`
@@ -33907,7 +33907,7 @@ CMD ["jshell"]
 ## `openjdk:latest`
 
 ```console
-$ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524decd1dd70e4dd6
+$ docker pull openjdk@sha256:c56c42fb84c21ebeea1c715f323b78f4160872ac6c28c32292d9cd1d29982aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -33919,51 +33919,51 @@ $ docker pull openjdk@sha256:3faa40aca89cf07bc9b9e2aaf905c53944a83ae46b1110a524d
 ### `openjdk:latest` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:latest` - windows version 10.0.17763.1282; amd64
@@ -34312,7 +34312,7 @@ CMD ["jshell"]
 ## `openjdk:oracle`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -34322,57 +34322,57 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:oracle` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b5e729c9d7264c
+$ docker pull openjdk@sha256:7f6c3f35e7b069c68a03af24284b8be1d8e563f8304964054dac4195e912db1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -34382,51 +34382,51 @@ $ docker pull openjdk@sha256:237e2b26d85eccfddf7da3dc97c76d0efae6d53a02d6916718b
 ### `openjdk:oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:ba0d4d4691ae754557ca69b7dd35d36e7b9643c376c218c53b44839eeb1b9f24
+$ docker pull openjdk@sha256:edb1562ae795f53bd93ab834a8ff7fe5e7739f9e9e879d575e48a8907e234a52
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **257.4 MB (257438156 bytes)**  
+-	Total Size: **257.4 MB (257442180 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72467478c013b95e74de2e216fa34b5251331d8e178b06482e8b3eae4a287f37`
+-	Image ID: `sha256:4fba8120f640877c7aedf93c1c862df74ee2d971786a402289099e6c08798598`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
 # Thu, 30 Aug 2018 21:49:27 GMT
 MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Mon, 04 May 2020 20:20:53 GMT
-ADD file:d23891d2372d6aae3d738388c74dacd92f9406083ee0c1ac0e2bfd140f92ec2b in / 
-# Mon, 04 May 2020 20:20:53 GMT
+# Wed, 10 Jun 2020 18:22:32 GMT
+ADD file:79bb5b8b89fe54ba99fd9d42d4f8774bfb9c1319ac3ead17a2005a3bde852451 in / 
+# Wed, 10 Jun 2020 18:22:32 GMT
 CMD ["/bin/bash"]
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:27 GMT
 RUN set -eux; 	yum install -y 		gzip 		tar 				binutils 		freetype fontconfig 	; 	rm -rf /var/cache/yum
-# Mon, 04 May 2020 20:38:21 GMT
+# Wed, 10 Jun 2020 18:39:28 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 04 May 2020 20:39:15 GMT
+# Wed, 10 Jun 2020 18:40:21 GMT
 ENV JAVA_VERSION=14.0.1
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 RUN set -eux; 		objdump="$(command -v objdump)"; 	arch="$(objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		amd64 | i386:x86-64) 			downloadUrl=https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz; 			downloadSha256=22ce248e0bd69f23028625bede9d1b3080935b68d011eaaf9e241f84d6b9c4cc; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o /openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 22 May 2020 01:23:50 GMT
+# Wed, 10 Jun 2020 18:40:46 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:83755823a002357171a0b229ef5769a60db47a90b624adc45f8c6b7cd1d1394f`  
-		Last Modified: Mon, 04 May 2020 20:22:07 GMT  
-		Size: 43.5 MB (43455265 bytes)  
+	-	`sha256:fa926a7d213a8145d6a906d68a085b21909a4b26871f142804e68b322bf8881f`  
+		Last Modified: Wed, 10 Jun 2020 18:23:43 GMT  
+		Size: 43.5 MB (43457466 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0e105caaf23acf967db67aa1f683d428603dbb51e12295bfe8f5df6a4cce8bb`  
-		Last Modified: Mon, 04 May 2020 20:40:58 GMT  
-		Size: 14.8 MB (14758294 bytes)  
+	-	`sha256:22aed8993d2fb0bb3a658c631a1dfbd05c0e5d42218f419d18238996bd06ea08`  
+		Last Modified: Wed, 10 Jun 2020 18:42:25 GMT  
+		Size: 14.8 MB (14760261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40aaeeabaf683143583aa9a565869c92a82fed3ae1a7e6daf3f81cc9f1d123e9`  
-		Last Modified: Fri, 22 May 2020 01:27:57 GMT  
-		Size: 199.2 MB (199224597 bytes)  
+	-	`sha256:6f92a663543542f8edf96b1c927ad7d97f7c9766009ba66ba5d800f537e6d26d`  
+		Last Modified: Wed, 10 Jun 2020 18:43:23 GMT  
+		Size: 199.2 MB (199224453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `openjdk:slim`
