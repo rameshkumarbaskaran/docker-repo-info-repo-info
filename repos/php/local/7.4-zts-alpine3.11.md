@@ -1,10 +1,10 @@
-# `php:7.4.6-zts-alpine3.11`
+# `php:7.4.7-zts-alpine3.11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0e9a76c98293af1825e6de040439295a0f07050d12324ee2dcfc5093b6f2a259`
-- Created: `2020-06-02T21:25:21.135750283Z`
-- Virtual Size: ~ 64.61 Mb  
+- Image ID: `sha256:7e386dd940c2f6210af6be7a7d3a542a0a88935fd805eb8ba970dcf134e47138`
+- Created: `2020-06-11T19:45:09.352063562Z`
+- Virtual Size: ~ 64.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.6`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.6.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.6.tar.xz.asc`
-  - `PHP_SHA256=d740322f84f63019622b9f369d64ea5ab676547d2bdcf12be77a5a4cffd06832`
+  - `PHP_VERSION=7.4.7`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.7.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.7.tar.xz.asc`
+  - `PHP_SHA256=53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -386,16 +386,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.40.0-r0 description:
+nghttp2-libs-1.40.0-r1 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.40.0-r0 webpage:
+nghttp2-libs-1.40.0-r1 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.40.0-r0 installed size:
+nghttp2-libs-1.40.0-r1 installed size:
 159744
 
-nghttp2-libs-1.40.0-r0 license:
+nghttp2-libs-1.40.0-r1 license:
 MIT
 
 ```
