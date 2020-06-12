@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:69f6df15e4c350a8f62818760125360167070504e930ff7584e1a3627426c397`
-- Created: `2020-06-02T16:26:09.492165251Z`
+- Image ID: `sha256:d788eca028a0f49b6bc70b251c8535b16ee5bd94e0ab375ca8f3a923e6ce4281`
+- Created: `2020-06-10T18:22:14.311673236Z`
 - Virtual Size: ~ 235.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -861,15 +861,15 @@ $ yumdownloader --quiet --source --urls libgpg-error-1.12-3.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libgpg-error-1.12-3.el7.src.rpm
 ```
 
-### `rpm` package: `libgudev1-219-73.0.1.el7_8.6.x86_64`
+### `rpm` package: `libgudev1-219-73.0.1.el7_8.7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libgudev1-219-73.0.1.el7_8.6
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/systemd-219-73.0.1.el7_8.6.src.rpm
+$ yumdownloader --quiet --source --urls libgudev1-219-73.0.1.el7_8.7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/systemd-219-73.0.1.el7_8.7.src.rpm
 ```
 
 ### `rpm` package: `libidn-1.28-4.el7.x86_64`
@@ -1873,26 +1873,26 @@ $ yumdownloader --quiet --source --urls sqlite-3.7.17-8.el7_7.1
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/sqlite-3.7.17-8.el7_7.1.src.rpm
 ```
 
-### `rpm` package: `systemd-219-73.0.1.el7_8.6.x86_64`
+### `rpm` package: `systemd-219-73.0.1.el7_8.7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT and GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls systemd-219-73.0.1.el7_8.6
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/systemd-219-73.0.1.el7_8.6.src.rpm
+$ yumdownloader --quiet --source --urls systemd-219-73.0.1.el7_8.7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/systemd-219-73.0.1.el7_8.7.src.rpm
 ```
 
-### `rpm` package: `systemd-libs-219-73.0.1.el7_8.6.x86_64`
+### `rpm` package: `systemd-libs-219-73.0.1.el7_8.7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls systemd-libs-219-73.0.1.el7_8.6
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/systemd-219-73.0.1.el7_8.6.src.rpm
+$ yumdownloader --quiet --source --urls systemd-libs-219-73.0.1.el7_8.7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/systemd-219-73.0.1.el7_8.7.src.rpm
 ```
 
 ### `rpm` package: `sysvinit-tools-2.88-14.dsf.el7.x86_64`
