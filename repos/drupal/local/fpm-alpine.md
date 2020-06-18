@@ -1,9 +1,9 @@
-# `drupal:8.9.0-fpm-alpine`
+# `drupal:8.9.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:835e1ff40ef672ab33248725c87425291f8ddf4bf87bbd36f5bfc2d8f2abe3ff`
-- Created: `2020-06-12T03:43:45.302897213Z`
+- Image ID: `sha256:bce1295772bb9aa8448048149431da8f1dd0277c58b8e7a8d83dc62e6480ca4b`
+- Created: `2020-06-18T00:20:16.288355933Z`
 - Virtual Size: ~ 166.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -23,8 +23,8 @@
   - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.7.tar.xz.asc`
   - `PHP_SHA256=53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf`
   - `PHP_MD5=`
-  - `DRUPAL_VERSION=8.9.0`
-  - `DRUPAL_MD5=3f57e9e8a7c2fe9c499712d5d254f55b`
+  - `DRUPAL_VERSION=8.9.1`
+  - `DRUPAL_MD5=9b4d1052c6d23b671aadc499cc961085`
 
 ## `apk` (`.apk`-based packages)
 
