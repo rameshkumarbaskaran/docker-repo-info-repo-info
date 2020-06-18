@@ -227,6 +227,72 @@
 -	[`openjdk:15-windowsservercore`](#openjdk15-windowsservercore)
 -	[`openjdk:15-windowsservercore-1809`](#openjdk15-windowsservercore-1809)
 -	[`openjdk:15-windowsservercore-ltsc2016`](#openjdk15-windowsservercore-ltsc2016)
+-	[`openjdk:16`](#openjdk16)
+-	[`openjdk:16-buster`](#openjdk16-buster)
+-	[`openjdk:16-ea`](#openjdk16-ea)
+-	[`openjdk:16-ea-1`](#openjdk16-ea-1)
+-	[`openjdk:16-ea-1-buster`](#openjdk16-ea-1-buster)
+-	[`openjdk:16-ea-1-jdk`](#openjdk16-ea-1-jdk)
+-	[`openjdk:16-ea-1-jdk-buster`](#openjdk16-ea-1-jdk-buster)
+-	[`openjdk:16-ea-1-jdk-nanoserver`](#openjdk16-ea-1-jdk-nanoserver)
+-	[`openjdk:16-ea-1-jdk-nanoserver-1809`](#openjdk16-ea-1-jdk-nanoserver-1809)
+-	[`openjdk:16-ea-1-jdk-oracle`](#openjdk16-ea-1-jdk-oracle)
+-	[`openjdk:16-ea-1-jdk-oraclelinux7`](#openjdk16-ea-1-jdk-oraclelinux7)
+-	[`openjdk:16-ea-1-jdk-slim`](#openjdk16-ea-1-jdk-slim)
+-	[`openjdk:16-ea-1-jdk-slim-buster`](#openjdk16-ea-1-jdk-slim-buster)
+-	[`openjdk:16-ea-1-jdk-windowsservercore`](#openjdk16-ea-1-jdk-windowsservercore)
+-	[`openjdk:16-ea-1-jdk-windowsservercore-1809`](#openjdk16-ea-1-jdk-windowsservercore-1809)
+-	[`openjdk:16-ea-1-jdk-windowsservercore-ltsc2016`](#openjdk16-ea-1-jdk-windowsservercore-ltsc2016)
+-	[`openjdk:16-ea-1-nanoserver`](#openjdk16-ea-1-nanoserver)
+-	[`openjdk:16-ea-1-nanoserver-1809`](#openjdk16-ea-1-nanoserver-1809)
+-	[`openjdk:16-ea-1-oracle`](#openjdk16-ea-1-oracle)
+-	[`openjdk:16-ea-1-oraclelinux7`](#openjdk16-ea-1-oraclelinux7)
+-	[`openjdk:16-ea-1-slim`](#openjdk16-ea-1-slim)
+-	[`openjdk:16-ea-1-slim-buster`](#openjdk16-ea-1-slim-buster)
+-	[`openjdk:16-ea-1-windowsservercore`](#openjdk16-ea-1-windowsservercore)
+-	[`openjdk:16-ea-1-windowsservercore-1809`](#openjdk16-ea-1-windowsservercore-1809)
+-	[`openjdk:16-ea-1-windowsservercore-ltsc2016`](#openjdk16-ea-1-windowsservercore-ltsc2016)
+-	[`openjdk:16-ea-buster`](#openjdk16-ea-buster)
+-	[`openjdk:16-ea-jdk`](#openjdk16-ea-jdk)
+-	[`openjdk:16-ea-jdk-buster`](#openjdk16-ea-jdk-buster)
+-	[`openjdk:16-ea-jdk-nanoserver`](#openjdk16-ea-jdk-nanoserver)
+-	[`openjdk:16-ea-jdk-nanoserver-1809`](#openjdk16-ea-jdk-nanoserver-1809)
+-	[`openjdk:16-ea-jdk-oracle`](#openjdk16-ea-jdk-oracle)
+-	[`openjdk:16-ea-jdk-oraclelinux7`](#openjdk16-ea-jdk-oraclelinux7)
+-	[`openjdk:16-ea-jdk-slim`](#openjdk16-ea-jdk-slim)
+-	[`openjdk:16-ea-jdk-slim-buster`](#openjdk16-ea-jdk-slim-buster)
+-	[`openjdk:16-ea-jdk-windowsservercore`](#openjdk16-ea-jdk-windowsservercore)
+-	[`openjdk:16-ea-jdk-windowsservercore-1809`](#openjdk16-ea-jdk-windowsservercore-1809)
+-	[`openjdk:16-ea-jdk-windowsservercore-ltsc2016`](#openjdk16-ea-jdk-windowsservercore-ltsc2016)
+-	[`openjdk:16-ea-nanoserver`](#openjdk16-ea-nanoserver)
+-	[`openjdk:16-ea-nanoserver-1809`](#openjdk16-ea-nanoserver-1809)
+-	[`openjdk:16-ea-oracle`](#openjdk16-ea-oracle)
+-	[`openjdk:16-ea-oraclelinux7`](#openjdk16-ea-oraclelinux7)
+-	[`openjdk:16-ea-slim`](#openjdk16-ea-slim)
+-	[`openjdk:16-ea-slim-buster`](#openjdk16-ea-slim-buster)
+-	[`openjdk:16-ea-windowsservercore`](#openjdk16-ea-windowsservercore)
+-	[`openjdk:16-ea-windowsservercore-1809`](#openjdk16-ea-windowsservercore-1809)
+-	[`openjdk:16-ea-windowsservercore-ltsc2016`](#openjdk16-ea-windowsservercore-ltsc2016)
+-	[`openjdk:16-jdk`](#openjdk16-jdk)
+-	[`openjdk:16-jdk-buster`](#openjdk16-jdk-buster)
+-	[`openjdk:16-jdk-nanoserver`](#openjdk16-jdk-nanoserver)
+-	[`openjdk:16-jdk-nanoserver-1809`](#openjdk16-jdk-nanoserver-1809)
+-	[`openjdk:16-jdk-oracle`](#openjdk16-jdk-oracle)
+-	[`openjdk:16-jdk-oraclelinux7`](#openjdk16-jdk-oraclelinux7)
+-	[`openjdk:16-jdk-slim`](#openjdk16-jdk-slim)
+-	[`openjdk:16-jdk-slim-buster`](#openjdk16-jdk-slim-buster)
+-	[`openjdk:16-jdk-windowsservercore`](#openjdk16-jdk-windowsservercore)
+-	[`openjdk:16-jdk-windowsservercore-1809`](#openjdk16-jdk-windowsservercore-1809)
+-	[`openjdk:16-jdk-windowsservercore-ltsc2016`](#openjdk16-jdk-windowsservercore-ltsc2016)
+-	[`openjdk:16-nanoserver`](#openjdk16-nanoserver)
+-	[`openjdk:16-nanoserver-1809`](#openjdk16-nanoserver-1809)
+-	[`openjdk:16-oracle`](#openjdk16-oracle)
+-	[`openjdk:16-oraclelinux7`](#openjdk16-oraclelinux7)
+-	[`openjdk:16-slim`](#openjdk16-slim)
+-	[`openjdk:16-slim-buster`](#openjdk16-slim-buster)
+-	[`openjdk:16-windowsservercore`](#openjdk16-windowsservercore)
+-	[`openjdk:16-windowsservercore-1809`](#openjdk16-windowsservercore-1809)
+-	[`openjdk:16-windowsservercore-ltsc2016`](#openjdk16-windowsservercore-ltsc2016)
 -	[`openjdk:8`](#openjdk8)
 -	[`openjdk:8-buster`](#openjdk8-buster)
 -	[`openjdk:8-jdk`](#openjdk8-jdk)
@@ -27189,6 +27255,270 @@ CMD ["jshell"]
 		Last Modified: Mon, 15 Jun 2020 22:02:35 GMT  
 		Size: 1.2 KB (1160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `openjdk:16`
+
+**does not exist** (yet?)
+
+## `openjdk:16-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-nanoserver`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-oracle`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-oraclelinux7`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-slim`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-slim-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-windowsservercore`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-jdk-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-nanoserver`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-oracle`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-oraclelinux7`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-slim`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-slim-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-windowsservercore`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-1-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-nanoserver`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-oracle`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-oraclelinux7`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-slim`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-slim-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-windowsservercore`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-jdk-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-nanoserver`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-oracle`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-oraclelinux7`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-slim`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-slim-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-windowsservercore`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-ea-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-nanoserver`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-oracle`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-oraclelinux7`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-slim`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-slim-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-windowsservercore`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-jdk-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `openjdk:16-nanoserver`
+
+**does not exist** (yet?)
+
+## `openjdk:16-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-oracle`
+
+**does not exist** (yet?)
+
+## `openjdk:16-oraclelinux7`
+
+**does not exist** (yet?)
+
+## `openjdk:16-slim`
+
+**does not exist** (yet?)
+
+## `openjdk:16-slim-buster`
+
+**does not exist** (yet?)
+
+## `openjdk:16-windowsservercore`
+
+**does not exist** (yet?)
+
+## `openjdk:16-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `openjdk:16-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `openjdk:8`
 
