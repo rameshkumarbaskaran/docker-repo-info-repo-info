@@ -551,14 +551,9 @@ Licenses: (parsed from: `/usr/share/doc/libdbus-1-3/copyright`)
 - `Tcl-BSDish`
 - `g10-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dbus=1.12.2-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.2-1ubuntu1.1.dsc' dbus_1.12.2-1ubuntu1.1.dsc 3561 SHA256:195b44d70dcafc5a84f6b948385bc0b1a1bc58a26097000cb3782c1f2105a689
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.2.orig.tar.gz' dbus_1.12.2.orig.tar.gz 2063143 SHA256:272bb5091770b047c8188b926d5e6038fa4fe6745488b2add96b23e2d9a83d88
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.2-1ubuntu1.1.debian.tar.xz' dbus_1.12.2-1ubuntu1.1.debian.tar.xz 66172 SHA256:31519f67adf4bcd56cf1f4b5c61221af90573867f188ee6588d0286abf4a22da
-```
 
 ### `dpkg` source package: `debconf=1.5.66ubuntu1`
 
@@ -2297,10 +2292,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libdrm=2.4.99-1ubuntu1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99-1ubuntu1~18.04.2.dsc' libdrm_2.4.99-1ubuntu1~18.04.2.dsc 3346 SHA256:35bc17f86a80d86521789adf670581b76ea16a810c3b348e28468e2e24b2d1bd
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99.orig.tar.gz' libdrm_2.4.99.orig.tar.gz 1145338 SHA256:597fb879e2f45193431a0d352d10cd79ef61a24ab31f44320168583e10cb6302
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99.orig.tar.gz.asc' libdrm_2.4.99.orig.tar.gz.asc 1068 SHA256:1d2af3f55f54d10383b81822ce38bf1f37f4e461a9abc6dfb18baeed0e6d0ed4
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99-1ubuntu1~18.04.2.diff.gz' libdrm_2.4.99-1ubuntu1~18.04.2.diff.gz 53629 SHA256:70ce509ef22574b689672060bb48cb825c88e0911b0ee7332422783b5c1f385d
+'http://security.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99-1ubuntu1~18.04.2.dsc' libdrm_2.4.99-1ubuntu1~18.04.2.dsc 3346 SHA256:35bc17f86a80d86521789adf670581b76ea16a810c3b348e28468e2e24b2d1bd
+'http://security.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99.orig.tar.gz' libdrm_2.4.99.orig.tar.gz 1145338 SHA256:597fb879e2f45193431a0d352d10cd79ef61a24ab31f44320168583e10cb6302
+'http://security.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99.orig.tar.gz.asc' libdrm_2.4.99.orig.tar.gz.asc 1068 SHA256:1d2af3f55f54d10383b81822ce38bf1f37f4e461a9abc6dfb18baeed0e6d0ed4
+'http://security.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.99-1ubuntu1~18.04.2.diff.gz' libdrm_2.4.99-1ubuntu1~18.04.2.diff.gz 53629 SHA256:70ce509ef22574b689672060bb48cb825c88e0911b0ee7332422783b5c1f385d
 ```
 
 ### `dpkg` source package: `libedit=3.1-20170329-1`
@@ -4517,14 +4512,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.35-2ubuntu2.7
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.7.dsc' nss_3.35-2ubuntu2.7.dsc 2331 SHA256:d4c619606e24d2ece258749767638daf27ef274e87d214c4ad0d75400cca40e8
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35.orig.tar.gz' nss_3.35.orig.tar.gz 9620041 SHA256:f4127de09bede39f5fd0f789d33c3504c5d261e69ea03022d46b319b3e32f6fa
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.7.debian.tar.xz' nss_3.35-2ubuntu2.7.debian.tar.xz 45568 SHA256:e39cdab85456bea8631becd276985e17f003ddc0782025b647a38d2cf16cb793
-```
 
 ### `dpkg` source package: `numactl=2.0.11-2.1ubuntu0.1`
 
