@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1d654303ff598552eb398b936a828752d6d39b04146e79b67afde3b48ccb2488`
-- Created: `2020-04-24T01:07:28.642630208Z`
-- Virtual Size: ~ 72.95 Mb  
+- Image ID: `sha256:2f6c85efea61013a1f52da29b66610c7a780cf6fa4299613e8fecb878f508ac6`
+- Created: `2020-06-17T01:20:44.963475221Z`
+- Virtual Size: ~ 72.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -54,12 +54,12 @@ $ apt-get source -qq --print-uris adduser=3.118ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu1.tar.xz' adduser_3.118ubuntu1.tar.xz 217300 SHA256:16e8d59231d814af0701a24195246f169a26df1b39d59e3cea04db882a31973a
 ```
 
-### `dpkg` source package: `apt=1.9.4`
+### `dpkg` source package: `apt=1.9.4ubuntu0.1`
 
 Binary Packages:
 
-- `apt=1.9.4`
-- `libapt-pkg5.90:amd64=1.9.4`
+- `apt=1.9.4ubuntu0.1`
+- `libapt-pkg5.90:amd64=1.9.4ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg5.90/copyright`)
 
@@ -69,9 +69,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apt=1.9.4
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.4.dsc' apt_1.9.4.dsc 2744 SHA256:fef428ea8f433254dc126558c0e708a40d26402778c2cf7429fd8203cbf75728
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.4.tar.xz' apt_1.9.4.tar.xz 2170120 SHA256:85ae8d5beb44fa02ed88af32137f4c97e7a68e5d9ba4164eab515988105ba292
+$ apt-get source -qq --print-uris apt=1.9.4ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.4ubuntu0.1.dsc' apt_1.9.4ubuntu0.1.dsc 2530 SHA256:e0824e1925047fcc1a654346f3b719590cbbcd90f9c8fd58f6107fd6bfddfa50
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.4ubuntu0.1.tar.xz' apt_1.9.4ubuntu0.1.tar.xz 2170952 SHA256:eff2c8bc96f753cab37b2be1902e56441287c974084975ee3e31bc19ae161cb1
 ```
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
@@ -495,11 +495,11 @@ $ apt-get source -qq --print-uris gnupg2=2.2.12-1ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.12-1ubuntu3.debian.tar.xz' gnupg2_2.2.12-1ubuntu3.debian.tar.xz 65876 SHA256:d95527c25e4c4eb404b1b29096044235eab56b2f5e29a94d764c2063b31016fe
 ```
 
-### `dpkg` source package: `gnutls28=3.6.9-5ubuntu1.1`
+### `dpkg` source package: `gnutls28=3.6.9-5ubuntu1.2`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.6.9-5ubuntu1.1`
+- `libgnutls30:amd64=3.6.9-5ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -516,9 +516,15 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gnutls28=3.6.9-5ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9-5ubuntu1.2.dsc' gnutls28_3.6.9-5ubuntu1.2.dsc 3486 SHA256:1de64d253257028214cb086a23ec279fb894d44577d85348ce3dcf58a6749f43
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz' gnutls28_3.6.9.orig.tar.xz 5773928 SHA256:4331fca55817ecdd74450b908a6c29b4f05bb24dd13144c6284aa34d872e1fcb
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz.asc' gnutls28_3.6.9.orig.tar.xz.asc 488 SHA256:7956ffdddad8495f6933233b6ad04bb6b4e8ff9a2977fc0fd7ae95aa33ae245d
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9-5ubuntu1.2.debian.tar.xz' gnutls28_3.6.9-5ubuntu1.2.debian.tar.xz 71968 SHA256:d5e6828c6441a4fce6eb51a4b149ad88abd7a883dd788e3eb934258e958a6fe6
+```
 
 ### `dpkg` source package: `grep=3.3-1build1`
 
@@ -1195,12 +1201,12 @@ $ apt-get source -qq --print-uris shadow=1:4.5-1.1ubuntu4
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1.1ubuntu4.debian.tar.xz' shadow_4.5-1.1ubuntu4.debian.tar.xz 472436 SHA256:4eaa200a5d65a63bc53761be36ac0f2b972f8758fd47c405714875d14d37d0d4
 ```
 
-### `dpkg` source package: `systemd=242-7ubuntu3.7`
+### `dpkg` source package: `systemd=242-7ubuntu3.9`
 
 Binary Packages:
 
-- `libsystemd0:amd64=242-7ubuntu3.7`
-- `libudev1:amd64=242-7ubuntu3.7`
+- `libsystemd0:amd64=242-7ubuntu3.9`
+- `libudev1:amd64=242-7ubuntu3.9`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1212,9 +1218,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=242-7ubuntu3.9
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242-7ubuntu3.9.dsc' systemd_242-7ubuntu3.9.dsc 5163 SHA256:35b7bcf12dc7fb6d0c0650d855c2841e352c06f0452abb0310f065186ab85eab
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242.orig.tar.gz' systemd_242.orig.tar.gz 7831435 SHA256:ec22be9a5dd94c9640e6348ed8391d1499af8ca2c2f01109198a414cff6c6cba
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_242-7ubuntu3.9.debian.tar.xz' systemd_242-7ubuntu3.9.debian.tar.xz 216164 SHA256:48caa27a3735decd5701af89f7d7970ecd49ce003b748f071322075f365b4a29
+```
 
 ### `dpkg` source package: `sysvinit=2.95-5ubuntu2`
 
