@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c3712e79ade7548861a907fe1abdba21819c44e9181a7aa67fa2f8665679ab4b`
-- Created: `2020-05-22T01:23:07.300959128Z`
-- Virtual Size: ~ 338.89 Mb  
+- Image ID: `sha256:4f9d59833b5fa9819e9467ca5e42f86c2dff123f5adbba34ddf9f5b0710a3ee3`
+- Created: `2020-06-22T20:22:57.4956457Z`
+- Virtual Size: ~ 341.30 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -85,6 +85,23 @@ GPL-2.0-only
 
 ```
 
+### `apk` package: `ca-certificates`
+
+```console
+ca-certificates-20191127-r2 description:
+Common CA certificates PEM files from Mozilla
+
+ca-certificates-20191127-r2 webpage:
+https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
+
+ca-certificates-20191127-r2 installed size:
+737280
+
+ca-certificates-20191127-r2 license:
+MPL-2.0 GPL-2.0-or-later
+
+```
+
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
@@ -99,6 +116,23 @@ ca-certificates-cacert-20191127-r1 installed size:
 
 ca-certificates-cacert-20191127-r1 license:
 MPL-2.0 GPL-2.0-or-later
+
+```
+
+### `apk` package: `java-cacerts`
+
+```console
+java-cacerts-1.0-r0 description:
+Script to update java cacerts store
+
+java-cacerts-1.0-r0 webpage:
+https://git.alpinelinux.org/cgit/aports/community/java-cacerts
+
+java-cacerts-1.0-r0 installed size:
+32768
+
+java-cacerts-1.0-r0 license:
+MIT
 
 ```
 
@@ -136,6 +170,23 @@ OpenSSL
 
 ```
 
+### `apk` package: `libffi`
+
+```console
+libffi-3.2.1-r6 description:
+A portable, high level programming interface to various calling conventions.
+
+libffi-3.2.1-r6 webpage:
+http://sourceware.org/libffi
+
+libffi-3.2.1-r6 installed size:
+49152
+
+libffi-3.2.1-r6 license:
+MIT
+
+```
+
 ### `apk` package: `libssl1.1`
 
 ```console
@@ -150,6 +201,23 @@ libssl1.1-1.1.1g-r0 installed size:
 
 libssl1.1-1.1.1g-r0 license:
 OpenSSL
+
+```
+
+### `apk` package: `libtasn1`
+
+```console
+libtasn1-4.15.0-r0 description:
+The ASN.1 library used in GNUTLS
+
+libtasn1-4.15.0-r0 webpage:
+https://www.gnu.org/software/gnutls/
+
+libtasn1-4.15.0-r0 installed size:
+151552
+
+libtasn1-4.15.0-r0 license:
+GPL-3.0 LGPL
 
 ```
 
@@ -201,6 +269,40 @@ musl-utils-1.1.24-r2 installed size:
 
 musl-utils-1.1.24-r2 license:
 MIT BSD GPL2+
+
+```
+
+### `apk` package: `p11-kit`
+
+```console
+p11-kit-0.23.18.1-r0 description:
+Library for loading and sharing PKCS#11 modules
+
+p11-kit-0.23.18.1-r0 webpage:
+https://p11-glue.freedesktop.org/
+
+p11-kit-0.23.18.1-r0 installed size:
+1245184
+
+p11-kit-0.23.18.1-r0 license:
+BSD-3-Clause
+
+```
+
+### `apk` package: `p11-kit-trust`
+
+```console
+p11-kit-trust-0.23.18.1-r0 description:
+System trust module from p11-kit
+
+p11-kit-trust-0.23.18.1-r0 webpage:
+https://p11-glue.freedesktop.org/
+
+p11-kit-trust-0.23.18.1-r0 installed size:
+495616
+
+p11-kit-trust-0.23.18.1-r0 license:
+BSD-3-Clause
 
 ```
 
