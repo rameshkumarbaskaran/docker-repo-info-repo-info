@@ -1,4 +1,4 @@
-# `znc:1.8.0-slim`
+# `znc:1.8.1-slim`
 
 ## Docker Metadata
 
