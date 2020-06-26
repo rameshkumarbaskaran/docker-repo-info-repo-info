@@ -600,14 +600,9 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.8
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.8.dsc' curl_7.58.0-2ubuntu3.8.dsc 2469 SHA256:15017c2311ce25857714d6c623aa9d67cde05125cdeda0d6a102bef5e8ffd658
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0.orig.tar.gz' curl_7.58.0.orig.tar.gz 3879728 SHA256:cc245bf9a1a42a45df491501d97d5593392a03f7b4f07b952793518d97666115
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.8.debian.tar.xz' curl_7.58.0-2ubuntu3.8.debian.tar.xz 40156 SHA256:0afbab0a9b208c5368e9f82e16c27fc94022e0a0e203e085c5627409ffaacc5b
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2.1`
 
@@ -2495,14 +2490,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-106.107
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-106.107.dsc' linux_4.15.0-106.107.dsc 7062 SHA256:e3d53e60810e6d462cbb8d39809f2f175239bed9fb5f2533d9fb3aee1a6ef1dd
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-106.107.diff.gz' linux_4.15.0-106.107.diff.gz 9866491 SHA256:c4832493cfc118c86e2db1b32c0026786b1e07d1944dedc81f3bdf33ff8fae9b
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-2`
 
@@ -3562,14 +3552,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.20-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.20-1.debian.tar.xz' python-catkin-pkg-modules_0.4.20-1.debian.tar.xz 2016 SHA512:42e2534bdc0e358db26999abf0690bcdd2b220f5758b8270a2913fa29da69508d6de214cda97a1913336ade0b9835c9fd0446ccbe5398942f3c848f1c8b89bd5
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.20-1.dsc' python-catkin-pkg-modules_0.4.20-1.dsc 998 SHA512:da4fa67ba68713476c291b38422b8de94f53c66356ffdaabaabda9d9b6c19c8d1ef5a13d3da053f9e612344d837a8c75de4e1465089d6dad0d47e4b5e1541785
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.20.orig.tar.gz' python-catkin-pkg-modules_0.4.20.orig.tar.gz 60982 SHA512:9cd276e95bb92d3b951b6020e4fe417fa7332ba269a5d36aafcc5cca62f68b0b2697b6adb8f334268483d4d46737d937b7f47585b1c4f2cc5de4f1f5e99234d9
-```
 
 ### `dpkg` source package: `python-catkin-pkg=0.4.20-100`
 
@@ -3581,14 +3566,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg=0.4.20-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.20-100.debian.tar.xz' python-catkin-pkg_0.4.20-100.debian.tar.xz 1996 SHA512:d377c004885372865e29ea966179b13a0fa127e624b9e52051e2f5f76660228f58735cde4e434728779843870bc4abae72927992934ecdf340b9373bbae84c81
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.20-100.dsc' python-catkin-pkg_0.4.20-100.dsc 938 SHA512:abacaf8f7c1e7e118afd5eff5a2e3f541c111c73b95cf9916939b2484d795728a7806092b51e08fa49692a5c2408df1f3c0620cd334e036accd3d9bf8b932376
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.20.orig.tar.gz' python-catkin-pkg_0.4.20.orig.tar.gz 13722 SHA512:a6b976183851e1ba67ce9556d7e12b0ad173c1e6dfa04bf82dfe631c592763e0de71f76af0aded932130e4767de4deb66ccfdab0788c905a77466d9b263b357c
-```
 
 ### `dpkg` source package: `python-cffi=1.11.5-1`
 
@@ -4090,14 +4070,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg-modules=1.2.6-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.2.6-1.debian.tar.xz' python-rospkg-modules_1.2.6-1.debian.tar.xz 1104 SHA512:c9dbf5351d3e2533cd6e7ca7ee59a05d72b450aa21bfa4192b84d6bab038d7cd9a982d3eb57bf4d58d46da7dbf2275b4ca988433cef9c1aebdd23db66d63f970
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.2.6-1.dsc' python-rospkg-modules_1.2.6-1.dsc 953 SHA512:db71d9d6fb40cd65e3a014a89a50b8254186e838fedf16a948d808ea7a1804fc3b2e9158372a0047347dad704641f4dbf5e15423cd3dc6faf344b9408813f1aa
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.2.6.orig.tar.gz' python-rospkg-modules_1.2.6.orig.tar.gz 41265 SHA512:f3c16a1edae6524cf5a05b3b2e87c97064e96b8801fd54054e489d9489c972ade91b77ba9bd03fe0e367d8a634c430679073a9bb05d402832f42586427766ff3
-```
 
 ### `dpkg` source package: `python-rospkg=1.2.6-100`
 
@@ -4109,14 +4084,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg=1.2.6-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.2.6-100.debian.tar.xz' python-rospkg_1.2.6-100.debian.tar.xz 1088 SHA512:a6dae3b1865b916a8a5bf7f4cb489bdf875092c0c2535e7dc84fa0d433133dfe6d56669e11b7a003677f415a993e1c879c4625ca80b40f6464f6b37dc4992d8f
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.2.6-100.dsc' python-rospkg_1.2.6-100.dsc 889 SHA512:6aba4273b586ac212ba176bc6fe998068d1de25441e173716ffac062e91c1022278a1a1378e4056f57588d4a7253b7f2ae259f3753f316937fa6482616133dd9
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.2.6.orig.tar.gz' python-rospkg_1.2.6.orig.tar.gz 17425 SHA512:f1c0da7f46602d0aa5fa4c0c22711c33b11b87e3188c5dd3f6cffd0e707b27544aa83a69315a1405538f0cf9de26bf3e4c2c9991b603c0bc40e9cad79c91fa51
-```
 
 ### `dpkg` source package: `python-setuptools=39.0.1-2`
 
@@ -4209,14 +4179,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-catkin-pkg-modules=0.4.20-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg-modules/python3-catkin-pkg-modules_0.4.20-1.debian.tar.xz' python3-catkin-pkg-modules_0.4.20-1.debian.tar.xz 2008 SHA512:addfe9c1d23b623e259f2edfc8f364f302a3bd56f7330f83b3593d7657635d6ac159c541353c1bfe886317980b863aa8214d66f2355c2f069e8a1538af14b0fd
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg-modules/python3-catkin-pkg-modules_0.4.20-1.dsc' python3-catkin-pkg-modules_0.4.20-1.dsc 985 SHA512:3d036e1e183bb7189bc7783cbc7075821f1079f843fb5360da3bdc90c38cfe0dd81f99456c8e67acbdcbaf74ec05b350f5d656652114e265ade66e2d9d289c74
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg-modules/python3-catkin-pkg-modules_0.4.20.orig.tar.gz' python3-catkin-pkg-modules_0.4.20.orig.tar.gz 62366 SHA512:dc17595e7aa239df6a4a8c4478ce4dd7824d2187ce8a7c3bf4ff347e685bcd7bbcd6ca0b9068146ff048b023666ed3aadef357f713fb106827c06012ca454dc9
-```
 
 ### `dpkg` source package: `python3-colcon-argcomplete=0.3.3-1`
 
@@ -4285,14 +4250,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-cmake=0.2.22-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-colcon-cmake/python3-colcon-cmake_0.2.22-1.debian.tar.xz' python3-colcon-cmake_0.2.22-1.debian.tar.xz 1096 SHA512:455374b9019beb9434a7cd5180d80b0b6aa0f67d28ae87e2b1c186438e69c51be1cf9e044e703cae85fbde4200f8508cdcd2af508a946e893036bdbb0259a14b
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-colcon-cmake/python3-colcon-cmake_0.2.22-1.dsc' python3-colcon-cmake_0.2.22-1.dsc 925 SHA512:3da24bebb7f9b692dcba3a4f803e35f4657ebf1e973b1b7b7c3f38392e667030cec0aff403cf0c70fa3b45345b07f812b2fca1ad9362c391055031f5e1931cd5
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-colcon-cmake/python3-colcon-cmake_0.2.22.orig.tar.gz' python3-colcon-cmake_0.2.22.orig.tar.gz 17371 SHA512:198febe41d0c4b4a4b6565df82fbd929d9a87a7a66db4e934229a5dbf04e36eb66c58d48c2ef5ac931a3127ea9ecdee3d57eb270648df0a8f25bae3861a6a43f
-```
 
 ### `dpkg` source package: `python3-colcon-common-extensions=0.2.1-1`
 
@@ -4323,14 +4283,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-core=0.5.9-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.5.9-1.debian.tar.xz' python3-colcon-core_0.5.9-1.debian.tar.xz 1572 SHA512:a1640267a29006ee1ca37c59aac764727846eee6d371ec451b5511e697fdd5083cae5adc753e8796795454405630e74e8f952dc1f15f57b9cf181cfe5ce70fc5
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.5.9-1.dsc' python3-colcon-core_0.5.9-1.dsc 916 SHA512:6ab64184b80846c6c7ed7223f11373e3e3d44b232f8de09053ed6c2da0faf781c54f2b7741af35f91f2061a6955f234a742e20ebc4bd389e71797c4adff79d47
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.5.9.orig.tar.gz' python3-colcon-core_0.5.9.orig.tar.gz 101337 SHA512:0b1d4f0b6dd236fd8028cf042e44345956a6eed62f4f9c37b993094061ba46cd4c5d6ad2c08fd549e793753817580ca7eb89ed72b2974d5f5591175e5ebcd554
-```
 
 ### `dpkg` source package: `python3-colcon-defaults=0.2.5-1`
 
@@ -4418,14 +4373,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-mixin=0.1.8-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-mixin/python3-colcon-mixin_0.1.8-1.debian.tar.xz' python3-colcon-mixin_0.1.8-1.debian.tar.xz 1120 SHA512:bf077098b379a017ca2a9703b41e04a149d805e38314e5f05f43840901adac9c3c2b668ee07e1f5749d43303d9e224b69f4ac9730cd7e660408f132db71d3984
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-mixin/python3-colcon-mixin_0.1.8-1.dsc' python3-colcon-mixin_0.1.8-1.dsc 918 SHA512:63d8f789555e8bd64a77cf777e2fecd311038056e7c8640b5de66fd649d40973c48f197b5dd275ce55ba51dad86712e09a856b2f2a858effbc1901970c54894e
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-mixin/python3-colcon-mixin_0.1.8.orig.tar.gz' python3-colcon-mixin_0.1.8.orig.tar.gz 11859 SHA512:28fc8da84e29687cb6cc0656832514274927a0a4a3b754742f867cdfea0a7be1249af5d4d6dbfac64e6edcca5a7ed2819002663b4b3799ac67c4f1c6a3944654
-```
 
 ### `dpkg` source package: `python3-colcon-notification=0.2.13-1`
 
@@ -4456,14 +4406,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-output=0.2.9-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.9-1.debian.tar.xz' python3-colcon-output_0.2.9-1.debian.tar.xz 1060 SHA512:ffa9d67b9d83c7506a0eb8f89d08a77b80fc3a611f1d0fb8fd06e75381d9ceaab0fb1c06c7efdd177727e0673a3739b7e2a6f0709c65e2a8323704bdc412a3a8
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.9-1.dsc' python3-colcon-output_0.2.9-1.dsc 924 SHA512:6cd73469c89ba9cc061c8ff0c2bcdbe950d733cc9f19bf8699732156188fd35546f504077912fb0e0b3876e423c0cff9ef74d7ab0f032ece51a947a50a648bad
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.9.orig.tar.gz' python3-colcon-output_0.2.9.orig.tar.gz 7534 SHA512:3f4a9bbafd1e1c75e7ff7932e7b31fb8e64bc64f6472d7c9d42732e287dc8d5c32efef7d05d51c7db0243c1c1dc3151927e8b729916f51c470b15719e0098486
-```
 
 ### `dpkg` source package: `python3-colcon-package-information=0.3.3-1`
 
@@ -4494,14 +4439,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-package-selection=0.2.6-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-package-selection/python3-colcon-package-selection_0.2.6-1.debian.tar.xz' python3-colcon-package-selection_0.2.6-1.debian.tar.xz 1072 SHA512:37d6d76fc81f2bd1e27b42de6d60d56d3ceaa4364adcf3c79399cab330ed85197ff7c49a66d4b2f8ae9cf846621a4291fde6a368c9d0551749101ff8c8ecc879
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-package-selection/python3-colcon-package-selection_0.2.6-1.dsc' python3-colcon-package-selection_0.2.6-1.dsc 1023 SHA512:49a687c6eb7873b653b4f97ca2c0a1dedebab292cc50aecd401d2da99f3723828ddb46b01079fc61fd361d45c7abcff9d395d05b22a560fbaff7275d4c0c1642
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-package-selection/python3-colcon-package-selection_0.2.6.orig.tar.gz' python3-colcon-package-selection_0.2.6.orig.tar.gz 8776 SHA512:0b31a8fabde21fdf28ec762a9d12a3320198c7931cf757cc5451ecb30bfee3b2798b74e0483022fcd7691f6bc608ad4e5ad52b7d2757eeff20321a6070370786
-```
 
 ### `dpkg` source package: `python3-colcon-parallel-executor=0.2.4-1`
 
@@ -4608,14 +4548,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-ros=0.3.17-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.17-1.debian.tar.xz' python3-colcon-ros_0.3.17-1.debian.tar.xz 1572 SHA512:ccce1eb0468b57e3ad056fa70ac8c8e35eae8443bb330a63fdeff07177fb469edf768efc0e077246fb482fffe6975b78ce588f49831324b5f0b452a925e5bf9a
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.17-1.dsc' python3-colcon-ros_0.3.17-1.dsc 907 SHA512:30c96386a6a221d5fa74a46ca4d019bd8a971cfed4f0633d5c5914b8a8683bcc3ee976b362c91e4aa626c1b309b066f1137a1db85c00ac2b5df34dec37cf3ba0
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.17.orig.tar.gz' python3-colcon-ros_0.3.17.orig.tar.gz 14070 SHA512:dd292584294528db56d64b299ea5f075850e97aed4a61f7fa1ea7b2529936bb5352ec02e68209f728e813906ae0b8843b859776402155f5c96e179c413915b0e
-```
 
 ### `dpkg` source package: `python3-colcon-test-result=0.3.8-1`
 
@@ -4706,14 +4641,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg-modules=1.2.6-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.6-1.debian.tar.xz' python3-rospkg-modules_1.2.6-1.debian.tar.xz 1176 SHA512:684d7184a6f0859a79bb4a23c586f1911478ae531bc53ec43ad64d17a2cf1287b0549bd3a0ab5faeab8f6980b9b35ddd058e04ea4035c7701959e8597c6c8c0d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.6-1.dsc' python3-rospkg-modules_1.2.6-1.dsc 940 SHA512:fb89a840ee03e4a25bdc7d0280e344e9e881a1a46b8c0f92f5c38732bc48fce28706ab6ce3696cf4ab23c6f86adacd315bc7d6d2dbf0932dd0c4e11fd937d4b5
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.6.orig.tar.gz' python3-rospkg-modules_1.2.6.orig.tar.gz 41320 SHA512:efbbad9995e67970aabc26126887bae194ad2cee2f5a25107de78fa1f99fda571a3631a2a01b1df289a0b8fff3856f802a15864b4339da3e8c5a623f6cbb1827
-```
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.6.9-1~18.04`
 
@@ -4745,14 +4675,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-vcstool=0.2.9-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-vcstool/python3-vcstool_0.2.9-1.debian.tar.xz' python3-vcstool_0.2.9-1.debian.tar.xz 1116 SHA512:c8835ba2db185f5a94b68b440565c0f4584a4522444b1c8865465d3e4edc9ef03cf845fb6dba4686273c118d11a7ffd3ecbe911c7808ed610d203492edb58035
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-vcstool/python3-vcstool_0.2.9-1.dsc' python3-vcstool_0.2.9-1.dsc 883 SHA512:1316061de32b0a3798fd5ec0db59a7ccbdda350d404057e74378ff01ed681cc753c5cde1ef00ec882408c957018d292c855ca3bb289ed6d7ce88b8c85a0d4515
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-vcstool/python3-vcstool_0.2.9.orig.tar.gz' python3-vcstool_0.2.9.orig.tar.gz 29796 SHA512:4d35804ca00d7151a72f4545c69830360cb294edfa2f30e4a493e08e7873c44827d13812baa76cbaa31b5947d4554b54d8bb6594d3631ddf1e21a73995eba11d
-```
 
 ### `dpkg` source package: `python3.6=3.6.9-1~18.04ubuntu1`
 
