@@ -1058,10 +1058,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-10=10.1.0-4
-'http://http.debian.net/debian/pool/main/g/gcc-10/gcc-10_10.1.0-4.dsc' gcc-10_10.1.0-4.dsc 27590 SHA256:e05f8e27f69ed1619147bae883a6463270b77d013270b8bca4447b9d66234627
-'http://http.debian.net/debian/pool/main/g/gcc-10/gcc-10_10.1.0.orig.tar.gz' gcc-10_10.1.0.orig.tar.gz 92670668 SHA256:cdf22173652ee0a51f4789a8c64aa2c7aeeaf67eddeb49d0221c0da368bc9432
-'http://http.debian.net/debian/pool/main/g/gcc-10/gcc-10_10.1.0-4.debian.tar.xz' gcc-10_10.1.0-4.debian.tar.xz 2319628 SHA256:c21b657214602bfc58b47821054361cd32dd0004b58eebbdc1afc98766464cbc
+'http://deb.debian.org/debian/pool/main/g/gcc-10/gcc-10_10.1.0-4.dsc' gcc-10_10.1.0-4.dsc 27590 SHA256:e05f8e27f69ed1619147bae883a6463270b77d013270b8bca4447b9d66234627
+'http://deb.debian.org/debian/pool/main/g/gcc-10/gcc-10_10.1.0.orig.tar.gz' gcc-10_10.1.0.orig.tar.gz 92670668 SHA256:cdf22173652ee0a51f4789a8c64aa2c7aeeaf67eddeb49d0221c0da368bc9432
+'http://deb.debian.org/debian/pool/main/g/gcc-10/gcc-10_10.1.0-4.debian.tar.xz' gcc-10_10.1.0-4.debian.tar.xz 2319628 SHA256:c21b657214602bfc58b47821054361cd32dd0004b58eebbdc1afc98766464cbc
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-10/10.1.0-4/ (for browsing the source)
+- https://sources.debian.net/src/gcc-10/10.1.0-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-10/10.1.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-9=9.3.0-14`
 
@@ -1525,20 +1531,13 @@ Licenses: (parsed from: `/usr/share/doc/libxtables12/copyright`)
 - `GPL-2+`
 - `custom`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iptables=1.8.4-3
-'http://deb.debian.org/debian/pool/main/i/iptables/iptables_1.8.4-3.dsc' iptables_1.8.4-3.dsc 2719 SHA256:0d0c9ae69f984d7ad8aef1f4361e56b01dfbb3908f2640644b02c62c0623f723
-'http://deb.debian.org/debian/pool/main/i/iptables/iptables_1.8.4.orig.tar.bz2' iptables_1.8.4.orig.tar.bz2 704312 SHA256:993a3a5490a544c2cbf2ef15cf7e7ed21af1845baf228318d5c36ef8827e157c
-'http://deb.debian.org/debian/pool/main/i/iptables/iptables_1.8.4-3.debian.tar.xz' iptables_1.8.4-3.debian.tar.xz 65296 SHA256:1d7018909d55f4f578f811ee5eff7591d91af79a6283a947d1c8c2c5f5a4ffab
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iptables/1.8.4-3/
 
-- https://sources.debian.net/src/iptables/1.8.4-3/ (for browsing the source)
-- https://sources.debian.net/src/iptables/1.8.4-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iptables/1.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `iputils=3:20190709-3`
 
@@ -3092,20 +3091,13 @@ Licenses: (parsed from: `/usr/share/doc/libopenblas0-pthread/copyright`)
 - `BSD-3-clause`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openblas=0.3.9+ds-1
-'http://deb.debian.org/debian/pool/main/o/openblas/openblas_0.3.9+ds-1.dsc' openblas_0.3.9+ds-1.dsc 4821 SHA256:e55ef72bdf342701bf4184e5a749d6fa5ccda6fd288e0d8aaeb454f42f97c559
-'http://deb.debian.org/debian/pool/main/o/openblas/openblas_0.3.9+ds.orig.tar.xz' openblas_0.3.9+ds.orig.tar.xz 1562624 SHA256:b8f430992045f428a1e021dc8426604ffb39d16d8c56a64af42caacc9657eec0
-'http://deb.debian.org/debian/pool/main/o/openblas/openblas_0.3.9+ds-1.debian.tar.xz' openblas_0.3.9+ds-1.debian.tar.xz 21104 SHA256:a5e596d8d6b03bfecb465675b870dd0efb6e506dcaf463e8c58d5f9b570dca69
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openblas/0.3.9+ds-1/
 
-- https://sources.debian.net/src/openblas/0.3.9+ds-1/ (for browsing the source)
-- https://sources.debian.net/src/openblas/0.3.9+ds-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openblas/0.3.9+ds-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openldap=2.4.50+dfsg-1`
 
@@ -3461,10 +3453,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris r-base=4.0.2-1
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.0.2-1.dsc' r-base_4.0.2-1.dsc 3016 SHA256:546d44b4e64ce38a03f780d8732f3025d381ec1b39ed9701ff04bb1100440051
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.0.2.orig.tar.gz' r-base_4.0.2.orig.tar.gz 33191186 SHA256:d3bceab364da0876625e4097808b42512395fdf41292f4915ab1fd257c1bbe75
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.0.2-1.debian.tar.xz' r-base_4.0.2-1.debian.tar.xz 97224 SHA256:565fc6a418f66390eea487062e23a1b9bb6c516b44e6c70e249da6e3d5d35789
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.0.2-1.dsc' r-base_4.0.2-1.dsc 3016 SHA256:546d44b4e64ce38a03f780d8732f3025d381ec1b39ed9701ff04bb1100440051
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.0.2.orig.tar.gz' r-base_4.0.2.orig.tar.gz 33191186 SHA256:d3bceab364da0876625e4097808b42512395fdf41292f4915ab1fd257c1bbe75
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.0.2-1.debian.tar.xz' r-base_4.0.2-1.debian.tar.xz 97224 SHA256:565fc6a418f66390eea487062e23a1b9bb6c516b44e6c70e249da6e3d5d35789
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/r-base/4.0.2-1/ (for browsing the source)
+- https://sources.debian.net/src/r-base/4.0.2-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/r-base/4.0.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-class=7.3-17-1`
 
