@@ -23,15 +23,23 @@
 -	[`julia:1.4-windowsservercore-ltsc2016`](#julia14-windowsservercore-ltsc2016)
 -	[`julia:1.5`](#julia15)
 -	[`julia:1.5.0`](#julia150)
+-	[`julia:1.5.0-alpine`](#julia150-alpine)
+-	[`julia:1.5.0-alpine3.12`](#julia150-alpine312)
 -	[`julia:1.5.0-buster`](#julia150-buster)
 -	[`julia:1.5.0-rc1`](#julia150-rc1)
+-	[`julia:1.5.0-rc1-alpine`](#julia150-rc1-alpine)
+-	[`julia:1.5.0-rc1-alpine3.12`](#julia150-rc1-alpine312)
 -	[`julia:1.5.0-rc1-buster`](#julia150-rc1-buster)
 -	[`julia:1.5.0-rc1-windowsservercore-1809`](#julia150-rc1-windowsservercore-1809)
 -	[`julia:1.5.0-rc1-windowsservercore-ltsc2016`](#julia150-rc1-windowsservercore-ltsc2016)
 -	[`julia:1.5.0-windowsservercore-1809`](#julia150-windowsservercore-1809)
 -	[`julia:1.5.0-windowsservercore-ltsc2016`](#julia150-windowsservercore-ltsc2016)
+-	[`julia:1.5-alpine`](#julia15-alpine)
+-	[`julia:1.5-alpine3.12`](#julia15-alpine312)
 -	[`julia:1.5-buster`](#julia15-buster)
 -	[`julia:1.5-rc`](#julia15-rc)
+-	[`julia:1.5-rc-alpine`](#julia15-rc-alpine)
+-	[`julia:1.5-rc-alpine3.12`](#julia15-rc-alpine312)
 -	[`julia:1.5-rc-buster`](#julia15-rc-buster)
 -	[`julia:1.5-rc-windowsservercore-1809`](#julia15-rc-windowsservercore-1809)
 -	[`julia:1.5-rc-windowsservercore-ltsc2016`](#julia15-rc-windowsservercore-ltsc2016)
@@ -43,6 +51,8 @@
 -	[`julia:buster`](#juliabuster)
 -	[`julia:latest`](#julialatest)
 -	[`julia:rc`](#juliarc)
+-	[`julia:rc-alpine`](#juliarc-alpine)
+-	[`julia:rc-alpine3.12`](#juliarc-alpine312)
 -	[`julia:rc-buster`](#juliarc-buster)
 -	[`julia:rc-windowsservercore-1809`](#juliarc-windowsservercore-1809)
 -	[`julia:rc-windowsservercore-ltsc2016`](#juliarc-windowsservercore-ltsc2016)
@@ -3774,6 +3784,14 @@ CMD ["julia"]
 		Size: 1.1 KB (1118 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `julia:1.5.0-alpine`
+
+**does not exist** (yet?)
+
+## `julia:1.5.0-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `julia:1.5.0-buster`
 
 ```console
@@ -4206,6 +4224,14 @@ CMD ["julia"]
 		Last Modified: Mon, 29 Jun 2020 20:57:04 GMT  
 		Size: 1.1 KB (1118 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `julia:1.5.0-rc1-alpine`
+
+**does not exist** (yet?)
+
+## `julia:1.5.0-rc1-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `julia:1.5.0-rc1-buster`
 
@@ -4641,6 +4667,14 @@ CMD ["julia"]
 		Size: 1.1 KB (1073 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `julia:1.5-alpine`
+
+**does not exist** (yet?)
+
+## `julia:1.5-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `julia:1.5-buster`
 
 ```console
@@ -5073,6 +5107,14 @@ CMD ["julia"]
 		Last Modified: Mon, 29 Jun 2020 20:57:04 GMT  
 		Size: 1.1 KB (1118 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `julia:1.5-rc-alpine`
+
+**does not exist** (yet?)
+
+## `julia:1.5-rc-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `julia:1.5-rc-buster`
 
@@ -6512,6 +6554,14 @@ CMD ["julia"]
 		Last Modified: Mon, 29 Jun 2020 20:57:04 GMT  
 		Size: 1.1 KB (1118 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `julia:rc-alpine`
+
+**does not exist** (yet?)
+
+## `julia:rc-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `julia:rc-buster`
 
