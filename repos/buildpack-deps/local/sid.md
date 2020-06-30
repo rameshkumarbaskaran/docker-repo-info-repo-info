@@ -3691,20 +3691,13 @@ Licenses: (parsed from: `/usr/share/doc/make/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris make-dfsg=4.3-3
-'http://deb.debian.org/debian/pool/main/m/make-dfsg/make-dfsg_4.3-3.dsc' make-dfsg_4.3-3.dsc 1917 SHA256:d446c035e2a59eaaf7957f3bb131b4ed061d9f69e5c7d3e7669c38d0353b6fdf
-'http://deb.debian.org/debian/pool/main/m/make-dfsg/make-dfsg_4.3.orig.tar.gz' make-dfsg_4.3.orig.tar.gz 1845906 SHA256:be4c17542578824e745f83bcd2a9ba264206187247cb6a5f5df99b0a9d1f9047
-'http://deb.debian.org/debian/pool/main/m/make-dfsg/make-dfsg_4.3-3.diff.gz' make-dfsg_4.3-3.diff.gz 50609 SHA256:aabc7aa84fa424e9de0f4a61e6b9d26dd7f5cd06722c0a580d93ca8df70c455b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/make-dfsg/4.3-3/
 
-- https://sources.debian.net/src/make-dfsg/4.3-3/ (for browsing the source)
-- https://sources.debian.net/src/make-dfsg/4.3-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/make-dfsg/4.3-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mariadb-10.3=1:10.3.22-1`
 
