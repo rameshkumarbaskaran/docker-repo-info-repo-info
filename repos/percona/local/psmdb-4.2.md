@@ -1,19 +1,19 @@
-# `percona:psmdb-4.2.6`
+# `percona:psmdb-4.2.7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:30b4812490c35628349beabfdb7d2ac9606c62fc5c2a369ac7cd20eecf5ed5f9`
-- Created: `2020-05-07T15:23:41.410819659Z`
-- Virtual Size: ~ 452.23 Mb  
+- Image ID: `sha256:126f7492bd259800f80428214feccc04c175599bcec0f4f65fa224bbb4f9b3a8`
+- Created: `2020-07-01T20:27:40.948786409Z`
+- Virtual Size: ~ 452.73 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["mongod"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `PSMDB_VERSION=4.2.6-6`
+  - `PSMDB_VERSION=4.2.7-7`
   - `OS_VER=el7`
-  - `FULL_PERCONA_VERSION=4.2.6-6.el7`
+  - `FULL_PERCONA_VERSION=4.2.7-7.el7`
   - `K8S_TOOLS_VERSION=0.5.0`
   - `GOSU_VERSION=1.11`
 - Labels:
@@ -21,7 +21,7 @@
   - `org.label-schema.description=Percona Server for MongoDB is our free and open-source drop-in replacement for MongoDB Community Edition. It offers all the features and benefits of MongoDB Community Edition, plus additional enterprise-grade functionality.`
   - `org.label-schema.license=SSPLv1`
   - `org.label-schema.name=Percona Server for MongoDB`
-  - `org.label-schema.schema-version=4.2.6-6`
+  - `org.label-schema.schema-version=4.2.7-7`
   - `org.label-schema.vendor=Percona`
   - `org.opencontainers.image.authors=info@percona.com`
   - `org.opencontainers.image.created=2020-05-04 00:00:00+01:00`
@@ -30,7 +30,7 @@
   - `org.opencontainers.image.licenses=GPL-2.0-only`
   - `org.opencontainers.image.title=Percona Server for MongoDB`
   - `org.opencontainers.image.vendor=Percona`
-  - `org.opencontainers.image.version=4.2.6-6`
+  - `org.opencontainers.image.version=4.2.7-7`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -730,7 +730,7 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/iputils-20160308-10.el7.src.rpm
 ```
 
-### `rpm` package: `jq-1.6-1.el7.x86_64`
+### `rpm` package: `jq-1.6-2.el7.x86_64`
 
 Licenses (from `rpm --query`): MIT and ASL 2.0 and CC-BY and GPLv3
 
@@ -1422,7 +1422,7 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/nss-util-3.44.0-4.el7_7.src.rpm
 ```
 
-### `rpm` package: `oniguruma-5.9.5-3.el7.x86_64`
+### `rpm` package: `oniguruma-6.8.2-1.el7.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -1526,25 +1526,25 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/pcre-8.32-17.el7.src.rpm
 ```
 
-### `rpm` package: `percona-release-1.0-17.noarch`
+### `rpm` package: `percona-release-1.0-20.noarch`
 
 Licenses (from `rpm --query`): GPL-3.0+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `percona-server-mongodb-mongos-4.2.6-6.el7.x86_64`
+### `rpm` package: `percona-server-mongodb-mongos-4.2.7-7.el7.x86_64`
 
 Licenses (from `rpm --query`): SSPL
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `percona-server-mongodb-server-4.2.6-6.el7.x86_64`
+### `rpm` package: `percona-server-mongodb-server-4.2.7-7.el7.x86_64`
 
 Licenses (from `rpm --query`): SSPL
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `percona-server-mongodb-shell-4.2.6-6.el7.x86_64`
+### `rpm` package: `percona-server-mongodb-shell-4.2.7-7.el7.x86_64`
 
 Licenses (from `rpm --query`): SSPL
 
@@ -2138,18 +2138,18 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/yum-utils-1.1.31-53.el7.src.rpm
 ```
 
-### `rpm` package: `yum-utils-1.1.31-53.el7.noarch`
+### `rpm` package: `yum-utils-1.1.31-54.el7_8.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls yum-utils-1.1.31-53.el7.noarch
+$ yumdownloader --quiet --source --urls yum-utils-1.1.31-54.el7_8.noarch
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/yum-utils-1.1.31-53.el7.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/yum-utils-1.1.31-54.el7_8.src.rpm
 ```
 
 ### `rpm` package: `zlib-1.2.7-18.el7.x86_64`
