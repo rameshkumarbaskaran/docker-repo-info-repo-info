@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:324b7a1a385c90671429977595c853c4abcbf87502aa11c163142240f2f5a9f1`
-- Created: `2020-06-03T20:40:08.83192989Z`
-- Virtual Size: ~ 450.07 Mb  
+- Image ID: `sha256:7a0932ad2178371beeb6ecac11959f5db89503f8a9eb96e63af6270ce307c8b5`
+- Created: `2020-06-30T20:48:33.524146895Z`
+- Virtual Size: ~ 450.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D`
-  - `PYTHON_VERSION=3.7.7`
+  - `PYTHON_VERSION=3.7.8`
   - `PYTHON_PIP_VERSION=20.1.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/eff16c878c7fd6b688b9b4c4267695cf1a0bf01b/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=b3153ec0cf7b7bbf9556932aa37e4981c35dc2a2c501d70d91d2795aa532be79`
@@ -395,16 +395,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.4-r1 description:
+libjpeg-turbo-2.0.5-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.4-r1 webpage:
+libjpeg-turbo-2.0.5-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.4-r1 installed size:
+libjpeg-turbo-2.0.5-r0 installed size:
 1056768
 
-libjpeg-turbo-2.0.4-r1 license:
+libjpeg-turbo-2.0.5-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -565,16 +565,16 @@ custom
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r8 description:
+musl-1.1.24-r9 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r8 webpage:
+musl-1.1.24-r9 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r8 installed size:
+musl-1.1.24-r9 installed size:
 614400
 
-musl-1.1.24-r8 license:
+musl-1.1.24-r9 license:
 MIT
 
 ```
