@@ -1384,20 +1384,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.64.3-1
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.64.3-1.dsc' glib2.0_2.64.3-1.dsc 3323 SHA256:57e5ffd936245525da22579d28b27f8abb290f8a0f97541a3e93d38cc935a82f
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.64.3.orig.tar.xz' glib2.0_2.64.3.orig.tar.xz 4778964 SHA256:fe9cbc97925d14c804935f067a3ad77ef55c0bbe9befe68962318f5a767ceb22
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.64.3-1.debian.tar.xz' glib2.0_2.64.3-1.debian.tar.xz 91812 SHA256:79493d57c8fa439d25ef15b57559255adab7197e518f7c7acd3ed58e1dc2e8a2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.64.3-1/
 
-- https://sources.debian.net/src/glib2.0/2.64.3-1/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.64.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.64.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.30-8`
 
@@ -4778,20 +4771,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.8=3.8.3-1
-'http://deb.debian.org/debian/pool/main/p/python3.8/python3.8_3.8.3-1.dsc' python3.8_3.8.3-1.dsc 3288 SHA256:646806a66cd9299459a21e990069fe31bfd8c3e8fdb66a842ffed66ae023258c
-'http://deb.debian.org/debian/pool/main/p/python3.8/python3.8_3.8.3.orig.tar.xz' python3.8_3.8.3.orig.tar.xz 17912964 SHA256:dfab5ec723c218082fe3d5d7ae17ecbdebffa9a1aea4d64aa3a2ecdd2e795864
-'http://deb.debian.org/debian/pool/main/p/python3.8/python3.8_3.8.3-1.debian.tar.xz' python3.8_3.8.3-1.debian.tar.xz 210020 SHA256:d1562489156121a1232bdc5eabba431e57a8e1415f3a09c27751ac0ecef31306
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.8/3.8.3-1/
 
-- https://sources.debian.net/src/python3.8/3.8.3-1/ (for browsing the source)
-- https://sources.debian.net/src/python3.8/3.8.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.8/3.8.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.0-4`
 
