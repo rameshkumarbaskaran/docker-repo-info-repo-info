@@ -6,6 +6,8 @@
 -	[`websphere-liberty:20.0.0.3-kernel-java8-ibmjava`](#websphere-liberty20003-kernel-java8-ibmjava)
 -	[`websphere-liberty:20.0.0.6-full-java8-ibmjava`](#websphere-liberty20006-full-java8-ibmjava)
 -	[`websphere-liberty:20.0.0.6-kernel-java8-ibmjava`](#websphere-liberty20006-kernel-java8-ibmjava)
+-	[`websphere-liberty:20.0.0.7-full-java8-ibmjava`](#websphere-liberty20007-full-java8-ibmjava)
+-	[`websphere-liberty:20.0.0.7-kernel-java8-ibmjava`](#websphere-liberty20007-kernel-java8-ibmjava)
 -	[`websphere-liberty:beta`](#websphere-libertybeta)
 -	[`websphere-liberty:full`](#websphere-libertyfull)
 -	[`websphere-liberty:kernel`](#websphere-libertykernel)
@@ -2115,6 +2117,14 @@ CMD ["/opt/ibm/wlp/bin/server" "run" "defaultServer"]
 		Last Modified: Mon, 29 Jun 2020 20:13:47 GMT  
 		Size: 5.7 MB (5695988 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:20.0.0.7-full-java8-ibmjava`
+
+**does not exist** (yet?)
+
+## `websphere-liberty:20.0.0.7-kernel-java8-ibmjava`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:beta`
 
