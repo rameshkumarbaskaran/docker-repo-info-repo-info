@@ -1220,14 +1220,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.23-0ubuntu11
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.dsc' glibc_2.23-0ubuntu11.dsc 8568 SHA256:2c45454af949b7c8d211c09925e4cd5282b40c14048b67dbfec6b394bb6e9828
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23.orig.tar.xz' glibc_2.23.orig.tar.xz 13849968 SHA256:bf6c528eeebefcacc295270068b79330c1fb2b22458ff66285b4175d23442c96
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.debian.tar.xz' glibc_2.23-0ubuntu11.debian.tar.xz 1246096 SHA256:fcaea11240f3eb24c28420f0bb7a48409da99939be6e1a5ed1479ed4ad1273db
-```
 
 ### `dpkg` source package: `gmp=2:6.1.0+dfsg-2`
 
@@ -4190,14 +4185,9 @@ Licenses: (parsed from: `/usr/share/doc/libopenexr22/copyright`)
 
 - `openexr`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openexr=2.2.0-10ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.2.dsc' openexr_2.2.0-10ubuntu2.2.dsc 2395 SHA256:69646a2a190d213c15203e1bbdb6c44fd18c51c01f054e4f96a939d23aa769af
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0.orig.tar.gz' openexr_2.2.0.orig.tar.gz 14489661 SHA256:36a012f6c43213f840ce29a8b182700f6cf6b214bea0d5735594136b44914231
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.2.debian.tar.xz' openexr_2.2.0-10ubuntu2.2.debian.tar.xz 43628 SHA256:740ee066e86ee434f1556164a4288fb7c20d475d10b5a8760e1d42f6b166c37c
-```
 
 ### `dpkg` source package: `openjpeg2=2.1.2-1.1+deb9u3build0.16.04.1`
 

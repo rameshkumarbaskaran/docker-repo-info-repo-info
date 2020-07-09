@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b79883c46b3e36ee4369bb51abcc2600c7b14b3ba4919bb2515bf732fec1405d`
-- Created: `2020-06-17T03:11:58.630013382Z`
-- Virtual Size: ~ 603.40 Mb  
+- Image ID: `sha256:9930b30ecc9bac43d26257776a18cd99ca29014ba5a49efa11650123a704c983`
+- Created: `2020-07-06T23:40:05.815540406Z`
+- Virtual Size: ~ 604.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/gzserver_entrypoint.sh"]`
@@ -403,12 +403,12 @@ $ apt-get source -qq --print-uris crystalhd=1:0.0~git20110715.fdd2f19-11build1
 'http://archive.ubuntu.com/ubuntu/pool/universe/c/crystalhd/crystalhd_0.0~git20110715.fdd2f19-11build1.debian.tar.xz' crystalhd_0.0~git20110715.fdd2f19-11build1.debian.tar.xz 15240 SHA256:646168058a9a41b20a392fe20f7a2a88caaa1a42fc3e002635c33f0cf129ed0f
 ```
 
-### `dpkg` source package: `curl=7.47.0-1ubuntu2.14`
+### `dpkg` source package: `curl=7.47.0-1ubuntu2.15`
 
 Binary Packages:
 
-- `libcurl3:amd64=7.47.0-1ubuntu2.14`
-- `libcurl3-gnutls:amd64=7.47.0-1ubuntu2.14`
+- `libcurl3:amd64=7.47.0-1ubuntu2.15`
+- `libcurl3-gnutls:amd64=7.47.0-1ubuntu2.15`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`)
 
@@ -419,9 +419,14 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/lib
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.47.0-1ubuntu2.15
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.15.dsc' curl_7.47.0-1ubuntu2.15.dsc 2733 SHA256:f69c59d02657dccb7fd3e5d25119ea89c84e7c8b6c9fad08bd0a5fbeb6ca07f0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0.orig.tar.gz' curl_7.47.0.orig.tar.gz 4563163 SHA256:df01bd42af361978d9de7de8529718bcafe01897a544a7650139a1954c55bdfe
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.15.debian.tar.xz' curl_7.47.0-1ubuntu2.15.debian.tar.xz 56200 SHA256:973830da76df0141298d9e4f76eff6df691af1c9354cb8ea3c2bc15157a63d14
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.26.dfsg1-14ubuntu0.2`
 
@@ -1089,14 +1094,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.23-0ubuntu11
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.dsc' glibc_2.23-0ubuntu11.dsc 8568 SHA256:2c45454af949b7c8d211c09925e4cd5282b40c14048b67dbfec6b394bb6e9828
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23.orig.tar.xz' glibc_2.23.orig.tar.xz 13849968 SHA256:bf6c528eeebefcacc295270068b79330c1fb2b22458ff66285b4175d23442c96
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.debian.tar.xz' glibc_2.23-0ubuntu11.debian.tar.xz 1246096 SHA256:fcaea11240f3eb24c28420f0bb7a48409da99939be6e1a5ed1479ed4ad1273db
-```
 
 ### `dpkg` source package: `gmp=2:6.1.0+dfsg-2`
 
@@ -1173,11 +1173,11 @@ $ apt-get source -qq --print-uris gnupg=1.4.20-1ubuntu3.3
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.4.20-1ubuntu3.3.debian.tar.xz' gnupg_1.4.20-1ubuntu3.3.debian.tar.xz 42452 SHA256:b12190aba71ef462a9ba164f2c5713474f0451c3dd6f1fdabb5f8ecfe4ee2938
 ```
 
-### `dpkg` source package: `gnutls28=3.4.10-4ubuntu1.7`
+### `dpkg` source package: `gnutls28=3.4.10-4ubuntu1.8`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.4.10-4ubuntu1.7`
+- `libgnutls30:amd64=3.4.10-4ubuntu1.8`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -1195,10 +1195,10 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gnutls28=3.4.10-4ubuntu1.7
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.7.dsc' gnutls28_3.4.10-4ubuntu1.7.dsc 3093 SHA256:315797a3229312006cd83086a44b07da09aea0fcfe2634df7df9c232aa42f755
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10.orig.tar.xz' gnutls28_3.4.10.orig.tar.xz 6645892 SHA256:6a32c2b4acbd33ff7eefcbd1357009da04c94c60146ef61320b6c076b1bdf59f
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.7.debian.tar.xz' gnutls28_3.4.10-4ubuntu1.7.debian.tar.xz 112800 SHA256:86f8cbf55fa3e27d0b672ffbec36d9a35d2d2d6a28883ea40498f941b651edb3
+$ apt-get source -qq --print-uris gnutls28=3.4.10-4ubuntu1.8
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.8.dsc' gnutls28_3.4.10-4ubuntu1.8.dsc 2439 SHA256:b65dc2e562dc61f1aa7baf41ba564b71826d1e2af7f54249c9f7e2917692cde5
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10.orig.tar.xz' gnutls28_3.4.10.orig.tar.xz 6645892 SHA256:6a32c2b4acbd33ff7eefcbd1357009da04c94c60146ef61320b6c076b1bdf59f
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.8.debian.tar.xz' gnutls28_3.4.10-4ubuntu1.8.debian.tar.xz 113000 SHA256:41efab50985952713e5eb46472653a44889ac33de6985e43d6082c45e0a6d55c
 ```
 
 ### `dpkg` source package: `grep=2.25-1~16.04.1`
@@ -3399,11 +3399,11 @@ $ apt-get source -qq --print-uris ogre-1.9=1.9.0+dfsg1-7
 'http://archive.ubuntu.com/ubuntu/pool/universe/o/ogre-1.9/ogre-1.9_1.9.0+dfsg1-7.debian.tar.xz' ogre-1.9_1.9.0+dfsg1-7.debian.tar.xz 24664 SHA256:6b6eb83a0d43650c1d79c2418fd6c9a2442a1c85efe329cecf7dbdcd9b79bc06
 ```
 
-### `dpkg` source package: `openexr=2.2.0-10ubuntu2.2`
+### `dpkg` source package: `openexr=2.2.0-10ubuntu2.3`
 
 Binary Packages:
 
-- `libopenexr22:amd64=2.2.0-10ubuntu2.2`
+- `libopenexr22:amd64=2.2.0-10ubuntu2.3`
 
 Licenses: (parsed from: `/usr/share/doc/libopenexr22/copyright`)
 
@@ -3412,10 +3412,10 @@ Licenses: (parsed from: `/usr/share/doc/libopenexr22/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openexr=2.2.0-10ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.2.dsc' openexr_2.2.0-10ubuntu2.2.dsc 2395 SHA256:69646a2a190d213c15203e1bbdb6c44fd18c51c01f054e4f96a939d23aa769af
+$ apt-get source -qq --print-uris openexr=2.2.0-10ubuntu2.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.3.dsc' openexr_2.2.0-10ubuntu2.3.dsc 2395 SHA256:751a0d8a271cd923e76020b46e16500cdd116291509b3fefa0108a4cb6b3d711
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0.orig.tar.gz' openexr_2.2.0.orig.tar.gz 14489661 SHA256:36a012f6c43213f840ce29a8b182700f6cf6b214bea0d5735594136b44914231
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.2.debian.tar.xz' openexr_2.2.0-10ubuntu2.2.debian.tar.xz 43628 SHA256:740ee066e86ee434f1556164a4288fb7c20d475d10b5a8760e1d42f6b166c37c
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.3.debian.tar.xz' openexr_2.2.0-10ubuntu2.3.debian.tar.xz 44996 SHA256:3ad0a21dc7ede66f6acf664ea57f7ba3dce00e4a2139a43cca1876b4c2fd417b
 ```
 
 ### `dpkg` source package: `openjpeg2=2.1.2-1.1+deb9u3build0.16.04.1`
@@ -4355,11 +4355,11 @@ $ apt-get source -qq --print-uris twolame=0.3.13-1.2
 'http://archive.ubuntu.com/ubuntu/pool/universe/t/twolame/twolame_0.3.13-1.2.diff.gz' twolame_0.3.13-1.2.diff.gz 4432 SHA256:a98313a8238c99f6a3b1fd280f2be62cd0fdfe1c2fffcb8bd7d2544141927470
 ```
 
-### `dpkg` source package: `ubuntu-keyring=2012.05.19`
+### `dpkg` source package: `ubuntu-keyring=2012.05.19.1`
 
 Binary Packages:
 
-- `ubuntu-keyring=2012.05.19`
+- `ubuntu-keyring=2012.05.19.1`
 
 Licenses: (parsed from: `/usr/share/doc/ubuntu-keyring/copyright`)
 
@@ -4368,9 +4368,9 @@ Licenses: (parsed from: `/usr/share/doc/ubuntu-keyring/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris ubuntu-keyring=2012.05.19
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2012.05.19.dsc' ubuntu-keyring_2012.05.19.dsc 1542 SHA256:a98138a8ef99905330f7f1340d04f8a9104c8706243e4c694b46db7d11c89d16
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2012.05.19.tar.gz' ubuntu-keyring_2012.05.19.tar.gz 18495 SHA256:8b3bb00770c7b1e5c0abb215ecf8c383cb3b709292a52aeb1022b5556e768b69
+$ apt-get source -qq --print-uris ubuntu-keyring=2012.05.19.1
+'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2012.05.19.1.dsc' ubuntu-keyring_2012.05.19.1.dsc 1505 SHA256:cd665a3c2a14d1029ecdc50612ed2c4853d94b2ded033577ea01923753463d1d
+'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2012.05.19.1.tar.gz' ubuntu-keyring_2012.05.19.1.tar.gz 21072 SHA256:9945fb0b2838fdda323ad8a186a04d304bc1ac8f8fb2a96b8d2c84a4ef517429
 ```
 
 ### `dpkg` source package: `ucf=3.0036`

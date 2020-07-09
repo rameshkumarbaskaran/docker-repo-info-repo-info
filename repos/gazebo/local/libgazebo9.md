@@ -5100,14 +5100,9 @@ Licenses: (parsed from: `/usr/share/doc/libopenexr22/copyright`)
 
 - `openexr`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openexr=2.2.0-11.1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-11.1ubuntu1.2.dsc' openexr_2.2.0-11.1ubuntu1.2.dsc 2403 SHA256:29fec328ae12f08bba21ca00a7f8de222b4f76b54627099e6c7d99ccac167402
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0.orig.tar.gz' openexr_2.2.0.orig.tar.gz 14489661 SHA256:36a012f6c43213f840ce29a8b182700f6cf6b214bea0d5735594136b44914231
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-11.1ubuntu1.2.debian.tar.xz' openexr_2.2.0-11.1ubuntu1.2.debian.tar.xz 29120 SHA256:1ef82bea4851af42a914f1563cb0844ba4f95387a5064eb5a40489832ed3b077
-```
 
 ### `dpkg` source package: `openjpeg2=2.3.0-2build0.18.04.1`
 
