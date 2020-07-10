@@ -1,10 +1,10 @@
-# `elixir:1.10.3-alpine`
+# `elixir:1.10.4-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:bcdb4e2fc5886cb24f3eb56573dae603b91d4f4cfea4f78ecf008dba5e73ac11`
-- Created: `2020-06-23T21:34:22.52055311Z`
-- Virtual Size: ~ 83.88 Mb  
+- Image ID: `sha256:028483440331b382730ebbc3c7aa3e20f5d02e0f59fd7eafd8d96902f190f0f7`
+- Created: `2020-07-08T17:24:01.057003109Z`
+- Virtual Size: ~ 83.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `OTP_VERSION=22.3.4.2`
   - `REBAR3_VERSION=3.13.2`
-  - `ELIXIR_VERSION=v1.10.3`
+  - `ELIXIR_VERSION=v1.10.4`
   - `LANG=C.UTF-8`
 - Labels:
   - `org.opencontainers.image.version=22.3.4.2`
