@@ -105,13 +105,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.1.6.dsc' apt_2.1.6.dsc 2756 SHA256:2f67d337161de54faf006ffab369292b5b7e85811bda0211e28bce5230e71d18
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.1.6.tar.xz' apt_2.1.6.tar.xz 2173604 SHA256:9994f8e1f4f52ce85f41aed50d5d7897e7b3c19cd5838c8d42012a6fecb4b41a
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/2.1.6/
+
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -241,13 +241,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu7.dsc' base-files_11ubuntu7.dsc 1604 SHA256:5b1912f20c7765ada81ecff5db9c86a161758c1b478d36423e03f734a304a8cf
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu7.tar.xz' base-files_11ubuntu7.tar.xz 79244 SHA256:3969734c950a014a7f5379832e07c93aececaef158e536c9f91d752c43d9ae36
-```
 
 ### `dpkg` source package: `base-passwd=3.5.47`
 
@@ -304,14 +300,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.34-7ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34-7ubuntu1.dsc' binutils_2.34-7ubuntu1.dsc 8780 SHA256:5f79ea0dafb60109fbe1533507c420741fdda6e499f903e7c38c8eb13e61a124
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34.orig.tar.xz' binutils_2.34.orig.tar.xz 21637796 SHA256:f00b0e8803dc9bab1e2165bd568528135be734df3fabf8d0161828cd56028952
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34-7ubuntu1.debian.tar.xz' binutils_2.34-7ubuntu1.debian.tar.xz 157456 SHA256:73ae4d0099a52c997a5a9950e7770ea395772cb9a7b758fbd7598cfb54c7c183
-```
 
 ### `dpkg` source package: `breezy=3.0.2-4ubuntu2`
 
@@ -485,14 +476,9 @@ Licenses: (parsed from: `/usr/share/doc/coreutils/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.dsc' coreutils_8.30-3ubuntu2.dsc 2048 SHA256:f36fe0ac14978b240a750b79d2bbd737d6b1939296c3a287899933aa2a1906ea
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30.orig.tar.xz' coreutils_8.30.orig.tar.xz 5359532 SHA256:e831b3a86091496cdba720411f9748de81507798f6130adeaef872d206e1b057
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.debian.tar.xz' coreutils_8.30-3ubuntu2.debian.tar.xz 39636 SHA256:98204ef9d94e5c567880cd0245fdb7940eaf7592d6c6830c300ad117628b351f
-```
 
 ### `dpkg` source package: `curl=7.68.0-1ubuntu2`
 
@@ -2937,14 +2923,13 @@ Licenses: (parsed from: `/usr/share/doc/make/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris make-dfsg=4.2.1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/make-dfsg/make-dfsg_4.2.1-2.dsc' make-dfsg_4.2.1-2.dsc 1915 SHA256:d583f63268ba5ceaeb64e6c67d9e03e99396817d749e00a7b274e70211f50394
-'http://archive.ubuntu.com/ubuntu/pool/main/m/make-dfsg/make-dfsg_4.2.1.orig.tar.gz' make-dfsg_4.2.1.orig.tar.gz 1485018 SHA256:480405e8995796ea47cc54b281b7855280f0d815d296a1af1993eeeb72074e39
-'http://archive.ubuntu.com/ubuntu/pool/main/m/make-dfsg/make-dfsg_4.2.1-2.diff.gz' make-dfsg_4.2.1-2.diff.gz 53478 SHA256:776dedaeb851356b8db18d757a8a6af2b0c38e87feea798525b490760ad701d4
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/make-dfsg/4.2.1-2/
+
 
 ### `dpkg` source package: `mawk=1.3.4.20200120-2`
 
@@ -3818,14 +3803,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.8.3-2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.8.3-2.dsc' python3-stdlib-extensions_3.8.3-2.dsc 2450 SHA256:86bc8a0c0514d2394f1b366d8577ba2e5d28677c08999213a6943f07dc0182a8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.8.3.orig.tar.xz' python3-stdlib-extensions_3.8.3.orig.tar.xz 1059540 SHA256:d8cea57a9875525c773c73b207d2409b8817903cc3afb23700ce1af8e03cb3d3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.8.3-2.debian.tar.xz' python3-stdlib-extensions_3.8.3-2.debian.tar.xz 17384 SHA256:680b5637a7afc45ffa63e6b3a419d4029bb8e3f311529eeb94287e24a0db40c2
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.8.3-2/
+
 
 ### `dpkg` source package: `python3.8=3.8.3-1`
 
