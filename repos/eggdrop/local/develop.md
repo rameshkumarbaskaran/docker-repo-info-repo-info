@@ -2,17 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:636d3c943c1330caad94d9edba187b5e3f7873d77290846f3ec59f6c2e75b794`
-- Created: `2020-04-24T14:22:17.230869699Z`
-- Virtual Size: ~ 32.82 Mb  
+- Image ID: `sha256:c777df184c73d5a17465eb477dbdbf5ac1d100daf0ca35ec47a9878027453e22`
+- Created: `2020-07-06T19:34:31.0166026Z`
+- Virtual Size: ~ 32.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/home/eggdrop/eggdrop/entrypoint.sh"]`
 - Command: `["eggdrop.conf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `EGGDROP_SHA256=12f560ad31e27f1ad631964f6d4ca43e97de6b11c35d4b733a44d21216d83bb4`
-  - `EGGDROP_COMMIT=7a490c534fd53af99cbf33a85d907785e9156629`
+  - `EGGDROP_SHA256=b34d8702f2429882c15f80274c146a5f2859326811eb9b2d272174a10bc521dd`
+  - `EGGDROP_COMMIT=9711e38ef62ae4d4269a803f7bd41480f61e044c`
   - `NICK=`
   - `SERVER=`
   - `LISTEN=3333`
@@ -229,16 +229,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20200118-r3 description:
+ncurses-libs-6.1_p20200118-r4 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20200118-r3 webpage:
+ncurses-libs-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.1_p20200118-r3 installed size:
+ncurses-libs-6.1_p20200118-r4 installed size:
 507904
 
-ncurses-libs-6.1_p20200118-r3 license:
+ncurses-libs-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -246,16 +246,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20200118-r3 description:
+ncurses-terminfo-base-6.1_p20200118-r4 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20200118-r3 webpage:
+ncurses-terminfo-base-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.1_p20200118-r3 installed size:
+ncurses-terminfo-base-6.1_p20200118-r4 installed size:
 217088
 
-ncurses-terminfo-base-6.1_p20200118-r3 license:
+ncurses-terminfo-base-6.1_p20200118-r4 license:
 MIT
 
 ```
