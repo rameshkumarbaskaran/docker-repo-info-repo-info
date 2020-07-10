@@ -1,7 +1,7 @@
 ## `kong:centos`
 
 ```console
-$ docker pull kong@sha256:26b695f46f0401152bb06730abff6966a06a35c75d151ede1859b450a213df40
+$ docker pull kong@sha256:92e3a4a8cc25d8af1ea6881f6b535bc50c89e2bfccd24a46e85fe04d28c00f1d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull kong@sha256:26b695f46f0401152bb06730abff6966a06a35c75d151ede1859b4
 ### `kong:centos` - linux; amd64
 
 ```console
-$ docker pull kong@sha256:0770a2caadebe3516c2b2e3a89f03f0b5ebe5ded765d4b9d89cc9e9107496ab2
+$ docker pull kong@sha256:5d16e0f378f2b014447761c143a7b0b380d07eaf4979716de48cedabdbe1ec6f
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **125.9 MB (125876109 bytes)**  
+-	Total Size: **127.2 MB (127222551 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:33606e3edaee945be23e4e4e9a8afbc416da3421b00be80f861dec3045b53b2a`
+-	Image ID: `sha256:27dbb73207530d4ccf1b6f737fcdacdcdea7ba16000aca132a0ecc85ee78affb`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["kong","docker-start"]`
 
@@ -37,27 +37,27 @@ ARG ASSET=ce
 ENV ASSET=ce
 # Tue, 05 May 2020 21:54:27 GMT
 COPY file:73044b225363e2703a176f55b132687ead4bab30398788756be18d2965fac2cd in /tmp/kong.rpm 
-# Tue, 05 May 2020 21:54:27 GMT
-ARG KONG_VERSION=2.0.4
-# Tue, 05 May 2020 21:54:27 GMT
-ENV KONG_VERSION=2.0.4
-# Tue, 05 May 2020 21:54:27 GMT
-ARG KONG_SHA256=16a934a7bc2e182f00f03bd75b67f4bdb483150b3820d33cab9b0c95539dd353
-# Tue, 05 May 2020 21:54:27 GMT
-ENV KONG_SHA256=16a934a7bc2e182f00f03bd75b67f4bdb483150b3820d33cab9b0c95539dd353
-# Tue, 05 May 2020 21:54:46 GMT
-RUN set -ex;     if [ "$ASSET" = "local" ] ; then exit 0 ;     elif [ "$ASSET" = "ce" ] ; then         curl -fL "https://bintray.com/kong/kong-rpm/download_file?file_path=centos/7/kong-$KONG_VERSION.el7.amd64.rpm" -o /tmp/kong.rpm &&         echo "$KONG_SHA256  /tmp/kong.rpm" | sha256sum -c -;     fi;     yum install -y -q unzip shadow-utils 	&& yum clean all -q 	&& rm -fr /var/cache/yum/* /tmp/yum_save*.yumtx /root/.pki 	&& useradd kong 	&& mkdir -p "/usr/local/kong" 	&& yum install -y /tmp/kong.rpm 	&& yum clean all 	&& rm /tmp/kong.rpm 	&& chown -R kong:0 /usr/local/kong 	&& chown kong:0 /usr/local/bin/kong 	&& chmod -R g=u /usr/local/kong
-# Tue, 05 May 2020 21:54:47 GMT
-COPY file:c7c95ad9b95e03a404039e7ee878ca4bb52cbcb965cd2d12c91037eb7a3b7e65 in /docker-entrypoint.sh 
-# Tue, 05 May 2020 21:54:47 GMT
+# Fri, 10 Jul 2020 20:23:32 GMT
+ARG KONG_VERSION=2.0.5
+# Fri, 10 Jul 2020 20:23:32 GMT
+ENV KONG_VERSION=2.0.5
+# Fri, 10 Jul 2020 20:23:33 GMT
+ARG KONG_SHA256=e05340680de3541c4c940f54e64f00c90fb5137f6a8c71e413b815a411d74fc6
+# Fri, 10 Jul 2020 20:23:33 GMT
+ENV KONG_SHA256=e05340680de3541c4c940f54e64f00c90fb5137f6a8c71e413b815a411d74fc6
+# Fri, 10 Jul 2020 20:24:05 GMT
+RUN set -ex; 	if [ "$ASSET" = "ce" ] ; then 		curl -fL "https://bintray.com/kong/kong-rpm/download_file?file_path=centos/7/kong-$KONG_VERSION.el7.amd64.rpm" -o /tmp/kong.rpm 		&& echo "$KONG_SHA256  /tmp/kong.rpm" | sha256sum -c -; 	fi; 	yum install -y -q unzip shadow-utils git zlib 	&& yum clean all -q 	&& rm -fr /var/cache/yum/* /tmp/yum_save*.yumtx /root/.pki 	&& useradd kong 	&& mkdir -p "/usr/local/kong" 	&& yum install -y /tmp/kong.rpm 	&& yum clean all 	&& rm /tmp/kong.rpm 	&& chown -R kong:0 /usr/local/kong 	&& chown kong:0 /usr/local/bin/kong 	&& chmod -R g=u /usr/local/kong 	&& kong version
+# Fri, 10 Jul 2020 20:24:06 GMT
+COPY file:fa8375740fa706893b805c585210990194c529e023568323f95bd7d67be95132 in /docker-entrypoint.sh 
+# Fri, 10 Jul 2020 20:24:06 GMT
 USER kong
-# Tue, 05 May 2020 21:54:47 GMT
+# Fri, 10 Jul 2020 20:24:07 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 05 May 2020 21:54:47 GMT
+# Fri, 10 Jul 2020 20:24:07 GMT
 EXPOSE 8000 8001 8443 8444
-# Tue, 05 May 2020 21:54:47 GMT
+# Fri, 10 Jul 2020 20:24:07 GMT
 STOPSIGNAL SIGQUIT
-# Tue, 05 May 2020 21:54:47 GMT
+# Fri, 10 Jul 2020 20:24:08 GMT
 CMD ["kong" "docker-start"]
 ```
 
@@ -70,11 +70,11 @@ CMD ["kong" "docker-start"]
 		Last Modified: Tue, 05 May 2020 22:02:15 GMT  
 		Size: 129.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0c09eae848c2b3842c2e1b6863034e9fb2ca603d8438ae1ffa8d1f1dbd3d1593`  
-		Last Modified: Tue, 05 May 2020 22:02:55 GMT  
-		Size: 50.0 MB (49995157 bytes)  
+	-	`sha256:6e839438e3b2588088e4bb0885546faeba1afe1d70b47fd88048e9d0c70ae370`  
+		Last Modified: Fri, 10 Jul 2020 20:25:43 GMT  
+		Size: 51.3 MB (51341586 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44a8e1c9ddcadf4475ac984587a95973290b72baed79445bbec7bddea3e7d3ad`  
-		Last Modified: Tue, 05 May 2020 22:02:16 GMT  
-		Size: 682.0 B  
+	-	`sha256:f5be06b0e3143edb276aa38e22427a1a992fe3f3c417a3f906017efc8102fccd`  
+		Last Modified: Fri, 10 Jul 2020 20:25:29 GMT  
+		Size: 695.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
