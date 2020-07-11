@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d3d18514e50a3610674ab3e4a9bf5fe389fcea3097878e2b820380782906d60d`
-- Created: `2020-06-12T01:25:50.764889615Z`
-- Virtual Size: ~ 89.85 Mb  
+- Image ID: `sha256:b1c6e15796238f0468f51f4b1fb7b20fae8894dfde65dde84ccfda440d0d3a75`
+- Created: `2020-07-10T05:05:45.503025151Z`
+- Virtual Size: ~ 90.44 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh","docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.7`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.7.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.7.tar.xz.asc`
-  - `PHP_SHA256=53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf`
+  - `PHP_VERSION=7.4.8`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.8.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.8.tar.xz.asc`
+  - `PHP_SHA256=642843890b732e8af01cb661e823ae01472af1402f211c83009c9b3abd073245`
   - `PHP_MD5=`
   - `ADMINER_VERSION=4.7.7`
   - `ADMINER_DOWNLOAD_SHA256=566152a2d86186dcfb28856b4ed0dfdb60e355d93ab693f7931201f75868fff0`
@@ -405,16 +405,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r8 description:
+musl-1.1.24-r9 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r8 webpage:
+musl-1.1.24-r9 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r8 installed size:
+musl-1.1.24-r9 installed size:
 614400
 
-musl-1.1.24-r8 license:
+musl-1.1.24-r9 license:
 MIT
 
 ```
