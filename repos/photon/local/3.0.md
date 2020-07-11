@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a3bbbff46f107cf6f3127664e11027b5e50834bb3e0aea5a42e71a083ab6d3e2`
-- Created: `2020-06-27T00:18:44.751984435Z`
-- Virtual Size: ~ 35.35 Mb  
+- Image ID: `sha256:30ded4d67031ea69c5792250dcd4c466511d940ff92f13cd6cc945c4456596ed`
+- Created: `2020-07-11T04:20:24.344044437Z`
+- Virtual Size: ~ 35.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20200626`
+  - `build-date=20200710`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -23,7 +23,7 @@ Licenses (from `rpm --query`): GPLv3
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `bzip2-libs-1.0.8-1.ph3.x86_64`
+### `rpm` package: `bzip2-libs-1.0.8-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -53,7 +53,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `e2fsprogs-libs-1.45.5-1.ph3.x86_64`
+### `rpm` package: `e2fsprogs-libs-1.45.5-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
@@ -65,13 +65,13 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `expat-2.2.9-1.ph3.x86_64`
+### `rpm` package: `expat-2.2.9-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `expat-libs-2.2.9-1.ph3.x86_64`
+### `rpm` package: `expat-libs-2.2.9-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -215,7 +215,7 @@ Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `toybox-0.8.2-1.ph3.x86_64`
+### `rpm` package: `toybox-0.8.2-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
