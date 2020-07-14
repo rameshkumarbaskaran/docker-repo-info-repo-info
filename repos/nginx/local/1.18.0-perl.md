@@ -2,16 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9b31cbc9244858215398b403cdd54fed20be3e1330c4d522f4dd3ba599264c7a`
-- Created: `2020-06-09T16:59:48.027644217Z`
-- Virtual Size: ~ 177.76 Mb  
+- Image ID: `sha256:cac0978e8d6451b7b77c6981304f1540de9355618af2013dc8a3436f0aa41856`
+- Created: `2020-07-10T20:29:27.295855298Z`
+- Virtual Size: ~ 178.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `NGINX_VERSION=1.18.0`
-  - `NJS_VERSION=0.4.0`
+  - `NJS_VERSION=0.4.2`
   - `PKG_RELEASE=1~buster`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -2126,11 +2127,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-njs=1.18.0.0.4.0-1~buster`
+### `dpkg` source package: `nginx-module-njs=1.18.0.0.4.2-1~buster`
 
 Binary Packages:
 
-- `nginx-module-njs=1.18.0.0.4.0-1~buster`
+- `nginx-module-njs=1.18.0.0.4.2-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.

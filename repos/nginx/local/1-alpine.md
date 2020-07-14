@@ -1,18 +1,18 @@
-# `nginx:1.19.0-alpine`
+# `nginx:1.19.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7d0cdcc60a96a5124763fddf5d534d058ad7d0d8d4c3b8be2aefedf4267d0270`
-- Created: `2020-06-02T16:23:50.280826105Z`
-- Virtual Size: ~ 21.25 Mb  
+- Image ID: `sha256:ecd67fe340f9048eaf01f304a37e9be9298480f242cc3e332a8a84c754df7d9a`
+- Created: `2020-07-10T20:27:47.131911434Z`
+- Virtual Size: ~ 21.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.19.0`
-  - `NJS_VERSION=0.4.1`
+  - `NGINX_VERSION=1.19.1`
+  - `NJS_VERSION=0.4.2`
   - `PKG_RELEASE=1`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -90,16 +90,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r1 description:
-Common CA certificates PEM files
+ca-certificates-20191127-r2 description:
+Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r1 webpage:
+ca-certificates-20191127-r2 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r1 installed size:
-741376
+ca-certificates-20191127-r2 installed size:
+737280
 
-ca-certificates-20191127-r1 license:
+ca-certificates-20191127-r2 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -328,16 +328,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.4-r0 description:
+libjpeg-turbo-2.0.4-r1 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.4-r0 webpage:
+libjpeg-turbo-2.0.4-r1 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.4-r0 installed size:
+libjpeg-turbo-2.0.4-r1 installed size:
 1355776
 
-libjpeg-turbo-2.0.4-r0 license:
+libjpeg-turbo-2.0.4-r1 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -515,16 +515,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.40.0-r0 description:
+nghttp2-libs-1.40.0-r1 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.40.0-r0 webpage:
+nghttp2-libs-1.40.0-r1 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.40.0-r0 installed size:
+nghttp2-libs-1.40.0-r1 installed size:
 159744
 
-nghttp2-libs-1.40.0-r0 license:
+nghttp2-libs-1.40.0-r1 license:
 MIT
 
 ```
@@ -532,16 +532,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.19.0-r1 description:
+nginx-1.19.1-r1 description:
 High performance web server
 
-nginx-1.19.0-r1 webpage:
+nginx-1.19.1-r1 webpage:
 http://nginx.org/
 
-nginx-1.19.0-r1 installed size:
-2580480
+nginx-1.19.1-r1 installed size:
+2588672
 
-nginx-1.19.0-r1 license:
+nginx-1.19.1-r1 license:
 2-clause BSD-like license
 
 ```
@@ -549,16 +549,16 @@ nginx-1.19.0-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.19.0-r1 description:
+nginx-module-geoip-1.19.1-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.19.0-r1 webpage:
+nginx-module-geoip-1.19.1-r1 webpage:
 http://nginx.org/
 
-nginx-module-geoip-1.19.0-r1 installed size:
+nginx-module-geoip-1.19.1-r1 installed size:
 118784
 
-nginx-module-geoip-1.19.0-r1 license:
+nginx-module-geoip-1.19.1-r1 license:
 2-clause BSD-like license
 
 ```
@@ -566,16 +566,16 @@ nginx-module-geoip-1.19.0-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.19.0-r1 description:
+nginx-module-image-filter-1.19.1-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.19.0-r1 webpage:
+nginx-module-image-filter-1.19.1-r1 webpage:
 http://nginx.org/
 
-nginx-module-image-filter-1.19.0-r1 installed size:
+nginx-module-image-filter-1.19.1-r1 installed size:
 90112
 
-nginx-module-image-filter-1.19.0-r1 license:
+nginx-module-image-filter-1.19.1-r1 license:
 2-clause BSD-like license
 
 ```
@@ -583,16 +583,16 @@ nginx-module-image-filter-1.19.0-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.19.0.0.4.1-r1 description:
+nginx-module-njs-1.19.1.0.4.2-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.19.0.0.4.1-r1 webpage:
+nginx-module-njs-1.19.1.0.4.2-r1 webpage:
 http://nginx.org/
 
-nginx-module-njs-1.19.0.0.4.1-r1 installed size:
-2777088
+nginx-module-njs-1.19.1.0.4.2-r1 installed size:
+3084288
 
-nginx-module-njs-1.19.0.0.4.1-r1 license:
+nginx-module-njs-1.19.1.0.4.2-r1 license:
 2-clause BSD-like license
 
 ```
@@ -600,16 +600,16 @@ nginx-module-njs-1.19.0.0.4.1-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.19.0-r1 description:
+nginx-module-xslt-1.19.1-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.19.0-r1 webpage:
+nginx-module-xslt-1.19.1-r1 webpage:
 http://nginx.org/
 
-nginx-module-xslt-1.19.0-r1 installed size:
+nginx-module-xslt-1.19.1-r1 installed size:
 86016
 
-nginx-module-xslt-1.19.0-r1 license:
+nginx-module-xslt-1.19.1-r1 license:
 2-clause BSD-like license
 
 ```

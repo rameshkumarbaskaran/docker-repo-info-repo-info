@@ -2,16 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c73848b5c823ed9cb5a58e5c8ff22f7c112cafafdfe42e3f02ec43a310c1ca46`
-- Created: `2020-04-24T13:00:04.150338662Z`
-- Virtual Size: ~ 55.51 Mb  
+- Image ID: `sha256:05728a16cab4fa50c86ddf86e0c7a574108efa87e2fc3707ba48a5e950ce3570`
+- Created: `2020-07-10T20:30:01.752863553Z`
+- Virtual Size: ~ 55.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
+- Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `NGINX_VERSION=1.18.0`
-  - `NJS_VERSION=0.4.0`
+  - `NJS_VERSION=0.4.2`
   - `PKG_RELEASE=1`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -89,16 +90,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r1 description:
-Common CA certificates PEM files
+ca-certificates-20191127-r2 description:
+Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r1 webpage:
+ca-certificates-20191127-r2 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r1 installed size:
-741376
+ca-certificates-20191127-r2 installed size:
+737280
 
-ca-certificates-20191127-r1 license:
+ca-certificates-20191127-r2 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -327,16 +328,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.4-r0 description:
+libjpeg-turbo-2.0.4-r1 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.4-r0 webpage:
+libjpeg-turbo-2.0.4-r1 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.4-r0 installed size:
+libjpeg-turbo-2.0.4-r1 installed size:
 1355776
 
-libjpeg-turbo-2.0.4-r0 license:
+libjpeg-turbo-2.0.4-r1 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -412,16 +413,16 @@ BSD-3-Clause
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r2 description:
+libxml2-2.9.10-r3 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r2 webpage:
+libxml2-2.9.10-r3 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r2 installed size:
+libxml2-2.9.10-r3 installed size:
 1220608
 
-libxml2-2.9.10-r2 license:
+libxml2-2.9.10-r3 license:
 MIT
 
 ```
@@ -480,16 +481,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20200118-r3 description:
+ncurses-libs-6.1_p20200118-r4 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20200118-r3 webpage:
+ncurses-libs-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.1_p20200118-r3 installed size:
+ncurses-libs-6.1_p20200118-r4 installed size:
 507904
 
-ncurses-libs-6.1_p20200118-r3 license:
+ncurses-libs-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -497,16 +498,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20200118-r3 description:
+ncurses-terminfo-base-6.1_p20200118-r4 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20200118-r3 webpage:
+ncurses-terminfo-base-6.1_p20200118-r4 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.1_p20200118-r3 installed size:
+ncurses-terminfo-base-6.1_p20200118-r4 installed size:
 217088
 
-ncurses-terminfo-base-6.1_p20200118-r3 license:
+ncurses-terminfo-base-6.1_p20200118-r4 license:
 MIT
 
 ```
@@ -514,16 +515,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.40.0-r0 description:
+nghttp2-libs-1.40.0-r1 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.40.0-r0 webpage:
+nghttp2-libs-1.40.0-r1 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.40.0-r0 installed size:
+nghttp2-libs-1.40.0-r1 installed size:
 159744
 
-nghttp2-libs-1.40.0-r0 license:
+nghttp2-libs-1.40.0-r1 license:
 MIT
 
 ```
@@ -582,16 +583,16 @@ nginx-module-image-filter-1.18.0-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.18.0.0.4.0-r1 description:
+nginx-module-njs-1.18.0.0.4.2-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.18.0.0.4.0-r1 webpage:
+nginx-module-njs-1.18.0.0.4.2-r1 webpage:
 http://nginx.org/
 
-nginx-module-njs-1.18.0.0.4.0-r1 installed size:
-2777088
+nginx-module-njs-1.18.0.0.4.2-r1 installed size:
+3084288
 
-nginx-module-njs-1.18.0.0.4.0-r1 license:
+nginx-module-njs-1.18.0.0.4.2-r1 license:
 2-clause BSD-like license
 
 ```
@@ -650,16 +651,16 @@ BSD-3-Clause
 ### `apk` package: `perl`
 
 ```console
-perl-5.30.1-r0 description:
+perl-5.30.3-r0 description:
 Larry Wall's Practical Extraction and Report Language
 
-perl-5.30.1-r0 webpage:
+perl-5.30.3-r0 webpage:
 https://www.perl.org/
 
-perl-5.30.1-r0 installed size:
-38596608
+perl-5.30.3-r0 installed size:
+38625280
 
-perl-5.30.1-r0 license:
+perl-5.30.3-r0 license:
 Artistic GPL-2.0
 
 ```
@@ -701,16 +702,16 @@ GPL-2.0-only
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019c-r0 description:
+tzdata-2020a-r0 description:
 Timezone data
 
-tzdata-2019c-r0 webpage:
+tzdata-2020a-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019c-r0 installed size:
-3538944
+tzdata-2020a-r0 installed size:
+3526656
 
-tzdata-2019c-r0 license:
+tzdata-2020a-r0 license:
 Public-Domain
 
 ```
