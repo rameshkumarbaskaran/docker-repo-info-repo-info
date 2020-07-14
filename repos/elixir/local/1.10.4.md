@@ -2,21 +2,21 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:027864008e8950a60431b90802a945dbbd85942e12232e2be0412c123c6a641d`
-- Created: `2020-07-08T17:20:59.560047497Z`
+- Image ID: `sha256:1a789360c5cbffcd37cd0d2a1114566a5a62103f726b6eab2123b5a67223d769`
+- Created: `2020-07-10T20:39:18.891414961Z`
 - Virtual Size: ~ 1.23 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=22.3.4.2`
+  - `OTP_VERSION=22.3.4.3`
   - `REBAR3_VERSION=3.13.2`
   - `REBAR_VERSION=2.6.4`
   - `ELIXIR_VERSION=v1.10.4`
   - `LANG=C.UTF-8`
 - Labels:
-  - `org.opencontainers.image.version=22.3.4.2`
+  - `org.opencontainers.image.version=22.3.4.3`
 
 ## `dpkg` (`.deb`-based packages)
 
