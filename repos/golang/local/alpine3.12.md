@@ -1,16 +1,16 @@
-# `golang:1.14.4-alpine3.12`
+# `golang:1.14.5-alpine3.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3289bf11c2843f3ebc4741a2c08dbb493594ddcd9fb4e4392cd0817d780006b8`
-- Created: `2020-06-02T01:32:36.214896562Z`
-- Virtual Size: ~ 369.83 Mb  
+- Image ID: `sha256:4c8eed5b55a04b1c04bb4311f6484951acd7707e2fa1068e1907f0ee45c1128e`
+- Created: `2020-07-14T18:22:44.779274217Z`
+- Virtual Size: ~ 370.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
 - Environment:
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOLANG_VERSION=1.14.4`
+  - `GOLANG_VERSION=1.14.5`
   - `GOPATH=/go`
 
 ## `apk` (`.apk`-based packages)
@@ -188,16 +188,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r8 description:
+musl-1.1.24-r9 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r8 webpage:
+musl-1.1.24-r9 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r8 installed size:
+musl-1.1.24-r9 installed size:
 614400
 
-musl-1.1.24-r8 license:
+musl-1.1.24-r9 license:
 MIT
 
 ```
