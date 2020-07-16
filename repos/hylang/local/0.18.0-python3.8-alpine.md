@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a0bc85c36f916ede0cceb2196e3e32fadc026fd03d67c0c8f5e029b4c8450cf8`
-- Created: `2020-06-04T22:22:22.370892231Z`
-- Virtual Size: ~ 86.23 Mb  
+- Image ID: `sha256:595bab4f615b13ff2013f991a7a75d69e2daaf903757568140137fbc63d290ff`
+- Created: `2020-07-14T04:05:56.359256124Z`
+- Virtual Size: ~ 87.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.3`
+  - `PYTHON_VERSION=3.8.4`
   - `PYTHON_PIP_VERSION=20.1.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/eff16c878c7fd6b688b9b4c4267695cf1a0bf01b/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=b3153ec0cf7b7bbf9556932aa37e4981c35dc2a2c501d70d91d2795aa532be79`
@@ -431,16 +431,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r8 description:
+musl-1.1.24-r9 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r8 webpage:
+musl-1.1.24-r9 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r8 installed size:
+musl-1.1.24-r9 installed size:
 614400
 
-musl-1.1.24-r8 license:
+musl-1.1.24-r9 license:
 MIT
 
 ```
