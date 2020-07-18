@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:30ded4d67031ea69c5792250dcd4c466511d940ff92f13cd6cc945c4456596ed`
-- Created: `2020-07-11T04:20:24.344044437Z`
+- Image ID: `sha256:ae4ada44fafb63337456d436fd4a3fc26a0c33ff20728a4cccec68d6b8a3f61c`
+- Created: `2020-07-17T22:27:24.429757471Z`
 - Virtual Size: ~ 35.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20200710`
+  - `build-date=20200717`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -197,7 +197,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `sqlite-libs-3.32.1-1.ph3.x86_64`
+### `rpm` package: `sqlite-libs-3.32.1-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): Public Domain
 
