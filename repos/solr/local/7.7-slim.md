@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e9324bdddafe62a1b21f84c9cb66b0d76b2a81115af71c7c4872243215d5e0ff`
-- Created: `2020-06-10T07:48:55.954561499Z`
-- Virtual Size: ~ 416.47 Mb  
+- Image ID: `sha256:03ae7bc933bb9d1bfcc0841f1ccfe29eaa86b042c16968bdb4cb0e5d65d097f3`
+- Created: `2020-07-17T00:26:19.138163045Z`
+- Virtual Size: ~ 416.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,9 +13,9 @@
   - `PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.7`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.7%2B10/OpenJDK11U-jre_`
-  - `JAVA_URL_VERSION=11.0.7_10`
+  - `JAVA_VERSION=11.0.8`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.8%2B10/OpenJDK11U-jre_`
+  - `JAVA_URL_VERSION=11.0.8_10`
   - `SOLR_USER=solr`
   - `SOLR_UID=8983`
   - `SOLR_GROUP=solr`
