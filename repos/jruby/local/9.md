@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7d51c055e8925caf82a1ad83008c30985284b6024d299f4cb7fd3f860618bc5`
-- Created: `2020-07-15T23:22:32.762369119Z`
-- Virtual Size: ~ 331.70 Mb  
+- Image ID: `sha256:340bdc07709d743ef006b715b841ac7c86db249899ae3e616d0bb3fd204b6a4e`
+- Created: `2020-07-16T23:13:39.514661113Z`
+- Virtual Size: ~ 331.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/bundle/bin:/opt/jruby/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u252`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u252-b09/OpenJDK8U-jre_`
-  - `JAVA_URL_VERSION=8u252b09`
+  - `JAVA_VERSION=8u262`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jre_`
+  - `JAVA_URL_VERSION=8u262b10`
   - `JRUBY_VERSION=9.2.12.0`
   - `JRUBY_SHA256=307f6124c4301d723e2d0ff4c0105fa9eee8950c3f9971e14bbe8862030e6c04`
   - `GEM_HOME=/usr/local/bundle`
