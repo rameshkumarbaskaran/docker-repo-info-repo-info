@@ -988,14 +988,20 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris freetype=2.10.2+dfsg-3
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.2+dfsg-3.dsc' freetype_2.10.2+dfsg-3.dsc 3680 SHA256:d91c8e350849462dc7fa93bf551c714653dfcbdb82ed7a45f1ecd414475c301b
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2demos.tar.xz' freetype_2.10.2+dfsg.orig-ft2demos.tar.xz 230672 SHA256:3dce65d1ba53d48659688549175765ee163d645b73db7055a3c43a7c882d6daa
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2demos.tar.xz.asc' freetype_2.10.2+dfsg.orig-ft2demos.tar.xz.asc 195 SHA256:0a11f56569a589c9f52a3e60e491aeed566d040f51435082891d6551d6d66338
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2docs.tar.xz' freetype_2.10.2+dfsg.orig-ft2docs.tar.xz 2078712 SHA256:22b9584040a2e3c4387b5998cb9b4340183888eef15c2ac0fd9115cad837cf91
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2docs.tar.xz.asc' freetype_2.10.2+dfsg.orig-ft2docs.tar.xz.asc 195 SHA256:4be0f469d29086486df1ace563b9536e1be34d603e311f89a38b3fef99a9f115
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig.tar.xz' freetype_2.10.2+dfsg.orig.tar.xz 2246904 SHA256:c1f32cbb42a1519ae7d69046d84d359f44bfdea15c800c4f0b60a36c78b46d70
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.2+dfsg-3.debian.tar.xz' freetype_2.10.2+dfsg-3.debian.tar.xz 116212 SHA256:7adcb9c757025deaa295f776787c8dc529d9ddfe30791862d476b73170782013
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.2+dfsg-3.dsc' freetype_2.10.2+dfsg-3.dsc 3680 SHA256:d91c8e350849462dc7fa93bf551c714653dfcbdb82ed7a45f1ecd414475c301b
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2demos.tar.xz' freetype_2.10.2+dfsg.orig-ft2demos.tar.xz 230672 SHA256:3dce65d1ba53d48659688549175765ee163d645b73db7055a3c43a7c882d6daa
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2demos.tar.xz.asc' freetype_2.10.2+dfsg.orig-ft2demos.tar.xz.asc 195 SHA256:0a11f56569a589c9f52a3e60e491aeed566d040f51435082891d6551d6d66338
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2docs.tar.xz' freetype_2.10.2+dfsg.orig-ft2docs.tar.xz 2078712 SHA256:22b9584040a2e3c4387b5998cb9b4340183888eef15c2ac0fd9115cad837cf91
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig-ft2docs.tar.xz.asc' freetype_2.10.2+dfsg.orig-ft2docs.tar.xz.asc 195 SHA256:4be0f469d29086486df1ace563b9536e1be34d603e311f89a38b3fef99a9f115
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.2+dfsg.orig.tar.xz' freetype_2.10.2+dfsg.orig.tar.xz 2246904 SHA256:c1f32cbb42a1519ae7d69046d84d359f44bfdea15c800c4f0b60a36c78b46d70
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.2+dfsg-3.debian.tar.xz' freetype_2.10.2+dfsg-3.debian.tar.xz 116212 SHA256:7adcb9c757025deaa295f776787c8dc529d9ddfe30791862d476b73170782013
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/freetype/2.10.2+dfsg-3/ (for browsing the source)
+- https://sources.debian.net/src/freetype/2.10.2+dfsg-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/freetype/2.10.2+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fribidi=1.0.8-2`
 
@@ -1053,10 +1059,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-10=10.1.0-6
-'http://http.debian.net/debian/pool/main/g/gcc-10/gcc-10_10.1.0-6.dsc' gcc-10_10.1.0-6.dsc 27608 SHA256:ad0d0e98f78c408e6430bcefc2763cf9a9f39f2a9fb9540172befcc441288f50
-'http://http.debian.net/debian/pool/main/g/gcc-10/gcc-10_10.1.0.orig.tar.gz' gcc-10_10.1.0.orig.tar.gz 92670668 SHA256:cdf22173652ee0a51f4789a8c64aa2c7aeeaf67eddeb49d0221c0da368bc9432
-'http://http.debian.net/debian/pool/main/g/gcc-10/gcc-10_10.1.0-6.debian.tar.xz' gcc-10_10.1.0-6.debian.tar.xz 2490624 SHA256:dd898392d33537be532eecf64537753a0659d167a87991d5407a193d90a69d59
+'http://deb.debian.org/debian/pool/main/g/gcc-10/gcc-10_10.1.0-6.dsc' gcc-10_10.1.0-6.dsc 27608 SHA256:ad0d0e98f78c408e6430bcefc2763cf9a9f39f2a9fb9540172befcc441288f50
+'http://deb.debian.org/debian/pool/main/g/gcc-10/gcc-10_10.1.0.orig.tar.gz' gcc-10_10.1.0.orig.tar.gz 92670668 SHA256:cdf22173652ee0a51f4789a8c64aa2c7aeeaf67eddeb49d0221c0da368bc9432
+'http://deb.debian.org/debian/pool/main/g/gcc-10/gcc-10_10.1.0-6.debian.tar.xz' gcc-10_10.1.0-6.debian.tar.xz 2490624 SHA256:dd898392d33537be532eecf64537753a0659d167a87991d5407a193d90a69d59
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-10/10.1.0-6/ (for browsing the source)
+- https://sources.debian.net/src/gcc-10/10.1.0-6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-10/10.1.0-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-9=9.3.0-15`
 
@@ -1086,10 +1098,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-9=9.3.0-15
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.3.0-15.dsc' gcc-9_9.3.0-15.dsc 21922 SHA256:83dd853938bcb9d131210c8f8eddcb4c9c9a3a0704b063da17cd099b32d88d30
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 88686943 SHA256:824044ffa96eb337bb1c1d4cf6a82691d0290d6f42e1d13362eea855458de060
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.3.0-15.debian.tar.xz' gcc-9_9.3.0-15.debian.tar.xz 735456 SHA256:6561b0b5c3578b7ef031e7c2b4af8178f479f2122df99e20540ea192871ba7ca
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0-15.dsc' gcc-9_9.3.0-15.dsc 21922 SHA256:83dd853938bcb9d131210c8f8eddcb4c9c9a3a0704b063da17cd099b32d88d30
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 88686943 SHA256:824044ffa96eb337bb1c1d4cf6a82691d0290d6f42e1d13362eea855458de060
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0-15.debian.tar.xz' gcc-9_9.3.0-15.debian.tar.xz 735456 SHA256:6561b0b5c3578b7ef031e7c2b4af8178f479f2122df99e20540ea192871ba7ca
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-9/9.3.0-15/ (for browsing the source)
+- https://sources.debian.net/src/gcc-9/9.3.0-15/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-9/9.3.0-15/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-defaults=1.185.1`
 
@@ -1165,10 +1183,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glib2.0=2.64.4-1
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.64.4-1.dsc' glib2.0_2.64.4-1.dsc 3328 SHA256:0cb06c20a4a7da393d7d17cd1fee0ecbe0efd41d3948a52442d003754fecc482
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.64.4.orig.tar.xz' glib2.0_2.64.4.orig.tar.xz 4779456 SHA256:f7e0b325b272281f0462e0f7fff25a833820cac19911ff677251daf6d87bce50
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.64.4-1.debian.tar.xz' glib2.0_2.64.4-1.debian.tar.xz 93700 SHA256:40db69d7d2013fb2a04017163dd16525f9c4c3a44d48e400ff8fa00083eaf7c5
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.64.4-1.dsc' glib2.0_2.64.4-1.dsc 3328 SHA256:0cb06c20a4a7da393d7d17cd1fee0ecbe0efd41d3948a52442d003754fecc482
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.64.4.orig.tar.xz' glib2.0_2.64.4.orig.tar.xz 4779456 SHA256:f7e0b325b272281f0462e0f7fff25a833820cac19911ff677251daf6d87bce50
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.64.4-1.debian.tar.xz' glib2.0_2.64.4-1.debian.tar.xz 93700 SHA256:40db69d7d2013fb2a04017163dd16525f9c4c3a44d48e400ff8fa00083eaf7c5
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/glib2.0/2.64.4-1/ (for browsing the source)
+- https://sources.debian.net/src/glib2.0/2.64.4-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glib2.0/2.64.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.31-1`
 
@@ -1190,10 +1214,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glibc=2.31-1
-'http://http.debian.net/debian/pool/main/g/glibc/glibc_2.31-1.dsc' glibc_2.31-1.dsc 8195 SHA256:411ff25e1d4395b4581dfdaef6e888322758444b1d49468d325682015f7c8dea
-'http://http.debian.net/debian/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17254692 SHA256:3dc7704b6166839c37d7047626fd199f3d4c09aca0d90e48c51c31c967dce34e
-'http://http.debian.net/debian/pool/main/g/glibc/glibc_2.31-1.debian.tar.xz' glibc_2.31-1.debian.tar.xz 829180 SHA256:b785b0fd0a1e4efa91c6cb56615ce72df63684a6c1c2012f677263904189149e
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-1.dsc' glibc_2.31-1.dsc 8195 SHA256:411ff25e1d4395b4581dfdaef6e888322758444b1d49468d325682015f7c8dea
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17254692 SHA256:3dc7704b6166839c37d7047626fd199f3d4c09aca0d90e48c51c31c967dce34e
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-1.debian.tar.xz' glibc_2.31-1.debian.tar.xz 829180 SHA256:b785b0fd0a1e4efa91c6cb56615ce72df63684a6c1c2012f677263904189149e
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/glibc/2.31-1/ (for browsing the source)
+- https://sources.debian.net/src/glibc/2.31-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glibc/2.31-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gmp=2:6.2.0+dfsg-4`
 
@@ -1433,11 +1463,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris icu=67.1-3
-'http://http.debian.net/debian/pool/main/i/icu/icu_67.1-3.dsc' icu_67.1-3.dsc 2219 SHA256:0a574a9a42191ebc8206cc34866691feeac288cce61dc9f986f4d5650ccfe293
-'http://http.debian.net/debian/pool/main/i/icu/icu_67.1.orig.tar.gz' icu_67.1.orig.tar.gz 24518055 SHA256:94a80cd6f251a53bd2a997f6f1b5ac6653fe791dfab66e1eb0227740fb86d5dc
-'http://http.debian.net/debian/pool/main/i/icu/icu_67.1.orig.tar.gz.asc' icu_67.1.orig.tar.gz.asc 833 SHA256:0044119f3df92ff3055dc3609f527fa1290177f6ef1b6650ea136698b245e537
-'http://http.debian.net/debian/pool/main/i/icu/icu_67.1-3.debian.tar.xz' icu_67.1-3.debian.tar.xz 24076 SHA256:afdaf67e22b0d09b7431a6879dc77cb489c721a459857f5ce4e0b86b4d3d2ac1
+'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1-3.dsc' icu_67.1-3.dsc 2219 SHA256:0a574a9a42191ebc8206cc34866691feeac288cce61dc9f986f4d5650ccfe293
+'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1.orig.tar.gz' icu_67.1.orig.tar.gz 24518055 SHA256:94a80cd6f251a53bd2a997f6f1b5ac6653fe791dfab66e1eb0227740fb86d5dc
+'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1.orig.tar.gz.asc' icu_67.1.orig.tar.gz.asc 833 SHA256:0044119f3df92ff3055dc3609f527fa1290177f6ef1b6650ea136698b245e537
+'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1-3.debian.tar.xz' icu_67.1-3.debian.tar.xz 24076 SHA256:afdaf67e22b0d09b7431a6879dc77cb489c721a459857f5ce4e0b86b4d3d2ac1
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/icu/67.1-3/ (for browsing the source)
+- https://sources.debian.net/src/icu/67.1-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/icu/67.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.57`
 
@@ -4048,10 +4084,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris util-linux=2.35.2-7
-'http://http.debian.net/debian/pool/main/u/util-linux/util-linux_2.35.2-7.dsc' util-linux_2.35.2-7.dsc 4337 SHA256:f530383c7d6d7fd8e4b96f9f1814b4adb54b2bd0a172e0dd54ff819e829a5612
-'http://http.debian.net/debian/pool/main/u/util-linux/util-linux_2.35.2.orig.tar.xz' util-linux_2.35.2.orig.tar.xz 5150488 SHA256:21b7431e82f6bcd9441a01beeec3d57ed33ee948f8a5b41da577073c372eb58a
-'http://http.debian.net/debian/pool/main/u/util-linux/util-linux_2.35.2-7.debian.tar.xz' util-linux_2.35.2-7.debian.tar.xz 95500 SHA256:808bfb2918e245476f044a328d1567cb5eff219438f2be8ffd0c66b99d544f4e
+'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.2-7.dsc' util-linux_2.35.2-7.dsc 4337 SHA256:f530383c7d6d7fd8e4b96f9f1814b4adb54b2bd0a172e0dd54ff819e829a5612
+'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.2.orig.tar.xz' util-linux_2.35.2.orig.tar.xz 5150488 SHA256:21b7431e82f6bcd9441a01beeec3d57ed33ee948f8a5b41da577073c372eb58a
+'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.35.2-7.debian.tar.xz' util-linux_2.35.2-7.debian.tar.xz 95500 SHA256:808bfb2918e245476f044a328d1567cb5eff219438f2be8ffd0c66b99d544f4e
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/util-linux/2.35.2-7/ (for browsing the source)
+- https://sources.debian.net/src/util-linux/2.35.2-7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/util-linux/2.35.2-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `vim=2:8.2.0716-3`
 
