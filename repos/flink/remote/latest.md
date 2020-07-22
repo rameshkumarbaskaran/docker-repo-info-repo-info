@@ -1,7 +1,7 @@
 ## `flink:latest`
 
 ```console
-$ docker pull flink@sha256:665db47d0a2bcc297e9eb4df7640d3e4c1d398d25849252a726c8ada112722cf
+$ docker pull flink@sha256:96fee5debc94bf4f3ab186ac7ee4e8b453db3e8aafedd49fec448268626f5e70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull flink@sha256:665db47d0a2bcc297e9eb4df7640d3e4c1d398d25849252a726c8
 ### `flink:latest` - linux; amd64
 
 ```console
-$ docker pull flink@sha256:84efa6830d9b62291ec0d8e56e6b5fcbac8950ed505b05271bb124762036bdc6
+$ docker pull flink@sha256:c3a2c59da83a9ac06f8941a798ed905730f951a7cfccf58f6599de0ad588d114
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **427.3 MB (427313371 bytes)**  
+-	Total Size: **428.4 MB (428352060 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:43f070a908e6e4622b63d1d8caa8b281d051b0531c9672a611465a6f055bba34`
+-	Image ID: `sha256:4e1cb1e99e3175c1f0db8be87a784e11d92fa17d3023dc523bea6fe6990b7a03`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["help"]`
 
@@ -55,25 +55,25 @@ RUN set -ex;   apt-get update;   apt-get -y install libsnappy1v5 gettext-base;  
 ENV GOSU_VERSION=1.11
 # Thu, 16 Jul 2020 23:02:31 GMT
 RUN set -ex;   wget -nv -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)";   wget -nv -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc";   export GNUPGHOME="$(mktemp -d)";   for server in ha.pool.sks-keyservers.net $(shuf -e                           hkp://p80.pool.sks-keyservers.net:80                           keyserver.ubuntu.com                           hkp://keyserver.ubuntu.com:80                           pgp.mit.edu) ; do       gpg --batch --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;   done &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;   gpgconf --kill all;   rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;   chmod +x /usr/local/bin/gosu;   gosu nobody true
-# Thu, 16 Jul 2020 23:03:55 GMT
-ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.11.0/flink-1.11.0-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.11.0/flink-1.11.0-bin-scala_2.12.tgz.asc GPG_KEY=2DA85B93244FDFA19A6244500653C0A2CEA00D0E CHECK_GPG=true
-# Thu, 16 Jul 2020 23:03:55 GMT
+# Wed, 22 Jul 2020 00:21:36 GMT
+ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.11.1/flink-1.11.1-bin-scala_2.12.tgz FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.11.1/flink-1.11.1-bin-scala_2.12.tgz.asc GPG_KEY=6B6291A8502BA8F0913AE04DDEB95B05BF075300 CHECK_GPG=true
+# Wed, 22 Jul 2020 00:21:36 GMT
 ENV FLINK_HOME=/opt/flink
-# Thu, 16 Jul 2020 23:03:55 GMT
+# Wed, 22 Jul 2020 00:21:37 GMT
 ENV PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 16 Jul 2020 23:03:56 GMT
+# Wed, 22 Jul 2020 00:21:38 GMT
 RUN groupadd --system --gid=9999 flink &&     useradd --system --home-dir $FLINK_HOME --uid=9999 --gid=flink flink
-# Thu, 16 Jul 2020 23:03:56 GMT
+# Wed, 22 Jul 2020 00:21:39 GMT
 WORKDIR /opt/flink
-# Thu, 16 Jul 2020 23:04:12 GMT
+# Wed, 22 Jul 2020 00:31:44 GMT
 RUN set -ex;   wget -nv -O flink.tgz "$FLINK_TGZ_URL";     if [ "$CHECK_GPG" = "true" ]; then     wget -nv -O flink.tgz.asc "$FLINK_ASC_URL";     export GNUPGHOME="$(mktemp -d)";     for server in ha.pool.sks-keyservers.net $(shuf -e                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "$server" --recv-keys "$GPG_KEY" && break || : ;     done &&     gpg --batch --verify flink.tgz.asc flink.tgz;     gpgconf --kill all;     rm -rf "$GNUPGHOME" flink.tgz.asc;   fi;     tar -xf flink.tgz --strip-components=1;   rm flink.tgz;     chown -R flink:flink .;
-# Thu, 16 Jul 2020 23:04:12 GMT
+# Wed, 22 Jul 2020 00:31:45 GMT
 COPY file:5118b9265b7774ef32131b2cbf42fd9bf26c640be3ebb42b4972a3ae8ed5125e in / 
-# Thu, 16 Jul 2020 23:04:12 GMT
+# Wed, 22 Jul 2020 00:31:45 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 16 Jul 2020 23:04:12 GMT
+# Wed, 22 Jul 2020 00:31:46 GMT
 EXPOSE 6123 8081
-# Thu, 16 Jul 2020 23:04:13 GMT
+# Wed, 22 Jul 2020 00:31:46 GMT
 CMD ["help"]
 ```
 
@@ -110,19 +110,19 @@ CMD ["help"]
 		Last Modified: Thu, 16 Jul 2020 23:04:23 GMT  
 		Size: 900.5 KB (900509 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f15a0d59303ad6314ec778305f7a37726c0675fd5c78a23dc2d43fe9608fab8c`  
-		Last Modified: Thu, 16 Jul 2020 23:05:28 GMT  
+	-	`sha256:7f19ebd3f52b017c88df46c3d1611a63907b5837b8450a85fbec820c048797d3`  
+		Last Modified: Wed, 22 Jul 2020 00:32:52 GMT  
 		Size: 4.6 KB (4606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81130e2e9fddab5ecd1d3e7fc453fb499a317258f772f9749ef2f93e33d4f783`  
-		Last Modified: Thu, 16 Jul 2020 23:05:27 GMT  
+	-	`sha256:15b9502269d0ad3ca059076a5c3b26cd6b262ea4e2e3a3c28f3ad574448ded31`  
+		Last Modified: Wed, 22 Jul 2020 00:32:52 GMT  
 		Size: 114.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40bdeebc27c6b0d853f6ec89d342d45a9bae2171a450fbacb29b1a56b20e895d`  
-		Last Modified: Thu, 16 Jul 2020 23:05:45 GMT  
-		Size: 311.8 MB (311812660 bytes)  
+	-	`sha256:9f36379f3533afe9359626b6f9252fe501ed5af6c528a592479c5e124792a43c`  
+		Last Modified: Wed, 22 Jul 2020 00:33:20 GMT  
+		Size: 312.9 MB (312851350 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fe3a85e5402dd19bb5ec292b4d73e19ba211ea02a7d0eadcd277e980ce57875`  
-		Last Modified: Thu, 16 Jul 2020 23:05:27 GMT  
-		Size: 1.7 KB (1689 bytes)  
+	-	`sha256:fc1e58637d2845781505a6c8daa8d3804aa6ad304f77be4e0d94d59b16cff391`  
+		Last Modified: Wed, 22 Jul 2020 00:32:53 GMT  
+		Size: 1.7 KB (1688 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
