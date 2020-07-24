@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b464b6c1d6f3a7b077f73f0d9a847dc01d52f4cfc359400683ce696fec1e4d4b`
-- Created: `2020-07-06T23:17:51.892528371Z`
+- Image ID: `sha256:cbd6544b69b714141012b652fbb860adf5a400fbc8d726d0a817b6a0741293a5`
+- Created: `2020-07-24T15:00:08.587103766Z`
 - Virtual Size: ~ 277.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -195,11 +195,11 @@ $ apt-get source -qq --print-uris base-passwd=3.5.47
 'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.47.tar.xz' base-passwd_3.5.47.tar.xz 53024 SHA256:9810ae0216e96bf9fc7ca6163d47ef8ec7d1677f533451af5911d8202a490a23
 ```
 
-### `dpkg` source package: `bash=5.0-6ubuntu1`
+### `dpkg` source package: `bash=5.0-6ubuntu1.1`
 
 Binary Packages:
 
-- `bash=5.0-6ubuntu1`
+- `bash=5.0-6ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
@@ -208,10 +208,10 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bash=5.0-6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.dsc' bash_5.0-6ubuntu1.dsc 2435 SHA256:c9e45089758a3b8dc6a876123a9e75db287b086184dac5a8ee30bc0116dce980
+$ apt-get source -qq --print-uris bash=5.0-6ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.1.dsc' bash_5.0-6ubuntu1.1.dsc 2418 SHA256:6ed4321c4a335f34ec05103e336c1b2ef3ef980b1d9bd36aa3b8610a01ff9389
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA256:893858ba233d65bda38039e99dd96a4102b2f6a2d5e6c1c546e0794a60beed97
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.debian.tar.xz' bash_5.0-6ubuntu1.debian.tar.xz 73252 SHA256:6ead2dbed2e82d1744726fea66f1de1f8227b76f3c896e5f7477c39af9971e23
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.1.debian.tar.xz' bash_5.0-6ubuntu1.1.debian.tar.xz 74356 SHA256:b2208096205b625756e2a211d69cb801a273443094c273a275af9c49916911b6
 ```
 
 ### `dpkg` source package: `breezy=3.0.2-4ubuntu2`
@@ -1288,14 +1288,9 @@ Licenses: (parsed from: `/usr/share/doc/libseccomp2/copyright`)
 
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libseccomp=2.4.3-1ubuntu3.20.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3-1ubuntu3.20.04.2.dsc' libseccomp_2.4.3-1ubuntu3.20.04.2.dsc 2263 SHA256:619f042a8ef40772943c9540bef6128b60c3c1ad1623859e745a60eb5d3ded8e
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3.orig.tar.gz' libseccomp_2.4.3.orig.tar.gz 598147 SHA256:cf15d1421997fac45b936515af61d209c4fd788af11005d212b3d0fd71e7991d
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3-1ubuntu3.20.04.2.debian.tar.xz' libseccomp_2.4.3-1ubuntu3.20.04.2.debian.tar.xz 33716 SHA256:7378d2845b1c256d3412cf4e64e5aa5787237586c11c50805576cbbcb51eae64
-```
 
 ### `dpkg` source package: `libselinux=3.0-1build2`
 
@@ -1716,12 +1711,12 @@ $ apt-get source -qq --print-uris npth=1.6-1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/npth/npth_1.6-1.debian.tar.xz' npth_1.6-1.debian.tar.xz 10532 SHA256:d312d4a3cf1d082e2f2cf3ea752c41d34f7e120f77a941c6c1680e6093834353
 ```
 
-### `dpkg` source package: `openldap=2.4.49+dfsg-2ubuntu1.2`
+### `dpkg` source package: `openldap=2.4.49+dfsg-2ubuntu1.3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.49+dfsg-2ubuntu1.2`
-- `libldap-common=2.4.49+dfsg-2ubuntu1.2`
+- `libldap-2.4-2:amd64=2.4.49+dfsg-2ubuntu1.3`
+- `libldap-common=2.4.49+dfsg-2ubuntu1.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1730,10 +1725,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.2
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.2.dsc' openldap_2.4.49+dfsg-2ubuntu1.2.dsc 3136 SHA256:fa0fecbe2cbf4078478f05526fdd252f5878ed4408c56f0bab7622f98830ac5e
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg.orig.tar.gz' openldap_2.4.49+dfsg.orig.tar.gz 4844726 SHA256:240022395b438f327aa860a631c1d4eef9b17e63ec8965d3aca2aa983e6d81e6
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.2.debian.tar.xz' openldap_2.4.49+dfsg-2ubuntu1.2.debian.tar.xz 182016 SHA256:47fa31fb69b3b0bf8abbc580e43fe29480cb619910853e008b9fc7629af8a8b8
+$ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.3.dsc' openldap_2.4.49+dfsg-2ubuntu1.3.dsc 3136 SHA256:ea972b78e05fccb356e64846fb9a8522b16a4a616ca9c7f61231517f057dee97
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg.orig.tar.gz' openldap_2.4.49+dfsg.orig.tar.gz 4844726 SHA256:240022395b438f327aa860a631c1d4eef9b17e63ec8965d3aca2aa983e6d81e6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.3.debian.tar.xz' openldap_2.4.49+dfsg-2ubuntu1.3.debian.tar.xz 182112 SHA256:56f7c59b4585508dc2dbd24b7c9b7ff7662792a3ed97a0db48b79388c48e8670
 ```
 
 ### `dpkg` source package: `openssh=1:8.2p1-4ubuntu0.1`
@@ -2101,14 +2096,14 @@ $ apt-get source -qq --print-uris python3-defaults=3.8.2-0ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.8.2-0ubuntu2.tar.gz' python3-defaults_3.8.2-0ubuntu2.tar.gz 138226 SHA256:e4969a54306421ebfd195d0c064935db7c53f9f152d8abaae63da33819235e9a
 ```
 
-### `dpkg` source package: `python3.8=3.8.2-1ubuntu1.1`
+### `dpkg` source package: `python3.8=3.8.2-1ubuntu1.2`
 
 Binary Packages:
 
-- `libpython3.8-minimal:amd64=3.8.2-1ubuntu1.1`
-- `libpython3.8-stdlib:amd64=3.8.2-1ubuntu1.1`
-- `python3.8=3.8.2-1ubuntu1.1`
-- `python3.8-minimal=3.8.2-1ubuntu1.1`
+- `libpython3.8-minimal:amd64=3.8.2-1ubuntu1.2`
+- `libpython3.8-stdlib:amd64=3.8.2-1ubuntu1.2`
+- `python3.8=3.8.2-1ubuntu1.2`
+- `python3.8-minimal=3.8.2-1ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/share/doc/libpython3.8-stdlib/copyright`, `/usr/share/doc/python3.8/copyright`, `/usr/share/doc/python3.8-minimal/copyright`)
 
@@ -2133,10 +2128,10 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python3.8=3.8.2-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2-1ubuntu1.1.dsc' python3.8_3.8.2-1ubuntu1.1.dsc 3367 SHA256:45b325b5227c4c5d4876c28be6b7ad5bef34be8e360d1885b8e3e388667448e8
+$ apt-get source -qq --print-uris python3.8=3.8.2-1ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2-1ubuntu1.2.dsc' python3.8_3.8.2-1ubuntu1.2.dsc 3383 SHA256:898842e484885ccfdf7447f43e73563ffe0ebe1b0222f2c49ddefeef1529d438
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2.orig.tar.xz' python3.8_3.8.2.orig.tar.xz 17869888 SHA256:2646e7dc233362f59714c6193017bb2d6f7b38d6ab4a0cb5fbac5c36c4d845df
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2-1ubuntu1.1.debian.tar.xz' python3.8_3.8.2-1ubuntu1.1.debian.tar.xz 212468 SHA256:4800bffbc0d586c26d167892586a7d3d2e2459783e82820f646e00674e8c9c69
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2-1ubuntu1.2.debian.tar.xz' python3.8_3.8.2-1ubuntu1.2.debian.tar.xz 214328 SHA256:c80492a2960102f2dc7b5798183049d7f43340b154a84de271cee2de9d21fe4f
 ```
 
 ### `dpkg` source package: `readline=8.0-4`
@@ -2348,14 +2343,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.1.dsc' systemd_245.4-4ubuntu3.1.dsc 5291 SHA256:9ced508e752203e4273e8dc2e20c29fee1fee9fa8f3e1900e40626fb4495767b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA256:bd1c467045989ab986b29d003f17960ccb201bc923093db978b4cfb299ae8a63
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.1.debian.tar.xz' systemd_245.4-4ubuntu3.1.debian.tar.xz 208816 SHA256:301b7a29c6f1164ae0b2235b2bf641f8c2d24f7c880d5c0d2ff34c7017a6944f
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
