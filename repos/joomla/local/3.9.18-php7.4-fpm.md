@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ccf5bcc27578c8a0897500f3ef80e14d13abcd1f3f10e75603900f00885a7879`
-- Created: `2020-07-10T05:39:42.110933876Z`
+- Image ID: `sha256:2733c2b2126a793280d0fee53ac2d0c09c7d0308cad42ef121e7d99647089c9b`
+- Created: `2020-07-23T05:54:38.799023683Z`
 - Virtual Size: ~ 452.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1922,11 +1922,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.19.118-2`
+### `dpkg` source package: `linux=4.19.118-2+deb10u1`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.19.118-2`
+- `linux-libc-dev:amd64=4.19.118-2+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1941,17 +1941,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.19.118-2
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.118-2.dsc' linux_4.19.118-2.dsc 189286 SHA256:254ddd763173ed6af41ab9e6df7ca718aa3fcebb988d2983d15360f0f8b3249f
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.118.orig.tar.xz' linux_4.19.118.orig.tar.xz 107469088 SHA256:353b99a93364cc9c54cd889acc71ffd3190101ad67f19238150691a3c6f95aaf
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.118-2.debian.tar.xz' linux_4.19.118-2.debian.tar.xz 3283568 SHA256:9481dd2018c83eeb15020e6d437ebb9ba8cd8db79a5f1e76b979929079463a5d
+$ apt-get source -qq --print-uris linux=4.19.118-2+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.118-2+deb10u1.dsc' linux_4.19.118-2+deb10u1.dsc 189318 SHA256:955087d295f3a75078f5ffcd46168cb2852345683af30cc22ce1b2db583609d7
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.118.orig.tar.xz' linux_4.19.118.orig.tar.xz 107469088 SHA256:353b99a93364cc9c54cd889acc71ffd3190101ad67f19238150691a3c6f95aaf
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.118-2+deb10u1.debian.tar.xz' linux_4.19.118-2+deb10u1.debian.tar.xz 3306732 SHA256:d77e14c94986c0ef783588fb0829ff69a5e4bc3ae678c4f2e6aad8184db29edf
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.19.118-2/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.118-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.118-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.19.118-2+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.19.118-2+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.19.118-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.8.3-1`
 
