@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4c1e8f1d094958410efc3c4500ee145485bf9745066a7f14e6849da29a6dd033`
-- Created: `2020-07-16T22:59:47.98242784Z`
+- Image ID: `sha256:3e6aa8696639d2e64069a31e5094416681161e084bbcae28acb45299f1784233`
+- Created: `2020-07-24T17:07:46.302871464Z`
 - Virtual Size: ~ 423.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -178,11 +178,11 @@ $ apt-get source -qq --print-uris base-passwd=3.5.47
 'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.47.tar.xz' base-passwd_3.5.47.tar.xz 53024 SHA256:9810ae0216e96bf9fc7ca6163d47ef8ec7d1677f533451af5911d8202a490a23
 ```
 
-### `dpkg` source package: `bash=5.0-6ubuntu1`
+### `dpkg` source package: `bash=5.0-6ubuntu1.1`
 
 Binary Packages:
 
-- `bash=5.0-6ubuntu1`
+- `bash=5.0-6ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
@@ -191,10 +191,10 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bash=5.0-6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.dsc' bash_5.0-6ubuntu1.dsc 2435 SHA256:c9e45089758a3b8dc6a876123a9e75db287b086184dac5a8ee30bc0116dce980
+$ apt-get source -qq --print-uris bash=5.0-6ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.1.dsc' bash_5.0-6ubuntu1.1.dsc 2418 SHA256:6ed4321c4a335f34ec05103e336c1b2ef3ef980b1d9bd36aa3b8610a01ff9389
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA256:893858ba233d65bda38039e99dd96a4102b2f6a2d5e6c1c546e0794a60beed97
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.debian.tar.xz' bash_5.0-6ubuntu1.debian.tar.xz 73252 SHA256:6ead2dbed2e82d1744726fea66f1de1f8227b76f3c896e5f7477c39af9971e23
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.1.debian.tar.xz' bash_5.0-6ubuntu1.1.debian.tar.xz 74356 SHA256:b2208096205b625756e2a211d69cb801a273443094c273a275af9c49916911b6
 ```
 
 ### `dpkg` source package: `bzip2=1.0.8-2`
@@ -1552,12 +1552,12 @@ $ apt-get source -qq --print-uris nss=2:3.49.1-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.49.1-1ubuntu1.2.debian.tar.xz' nss_3.49.1-1ubuntu1.2.debian.tar.xz 30084 SHA256:4ba976ba27a508f05c8d5e11b07d7f0fd76ae3b244d8040e1e4efaf8631c6d76
 ```
 
-### `dpkg` source package: `openldap=2.4.49+dfsg-2ubuntu1.2`
+### `dpkg` source package: `openldap=2.4.49+dfsg-2ubuntu1.3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.49+dfsg-2ubuntu1.2`
-- `libldap-common=2.4.49+dfsg-2ubuntu1.2`
+- `libldap-2.4-2:amd64=2.4.49+dfsg-2ubuntu1.3`
+- `libldap-common=2.4.49+dfsg-2ubuntu1.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1566,10 +1566,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.2
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.2.dsc' openldap_2.4.49+dfsg-2ubuntu1.2.dsc 3136 SHA256:fa0fecbe2cbf4078478f05526fdd252f5878ed4408c56f0bab7622f98830ac5e
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg.orig.tar.gz' openldap_2.4.49+dfsg.orig.tar.gz 4844726 SHA256:240022395b438f327aa860a631c1d4eef9b17e63ec8965d3aca2aa983e6d81e6
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.2.debian.tar.xz' openldap_2.4.49+dfsg-2ubuntu1.2.debian.tar.xz 182016 SHA256:47fa31fb69b3b0bf8abbc580e43fe29480cb619910853e008b9fc7629af8a8b8
+$ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.3.dsc' openldap_2.4.49+dfsg-2ubuntu1.3.dsc 3136 SHA256:ea972b78e05fccb356e64846fb9a8522b16a4a616ca9c7f61231517f057dee97
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg.orig.tar.gz' openldap_2.4.49+dfsg.orig.tar.gz 4844726 SHA256:240022395b438f327aa860a631c1d4eef9b17e63ec8965d3aca2aa983e6d81e6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.49+dfsg-2ubuntu1.3.debian.tar.xz' openldap_2.4.49+dfsg-2ubuntu1.3.debian.tar.xz 182112 SHA256:56f7c59b4585508dc2dbd24b7c9b7ff7662792a3ed97a0db48b79388c48e8670
 ```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2`
@@ -1907,14 +1907,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.1.dsc' systemd_245.4-4ubuntu3.1.dsc 5291 SHA256:9ced508e752203e4273e8dc2e20c29fee1fee9fa8f3e1900e40626fb4495767b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA256:bd1c467045989ab986b29d003f17960ccb201bc923093db978b4cfb299ae8a63
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.1.debian.tar.xz' systemd_245.4-4ubuntu3.1.debian.tar.xz 208816 SHA256:301b7a29c6f1164ae0b2235b2bf641f8c2d24f7c880d5c0d2ff34c7017a6944f
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
