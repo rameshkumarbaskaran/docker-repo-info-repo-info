@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5db2b79e93722c97641b262c72a985ffb93764c764bf2ddd154dcad5c6d37591`
-- Created: `2020-07-17T23:39:08.407714222Z`
-- Virtual Size: ~ 1.30 Gb  
+- Image ID: `sha256:8e980f63a9ffb2a537ad28245b8c3ed904ac975afb536a9e72ad49fe60e41574`
+- Created: `2020-07-24T21:02:15.415752069Z`
+- Virtual Size: ~ 1.29 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -978,35 +978,16 @@ $ apt-get source -qq --print-uris glib2.0=2.56.4-0ubuntu0.18.04.6
 'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.6.debian.tar.xz' glib2.0_2.56.4-0ubuntu0.18.04.6.debian.tar.xz 89540 SHA256:57f17e1760946894ae729e988798ac11339460e8ee71421c6b0a5b6cdde9af36
 ```
 
-### `dpkg` source package: `glibc=2.27-3ubuntu1`
-
-Binary Packages:
-
-- `libc-bin=2.27-3ubuntu1`
-
-Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`)
-
-- `GPL-2`
-- `LGPL-2.1`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris glibc=2.27-3ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.27-3ubuntu1.dsc' glibc_2.27-3ubuntu1.dsc 9356 SHA256:b0006ab99aac50bcedadf9bf8c74b81a4daee6c4cbc2e983c29a07d419d0bcb4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.27.orig.tar.xz' glibc_2.27.orig.tar.xz 15923832 SHA256:0e9826488e3ffedb4d14a426d741b7b1cf15f6973ab30762af9a188ad47633ed
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.27-3ubuntu1.debian.tar.xz' glibc_2.27-3ubuntu1.debian.tar.xz 1007844 SHA256:7f4e1f935974e18c497ea8bd1cd165c7a37b3579fe05262f72992fdfa3b56376
-```
-
 ### `dpkg` source package: `glibc=2.27-3ubuntu1.2`
 
 Binary Packages:
 
+- `libc-bin=2.27-3ubuntu1.2`
 - `libc6:amd64=2.27-3ubuntu1.2`
 - `locales=2.27-3ubuntu1.2`
 - `multiarch-support=2.27-3ubuntu1.2`
 
-Licenses: (parsed from: `/usr/share/doc/libc6/copyright`, `/usr/share/doc/locales/copyright`, `/usr/share/doc/multiarch-support/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/locales/copyright`, `/usr/share/doc/multiarch-support/copyright`)
 
 - `GPL-2`
 - `LGPL-2.1`
@@ -1082,11 +1063,11 @@ $ apt-get source -qq --print-uris gnupg2=2.2.4-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.4-1ubuntu1.2.debian.tar.bz2' gnupg2_2.2.4-1ubuntu1.2.debian.tar.bz2 82238 SHA256:ad2e70205e5d5f52c092c58e619ee58e5f5bc2b44f44a2c462296fc34a1960de
 ```
 
-### `dpkg` source package: `gnutls28=3.5.18-1ubuntu1.3`
+### `dpkg` source package: `gnutls28=3.5.18-1ubuntu1.4`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.5.18-1ubuntu1.3`
+- `libgnutls30:amd64=3.5.18-1ubuntu1.4`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -1103,11 +1084,11 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gnutls28=3.5.18-1ubuntu1.3
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.3.dsc' gnutls28_3.5.18-1ubuntu1.3.dsc 3434 SHA256:cff65f96caf5e8bc77094780ccf704ddabe6b129cba5486fcde93b7b936bd52d
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz' gnutls28_3.5.18.orig.tar.xz 7261980 SHA256:ae2248d9e78747cf9c469dde81ff8f90b56838b707a0637f3f7d4eee90e80234
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz.asc' gnutls28_3.5.18.orig.tar.xz.asc 534 SHA256:50bb942469be0639bbab925de630fb921aa8cac5f40072cb1c2cf1fb7ae7977b
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.3.debian.tar.xz' gnutls28_3.5.18-1ubuntu1.3.debian.tar.xz 83208 SHA256:65d104c920a7f9371a828c467d3415eeeb59e18640a5c9c41f29558e5e09660a
+$ apt-get source -qq --print-uris gnutls28=3.5.18-1ubuntu1.4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.4.dsc' gnutls28_3.5.18-1ubuntu1.4.dsc 2780 SHA256:6c58a44e5790eb86989318bf660e2391561c04518d4d8c7b85fb495a4efcd5ae
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz' gnutls28_3.5.18.orig.tar.xz 7261980 SHA256:ae2248d9e78747cf9c469dde81ff8f90b56838b707a0637f3f7d4eee90e80234
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz.asc' gnutls28_3.5.18.orig.tar.xz.asc 534 SHA256:50bb942469be0639bbab925de630fb921aa8cac5f40072cb1c2cf1fb7ae7977b
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.4.debian.tar.xz' gnutls28_3.5.18-1ubuntu1.4.debian.tar.xz 83784 SHA256:3ff4cbd5e9b6d9d51479fdae70486598ad7c11dae50aa06e98f000290f30cd05
 ```
 
 ### `dpkg` source package: `gpgme1.0=1.10.0-1ubuntu2`
@@ -3702,15 +3683,15 @@ $ apt-get source -qq --print-uris python3-defaults=3.6.7-1~18.04
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.6.7-1~18.04.tar.gz' python3-defaults_3.6.7-1~18.04.tar.gz 137600 SHA256:df14f4993ac87537415f1abaa69d80790fb01e51033416bc123038f731286ed4
 ```
 
-### `dpkg` source package: `python3.6=3.6.9-1~18.04ubuntu1`
+### `dpkg` source package: `python3.6=3.6.9-1~18.04ubuntu1.1`
 
 Binary Packages:
 
-- `libpython3.6:amd64=3.6.9-1~18.04ubuntu1`
-- `libpython3.6-minimal:amd64=3.6.9-1~18.04ubuntu1`
-- `libpython3.6-stdlib:amd64=3.6.9-1~18.04ubuntu1`
-- `python3.6=3.6.9-1~18.04ubuntu1`
-- `python3.6-minimal=3.6.9-1~18.04ubuntu1`
+- `libpython3.6:amd64=3.6.9-1~18.04ubuntu1.1`
+- `libpython3.6-minimal:amd64=3.6.9-1~18.04ubuntu1.1`
+- `libpython3.6-stdlib:amd64=3.6.9-1~18.04ubuntu1.1`
+- `python3.6=3.6.9-1~18.04ubuntu1.1`
+- `python3.6-minimal=3.6.9-1~18.04ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc/libpython3.6-minimal/copyright`, `/usr/share/doc/libpython3.6-stdlib/copyright`, `/usr/share/doc/python3.6/copyright`, `/usr/share/doc/python3.6-minimal/copyright`)
 
@@ -3732,9 +3713,14 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc
 - `use in source`
 - `without`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3.6=3.6.9-1~18.04ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1~18.04ubuntu1.1.dsc' python3.6_3.6.9-1~18.04ubuntu1.1.dsc 3470 SHA256:e780132c4fd5341e24b354d7ca37fb3d5d22f4178c1a180c0f530b18c9586e30
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9.orig.tar.xz' python3.6_3.6.9.orig.tar.xz 17212164 SHA256:5e2f5f554e3f8f7f0296f7e73d8600c4e9acbaee6b2555b83206edf5153870da
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1~18.04ubuntu1.1.debian.tar.xz' python3.6_3.6.9-1~18.04ubuntu1.1.debian.tar.xz 218936 SHA256:63afea0ff02387fb269d4e96a1732b0ba42740d1f7046f75d5cfcbfd719459e7
+```
 
 ### `dpkg` source package: `raptor2=2.0.14-1build1`
 
