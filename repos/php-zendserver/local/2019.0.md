@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8c04f6940be5a2fef39c5261b0af64efa48732b58738b71969e26deac15e1b2f`
-- Created: `2020-07-08T18:29:27.088624855Z`
+- Image ID: `sha256:49771660717527f62e7fce9e5e62ea67d6ff93f965bdb4a54db781d79935598c`
+- Created: `2020-07-24T16:38:14.978920486Z`
 - Virtual Size: ~ 1.22 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -714,34 +714,15 @@ $ apt-get source -qq --print-uris git=1:2.17.1-1ubuntu0.7
 'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1-1ubuntu0.7.debian.tar.xz' git_2.17.1-1ubuntu0.7.debian.tar.xz 614088 SHA256:169a0d8139dbe57dc4e7300b3677f100b1fdc660dae66e6b81b338d4eaa9c54a
 ```
 
-### `dpkg` source package: `glibc=2.27-3ubuntu1`
-
-Binary Packages:
-
-- `libc-bin=2.27-3ubuntu1`
-- `libc6:amd64=2.27-3ubuntu1`
-
-Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`)
-
-- `GPL-2`
-- `LGPL-2.1`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris glibc=2.27-3ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.27-3ubuntu1.dsc' glibc_2.27-3ubuntu1.dsc 9356 SHA256:b0006ab99aac50bcedadf9bf8c74b81a4daee6c4cbc2e983c29a07d419d0bcb4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.27.orig.tar.xz' glibc_2.27.orig.tar.xz 15923832 SHA256:0e9826488e3ffedb4d14a426d741b7b1cf15f6973ab30762af9a188ad47633ed
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.27-3ubuntu1.debian.tar.xz' glibc_2.27-3ubuntu1.debian.tar.xz 1007844 SHA256:7f4e1f935974e18c497ea8bd1cd165c7a37b3579fe05262f72992fdfa3b56376
-```
-
 ### `dpkg` source package: `glibc=2.27-3ubuntu1.2`
 
 Binary Packages:
 
+- `libc-bin=2.27-3ubuntu1.2`
+- `libc6:amd64=2.27-3ubuntu1.2`
 - `multiarch-support=2.27-3ubuntu1.2`
 
-Licenses: (parsed from: `/usr/share/doc/multiarch-support/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/multiarch-support/copyright`)
 
 - `GPL-2`
 - `LGPL-2.1`
@@ -817,11 +798,11 @@ $ apt-get source -qq --print-uris gnupg2=2.2.4-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.4-1ubuntu1.2.debian.tar.bz2' gnupg2_2.2.4-1ubuntu1.2.debian.tar.bz2 82238 SHA256:ad2e70205e5d5f52c092c58e619ee58e5f5bc2b44f44a2c462296fc34a1960de
 ```
 
-### `dpkg` source package: `gnutls28=3.5.18-1ubuntu1.3`
+### `dpkg` source package: `gnutls28=3.5.18-1ubuntu1.4`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.5.18-1ubuntu1.3`
+- `libgnutls30:amd64=3.5.18-1ubuntu1.4`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -838,11 +819,11 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gnutls28=3.5.18-1ubuntu1.3
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.3.dsc' gnutls28_3.5.18-1ubuntu1.3.dsc 3434 SHA256:cff65f96caf5e8bc77094780ccf704ddabe6b129cba5486fcde93b7b936bd52d
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz' gnutls28_3.5.18.orig.tar.xz 7261980 SHA256:ae2248d9e78747cf9c469dde81ff8f90b56838b707a0637f3f7d4eee90e80234
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz.asc' gnutls28_3.5.18.orig.tar.xz.asc 534 SHA256:50bb942469be0639bbab925de630fb921aa8cac5f40072cb1c2cf1fb7ae7977b
-'http://security.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.3.debian.tar.xz' gnutls28_3.5.18-1ubuntu1.3.debian.tar.xz 83208 SHA256:65d104c920a7f9371a828c467d3415eeeb59e18640a5c9c41f29558e5e09660a
+$ apt-get source -qq --print-uris gnutls28=3.5.18-1ubuntu1.4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.4.dsc' gnutls28_3.5.18-1ubuntu1.4.dsc 2780 SHA256:6c58a44e5790eb86989318bf660e2391561c04518d4d8c7b85fb495a4efcd5ae
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz' gnutls28_3.5.18.orig.tar.xz 7261980 SHA256:ae2248d9e78747cf9c469dde81ff8f90b56838b707a0637f3f7d4eee90e80234
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18.orig.tar.xz.asc' gnutls28_3.5.18.orig.tar.xz.asc 534 SHA256:50bb942469be0639bbab925de630fb921aa8cac5f40072cb1c2cf1fb7ae7977b
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.5.18-1ubuntu1.4.debian.tar.xz' gnutls28_3.5.18-1ubuntu1.4.debian.tar.xz 83784 SHA256:3ff4cbd5e9b6d9d51479fdae70486598ad7c11dae50aa06e98f000290f30cd05
 ```
 
 ### `dpkg` source package: `grep=3.1-2build1`
@@ -2270,12 +2251,12 @@ $ apt-get source -qq --print-uris npth=1.5-3
 'http://archive.ubuntu.com/ubuntu/pool/main/n/npth/npth_1.5-3.debian.tar.xz' npth_1.5-3.debian.tar.xz 10480 SHA256:5cbaf91c95c90ab82053110eeec5ac72f5a3cab36829edb0579f1fb759ec5fec
 ```
 
-### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.5`
+### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.6`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.5`
-- `libldap-common=2.4.45+dfsg-1ubuntu1.5`
+- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.6`
+- `libldap-common=2.4.45+dfsg-1ubuntu1.6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2284,10 +2265,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.5
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.5.dsc' openldap_2.4.45+dfsg-1ubuntu1.5.dsc 2884 SHA256:7b21af2ae2ed72ba81ad3c9b03656a57dbdb0e706bf57c9d9b940f074d97d423
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.5.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.5.debian.tar.xz 178712 SHA256:bba7797a23f9f522a518bc99b6afcb5e705b2d799fee5b18e8515862c88d0146
+$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.6.dsc' openldap_2.4.45+dfsg-1ubuntu1.6.dsc 2884 SHA256:7f7b47c9ca3e1e61c7e1955813148f4f127e9c29e96efcb22b797fded2282630
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.6.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.6.debian.tar.xz 179188 SHA256:959cf67aceadf0af09caf85615d61161df4b91ef9ff2153ea420ae7eec8b9f2d
 ```
 
 ### `dpkg` source package: `openssh=1:7.6p1-4ubuntu0.3`
