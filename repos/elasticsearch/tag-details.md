@@ -8,21 +8,195 @@
 ## `elasticsearch:6.8.11`
 
 ```console
-$ docker pull elasticsearch@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull elasticsearch@sha256:7a36fe5aeee5d3bf22a7111eaafebd34933eea4807ea586535ed6cefcb3829b1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+
+### `elasticsearch:6.8.11` - linux; amd64
+
+```console
+$ docker pull elasticsearch@sha256:1804c9b8d38a124ef4f586aa452f9d4013be7474aa2a07283b702108df90996c
+```
+
+-	Docker Version: 19.03.8
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **462.7 MB (462708012 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:fe9dfcd4a78b548266a872bb1d4af105602cf27da97a2975b9a81ddc8d71355d`
+-	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint.sh"]`
+-	Default Command: `["eswrapper"]`
+
+```dockerfile
+# Tue, 05 May 2020 21:20:06 GMT
+ADD file:38e2d2a1a0cd8694bd5086f257fdf7504f0c2481bf4f746c9bd1c8d9f3f6430d in / 
+# Tue, 05 May 2020 21:20:06 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20200504 org.opencontainers.image.title=CentOS Base Image org.opencontainers.image.vendor=CentOS org.opencontainers.image.licenses=GPL-2.0-only org.opencontainers.image.created=2020-05-04 00:00:00+01:00
+# Tue, 05 May 2020 21:20:07 GMT
+CMD ["/bin/bash"]
+# Thu, 09 Jul 2020 19:13:50 GMT
+ENV ELASTIC_CONTAINER=true
+# Thu, 09 Jul 2020 19:13:51 GMT
+ENV JAVA_HOME=/opt/jdk-14.0.1+7
+# Thu, 09 Jul 2020 19:13:58 GMT
+COPY dir:170319d0c30c0291abfea65bce51d4fa7bfdeba3e2278bcdd7c345f06cc9303d in /opt/jdk-14.0.1+7 
+# Thu, 09 Jul 2020 19:14:24 GMT
+RUN for iter in {1..10}; do yum update  --setopt=tsflags=nodocs -y &&     yum install -y  --setopt=tsflags=nodocs nc unzip wget which &&     yum clean all && exit_code=0 && break || exit_code=\$? && echo "yum error: retry $iter in 10s" && sleep 10; done;     (exit $exit_code)
+# Thu, 09 Jul 2020 19:14:27 GMT
+RUN groupadd -g 1000 elasticsearch &&     adduser -u 1000 -g 1000 -G 0 -d /usr/share/elasticsearch elasticsearch &&     chmod 0775 /usr/share/elasticsearch &&     chgrp 0 /usr/share/elasticsearch
+# Thu, 09 Jul 2020 19:14:27 GMT
+WORKDIR /usr/share/elasticsearch
+# Thu, 09 Jul 2020 19:14:34 GMT
+COPY --chown=1000:0dir:0b86c692d3bec657a32541c7db9e601c8e046ec160d46517819e413867adc8cd in /usr/share/elasticsearch 
+# Thu, 09 Jul 2020 19:14:34 GMT
+ENV PATH=/usr/share/elasticsearch/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Thu, 09 Jul 2020 19:14:34 GMT
+COPY --chown=1000:0file:08193f849fc25f29db1438eff6d5c9fe1d63237aeb07a3e0009e8ba554f97c31 in /usr/local/bin/docker-entrypoint.sh 
+# Thu, 09 Jul 2020 19:14:37 GMT
+RUN chgrp 0 /usr/local/bin/docker-entrypoint.sh &&     chmod g=u /etc/passwd &&     chmod 0775 /usr/local/bin/docker-entrypoint.sh
+# Thu, 09 Jul 2020 19:14:38 GMT
+EXPOSE 9200 9300
+# Thu, 09 Jul 2020 19:14:39 GMT
+LABEL org.label-schema.build-date=2020-07-09T19:08:08.940669Z org.label-schema.license=Elastic-License org.label-schema.name=Elasticsearch org.label-schema.schema-version=1.0 org.label-schema.url=https://www.elastic.co/products/elasticsearch org.label-schema.usage=https://www.elastic.co/guide/en/elasticsearch/reference/index.html org.label-schema.vcs-ref=00bf38630844371b78c586bc32e9373e9abc8890 org.label-schema.vcs-url=https://github.com/elastic/elasticsearch org.label-schema.vendor=Elastic org.label-schema.version=6.8.11 org.opencontainers.image.created=2020-07-09T19:08:08.940669Z org.opencontainers.image.documentation=https://www.elastic.co/guide/en/elasticsearch/reference/index.html org.opencontainers.image.licenses=Elastic-License org.opencontainers.image.revision=00bf38630844371b78c586bc32e9373e9abc8890 org.opencontainers.image.source=https://github.com/elastic/elasticsearch org.opencontainers.image.title=Elasticsearch org.opencontainers.image.url=https://www.elastic.co/products/elasticsearch org.opencontainers.image.vendor=Elastic org.opencontainers.image.version=6.8.11
+# Thu, 09 Jul 2020 19:14:39 GMT
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+# Thu, 09 Jul 2020 19:14:39 GMT
+CMD ["eswrapper"]
+```
+
+-	Layers:
+	-	`sha256:524b0c1e57f8ee5fee01a1decba2f301c324a6513ca3551021264e3aa7341ebc`  
+		Last Modified: Tue, 05 May 2020 21:23:14 GMT  
+		Size: 75.9 MB (75880141 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d99550969a56b62f737b251805e94058904a74f620baa04b68058c6f479a53e2`  
+		Last Modified: Mon, 27 Jul 2020 17:08:49 GMT  
+		Size: 211.9 MB (211934749 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1f4ec4071fa1d79144e32d1a3dac185f2e53d75c6330f50653005f9c84e350af`  
+		Last Modified: Mon, 27 Jul 2020 17:08:35 GMT  
+		Size: 24.8 MB (24783418 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c3864b36aeacd6b59092606cbb925a50ca9e4790b2c2daf1fdc8f2e44d1afd99`  
+		Last Modified: Mon, 27 Jul 2020 17:08:30 GMT  
+		Size: 2.3 KB (2281 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:72f1dcd1d3765b2870091069c767d65dd8b065351290412a655100e33a4d944d`  
+		Last Modified: Mon, 27 Jul 2020 17:08:47 GMT  
+		Size: 150.1 MB (150102960 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0be03155d18f11429e660998c26427ba44edfba21b387bdac54d7ac5bd9e99ca`  
+		Last Modified: Mon, 27 Jul 2020 17:08:31 GMT  
+		Size: 2.1 KB (2063 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0b56fbe4996f245bdd799b190d76e38be5fa62eb46457e40732d89d413d0f460`  
+		Last Modified: Mon, 27 Jul 2020 17:08:30 GMT  
+		Size: 2.4 KB (2400 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elasticsearch:7.8.1`
 
 ```console
-$ docker pull elasticsearch@sha256:d7893afa9b9506c7db868c5686c573821fce696fc64bb4c3667bc1050c738381
+$ docker pull elasticsearch@sha256:2d9bedec9e41ab6deac52fa478ba6aae749b8e9dea4172f402013d788047368e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
 	-	linux; arm64 variant v8
+
+### `elasticsearch:7.8.1` - linux; amd64
+
+```console
+$ docker pull elasticsearch@sha256:0fe222197c31ceec8902eda2fbc5290c7eef9c358458952965998dd18d0daa5d
+```
+
+-	Docker Version: 19.03.8
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **421.3 MB (421301808 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:a529963ec23610e69aff7b653af27f9e818ab452a16cfbce3e26e17ad626bb0e`
+-	Entrypoint: `["\/tini","--","\/usr\/local\/bin\/docker-entrypoint.sh"]`
+-	Default Command: `["eswrapper"]`
+
+```dockerfile
+# Tue, 05 May 2020 21:20:06 GMT
+ADD file:38e2d2a1a0cd8694bd5086f257fdf7504f0c2481bf4f746c9bd1c8d9f3f6430d in / 
+# Tue, 05 May 2020 21:20:06 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20200504 org.opencontainers.image.title=CentOS Base Image org.opencontainers.image.vendor=CentOS org.opencontainers.image.licenses=GPL-2.0-only org.opencontainers.image.created=2020-05-04 00:00:00+01:00
+# Tue, 05 May 2020 21:20:07 GMT
+CMD ["/bin/bash"]
+# Tue, 21 Jul 2020 16:45:08 GMT
+ENV ELASTIC_CONTAINER=true
+# Tue, 21 Jul 2020 16:45:09 GMT
+COPY file:df9158ae8b9b283e8ea5bd72d1e344c08dea733e283f9f0941833f467466323c in /tini 
+# Tue, 21 Jul 2020 16:45:50 GMT
+RUN for iter in {1..10}; do yum update --setopt=tsflags=nodocs -y &&     yum install --setopt=tsflags=nodocs -y nc shadow-utils zip unzip &&     yum clean all && exit_code=0 && break || exit_code=$? && echo "yum error: retry $iter in 10s" && sleep 10; done;     (exit $exit_code)
+# Tue, 21 Jul 2020 16:45:51 GMT
+RUN groupadd -g 1000 elasticsearch &&     adduser -u 1000 -g 1000 -G 0 -d /usr/share/elasticsearch elasticsearch &&     chmod 0775 /usr/share/elasticsearch &&     chgrp 0 /usr/share/elasticsearch
+# Tue, 21 Jul 2020 16:45:52 GMT
+WORKDIR /usr/share/elasticsearch
+# Tue, 21 Jul 2020 16:46:09 GMT
+COPY --chown=1000:0dir:98bf1f8228cfd9b3f6167fcc649f6a1416afcd9b42993344698d3b54229927f0 in /usr/share/elasticsearch 
+# Tue, 21 Jul 2020 16:46:11 GMT
+RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /usr/share/elasticsearch/jdk/lib/security/cacerts
+# Tue, 21 Jul 2020 16:46:11 GMT
+ENV PATH=/usr/share/elasticsearch/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 21 Jul 2020 16:46:12 GMT
+COPY file:d964df1452418918baf1d29ee20df18c9648ca6c9d51764640fca470bd9a9366 in /usr/local/bin/docker-entrypoint.sh 
+# Tue, 21 Jul 2020 16:46:14 GMT
+RUN chmod g=u /etc/passwd &&     chmod 0775 /usr/local/bin/docker-entrypoint.sh
+# Tue, 21 Jul 2020 16:46:17 GMT
+RUN find / -xdev -perm -4000 -exec chmod ug-s {} +
+# Tue, 21 Jul 2020 16:46:17 GMT
+EXPOSE 9200 9300
+# Tue, 21 Jul 2020 16:46:17 GMT
+LABEL org.label-schema.build-date=2020-07-21T16:40:44.668009Z org.label-schema.license=Elastic-License org.label-schema.name=Elasticsearch org.label-schema.schema-version=1.0 org.label-schema.url=https://www.elastic.co/products/elasticsearch org.label-schema.usage=https://www.elastic.co/guide/en/elasticsearch/reference/index.html org.label-schema.vcs-ref=b5ca9c58fb664ca8bf9e4057fc229b3396bf3a89 org.label-schema.vcs-url=https://github.com/elastic/elasticsearch org.label-schema.vendor=Elastic org.label-schema.version=7.8.1 org.opencontainers.image.created=2020-07-21T16:40:44.668009Z org.opencontainers.image.documentation=https://www.elastic.co/guide/en/elasticsearch/reference/index.html org.opencontainers.image.licenses=Elastic-License org.opencontainers.image.revision=b5ca9c58fb664ca8bf9e4057fc229b3396bf3a89 org.opencontainers.image.source=https://github.com/elastic/elasticsearch org.opencontainers.image.title=Elasticsearch org.opencontainers.image.url=https://www.elastic.co/products/elasticsearch org.opencontainers.image.vendor=Elastic org.opencontainers.image.version=7.8.1
+# Tue, 21 Jul 2020 16:46:17 GMT
+ENTRYPOINT ["/tini" "--" "/usr/local/bin/docker-entrypoint.sh"]
+# Tue, 21 Jul 2020 16:46:17 GMT
+CMD ["eswrapper"]
+```
+
+-	Layers:
+	-	`sha256:524b0c1e57f8ee5fee01a1decba2f301c324a6513ca3551021264e3aa7341ebc`  
+		Last Modified: Tue, 05 May 2020 21:23:14 GMT  
+		Size: 75.9 MB (75880141 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:50c3bb99d4d5e3be54ea472beb6aea573a5c150b8ad104e4e348facc384ea5d0`  
+		Last Modified: Mon, 27 Jul 2020 15:17:40 GMT  
+		Size: 9.5 KB (9461 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:41844ab4e28459cdad440176bb9498b2ce0c4023024c849a6bdec6343e2fdfde`  
+		Last Modified: Mon, 27 Jul 2020 15:17:53 GMT  
+		Size: 25.2 MB (25154401 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0eb5eb9335297ade6d17208067a9467718523b1d42a7d4cc0bfaeebf00862abd`  
+		Last Modified: Mon, 27 Jul 2020 15:17:38 GMT  
+		Size: 2.3 KB (2278 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e4013d3173a219fa02e902f9be0622452a826c10a3a60640319ff22d7f074c28`  
+		Last Modified: Mon, 27 Jul 2020 15:18:34 GMT  
+		Size: 320.1 MB (320050839 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1f6c0ce7bcd6a82417d98333182f508a64345fbd1342a7e1c97e393f60a92b52`  
+		Last Modified: Mon, 27 Jul 2020 15:17:38 GMT  
+		Size: 282.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e0da85f729c31b73d94f4f0be94b4005039c7bb5792fdb286e82e1994ec0ff41`  
+		Last Modified: Mon, 27 Jul 2020 15:17:37 GMT  
+		Size: 1.7 KB (1722 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:030a650fb544d66e73b6d48fcb7ed24446dc49d094c6fc04cc337522d8219ff4`  
+		Last Modified: Mon, 27 Jul 2020 15:17:37 GMT  
+		Size: 2.1 KB (2069 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1e0f6a626b58864e1f2ff3359a4c965b14898379bcfaf790345e3b8c28c90b30`  
+		Last Modified: Mon, 27 Jul 2020 15:17:37 GMT  
+		Size: 200.6 KB (200615 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `elasticsearch:7.8.1` - linux; arm64 variant v8
 
