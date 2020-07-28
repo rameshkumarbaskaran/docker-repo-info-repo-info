@@ -310,14 +310,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.34.90.20200716-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34.90.20200716-1ubuntu1.dsc' binutils_2.34.90.20200716-1ubuntu1.dsc 8851 SHA256:760800e576b2e33383eebe1b59ae2ee78555b45070ec24693895341d5418b436
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34.90.20200716.orig.tar.xz' binutils_2.34.90.20200716.orig.tar.xz 21640660 SHA256:530aabd920a909581665cf9121a6e738be231cd1c6afce562cdc03d9adfb3d51
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34.90.20200716-1ubuntu1.debian.tar.xz' binutils_2.34.90.20200716-1ubuntu1.debian.tar.xz 101920 SHA256:f16bc562cb66a1c1d59a01b656245b5785c1ff3201d61f9c8f2be2314ebf1759
-```
 
 ### `dpkg` source package: `breezy=3.1.0-4`
 
@@ -997,14 +992,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-10=10.1.0-6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.1.0-6ubuntu1.dsc' gcc-10_10.1.0-6ubuntu1.dsc 30466 SHA256:63028a921bccc72c35a48d1ca6e0304cf9ce1739900cc81fca8e5f34b4174142
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.1.0.orig.tar.gz' gcc-10_10.1.0.orig.tar.gz 94357676 SHA256:639726222b60ce144063e2b166057fccda523064839381025130f7128f7b9b66
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.1.0-6ubuntu1.debian.tar.xz' gcc-10_10.1.0-6ubuntu1.debian.tar.xz 2493012 SHA256:f3b94ed21d8bd2ad185f216acea3631e42cb3ae787de268b8ef0f0636dbaea8f
-```
 
 ### `dpkg` source package: `gcc-9=9.3.0-13ubuntu1`
 
@@ -1049,13 +1039,9 @@ Licenses: (parsed from: `/usr/share/doc/cpp/copyright`, `/usr/share/doc/g++/copy
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-defaults=1.185.1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc-defaults_1.185.1ubuntu2.dsc' gcc-defaults_1.185.1ubuntu2.dsc 16544 SHA256:32c0331bc75ecbc0d013b9e11401d1fc64cbd7b0198274cb25a183a27b5c407f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc-defaults_1.185.1ubuntu2.tar.gz' gcc-defaults_1.185.1ubuntu2.tar.gz 58807 SHA256:342b5842c03073717bc98d6d9de7eb79027a1239735637743006933e5d44bb05
-```
 
 ### `dpkg` source package: `gdbm=1.18.1-5`
 
@@ -2841,14 +2827,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-26.30
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-26.30.dsc' linux_5.4.0-26.30.dsc 7182 SHA256:ee57181c9c9f5ab79ee106888701fd6bc14bb67f6dafdc6f2e01a60612221099
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA256:805f3ed93854317814c59caf2dbfd2097745685f95c8c18b509c9347dcc7d51f
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-26.30.diff.gz' linux_5.4.0-26.30.diff.gz 4197539 SHA256:f7700ed6c0a5b8fee2d1d605b8830f35b116adc7d78f6ecea2647bbde8f17b3a
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
