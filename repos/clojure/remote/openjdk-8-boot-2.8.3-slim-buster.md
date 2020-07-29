@@ -1,7 +1,7 @@
 ## `clojure:openjdk-8-boot-2.8.3-slim-buster`
 
 ```console
-$ docker pull clojure@sha256:7323249509dd7f0f3977bf6bb9fd9a5fe75e9e0e72bfdabc769485a709bbfb2e
+$ docker pull clojure@sha256:d8eafc0d4abf8ab446a0644f9a77bdcb1d9aa46a9e3a1fd5750b2ca191a1d1f3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull clojure@sha256:7323249509dd7f0f3977bf6bb9fd9a5fe75e9e0e72bfdabc769
 ### `clojure:openjdk-8-boot-2.8.3-slim-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:dc9020f28fa30f27bbf039422400d0073aa75ac0fc92016f840c713c843382aa
+$ docker pull clojure@sha256:d21450a267fa80cb38e7e45e0881e6432a86d207310249d1f42fbaa21968634f
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **194.6 MB (194552842 bytes)**  
+-	Total Size: **194.6 MB (194552584 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3da547c18d531b24203e14790518b55d154ed1ab92db828fb0cc79b9f4990bb3`
+-	Image ID: `sha256:6f31bb9a96285eeb54fb6ed8e6a6013bdb335a2c6da46c0d0e972ff037416701`
 -	Default Command: `["boot","repl"]`
 
 ```dockerfile
@@ -50,15 +50,15 @@ ENV BOOT_VERSION=2.8.3
 ENV BOOT_INSTALL=/usr/local/bin/
 # Thu, 23 Jul 2020 07:50:05 GMT
 WORKDIR /tmp
-# Thu, 23 Jul 2020 07:50:10 GMT
-RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apt-get remove -y --purge wget && apt-get autoremove -y
-# Thu, 23 Jul 2020 07:50:10 GMT
+# Tue, 28 Jul 2020 23:21:33 GMT
+RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apt-get purge -y --auto-remove wget
+# Tue, 28 Jul 2020 23:21:33 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Thu, 23 Jul 2020 07:50:10 GMT
+# Tue, 28 Jul 2020 23:21:33 GMT
 ENV BOOT_AS_ROOT=yes
-# Thu, 23 Jul 2020 07:50:27 GMT
+# Tue, 28 Jul 2020 23:21:50 GMT
 RUN boot
-# Thu, 23 Jul 2020 07:50:27 GMT
+# Tue, 28 Jul 2020 23:21:51 GMT
 CMD ["boot" "repl"]
 ```
 
@@ -79,11 +79,11 @@ CMD ["boot" "repl"]
 		Last Modified: Wed, 22 Jul 2020 22:48:52 GMT  
 		Size: 105.1 MB (105104532 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3caf09dee50325f06bdbc26bb75819712e8a032043f2c3f8e84492850a4d390`  
-		Last Modified: Thu, 23 Jul 2020 07:58:53 GMT  
-		Size: 281.2 KB (281247 bytes)  
+	-	`sha256:fd99c24245aff9e234285699c5a3f9731720b4816fc453317ce46d37194dd89b`  
+		Last Modified: Tue, 28 Jul 2020 23:29:17 GMT  
+		Size: 281.2 KB (281202 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0a4d0980f23885a79000e6287e041288e3d86c190d5a99579ece6405d30604cb`  
-		Last Modified: Thu, 23 Jul 2020 07:58:56 GMT  
-		Size: 58.8 MB (58819865 bytes)  
+	-	`sha256:bda5fb8d4c5e2cb4a75d57d9a1a06a210a12ad2bbc8fe741700144739d2cffd8`  
+		Last Modified: Tue, 28 Jul 2020 23:29:21 GMT  
+		Size: 58.8 MB (58819652 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
