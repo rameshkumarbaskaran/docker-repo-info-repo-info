@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:aaf96e87b224942eb358377f3d4108fd82762dce82a1b56b407c7871294e2465`
-- Created: `2020-07-23T08:22:24.730999182Z`
+- Image ID: `sha256:05266b8723bcc7aa93700360761bf6ad89c8a94350a11c910cc06831ebd0f166`
+- Created: `2020-07-29T02:57:50.054387688Z`
 - Virtual Size: ~ 530.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,8 +13,6 @@
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `JAVA_VERSION=8u262`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_`
-  - `JAVA_URL_VERSION=8u262b10`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`

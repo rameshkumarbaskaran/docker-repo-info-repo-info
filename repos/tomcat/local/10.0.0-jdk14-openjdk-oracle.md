@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e6e841881c72d48049410c75f88521e545ee2437bb8f62315c8fb39ea7a45221`
-- Created: `2020-07-17T03:36:41.499226522Z`
-- Virtual Size: ~ 547.96 Mb  
+- Image ID: `sha256:157ca6a9e3ade31c540cda5a396ec3592fb0df400439e6d1e715b2f3a26531be`
+- Created: `2020-07-29T02:54:23.650365095Z`
+- Virtual Size: ~ 548.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -557,15 +557,15 @@ $ yumdownloader --quiet --source --urls libffi-3.0.13-19.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libffi-3.0.13-19.el7.src.rpm
 ```
 
-### `rpm` package: `libgcc-4.8.5-39.0.3.el7.x86_64`
+### `rpm` package: `libgcc-4.8.5-39.0.5.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libgcc-4.8.5-39.0.3.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/gcc-4.8.5-39.0.3.el7.src.rpm
+$ yumdownloader --quiet --source --urls libgcc-4.8.5-39.0.5.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/gcc-4.8.5-39.0.5.el7.src.rpm
 ```
 
 ### `rpm` package: `libgcrypt-1.5.3-14.el7.x86_64`
