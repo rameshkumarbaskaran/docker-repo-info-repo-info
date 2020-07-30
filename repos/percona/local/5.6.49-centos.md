@@ -1,17 +1,17 @@
-# `percona:5.6.48-centos`
+# `percona:5.6.49-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d028c31a5e5d22d9b0abdf802091a0bbb39a6d3bbca5522c2b7e02111011c207`
-- Created: `2020-05-13T14:20:50.182808658Z`
-- Virtual Size: ~ 425.43 Mb  
+- Image ID: `sha256:cac50f2bc0106260cd8702e0efa790ac6817cf6e59859b59c146c2081ab1dcaa`
+- Created: `2020-07-27T18:22:13.843364128Z`
+- Virtual Size: ~ 426.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["mysqld"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `PERCONA_VERSION=5.6.48-rel88.0.1.el7`
+  - `PERCONA_VERSION=5.6.49-rel89.0.1.el7`
 - Labels:
   - `org.label-schema.build-date=20200504`
   - `org.label-schema.license=GPLv2`
@@ -26,25 +26,25 @@
 
 ## `rpm` (`.rpm`-based packages)
 
-### `rpm` package: `Percona-Server-client-56-5.6.48-rel88.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-client-56-5.6.49-rel89.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-server-56-5.6.48-rel88.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-server-56-5.6.49-rel89.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-shared-56-5.6.48-rel88.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-shared-56-5.6.49-rel89.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-tokudb-56-5.6.48-rel88.0.1.el7.x86_64`
+### `rpm` package: `Percona-Server-tokudb-56-5.6.49-rel89.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2010, Oracle and/or its affiliates.  All rights reserved.  Use is subject to license terms. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
@@ -1320,6 +1320,20 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/lz4-1.7.5-3.el7.src.rpm
 ```
 
+### `rpm` package: `make-3.82-24.el7.x86_64`
+
+Licenses (from `rpm --query`): GPLv2+
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls make-3.82-24.el7
+Enabling updates-source repository
+Enabling base-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/make-3.82-24.el7.src.rpm
+```
+
 ### `rpm` package: `ncurses-5.9-14.20130511.el7_4.x86_64`
 
 Licenses (from `rpm --query`): MIT
@@ -1500,6 +1514,20 @@ Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/openldap-2.4.44-21.el7_6.src.rpm
+```
+
+### `rpm` package: `openssl-1.0.2k-19.el7.x86_64`
+
+Licenses (from `rpm --query`): OpenSSL
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls openssl-1.0.2k-19.el7
+Enabling updates-source repository
+Enabling base-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/openssl-1.0.2k-19.el7.src.rpm
 ```
 
 ### `rpm` package: `openssl-libs-1.0.2k-19.el7.x86_64`
