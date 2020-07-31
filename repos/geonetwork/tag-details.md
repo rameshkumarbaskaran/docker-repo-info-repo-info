@@ -20,7 +20,7 @@
 ## `geonetwork:3.10`
 
 ```console
-$ docker pull geonetwork@sha256:b2af9dc43bf6d54b50d5a48b04b43fe622cbe97814b05be32c92694d9aed3bd5
+$ docker pull geonetwork@sha256:ab97b0a72f30dc1ef916275146ed7107706ba78012bf9ed88e523906c4f067a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -30,14 +30,14 @@ $ docker pull geonetwork@sha256:b2af9dc43bf6d54b50d5a48b04b43fe622cbe97814b05be3
 ### `geonetwork:3.10` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:551c4870e016d1326844bfc772985854cb806a7b9310707bf1e6d29c38afdf39
+$ docker pull geonetwork@sha256:fd563c85dde43a62580f71167c1b093bcbad585fa77d9215a5d13682417f9534
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **453.0 MB (452958187 bytes)**  
+-	Total Size: **453.0 MB (452972320 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc92dadf3e2a3cfbe4daf363c7cfdca52099408285d3ead1d16c72bb0464bf44`
+-	Image ID: `sha256:24da54f9a6553c1b01e817ccc1089557d5446f04dc3d696814ded55312d177b8`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -62,57 +62,57 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_VERSION=3.10.3
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_DOWNLOAD_MD5=f6d62ef8856d697e62c7cbde65e66ad7
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -141,35 +141,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94e0a169f022f6756e7bb116d16f69f0274a8afc278c6774071b1e847a0698ad`  
-		Last Modified: Wed, 29 Jul 2020 05:04:32 GMT  
-		Size: 211.4 MB (211422962 bytes)  
+	-	`sha256:e2df17bba8cd06905286cc0d64bbd3a09dda7cdfa8bb401c169be5ee695629cf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:16 GMT  
+		Size: 211.4 MB (211422997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:941efc2cd855bec437f36aaa0a9cd6510a50e607f04dc1298f9c6ae4ed8b4b94`  
-		Last Modified: Wed, 29 Jul 2020 05:04:16 GMT  
-		Size: 250.0 B  
+	-	`sha256:d94f152eea3c35aac1f2ef8039e855efb9204f8ce3fed0ab65f2d934afaced0c`  
+		Last Modified: Fri, 31 Jul 2020 00:39:01 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:3.10.3`
 
 ```console
-$ docker pull geonetwork@sha256:b2af9dc43bf6d54b50d5a48b04b43fe622cbe97814b05be32c92694d9aed3bd5
+$ docker pull geonetwork@sha256:ab97b0a72f30dc1ef916275146ed7107706ba78012bf9ed88e523906c4f067a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -179,14 +179,14 @@ $ docker pull geonetwork@sha256:b2af9dc43bf6d54b50d5a48b04b43fe622cbe97814b05be3
 ### `geonetwork:3.10.3` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:551c4870e016d1326844bfc772985854cb806a7b9310707bf1e6d29c38afdf39
+$ docker pull geonetwork@sha256:fd563c85dde43a62580f71167c1b093bcbad585fa77d9215a5d13682417f9534
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **453.0 MB (452958187 bytes)**  
+-	Total Size: **453.0 MB (452972320 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc92dadf3e2a3cfbe4daf363c7cfdca52099408285d3ead1d16c72bb0464bf44`
+-	Image ID: `sha256:24da54f9a6553c1b01e817ccc1089557d5446f04dc3d696814ded55312d177b8`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -211,57 +211,57 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_VERSION=3.10.3
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_DOWNLOAD_MD5=f6d62ef8856d697e62c7cbde65e66ad7
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -290,35 +290,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94e0a169f022f6756e7bb116d16f69f0274a8afc278c6774071b1e847a0698ad`  
-		Last Modified: Wed, 29 Jul 2020 05:04:32 GMT  
-		Size: 211.4 MB (211422962 bytes)  
+	-	`sha256:e2df17bba8cd06905286cc0d64bbd3a09dda7cdfa8bb401c169be5ee695629cf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:16 GMT  
+		Size: 211.4 MB (211422997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:941efc2cd855bec437f36aaa0a9cd6510a50e607f04dc1298f9c6ae4ed8b4b94`  
-		Last Modified: Wed, 29 Jul 2020 05:04:16 GMT  
-		Size: 250.0 B  
+	-	`sha256:d94f152eea3c35aac1f2ef8039e855efb9204f8ce3fed0ab65f2d934afaced0c`  
+		Last Modified: Fri, 31 Jul 2020 00:39:01 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:3.10.3-postgres`
 
 ```console
-$ docker pull geonetwork@sha256:b7c30b8dcb74188a566495cb26f059774fa61a02590c5e04cd826a292e8e0e2e
+$ docker pull geonetwork@sha256:5364210c018fd11eca92c71267bca211bc82809211d9aaf9911a1e3fe78856f0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -328,14 +328,14 @@ $ docker pull geonetwork@sha256:b7c30b8dcb74188a566495cb26f059774fa61a02590c5e04
 ### `geonetwork:3.10.3-postgres` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:53e0c4b57514054c7e3b91897806929ed4144d9393dbdb6adf1bc007af12072d
+$ docker pull geonetwork@sha256:baf93cb068387af35902a0224e452befccaf2eb0c78fe7d4b080694e2ebdb386
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.8 MB (464770536 bytes)**  
+-	Total Size: **464.8 MB (464784618 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:70a58860ea5967cc6c05b268c320a3a48401615dc63c39e51d5b9e9fdfb9df28`
+-	Image ID: `sha256:01732ae08bee45db37baab8917d4717cb4d4a006a32a6ec1578595d313df7b39`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -360,69 +360,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_VERSION=3.10.3
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_DOWNLOAD_MD5=f6d62ef8856d697e62c7cbde65e66ad7
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:22:13 GMT
+# Fri, 31 Jul 2020 00:37:44 GMT
 RUN apt-get update && apt-get install -y postgresql-client &&     rm -rf /var/lib/apt/lists/*
-# Wed, 29 Jul 2020 04:22:13 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 RUN sed -i -e 's#<import resource="../config-db/${geonetwork.db.type:h2}.xml"/>#<!--<import resource="../config-db/${geonetwork.db.type:h2}.xml"/-->#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml && sed -i -e 's#<!--<import resource="../config-db/postgres.xml"/>-->#<import resource="../config-db/postgres.xml"/>#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 COPY file:83f69d2041e5fb378033b0db57e096c81ba0725102ab4da4f089685e748fcce3 in /usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties 
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 COPY file:c88411abba7ad9b7bb75019f08755dbfa163d2fc7fdd80676bf9350c4c56a19c in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -451,51 +451,51 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94e0a169f022f6756e7bb116d16f69f0274a8afc278c6774071b1e847a0698ad`  
-		Last Modified: Wed, 29 Jul 2020 05:04:32 GMT  
-		Size: 211.4 MB (211422962 bytes)  
+	-	`sha256:e2df17bba8cd06905286cc0d64bbd3a09dda7cdfa8bb401c169be5ee695629cf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:16 GMT  
+		Size: 211.4 MB (211422997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:941efc2cd855bec437f36aaa0a9cd6510a50e607f04dc1298f9c6ae4ed8b4b94`  
-		Last Modified: Wed, 29 Jul 2020 05:04:16 GMT  
-		Size: 250.0 B  
+	-	`sha256:d94f152eea3c35aac1f2ef8039e855efb9204f8ce3fed0ab65f2d934afaced0c`  
+		Last Modified: Fri, 31 Jul 2020 00:39:01 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2da41e1dcd50b4e1f6f3f636ddbe103a0288c64b4fa51a21937f03187a769746`  
-		Last Modified: Wed, 29 Jul 2020 05:04:39 GMT  
-		Size: 11.8 MB (11808981 bytes)  
+	-	`sha256:61f2f0a7a6573914d4dc5c34f290a34286709e1af99275d1bdb2f19e08d5eb98`  
+		Last Modified: Fri, 31 Jul 2020 00:39:24 GMT  
+		Size: 11.8 MB (11808940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:715b461dfbe589ea7df7eb9f4db6e89a2cbd1789c302fd24962e61abab112217`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 1.3 KB (1267 bytes)  
+	-	`sha256:8fd83fa541a40b2da9aeeacb49b82ffb25c1d4096247f3587e283c1c31a8eb6b`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 1.3 KB (1262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de96a8e8374ec76210d984c808d86a1aeb2a292890a73f38dc6e9cce825745d5`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:f3472427d187bc9d1eb4dc11a61a70e1d6f922e969179260125b1f4f080a318e`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81d312bd4bbb5e4ea8bdb883faf9810e94c32a72f15d09fc86063a89020cec77`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 974.0 B  
+	-	`sha256:715c3eec1d8fca1aed016f4c2f386c1cad9d93cb41fffcda592e7738fc34ef9d`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 973.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:3.10-postgres`
 
 ```console
-$ docker pull geonetwork@sha256:b7c30b8dcb74188a566495cb26f059774fa61a02590c5e04cd826a292e8e0e2e
+$ docker pull geonetwork@sha256:5364210c018fd11eca92c71267bca211bc82809211d9aaf9911a1e3fe78856f0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -505,14 +505,14 @@ $ docker pull geonetwork@sha256:b7c30b8dcb74188a566495cb26f059774fa61a02590c5e04
 ### `geonetwork:3.10-postgres` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:53e0c4b57514054c7e3b91897806929ed4144d9393dbdb6adf1bc007af12072d
+$ docker pull geonetwork@sha256:baf93cb068387af35902a0224e452befccaf2eb0c78fe7d4b080694e2ebdb386
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.8 MB (464770536 bytes)**  
+-	Total Size: **464.8 MB (464784618 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:70a58860ea5967cc6c05b268c320a3a48401615dc63c39e51d5b9e9fdfb9df28`
+-	Image ID: `sha256:01732ae08bee45db37baab8917d4717cb4d4a006a32a6ec1578595d313df7b39`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -537,69 +537,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_VERSION=3.10.3
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_DOWNLOAD_MD5=f6d62ef8856d697e62c7cbde65e66ad7
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:22:13 GMT
+# Fri, 31 Jul 2020 00:37:44 GMT
 RUN apt-get update && apt-get install -y postgresql-client &&     rm -rf /var/lib/apt/lists/*
-# Wed, 29 Jul 2020 04:22:13 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 RUN sed -i -e 's#<import resource="../config-db/${geonetwork.db.type:h2}.xml"/>#<!--<import resource="../config-db/${geonetwork.db.type:h2}.xml"/-->#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml && sed -i -e 's#<!--<import resource="../config-db/postgres.xml"/>-->#<import resource="../config-db/postgres.xml"/>#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 COPY file:83f69d2041e5fb378033b0db57e096c81ba0725102ab4da4f089685e748fcce3 in /usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties 
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 COPY file:c88411abba7ad9b7bb75019f08755dbfa163d2fc7fdd80676bf9350c4c56a19c in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -628,51 +628,51 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94e0a169f022f6756e7bb116d16f69f0274a8afc278c6774071b1e847a0698ad`  
-		Last Modified: Wed, 29 Jul 2020 05:04:32 GMT  
-		Size: 211.4 MB (211422962 bytes)  
+	-	`sha256:e2df17bba8cd06905286cc0d64bbd3a09dda7cdfa8bb401c169be5ee695629cf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:16 GMT  
+		Size: 211.4 MB (211422997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:941efc2cd855bec437f36aaa0a9cd6510a50e607f04dc1298f9c6ae4ed8b4b94`  
-		Last Modified: Wed, 29 Jul 2020 05:04:16 GMT  
-		Size: 250.0 B  
+	-	`sha256:d94f152eea3c35aac1f2ef8039e855efb9204f8ce3fed0ab65f2d934afaced0c`  
+		Last Modified: Fri, 31 Jul 2020 00:39:01 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2da41e1dcd50b4e1f6f3f636ddbe103a0288c64b4fa51a21937f03187a769746`  
-		Last Modified: Wed, 29 Jul 2020 05:04:39 GMT  
-		Size: 11.8 MB (11808981 bytes)  
+	-	`sha256:61f2f0a7a6573914d4dc5c34f290a34286709e1af99275d1bdb2f19e08d5eb98`  
+		Last Modified: Fri, 31 Jul 2020 00:39:24 GMT  
+		Size: 11.8 MB (11808940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:715b461dfbe589ea7df7eb9f4db6e89a2cbd1789c302fd24962e61abab112217`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 1.3 KB (1267 bytes)  
+	-	`sha256:8fd83fa541a40b2da9aeeacb49b82ffb25c1d4096247f3587e283c1c31a8eb6b`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 1.3 KB (1262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de96a8e8374ec76210d984c808d86a1aeb2a292890a73f38dc6e9cce825745d5`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:f3472427d187bc9d1eb4dc11a61a70e1d6f922e969179260125b1f4f080a318e`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81d312bd4bbb5e4ea8bdb883faf9810e94c32a72f15d09fc86063a89020cec77`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 974.0 B  
+	-	`sha256:715c3eec1d8fca1aed016f4c2f386c1cad9d93cb41fffcda592e7738fc34ef9d`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 973.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:3.8`
 
 ```console
-$ docker pull geonetwork@sha256:95c88cbee647d7f82e7a0dc2a5b4aa2e2425b78f9cb715a9d03e4451e3b84efa
+$ docker pull geonetwork@sha256:31c759b785c9329ba1ca649b585f00709e9fe0dda684d9faf8fa39ce8a8d676b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -682,14 +682,14 @@ $ docker pull geonetwork@sha256:95c88cbee647d7f82e7a0dc2a5b4aa2e2425b78f9cb715a9
 ### `geonetwork:3.8` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:14159cc457af1c61e3ada134a7198f8f4d0fad416033d1a1b57696a40395d98f
+$ docker pull geonetwork@sha256:a57fcc0891c17e2564d64de836523ffcd16ef16ca84865707c95d5464d9a6e70
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **447.3 MB (447282970 bytes)**  
+-	Total Size: **447.3 MB (447296997 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9e2531c8ecf855c16166832d011598e00b0a5ace0b2e8cbd0d915983496dce13`
+-	Image ID: `sha256:f6630d3633090d8f780cf639c77d059e88e8b8f3cfda48676a8d32e871c40023`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -714,57 +714,57 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_VERSION=3.8.3
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_DOWNLOAD_MD5=0d05c65aa4ac67fea90fa74f947822d6
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:36:05 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *$GN_FILE" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -793,35 +793,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2a477eb966edd1a3247fea3c4e0bea3cbea0f0781155bc31778cd7d96c9465`  
-		Last Modified: Wed, 29 Jul 2020 05:04:59 GMT  
-		Size: 205.7 MB (205747746 bytes)  
+	-	`sha256:6d43a7646aaf77f223d70f84a0f6b10b0a8cfcec14c4249263f0dfebe157461a`  
+		Last Modified: Fri, 31 Jul 2020 00:39:44 GMT  
+		Size: 205.7 MB (205747674 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1aa3c43c476f11d0689caa983add3b91e8de03742551efee1ea8ff43f8f1646a`  
-		Last Modified: Wed, 29 Jul 2020 05:04:43 GMT  
+	-	`sha256:f285a55e1b5468bb0cc3b2c870bd132b190e36e8f3bd37f66374d24570df2bad`  
+		Last Modified: Fri, 31 Jul 2020 00:39:29 GMT  
 		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:3.8.3`
 
 ```console
-$ docker pull geonetwork@sha256:95c88cbee647d7f82e7a0dc2a5b4aa2e2425b78f9cb715a9d03e4451e3b84efa
+$ docker pull geonetwork@sha256:31c759b785c9329ba1ca649b585f00709e9fe0dda684d9faf8fa39ce8a8d676b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -831,14 +831,14 @@ $ docker pull geonetwork@sha256:95c88cbee647d7f82e7a0dc2a5b4aa2e2425b78f9cb715a9
 ### `geonetwork:3.8.3` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:14159cc457af1c61e3ada134a7198f8f4d0fad416033d1a1b57696a40395d98f
+$ docker pull geonetwork@sha256:a57fcc0891c17e2564d64de836523ffcd16ef16ca84865707c95d5464d9a6e70
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **447.3 MB (447282970 bytes)**  
+-	Total Size: **447.3 MB (447296997 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9e2531c8ecf855c16166832d011598e00b0a5ace0b2e8cbd0d915983496dce13`
+-	Image ID: `sha256:f6630d3633090d8f780cf639c77d059e88e8b8f3cfda48676a8d32e871c40023`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -863,57 +863,57 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_VERSION=3.8.3
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_DOWNLOAD_MD5=0d05c65aa4ac67fea90fa74f947822d6
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:36:05 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *$GN_FILE" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -942,35 +942,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2a477eb966edd1a3247fea3c4e0bea3cbea0f0781155bc31778cd7d96c9465`  
-		Last Modified: Wed, 29 Jul 2020 05:04:59 GMT  
-		Size: 205.7 MB (205747746 bytes)  
+	-	`sha256:6d43a7646aaf77f223d70f84a0f6b10b0a8cfcec14c4249263f0dfebe157461a`  
+		Last Modified: Fri, 31 Jul 2020 00:39:44 GMT  
+		Size: 205.7 MB (205747674 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1aa3c43c476f11d0689caa983add3b91e8de03742551efee1ea8ff43f8f1646a`  
-		Last Modified: Wed, 29 Jul 2020 05:04:43 GMT  
+	-	`sha256:f285a55e1b5468bb0cc3b2c870bd132b190e36e8f3bd37f66374d24570df2bad`  
+		Last Modified: Fri, 31 Jul 2020 00:39:29 GMT  
 		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:3.8.3-postgres`
 
 ```console
-$ docker pull geonetwork@sha256:06aa925392f31f8a7c1334fb9bf81b2865819c050da5cb8d5a4bb7710a2f68e9
+$ docker pull geonetwork@sha256:5f5ccde4307388ef163c2105d463b0d89f4f254948a781ad3ebc491ce709cfa1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -980,14 +980,14 @@ $ docker pull geonetwork@sha256:06aa925392f31f8a7c1334fb9bf81b2865819c050da5cb8d
 ### `geonetwork:3.8.3-postgres` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:5cbc84158fa8c86b7a98071c32f2bcefb8a03d55bc6e1ec7198841276031d84e
+$ docker pull geonetwork@sha256:49d54ab105fe4435ea1cdc775ed16bffcffd143202c6c050948b45cfd27545b2
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.1 MB (459094706 bytes)**  
+-	Total Size: **459.1 MB (459108816 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6eeeb9ba38b1de7169543d554a4610e6f1e440e135ebdae29a0634bf9ebaf12e`
+-	Image ID: `sha256:28622d626deff5146379ef58aa76da503a872e0fe2a3909765741171eea26b53`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -1012,69 +1012,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_VERSION=3.8.3
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_DOWNLOAD_MD5=0d05c65aa4ac67fea90fa74f947822d6
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:36:05 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *$GN_FILE" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:36:25 GMT
+# Fri, 31 Jul 2020 00:38:20 GMT
 RUN apt-get update && apt-get install -y postgresql-client &&     rm -rf /var/lib/apt/lists/*
-# Wed, 29 Jul 2020 04:36:26 GMT
+# Fri, 31 Jul 2020 00:38:20 GMT
 RUN sed -i -e 's#<import resource="../config-db/h2.xml"/>#<!--<import resource="../config-db/h2.xml"/> -->#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml && sed -i -e 's#<!--<import resource="../config-db/postgres.xml"/>-->#<import resource="../config-db/postgres.xml"/>#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml
-# Wed, 29 Jul 2020 04:36:26 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 COPY file:2dedfd940a86106b2ae284c537f14d365881c03a01b212f81b49177bb22c8d7a in /usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties 
-# Wed, 29 Jul 2020 04:36:26 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 COPY file:c88411abba7ad9b7bb75019f08755dbfa163d2fc7fdd80676bf9350c4c56a19c in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:36:27 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:36:27 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -1103,51 +1103,51 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2a477eb966edd1a3247fea3c4e0bea3cbea0f0781155bc31778cd7d96c9465`  
-		Last Modified: Wed, 29 Jul 2020 05:04:59 GMT  
-		Size: 205.7 MB (205747746 bytes)  
+	-	`sha256:6d43a7646aaf77f223d70f84a0f6b10b0a8cfcec14c4249263f0dfebe157461a`  
+		Last Modified: Fri, 31 Jul 2020 00:39:44 GMT  
+		Size: 205.7 MB (205747674 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1aa3c43c476f11d0689caa983add3b91e8de03742551efee1ea8ff43f8f1646a`  
-		Last Modified: Wed, 29 Jul 2020 05:04:43 GMT  
+	-	`sha256:f285a55e1b5468bb0cc3b2c870bd132b190e36e8f3bd37f66374d24570df2bad`  
+		Last Modified: Fri, 31 Jul 2020 00:39:29 GMT  
 		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9fb0482a94530639fc2691c1a42484fc53efe4453af782aa4dd95f46acc76d66`  
-		Last Modified: Wed, 29 Jul 2020 05:05:16 GMT  
-		Size: 11.8 MB (11808959 bytes)  
+	-	`sha256:635a8e85f6836a674cc9b019ea7cabf54dc42688f8373a1611a0ca7996b25940`  
+		Last Modified: Fri, 31 Jul 2020 00:39:51 GMT  
+		Size: 11.8 MB (11809051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abdcdef3eeb5da77ada5f65e70ae5a4a4d407a487ced344075265e993fabe1f5`  
-		Last Modified: Wed, 29 Jul 2020 05:05:07 GMT  
-		Size: 1.3 KB (1266 bytes)  
+	-	`sha256:15442148e94ce3f97c064f69c3885f0d393c7c1ec4b862011ef9f75e06a90932`  
+		Last Modified: Fri, 31 Jul 2020 00:39:50 GMT  
+		Size: 1.3 KB (1259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9757eab4f7a3acc067db420154a6a199dda1b55727f91a5aa32f7e678461c13d`  
-		Last Modified: Wed, 29 Jul 2020 05:05:07 GMT  
-		Size: 539.0 B  
+	-	`sha256:8efb84ea6e3ba12ce21493dada7f135ae19482826271af0b0e01d762ca267ddf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:49 GMT  
+		Size: 535.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f88460641ae0fe3c1ee273a7d2a730d9e1635d1b1f49dbeb42a7151df4d47b7`  
-		Last Modified: Wed, 29 Jul 2020 05:05:08 GMT  
-		Size: 972.0 B  
+	-	`sha256:beead655450886552220bf5a2fe6c6abfdccacf71f08c98039de66a83477effc`  
+		Last Modified: Fri, 31 Jul 2020 00:39:49 GMT  
+		Size: 974.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:3.8-postgres`
 
 ```console
-$ docker pull geonetwork@sha256:06aa925392f31f8a7c1334fb9bf81b2865819c050da5cb8d5a4bb7710a2f68e9
+$ docker pull geonetwork@sha256:5f5ccde4307388ef163c2105d463b0d89f4f254948a781ad3ebc491ce709cfa1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1157,14 +1157,14 @@ $ docker pull geonetwork@sha256:06aa925392f31f8a7c1334fb9bf81b2865819c050da5cb8d
 ### `geonetwork:3.8-postgres` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:5cbc84158fa8c86b7a98071c32f2bcefb8a03d55bc6e1ec7198841276031d84e
+$ docker pull geonetwork@sha256:49d54ab105fe4435ea1cdc775ed16bffcffd143202c6c050948b45cfd27545b2
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.1 MB (459094706 bytes)**  
+-	Total Size: **459.1 MB (459108816 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6eeeb9ba38b1de7169543d554a4610e6f1e440e135ebdae29a0634bf9ebaf12e`
+-	Image ID: `sha256:28622d626deff5146379ef58aa76da503a872e0fe2a3909765741171eea26b53`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -1189,69 +1189,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_VERSION=3.8.3
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 ENV GN_DOWNLOAD_MD5=0d05c65aa4ac67fea90fa74f947822d6
-# Wed, 29 Jul 2020 04:22:19 GMT
+# Fri, 31 Jul 2020 00:37:50 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:36:05 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *$GN_FILE" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:06 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:36:06 GMT
+# Fri, 31 Jul 2020 00:38:07 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:36:25 GMT
+# Fri, 31 Jul 2020 00:38:20 GMT
 RUN apt-get update && apt-get install -y postgresql-client &&     rm -rf /var/lib/apt/lists/*
-# Wed, 29 Jul 2020 04:36:26 GMT
+# Fri, 31 Jul 2020 00:38:20 GMT
 RUN sed -i -e 's#<import resource="../config-db/h2.xml"/>#<!--<import resource="../config-db/h2.xml"/> -->#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml && sed -i -e 's#<!--<import resource="../config-db/postgres.xml"/>-->#<import resource="../config-db/postgres.xml"/>#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml
-# Wed, 29 Jul 2020 04:36:26 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 COPY file:2dedfd940a86106b2ae284c537f14d365881c03a01b212f81b49177bb22c8d7a in /usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties 
-# Wed, 29 Jul 2020 04:36:26 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 COPY file:c88411abba7ad9b7bb75019f08755dbfa163d2fc7fdd80676bf9350c4c56a19c in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:36:27 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:36:27 GMT
+# Fri, 31 Jul 2020 00:38:21 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -1280,51 +1280,51 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2a477eb966edd1a3247fea3c4e0bea3cbea0f0781155bc31778cd7d96c9465`  
-		Last Modified: Wed, 29 Jul 2020 05:04:59 GMT  
-		Size: 205.7 MB (205747746 bytes)  
+	-	`sha256:6d43a7646aaf77f223d70f84a0f6b10b0a8cfcec14c4249263f0dfebe157461a`  
+		Last Modified: Fri, 31 Jul 2020 00:39:44 GMT  
+		Size: 205.7 MB (205747674 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1aa3c43c476f11d0689caa983add3b91e8de03742551efee1ea8ff43f8f1646a`  
-		Last Modified: Wed, 29 Jul 2020 05:04:43 GMT  
+	-	`sha256:f285a55e1b5468bb0cc3b2c870bd132b190e36e8f3bd37f66374d24570df2bad`  
+		Last Modified: Fri, 31 Jul 2020 00:39:29 GMT  
 		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9fb0482a94530639fc2691c1a42484fc53efe4453af782aa4dd95f46acc76d66`  
-		Last Modified: Wed, 29 Jul 2020 05:05:16 GMT  
-		Size: 11.8 MB (11808959 bytes)  
+	-	`sha256:635a8e85f6836a674cc9b019ea7cabf54dc42688f8373a1611a0ca7996b25940`  
+		Last Modified: Fri, 31 Jul 2020 00:39:51 GMT  
+		Size: 11.8 MB (11809051 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abdcdef3eeb5da77ada5f65e70ae5a4a4d407a487ced344075265e993fabe1f5`  
-		Last Modified: Wed, 29 Jul 2020 05:05:07 GMT  
-		Size: 1.3 KB (1266 bytes)  
+	-	`sha256:15442148e94ce3f97c064f69c3885f0d393c7c1ec4b862011ef9f75e06a90932`  
+		Last Modified: Fri, 31 Jul 2020 00:39:50 GMT  
+		Size: 1.3 KB (1259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9757eab4f7a3acc067db420154a6a199dda1b55727f91a5aa32f7e678461c13d`  
-		Last Modified: Wed, 29 Jul 2020 05:05:07 GMT  
-		Size: 539.0 B  
+	-	`sha256:8efb84ea6e3ba12ce21493dada7f135ae19482826271af0b0e01d762ca267ddf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:49 GMT  
+		Size: 535.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f88460641ae0fe3c1ee273a7d2a730d9e1635d1b1f49dbeb42a7151df4d47b7`  
-		Last Modified: Wed, 29 Jul 2020 05:05:08 GMT  
-		Size: 972.0 B  
+	-	`sha256:beead655450886552220bf5a2fe6c6abfdccacf71f08c98039de66a83477effc`  
+		Last Modified: Fri, 31 Jul 2020 00:39:49 GMT  
+		Size: 974.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:4.0.0-alpha`
 
 ```console
-$ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c8b3181241332da79
+$ docker pull geonetwork@sha256:742e96ef2a285f60af1316e17a19cfdeb355ed970e82c70c85b330893616f2c9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1334,14 +1334,14 @@ $ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c
 ### `geonetwork:4.0.0-alpha` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:8b1c5228cdc65538524b106a58c78b052d0530d38e63f7203f4f3ccde618cb2f
+$ docker pull geonetwork@sha256:abb69647370fe1612aaf27826dd33ff0101e3b183b3d43b2448e1d1fecfaa895
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **457.8 MB (457758511 bytes)**  
+-	Total Size: **457.8 MB (457772656 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7bb791fc1fdc2aa4bb259644119fec293d3f2052ef6bbaa088f508c52f2efc9`
+-	Image ID: `sha256:19c41dbca2ef4ce63f53dc60d44a78511373091c63267a627b98897378688351`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -1366,69 +1366,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:36:31 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_VERSION=4.0.0-alpha.1
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_DOWNLOAD_MD5=cbdd928213eb2afedf2a5d3891463c29
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC -Dspring.profiles.active=es
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_HOST=localhost
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PROTOCOL=http
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PORT=9200
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_USERNAME=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PASSWORD=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 ENV KB_URL=http://localhost:5601
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_unstable_development_versions/${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 COPY file:74787d84f80dfdd72c655377f2a0311d3657bf33f93bf404aeb2eb587347ded5 in /entrypoint.sh 
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:48 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -1457,35 +1457,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3bac06d5ef181bb60bb4b6eb2abbe040de4e242a89c7a6955df1b9ae270a431`  
-		Last Modified: Wed, 29 Jul 2020 05:05:34 GMT  
-		Size: 216.2 MB (216222458 bytes)  
+	-	`sha256:0b21eea8a9eaa377871be42575446fb1d640fe4be072ef5dff79d957fd768a6b`  
+		Last Modified: Fri, 31 Jul 2020 00:40:09 GMT  
+		Size: 216.2 MB (216222504 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e02513aa8ec4e268b80e11289bbeab7e3d677b671d1651c9ea0afe86c75cd6d`  
-		Last Modified: Wed, 29 Jul 2020 05:05:20 GMT  
+	-	`sha256:1e84fb2b5f887032ac6394f4b359efeb9a3bc257965e877cd5ecdac076cfab2b`  
+		Last Modified: Fri, 31 Jul 2020 00:39:54 GMT  
 		Size: 1.1 KB (1078 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:4.0.0-alpha.1`
 
 ```console
-$ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c8b3181241332da79
+$ docker pull geonetwork@sha256:742e96ef2a285f60af1316e17a19cfdeb355ed970e82c70c85b330893616f2c9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1495,14 +1495,14 @@ $ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c
 ### `geonetwork:4.0.0-alpha.1` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:8b1c5228cdc65538524b106a58c78b052d0530d38e63f7203f4f3ccde618cb2f
+$ docker pull geonetwork@sha256:abb69647370fe1612aaf27826dd33ff0101e3b183b3d43b2448e1d1fecfaa895
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **457.8 MB (457758511 bytes)**  
+-	Total Size: **457.8 MB (457772656 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7bb791fc1fdc2aa4bb259644119fec293d3f2052ef6bbaa088f508c52f2efc9`
+-	Image ID: `sha256:19c41dbca2ef4ce63f53dc60d44a78511373091c63267a627b98897378688351`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -1527,69 +1527,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:36:31 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_VERSION=4.0.0-alpha.1
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_DOWNLOAD_MD5=cbdd928213eb2afedf2a5d3891463c29
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC -Dspring.profiles.active=es
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_HOST=localhost
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PROTOCOL=http
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PORT=9200
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_USERNAME=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PASSWORD=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 ENV KB_URL=http://localhost:5601
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_unstable_development_versions/${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 COPY file:74787d84f80dfdd72c655377f2a0311d3657bf33f93bf404aeb2eb587347ded5 in /entrypoint.sh 
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:48 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -1618,35 +1618,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3bac06d5ef181bb60bb4b6eb2abbe040de4e242a89c7a6955df1b9ae270a431`  
-		Last Modified: Wed, 29 Jul 2020 05:05:34 GMT  
-		Size: 216.2 MB (216222458 bytes)  
+	-	`sha256:0b21eea8a9eaa377871be42575446fb1d640fe4be072ef5dff79d957fd768a6b`  
+		Last Modified: Fri, 31 Jul 2020 00:40:09 GMT  
+		Size: 216.2 MB (216222504 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e02513aa8ec4e268b80e11289bbeab7e3d677b671d1651c9ea0afe86c75cd6d`  
-		Last Modified: Wed, 29 Jul 2020 05:05:20 GMT  
+	-	`sha256:1e84fb2b5f887032ac6394f4b359efeb9a3bc257965e877cd5ecdac076cfab2b`  
+		Last Modified: Fri, 31 Jul 2020 00:39:54 GMT  
 		Size: 1.1 KB (1078 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:4.0-alpha`
 
 ```console
-$ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c8b3181241332da79
+$ docker pull geonetwork@sha256:742e96ef2a285f60af1316e17a19cfdeb355ed970e82c70c85b330893616f2c9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1656,14 +1656,14 @@ $ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c
 ### `geonetwork:4.0-alpha` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:8b1c5228cdc65538524b106a58c78b052d0530d38e63f7203f4f3ccde618cb2f
+$ docker pull geonetwork@sha256:abb69647370fe1612aaf27826dd33ff0101e3b183b3d43b2448e1d1fecfaa895
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **457.8 MB (457758511 bytes)**  
+-	Total Size: **457.8 MB (457772656 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7bb791fc1fdc2aa4bb259644119fec293d3f2052ef6bbaa088f508c52f2efc9`
+-	Image ID: `sha256:19c41dbca2ef4ce63f53dc60d44a78511373091c63267a627b98897378688351`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -1688,69 +1688,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:36:31 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_VERSION=4.0.0-alpha.1
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_DOWNLOAD_MD5=cbdd928213eb2afedf2a5d3891463c29
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC -Dspring.profiles.active=es
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_HOST=localhost
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PROTOCOL=http
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PORT=9200
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_USERNAME=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PASSWORD=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 ENV KB_URL=http://localhost:5601
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_unstable_development_versions/${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 COPY file:74787d84f80dfdd72c655377f2a0311d3657bf33f93bf404aeb2eb587347ded5 in /entrypoint.sh 
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:48 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -1779,35 +1779,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3bac06d5ef181bb60bb4b6eb2abbe040de4e242a89c7a6955df1b9ae270a431`  
-		Last Modified: Wed, 29 Jul 2020 05:05:34 GMT  
-		Size: 216.2 MB (216222458 bytes)  
+	-	`sha256:0b21eea8a9eaa377871be42575446fb1d640fe4be072ef5dff79d957fd768a6b`  
+		Last Modified: Fri, 31 Jul 2020 00:40:09 GMT  
+		Size: 216.2 MB (216222504 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e02513aa8ec4e268b80e11289bbeab7e3d677b671d1651c9ea0afe86c75cd6d`  
-		Last Modified: Wed, 29 Jul 2020 05:05:20 GMT  
+	-	`sha256:1e84fb2b5f887032ac6394f4b359efeb9a3bc257965e877cd5ecdac076cfab2b`  
+		Last Modified: Fri, 31 Jul 2020 00:39:54 GMT  
 		Size: 1.1 KB (1078 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:4-alpha`
 
 ```console
-$ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c8b3181241332da79
+$ docker pull geonetwork@sha256:742e96ef2a285f60af1316e17a19cfdeb355ed970e82c70c85b330893616f2c9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1817,14 +1817,14 @@ $ docker pull geonetwork@sha256:0143cea2b4b72e494b66044086bf9ea2336cc341732f394c
 ### `geonetwork:4-alpha` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:8b1c5228cdc65538524b106a58c78b052d0530d38e63f7203f4f3ccde618cb2f
+$ docker pull geonetwork@sha256:abb69647370fe1612aaf27826dd33ff0101e3b183b3d43b2448e1d1fecfaa895
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **457.8 MB (457758511 bytes)**  
+-	Total Size: **457.8 MB (457772656 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7bb791fc1fdc2aa4bb259644119fec293d3f2052ef6bbaa088f508c52f2efc9`
+-	Image ID: `sha256:19c41dbca2ef4ce63f53dc60d44a78511373091c63267a627b98897378688351`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -1849,69 +1849,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:36:31 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_VERSION=4.0.0-alpha.1
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV GN_DOWNLOAD_MD5=cbdd928213eb2afedf2a5d3891463c29
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:26 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC -Dspring.profiles.active=es
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_HOST=localhost
-# Wed, 29 Jul 2020 04:36:32 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PROTOCOL=http
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PORT=9200
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_USERNAME=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:27 GMT
 ENV ES_PASSWORD=
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 ENV KB_URL=http://localhost:5601
-# Wed, 29 Jul 2020 04:36:33 GMT
+# Fri, 31 Jul 2020 00:38:28 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_unstable_development_versions/${GN_VERSION}/geonetwork.war/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 COPY file:74787d84f80dfdd72c655377f2a0311d3657bf33f93bf404aeb2eb587347ded5 in /entrypoint.sh 
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 05:03:57 GMT
+# Fri, 31 Jul 2020 00:38:48 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -1940,35 +1940,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3bac06d5ef181bb60bb4b6eb2abbe040de4e242a89c7a6955df1b9ae270a431`  
-		Last Modified: Wed, 29 Jul 2020 05:05:34 GMT  
-		Size: 216.2 MB (216222458 bytes)  
+	-	`sha256:0b21eea8a9eaa377871be42575446fb1d640fe4be072ef5dff79d957fd768a6b`  
+		Last Modified: Fri, 31 Jul 2020 00:40:09 GMT  
+		Size: 216.2 MB (216222504 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e02513aa8ec4e268b80e11289bbeab7e3d677b671d1651c9ea0afe86c75cd6d`  
-		Last Modified: Wed, 29 Jul 2020 05:05:20 GMT  
+	-	`sha256:1e84fb2b5f887032ac6394f4b359efeb9a3bc257965e877cd5ecdac076cfab2b`  
+		Last Modified: Fri, 31 Jul 2020 00:39:54 GMT  
 		Size: 1.1 KB (1078 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:latest`
 
 ```console
-$ docker pull geonetwork@sha256:b2af9dc43bf6d54b50d5a48b04b43fe622cbe97814b05be32c92694d9aed3bd5
+$ docker pull geonetwork@sha256:ab97b0a72f30dc1ef916275146ed7107706ba78012bf9ed88e523906c4f067a0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1978,14 +1978,14 @@ $ docker pull geonetwork@sha256:b2af9dc43bf6d54b50d5a48b04b43fe622cbe97814b05be3
 ### `geonetwork:latest` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:551c4870e016d1326844bfc772985854cb806a7b9310707bf1e6d29c38afdf39
+$ docker pull geonetwork@sha256:fd563c85dde43a62580f71167c1b093bcbad585fa77d9215a5d13682417f9534
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **453.0 MB (452958187 bytes)**  
+-	Total Size: **453.0 MB (452972320 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc92dadf3e2a3cfbe4daf363c7cfdca52099408285d3ead1d16c72bb0464bf44`
+-	Image ID: `sha256:24da54f9a6553c1b01e817ccc1089557d5446f04dc3d696814ded55312d177b8`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -2010,57 +2010,57 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_VERSION=3.10.3
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_DOWNLOAD_MD5=f6d62ef8856d697e62c7cbde65e66ad7
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -2089,35 +2089,35 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94e0a169f022f6756e7bb116d16f69f0274a8afc278c6774071b1e847a0698ad`  
-		Last Modified: Wed, 29 Jul 2020 05:04:32 GMT  
-		Size: 211.4 MB (211422962 bytes)  
+	-	`sha256:e2df17bba8cd06905286cc0d64bbd3a09dda7cdfa8bb401c169be5ee695629cf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:16 GMT  
+		Size: 211.4 MB (211422997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:941efc2cd855bec437f36aaa0a9cd6510a50e607f04dc1298f9c6ae4ed8b4b94`  
-		Last Modified: Wed, 29 Jul 2020 05:04:16 GMT  
-		Size: 250.0 B  
+	-	`sha256:d94f152eea3c35aac1f2ef8039e855efb9204f8ce3fed0ab65f2d934afaced0c`  
+		Last Modified: Fri, 31 Jul 2020 00:39:01 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `geonetwork:postgres`
 
 ```console
-$ docker pull geonetwork@sha256:b7c30b8dcb74188a566495cb26f059774fa61a02590c5e04cd826a292e8e0e2e
+$ docker pull geonetwork@sha256:5364210c018fd11eca92c71267bca211bc82809211d9aaf9911a1e3fe78856f0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2127,14 +2127,14 @@ $ docker pull geonetwork@sha256:b7c30b8dcb74188a566495cb26f059774fa61a02590c5e04
 ### `geonetwork:postgres` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:53e0c4b57514054c7e3b91897806929ed4144d9393dbdb6adf1bc007af12072d
+$ docker pull geonetwork@sha256:baf93cb068387af35902a0224e452befccaf2eb0c78fe7d4b080694e2ebdb386
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.8 MB (464770536 bytes)**  
+-	Total Size: **464.8 MB (464784618 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:70a58860ea5967cc6c05b268c320a3a48401615dc63c39e51d5b9e9fdfb9df28`
+-	Image ID: `sha256:01732ae08bee45db37baab8917d4717cb4d4a006a32a6ec1578595d313df7b39`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -2159,69 +2159,69 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 22 Jul 2020 22:41:40 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 22 Jul 2020 22:41:40 GMT
-ENV JAVA_VERSION=8u262
-# Wed, 29 Jul 2020 01:30:05 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_8u262b10.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:26:02 GMT
+ENV JAVA_VERSION=8u265
+# Thu, 30 Jul 2020 22:26:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		amd64 | i386:x86-64) downloadUrl=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_8u265b01.tar.gz ;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz.asc "$downloadUrl.sign"; 	wget -O openjdk.tgz "$downloadUrl" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Thu, 30 Jul 2020 22:40:18 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:17 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:19 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 29 Jul 2020 02:57:18 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 02:57:19 GMT
+# Thu, 30 Jul 2020 22:40:20 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_MAJOR=8
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:53 GMT
 ENV TOMCAT_VERSION=8.5.57
-# Wed, 29 Jul 2020 03:08:15 GMT
+# Thu, 30 Jul 2020 22:44:54 GMT
 ENV TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1
-# Wed, 29 Jul 2020 03:08:39 GMT
+# Thu, 30 Jul 2020 22:45:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 29 Jul 2020 03:08:41 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 EXPOSE 8080
-# Wed, 29 Jul 2020 03:08:42 GMT
+# Thu, 30 Jul 2020 22:45:24 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV GN_FILE=geonetwork.war
-# Wed, 29 Jul 2020 04:21:09 GMT
+# Fri, 31 Jul 2020 00:37:10 GMT
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_VERSION=3.10.3
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 ENV GN_DOWNLOAD_MD5=f6d62ef8856d697e62c7cbde65e66ad7
-# Wed, 29 Jul 2020 04:21:10 GMT
+# Fri, 31 Jul 2020 00:37:11 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "$GN_DOWNLOAD_MD5 *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:29 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:00 GMT
+# Fri, 31 Jul 2020 00:37:30 GMT
 CMD ["catalina.sh" "run"]
-# Wed, 29 Jul 2020 04:22:13 GMT
+# Fri, 31 Jul 2020 00:37:44 GMT
 RUN apt-get update && apt-get install -y postgresql-client &&     rm -rf /var/lib/apt/lists/*
-# Wed, 29 Jul 2020 04:22:13 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 RUN sed -i -e 's#<import resource="../config-db/${geonetwork.db.type:h2}.xml"/>#<!--<import resource="../config-db/${geonetwork.db.type:h2}.xml"/-->#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml && sed -i -e 's#<!--<import resource="../config-db/postgres.xml"/>-->#<import resource="../config-db/postgres.xml"/>#g' $CATALINA_HOME/webapps/geonetwork/WEB-INF/config-node/srv.xml
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 COPY file:83f69d2041e5fb378033b0db57e096c81ba0725102ab4da4f089685e748fcce3 in /usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties 
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 COPY file:c88411abba7ad9b7bb75019f08755dbfa163d2fc7fdd80676bf9350c4c56a19c in /entrypoint.sh 
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 29 Jul 2020 04:22:14 GMT
+# Fri, 31 Jul 2020 00:37:45 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -2250,43 +2250,43 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Wed, 22 Jul 2020 22:48:20 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:72ca6adee6d94d73fae88abf6784c5b22c8224bc3cce281c86c0d3b8b115c612`  
-		Last Modified: Wed, 29 Jul 2020 01:37:49 GMT  
-		Size: 104.8 MB (104827562 bytes)  
+	-	`sha256:9f9d29dec66c715c8bbc1a9977a3cdbf8e442540543f8cc970d281c7b34a0ee6`  
+		Last Modified: Thu, 30 Jul 2020 22:29:18 GMT  
+		Size: 104.8 MB (104841709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be1123659c0d90a940640ec454c258d03e8bc8bf8952a8c31019699fb3f079e8`  
-		Last Modified: Wed, 29 Jul 2020 03:12:38 GMT  
+	-	`sha256:2253269f1b6e2167579d076194883202ce667dfae2163ffd6fed55123c49cbf0`  
+		Last Modified: Thu, 30 Jul 2020 22:50:25 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4ed4d4f6592b805cc459437cea213d999317d248a9dbb22e5d3540f6e2ce805`  
-		Last Modified: Wed, 29 Jul 2020 03:14:23 GMT  
-		Size: 11.4 MB (11394082 bytes)  
+	-	`sha256:f21a2a8111adf3cdcac16e151a83875f208f876bd2262d7b5df6c1b79ce24d9b`  
+		Last Modified: Thu, 30 Jul 2020 22:51:47 GMT  
+		Size: 11.4 MB (11394033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c26a3323435d195605fdbe85e05fae94a9bc7da06a6ce3565b0bd341710d1b`  
-		Last Modified: Wed, 29 Jul 2020 03:14:21 GMT  
-		Size: 130.0 B  
+	-	`sha256:8cf737bb61670c3deb6a8fecc1f328bbba7cff59e79a7c17167b30b64f5d17f4`  
+		Last Modified: Thu, 30 Jul 2020 22:51:46 GMT  
+		Size: 131.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94e0a169f022f6756e7bb116d16f69f0274a8afc278c6774071b1e847a0698ad`  
-		Last Modified: Wed, 29 Jul 2020 05:04:32 GMT  
-		Size: 211.4 MB (211422962 bytes)  
+	-	`sha256:e2df17bba8cd06905286cc0d64bbd3a09dda7cdfa8bb401c169be5ee695629cf`  
+		Last Modified: Fri, 31 Jul 2020 00:39:16 GMT  
+		Size: 211.4 MB (211422997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:941efc2cd855bec437f36aaa0a9cd6510a50e607f04dc1298f9c6ae4ed8b4b94`  
-		Last Modified: Wed, 29 Jul 2020 05:04:16 GMT  
-		Size: 250.0 B  
+	-	`sha256:d94f152eea3c35aac1f2ef8039e855efb9204f8ce3fed0ab65f2d934afaced0c`  
+		Last Modified: Fri, 31 Jul 2020 00:39:01 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2da41e1dcd50b4e1f6f3f636ddbe103a0288c64b4fa51a21937f03187a769746`  
-		Last Modified: Wed, 29 Jul 2020 05:04:39 GMT  
-		Size: 11.8 MB (11808981 bytes)  
+	-	`sha256:61f2f0a7a6573914d4dc5c34f290a34286709e1af99275d1bdb2f19e08d5eb98`  
+		Last Modified: Fri, 31 Jul 2020 00:39:24 GMT  
+		Size: 11.8 MB (11808940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:715b461dfbe589ea7df7eb9f4db6e89a2cbd1789c302fd24962e61abab112217`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 1.3 KB (1267 bytes)  
+	-	`sha256:8fd83fa541a40b2da9aeeacb49b82ffb25c1d4096247f3587e283c1c31a8eb6b`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 1.3 KB (1262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de96a8e8374ec76210d984c808d86a1aeb2a292890a73f38dc6e9cce825745d5`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:f3472427d187bc9d1eb4dc11a61a70e1d6f922e969179260125b1f4f080a318e`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81d312bd4bbb5e4ea8bdb883faf9810e94c32a72f15d09fc86063a89020cec77`  
-		Last Modified: Wed, 29 Jul 2020 05:04:37 GMT  
-		Size: 974.0 B  
+	-	`sha256:715c3eec1d8fca1aed016f4c2f386c1cad9d93cb41fffcda592e7738fc34ef9d`  
+		Last Modified: Fri, 31 Jul 2020 00:39:22 GMT  
+		Size: 973.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
