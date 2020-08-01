@@ -3277,14 +3277,13 @@ Licenses: (parsed from: `/usr/share/doc/libopenblas0-pthread/copyright`)
 - `BSD-3-clause`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openblas=0.3.10+ds-1
-'http://http.debian.net/debian/pool/main/o/openblas/openblas_0.3.10+ds-1.dsc' openblas_0.3.10+ds-1.dsc 4916 SHA256:f658c353dd9428aa0339d560a4b8ab84a00a86d64182375ebc5fc453b3edcb2f
-'http://http.debian.net/debian/pool/main/o/openblas/openblas_0.3.10+ds.orig.tar.xz' openblas_0.3.10+ds.orig.tar.xz 1594332 SHA256:6178ec53c96959888f7c8112887ce678d063898a216a9adcd10da5a449ae1336
-'http://http.debian.net/debian/pool/main/o/openblas/openblas_0.3.10+ds-1.debian.tar.xz' openblas_0.3.10+ds-1.debian.tar.xz 21296 SHA256:ce77d4ff9655d78f70922b8d697a92ca1de3b0feedfa8097aa58b06718ad8dd5
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/openblas/0.3.10+ds-1/
+
 
 ### `dpkg` source package: `openldap=2.4.50+dfsg-1`
 
@@ -3984,20 +3983,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.6-2
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_245.6-2.dsc' systemd_245.6-2.dsc 5096 SHA256:9ccd9abc80997c1047230f4260d56abbca152c052fb685fcfd88a827d9cc3dfd
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_245.6.orig.tar.gz' systemd_245.6.orig.tar.gz 9022866 SHA256:f58424fd2d105503f836ff7d099d762901fb40347de993fce7373d65ff640f5b
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_245.6-2.debian.tar.xz' systemd_245.6-2.debian.tar.xz 166092 SHA256:11afdb01b408921a9fc98b4c2ce36daf8d90d388e3079a3107069c955ebebdac
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/245.6-2/
 
-- https://sources.debian.net/src/systemd/245.6-2/ (for browsing the source)
-- https://sources.debian.net/src/systemd/245.6-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/245.6-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.96-3`
 
