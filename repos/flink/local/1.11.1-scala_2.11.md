@@ -1,9 +1,9 @@
-# `flink:1.11.1-scala_2.11`
+# `flink:1.11.1-scala_2.11-java8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5580b449cc79fbecbce23b5a3303d6526c014c3871f00526395902a628eb2aa3`
-- Created: `2020-07-23T08:49:41.774696306Z`
+- Image ID: `sha256:ec251421aab7e2e54d91d77694acce9856fcd46d9856c356afec00aacbde71d6`
+- Created: `2020-07-30T23:38:57.02366498Z`
 - Virtual Size: ~ 635.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,9 +13,7 @@
   - `PATH=/opt/flink/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u262`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jre_`
-  - `JAVA_URL_VERSION=8u262b10`
+  - `JAVA_VERSION=8u265`
   - `GOSU_VERSION=1.11`
   - `FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=flink/flink-1.11.1/flink-1.11.1-bin-scala_2.11.tgz`
   - `FLINK_ASC_URL=https://www.apache.org/dist/flink/flink-1.11.1/flink-1.11.1-bin-scala_2.11.tgz.asc`
