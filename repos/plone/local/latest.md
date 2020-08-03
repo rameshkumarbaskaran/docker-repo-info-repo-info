@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:58c45fef80afc18b7cfaea91f8fdc64b10a5fb7e182f74d98a6496e726cf14c7`
-- Created: `2020-07-23T06:52:55.425043369Z`
-- Virtual Size: ~ 597.69 Mb  
+- Image ID: `sha256:427b47321e3a5e821d2df5b57543df996150335b0cfbc7426768c498406013c2`
+- Created: `2020-07-31T01:13:16.278686326Z`
+- Virtual Size: ~ 597.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -14,9 +14,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D`
   - `PYTHON_VERSION=3.7.8`
-  - `PYTHON_PIP_VERSION=20.1.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/eff16c878c7fd6b688b9b4c4267695cf1a0bf01b/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=b3153ec0cf7b7bbf9556932aa37e4981c35dc2a2c501d70d91d2795aa532be79`
+  - `PYTHON_PIP_VERSION=20.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/cb5b85a8e0c3d13ced611b97816d7490d2f1497e/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=a30ff8a3446c592c6d70403a82483716e7b759e8eecba2c8d3f6ecfb34a8d6d7`
   - `PIP=19.3.1`
   - `ZC_BUILDOUT=2.13.2`
   - `SETUPTOOLS=45.0.0`
@@ -2233,12 +2233,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pixman/0.34.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pixman/0.34.0-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `poppler=0.48.0-2+deb9u2`
+### `dpkg` source package: `poppler=0.48.0-2+deb9u3`
 
 Binary Packages:
 
-- `libpoppler64:amd64=0.48.0-2+deb9u2`
-- `poppler-utils=0.48.0-2+deb9u2`
+- `libpoppler64:amd64=0.48.0-2+deb9u3`
+- `poppler-utils=0.48.0-2+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/libpoppler64/copyright`, `/usr/share/doc/poppler-utils/copyright`)
 
@@ -2247,17 +2247,17 @@ Licenses: (parsed from: `/usr/share/doc/libpoppler64/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris poppler=0.48.0-2+deb9u2
-'http://deb.debian.org/debian/pool/main/p/poppler/poppler_0.48.0-2+deb9u2.dsc' poppler_0.48.0-2+deb9u2.dsc 3408 SHA256:658eab614c16d776952faf31b3a442f6e2bc28802a8f523fe4e958f6b5976efe
-'http://deb.debian.org/debian/pool/main/p/poppler/poppler_0.48.0.orig.tar.xz' poppler_0.48.0.orig.tar.xz 1684164 SHA256:85a003968074c85d8e13bf320ec47cef647b496b56dcff4c790b34e5482fef93
-'http://deb.debian.org/debian/pool/main/p/poppler/poppler_0.48.0-2+deb9u2.debian.tar.xz' poppler_0.48.0-2+deb9u2.debian.tar.xz 40808 SHA256:5842d61f5bda84dac0e624ec0aef684b2beab70491e1e0c1c6b8cfd70485997c
+$ apt-get source -qq --print-uris poppler=0.48.0-2+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/p/poppler/poppler_0.48.0-2+deb9u3.dsc' poppler_0.48.0-2+deb9u3.dsc 3408 SHA256:3a61ff8daf3fbb1e912c1e53a6d00f28ebeccd02cf3fd3c047bff57aca5744c9
+'http://security.debian.org/debian-security/pool/updates/main/p/poppler/poppler_0.48.0.orig.tar.xz' poppler_0.48.0.orig.tar.xz 1684164 SHA256:85a003968074c85d8e13bf320ec47cef647b496b56dcff4c790b34e5482fef93
+'http://security.debian.org/debian-security/pool/updates/main/p/poppler/poppler_0.48.0-2+deb9u3.debian.tar.xz' poppler_0.48.0-2+deb9u3.debian.tar.xz 45284 SHA256:15f0f179285f946359bc7585561f57f668a1581d16161fee914db4f45bdd8c9a
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/poppler/0.48.0-2+deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/poppler/0.48.0-2+deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/poppler/0.48.0-2+deb9u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/poppler/0.48.0-2+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/poppler/0.48.0-2+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/poppler/0.48.0-2+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `popt=1.16-10`
 
