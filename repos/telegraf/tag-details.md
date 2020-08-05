@@ -20,7 +20,7 @@
 ## `telegraf:1.13`
 
 ```console
-$ docker pull telegraf@sha256:6f204eb40f0cc8837e9e24a904ee85e0ba291a70e15f4478d5d69f84e6c45058
+$ docker pull telegraf@sha256:f3460fd64feff89c5e4e0e23b2a8cd21a4e0eda2d19041a3dd1f7a7843cec6f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -103,72 +103,72 @@ CMD ["telegraf"]
 ### `telegraf:1.13` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:9d395b855ac92448cdab3c99b4e0d288e08e2b693c755ecb41d4628b7082e172
+$ docker pull telegraf@sha256:5d673989e66769a5513367d85e080fde3822d19e554b54f5b3330884e64dcb53
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **89.4 MB (89364441 bytes)**  
+-	Total Size: **89.4 MB (89365801 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0ffe3fcad0972f1f525e37908f79e117ade897520b3a49f95fbfbe03c6832e66`
+-	Image ID: `sha256:6f561e9757bb1d1e59cd09955462ec830b0c62d2dd2083021fa078d392888bcb`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 22 Jul 2020 01:32:02 GMT
-ADD file:762e52a5e1d8ff2daa22c3bec2cfdfe4cbcf224deb1e73d7db3af0cbf5658785 in / 
-# Wed, 22 Jul 2020 01:32:11 GMT
+# Tue, 04 Aug 2020 05:01:04 GMT
+ADD file:0ba6f3203fb10e66124d03088d234e92fc908c572ec7eed268e866623a383a7d in / 
+# Tue, 04 Aug 2020 05:01:07 GMT
 CMD ["bash"]
-# Wed, 22 Jul 2020 05:50:11 GMT
+# Tue, 04 Aug 2020 08:16:04 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 05:50:52 GMT
+# Tue, 04 Aug 2020 08:16:44 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 22 Jul 2020 20:50:20 GMT
+# Wed, 05 Aug 2020 01:50:08 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 20:50:25 GMT
+# Wed, 05 Aug 2020 01:50:16 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 22 Jul 2020 20:50:47 GMT
+# Wed, 05 Aug 2020 01:50:17 GMT
 ENV TELEGRAF_VERSION=1.13.4
-# Wed, 22 Jul 2020 20:50:56 GMT
+# Wed, 05 Aug 2020 01:50:37 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 22 Jul 2020 20:50:57 GMT
+# Wed, 05 Aug 2020 01:50:38 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 22 Jul 2020 20:50:58 GMT
+# Wed, 05 Aug 2020 01:50:41 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Wed, 22 Jul 2020 20:50:59 GMT
+# Wed, 05 Aug 2020 01:50:42 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 22 Jul 2020 20:51:00 GMT
+# Wed, 05 Aug 2020 01:50:43 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:05dc12a0df610a09562914533797508b791bbd115ae17b6a1b75666ec90263da`  
-		Last Modified: Wed, 22 Jul 2020 01:44:04 GMT  
-		Size: 42.1 MB (42107480 bytes)  
+	-	`sha256:323178d00ec2c5eb5ffb9cb696a52eaf8683dcf2eb605c742da2953556f06e37`  
+		Last Modified: Tue, 04 Aug 2020 05:08:40 GMT  
+		Size: 42.1 MB (42111382 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b998b2d4ee2005b0f51e94b6fc7467091e54a910491e7873b9e0d6f59aabd98`  
-		Last Modified: Wed, 22 Jul 2020 06:06:37 GMT  
-		Size: 9.4 MB (9444083 bytes)  
+	-	`sha256:a7b4e15a79453f6ae10815d79c8f4590aef2f1ac2979c192ff7f1ed0fbf04e60`  
+		Last Modified: Tue, 04 Aug 2020 08:30:43 GMT  
+		Size: 9.4 MB (9443881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15230f55c10a543d54564a792784b1d2e133d4edeadd58978682d9bf02d1425a`  
-		Last Modified: Wed, 22 Jul 2020 06:06:34 GMT  
-		Size: 3.9 MB (3918506 bytes)  
+	-	`sha256:caf9cb1ef704caf3af8a2ed43dc12884b4f74ac867ce95f60bd8996f51fde770`  
+		Last Modified: Tue, 04 Aug 2020 08:30:41 GMT  
+		Size: 3.9 MB (3918490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67a8ed6da9c9a9b6a83c45713f25bc874233a2ed8a57ffdd0fcdfd8fc3b70c41`  
-		Last Modified: Wed, 22 Jul 2020 20:51:39 GMT  
-		Size: 14.8 MB (14838306 bytes)  
+	-	`sha256:31269b8e0d90f2c135d09e726df2432c9dd0c2b91d454425d5bb545df4485c9d`  
+		Last Modified: Wed, 05 Aug 2020 01:53:21 GMT  
+		Size: 14.8 MB (14835952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92d146b77fdedc3c75ccf0db81330d0afb9d3a27da887066550bfba1f169358f`  
-		Last Modified: Wed, 22 Jul 2020 20:51:34 GMT  
-		Size: 2.8 KB (2802 bytes)  
+	-	`sha256:828e4df8803d59fb1a424adf9f6a9282d704a9ea887b6408ec71f58139d202cf`  
+		Last Modified: Wed, 05 Aug 2020 01:53:16 GMT  
+		Size: 2.8 KB (2800 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e011113c8eb3432f71b37f3b45b9d71587a8f7bcd0ce2f4d29b11abe98caf0d1`  
-		Last Modified: Wed, 22 Jul 2020 20:51:56 GMT  
-		Size: 19.1 MB (19053078 bytes)  
+	-	`sha256:760e1a5f7d40803dfa08cc45f67bf3b683066eb90166a26dba73340aee980680`  
+		Last Modified: Wed, 05 Aug 2020 01:53:23 GMT  
+		Size: 19.1 MB (19053114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:996b5866cf403c6caea5ae153451bfbbca735a3a08a8d003e2829803906b3ca5`  
-		Last Modified: Wed, 22 Jul 2020 20:51:49 GMT  
-		Size: 186.0 B  
+	-	`sha256:5572699b74f4f50dd2a5039ae8a729818252806147867d6993360da0c68cf774`  
+		Last Modified: Wed, 05 Aug 2020 01:53:16 GMT  
+		Size: 182.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:1.13` - linux; arm64 variant v8
@@ -245,7 +245,7 @@ CMD ["telegraf"]
 ## `telegraf:1.13.4`
 
 ```console
-$ docker pull telegraf@sha256:6f204eb40f0cc8837e9e24a904ee85e0ba291a70e15f4478d5d69f84e6c45058
+$ docker pull telegraf@sha256:f3460fd64feff89c5e4e0e23b2a8cd21a4e0eda2d19041a3dd1f7a7843cec6f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -328,72 +328,72 @@ CMD ["telegraf"]
 ### `telegraf:1.13.4` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:9d395b855ac92448cdab3c99b4e0d288e08e2b693c755ecb41d4628b7082e172
+$ docker pull telegraf@sha256:5d673989e66769a5513367d85e080fde3822d19e554b54f5b3330884e64dcb53
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **89.4 MB (89364441 bytes)**  
+-	Total Size: **89.4 MB (89365801 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0ffe3fcad0972f1f525e37908f79e117ade897520b3a49f95fbfbe03c6832e66`
+-	Image ID: `sha256:6f561e9757bb1d1e59cd09955462ec830b0c62d2dd2083021fa078d392888bcb`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 22 Jul 2020 01:32:02 GMT
-ADD file:762e52a5e1d8ff2daa22c3bec2cfdfe4cbcf224deb1e73d7db3af0cbf5658785 in / 
-# Wed, 22 Jul 2020 01:32:11 GMT
+# Tue, 04 Aug 2020 05:01:04 GMT
+ADD file:0ba6f3203fb10e66124d03088d234e92fc908c572ec7eed268e866623a383a7d in / 
+# Tue, 04 Aug 2020 05:01:07 GMT
 CMD ["bash"]
-# Wed, 22 Jul 2020 05:50:11 GMT
+# Tue, 04 Aug 2020 08:16:04 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 05:50:52 GMT
+# Tue, 04 Aug 2020 08:16:44 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 22 Jul 2020 20:50:20 GMT
+# Wed, 05 Aug 2020 01:50:08 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 20:50:25 GMT
+# Wed, 05 Aug 2020 01:50:16 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 22 Jul 2020 20:50:47 GMT
+# Wed, 05 Aug 2020 01:50:17 GMT
 ENV TELEGRAF_VERSION=1.13.4
-# Wed, 22 Jul 2020 20:50:56 GMT
+# Wed, 05 Aug 2020 01:50:37 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 22 Jul 2020 20:50:57 GMT
+# Wed, 05 Aug 2020 01:50:38 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 22 Jul 2020 20:50:58 GMT
+# Wed, 05 Aug 2020 01:50:41 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Wed, 22 Jul 2020 20:50:59 GMT
+# Wed, 05 Aug 2020 01:50:42 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 22 Jul 2020 20:51:00 GMT
+# Wed, 05 Aug 2020 01:50:43 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:05dc12a0df610a09562914533797508b791bbd115ae17b6a1b75666ec90263da`  
-		Last Modified: Wed, 22 Jul 2020 01:44:04 GMT  
-		Size: 42.1 MB (42107480 bytes)  
+	-	`sha256:323178d00ec2c5eb5ffb9cb696a52eaf8683dcf2eb605c742da2953556f06e37`  
+		Last Modified: Tue, 04 Aug 2020 05:08:40 GMT  
+		Size: 42.1 MB (42111382 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b998b2d4ee2005b0f51e94b6fc7467091e54a910491e7873b9e0d6f59aabd98`  
-		Last Modified: Wed, 22 Jul 2020 06:06:37 GMT  
-		Size: 9.4 MB (9444083 bytes)  
+	-	`sha256:a7b4e15a79453f6ae10815d79c8f4590aef2f1ac2979c192ff7f1ed0fbf04e60`  
+		Last Modified: Tue, 04 Aug 2020 08:30:43 GMT  
+		Size: 9.4 MB (9443881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15230f55c10a543d54564a792784b1d2e133d4edeadd58978682d9bf02d1425a`  
-		Last Modified: Wed, 22 Jul 2020 06:06:34 GMT  
-		Size: 3.9 MB (3918506 bytes)  
+	-	`sha256:caf9cb1ef704caf3af8a2ed43dc12884b4f74ac867ce95f60bd8996f51fde770`  
+		Last Modified: Tue, 04 Aug 2020 08:30:41 GMT  
+		Size: 3.9 MB (3918490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67a8ed6da9c9a9b6a83c45713f25bc874233a2ed8a57ffdd0fcdfd8fc3b70c41`  
-		Last Modified: Wed, 22 Jul 2020 20:51:39 GMT  
-		Size: 14.8 MB (14838306 bytes)  
+	-	`sha256:31269b8e0d90f2c135d09e726df2432c9dd0c2b91d454425d5bb545df4485c9d`  
+		Last Modified: Wed, 05 Aug 2020 01:53:21 GMT  
+		Size: 14.8 MB (14835952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92d146b77fdedc3c75ccf0db81330d0afb9d3a27da887066550bfba1f169358f`  
-		Last Modified: Wed, 22 Jul 2020 20:51:34 GMT  
-		Size: 2.8 KB (2802 bytes)  
+	-	`sha256:828e4df8803d59fb1a424adf9f6a9282d704a9ea887b6408ec71f58139d202cf`  
+		Last Modified: Wed, 05 Aug 2020 01:53:16 GMT  
+		Size: 2.8 KB (2800 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e011113c8eb3432f71b37f3b45b9d71587a8f7bcd0ce2f4d29b11abe98caf0d1`  
-		Last Modified: Wed, 22 Jul 2020 20:51:56 GMT  
-		Size: 19.1 MB (19053078 bytes)  
+	-	`sha256:760e1a5f7d40803dfa08cc45f67bf3b683066eb90166a26dba73340aee980680`  
+		Last Modified: Wed, 05 Aug 2020 01:53:23 GMT  
+		Size: 19.1 MB (19053114 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:996b5866cf403c6caea5ae153451bfbbca735a3a08a8d003e2829803906b3ca5`  
-		Last Modified: Wed, 22 Jul 2020 20:51:49 GMT  
-		Size: 186.0 B  
+	-	`sha256:5572699b74f4f50dd2a5039ae8a729818252806147867d6993360da0c68cf774`  
+		Last Modified: Wed, 05 Aug 2020 01:53:16 GMT  
+		Size: 182.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:1.13.4` - linux; arm64 variant v8
@@ -608,7 +608,7 @@ CMD ["telegraf"]
 ## `telegraf:1.14`
 
 ```console
-$ docker pull telegraf@sha256:f833b1a672ca9b00f4d845a626d423156e649f3f89b96c8d9e55c472a71cf490
+$ docker pull telegraf@sha256:9e9c9fd89094511f23abc9da5e70d210341691c58cd0652f97c50a03b8b786a2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -691,72 +691,72 @@ CMD ["telegraf"]
 ### `telegraf:1.14` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:95c9fa3f85a8874303bb11da10b6192e9e6d81d2d149083ab0cadb8f35ad4705
+$ docker pull telegraf@sha256:8830801f1a26eda4113d15f4525d1a8f129ccc32d3a3b449d9840fec03528b83
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **90.4 MB (90441629 bytes)**  
+-	Total Size: **90.4 MB (90442981 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d4e98e7d280480217ace773fb2a885ad0421b3e2f1da44d8ce96962da3c201f5`
+-	Image ID: `sha256:33a17d7e9820b6b4020850fcebff2bc885b1eeaebac6b85089fdc812f4df2f23`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 22 Jul 2020 01:32:02 GMT
-ADD file:762e52a5e1d8ff2daa22c3bec2cfdfe4cbcf224deb1e73d7db3af0cbf5658785 in / 
-# Wed, 22 Jul 2020 01:32:11 GMT
+# Tue, 04 Aug 2020 05:01:04 GMT
+ADD file:0ba6f3203fb10e66124d03088d234e92fc908c572ec7eed268e866623a383a7d in / 
+# Tue, 04 Aug 2020 05:01:07 GMT
 CMD ["bash"]
-# Wed, 22 Jul 2020 05:50:11 GMT
+# Tue, 04 Aug 2020 08:16:04 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 05:50:52 GMT
+# Tue, 04 Aug 2020 08:16:44 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 22 Jul 2020 20:50:20 GMT
+# Wed, 05 Aug 2020 01:50:08 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 20:50:25 GMT
+# Wed, 05 Aug 2020 01:50:16 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 22 Jul 2020 20:51:08 GMT
+# Wed, 05 Aug 2020 01:51:00 GMT
 ENV TELEGRAF_VERSION=1.14.5
-# Wed, 22 Jul 2020 20:51:16 GMT
+# Wed, 05 Aug 2020 01:51:11 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 22 Jul 2020 20:51:17 GMT
+# Wed, 05 Aug 2020 01:51:15 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 22 Jul 2020 20:51:18 GMT
+# Wed, 05 Aug 2020 01:51:20 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Wed, 22 Jul 2020 20:51:20 GMT
+# Wed, 05 Aug 2020 01:51:25 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 22 Jul 2020 20:51:21 GMT
+# Wed, 05 Aug 2020 01:51:26 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:05dc12a0df610a09562914533797508b791bbd115ae17b6a1b75666ec90263da`  
-		Last Modified: Wed, 22 Jul 2020 01:44:04 GMT  
-		Size: 42.1 MB (42107480 bytes)  
+	-	`sha256:323178d00ec2c5eb5ffb9cb696a52eaf8683dcf2eb605c742da2953556f06e37`  
+		Last Modified: Tue, 04 Aug 2020 05:08:40 GMT  
+		Size: 42.1 MB (42111382 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b998b2d4ee2005b0f51e94b6fc7467091e54a910491e7873b9e0d6f59aabd98`  
-		Last Modified: Wed, 22 Jul 2020 06:06:37 GMT  
-		Size: 9.4 MB (9444083 bytes)  
+	-	`sha256:a7b4e15a79453f6ae10815d79c8f4590aef2f1ac2979c192ff7f1ed0fbf04e60`  
+		Last Modified: Tue, 04 Aug 2020 08:30:43 GMT  
+		Size: 9.4 MB (9443881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15230f55c10a543d54564a792784b1d2e133d4edeadd58978682d9bf02d1425a`  
-		Last Modified: Wed, 22 Jul 2020 06:06:34 GMT  
-		Size: 3.9 MB (3918506 bytes)  
+	-	`sha256:caf9cb1ef704caf3af8a2ed43dc12884b4f74ac867ce95f60bd8996f51fde770`  
+		Last Modified: Tue, 04 Aug 2020 08:30:41 GMT  
+		Size: 3.9 MB (3918490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67a8ed6da9c9a9b6a83c45713f25bc874233a2ed8a57ffdd0fcdfd8fc3b70c41`  
-		Last Modified: Wed, 22 Jul 2020 20:51:39 GMT  
-		Size: 14.8 MB (14838306 bytes)  
+	-	`sha256:31269b8e0d90f2c135d09e726df2432c9dd0c2b91d454425d5bb545df4485c9d`  
+		Last Modified: Wed, 05 Aug 2020 01:53:21 GMT  
+		Size: 14.8 MB (14835952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92d146b77fdedc3c75ccf0db81330d0afb9d3a27da887066550bfba1f169358f`  
-		Last Modified: Wed, 22 Jul 2020 20:51:34 GMT  
-		Size: 2.8 KB (2802 bytes)  
+	-	`sha256:828e4df8803d59fb1a424adf9f6a9282d704a9ea887b6408ec71f58139d202cf`  
+		Last Modified: Wed, 05 Aug 2020 01:53:16 GMT  
+		Size: 2.8 KB (2800 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06269392053c963d7de9bfc92e721fbe21b0cb6eb12abf438f2ecd1611e9243e`  
-		Last Modified: Wed, 22 Jul 2020 20:52:11 GMT  
-		Size: 20.1 MB (20130267 bytes)  
+	-	`sha256:bd152d9628a7fff5603b5b86e79c2d8c3cdacbb165a79181cae693402e8005f4`  
+		Last Modified: Wed, 05 Aug 2020 01:53:37 GMT  
+		Size: 20.1 MB (20130294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:240d798fa970c843b5c02d460d39b77ef0309a0d16d115f03362e6ce48312bc9`  
-		Last Modified: Wed, 22 Jul 2020 20:52:03 GMT  
-		Size: 185.0 B  
+	-	`sha256:2dbeee2190b708757e9239b378f9ba74d39d498a3dfa58bd2b874d9cc9824347`  
+		Last Modified: Wed, 05 Aug 2020 01:53:29 GMT  
+		Size: 182.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:1.14` - linux; arm64 variant v8
@@ -833,7 +833,7 @@ CMD ["telegraf"]
 ## `telegraf:1.14.5`
 
 ```console
-$ docker pull telegraf@sha256:f833b1a672ca9b00f4d845a626d423156e649f3f89b96c8d9e55c472a71cf490
+$ docker pull telegraf@sha256:9e9c9fd89094511f23abc9da5e70d210341691c58cd0652f97c50a03b8b786a2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -916,72 +916,72 @@ CMD ["telegraf"]
 ### `telegraf:1.14.5` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:95c9fa3f85a8874303bb11da10b6192e9e6d81d2d149083ab0cadb8f35ad4705
+$ docker pull telegraf@sha256:8830801f1a26eda4113d15f4525d1a8f129ccc32d3a3b449d9840fec03528b83
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **90.4 MB (90441629 bytes)**  
+-	Total Size: **90.4 MB (90442981 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d4e98e7d280480217ace773fb2a885ad0421b3e2f1da44d8ce96962da3c201f5`
+-	Image ID: `sha256:33a17d7e9820b6b4020850fcebff2bc885b1eeaebac6b85089fdc812f4df2f23`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 22 Jul 2020 01:32:02 GMT
-ADD file:762e52a5e1d8ff2daa22c3bec2cfdfe4cbcf224deb1e73d7db3af0cbf5658785 in / 
-# Wed, 22 Jul 2020 01:32:11 GMT
+# Tue, 04 Aug 2020 05:01:04 GMT
+ADD file:0ba6f3203fb10e66124d03088d234e92fc908c572ec7eed268e866623a383a7d in / 
+# Tue, 04 Aug 2020 05:01:07 GMT
 CMD ["bash"]
-# Wed, 22 Jul 2020 05:50:11 GMT
+# Tue, 04 Aug 2020 08:16:04 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 05:50:52 GMT
+# Tue, 04 Aug 2020 08:16:44 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 22 Jul 2020 20:50:20 GMT
+# Wed, 05 Aug 2020 01:50:08 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 20:50:25 GMT
+# Wed, 05 Aug 2020 01:50:16 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 22 Jul 2020 20:51:08 GMT
+# Wed, 05 Aug 2020 01:51:00 GMT
 ENV TELEGRAF_VERSION=1.14.5
-# Wed, 22 Jul 2020 20:51:16 GMT
+# Wed, 05 Aug 2020 01:51:11 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Wed, 22 Jul 2020 20:51:17 GMT
+# Wed, 05 Aug 2020 01:51:15 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Wed, 22 Jul 2020 20:51:18 GMT
+# Wed, 05 Aug 2020 01:51:20 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Wed, 22 Jul 2020 20:51:20 GMT
+# Wed, 05 Aug 2020 01:51:25 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 22 Jul 2020 20:51:21 GMT
+# Wed, 05 Aug 2020 01:51:26 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:05dc12a0df610a09562914533797508b791bbd115ae17b6a1b75666ec90263da`  
-		Last Modified: Wed, 22 Jul 2020 01:44:04 GMT  
-		Size: 42.1 MB (42107480 bytes)  
+	-	`sha256:323178d00ec2c5eb5ffb9cb696a52eaf8683dcf2eb605c742da2953556f06e37`  
+		Last Modified: Tue, 04 Aug 2020 05:08:40 GMT  
+		Size: 42.1 MB (42111382 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b998b2d4ee2005b0f51e94b6fc7467091e54a910491e7873b9e0d6f59aabd98`  
-		Last Modified: Wed, 22 Jul 2020 06:06:37 GMT  
-		Size: 9.4 MB (9444083 bytes)  
+	-	`sha256:a7b4e15a79453f6ae10815d79c8f4590aef2f1ac2979c192ff7f1ed0fbf04e60`  
+		Last Modified: Tue, 04 Aug 2020 08:30:43 GMT  
+		Size: 9.4 MB (9443881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15230f55c10a543d54564a792784b1d2e133d4edeadd58978682d9bf02d1425a`  
-		Last Modified: Wed, 22 Jul 2020 06:06:34 GMT  
-		Size: 3.9 MB (3918506 bytes)  
+	-	`sha256:caf9cb1ef704caf3af8a2ed43dc12884b4f74ac867ce95f60bd8996f51fde770`  
+		Last Modified: Tue, 04 Aug 2020 08:30:41 GMT  
+		Size: 3.9 MB (3918490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67a8ed6da9c9a9b6a83c45713f25bc874233a2ed8a57ffdd0fcdfd8fc3b70c41`  
-		Last Modified: Wed, 22 Jul 2020 20:51:39 GMT  
-		Size: 14.8 MB (14838306 bytes)  
+	-	`sha256:31269b8e0d90f2c135d09e726df2432c9dd0c2b91d454425d5bb545df4485c9d`  
+		Last Modified: Wed, 05 Aug 2020 01:53:21 GMT  
+		Size: 14.8 MB (14835952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92d146b77fdedc3c75ccf0db81330d0afb9d3a27da887066550bfba1f169358f`  
-		Last Modified: Wed, 22 Jul 2020 20:51:34 GMT  
-		Size: 2.8 KB (2802 bytes)  
+	-	`sha256:828e4df8803d59fb1a424adf9f6a9282d704a9ea887b6408ec71f58139d202cf`  
+		Last Modified: Wed, 05 Aug 2020 01:53:16 GMT  
+		Size: 2.8 KB (2800 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06269392053c963d7de9bfc92e721fbe21b0cb6eb12abf438f2ecd1611e9243e`  
-		Last Modified: Wed, 22 Jul 2020 20:52:11 GMT  
-		Size: 20.1 MB (20130267 bytes)  
+	-	`sha256:bd152d9628a7fff5603b5b86e79c2d8c3cdacbb165a79181cae693402e8005f4`  
+		Last Modified: Wed, 05 Aug 2020 01:53:37 GMT  
+		Size: 20.1 MB (20130294 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:240d798fa970c843b5c02d460d39b77ef0309a0d16d115f03362e6ce48312bc9`  
-		Last Modified: Wed, 22 Jul 2020 20:52:03 GMT  
-		Size: 185.0 B  
+	-	`sha256:2dbeee2190b708757e9239b378f9ba74d39d498a3dfa58bd2b874d9cc9824347`  
+		Last Modified: Wed, 05 Aug 2020 01:53:29 GMT  
+		Size: 182.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:1.14.5` - linux; arm64 variant v8
@@ -1196,7 +1196,7 @@ CMD ["telegraf"]
 ## `telegraf:1.15`
 
 ```console
-$ docker pull telegraf@sha256:7cb50213217ced48d2ec3014da2265bb7ed20a0d6cdc8f25eb0fba848fb97501
+$ docker pull telegraf@sha256:87dca1fd2cfaa0f68e6b144b7a7222d37a0c5415de8152ad10135bfb66e5a34c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1279,71 +1279,71 @@ CMD ["telegraf"]
 ### `telegraf:1.15` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:8964d5c1ecf0efb5c8d5e3cc649310042d92a9ca50988c94193c0114dc6985e8
+$ docker pull telegraf@sha256:36f6d826e9bdfbb3eccba107c6fc15736687a229abf444979acda578cccc5eeb
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **98.9 MB (98877270 bytes)**  
+-	Total Size: **98.9 MB (98881250 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e76b880897b8099c01be02bcf328ff33e0156c13f75ab8d14ca14560428e616e`
+-	Image ID: `sha256:c3ee1919fa55cc5935a28896f3767fab9527815930c9c6f77cc21140f088c922`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 22 Jul 2020 01:18:19 GMT
-ADD file:38965defa0df84392a8ff562c2fa6393fe8d42f65f85591c07a581d694eebc30 in / 
-# Wed, 22 Jul 2020 01:18:24 GMT
+# Tue, 04 Aug 2020 04:56:26 GMT
+ADD file:aaf5c6340b3d662631775fa4536c2e48e9f68b6cc8d53e18fb8fd76ae41b305e in / 
+# Tue, 04 Aug 2020 04:56:28 GMT
 CMD ["bash"]
-# Wed, 22 Jul 2020 05:27:12 GMT
+# Tue, 04 Aug 2020 07:52:20 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 05:27:49 GMT
+# Tue, 04 Aug 2020 07:53:19 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 23 Jul 2020 08:21:00 GMT
+# Wed, 05 Aug 2020 01:52:11 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
-# Thu, 23 Jul 2020 08:21:16 GMT
+# Wed, 05 Aug 2020 01:52:17 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Tue, 04 Aug 2020 04:51:26 GMT
+# Wed, 05 Aug 2020 01:52:18 GMT
 ENV TELEGRAF_VERSION=1.15.2
-# Tue, 04 Aug 2020 04:52:12 GMT
+# Wed, 05 Aug 2020 01:52:27 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Tue, 04 Aug 2020 04:52:22 GMT
+# Wed, 05 Aug 2020 01:52:28 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Tue, 04 Aug 2020 04:52:43 GMT
+# Wed, 05 Aug 2020 01:52:29 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Tue, 04 Aug 2020 04:52:50 GMT
+# Wed, 05 Aug 2020 01:52:31 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 04 Aug 2020 04:52:59 GMT
+# Wed, 05 Aug 2020 01:52:34 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:f890282b0ef00faf11d62374bcdfc54ca574d085127c66977d9a08ab80978a98`  
-		Last Modified: Wed, 22 Jul 2020 01:40:13 GMT  
-		Size: 45.9 MB (45868714 bytes)  
+	-	`sha256:e7cf402ee4b1ba67e92813d50297a082bbdbdd4d47f6aeb62f2316b81d5dc843`  
+		Last Modified: Tue, 04 Aug 2020 05:04:56 GMT  
+		Size: 45.9 MB (45869261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fda9a2c24b0e12476aa415979e2be070c1cb51f060e0af97ed46ee44de7a3be`  
-		Last Modified: Wed, 22 Jul 2020 06:01:56 GMT  
-		Size: 7.1 MB (7097816 bytes)  
+	-	`sha256:cff6bd4a89fc21d80ca6924320f86708f35ddea71c7aa34a408a5b64257c764e`  
+		Last Modified: Tue, 04 Aug 2020 08:25:56 GMT  
+		Size: 7.1 MB (7097820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:792d650db03400aa008d695ec7474d63c2c2d0463789209a45254c5499c8e301`  
-		Last Modified: Wed, 22 Jul 2020 06:01:54 GMT  
-		Size: 9.3 MB (9343320 bytes)  
+	-	`sha256:e48f5852a753b7731e5d374567ae9b64e309805758f336c76d5f13bb67c94e20`  
+		Last Modified: Tue, 04 Aug 2020 08:25:56 GMT  
+		Size: 9.3 MB (9343353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ef85cb8be5c6eab5adac2aa4bf837bd540e68151717ff15245d4d7e28783a2d`  
-		Last Modified: Thu, 23 Jul 2020 08:22:02 GMT  
-		Size: 16.2 MB (16161298 bytes)  
+	-	`sha256:3640f9f6e2a57392770dada759969ada76ad0acba79f078302ef3a69700ea37e`  
+		Last Modified: Wed, 05 Aug 2020 01:53:50 GMT  
+		Size: 16.2 MB (16164767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:557343f785fe61732ac9de21e1d1ccfa6847719755fab731fb0ac979ba193240`  
-		Last Modified: Thu, 23 Jul 2020 08:21:55 GMT  
-		Size: 2.9 KB (2855 bytes)  
+	-	`sha256:450459590b912a0d6ee32ffe8ec59f466a4aa6d4971e2076e9c7a986d8990d2e`  
+		Last Modified: Wed, 05 Aug 2020 01:53:44 GMT  
+		Size: 2.8 KB (2848 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de00718f543c5237649033ed7a7f8a53975a61ec688ca2a356265bcc6d5e036d`  
-		Last Modified: Tue, 04 Aug 2020 04:53:34 GMT  
-		Size: 20.4 MB (20403082 bytes)  
+	-	`sha256:573fa0f49a25bf49631c97a439fa4ab576aac8b682d38c2bf6af36bd61402c89`  
+		Last Modified: Wed, 05 Aug 2020 01:53:50 GMT  
+		Size: 20.4 MB (20403016 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0370a4f0d6e7dd4ab384848b39323a20682737f62980ca9e0aff4826f6b9c630`  
-		Last Modified: Tue, 04 Aug 2020 04:53:29 GMT  
+	-	`sha256:6192a8cf2cd051a9b61ba2206e992aa27d10653c53bc8b11fb1acf8afa473ee8`  
+		Last Modified: Wed, 05 Aug 2020 01:53:43 GMT  
 		Size: 185.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1421,7 +1421,7 @@ CMD ["telegraf"]
 ## `telegraf:1.15.2`
 
 ```console
-$ docker pull telegraf@sha256:7cb50213217ced48d2ec3014da2265bb7ed20a0d6cdc8f25eb0fba848fb97501
+$ docker pull telegraf@sha256:87dca1fd2cfaa0f68e6b144b7a7222d37a0c5415de8152ad10135bfb66e5a34c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1504,71 +1504,71 @@ CMD ["telegraf"]
 ### `telegraf:1.15.2` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:8964d5c1ecf0efb5c8d5e3cc649310042d92a9ca50988c94193c0114dc6985e8
+$ docker pull telegraf@sha256:36f6d826e9bdfbb3eccba107c6fc15736687a229abf444979acda578cccc5eeb
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **98.9 MB (98877270 bytes)**  
+-	Total Size: **98.9 MB (98881250 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e76b880897b8099c01be02bcf328ff33e0156c13f75ab8d14ca14560428e616e`
+-	Image ID: `sha256:c3ee1919fa55cc5935a28896f3767fab9527815930c9c6f77cc21140f088c922`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 22 Jul 2020 01:18:19 GMT
-ADD file:38965defa0df84392a8ff562c2fa6393fe8d42f65f85591c07a581d694eebc30 in / 
-# Wed, 22 Jul 2020 01:18:24 GMT
+# Tue, 04 Aug 2020 04:56:26 GMT
+ADD file:aaf5c6340b3d662631775fa4536c2e48e9f68b6cc8d53e18fb8fd76ae41b305e in / 
+# Tue, 04 Aug 2020 04:56:28 GMT
 CMD ["bash"]
-# Wed, 22 Jul 2020 05:27:12 GMT
+# Tue, 04 Aug 2020 07:52:20 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 05:27:49 GMT
+# Tue, 04 Aug 2020 07:53:19 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 23 Jul 2020 08:21:00 GMT
+# Wed, 05 Aug 2020 01:52:11 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
-# Thu, 23 Jul 2020 08:21:16 GMT
+# Wed, 05 Aug 2020 01:52:17 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Tue, 04 Aug 2020 04:51:26 GMT
+# Wed, 05 Aug 2020 01:52:18 GMT
 ENV TELEGRAF_VERSION=1.15.2
-# Tue, 04 Aug 2020 04:52:12 GMT
+# Wed, 05 Aug 2020 01:52:27 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Tue, 04 Aug 2020 04:52:22 GMT
+# Wed, 05 Aug 2020 01:52:28 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Tue, 04 Aug 2020 04:52:43 GMT
+# Wed, 05 Aug 2020 01:52:29 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Tue, 04 Aug 2020 04:52:50 GMT
+# Wed, 05 Aug 2020 01:52:31 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 04 Aug 2020 04:52:59 GMT
+# Wed, 05 Aug 2020 01:52:34 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:f890282b0ef00faf11d62374bcdfc54ca574d085127c66977d9a08ab80978a98`  
-		Last Modified: Wed, 22 Jul 2020 01:40:13 GMT  
-		Size: 45.9 MB (45868714 bytes)  
+	-	`sha256:e7cf402ee4b1ba67e92813d50297a082bbdbdd4d47f6aeb62f2316b81d5dc843`  
+		Last Modified: Tue, 04 Aug 2020 05:04:56 GMT  
+		Size: 45.9 MB (45869261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fda9a2c24b0e12476aa415979e2be070c1cb51f060e0af97ed46ee44de7a3be`  
-		Last Modified: Wed, 22 Jul 2020 06:01:56 GMT  
-		Size: 7.1 MB (7097816 bytes)  
+	-	`sha256:cff6bd4a89fc21d80ca6924320f86708f35ddea71c7aa34a408a5b64257c764e`  
+		Last Modified: Tue, 04 Aug 2020 08:25:56 GMT  
+		Size: 7.1 MB (7097820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:792d650db03400aa008d695ec7474d63c2c2d0463789209a45254c5499c8e301`  
-		Last Modified: Wed, 22 Jul 2020 06:01:54 GMT  
-		Size: 9.3 MB (9343320 bytes)  
+	-	`sha256:e48f5852a753b7731e5d374567ae9b64e309805758f336c76d5f13bb67c94e20`  
+		Last Modified: Tue, 04 Aug 2020 08:25:56 GMT  
+		Size: 9.3 MB (9343353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ef85cb8be5c6eab5adac2aa4bf837bd540e68151717ff15245d4d7e28783a2d`  
-		Last Modified: Thu, 23 Jul 2020 08:22:02 GMT  
-		Size: 16.2 MB (16161298 bytes)  
+	-	`sha256:3640f9f6e2a57392770dada759969ada76ad0acba79f078302ef3a69700ea37e`  
+		Last Modified: Wed, 05 Aug 2020 01:53:50 GMT  
+		Size: 16.2 MB (16164767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:557343f785fe61732ac9de21e1d1ccfa6847719755fab731fb0ac979ba193240`  
-		Last Modified: Thu, 23 Jul 2020 08:21:55 GMT  
-		Size: 2.9 KB (2855 bytes)  
+	-	`sha256:450459590b912a0d6ee32ffe8ec59f466a4aa6d4971e2076e9c7a986d8990d2e`  
+		Last Modified: Wed, 05 Aug 2020 01:53:44 GMT  
+		Size: 2.8 KB (2848 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de00718f543c5237649033ed7a7f8a53975a61ec688ca2a356265bcc6d5e036d`  
-		Last Modified: Tue, 04 Aug 2020 04:53:34 GMT  
-		Size: 20.4 MB (20403082 bytes)  
+	-	`sha256:573fa0f49a25bf49631c97a439fa4ab576aac8b682d38c2bf6af36bd61402c89`  
+		Last Modified: Wed, 05 Aug 2020 01:53:50 GMT  
+		Size: 20.4 MB (20403016 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0370a4f0d6e7dd4ab384848b39323a20682737f62980ca9e0aff4826f6b9c630`  
-		Last Modified: Tue, 04 Aug 2020 04:53:29 GMT  
+	-	`sha256:6192a8cf2cd051a9b61ba2206e992aa27d10653c53bc8b11fb1acf8afa473ee8`  
+		Last Modified: Wed, 05 Aug 2020 01:53:43 GMT  
 		Size: 185.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1853,7 +1853,7 @@ CMD ["telegraf"]
 ## `telegraf:latest`
 
 ```console
-$ docker pull telegraf@sha256:7cb50213217ced48d2ec3014da2265bb7ed20a0d6cdc8f25eb0fba848fb97501
+$ docker pull telegraf@sha256:87dca1fd2cfaa0f68e6b144b7a7222d37a0c5415de8152ad10135bfb66e5a34c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1936,71 +1936,71 @@ CMD ["telegraf"]
 ### `telegraf:latest` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:8964d5c1ecf0efb5c8d5e3cc649310042d92a9ca50988c94193c0114dc6985e8
+$ docker pull telegraf@sha256:36f6d826e9bdfbb3eccba107c6fc15736687a229abf444979acda578cccc5eeb
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **98.9 MB (98877270 bytes)**  
+-	Total Size: **98.9 MB (98881250 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e76b880897b8099c01be02bcf328ff33e0156c13f75ab8d14ca14560428e616e`
+-	Image ID: `sha256:c3ee1919fa55cc5935a28896f3767fab9527815930c9c6f77cc21140f088c922`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
 ```dockerfile
-# Wed, 22 Jul 2020 01:18:19 GMT
-ADD file:38965defa0df84392a8ff562c2fa6393fe8d42f65f85591c07a581d694eebc30 in / 
-# Wed, 22 Jul 2020 01:18:24 GMT
+# Tue, 04 Aug 2020 04:56:26 GMT
+ADD file:aaf5c6340b3d662631775fa4536c2e48e9f68b6cc8d53e18fb8fd76ae41b305e in / 
+# Tue, 04 Aug 2020 04:56:28 GMT
 CMD ["bash"]
-# Wed, 22 Jul 2020 05:27:12 GMT
+# Tue, 04 Aug 2020 07:52:20 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 22 Jul 2020 05:27:49 GMT
+# Tue, 04 Aug 2020 07:53:19 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 23 Jul 2020 08:21:00 GMT
+# Wed, 05 Aug 2020 01:52:11 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
-# Thu, 23 Jul 2020 08:21:16 GMT
+# Wed, 05 Aug 2020 01:52:17 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Tue, 04 Aug 2020 04:51:26 GMT
+# Wed, 05 Aug 2020 01:52:18 GMT
 ENV TELEGRAF_VERSION=1.15.2
-# Tue, 04 Aug 2020 04:52:12 GMT
+# Wed, 05 Aug 2020 01:52:27 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Tue, 04 Aug 2020 04:52:22 GMT
+# Wed, 05 Aug 2020 01:52:28 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Tue, 04 Aug 2020 04:52:43 GMT
+# Wed, 05 Aug 2020 01:52:29 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Tue, 04 Aug 2020 04:52:50 GMT
+# Wed, 05 Aug 2020 01:52:31 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 04 Aug 2020 04:52:59 GMT
+# Wed, 05 Aug 2020 01:52:34 GMT
 CMD ["telegraf"]
 ```
 
 -	Layers:
-	-	`sha256:f890282b0ef00faf11d62374bcdfc54ca574d085127c66977d9a08ab80978a98`  
-		Last Modified: Wed, 22 Jul 2020 01:40:13 GMT  
-		Size: 45.9 MB (45868714 bytes)  
+	-	`sha256:e7cf402ee4b1ba67e92813d50297a082bbdbdd4d47f6aeb62f2316b81d5dc843`  
+		Last Modified: Tue, 04 Aug 2020 05:04:56 GMT  
+		Size: 45.9 MB (45869261 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fda9a2c24b0e12476aa415979e2be070c1cb51f060e0af97ed46ee44de7a3be`  
-		Last Modified: Wed, 22 Jul 2020 06:01:56 GMT  
-		Size: 7.1 MB (7097816 bytes)  
+	-	`sha256:cff6bd4a89fc21d80ca6924320f86708f35ddea71c7aa34a408a5b64257c764e`  
+		Last Modified: Tue, 04 Aug 2020 08:25:56 GMT  
+		Size: 7.1 MB (7097820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:792d650db03400aa008d695ec7474d63c2c2d0463789209a45254c5499c8e301`  
-		Last Modified: Wed, 22 Jul 2020 06:01:54 GMT  
-		Size: 9.3 MB (9343320 bytes)  
+	-	`sha256:e48f5852a753b7731e5d374567ae9b64e309805758f336c76d5f13bb67c94e20`  
+		Last Modified: Tue, 04 Aug 2020 08:25:56 GMT  
+		Size: 9.3 MB (9343353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ef85cb8be5c6eab5adac2aa4bf837bd540e68151717ff15245d4d7e28783a2d`  
-		Last Modified: Thu, 23 Jul 2020 08:22:02 GMT  
-		Size: 16.2 MB (16161298 bytes)  
+	-	`sha256:3640f9f6e2a57392770dada759969ada76ad0acba79f078302ef3a69700ea37e`  
+		Last Modified: Wed, 05 Aug 2020 01:53:50 GMT  
+		Size: 16.2 MB (16164767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:557343f785fe61732ac9de21e1d1ccfa6847719755fab731fb0ac979ba193240`  
-		Last Modified: Thu, 23 Jul 2020 08:21:55 GMT  
-		Size: 2.9 KB (2855 bytes)  
+	-	`sha256:450459590b912a0d6ee32ffe8ec59f466a4aa6d4971e2076e9c7a986d8990d2e`  
+		Last Modified: Wed, 05 Aug 2020 01:53:44 GMT  
+		Size: 2.8 KB (2848 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de00718f543c5237649033ed7a7f8a53975a61ec688ca2a356265bcc6d5e036d`  
-		Last Modified: Tue, 04 Aug 2020 04:53:34 GMT  
-		Size: 20.4 MB (20403082 bytes)  
+	-	`sha256:573fa0f49a25bf49631c97a439fa4ab576aac8b682d38c2bf6af36bd61402c89`  
+		Last Modified: Wed, 05 Aug 2020 01:53:50 GMT  
+		Size: 20.4 MB (20403016 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0370a4f0d6e7dd4ab384848b39323a20682737f62980ca9e0aff4826f6b9c630`  
-		Last Modified: Tue, 04 Aug 2020 04:53:29 GMT  
+	-	`sha256:6192a8cf2cd051a9b61ba2206e992aa27d10653c53bc8b11fb1acf8afa473ee8`  
+		Last Modified: Wed, 05 Aug 2020 01:53:43 GMT  
 		Size: 185.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
