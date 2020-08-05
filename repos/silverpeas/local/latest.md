@@ -5127,14 +5127,9 @@ Licenses: (parsed from: `/usr/share/doc/libssh-gcrypt-4/copyright`)
 - `LGPL-2.1+~OpenSSL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh=0.8.0~20170825.94fa1e38-1ubuntu0.6
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.dsc' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.dsc 2518 SHA256:2ee84667e3447ce4edab938227c2a4c0311dd8577ef050b45bf4d622cc0da872
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38.orig.tar.xz' libssh_0.8.0~20170825.94fa1e38.orig.tar.xz 381176 SHA256:48cbcc4c946380f08c024fbc1898b1efd6edff66a5ec4b536695926f0ea055a8
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.debian.tar.xz' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.debian.tar.xz 36024 SHA256:d961dec81b464d03ef6351411489b08888ee7ed9d68aaf83533e9bcf49695658
-```
 
 ### `dpkg` source package: `libtasn1-6=4.13-2`
 
@@ -7375,14 +7370,9 @@ Licenses: (parsed from: `/usr/share/doc/libpulse0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pulseaudio=1:11.1-1ubuntu7.9
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_11.1-1ubuntu7.9.dsc' pulseaudio_11.1-1ubuntu7.9.dsc 3223 SHA256:0948fed9942730b67c17cd34b6948895682e72d9f630b947b0503495b5503e8d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_11.1.orig.tar.xz' pulseaudio_11.1.orig.tar.xz 1648924 SHA256:f2521c525a77166189e3cb9169f75c2ee2b82fa3fcf9476024fbc2c3a6c9cd9e
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_11.1-1ubuntu7.9.debian.tar.xz' pulseaudio_11.1-1ubuntu7.9.debian.tar.xz 113684 SHA256:4efffa8c36fff9bbcc5fdca79571356ac1f6d85ee05ba9d936b291c0fc1adab8
-```
 
 ### `dpkg` source package: `python3-defaults=3.6.7-1~18.04`
 
