@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b073a2f2d68cd3cc7aabf58a237e201e0006513385d9a1b595e73a90df860f11`
-- Created: `2020-07-22T03:29:22.708118527Z`
+- Image ID: `sha256:3576ec790ae798d19836433fb6209fecad869412e3a171c8c8c5ce15591eca43`
+- Created: `2020-08-05T00:32:31.478926986Z`
 - Virtual Size: ~ 1.20 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -178,23 +178,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=10.3+deb10u4`
+### `dpkg` source package: `base-files=10.3+deb10u5`
 
 Binary Packages:
 
-- `base-files=10.3+deb10u4`
+- `base-files=10.3+deb10u5`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=10.3+deb10u5
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u5.dsc' base-files_10.3+deb10u5.dsc 1103 SHA256:7724ff9a9a3b2ce469cb04e761ab504b88fa2c74ba45d4d4d6b1e6cebdb11502
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u5.tar.xz' base-files_10.3+deb10u5.tar.xz 65376 SHA256:a86ea7be711a9a91ae781cbd9db1b0a931f76cdd36ea247aae9273f8f4d2a011
+```
 
-- http://snapshot.debian.org/package/base-files/10.3+deb10u4/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/10.3+deb10u5/ (for browsing the source)
+- https://sources.debian.net/src/base-files/10.3+deb10u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/10.3+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -1205,11 +1211,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gnupg2/2.2.12-1+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gnupg2/2.2.12-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gnutls28=3.6.7-4+deb10u4`
+### `dpkg` source package: `gnutls28=3.6.7-4+deb10u5`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.6.7-4+deb10u4`
+- `libgnutls30:amd64=3.6.7-4+deb10u5`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -1228,18 +1234,18 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gnutls28=3.6.7-4+deb10u4
-'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7-4+deb10u4.dsc' gnutls28_3.6.7-4+deb10u4.dsc 3509 SHA256:0d633cb281152d025b49fa398930c8f5ea2e9af529bc9a2d288813679e75d88f
-'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
-'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz.asc' gnutls28_3.6.7.orig.tar.xz.asc 534 SHA256:a14d0a7b9295b65ae797a70f8e765024a2e363dca03d008bfce0aec2b3f292b0
-'http://security.debian.org/debian-security/pool/updates/main/g/gnutls28/gnutls28_3.6.7-4+deb10u4.debian.tar.xz' gnutls28_3.6.7-4+deb10u4.debian.tar.xz 78712 SHA256:2bf9e2ce3603e46ad2a47762e4e96c2f64729fe5bd784274025aa99f33a11688
+$ apt-get source -qq --print-uris gnutls28=3.6.7-4+deb10u5
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4+deb10u5.dsc' gnutls28_3.6.7-4+deb10u5.dsc 3354 SHA256:d91aef3a450b7dceef817264996a3c11b72dd7fb8e892897b63d7e52bd078e4a
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz.asc' gnutls28_3.6.7.orig.tar.xz.asc 534 SHA256:a14d0a7b9295b65ae797a70f8e765024a2e363dca03d008bfce0aec2b3f292b0
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4+deb10u5.debian.tar.xz' gnutls28_3.6.7-4+deb10u5.debian.tar.xz 89484 SHA256:d719d468f59aef1c480dda91ffee6d0c728e8635a0808f199d999d04f128b70a
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u4/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.6.7-4+deb10u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u5/ (for browsing the source)
+- https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gnutls28/3.6.7-4+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.13-7`
 
@@ -6575,23 +6581,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/node-minimatch/3.0.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/node-minimatch/3.0.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `node-minimist=1.2.0-1`
+### `dpkg` source package: `node-minimist=1.2.0-1+deb10u1`
 
 Binary Packages:
 
-- `node-minimist=1.2.0-1`
+- `node-minimist=1.2.0-1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/node-minimist/copyright`)
 
 - `Expat`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris node-minimist=1.2.0-1+deb10u1
+'http://deb.debian.org/debian/pool/main/n/node-minimist/node-minimist_1.2.0-1+deb10u1.dsc' node-minimist_1.2.0-1+deb10u1.dsc 2051 SHA256:4ce9c6d35bf27b212174dff67cb03bc330a6d8481a9f157f28ec18237d1ad4a6
+'http://deb.debian.org/debian/pool/main/n/node-minimist/node-minimist_1.2.0.orig.tar.gz' node-minimist_1.2.0.orig.tar.gz 7885 SHA256:8b43cc5668a3b8b4523b957a5daeff5cdb84fc6f29e65148e6851bc4ec0e1a8d
+'http://deb.debian.org/debian/pool/main/n/node-minimist/node-minimist_1.2.0-1+deb10u1.debian.tar.xz' node-minimist_1.2.0-1+deb10u1.debian.tar.xz 3612 SHA256:864977e5daea4d4e370879fa3f410410d3e37ca2378f163c0ab032344ccd5e84
+```
 
-- http://snapshot.debian.org/package/node-minimist/1.2.0-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/node-minimist/1.2.0-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/node-minimist/1.2.0-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/node-minimist/1.2.0-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `node-mississippi=3.0.0-1`
 
@@ -9648,11 +9661,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pcre3/2:8.39-12/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pcre3/2:8.39-12/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `perl=5.28.1-6`
+### `dpkg` source package: `perl=5.28.1-6+deb10u1`
 
 Binary Packages:
 
-- `perl-base=5.28.1-6`
+- `perl-base=5.28.1-6+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 
@@ -9688,7 +9701,7 @@ Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris perl=5.28.1-6
+$ apt-get source -qq --print-uris perl=5.28.1-6+deb10u1
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1-6+deb10u1.dsc' perl_5.28.1-6+deb10u1.dsc 2863 SHA256:a680d97001398640c249fc6bae6124fe59eb465b044f03fb4148b22152895785
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1.orig-regen-configure.tar.xz' perl_5.28.1.orig-regen-configure.tar.xz 411944 SHA256:5873b81af4514d3910ab1a8267b15ff8c0e2100dbae4edfd10b65ef72cd31ef8
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1.orig.tar.xz' perl_5.28.1.orig.tar.xz 12372080 SHA256:fea7162d4cca940a387f0587b93f6737d884bf74d8a9d7cfd978bc12cd0b202d
@@ -9697,9 +9710,9 @@ $ apt-get source -qq --print-uris perl=5.28.1-6
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/perl/5.28.1-6/ (for browsing the source)
-- https://sources.debian.net/src/perl/5.28.1-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/perl/5.28.1-6/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/perl/5.28.1-6+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/perl/5.28.1-6+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/perl/5.28.1-6+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pgdg-keyring=2018.2`
 
@@ -9715,11 +9728,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `pillow=5.4.1-2+deb10u1`
+### `dpkg` source package: `pillow=5.4.1-2+deb10u2`
 
 Binary Packages:
 
-- `python3-pil:amd64=5.4.1-2+deb10u1`
+- `python3-pil:amd64=5.4.1-2+deb10u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -9728,17 +9741,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris pillow=5.4.1-2+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_5.4.1-2+deb10u1.dsc' pillow_5.4.1-2+deb10u1.dsc 2819 SHA256:10314b2a4fc89585a06813b62ed749e0ffec7a52e1de586272780c57d9a85b71
-'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_5.4.1.orig.tar.xz' pillow_5.4.1.orig.tar.xz 12248208 SHA256:db7f301e4bf1eade3321430014b71230492443015929a221163c6b52af68320d
-'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_5.4.1-2+deb10u1.debian.tar.xz' pillow_5.4.1-2+deb10u1.debian.tar.xz 24696 SHA256:364aec494d1c0caeb885ddf091ed85392d0d37a6f16920fdeeb85bca30948367
+$ apt-get source -qq --print-uris pillow=5.4.1-2+deb10u2
+'http://deb.debian.org/debian/pool/main/p/pillow/pillow_5.4.1-2+deb10u2.dsc' pillow_5.4.1-2+deb10u2.dsc 2819 SHA256:a7da88c4b348a46d173542565a46182ab52e093acabf3b68ace7bd16006e63b5
+'http://deb.debian.org/debian/pool/main/p/pillow/pillow_5.4.1.orig.tar.xz' pillow_5.4.1.orig.tar.xz 12248208 SHA256:db7f301e4bf1eade3321430014b71230492443015929a221163c6b52af68320d
+'http://deb.debian.org/debian/pool/main/p/pillow/pillow_5.4.1-2+deb10u2.debian.tar.xz' pillow_5.4.1-2+deb10u2.debian.tar.xz 26520 SHA256:dba1a0b0e8d09ffe9e29fddc1d888ca49c7dbe2399233122c055c3122030c693
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/pillow/5.4.1-2+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/pillow/5.4.1-2+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pillow/5.4.1-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/pillow/5.4.1-2+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/pillow/5.4.1-2+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/pillow/5.4.1-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pinentry=1.1.0-2`
 
@@ -11176,14 +11189,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python3-stdlib-extensions/3.7.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python3.7=3.7.3-2+deb10u1`
+### `dpkg` source package: `python3.7=3.7.3-2+deb10u2`
 
 Binary Packages:
 
-- `libpython3.7-minimal:amd64=3.7.3-2+deb10u1`
-- `libpython3.7-stdlib:amd64=3.7.3-2+deb10u1`
-- `python3.7=3.7.3-2+deb10u1`
-- `python3.7-minimal=3.7.3-2+deb10u1`
+- `libpython3.7-minimal:amd64=3.7.3-2+deb10u2`
+- `libpython3.7-stdlib:amd64=3.7.3-2+deb10u2`
+- `python3.7=3.7.3-2+deb10u2`
+- `python3.7-minimal=3.7.3-2+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/share/doc/libpython3.7-stdlib/copyright`, `/usr/share/doc/python3.7/copyright`, `/usr/share/doc/python3.7-minimal/copyright`)
 
@@ -11205,13 +11218,20 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris python3.7=3.7.3-2+deb10u2
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2+deb10u2.dsc' python3.7_3.7.3-2+deb10u2.dsc 3404 SHA256:06969a6446c96eb791b20fced13126a81acffca3cf669dc1c726abca763efd3f
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3.orig.tar.xz' python3.7_3.7.3.orig.tar.xz 17108364 SHA256:da60b54064d4cfcd9c26576f6df2690e62085123826cff2e667e72a91952d318
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2+deb10u2.debian.tar.xz' python3.7_3.7.3-2+deb10u2.debian.tar.xz 217696 SHA256:b401c8d03bfbdf24bdf1bb12c8c88ef506b3fe00914e560ac1a58a09915c60c9
+```
 
-- http://snapshot.debian.org/package/python3.7/3.7.3-2+deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/python3.7/3.7.3-2+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/python3.7/3.7.3-2+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python3.7/3.7.3-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pyusb=1.0.2-1`
 
