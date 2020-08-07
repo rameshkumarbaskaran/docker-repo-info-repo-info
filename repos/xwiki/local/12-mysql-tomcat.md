@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c861ab895d57d055f3176d0bb61dcbc4d53744874d6bcb6a168c9fd41a53f70d`
-- Created: `2020-08-03T23:06:45.226708813Z`
-- Virtual Size: ~ 1.30 Gb  
+- Image ID: `sha256:980375e0f213c5bceba52256e374e48ab213309a4abad8955ef8eaa2598f736c`
+- Created: `2020-08-05T22:28:06.578934775Z`
+- Virtual Size: ~ 1.31 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -23,9 +23,9 @@
   - `TOMCAT_MAJOR=8`
   - `TOMCAT_VERSION=8.5.57`
   - `TOMCAT_SHA512=720de36bb3e40a4c67bdf0137b12ae0fd733aef772d81a4b8dab00f29924ddd17ecb2a7217b9551fc0ca51bd81d1da13ad63b6694c445e5c0e42dfa7f279ede1`
-  - `XWIKI_VERSION=12.5.1`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/12.5.1`
-  - `XWIKI_DOWNLOAD_SHA256=09d6bca7466cc70f7b78802209f391b2537757abfe14740fdb7d852470b22557`
+  - `XWIKI_VERSION=12.6`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/12.6`
+  - `XWIKI_DOWNLOAD_SHA256=6ad47ade6e403cc67587496d9b7e7556f80fd21cc0049d941837dcdd094cd1cd`
   - `MYSQL_JDBC_VERSION=8.0.20`
   - `MYSQL_JDBC_SHA256=56a42553b516660ae0bcd08f7f4f5f375294afbd62200d6c0c88a8c61c668ede`
   - `MYSQL_JDBC_PREFIX=https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.20`
@@ -285,13 +285,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.8.dsc' base-files_10.1ubuntu2.8.dsc 1275 SHA256:fa0056b823fb0bb9442b9d26161d74d836aa72e74c0ccf43d4b27baf2f4c9985
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.8.tar.xz' base-files_10.1ubuntu2.8.tar.xz 78408 SHA256:c555008db259ae41c3c5252e8ab212b81840256e0a7ea35434dbbb6abc4924d9
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -3964,14 +3960,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.41
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.41.dsc' systemd_237-3ubuntu10.41.dsc 5149 SHA256:9fd80d1fdd57e4275a0aaaed2b4c9009953335cda45970582b7c71d624a10e0b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.41.debian.tar.xz' systemd_237-3ubuntu10.41.debian.tar.xz 270988 SHA256:86b1e317ed39c35b5fb64740c4df6c7b0acb9a72fd6b978bd0a816928ecc060a
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
