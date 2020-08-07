@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:36bf7259fa4563a6aa12b905389d75598843bff3cdc130a1387b65e531ff2726`
-- Created: `2020-07-16T22:19:34.5276092Z`
-- Virtual Size: ~ 175.80 Mb  
+- Image ID: `sha256:25f8bbbd7f520a55d41e41c43d3799fb50e686cca035f24836f0f178cf52c97f`
+- Created: `2020-08-07T01:16:42.974370044Z`
+- Virtual Size: ~ 175.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.8`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.8.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.8.tar.xz.asc`
-  - `PHP_SHA256=642843890b732e8af01cb661e823ae01472af1402f211c83009c9b3abd073245`
+  - `PHP_VERSION=7.4.9`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.9.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.9.tar.xz.asc`
+  - `PHP_SHA256=23733f4a608ad1bebdcecf0138ebc5fd57cf20d6e0915f98a9444c3f747dc57b`
   - `PHP_MD5=`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
@@ -796,16 +796,16 @@ BSD-3-Clause
 ### `apk` package: `python3`
 
 ```console
-python3-3.8.3-r0 description:
+python3-3.8.5-r0 description:
 A high-level scripting language
 
-python3-3.8.3-r0 webpage:
+python3-3.8.5-r0 webpage:
 https://www.python.org/
 
-python3-3.8.3-r0 installed size:
-46813184
+python3-3.8.5-r0 installed size:
+46911488
 
-python3-3.8.3-r0 license:
+python3-3.8.5-r0 license:
 PSF-2.0
 
 ```
