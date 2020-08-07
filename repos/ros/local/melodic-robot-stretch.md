@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1fc2a15be60c5d8a383ee6143a77784106e146d34eeda983ee61734dbb8e51a0`
-- Created: `2020-07-22T20:33:39.177671253Z`
+- Image ID: `sha256:32310c51192576c47e8ad2d2c11305e45ac340a1e7fde00c6084e8868dbae475`
+- Created: `2020-08-05T06:49:53.215783478Z`
 - Virtual Size: ~ 1.29 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -816,12 +816,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/cups/2.2.1-8+deb9u6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/cups/2.2.1-8+deb9u6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `curl=7.52.1-5+deb9u10`
+### `dpkg` source package: `curl=7.52.1-5+deb9u11`
 
 Binary Packages:
 
-- `libcurl3:amd64=7.52.1-5+deb9u10`
-- `libcurl3-gnutls:amd64=7.52.1-5+deb9u10`
+- `libcurl3:amd64=7.52.1-5+deb9u11`
+- `libcurl3-gnutls:amd64=7.52.1-5+deb9u11`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`)
 
@@ -835,17 +835,17 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/lib
 Source:
 
 ```console
-$ apt-get source -qq --print-uris curl=7.52.1-5+deb9u10
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.52.1-5+deb9u10.dsc' curl_7.52.1-5+deb9u10.dsc 2822 SHA256:313cd1eeb23ee0cb069040ab48d3d4fba08811d14b1581647b0e0bf303747160
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.52.1.orig.tar.gz' curl_7.52.1.orig.tar.gz 3504621 SHA256:a8984e8b20880b621f61a62d95ff3c0763a3152093a9f9ce4287cfd614add6ae
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.52.1-5+deb9u10.debian.tar.xz' curl_7.52.1-5+deb9u10.debian.tar.xz 43360 SHA256:014f6df474eb55469883314060bef68c04334862ff8d543c04bec6f5fae4542c
+$ apt-get source -qq --print-uris curl=7.52.1-5+deb9u11
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u11.dsc' curl_7.52.1-5+deb9u11.dsc 2956 SHA256:e28615867cb827ad8c6e2b43fa0e990f3d3143446e19e217b3f498485920a8da
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1.orig.tar.gz' curl_7.52.1.orig.tar.gz 3504621 SHA256:a8984e8b20880b621f61a62d95ff3c0763a3152093a9f9ce4287cfd614add6ae
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u11.debian.tar.xz' curl_7.52.1-5+deb9u11.debian.tar.xz 43880 SHA256:904852ae6672bd14ffbe2a17491eb908b852f6fb4c63fe3c9695f46c909246af
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/curl/7.52.1-5+deb9u10/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.52.1-5+deb9u10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u10/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u11/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u11/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3+deb9u1`
 
@@ -1160,14 +1160,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/dpkg/1.18.25/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/dpkg/1.18.25/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `e2fsprogs=1.43.4-2+deb9u1`
+### `dpkg` source package: `e2fsprogs=1.43.4-2+deb9u2`
 
 Binary Packages:
 
-- `e2fslibs:amd64=1.43.4-2+deb9u1`
-- `e2fsprogs=1.43.4-2+deb9u1`
-- `libcomerr2:amd64=1.43.4-2+deb9u1`
-- `libss2:amd64=1.43.4-2+deb9u1`
+- `e2fslibs:amd64=1.43.4-2+deb9u2`
+- `e2fsprogs=1.43.4-2+deb9u2`
+- `libcomerr2:amd64=1.43.4-2+deb9u2`
+- `libss2:amd64=1.43.4-2+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/libcomerr2/copyright`, `/usr/share/doc/libss2/copyright`)
 
@@ -1177,17 +1177,17 @@ Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2f
 Source:
 
 ```console
-$ apt-get source -qq --print-uris e2fsprogs=1.43.4-2+deb9u1
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.43.4-2+deb9u1.dsc' e2fsprogs_1.43.4-2+deb9u1.dsc 2071 SHA256:b3d4d80f72ef552369448b0f2ecc2b68e3a670fdab5a14705fcaf8607579cc32
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.43.4.orig.tar.gz' e2fsprogs_1.43.4.orig.tar.gz 7552218 SHA256:484ab0bc1bc07c64267b18cfe7871b6b975bf0a705c5a4563001f035071cdc7c
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.43.4-2+deb9u1.debian.tar.xz' e2fsprogs_1.43.4-2+deb9u1.debian.tar.xz 78168 SHA256:d238b0872e2aad029fbcd02a9e83242befb3b2cc445bbaa4712a90f2741fbeeb
+$ apt-get source -qq --print-uris e2fsprogs=1.43.4-2+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.43.4-2+deb9u2.dsc' e2fsprogs_1.43.4-2+deb9u2.dsc 2575 SHA256:40b9eac8d59a005d1e3677bf6bc4f152521dd9155805e0a0368aae668e06dd30
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.43.4.orig.tar.gz' e2fsprogs_1.43.4.orig.tar.gz 7552218 SHA256:484ab0bc1bc07c64267b18cfe7871b6b975bf0a705c5a4563001f035071cdc7c
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.43.4-2+deb9u2.debian.tar.xz' e2fsprogs_1.43.4-2+deb9u2.debian.tar.xz 79360 SHA256:34c815b2b70f7d44bf0a308324e4371fc7e7c149dcafcf9f39dd64bfc387c631
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/e2fsprogs/1.43.4-2+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.43.4-2+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.43.4-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/e2fsprogs/1.43.4-2+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/e2fsprogs/1.43.4-2+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/e2fsprogs/1.43.4-2+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `eigen3=3.3.2-1`
 
@@ -3032,11 +3032,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libidn/1.33-1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libidn/1.33-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libjpeg-turbo=1:1.5.1-2`
+### `dpkg` source package: `libjpeg-turbo=1:1.5.1-2+deb9u1`
 
 Binary Packages:
 
-- `libjpeg62-turbo:amd64=1:1.5.1-2`
+- `libjpeg62-turbo:amd64=1:1.5.1-2+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libjpeg62-turbo/copyright`)
 
@@ -3047,17 +3047,17 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg62-turbo/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libjpeg-turbo=1:1.5.1-2
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1-2.dsc' libjpeg-turbo_1.5.1-2.dsc 2420 SHA256:9f755bfafa4795f91c689cb742194559f6e543e35ba135e0d30f6b51eed1eba2
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1.orig.tar.gz' libjpeg-turbo_1.5.1.orig.tar.gz 1650647 SHA256:41429d3d253017433f66e3d472b8c7d998491d2f41caa7306b8d9a6f2a2c666c
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1-2.debian.tar.xz' libjpeg-turbo_1.5.1-2.debian.tar.xz 78576 SHA256:0077c9e2b7ec2abe25c7a591e65a08750045a28dcd00207a928079a3d31b3cc4
+$ apt-get source -qq --print-uris libjpeg-turbo=1:1.5.1-2+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1-2+deb9u1.dsc' libjpeg-turbo_1.5.1-2+deb9u1.dsc 2332 SHA256:c279f540af20efed9482a9e57b3878d4095c2249e7564b1805f24f6190b0fb63
+'http://security.debian.org/debian-security/pool/updates/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1.orig.tar.gz' libjpeg-turbo_1.5.1.orig.tar.gz 1650647 SHA256:41429d3d253017433f66e3d472b8c7d998491d2f41caa7306b8d9a6f2a2c666c
+'http://security.debian.org/debian-security/pool/updates/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1-2+deb9u1.debian.tar.xz' libjpeg-turbo_1.5.1-2+deb9u1.debian.tar.xz 85132 SHA256:a8655688837fafbdef3922619e5f5a3c73956626ccbcfe89c7821d2b6e682b7c
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libjpeg-turbo/1:1.5.1-2/ (for browsing the source)
-- https://sources.debian.net/src/libjpeg-turbo/1:1.5.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libjpeg-turbo/1:1.5.1-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libjpeg-turbo/1:1.5.1-2+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/libjpeg-turbo/1:1.5.1-2+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libjpeg-turbo/1:1.5.1-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libjsoncpp=1.7.4-3`
 
@@ -3627,13 +3627,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libwebp/0.5.2-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libwebp/0.5.2-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libx11=2:1.6.4-3+deb9u1`
+### `dpkg` source package: `libx11=2:1.6.4-3+deb9u2`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.4-3+deb9u1`
-- `libx11-data=2:1.6.4-3+deb9u1`
-- `libx11-xcb1:amd64=2:1.6.4-3+deb9u1`
+- `libx11-6:amd64=2:1.6.4-3+deb9u2`
+- `libx11-data=2:1.6.4-3+deb9u2`
+- `libx11-xcb1:amd64=2:1.6.4-3+deb9u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3642,17 +3642,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libx11=2:1.6.4-3+deb9u1
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.4-3+deb9u1.dsc' libx11_1.6.4-3+deb9u1.dsc 2576 SHA256:f58095603558b7db6b5799852c693efb18adcb64b8a85e21433df0f3080101cd
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.4.orig.tar.gz' libx11_1.6.4.orig.tar.gz 3095115 SHA256:5d7fbb9e15c27900ea8963218a59750b674a8d7c94161b66e96fcfbdaa1c6263
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.4-3+deb9u1.diff.gz' libx11_1.6.4-3+deb9u1.diff.gz 42948 SHA256:9f35ff369042893ffc47fa47fea245b355e7a7e44853d8cc4d8a765c32b407f2
+$ apt-get source -qq --print-uris libx11=2:1.6.4-3+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.4-3+deb9u2.dsc' libx11_1.6.4-3+deb9u2.dsc 2428 SHA256:bb0cfdee30dc9b16cbc3ee1195b3f04941f9b337c5c49a7929cf7bc1e0381ca1
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.4.orig.tar.gz' libx11_1.6.4.orig.tar.gz 3095115 SHA256:5d7fbb9e15c27900ea8963218a59750b674a8d7c94161b66e96fcfbdaa1c6263
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.4-3+deb9u2.diff.gz' libx11_1.6.4-3+deb9u2.diff.gz 126057 SHA256:883f8c3a5bbe8a5fa4b3c025b109f34f165e2fa86afb51b297307cfb4815dae5
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libx11/2:1.6.4-3+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/libx11/2:1.6.4-3+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libx11/2:1.6.4-3+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libx11/2:1.6.4-3+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/libx11/2:1.6.4-3+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libx11/2:1.6.4-3+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 
@@ -4423,12 +4423,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/mawk/1.3.3-17/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/mawk/1.3.3-17/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `mercurial=4.0-1+deb9u1`
+### `dpkg` source package: `mercurial=4.0-1+deb9u2`
 
 Binary Packages:
 
-- `mercurial=4.0-1+deb9u1`
-- `mercurial-common=4.0-1+deb9u1`
+- `mercurial=4.0-1+deb9u2`
+- `mercurial-common=4.0-1+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/mercurial-common/copyright`)
 
@@ -4438,17 +4438,17 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mercurial=4.0-1+deb9u1
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.0-1+deb9u1.dsc' mercurial_4.0-1+deb9u1.dsc 2427 SHA256:ba44c9b1c5426154dd3bf44ad16b2973e4da475b8dd5d97ce9ebcd3ec472e174
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.0.orig.tar.gz' mercurial_4.0.orig.tar.gz 4850316 SHA256:24be080745230840f214d93e9f9fb4e25510f9abbbec2e56fab18543fedc43a7
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.0-1+deb9u1.debian.tar.xz' mercurial_4.0-1+deb9u1.debian.tar.xz 101944 SHA256:83c6dee02fa4df95235a2f03baea99731a37e9d8d166362db6152a2990e6ad96
+$ apt-get source -qq --print-uris mercurial=4.0-1+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/m/mercurial/mercurial_4.0-1+deb9u2.dsc' mercurial_4.0-1+deb9u2.dsc 2427 SHA256:01fb3c0ab234431ba7a64d190c030dd963337efc97023df8bad228d96bb1f67b
+'http://security.debian.org/debian-security/pool/updates/main/m/mercurial/mercurial_4.0.orig.tar.gz' mercurial_4.0.orig.tar.gz 4850316 SHA256:24be080745230840f214d93e9f9fb4e25510f9abbbec2e56fab18543fedc43a7
+'http://security.debian.org/debian-security/pool/updates/main/m/mercurial/mercurial_4.0-1+deb9u2.debian.tar.xz' mercurial_4.0-1+deb9u2.debian.tar.xz 117480 SHA256:c034a87b9aa4a02f4852c9447518b4520ab9ece7c8f0d4c27953d64c97c2c883
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/mercurial/4.0-1+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/4.0-1+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/4.0-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/mercurial/4.0-1+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/mercurial/4.0-1+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/mercurial/4.0-1+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mesa=13.0.6-1`
 

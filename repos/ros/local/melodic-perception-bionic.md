@@ -394,13 +394,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.8.dsc' base-files_10.1ubuntu2.8.dsc 1275 SHA256:fa0056b823fb0bb9442b9d26161d74d836aa72e74c0ccf43d4b27baf2f4c9985
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.8.tar.xz' base-files_10.1ubuntu2.8.tar.xz 78408 SHA256:c555008db259ae41c3c5252e8ab212b81840256e0a7ea35434dbbb6abc4924d9
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -455,14 +451,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.30-21ubuntu1~18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1~18.04.3.dsc' binutils_2.30-21ubuntu1~18.04.3.dsc 11670 SHA256:277baf59cd0eeca9f624afbcef484f88726cd309bcf5ba11d95aea0a91673feb
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30.orig.tar.xz' binutils_2.30.orig.tar.xz 20286700 SHA256:6e46b8aeae2f727a36f0bd9505e405768a72218f1796f0d09757d45209871ae6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1~18.04.3.debian.tar.xz' binutils_2.30-21ubuntu1~18.04.3.debian.tar.xz 621320 SHA256:38cffa307e197c63ec5631dc57cafd0d48f904c146559a43d2fcb3b8e56b45e9
-```
 
 ### `dpkg` source package: `boost-defaults=1.65.1.0ubuntu1`
 
@@ -4381,14 +4372,9 @@ Licenses: (parsed from: `/usr/share/doc/libssh-gcrypt-4/copyright`)
 - `LGPL-2.1+~OpenSSL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh=0.8.0~20170825.94fa1e38-1ubuntu0.6
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.dsc' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.dsc 2518 SHA256:2ee84667e3447ce4edab938227c2a4c0311dd8577ef050b45bf4d622cc0da872
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38.orig.tar.xz' libssh_0.8.0~20170825.94fa1e38.orig.tar.xz 381176 SHA256:48cbcc4c946380f08c024fbc1898b1efd6edff66a5ec4b536695926f0ea055a8
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.debian.tar.xz' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.6.debian.tar.xz 36024 SHA256:d961dec81b464d03ef6351411489b08888ee7ed9d68aaf83533e9bcf49695658
-```
 
 ### `dpkg` source package: `libtasn1-6=4.13-2`
 
@@ -10160,14 +10146,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.41
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.41.dsc' systemd_237-3ubuntu10.41.dsc 5149 SHA256:9fd80d1fdd57e4275a0aaaed2b4c9009953335cda45970582b7c71d624a10e0b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.41.debian.tar.xz' systemd_237-3ubuntu10.41.debian.tar.xz 270988 SHA256:86b1e317ed39c35b5fb64740c4df6c7b0acb9a72fd6b978bd0a816928ecc060a
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
