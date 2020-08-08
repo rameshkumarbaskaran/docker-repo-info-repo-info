@@ -1,10 +1,10 @@
-# `kong:2.0.5-alpine`
+# `kong:2.1.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6cd6bc3dc6120ac04c63d99c82a2d117798dc4663ada08099c314d45bb49c9d2`
-- Created: `2020-07-14T20:21:11.2352402Z`
-- Virtual Size: ~ 145.52 Mb  
+- Image ID: `sha256:a44fb79f22c843717b798bb072be12e6f65bca7fceca62c7ce1c8edc96eb6849`
+- Created: `2020-08-07T23:26:23.938755262Z`
+- Virtual Size: ~ 147.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,8 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.0.5`
-  - `KONG_SHA256=2e78dee0e695c238cde7e607e85c2e62e44422b57c626ea12822d15ed898769b`
+  - `KONG_VERSION=2.1.1`
 - Labels:
   - `maintainer=Kong <support@konghq.com>`
 
@@ -308,6 +307,23 @@ OpenSSL
 
 ```
 
+### `apk` package: `libstdc++`
+
+```console
+libstdc++-9.2.0-r4 description:
+GNU C++ standard runtime library
+
+libstdc++-9.2.0-r4 webpage:
+http://gcc.gnu.org
+
+libstdc++-9.2.0-r4 installed size:
+1671168
+
+libstdc++-9.2.0-r4 license:
+GPL LGPL
+
+```
+
 ### `apk` package: `libtls-standalone`
 
 ```console
@@ -512,6 +528,23 @@ GPL-2.0-or-later
 
 ```
 
+### `apk` package: `pkgconf`
+
+```console
+pkgconf-1.6.3-r0 description:
+development framework configuration tools
+
+pkgconf-1.6.3-r0 webpage:
+https://git.dereferenced.org/pkgconf/pkgconf
+
+pkgconf-1.6.3-r0 installed size:
+143360
+
+pkgconf-1.6.3-r0 license:
+ISC
+
+```
+
 ### `apk` package: `readline`
 
 ```console
@@ -627,6 +660,23 @@ zlib-1.2.11-r3 installed size:
 110592
 
 zlib-1.2.11-r3 license:
+Zlib
+
+```
+
+### `apk` package: `zlib-dev`
+
+```console
+zlib-dev-1.2.11-r3 description:
+A compression/decompression Library (development files)
+
+zlib-dev-1.2.11-r3 webpage:
+https://zlib.net/
+
+zlib-dev-1.2.11-r3 installed size:
+143360
+
+zlib-dev-1.2.11-r3 license:
 Zlib
 
 ```

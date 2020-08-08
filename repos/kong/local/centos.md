@@ -1,10 +1,10 @@
-# `kong:2.0.5-centos`
+# `kong:2.1.1-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e6ff1d4be6c902aabe1ad9a93e37eac121f1781af332682e2826cb27087f357d`
-- Created: `2020-07-14T20:21:21.683375263Z`
-- Virtual Size: ~ 363.98 Mb  
+- Image ID: `sha256:56f08c61c08f72738770efc73f46eba5a54b10d7ce070930c2f83921612e5c2b`
+- Created: `2020-08-07T23:27:50.170901431Z`
+- Virtual Size: ~ 363.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,8 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.0.5`
-  - `KONG_SHA256=e05340680de3541c4c940f54e64f00c90fb5137f6a8c71e413b815a411d74fc6`
+  - `KONG_VERSION=2.1.1`
 - Labels:
   - `maintainer=Kong <support@konghq.com>`
   - `org.label-schema.build-date=20200504`
@@ -818,7 +817,7 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/kmod-20-28.el7.src.rpm
 ```
 
-### `rpm` package: `kong-2.0.5-1.x86_64`
+### `rpm` package: `kong-2.1.1-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 2.0
 
@@ -2652,6 +2651,20 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls zlib-1.2.7-18.el7
+Enabling updates-source repository
+Enabling base-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/zlib-1.2.7-18.el7.src.rpm
+```
+
+### `rpm` package: `zlib-devel-1.2.7-18.el7.x86_64`
+
+Licenses (from `rpm --query`): zlib and Boost
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls zlib-devel-1.2.7-18.el7
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository

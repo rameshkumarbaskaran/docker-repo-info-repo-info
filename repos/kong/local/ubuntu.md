@@ -1,10 +1,10 @@
-# `kong:2.0.5-ubuntu`
+# `kong:2.1.1-ubuntu`
 
 ## Docker Metadata
 
-- Image ID: `sha256:df667bda5f7cfff805a379a18b00d1c0ee6b3b914d38aa5491af43e68b299779`
-- Created: `2020-07-14T20:21:16.92445828Z`
-- Virtual Size: ~ 287.97 Mb  
+- Image ID: `sha256:b0c34216b66067fc2dfd194849733099f303e34853fec46f0dc065266f9d88fe`
+- Created: `2020-08-07T23:27:15.262777218Z`
+- Virtual Size: ~ 305.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.0.5`
+  - `KONG_VERSION=2.1.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -148,13 +148,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=9.4ubuntu4.11
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.11.dsc' base-files_9.4ubuntu4.11.dsc 1575 SHA256:916072c008683dbd6468e04ad140eab668d9e511c888836f4280d0434b8ed065
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.11.tar.xz' base-files_9.4ubuntu4.11.tar.xz 65368 SHA256:0e65fae9f9d964c2d0539b79f2fa10591f9ca96a9e415828dc58560dfd97b92a
-```
 
 ### `dpkg` source package: `base-passwd=3.5.39`
 
@@ -622,22 +618,29 @@ $ apt-get source -qq --print-uris git=1:2.7.4-0ubuntu1.9
 'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.7.4-0ubuntu1.9.debian.tar.xz' git_2.7.4-0ubuntu1.9.debian.tar.xz 572052 SHA256:2ab39ce8a9d1d94a549be4d086e6b59ae2c4201bc022dd1368a38eebe98cdf24
 ```
 
-### `dpkg` source package: `glibc=2.23-0ubuntu11`
+### `dpkg` source package: `glibc=2.23-0ubuntu11.2`
 
 Binary Packages:
 
-- `libc-bin=2.23-0ubuntu11`
-- `libc6:amd64=2.23-0ubuntu11`
-- `multiarch-support=2.23-0ubuntu11`
+- `libc-bin=2.23-0ubuntu11.2`
+- `libc-dev-bin=2.23-0ubuntu11.2`
+- `libc6:amd64=2.23-0ubuntu11.2`
+- `libc6-dev:amd64=2.23-0ubuntu11.2`
+- `multiarch-support=2.23-0ubuntu11.2`
 
-Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/multiarch-support/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc-dev-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/libc6-dev/copyright`, `/usr/share/doc/multiarch-support/copyright`)
 
 - `GPL-2`
 - `LGPL-2.1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris glibc=2.23-0ubuntu11.2
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.2.dsc' glibc_2.23-0ubuntu11.2.dsc 8547 SHA256:bf8f1067f5524046070f3cac025888651a99447cc789a0e5b9eafa97a3571f9c
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23.orig.tar.xz' glibc_2.23.orig.tar.xz 13849968 SHA256:bf6c528eeebefcacc295270068b79330c1fb2b22458ff66285b4175d23442c96
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.2.debian.tar.xz' glibc_2.23-0ubuntu11.2.debian.tar.xz 1357888 SHA256:04ebe665c81c24481057a4facd6c07e9c43319f6a2dc98fce18ecd247d1af96d
+```
 
 ### `dpkg` source package: `gmp=2:6.1.0+dfsg-2`
 
@@ -877,11 +880,11 @@ $ apt-get source -qq --print-uris kmod=22-1ubuntu5.2
 'http://archive.ubuntu.com/ubuntu/pool/main/k/kmod/kmod_22-1ubuntu5.2.debian.tar.xz' kmod_22-1ubuntu5.2.debian.tar.xz 14524 SHA256:f8dd1134e6cff72a458e66d2e86ef413be07a29cc66c87d02544bb5c2037bfb7
 ```
 
-### `dpkg` source package: `kong=2.0.5`
+### `dpkg` source package: `kong=2.1.1`
 
 Binary Packages:
 
-- `kong=2.0.5`
+- `kong=2.1.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1045,11 +1048,11 @@ $ apt-get source -qq --print-uris libidn=1.32-3ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn/libidn_1.32-3ubuntu1.2.debian.tar.xz' libidn_1.32-3ubuntu1.2.debian.tar.xz 84724 SHA256:f898167a432eeb656fe372b0565af7ab26f8eeaf269cfd768d34fa97fcaa3a4c
 ```
 
-### `dpkg` source package: `libseccomp=2.4.1-0ubuntu0.16.04.2`
+### `dpkg` source package: `libseccomp=2.4.3-1ubuntu3.16.04.2`
 
 Binary Packages:
 
-- `libseccomp2:amd64=2.4.1-0ubuntu0.16.04.2`
+- `libseccomp2:amd64=2.4.3-1ubuntu3.16.04.2`
 
 Licenses: (parsed from: `/usr/share/doc/libseccomp2/copyright`)
 
@@ -1160,6 +1163,26 @@ $ apt-get source -qq --print-uris libusb=2:0.1.12-28
 'http://archive.ubuntu.com/ubuntu/pool/main/libu/libusb/libusb_0.1.12-28.dsc' libusb_0.1.12-28.dsc 2012 SHA256:be0a89935a8764dc64d40a28959397e6582261eef2152c4ce90a13490471dc5f
 'http://archive.ubuntu.com/ubuntu/pool/main/libu/libusb/libusb_0.1.12.orig.tar.gz' libusb_0.1.12.orig.tar.gz 389343 SHA256:37f6f7d9de74196eb5fc0bbe0aea9b5c939de7f500acba3af6fd643f3b538b44
 'http://archive.ubuntu.com/ubuntu/pool/main/libu/libusb/libusb_0.1.12-28.debian.tar.xz' libusb_0.1.12-28.debian.tar.xz 21524 SHA256:eaf2314902b0bb9de3e1fa8c9abfcecea7b78c9824048016beaca34f7cc4351b
+```
+
+### `dpkg` source package: `linux=4.4.0-186.216`
+
+Binary Packages:
+
+- `linux-libc-dev:amd64=4.4.0-186.216`
+
+Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
+
+- `GPL-2`
+- `redpine-signals`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-186.216
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-186.216.dsc' linux_4.4.0-186.216.dsc 11909 SHA256:be89e56f62386e9c7461b2ddab85e5f456214d9198012bc1ab814a3638aae8c5
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-186.216.diff.gz' linux_4.4.0-186.216.diff.gz 16629023 SHA256:d9355d89b9c9ddabd89d0ff6fa09d59894f31c48122fdb8f17ac08b6839d13b3
 ```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
@@ -1313,11 +1336,11 @@ $ apt-get source -qq --print-uris nettle=3.2-1ubuntu0.16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.2-1ubuntu0.16.04.1.debian.tar.xz' nettle_3.2-1ubuntu0.16.04.1.debian.tar.xz 21340 SHA256:49e9715ec8f211831efeaa90122fb16126e39d2cf0739fecd572621b5e55a097
 ```
 
-### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.8`
+### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.9`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.8`
+- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.9`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1326,10 +1349,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.8
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.8.dsc' openldap_2.4.42+dfsg-2ubuntu3.8.dsc 3054 SHA256:0bb7000b196fd8c0938d7b646acbc4d843800c653834da78fa5a403f8e33bc0c
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
-'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.8.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.8.debian.tar.xz 181884 SHA256:b1673db7d591f6db57352d33d91081cf5f95b97401306f1f7028e5ccb076e1f6
+$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.9
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.9.dsc' openldap_2.4.42+dfsg-2ubuntu3.9.dsc 3054 SHA256:cbf8d203c54a73edc7611e81864900ac8f8c27b5944b44fc94d5130993918ade
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.9.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.9.debian.tar.xz 181648 SHA256:d533a0257b2e86abdafc89e386d27585ac91eaf1ca7da33abb982185c704a3d6
 ```
 
 ### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.16`
@@ -1816,6 +1839,7 @@ $ apt-get source -qq --print-uris xz-utils=5.1.1alpha+20120614-2ubuntu2
 Binary Packages:
 
 - `zlib1g:amd64=1:1.2.8.dfsg-2ubuntu4.3`
+- `zlib1g-dev:amd64=1:1.2.8.dfsg-2ubuntu4.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1828,4 +1852,23 @@ $ apt-get source -qq --print-uris zlib=1:1.2.8.dfsg-2ubuntu4.3
 'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.8.dfsg-2ubuntu4.3.dsc' zlib_1.2.8.dfsg-2ubuntu4.3.dsc 2535 SHA256:d0e23d3bf4b5062bbb929e4e78639ded99129dbfeca9fb735c5d2390b1f9c398
 'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.8.dfsg.orig.tar.gz' zlib_1.2.8.dfsg.orig.tar.gz 361943 SHA256:2caecc2c3f1ef8b87b8f72b128a03e61c307e8c14f5ec9b422ef7914ba75cf9f
 'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.8.dfsg-2ubuntu4.3.debian.tar.xz' zlib_1.2.8.dfsg-2ubuntu4.3.debian.tar.xz 19128 SHA256:25a6dda8dd5fad7c5927e43b815056335e27e7a1a552b5d8e5a4d5b4f9a9ce8f
+```
+
+### `dpkg` source package: `zlibc=0.9k-4.3`
+
+Binary Packages:
+
+- `zlibc=0.9k-4.3`
+
+Licenses: (parsed from: `/usr/share/doc/zlibc/copyright`)
+
+- `GPL`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris zlibc=0.9k-4.3
+'http://archive.ubuntu.com/ubuntu/pool/universe/z/zlibc/zlibc_0.9k-4.3.dsc' zlibc_0.9k-4.3.dsc 1679 SHA256:569791d727d910dc26e7c77a6a26f9af1edebe95eadfc1ef98896069f7a9ffd2
+'http://archive.ubuntu.com/ubuntu/pool/universe/z/zlibc/zlibc_0.9k.orig.tar.gz' zlibc_0.9k.orig.tar.gz 111773 SHA256:de63f95e2e1fdca2182667974f7766b333a2ed3230d9721658e765d6f59a4ac6
+'http://archive.ubuntu.com/ubuntu/pool/universe/z/zlibc/zlibc_0.9k-4.3.diff.gz' zlibc_0.9k-4.3.diff.gz 86159 SHA256:4b4b9c9e5777f0b292de730d33eaac5633acdccefd258cdf760562fb947e9ae1
 ```
