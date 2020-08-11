@@ -1,9 +1,9 @@
-# `jobber:1.4.3-alpine3.11`
+# `jobber:1.4.4-alpine3.11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:96a5291627e6a83b4a0e2a97625082e1c0cfd6342455dfeb67bcc17bfa5c3f8c`
-- Created: `2020-05-27T01:20:13.137972409Z`
+- Image ID: `sha256:c6583bbfcfb862dc7a8c53db03383c4b6de0b03c10a9c9270983daaa2ac82ed0`
+- Created: `2020-08-10T18:23:49.190219942Z`
 - Virtual Size: ~ 32.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `USERID=1000`
-  - `JOBBER_VERSION=1.4.3`
-  - `JOBBER_SHA256=c317006fdc96f84fe0a97c334d585bee51ec879f49ac33fc04d862e62f08256f`
+  - `JOBBER_VERSION=1.4.4`
+  - `JOBBER_SHA256=ec09b2efafff69c91fba2124bf28607209e1c9b50ed834ff444a9d40798aa8d3`
 
 ## `apk` (`.apk`-based packages)
 
@@ -104,16 +104,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `jobber`
 
 ```console
-jobber-1.4.3-r0 description:
+jobber-1.4.4-r0 description:
 A replacement for cron, with sophisticated status-reporting and error-handling.
 
-jobber-1.4.3-r0 webpage:
+jobber-1.4.4-r0 webpage:
 https://dshearer.github.io/jobber/
 
-jobber-1.4.3-r0 installed size:
+jobber-1.4.4-r0 installed size:
 26488832
 
-jobber-1.4.3-r0 license:
+jobber-1.4.4-r0 license:
 MIT
 
 ```
