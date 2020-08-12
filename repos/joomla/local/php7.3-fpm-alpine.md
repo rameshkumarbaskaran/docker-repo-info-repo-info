@@ -1,10 +1,10 @@
-# `joomla:3.9.18-fpm-alpine`
+# `joomla:3.9.20-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ad71c163f3e97c1b18c10e14538738a17b9a810ae7c3acb8358660ce1332bc3e`
-- Created: `2020-08-07T01:55:43.628020321Z`
-- Virtual Size: ~ 129.01 Mb  
+- Image ID: `sha256:644b71fb8719ae8c4ff99a16d0e9b6eea0dca08caedbaf041277c6fe0fbe444a`
+- Created: `2020-08-11T01:30:07.835050088Z`
+- Virtual Size: ~ 130.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -24,8 +24,8 @@
   - `PHP_SHA256=4c8b065746ef776d84b7ae47908c21a79e3d4704b86b60d816716b8697c58ce9`
   - `PHP_MD5=`
   - `JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1`
-  - `JOOMLA_VERSION=3.9.18`
-  - `JOOMLA_SHA512=1bf4590a761cc24f59fc0d5b07ffbb8f9e50073b3536edc261b8785ff168aca2066d133a81c4ac33bcfe7b843559320ef4d1f97c5eb16096ca4b550a18b7f44d`
+  - `JOOMLA_VERSION=3.9.20`
+  - `JOOMLA_SHA512=ed885916525e202267c6508156f69dcc9f4688231906ebae1e2ae9f823c9221202f9b88b4ee1ebc26827ba0992fd5a9f3ecc3651bedab7399a078603ad68e5bf`
 - Labels:
   - `maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)`
 
@@ -201,6 +201,23 @@ custom
 
 ```
 
+### `apk` package: `gmp`
+
+```console
+gmp-6.2.0-r0 description:
+A free library for arbitrary precision arithmetic
+
+gmp-6.2.0-r0 webpage:
+https://gmplib.org/
+
+gmp-6.2.0-r0 installed size:
+430080
+
+gmp-6.2.0-r0 license:
+LGPL-3.0-or-later
+
+```
+
 ### `apk` package: `libacl`
 
 ```console
@@ -351,6 +368,23 @@ libldap-2.4.50-r0 installed size:
 
 libldap-2.4.50-r0 license:
 custom
+
+```
+
+### `apk` package: `libmcrypt`
+
+```console
+libmcrypt-2.5.8-r8 description:
+A library which provides a uniform interface to several symmetric encryption algorithms
+
+libmcrypt-2.5.8-r8 webpage:
+http://mcrypt.sourceforge.net/
+
+libmcrypt-2.5.8-r8 installed size:
+180224
+
+libmcrypt-2.5.8-r8 license:
+LGPL-2.1-or-later
 
 ```
 
