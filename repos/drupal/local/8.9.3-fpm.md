@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:eb5a53e2917743da60be388beff00d38c342b4bac5cc59578371674130bdf650`
-- Created: `2020-08-07T18:21:38.010788984Z`
-- Virtual Size: ~ 494.07 Mb  
+- Image ID: `sha256:d405df950132b674a70ff3b41499bc4b1cea52379d09da8e7b9d4a3f86d11289`
+- Created: `2020-08-13T00:19:54.14654185Z`
+- Virtual Size: ~ 494.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
 - Command: `["php-fpm"]`
 - Environment:
-  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin`
   - `PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c`
   - `PHP_INI_DIR=/usr/local/etc/php`
   - `PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi`

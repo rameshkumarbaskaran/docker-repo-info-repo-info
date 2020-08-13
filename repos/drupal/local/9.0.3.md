@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:158f24e806919744f312aec250933d36e89be68abf21313602654ca62b3c08d7`
-- Created: `2020-08-07T18:20:07.047022016Z`
-- Virtual Size: ~ 493.56 Mb  
+- Image ID: `sha256:94b3b477f00cebc7a469df7ec8bdb66e48e31d1667791fecf440b71b42a709f1`
+- Created: `2020-08-13T00:19:35.590368711Z`
+- Virtual Size: ~ 493.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
 - Command: `["apache2-foreground"]`
 - Environment:
-  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin`
   - `PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c`
   - `PHP_INI_DIR=/usr/local/etc/php`
   - `APACHE_CONFDIR=/etc/apache2`
