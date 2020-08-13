@@ -1,7 +1,7 @@
 ## `drupal:9-fpm-buster`
 
 ```console
-$ docker pull drupal@sha256:7985089d6f8b86b10e94dd84c114ecc5cbceb4e4f7fef19f361f58d1e1d4dcb7
+$ docker pull drupal@sha256:b7460bfa0044be357b36319d27e197b8a83e14a129f5b769505210e3797e1282
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -302,14 +302,14 @@ RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --n
 ### `drupal:9-fpm-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull drupal@sha256:91829c80022ac94b2c494ad686974b74e65aa6754ca0484b6111e2a5817d5dee
+$ docker pull drupal@sha256:c72db27dd7e3c3398e4898489e787da556244fa4638007c5e78106ca648239de
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **154.5 MB (154502057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:eb4cf5c957b4d3dc1804d09e4bc7aa000c7b3a92adeca4e83a1d26686e9bfd02`
+-	Image ID: `sha256:fd6fa337c2d8ca429a5796975a6706ca702d1d2384fac8d976629d7969348771`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -378,6 +378,8 @@ ENV DRUPAL_VERSION=9.0.3
 WORKDIR /opt/drupal
 # Mon, 10 Aug 2020 19:08:57 GMT
 RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --no-interaction "drupal/recommended-project:$DRUPAL_VERSION" ./; 	chown -R www-data:www-data web/sites web/modules web/themes; 	rmdir /var/www/html; 	ln -sf /opt/drupal/web /var/www/html; 	rm -rf "$COMPOSER_HOME"
+# Wed, 12 Aug 2020 23:39:56 GMT
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin
 ```
 
 -	Layers:
@@ -445,14 +447,14 @@ RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --n
 ### `drupal:9-fpm-buster` - linux; 386
 
 ```console
-$ docker pull drupal@sha256:839d8b2a78e585c2788aec0a464974bc0de9c1cf0ee6e22abd7f032f2173b25b
+$ docker pull drupal@sha256:6e7aa0ef91d67ee408161aa7125c01bca73588fe1630b415e9502a933a405a29
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **168.2 MB (168184871 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6e3a0cd34736706180b9c5630773f272e173e9b79d41739d5e6959b597adb3ea`
+-	Image ID: `sha256:59291dfa4e7fd5a67655560ff72e3321372a1f2fc0d47995b93f3282609e6094`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -521,6 +523,8 @@ ENV DRUPAL_VERSION=9.0.3
 WORKDIR /opt/drupal
 # Mon, 10 Aug 2020 18:56:43 GMT
 RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --no-interaction "drupal/recommended-project:$DRUPAL_VERSION" ./; 	chown -R www-data:www-data web/sites web/modules web/themes; 	rmdir /var/www/html; 	ln -sf /opt/drupal/web /var/www/html; 	rm -rf "$COMPOSER_HOME"
+# Wed, 12 Aug 2020 23:38:30 GMT
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin
 ```
 
 -	Layers:
@@ -731,14 +735,14 @@ RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --n
 ### `drupal:9-fpm-buster` - linux; s390x
 
 ```console
-$ docker pull drupal@sha256:1ca3522837186659cd55d8934bac60e672ed0122ff87c0b834f3c00a405c45a2
+$ docker pull drupal@sha256:d0a19c8001f532efdb1d584ff07f2e98298c0bd7b876e96b31e77b7cd4eb94df
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **148.1 MB (148101351 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6027a4c1e00ef61fca2bdd62fdee342ed55ad273d4c8136fb68362bb13e90ec8`
+-	Image ID: `sha256:107311441cd560a58d3f0eeae565a18e327b59b0b55598485628a7d21469c23f`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -807,6 +811,8 @@ ENV DRUPAL_VERSION=9.0.3
 WORKDIR /opt/drupal
 # Mon, 10 Aug 2020 18:58:26 GMT
 RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --no-interaction "drupal/recommended-project:$DRUPAL_VERSION" ./; 	chown -R www-data:www-data web/sites web/modules web/themes; 	rmdir /var/www/html; 	ln -sf /opt/drupal/web /var/www/html; 	rm -rf "$COMPOSER_HOME"
+# Wed, 12 Aug 2020 23:41:29 GMT
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin
 ```
 
 -	Layers:
