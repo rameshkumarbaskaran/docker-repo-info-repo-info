@@ -78,6 +78,34 @@
 -	[`clojure:openjdk-15-tools-deps-1.10.1.561-slim-buster`](#clojureopenjdk-15-tools-deps-1101561-slim-buster)
 -	[`clojure:openjdk-15-tools-deps-buster`](#clojureopenjdk-15-tools-deps-buster)
 -	[`clojure:openjdk-15-tools-deps-slim-buster`](#clojureopenjdk-15-tools-deps-slim-buster)
+-	[`clojure:openjdk-16`](#clojureopenjdk-16)
+-	[`clojure:openjdk-16-alpine`](#clojureopenjdk-16-alpine)
+-	[`clojure:openjdk-16-boot`](#clojureopenjdk-16-boot)
+-	[`clojure:openjdk-16-boot-2.8.3`](#clojureopenjdk-16-boot-283)
+-	[`clojure:openjdk-16-boot-2.8.3-alpine`](#clojureopenjdk-16-boot-283-alpine)
+-	[`clojure:openjdk-16-boot-2.8.3-buster`](#clojureopenjdk-16-boot-283-buster)
+-	[`clojure:openjdk-16-boot-2.8.3-slim-buster`](#clojureopenjdk-16-boot-283-slim-buster)
+-	[`clojure:openjdk-16-boot-alpine`](#clojureopenjdk-16-boot-alpine)
+-	[`clojure:openjdk-16-boot-buster`](#clojureopenjdk-16-boot-buster)
+-	[`clojure:openjdk-16-boot-slim-buster`](#clojureopenjdk-16-boot-slim-buster)
+-	[`clojure:openjdk-16-buster`](#clojureopenjdk-16-buster)
+-	[`clojure:openjdk-16-lein`](#clojureopenjdk-16-lein)
+-	[`clojure:openjdk-16-lein-2.9.3`](#clojureopenjdk-16-lein-293)
+-	[`clojure:openjdk-16-lein-2.9.3-alpine`](#clojureopenjdk-16-lein-293-alpine)
+-	[`clojure:openjdk-16-lein-2.9.3-buster`](#clojureopenjdk-16-lein-293-buster)
+-	[`clojure:openjdk-16-lein-2.9.3-slim-buster`](#clojureopenjdk-16-lein-293-slim-buster)
+-	[`clojure:openjdk-16-lein-alpine`](#clojureopenjdk-16-lein-alpine)
+-	[`clojure:openjdk-16-lein-buster`](#clojureopenjdk-16-lein-buster)
+-	[`clojure:openjdk-16-lein-slim-buster`](#clojureopenjdk-16-lein-slim-buster)
+-	[`clojure:openjdk-16-slim-buster`](#clojureopenjdk-16-slim-buster)
+-	[`clojure:openjdk-16-tools-deps`](#clojureopenjdk-16-tools-deps)
+-	[`clojure:openjdk-16-tools-deps-1.10.1.561`](#clojureopenjdk-16-tools-deps-1101561)
+-	[`clojure:openjdk-16-tools-deps-1.10.1.561-alpine`](#clojureopenjdk-16-tools-deps-1101561-alpine)
+-	[`clojure:openjdk-16-tools-deps-1.10.1.561-buster`](#clojureopenjdk-16-tools-deps-1101561-buster)
+-	[`clojure:openjdk-16-tools-deps-1.10.1.561-slim-buster`](#clojureopenjdk-16-tools-deps-1101561-slim-buster)
+-	[`clojure:openjdk-16-tools-deps-alpine`](#clojureopenjdk-16-tools-deps-alpine)
+-	[`clojure:openjdk-16-tools-deps-buster`](#clojureopenjdk-16-tools-deps-buster)
+-	[`clojure:openjdk-16-tools-deps-slim-buster`](#clojureopenjdk-16-tools-deps-slim-buster)
 -	[`clojure:openjdk-8`](#clojureopenjdk-8)
 -	[`clojure:openjdk-8-boot`](#clojureopenjdk-8-boot)
 -	[`clojure:openjdk-8-boot-2.8.3`](#clojureopenjdk-8-boot-283)
@@ -10189,6 +10217,118 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 		Last Modified: Fri, 14 Aug 2020 01:26:23 GMT  
 		Size: 42.5 MB (42506692 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `clojure:openjdk-16`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-alpine`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot-2.8.3`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot-2.8.3-alpine`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot-2.8.3-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot-2.8.3-slim-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot-alpine`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-boot-slim-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein-2.9.3`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein-2.9.3-alpine`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein-2.9.3-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein-2.9.3-slim-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein-alpine`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-lein-slim-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-slim-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps-1.10.1.561`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps-1.10.1.561-alpine`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps-1.10.1.561-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps-1.10.1.561-slim-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps-alpine`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps-buster`
+
+**does not exist** (yet?)
+
+## `clojure:openjdk-16-tools-deps-slim-buster`
+
+**does not exist** (yet?)
 
 ## `clojure:openjdk-8`
 
