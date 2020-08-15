@@ -1,10 +1,10 @@
-# `kong:2.1.1-alpine`
+# `kong:2.1.2-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a44fb79f22c843717b798bb072be12e6f65bca7fceca62c7ce1c8edc96eb6849`
-- Created: `2020-08-07T23:26:23.938755262Z`
-- Virtual Size: ~ 147.16 Mb  
+- Image ID: `sha256:19bb9f62a43859c7ddb51190fd7dc83e3bc9399b09b2f374656ade0ec1400807`
+- Created: `2020-08-14T01:26:58.986586619Z`
+- Virtual Size: ~ 147.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.1.1`
+  - `KONG_VERSION=2.1.2`
 - Labels:
   - `maintainer=Kong <support@konghq.com>`
 
@@ -276,16 +276,16 @@ MIT
 ### `apk` package: `libgcc`
 
 ```console
-libgcc-9.2.0-r4 description:
+libgcc-9.3.0-r0 description:
 GNU C compiler runtime libraries
 
-libgcc-9.2.0-r4 webpage:
+libgcc-9.3.0-r0 webpage:
 http://gcc.gnu.org
 
-libgcc-9.2.0-r4 installed size:
+libgcc-9.3.0-r0 installed size:
 90112
 
-libgcc-9.2.0-r4 license:
+libgcc-9.3.0-r0 license:
 GPL LGPL
 
 ```
@@ -310,16 +310,16 @@ OpenSSL
 ### `apk` package: `libstdc++`
 
 ```console
-libstdc++-9.2.0-r4 description:
+libstdc++-9.3.0-r0 description:
 GNU C++ standard runtime library
 
-libstdc++-9.2.0-r4 webpage:
+libstdc++-9.3.0-r0 webpage:
 http://gcc.gnu.org
 
-libstdc++-9.2.0-r4 installed size:
+libstdc++-9.3.0-r0 installed size:
 1671168
 
-libstdc++-9.2.0-r4 license:
+libstdc++-9.3.0-r0 license:
 GPL LGPL
 
 ```
