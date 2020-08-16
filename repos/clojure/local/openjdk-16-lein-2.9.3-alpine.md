@@ -1,20 +1,20 @@
-# `clojure:openjdk-15-boot-alpine`
+# `clojure:openjdk-16-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a6e3625466edd0c621f269c3de7aeea7b96fee979b15250edb47dcf719f9da94`
-- Created: `2020-07-29T02:12:57.363219672Z`
-- Virtual Size: ~ 408.49 Mb  
+- Image ID: `sha256:bc69ba6b24fca56978b74c2904a7f52d2a433907a23a16cde6746387b7608745`
+- Created: `2020-08-14T21:25:46.499247825Z`
+- Virtual Size: ~ 366.28 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["boot","repl"]`
+- Command: `["lein","repl"]`
 - Environment:
-  - `PATH=/opt/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
-  - `JAVA_HOME=/opt/openjdk-15`
-  - `JAVA_VERSION=15-ea+31`
-  - `BOOT_VERSION=2.8.3`
-  - `BOOT_INSTALL=/usr/local/bin/`
-  - `BOOT_AS_ROOT=yes`
+  - `PATH=/opt/openjdk-16/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
+  - `JAVA_HOME=/opt/openjdk-16`
+  - `JAVA_VERSION=16-ea+5`
+  - `LEIN_VERSION=2.9.3`
+  - `LEIN_INSTALL=/usr/local/bin/`
+  - `LEIN_ROOT=1`
 
 ## `apk` (`.apk`-based packages)
 

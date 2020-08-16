@@ -1,18 +1,20 @@
-# `clojure:openjdk-15-tools-deps-alpine`
+# `clojure:openjdk-16-boot-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ec5b907de5ba2f57eda99e961afe6c7424e5fc2ed9609b509568d33f81a2d4e8`
-- Created: `2020-08-03T21:26:00.211313406Z`
-- Virtual Size: ~ 369.46 Mb  
+- Image ID: `sha256:0a6e2556938267a650ea1a03c172634ad23715544d3e79856a691f25f8e4e7db`
+- Created: `2020-08-14T21:26:32.018329172Z`
+- Virtual Size: ~ 410.28 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["sh","-c","sleep 1 && exec clj"]`
+- Command: `["boot","repl"]`
 - Environment:
-  - `PATH=/opt/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_HOME=/opt/openjdk-15`
-  - `JAVA_VERSION=15-ea+31`
-  - `CLOJURE_VERSION=1.10.1.619`
+  - `PATH=/opt/openjdk-16/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
+  - `JAVA_HOME=/opt/openjdk-16`
+  - `JAVA_VERSION=16-ea+5`
+  - `BOOT_VERSION=2.8.3`
+  - `BOOT_INSTALL=/usr/local/bin/`
+  - `BOOT_AS_ROOT=yes`
 
 ## `apk` (`.apk`-based packages)
 
@@ -251,23 +253,6 @@ libtls-standalone-2.9.1-r1 installed size:
 
 libtls-standalone-2.9.1-r1 license:
 ISC
-
-```
-
-### `apk` package: `make`
-
-```console
-make-4.3-r0 description:
-GNU make utility to maintain groups of programs
-
-make-4.3-r0 webpage:
-https://www.gnu.org/software/make
-
-make-4.3-r0 installed size:
-237568
-
-make-4.3-r0 license:
-GPL-3.0-or-later
 
 ```
 

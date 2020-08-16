@@ -1,18 +1,18 @@
-# `clojure:openjdk-15-tools-deps`
+# `clojure:openjdk-16-tools-deps`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f505c84fffbbfdc4b85837c2e510c9882b80680c36d77cd979d1a574daff5dbe`
-- Created: `2020-08-08T00:17:26.96808549Z`
-- Virtual Size: ~ 517.83 Mb  
+- Image ID: `sha256:893c266ffd472be2e7a17f1e5840cb2e70900d7a401828eeb1496f4237703dfc`
+- Created: `2020-08-14T22:38:05.702719922Z`
+- Virtual Size: ~ 519.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/openjdk-16/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-15`
-  - `JAVA_VERSION=15`
+  - `JAVA_HOME=/usr/local/openjdk-16`
+  - `JAVA_VERSION=16-ea+11`
   - `CLOJURE_VERSION=1.10.1.619`
 
 ## `dpkg` (`.deb`-based packages)
