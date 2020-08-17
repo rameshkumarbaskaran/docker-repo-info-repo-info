@@ -1,10 +1,10 @@
-# `postgres:12.3`
+# `postgres:12.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b03968f50f0e9800f2488a393095a050b00e8cb382cf2776debb132ece6a8b6b`
-- Created: `2020-08-05T06:23:00.978363032Z`
-- Virtual Size: ~ 313.02 Mb  
+- Image ID: `sha256:62473370e7eeea08c9ad60273081a32452c5ba461314490b893c11021e01aefd`
+- Created: `2020-08-14T17:27:10.418320283Z`
+- Virtual Size: ~ 313.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.12`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=12`
-  - `PG_VERSION=12.3-1.pgdg100+1`
+  - `PG_VERSION=12.4-1.pgdg100+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -1972,13 +1972,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.1.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.1.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-12=12.3-1.pgdg100+1`
+### `dpkg` source package: `postgresql-12=12.4-1.pgdg100+1`
 
 Binary Packages:
 
-- `libpq5:amd64=12.3-1.pgdg100+1`
-- `postgresql-12=12.3-1.pgdg100+1`
-- `postgresql-client-12=12.3-1.pgdg100+1`
+- `libpq5:amd64=12.4-1.pgdg100+1`
+- `postgresql-12=12.4-1.pgdg100+1`
+- `postgresql-client-12=12.4-1.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-12/copyright`, `/usr/share/doc/postgresql-client-12/copyright`)
 
@@ -2001,18 +2001,18 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-12=12.3-1.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.3-1.pgdg100+1.dsc' postgresql-12_12.3-1.pgdg100+1.dsc 2776 SHA256:c58e10101d844d8707d7b28fbb9b27c0f9a47d9e0237dea600aa961eb1175bb2
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.3.orig.tar.bz2' postgresql-12_12.3.orig.tar.bz2 20439892 SHA256:94ed64a6179048190695c86ec707cc25d016056ce10fc9d229267d9a8f1dcf41
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.3-1.pgdg100+1.debian.tar.xz' postgresql-12_12.3-1.pgdg100+1.debian.tar.xz 23068 SHA256:01d1c1b9d86efee8ac388d1bab77fbd0772b8fed159cc0587339caf84cd9d713
+$ apt-get source -qq --print-uris postgresql-12=12.4-1.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.4-1.pgdg100+1.dsc' postgresql-12_12.4-1.pgdg100+1.dsc 2776 SHA256:50b6a97025f3dbec552ee8d12930805635e79209e34e794e4964af2896215fec
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.4.orig.tar.bz2' postgresql-12_12.4.orig.tar.bz2 20669776 SHA256:bee93fbe2c32f59419cb162bcc0145c58da9a8644ee154a30b9a5ce47de606cc
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.4-1.pgdg100+1.debian.tar.xz' postgresql-12_12.4-1.pgdg100+1.debian.tar.xz 23740 SHA256:69f50bd40d06bf6e99b71454c058b3b7579ef698d9cb1f86ae9ddeb820125a92
 ```
 
-### `dpkg` source package: `postgresql-common=215.pgdg100+1`
+### `dpkg` source package: `postgresql-common=216.pgdg100+1`
 
 Binary Packages:
 
-- `postgresql-client-common=215.pgdg100+1`
-- `postgresql-common=215.pgdg100+1`
+- `postgresql-client-common=216.pgdg100+1`
+- `postgresql-common=216.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/usr/share/doc/postgresql-common/copyright`)
 
@@ -2022,9 +2022,9 @@ Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/u
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-common=215.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_215.pgdg100+1.dsc' postgresql-common_215.pgdg100+1.dsc 1576 SHA256:bd3dbc8d0292e7813feaffcb89f5cdd8f00c2f65351a9ac592d2b5f1287208e7
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_215.pgdg100+1.tar.xz' postgresql-common_215.pgdg100+1.tar.xz 217448 SHA256:2c619553837e96b8cc75fe7429e62271da51faa0e6b281ac4d1fcf8f08d6f150
+$ apt-get source -qq --print-uris postgresql-common=216.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_216.pgdg100+1.dsc' postgresql-common_216.pgdg100+1.dsc 1576 SHA256:014991a3b46af450e1ea8b6c970143a8394df6778121fab5d48f3ccca7d0abc8
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_216.pgdg100+1.tar.xz' postgresql-common_216.pgdg100+1.tar.xz 217808 SHA256:0daf2e5378dae75b15261628bd4b5d770308c2b0482740e7a8c6fae1a8ae7c88
 ```
 
 ### `dpkg` source package: `readline=7.0-5`

@@ -1,10 +1,10 @@
-# `postgres:13-beta2`
+# `postgres:13-beta3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f3db2b169e3c3040695b37866d19eb6eb52bd34dc3650649cbc989000aad2dee`
-- Created: `2020-08-05T06:22:22.482618888Z`
-- Virtual Size: ~ 315.77 Mb  
+- Image ID: `sha256:d2e0ea262c7cc00b4ef42e5e3f974ed9c56861f48cd1cb2809e38807f4a8ad55`
+- Created: `2020-08-14T17:20:52.326647745Z`
+- Virtual Size: ~ 315.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.12`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=13`
-  - `PG_VERSION=13~beta2-1.pgdg100+1`
+  - `PG_VERSION=13~beta3-1.pgdg100+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -1972,13 +1972,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.1.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.1.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-13=13~beta2-1.pgdg100+1`
+### `dpkg` source package: `postgresql-13=13~beta3-1.pgdg100+1`
 
 Binary Packages:
 
-- `libpq5:amd64=13~beta2-1.pgdg100+1`
-- `postgresql-13=13~beta2-1.pgdg100+1`
-- `postgresql-client-13=13~beta2-1.pgdg100+1`
+- `libpq5:amd64=13~beta3-1.pgdg100+1`
+- `postgresql-13=13~beta3-1.pgdg100+1`
+- `postgresql-client-13=13~beta3-1.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-13/copyright`, `/usr/share/doc/postgresql-client-13/copyright`)
 
@@ -2001,18 +2001,18 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-13=13~beta2-1.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/13/p/postgresql-13/postgresql-13_13~beta2-1.pgdg100+1.dsc' postgresql-13_13~beta2-1.pgdg100+1.dsc 2888 SHA256:9150128ac857db1af557ca509a2e28bdf728589c737128f30113824afd2055f1
-'http://apt.postgresql.org/pub/repos/apt/pool/13/p/postgresql-13/postgresql-13_13~beta2.orig.tar.bz2' postgresql-13_13~beta2.orig.tar.bz2 21365208 SHA256:51b8c64f4c354728555144a7bfbdced96afb86e5cfa80a26b5e96a1d9081ee9f
-'http://apt.postgresql.org/pub/repos/apt/pool/13/p/postgresql-13/postgresql-13_13~beta2-1.pgdg100+1.debian.tar.xz' postgresql-13_13~beta2-1.pgdg100+1.debian.tar.xz 22296 SHA256:83ae9327dbff8921bde535356767e39e2118543ab8610fb1fd0d5c074d4ed6ac
+$ apt-get source -qq --print-uris postgresql-13=13~beta3-1.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/13/p/postgresql-13/postgresql-13_13~beta3-1.pgdg100+1.dsc' postgresql-13_13~beta3-1.pgdg100+1.dsc 2874 SHA256:29d093443c2941d25f3cba082a1efaf2f7a3b3aecf62cf4f01a650a4adbc74b3
+'http://apt.postgresql.org/pub/repos/apt/pool/13/p/postgresql-13/postgresql-13_13~beta3.orig.tar.bz2' postgresql-13_13~beta3.orig.tar.bz2 21411847 SHA256:863e33ee9d1099e2a0f1cab6dbd015789b2c2af75cfbad814a3acdf7c8eeaf9d
+'http://apt.postgresql.org/pub/repos/apt/pool/13/p/postgresql-13/postgresql-13_13~beta3-1.pgdg100+1.debian.tar.xz' postgresql-13_13~beta3-1.pgdg100+1.debian.tar.xz 22616 SHA256:99ff2aa012e0ed32f603c56f4b9e7411b37b39ed425ecf9c120e08f1924d2d1e
 ```
 
-### `dpkg` source package: `postgresql-common=215.pgdg100+1`
+### `dpkg` source package: `postgresql-common=216.pgdg100+1`
 
 Binary Packages:
 
-- `postgresql-client-common=215.pgdg100+1`
-- `postgresql-common=215.pgdg100+1`
+- `postgresql-client-common=216.pgdg100+1`
+- `postgresql-common=216.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/usr/share/doc/postgresql-common/copyright`)
 
@@ -2022,9 +2022,9 @@ Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/u
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-common=215.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_215.pgdg100+1.dsc' postgresql-common_215.pgdg100+1.dsc 1576 SHA256:bd3dbc8d0292e7813feaffcb89f5cdd8f00c2f65351a9ac592d2b5f1287208e7
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_215.pgdg100+1.tar.xz' postgresql-common_215.pgdg100+1.tar.xz 217448 SHA256:2c619553837e96b8cc75fe7429e62271da51faa0e6b281ac4d1fcf8f08d6f150
+$ apt-get source -qq --print-uris postgresql-common=216.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_216.pgdg100+1.dsc' postgresql-common_216.pgdg100+1.dsc 1576 SHA256:014991a3b46af450e1ea8b6c970143a8394df6778121fab5d48f3ccca7d0abc8
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_216.pgdg100+1.tar.xz' postgresql-common_216.pgdg100+1.tar.xz 217808 SHA256:0daf2e5378dae75b15261628bd4b5d770308c2b0482740e7a8c6fae1a8ae7c88
 ```
 
 ### `dpkg` source package: `readline=7.0-5`
