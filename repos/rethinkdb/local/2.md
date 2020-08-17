@@ -1,16 +1,16 @@
-# `rethinkdb:2.4.0-buster-slim`
+# `rethinkdb:2.4.1-buster-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5ab3769bad6ed271504117db2e120e7efd0e4b2bb5038a268c20e03f84f0f03b`
-- Created: `2020-08-10T19:00:16.770845369Z`
-- Virtual Size: ~ 131.22 Mb  
+- Image ID: `sha256:b9748409ac29202b6becca6c24bc029fb43cfca53746d2d60c5adb657395f5bc`
+- Created: `2020-08-14T21:12:51.37863172Z`
+- Virtual Size: ~ 131.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["rethinkdb","--bind","all"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `RETHINKDB_PACKAGE_VERSION=2.4.0~0buster`
+  - `RETHINKDB_PACKAGE_VERSION=2.4.1~0buster`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1986,11 +1986,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/readline/7.0-5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/readline/7.0-5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `rethinkdb=2.4.0~0buster`
+### `dpkg` source package: `rethinkdb=2.4.1~0buster`
 
 Binary Packages:
 
-- `rethinkdb=2.4.0~0buster`
+- `rethinkdb=2.4.1~0buster`
 
 Licenses: (parsed from: `/usr/share/doc/rethinkdb/copyright`)
 
