@@ -30,7 +30,7 @@
 ## `rabbitmq:3`
 
 ```console
-$ docker pull rabbitmq@sha256:d94c72c485d67f9589236a3eb7b99123d1218dbdac16e94952af362e815b7a36
+$ docker pull rabbitmq@sha256:c8a9c5e18db0dbb905ab5add57f56e5a126d9dc9b9088de4387b2b33bcc1f9bd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -45,14 +45,14 @@ $ docker pull rabbitmq@sha256:d94c72c485d67f9589236a3eb7b99123d1218dbdac16e94952
 ### `rabbitmq:3` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:4239c88b0fbe60caa99f851ef71d8ec0fe10784a1c7ea94c9ac601f0480c08b3
+$ docker pull rabbitmq@sha256:6fcdff7152942ccb8260488f1b3a54eea2f99df21e48ac0450fdff4309356582
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.5 MB (75537139 bytes)**  
+-	Total Size: **75.5 MB (75534340 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:51ce028a0e75f1f075ad1943a3fa5c11cbdf7e9bdc74e71b1f2b6bbeeefef51e`
+-	Image ID: `sha256:de302df374f44eaadd815c4331ed9196219835e83d07569aeadc5f3c57b44b42`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -89,33 +89,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 16:48:11 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:47:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:48:30 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -148,17 +148,17 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
 		Size: 2.1 KB (2071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3b3f5c0eff341f26661e19dc6f82e543c801578903afa13e51f9ad0f79bccc7`  
-		Last Modified: Wed, 05 Aug 2020 09:49:46 GMT  
-		Size: 15.6 MB (15575432 bytes)  
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b157b9c8a3865cc3332b2f0c9dabba91baa944d3ee429c9ddd35ec93c3dbf6f`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afd359d7554c2cbeac443d216cca958caf777e1ddb7b82a95c8354e367fe041b`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
-		Size: 4.6 KB (4639 bytes)  
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3` - linux; arm variant v7
@@ -283,14 +283,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:3` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:48d2c85801e3765cfcc8b8ae81c879ccf227349fe6c9125163ffa3da0f054361
+$ docker pull rabbitmq@sha256:4fed3790fd0cdecdfe2530aed9ed5d1374d279a2ab62ae052117511a32a080f6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **72.0 MB (72047193 bytes)**  
+-	Total Size: **72.0 MB (72044453 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de1c4870afccbb9bb61adb0d594658fd9a896c3ae5d3bce98de9a92547420c6a`
+-	Image ID: `sha256:04b23e2ba6bc53c71a1f8bc99fe616f24a3ae825750396b129970dccf520c36d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -327,33 +327,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 19:17:09 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:08:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:08:56 GMT
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:08:57 GMT
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:08:58 GMT
+# Tue, 18 Aug 2020 18:39:56 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:09:46 GMT
+# Tue, 18 Aug 2020 18:40:35 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:09:49 GMT
+# Tue, 18 Aug 2020 18:40:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:39 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:40 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:09:51 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:42 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -386,30 +386,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
 		Size: 2.2 KB (2156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be9ca5331d65f11003b410173a9f4cf082aebed9e91e6399867aff9178e4b6fb`  
-		Last Modified: Wed, 05 Aug 2020 10:11:58 GMT  
-		Size: 15.6 MB (15575589 bytes)  
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c294a5e514460351b6e8d39157c1dfccfebd2d89f632ef1c14d1710fe2b465c`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f3933a972de70083240a9b7531d21eb5da33d3544a764fd40406c0b20eb9916`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
-		Size: 4.6 KB (4638 bytes)  
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:1a0374069a0695c1fbf0227a4d2bb4c11581e6b4e76492ea6bec899356c3a005
+$ docker pull rabbitmq@sha256:fda0cae2052105756efa5cdf6f0ca64110aedb12dc7e2289cf62464c029bfffa
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.8 MB (75796343 bytes)**  
+-	Total Size: **75.8 MB (75793516 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c013e649d867e94350857215fa087891a08ea8fe0e63b4c4e84195d6c449a643`
+-	Image ID: `sha256:d9af82e22a914fc1da549ef86bd61a40717b699cb2f785f45172f946226fe56c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -446,33 +446,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:19:48 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:46:12 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:46:51 GMT
+# Tue, 18 Aug 2020 18:39:00 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:46:56 GMT
+# Tue, 18 Aug 2020 18:39:03 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -505,17 +505,17 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
 		Size: 2.1 KB (2060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346111b9b67e675c83f6fb4822b0b1a9b781ea81f4026e65663c2ab2eae3823c`  
-		Last Modified: Tue, 04 Aug 2020 22:48:24 GMT  
-		Size: 15.6 MB (15575353 bytes)  
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eae9a59af7e95007217d7fbff06e006eae6be7d26afea42f9192cff7faffde77`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33abfe88e04f02ee54ccce3ff83956b55a09275e2c50a2b3454f0abe429920af`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
-		Size: 4.6 KB (4641 bytes)  
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3` - linux; ppc64le
@@ -640,14 +640,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:3` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:d564e36d70c5864a8d8bdf14c1f78a26c5dc28c42dd34f32531db913d0b16682
+$ docker pull rabbitmq@sha256:d74e191b122686f684859e9803430a9706af4d8c15eedb114d4d5e89738fffd1
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **73.9 MB (73876564 bytes)**  
+-	Total Size: **73.9 MB (73873727 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f689da3a332f7187146496dc62be29ded54156bc11fb38d35e0ea0e29993c21f`
+-	Image ID: `sha256:8433898132af27a33483c54ac6a0b79e39fac88c61512e35131c3e887c47d97b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -684,33 +684,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:31:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:21 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:22 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:41:52 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:55 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -743,17 +743,17 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
 		Size: 2.2 KB (2152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed9f42ae5377d74ee94db86388cefd08ad542a7dcd6a94035ebd8194c1ed77c8`  
-		Last Modified: Tue, 04 Aug 2020 22:48:57 GMT  
-		Size: 15.6 MB (15574961 bytes)  
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71643a2fd1c3b0a805e513d85be6c44401a3aaabe323a783374d7224d4d43264`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3e3e4d2e8d4f352a49317522d34560bc57642e7dd47f3c38b41f25a60b318ad`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
-		Size: 4.6 KB (4634 bytes)  
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:3.7`
@@ -6677,7 +6677,7 @@ EXPOSE 15671 15672
 ## `rabbitmq:3.8`
 
 ```console
-$ docker pull rabbitmq@sha256:a19591cbee9fcf3389aa44df7fc1eda7a757df09e0337a01b57b6fa54dbf9dae
+$ docker pull rabbitmq@sha256:84ccd215290e1811d0a8d83af86ea50ccb7234fcfef66ed252407d3907241b57
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6691,14 +6691,14 @@ $ docker pull rabbitmq@sha256:a19591cbee9fcf3389aa44df7fc1eda7a757df09e0337a01b5
 ### `rabbitmq:3.8` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:4239c88b0fbe60caa99f851ef71d8ec0fe10784a1c7ea94c9ac601f0480c08b3
+$ docker pull rabbitmq@sha256:6fcdff7152942ccb8260488f1b3a54eea2f99df21e48ac0450fdff4309356582
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.5 MB (75537139 bytes)**  
+-	Total Size: **75.5 MB (75534340 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:51ce028a0e75f1f075ad1943a3fa5c11cbdf7e9bdc74e71b1f2b6bbeeefef51e`
+-	Image ID: `sha256:de302df374f44eaadd815c4331ed9196219835e83d07569aeadc5f3c57b44b42`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -6735,33 +6735,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 16:48:11 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:47:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:48:30 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -6794,17 +6794,17 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
 		Size: 2.1 KB (2071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3b3f5c0eff341f26661e19dc6f82e543c801578903afa13e51f9ad0f79bccc7`  
-		Last Modified: Wed, 05 Aug 2020 09:49:46 GMT  
-		Size: 15.6 MB (15575432 bytes)  
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b157b9c8a3865cc3332b2f0c9dabba91baa944d3ee429c9ddd35ec93c3dbf6f`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afd359d7554c2cbeac443d216cca958caf777e1ddb7b82a95c8354e367fe041b`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
-		Size: 4.6 KB (4639 bytes)  
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8` - linux; arm variant v7
@@ -6929,14 +6929,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:3.8` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:48d2c85801e3765cfcc8b8ae81c879ccf227349fe6c9125163ffa3da0f054361
+$ docker pull rabbitmq@sha256:4fed3790fd0cdecdfe2530aed9ed5d1374d279a2ab62ae052117511a32a080f6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **72.0 MB (72047193 bytes)**  
+-	Total Size: **72.0 MB (72044453 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de1c4870afccbb9bb61adb0d594658fd9a896c3ae5d3bce98de9a92547420c6a`
+-	Image ID: `sha256:04b23e2ba6bc53c71a1f8bc99fe616f24a3ae825750396b129970dccf520c36d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -6973,33 +6973,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 19:17:09 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:08:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:08:56 GMT
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:08:57 GMT
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:08:58 GMT
+# Tue, 18 Aug 2020 18:39:56 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:09:46 GMT
+# Tue, 18 Aug 2020 18:40:35 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:09:49 GMT
+# Tue, 18 Aug 2020 18:40:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:39 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:40 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:09:51 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:42 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -7032,30 +7032,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
 		Size: 2.2 KB (2156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be9ca5331d65f11003b410173a9f4cf082aebed9e91e6399867aff9178e4b6fb`  
-		Last Modified: Wed, 05 Aug 2020 10:11:58 GMT  
-		Size: 15.6 MB (15575589 bytes)  
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c294a5e514460351b6e8d39157c1dfccfebd2d89f632ef1c14d1710fe2b465c`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f3933a972de70083240a9b7531d21eb5da33d3544a764fd40406c0b20eb9916`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
-		Size: 4.6 KB (4638 bytes)  
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:1a0374069a0695c1fbf0227a4d2bb4c11581e6b4e76492ea6bec899356c3a005
+$ docker pull rabbitmq@sha256:fda0cae2052105756efa5cdf6f0ca64110aedb12dc7e2289cf62464c029bfffa
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.8 MB (75796343 bytes)**  
+-	Total Size: **75.8 MB (75793516 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c013e649d867e94350857215fa087891a08ea8fe0e63b4c4e84195d6c449a643`
+-	Image ID: `sha256:d9af82e22a914fc1da549ef86bd61a40717b699cb2f785f45172f946226fe56c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -7092,33 +7092,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:19:48 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:46:12 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:46:51 GMT
+# Tue, 18 Aug 2020 18:39:00 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:46:56 GMT
+# Tue, 18 Aug 2020 18:39:03 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -7151,30 +7151,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
 		Size: 2.1 KB (2060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346111b9b67e675c83f6fb4822b0b1a9b781ea81f4026e65663c2ab2eae3823c`  
-		Last Modified: Tue, 04 Aug 2020 22:48:24 GMT  
-		Size: 15.6 MB (15575353 bytes)  
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eae9a59af7e95007217d7fbff06e006eae6be7d26afea42f9192cff7faffde77`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33abfe88e04f02ee54ccce3ff83956b55a09275e2c50a2b3454f0abe429920af`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
-		Size: 4.6 KB (4641 bytes)  
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:d564e36d70c5864a8d8bdf14c1f78a26c5dc28c42dd34f32531db913d0b16682
+$ docker pull rabbitmq@sha256:d74e191b122686f684859e9803430a9706af4d8c15eedb114d4d5e89738fffd1
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **73.9 MB (73876564 bytes)**  
+-	Total Size: **73.9 MB (73873727 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f689da3a332f7187146496dc62be29ded54156bc11fb38d35e0ea0e29993c21f`
+-	Image ID: `sha256:8433898132af27a33483c54ac6a0b79e39fac88c61512e35131c3e887c47d97b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -7211,33 +7211,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:31:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:21 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:22 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:41:52 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:55 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -7270,28 +7270,151 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
 		Size: 2.2 KB (2152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed9f42ae5377d74ee94db86388cefd08ad542a7dcd6a94035ebd8194c1ed77c8`  
-		Last Modified: Tue, 04 Aug 2020 22:48:57 GMT  
-		Size: 15.6 MB (15574961 bytes)  
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71643a2fd1c3b0a805e513d85be6c44401a3aaabe323a783374d7224d4d43264`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3e3e4d2e8d4f352a49317522d34560bc57642e7dd47f3c38b41f25a60b318ad`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
-		Size: 4.6 KB (4634 bytes)  
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:3.8.7`
 
 ```console
-$ docker pull rabbitmq@sha256:c302c026b381860e18af060f9a691e6b4606bffa36172c0734cdb8d0b1257003
+$ docker pull rabbitmq@sha256:84ccd215290e1811d0a8d83af86ea50ccb7234fcfef66ed252407d3907241b57
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
 	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; 386
+	-	linux; s390x
+
+### `rabbitmq:3.8.7` - linux; amd64
+
+```console
+$ docker pull rabbitmq@sha256:6fcdff7152942ccb8260488f1b3a54eea2f99df21e48ac0450fdff4309356582
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **75.5 MB (75534340 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:de302df374f44eaadd815c4331ed9196219835e83d07569aeadc5f3c57b44b42`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 14:38:19 GMT
+ADD file:7d9bbf45a5b2510d44d3206a028cf6502757884d49e46d3d2e6356c3a92c4309 in / 
+# Fri, 24 Jul 2020 14:38:20 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 14:38:21 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 14:38:21 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 14:38:22 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 16:41:59 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 16:41:59 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 16:41:59 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 16:41:59 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 16:42:00 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 16:42:00 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 16:42:00 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 16:48:10 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 16:48:10 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 16:48:11 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:20:29 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:20:30 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:20:30 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:20:30 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:20:30 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:20:31 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:20:31 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:20:31 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:20:31 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:7595c8c21622ea8a8b9778972e26dbbe063f7a1c4b0a28a80a34ebb3d343b586`  
+		Last Modified: Mon, 13 Jul 2020 15:46:50 GMT  
+		Size: 26.7 MB (26697127 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d13af8ca898f36af68711cb67c345f65046a78ccd802453f4b129adf9205b1f8`  
+		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+		Size: 35.4 KB (35364 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:70799171ddba93a611490ba3557d782714b3f4da8963d49ac8726786ba8274a5`  
+		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+		Size: 848.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b6c12202c5ef07dc9eb8f9d9e71407064684ed70f8c4040b62679b7d30200840`  
+		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+		Size: 161.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7c7d7bd9523c9a685d8974c8af77cb4542ee8ac8797dc01f8f61148ac6185d82`  
+		Last Modified: Fri, 24 Jul 2020 16:58:42 GMT  
+		Size: 779.7 KB (779705 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:30fd97770142db5fa3eb9356e683e7c94cc482f13ec00b227641b43d1c7a219f`  
+		Last Modified: Fri, 24 Jul 2020 16:58:48 GMT  
+		Size: 32.4 MB (32441685 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2e22a196dea1ba51c9a6ef7aed8304dca2fba571b2afb4c662c6048b84e6a122`  
+		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
+		Size: 2.1 KB (2071 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8.7` - linux; arm variant v7
 
@@ -7412,15 +7535,580 @@ CMD ["rabbitmq-server"]
 		Size: 4.6 KB (4639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `rabbitmq:3.8.7` - linux; arm64 variant v8
+
+```console
+$ docker pull rabbitmq@sha256:4fed3790fd0cdecdfe2530aed9ed5d1374d279a2ab62ae052117511a32a080f6
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **72.0 MB (72044453 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:04b23e2ba6bc53c71a1f8bc99fe616f24a3ae825750396b129970dccf520c36d`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 16:21:15 GMT
+ADD file:146b4b3953060bbe623c06f374b3b3798872e4e1ddfef76071c7c4b69a834622 in / 
+# Fri, 24 Jul 2020 16:21:35 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 16:21:51 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 16:23:26 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 16:23:50 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 19:11:51 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 19:11:52 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 19:11:53 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 19:11:53 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 19:11:54 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 19:11:54 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 19:11:55 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 19:17:06 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 19:17:07 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 19:17:09 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:39:55 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:39:56 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:40:35 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:40:37 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:40:37 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:40:38 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:40:39 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:40:40 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:40:41 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:40:41 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:40:42 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:a114936b480795ec46632c29c96e126744c314983ee0d83354804dc39d1afb46`  
+		Last Modified: Mon, 13 Jul 2020 15:47:08 GMT  
+		Size: 23.7 MB (23721122 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a27ecf0d2a869e5d188121e6b38473e481b66599a26d8df24d22c9170f50bfa9`  
+		Last Modified: Fri, 24 Jul 2020 16:27:00 GMT  
+		Size: 35.2 KB (35205 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f4eb48eb870f62ec1a7a4a2d753bf2b92dff62a6dbedaeff6db6e41cb33196bc`  
+		Last Modified: Fri, 24 Jul 2020 16:27:00 GMT  
+		Size: 849.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0f912b9bb20d998fd0f1a2526d5539f35d34a476da71c783d0041b25b78c0af5`  
+		Last Modified: Fri, 24 Jul 2020 16:27:00 GMT  
+		Size: 188.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b402e9dc449340e7bc199c7cb64bf6126609b5923d22f3811f9005c57aad0c0d`  
+		Last Modified: Fri, 24 Jul 2020 19:27:36 GMT  
+		Size: 676.6 KB (676649 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e0a5682a8c3df1c9f90367624ea72442fcef4352787f6a7412cde414762fe083`  
+		Last Modified: Fri, 24 Jul 2020 19:27:42 GMT  
+		Size: 32.0 MB (32030690 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0cb62c0a524d18b4a25627201c59207a4e3b40796f6345e1e23c3d6aa84ea779`  
+		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
+		Size: 2.2 KB (2156 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7` - linux; 386
+
+```console
+$ docker pull rabbitmq@sha256:fda0cae2052105756efa5cdf6f0ca64110aedb12dc7e2289cf62464c029bfffa
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **75.8 MB (75793516 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:d9af82e22a914fc1da549ef86bd61a40717b699cb2f785f45172f946226fe56c`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 14:40:18 GMT
+ADD file:1041a59a13c0d49b1cb87f211694f68be4c9b76f2deb36e2d8955b77c4d2836f in / 
+# Fri, 24 Jul 2020 14:40:19 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 14:40:20 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 14:40:21 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 14:40:21 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 15:11:32 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 15:11:32 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 15:11:32 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 15:11:32 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 15:11:32 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 15:11:33 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 15:11:33 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 15:19:47 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 15:19:47 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 15:19:48 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:39:00 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:39:01 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:39:01 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:39:02 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:39:02 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:39:02 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:39:02 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:39:02 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:39:03 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:89823af3b784a3ef6d57a90159cbd5f28c863927aa03d4c43b44b6c37479fa1c`  
+		Last Modified: Mon, 13 Jul 2020 15:46:56 GMT  
+		Size: 27.1 MB (27123624 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:28677484c2569b014ecb876df3111b11e825c82629306b3af99a1c12f3b234e2`  
+		Last Modified: Fri, 24 Jul 2020 14:40:50 GMT  
+		Size: 34.6 KB (34611 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9c914b15d9c03339769ddd662b893654bbc371dbed4f8cdfa29ca1c57c0bb98e`  
+		Last Modified: Fri, 24 Jul 2020 14:40:50 GMT  
+		Size: 849.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d9dc7dbf6d65bca5959e6f7c892f468288c27e6a0ef07eec142d4497ee07e6cd`  
+		Last Modified: Fri, 24 Jul 2020 14:40:50 GMT  
+		Size: 162.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6da66285800d54a71cd061b0d76c529c14a5dc27e7719d46a70911eed06e02de`  
+		Last Modified: Fri, 24 Jul 2020 15:33:54 GMT  
+		Size: 690.2 KB (690217 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:364dd3eb0c54b0174f9f6a9536fec1a1f8a634377056ed669970544c9e97f3a1`  
+		Last Modified: Fri, 24 Jul 2020 15:34:02 GMT  
+		Size: 32.4 MB (32364719 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:61f2424b8d5e41e822d269fb0aa74510239b7d255244de7b0415063552c4590d`  
+		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
+		Size: 2.1 KB (2060 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7` - linux; s390x
+
+```console
+$ docker pull rabbitmq@sha256:d74e191b122686f684859e9803430a9706af4d8c15eedb114d4d5e89738fffd1
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **73.9 MB (73873727 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:8433898132af27a33483c54ac6a0b79e39fac88c61512e35131c3e887c47d97b`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 14:43:52 GMT
+ADD file:03965719c666ec8be956f87c8fd8121313110d14fd14f25a85be1281e4ca000b in / 
+# Fri, 24 Jul 2020 14:44:00 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 14:44:02 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 14:44:04 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 14:44:05 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 15:24:49 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 15:24:50 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 15:24:51 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 15:24:51 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 15:24:52 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 15:24:53 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 15:24:53 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 15:30:55 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 15:31:00 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 15:31:02 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:41:39 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:41:39 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:41:52 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:41:53 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:41:53 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:41:54 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:41:54 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:41:54 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:41:54 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:41:54 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:41:55 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:be08d3c199ef98c9593e956954bc77a9dbc438573a70702d7b3464d4e8d1ac41`  
+		Last Modified: Mon, 13 Jul 2020 15:48:28 GMT  
+		Size: 25.4 MB (25369527 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f7d13cd4fc4b78e5f1f87dd7f9b563a260a4a858377937981e98c3246b6908cf`  
+		Last Modified: Fri, 24 Jul 2020 14:45:31 GMT  
+		Size: 36.2 KB (36170 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c4b49d28fc51a8e47b741fef4363cbf334000d3955d4bdef76622a0a5ba72a88`  
+		Last Modified: Fri, 24 Jul 2020 14:45:31 GMT  
+		Size: 848.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c2e784976bb1b84890c7c9256bdf2d9d634bc901a832f0724a5cf6d1e365e44f`  
+		Last Modified: Fri, 24 Jul 2020 14:45:36 GMT  
+		Size: 188.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6b9d4d0cabb159bc6f508399d96d502123cf3ff6b9bba41dc87a67e51bb593e4`  
+		Last Modified: Fri, 24 Jul 2020 15:41:02 GMT  
+		Size: 780.4 KB (780431 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4fb1a08a860837c0f3f87e799c32a466af3f49949762188c91f18162cd624728`  
+		Last Modified: Fri, 24 Jul 2020 15:41:03 GMT  
+		Size: 32.1 MB (32107546 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7a86f2b688f9990ee347b4821b24f105c6f1afacf012327834314b14f00614d7`  
+		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
+		Size: 2.2 KB (2152 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `rabbitmq:3.8.7-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:542e6c79c482e302add4bbf6c65a0c03ad5ce052bf70b39ef83ba02ee55cfe86
+$ docker pull rabbitmq@sha256:d32e880e91cc311d84da056fac5f7d7b55b0eba487eb3a46e2c02926f564a97a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+	-	linux; arm variant v6
 	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; 386
+	-	linux; ppc64le
+	-	linux; s390x
+
+### `rabbitmq:3.8.7-alpine` - linux; amd64
+
+```console
+$ docker pull rabbitmq@sha256:aa1b18eccb0a247c20f1d7f1b887a01d013668cb463d360e25b30cd89b179cbe
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **56.3 MB (56270803 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:635e72823beff1a201290febbc250c7de9e3eed7a0541f00f168d7b005b36a98`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:19:46 GMT
+ADD file:c92c248239f8c7b9b3c067650954815f391b7bcb09023f984972c082ace2a8d0 in / 
+# Fri, 29 May 2020 21:19:46 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:31:08 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:31:08 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:31:08 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:31:08 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:31:08 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 22:35:30 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 22:35:31 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 22:43:17 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 22:43:17 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 22:43:18 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:20:55 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:20:55 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:21:02 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:21:03 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:21:03 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:21:03 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:21:03 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:21:03 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:21:04 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:21:04 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:21:04 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:df20fa9351a15782c64e6dddb2d4a6f50bf6d3688060a34c4014b0d9a752eb4c`  
+		Last Modified: Fri, 29 May 2020 21:20:06 GMT  
+		Size: 2.8 MB (2797541 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6a4ed01407015543e7eb77b28e070f712a6f3ef2c65a1b3abd0f961e98483efc`  
+		Last Modified: Thu, 25 Jun 2020 19:54:13 GMT  
+		Size: 1.0 MB (1001518 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e19849f2828570c299916ce6927355e4ef81d8af1fb2b9232e6aac79e48924e8`  
+		Last Modified: Mon, 20 Jul 2020 22:45:21 GMT  
+		Size: 37.2 MB (37247834 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9a01d5b06a69135dba97c64a9a83f32d6b683a24549be046ecd5b6f6b7a86f28`  
+		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
+		Size: 1.4 KB (1389 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-alpine` - linux; arm variant v6
+
+```console
+$ docker pull rabbitmq@sha256:8641a5d01eadc86e0a819741fb1672b42c8dfa2dcfb1a05dd37ea5d955b236e6
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **55.0 MB (55015036 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:422f1b72cfd9b1bc739743398c8a7654075c300cf9aff725bc03b96d37ae1393`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:50:55 GMT
+ADD file:f46e997a56849423db17e5fc9f0249ab6c73b155245927dba5fcb9dfd65f622f in / 
+# Fri, 29 May 2020 21:50:56 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:51:43 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:51:44 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:51:45 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:51:46 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:51:46 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 23:17:34 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 23:17:42 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:30:05 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:30:08 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:30:13 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:50:50 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:50:51 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:51:29 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:51:31 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:51:31 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:51:32 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:51:32 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:51:33 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:51:34 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:51:34 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:51:35 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:b4b72e716706d29f5d2351709c20bf737b94f876a5472a43ff1b6e203c65d27f`  
+		Last Modified: Fri, 29 May 2020 21:51:30 GMT  
+		Size: 2.6 MB (2603286 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d36cc9d00ec8187f85ea3edcf0141b4ce8f8a83db78deaea072d01e25422505e`  
+		Last Modified: Thu, 25 Jun 2020 20:47:37 GMT  
+		Size: 955.0 KB (954953 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5bfad2caf4ddfb0257aff5b4f6808899000d64869d6234e5e330481ad33b485e`  
+		Last Modified: Mon, 20 Jul 2020 23:32:29 GMT  
+		Size: 36.2 MB (36232832 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:24bbd23763a76a381476ee05ee47c112b2526679914dc10f2957fdb9190e67e8`  
+		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
+		Size: 1.5 KB (1457 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
+		Size: 4.6 KB (4643 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8.7-alpine` - linux; arm variant v7
 
@@ -7523,15 +8211,556 @@ CMD ["rabbitmq-server"]
 		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `rabbitmq:3.8.7-alpine` - linux; arm64 variant v8
+
+```console
+$ docker pull rabbitmq@sha256:386853f40be0484b45f02f752f1e8116aebcd9c2f64f5a186dee74a1e31669f6
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **55.8 MB (55790527 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:d6b6731c2e335d690ad8f00175d3274f1c260143bcffb5f782d153944472594e`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:43:19 GMT
+ADD file:7574aee4e37a85460ab889212d52912723a9b30dda1c060548f0deb4a05fc398 in / 
+# Fri, 29 May 2020 21:43:20 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:43:13 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:43:13 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:43:14 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:43:15 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:43:15 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 23:33:45 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 23:33:46 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:37:54 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:37:56 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:37:58 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:41:24 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:41:24 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:41:37 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:41:39 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:41:40 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:41:40 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:41:41 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:41:42 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:41:42 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:41:43 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:41:44 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:b538f80385f9b48122e3da068c932a96ea5018afa3c7be79da00437414bd18cd`  
+		Last Modified: Fri, 29 May 2020 21:43:57 GMT  
+		Size: 2.7 MB (2707964 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ab0f9e16c7222c6c68c4a21363ddf805779eaeeaa3d5e6697411e59d40b0b275`  
+		Last Modified: Thu, 25 Jun 2020 19:57:48 GMT  
+		Size: 1.0 MB (1031906 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f95b6b49edbbe0ab4ea8ea595c1f0fb1070d82f009194db36344517f0f04242f`  
+		Last Modified: Mon, 20 Jul 2020 23:40:27 GMT  
+		Size: 36.8 MB (36826679 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3b0c66330249270460441163024f8b2b477ec3da00a8589b9fd43c659b21f167`  
+		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
+		Size: 1.5 KB (1456 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-alpine` - linux; 386
+
+```console
+$ docker pull rabbitmq@sha256:8f3b105057384535ba189d4cf42420c55eb503b77530780ebfa7405a43d06a73
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **56.3 MB (56301050 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:14f225c356162358902588d3fed5ab3c1c1fdfa04f241f830ebeffeecaea754a`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:38:33 GMT
+ADD file:5624441d97aca5eeb82a582941efc3586397098b8391227a9040ebe434cc1d6b in / 
+# Fri, 29 May 2020 21:38:33 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:39:11 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:39:11 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:39:11 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:39:12 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:39:12 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 23:03:30 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 23:03:30 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:10:42 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:10:43 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:10:43 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:39:30 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:39:37 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:39:38 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:39:38 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:39:38 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:39:38 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:39:39 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:39:39 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:39:39 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:39:39 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:0625b4155e2a59f647ece47c0cd77ed3196b1f84454fa64ce80cad90e2b9b79e`  
+		Last Modified: Fri, 29 May 2020 21:38:53 GMT  
+		Size: 2.8 MB (2792298 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4a944684acce8248e04e4cc3fddee8a0a5dc5f65876afd996a6b34012b96cb28`  
+		Last Modified: Thu, 25 Jun 2020 20:04:57 GMT  
+		Size: 1.1 MB (1053761 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:815bcd31e105f62cbde626a371f51e94f17cf97b39a30cc7efc07ffa9a664632`  
+		Last Modified: Mon, 20 Jul 2020 23:12:24 GMT  
+		Size: 37.2 MB (37231082 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0277717fa978a7b0b06583219dc79660b2a9688b004d03a2b3943f6216282ee2`  
+		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
+		Size: 1.4 KB (1389 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
+		Size: 4.6 KB (4642 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-alpine` - linux; ppc64le
+
+```console
+$ docker pull rabbitmq@sha256:7273e15087b6c7b56b9a8ce8a7f6d8455bac5e6dfdfa299408eaf69e0c9b8ce3
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **56.7 MB (56676176 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:062bf709331dba66bbc173601ab8c3a41f37b07dc47bdc4b1bce9263ed937eb3`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:23:03 GMT
+ADD file:8194808a812370fd2202d80d1667f851bd9eac4c560d69d347fe1964f54343de in / 
+# Fri, 29 May 2020 21:23:06 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:19:24 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:19:28 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:19:32 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:19:35 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:19:42 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 22:33:56 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 22:33:59 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 22:39:23 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 22:39:30 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 22:39:40 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:19:19 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:19:23 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:19:53 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:20:03 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:20:13 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:20:21 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:20:27 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:20:29 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:20:35 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:20:44 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:20:51 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:5077f8601dceb5744d875d7740ebc203f674b108a0188f3a31e292b21a4bee64`  
+		Last Modified: Fri, 29 May 2020 21:23:37 GMT  
+		Size: 2.8 MB (2805199 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1770f708218b0ef9d2889d93d262ec6c470f32355beac39b039129d71354df8f`  
+		Last Modified: Thu, 25 Jun 2020 19:39:25 GMT  
+		Size: 1.1 MB (1116175 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:92b2d3be90307ff448adf786b56246096967c135a7d62e733a0e140fd5d12ca8`  
+		Last Modified: Mon, 20 Jul 2020 22:44:18 GMT  
+		Size: 37.5 MB (37530808 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d85a5f252915193b90a564d3a09e6d170a2f89b52e4835a55c1bacb94e71a25a`  
+		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
+		Size: 1.5 KB (1462 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-alpine` - linux; s390x
+
+```console
+$ docker pull rabbitmq@sha256:a742e727e4e324ba52d41de85620311190d1925f708fb7d3abe67e1e3e4e5fe5
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **55.1 MB (55077412 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:23a80031ac9433ff0021d288015bedeb243bb24e83201b4696ced21e54f1e614`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:41:39 GMT
+ADD file:9799ce3b2f782a28e10b1846cd9b3db827fa99c9bc601feb268456195856814e in / 
+# Fri, 29 May 2020 21:41:39 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:42:24 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:42:24 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:42:24 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:42:25 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:42:25 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 22:56:55 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 22:56:55 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:00:21 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:00:22 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:00:23 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:42:18 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:42:18 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:42:23 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:42:24 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:42:24 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:42:25 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:42:25 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:42:25 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:42:25 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:42:25 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:42:26 GMT
+CMD ["rabbitmq-server"]
+```
+
+-	Layers:
+	-	`sha256:8fb3d41b2e9a59630b51745f257cd2561f96bcd15cf309fcc20120d5fcee8c5b`  
+		Last Modified: Fri, 29 May 2020 21:42:03 GMT  
+		Size: 2.6 MB (2566189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d14d2c7bf3d31629119bd6e5730b0398235a9dfadc3f2ef4bc0aadbab0947122`  
+		Last Modified: Thu, 25 Jun 2020 19:54:18 GMT  
+		Size: 1.0 MB (1044229 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bde5efa4b89c47b8fe8815b67e7e23920dca9b6bafdc0aad20630e4f84e0aaec`  
+		Last Modified: Mon, 20 Jul 2020 23:02:15 GMT  
+		Size: 36.2 MB (36243006 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1a78780d2b27bd228e35e5167bbac70817578898fc4178b411a62f7825ce4c43`  
+		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
+		Size: 1.5 KB (1455 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `rabbitmq:3.8.7-management`
 
 ```console
-$ docker pull rabbitmq@sha256:6b6670dfc6284acb3b6570f9859c4f86df55fd69eb77752b8513f5e932a827d7
+$ docker pull rabbitmq@sha256:29ab5b3d6ab75541cc5784573c90b44d184cca93fa69ef2176be4ba2cbb904d6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
 	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; 386
+	-	linux; s390x
+
+### `rabbitmq:3.8.7-management` - linux; amd64
+
+```console
+$ docker pull rabbitmq@sha256:52088132b708e14589a00b404f8732fbcc2c2b0106b01611738c185d3e07ed7c
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **86.3 MB (86317992 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:0067598739d32fdce6d90674a3e8705199ce57b43e4ad61b07a3f5a4fd5b2945`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 14:38:19 GMT
+ADD file:7d9bbf45a5b2510d44d3206a028cf6502757884d49e46d3d2e6356c3a92c4309 in / 
+# Fri, 24 Jul 2020 14:38:20 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 14:38:21 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 14:38:21 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 14:38:22 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 16:41:59 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 16:41:59 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 16:41:59 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 16:41:59 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 16:42:00 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 16:42:00 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 16:42:00 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 16:48:10 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 16:48:10 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 16:48:11 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:20:29 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:20:30 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:20:30 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:20:30 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:20:30 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:20:31 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:20:31 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:20:31 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:20:31 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:20:38 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:20:49 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:20:49 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:7595c8c21622ea8a8b9778972e26dbbe063f7a1c4b0a28a80a34ebb3d343b586`  
+		Last Modified: Mon, 13 Jul 2020 15:46:50 GMT  
+		Size: 26.7 MB (26697127 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d13af8ca898f36af68711cb67c345f65046a78ccd802453f4b129adf9205b1f8`  
+		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+		Size: 35.4 KB (35364 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:70799171ddba93a611490ba3557d782714b3f4da8963d49ac8726786ba8274a5`  
+		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+		Size: 848.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b6c12202c5ef07dc9eb8f9d9e71407064684ed70f8c4040b62679b7d30200840`  
+		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+		Size: 161.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7c7d7bd9523c9a685d8974c8af77cb4542ee8ac8797dc01f8f61148ac6185d82`  
+		Last Modified: Fri, 24 Jul 2020 16:58:42 GMT  
+		Size: 779.7 KB (779705 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:30fd97770142db5fa3eb9356e683e7c94cc482f13ec00b227641b43d1c7a219f`  
+		Last Modified: Fri, 24 Jul 2020 16:58:48 GMT  
+		Size: 32.4 MB (32441685 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2e22a196dea1ba51c9a6ef7aed8304dca2fba571b2afb4c662c6048b84e6a122`  
+		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
+		Size: 2.1 KB (2071 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d8afb40937f21cc00b19fb158647fdf630617dfc4c52cab823c1307852866892`  
+		Last Modified: Tue, 18 Aug 2020 18:21:50 GMT  
+		Size: 188.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f3bf6465850cb13a7d1b6ae827d8f3ae4999c9246bceee3b72b9916446738efc`  
+		Last Modified: Tue, 18 Aug 2020 18:21:53 GMT  
+		Size: 10.8 MB (10783464 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8.7-management` - linux; arm variant v7
 
@@ -7666,15 +8895,650 @@ EXPOSE 15671 15672
 		Size: 9.7 MB (9743966 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `rabbitmq:3.8.7-management` - linux; arm64 variant v8
+
+```console
+$ docker pull rabbitmq@sha256:9541bf9c2891ae94334da22e2da552ce93a7e9ba0b80e782bc743546e673f6c5
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **82.2 MB (82194685 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:550e08e137b598b4478cc946ab5c23dfebc7a6c2b897e59fb39545d25646c52f`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 16:21:15 GMT
+ADD file:146b4b3953060bbe623c06f374b3b3798872e4e1ddfef76071c7c4b69a834622 in / 
+# Fri, 24 Jul 2020 16:21:35 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 16:21:51 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 16:23:26 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 16:23:50 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 19:11:51 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 19:11:52 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 19:11:53 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 19:11:53 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 19:11:54 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 19:11:54 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 19:11:55 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 19:17:06 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 19:17:07 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 19:17:09 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:39:55 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:39:56 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:40:35 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:40:37 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:40:37 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:40:38 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:40:39 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:40:40 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:40:41 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:40:41 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:40:42 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:40:54 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:41:13 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:41:14 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:a114936b480795ec46632c29c96e126744c314983ee0d83354804dc39d1afb46`  
+		Last Modified: Mon, 13 Jul 2020 15:47:08 GMT  
+		Size: 23.7 MB (23721122 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a27ecf0d2a869e5d188121e6b38473e481b66599a26d8df24d22c9170f50bfa9`  
+		Last Modified: Fri, 24 Jul 2020 16:27:00 GMT  
+		Size: 35.2 KB (35205 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f4eb48eb870f62ec1a7a4a2d753bf2b92dff62a6dbedaeff6db6e41cb33196bc`  
+		Last Modified: Fri, 24 Jul 2020 16:27:00 GMT  
+		Size: 849.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0f912b9bb20d998fd0f1a2526d5539f35d34a476da71c783d0041b25b78c0af5`  
+		Last Modified: Fri, 24 Jul 2020 16:27:00 GMT  
+		Size: 188.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b402e9dc449340e7bc199c7cb64bf6126609b5923d22f3811f9005c57aad0c0d`  
+		Last Modified: Fri, 24 Jul 2020 19:27:36 GMT  
+		Size: 676.6 KB (676649 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e0a5682a8c3df1c9f90367624ea72442fcef4352787f6a7412cde414762fe083`  
+		Last Modified: Fri, 24 Jul 2020 19:27:42 GMT  
+		Size: 32.0 MB (32030690 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0cb62c0a524d18b4a25627201c59207a4e3b40796f6345e1e23c3d6aa84ea779`  
+		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
+		Size: 2.2 KB (2156 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fd060abd5d03333f41c36edc60c7952e40d57dc090084585e2335fa436f904db`  
+		Last Modified: Tue, 18 Aug 2020 18:42:50 GMT  
+		Size: 188.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:32c26d8cf0308b1ed9d378116c566c59c084bb02640769eaa03bb080319cefbe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:53 GMT  
+		Size: 10.2 MB (10150044 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-management` - linux; 386
+
+```console
+$ docker pull rabbitmq@sha256:2a5efd9f225a0cd57223e6a53f2506776ee9c9035d5f73ce5690abd9e8ad6d9c
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **86.6 MB (86646181 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:3571fca61ef98843ec54a5ffa8aeeef65da2445a2c0e51c4f0b7f5aec101dee9`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 14:40:18 GMT
+ADD file:1041a59a13c0d49b1cb87f211694f68be4c9b76f2deb36e2d8955b77c4d2836f in / 
+# Fri, 24 Jul 2020 14:40:19 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 14:40:20 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 14:40:21 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 14:40:21 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 15:11:32 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 15:11:32 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 15:11:32 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 15:11:32 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 15:11:32 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 15:11:33 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 15:11:33 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 15:19:47 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 15:19:47 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 15:19:48 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:39:00 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:39:01 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:39:01 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:39:02 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:39:02 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:39:02 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:39:02 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:39:02 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:39:03 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:39:12 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:39:24 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:39:24 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:89823af3b784a3ef6d57a90159cbd5f28c863927aa03d4c43b44b6c37479fa1c`  
+		Last Modified: Mon, 13 Jul 2020 15:46:56 GMT  
+		Size: 27.1 MB (27123624 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:28677484c2569b014ecb876df3111b11e825c82629306b3af99a1c12f3b234e2`  
+		Last Modified: Fri, 24 Jul 2020 14:40:50 GMT  
+		Size: 34.6 KB (34611 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9c914b15d9c03339769ddd662b893654bbc371dbed4f8cdfa29ca1c57c0bb98e`  
+		Last Modified: Fri, 24 Jul 2020 14:40:50 GMT  
+		Size: 849.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d9dc7dbf6d65bca5959e6f7c892f468288c27e6a0ef07eec142d4497ee07e6cd`  
+		Last Modified: Fri, 24 Jul 2020 14:40:50 GMT  
+		Size: 162.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6da66285800d54a71cd061b0d76c529c14a5dc27e7719d46a70911eed06e02de`  
+		Last Modified: Fri, 24 Jul 2020 15:33:54 GMT  
+		Size: 690.2 KB (690217 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:364dd3eb0c54b0174f9f6a9536fec1a1f8a634377056ed669970544c9e97f3a1`  
+		Last Modified: Fri, 24 Jul 2020 15:34:02 GMT  
+		Size: 32.4 MB (32364719 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:61f2424b8d5e41e822d269fb0aa74510239b7d255244de7b0415063552c4590d`  
+		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
+		Size: 2.1 KB (2060 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1a135d928a7f36b49d43c34c2975266b423fc71be7938ac2b8f43ffe64a05b0e`  
+		Last Modified: Tue, 18 Aug 2020 18:40:30 GMT  
+		Size: 190.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fd477614bb9de9f74897f9c00f6cdf28e06b8442b430a16e0d3f29c43901a9c4`  
+		Last Modified: Tue, 18 Aug 2020 18:40:33 GMT  
+		Size: 10.9 MB (10852475 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-management` - linux; s390x
+
+```console
+$ docker pull rabbitmq@sha256:b0871a647a02a7767a883340f65f9016331bea9f7ea0139274c837142b20a295
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **84.3 MB (84284797 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:f52acc2c5b848288c9197699d68c3e7e3d0bd674837761c6dca243f55eed26bb`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 24 Jul 2020 14:43:52 GMT
+ADD file:03965719c666ec8be956f87c8fd8121313110d14fd14f25a85be1281e4ca000b in / 
+# Fri, 24 Jul 2020 14:44:00 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Fri, 24 Jul 2020 14:44:02 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Fri, 24 Jul 2020 14:44:04 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Fri, 24 Jul 2020 14:44:05 GMT
+CMD ["/bin/bash"]
+# Fri, 24 Jul 2020 15:24:49 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gosu 	; 	rm -rf /var/lib/apt/lists/*; 	gosu nobody true
+# Fri, 24 Jul 2020 15:24:50 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Fri, 24 Jul 2020 15:24:51 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Fri, 24 Jul 2020 15:24:51 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Fri, 24 Jul 2020 15:24:52 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Fri, 24 Jul 2020 15:24:53 GMT
+ENV OTP_VERSION=23.0.3
+# Fri, 24 Jul 2020 15:24:53 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Fri, 24 Jul 2020 15:30:55 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		autoconf 		ca-certificates 		dpkg-dev 		gcc 		gnupg 		libncurses5-dev 		make 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum --check --strict -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	debMultiarch="$(dpkg-architecture --query DEB_HOST_MULTIARCH)"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		--libdir="lib/$debMultiarch" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	ldconfig; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --progress dot:giga --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum --check --strict -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	CFLAGS="$(dpkg-buildflags --get CFLAGS)"; export CFLAGS; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Fri, 24 Jul 2020 15:31:00 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Fri, 24 Jul 2020 15:31:02 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:41:39 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:41:39 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:41:52 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:41:53 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:41:53 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:41:54 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:41:54 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:41:54 GMT
+COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:41:54 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:41:54 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:41:55 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:42:03 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:42:12 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:42:13 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:be08d3c199ef98c9593e956954bc77a9dbc438573a70702d7b3464d4e8d1ac41`  
+		Last Modified: Mon, 13 Jul 2020 15:48:28 GMT  
+		Size: 25.4 MB (25369527 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f7d13cd4fc4b78e5f1f87dd7f9b563a260a4a858377937981e98c3246b6908cf`  
+		Last Modified: Fri, 24 Jul 2020 14:45:31 GMT  
+		Size: 36.2 KB (36170 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c4b49d28fc51a8e47b741fef4363cbf334000d3955d4bdef76622a0a5ba72a88`  
+		Last Modified: Fri, 24 Jul 2020 14:45:31 GMT  
+		Size: 848.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c2e784976bb1b84890c7c9256bdf2d9d634bc901a832f0724a5cf6d1e365e44f`  
+		Last Modified: Fri, 24 Jul 2020 14:45:36 GMT  
+		Size: 188.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6b9d4d0cabb159bc6f508399d96d502123cf3ff6b9bba41dc87a67e51bb593e4`  
+		Last Modified: Fri, 24 Jul 2020 15:41:02 GMT  
+		Size: 780.4 KB (780431 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4fb1a08a860837c0f3f87e799c32a466af3f49949762188c91f18162cd624728`  
+		Last Modified: Fri, 24 Jul 2020 15:41:03 GMT  
+		Size: 32.1 MB (32107546 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7a86f2b688f9990ee347b4821b24f105c6f1afacf012327834314b14f00614d7`  
+		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
+		Size: 2.2 KB (2152 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0011d5588e631ecce7c1e7b621481598ae868356cc4bd2585d766ad513a95067`  
+		Last Modified: Tue, 18 Aug 2020 18:43:14 GMT  
+		Size: 189.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1ddb555b7f231c7d7d772c25a4f8fe0c6836f2ffeca36b4f171fb2f1127aa9c7`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
+		Size: 10.4 MB (10410881 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `rabbitmq:3.8.7-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:704a144357f9eb317fb1fbe381191d6fc0f8b09dee12dce64c3b043bec921578
+$ docker pull rabbitmq@sha256:a8de5efa1ead9e1ffb3c34695cccbf4c02fed06859e64c95455d02b1f941b32b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+	-	linux; arm variant v6
 	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; 386
+	-	linux; ppc64le
+	-	linux; s390x
+
+### `rabbitmq:3.8.7-management-alpine` - linux; amd64
+
+```console
+$ docker pull rabbitmq@sha256:203da97f2f9955b1a88fab311c3d234743514e3929dff3bf05bea839cdc3d0db
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **70.2 MB (70184971 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:39a3adedf1f5d22dafe081744cee0fe1dd9219d4172838343c66ae0e207bdc30`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:19:46 GMT
+ADD file:c92c248239f8c7b9b3c067650954815f391b7bcb09023f984972c082ace2a8d0 in / 
+# Fri, 29 May 2020 21:19:46 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:31:08 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:31:08 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:31:08 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:31:08 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:31:08 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 22:35:30 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 22:35:31 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 22:43:17 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 22:43:17 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 22:43:18 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:20:55 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:20:55 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:21:02 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:21:03 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:21:03 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:21:03 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:21:03 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:21:03 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:21:04 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:21:04 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:21:04 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:21:10 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:21:14 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:21:14 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:df20fa9351a15782c64e6dddb2d4a6f50bf6d3688060a34c4014b0d9a752eb4c`  
+		Last Modified: Fri, 29 May 2020 21:20:06 GMT  
+		Size: 2.8 MB (2797541 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6a4ed01407015543e7eb77b28e070f712a6f3ef2c65a1b3abd0f961e98483efc`  
+		Last Modified: Thu, 25 Jun 2020 19:54:13 GMT  
+		Size: 1.0 MB (1001518 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e19849f2828570c299916ce6927355e4ef81d8af1fb2b9232e6aac79e48924e8`  
+		Last Modified: Mon, 20 Jul 2020 22:45:21 GMT  
+		Size: 37.2 MB (37247834 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9a01d5b06a69135dba97c64a9a83f32d6b683a24549be046ecd5b6f6b7a86f28`  
+		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
+		Size: 1.4 KB (1389 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:78b709fe91779d62d4851357c9a565b478fd7ef61ce2b1dd61e31ba0ff29c72c`  
+		Last Modified: Tue, 18 Aug 2020 18:22:09 GMT  
+		Size: 191.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:607326a104f2cf9c0adad53c4996768b34f7e53723ced3ff92a94144e99d505a`  
+		Last Modified: Tue, 18 Aug 2020 18:22:11 GMT  
+		Size: 13.9 MB (13913977 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-management-alpine` - linux; arm variant v6
+
+```console
+$ docker pull rabbitmq@sha256:762c1267c57ad5f78390c49163c428c2a1eb4acd45e781581159592b265e52bd
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **68.8 MB (68821298 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:896127ebfa21e7c02c68edf992689476e0a063943bb8ef16da306ad2d7d6de4a`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:50:55 GMT
+ADD file:f46e997a56849423db17e5fc9f0249ab6c73b155245927dba5fcb9dfd65f622f in / 
+# Fri, 29 May 2020 21:50:56 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:51:43 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:51:44 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:51:45 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:51:46 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:51:46 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 23:17:34 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 23:17:42 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:30:05 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:30:08 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:30:13 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:50:50 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:50:51 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:51:29 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:51:31 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:51:31 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:51:32 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:51:32 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:51:33 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:51:34 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:51:34 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:51:35 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:51:58 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:52:07 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:52:08 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:b4b72e716706d29f5d2351709c20bf737b94f876a5472a43ff1b6e203c65d27f`  
+		Last Modified: Fri, 29 May 2020 21:51:30 GMT  
+		Size: 2.6 MB (2603286 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d36cc9d00ec8187f85ea3edcf0141b4ce8f8a83db78deaea072d01e25422505e`  
+		Last Modified: Thu, 25 Jun 2020 20:47:37 GMT  
+		Size: 955.0 KB (954953 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5bfad2caf4ddfb0257aff5b4f6808899000d64869d6234e5e330481ad33b485e`  
+		Last Modified: Mon, 20 Jul 2020 23:32:29 GMT  
+		Size: 36.2 MB (36232832 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:24bbd23763a76a381476ee05ee47c112b2526679914dc10f2957fdb9190e67e8`  
+		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
+		Size: 1.5 KB (1457 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
+		Size: 4.6 KB (4643 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:926fda1b9e25bfaa6872af4dd9a6a0a7d1961b72e3cbb9ce1aed16ee271c59bc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:44 GMT  
+		Size: 192.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ebc15264d2986e943c16a5b40123a60ca2ea50f1bf2e0539e0ae0ffe415a7592`  
+		Last Modified: Tue, 18 Aug 2020 18:52:50 GMT  
+		Size: 13.8 MB (13806070 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8.7-management-alpine` - linux; arm variant v7
 
@@ -7791,10 +9655,470 @@ EXPOSE 15671 15672
 		Size: 13.5 MB (13451739 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `rabbitmq:3.8.7-management-alpine` - linux; arm64 variant v8
+
+```console
+$ docker pull rabbitmq@sha256:27105255e70f9e74dd49676bdef24735ca15eb3d47910d996efd9606ed6155d5
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.8 MB (69824930 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:d8fdd9e8025e7b3f16646dbc6015a09082b9749398fba4750fc3d5098b93804e`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:43:19 GMT
+ADD file:7574aee4e37a85460ab889212d52912723a9b30dda1c060548f0deb4a05fc398 in / 
+# Fri, 29 May 2020 21:43:20 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:43:13 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:43:13 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:43:14 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:43:15 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:43:15 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 23:33:45 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 23:33:46 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:37:54 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:37:56 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:37:58 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:41:24 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:41:24 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:41:37 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:41:39 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:41:40 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:41:40 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:41:41 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:41:42 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:41:42 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:41:43 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:41:44 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:41:53 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:42:00 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:42:01 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:b538f80385f9b48122e3da068c932a96ea5018afa3c7be79da00437414bd18cd`  
+		Last Modified: Fri, 29 May 2020 21:43:57 GMT  
+		Size: 2.7 MB (2707964 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ab0f9e16c7222c6c68c4a21363ddf805779eaeeaa3d5e6697411e59d40b0b275`  
+		Last Modified: Thu, 25 Jun 2020 19:57:48 GMT  
+		Size: 1.0 MB (1031906 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f95b6b49edbbe0ab4ea8ea595c1f0fb1070d82f009194db36344517f0f04242f`  
+		Last Modified: Mon, 20 Jul 2020 23:40:27 GMT  
+		Size: 36.8 MB (36826679 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3b0c66330249270460441163024f8b2b477ec3da00a8589b9fd43c659b21f167`  
+		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
+		Size: 1.5 KB (1456 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b929a7515b5e55a528f54b9ecf6fc36b3cf4af69a60e399e58286f966769a3bc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
+		Size: 191.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f78244fa774a4ddf7573d52e90e85961867cee371ef20406c7ff73ab666a3100`  
+		Last Modified: Tue, 18 Aug 2020 18:43:20 GMT  
+		Size: 14.0 MB (14034212 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-management-alpine` - linux; 386
+
+```console
+$ docker pull rabbitmq@sha256:a19e31339cb31494bfab63c6391f323c11ce65b595b1dbdc5c76e080da31923d
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **70.3 MB (70334467 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7d0c5964c62970932f3842037c9aa222f562e0d5383557d8bdc3472e7cff53d3`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:38:33 GMT
+ADD file:5624441d97aca5eeb82a582941efc3586397098b8391227a9040ebe434cc1d6b in / 
+# Fri, 29 May 2020 21:38:33 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:39:11 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:39:11 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:39:11 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:39:12 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:39:12 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 23:03:30 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 23:03:30 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:10:42 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:10:43 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:10:43 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:39:30 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:39:37 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:39:38 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:39:38 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:39:38 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:39:38 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:39:39 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:39:39 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:39:39 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:39:39 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:39:45 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:39:50 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:39:50 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:0625b4155e2a59f647ece47c0cd77ed3196b1f84454fa64ce80cad90e2b9b79e`  
+		Last Modified: Fri, 29 May 2020 21:38:53 GMT  
+		Size: 2.8 MB (2792298 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4a944684acce8248e04e4cc3fddee8a0a5dc5f65876afd996a6b34012b96cb28`  
+		Last Modified: Thu, 25 Jun 2020 20:04:57 GMT  
+		Size: 1.1 MB (1053761 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:815bcd31e105f62cbde626a371f51e94f17cf97b39a30cc7efc07ffa9a664632`  
+		Last Modified: Mon, 20 Jul 2020 23:12:24 GMT  
+		Size: 37.2 MB (37231082 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0277717fa978a7b0b06583219dc79660b2a9688b004d03a2b3943f6216282ee2`  
+		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
+		Size: 1.4 KB (1389 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
+		Size: 4.6 KB (4642 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3396f70e7325482a929bccab56e45ff49ad548d49e6c30be384f014de489bbc8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:45 GMT  
+		Size: 192.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c95ffdcb053c77e4fd0f4df47385c7f50b79432c2522a8a89a035a5f9f6a4394`  
+		Last Modified: Tue, 18 Aug 2020 18:40:49 GMT  
+		Size: 14.0 MB (14033225 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-management-alpine` - linux; ppc64le
+
+```console
+$ docker pull rabbitmq@sha256:736e3809befaf6c34a16cef9e5ce873f7388098747d8d2107cb6209197a32ede
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **71.0 MB (71039949 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:747b49ef7d06424acba5effefb943c95703b242edfa4f7844a8d3c608c370c97`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:23:03 GMT
+ADD file:8194808a812370fd2202d80d1667f851bd9eac4c560d69d347fe1964f54343de in / 
+# Fri, 29 May 2020 21:23:06 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:19:24 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:19:28 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:19:32 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:19:35 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:19:42 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 22:33:56 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 22:33:59 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 22:39:23 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 22:39:30 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 22:39:40 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:19:19 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:19:23 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:19:53 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:20:03 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:20:13 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:20:21 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:20:27 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:20:29 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:20:35 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:20:44 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:20:51 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:21:15 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:21:43 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:21:52 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:5077f8601dceb5744d875d7740ebc203f674b108a0188f3a31e292b21a4bee64`  
+		Last Modified: Fri, 29 May 2020 21:23:37 GMT  
+		Size: 2.8 MB (2805199 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1770f708218b0ef9d2889d93d262ec6c470f32355beac39b039129d71354df8f`  
+		Last Modified: Thu, 25 Jun 2020 19:39:25 GMT  
+		Size: 1.1 MB (1116175 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:92b2d3be90307ff448adf786b56246096967c135a7d62e733a0e140fd5d12ca8`  
+		Last Modified: Mon, 20 Jul 2020 22:44:18 GMT  
+		Size: 37.5 MB (37530808 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d85a5f252915193b90a564d3a09e6d170a2f89b52e4835a55c1bacb94e71a25a`  
+		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
+		Size: 1.5 KB (1462 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6fb34e7b4f9194d1f8f699fc8ccf121eed6e99faaf9474e41e4b9ae39f1f0eaf`  
+		Last Modified: Tue, 18 Aug 2020 18:24:31 GMT  
+		Size: 193.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9704a8cf6880495e64a089b6aff166c0601d9776afdac0f1c6d9c03d9b529526`  
+		Last Modified: Tue, 18 Aug 2020 18:24:36 GMT  
+		Size: 14.4 MB (14363580 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `rabbitmq:3.8.7-management-alpine` - linux; s390x
+
+```console
+$ docker pull rabbitmq@sha256:e59c82c1fa401e49ba971b66330b378199880ce3c0cd41ed942253c5e29df4d7
+```
+
+-	Docker Version: 18.09.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **69.0 MB (69033165 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:5fbaaef8ce8e040a9adbfc4bf098f0aca0ad3b39c97e8eb0f4f214971c898134`
+-	Entrypoint: `["docker-entrypoint.sh"]`
+-	Default Command: `["rabbitmq-server"]`
+
+```dockerfile
+# Fri, 29 May 2020 21:41:39 GMT
+ADD file:9799ce3b2f782a28e10b1846cd9b3db827fa99c9bc601feb268456195856814e in / 
+# Fri, 29 May 2020 21:41:39 GMT
+CMD ["/bin/sh"]
+# Thu, 25 Jun 2020 19:42:24 GMT
+RUN apk add --no-cache 		'su-exec>=0.2' 		bash 		procps
+# Thu, 25 Jun 2020 19:42:24 GMT
+ARG PGP_KEYSERVER=ha.pool.sks-keyservers.net
+# Thu, 25 Jun 2020 19:42:24 GMT
+ENV OPENSSL_VERSION=1.1.1g
+# Thu, 25 Jun 2020 19:42:25 GMT
+ENV OPENSSL_SOURCE_SHA256=ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46
+# Thu, 25 Jun 2020 19:42:25 GMT
+ENV OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D
+# Mon, 20 Jul 2020 22:56:55 GMT
+ENV OTP_VERSION=23.0.3
+# Mon, 20 Jul 2020 22:56:55 GMT
+ENV OTP_SOURCE_SHA256=ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac
+# Mon, 20 Jul 2020 23:00:21 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		autoconf 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		linux-headers 		make 		ncurses-dev 	; 		OPENSSL_SOURCE_URL="https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz"; 	OPENSSL_PATH="/usr/local/src/openssl-$OPENSSL_VERSION"; 	OPENSSL_CONFIG_DIR=/usr/local/etc/ssl; 		mkdir /usr/local/src; 		wget --output-document "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_SOURCE_URL.asc"; 	wget --output-document "$OPENSSL_PATH.tar.gz" "$OPENSSL_SOURCE_URL"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $OPENSSL_PGP_KEY_IDS; do 		gpg --batch --keyserver "$PGP_KEYSERVER" --recv-keys "$key"; 	done; 	gpg --batch --verify "$OPENSSL_PATH.tar.gz.asc" "$OPENSSL_PATH.tar.gz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 	echo "$OPENSSL_SOURCE_SHA256 *$OPENSSL_PATH.tar.gz" | sha256sum -c -; 	mkdir -p "$OPENSSL_PATH"; 	tar --extract --file "$OPENSSL_PATH.tar.gz" --directory "$OPENSSL_PATH" --strip-components 1; 		cd "$OPENSSL_PATH"; 	MACHINE="$(dpkg-architecture --query DEB_BUILD_GNU_CPU)" 	RELEASE="4.x.y-z" 	SYSTEM='Linux' 	BUILD='???' 	./config 		--openssldir="$OPENSSL_CONFIG_DIR" 		-Wl,-rpath=/usr/local/lib 	; 	make -j "$(getconf _NPROCESSORS_ONLN)"; 	make install_sw install_ssldirs; 	cd ..; 	rm -rf "$OPENSSL_PATH"*; 	rmdir "$OPENSSL_CONFIG_DIR/certs" "$OPENSSL_CONFIG_DIR/private"; 	ln -sf /etc/ssl/certs /etc/ssl/private "$OPENSSL_CONFIG_DIR"; 	openssl version; 		OTP_SOURCE_URL="https://github.com/erlang/otp/archive/OTP-$OTP_VERSION.tar.gz"; 	OTP_PATH="/usr/local/src/otp-$OTP_VERSION"; 		mkdir -p "$OTP_PATH"; 	wget --output-document "$OTP_PATH.tar.gz" "$OTP_SOURCE_URL"; 	echo "$OTP_SOURCE_SHA256 *$OTP_PATH.tar.gz" | sha256sum -c -; 	tar --extract --file "$OTP_PATH.tar.gz" --directory "$OTP_PATH" --strip-components 1; 		cd "$OTP_PATH"; 	export ERL_TOP="$OTP_PATH"; 	./otp_build autoconf; 	export CFLAGS='-g -O2'; 	export CFLAGS="$CFLAGS -Wl,-rpath=/usr/local/lib"; 	hostArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)"; 	buildArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	dpkgArch="$(dpkg --print-architecture)"; dpkgArch="${dpkgArch##*-}"; 	./configure 		--host="$hostArch" 		--build="$buildArch" 		--disable-dynamic-ssl-lib 		--disable-hipe 		--disable-sctp 		--disable-silent-rules 		--enable-clock-gettime 		--enable-hybrid-heap 		--enable-kernel-poll 		--enable-shared-zlib 		--enable-smp-support 		--enable-threads 		--with-microstate-accounting=extra 		--without-common_test 		--without-debugger 		--without-dialyzer 		--without-diameter 		--without-edoc 		--without-erl_docgen 		--without-erl_interface 		--without-et 		--without-eunit 		--without-ftp 		--without-hipe 		--without-jinterface 		--without-megaco 		--without-observer 		--without-odbc 		--without-reltool 		--without-ssh 		--without-tftp 		--without-wx 	; 	make -j "$(getconf _NPROCESSORS_ONLN)" GEN_OPT_FLGS="-O2 -fno-strict-aliasing"; 	make install; 	cd ..; 	rm -rf 		"$OTP_PATH"* 		/usr/local/lib/erlang/lib/*/examples 		/usr/local/lib/erlang/lib/*/src 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .otp-run-deps $runDeps; 	apk del --no-network .build-deps; 		openssl version; 	erl -noshell -eval 'io:format("~p~n~n~p~n~n", [crypto:supports(), ssl:versions()]), init:stop().'
+# Mon, 20 Jul 2020 23:00:22 GMT
+ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
+# Mon, 20 Jul 2020 23:00:23 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
+# Tue, 18 Aug 2020 18:42:18 GMT
+ENV RABBITMQ_HOME=/opt/rabbitmq
+# Tue, 18 Aug 2020 18:42:18 GMT
+ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
+# Tue, 18 Aug 2020 18:42:23 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
+# Tue, 18 Aug 2020 18:42:24 GMT
+# ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
+RUN ln -sf /opt/rabbitmq/plugins /plugins
+# Tue, 18 Aug 2020 18:42:24 GMT
+ENV HOME=/var/lib/rabbitmq
+# Tue, 18 Aug 2020 18:42:25 GMT
+VOLUME [/var/lib/rabbitmq]
+# Tue, 18 Aug 2020 18:42:25 GMT
+ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
+# Tue, 18 Aug 2020 18:42:25 GMT
+COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
+# Tue, 18 Aug 2020 18:42:25 GMT
+ENTRYPOINT ["docker-entrypoint.sh"]
+# Tue, 18 Aug 2020 18:42:25 GMT
+EXPOSE 25672 4369 5671 5672
+# Tue, 18 Aug 2020 18:42:26 GMT
+CMD ["rabbitmq-server"]
+# Tue, 18 Aug 2020 18:42:32 GMT
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+# Tue, 18 Aug 2020 18:42:35 GMT
+RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
+# Tue, 18 Aug 2020 18:42:36 GMT
+EXPOSE 15671 15672
+```
+
+-	Layers:
+	-	`sha256:8fb3d41b2e9a59630b51745f257cd2561f96bcd15cf309fcc20120d5fcee8c5b`  
+		Last Modified: Fri, 29 May 2020 21:42:03 GMT  
+		Size: 2.6 MB (2566189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d14d2c7bf3d31629119bd6e5730b0398235a9dfadc3f2ef4bc0aadbab0947122`  
+		Last Modified: Thu, 25 Jun 2020 19:54:18 GMT  
+		Size: 1.0 MB (1044229 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bde5efa4b89c47b8fe8815b67e7e23920dca9b6bafdc0aad20630e4f84e0aaec`  
+		Last Modified: Mon, 20 Jul 2020 23:02:15 GMT  
+		Size: 36.2 MB (36243006 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1a78780d2b27bd228e35e5167bbac70817578898fc4178b411a62f7825ce4c43`  
+		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
+		Size: 1.5 KB (1455 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
+		Size: 107.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7d2cbbb7b5d4ac3e770da4f3b648329a3dd67c0487be160ae90659d1d3b99c4f`  
+		Last Modified: Tue, 18 Aug 2020 18:43:35 GMT  
+		Size: 194.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3af8190599b13622b1e4a6d155be4820ae5594dbe9da2ae1742a72362002efea`  
+		Last Modified: Tue, 18 Aug 2020 18:43:37 GMT  
+		Size: 14.0 MB (13955559 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ## `rabbitmq:3.8-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:57a2f8d3991dd4a1429a7e53c384ca18c001c9b21fadf33a6350ed8ad5af1588
+$ docker pull rabbitmq@sha256:d32e880e91cc311d84da056fac5f7d7b55b0eba487eb3a46e2c02926f564a97a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7810,14 +10134,14 @@ $ docker pull rabbitmq@sha256:57a2f8d3991dd4a1429a7e53c384ca18c001c9b21fadf33a63
 ### `rabbitmq:3.8-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:2f5074756d62b8db675b90384a15526afec5159635f6432f82e0cc20bdd4c44a
+$ docker pull rabbitmq@sha256:aa1b18eccb0a247c20f1d7f1b887a01d013668cb463d360e25b30cd89b179cbe
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.3 MB (56273423 bytes)**  
+-	Total Size: **56.3 MB (56270803 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:12634d36fb21a072a04df476d0db8b21d8c4cdef1e4aef515c830d73347c9339`
+-	Image ID: `sha256:635e72823beff1a201290febbc250c7de9e3eed7a0541f00f168d7b005b36a98`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -7848,33 +10172,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:43:18 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:48:58 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:48:59 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:49:06 GMT
+# Tue, 18 Aug 2020 18:21:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -7895,30 +10219,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bca127415eff9a06e53f066c7a8b81ae9d26696201904e18c7fe4e16727bde80`  
-		Last Modified: Wed, 05 Aug 2020 09:50:02 GMT  
-		Size: 15.2 MB (15220391 bytes)  
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce6ee20db1b180903224622bc115cf1d39c45008c797a61442c06f6ac377f0af`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10682479430a3d554886c654aa2b489975d0b3b475690d5799247d8ce34e80f3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
-		Size: 4.6 KB (4643 bytes)  
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:bff398ec1a39ddee25afe5fefc1aea7e87e194d0d7648a4c3296433e5cbd4f48
+$ docker pull rabbitmq@sha256:8641a5d01eadc86e0a819741fb1672b42c8dfa2dcfb1a05dd37ea5d955b236e6
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.0 MB (55017685 bytes)**  
+-	Total Size: **55.0 MB (55015036 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9e53322b4bfafda4a0745538a31057d78c7c40b4f9f48f46bbed09538b5732e6`
+-	Image ID: `sha256:422f1b72cfd9b1bc739743398c8a7654075c300cf9aff725bc03b96d37ae1393`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -7949,33 +10273,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:30:13 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:14:28 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:14:29 GMT
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:51 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:15:11 GMT
+# Tue, 18 Aug 2020 18:51:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:15:17 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:15:21 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:15:22 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:15:23 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:15:24 GMT
+# Tue, 18 Aug 2020 18:51:33 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:15:27 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:15:28 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:15:29 GMT
+# Tue, 18 Aug 2020 18:51:35 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -7996,16 +10320,16 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
 		Size: 1.5 KB (1457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84dbf564a6fc9745ceca8e028c497e904e032121fb6cb13e0c3db533a3689ab5`  
-		Last Modified: Tue, 04 Aug 2020 22:16:51 GMT  
-		Size: 15.2 MB (15220407 bytes)  
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5504e3495fc69b155962409a25eace7d96f4cc05ccb6c70f5d532a0e4c1b83bb`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6650697d0e5ccbbbf92cc73f9780cb7bd2f4b26b0829239221d098f0b33dae16`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 4.6 KB (4643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -8113,14 +10437,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:3.8-alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:e541d648d9aecaa62e6ba8f59285f3e7815a1d0f173969363df00d5b16664c13
+$ docker pull rabbitmq@sha256:386853f40be0484b45f02f752f1e8116aebcd9c2f64f5a186dee74a1e31669f6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.8 MB (55793166 bytes)**  
+-	Total Size: **55.8 MB (55790527 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7bbba3cc0b4b6d08a0feac36588037844384ec27f3abfa2a28f5be3901976ed6`
+-	Image ID: `sha256:d6b6731c2e335d690ad8f00175d3274f1c260143bcffb5f782d153944472594e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -8151,33 +10475,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:37:58 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:10:33 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:10:35 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:10:55 GMT
+# Tue, 18 Aug 2020 18:41:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:10:56 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:10:57 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:41 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:11:00 GMT
+# Tue, 18 Aug 2020 18:41:43 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:11:01 GMT
+# Tue, 18 Aug 2020 18:41:44 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -8198,30 +10522,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
 		Size: 1.5 KB (1456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c964eafbc795477b227f1ffd57a9870270075e56420ea4478505addf39731df0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:23 GMT  
-		Size: 15.2 MB (15220410 bytes)  
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a2789b904c7c14dc5e21e70d81c9497b6b0d41a833929a7557371b3590d92da`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be0265b364b72d5b6def99dd5d8243e08547557fd8c75c0350bb75c41f563cb0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
-		Size: 4.6 KB (4644 bytes)  
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-alpine` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:f35129943ed9324282fcfb010cee2d088a6cf51e5daa8a7941b50370558f82a6
+$ docker pull rabbitmq@sha256:8f3b105057384535ba189d4cf42420c55eb503b77530780ebfa7405a43d06a73
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.3 MB (56303671 bytes)**  
+-	Total Size: **56.3 MB (56301050 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd6ce52bb08e25ecffaf96724baf3ea6a09dfe47d32f02175d4d94be0cfb5c47`
+-	Image ID: `sha256:14f225c356162358902588d3fed5ab3c1c1fdfa04f241f830ebeffeecaea754a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -8252,33 +10576,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:10:43 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:25 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:26 GMT
+# Tue, 18 Aug 2020 18:39:30 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:35 GMT
+# Tue, 18 Aug 2020 18:39:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -8299,30 +10623,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2d1ffcc0a6344e6f0f44905e288c38bec15c9c4567faf2f5eca0f4881ee86b5`  
-		Last Modified: Tue, 04 Aug 2020 22:48:41 GMT  
-		Size: 15.2 MB (15220392 bytes)  
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4f5c50489a3c9223d2b6bb523d08f53b5202cf2976a9241de657f6275b47f01`  
-		Last Modified: Tue, 04 Aug 2020 22:48:38 GMT  
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8921f49206b6385fa0299240d982e1d079fd21573730dcebf45edd7294b5bdd1`  
-		Last Modified: Tue, 04 Aug 2020 22:48:39 GMT  
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
 		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-alpine` - linux; ppc64le
 
 ```console
-$ docker pull rabbitmq@sha256:9097ca280d89dcec476dad3b406a859fe8a57ad4340d369507bfbfd6b81211e7
+$ docker pull rabbitmq@sha256:7273e15087b6c7b56b9a8ce8a7f6d8455bac5e6dfdfa299408eaf69e0c9b8ce3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.7 MB (56678809 bytes)**  
+-	Total Size: **56.7 MB (56676176 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5df2bcc93307713eb33239e880c359f0e7349d952410c85ace1cf43cfeaa0475`
+-	Image ID: `sha256:062bf709331dba66bbc173601ab8c3a41f37b07dc47bdc4b1bce9263ed937eb3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -8353,33 +10677,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:39:40 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 06:07:46 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 06:07:49 GMT
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 06:07:53 GMT
+# Tue, 18 Aug 2020 18:19:19 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 06:07:58 GMT
+# Tue, 18 Aug 2020 18:19:23 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 06:08:20 GMT
+# Tue, 18 Aug 2020 18:19:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 06:08:31 GMT
+# Tue, 18 Aug 2020 18:20:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 06:08:35 GMT
+# Tue, 18 Aug 2020 18:20:13 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 06:08:39 GMT
+# Tue, 18 Aug 2020 18:20:21 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 06:08:43 GMT
+# Tue, 18 Aug 2020 18:20:27 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 06:08:44 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 06:08:47 GMT
+# Tue, 18 Aug 2020 18:20:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 06:08:51 GMT
+# Tue, 18 Aug 2020 18:20:44 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 06:08:53 GMT
+# Tue, 18 Aug 2020 18:20:51 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -8400,30 +10724,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
 		Size: 1.5 KB (1462 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efa7517a6d95ab298ff77e20cb934892128e241a1b5b2eac20266c4de24f760e`  
-		Last Modified: Wed, 05 Aug 2020 06:11:16 GMT  
-		Size: 15.2 MB (15220413 bytes)  
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e90a3b34978ff87934ea197584b6a04cb0ff136a3f327cf59c208baa7a2ac7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb7ced3deacbb43140a77a6308c91c14853769b5f244efc3a04c87cd783e31bf`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
-		Size: 4.6 KB (4645 bytes)  
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-alpine` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:69dea59e48c6207c85fe2e2952078f2a44394a35447fae1ed099b4df2d75fadd
+$ docker pull rabbitmq@sha256:a742e727e4e324ba52d41de85620311190d1925f708fb7d3abe67e1e3e4e5fe5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.1 MB (55080044 bytes)**  
+-	Total Size: **55.1 MB (55077412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28b340036ed434707a458946cdca3900e939f90481195abd0588e5f84a6f5576`
+-	Image ID: `sha256:23a80031ac9433ff0021d288015bedeb243bb24e83201b4696ced21e54f1e614`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -8454,33 +10778,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:00:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:48:00 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:48:07 GMT
+# Tue, 18 Aug 2020 18:42:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:26 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -8501,23 +10825,23 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
 		Size: 1.5 KB (1455 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef24e923834b403a661fb1d0ae2f82389517a9eea6d0cbeb6b5f36cf2cd14b6`  
-		Last Modified: Tue, 04 Aug 2020 22:49:19 GMT  
-		Size: 15.2 MB (15220418 bytes)  
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aafba55383f2e239b44252205ff48087e6e566a4c3f382dd6b293c67f1122b79`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c95ecf67c164b009bc63396745029324e3d19475977c00c1ca6a5a5538eb3d2`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
-		Size: 4.6 KB (4640 bytes)  
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:3.8-management`
 
 ```console
-$ docker pull rabbitmq@sha256:5e48c36f4095498a401ac7ce9088caf10ee691839c6b9078acf7343c0252ff1f
+$ docker pull rabbitmq@sha256:29ab5b3d6ab75541cc5784573c90b44d184cca93fa69ef2176be4ba2cbb904d6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8531,14 +10855,14 @@ $ docker pull rabbitmq@sha256:5e48c36f4095498a401ac7ce9088caf10ee691839c6b9078ac
 ### `rabbitmq:3.8-management` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:42cbce6d0d2f246ac66ccc3bfaa18124bbecea3a8173b7fec93489eeddf5d655
+$ docker pull rabbitmq@sha256:52088132b708e14589a00b404f8732fbcc2c2b0106b01611738c185d3e07ed7c
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.3 MB (86320846 bytes)**  
+-	Total Size: **86.3 MB (86317992 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:64a1f920fb0d3473f7270e6ad07d8c87b5ff63fa08b0df0845111ceecb8d27d4`
+-	Image ID: `sha256:0067598739d32fdce6d90674a3e8705199ce57b43e4ad61b07a3f5a4fd5b2945`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -8575,39 +10899,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 16:48:11 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:47:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:48:30 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 09:48:38 GMT
+# Tue, 18 Aug 2020 18:20:38 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 09:48:51 GMT
+# Tue, 18 Aug 2020 18:20:49 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 09:48:52 GMT
+# Tue, 18 Aug 2020 18:20:49 GMT
 EXPOSE 15671 15672
 ```
 
@@ -8640,25 +10964,25 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
 		Size: 2.1 KB (2071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3b3f5c0eff341f26661e19dc6f82e543c801578903afa13e51f9ad0f79bccc7`  
-		Last Modified: Wed, 05 Aug 2020 09:49:46 GMT  
-		Size: 15.6 MB (15575432 bytes)  
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b157b9c8a3865cc3332b2f0c9dabba91baa944d3ee429c9ddd35ec93c3dbf6f`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afd359d7554c2cbeac443d216cca958caf777e1ddb7b82a95c8354e367fe041b`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
-		Size: 4.6 KB (4639 bytes)  
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13b85b39ee3debeb634cf0983f2a9328cda7f58b82fe25d14d3fa0eeb58161d`  
-		Last Modified: Wed, 05 Aug 2020 09:49:52 GMT  
-		Size: 189.0 B  
+	-	`sha256:d8afb40937f21cc00b19fb158647fdf630617dfc4c52cab823c1307852866892`  
+		Last Modified: Tue, 18 Aug 2020 18:21:50 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be247a5b0331975319b6b268abb1bafc93a695e5b57211ed4b141c8a1474c5ad`  
-		Last Modified: Wed, 05 Aug 2020 09:49:54 GMT  
-		Size: 10.8 MB (10783518 bytes)  
+	-	`sha256:f3bf6465850cb13a7d1b6ae827d8f3ae4999c9246bceee3b72b9916446738efc`  
+		Last Modified: Tue, 18 Aug 2020 18:21:53 GMT  
+		Size: 10.8 MB (10783464 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management` - linux; arm variant v7
@@ -8797,14 +11121,14 @@ EXPOSE 15671 15672
 ### `rabbitmq:3.8-management` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:a33dcc4a966790fc84fa579bbc3d757915169c012a862df0384487feddd2ba71
+$ docker pull rabbitmq@sha256:9541bf9c2891ae94334da22e2da552ce93a7e9ba0b80e782bc743546e673f6c5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **82.2 MB (82197586 bytes)**  
+-	Total Size: **82.2 MB (82194685 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:90b94371b81ec2b172fae1a70ab2396f0d89a9499ece9562f9440f876a3bfd6a`
+-	Image ID: `sha256:550e08e137b598b4478cc946ab5c23dfebc7a6c2b897e59fb39545d25646c52f`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -8841,39 +11165,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 19:17:09 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:08:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:08:56 GMT
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:08:57 GMT
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:08:58 GMT
+# Tue, 18 Aug 2020 18:39:56 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:09:46 GMT
+# Tue, 18 Aug 2020 18:40:35 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:09:49 GMT
+# Tue, 18 Aug 2020 18:40:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:39 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:40 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:09:51 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:42 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 10:10:07 GMT
+# Tue, 18 Aug 2020 18:40:54 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 10:10:25 GMT
+# Tue, 18 Aug 2020 18:41:13 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 10:10:25 GMT
+# Tue, 18 Aug 2020 18:41:14 GMT
 EXPOSE 15671 15672
 ```
 
@@ -8906,38 +11230,38 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
 		Size: 2.2 KB (2156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be9ca5331d65f11003b410173a9f4cf082aebed9e91e6399867aff9178e4b6fb`  
-		Last Modified: Wed, 05 Aug 2020 10:11:58 GMT  
-		Size: 15.6 MB (15575589 bytes)  
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c294a5e514460351b6e8d39157c1dfccfebd2d89f632ef1c14d1710fe2b465c`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f3933a972de70083240a9b7531d21eb5da33d3544a764fd40406c0b20eb9916`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
-		Size: 4.6 KB (4638 bytes)  
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78ea89d25ea89a1877f57ab2ecbd4e7f235405c278626540648b0f83f1659837`  
-		Last Modified: Wed, 05 Aug 2020 10:12:08 GMT  
-		Size: 189.0 B  
+	-	`sha256:fd060abd5d03333f41c36edc60c7952e40d57dc090084585e2335fa436f904db`  
+		Last Modified: Tue, 18 Aug 2020 18:42:50 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54c48670b1202e86c696e5822127b52007016769faa3ca6cb7a2e382aa2efaa3`  
-		Last Modified: Wed, 05 Aug 2020 10:12:11 GMT  
-		Size: 10.2 MB (10150204 bytes)  
+	-	`sha256:32c26d8cf0308b1ed9d378116c566c59c084bb02640769eaa03bb080319cefbe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:53 GMT  
+		Size: 10.2 MB (10150044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:98b2d1a082a55af063b603e1f2bc434debd9e42677a18901ebb28387c8568cc5
+$ docker pull rabbitmq@sha256:2a5efd9f225a0cd57223e6a53f2506776ee9c9035d5f73ce5690abd9e8ad6d9c
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.6 MB (86649073 bytes)**  
+-	Total Size: **86.6 MB (86646181 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:08e2d7ecbaad51e091dffd94c2c13c09a4729caa58031e5865d61d14e8bb827f`
+-	Image ID: `sha256:3571fca61ef98843ec54a5ffa8aeeef65da2445a2c0e51c4f0b7f5aec101dee9`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -8974,39 +11298,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:19:48 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:46:12 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:46:51 GMT
+# Tue, 18 Aug 2020 18:39:00 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:46:56 GMT
+# Tue, 18 Aug 2020 18:39:03 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:02 GMT
+# Tue, 18 Aug 2020 18:39:12 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:18 GMT
+# Tue, 18 Aug 2020 18:39:24 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:19 GMT
+# Tue, 18 Aug 2020 18:39:24 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9039,38 +11363,38 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
 		Size: 2.1 KB (2060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346111b9b67e675c83f6fb4822b0b1a9b781ea81f4026e65663c2ab2eae3823c`  
-		Last Modified: Tue, 04 Aug 2020 22:48:24 GMT  
-		Size: 15.6 MB (15575353 bytes)  
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eae9a59af7e95007217d7fbff06e006eae6be7d26afea42f9192cff7faffde77`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33abfe88e04f02ee54ccce3ff83956b55a09275e2c50a2b3454f0abe429920af`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
-		Size: 4.6 KB (4641 bytes)  
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba63dac538698d7abddf12ef8c40ff5db81e1e153eda12549dbb6d2d1d3eadbd`  
-		Last Modified: Tue, 04 Aug 2020 22:48:29 GMT  
+	-	`sha256:1a135d928a7f36b49d43c34c2975266b423fc71be7938ac2b8f43ffe64a05b0e`  
+		Last Modified: Tue, 18 Aug 2020 18:40:30 GMT  
 		Size: 190.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff869044d36c1f24329c046330ebd815cb07b394e2f12f6111f872aecd1a3b46`  
-		Last Modified: Tue, 04 Aug 2020 22:48:32 GMT  
-		Size: 10.9 MB (10852540 bytes)  
+	-	`sha256:fd477614bb9de9f74897f9c00f6cdf28e06b8442b430a16e0d3f29c43901a9c4`  
+		Last Modified: Tue, 18 Aug 2020 18:40:33 GMT  
+		Size: 10.9 MB (10852475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:c818c766ccf15dfb5d855af15c4568eb41a27ee9a055001f062ee6e557443adf
+$ docker pull rabbitmq@sha256:b0871a647a02a7767a883340f65f9016331bea9f7ea0139274c837142b20a295
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **84.3 MB (84287633 bytes)**  
+-	Total Size: **84.3 MB (84284797 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:629715ec3f9fc036d277885f3332e020fbfb3a722c4ed2977ca68659e4eb6b9a`
+-	Image ID: `sha256:f52acc2c5b848288c9197699d68c3e7e3d0bd674837761c6dca243f55eed26bb`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -9107,39 +11431,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:31:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:21 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:22 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:41:52 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:55 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:45 GMT
+# Tue, 18 Aug 2020 18:42:03 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:54 GMT
+# Tue, 18 Aug 2020 18:42:12 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:54 GMT
+# Tue, 18 Aug 2020 18:42:13 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9172,31 +11496,31 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
 		Size: 2.2 KB (2152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed9f42ae5377d74ee94db86388cefd08ad542a7dcd6a94035ebd8194c1ed77c8`  
-		Last Modified: Tue, 04 Aug 2020 22:48:57 GMT  
-		Size: 15.6 MB (15574961 bytes)  
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71643a2fd1c3b0a805e513d85be6c44401a3aaabe323a783374d7224d4d43264`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3e3e4d2e8d4f352a49317522d34560bc57642e7dd47f3c38b41f25a60b318ad`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
-		Size: 4.6 KB (4634 bytes)  
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18cecb34f3375ddece120f963493d01b0b7f1f37e8ce8340f069dfe098d9c5c5`  
-		Last Modified: Tue, 04 Aug 2020 22:49:06 GMT  
+	-	`sha256:0011d5588e631ecce7c1e7b621481598ae868356cc4bd2585d766ad513a95067`  
+		Last Modified: Tue, 18 Aug 2020 18:43:14 GMT  
 		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4714db476ad0f77cf05e70cc3eeb63446115cce5c9d4bb917b411e488aedde3`  
-		Last Modified: Tue, 04 Aug 2020 22:49:07 GMT  
-		Size: 10.4 MB (10410880 bytes)  
+	-	`sha256:1ddb555b7f231c7d7d772c25a4f8fe0c6836f2ffeca36b4f171fb2f1127aa9c7`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
+		Size: 10.4 MB (10410881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:3.8-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:239b71087cee787fc2b48050ba5f670f997773aea41d8f9e5561a4013271142d
+$ docker pull rabbitmq@sha256:a8de5efa1ead9e1ffb3c34695cccbf4c02fed06859e64c95455d02b1f941b32b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9212,14 +11536,14 @@ $ docker pull rabbitmq@sha256:239b71087cee787fc2b48050ba5f670f997773aea41d8f9e55
 ### `rabbitmq:3.8-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:f4839286f327d2dc960671d03c5fea2d7e4d10b5053b399f7a093f24aaf86d55
+$ docker pull rabbitmq@sha256:203da97f2f9955b1a88fab311c3d234743514e3929dff3bf05bea839cdc3d0db
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.2 MB (70187703 bytes)**  
+-	Total Size: **70.2 MB (70184971 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:65f55c49fd3e53b4b1a063b4b5929b40d310caf104cbc1dcb81343eef63116e9`
+-	Image ID: `sha256:39a3adedf1f5d22dafe081744cee0fe1dd9219d4172838343c66ae0e207bdc30`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -9250,39 +11574,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:43:18 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:48:58 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:48:59 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:49:06 GMT
+# Tue, 18 Aug 2020 18:21:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 09:49:14 GMT
+# Tue, 18 Aug 2020 18:21:10 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 09:49:18 GMT
+# Tue, 18 Aug 2020 18:21:14 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 09:49:18 GMT
+# Tue, 18 Aug 2020 18:21:14 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9303,38 +11627,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bca127415eff9a06e53f066c7a8b81ae9d26696201904e18c7fe4e16727bde80`  
-		Last Modified: Wed, 05 Aug 2020 09:50:02 GMT  
-		Size: 15.2 MB (15220391 bytes)  
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce6ee20db1b180903224622bc115cf1d39c45008c797a61442c06f6ac377f0af`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10682479430a3d554886c654aa2b489975d0b3b475690d5799247d8ce34e80f3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
-		Size: 4.6 KB (4643 bytes)  
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:023c22d01767345ab471ac933aac8e1a7e974946be13e50dd6d27c15558e12a3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:08 GMT  
+	-	`sha256:78b709fe91779d62d4851357c9a565b478fd7ef61ce2b1dd61e31ba0ff29c72c`  
+		Last Modified: Tue, 18 Aug 2020 18:22:09 GMT  
 		Size: 191.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d349022bc104e9b33be656aec880cab2a11f56ed24573b6a6cf37b8ff5530f75`  
-		Last Modified: Wed, 05 Aug 2020 09:50:11 GMT  
-		Size: 13.9 MB (13914089 bytes)  
+	-	`sha256:607326a104f2cf9c0adad53c4996768b34f7e53723ced3ff92a94144e99d505a`  
+		Last Modified: Tue, 18 Aug 2020 18:22:11 GMT  
+		Size: 13.9 MB (13913977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:dd39f196e12e2cc6e0b2cabde70c3d229f344d648e9916c1695493b334c4f1e1
+$ docker pull rabbitmq@sha256:762c1267c57ad5f78390c49163c428c2a1eb4acd45e781581159592b265e52bd
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.8 MB (68823997 bytes)**  
+-	Total Size: **68.8 MB (68821298 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:01bf386e71bf9815f857fd5ef1dd99ced497b868c616d0bc77db04b3a1079701`
+-	Image ID: `sha256:896127ebfa21e7c02c68edf992689476e0a063943bb8ef16da306ad2d7d6de4a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -9365,39 +11689,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:30:13 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:14:28 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:14:29 GMT
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:51 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:15:11 GMT
+# Tue, 18 Aug 2020 18:51:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:15:17 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:15:21 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:15:22 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:15:23 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:15:24 GMT
+# Tue, 18 Aug 2020 18:51:33 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:15:27 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:15:28 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:15:29 GMT
+# Tue, 18 Aug 2020 18:51:35 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:16:04 GMT
+# Tue, 18 Aug 2020 18:51:58 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:16:19 GMT
+# Tue, 18 Aug 2020 18:52:07 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:16:21 GMT
+# Tue, 18 Aug 2020 18:52:08 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9418,25 +11742,25 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
 		Size: 1.5 KB (1457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84dbf564a6fc9745ceca8e028c497e904e032121fb6cb13e0c3db533a3689ab5`  
-		Last Modified: Tue, 04 Aug 2020 22:16:51 GMT  
-		Size: 15.2 MB (15220407 bytes)  
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5504e3495fc69b155962409a25eace7d96f4cc05ccb6c70f5d532a0e4c1b83bb`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6650697d0e5ccbbbf92cc73f9780cb7bd2f4b26b0829239221d098f0b33dae16`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 4.6 KB (4643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:627afac6de9e9402fab124e623164e820aaabe977446aa7816a0172509b792e7`  
-		Last Modified: Tue, 04 Aug 2020 22:16:59 GMT  
-		Size: 191.0 B  
+	-	`sha256:926fda1b9e25bfaa6872af4dd9a6a0a7d1961b72e3cbb9ce1aed16ee271c59bc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:44 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa3401e575a662b1c723287a95d6cfb930300b2369382341f6b3fdb2dde356f5`  
-		Last Modified: Tue, 04 Aug 2020 22:17:05 GMT  
-		Size: 13.8 MB (13806121 bytes)  
+	-	`sha256:ebc15264d2986e943c16a5b40123a60ca2ea50f1bf2e0539e0ae0ffe415a7592`  
+		Last Modified: Tue, 18 Aug 2020 18:52:50 GMT  
+		Size: 13.8 MB (13806070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management-alpine` - linux; arm variant v7
@@ -9557,14 +11881,14 @@ EXPOSE 15671 15672
 ### `rabbitmq:3.8-management-alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:e190d03129e27141871e2d726703aa8fbc1fee3cc40608090d6f54ae23ba2e41
+$ docker pull rabbitmq@sha256:27105255e70f9e74dd49676bdef24735ca15eb3d47910d996efd9606ed6155d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.8 MB (69827540 bytes)**  
+-	Total Size: **69.8 MB (69824930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:89aef88f9c58bd75c2b31cbd0dc4b19aeeda06ab25fe5643936f63d3cdc4c166`
+-	Image ID: `sha256:d8fdd9e8025e7b3f16646dbc6015a09082b9749398fba4750fc3d5098b93804e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -9595,39 +11919,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:37:58 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:10:33 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:10:35 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:10:55 GMT
+# Tue, 18 Aug 2020 18:41:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:10:56 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:10:57 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:41 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:11:00 GMT
+# Tue, 18 Aug 2020 18:41:43 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:11:01 GMT
+# Tue, 18 Aug 2020 18:41:44 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 10:11:12 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 10:11:18 GMT
+# Tue, 18 Aug 2020 18:42:00 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 10:11:19 GMT
+# Tue, 18 Aug 2020 18:42:01 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9648,38 +11972,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
 		Size: 1.5 KB (1456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c964eafbc795477b227f1ffd57a9870270075e56420ea4478505addf39731df0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:23 GMT  
-		Size: 15.2 MB (15220410 bytes)  
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a2789b904c7c14dc5e21e70d81c9497b6b0d41a833929a7557371b3590d92da`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be0265b364b72d5b6def99dd5d8243e08547557fd8c75c0350bb75c41f563cb0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
-		Size: 4.6 KB (4644 bytes)  
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08856ade48dfc960b43d61dd66b959623d845502a2973fab1f9777dc681d1427`  
-		Last Modified: Wed, 05 Aug 2020 10:12:32 GMT  
+	-	`sha256:b929a7515b5e55a528f54b9ecf6fc36b3cf4af69a60e399e58286f966769a3bc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
 		Size: 191.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:948a4983ab5bcdebfac71abbc77a04a698a55bd446fc79ef0d2a4dd71fbd9742`  
-		Last Modified: Wed, 05 Aug 2020 10:12:36 GMT  
-		Size: 14.0 MB (14034183 bytes)  
+	-	`sha256:f78244fa774a4ddf7573d52e90e85961867cee371ef20406c7ff73ab666a3100`  
+		Last Modified: Tue, 18 Aug 2020 18:43:20 GMT  
+		Size: 14.0 MB (14034212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management-alpine` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:b25ff85c8fed5805d1779b1753a23872f969c90169903763b49d00673222a94d
+$ docker pull rabbitmq@sha256:a19e31339cb31494bfab63c6391f323c11ce65b595b1dbdc5c76e080da31923d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.3 MB (70337097 bytes)**  
+-	Total Size: **70.3 MB (70334467 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:023fa07fa4d57d4670dfd269224f5f70dc33e8f457bb9f56b47fc0b530fb409c`
+-	Image ID: `sha256:7d0c5964c62970932f3842037c9aa222f562e0d5383557d8bdc3472e7cff53d3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -9710,39 +12034,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:10:43 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:25 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:26 GMT
+# Tue, 18 Aug 2020 18:39:30 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:35 GMT
+# Tue, 18 Aug 2020 18:39:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:46 GMT
+# Tue, 18 Aug 2020 18:39:45 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:50 GMT
+# Tue, 18 Aug 2020 18:39:50 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:51 GMT
+# Tue, 18 Aug 2020 18:39:50 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9763,38 +12087,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2d1ffcc0a6344e6f0f44905e288c38bec15c9c4567faf2f5eca0f4881ee86b5`  
-		Last Modified: Tue, 04 Aug 2020 22:48:41 GMT  
-		Size: 15.2 MB (15220392 bytes)  
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4f5c50489a3c9223d2b6bb523d08f53b5202cf2976a9241de657f6275b47f01`  
-		Last Modified: Tue, 04 Aug 2020 22:48:38 GMT  
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8921f49206b6385fa0299240d982e1d079fd21573730dcebf45edd7294b5bdd1`  
-		Last Modified: Tue, 04 Aug 2020 22:48:39 GMT  
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
 		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8584ec897bfdf7ef8daf6f73f37dabee103db6c9776f730abbd61280c28d2077`  
-		Last Modified: Tue, 04 Aug 2020 22:48:47 GMT  
+	-	`sha256:3396f70e7325482a929bccab56e45ff49ad548d49e6c30be384f014de489bbc8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:45 GMT  
 		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca77ec253029e35cee37cbdaae8a4d11897ae6deb7cdd23794b4f19ed7c3a4bd`  
-		Last Modified: Tue, 04 Aug 2020 22:48:51 GMT  
-		Size: 14.0 MB (14033234 bytes)  
+	-	`sha256:c95ffdcb053c77e4fd0f4df47385c7f50b79432c2522a8a89a035a5f9f6a4394`  
+		Last Modified: Tue, 18 Aug 2020 18:40:49 GMT  
+		Size: 14.0 MB (14033225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management-alpine` - linux; ppc64le
 
 ```console
-$ docker pull rabbitmq@sha256:de22fba7d4bc10eeb921b3cff71a649d1e725f9fa105fcb895e79ddd01547262
+$ docker pull rabbitmq@sha256:736e3809befaf6c34a16cef9e5ce873f7388098747d8d2107cb6209197a32ede
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.0 MB (71042572 bytes)**  
+-	Total Size: **71.0 MB (71039949 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ba7cac82b0dc317cbb825bc21f41c796365fcab8d7d51d00997b3134189bfb0`
+-	Image ID: `sha256:747b49ef7d06424acba5effefb943c95703b242edfa4f7844a8d3c608c370c97`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -9825,39 +12149,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:39:40 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 06:07:46 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 06:07:49 GMT
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 06:07:53 GMT
+# Tue, 18 Aug 2020 18:19:19 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 06:07:58 GMT
+# Tue, 18 Aug 2020 18:19:23 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 06:08:20 GMT
+# Tue, 18 Aug 2020 18:19:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 06:08:31 GMT
+# Tue, 18 Aug 2020 18:20:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 06:08:35 GMT
+# Tue, 18 Aug 2020 18:20:13 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 06:08:39 GMT
+# Tue, 18 Aug 2020 18:20:21 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 06:08:43 GMT
+# Tue, 18 Aug 2020 18:20:27 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 06:08:44 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 06:08:47 GMT
+# Tue, 18 Aug 2020 18:20:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 06:08:51 GMT
+# Tue, 18 Aug 2020 18:20:44 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 06:08:53 GMT
+# Tue, 18 Aug 2020 18:20:51 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 06:09:18 GMT
+# Tue, 18 Aug 2020 18:21:15 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 06:09:32 GMT
+# Tue, 18 Aug 2020 18:21:43 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 06:09:38 GMT
+# Tue, 18 Aug 2020 18:21:52 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9878,38 +12202,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
 		Size: 1.5 KB (1462 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efa7517a6d95ab298ff77e20cb934892128e241a1b5b2eac20266c4de24f760e`  
-		Last Modified: Wed, 05 Aug 2020 06:11:16 GMT  
-		Size: 15.2 MB (15220413 bytes)  
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e90a3b34978ff87934ea197584b6a04cb0ff136a3f327cf59c208baa7a2ac7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb7ced3deacbb43140a77a6308c91c14853769b5f244efc3a04c87cd783e31bf`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
-		Size: 4.6 KB (4645 bytes)  
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fd4e702c68af6379c076608206aebdbe456ba70b21e6294856ac0463b67add7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:31 GMT  
-		Size: 191.0 B  
+	-	`sha256:6fb34e7b4f9194d1f8f699fc8ccf121eed6e99faaf9474e41e4b9ae39f1f0eaf`  
+		Last Modified: Tue, 18 Aug 2020 18:24:31 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15ff596f338107d803ccae764a727c953ddf60fabb8bbfa170b3479f3c9b0c66`  
-		Last Modified: Wed, 05 Aug 2020 06:11:35 GMT  
-		Size: 14.4 MB (14363572 bytes)  
+	-	`sha256:9704a8cf6880495e64a089b6aff166c0601d9776afdac0f1c6d9c03d9b529526`  
+		Last Modified: Tue, 18 Aug 2020 18:24:36 GMT  
+		Size: 14.4 MB (14363580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3.8-management-alpine` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:ffa3002c4566343df5bd3ad6345d40d613429b15ea40ac1d440b642bf206df7e
+$ docker pull rabbitmq@sha256:e59c82c1fa401e49ba971b66330b378199880ce3c0cd41ed942253c5e29df4d7
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.0 MB (69035762 bytes)**  
+-	Total Size: **69.0 MB (69033165 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c5dd55cbc8c093fe6224d8179ae3cab189c0b785b45861f6c3a575d2d6bd5722`
+-	Image ID: `sha256:5fbaaef8ce8e040a9adbfc4bf098f0aca0ad3b39c97e8eb0f4f214971c898134`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -9940,39 +12264,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:00:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:48:00 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:48:07 GMT
+# Tue, 18 Aug 2020 18:42:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:26 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:48:15 GMT
+# Tue, 18 Aug 2020 18:42:32 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:48:18 GMT
+# Tue, 18 Aug 2020 18:42:35 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:48:19 GMT
+# Tue, 18 Aug 2020 18:42:36 GMT
 EXPOSE 15671 15672
 ```
 
@@ -9993,31 +12317,31 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
 		Size: 1.5 KB (1455 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef24e923834b403a661fb1d0ae2f82389517a9eea6d0cbeb6b5f36cf2cd14b6`  
-		Last Modified: Tue, 04 Aug 2020 22:49:19 GMT  
-		Size: 15.2 MB (15220418 bytes)  
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aafba55383f2e239b44252205ff48087e6e566a4c3f382dd6b293c67f1122b79`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c95ecf67c164b009bc63396745029324e3d19475977c00c1ca6a5a5538eb3d2`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
-		Size: 4.6 KB (4640 bytes)  
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3356d22e79191ded8a8a3453c8f198f9d550fd642c39756f745498ba3c57248b`  
-		Last Modified: Tue, 04 Aug 2020 22:49:28 GMT  
-		Size: 191.0 B  
+	-	`sha256:7d2cbbb7b5d4ac3e770da4f3b648329a3dd67c0487be160ae90659d1d3b99c4f`  
+		Last Modified: Tue, 18 Aug 2020 18:43:35 GMT  
+		Size: 194.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:201a2580d27fb480197b24b388bcfbee9cecd2bc0052ad9d8af50a9424fe7975`  
-		Last Modified: Tue, 04 Aug 2020 22:49:30 GMT  
-		Size: 14.0 MB (13955527 bytes)  
+	-	`sha256:3af8190599b13622b1e4a6d155be4820ae5594dbe9da2ae1742a72362002efea`  
+		Last Modified: Tue, 18 Aug 2020 18:43:37 GMT  
+		Size: 14.0 MB (13955559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:3-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:57a2f8d3991dd4a1429a7e53c384ca18c001c9b21fadf33a6350ed8ad5af1588
+$ docker pull rabbitmq@sha256:d32e880e91cc311d84da056fac5f7d7b55b0eba487eb3a46e2c02926f564a97a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10033,14 +12357,14 @@ $ docker pull rabbitmq@sha256:57a2f8d3991dd4a1429a7e53c384ca18c001c9b21fadf33a63
 ### `rabbitmq:3-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:2f5074756d62b8db675b90384a15526afec5159635f6432f82e0cc20bdd4c44a
+$ docker pull rabbitmq@sha256:aa1b18eccb0a247c20f1d7f1b887a01d013668cb463d360e25b30cd89b179cbe
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.3 MB (56273423 bytes)**  
+-	Total Size: **56.3 MB (56270803 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:12634d36fb21a072a04df476d0db8b21d8c4cdef1e4aef515c830d73347c9339`
+-	Image ID: `sha256:635e72823beff1a201290febbc250c7de9e3eed7a0541f00f168d7b005b36a98`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -10071,33 +12395,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:43:18 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:48:58 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:48:59 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:49:06 GMT
+# Tue, 18 Aug 2020 18:21:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -10118,30 +12442,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bca127415eff9a06e53f066c7a8b81ae9d26696201904e18c7fe4e16727bde80`  
-		Last Modified: Wed, 05 Aug 2020 09:50:02 GMT  
-		Size: 15.2 MB (15220391 bytes)  
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce6ee20db1b180903224622bc115cf1d39c45008c797a61442c06f6ac377f0af`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10682479430a3d554886c654aa2b489975d0b3b475690d5799247d8ce34e80f3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
-		Size: 4.6 KB (4643 bytes)  
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:bff398ec1a39ddee25afe5fefc1aea7e87e194d0d7648a4c3296433e5cbd4f48
+$ docker pull rabbitmq@sha256:8641a5d01eadc86e0a819741fb1672b42c8dfa2dcfb1a05dd37ea5d955b236e6
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.0 MB (55017685 bytes)**  
+-	Total Size: **55.0 MB (55015036 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9e53322b4bfafda4a0745538a31057d78c7c40b4f9f48f46bbed09538b5732e6`
+-	Image ID: `sha256:422f1b72cfd9b1bc739743398c8a7654075c300cf9aff725bc03b96d37ae1393`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -10172,33 +12496,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:30:13 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:14:28 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:14:29 GMT
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:51 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:15:11 GMT
+# Tue, 18 Aug 2020 18:51:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:15:17 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:15:21 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:15:22 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:15:23 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:15:24 GMT
+# Tue, 18 Aug 2020 18:51:33 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:15:27 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:15:28 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:15:29 GMT
+# Tue, 18 Aug 2020 18:51:35 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -10219,16 +12543,16 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
 		Size: 1.5 KB (1457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84dbf564a6fc9745ceca8e028c497e904e032121fb6cb13e0c3db533a3689ab5`  
-		Last Modified: Tue, 04 Aug 2020 22:16:51 GMT  
-		Size: 15.2 MB (15220407 bytes)  
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5504e3495fc69b155962409a25eace7d96f4cc05ccb6c70f5d532a0e4c1b83bb`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6650697d0e5ccbbbf92cc73f9780cb7bd2f4b26b0829239221d098f0b33dae16`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 4.6 KB (4643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -10336,14 +12660,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:3-alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:e541d648d9aecaa62e6ba8f59285f3e7815a1d0f173969363df00d5b16664c13
+$ docker pull rabbitmq@sha256:386853f40be0484b45f02f752f1e8116aebcd9c2f64f5a186dee74a1e31669f6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.8 MB (55793166 bytes)**  
+-	Total Size: **55.8 MB (55790527 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7bbba3cc0b4b6d08a0feac36588037844384ec27f3abfa2a28f5be3901976ed6`
+-	Image ID: `sha256:d6b6731c2e335d690ad8f00175d3274f1c260143bcffb5f782d153944472594e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -10374,33 +12698,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:37:58 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:10:33 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:10:35 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:10:55 GMT
+# Tue, 18 Aug 2020 18:41:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:10:56 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:10:57 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:41 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:11:00 GMT
+# Tue, 18 Aug 2020 18:41:43 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:11:01 GMT
+# Tue, 18 Aug 2020 18:41:44 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -10421,30 +12745,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
 		Size: 1.5 KB (1456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c964eafbc795477b227f1ffd57a9870270075e56420ea4478505addf39731df0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:23 GMT  
-		Size: 15.2 MB (15220410 bytes)  
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a2789b904c7c14dc5e21e70d81c9497b6b0d41a833929a7557371b3590d92da`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be0265b364b72d5b6def99dd5d8243e08547557fd8c75c0350bb75c41f563cb0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
-		Size: 4.6 KB (4644 bytes)  
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-alpine` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:f35129943ed9324282fcfb010cee2d088a6cf51e5daa8a7941b50370558f82a6
+$ docker pull rabbitmq@sha256:8f3b105057384535ba189d4cf42420c55eb503b77530780ebfa7405a43d06a73
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.3 MB (56303671 bytes)**  
+-	Total Size: **56.3 MB (56301050 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd6ce52bb08e25ecffaf96724baf3ea6a09dfe47d32f02175d4d94be0cfb5c47`
+-	Image ID: `sha256:14f225c356162358902588d3fed5ab3c1c1fdfa04f241f830ebeffeecaea754a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -10475,33 +12799,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:10:43 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:25 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:26 GMT
+# Tue, 18 Aug 2020 18:39:30 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:35 GMT
+# Tue, 18 Aug 2020 18:39:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -10522,30 +12846,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2d1ffcc0a6344e6f0f44905e288c38bec15c9c4567faf2f5eca0f4881ee86b5`  
-		Last Modified: Tue, 04 Aug 2020 22:48:41 GMT  
-		Size: 15.2 MB (15220392 bytes)  
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4f5c50489a3c9223d2b6bb523d08f53b5202cf2976a9241de657f6275b47f01`  
-		Last Modified: Tue, 04 Aug 2020 22:48:38 GMT  
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8921f49206b6385fa0299240d982e1d079fd21573730dcebf45edd7294b5bdd1`  
-		Last Modified: Tue, 04 Aug 2020 22:48:39 GMT  
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
 		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-alpine` - linux; ppc64le
 
 ```console
-$ docker pull rabbitmq@sha256:9097ca280d89dcec476dad3b406a859fe8a57ad4340d369507bfbfd6b81211e7
+$ docker pull rabbitmq@sha256:7273e15087b6c7b56b9a8ce8a7f6d8455bac5e6dfdfa299408eaf69e0c9b8ce3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.7 MB (56678809 bytes)**  
+-	Total Size: **56.7 MB (56676176 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5df2bcc93307713eb33239e880c359f0e7349d952410c85ace1cf43cfeaa0475`
+-	Image ID: `sha256:062bf709331dba66bbc173601ab8c3a41f37b07dc47bdc4b1bce9263ed937eb3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -10576,33 +12900,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:39:40 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 06:07:46 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 06:07:49 GMT
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 06:07:53 GMT
+# Tue, 18 Aug 2020 18:19:19 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 06:07:58 GMT
+# Tue, 18 Aug 2020 18:19:23 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 06:08:20 GMT
+# Tue, 18 Aug 2020 18:19:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 06:08:31 GMT
+# Tue, 18 Aug 2020 18:20:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 06:08:35 GMT
+# Tue, 18 Aug 2020 18:20:13 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 06:08:39 GMT
+# Tue, 18 Aug 2020 18:20:21 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 06:08:43 GMT
+# Tue, 18 Aug 2020 18:20:27 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 06:08:44 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 06:08:47 GMT
+# Tue, 18 Aug 2020 18:20:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 06:08:51 GMT
+# Tue, 18 Aug 2020 18:20:44 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 06:08:53 GMT
+# Tue, 18 Aug 2020 18:20:51 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -10623,30 +12947,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
 		Size: 1.5 KB (1462 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efa7517a6d95ab298ff77e20cb934892128e241a1b5b2eac20266c4de24f760e`  
-		Last Modified: Wed, 05 Aug 2020 06:11:16 GMT  
-		Size: 15.2 MB (15220413 bytes)  
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e90a3b34978ff87934ea197584b6a04cb0ff136a3f327cf59c208baa7a2ac7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb7ced3deacbb43140a77a6308c91c14853769b5f244efc3a04c87cd783e31bf`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
-		Size: 4.6 KB (4645 bytes)  
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-alpine` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:69dea59e48c6207c85fe2e2952078f2a44394a35447fae1ed099b4df2d75fadd
+$ docker pull rabbitmq@sha256:a742e727e4e324ba52d41de85620311190d1925f708fb7d3abe67e1e3e4e5fe5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.1 MB (55080044 bytes)**  
+-	Total Size: **55.1 MB (55077412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28b340036ed434707a458946cdca3900e939f90481195abd0588e5f84a6f5576`
+-	Image ID: `sha256:23a80031ac9433ff0021d288015bedeb243bb24e83201b4696ced21e54f1e614`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -10677,33 +13001,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:00:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:48:00 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:48:07 GMT
+# Tue, 18 Aug 2020 18:42:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:26 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -10724,23 +13048,23 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
 		Size: 1.5 KB (1455 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef24e923834b403a661fb1d0ae2f82389517a9eea6d0cbeb6b5f36cf2cd14b6`  
-		Last Modified: Tue, 04 Aug 2020 22:49:19 GMT  
-		Size: 15.2 MB (15220418 bytes)  
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aafba55383f2e239b44252205ff48087e6e566a4c3f382dd6b293c67f1122b79`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c95ecf67c164b009bc63396745029324e3d19475977c00c1ca6a5a5538eb3d2`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
-		Size: 4.6 KB (4640 bytes)  
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:3-management`
 
 ```console
-$ docker pull rabbitmq@sha256:b1bfb093b1c4f460fb2967b4aa89e48c434bd67934280f2816164b05620a5185
+$ docker pull rabbitmq@sha256:b0846204eb1dbe6230a108e7d4c83291d306409285742be081c2e62a5f0a82c9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10755,14 +13079,14 @@ $ docker pull rabbitmq@sha256:b1bfb093b1c4f460fb2967b4aa89e48c434bd67934280f2816
 ### `rabbitmq:3-management` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:42cbce6d0d2f246ac66ccc3bfaa18124bbecea3a8173b7fec93489eeddf5d655
+$ docker pull rabbitmq@sha256:52088132b708e14589a00b404f8732fbcc2c2b0106b01611738c185d3e07ed7c
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.3 MB (86320846 bytes)**  
+-	Total Size: **86.3 MB (86317992 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:64a1f920fb0d3473f7270e6ad07d8c87b5ff63fa08b0df0845111ceecb8d27d4`
+-	Image ID: `sha256:0067598739d32fdce6d90674a3e8705199ce57b43e4ad61b07a3f5a4fd5b2945`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -10799,39 +13123,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 16:48:11 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:47:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:48:30 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 09:48:38 GMT
+# Tue, 18 Aug 2020 18:20:38 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 09:48:51 GMT
+# Tue, 18 Aug 2020 18:20:49 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 09:48:52 GMT
+# Tue, 18 Aug 2020 18:20:49 GMT
 EXPOSE 15671 15672
 ```
 
@@ -10864,25 +13188,25 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
 		Size: 2.1 KB (2071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3b3f5c0eff341f26661e19dc6f82e543c801578903afa13e51f9ad0f79bccc7`  
-		Last Modified: Wed, 05 Aug 2020 09:49:46 GMT  
-		Size: 15.6 MB (15575432 bytes)  
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b157b9c8a3865cc3332b2f0c9dabba91baa944d3ee429c9ddd35ec93c3dbf6f`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afd359d7554c2cbeac443d216cca958caf777e1ddb7b82a95c8354e367fe041b`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
-		Size: 4.6 KB (4639 bytes)  
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13b85b39ee3debeb634cf0983f2a9328cda7f58b82fe25d14d3fa0eeb58161d`  
-		Last Modified: Wed, 05 Aug 2020 09:49:52 GMT  
-		Size: 189.0 B  
+	-	`sha256:d8afb40937f21cc00b19fb158647fdf630617dfc4c52cab823c1307852866892`  
+		Last Modified: Tue, 18 Aug 2020 18:21:50 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be247a5b0331975319b6b268abb1bafc93a695e5b57211ed4b141c8a1474c5ad`  
-		Last Modified: Wed, 05 Aug 2020 09:49:54 GMT  
-		Size: 10.8 MB (10783518 bytes)  
+	-	`sha256:f3bf6465850cb13a7d1b6ae827d8f3ae4999c9246bceee3b72b9916446738efc`  
+		Last Modified: Tue, 18 Aug 2020 18:21:53 GMT  
+		Size: 10.8 MB (10783464 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management` - linux; arm variant v7
@@ -11021,14 +13345,14 @@ EXPOSE 15671 15672
 ### `rabbitmq:3-management` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:a33dcc4a966790fc84fa579bbc3d757915169c012a862df0384487feddd2ba71
+$ docker pull rabbitmq@sha256:9541bf9c2891ae94334da22e2da552ce93a7e9ba0b80e782bc743546e673f6c5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **82.2 MB (82197586 bytes)**  
+-	Total Size: **82.2 MB (82194685 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:90b94371b81ec2b172fae1a70ab2396f0d89a9499ece9562f9440f876a3bfd6a`
+-	Image ID: `sha256:550e08e137b598b4478cc946ab5c23dfebc7a6c2b897e59fb39545d25646c52f`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -11065,39 +13389,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 19:17:09 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:08:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:08:56 GMT
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:08:57 GMT
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:08:58 GMT
+# Tue, 18 Aug 2020 18:39:56 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:09:46 GMT
+# Tue, 18 Aug 2020 18:40:35 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:09:49 GMT
+# Tue, 18 Aug 2020 18:40:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:39 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:40 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:09:51 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:42 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 10:10:07 GMT
+# Tue, 18 Aug 2020 18:40:54 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 10:10:25 GMT
+# Tue, 18 Aug 2020 18:41:13 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 10:10:25 GMT
+# Tue, 18 Aug 2020 18:41:14 GMT
 EXPOSE 15671 15672
 ```
 
@@ -11130,38 +13454,38 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
 		Size: 2.2 KB (2156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be9ca5331d65f11003b410173a9f4cf082aebed9e91e6399867aff9178e4b6fb`  
-		Last Modified: Wed, 05 Aug 2020 10:11:58 GMT  
-		Size: 15.6 MB (15575589 bytes)  
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c294a5e514460351b6e8d39157c1dfccfebd2d89f632ef1c14d1710fe2b465c`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f3933a972de70083240a9b7531d21eb5da33d3544a764fd40406c0b20eb9916`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
-		Size: 4.6 KB (4638 bytes)  
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78ea89d25ea89a1877f57ab2ecbd4e7f235405c278626540648b0f83f1659837`  
-		Last Modified: Wed, 05 Aug 2020 10:12:08 GMT  
-		Size: 189.0 B  
+	-	`sha256:fd060abd5d03333f41c36edc60c7952e40d57dc090084585e2335fa436f904db`  
+		Last Modified: Tue, 18 Aug 2020 18:42:50 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54c48670b1202e86c696e5822127b52007016769faa3ca6cb7a2e382aa2efaa3`  
-		Last Modified: Wed, 05 Aug 2020 10:12:11 GMT  
-		Size: 10.2 MB (10150204 bytes)  
+	-	`sha256:32c26d8cf0308b1ed9d378116c566c59c084bb02640769eaa03bb080319cefbe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:53 GMT  
+		Size: 10.2 MB (10150044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:98b2d1a082a55af063b603e1f2bc434debd9e42677a18901ebb28387c8568cc5
+$ docker pull rabbitmq@sha256:2a5efd9f225a0cd57223e6a53f2506776ee9c9035d5f73ce5690abd9e8ad6d9c
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.6 MB (86649073 bytes)**  
+-	Total Size: **86.6 MB (86646181 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:08e2d7ecbaad51e091dffd94c2c13c09a4729caa58031e5865d61d14e8bb827f`
+-	Image ID: `sha256:3571fca61ef98843ec54a5ffa8aeeef65da2445a2c0e51c4f0b7f5aec101dee9`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -11198,39 +13522,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:19:48 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:46:12 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:46:51 GMT
+# Tue, 18 Aug 2020 18:39:00 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:46:56 GMT
+# Tue, 18 Aug 2020 18:39:03 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:02 GMT
+# Tue, 18 Aug 2020 18:39:12 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:18 GMT
+# Tue, 18 Aug 2020 18:39:24 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:19 GMT
+# Tue, 18 Aug 2020 18:39:24 GMT
 EXPOSE 15671 15672
 ```
 
@@ -11263,25 +13587,25 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
 		Size: 2.1 KB (2060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346111b9b67e675c83f6fb4822b0b1a9b781ea81f4026e65663c2ab2eae3823c`  
-		Last Modified: Tue, 04 Aug 2020 22:48:24 GMT  
-		Size: 15.6 MB (15575353 bytes)  
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eae9a59af7e95007217d7fbff06e006eae6be7d26afea42f9192cff7faffde77`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33abfe88e04f02ee54ccce3ff83956b55a09275e2c50a2b3454f0abe429920af`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
-		Size: 4.6 KB (4641 bytes)  
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba63dac538698d7abddf12ef8c40ff5db81e1e153eda12549dbb6d2d1d3eadbd`  
-		Last Modified: Tue, 04 Aug 2020 22:48:29 GMT  
+	-	`sha256:1a135d928a7f36b49d43c34c2975266b423fc71be7938ac2b8f43ffe64a05b0e`  
+		Last Modified: Tue, 18 Aug 2020 18:40:30 GMT  
 		Size: 190.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff869044d36c1f24329c046330ebd815cb07b394e2f12f6111f872aecd1a3b46`  
-		Last Modified: Tue, 04 Aug 2020 22:48:32 GMT  
-		Size: 10.9 MB (10852540 bytes)  
+	-	`sha256:fd477614bb9de9f74897f9c00f6cdf28e06b8442b430a16e0d3f29c43901a9c4`  
+		Last Modified: Tue, 18 Aug 2020 18:40:33 GMT  
+		Size: 10.9 MB (10852475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management` - linux; ppc64le
@@ -11420,14 +13744,14 @@ EXPOSE 15671/tcp 15672/tcp
 ### `rabbitmq:3-management` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:c818c766ccf15dfb5d855af15c4568eb41a27ee9a055001f062ee6e557443adf
+$ docker pull rabbitmq@sha256:b0871a647a02a7767a883340f65f9016331bea9f7ea0139274c837142b20a295
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **84.3 MB (84287633 bytes)**  
+-	Total Size: **84.3 MB (84284797 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:629715ec3f9fc036d277885f3332e020fbfb3a722c4ed2977ca68659e4eb6b9a`
+-	Image ID: `sha256:f52acc2c5b848288c9197699d68c3e7e3d0bd674837761c6dca243f55eed26bb`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -11464,39 +13788,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:31:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:21 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:22 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:41:52 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:55 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:45 GMT
+# Tue, 18 Aug 2020 18:42:03 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:54 GMT
+# Tue, 18 Aug 2020 18:42:12 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:54 GMT
+# Tue, 18 Aug 2020 18:42:13 GMT
 EXPOSE 15671 15672
 ```
 
@@ -11529,31 +13853,31 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
 		Size: 2.2 KB (2152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed9f42ae5377d74ee94db86388cefd08ad542a7dcd6a94035ebd8194c1ed77c8`  
-		Last Modified: Tue, 04 Aug 2020 22:48:57 GMT  
-		Size: 15.6 MB (15574961 bytes)  
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71643a2fd1c3b0a805e513d85be6c44401a3aaabe323a783374d7224d4d43264`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3e3e4d2e8d4f352a49317522d34560bc57642e7dd47f3c38b41f25a60b318ad`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
-		Size: 4.6 KB (4634 bytes)  
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18cecb34f3375ddece120f963493d01b0b7f1f37e8ce8340f069dfe098d9c5c5`  
-		Last Modified: Tue, 04 Aug 2020 22:49:06 GMT  
+	-	`sha256:0011d5588e631ecce7c1e7b621481598ae868356cc4bd2585d766ad513a95067`  
+		Last Modified: Tue, 18 Aug 2020 18:43:14 GMT  
 		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4714db476ad0f77cf05e70cc3eeb63446115cce5c9d4bb917b411e488aedde3`  
-		Last Modified: Tue, 04 Aug 2020 22:49:07 GMT  
-		Size: 10.4 MB (10410880 bytes)  
+	-	`sha256:1ddb555b7f231c7d7d772c25a4f8fe0c6836f2ffeca36b4f171fb2f1127aa9c7`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
+		Size: 10.4 MB (10410881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:3-management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:239b71087cee787fc2b48050ba5f670f997773aea41d8f9e5561a4013271142d
+$ docker pull rabbitmq@sha256:a8de5efa1ead9e1ffb3c34695cccbf4c02fed06859e64c95455d02b1f941b32b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11569,14 +13893,14 @@ $ docker pull rabbitmq@sha256:239b71087cee787fc2b48050ba5f670f997773aea41d8f9e55
 ### `rabbitmq:3-management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:f4839286f327d2dc960671d03c5fea2d7e4d10b5053b399f7a093f24aaf86d55
+$ docker pull rabbitmq@sha256:203da97f2f9955b1a88fab311c3d234743514e3929dff3bf05bea839cdc3d0db
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.2 MB (70187703 bytes)**  
+-	Total Size: **70.2 MB (70184971 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:65f55c49fd3e53b4b1a063b4b5929b40d310caf104cbc1dcb81343eef63116e9`
+-	Image ID: `sha256:39a3adedf1f5d22dafe081744cee0fe1dd9219d4172838343c66ae0e207bdc30`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -11607,39 +13931,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:43:18 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:48:58 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:48:59 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:49:06 GMT
+# Tue, 18 Aug 2020 18:21:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 09:49:14 GMT
+# Tue, 18 Aug 2020 18:21:10 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 09:49:18 GMT
+# Tue, 18 Aug 2020 18:21:14 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 09:49:18 GMT
+# Tue, 18 Aug 2020 18:21:14 GMT
 EXPOSE 15671 15672
 ```
 
@@ -11660,38 +13984,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bca127415eff9a06e53f066c7a8b81ae9d26696201904e18c7fe4e16727bde80`  
-		Last Modified: Wed, 05 Aug 2020 09:50:02 GMT  
-		Size: 15.2 MB (15220391 bytes)  
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce6ee20db1b180903224622bc115cf1d39c45008c797a61442c06f6ac377f0af`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10682479430a3d554886c654aa2b489975d0b3b475690d5799247d8ce34e80f3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
-		Size: 4.6 KB (4643 bytes)  
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:023c22d01767345ab471ac933aac8e1a7e974946be13e50dd6d27c15558e12a3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:08 GMT  
+	-	`sha256:78b709fe91779d62d4851357c9a565b478fd7ef61ce2b1dd61e31ba0ff29c72c`  
+		Last Modified: Tue, 18 Aug 2020 18:22:09 GMT  
 		Size: 191.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d349022bc104e9b33be656aec880cab2a11f56ed24573b6a6cf37b8ff5530f75`  
-		Last Modified: Wed, 05 Aug 2020 09:50:11 GMT  
-		Size: 13.9 MB (13914089 bytes)  
+	-	`sha256:607326a104f2cf9c0adad53c4996768b34f7e53723ced3ff92a94144e99d505a`  
+		Last Modified: Tue, 18 Aug 2020 18:22:11 GMT  
+		Size: 13.9 MB (13913977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:dd39f196e12e2cc6e0b2cabde70c3d229f344d648e9916c1695493b334c4f1e1
+$ docker pull rabbitmq@sha256:762c1267c57ad5f78390c49163c428c2a1eb4acd45e781581159592b265e52bd
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.8 MB (68823997 bytes)**  
+-	Total Size: **68.8 MB (68821298 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:01bf386e71bf9815f857fd5ef1dd99ced497b868c616d0bc77db04b3a1079701`
+-	Image ID: `sha256:896127ebfa21e7c02c68edf992689476e0a063943bb8ef16da306ad2d7d6de4a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -11722,39 +14046,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:30:13 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:14:28 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:14:29 GMT
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:51 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:15:11 GMT
+# Tue, 18 Aug 2020 18:51:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:15:17 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:15:21 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:15:22 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:15:23 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:15:24 GMT
+# Tue, 18 Aug 2020 18:51:33 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:15:27 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:15:28 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:15:29 GMT
+# Tue, 18 Aug 2020 18:51:35 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:16:04 GMT
+# Tue, 18 Aug 2020 18:51:58 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:16:19 GMT
+# Tue, 18 Aug 2020 18:52:07 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:16:21 GMT
+# Tue, 18 Aug 2020 18:52:08 GMT
 EXPOSE 15671 15672
 ```
 
@@ -11775,25 +14099,25 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
 		Size: 1.5 KB (1457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84dbf564a6fc9745ceca8e028c497e904e032121fb6cb13e0c3db533a3689ab5`  
-		Last Modified: Tue, 04 Aug 2020 22:16:51 GMT  
-		Size: 15.2 MB (15220407 bytes)  
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5504e3495fc69b155962409a25eace7d96f4cc05ccb6c70f5d532a0e4c1b83bb`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6650697d0e5ccbbbf92cc73f9780cb7bd2f4b26b0829239221d098f0b33dae16`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 4.6 KB (4643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:627afac6de9e9402fab124e623164e820aaabe977446aa7816a0172509b792e7`  
-		Last Modified: Tue, 04 Aug 2020 22:16:59 GMT  
-		Size: 191.0 B  
+	-	`sha256:926fda1b9e25bfaa6872af4dd9a6a0a7d1961b72e3cbb9ce1aed16ee271c59bc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:44 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa3401e575a662b1c723287a95d6cfb930300b2369382341f6b3fdb2dde356f5`  
-		Last Modified: Tue, 04 Aug 2020 22:17:05 GMT  
-		Size: 13.8 MB (13806121 bytes)  
+	-	`sha256:ebc15264d2986e943c16a5b40123a60ca2ea50f1bf2e0539e0ae0ffe415a7592`  
+		Last Modified: Tue, 18 Aug 2020 18:52:50 GMT  
+		Size: 13.8 MB (13806070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management-alpine` - linux; arm variant v7
@@ -11914,14 +14238,14 @@ EXPOSE 15671 15672
 ### `rabbitmq:3-management-alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:e190d03129e27141871e2d726703aa8fbc1fee3cc40608090d6f54ae23ba2e41
+$ docker pull rabbitmq@sha256:27105255e70f9e74dd49676bdef24735ca15eb3d47910d996efd9606ed6155d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.8 MB (69827540 bytes)**  
+-	Total Size: **69.8 MB (69824930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:89aef88f9c58bd75c2b31cbd0dc4b19aeeda06ab25fe5643936f63d3cdc4c166`
+-	Image ID: `sha256:d8fdd9e8025e7b3f16646dbc6015a09082b9749398fba4750fc3d5098b93804e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -11952,39 +14276,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:37:58 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:10:33 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:10:35 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:10:55 GMT
+# Tue, 18 Aug 2020 18:41:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:10:56 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:10:57 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:41 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:11:00 GMT
+# Tue, 18 Aug 2020 18:41:43 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:11:01 GMT
+# Tue, 18 Aug 2020 18:41:44 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 10:11:12 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 10:11:18 GMT
+# Tue, 18 Aug 2020 18:42:00 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 10:11:19 GMT
+# Tue, 18 Aug 2020 18:42:01 GMT
 EXPOSE 15671 15672
 ```
 
@@ -12005,38 +14329,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
 		Size: 1.5 KB (1456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c964eafbc795477b227f1ffd57a9870270075e56420ea4478505addf39731df0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:23 GMT  
-		Size: 15.2 MB (15220410 bytes)  
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a2789b904c7c14dc5e21e70d81c9497b6b0d41a833929a7557371b3590d92da`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be0265b364b72d5b6def99dd5d8243e08547557fd8c75c0350bb75c41f563cb0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
-		Size: 4.6 KB (4644 bytes)  
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08856ade48dfc960b43d61dd66b959623d845502a2973fab1f9777dc681d1427`  
-		Last Modified: Wed, 05 Aug 2020 10:12:32 GMT  
+	-	`sha256:b929a7515b5e55a528f54b9ecf6fc36b3cf4af69a60e399e58286f966769a3bc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
 		Size: 191.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:948a4983ab5bcdebfac71abbc77a04a698a55bd446fc79ef0d2a4dd71fbd9742`  
-		Last Modified: Wed, 05 Aug 2020 10:12:36 GMT  
-		Size: 14.0 MB (14034183 bytes)  
+	-	`sha256:f78244fa774a4ddf7573d52e90e85961867cee371ef20406c7ff73ab666a3100`  
+		Last Modified: Tue, 18 Aug 2020 18:43:20 GMT  
+		Size: 14.0 MB (14034212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management-alpine` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:b25ff85c8fed5805d1779b1753a23872f969c90169903763b49d00673222a94d
+$ docker pull rabbitmq@sha256:a19e31339cb31494bfab63c6391f323c11ce65b595b1dbdc5c76e080da31923d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.3 MB (70337097 bytes)**  
+-	Total Size: **70.3 MB (70334467 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:023fa07fa4d57d4670dfd269224f5f70dc33e8f457bb9f56b47fc0b530fb409c`
+-	Image ID: `sha256:7d0c5964c62970932f3842037c9aa222f562e0d5383557d8bdc3472e7cff53d3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12067,39 +14391,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:10:43 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:25 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:26 GMT
+# Tue, 18 Aug 2020 18:39:30 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:35 GMT
+# Tue, 18 Aug 2020 18:39:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:46 GMT
+# Tue, 18 Aug 2020 18:39:45 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:50 GMT
+# Tue, 18 Aug 2020 18:39:50 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:51 GMT
+# Tue, 18 Aug 2020 18:39:50 GMT
 EXPOSE 15671 15672
 ```
 
@@ -12120,38 +14444,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2d1ffcc0a6344e6f0f44905e288c38bec15c9c4567faf2f5eca0f4881ee86b5`  
-		Last Modified: Tue, 04 Aug 2020 22:48:41 GMT  
-		Size: 15.2 MB (15220392 bytes)  
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4f5c50489a3c9223d2b6bb523d08f53b5202cf2976a9241de657f6275b47f01`  
-		Last Modified: Tue, 04 Aug 2020 22:48:38 GMT  
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8921f49206b6385fa0299240d982e1d079fd21573730dcebf45edd7294b5bdd1`  
-		Last Modified: Tue, 04 Aug 2020 22:48:39 GMT  
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
 		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8584ec897bfdf7ef8daf6f73f37dabee103db6c9776f730abbd61280c28d2077`  
-		Last Modified: Tue, 04 Aug 2020 22:48:47 GMT  
+	-	`sha256:3396f70e7325482a929bccab56e45ff49ad548d49e6c30be384f014de489bbc8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:45 GMT  
 		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca77ec253029e35cee37cbdaae8a4d11897ae6deb7cdd23794b4f19ed7c3a4bd`  
-		Last Modified: Tue, 04 Aug 2020 22:48:51 GMT  
-		Size: 14.0 MB (14033234 bytes)  
+	-	`sha256:c95ffdcb053c77e4fd0f4df47385c7f50b79432c2522a8a89a035a5f9f6a4394`  
+		Last Modified: Tue, 18 Aug 2020 18:40:49 GMT  
+		Size: 14.0 MB (14033225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management-alpine` - linux; ppc64le
 
 ```console
-$ docker pull rabbitmq@sha256:de22fba7d4bc10eeb921b3cff71a649d1e725f9fa105fcb895e79ddd01547262
+$ docker pull rabbitmq@sha256:736e3809befaf6c34a16cef9e5ce873f7388098747d8d2107cb6209197a32ede
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.0 MB (71042572 bytes)**  
+-	Total Size: **71.0 MB (71039949 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ba7cac82b0dc317cbb825bc21f41c796365fcab8d7d51d00997b3134189bfb0`
+-	Image ID: `sha256:747b49ef7d06424acba5effefb943c95703b242edfa4f7844a8d3c608c370c97`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12182,39 +14506,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:39:40 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 06:07:46 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 06:07:49 GMT
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 06:07:53 GMT
+# Tue, 18 Aug 2020 18:19:19 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 06:07:58 GMT
+# Tue, 18 Aug 2020 18:19:23 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 06:08:20 GMT
+# Tue, 18 Aug 2020 18:19:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 06:08:31 GMT
+# Tue, 18 Aug 2020 18:20:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 06:08:35 GMT
+# Tue, 18 Aug 2020 18:20:13 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 06:08:39 GMT
+# Tue, 18 Aug 2020 18:20:21 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 06:08:43 GMT
+# Tue, 18 Aug 2020 18:20:27 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 06:08:44 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 06:08:47 GMT
+# Tue, 18 Aug 2020 18:20:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 06:08:51 GMT
+# Tue, 18 Aug 2020 18:20:44 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 06:08:53 GMT
+# Tue, 18 Aug 2020 18:20:51 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 06:09:18 GMT
+# Tue, 18 Aug 2020 18:21:15 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 06:09:32 GMT
+# Tue, 18 Aug 2020 18:21:43 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 06:09:38 GMT
+# Tue, 18 Aug 2020 18:21:52 GMT
 EXPOSE 15671 15672
 ```
 
@@ -12235,38 +14559,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
 		Size: 1.5 KB (1462 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efa7517a6d95ab298ff77e20cb934892128e241a1b5b2eac20266c4de24f760e`  
-		Last Modified: Wed, 05 Aug 2020 06:11:16 GMT  
-		Size: 15.2 MB (15220413 bytes)  
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e90a3b34978ff87934ea197584b6a04cb0ff136a3f327cf59c208baa7a2ac7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb7ced3deacbb43140a77a6308c91c14853769b5f244efc3a04c87cd783e31bf`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
-		Size: 4.6 KB (4645 bytes)  
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fd4e702c68af6379c076608206aebdbe456ba70b21e6294856ac0463b67add7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:31 GMT  
-		Size: 191.0 B  
+	-	`sha256:6fb34e7b4f9194d1f8f699fc8ccf121eed6e99faaf9474e41e4b9ae39f1f0eaf`  
+		Last Modified: Tue, 18 Aug 2020 18:24:31 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15ff596f338107d803ccae764a727c953ddf60fabb8bbfa170b3479f3c9b0c66`  
-		Last Modified: Wed, 05 Aug 2020 06:11:35 GMT  
-		Size: 14.4 MB (14363572 bytes)  
+	-	`sha256:9704a8cf6880495e64a089b6aff166c0601d9776afdac0f1c6d9c03d9b529526`  
+		Last Modified: Tue, 18 Aug 2020 18:24:36 GMT  
+		Size: 14.4 MB (14363580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:3-management-alpine` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:ffa3002c4566343df5bd3ad6345d40d613429b15ea40ac1d440b642bf206df7e
+$ docker pull rabbitmq@sha256:e59c82c1fa401e49ba971b66330b378199880ce3c0cd41ed942253c5e29df4d7
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.0 MB (69035762 bytes)**  
+-	Total Size: **69.0 MB (69033165 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c5dd55cbc8c093fe6224d8179ae3cab189c0b785b45861f6c3a575d2d6bd5722`
+-	Image ID: `sha256:5fbaaef8ce8e040a9adbfc4bf098f0aca0ad3b39c97e8eb0f4f214971c898134`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12297,39 +14621,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:00:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:48:00 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:48:07 GMT
+# Tue, 18 Aug 2020 18:42:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:26 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:48:15 GMT
+# Tue, 18 Aug 2020 18:42:32 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:48:18 GMT
+# Tue, 18 Aug 2020 18:42:35 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:48:19 GMT
+# Tue, 18 Aug 2020 18:42:36 GMT
 EXPOSE 15671 15672
 ```
 
@@ -12350,31 +14674,31 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
 		Size: 1.5 KB (1455 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef24e923834b403a661fb1d0ae2f82389517a9eea6d0cbeb6b5f36cf2cd14b6`  
-		Last Modified: Tue, 04 Aug 2020 22:49:19 GMT  
-		Size: 15.2 MB (15220418 bytes)  
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aafba55383f2e239b44252205ff48087e6e566a4c3f382dd6b293c67f1122b79`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c95ecf67c164b009bc63396745029324e3d19475977c00c1ca6a5a5538eb3d2`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
-		Size: 4.6 KB (4640 bytes)  
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3356d22e79191ded8a8a3453c8f198f9d550fd642c39756f745498ba3c57248b`  
-		Last Modified: Tue, 04 Aug 2020 22:49:28 GMT  
-		Size: 191.0 B  
+	-	`sha256:7d2cbbb7b5d4ac3e770da4f3b648329a3dd67c0487be160ae90659d1d3b99c4f`  
+		Last Modified: Tue, 18 Aug 2020 18:43:35 GMT  
+		Size: 194.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:201a2580d27fb480197b24b388bcfbee9cecd2bc0052ad9d8af50a9424fe7975`  
-		Last Modified: Tue, 04 Aug 2020 22:49:30 GMT  
-		Size: 14.0 MB (13955527 bytes)  
+	-	`sha256:3af8190599b13622b1e4a6d155be4820ae5594dbe9da2ae1742a72362002efea`  
+		Last Modified: Tue, 18 Aug 2020 18:43:37 GMT  
+		Size: 14.0 MB (13955559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:57a2f8d3991dd4a1429a7e53c384ca18c001c9b21fadf33a6350ed8ad5af1588
+$ docker pull rabbitmq@sha256:d32e880e91cc311d84da056fac5f7d7b55b0eba487eb3a46e2c02926f564a97a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12390,14 +14714,14 @@ $ docker pull rabbitmq@sha256:57a2f8d3991dd4a1429a7e53c384ca18c001c9b21fadf33a63
 ### `rabbitmq:alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:2f5074756d62b8db675b90384a15526afec5159635f6432f82e0cc20bdd4c44a
+$ docker pull rabbitmq@sha256:aa1b18eccb0a247c20f1d7f1b887a01d013668cb463d360e25b30cd89b179cbe
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.3 MB (56273423 bytes)**  
+-	Total Size: **56.3 MB (56270803 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:12634d36fb21a072a04df476d0db8b21d8c4cdef1e4aef515c830d73347c9339`
+-	Image ID: `sha256:635e72823beff1a201290febbc250c7de9e3eed7a0541f00f168d7b005b36a98`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12428,33 +14752,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:43:18 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:48:58 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:48:59 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:49:06 GMT
+# Tue, 18 Aug 2020 18:21:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -12475,30 +14799,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bca127415eff9a06e53f066c7a8b81ae9d26696201904e18c7fe4e16727bde80`  
-		Last Modified: Wed, 05 Aug 2020 09:50:02 GMT  
-		Size: 15.2 MB (15220391 bytes)  
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce6ee20db1b180903224622bc115cf1d39c45008c797a61442c06f6ac377f0af`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10682479430a3d554886c654aa2b489975d0b3b475690d5799247d8ce34e80f3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
-		Size: 4.6 KB (4643 bytes)  
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:bff398ec1a39ddee25afe5fefc1aea7e87e194d0d7648a4c3296433e5cbd4f48
+$ docker pull rabbitmq@sha256:8641a5d01eadc86e0a819741fb1672b42c8dfa2dcfb1a05dd37ea5d955b236e6
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.0 MB (55017685 bytes)**  
+-	Total Size: **55.0 MB (55015036 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9e53322b4bfafda4a0745538a31057d78c7c40b4f9f48f46bbed09538b5732e6`
+-	Image ID: `sha256:422f1b72cfd9b1bc739743398c8a7654075c300cf9aff725bc03b96d37ae1393`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12529,33 +14853,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:30:13 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:14:28 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:14:29 GMT
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:51 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:15:11 GMT
+# Tue, 18 Aug 2020 18:51:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:15:17 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:15:21 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:15:22 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:15:23 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:15:24 GMT
+# Tue, 18 Aug 2020 18:51:33 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:15:27 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:15:28 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:15:29 GMT
+# Tue, 18 Aug 2020 18:51:35 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -12576,16 +14900,16 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
 		Size: 1.5 KB (1457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84dbf564a6fc9745ceca8e028c497e904e032121fb6cb13e0c3db533a3689ab5`  
-		Last Modified: Tue, 04 Aug 2020 22:16:51 GMT  
-		Size: 15.2 MB (15220407 bytes)  
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5504e3495fc69b155962409a25eace7d96f4cc05ccb6c70f5d532a0e4c1b83bb`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6650697d0e5ccbbbf92cc73f9780cb7bd2f4b26b0829239221d098f0b33dae16`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 4.6 KB (4643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -12693,14 +15017,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:e541d648d9aecaa62e6ba8f59285f3e7815a1d0f173969363df00d5b16664c13
+$ docker pull rabbitmq@sha256:386853f40be0484b45f02f752f1e8116aebcd9c2f64f5a186dee74a1e31669f6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.8 MB (55793166 bytes)**  
+-	Total Size: **55.8 MB (55790527 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7bbba3cc0b4b6d08a0feac36588037844384ec27f3abfa2a28f5be3901976ed6`
+-	Image ID: `sha256:d6b6731c2e335d690ad8f00175d3274f1c260143bcffb5f782d153944472594e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12731,33 +15055,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:37:58 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:10:33 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:10:35 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:10:55 GMT
+# Tue, 18 Aug 2020 18:41:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:10:56 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:10:57 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:41 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:11:00 GMT
+# Tue, 18 Aug 2020 18:41:43 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:11:01 GMT
+# Tue, 18 Aug 2020 18:41:44 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -12778,30 +15102,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
 		Size: 1.5 KB (1456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c964eafbc795477b227f1ffd57a9870270075e56420ea4478505addf39731df0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:23 GMT  
-		Size: 15.2 MB (15220410 bytes)  
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a2789b904c7c14dc5e21e70d81c9497b6b0d41a833929a7557371b3590d92da`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be0265b364b72d5b6def99dd5d8243e08547557fd8c75c0350bb75c41f563cb0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
-		Size: 4.6 KB (4644 bytes)  
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:alpine` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:f35129943ed9324282fcfb010cee2d088a6cf51e5daa8a7941b50370558f82a6
+$ docker pull rabbitmq@sha256:8f3b105057384535ba189d4cf42420c55eb503b77530780ebfa7405a43d06a73
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.3 MB (56303671 bytes)**  
+-	Total Size: **56.3 MB (56301050 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd6ce52bb08e25ecffaf96724baf3ea6a09dfe47d32f02175d4d94be0cfb5c47`
+-	Image ID: `sha256:14f225c356162358902588d3fed5ab3c1c1fdfa04f241f830ebeffeecaea754a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12832,33 +15156,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:10:43 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:25 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:26 GMT
+# Tue, 18 Aug 2020 18:39:30 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:35 GMT
+# Tue, 18 Aug 2020 18:39:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -12879,30 +15203,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2d1ffcc0a6344e6f0f44905e288c38bec15c9c4567faf2f5eca0f4881ee86b5`  
-		Last Modified: Tue, 04 Aug 2020 22:48:41 GMT  
-		Size: 15.2 MB (15220392 bytes)  
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4f5c50489a3c9223d2b6bb523d08f53b5202cf2976a9241de657f6275b47f01`  
-		Last Modified: Tue, 04 Aug 2020 22:48:38 GMT  
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8921f49206b6385fa0299240d982e1d079fd21573730dcebf45edd7294b5bdd1`  
-		Last Modified: Tue, 04 Aug 2020 22:48:39 GMT  
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
 		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:alpine` - linux; ppc64le
 
 ```console
-$ docker pull rabbitmq@sha256:9097ca280d89dcec476dad3b406a859fe8a57ad4340d369507bfbfd6b81211e7
+$ docker pull rabbitmq@sha256:7273e15087b6c7b56b9a8ce8a7f6d8455bac5e6dfdfa299408eaf69e0c9b8ce3
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.7 MB (56678809 bytes)**  
+-	Total Size: **56.7 MB (56676176 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5df2bcc93307713eb33239e880c359f0e7349d952410c85ace1cf43cfeaa0475`
+-	Image ID: `sha256:062bf709331dba66bbc173601ab8c3a41f37b07dc47bdc4b1bce9263ed937eb3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -12933,33 +15257,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:39:40 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 06:07:46 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 06:07:49 GMT
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 06:07:53 GMT
+# Tue, 18 Aug 2020 18:19:19 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 06:07:58 GMT
+# Tue, 18 Aug 2020 18:19:23 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 06:08:20 GMT
+# Tue, 18 Aug 2020 18:19:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 06:08:31 GMT
+# Tue, 18 Aug 2020 18:20:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 06:08:35 GMT
+# Tue, 18 Aug 2020 18:20:13 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 06:08:39 GMT
+# Tue, 18 Aug 2020 18:20:21 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 06:08:43 GMT
+# Tue, 18 Aug 2020 18:20:27 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 06:08:44 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 06:08:47 GMT
+# Tue, 18 Aug 2020 18:20:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 06:08:51 GMT
+# Tue, 18 Aug 2020 18:20:44 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 06:08:53 GMT
+# Tue, 18 Aug 2020 18:20:51 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -12980,30 +15304,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
 		Size: 1.5 KB (1462 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efa7517a6d95ab298ff77e20cb934892128e241a1b5b2eac20266c4de24f760e`  
-		Last Modified: Wed, 05 Aug 2020 06:11:16 GMT  
-		Size: 15.2 MB (15220413 bytes)  
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e90a3b34978ff87934ea197584b6a04cb0ff136a3f327cf59c208baa7a2ac7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb7ced3deacbb43140a77a6308c91c14853769b5f244efc3a04c87cd783e31bf`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
-		Size: 4.6 KB (4645 bytes)  
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:alpine` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:69dea59e48c6207c85fe2e2952078f2a44394a35447fae1ed099b4df2d75fadd
+$ docker pull rabbitmq@sha256:a742e727e4e324ba52d41de85620311190d1925f708fb7d3abe67e1e3e4e5fe5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.1 MB (55080044 bytes)**  
+-	Total Size: **55.1 MB (55077412 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28b340036ed434707a458946cdca3900e939f90481195abd0588e5f84a6f5576`
+-	Image ID: `sha256:23a80031ac9433ff0021d288015bedeb243bb24e83201b4696ced21e54f1e614`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -13034,33 +15358,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:00:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:48:00 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:48:07 GMT
+# Tue, 18 Aug 2020 18:42:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:26 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -13081,23 +15405,23 @@ CMD ["rabbitmq-server"]
 		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
 		Size: 1.5 KB (1455 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef24e923834b403a661fb1d0ae2f82389517a9eea6d0cbeb6b5f36cf2cd14b6`  
-		Last Modified: Tue, 04 Aug 2020 22:49:19 GMT  
-		Size: 15.2 MB (15220418 bytes)  
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aafba55383f2e239b44252205ff48087e6e566a4c3f382dd6b293c67f1122b79`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c95ecf67c164b009bc63396745029324e3d19475977c00c1ca6a5a5538eb3d2`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
-		Size: 4.6 KB (4640 bytes)  
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:latest`
 
 ```console
-$ docker pull rabbitmq@sha256:d94c72c485d67f9589236a3eb7b99123d1218dbdac16e94952af362e815b7a36
+$ docker pull rabbitmq@sha256:c8a9c5e18db0dbb905ab5add57f56e5a126d9dc9b9088de4387b2b33bcc1f9bd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13112,14 +15436,14 @@ $ docker pull rabbitmq@sha256:d94c72c485d67f9589236a3eb7b99123d1218dbdac16e94952
 ### `rabbitmq:latest` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:4239c88b0fbe60caa99f851ef71d8ec0fe10784a1c7ea94c9ac601f0480c08b3
+$ docker pull rabbitmq@sha256:6fcdff7152942ccb8260488f1b3a54eea2f99df21e48ac0450fdff4309356582
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.5 MB (75537139 bytes)**  
+-	Total Size: **75.5 MB (75534340 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:51ce028a0e75f1f075ad1943a3fa5c11cbdf7e9bdc74e71b1f2b6bbeeefef51e`
+-	Image ID: `sha256:de302df374f44eaadd815c4331ed9196219835e83d07569aeadc5f3c57b44b42`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -13156,33 +15480,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 16:48:11 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:47:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:48:30 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -13215,17 +15539,17 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
 		Size: 2.1 KB (2071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3b3f5c0eff341f26661e19dc6f82e543c801578903afa13e51f9ad0f79bccc7`  
-		Last Modified: Wed, 05 Aug 2020 09:49:46 GMT  
-		Size: 15.6 MB (15575432 bytes)  
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b157b9c8a3865cc3332b2f0c9dabba91baa944d3ee429c9ddd35ec93c3dbf6f`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afd359d7554c2cbeac443d216cca958caf777e1ddb7b82a95c8354e367fe041b`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
-		Size: 4.6 KB (4639 bytes)  
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:latest` - linux; arm variant v7
@@ -13350,14 +15674,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:48d2c85801e3765cfcc8b8ae81c879ccf227349fe6c9125163ffa3da0f054361
+$ docker pull rabbitmq@sha256:4fed3790fd0cdecdfe2530aed9ed5d1374d279a2ab62ae052117511a32a080f6
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **72.0 MB (72047193 bytes)**  
+-	Total Size: **72.0 MB (72044453 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de1c4870afccbb9bb61adb0d594658fd9a896c3ae5d3bce98de9a92547420c6a`
+-	Image ID: `sha256:04b23e2ba6bc53c71a1f8bc99fe616f24a3ae825750396b129970dccf520c36d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -13394,33 +15718,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 19:17:09 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:08:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:08:56 GMT
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:08:57 GMT
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:08:58 GMT
+# Tue, 18 Aug 2020 18:39:56 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:09:46 GMT
+# Tue, 18 Aug 2020 18:40:35 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:09:49 GMT
+# Tue, 18 Aug 2020 18:40:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:39 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:40 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:09:51 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:42 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -13453,30 +15777,30 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
 		Size: 2.2 KB (2156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be9ca5331d65f11003b410173a9f4cf082aebed9e91e6399867aff9178e4b6fb`  
-		Last Modified: Wed, 05 Aug 2020 10:11:58 GMT  
-		Size: 15.6 MB (15575589 bytes)  
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c294a5e514460351b6e8d39157c1dfccfebd2d89f632ef1c14d1710fe2b465c`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f3933a972de70083240a9b7531d21eb5da33d3544a764fd40406c0b20eb9916`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
-		Size: 4.6 KB (4638 bytes)  
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:latest` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:1a0374069a0695c1fbf0227a4d2bb4c11581e6b4e76492ea6bec899356c3a005
+$ docker pull rabbitmq@sha256:fda0cae2052105756efa5cdf6f0ca64110aedb12dc7e2289cf62464c029bfffa
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.8 MB (75796343 bytes)**  
+-	Total Size: **75.8 MB (75793516 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c013e649d867e94350857215fa087891a08ea8fe0e63b4c4e84195d6c449a643`
+-	Image ID: `sha256:d9af82e22a914fc1da549ef86bd61a40717b699cb2f785f45172f946226fe56c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -13513,33 +15837,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:19:48 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:46:12 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:46:51 GMT
+# Tue, 18 Aug 2020 18:39:00 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:46:56 GMT
+# Tue, 18 Aug 2020 18:39:03 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -13572,17 +15896,17 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
 		Size: 2.1 KB (2060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346111b9b67e675c83f6fb4822b0b1a9b781ea81f4026e65663c2ab2eae3823c`  
-		Last Modified: Tue, 04 Aug 2020 22:48:24 GMT  
-		Size: 15.6 MB (15575353 bytes)  
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eae9a59af7e95007217d7fbff06e006eae6be7d26afea42f9192cff7faffde77`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33abfe88e04f02ee54ccce3ff83956b55a09275e2c50a2b3454f0abe429920af`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
-		Size: 4.6 KB (4641 bytes)  
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:latest` - linux; ppc64le
@@ -13707,14 +16031,14 @@ CMD ["rabbitmq-server"]
 ### `rabbitmq:latest` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:d564e36d70c5864a8d8bdf14c1f78a26c5dc28c42dd34f32531db913d0b16682
+$ docker pull rabbitmq@sha256:d74e191b122686f684859e9803430a9706af4d8c15eedb114d4d5e89738fffd1
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **73.9 MB (73876564 bytes)**  
+-	Total Size: **73.9 MB (73873727 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f689da3a332f7187146496dc62be29ded54156bc11fb38d35e0ea0e29993c21f`
+-	Image ID: `sha256:8433898132af27a33483c54ac6a0b79e39fac88c61512e35131c3e887c47d97b`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -13751,33 +16075,33 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:31:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:21 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:22 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:41:52 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:55 GMT
 CMD ["rabbitmq-server"]
 ```
 
@@ -13810,23 +16134,23 @@ CMD ["rabbitmq-server"]
 		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
 		Size: 2.2 KB (2152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed9f42ae5377d74ee94db86388cefd08ad542a7dcd6a94035ebd8194c1ed77c8`  
-		Last Modified: Tue, 04 Aug 2020 22:48:57 GMT  
-		Size: 15.6 MB (15574961 bytes)  
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71643a2fd1c3b0a805e513d85be6c44401a3aaabe323a783374d7224d4d43264`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3e3e4d2e8d4f352a49317522d34560bc57642e7dd47f3c38b41f25a60b318ad`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
-		Size: 4.6 KB (4634 bytes)  
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:management`
 
 ```console
-$ docker pull rabbitmq@sha256:b1bfb093b1c4f460fb2967b4aa89e48c434bd67934280f2816164b05620a5185
+$ docker pull rabbitmq@sha256:b0846204eb1dbe6230a108e7d4c83291d306409285742be081c2e62a5f0a82c9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13841,14 +16165,14 @@ $ docker pull rabbitmq@sha256:b1bfb093b1c4f460fb2967b4aa89e48c434bd67934280f2816
 ### `rabbitmq:management` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:42cbce6d0d2f246ac66ccc3bfaa18124bbecea3a8173b7fec93489eeddf5d655
+$ docker pull rabbitmq@sha256:52088132b708e14589a00b404f8732fbcc2c2b0106b01611738c185d3e07ed7c
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.3 MB (86320846 bytes)**  
+-	Total Size: **86.3 MB (86317992 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:64a1f920fb0d3473f7270e6ad07d8c87b5ff63fa08b0df0845111ceecb8d27d4`
+-	Image ID: `sha256:0067598739d32fdce6d90674a3e8705199ce57b43e4ad61b07a3f5a4fd5b2945`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -13885,39 +16209,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 16:48:11 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:47:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:47:57 GMT
+# Tue, 18 Aug 2020 18:20:06 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:48:30 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:48:31 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:30 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:48:32 GMT
+# Tue, 18 Aug 2020 18:20:31 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 09:48:38 GMT
+# Tue, 18 Aug 2020 18:20:38 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 09:48:51 GMT
+# Tue, 18 Aug 2020 18:20:49 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 09:48:52 GMT
+# Tue, 18 Aug 2020 18:20:49 GMT
 EXPOSE 15671 15672
 ```
 
@@ -13950,25 +16274,25 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 16:58:41 GMT  
 		Size: 2.1 KB (2071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3b3f5c0eff341f26661e19dc6f82e543c801578903afa13e51f9ad0f79bccc7`  
-		Last Modified: Wed, 05 Aug 2020 09:49:46 GMT  
-		Size: 15.6 MB (15575432 bytes)  
+	-	`sha256:5e54d9b2964a663110ae3e743d975c8ab7c3c62806e05f9ef630b3937880c62c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:42 GMT  
+		Size: 15.6 MB (15572634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b157b9c8a3865cc3332b2f0c9dabba91baa944d3ee429c9ddd35ec93c3dbf6f`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
+	-	`sha256:2578857eca925eb94b24a751580041baef769d3bd71c514086559ae1360d5bea`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afd359d7554c2cbeac443d216cca958caf777e1ddb7b82a95c8354e367fe041b`  
-		Last Modified: Wed, 05 Aug 2020 09:49:45 GMT  
-		Size: 4.6 KB (4639 bytes)  
+	-	`sha256:757c77c515997c51a62df4c31f5f0e9e866484e0fb9c52967e07202cc461c8e3`  
+		Last Modified: Tue, 18 Aug 2020 18:21:41 GMT  
+		Size: 4.6 KB (4638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13b85b39ee3debeb634cf0983f2a9328cda7f58b82fe25d14d3fa0eeb58161d`  
-		Last Modified: Wed, 05 Aug 2020 09:49:52 GMT  
-		Size: 189.0 B  
+	-	`sha256:d8afb40937f21cc00b19fb158647fdf630617dfc4c52cab823c1307852866892`  
+		Last Modified: Tue, 18 Aug 2020 18:21:50 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be247a5b0331975319b6b268abb1bafc93a695e5b57211ed4b141c8a1474c5ad`  
-		Last Modified: Wed, 05 Aug 2020 09:49:54 GMT  
-		Size: 10.8 MB (10783518 bytes)  
+	-	`sha256:f3bf6465850cb13a7d1b6ae827d8f3ae4999c9246bceee3b72b9916446738efc`  
+		Last Modified: Tue, 18 Aug 2020 18:21:53 GMT  
+		Size: 10.8 MB (10783464 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management` - linux; arm variant v7
@@ -14107,14 +16431,14 @@ EXPOSE 15671 15672
 ### `rabbitmq:management` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:a33dcc4a966790fc84fa579bbc3d757915169c012a862df0384487feddd2ba71
+$ docker pull rabbitmq@sha256:9541bf9c2891ae94334da22e2da552ce93a7e9ba0b80e782bc743546e673f6c5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **82.2 MB (82197586 bytes)**  
+-	Total Size: **82.2 MB (82194685 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:90b94371b81ec2b172fae1a70ab2396f0d89a9499ece9562f9440f876a3bfd6a`
+-	Image ID: `sha256:550e08e137b598b4478cc946ab5c23dfebc7a6c2b897e59fb39545d25646c52f`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -14151,39 +16475,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 19:17:09 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:08:56 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:08:56 GMT
+# Tue, 18 Aug 2020 18:39:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:08:57 GMT
+# Tue, 18 Aug 2020 18:39:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:08:58 GMT
+# Tue, 18 Aug 2020 18:39:56 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:09:46 GMT
+# Tue, 18 Aug 2020 18:40:35 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:09:48 GMT
+# Tue, 18 Aug 2020 18:40:37 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:09:49 GMT
+# Tue, 18 Aug 2020 18:40:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:39 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:09:50 GMT
+# Tue, 18 Aug 2020 18:40:40 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:09:51 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:41 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:09:52 GMT
+# Tue, 18 Aug 2020 18:40:42 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 10:10:07 GMT
+# Tue, 18 Aug 2020 18:40:54 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 10:10:25 GMT
+# Tue, 18 Aug 2020 18:41:13 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 10:10:25 GMT
+# Tue, 18 Aug 2020 18:41:14 GMT
 EXPOSE 15671 15672
 ```
 
@@ -14216,38 +16540,38 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 19:27:34 GMT  
 		Size: 2.2 KB (2156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be9ca5331d65f11003b410173a9f4cf082aebed9e91e6399867aff9178e4b6fb`  
-		Last Modified: Wed, 05 Aug 2020 10:11:58 GMT  
-		Size: 15.6 MB (15575589 bytes)  
+	-	`sha256:df594585ea3a31a7db2ce5498937af75ca258327d157659517b8504075aaed4f`  
+		Last Modified: Tue, 18 Aug 2020 18:42:40 GMT  
+		Size: 15.6 MB (15572847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c294a5e514460351b6e8d39157c1dfccfebd2d89f632ef1c14d1710fe2b465c`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
+	-	`sha256:c2ba8a764c68cc8f8ec92e07c9da9fe0c23747cde9bfe579451b3f5b86c027fe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f3933a972de70083240a9b7531d21eb5da33d3544a764fd40406c0b20eb9916`  
-		Last Modified: Wed, 05 Aug 2020 10:11:56 GMT  
-		Size: 4.6 KB (4638 bytes)  
+	-	`sha256:1e799e1ff765d8683231ecd4cd6cadb93ea9b240002d2e2077970ae563b57624`  
+		Last Modified: Tue, 18 Aug 2020 18:42:38 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78ea89d25ea89a1877f57ab2ecbd4e7f235405c278626540648b0f83f1659837`  
-		Last Modified: Wed, 05 Aug 2020 10:12:08 GMT  
-		Size: 189.0 B  
+	-	`sha256:fd060abd5d03333f41c36edc60c7952e40d57dc090084585e2335fa436f904db`  
+		Last Modified: Tue, 18 Aug 2020 18:42:50 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54c48670b1202e86c696e5822127b52007016769faa3ca6cb7a2e382aa2efaa3`  
-		Last Modified: Wed, 05 Aug 2020 10:12:11 GMT  
-		Size: 10.2 MB (10150204 bytes)  
+	-	`sha256:32c26d8cf0308b1ed9d378116c566c59c084bb02640769eaa03bb080319cefbe`  
+		Last Modified: Tue, 18 Aug 2020 18:42:53 GMT  
+		Size: 10.2 MB (10150044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:98b2d1a082a55af063b603e1f2bc434debd9e42677a18901ebb28387c8568cc5
+$ docker pull rabbitmq@sha256:2a5efd9f225a0cd57223e6a53f2506776ee9c9035d5f73ce5690abd9e8ad6d9c
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.6 MB (86649073 bytes)**  
+-	Total Size: **86.6 MB (86646181 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:08e2d7ecbaad51e091dffd94c2c13c09a4729caa58031e5865d61d14e8bb827f`
+-	Image ID: `sha256:3571fca61ef98843ec54a5ffa8aeeef65da2445a2c0e51c4f0b7f5aec101dee9`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -14284,39 +16608,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:19:48 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:46:12 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:46:13 GMT
+# Tue, 18 Aug 2020 18:38:37 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:46:51 GMT
+# Tue, 18 Aug 2020 18:39:00 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:01 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:46:54 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:46:55 GMT
+# Tue, 18 Aug 2020 18:39:02 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:46:56 GMT
+# Tue, 18 Aug 2020 18:39:03 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:02 GMT
+# Tue, 18 Aug 2020 18:39:12 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:18 GMT
+# Tue, 18 Aug 2020 18:39:24 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:19 GMT
+# Tue, 18 Aug 2020 18:39:24 GMT
 EXPOSE 15671 15672
 ```
 
@@ -14349,25 +16673,25 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 15:33:52 GMT  
 		Size: 2.1 KB (2060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346111b9b67e675c83f6fb4822b0b1a9b781ea81f4026e65663c2ab2eae3823c`  
-		Last Modified: Tue, 04 Aug 2020 22:48:24 GMT  
-		Size: 15.6 MB (15575353 bytes)  
+	-	`sha256:feb15629a2fc1a26081ab2be413c964e051d2e1c75e3008b73834962170e3cf1`  
+		Last Modified: Tue, 18 Aug 2020 18:40:25 GMT  
+		Size: 15.6 MB (15572527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eae9a59af7e95007217d7fbff06e006eae6be7d26afea42f9192cff7faffde77`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
+	-	`sha256:c39fce4a78223e5ccf976d27e6f218c2b26336014d54ffd4bac87d4cab66b0d8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33abfe88e04f02ee54ccce3ff83956b55a09275e2c50a2b3454f0abe429920af`  
-		Last Modified: Tue, 04 Aug 2020 22:48:23 GMT  
-		Size: 4.6 KB (4641 bytes)  
+	-	`sha256:351b6abce78d0d22419684f9f0b6b4488a91b6f47d23e0014a33b0f2f255838d`  
+		Last Modified: Tue, 18 Aug 2020 18:40:23 GMT  
+		Size: 4.6 KB (4640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba63dac538698d7abddf12ef8c40ff5db81e1e153eda12549dbb6d2d1d3eadbd`  
-		Last Modified: Tue, 04 Aug 2020 22:48:29 GMT  
+	-	`sha256:1a135d928a7f36b49d43c34c2975266b423fc71be7938ac2b8f43ffe64a05b0e`  
+		Last Modified: Tue, 18 Aug 2020 18:40:30 GMT  
 		Size: 190.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff869044d36c1f24329c046330ebd815cb07b394e2f12f6111f872aecd1a3b46`  
-		Last Modified: Tue, 04 Aug 2020 22:48:32 GMT  
-		Size: 10.9 MB (10852540 bytes)  
+	-	`sha256:fd477614bb9de9f74897f9c00f6cdf28e06b8442b430a16e0d3f29c43901a9c4`  
+		Last Modified: Tue, 18 Aug 2020 18:40:33 GMT  
+		Size: 10.9 MB (10852475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management` - linux; ppc64le
@@ -14506,14 +16830,14 @@ EXPOSE 15671/tcp 15672/tcp
 ### `rabbitmq:management` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:c818c766ccf15dfb5d855af15c4568eb41a27ee9a055001f062ee6e557443adf
+$ docker pull rabbitmq@sha256:b0871a647a02a7767a883340f65f9016331bea9f7ea0139274c837142b20a295
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **84.3 MB (84287633 bytes)**  
+-	Total Size: **84.3 MB (84284797 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:629715ec3f9fc036d277885f3332e020fbfb3a722c4ed2977ca68659e4eb6b9a`
+-	Image ID: `sha256:f52acc2c5b848288c9197699d68c3e7e3d0bd674837761c6dca243f55eed26bb`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -14550,39 +16874,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Fri, 24 Jul 2020 15:31:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	groupadd --gid 999 --system rabbitmq; 	useradd --uid 999 --system --home-dir "$RABBITMQ_DATA_DIR" --gid rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:21 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:38 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:38 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:21 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:22 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:41:52 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install --yes --no-install-recommends 		ca-certificates 		gnupg 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --progress dot:giga --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	gosu rabbitmq rabbitmqctl help; 	gosu rabbitmq rabbitmqctl list_ciphers; 	gosu rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 COPY file:b47e186ce30cd8335ebfcc492a3ee2bf8f38c7a29a1301945c0df60e929b021e in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:54 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:41:55 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:45 GMT
+# Tue, 18 Aug 2020 18:42:03 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:54 GMT
+# Tue, 18 Aug 2020 18:42:12 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apt-get update; apt-get install -y --no-install-recommends python3; rm -rf /var/lib/apt/lists/*; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:54 GMT
+# Tue, 18 Aug 2020 18:42:13 GMT
 EXPOSE 15671 15672
 ```
 
@@ -14615,31 +16939,31 @@ EXPOSE 15671 15672
 		Last Modified: Fri, 24 Jul 2020 15:40:59 GMT  
 		Size: 2.2 KB (2152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed9f42ae5377d74ee94db86388cefd08ad542a7dcd6a94035ebd8194c1ed77c8`  
-		Last Modified: Tue, 04 Aug 2020 22:48:57 GMT  
-		Size: 15.6 MB (15574961 bytes)  
+	-	`sha256:080c6a4427bbfe0cf9427bde856a5795568861003b51bea7f31e298c3a0e76ce`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.6 MB (15572125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71643a2fd1c3b0a805e513d85be6c44401a3aaabe323a783374d7224d4d43264`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
+	-	`sha256:aeb7c4dde2cfbdaf62adc8fd3e7526a39e4a53f36d06d63cafe367fed2ec6866`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3e3e4d2e8d4f352a49317522d34560bc57642e7dd47f3c38b41f25a60b318ad`  
-		Last Modified: Tue, 04 Aug 2020 22:48:56 GMT  
-		Size: 4.6 KB (4634 bytes)  
+	-	`sha256:fcaa9c47e6bf366451bfab9d1acb199c3fc9a8d24785b143229f68c4e05346cc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:05 GMT  
+		Size: 4.6 KB (4633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18cecb34f3375ddece120f963493d01b0b7f1f37e8ce8340f069dfe098d9c5c5`  
-		Last Modified: Tue, 04 Aug 2020 22:49:06 GMT  
+	-	`sha256:0011d5588e631ecce7c1e7b621481598ae868356cc4bd2585d766ad513a95067`  
+		Last Modified: Tue, 18 Aug 2020 18:43:14 GMT  
 		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4714db476ad0f77cf05e70cc3eeb63446115cce5c9d4bb917b411e488aedde3`  
-		Last Modified: Tue, 04 Aug 2020 22:49:07 GMT  
-		Size: 10.4 MB (10410880 bytes)  
+	-	`sha256:1ddb555b7f231c7d7d772c25a4f8fe0c6836f2ffeca36b4f171fb2f1127aa9c7`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
+		Size: 10.4 MB (10410881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rabbitmq:management-alpine`
 
 ```console
-$ docker pull rabbitmq@sha256:239b71087cee787fc2b48050ba5f670f997773aea41d8f9e5561a4013271142d
+$ docker pull rabbitmq@sha256:a8de5efa1ead9e1ffb3c34695cccbf4c02fed06859e64c95455d02b1f941b32b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14655,14 +16979,14 @@ $ docker pull rabbitmq@sha256:239b71087cee787fc2b48050ba5f670f997773aea41d8f9e55
 ### `rabbitmq:management-alpine` - linux; amd64
 
 ```console
-$ docker pull rabbitmq@sha256:f4839286f327d2dc960671d03c5fea2d7e4d10b5053b399f7a093f24aaf86d55
+$ docker pull rabbitmq@sha256:203da97f2f9955b1a88fab311c3d234743514e3929dff3bf05bea839cdc3d0db
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.2 MB (70187703 bytes)**  
+-	Total Size: **70.2 MB (70184971 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:65f55c49fd3e53b4b1a063b4b5929b40d310caf104cbc1dcb81343eef63116e9`
+-	Image ID: `sha256:39a3adedf1f5d22dafe081744cee0fe1dd9219d4172838343c66ae0e207bdc30`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -14693,39 +17017,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:43:18 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 09:48:58 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:54 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 09:48:58 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 09:48:59 GMT
+# Tue, 18 Aug 2020 18:20:55 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 09:49:06 GMT
+# Tue, 18 Aug 2020 18:21:02 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 09:49:07 GMT
+# Tue, 18 Aug 2020 18:21:03 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 09:49:08 GMT
+# Tue, 18 Aug 2020 18:21:04 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 09:49:14 GMT
+# Tue, 18 Aug 2020 18:21:10 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 09:49:18 GMT
+# Tue, 18 Aug 2020 18:21:14 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 09:49:18 GMT
+# Tue, 18 Aug 2020 18:21:14 GMT
 EXPOSE 15671 15672
 ```
 
@@ -14746,38 +17070,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 22:45:15 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bca127415eff9a06e53f066c7a8b81ae9d26696201904e18c7fe4e16727bde80`  
-		Last Modified: Wed, 05 Aug 2020 09:50:02 GMT  
-		Size: 15.2 MB (15220391 bytes)  
+	-	`sha256:12c5195c64733c84ccdd4696a8e5d4e4cf766c5518d85b1cc75378455be105b5`  
+		Last Modified: Tue, 18 Aug 2020 18:21:59 GMT  
+		Size: 15.2 MB (15217772 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce6ee20db1b180903224622bc115cf1d39c45008c797a61442c06f6ac377f0af`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
+	-	`sha256:89d022121ef9bfee3e81e5dde115f840e1a42f86a0012b0c88d9e6945d71b75c`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10682479430a3d554886c654aa2b489975d0b3b475690d5799247d8ce34e80f3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:01 GMT  
-		Size: 4.6 KB (4643 bytes)  
+	-	`sha256:ad7304f11c125760c9e9accec6d29a65873938c60b5c7430cac213d92b666aaf`  
+		Last Modified: Tue, 18 Aug 2020 18:21:58 GMT  
+		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:023c22d01767345ab471ac933aac8e1a7e974946be13e50dd6d27c15558e12a3`  
-		Last Modified: Wed, 05 Aug 2020 09:50:08 GMT  
+	-	`sha256:78b709fe91779d62d4851357c9a565b478fd7ef61ce2b1dd61e31ba0ff29c72c`  
+		Last Modified: Tue, 18 Aug 2020 18:22:09 GMT  
 		Size: 191.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d349022bc104e9b33be656aec880cab2a11f56ed24573b6a6cf37b8ff5530f75`  
-		Last Modified: Wed, 05 Aug 2020 09:50:11 GMT  
-		Size: 13.9 MB (13914089 bytes)  
+	-	`sha256:607326a104f2cf9c0adad53c4996768b34f7e53723ced3ff92a94144e99d505a`  
+		Last Modified: Tue, 18 Aug 2020 18:22:11 GMT  
+		Size: 13.9 MB (13913977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull rabbitmq@sha256:dd39f196e12e2cc6e0b2cabde70c3d229f344d648e9916c1695493b334c4f1e1
+$ docker pull rabbitmq@sha256:762c1267c57ad5f78390c49163c428c2a1eb4acd45e781581159592b265e52bd
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.8 MB (68823997 bytes)**  
+-	Total Size: **68.8 MB (68821298 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:01bf386e71bf9815f857fd5ef1dd99ced497b868c616d0bc77db04b3a1079701`
+-	Image ID: `sha256:896127ebfa21e7c02c68edf992689476e0a063943bb8ef16da306ad2d7d6de4a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -14808,39 +17132,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:30:13 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:14:28 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:14:29 GMT
+# Tue, 18 Aug 2020 18:50:49 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:50 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:14:30 GMT
+# Tue, 18 Aug 2020 18:50:51 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:15:11 GMT
+# Tue, 18 Aug 2020 18:51:29 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:15:17 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:15:21 GMT
+# Tue, 18 Aug 2020 18:51:31 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:15:22 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:15:23 GMT
+# Tue, 18 Aug 2020 18:51:32 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:15:24 GMT
+# Tue, 18 Aug 2020 18:51:33 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:15:27 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:15:28 GMT
+# Tue, 18 Aug 2020 18:51:34 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:15:29 GMT
+# Tue, 18 Aug 2020 18:51:35 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:16:04 GMT
+# Tue, 18 Aug 2020 18:51:58 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:16:19 GMT
+# Tue, 18 Aug 2020 18:52:07 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:16:21 GMT
+# Tue, 18 Aug 2020 18:52:08 GMT
 EXPOSE 15671 15672
 ```
 
@@ -14861,25 +17185,25 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:32:19 GMT  
 		Size: 1.5 KB (1457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84dbf564a6fc9745ceca8e028c497e904e032121fb6cb13e0c3db533a3689ab5`  
-		Last Modified: Tue, 04 Aug 2020 22:16:51 GMT  
-		Size: 15.2 MB (15220407 bytes)  
+	-	`sha256:39150fb475e8209714906018baab88931818e3347d3f9735e913ff09a26caefc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:36 GMT  
+		Size: 15.2 MB (15217758 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5504e3495fc69b155962409a25eace7d96f4cc05ccb6c70f5d532a0e4c1b83bb`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:52a2a9ed363f3b8510d55f416c546f5d75e31c563d29b9cd7f47ee803fa0cb8f`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6650697d0e5ccbbbf92cc73f9780cb7bd2f4b26b0829239221d098f0b33dae16`  
-		Last Modified: Tue, 04 Aug 2020 22:16:48 GMT  
+	-	`sha256:e5bf123becbdbc94933327f3f44ff13bb7f712263b3bd063d228a83ff4c8fc67`  
+		Last Modified: Tue, 18 Aug 2020 18:52:34 GMT  
 		Size: 4.6 KB (4643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:627afac6de9e9402fab124e623164e820aaabe977446aa7816a0172509b792e7`  
-		Last Modified: Tue, 04 Aug 2020 22:16:59 GMT  
-		Size: 191.0 B  
+	-	`sha256:926fda1b9e25bfaa6872af4dd9a6a0a7d1961b72e3cbb9ce1aed16ee271c59bc`  
+		Last Modified: Tue, 18 Aug 2020 18:52:44 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa3401e575a662b1c723287a95d6cfb930300b2369382341f6b3fdb2dde356f5`  
-		Last Modified: Tue, 04 Aug 2020 22:17:05 GMT  
-		Size: 13.8 MB (13806121 bytes)  
+	-	`sha256:ebc15264d2986e943c16a5b40123a60ca2ea50f1bf2e0539e0ae0ffe415a7592`  
+		Last Modified: Tue, 18 Aug 2020 18:52:50 GMT  
+		Size: 13.8 MB (13806070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management-alpine` - linux; arm variant v7
@@ -15000,14 +17324,14 @@ EXPOSE 15671 15672
 ### `rabbitmq:management-alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull rabbitmq@sha256:e190d03129e27141871e2d726703aa8fbc1fee3cc40608090d6f54ae23ba2e41
+$ docker pull rabbitmq@sha256:27105255e70f9e74dd49676bdef24735ca15eb3d47910d996efd9606ed6155d5
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.8 MB (69827540 bytes)**  
+-	Total Size: **69.8 MB (69824930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:89aef88f9c58bd75c2b31cbd0dc4b19aeeda06ab25fe5643936f63d3cdc4c166`
+-	Image ID: `sha256:d8fdd9e8025e7b3f16646dbc6015a09082b9749398fba4750fc3d5098b93804e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -15038,39 +17362,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:37:58 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 10:10:33 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:23 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:41:23 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 10:10:34 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 10:10:35 GMT
+# Tue, 18 Aug 2020 18:41:24 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 10:10:55 GMT
+# Tue, 18 Aug 2020 18:41:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 10:10:56 GMT
+# Tue, 18 Aug 2020 18:41:39 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 10:10:57 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:40 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 10:10:58 GMT
+# Tue, 18 Aug 2020 18:41:41 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 10:10:59 GMT
+# Tue, 18 Aug 2020 18:41:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 10:11:00 GMT
+# Tue, 18 Aug 2020 18:41:43 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 10:11:01 GMT
+# Tue, 18 Aug 2020 18:41:44 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 10:11:12 GMT
+# Tue, 18 Aug 2020 18:41:53 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 10:11:18 GMT
+# Tue, 18 Aug 2020 18:42:00 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 10:11:19 GMT
+# Tue, 18 Aug 2020 18:42:01 GMT
 EXPOSE 15671 15672
 ```
 
@@ -15091,38 +17415,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:40:18 GMT  
 		Size: 1.5 KB (1456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c964eafbc795477b227f1ffd57a9870270075e56420ea4478505addf39731df0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:23 GMT  
-		Size: 15.2 MB (15220410 bytes)  
+	-	`sha256:af4baa6c2cdd21d91f378466f480a826dd08f20a4a490413b038b290cc333449`  
+		Last Modified: Tue, 18 Aug 2020 18:43:06 GMT  
+		Size: 15.2 MB (15217770 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a2789b904c7c14dc5e21e70d81c9497b6b0d41a833929a7557371b3590d92da`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
+	-	`sha256:313d0e4538d3783928547db0ace9494dad017e3f8b378c872d5207547ea52336`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be0265b364b72d5b6def99dd5d8243e08547557fd8c75c0350bb75c41f563cb0`  
-		Last Modified: Wed, 05 Aug 2020 10:12:21 GMT  
-		Size: 4.6 KB (4644 bytes)  
+	-	`sha256:b095e854fee0eea6b4bc9e6a910fffcd95ea37d19f2c9d34da6b8b6e97a101b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:04 GMT  
+		Size: 4.6 KB (4645 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08856ade48dfc960b43d61dd66b959623d845502a2973fab1f9777dc681d1427`  
-		Last Modified: Wed, 05 Aug 2020 10:12:32 GMT  
+	-	`sha256:b929a7515b5e55a528f54b9ecf6fc36b3cf4af69a60e399e58286f966769a3bc`  
+		Last Modified: Tue, 18 Aug 2020 18:43:16 GMT  
 		Size: 191.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:948a4983ab5bcdebfac71abbc77a04a698a55bd446fc79ef0d2a4dd71fbd9742`  
-		Last Modified: Wed, 05 Aug 2020 10:12:36 GMT  
-		Size: 14.0 MB (14034183 bytes)  
+	-	`sha256:f78244fa774a4ddf7573d52e90e85961867cee371ef20406c7ff73ab666a3100`  
+		Last Modified: Tue, 18 Aug 2020 18:43:20 GMT  
+		Size: 14.0 MB (14034212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management-alpine` - linux; 386
 
 ```console
-$ docker pull rabbitmq@sha256:b25ff85c8fed5805d1779b1753a23872f969c90169903763b49d00673222a94d
+$ docker pull rabbitmq@sha256:a19e31339cb31494bfab63c6391f323c11ce65b595b1dbdc5c76e080da31923d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.3 MB (70337097 bytes)**  
+-	Total Size: **70.3 MB (70334467 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:023fa07fa4d57d4670dfd269224f5f70dc33e8f457bb9f56b47fc0b530fb409c`
+-	Image ID: `sha256:7d0c5964c62970932f3842037c9aa222f562e0d5383557d8bdc3472e7cff53d3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -15153,39 +17477,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:10:43 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:47:25 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:47:25 GMT
+# Tue, 18 Aug 2020 18:39:29 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:47:26 GMT
+# Tue, 18 Aug 2020 18:39:30 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:47:35 GMT
+# Tue, 18 Aug 2020 18:39:37 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:47:36 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:38 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:47:37 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:47:38 GMT
+# Tue, 18 Aug 2020 18:39:39 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:47:46 GMT
+# Tue, 18 Aug 2020 18:39:45 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:47:50 GMT
+# Tue, 18 Aug 2020 18:39:50 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:47:51 GMT
+# Tue, 18 Aug 2020 18:39:50 GMT
 EXPOSE 15671 15672
 ```
 
@@ -15206,38 +17530,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:12:17 GMT  
 		Size: 1.4 KB (1389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2d1ffcc0a6344e6f0f44905e288c38bec15c9c4567faf2f5eca0f4881ee86b5`  
-		Last Modified: Tue, 04 Aug 2020 22:48:41 GMT  
-		Size: 15.2 MB (15220392 bytes)  
+	-	`sha256:91d30f7a24c1e61f44ace3e6d948aff6586e3facfa30c1699eee02069b55b5c0`  
+		Last Modified: Tue, 18 Aug 2020 18:40:40 GMT  
+		Size: 15.2 MB (15217771 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4f5c50489a3c9223d2b6bb523d08f53b5202cf2976a9241de657f6275b47f01`  
-		Last Modified: Tue, 04 Aug 2020 22:48:38 GMT  
+	-	`sha256:311158725e32efe97eee7589ce7baae1d305f06652d10a07d71c25c70dfd599a`  
+		Last Modified: Tue, 18 Aug 2020 18:40:39 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8921f49206b6385fa0299240d982e1d079fd21573730dcebf45edd7294b5bdd1`  
-		Last Modified: Tue, 04 Aug 2020 22:48:39 GMT  
+	-	`sha256:2786c9c139c18d26220471b990fced4b185394eadc044e328763bf5e6a840110`  
+		Last Modified: Tue, 18 Aug 2020 18:40:38 GMT  
 		Size: 4.6 KB (4642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8584ec897bfdf7ef8daf6f73f37dabee103db6c9776f730abbd61280c28d2077`  
-		Last Modified: Tue, 04 Aug 2020 22:48:47 GMT  
+	-	`sha256:3396f70e7325482a929bccab56e45ff49ad548d49e6c30be384f014de489bbc8`  
+		Last Modified: Tue, 18 Aug 2020 18:40:45 GMT  
 		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca77ec253029e35cee37cbdaae8a4d11897ae6deb7cdd23794b4f19ed7c3a4bd`  
-		Last Modified: Tue, 04 Aug 2020 22:48:51 GMT  
-		Size: 14.0 MB (14033234 bytes)  
+	-	`sha256:c95ffdcb053c77e4fd0f4df47385c7f50b79432c2522a8a89a035a5f9f6a4394`  
+		Last Modified: Tue, 18 Aug 2020 18:40:49 GMT  
+		Size: 14.0 MB (14033225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management-alpine` - linux; ppc64le
 
 ```console
-$ docker pull rabbitmq@sha256:de22fba7d4bc10eeb921b3cff71a649d1e725f9fa105fcb895e79ddd01547262
+$ docker pull rabbitmq@sha256:736e3809befaf6c34a16cef9e5ce873f7388098747d8d2107cb6209197a32ede
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **71.0 MB (71042572 bytes)**  
+-	Total Size: **71.0 MB (71039949 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ba7cac82b0dc317cbb825bc21f41c796365fcab8d7d51d00997b3134189bfb0`
+-	Image ID: `sha256:747b49ef7d06424acba5effefb943c95703b242edfa4f7844a8d3c608c370c97`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -15268,39 +17592,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 22:39:40 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Wed, 05 Aug 2020 06:07:46 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Wed, 05 Aug 2020 06:07:49 GMT
+# Tue, 18 Aug 2020 18:19:10 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:19:14 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Wed, 05 Aug 2020 06:07:53 GMT
+# Tue, 18 Aug 2020 18:19:19 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Wed, 05 Aug 2020 06:07:58 GMT
+# Tue, 18 Aug 2020 18:19:23 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Wed, 05 Aug 2020 06:08:20 GMT
+# Tue, 18 Aug 2020 18:19:53 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Wed, 05 Aug 2020 06:08:31 GMT
+# Tue, 18 Aug 2020 18:20:03 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Wed, 05 Aug 2020 06:08:35 GMT
+# Tue, 18 Aug 2020 18:20:13 GMT
 ENV HOME=/var/lib/rabbitmq
-# Wed, 05 Aug 2020 06:08:39 GMT
+# Tue, 18 Aug 2020 18:20:21 GMT
 VOLUME [/var/lib/rabbitmq]
-# Wed, 05 Aug 2020 06:08:43 GMT
+# Tue, 18 Aug 2020 18:20:27 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Wed, 05 Aug 2020 06:08:44 GMT
+# Tue, 18 Aug 2020 18:20:29 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Wed, 05 Aug 2020 06:08:47 GMT
+# Tue, 18 Aug 2020 18:20:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 05 Aug 2020 06:08:51 GMT
+# Tue, 18 Aug 2020 18:20:44 GMT
 EXPOSE 25672 4369 5671 5672
-# Wed, 05 Aug 2020 06:08:53 GMT
+# Tue, 18 Aug 2020 18:20:51 GMT
 CMD ["rabbitmq-server"]
-# Wed, 05 Aug 2020 06:09:18 GMT
+# Tue, 18 Aug 2020 18:21:15 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Wed, 05 Aug 2020 06:09:32 GMT
+# Tue, 18 Aug 2020 18:21:43 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Wed, 05 Aug 2020 06:09:38 GMT
+# Tue, 18 Aug 2020 18:21:52 GMT
 EXPOSE 15671 15672
 ```
 
@@ -15321,38 +17645,38 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 22:44:10 GMT  
 		Size: 1.5 KB (1462 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efa7517a6d95ab298ff77e20cb934892128e241a1b5b2eac20266c4de24f760e`  
-		Last Modified: Wed, 05 Aug 2020 06:11:16 GMT  
-		Size: 15.2 MB (15220413 bytes)  
+	-	`sha256:9874c4cf3de1c96c219843bdf4490a94a2be350e7a5267a6bb8c5762a04571a4`  
+		Last Modified: Tue, 18 Aug 2020 18:24:15 GMT  
+		Size: 15.2 MB (15217784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e90a3b34978ff87934ea197584b6a04cb0ff136a3f327cf59c208baa7a2ac7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
+	-	`sha256:7aeb9d36fc2f102bfa1cefb14d7789b8aae43c5f791c5e033c5f14a4af08bff7`  
+		Last Modified: Tue, 18 Aug 2020 18:24:14 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb7ced3deacbb43140a77a6308c91c14853769b5f244efc3a04c87cd783e31bf`  
-		Last Modified: Wed, 05 Aug 2020 06:11:14 GMT  
-		Size: 4.6 KB (4645 bytes)  
+	-	`sha256:b9e9d63891fc13d807547ffe3967bc05e7a6078087928e9215c087fcd922a844`  
+		Last Modified: Tue, 18 Aug 2020 18:24:13 GMT  
+		Size: 4.6 KB (4641 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fd4e702c68af6379c076608206aebdbe456ba70b21e6294856ac0463b67add7`  
-		Last Modified: Wed, 05 Aug 2020 06:11:31 GMT  
-		Size: 191.0 B  
+	-	`sha256:6fb34e7b4f9194d1f8f699fc8ccf121eed6e99faaf9474e41e4b9ae39f1f0eaf`  
+		Last Modified: Tue, 18 Aug 2020 18:24:31 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15ff596f338107d803ccae764a727c953ddf60fabb8bbfa170b3479f3c9b0c66`  
-		Last Modified: Wed, 05 Aug 2020 06:11:35 GMT  
-		Size: 14.4 MB (14363572 bytes)  
+	-	`sha256:9704a8cf6880495e64a089b6aff166c0601d9776afdac0f1c6d9c03d9b529526`  
+		Last Modified: Tue, 18 Aug 2020 18:24:36 GMT  
+		Size: 14.4 MB (14363580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rabbitmq:management-alpine` - linux; s390x
 
 ```console
-$ docker pull rabbitmq@sha256:ffa3002c4566343df5bd3ad6345d40d613429b15ea40ac1d440b642bf206df7e
+$ docker pull rabbitmq@sha256:e59c82c1fa401e49ba971b66330b378199880ce3c0cd41ed942253c5e29df4d7
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.0 MB (69035762 bytes)**  
+-	Total Size: **69.0 MB (69033165 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c5dd55cbc8c093fe6224d8179ae3cab189c0b785b45861f6c3a575d2d6bd5722`
+-	Image ID: `sha256:5fbaaef8ce8e040a9adbfc4bf098f0aca0ad3b39c97e8eb0f4f214971c898134`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["rabbitmq-server"]`
 
@@ -15383,39 +17707,39 @@ ENV RABBITMQ_DATA_DIR=/var/lib/rabbitmq
 # Mon, 20 Jul 2020 23:00:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 	addgroup -g 101 -S rabbitmq; 	adduser -u 100 -S -h "$RABBITMQ_DATA_DIR" -G rabbitmq rabbitmq; 	mkdir -p "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chown -fR rabbitmq:rabbitmq "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	chmod 777 "$RABBITMQ_DATA_DIR" /etc/rabbitmq /tmp/rabbitmq-ssl /var/log/rabbitmq; 	ln -sf "$RABBITMQ_DATA_DIR/.erlang.cookie" /root/.erlang.cookie
-# Tue, 04 Aug 2020 22:48:00 GMT
-ENV RABBITMQ_VERSION=3.8.6
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:17 GMT
+ENV RABBITMQ_VERSION=3.8.7
+# Tue, 18 Aug 2020 18:42:17 GMT
 ENV RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV RABBITMQ_HOME=/opt/rabbitmq
-# Tue, 04 Aug 2020 22:48:00 GMT
+# Tue, 18 Aug 2020 18:42:18 GMT
 ENV PATH=/opt/rabbitmq/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RABBITMQ_LOGS=-
-# Tue, 04 Aug 2020 22:48:07 GMT
+# Tue, 18 Aug 2020 18:42:23 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		gnupg 		xz 	; 		RABBITMQ_SOURCE_URL="https://github.com/rabbitmq/rabbitmq-server/releases/download/v$RABBITMQ_VERSION/rabbitmq-server-generic-unix-latest-toolchain-$RABBITMQ_VERSION.tar.xz"; 	RABBITMQ_PATH="/usr/local/src/rabbitmq-$RABBITMQ_VERSION"; 		wget --output-document "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_SOURCE_URL.asc"; 	wget --output-document "$RABBITMQ_PATH.tar.xz" "$RABBITMQ_SOURCE_URL"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$RABBITMQ_PGP_KEY_ID"; 	gpg --batch --verify "$RABBITMQ_PATH.tar.xz.asc" "$RABBITMQ_PATH.tar.xz"; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$RABBITMQ_HOME"; 	tar --extract --file "$RABBITMQ_PATH.tar.xz" --directory "$RABBITMQ_HOME" --strip-components 1; 	rm -rf "$RABBITMQ_PATH"*; 	grep -qE '^SYS_PREFIX=\$\{RABBITMQ_HOME\}$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	sed -i 's/^SYS_PREFIX=.*$/SYS_PREFIX=/' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	grep -qE '^SYS_PREFIX=$' "$RABBITMQ_HOME/sbin/rabbitmq-defaults"; 	chown -R rabbitmq:rabbitmq "$RABBITMQ_HOME"; 		apk del .build-deps; 		[ ! -e "$RABBITMQ_DATA_DIR/.erlang.cookie" ]; 	su-exec rabbitmq rabbitmqctl help; 	su-exec rabbitmq rabbitmqctl list_ciphers; 	su-exec rabbitmq rabbitmq-plugins list; 	rm "$RABBITMQ_DATA_DIR/.erlang.cookie"
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 # ARGS: PGP_KEYSERVER=ha.pool.sks-keyservers.net
 RUN ln -sf /opt/rabbitmq/plugins /plugins
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:24 GMT
 ENV HOME=/var/lib/rabbitmq
-# Tue, 04 Aug 2020 22:48:08 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 VOLUME [/var/lib/rabbitmq]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENV LANG=C.UTF-8 LANGUAGE=C.UTF-8 LC_ALL=C.UTF-8
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 COPY file:75981ed954baf43f9b0251f37de628d4cc74b2b1c0742de104a757015ca39ba9 in /usr/local/bin/ 
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:25 GMT
 EXPOSE 25672 4369 5671 5672
-# Tue, 04 Aug 2020 22:48:09 GMT
+# Tue, 18 Aug 2020 18:42:26 GMT
 CMD ["rabbitmq-server"]
-# Tue, 04 Aug 2020 22:48:15 GMT
+# Tue, 18 Aug 2020 18:42:32 GMT
 RUN rabbitmq-plugins enable --offline rabbitmq_management
-# Tue, 04 Aug 2020 22:48:18 GMT
+# Tue, 18 Aug 2020 18:42:35 GMT
 RUN set -eux; 	erl -noinput -eval ' 		{ ok, AdminBin } = zip:foldl(fun(FileInArchive, GetInfo, GetBin, Acc) -> 			case Acc of 				"" -> 					case lists:suffix("/rabbitmqadmin", FileInArchive) of 						true -> GetBin(); 						false -> Acc 					end; 				_ -> Acc 			end 		end, "", init:get_plain_arguments()), 		io:format("~s", [ AdminBin ]), 		init:stop(). 	' -- /plugins/rabbitmq_management-*.ez > /usr/local/bin/rabbitmqadmin; 	[ -s /usr/local/bin/rabbitmqadmin ]; 	chmod +x /usr/local/bin/rabbitmqadmin; 	apk add --no-cache python3; 	rabbitmqadmin --version
-# Tue, 04 Aug 2020 22:48:19 GMT
+# Tue, 18 Aug 2020 18:42:36 GMT
 EXPOSE 15671 15672
 ```
 
@@ -15436,23 +17760,23 @@ EXPOSE 15671 15672
 		Last Modified: Mon, 20 Jul 2020 23:02:10 GMT  
 		Size: 1.5 KB (1455 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef24e923834b403a661fb1d0ae2f82389517a9eea6d0cbeb6b5f36cf2cd14b6`  
-		Last Modified: Tue, 04 Aug 2020 22:49:19 GMT  
-		Size: 15.2 MB (15220418 bytes)  
+	-	`sha256:f33d1bcfdaf6eb93ff0a73143adc40eaabaea9bfe8f0b87927f2cfffac8ce1fe`  
+		Last Modified: Tue, 18 Aug 2020 18:43:26 GMT  
+		Size: 15.2 MB (15217787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aafba55383f2e239b44252205ff48087e6e566a4c3f382dd6b293c67f1122b79`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
+	-	`sha256:cef757a0d90104b968770106e4630f8f9583cba756d95119dae38704d31816b1`  
+		Last Modified: Tue, 18 Aug 2020 18:43:25 GMT  
 		Size: 107.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c95ecf67c164b009bc63396745029324e3d19475977c00c1ca6a5a5538eb3d2`  
-		Last Modified: Tue, 04 Aug 2020 22:49:17 GMT  
-		Size: 4.6 KB (4640 bytes)  
+	-	`sha256:2a3eef056ce652dda095cd00a1ae445f53ce65116800fdadede5adc87d0f9a27`  
+		Last Modified: Tue, 18 Aug 2020 18:43:24 GMT  
+		Size: 4.6 KB (4639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3356d22e79191ded8a8a3453c8f198f9d550fd642c39756f745498ba3c57248b`  
-		Last Modified: Tue, 04 Aug 2020 22:49:28 GMT  
-		Size: 191.0 B  
+	-	`sha256:7d2cbbb7b5d4ac3e770da4f3b648329a3dd67c0487be160ae90659d1d3b99c4f`  
+		Last Modified: Tue, 18 Aug 2020 18:43:35 GMT  
+		Size: 194.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:201a2580d27fb480197b24b388bcfbee9cecd2bc0052ad9d8af50a9424fe7975`  
-		Last Modified: Tue, 04 Aug 2020 22:49:30 GMT  
-		Size: 14.0 MB (13955527 bytes)  
+	-	`sha256:3af8190599b13622b1e4a6d155be4820ae5594dbe9da2ae1742a72362002efea`  
+		Last Modified: Tue, 18 Aug 2020 18:43:37 GMT  
+		Size: 14.0 MB (13955559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
