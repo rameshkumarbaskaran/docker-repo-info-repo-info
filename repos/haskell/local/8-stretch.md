@@ -1,15 +1,15 @@
-# `haskell:8.10.1-stretch`
+# `haskell:8.10.2-stretch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b3ddafe07da9e9be1c9b0ff669e5c2a15e875bba153e5869a72554b9a912d46b`
-- Created: `2020-08-04T22:54:37.195044417Z`
-- Virtual Size: ~ 1.45 Gb  
+- Image ID: `sha256:5e5bb28470ee964ad12d72fc5fc084644d2fff1193409dadff09503d426e88e8`
+- Created: `2020-08-17T22:22:55.892806039Z`
+- Virtual Size: ~ 1.46 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["ghci"]`
 - Environment:
-  - `PATH=/root/.cabal/bin:/root/.local/bin:/opt/cabal/3.2/bin:/opt/ghc/8.10.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/root/.cabal/bin:/root/.local/bin:/opt/cabal/3.2/bin:/opt/ghc/8.10.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -805,23 +805,23 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gdbm/1.8.3-14/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gdbm/1.8.3-14/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `ghc-8.10.1=8.10.1-17~deb9`
+### `dpkg` source package: `ghc-8.10.2=8.10.2-17~deb9`
 
 Binary Packages:
 
-- `ghc-8.10.1=8.10.1-17~deb9`
+- `ghc-8.10.2=8.10.2-17~deb9`
 
-Licenses: (parsed from: `/usr/share/doc/ghc-8.10.1/copyright`)
+Licenses: (parsed from: `/usr/share/doc/ghc-8.10.2/copyright`)
 
 - `BSD-3-Clause`
 
 Source:
 
 ```console
-$ apt-get source -qq --print-uris ghc-8.10.1=8.10.1-17~deb9
-'http://downloads.haskell.org/debian/pool/main/g/ghc-8.10.1/ghc-8.10.1_8.10.1-17~deb9.dsc' ghc-8.10.1_8.10.1-17~deb9.dsc 2126 SHA256:509cf9a4e8e408ce8753a8910ba743e206f44aa5e933640288632557ef4f4384
-'http://downloads.haskell.org/debian/pool/main/g/ghc-8.10.1/ghc-8.10.1_8.10.1.orig.tar.xz' ghc-8.10.1_8.10.1.orig.tar.xz 20076172 SHA256:31b1f6a82d7c9e75f6e47bbbff0d38328d72039324e68e228b8a5301033cba07
-'http://downloads.haskell.org/debian/pool/main/g/ghc-8.10.1/ghc-8.10.1_8.10.1-17~deb9.debian.tar.xz' ghc-8.10.1_8.10.1-17~deb9.debian.tar.xz 7568 SHA256:65768ffeecbcae10698ca1569a44a58ca17cc06f2d13cc5fb65733bf9f7cabb5
+$ apt-get source -qq --print-uris ghc-8.10.2=8.10.2-17~deb9
+'http://downloads.haskell.org/debian/pool/main/g/ghc-8.10.2/ghc-8.10.2_8.10.2-17~deb9.dsc' ghc-8.10.2_8.10.2-17~deb9.dsc 2126 SHA256:d989342040e1205a0e1fc54bc9d758378d725c763d3d84c9645767d07c3ff442
+'http://downloads.haskell.org/debian/pool/main/g/ghc-8.10.2/ghc-8.10.2_8.10.2.orig.tar.xz' ghc-8.10.2_8.10.2.orig.tar.xz 21880680 SHA256:9c573a4621a78723950617c223559bdc325ea6a3409264aedf68f05510b0880b
+'http://downloads.haskell.org/debian/pool/main/g/ghc-8.10.2/ghc-8.10.2_8.10.2-17~deb9.debian.tar.xz' ghc-8.10.2_8.10.2-17~deb9.debian.tar.xz 7556 SHA256:77b143f2e79abdfdc879e8fc14d6689a2f07f6709e8df3f8f851528981e0f418
 ```
 
 ### `dpkg` source package: `git=1:2.11.0-3+deb9u7`
