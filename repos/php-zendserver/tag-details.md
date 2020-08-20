@@ -12,7 +12,7 @@
 ## `php-zendserver:2019.0`
 
 ```console
-$ docker pull php-zendserver@sha256:6a384e05db2d751cab3fd2be5deda8f2a4213e9a1186606e49958bbae66a4ae3
+$ docker pull php-zendserver@sha256:156eae12dc2703adde99a46b7bbe5188fba92a8ec1ed00e9782bc20296bbef1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22,135 +22,135 @@ $ docker pull php-zendserver@sha256:6a384e05db2d751cab3fd2be5deda8f2a4213e9a1186
 ### `php-zendserver:2019.0` - linux; amd64
 
 ```console
-$ docker pull php-zendserver@sha256:04c0526c639254e6e214c0729302c3f81fe8cb3c7eb311e1c02e734c813c4884
+$ docker pull php-zendserver@sha256:e85fc05ad0dcb52db2388cb3d1f2ca03d82df0dda56e425900c9d0e34c269a63
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **492.3 MB (492331882 bytes)**  
+-	Total Size: **491.4 MB (491419057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:49771660717527f62e7fce9e5e62ea67d6ff93f965bdb4a54db781d79935598c`
+-	Image ID: `sha256:d1b369291f87b577cadde29a42dc919bc19a56d1ac2712fd8cc80436699a8d4f`
 -	Default Command: `["\/usr\/local\/bin\/run"]`
 
 ```dockerfile
-# Fri, 24 Jul 2020 14:38:19 GMT
-ADD file:7d9bbf45a5b2510d44d3206a028cf6502757884d49e46d3d2e6356c3a92c4309 in / 
-# Fri, 24 Jul 2020 14:38:20 GMT
+# Wed, 19 Aug 2020 21:13:50 GMT
+ADD file:5c125b7f411566e9daa738d8cb851098f36197810f06488c2609074296f294b2 in / 
+# Wed, 19 Aug 2020 21:13:52 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Fri, 24 Jul 2020 14:38:21 GMT
+# Wed, 19 Aug 2020 21:13:53 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 24 Jul 2020 14:38:21 GMT
+# Wed, 19 Aug 2020 21:13:55 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 24 Jul 2020 14:38:22 GMT
+# Wed, 19 Aug 2020 21:13:55 GMT
 CMD ["/bin/bash"]
-# Fri, 24 Jul 2020 16:36:17 GMT
+# Wed, 19 Aug 2020 23:38:46 GMT
 RUN apt-get update && apt-get install -y       gnupg
-# Fri, 24 Jul 2020 16:36:18 GMT
+# Wed, 19 Aug 2020 23:38:47 GMT
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key 799058698E65316A2E7A4FF42EAE1437F7D2C623
-# Fri, 24 Jul 2020 16:36:18 GMT
+# Wed, 19 Aug 2020 23:38:47 GMT
 COPY file:23f8c2a96f087277b95ebfd7f401f5c1b95ec7f3443fa9231607566f1d8e7270 in /etc/apt/sources.list.d/zend-server.list 
-# Fri, 24 Jul 2020 16:38:02 GMT
+# Wed, 19 Aug 2020 23:40:18 GMT
 RUN apt-get update && apt-get install -y       iproute2       curl       libmysqlclient20       unzip       git       zend-server-nginx=2019.0.4+b392     && rm -rf /var/lib/apt/lists/*     && /usr/local/zend/bin/zendctl.sh stop
-# Fri, 24 Jul 2020 16:38:02 GMT
+# Wed, 19 Aug 2020 23:40:19 GMT
 ENV ZS_INIT_VERSION=0.3
-# Fri, 24 Jul 2020 16:38:02 GMT
+# Wed, 19 Aug 2020 23:40:19 GMT
 ENV ZS_INIT_SHA256=e8d441d8503808e9fc0fafc762b2cb80d4a6e68b94fede0fe41efdeac10800cb
-# Fri, 24 Jul 2020 16:38:03 GMT
+# Wed, 19 Aug 2020 23:40:19 GMT
 COPY file:ad21ce0b2dc8345be0ef63836774934d6b2045ddc3685411221a07dd10b649d1 in /tmp/zs-init.patch 
-# Fri, 24 Jul 2020 16:38:03 GMT
+# Wed, 19 Aug 2020 23:40:20 GMT
 RUN curl -fSL -o zs-init.tar.gz "http://repos.zend.com/zs-init/zs-init-docker-${ZS_INIT_VERSION}.tar.gz"     && echo "${ZS_INIT_SHA256} *zs-init.tar.gz" | sha256sum -c -     && mkdir /usr/local/zs-init     && tar xzf zs-init.tar.gz --strip-components=1 -C /usr/local/zs-init     && rm zs-init.tar.gz     && patch -u /usr/local/zs-init/src/Init/Steps/AbstractStep.php -i /tmp/zs-init.patch     && rm /tmp/zs-init.patch
-# Fri, 24 Jul 2020 16:38:04 GMT
+# Wed, 19 Aug 2020 23:40:20 GMT
 WORKDIR /usr/local/zs-init
-# Fri, 24 Jul 2020 16:38:12 GMT
+# Wed, 19 Aug 2020 23:40:30 GMT
 RUN /usr/local/zend/bin/php -r "readfile('https://getcomposer.org/installer');" | /usr/local/zend/bin/php     && /usr/local/zend/bin/php composer.phar update
-# Fri, 24 Jul 2020 16:38:12 GMT
+# Wed, 19 Aug 2020 23:40:30 GMT
 COPY dir:7937a6223a1e7805720eca1fbf8c2ccd37938f8f8aa175ae003d409459d49380 in /usr/local/bin 
-# Fri, 24 Jul 2020 16:38:12 GMT
+# Wed, 19 Aug 2020 23:40:30 GMT
 COPY dir:80bde0d50316e7c9350262fe3b75826a91d075303027787e759d703b60df13d6 in /usr/local/zend/var/plugins/ 
-# Fri, 24 Jul 2020 16:38:13 GMT
+# Wed, 19 Aug 2020 23:40:31 GMT
 RUN rm /var/www/html/index.nginx-debian.html
-# Fri, 24 Jul 2020 16:38:13 GMT
+# Wed, 19 Aug 2020 23:40:31 GMT
 COPY dir:d174a5d34625889b4356c566972566e0ca7da618b01ea42276562f8186517a67 in /var/www/html 
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 80
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 443
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 10081
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 10082
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 WORKDIR /var/www/html
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 CMD ["/usr/local/bin/run"]
 ```
 
 -	Layers:
-	-	`sha256:7595c8c21622ea8a8b9778972e26dbbe063f7a1c4b0a28a80a34ebb3d343b586`  
-		Last Modified: Mon, 13 Jul 2020 15:46:50 GMT  
-		Size: 26.7 MB (26697127 bytes)  
+	-	`sha256:f08d8e2a3ba11bea23cf5c17e8e1c620057412ed05c32d1114640e18d6dd0a43`  
+		Last Modified: Sat, 08 Aug 2020 12:21:16 GMT  
+		Size: 26.7 MB (26700095 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d13af8ca898f36af68711cb67c345f65046a78ccd802453f4b129adf9205b1f8`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+	-	`sha256:3baa9cb2483bd9c5329a44d9c2fe72535625bbd4308bca95785dd58e72c06365`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
 		Size: 35.4 KB (35364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70799171ddba93a611490ba3557d782714b3f4da8963d49ac8726786ba8274a5`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+	-	`sha256:94e5ff4c0b1526abf77c236655f21c8f67a23313291c8b970fe6b469549d8153`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
 		Size: 848.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6c12202c5ef07dc9eb8f9d9e71407064684ed70f8c4040b62679b7d30200840`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
-		Size: 161.0 B  
+	-	`sha256:1860925334f940c3145808527480b4f0cba7f01279087fdb27679e4354fba967`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
+		Size: 163.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8e8bd0044bba53b957398126fd92cf0f60a5eb2668783884c1ece2a31f4fc46`  
-		Last Modified: Fri, 24 Jul 2020 16:40:29 GMT  
-		Size: 28.2 MB (28166831 bytes)  
+	-	`sha256:3ddcc9b3b04d4af7f8cd42b20b4d4eeab5eae7a2062a53b9e99a0c0577b85790`  
+		Last Modified: Wed, 19 Aug 2020 23:42:57 GMT  
+		Size: 28.3 MB (28267258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:620517cf9e126051cdd98208134f893446b23dcd79debf3a78c4dd30ecac159f`  
-		Last Modified: Fri, 24 Jul 2020 16:40:25 GMT  
-		Size: 1.4 KB (1385 bytes)  
+	-	`sha256:3726f4ff6b1261712ea3b160ce213d525018b5875b3afa7f81e9b517d373cbe0`  
+		Last Modified: Wed, 19 Aug 2020 23:42:53 GMT  
+		Size: 1.4 KB (1390 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d01b62b7af11403eeeb9de0c191228214c182242d713914b2d6e7241d29c512`  
-		Last Modified: Fri, 24 Jul 2020 16:40:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:10c404c30bcee943368cf18404142c5daea79043736b7f70615cc6ccd3fa2a62`  
+		Last Modified: Wed, 19 Aug 2020 23:42:52 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3b715824e1c3f7f4472ba80b696fd43ad175265fb5ca1057f64581ac7fc560ee`  
-		Last Modified: Fri, 24 Jul 2020 16:41:27 GMT  
-		Size: 417.6 MB (417569103 bytes)  
+	-	`sha256:0732084791d941a2b2f0830bfc2ef3c0e99cab7530d5e8200124aad21d993a88`  
+		Last Modified: Wed, 19 Aug 2020 23:43:55 GMT  
+		Size: 417.6 MB (417572070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2936f13a221de6a10aaa96c4a17d365f1db96580b5da9f8d83311cf010ceb646`  
-		Last Modified: Fri, 24 Jul 2020 16:40:24 GMT  
-		Size: 445.0 B  
+	-	`sha256:e73a7901bfecf4ba69c435dd68ac7611416eda5409fff77245428f22f5883524`  
+		Last Modified: Wed, 19 Aug 2020 23:42:52 GMT  
+		Size: 446.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88603cba5cc964d47dbe77ab0ceabbad028f9ce116cdc43ab993f9d3f9751c15`  
-		Last Modified: Fri, 24 Jul 2020 16:40:24 GMT  
-		Size: 18.9 KB (18898 bytes)  
+	-	`sha256:8d6ed38341a32b31bc4e0792be1cddb2bea646e4a340a4f13806a0d8cc2fdcf8`  
+		Last Modified: Wed, 19 Aug 2020 23:42:52 GMT  
+		Size: 18.9 KB (18902 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb808167bec8dc558fa7338ae27b1bbfbd018ee8cab15671abc5113dae73308`  
-		Last Modified: Fri, 24 Jul 2020 16:40:27 GMT  
-		Size: 19.8 MB (19823259 bytes)  
+	-	`sha256:a77d4388fb3a6eb617d5956ca2d52931504e7e6e9e041e99e4043b06de56593e`  
+		Last Modified: Wed, 19 Aug 2020 23:42:54 GMT  
+		Size: 18.8 MB (18804061 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:794a944b7e73810295c8c5bd497ceb77bc5dec0176b2ce1495dff3c0da53f2c0`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 14.3 KB (14255 bytes)  
+	-	`sha256:d6d5f12d237947485aeadebc5c92e678cd7fc870cd91dd2040ecab1c6157a22a`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 14.2 KB (14249 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f098431e37eca64534dfdf3eee74a93796ebc79f0b648538cb76906fbf812ef8`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 2.5 KB (2530 bytes)  
+	-	`sha256:efd8fe24f26e10152c37029e53bd072eb9b32e08984fb6520171253832caf86c`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 2.5 KB (2529 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bab295e921ddffdf496b080a9dd83b55c02ebe00e30f293cfdb51af66408fd9f`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 185.0 B  
+	-	`sha256:13abb24f1ca2419f43a0db5a1886aaa0fd521b3471d6d23ff603f8404c6b9c08`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd08bd0e69bae973715f91c30b3715fc91cf2fde2f3e5df6b68a14343158a076`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 1.3 KB (1254 bytes)  
+	-	`sha256:3177cec03260e9f6d9812c47e245d3cfe1ecd837beb98b48053c22449f3860c7`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 1.3 KB (1256 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `php-zendserver:5.6`
 
 ```console
-$ docker pull php-zendserver@sha256:285707664d621644902102d46c121ead9b93871a1fb5af1e537408e842baed5e
+$ docker pull php-zendserver@sha256:63407a239c07141e3a6a370c83ca39c319b4526273dd04636f4fec866d488333
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -160,147 +160,147 @@ $ docker pull php-zendserver@sha256:285707664d621644902102d46c121ead9b93871a1fb5
 ### `php-zendserver:5.6` - linux; amd64
 
 ```console
-$ docker pull php-zendserver@sha256:1b8c3b6ddfae8465074a137bedc6d3cee7ffb3efe578548a0db3ced5a30821fd
+$ docker pull php-zendserver@sha256:639f2f2e6db8295970ffd5e79c1c9f91ba38378f0466a1fb17b08ef79af1ff15
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **328.1 MB (328140810 bytes)**  
+-	Total Size: **327.2 MB (327160108 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7855506b68fafd3081b7d2e53bfbd364661cd305c3a344b3226392cd1227723c`
+-	Image ID: `sha256:f2472a77ef711c6a3a7d15f78210f8f7a77ec07e931f3ab408a4f30c933860e6`
 -	Default Command: `["\/usr\/local\/bin\/run"]`
 
 ```dockerfile
-# Fri, 24 Jul 2020 14:39:06 GMT
-ADD file:513ae777bc4042f8446c0454f8cffc9a94f8429de963651d9a6dab95d4502007 in / 
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:18 GMT
+ADD file:144835a276ed2d8eaf6e893d5560444fe0d6a6f9b9bdadec1eb56e7bd9814427 in / 
+# Wed, 19 Aug 2020 21:16:19 GMT
 RUN rm -rf /var/lib/apt/lists/*
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:21 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 CMD ["/bin/bash"]
-# Fri, 24 Jul 2020 16:31:48 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key 799058698E65316A2E7A4FF42EAE1437F7D2C623
-# Fri, 24 Jul 2020 16:31:49 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 COPY file:6f0a5450842ae9c3e06d131c7180961d773ca33754e17af8ea2ac258fd0c6054 in /etc/apt/sources.list.d/zend-server.list 
-# Fri, 24 Jul 2020 16:31:49 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 COPY file:7a9d81c6298f71cfad4408c8b3d7c3bf53bf90083221ec55686e12b2eb6f16a4 in /etc/apt/sources.list.d/ubuntu-trusty.list 
-# Fri, 24 Jul 2020 16:33:38 GMT
+# Wed, 19 Aug 2020 23:36:18 GMT
 RUN apt-get update     && apt-get install -y         curl         libmysqlclient18         unzip         git         zend-server-php-5.6=8.5.15+b8     && rm -rf /var/lib/apt/lists/*     && /usr/local/zend/bin/zendctl.sh stop
-# Fri, 24 Jul 2020 16:33:39 GMT
+# Wed, 19 Aug 2020 23:36:19 GMT
 COPY file:def46bbc651bcb61f92bcaa2f8d6edec0c22e51e86132fabd2e47542dcbec0bf in /etc/apache2/conf-available 
-# Fri, 24 Jul 2020 16:33:39 GMT
+# Wed, 19 Aug 2020 23:36:20 GMT
 RUN /usr/sbin/a2enconf drop-http-proxy-header
-# Fri, 24 Jul 2020 16:33:40 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 RUN /usr/sbin/a2enmod headers
-# Fri, 24 Jul 2020 16:33:40 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 ENV ZS_INIT_VERSION=0.3
-# Fri, 24 Jul 2020 16:33:41 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 ENV ZS_INIT_SHA256=e8d441d8503808e9fc0fafc762b2cb80d4a6e68b94fede0fe41efdeac10800cb
-# Fri, 24 Jul 2020 16:33:41 GMT
+# Wed, 19 Aug 2020 23:36:22 GMT
 RUN curl -fSL -o zs-init.tar.gz "http://repos.zend.com/zs-init/zs-init-docker-${ZS_INIT_VERSION}.tar.gz"     && echo "${ZS_INIT_SHA256} *zs-init.tar.gz" | sha256sum -c -     && mkdir /usr/local/zs-init     && tar xzf zs-init.tar.gz --strip-components=1 -C /usr/local/zs-init     && rm zs-init.tar.gz
-# Fri, 24 Jul 2020 16:33:42 GMT
+# Wed, 19 Aug 2020 23:36:22 GMT
 WORKDIR /usr/local/zs-init
-# Fri, 24 Jul 2020 16:33:55 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 RUN /usr/local/zend/bin/php -r "readfile('https://getcomposer.org/installer');" | /usr/local/zend/bin/php     && /usr/local/zend/bin/php composer.phar self-update && /usr/local/zend/bin/php composer.phar update
-# Fri, 24 Jul 2020 16:33:56 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 COPY dir:b75978d6e77900379bb898c52c86c408d7f6fcd06b5c66439d594a1a3dcca0b4 in /usr/local/bin 
-# Fri, 24 Jul 2020 16:33:56 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 COPY dir:80bde0d50316e7c9350262fe3b75826a91d075303027787e759d703b60df13d6 in /usr/local/zend/var/plugins/ 
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 RUN rm /var/www/html/index.html
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 COPY dir:d174a5d34625889b4356c566972566e0ca7da618b01ea42276562f8186517a67 in /var/www/html 
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 EXPOSE 80
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 443
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 10081
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 10082
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 WORKDIR /var/www/html
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 CMD ["/usr/local/bin/run"]
 ```
 
 -	Layers:
-	-	`sha256:7b378fa0f9085667ced1c76c9919cde8663becf2218e8d20e2df8d0824311531`  
-		Last Modified: Tue, 07 Jul 2020 13:19:56 GMT  
-		Size: 44.4 MB (44401021 bytes)  
+	-	`sha256:8e097b52bfb8e743e52ccd2dfbd5a0363e48a00b06cdd3728a6fd4d1f3a34280`  
+		Last Modified: Sat, 08 Aug 2020 13:20:06 GMT  
+		Size: 44.4 MB (44447543 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d77b1b29f2e9b6f141b9d8f74b601f40eb998544783f4a0a3cdc384873c1a4e`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
+	-	`sha256:a613a9b4553ca86fac22546f2f79e2ff3d17d8d6aeea8b97d67862a5a40ad8ec`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
 		Size: 529.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c793be88baee3f3204444e4d4e49c4e44c1709d40182c131cd5681c94e17227`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
-		Size: 847.0 B  
+	-	`sha256:acc000f015361df35e770a910ce03d30691e35aa10d52f4a4f432f183a6c03db`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 853.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc05c8a19c0cf83f2f44263c967c3fe81fffc4b41b592ad088fb1534c206e70`  
-		Last Modified: Fri, 24 Jul 2020 14:39:49 GMT  
-		Size: 169.0 B  
+	-	`sha256:73eef93b7466c41f22f32d28aae5eb87e1ebc0c4d232c5f5e68c955d0e798dca`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:748f9d7b4e3266b22bb306c205cb89f601fdd6b96e70651f786712c9409aacea`  
-		Last Modified: Fri, 24 Jul 2020 16:38:33 GMT  
-		Size: 14.7 KB (14703 bytes)  
+	-	`sha256:c98204131f91a066ec4e6e91dcdb20a24d8906a3eb1636c5f65410ef1223320a`  
+		Last Modified: Wed, 19 Aug 2020 23:41:00 GMT  
+		Size: 14.7 KB (14701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:556df6871dacfa73d17bdf6b436a65961234bd062c447f24310e57ef35d19ad4`  
-		Last Modified: Fri, 24 Jul 2020 16:38:33 GMT  
-		Size: 235.0 B  
+	-	`sha256:336864dddbcba89b7bd2621372c7bbaf0cf61cc6371b466da2ee065173c45eae`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
+		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3cd9a86a42a9061da28825dccd0fde75a4895e3f43928ee40eb02cd95f7fd2c5`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
-		Size: 278.0 B  
+	-	`sha256:1f7b358c258493e4503bfe7f59f593e5b78d6dfae8f64480d4fe680c0a0564f0`  
+		Last Modified: Wed, 19 Aug 2020 23:41:00 GMT  
+		Size: 276.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ac0fc122a919b8fb975a8585123a0ecacf5ddde90939e6c7947d2fb64384b89`  
-		Last Modified: Fri, 24 Jul 2020 16:39:19 GMT  
-		Size: 263.9 MB (263866105 bytes)  
+	-	`sha256:8f1597d5300d3c45587d3be35815c237998889e983e162551349fdbe3febda74`  
+		Last Modified: Wed, 19 Aug 2020 23:41:46 GMT  
+		Size: 263.9 MB (263862003 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a065508f106c264bbd3658a020e2882e4731af4e85732234af242d4df43c8efd`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
+	-	`sha256:7dc83abc04f42bb4ca044ce3c725a1effe649b340f51e6e2403b037a9286324c`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
 		Size: 263.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:303a15eaec7c361c9965cd59cc3a6cfdaff5615d7baf3e7572c3e7d1026b8a8f`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
-		Size: 313.0 B  
+	-	`sha256:e18ede7c5c3a5ea4667c3d56e342fe51cff1ca9def9854775fd2c19383b644a1`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
+		Size: 317.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb14a7a9d1a97cb4524bd531d626ca1ab7f20c19a25a788f347d48848bf4bcca`  
-		Last Modified: Fri, 24 Jul 2020 16:38:31 GMT  
-		Size: 310.0 B  
+	-	`sha256:da6ed62fb80dadbe098e4c36c090f5f001b3ea36b5a14cff98b14f1cb568d158`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 309.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:762af8b4380e3217f6c49f0b21e643a050540ea64bc195fa1fb907fb7c6c1b39`  
-		Last Modified: Fri, 24 Jul 2020 16:38:30 GMT  
-		Size: 18.8 KB (18827 bytes)  
+	-	`sha256:06fef609a9890bd830da97c23f412e52cafaaea8f5209117677e65c8f254be54`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 18.8 KB (18826 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb3c2a105068d08dd6835b8696cdaf0b6d68d1cbafd2709f744947dc3e52907`  
-		Last Modified: Fri, 24 Jul 2020 16:38:36 GMT  
-		Size: 19.8 MB (19819899 bytes)  
+	-	`sha256:47e7ea21820ca70d8f23f351313164ad09291ecd8f72d0b1625fecaffdc9eb0e`  
+		Last Modified: Wed, 19 Aug 2020 23:41:02 GMT  
+		Size: 18.8 MB (18796774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70e43f14cc2f45ccaf064571f3ef5bd682db7d26a36c1ccd3dfe785a3d804cd4`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 13.4 KB (13355 bytes)  
+	-	`sha256:38250c3bff2bc1aa21aa94cdb1949ed5121158274ef160f4ffef669f0b63e613`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 13.4 KB (13357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57911b14af53e3a36438d53cbe41c72f025f01060bf529acea43b044efb99d3b`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 2.5 KB (2536 bytes)  
+	-	`sha256:110316c2157fcd45726e6c19c34aaa544af9cd82d302403d11440d110663dd67`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 2.5 KB (2534 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ce8bdd23ab08af121417c92421b0f901255ea4dde9486b0a8dbad10a19ff956`  
-		Last Modified: Fri, 24 Jul 2020 16:38:29 GMT  
-		Size: 169.0 B  
+	-	`sha256:d2ee703da6cfeda8ab3494ce1bb6040da0d3596b2c3b38cf13d904731ec0469f`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93c02264a3e40951a31d746dba3bd356e03c6cd41ee3346baa302556c8278191`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 1.3 KB (1251 bytes)  
+	-	`sha256:b8b7b4936cd67accb683d1d562836b1d6b64ae0cff71200ed0a5c80b084d06e3`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 1.2 KB (1250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `php-zendserver:8.5`
 
 ```console
-$ docker pull php-zendserver@sha256:285707664d621644902102d46c121ead9b93871a1fb5af1e537408e842baed5e
+$ docker pull php-zendserver@sha256:63407a239c07141e3a6a370c83ca39c319b4526273dd04636f4fec866d488333
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -310,147 +310,147 @@ $ docker pull php-zendserver@sha256:285707664d621644902102d46c121ead9b93871a1fb5
 ### `php-zendserver:8.5` - linux; amd64
 
 ```console
-$ docker pull php-zendserver@sha256:1b8c3b6ddfae8465074a137bedc6d3cee7ffb3efe578548a0db3ced5a30821fd
+$ docker pull php-zendserver@sha256:639f2f2e6db8295970ffd5e79c1c9f91ba38378f0466a1fb17b08ef79af1ff15
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **328.1 MB (328140810 bytes)**  
+-	Total Size: **327.2 MB (327160108 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7855506b68fafd3081b7d2e53bfbd364661cd305c3a344b3226392cd1227723c`
+-	Image ID: `sha256:f2472a77ef711c6a3a7d15f78210f8f7a77ec07e931f3ab408a4f30c933860e6`
 -	Default Command: `["\/usr\/local\/bin\/run"]`
 
 ```dockerfile
-# Fri, 24 Jul 2020 14:39:06 GMT
-ADD file:513ae777bc4042f8446c0454f8cffc9a94f8429de963651d9a6dab95d4502007 in / 
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:18 GMT
+ADD file:144835a276ed2d8eaf6e893d5560444fe0d6a6f9b9bdadec1eb56e7bd9814427 in / 
+# Wed, 19 Aug 2020 21:16:19 GMT
 RUN rm -rf /var/lib/apt/lists/*
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:21 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 CMD ["/bin/bash"]
-# Fri, 24 Jul 2020 16:31:48 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key 799058698E65316A2E7A4FF42EAE1437F7D2C623
-# Fri, 24 Jul 2020 16:31:49 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 COPY file:6f0a5450842ae9c3e06d131c7180961d773ca33754e17af8ea2ac258fd0c6054 in /etc/apt/sources.list.d/zend-server.list 
-# Fri, 24 Jul 2020 16:31:49 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 COPY file:7a9d81c6298f71cfad4408c8b3d7c3bf53bf90083221ec55686e12b2eb6f16a4 in /etc/apt/sources.list.d/ubuntu-trusty.list 
-# Fri, 24 Jul 2020 16:33:38 GMT
+# Wed, 19 Aug 2020 23:36:18 GMT
 RUN apt-get update     && apt-get install -y         curl         libmysqlclient18         unzip         git         zend-server-php-5.6=8.5.15+b8     && rm -rf /var/lib/apt/lists/*     && /usr/local/zend/bin/zendctl.sh stop
-# Fri, 24 Jul 2020 16:33:39 GMT
+# Wed, 19 Aug 2020 23:36:19 GMT
 COPY file:def46bbc651bcb61f92bcaa2f8d6edec0c22e51e86132fabd2e47542dcbec0bf in /etc/apache2/conf-available 
-# Fri, 24 Jul 2020 16:33:39 GMT
+# Wed, 19 Aug 2020 23:36:20 GMT
 RUN /usr/sbin/a2enconf drop-http-proxy-header
-# Fri, 24 Jul 2020 16:33:40 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 RUN /usr/sbin/a2enmod headers
-# Fri, 24 Jul 2020 16:33:40 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 ENV ZS_INIT_VERSION=0.3
-# Fri, 24 Jul 2020 16:33:41 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 ENV ZS_INIT_SHA256=e8d441d8503808e9fc0fafc762b2cb80d4a6e68b94fede0fe41efdeac10800cb
-# Fri, 24 Jul 2020 16:33:41 GMT
+# Wed, 19 Aug 2020 23:36:22 GMT
 RUN curl -fSL -o zs-init.tar.gz "http://repos.zend.com/zs-init/zs-init-docker-${ZS_INIT_VERSION}.tar.gz"     && echo "${ZS_INIT_SHA256} *zs-init.tar.gz" | sha256sum -c -     && mkdir /usr/local/zs-init     && tar xzf zs-init.tar.gz --strip-components=1 -C /usr/local/zs-init     && rm zs-init.tar.gz
-# Fri, 24 Jul 2020 16:33:42 GMT
+# Wed, 19 Aug 2020 23:36:22 GMT
 WORKDIR /usr/local/zs-init
-# Fri, 24 Jul 2020 16:33:55 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 RUN /usr/local/zend/bin/php -r "readfile('https://getcomposer.org/installer');" | /usr/local/zend/bin/php     && /usr/local/zend/bin/php composer.phar self-update && /usr/local/zend/bin/php composer.phar update
-# Fri, 24 Jul 2020 16:33:56 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 COPY dir:b75978d6e77900379bb898c52c86c408d7f6fcd06b5c66439d594a1a3dcca0b4 in /usr/local/bin 
-# Fri, 24 Jul 2020 16:33:56 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 COPY dir:80bde0d50316e7c9350262fe3b75826a91d075303027787e759d703b60df13d6 in /usr/local/zend/var/plugins/ 
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 RUN rm /var/www/html/index.html
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 COPY dir:d174a5d34625889b4356c566972566e0ca7da618b01ea42276562f8186517a67 in /var/www/html 
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 EXPOSE 80
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 443
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 10081
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 10082
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 WORKDIR /var/www/html
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 CMD ["/usr/local/bin/run"]
 ```
 
 -	Layers:
-	-	`sha256:7b378fa0f9085667ced1c76c9919cde8663becf2218e8d20e2df8d0824311531`  
-		Last Modified: Tue, 07 Jul 2020 13:19:56 GMT  
-		Size: 44.4 MB (44401021 bytes)  
+	-	`sha256:8e097b52bfb8e743e52ccd2dfbd5a0363e48a00b06cdd3728a6fd4d1f3a34280`  
+		Last Modified: Sat, 08 Aug 2020 13:20:06 GMT  
+		Size: 44.4 MB (44447543 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d77b1b29f2e9b6f141b9d8f74b601f40eb998544783f4a0a3cdc384873c1a4e`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
+	-	`sha256:a613a9b4553ca86fac22546f2f79e2ff3d17d8d6aeea8b97d67862a5a40ad8ec`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
 		Size: 529.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c793be88baee3f3204444e4d4e49c4e44c1709d40182c131cd5681c94e17227`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
-		Size: 847.0 B  
+	-	`sha256:acc000f015361df35e770a910ce03d30691e35aa10d52f4a4f432f183a6c03db`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 853.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc05c8a19c0cf83f2f44263c967c3fe81fffc4b41b592ad088fb1534c206e70`  
-		Last Modified: Fri, 24 Jul 2020 14:39:49 GMT  
-		Size: 169.0 B  
+	-	`sha256:73eef93b7466c41f22f32d28aae5eb87e1ebc0c4d232c5f5e68c955d0e798dca`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:748f9d7b4e3266b22bb306c205cb89f601fdd6b96e70651f786712c9409aacea`  
-		Last Modified: Fri, 24 Jul 2020 16:38:33 GMT  
-		Size: 14.7 KB (14703 bytes)  
+	-	`sha256:c98204131f91a066ec4e6e91dcdb20a24d8906a3eb1636c5f65410ef1223320a`  
+		Last Modified: Wed, 19 Aug 2020 23:41:00 GMT  
+		Size: 14.7 KB (14701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:556df6871dacfa73d17bdf6b436a65961234bd062c447f24310e57ef35d19ad4`  
-		Last Modified: Fri, 24 Jul 2020 16:38:33 GMT  
-		Size: 235.0 B  
+	-	`sha256:336864dddbcba89b7bd2621372c7bbaf0cf61cc6371b466da2ee065173c45eae`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
+		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3cd9a86a42a9061da28825dccd0fde75a4895e3f43928ee40eb02cd95f7fd2c5`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
-		Size: 278.0 B  
+	-	`sha256:1f7b358c258493e4503bfe7f59f593e5b78d6dfae8f64480d4fe680c0a0564f0`  
+		Last Modified: Wed, 19 Aug 2020 23:41:00 GMT  
+		Size: 276.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ac0fc122a919b8fb975a8585123a0ecacf5ddde90939e6c7947d2fb64384b89`  
-		Last Modified: Fri, 24 Jul 2020 16:39:19 GMT  
-		Size: 263.9 MB (263866105 bytes)  
+	-	`sha256:8f1597d5300d3c45587d3be35815c237998889e983e162551349fdbe3febda74`  
+		Last Modified: Wed, 19 Aug 2020 23:41:46 GMT  
+		Size: 263.9 MB (263862003 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a065508f106c264bbd3658a020e2882e4731af4e85732234af242d4df43c8efd`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
+	-	`sha256:7dc83abc04f42bb4ca044ce3c725a1effe649b340f51e6e2403b037a9286324c`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
 		Size: 263.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:303a15eaec7c361c9965cd59cc3a6cfdaff5615d7baf3e7572c3e7d1026b8a8f`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
-		Size: 313.0 B  
+	-	`sha256:e18ede7c5c3a5ea4667c3d56e342fe51cff1ca9def9854775fd2c19383b644a1`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
+		Size: 317.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb14a7a9d1a97cb4524bd531d626ca1ab7f20c19a25a788f347d48848bf4bcca`  
-		Last Modified: Fri, 24 Jul 2020 16:38:31 GMT  
-		Size: 310.0 B  
+	-	`sha256:da6ed62fb80dadbe098e4c36c090f5f001b3ea36b5a14cff98b14f1cb568d158`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 309.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:762af8b4380e3217f6c49f0b21e643a050540ea64bc195fa1fb907fb7c6c1b39`  
-		Last Modified: Fri, 24 Jul 2020 16:38:30 GMT  
-		Size: 18.8 KB (18827 bytes)  
+	-	`sha256:06fef609a9890bd830da97c23f412e52cafaaea8f5209117677e65c8f254be54`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 18.8 KB (18826 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb3c2a105068d08dd6835b8696cdaf0b6d68d1cbafd2709f744947dc3e52907`  
-		Last Modified: Fri, 24 Jul 2020 16:38:36 GMT  
-		Size: 19.8 MB (19819899 bytes)  
+	-	`sha256:47e7ea21820ca70d8f23f351313164ad09291ecd8f72d0b1625fecaffdc9eb0e`  
+		Last Modified: Wed, 19 Aug 2020 23:41:02 GMT  
+		Size: 18.8 MB (18796774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70e43f14cc2f45ccaf064571f3ef5bd682db7d26a36c1ccd3dfe785a3d804cd4`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 13.4 KB (13355 bytes)  
+	-	`sha256:38250c3bff2bc1aa21aa94cdb1949ed5121158274ef160f4ffef669f0b63e613`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 13.4 KB (13357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57911b14af53e3a36438d53cbe41c72f025f01060bf529acea43b044efb99d3b`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 2.5 KB (2536 bytes)  
+	-	`sha256:110316c2157fcd45726e6c19c34aaa544af9cd82d302403d11440d110663dd67`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 2.5 KB (2534 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ce8bdd23ab08af121417c92421b0f901255ea4dde9486b0a8dbad10a19ff956`  
-		Last Modified: Fri, 24 Jul 2020 16:38:29 GMT  
-		Size: 169.0 B  
+	-	`sha256:d2ee703da6cfeda8ab3494ce1bb6040da0d3596b2c3b38cf13d904731ec0469f`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93c02264a3e40951a31d746dba3bd356e03c6cd41ee3346baa302556c8278191`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 1.3 KB (1251 bytes)  
+	-	`sha256:b8b7b4936cd67accb683d1d562836b1d6b64ae0cff71200ed0a5c80b084d06e3`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 1.2 KB (1250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `php-zendserver:8.5-php5.6`
 
 ```console
-$ docker pull php-zendserver@sha256:285707664d621644902102d46c121ead9b93871a1fb5af1e537408e842baed5e
+$ docker pull php-zendserver@sha256:63407a239c07141e3a6a370c83ca39c319b4526273dd04636f4fec866d488333
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -460,147 +460,147 @@ $ docker pull php-zendserver@sha256:285707664d621644902102d46c121ead9b93871a1fb5
 ### `php-zendserver:8.5-php5.6` - linux; amd64
 
 ```console
-$ docker pull php-zendserver@sha256:1b8c3b6ddfae8465074a137bedc6d3cee7ffb3efe578548a0db3ced5a30821fd
+$ docker pull php-zendserver@sha256:639f2f2e6db8295970ffd5e79c1c9f91ba38378f0466a1fb17b08ef79af1ff15
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **328.1 MB (328140810 bytes)**  
+-	Total Size: **327.2 MB (327160108 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7855506b68fafd3081b7d2e53bfbd364661cd305c3a344b3226392cd1227723c`
+-	Image ID: `sha256:f2472a77ef711c6a3a7d15f78210f8f7a77ec07e931f3ab408a4f30c933860e6`
 -	Default Command: `["\/usr\/local\/bin\/run"]`
 
 ```dockerfile
-# Fri, 24 Jul 2020 14:39:06 GMT
-ADD file:513ae777bc4042f8446c0454f8cffc9a94f8429de963651d9a6dab95d4502007 in / 
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:18 GMT
+ADD file:144835a276ed2d8eaf6e893d5560444fe0d6a6f9b9bdadec1eb56e7bd9814427 in / 
+# Wed, 19 Aug 2020 21:16:19 GMT
 RUN rm -rf /var/lib/apt/lists/*
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:21 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 CMD ["/bin/bash"]
-# Fri, 24 Jul 2020 16:31:48 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key 799058698E65316A2E7A4FF42EAE1437F7D2C623
-# Fri, 24 Jul 2020 16:31:49 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 COPY file:6f0a5450842ae9c3e06d131c7180961d773ca33754e17af8ea2ac258fd0c6054 in /etc/apt/sources.list.d/zend-server.list 
-# Fri, 24 Jul 2020 16:31:49 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 COPY file:7a9d81c6298f71cfad4408c8b3d7c3bf53bf90083221ec55686e12b2eb6f16a4 in /etc/apt/sources.list.d/ubuntu-trusty.list 
-# Fri, 24 Jul 2020 16:33:38 GMT
+# Wed, 19 Aug 2020 23:36:18 GMT
 RUN apt-get update     && apt-get install -y         curl         libmysqlclient18         unzip         git         zend-server-php-5.6=8.5.15+b8     && rm -rf /var/lib/apt/lists/*     && /usr/local/zend/bin/zendctl.sh stop
-# Fri, 24 Jul 2020 16:33:39 GMT
+# Wed, 19 Aug 2020 23:36:19 GMT
 COPY file:def46bbc651bcb61f92bcaa2f8d6edec0c22e51e86132fabd2e47542dcbec0bf in /etc/apache2/conf-available 
-# Fri, 24 Jul 2020 16:33:39 GMT
+# Wed, 19 Aug 2020 23:36:20 GMT
 RUN /usr/sbin/a2enconf drop-http-proxy-header
-# Fri, 24 Jul 2020 16:33:40 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 RUN /usr/sbin/a2enmod headers
-# Fri, 24 Jul 2020 16:33:40 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 ENV ZS_INIT_VERSION=0.3
-# Fri, 24 Jul 2020 16:33:41 GMT
+# Wed, 19 Aug 2020 23:36:21 GMT
 ENV ZS_INIT_SHA256=e8d441d8503808e9fc0fafc762b2cb80d4a6e68b94fede0fe41efdeac10800cb
-# Fri, 24 Jul 2020 16:33:41 GMT
+# Wed, 19 Aug 2020 23:36:22 GMT
 RUN curl -fSL -o zs-init.tar.gz "http://repos.zend.com/zs-init/zs-init-docker-${ZS_INIT_VERSION}.tar.gz"     && echo "${ZS_INIT_SHA256} *zs-init.tar.gz" | sha256sum -c -     && mkdir /usr/local/zs-init     && tar xzf zs-init.tar.gz --strip-components=1 -C /usr/local/zs-init     && rm zs-init.tar.gz
-# Fri, 24 Jul 2020 16:33:42 GMT
+# Wed, 19 Aug 2020 23:36:22 GMT
 WORKDIR /usr/local/zs-init
-# Fri, 24 Jul 2020 16:33:55 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 RUN /usr/local/zend/bin/php -r "readfile('https://getcomposer.org/installer');" | /usr/local/zend/bin/php     && /usr/local/zend/bin/php composer.phar self-update && /usr/local/zend/bin/php composer.phar update
-# Fri, 24 Jul 2020 16:33:56 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 COPY dir:b75978d6e77900379bb898c52c86c408d7f6fcd06b5c66439d594a1a3dcca0b4 in /usr/local/bin 
-# Fri, 24 Jul 2020 16:33:56 GMT
+# Wed, 19 Aug 2020 23:36:35 GMT
 COPY dir:80bde0d50316e7c9350262fe3b75826a91d075303027787e759d703b60df13d6 in /usr/local/zend/var/plugins/ 
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 RUN rm /var/www/html/index.html
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 COPY dir:d174a5d34625889b4356c566972566e0ca7da618b01ea42276562f8186517a67 in /var/www/html 
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:36 GMT
 EXPOSE 80
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 443
-# Fri, 24 Jul 2020 16:33:57 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 10081
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 EXPOSE 10082
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 WORKDIR /var/www/html
-# Fri, 24 Jul 2020 16:33:58 GMT
+# Wed, 19 Aug 2020 23:36:37 GMT
 CMD ["/usr/local/bin/run"]
 ```
 
 -	Layers:
-	-	`sha256:7b378fa0f9085667ced1c76c9919cde8663becf2218e8d20e2df8d0824311531`  
-		Last Modified: Tue, 07 Jul 2020 13:19:56 GMT  
-		Size: 44.4 MB (44401021 bytes)  
+	-	`sha256:8e097b52bfb8e743e52ccd2dfbd5a0363e48a00b06cdd3728a6fd4d1f3a34280`  
+		Last Modified: Sat, 08 Aug 2020 13:20:06 GMT  
+		Size: 44.4 MB (44447543 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d77b1b29f2e9b6f141b9d8f74b601f40eb998544783f4a0a3cdc384873c1a4e`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
+	-	`sha256:a613a9b4553ca86fac22546f2f79e2ff3d17d8d6aeea8b97d67862a5a40ad8ec`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
 		Size: 529.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c793be88baee3f3204444e4d4e49c4e44c1709d40182c131cd5681c94e17227`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
-		Size: 847.0 B  
+	-	`sha256:acc000f015361df35e770a910ce03d30691e35aa10d52f4a4f432f183a6c03db`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 853.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc05c8a19c0cf83f2f44263c967c3fe81fffc4b41b592ad088fb1534c206e70`  
-		Last Modified: Fri, 24 Jul 2020 14:39:49 GMT  
-		Size: 169.0 B  
+	-	`sha256:73eef93b7466c41f22f32d28aae5eb87e1ebc0c4d232c5f5e68c955d0e798dca`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:748f9d7b4e3266b22bb306c205cb89f601fdd6b96e70651f786712c9409aacea`  
-		Last Modified: Fri, 24 Jul 2020 16:38:33 GMT  
-		Size: 14.7 KB (14703 bytes)  
+	-	`sha256:c98204131f91a066ec4e6e91dcdb20a24d8906a3eb1636c5f65410ef1223320a`  
+		Last Modified: Wed, 19 Aug 2020 23:41:00 GMT  
+		Size: 14.7 KB (14701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:556df6871dacfa73d17bdf6b436a65961234bd062c447f24310e57ef35d19ad4`  
-		Last Modified: Fri, 24 Jul 2020 16:38:33 GMT  
-		Size: 235.0 B  
+	-	`sha256:336864dddbcba89b7bd2621372c7bbaf0cf61cc6371b466da2ee065173c45eae`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
+		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3cd9a86a42a9061da28825dccd0fde75a4895e3f43928ee40eb02cd95f7fd2c5`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
-		Size: 278.0 B  
+	-	`sha256:1f7b358c258493e4503bfe7f59f593e5b78d6dfae8f64480d4fe680c0a0564f0`  
+		Last Modified: Wed, 19 Aug 2020 23:41:00 GMT  
+		Size: 276.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ac0fc122a919b8fb975a8585123a0ecacf5ddde90939e6c7947d2fb64384b89`  
-		Last Modified: Fri, 24 Jul 2020 16:39:19 GMT  
-		Size: 263.9 MB (263866105 bytes)  
+	-	`sha256:8f1597d5300d3c45587d3be35815c237998889e983e162551349fdbe3febda74`  
+		Last Modified: Wed, 19 Aug 2020 23:41:46 GMT  
+		Size: 263.9 MB (263862003 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a065508f106c264bbd3658a020e2882e4731af4e85732234af242d4df43c8efd`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
+	-	`sha256:7dc83abc04f42bb4ca044ce3c725a1effe649b340f51e6e2403b037a9286324c`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
 		Size: 263.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:303a15eaec7c361c9965cd59cc3a6cfdaff5615d7baf3e7572c3e7d1026b8a8f`  
-		Last Modified: Fri, 24 Jul 2020 16:38:32 GMT  
-		Size: 313.0 B  
+	-	`sha256:e18ede7c5c3a5ea4667c3d56e342fe51cff1ca9def9854775fd2c19383b644a1`  
+		Last Modified: Wed, 19 Aug 2020 23:40:59 GMT  
+		Size: 317.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb14a7a9d1a97cb4524bd531d626ca1ab7f20c19a25a788f347d48848bf4bcca`  
-		Last Modified: Fri, 24 Jul 2020 16:38:31 GMT  
-		Size: 310.0 B  
+	-	`sha256:da6ed62fb80dadbe098e4c36c090f5f001b3ea36b5a14cff98b14f1cb568d158`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 309.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:762af8b4380e3217f6c49f0b21e643a050540ea64bc195fa1fb907fb7c6c1b39`  
-		Last Modified: Fri, 24 Jul 2020 16:38:30 GMT  
-		Size: 18.8 KB (18827 bytes)  
+	-	`sha256:06fef609a9890bd830da97c23f412e52cafaaea8f5209117677e65c8f254be54`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 18.8 KB (18826 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb3c2a105068d08dd6835b8696cdaf0b6d68d1cbafd2709f744947dc3e52907`  
-		Last Modified: Fri, 24 Jul 2020 16:38:36 GMT  
-		Size: 19.8 MB (19819899 bytes)  
+	-	`sha256:47e7ea21820ca70d8f23f351313164ad09291ecd8f72d0b1625fecaffdc9eb0e`  
+		Last Modified: Wed, 19 Aug 2020 23:41:02 GMT  
+		Size: 18.8 MB (18796774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70e43f14cc2f45ccaf064571f3ef5bd682db7d26a36c1ccd3dfe785a3d804cd4`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 13.4 KB (13355 bytes)  
+	-	`sha256:38250c3bff2bc1aa21aa94cdb1949ed5121158274ef160f4ffef669f0b63e613`  
+		Last Modified: Wed, 19 Aug 2020 23:40:58 GMT  
+		Size: 13.4 KB (13357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57911b14af53e3a36438d53cbe41c72f025f01060bf529acea43b044efb99d3b`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 2.5 KB (2536 bytes)  
+	-	`sha256:110316c2157fcd45726e6c19c34aaa544af9cd82d302403d11440d110663dd67`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 2.5 KB (2534 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ce8bdd23ab08af121417c92421b0f901255ea4dde9486b0a8dbad10a19ff956`  
-		Last Modified: Fri, 24 Jul 2020 16:38:29 GMT  
-		Size: 169.0 B  
+	-	`sha256:d2ee703da6cfeda8ab3494ce1bb6040da0d3596b2c3b38cf13d904731ec0469f`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93c02264a3e40951a31d746dba3bd356e03c6cd41ee3346baa302556c8278191`  
-		Last Modified: Fri, 24 Jul 2020 16:38:28 GMT  
-		Size: 1.3 KB (1251 bytes)  
+	-	`sha256:b8b7b4936cd67accb683d1d562836b1d6b64ae0cff71200ed0a5c80b084d06e3`  
+		Last Modified: Wed, 19 Aug 2020 23:40:57 GMT  
+		Size: 1.2 KB (1250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `php-zendserver:9.1`
 
 ```console
-$ docker pull php-zendserver@sha256:cc456bcd53dd393e1508c060333de71450970743bda44f12f72c242c9d004e02
+$ docker pull php-zendserver@sha256:b19a8728fcc49b37a32be2049b53b4ee4ff53eb75e0eac2738358cbb50fbc3f3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -610,141 +610,141 @@ $ docker pull php-zendserver@sha256:cc456bcd53dd393e1508c060333de71450970743bda4
 ### `php-zendserver:9.1` - linux; amd64
 
 ```console
-$ docker pull php-zendserver@sha256:864746b2164890a376e19e5f37a781e6d7406f39973eba9de5512f3fa839c6e2
+$ docker pull php-zendserver@sha256:e00d0c71fbd52d5c0e1e4a44a0f4990049f1ec52f4600c4e4217978c2799319a
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **411.8 MB (411798733 bytes)**  
+-	Total Size: **410.8 MB (410823198 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:245d456a68b4aabd5b3b98f6e26177222acc6dbef3add55eed7db4677c4a01a6`
+-	Image ID: `sha256:74b4dfb0f15e598ab54a3bac8d0d3670e71e434607563688084a1eab73fb5b56`
 -	Default Command: `["\/usr\/local\/bin\/run"]`
 
 ```dockerfile
-# Fri, 24 Jul 2020 14:39:06 GMT
-ADD file:513ae777bc4042f8446c0454f8cffc9a94f8429de963651d9a6dab95d4502007 in / 
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:18 GMT
+ADD file:144835a276ed2d8eaf6e893d5560444fe0d6a6f9b9bdadec1eb56e7bd9814427 in / 
+# Wed, 19 Aug 2020 21:16:19 GMT
 RUN rm -rf /var/lib/apt/lists/*
-# Fri, 24 Jul 2020 14:39:07 GMT
+# Wed, 19 Aug 2020 21:16:21 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 24 Jul 2020 14:39:08 GMT
+# Wed, 19 Aug 2020 21:16:22 GMT
 CMD ["/bin/bash"]
-# Fri, 24 Jul 2020 16:31:48 GMT
+# Wed, 19 Aug 2020 23:34:32 GMT
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key 799058698E65316A2E7A4FF42EAE1437F7D2C623
-# Fri, 24 Jul 2020 16:34:05 GMT
+# Wed, 19 Aug 2020 23:36:48 GMT
 COPY file:0d4830b5060fb75cec6a47b30d343d82f9c3d6f95f20c11635618b93dedb5720 in /etc/apt/sources.list.d/zend-server.list 
-# Fri, 24 Jul 2020 16:35:33 GMT
+# Wed, 19 Aug 2020 23:38:09 GMT
 RUN apt-get update     && apt-get install -y       curl       libmysqlclient20       unzip       git       zend-server-php-7.1=9.1.10+b202     && rm -rf /var/lib/apt/lists/*     && /usr/local/zend/bin/zendctl.sh stop
-# Fri, 24 Jul 2020 16:35:34 GMT
+# Wed, 19 Aug 2020 23:38:11 GMT
 COPY file:def46bbc651bcb61f92bcaa2f8d6edec0c22e51e86132fabd2e47542dcbec0bf in /etc/apache2/conf-available 
-# Fri, 24 Jul 2020 16:35:35 GMT
+# Wed, 19 Aug 2020 23:38:11 GMT
 RUN /usr/sbin/a2enconf drop-http-proxy-header
-# Fri, 24 Jul 2020 16:35:36 GMT
+# Wed, 19 Aug 2020 23:38:12 GMT
 RUN /usr/sbin/a2enmod headers
-# Fri, 24 Jul 2020 16:35:36 GMT
+# Wed, 19 Aug 2020 23:38:12 GMT
 ENV ZS_INIT_VERSION=0.3
-# Fri, 24 Jul 2020 16:35:36 GMT
+# Wed, 19 Aug 2020 23:38:12 GMT
 ENV ZS_INIT_SHA256=e8d441d8503808e9fc0fafc762b2cb80d4a6e68b94fede0fe41efdeac10800cb
-# Fri, 24 Jul 2020 16:35:37 GMT
+# Wed, 19 Aug 2020 23:38:13 GMT
 RUN curl -fSL -o zs-init.tar.gz "http://repos.zend.com/zs-init/zs-init-docker-${ZS_INIT_VERSION}.tar.gz"     && echo "${ZS_INIT_SHA256} *zs-init.tar.gz" | sha256sum -c -     && mkdir /usr/local/zs-init     && tar xzf zs-init.tar.gz --strip-components=1 -C /usr/local/zs-init     && rm zs-init.tar.gz
-# Fri, 24 Jul 2020 16:35:37 GMT
+# Wed, 19 Aug 2020 23:38:13 GMT
 WORKDIR /usr/local/zs-init
-# Fri, 24 Jul 2020 16:35:53 GMT
+# Wed, 19 Aug 2020 23:38:25 GMT
 RUN /usr/local/zend/bin/php -r "readfile('https://getcomposer.org/installer');" | /usr/local/zend/bin/php     && /usr/local/zend/bin/php composer.phar self-update && /usr/local/zend/bin/php composer.phar update
-# Fri, 24 Jul 2020 16:35:53 GMT
+# Wed, 19 Aug 2020 23:38:26 GMT
 COPY dir:864637d3fa0817ce3be0c7e34e1298851fa2ea4cfb86583e2ec811f00c6a95fd in /usr/local/bin 
-# Fri, 24 Jul 2020 16:35:53 GMT
+# Wed, 19 Aug 2020 23:38:26 GMT
 COPY dir:80bde0d50316e7c9350262fe3b75826a91d075303027787e759d703b60df13d6 in /usr/local/zend/var/plugins/ 
-# Fri, 24 Jul 2020 16:35:54 GMT
+# Wed, 19 Aug 2020 23:38:27 GMT
 RUN rm /var/www/html/index.html
-# Fri, 24 Jul 2020 16:35:54 GMT
+# Wed, 19 Aug 2020 23:38:27 GMT
 COPY dir:d174a5d34625889b4356c566972566e0ca7da618b01ea42276562f8186517a67 in /var/www/html 
-# Fri, 24 Jul 2020 16:35:54 GMT
+# Wed, 19 Aug 2020 23:38:27 GMT
 EXPOSE 80
-# Fri, 24 Jul 2020 16:35:55 GMT
+# Wed, 19 Aug 2020 23:38:27 GMT
 EXPOSE 443
-# Fri, 24 Jul 2020 16:35:55 GMT
+# Wed, 19 Aug 2020 23:38:27 GMT
 EXPOSE 10081
-# Fri, 24 Jul 2020 16:35:55 GMT
+# Wed, 19 Aug 2020 23:38:27 GMT
 EXPOSE 10082
-# Fri, 24 Jul 2020 16:35:55 GMT
+# Wed, 19 Aug 2020 23:38:28 GMT
 WORKDIR /var/www/html
-# Fri, 24 Jul 2020 16:35:55 GMT
+# Wed, 19 Aug 2020 23:38:28 GMT
 CMD ["/usr/local/bin/run"]
 ```
 
 -	Layers:
-	-	`sha256:7b378fa0f9085667ced1c76c9919cde8663becf2218e8d20e2df8d0824311531`  
-		Last Modified: Tue, 07 Jul 2020 13:19:56 GMT  
-		Size: 44.4 MB (44401021 bytes)  
+	-	`sha256:8e097b52bfb8e743e52ccd2dfbd5a0363e48a00b06cdd3728a6fd4d1f3a34280`  
+		Last Modified: Sat, 08 Aug 2020 13:20:06 GMT  
+		Size: 44.4 MB (44447543 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d77b1b29f2e9b6f141b9d8f74b601f40eb998544783f4a0a3cdc384873c1a4e`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
+	-	`sha256:a613a9b4553ca86fac22546f2f79e2ff3d17d8d6aeea8b97d67862a5a40ad8ec`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
 		Size: 529.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c793be88baee3f3204444e4d4e49c4e44c1709d40182c131cd5681c94e17227`  
-		Last Modified: Fri, 24 Jul 2020 14:39:50 GMT  
-		Size: 847.0 B  
+	-	`sha256:acc000f015361df35e770a910ce03d30691e35aa10d52f4a4f432f183a6c03db`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 853.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc05c8a19c0cf83f2f44263c967c3fe81fffc4b41b592ad088fb1534c206e70`  
-		Last Modified: Fri, 24 Jul 2020 14:39:49 GMT  
-		Size: 169.0 B  
+	-	`sha256:73eef93b7466c41f22f32d28aae5eb87e1ebc0c4d232c5f5e68c955d0e798dca`  
+		Last Modified: Wed, 19 Aug 2020 21:17:23 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:748f9d7b4e3266b22bb306c205cb89f601fdd6b96e70651f786712c9409aacea`  
-		Last Modified: Fri, 24 Jul 2020 16:38:33 GMT  
-		Size: 14.7 KB (14703 bytes)  
+	-	`sha256:c98204131f91a066ec4e6e91dcdb20a24d8906a3eb1636c5f65410ef1223320a`  
+		Last Modified: Wed, 19 Aug 2020 23:41:00 GMT  
+		Size: 14.7 KB (14701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:968372964db46db0723e500a1afa02b4a891b2c1ba98e88f29ab5df0fb9a0835`  
-		Last Modified: Fri, 24 Jul 2020 16:39:27 GMT  
-		Size: 237.0 B  
+	-	`sha256:7e47565094be116552f7e584933eaf4996019a03c31dde6260dac8927649f554`  
+		Last Modified: Wed, 19 Aug 2020 23:41:54 GMT  
+		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31cb905c691f9fba4f2754cf4521617f749e7c81112fc035258d62ba8e549d38`  
-		Last Modified: Fri, 24 Jul 2020 16:40:17 GMT  
-		Size: 347.5 MB (347520166 bytes)  
+	-	`sha256:641cd36fa2fe9a99c95392a742a434f149b0f0d47c38e89d93f7bdc0f6be4158`  
+		Last Modified: Wed, 19 Aug 2020 23:42:44 GMT  
+		Size: 347.5 MB (347517279 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a724f632db8a139bfe58172f8470ce0c94660959e8840caa86421da5a711ccde`  
-		Last Modified: Fri, 24 Jul 2020 16:39:26 GMT  
+	-	`sha256:a0194fe719789440160725de86fecf8aaaa6e5dbca937138c8adbc5efc0a2f74`  
+		Last Modified: Wed, 19 Aug 2020 23:41:53 GMT  
 		Size: 264.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb50a4813aedcc99eecb7aa82b806539f594cf9b9c63191608eeacd99fd535a6`  
-		Last Modified: Fri, 24 Jul 2020 16:39:26 GMT  
+	-	`sha256:31760f0893db322a4d80531e07f172abf75870473b303dd04639afa0162ab8dc`  
+		Last Modified: Wed, 19 Aug 2020 23:41:53 GMT  
 		Size: 314.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4544f5b34bbec3f9fd34cb662153238717839bc6510d61d6bd285619ac3cb900`  
-		Last Modified: Fri, 24 Jul 2020 16:39:26 GMT  
-		Size: 308.0 B  
+	-	`sha256:3cae13aa84ae1f3d3d8149eec8b6981a0b92c4baba7a2e8bdeef6146826bb3e3`  
+		Last Modified: Wed, 19 Aug 2020 23:41:53 GMT  
+		Size: 309.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0340669fedd7d398945e3748445a6440bff3430e5aa290ff8813c6231ea2c763`  
-		Last Modified: Fri, 24 Jul 2020 16:39:25 GMT  
-		Size: 18.8 KB (18828 bytes)  
+	-	`sha256:99d3f43060e7726e3090a302e2afbce6541aec9aae3042a8ab41d8b5d5feae98`  
+		Last Modified: Wed, 19 Aug 2020 23:41:52 GMT  
+		Size: 18.8 KB (18832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3bbce02013590aa0dacf9863d5760d818a19da77e64d5cceff1f7689ee2feceb`  
-		Last Modified: Fri, 24 Jul 2020 16:39:28 GMT  
-		Size: 19.8 MB (19823093 bytes)  
+	-	`sha256:2db625b47f532d5566eb537980b39a93bf489e05332b3b2ba7a10ae38ea6f3f4`  
+		Last Modified: Wed, 19 Aug 2020 23:41:54 GMT  
+		Size: 18.8 MB (18803923 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81d621646184347452e5928fffaa450f7e5dc9b5433d7671e0f59c0cf625ec91`  
-		Last Modified: Fri, 24 Jul 2020 16:39:25 GMT  
-		Size: 14.3 KB (14301 bytes)  
+	-	`sha256:0873c814091f0201b321f04b127edcdfd89b1c340fa6aaea30dcb10847496baf`  
+		Last Modified: Wed, 19 Aug 2020 23:41:51 GMT  
+		Size: 14.3 KB (14298 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c881ae5dbcc69600b649e1d4dfce28d4725ee975945890bf9fa3256c9ba5d651`  
-		Last Modified: Fri, 24 Jul 2020 16:39:24 GMT  
+	-	`sha256:024890e8d8efc6732e378fb8748bbbf527b148fd5e34110316870f1912e8e45f`  
+		Last Modified: Wed, 19 Aug 2020 23:41:52 GMT  
 		Size: 2.5 KB (2533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:520b5ceee7e8eff64377c49cf6d372275ed2596b6141fe79d32bd69eac7e8151`  
-		Last Modified: Fri, 24 Jul 2020 16:39:24 GMT  
+	-	`sha256:4d2d94b5fb715d8fddbab270af5b430d91b739015dff0954dfdef5b62ec2e70b`  
+		Last Modified: Wed, 19 Aug 2020 23:41:51 GMT  
 		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8837572f8217346403b51d961df37c8492956dcf9eb8c6621e118b7aa807662e`  
-		Last Modified: Fri, 24 Jul 2020 16:39:25 GMT  
-		Size: 1.3 KB (1251 bytes)  
+	-	`sha256:c8a65db2c454edcea9b55a505c0ee260692c8d315a06ffda7c632d0b9d0c6688`  
+		Last Modified: Wed, 19 Aug 2020 23:41:52 GMT  
+		Size: 1.2 KB (1250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `php-zendserver:latest`
 
 ```console
-$ docker pull php-zendserver@sha256:6a384e05db2d751cab3fd2be5deda8f2a4213e9a1186606e49958bbae66a4ae3
+$ docker pull php-zendserver@sha256:156eae12dc2703adde99a46b7bbe5188fba92a8ec1ed00e9782bc20296bbef1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -754,127 +754,127 @@ $ docker pull php-zendserver@sha256:6a384e05db2d751cab3fd2be5deda8f2a4213e9a1186
 ### `php-zendserver:latest` - linux; amd64
 
 ```console
-$ docker pull php-zendserver@sha256:04c0526c639254e6e214c0729302c3f81fe8cb3c7eb311e1c02e734c813c4884
+$ docker pull php-zendserver@sha256:e85fc05ad0dcb52db2388cb3d1f2ca03d82df0dda56e425900c9d0e34c269a63
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **492.3 MB (492331882 bytes)**  
+-	Total Size: **491.4 MB (491419057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:49771660717527f62e7fce9e5e62ea67d6ff93f965bdb4a54db781d79935598c`
+-	Image ID: `sha256:d1b369291f87b577cadde29a42dc919bc19a56d1ac2712fd8cc80436699a8d4f`
 -	Default Command: `["\/usr\/local\/bin\/run"]`
 
 ```dockerfile
-# Fri, 24 Jul 2020 14:38:19 GMT
-ADD file:7d9bbf45a5b2510d44d3206a028cf6502757884d49e46d3d2e6356c3a92c4309 in / 
-# Fri, 24 Jul 2020 14:38:20 GMT
+# Wed, 19 Aug 2020 21:13:50 GMT
+ADD file:5c125b7f411566e9daa738d8cb851098f36197810f06488c2609074296f294b2 in / 
+# Wed, 19 Aug 2020 21:13:52 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Fri, 24 Jul 2020 14:38:21 GMT
+# Wed, 19 Aug 2020 21:13:53 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 24 Jul 2020 14:38:21 GMT
+# Wed, 19 Aug 2020 21:13:55 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 24 Jul 2020 14:38:22 GMT
+# Wed, 19 Aug 2020 21:13:55 GMT
 CMD ["/bin/bash"]
-# Fri, 24 Jul 2020 16:36:17 GMT
+# Wed, 19 Aug 2020 23:38:46 GMT
 RUN apt-get update && apt-get install -y       gnupg
-# Fri, 24 Jul 2020 16:36:18 GMT
+# Wed, 19 Aug 2020 23:38:47 GMT
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key 799058698E65316A2E7A4FF42EAE1437F7D2C623
-# Fri, 24 Jul 2020 16:36:18 GMT
+# Wed, 19 Aug 2020 23:38:47 GMT
 COPY file:23f8c2a96f087277b95ebfd7f401f5c1b95ec7f3443fa9231607566f1d8e7270 in /etc/apt/sources.list.d/zend-server.list 
-# Fri, 24 Jul 2020 16:38:02 GMT
+# Wed, 19 Aug 2020 23:40:18 GMT
 RUN apt-get update && apt-get install -y       iproute2       curl       libmysqlclient20       unzip       git       zend-server-nginx=2019.0.4+b392     && rm -rf /var/lib/apt/lists/*     && /usr/local/zend/bin/zendctl.sh stop
-# Fri, 24 Jul 2020 16:38:02 GMT
+# Wed, 19 Aug 2020 23:40:19 GMT
 ENV ZS_INIT_VERSION=0.3
-# Fri, 24 Jul 2020 16:38:02 GMT
+# Wed, 19 Aug 2020 23:40:19 GMT
 ENV ZS_INIT_SHA256=e8d441d8503808e9fc0fafc762b2cb80d4a6e68b94fede0fe41efdeac10800cb
-# Fri, 24 Jul 2020 16:38:03 GMT
+# Wed, 19 Aug 2020 23:40:19 GMT
 COPY file:ad21ce0b2dc8345be0ef63836774934d6b2045ddc3685411221a07dd10b649d1 in /tmp/zs-init.patch 
-# Fri, 24 Jul 2020 16:38:03 GMT
+# Wed, 19 Aug 2020 23:40:20 GMT
 RUN curl -fSL -o zs-init.tar.gz "http://repos.zend.com/zs-init/zs-init-docker-${ZS_INIT_VERSION}.tar.gz"     && echo "${ZS_INIT_SHA256} *zs-init.tar.gz" | sha256sum -c -     && mkdir /usr/local/zs-init     && tar xzf zs-init.tar.gz --strip-components=1 -C /usr/local/zs-init     && rm zs-init.tar.gz     && patch -u /usr/local/zs-init/src/Init/Steps/AbstractStep.php -i /tmp/zs-init.patch     && rm /tmp/zs-init.patch
-# Fri, 24 Jul 2020 16:38:04 GMT
+# Wed, 19 Aug 2020 23:40:20 GMT
 WORKDIR /usr/local/zs-init
-# Fri, 24 Jul 2020 16:38:12 GMT
+# Wed, 19 Aug 2020 23:40:30 GMT
 RUN /usr/local/zend/bin/php -r "readfile('https://getcomposer.org/installer');" | /usr/local/zend/bin/php     && /usr/local/zend/bin/php composer.phar update
-# Fri, 24 Jul 2020 16:38:12 GMT
+# Wed, 19 Aug 2020 23:40:30 GMT
 COPY dir:7937a6223a1e7805720eca1fbf8c2ccd37938f8f8aa175ae003d409459d49380 in /usr/local/bin 
-# Fri, 24 Jul 2020 16:38:12 GMT
+# Wed, 19 Aug 2020 23:40:30 GMT
 COPY dir:80bde0d50316e7c9350262fe3b75826a91d075303027787e759d703b60df13d6 in /usr/local/zend/var/plugins/ 
-# Fri, 24 Jul 2020 16:38:13 GMT
+# Wed, 19 Aug 2020 23:40:31 GMT
 RUN rm /var/www/html/index.nginx-debian.html
-# Fri, 24 Jul 2020 16:38:13 GMT
+# Wed, 19 Aug 2020 23:40:31 GMT
 COPY dir:d174a5d34625889b4356c566972566e0ca7da618b01ea42276562f8186517a67 in /var/www/html 
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 80
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 443
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 10081
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 EXPOSE 10082
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 WORKDIR /var/www/html
-# Fri, 24 Jul 2020 16:38:14 GMT
+# Wed, 19 Aug 2020 23:40:32 GMT
 CMD ["/usr/local/bin/run"]
 ```
 
 -	Layers:
-	-	`sha256:7595c8c21622ea8a8b9778972e26dbbe063f7a1c4b0a28a80a34ebb3d343b586`  
-		Last Modified: Mon, 13 Jul 2020 15:46:50 GMT  
-		Size: 26.7 MB (26697127 bytes)  
+	-	`sha256:f08d8e2a3ba11bea23cf5c17e8e1c620057412ed05c32d1114640e18d6dd0a43`  
+		Last Modified: Sat, 08 Aug 2020 12:21:16 GMT  
+		Size: 26.7 MB (26700095 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d13af8ca898f36af68711cb67c345f65046a78ccd802453f4b129adf9205b1f8`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+	-	`sha256:3baa9cb2483bd9c5329a44d9c2fe72535625bbd4308bca95785dd58e72c06365`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
 		Size: 35.4 KB (35364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70799171ddba93a611490ba3557d782714b3f4da8963d49ac8726786ba8274a5`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+	-	`sha256:94e5ff4c0b1526abf77c236655f21c8f67a23313291c8b970fe6b469549d8153`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
 		Size: 848.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6c12202c5ef07dc9eb8f9d9e71407064684ed70f8c4040b62679b7d30200840`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
-		Size: 161.0 B  
+	-	`sha256:1860925334f940c3145808527480b4f0cba7f01279087fdb27679e4354fba967`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
+		Size: 163.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8e8bd0044bba53b957398126fd92cf0f60a5eb2668783884c1ece2a31f4fc46`  
-		Last Modified: Fri, 24 Jul 2020 16:40:29 GMT  
-		Size: 28.2 MB (28166831 bytes)  
+	-	`sha256:3ddcc9b3b04d4af7f8cd42b20b4d4eeab5eae7a2062a53b9e99a0c0577b85790`  
+		Last Modified: Wed, 19 Aug 2020 23:42:57 GMT  
+		Size: 28.3 MB (28267258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:620517cf9e126051cdd98208134f893446b23dcd79debf3a78c4dd30ecac159f`  
-		Last Modified: Fri, 24 Jul 2020 16:40:25 GMT  
-		Size: 1.4 KB (1385 bytes)  
+	-	`sha256:3726f4ff6b1261712ea3b160ce213d525018b5875b3afa7f81e9b517d373cbe0`  
+		Last Modified: Wed, 19 Aug 2020 23:42:53 GMT  
+		Size: 1.4 KB (1390 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d01b62b7af11403eeeb9de0c191228214c182242d713914b2d6e7241d29c512`  
-		Last Modified: Fri, 24 Jul 2020 16:40:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:10c404c30bcee943368cf18404142c5daea79043736b7f70615cc6ccd3fa2a62`  
+		Last Modified: Wed, 19 Aug 2020 23:42:52 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3b715824e1c3f7f4472ba80b696fd43ad175265fb5ca1057f64581ac7fc560ee`  
-		Last Modified: Fri, 24 Jul 2020 16:41:27 GMT  
-		Size: 417.6 MB (417569103 bytes)  
+	-	`sha256:0732084791d941a2b2f0830bfc2ef3c0e99cab7530d5e8200124aad21d993a88`  
+		Last Modified: Wed, 19 Aug 2020 23:43:55 GMT  
+		Size: 417.6 MB (417572070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2936f13a221de6a10aaa96c4a17d365f1db96580b5da9f8d83311cf010ceb646`  
-		Last Modified: Fri, 24 Jul 2020 16:40:24 GMT  
-		Size: 445.0 B  
+	-	`sha256:e73a7901bfecf4ba69c435dd68ac7611416eda5409fff77245428f22f5883524`  
+		Last Modified: Wed, 19 Aug 2020 23:42:52 GMT  
+		Size: 446.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88603cba5cc964d47dbe77ab0ceabbad028f9ce116cdc43ab993f9d3f9751c15`  
-		Last Modified: Fri, 24 Jul 2020 16:40:24 GMT  
-		Size: 18.9 KB (18898 bytes)  
+	-	`sha256:8d6ed38341a32b31bc4e0792be1cddb2bea646e4a340a4f13806a0d8cc2fdcf8`  
+		Last Modified: Wed, 19 Aug 2020 23:42:52 GMT  
+		Size: 18.9 KB (18902 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb808167bec8dc558fa7338ae27b1bbfbd018ee8cab15671abc5113dae73308`  
-		Last Modified: Fri, 24 Jul 2020 16:40:27 GMT  
-		Size: 19.8 MB (19823259 bytes)  
+	-	`sha256:a77d4388fb3a6eb617d5956ca2d52931504e7e6e9e041e99e4043b06de56593e`  
+		Last Modified: Wed, 19 Aug 2020 23:42:54 GMT  
+		Size: 18.8 MB (18804061 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:794a944b7e73810295c8c5bd497ceb77bc5dec0176b2ce1495dff3c0da53f2c0`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 14.3 KB (14255 bytes)  
+	-	`sha256:d6d5f12d237947485aeadebc5c92e678cd7fc870cd91dd2040ecab1c6157a22a`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 14.2 KB (14249 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f098431e37eca64534dfdf3eee74a93796ebc79f0b648538cb76906fbf812ef8`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 2.5 KB (2530 bytes)  
+	-	`sha256:efd8fe24f26e10152c37029e53bd072eb9b32e08984fb6520171253832caf86c`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 2.5 KB (2529 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bab295e921ddffdf496b080a9dd83b55c02ebe00e30f293cfdb51af66408fd9f`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 185.0 B  
+	-	`sha256:13abb24f1ca2419f43a0db5a1886aaa0fd521b3471d6d23ff603f8404c6b9c08`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd08bd0e69bae973715f91c30b3715fc91cf2fde2f3e5df6b68a14343158a076`  
-		Last Modified: Fri, 24 Jul 2020 16:40:23 GMT  
-		Size: 1.3 KB (1254 bytes)  
+	-	`sha256:3177cec03260e9f6d9812c47e245d3cfe1ecd837beb98b48053c22449f3860c7`  
+		Last Modified: Wed, 19 Aug 2020 23:42:51 GMT  
+		Size: 1.3 KB (1256 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
