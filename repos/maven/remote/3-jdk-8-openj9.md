@@ -1,7 +1,7 @@
 ## `maven:3-jdk-8-openj9`
 
 ```console
-$ docker pull maven@sha256:5d5d07d03a264e3254086e0bdc3ff74ce11ed6cce96d6fb8cd968f352703be2e
+$ docker pull maven@sha256:920db96bd20fc0c97d1c17ee7e5f8d738cd9922ab623f6f5055b8ec5b20453e7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,100 +13,100 @@ $ docker pull maven@sha256:5d5d07d03a264e3254086e0bdc3ff74ce11ed6cce96d6fb8cd968
 ### `maven:3-jdk-8-openj9` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:9d54c81926de3c8a9caa1ee020ffa8f00abb98408939ea98d077ce17d0efe547
+$ docker pull maven@sha256:e195c80107fa98cd04c676042f88f3f9d0c0b7277aa406c92f65761b16b6782b
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.1 MB (187050394 bytes)**  
+-	Total Size: **187.2 MB (187151760 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:92f2df0cbde82c25742bc8cd3b7871b2c60a48762558a5a011b6195771c53d5a`
+-	Image ID: `sha256:c64bd4af7b2c50b4ef49edc38b26bbd3f4337bbecc8b136a71f634392d25897f`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Fri, 24 Jul 2020 14:38:19 GMT
-ADD file:7d9bbf45a5b2510d44d3206a028cf6502757884d49e46d3d2e6356c3a92c4309 in / 
-# Fri, 24 Jul 2020 14:38:20 GMT
+# Wed, 19 Aug 2020 21:13:50 GMT
+ADD file:5c125b7f411566e9daa738d8cb851098f36197810f06488c2609074296f294b2 in / 
+# Wed, 19 Aug 2020 21:13:52 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Fri, 24 Jul 2020 14:38:21 GMT
+# Wed, 19 Aug 2020 21:13:53 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 24 Jul 2020 14:38:21 GMT
+# Wed, 19 Aug 2020 21:13:55 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 24 Jul 2020 14:38:22 GMT
+# Wed, 19 Aug 2020 21:13:55 GMT
 CMD ["/bin/bash"]
-# Fri, 24 Jul 2020 15:16:41 GMT
+# Wed, 19 Aug 2020 21:58:33 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 24 Jul 2020 15:17:03 GMT
+# Wed, 19 Aug 2020 21:58:49 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 24 Jul 2020 15:19:45 GMT
+# Wed, 19 Aug 2020 22:00:38 GMT
 ENV JAVA_VERSION=jdk8u262-b10_openj9-0.21.0
-# Fri, 24 Jul 2020 15:19:54 GMT
+# Wed, 19 Aug 2020 22:00:45 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='8659c84c5c5d94ffed4789f06f2be401e59020b83e95fd45e71992f425483a13';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u262-b10_openj9-0.21.0/OpenJDK8U-jdk_ppc64le_linux_openj9_8u262b10_openj9-0.21.0.tar.gz';          ;;        s390x)          ESUM='37fe91840b1d8fa98bc6a859ef29b28e0b2187cd926c9d58743f7022640f8d8e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u262-b10_openj9-0.21.0/OpenJDK8U-jdk_s390x_linux_openj9_8u262b10_openj9-0.21.0.tar.gz';          ;;        amd64|x86_64)          ESUM='bdeab95a04462ae48df1dc1c53c833f86bfa34bd3a86c65c7adad7c096a1dbce';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u262-b10_openj9-0.21.0/OpenJDK8U-jdk_x64_linux_openj9_8u262b10_openj9-0.21.0.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 24 Jul 2020 15:19:54 GMT
+# Wed, 19 Aug 2020 22:00:45 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 24 Jul 2020 15:19:54 GMT
+# Wed, 19 Aug 2020 22:00:45 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Fri, 24 Jul 2020 19:58:00 GMT
+# Thu, 20 Aug 2020 02:22:09 GMT
 ARG MAVEN_VERSION=3.6.3
-# Fri, 24 Jul 2020 19:58:00 GMT
+# Thu, 20 Aug 2020 02:22:10 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 24 Jul 2020 19:58:01 GMT
+# Thu, 20 Aug 2020 02:22:10 GMT
 ARG SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0
-# Fri, 24 Jul 2020 19:58:01 GMT
+# Thu, 20 Aug 2020 02:22:10 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.3/binaries
-# Fri, 24 Jul 2020 19:58:09 GMT
+# Thu, 20 Aug 2020 02:22:18 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.3/binaries MAVEN_VERSION=3.6.3 SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0 USER_HOME_DIR=/root
 RUN apt-get update && apt-get install -y curl   && mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 24 Jul 2020 19:58:09 GMT
+# Thu, 20 Aug 2020 02:22:18 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 24 Jul 2020 19:58:09 GMT
+# Thu, 20 Aug 2020 02:22:18 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 24 Jul 2020 19:58:10 GMT
+# Thu, 20 Aug 2020 02:22:19 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 24 Jul 2020 19:58:10 GMT
+# Thu, 20 Aug 2020 02:22:19 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 24 Jul 2020 19:58:10 GMT
+# Thu, 20 Aug 2020 02:22:19 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 24 Jul 2020 19:58:10 GMT
+# Thu, 20 Aug 2020 02:22:19 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:7595c8c21622ea8a8b9778972e26dbbe063f7a1c4b0a28a80a34ebb3d343b586`  
-		Last Modified: Mon, 13 Jul 2020 15:46:50 GMT  
-		Size: 26.7 MB (26697127 bytes)  
+	-	`sha256:f08d8e2a3ba11bea23cf5c17e8e1c620057412ed05c32d1114640e18d6dd0a43`  
+		Last Modified: Sat, 08 Aug 2020 12:21:16 GMT  
+		Size: 26.7 MB (26700095 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d13af8ca898f36af68711cb67c345f65046a78ccd802453f4b129adf9205b1f8`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+	-	`sha256:3baa9cb2483bd9c5329a44d9c2fe72535625bbd4308bca95785dd58e72c06365`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
 		Size: 35.4 KB (35364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70799171ddba93a611490ba3557d782714b3f4da8963d49ac8726786ba8274a5`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
+	-	`sha256:94e5ff4c0b1526abf77c236655f21c8f67a23313291c8b970fe6b469549d8153`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
 		Size: 848.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6c12202c5ef07dc9eb8f9d9e71407064684ed70f8c4040b62679b7d30200840`  
-		Last Modified: Fri, 24 Jul 2020 14:39:21 GMT  
-		Size: 161.0 B  
+	-	`sha256:1860925334f940c3145808527480b4f0cba7f01279087fdb27679e4354fba967`  
+		Last Modified: Wed, 19 Aug 2020 21:16:44 GMT  
+		Size: 163.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c54d424eaa66f20b7926dbaa13c37d1c7c27c0e3113239f5608b4a57c157c399`  
-		Last Modified: Fri, 24 Jul 2020 15:22:49 GMT  
-		Size: 13.9 MB (13875512 bytes)  
+	-	`sha256:f9b7f96c83b992275744136bd8deb3404fb357ee0e75620f46f7db8aed8481d6`  
+		Last Modified: Wed, 19 Aug 2020 22:02:55 GMT  
+		Size: 13.9 MB (13875193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ca408c961f3822728638a4079ecf13d487b00be9a6694279baf05aaaa8dc058`  
-		Last Modified: Fri, 24 Jul 2020 15:25:50 GMT  
+	-	`sha256:283f0ded28a8c29eb92cfbe7dabb06bc2019aca2cf3d9dab2d99a94a2c27a12b`  
+		Last Modified: Wed, 19 Aug 2020 22:05:37 GMT  
 		Size: 115.4 MB (115356480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2610e44c81c9fb6c212e23cb1fadec088ae3b2d74a6c4ea97273a738866b1b78`  
-		Last Modified: Fri, 24 Jul 2020 20:00:51 GMT  
-		Size: 31.1 MB (31083691 bytes)  
+	-	`sha256:99fdfbc786fe94e348b9d08a459d1e9abb7b11714a92a192ea17a77d1d36228e`  
+		Last Modified: Thu, 20 Aug 2020 02:24:49 GMT  
+		Size: 31.2 MB (31182406 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b5833b78edf00299b7e1130c58f67f6d1f554adc570f5518c6a0c5f034de57`  
-		Last Modified: Fri, 24 Jul 2020 20:00:49 GMT  
+	-	`sha256:0e17e3434054d2b3463fe8419767083edc7422e9e78c5eb8b612a3071ecb6311`  
+		Last Modified: Thu, 20 Aug 2020 02:24:46 GMT  
 		Size: 851.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ea821aedd1867b63ba56254c0c3e936328092b788f25d2ed3b7a2b0b8dbabe2`  
-		Last Modified: Fri, 24 Jul 2020 20:00:49 GMT  
+	-	`sha256:6ad7dbb9d3dfce3ecdb923aae1c9deb60b832cde04bbdc61a61a8898ace757bb`  
+		Last Modified: Thu, 20 Aug 2020 02:24:46 GMT  
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
