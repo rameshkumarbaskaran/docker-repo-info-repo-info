@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f24c4232ab68d6be0bae20b2cb8d3c5d80c823b3deb2152587e19a6ceabb8b1b`
-- Created: `2020-08-14T22:15:03.639333498Z`
+- Image ID: `sha256:f962d6c4cb48490e1a008ce978c1b776bbabe1f0c409bd41fb3d67c0d336c879`
+- Created: `2020-08-20T03:09:20.738565261Z`
 - Virtual Size: ~ 1.30 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -270,19 +270,23 @@ $ apt-get source -qq --print-uris avahi=0.7-3.1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-3.1ubuntu1.2.debian.tar.xz' avahi_0.7-3.1ubuntu1.2.debian.tar.xz 35124 SHA256:a72a1652e00b4385f99407e4f26eb1656e8eb0026d127e246533438d1ae05407
 ```
 
-### `dpkg` source package: `base-files=10.1ubuntu2.8`
+### `dpkg` source package: `base-files=10.1ubuntu2.9`
 
 Binary Packages:
 
-- `base-files=10.1ubuntu2.8`
+- `base-files=10.1ubuntu2.9`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=10.1ubuntu2.9
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.9.dsc' base-files_10.1ubuntu2.9.dsc 1275 SHA256:d7b2f1c250b358ad4aa76bc6f5f4c681684898b9bdff7208c48ebdb45d4bd927
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.9.tar.xz' base-files_10.1ubuntu2.9.tar.xz 78380 SHA256:42983195aad6985b1914cca55b29812e7358705ec30548e4444130f2c6341697
+```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -516,13 +520,13 @@ $ apt-get source -qq --print-uris cups=2.2.7-1ubuntu2.8
 'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7-1ubuntu2.8.debian.tar.xz' cups_2.2.7-1ubuntu2.8.debian.tar.xz 363376 SHA256:eb062ea65e733f3c3bbe045c08477929a3cf02e6b6676586f8af72273ad2ddb9
 ```
 
-### `dpkg` source package: `curl=7.58.0-2ubuntu3.9`
+### `dpkg` source package: `curl=7.58.0-2ubuntu3.10`
 
 Binary Packages:
 
-- `curl=7.58.0-2ubuntu3.9`
-- `libcurl3-gnutls:amd64=7.58.0-2ubuntu3.9`
-- `libcurl4:amd64=7.58.0-2ubuntu3.9`
+- `curl=7.58.0-2ubuntu3.10`
+- `libcurl3-gnutls:amd64=7.58.0-2ubuntu3.10`
+- `libcurl4:amd64=7.58.0-2ubuntu3.10`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -536,10 +540,10 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 Source:
 
 ```console
-$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.9
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.9.dsc' curl_7.58.0-2ubuntu3.9.dsc 2777 SHA256:e6300de42c395bc17531dc85a6decd5a6ef0e446625641860c3a7ce8084b2309
+$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.10
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.10.dsc' curl_7.58.0-2ubuntu3.10.dsc 2781 SHA256:0f80b3add0f3a8c471d1ae4f0aac8d473a3fcba72e9fba398355f16bfcd4615e
 'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0.orig.tar.gz' curl_7.58.0.orig.tar.gz 3879728 SHA256:cc245bf9a1a42a45df491501d97d5593392a03f7b4f07b952793518d97666115
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.9.debian.tar.xz' curl_7.58.0-2ubuntu3.9.debian.tar.xz 40692 SHA256:6231d88f5dc76718550eb3d89f810f1c0d1ecb84b9da9b261640389427a551ab
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.10.debian.tar.xz' curl_7.58.0-2ubuntu3.10.debian.tar.xz 41908 SHA256:0aca9be6c8fdb0ab69b109b34d4424c99097c894ba8487fd7e28f83bc27f4850
 ```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2.1`
@@ -2418,12 +2422,12 @@ $ apt-get source -qq --print-uris librevenge=0.0.4-6ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/libr/librevenge/librevenge_0.0.4-6ubuntu2.debian.tar.xz' librevenge_0.0.4-6ubuntu2.debian.tar.xz 13712 SHA256:0366405c50e6abc83c2221bbdfc1108584aeeee9e8e0c7a8aea3213683f0d5be
 ```
 
-### `dpkg` source package: `librsvg=2.40.20-2`
+### `dpkg` source package: `librsvg=2.40.20-2ubuntu0.2`
 
 Binary Packages:
 
-- `librsvg2-2:amd64=2.40.20-2`
-- `librsvg2-common:amd64=2.40.20-2`
+- `librsvg2-2:amd64=2.40.20-2ubuntu0.2`
+- `librsvg2-common:amd64=2.40.20-2ubuntu0.2`
 
 Licenses: (parsed from: `/usr/share/doc/librsvg2-2/copyright`, `/usr/share/doc/librsvg2-common/copyright`)
 
@@ -2435,26 +2439,31 @@ Licenses: (parsed from: `/usr/share/doc/librsvg2-2/copyright`, `/usr/share/doc/l
 Source:
 
 ```console
-$ apt-get source -qq --print-uris librsvg=2.40.20-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.40.20-2.dsc' librsvg_2.40.20-2.dsc 2731 SHA256:35b78a72b57dc406ce641efbca357476e2b67b8681951c9f0e7a6ec2f6808b37
+$ apt-get source -qq --print-uris librsvg=2.40.20-2ubuntu0.2
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.40.20-2ubuntu0.2.dsc' librsvg_2.40.20-2ubuntu0.2.dsc 2846 SHA256:6790f598b07cb0433bb4243e9afd17cc768168f93e3eab03173fad90747b81ce
 'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.40.20.orig.tar.xz' librsvg_2.40.20.orig.tar.xz 1796376 SHA256:cff4dd3c3b78bfe99d8fcfad3b8ba1eee3289a0823c0e118d78106be6b84c92b
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.40.20-2.debian.tar.xz' librsvg_2.40.20-2.debian.tar.xz 16544 SHA256:40f1ff3c70b3bb3d107f5d9e37c4ee023c8cffd33bd2d65cebb0ebc245adda28
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/librsvg/librsvg_2.40.20-2ubuntu0.2.debian.tar.xz' librsvg_2.40.20-2ubuntu0.2.debian.tar.xz 16768 SHA256:8eca9882068282bbfa972d33a1e4d96b5e188fda216a0f1a489c231a92d4b178
 ```
 
-### `dpkg` source package: `libseccomp=2.4.3-1ubuntu3.18.04.2`
+### `dpkg` source package: `libseccomp=2.4.3-1ubuntu3.18.04.3`
 
 Binary Packages:
 
-- `libseccomp2:amd64=2.4.3-1ubuntu3.18.04.2`
+- `libseccomp2:amd64=2.4.3-1ubuntu3.18.04.3`
 
 Licenses: (parsed from: `/usr/share/doc/libseccomp2/copyright`)
 
 - `LGPL-2`
 - `LGPL-2.0+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libseccomp=2.4.3-1ubuntu3.18.04.3
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3-1ubuntu3.18.04.3.dsc' libseccomp_2.4.3-1ubuntu3.18.04.3.dsc 1951 SHA256:a21ac1a2c77ed23af125630a6fe63035e35cd8312d5023efdb5c9434c2d3d30e
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3.orig.tar.gz' libseccomp_2.4.3.orig.tar.gz 598147 SHA256:cf15d1421997fac45b936515af61d209c4fd788af11005d212b3d0fd71e7991d
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.4.3-1ubuntu3.18.04.3.debian.tar.xz' libseccomp_2.4.3-1ubuntu3.18.04.3.debian.tar.xz 27652 SHA256:9110a31f32f7c63318f75c09493c021e454fa46d7bb0ccca4b0874610c85a71c
+```
 
 ### `dpkg` source package: `libselinux=2.7-2build2`
 
@@ -3360,19 +3369,24 @@ $ apt-get source -qq --print-uris nspr=2:4.18-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nspr/nspr_4.18-1ubuntu1.debian.tar.xz' nspr_4.18-1ubuntu1.debian.tar.xz 19520 SHA256:712cd17e174defbae082724ba3278164218cd77f4fa322d5f376c0bec111b70c
 ```
 
-### `dpkg` source package: `nss=2:3.35-2ubuntu2.9`
+### `dpkg` source package: `nss=2:3.35-2ubuntu2.11`
 
 Binary Packages:
 
-- `libnss3:amd64=2:3.35-2ubuntu2.9`
+- `libnss3:amd64=2:3.35-2ubuntu2.11`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris nss=2:3.35-2ubuntu2.11
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.11.dsc' nss_3.35-2ubuntu2.11.dsc 2354 SHA256:ee3f8fd4e7523953b3670c39cda737e79f7b90f9baf44b3e7395a8a93147a3a3
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35.orig.tar.gz' nss_3.35.orig.tar.gz 9620041 SHA256:f4127de09bede39f5fd0f789d33c3504c5d261e69ea03022d46b319b3e32f6fa
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.11.debian.tar.xz' nss_3.35-2ubuntu2.11.debian.tar.xz 219992 SHA256:01bafee19a120b79a211de608fe70236b30583734f42343a40ed0897b643ae95
+```
 
 ### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.6`
 
@@ -3952,12 +3966,12 @@ $ apt-get source -qq --print-uris suitesparse=1:5.1.2-2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/suitesparse/suitesparse_5.1.2-2.debian.tar.xz' suitesparse_5.1.2-2.debian.tar.xz 29056 SHA256:5e64720f4b9854dec9f7f871686b09b3ccafc24e5c698bf6a3c95089c52bc3b0
 ```
 
-### `dpkg` source package: `systemd=237-3ubuntu10.41`
+### `dpkg` source package: `systemd=237-3ubuntu10.42`
 
 Binary Packages:
 
-- `libsystemd0:amd64=237-3ubuntu10.41`
-- `libudev1:amd64=237-3ubuntu10.41`
+- `libsystemd0:amd64=237-3ubuntu10.42`
+- `libudev1:amd64=237-3ubuntu10.42`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -3969,9 +3983,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=237-3ubuntu10.42
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.42.dsc' systemd_237-3ubuntu10.42.dsc 5182 SHA256:38073197625912794aacfe4522006680aae20d1743699fa9b0de71f14536fa74
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.42.debian.tar.xz' systemd_237-3ubuntu10.42.debian.tar.xz 275288 SHA256:8f408963e65e7cd4435df53e43c17f39b4a5d3df0cf66fba99f91a8f5956f685
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
