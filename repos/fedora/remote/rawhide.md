@@ -1,7 +1,7 @@
 ## `fedora:rawhide`
 
 ```console
-$ docker pull fedora@sha256:f7e88b3a542eca2fe0c7b700931aa09645cb7c953838bf6db4fd2893c4c88e6c
+$ docker pull fedora@sha256:11d305da55a76ef7e2b5e3988aab358c1db63538d5829d88a4878a8940a69ee2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,31 +12,31 @@ $ docker pull fedora@sha256:f7e88b3a542eca2fe0c7b700931aa09645cb7c953838bf6db4fd
 ### `fedora:rawhide` - linux; amd64
 
 ```console
-$ docker pull fedora@sha256:8d89b6b3f5d501afd4875a1a250f33e1fddda7b96d5aa5886eeefee8e29612fc
+$ docker pull fedora@sha256:d2e645df6aae153817c34a08b87f78737f35e785e5300ff9c8978636241fed11
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **65.2 MB (65165341 bytes)**  
+-	Total Size: **63.5 MB (63500050 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e6ff04a4b8bd6824e118d512caceffc433bbdd60a02e9f8c1b649968a8fc6f51`
+-	Image ID: `sha256:59a2a955d1de9cfaf7d027d61d304d8d1d92507896d78f703e88ca23f30f8653`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
 # Wed, 16 Jan 2019 21:21:55 GMT
 LABEL maintainer=Clement Verna <cverna@fedoraproject.org>
-# Thu, 30 Apr 2020 23:21:44 GMT
-ENV DISTTAG=f33container FGC=f33 FBR=f33
-# Fri, 10 Jul 2020 20:14:07 GMT
-ADD file:5465cd6809e79e1be0bbaf7d371fc220edbbd8a46002b6673fba7299ed38ec44 in / 
-# Fri, 10 Jul 2020 20:14:08 GMT
+# Tue, 25 Aug 2020 18:28:13 GMT
+ENV DISTTAG=f34container FGC=f34 FBR=f34
+# Tue, 25 Aug 2020 18:28:19 GMT
+ADD file:d3ce39f7577df3475ab7d7a6acc26b52570a0046ccab5f6dc40483f76361074f in / 
+# Tue, 25 Aug 2020 18:28:20 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:90cdc03ac7c1ff13eb31ef8b5de9ac2f8c62ad16180a11d2d68cfade36fb7d2d`  
-		Last Modified: Fri, 10 Jul 2020 20:15:14 GMT  
-		Size: 65.2 MB (65165341 bytes)  
+	-	`sha256:a2e6d15c323a1fc868a1ea96b9f07ea0ae0bed2d361687e6f98e985677edd55f`  
+		Last Modified: Tue, 25 Aug 2020 18:28:59 GMT  
+		Size: 63.5 MB (63500050 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fedora:rawhide` - linux; arm64 variant v8
