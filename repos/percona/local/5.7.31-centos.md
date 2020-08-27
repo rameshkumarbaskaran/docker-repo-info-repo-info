@@ -1,17 +1,17 @@
-# `percona:5.7.30-centos`
+# `percona:5.7.31-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8238bc5a4dc78faa31ffdcbdb63f20c8f99b1e873119d61674eba92cf3ad405f`
-- Created: `2020-08-10T18:42:05.830807686Z`
-- Virtual Size: ~ 596.63 Mb  
+- Image ID: `sha256:cb49da8a7d3c22eb92a4de93d43ede592bb5487ac89ad866211a4f9ef8d11a3e`
+- Created: `2020-08-25T18:30:18.751177135Z`
+- Virtual Size: ~ 599.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["mysqld"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `PERCONA_VERSION=5.7.30-33.1.el7`
+  - `PERCONA_VERSION=5.7.31-34.1.el7`
 - Labels:
   - `org.label-schema.build-date=20200809`
   - `org.label-schema.license=GPLv2`
@@ -26,43 +26,43 @@
 
 ## `rpm` (`.rpm`-based packages)
 
-### `rpm` package: `Percona-Server-client-57-5.7.30-33.1.el7.x86_64`
+### `rpm` package: `Percona-Server-client-57-5.7.31-34.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-devel-57-5.7.30-33.1.el7.x86_64`
+### `rpm` package: `Percona-Server-devel-57-5.7.31-34.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-rocksdb-57-5.7.30-33.1.el7.x86_64`
+### `rpm` package: `Percona-Server-rocksdb-57-5.7.31-34.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-server-57-5.7.30-33.1.el7.x86_64`
+### `rpm` package: `Percona-Server-server-57-5.7.31-34.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-shared-57-5.7.30-33.1.el7.x86_64`
+### `rpm` package: `Percona-Server-shared-57-5.7.31-34.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-shared-compat-57-5.7.30-33.1.el7.x86_64`
+### `rpm` package: `Percona-Server-shared-compat-57-5.7.31-34.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `Percona-Server-tokudb-57-5.7.30-33.1.el7.x86_64`
+### `rpm` package: `Percona-Server-tokudb-57-5.7.31-34.1.el7.x86_64`
 
 Licenses (from `rpm --query`): Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved. Under the GNU General Public License (http://www.gnu.org/licenses/).
 
