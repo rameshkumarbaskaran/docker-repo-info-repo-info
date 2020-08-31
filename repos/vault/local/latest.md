@@ -1,10 +1,10 @@
-# `vault:1.5.2`
+# `vault:1.5.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:14889d38c67545d7b96c510e816782c52426c3e8545af34d7c2ffa792c151ee1`
-- Created: `2020-08-21T19:18:23.892264298Z`
-- Virtual Size: ~ 146.07 Mb  
+- Image ID: `sha256:aac433bb6835d15f5848057eb42c34e349e7416ea14ec2317e5349af68c7163a`
+- Created: `2020-08-28T17:27:06.726550648Z`
+- Virtual Size: ~ 146.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
