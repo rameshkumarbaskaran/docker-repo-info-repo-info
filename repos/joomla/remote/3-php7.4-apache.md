@@ -1,7 +1,7 @@
 ## `joomla:3-php7.4-apache`
 
 ```console
-$ docker pull joomla@sha256:a3262d6c979858aeac82566497d1493541bba19df19bd8a9f42e46b69ed2908c
+$ docker pull joomla@sha256:46c0807136ad345f8ca882661f7116b9f1ec8270cb12dfeb033bdf3ebaa1aa93
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18,14 +18,14 @@ $ docker pull joomla@sha256:a3262d6c979858aeac82566497d1493541bba19df19bd8a9f42e
 ### `joomla:3-php7.4-apache` - linux; amd64
 
 ```console
-$ docker pull joomla@sha256:ec73991b8654a72df4135b0eb33ac8d4ad694c2dff6247c3ea0c1fced23c23c5
+$ docker pull joomla@sha256:90feff520ea43a4248aba8492d8873a7fb9ec4d65c362d2caea35d7749a0c5af
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **160.0 MB (160006887 bytes)**  
+-	Total Size: **160.0 MB (160013042 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b1ed727a2063fde61c06afa3d383efe12995da98b1ad070ea8425e237d9a5641`
+-	Image ID: `sha256:bbb8d1b62d685f873c12c965828e2827400a6e71b32f468e18da564c199393e1`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -94,29 +94,29 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Thu, 06 Aug 2020 19:13:46 GMT
 CMD ["apache2-foreground"]
-# Fri, 07 Aug 2020 01:55:48 GMT
-LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
-# Fri, 07 Aug 2020 01:55:48 GMT
+# Tue, 01 Sep 2020 01:22:43 GMT
+LABEL maintainer=Harald Leithner <harald.leithner@community.joomla.org> (@HLeithner)
+# Tue, 01 Sep 2020 01:22:44 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Fri, 07 Aug 2020 01:55:49 GMT
+# Tue, 01 Sep 2020 01:22:45 GMT
 RUN a2enmod rewrite
-# Tue, 11 Aug 2020 01:31:48 GMT
+# Tue, 01 Sep 2020 01:25:22 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libbz2-dev 		libgmp-dev 		libjpeg-dev 		libldap2-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd --with-jpeg; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		gmp 		ldap 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.18; 	pecl install memcached-3.1.5; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Tue, 11 Aug 2020 01:31:48 GMT
+# Tue, 01 Sep 2020 01:25:23 GMT
 VOLUME [/var/www/html]
-# Tue, 11 Aug 2020 01:31:48 GMT
-ENV JOOMLA_VERSION=3.9.20
-# Tue, 11 Aug 2020 01:31:48 GMT
-ENV JOOMLA_SHA512=ed885916525e202267c6508156f69dcc9f4688231906ebae1e2ae9f823c9221202f9b88b4ee1ebc26827ba0992fd5a9f3ecc3651bedab7399a078603ad68e5bf
-# Tue, 11 Aug 2020 01:31:52 GMT
+# Tue, 01 Sep 2020 01:25:23 GMT
+ENV JOOMLA_VERSION=3.9.21
+# Tue, 01 Sep 2020 01:25:23 GMT
+ENV JOOMLA_SHA512=603027bb54f1aa0c37ecdac7438ce1294120b82a16f6c5b6671d1344e87816cc999d9b7e7fe149800e26d937a97fba383817d3e1c71bd23b1a2d380758de3a1d
+# Tue, 01 Sep 2020 01:25:31 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Tue, 11 Aug 2020 01:31:53 GMT
-COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Tue, 11 Aug 2020 01:31:53 GMT
+# Tue, 01 Sep 2020 01:25:32 GMT
+COPY file:f6b7a1c96cc89593a2b9ce4c68af350ae02f2e0c654cd5e842ff6c03641d470e in /entrypoint.sh 
+# Tue, 01 Sep 2020 01:25:32 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Tue, 11 Aug 2020 01:31:53 GMT
+# Tue, 01 Sep 2020 01:25:33 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 11 Aug 2020 01:31:53 GMT
+# Tue, 01 Sep 2020 01:25:33 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -173,25 +173,25 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 07 Aug 2020 00:24:27 GMT  
 		Size: 895.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecc92f79551ef7414c6530c69a3dd8a28779281b4c6cf37988834e39da121018`  
-		Last Modified: Fri, 07 Aug 2020 02:03:43 GMT  
-		Size: 312.0 B  
+	-	`sha256:a89253289e9ce84f12193f63140fc8f8bd5d3a172f2177e64210fe4446df98b0`  
+		Last Modified: Tue, 01 Sep 2020 01:32:21 GMT  
+		Size: 311.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1469e4b0bf165982e9fc02ebeddad2bf014aefae2c7d074c9ab3b7000b7d36ec`  
-		Last Modified: Tue, 11 Aug 2020 01:37:33 GMT  
-		Size: 3.5 MB (3468853 bytes)  
+	-	`sha256:a51ce611b31925100f85496be6f4dd63dec4563cec6949870c40743d0be567d4`  
+		Last Modified: Tue, 01 Sep 2020 01:32:23 GMT  
+		Size: 3.5 MB (3468934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3bac255e702a6697cf204d2106893225573aa0defa3936ad6c2a0bc336d8333e`  
-		Last Modified: Tue, 11 Aug 2020 01:37:37 GMT  
-		Size: 9.7 MB (9680421 bytes)  
+	-	`sha256:eb93af23179ea22a7635a362cd62a630a7d46f944283f7abe424c57b432e5eb8`  
+		Last Modified: Tue, 01 Sep 2020 01:32:29 GMT  
+		Size: 9.7 MB (9686471 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2eee0de871a7313eadaf3608c028a63e4953b6020a228352f49c48663196168a`  
-		Last Modified: Tue, 11 Aug 2020 01:37:31 GMT  
-		Size: 1.2 KB (1172 bytes)  
+	-	`sha256:26fde09a08707936cf0bedbd0c811f29e154b326d6322009cc44b023640e73e2`  
+		Last Modified: Tue, 01 Sep 2020 01:32:21 GMT  
+		Size: 1.2 KB (1199 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0844016390ec1370673846229aa86464614c9259f8f66b4118404510c27e9530`  
-		Last Modified: Tue, 11 Aug 2020 01:37:32 GMT  
-		Size: 615.0 B  
+	-	`sha256:650e2a92152d8719675769f2627133925acae421674b574efe14ca1401e0faed`  
+		Last Modified: Tue, 01 Sep 2020 01:32:21 GMT  
+		Size: 613.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.4-apache` - linux; arm variant v5
