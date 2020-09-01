@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:37433d089268cb2940af111cfffb04d3e733876b49583fe0b7ada654a6564443`
-- Created: `2020-08-05T10:45:48.012004346Z`
+- Image ID: `sha256:3ba60c3a7a881abed04e20f788117be32deadf0d33f05d1b20d0bbee60d74080`
+- Created: `2020-09-01T08:00:58.762963785Z`
 - Virtual Size: ~ 1.22 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2426,11 +2426,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/jbigkit/2.1-3.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/jbigkit/2.1-3.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `json-c=0.12.1+ds-2`
+### `dpkg` source package: `json-c=0.12.1+ds-2+deb10u1`
 
 Binary Packages:
 
-- `libjson-c3:amd64=0.12.1+ds-2`
+- `libjson-c3:amd64=0.12.1+ds-2+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libjson-c3/copyright`)
 
@@ -2439,17 +2439,17 @@ Licenses: (parsed from: `/usr/share/doc/libjson-c3/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris json-c=0.12.1+ds-2
-'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds-2.dsc' json-c_0.12.1+ds-2.dsc 2040 SHA256:933ae6adbb96b30cf98dadbdc03585b5910f9eb147d3dbfa719a8a57f613e884
-'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds.orig.tar.gz' json-c_0.12.1+ds.orig.tar.gz 477598 SHA256:d036d20b63cb17ff02f43b86840f6c8c8da2b99077700c1779b16379cebb788d
-'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds-2.debian.tar.xz' json-c_0.12.1+ds-2.debian.tar.xz 7132 SHA256:54c1434412f6e835f597320b7187a1bdf16f36f22ba2b47a872662fc0854c0c0
+$ apt-get source -qq --print-uris json-c=0.12.1+ds-2+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.dsc' json-c_0.12.1+ds-2+deb10u1.dsc 2105 SHA256:d64688bc4427ad313277c7074cb01f55ca6a1fe0aa60d2f47defb9101e203426
+'http://security.debian.org/debian-security/pool/updates/main/j/json-c/json-c_0.12.1+ds.orig.tar.gz' json-c_0.12.1+ds.orig.tar.gz 477598 SHA256:d036d20b63cb17ff02f43b86840f6c8c8da2b99077700c1779b16379cebb788d
+'http://security.debian.org/debian-security/pool/updates/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.debian.tar.xz' json-c_0.12.1+ds-2+deb10u1.debian.tar.xz 9460 SHA256:d40d54851a278018d15e1348efd9c169963add8566c455c8551d394337190d75
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/json-c/0.12.1+ds-2/ (for browsing the source)
-- https://sources.debian.net/src/json-c/0.12.1+ds-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/json-c/0.12.1+ds-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/json-c/0.12.1+ds-2+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/json-c/0.12.1+ds-2+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/json-c/0.12.1+ds-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `json-glib=1.4.4-2`
 
@@ -5328,12 +5328,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/numactl/2.0.12-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/numactl/2.0.12-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openexr=2.2.1-4.1`
+### `dpkg` source package: `openexr=2.2.1-4.1+deb10u1`
 
 Binary Packages:
 
-- `libopenexr-dev=2.2.1-4.1`
-- `libopenexr23:amd64=2.2.1-4.1`
+- `libopenexr-dev=2.2.1-4.1+deb10u1`
+- `libopenexr23:amd64=2.2.1-4.1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libopenexr-dev/copyright`, `/usr/share/doc/libopenexr23/copyright`)
 
@@ -5342,17 +5342,17 @@ Licenses: (parsed from: `/usr/share/doc/libopenexr-dev/copyright`, `/usr/share/d
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openexr=2.2.1-4.1
-'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1-4.1.dsc' openexr_2.2.1-4.1.dsc 2270 SHA256:52ad0ebb9b1ab827c9c35f3ae971a604e4852b77494c210eb036e2c8bf2c7aaa
-'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1.orig.tar.gz' openexr_2.2.1.orig.tar.gz 18176639 SHA256:8f9a5af6131583404261931d9a5c83de0a425cb4b8b25ddab2b169fbf113aecd
-'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1-4.1.debian.tar.xz' openexr_2.2.1-4.1.debian.tar.xz 17976 SHA256:a1bff86eef1f812acfcc5300aeeced664eeb214e536b7eb6797da227229a245f
+$ apt-get source -qq --print-uris openexr=2.2.1-4.1+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openexr/openexr_2.2.1-4.1+deb10u1.dsc' openexr_2.2.1-4.1+deb10u1.dsc 2302 SHA256:bf813e2e7c6baedd9068c02301511b2d05f14e511c18db827b16eca6bd7d9478
+'http://security.debian.org/debian-security/pool/updates/main/o/openexr/openexr_2.2.1.orig.tar.gz' openexr_2.2.1.orig.tar.gz 18176639 SHA256:8f9a5af6131583404261931d9a5c83de0a425cb4b8b25ddab2b169fbf113aecd
+'http://security.debian.org/debian-security/pool/updates/main/o/openexr/openexr_2.2.1-4.1+deb10u1.debian.tar.xz' openexr_2.2.1-4.1+deb10u1.debian.tar.xz 27212 SHA256:c991df0bf7582a9ce9ddf2294793c68e1b2f381d1bcc429eb8bfb914161dc47a
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openexr/2.2.1-4.1/ (for browsing the source)
-- https://sources.debian.net/src/openexr/2.2.1-4.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openexr/2.2.1-4.1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openexr/2.2.1-4.1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/openexr/2.2.1-4.1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openexr/2.2.1-4.1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openjpeg2=2.3.0-2+deb10u1`
 
