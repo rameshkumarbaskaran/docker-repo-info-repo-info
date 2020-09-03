@@ -67,14 +67,9 @@ Licenses: (parsed from: `/usr/share/doc/libasound2/copyright`, `/usr/share/doc/l
 - `LGPL-2.1`
 - `LPGL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris alsa-lib=1.2.2-2.1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/alsa-lib_1.2.2-2.1ubuntu1.dsc' alsa-lib_1.2.2-2.1ubuntu1.dsc 2007 SHA256:0da80f1eb90ffbb37a350d67eeb88a305a24bd6408b0151d6b3b332f65d2da87
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/alsa-lib_1.2.2.orig.tar.bz2' alsa-lib_1.2.2.orig.tar.bz2 1030747 SHA256:d8e853d8805574777bbe40937812ad1419c9ea7210e176f0def3e6ed255ab3ec
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/alsa-lib_1.2.2-2.1ubuntu1.debian.tar.xz' alsa-lib_1.2.2-2.1ubuntu1.debian.tar.xz 30420 SHA256:99c92d95ac6569e93fa742fabc6d2cc20a9098f33ba57deb4b63bf624d89514d
-```
 
 ### `dpkg` source package: `aom=1.0.0.errata1-3build1`
 
@@ -345,13 +340,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu5.1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.1.dsc' base-files_11ubuntu5.1.dsc 1267 SHA256:5a11844317d216cf356c3c4893e61a2e950d1baafb12dd5bf4903f211db642cb
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.1.tar.xz' base-files_11ubuntu5.1.tar.xz 79132 SHA256:4f5859d89b2fdfbf44e56013950b7eedfec83145e52ee4c28a157f49d0524424
-```
 
 ### `dpkg` source package: `base-passwd=3.5.47`
 
@@ -5240,14 +5231,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-42.46
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-42.46.dsc' linux_5.4.0-42.46.dsc 7204 SHA256:9757c11f4a535512fd812a20c9e24ae8369ac3195ed359c0f0193f73c340f942
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA256:805f3ed93854317814c59caf2dbfd2097745685f95c8c18b509c9347dcc7d51f
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-42.46.diff.gz' linux_5.4.0-42.46.diff.gz 4665701 SHA256:9e416bd1147d00d93eeaa3a106304e9ff03629ea2447efc5b61381d2046e2f7d
-```
 
 ### `dpkg` source package: `llvm-toolchain-10=1:10.0.0-4ubuntu1`
 
@@ -6586,14 +6572,9 @@ Licenses: (parsed from: `/usr/share/doc/libpulse0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pulseaudio=1:13.99.1-1ubuntu3.5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.5.dsc' pulseaudio_13.99.1-1ubuntu3.5.dsc 3205 SHA256:d05d2b77a31c6be080e565f3f45b4b1740404e9adebab4ce41dca0179ac41964
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1.orig.tar.xz' pulseaudio_13.99.1.orig.tar.xz 1955840 SHA256:e6a111cc078e6039bf657a3fd1f73dc804c8ee362ca03a0732dc5c38c13e0a0c
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.5.debian.tar.xz' pulseaudio_13.99.1-1ubuntu3.5.debian.tar.xz 142120 SHA256:8d718b50f9de793b2e48271f59e706ce20fa5cd975e9349d42d7cc7bb52f4976
-```
 
 ### `dpkg` source package: `python3-defaults=3.8.2-0ubuntu2`
 
