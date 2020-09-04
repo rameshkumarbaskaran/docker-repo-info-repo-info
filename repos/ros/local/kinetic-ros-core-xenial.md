@@ -189,13 +189,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=9.4ubuntu4.12
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.12.dsc' base-files_9.4ubuntu4.12.dsc 1230 SHA256:a2b35edf31f7c157e85329538534c5fda82b87a710ebc0d93541afc1ed95e394
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.12.tar.xz' base-files_9.4ubuntu4.12.tar.xz 65584 SHA256:de69b2a17c4d6e8168459e800b13759ef1f8eeb49825947ea341d6c20b47c5df
-```
 
 ### `dpkg` source package: `base-passwd=3.5.39`
 
@@ -1782,14 +1778,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `GPL-2`
 - `redpine-signals`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.4.0-187.217
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-187.217.dsc' linux_4.4.0-187.217.dsc 11909 SHA256:9f243a59c772487e160f6020300bfb07b48342f86b1cc063a7d71e59fcb7bf65
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-187.217.diff.gz' linux_4.4.0-187.217.diff.gz 16662935 SHA256:387884e66fbed42af7f9529f1706c8597a048f203c56239e0441aba769975519
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.16+dfsg-3`
 
