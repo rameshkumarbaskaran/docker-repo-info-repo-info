@@ -34,6 +34,8 @@
 -	[`percona:psmdb-4.0.20`](#perconapsmdb-4020)
 -	[`percona:psmdb-4.2`](#perconapsmdb-42)
 -	[`percona:psmdb-4.2.9`](#perconapsmdb-429)
+-	[`percona:psmdb-4.4`](#perconapsmdb-44)
+-	[`percona:psmdb-4.4.0`](#perconapsmdb-440)
 
 ## `percona:5`
 
@@ -3154,3 +3156,11 @@ CMD ["mongod"]
 		Last Modified: Thu, 03 Sep 2020 18:26:54 GMT  
 		Size: 4.5 KB (4542 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `percona:psmdb-4.4`
+
+**does not exist** (yet?)
+
+## `percona:psmdb-4.4.0`
+
+**does not exist** (yet?)
