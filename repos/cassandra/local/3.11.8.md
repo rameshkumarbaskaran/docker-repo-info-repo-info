@@ -1,10 +1,10 @@
-# `cassandra:3.11.7`
+# `cassandra:3.11.8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e6baf2484e595fbb4a6b2335f115d2d7718dc9f4fd9c7259859921cfb250e87d`
-- Created: `2020-08-20T02:12:13.213936273Z`
-- Virtual Size: ~ 384.67 Mb  
+- Image ID: `sha256:4729375caedd385765d2081ce7561c000485035f4c3d02bf6869c9d806f8818f`
+- Created: `2020-09-05T00:20:34.398406831Z`
+- Virtual Size: ~ 384.73 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,8 +20,8 @@
   - `CASSANDRA_HOME=/opt/cassandra`
   - `CASSANDRA_CONF=/etc/cassandra`
   - `GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA 	A4C465FEA0C552561A392A61E91335D77E3E87CB`
-  - `CASSANDRA_VERSION=3.11.7`
-  - `CASSANDRA_SHA512=c23a51d2d583e707fae8b0e0c413a6287a47af131650715cb3ae8d404b9958fca531c6d73cd196bde5054d2485cc12b6bf195de173f1baa647ac4cc012d9aecd`
+  - `CASSANDRA_VERSION=3.11.8`
+  - `CASSANDRA_SHA512=ece12cafc7aab7f035a5c8505a7a32915f7fe8c2729c7ade69b21d9354e3f0c06fd5e6206e7f066fb1e525162213fa295200cd46fd1a8bf4b27c9bc834a86c43`
 
 ## `dpkg` (`.deb`-based packages)
 
