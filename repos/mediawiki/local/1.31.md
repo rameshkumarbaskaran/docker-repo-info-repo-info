@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:021e39be8c50c5fe952a2aff94165c375e572b784061423bb7b9f3ecb0c013c3`
-- Created: `2020-09-01T22:28:56.887599242Z`
-- Virtual Size: ~ 723.77 Mb  
+- Image ID: `sha256:a083fe4c865f25b97513c4462ee0d62e86fad717fc470a6d7334400123d9ab61`
+- Created: `2020-09-04T01:35:53.691591266Z`
+- Virtual Size: ~ 725.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -27,9 +27,7 @@
   - `PHP_SHA256=0f160a3483ffce36be5962fab7bcf09d605ee66c5707df83e4195cb796bbb03a`
   - `PHP_MD5=`
   - `MEDIAWIKI_MAJOR_VERSION=1.31`
-  - `MEDIAWIKI_BRANCH=REL1_31`
   - `MEDIAWIKI_VERSION=1.31.8`
-  - `MEDIAWIKI_SHA512=f5de72a060177bf444dd27e148c8b94224e5aeee9497169ca57a692ce9e8fb89dd7c2f503e2f6e4d035128b6e62a414a654edc467c5e7e3a347eb805d9ab9e93`
 
 ## `dpkg` (`.deb`-based packages)
 
