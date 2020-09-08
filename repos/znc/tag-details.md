@@ -284,11 +284,21 @@ COPY file:765473e154cb7674cba99ed8ee42b51feda01581be870e3d1e7e4930b82a0f37 in /s
 
 ## `znc:1.8.2`
 
-**does not exist** (yet?)
+```console
+$ docker pull znc@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `znc:1.8.2-slim`
 
-**does not exist** (yet?)
+```console
+$ docker pull znc@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `znc:1.8-slim`
 
