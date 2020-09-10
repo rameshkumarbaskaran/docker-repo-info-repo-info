@@ -1,7 +1,7 @@
 ## `friendica:rc-apache`
 
 ```console
-$ docker pull friendica@sha256:461296405234688ab79a44b20832bc9bc4059eee7b31a1caac105a532e60a754
+$ docker pull friendica@sha256:0ef4316f5ed96c5c7e2749efbf905bb5f47787387a852d060eef224e24f7804c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -213,14 +213,14 @@ CMD ["apache2-foreground"]
 ### `friendica:rc-apache` - linux; arm variant v5
 
 ```console
-$ docker pull friendica@sha256:3768f65686cc4630b3c225f90ced9d0fd7c21e86f56ce732982e6b259be9125e
+$ docker pull friendica@sha256:fe13c011e5e0b79275b5970ba77e3c6ce8b767e6d2ce4bd90409aca576c2ec89
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.8 MB (158782729 bytes)**  
+-	Total Size: **158.8 MB (158782752 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fcfe7886e42f93c3cc22a6f77ff58977988b6b5435bab04c292372f1111fbef`
+-	Image ID: `sha256:cfd2424dee5c1e916be864284796172d255341dfda3968360a4b29f34c010b87`
 -	Entrypoint: `["\/entrypoint-dev.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -309,13 +309,13 @@ RUN set -ex;    a2enmod rewrite remoteip ;    {     echo RemoteIPHeader X-Real-I
 ENV FRIENDICA_VERSION=2020.09-rc
 # Thu, 10 Sep 2020 15:18:51 GMT
 ENV FRIENDICA_ADDONS=2020.09-rc
-# Thu, 10 Sep 2020 15:18:57 GMT
-COPY multi:3784479e3dfafa9db457a9077471aff84b9ec68c2636d95e5207b3fbcdb966a9 in / 
-# Thu, 10 Sep 2020 15:18:59 GMT
+# Thu, 10 Sep 2020 20:51:12 GMT
+COPY multi:79fafe1f110f1d1a4fd44f7b958b2a83de813fc7f8cfcefe662a6fa6e275cf3e in / 
+# Thu, 10 Sep 2020 20:51:16 GMT
 COPY multi:923de5042cde61ed518a7067985e18cb873d0cd10946593bfb44de6ba9e078ed in /usr/src/friendica/config/ 
-# Thu, 10 Sep 2020 15:19:02 GMT
+# Thu, 10 Sep 2020 20:51:19 GMT
 ENTRYPOINT ["/entrypoint-dev.sh"]
-# Thu, 10 Sep 2020 15:19:05 GMT
+# Thu, 10 Sep 2020 20:51:21 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -396,13 +396,13 @@ CMD ["apache2-foreground"]
 		Last Modified: Thu, 10 Sep 2020 15:20:06 GMT  
 		Size: 543.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:113b69e578082b3ba2409ea96bfe59f5c08ff4c9ac90119d38ca7a94cc271b41`  
-		Last Modified: Thu, 10 Sep 2020 15:22:00 GMT  
-		Size: 3.2 KB (3241 bytes)  
+	-	`sha256:f4233d4ba29630be4322fdff786c05291504ea466f3d97a94dd8247ba55a97bf`  
+		Last Modified: Thu, 10 Sep 2020 20:54:14 GMT  
+		Size: 3.3 KB (3260 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7025904b8fedd29d036543a256bc6eedc4ddc31d227c6f25b1892bc12b732247`  
-		Last Modified: Thu, 10 Sep 2020 15:22:00 GMT  
-		Size: 1.1 KB (1093 bytes)  
+	-	`sha256:bff6dc89055a9279d215a616b0df4e45577b200a6f227594228b62d8f7766183`  
+		Last Modified: Thu, 10 Sep 2020 20:54:14 GMT  
+		Size: 1.1 KB (1097 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `friendica:rc-apache` - linux; arm variant v7
@@ -1383,14 +1383,14 @@ CMD ["apache2-foreground"]
 ### `friendica:rc-apache` - linux; s390x
 
 ```console
-$ docker pull friendica@sha256:a09dff4536cc9122e9910f597dc60afb7969b3401bb6e2c48f97df5df0c2651f
+$ docker pull friendica@sha256:63f5c816a7645341252307ffcc9266abc990a611e14387756b9160aab3f6af71
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **166.7 MB (166712288 bytes)**  
+-	Total Size: **166.7 MB (166712307 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:eb07852be08f1fdd36e9f66041174a72b63155bda59d35f0414b840a395ce2d9`
+-	Image ID: `sha256:9624bbc9dbe5cc89e28a28fb3df95bb0caf5083a76fefc43cb185d817edf6728`
 -	Entrypoint: `["\/entrypoint-dev.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -1479,13 +1479,13 @@ RUN set -ex;    a2enmod rewrite remoteip ;    {     echo RemoteIPHeader X-Real-I
 ENV FRIENDICA_VERSION=2020.09-rc
 # Thu, 10 Sep 2020 08:48:30 GMT
 ENV FRIENDICA_ADDONS=2020.09-rc
-# Thu, 10 Sep 2020 08:48:30 GMT
-COPY multi:3784479e3dfafa9db457a9077471aff84b9ec68c2636d95e5207b3fbcdb966a9 in / 
-# Thu, 10 Sep 2020 08:48:30 GMT
+# Thu, 10 Sep 2020 20:42:42 GMT
+COPY multi:79fafe1f110f1d1a4fd44f7b958b2a83de813fc7f8cfcefe662a6fa6e275cf3e in / 
+# Thu, 10 Sep 2020 20:42:42 GMT
 COPY multi:923de5042cde61ed518a7067985e18cb873d0cd10946593bfb44de6ba9e078ed in /usr/src/friendica/config/ 
-# Thu, 10 Sep 2020 08:48:31 GMT
+# Thu, 10 Sep 2020 20:42:42 GMT
 ENTRYPOINT ["/entrypoint-dev.sh"]
-# Thu, 10 Sep 2020 08:48:31 GMT
+# Thu, 10 Sep 2020 20:42:42 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -1566,11 +1566,11 @@ CMD ["apache2-foreground"]
 		Last Modified: Thu, 10 Sep 2020 08:49:13 GMT  
 		Size: 534.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:344fbec32a71322d0410f2fc7984e0a9f165cac3e4ae0a700980c43b4a57a2e4`  
-		Last Modified: Thu, 10 Sep 2020 08:50:21 GMT  
-		Size: 3.2 KB (3242 bytes)  
+	-	`sha256:cd5568f98ce31f21df4b34cd34f767a89aa1497c427b9e0acf9dc5e6bd2f2cfb`  
+		Last Modified: Thu, 10 Sep 2020 20:44:17 GMT  
+		Size: 3.3 KB (3259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c62ad6e88f452dce200424fca3ad03699999567c41a99b565066fde088ffb20`  
-		Last Modified: Thu, 10 Sep 2020 08:50:20 GMT  
-		Size: 1.1 KB (1092 bytes)  
+	-	`sha256:1b1cfc59a2e2b914f41034b0dd0dfbe931adef945be85927cd52a0f59f13f887`  
+		Last Modified: Thu, 10 Sep 2020 20:44:17 GMT  
+		Size: 1.1 KB (1094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
