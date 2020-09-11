@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0f680c3d4f8bfe963969a56356a578fe99b69aad2ff422d4d5b114f9109f521a`
-- Created: `2020-08-04T22:03:51.167335996Z`
+- Image ID: `sha256:496f67b468b4a28280962989ab551ee9965197ba98713a6e0707e5068b8339c6`
+- Created: `2020-09-10T04:31:09.484603417Z`
 - Virtual Size: ~ 514.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2161,27 +2161,34 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libtool/2.4.6-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libtool/2.4.6-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libx11=2:1.6.4-3+deb9u2`
+### `dpkg` source package: `libx11=2:1.6.4-3+deb9u3`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.4-3+deb9u2`
-- `libx11-data=2:1.6.4-3+deb9u2`
-- `libx11-dev:amd64=2:1.6.4-3+deb9u2`
-- `libx11-xcb-dev:amd64=2:1.6.4-3+deb9u2`
-- `libx11-xcb1:amd64=2:1.6.4-3+deb9u2`
+- `libx11-6:amd64=2:1.6.4-3+deb9u3`
+- `libx11-data=2:1.6.4-3+deb9u3`
+- `libx11-dev:amd64=2:1.6.4-3+deb9u3`
+- `libx11-xcb-dev:amd64=2:1.6.4-3+deb9u3`
+- `libx11-xcb1:amd64=2:1.6.4-3+deb9u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libx11=2:1.6.4-3+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.4-3+deb9u3.dsc' libx11_1.6.4-3+deb9u3.dsc 2425 SHA256:50b0a6ee00b6019b39b5bf513001b4d085fcaecdb34f4f432695b8dd56b2dce4
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.4.orig.tar.gz' libx11_1.6.4.orig.tar.gz 3095115 SHA256:5d7fbb9e15c27900ea8963218a59750b674a8d7c94161b66e96fcfbdaa1c6263
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.4-3+deb9u3.diff.gz' libx11_1.6.4-3+deb9u3.diff.gz 47484 SHA256:86c81692699b0a1d73f13f8c7ca49dbdebe949ce2f2ceae3972bbccab4783fb6
+```
 
-- http://snapshot.debian.org/package/libx11/2:1.6.4-3+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libx11/2:1.6.4-3+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/libx11/2:1.6.4-3+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libx11/2:1.6.4-3+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 
@@ -2458,11 +2465,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxinerama/2:1.1.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxinerama/2:1.1.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u2`
+### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u3`
 
 Binary Packages:
 
-- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u2`
+- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2471,17 +2478,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-2.2+deb9u2
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u2.dsc' libxml2_2.9.4+dfsg1-2.2+deb9u2.dsc 3049 SHA256:53d34e06270572861dd0cb59f99b35caa40f85f928151827f59686fc3642d6b1
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u2.debian.tar.xz' libxml2_2.9.4+dfsg1-2.2+deb9u2.debian.tar.xz 33996 SHA256:d178b2d7c9a3bfd929762e15b8f99a139a54a9bcf988820e4f4febb051090b62
+$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-2.2+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u3.dsc' libxml2_2.9.4+dfsg1-2.2+deb9u3.dsc 3045 SHA256:08f96248840c577e4131f58ca1010d4335add3eb9b78dd1b152e064683e13158
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u3.debian.tar.xz' libxml2_2.9.4+dfsg1-2.2+deb9u3.debian.tar.xz 36248 SHA256:76a2f664a700d1023c214b9fbb248cf955072d16cfea4bba54003af199795268
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxrandr=2:1.5.1-1`
 
