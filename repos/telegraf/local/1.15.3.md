@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:79fd1e5d0a8f8e6ab2ff7286476d2b2f7a06e62b13775c4af8a1606295e2a5eb`
-- Created: `2020-08-05T16:37:26.509166596Z`
+- Image ID: `sha256:2790a9674f7cdf1b9d2f79ffa293ce38dfafbf8722bcb681dc738e73978d0970`
+- Created: `2020-09-10T21:31:22.266991263Z`
 - Virtual Size: ~ 276.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1794,13 +1794,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ncurses/6.1+20181013-2+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ncurses/6.1+20181013-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `net-snmp=5.7.3+dfsg-5`
+### `dpkg` source package: `net-snmp=5.7.3+dfsg-5+deb10u1`
 
 Binary Packages:
 
-- `libsnmp-base=5.7.3+dfsg-5`
-- `libsnmp30:amd64=5.7.3+dfsg-5`
-- `snmp=5.7.3+dfsg-5`
+- `libsnmp-base=5.7.3+dfsg-5+deb10u1`
+- `libsnmp30:amd64=5.7.3+dfsg-5+deb10u1`
+- `snmp=5.7.3+dfsg-5+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libsnmp-base/copyright`, `/usr/share/doc/libsnmp30/copyright`, `/usr/share/doc/snmp/copyright`)
 
@@ -1815,17 +1815,17 @@ Licenses: (parsed from: `/usr/share/doc/libsnmp-base/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris net-snmp=5.7.3+dfsg-5
-'http://deb.debian.org/debian/pool/main/n/net-snmp/net-snmp_5.7.3+dfsg-5.dsc' net-snmp_5.7.3+dfsg-5.dsc 2968 SHA256:b0f3227b1357d25dc54e72e534efc35f19437f5236f4a0a95dc3dbb4d2c4b019
-'http://deb.debian.org/debian/pool/main/n/net-snmp/net-snmp_5.7.3+dfsg.orig.tar.xz' net-snmp_5.7.3+dfsg.orig.tar.xz 3371224 SHA256:073eb05b926a9d23a2eba3270c4e52dd94c0aa27e8b7cf7f1a4e59a4d3da3fb5
-'http://deb.debian.org/debian/pool/main/n/net-snmp/net-snmp_5.7.3+dfsg-5.debian.tar.xz' net-snmp_5.7.3+dfsg-5.debian.tar.xz 77572 SHA256:2da5c99764ddc0a4a568b4b8e83b8f23fba6f7a353438d25fd6f4e49e8af25f5
+$ apt-get source -qq --print-uris net-snmp=5.7.3+dfsg-5+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/n/net-snmp/net-snmp_5.7.3+dfsg-5+deb10u1.dsc' net-snmp_5.7.3+dfsg-5+deb10u1.dsc 3000 SHA256:b9e7cc8c042c69e059cfbc9b39bc617793e7e66363ea549cdfc007f0acaee905
+'http://security.debian.org/debian-security/pool/updates/main/n/net-snmp/net-snmp_5.7.3+dfsg.orig.tar.xz' net-snmp_5.7.3+dfsg.orig.tar.xz 3371224 SHA256:073eb05b926a9d23a2eba3270c4e52dd94c0aa27e8b7cf7f1a4e59a4d3da3fb5
+'http://security.debian.org/debian-security/pool/updates/main/n/net-snmp/net-snmp_5.7.3+dfsg-5+deb10u1.debian.tar.xz' net-snmp_5.7.3+dfsg-5+deb10u1.debian.tar.xz 82540 SHA256:dcaafbe074a1f3881e4f350508d02f0647c77a84512707bb97f78d5709f19395
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/net-snmp/5.7.3+dfsg-5/ (for browsing the source)
-- https://sources.debian.net/src/net-snmp/5.7.3+dfsg-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/net-snmp/5.7.3+dfsg-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/net-snmp/5.7.3+dfsg-5+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/net-snmp/5.7.3+dfsg-5+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/net-snmp/5.7.3+dfsg-5+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `netbase=5.6`
 
