@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d08f5c823d226440819bdd47833a4b70cd02308c500715b6ce7aff9ed07fa156`
-- Created: `2020-09-08T19:27:20.550575396Z`
-- Virtual Size: ~ 598.96 Mb  
+- Image ID: `sha256:598a7c316b244840a67b69714bc2a06ab3f91d34bbf9cb005043bf115253be9f`
+- Created: `2020-09-11T07:09:44.614723776Z`
+- Virtual Size: ~ 573.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -24,8 +24,8 @@
   - `PHP_SHA256=0e66606d3bdab5c2ae3f778136bfe8788e574913a3d8138695e54d98562f1fb5`
   - `PHP_MD5=`
   - `TINI_VERSION=v0.19.0`
-  - `FRIENDICA_VERSION=2020.07`
-  - `FRIENDICA_ADDONS=2020.07`
+  - `FRIENDICA_VERSION=2020.07-1`
+  - `FRIENDICA_ADDONS=2020.07-1`
 
 ## `dpkg` (`.deb`-based packages)
 
