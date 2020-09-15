@@ -4929,14 +4929,9 @@ Licenses: (parsed from: `/usr/share/doc/libopenjp2-7/copyright`)
 - `ZLIB`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjpeg2=2.1.2-1.1+deb9u3build0.16.04.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openjpeg2/openjpeg2_2.1.2-1.1+deb9u3build0.16.04.1.dsc' openjpeg2_2.1.2-1.1+deb9u3build0.16.04.1.dsc 2853 SHA256:f20dfb8a3d7c63daba848149a22883cee1b2454d72aace898b79d70ef3478ff1
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openjpeg2/openjpeg2_2.1.2.orig.tar.gz' openjpeg2_2.1.2.orig.tar.gz 1987071 SHA256:4ce77b6ef538ef090d9bde1d5eeff8b3069ab56c4906f083475517c2c023dfa7
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openjpeg2/openjpeg2_2.1.2-1.1+deb9u3build0.16.04.1.debian.tar.xz' openjpeg2_2.1.2-1.1+deb9u3build0.16.04.1.debian.tar.xz 26020 SHA256:fb68f25b9d99a93ff8398a6c6ffb15ee8477994fce2695b893c638135d391c47
-```
 
 ### `dpkg` source package: `openjpeg=1:1.5.2-3.1`
 

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7f543a44ab3bac72994ab8f3805e7b16444ad150317b1033c635ed47c22644f2`
-- Created: `2020-09-01T23:57:07.271689857Z`
-- Virtual Size: ~ 1.17 Gb  
+- Image ID: `sha256:90cee1c8e26173f90e964d6076f4099193051e2a0f93d55f32ca9a1ed58beb67`
+- Created: `2020-09-11T23:05:45.222242272Z`
+- Virtual Size: ~ 1.21 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/ros_entrypoint.sh"]`
@@ -2614,12 +2614,12 @@ $ apt-get source -qq --print-uris libwebp=0.6.1-2
 'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwebp/libwebp_0.6.1-2.debian.tar.xz' libwebp_0.6.1-2.debian.tar.xz 9532 SHA256:5af543e277abb97f6b2c72ca0d7ce95de79108d88da383d511ef729683fa7a45
 ```
 
-### `dpkg` source package: `libx11=2:1.6.9-2ubuntu1`
+### `dpkg` source package: `libx11=2:1.6.9-2ubuntu1.1`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.9-2ubuntu1`
-- `libx11-data=2:1.6.9-2ubuntu1`
+- `libx11-6:amd64=2:1.6.9-2ubuntu1.1`
+- `libx11-data=2:1.6.9-2ubuntu1.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2628,11 +2628,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libx11=2:1.6.9-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.dsc' libx11_1.6.9-2ubuntu1.dsc 2584 SHA256:e0d4ff552c8a2e0742bd01053d1abc8cfc8b32dc5302cd1fe90c524a91ae0999
+$ apt-get source -qq --print-uris libx11=2:1.6.9-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.1.dsc' libx11_1.6.9-2ubuntu1.1.dsc 2671 SHA256:25dc81cb1335e7d957a22b33566f01d50e980c212ed88d7f22cc3b46b87f2034
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9.orig.tar.gz' libx11_1.6.9.orig.tar.gz 2994329 SHA256:b8c0930a9b25de15f3d773288cacd5e2f0a4158e194935615c52aeceafd1107b
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9.orig.tar.gz.asc' libx11_1.6.9.orig.tar.gz.asc 659 SHA256:5dca08f1a18bcfd9aabbb9b61c78948180db4e0a3e6710df695a48badb1ea8df
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.diff.gz' libx11_1.6.9-2ubuntu1.diff.gz 60547 SHA256:6af57abf40eabe9d1ddc09d70754ad473ef7b7edc898d88ca9069d9acbd60d9e
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.1.diff.gz' libx11_1.6.9-2ubuntu1.1.diff.gz 65340 SHA256:b64982a45800e7a9b3e9afe04eca62bf96225f183cc69586b1585a2f546d47ef
 ```
 
 ### `dpkg` source package: `libxau=1:1.0.9-0ubuntu1`
@@ -5919,11 +5919,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-foxy-demo-nodes-cpp=0.9.3-1focal.20200826.175043`
+### `dpkg` source package: `ros-foxy-demo-nodes-cpp=0.9.3-1focal.20200827.225803`
 
 Binary Packages:
 
-- `ros-foxy-demo-nodes-cpp=0.9.3-1focal.20200826.175043`
+- `ros-foxy-demo-nodes-cpp=0.9.3-1focal.20200827.225803`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -5933,11 +5933,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-foxy-demo-nodes-py=0.9.3-1focal.20200826.172405`
+### `dpkg` source package: `ros-foxy-demo-nodes-py=0.9.3-1focal.20200827.221535`
 
 Binary Packages:
 
-- `ros-foxy-demo-nodes-py=0.9.3-1focal.20200826.172405`
+- `ros-foxy-demo-nodes-py=0.9.3-1focal.20200827.221535`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -5989,11 +5989,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-foxy-example-interfaces=0.9.0-1focal.20200824.184458`
+### `dpkg` source package: `ros-foxy-example-interfaces=0.9.0-1focal.20200827.214656`
 
 Binary Packages:
 
-- `ros-foxy-example-interfaces=0.9.0-1focal.20200824.184458`
+- `ros-foxy-example-interfaces=0.9.0-1focal.20200827.214656`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -6050,6 +6050,20 @@ This is *usually* due to a new package version being released and the old versio
 Binary Packages:
 
 - `ros-foxy-foonathan-memory-vendor=1.0.0-1focal.20200624.053817`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
+
+
+### `dpkg` source package: `ros-foxy-gazebo-msgs=3.5.0-2focal.20200827.220613`
+
+Binary Packages:
+
+- `ros-foxy-gazebo-msgs=3.5.0-2focal.20200827.220613`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -6689,11 +6703,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-foxy-ros1-bridge=0.9.3-1focal.20200826.180106`
+### `dpkg` source package: `ros-foxy-ros1-bridge=0.9.3-7focal.20200909.180722`
 
 Binary Packages:
 
-- `ros-foxy-ros1-bridge=0.9.3-1focal.20200826.180106`
+- `ros-foxy-ros1-bridge=0.9.3-7focal.20200909.180722`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
