@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e59eda50593c4cf8f5ecc5924e20dcb0e7b68c2482312558e58926cc8dc34b11`
-- Created: `2020-09-11T11:02:50.770438975Z`
-- Virtual Size: ~ 626.62 Mb  
+- Image ID: `sha256:1337d55397f73e2a7d1596512bf1335c40a0bf84b46ba3b62441f0e950644659`
+- Created: `2020-09-15T22:16:48.361994955Z`
+- Virtual Size: ~ 630.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -16,3 +16,10 @@
   - `JAVA_VERSION=14.0.2`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
+- Labels:
+  - `org.opencontainers.image.authors=Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>`
+  - `org.opencontainers.image.description=Oracle Linux is an open-source       operating system available under the GNU General Public License (GPLv2) and       is suitable for both general purpose or Oracle workloads.`
+  - `org.opencontainers.image.source=https://github.com/oracle/container-images/tree/dist-amd64/8-slim`
+  - `org.opencontainers.image.title=Oracle Linux 8 (slim)`
+  - `org.opencontainers.image.url=https://github.com/oracle/container-images`
+  - `org.opencontainers.image.vendor=Oracle America, Inc`
