@@ -1,10 +1,10 @@
-# `tomcat:10.0.0-M7-jdk14-openjdk-oraclelinux7`
+# `tomcat:10.0.0-M8-jdk14-openjdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1f99d4b736173a256afd19eab8223e13249b63fe58b1ecc4e6cdb85df98bec13`
-- Created: `2020-09-01T21:35:48.083361062Z`
-- Virtual Size: ~ 548.20 Mb  
+- Image ID: `sha256:569237bc95777d3bc09a41bc7cc71cc7fab1403ff0e57cc1b54db74a9311f078`
+- Created: `2020-09-15T22:29:58.690698089Z`
+- Virtual Size: ~ 548.18 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -18,8 +18,15 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7`
   - `TOMCAT_MAJOR=10`
-  - `TOMCAT_VERSION=10.0.0-M7`
-  - `TOMCAT_SHA512=a0fd7472c94285dbb86e1273828ddaa395b8e7e3c2e7d8da901fca7969c0e19fef08452d288500f4ff69bca7ed0d4e3a6382a706dc0328c9e2e9114bd86a84af`
+  - `TOMCAT_VERSION=10.0.0-M8`
+  - `TOMCAT_SHA512=5e3dcbc56e14de73c6b866d355db8169680d093fa447e52e9a4082cc7ca363a385ac2a37a1acdc66c1945a21effe440aa06edd8a572ac6096cbe5e22ea356de4`
+- Labels:
+  - `org.opencontainers.image.authors=Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>`
+  - `org.opencontainers.image.description=Oracle Linux is an open-source       operating system available under the GNU General Public License (GPLv2) and       is suitable for both general purpose or Oracle workloads.`
+  - `org.opencontainers.image.source=https://github.com/oracle/container-images/tree/dist-amd64/7-slim`
+  - `org.opencontainers.image.title=Oracle Linux 7 (slim)`
+  - `org.opencontainers.image.url=https://github.com/oracle/container-images`
+  - `org.opencontainers.image.vendor=Oracle America, Inc`
 
 ## `rpm` (`.rpm`-based packages)
 
