@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9cb881a84f200b482d1cd63d579aaaf5c57f8decc18c1933058de25808eff795`
-- Created: `2020-07-22T01:57:39.758868858Z`
-- Virtual Size: ~ 125.22 Mb  
+- Image ID: `sha256:d83b903a942c088f3332c9a9a1fb03d9d96bf86a93db66156095eacd38c21219`
+- Created: `2020-09-16T18:21:51.123347502Z`
+- Virtual Size: ~ 125.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node","-e","require('express-gateway')().run();"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.22.0`
+  - `NODE_VERSION=10.22.1`
   - `YARN_VERSION=1.22.4`
   - `NODE_ENV=production`
   - `NODE_PATH=/usr/local/share/.config/yarn/global/node_modules/`
@@ -144,16 +144,16 @@ OpenSSL
 ### `apk` package: `libgcc`
 
 ```console
-libgcc-9.2.0-r4 description:
+libgcc-9.3.0-r0 description:
 GNU C compiler runtime libraries
 
-libgcc-9.2.0-r4 webpage:
+libgcc-9.3.0-r0 webpage:
 http://gcc.gnu.org
 
-libgcc-9.2.0-r4 installed size:
+libgcc-9.3.0-r0 installed size:
 90112
 
-libgcc-9.2.0-r4 license:
+libgcc-9.3.0-r0 license:
 GPL LGPL
 
 ```
@@ -178,16 +178,16 @@ OpenSSL
 ### `apk` package: `libstdc++`
 
 ```console
-libstdc++-9.2.0-r4 description:
+libstdc++-9.3.0-r0 description:
 GNU C++ standard runtime library
 
-libstdc++-9.2.0-r4 webpage:
+libstdc++-9.3.0-r0 webpage:
 http://gcc.gnu.org
 
-libstdc++-9.2.0-r4 installed size:
+libstdc++-9.3.0-r0 installed size:
 1671168
 
-libstdc++-9.2.0-r4 license:
+libstdc++-9.3.0-r0 license:
 GPL LGPL
 
 ```
