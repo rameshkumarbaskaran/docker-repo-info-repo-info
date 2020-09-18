@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:043741f7f230db9ab92205b6f10346f840098b2af036af1e3dba4f59ad27db90`
-- Created: `2020-08-20T00:14:51.490654226Z`
+- Image ID: `sha256:43b704b34c0cc5cdab2180cfef3c696128e79a11cf9275de2818965b45557023`
+- Created: `2020-09-17T01:38:50.281278968Z`
 - Virtual Size: ~ 1.18 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -242,19 +242,23 @@ $ apt-get source -qq --print-uris autotools-dev=20180224.1
 'http://archive.ubuntu.com/ubuntu/pool/main/a/autotools-dev/autotools-dev_20180224.1.tar.xz' autotools-dev_20180224.1.tar.xz 68256 SHA256:355a4d8461dfedebd2c5194603197712a10f71e20de73a35ab6e90b7acf3e837
 ```
 
-### `dpkg` source package: `base-files=11ubuntu5.1`
+### `dpkg` source package: `base-files=11ubuntu5.2`
 
 Binary Packages:
 
-- `base-files=11ubuntu5.1`
+- `base-files=11ubuntu5.2`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=11ubuntu5.2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.2.dsc' base-files_11ubuntu5.2.dsc 1676 SHA256:d945ac6208e2c9b16ca462f4e054df7a21df2f019fa9be017cce668c44313b2f
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.2.tar.xz' base-files_11ubuntu5.2.tar.xz 80528 SHA256:8629f826ab5e29cf0c0f03042912e274fead6eef27f5c404ea0103c5ff0bf20f
+```
 
 ### `dpkg` source package: `base-passwd=3.5.47`
 
@@ -1198,11 +1202,11 @@ $ apt-get source -qq --print-uris gnupg2=2.2.19-3ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gnupg2/gnupg2_2.2.19-3ubuntu2.debian.tar.xz' gnupg2_2.2.19-3ubuntu2.debian.tar.xz 65068 SHA256:fd2dc1a844dbce1b989e8c6f7d8199c950bd3c35c8aefa553dcc27f9cb977ac6
 ```
 
-### `dpkg` source package: `gnutls28=3.6.13-2ubuntu1.2`
+### `dpkg` source package: `gnutls28=3.6.13-2ubuntu1.3`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.6.13-2ubuntu1.2`
+- `libgnutls30:amd64=3.6.13-2ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -1220,9 +1224,15 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gnutls28=3.6.13-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.13-2ubuntu1.3.dsc' gnutls28_3.6.13-2ubuntu1.3.dsc 3594 SHA256:47cd345ce3261708acc91f85abb2b1910702fb9451867d0d937f1f8d4db9905b
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.13.orig.tar.xz' gnutls28_3.6.13.orig.tar.xz 5958956 SHA256:32041df447d9f4644570cf573c9f60358e865637d69b7e59d1159b7240b52f38
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.13.orig.tar.xz.asc' gnutls28_3.6.13.orig.tar.xz.asc 667 SHA256:79eb677b19a35de2f17d2ea87e863755cd53f0072b9435c8a4b57669360f57d0
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.13-2ubuntu1.3.debian.tar.xz' gnutls28_3.6.13-2ubuntu1.3.debian.tar.xz 64836 SHA256:5e821c76567b141f8aa511f734f1be9c4c83b5da208acb7c53352a3dd3f8a293
+```
 
 ### `dpkg` source package: `googletest=1.10.0-2`
 
@@ -2243,12 +2253,12 @@ $ apt-get source -qq --print-uris libuv1=1.34.2-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/libu/libuv1/libuv1_1.34.2-1ubuntu1.debian.tar.xz' libuv1_1.34.2-1ubuntu1.debian.tar.xz 21896 SHA256:c041a02b38d7dacb842808dec080fcbd95e5107fd425295e5e1714d5e7bb0496
 ```
 
-### `dpkg` source package: `libx11=2:1.6.9-2ubuntu1`
+### `dpkg` source package: `libx11=2:1.6.9-2ubuntu1.1`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.9-2ubuntu1`
-- `libx11-data=2:1.6.9-2ubuntu1`
+- `libx11-6:amd64=2:1.6.9-2ubuntu1.1`
+- `libx11-data=2:1.6.9-2ubuntu1.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2257,11 +2267,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libx11=2:1.6.9-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.dsc' libx11_1.6.9-2ubuntu1.dsc 2584 SHA256:e0d4ff552c8a2e0742bd01053d1abc8cfc8b32dc5302cd1fe90c524a91ae0999
+$ apt-get source -qq --print-uris libx11=2:1.6.9-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.1.dsc' libx11_1.6.9-2ubuntu1.1.dsc 2671 SHA256:25dc81cb1335e7d957a22b33566f01d50e980c212ed88d7f22cc3b46b87f2034
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9.orig.tar.gz' libx11_1.6.9.orig.tar.gz 2994329 SHA256:b8c0930a9b25de15f3d773288cacd5e2f0a4158e194935615c52aeceafd1107b
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9.orig.tar.gz.asc' libx11_1.6.9.orig.tar.gz.asc 659 SHA256:5dca08f1a18bcfd9aabbb9b61c78948180db4e0a3e6710df695a48badb1ea8df
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.diff.gz' libx11_1.6.9-2ubuntu1.diff.gz 60547 SHA256:6af57abf40eabe9d1ddc09d70754ad473ef7b7edc898d88ca9069d9acbd60d9e
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.6.9-2ubuntu1.1.diff.gz' libx11_1.6.9-2ubuntu1.1.diff.gz 65340 SHA256:b64982a45800e7a9b3e9afe04eca62bf96225f183cc69586b1585a2f546d47ef
 ```
 
 ### `dpkg` source package: `libxau=1:1.0.9-0ubuntu1`
@@ -2423,19 +2433,24 @@ $ apt-get source -qq --print-uris libzstd=1.4.4+dfsg-3
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.4+dfsg-3.debian.tar.xz' libzstd_1.4.4+dfsg-3.debian.tar.xz 16068 SHA256:f7fec89f1fae04dfa551d124973167e09e84c864a25961aa20727cc91277b0e6
 ```
 
-### `dpkg` source package: `linux=5.4.0-42.46`
+### `dpkg` source package: `linux=5.4.0-47.51`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.4.0-42.46`
+- `linux-libc-dev:amd64=5.4.0-47.51`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.4.0-47.51
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-47.51.dsc' linux_5.4.0-47.51.dsc 6907 SHA256:4822787354014332c199908cce09ba5f940d59ec65361b922c10281c0123195c
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA256:805f3ed93854317814c59caf2dbfd2097745685f95c8c18b509c9347dcc7d51f
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-47.51.diff.gz' linux_5.4.0-47.51.diff.gz 5132021 SHA256:7be80319a671f218be09611f2dafeab74e8bb26bf5821bb42187da1056c2e7db
+```
 
 ### `dpkg` source package: `lksctp-tools=1.0.18+dfsg-1`
 
@@ -3076,14 +3091,14 @@ $ apt-get source -qq --print-uris p11-kit=0.23.20-1build1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.20-1build1.debian.tar.xz' p11-kit_0.23.20-1build1.debian.tar.xz 22004 SHA256:c43279d68adc9f710ff438f7084316e1e3ca9918f7c653bf1cb932927c415960
 ```
 
-### `dpkg` source package: `pam=1.3.1-5ubuntu4`
+### `dpkg` source package: `pam=1.3.1-5ubuntu4.1`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.3.1-5ubuntu4`
-- `libpam-modules-bin=1.3.1-5ubuntu4`
-- `libpam-runtime=1.3.1-5ubuntu4`
-- `libpam0g:amd64=1.3.1-5ubuntu4`
+- `libpam-modules:amd64=1.3.1-5ubuntu4.1`
+- `libpam-modules-bin=1.3.1-5ubuntu4.1`
+- `libpam-runtime=1.3.1-5ubuntu4.1`
+- `libpam0g:amd64=1.3.1-5ubuntu4.1`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
@@ -3092,10 +3107,10 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 Source:
 
 ```console
-$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.dsc' pam_1.3.1-5ubuntu4.dsc 2699 SHA256:b0d51a23352d570209f00156b796e685cee249dfcc36872154de0138f0b27e4b
+$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu4.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.1.dsc' pam_1.3.1-5ubuntu4.1.dsc 2707 SHA256:35ab14df7e92736365c7f25ab34c409c0e61744873a00eb2501913a78391242e
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1.orig.tar.xz' pam_1.3.1.orig.tar.xz 912332 SHA256:eff47a4ecd833fbf18de9686632a70ee8d0794b79aecb217ebd0ce11db4cd0db
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.debian.tar.xz' pam_1.3.1-5ubuntu4.debian.tar.xz 159780 SHA256:d5c539ac0bb5d05b62a2e9f936145d1cc8dbf94a91e0268e7ae98f043dbe8b0b
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.1.debian.tar.xz' pam_1.3.1-5ubuntu4.1.debian.tar.xz 159852 SHA256:0077dbedfcfece1aad46febd0f7a3be5fa90ecd05080b660843c8d9ec53ff3c4
 ```
 
 ### `dpkg` source package: `paramiko=2.6.0-2`
@@ -3917,11 +3932,11 @@ $ apt-get source -qq --print-uris rhash=1.3.9-1
 'http://archive.ubuntu.com/ubuntu/pool/main/r/rhash/rhash_1.3.9-1.debian.tar.xz' rhash_1.3.9-1.debian.tar.xz 9936 SHA256:64c6405e34a360297e9612564adb4af7fd0e2dc291f25df38252560c7ca1c11e
 ```
 
-### `dpkg` source package: `ros-noetic-actionlib-msgs=1.13.0-1focal.20200724.172738`
+### `dpkg` source package: `ros-noetic-actionlib-msgs=1.13.0-1focal.20200812.170243`
 
 Binary Packages:
 
-- `ros-noetic-actionlib-msgs=1.13.0-1focal.20200724.172738`
+- `ros-noetic-actionlib-msgs=1.13.0-1focal.20200812.170243`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3931,11 +3946,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-actionlib=1.13.1-1focal.20200724.181631`
+### `dpkg` source package: `ros-noetic-actionlib=1.13.2-1focal.20200826.180635`
 
 Binary Packages:
 
-- `ros-noetic-actionlib=1.13.1-1focal.20200724.181631`
+- `ros-noetic-actionlib=1.13.2-1focal.20200826.180635`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3945,11 +3960,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-bond-core=1.8.5-1focal.20200724.174550`
+### `dpkg` source package: `ros-noetic-bond-core=1.8.5-1focal.20200812.185528`
 
 Binary Packages:
 
-- `ros-noetic-bond-core=1.8.5-1focal.20200724.174550`
+- `ros-noetic-bond-core=1.8.5-1focal.20200812.185528`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3959,11 +3974,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-bond=1.8.5-1focal.20200724.172748`
+### `dpkg` source package: `ros-noetic-bond=1.8.5-1focal.20200812.170245`
 
 Binary Packages:
 
-- `ros-noetic-bond=1.8.5-1focal.20200724.172748`
+- `ros-noetic-bond=1.8.5-1focal.20200812.170245`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3973,11 +3988,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-bondcpp=1.8.5-1focal.20200724.173902`
+### `dpkg` source package: `ros-noetic-bondcpp=1.8.5-1focal.20200812.175842`
 
 Binary Packages:
 
-- `ros-noetic-bondcpp=1.8.5-1focal.20200724.173902`
+- `ros-noetic-bondcpp=1.8.5-1focal.20200812.175842`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3987,11 +4002,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-bondpy=1.8.5-1focal.20200724.174221`
+### `dpkg` source package: `ros-noetic-bondpy=1.8.5-1focal.20200812.183021`
 
 Binary Packages:
 
-- `ros-noetic-bondpy=1.8.5-1focal.20200724.174221`
+- `ros-noetic-bondpy=1.8.5-1focal.20200812.183021`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4043,11 +4058,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-common-msgs=1.13.0-1focal.20200724.182241`
+### `dpkg` source package: `ros-noetic-common-msgs=1.13.0-1focal.20200812.195732`
 
 Binary Packages:
 
-- `ros-noetic-common-msgs=1.13.0-1focal.20200724.182241`
+- `ros-noetic-common-msgs=1.13.0-1focal.20200812.195732`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4071,11 +4086,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-diagnostic-msgs=1.13.0-1focal.20200724.172912`
+### `dpkg` source package: `ros-noetic-diagnostic-msgs=1.13.0-1focal.20200812.170346`
 
 Binary Packages:
 
-- `ros-noetic-diagnostic-msgs=1.13.0-1focal.20200724.172912`
+- `ros-noetic-diagnostic-msgs=1.13.0-1focal.20200812.170346`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4085,11 +4100,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-dynamic-reconfigure=1.7.0-1focal.20200724.181552`
+### `dpkg` source package: `ros-noetic-dynamic-reconfigure=1.7.0-1focal.20200812.195340`
 
 Binary Packages:
 
-- `ros-noetic-dynamic-reconfigure=1.7.0-1focal.20200724.181552`
+- `ros-noetic-dynamic-reconfigure=1.7.0-1focal.20200812.195340`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4169,11 +4184,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-genpy=0.6.13-1focal.20200724.170030`
+### `dpkg` source package: `ros-noetic-genpy=0.6.14-1focal.20200812.160957`
 
 Binary Packages:
 
-- `ros-noetic-genpy=0.6.13-1focal.20200724.170030`
+- `ros-noetic-genpy=0.6.14-1focal.20200812.160957`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4183,11 +4198,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-geometry-msgs=1.13.0-1focal.20200724.173237`
+### `dpkg` source package: `ros-noetic-geometry-msgs=1.13.0-1focal.20200812.170527`
 
 Binary Packages:
 
-- `ros-noetic-geometry-msgs=1.13.0-1focal.20200724.173237`
+- `ros-noetic-geometry-msgs=1.13.0-1focal.20200812.170527`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4197,11 +4212,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-message-filters=1.15.8-1focal.20200724.174811`
+### `dpkg` source package: `ros-noetic-message-filters=1.15.8-1focal.20200812.185928`
 
 Binary Packages:
 
-- `ros-noetic-message-filters=1.15.8-1focal.20200724.174811`
+- `ros-noetic-message-filters=1.15.8-1focal.20200812.185928`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4211,11 +4226,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-message-generation=0.4.1-1focal.20200724.170252`
+### `dpkg` source package: `ros-noetic-message-generation=0.4.1-1focal.20200812.162405`
 
 Binary Packages:
 
-- `ros-noetic-message-generation=0.4.1-1focal.20200724.170252`
+- `ros-noetic-message-generation=0.4.1-1focal.20200812.162405`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4225,11 +4240,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-message-runtime=0.4.13-1focal.20200724.171508`
+### `dpkg` source package: `ros-noetic-message-runtime=0.4.13-1focal.20200812.162259`
 
 Binary Packages:
 
-- `ros-noetic-message-runtime=0.4.13-1focal.20200724.171508`
+- `ros-noetic-message-runtime=0.4.13-1focal.20200812.162259`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4239,11 +4254,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-mk=1.15.6-1focal.20200724.172008`
+### `dpkg` source package: `ros-noetic-mk=1.15.6-1focal.20200812.172829`
 
 Binary Packages:
 
-- `ros-noetic-mk=1.15.6-1focal.20200724.172008`
+- `ros-noetic-mk=1.15.6-1focal.20200812.172829`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4253,11 +4268,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-nav-msgs=1.13.0-1focal.20200724.175202`
+### `dpkg` source package: `ros-noetic-nav-msgs=1.13.0-1focal.20200812.172050`
 
 Binary Packages:
 
-- `ros-noetic-nav-msgs=1.13.0-1focal.20200724.175202`
+- `ros-noetic-nav-msgs=1.13.0-1focal.20200812.172050`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4267,11 +4282,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-nodelet-core=1.10.0-1focal.20200724.183357`
+### `dpkg` source package: `ros-noetic-nodelet-core=1.10.0-1focal.20200812.203447`
 
 Binary Packages:
 
-- `ros-noetic-nodelet-core=1.10.0-1focal.20200724.183357`
+- `ros-noetic-nodelet-core=1.10.0-1focal.20200812.203447`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4281,11 +4296,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-nodelet-topic-tools=1.10.0-1focal.20200724.182436`
+### `dpkg` source package: `ros-noetic-nodelet-topic-tools=1.10.0-1focal.20200812.201354`
 
 Binary Packages:
 
-- `ros-noetic-nodelet-topic-tools=1.10.0-1focal.20200724.182436`
+- `ros-noetic-nodelet-topic-tools=1.10.0-1focal.20200812.201354`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4295,11 +4310,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-nodelet=1.10.0-1focal.20200724.174146`
+### `dpkg` source package: `ros-noetic-nodelet=1.10.0-1focal.20200812.182808`
 
 Binary Packages:
 
-- `ros-noetic-nodelet=1.10.0-1focal.20200724.174146`
+- `ros-noetic-nodelet=1.10.0-1focal.20200812.182808`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4309,11 +4324,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-pluginlib=1.13.0-1focal.20200724.172448`
+### `dpkg` source package: `ros-noetic-pluginlib=1.13.0-1focal.20200812.174323`
 
 Binary Packages:
 
-- `ros-noetic-pluginlib=1.13.0-1focal.20200724.172448`
+- `ros-noetic-pluginlib=1.13.0-1focal.20200812.174323`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4323,11 +4338,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-ros-base=1.5.0-1focal.20200724.184136`
+### `dpkg` source package: `ros-noetic-ros-base=1.5.0-1focal.20200826.182532`
 
 Binary Packages:
 
-- `ros-noetic-ros-base=1.5.0-1focal.20200724.184136`
+- `ros-noetic-ros-base=1.5.0-1focal.20200826.182532`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4337,11 +4352,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-ros-comm=1.15.8-1focal.20200724.182454`
+### `dpkg` source package: `ros-noetic-ros-comm=1.15.8-1focal.20200812.202746`
 
 Binary Packages:
 
-- `ros-noetic-ros-comm=1.15.8-1focal.20200724.182454`
+- `ros-noetic-ros-comm=1.15.8-1focal.20200812.202746`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4351,11 +4366,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-ros-core=1.5.0-1focal.20200724.183234`
+### `dpkg` source package: `ros-noetic-ros-core=1.5.0-1focal.20200812.204115`
 
 Binary Packages:
 
-- `ros-noetic-ros-core=1.5.0-1focal.20200724.183234`
+- `ros-noetic-ros-core=1.5.0-1focal.20200812.204115`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4379,11 +4394,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-ros=1.15.6-1focal.20200724.172234`
+### `dpkg` source package: `ros-noetic-ros=1.15.6-1focal.20200812.173936`
 
 Binary Packages:
 
-- `ros-noetic-ros=1.15.6-1focal.20200724.172234`
+- `ros-noetic-ros=1.15.6-1focal.20200812.173936`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4407,11 +4422,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosbag-storage=1.15.8-1focal.20200724.174818`
+### `dpkg` source package: `ros-noetic-rosbag-storage=1.15.8-1focal.20200812.185350`
 
 Binary Packages:
 
-- `ros-noetic-rosbag-storage=1.15.8-1focal.20200724.174818`
+- `ros-noetic-rosbag-storage=1.15.8-1focal.20200812.185350`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4421,11 +4436,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosbag=1.15.8-1focal.20200724.175257`
+### `dpkg` source package: `ros-noetic-rosbag=1.15.8-1focal.20200812.191024`
 
 Binary Packages:
 
-- `ros-noetic-rosbag=1.15.8-1focal.20200724.175257`
+- `ros-noetic-rosbag=1.15.8-1focal.20200812.191024`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4463,11 +4478,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosbuild=1.15.6-1focal.20200724.171651`
+### `dpkg` source package: `ros-noetic-rosbuild=1.15.6-1focal.20200812.163643`
 
 Binary Packages:
 
-- `ros-noetic-rosbuild=1.15.6-1focal.20200724.171651`
+- `ros-noetic-rosbuild=1.15.6-1focal.20200812.163643`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4491,11 +4506,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosconsole-bridge=0.5.4-1focal.20200724.172709`
+### `dpkg` source package: `ros-noetic-rosconsole-bridge=0.5.4-1focal.20200812.174333`
 
 Binary Packages:
 
-- `ros-noetic-rosconsole-bridge=0.5.4-1focal.20200724.172709`
+- `ros-noetic-rosconsole-bridge=0.5.4-1focal.20200812.174333`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4505,11 +4520,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosconsole=1.14.1-1focal.20200724.172026`
+### `dpkg` source package: `ros-noetic-rosconsole=1.14.2-1focal.20200812.172838`
 
 Binary Packages:
 
-- `ros-noetic-rosconsole=1.14.1-1focal.20200724.172026`
+- `ros-noetic-rosconsole=1.14.2-1focal.20200812.172838`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4561,11 +4576,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-roscpp=1.15.8-1focal.20200724.173014`
+### `dpkg` source package: `ros-noetic-roscpp=1.15.8-1focal.20200812.174031`
 
 Binary Packages:
 
-- `ros-noetic-roscpp=1.15.8-1focal.20200724.173014`
+- `ros-noetic-roscpp=1.15.8-1focal.20200812.174031`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4589,11 +4604,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosgraph-msgs=1.11.3-1focal.20200724.172647`
+### `dpkg` source package: `ros-noetic-rosgraph-msgs=1.11.3-1focal.20200812.171808`
 
 Binary Packages:
 
-- `ros-noetic-rosgraph-msgs=1.11.3-1focal.20200724.172647`
+- `ros-noetic-rosgraph-msgs=1.11.3-1focal.20200812.171808`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4631,11 +4646,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-roslaunch=1.15.8-1focal.20200724.174129`
+### `dpkg` source package: `ros-noetic-roslaunch=1.15.8-1focal.20200812.181327`
 
 Binary Packages:
 
-- `ros-noetic-roslaunch=1.15.8-1focal.20200724.174129`
+- `ros-noetic-roslaunch=1.15.8-1focal.20200812.181327`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4659,11 +4674,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-roslisp=1.9.24-1focal.20200724.173034`
+### `dpkg` source package: `ros-noetic-roslisp=1.9.24-1focal.20200812.173107`
 
 Binary Packages:
 
-- `ros-noetic-roslisp=1.9.24-1focal.20200724.173034`
+- `ros-noetic-roslisp=1.9.24-1focal.20200812.173107`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4715,11 +4730,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosmsg=1.15.8-1focal.20200724.180012`
+### `dpkg` source package: `ros-noetic-rosmsg=1.15.8-1focal.20200812.192620`
 
 Binary Packages:
 
-- `ros-noetic-rosmsg=1.15.8-1focal.20200724.180012`
+- `ros-noetic-rosmsg=1.15.8-1focal.20200812.192620`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4729,11 +4744,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosnode=1.15.8-1focal.20200724.180800`
+### `dpkg` source package: `ros-noetic-rosnode=1.15.8-1focal.20200812.195632`
 
 Binary Packages:
 
-- `ros-noetic-rosnode=1.15.8-1focal.20200724.180800`
+- `ros-noetic-rosnode=1.15.8-1focal.20200812.195632`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4743,11 +4758,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosout=1.15.8-1focal.20200724.173826`
+### `dpkg` source package: `ros-noetic-rosout=1.15.8-1focal.20200812.180004`
 
 Binary Packages:
 
-- `ros-noetic-rosout=1.15.8-1focal.20200724.173826`
+- `ros-noetic-rosout=1.15.8-1focal.20200812.180004`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4785,11 +4800,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rospy=1.15.8-1focal.20200724.173836`
+### `dpkg` source package: `ros-noetic-rospy=1.15.8-1focal.20200812.181338`
 
 Binary Packages:
 
-- `ros-noetic-rospy=1.15.8-1focal.20200724.173836`
+- `ros-noetic-rospy=1.15.8-1focal.20200812.181338`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4799,11 +4814,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rosservice=1.15.8-1focal.20200724.180737`
+### `dpkg` source package: `ros-noetic-rosservice=1.15.8-1focal.20200812.194030`
 
 Binary Packages:
 
-- `ros-noetic-rosservice=1.15.8-1focal.20200724.180737`
+- `ros-noetic-rosservice=1.15.8-1focal.20200812.194030`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4813,11 +4828,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rostest=1.15.8-1focal.20200724.174433`
+### `dpkg` source package: `ros-noetic-rostest=1.15.8-1focal.20200812.183314`
 
 Binary Packages:
 
-- `ros-noetic-rostest=1.15.8-1focal.20200724.174433`
+- `ros-noetic-rostest=1.15.8-1focal.20200812.183314`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4841,11 +4856,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-rostopic=1.15.8-1focal.20200724.180016`
+### `dpkg` source package: `ros-noetic-rostopic=1.15.8-1focal.20200812.192658`
 
 Binary Packages:
 
-- `ros-noetic-rostopic=1.15.8-1focal.20200724.180016`
+- `ros-noetic-rostopic=1.15.8-1focal.20200812.192658`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4869,11 +4884,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-roswtf=1.15.8-1focal.20200724.181611`
+### `dpkg` source package: `ros-noetic-roswtf=1.15.8-1focal.20200812.201106`
 
 Binary Packages:
 
-- `ros-noetic-roswtf=1.15.8-1focal.20200724.181611`
+- `ros-noetic-roswtf=1.15.8-1focal.20200812.201106`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4883,11 +4898,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-sensor-msgs=1.13.0-1focal.20200724.180044`
+### `dpkg` source package: `ros-noetic-sensor-msgs=1.13.0-1focal.20200812.192710`
 
 Binary Packages:
 
-- `ros-noetic-sensor-msgs=1.13.0-1focal.20200724.180044`
+- `ros-noetic-sensor-msgs=1.13.0-1focal.20200812.192710`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4897,11 +4912,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-shape-msgs=1.13.0-1focal.20200724.175947`
+### `dpkg` source package: `ros-noetic-shape-msgs=1.13.0-1focal.20200812.172454`
 
 Binary Packages:
 
-- `ros-noetic-shape-msgs=1.13.0-1focal.20200724.175947`
+- `ros-noetic-shape-msgs=1.13.0-1focal.20200812.172454`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4925,11 +4940,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-std-msgs=0.5.13-1focal.20200724.172043`
+### `dpkg` source package: `ros-noetic-std-msgs=0.5.13-1focal.20200812.163652`
 
 Binary Packages:
 
-- `ros-noetic-std-msgs=0.5.13-1focal.20200724.172043`
+- `ros-noetic-std-msgs=0.5.13-1focal.20200812.163652`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4939,11 +4954,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-std-srvs=1.11.3-1focal.20200724.172043`
+### `dpkg` source package: `ros-noetic-std-srvs=1.11.3-1focal.20200812.163752`
 
 Binary Packages:
 
-- `ros-noetic-std-srvs=1.11.3-1focal.20200724.172043`
+- `ros-noetic-std-srvs=1.11.3-1focal.20200812.163752`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4953,11 +4968,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-stereo-msgs=1.13.0-1focal.20200724.181455`
+### `dpkg` source package: `ros-noetic-stereo-msgs=1.13.0-1focal.20200812.194354`
 
 Binary Packages:
 
-- `ros-noetic-stereo-msgs=1.13.0-1focal.20200724.181455`
+- `ros-noetic-stereo-msgs=1.13.0-1focal.20200812.194354`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4967,11 +4982,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-topic-tools=1.15.8-1focal.20200724.174830`
+### `dpkg` source package: `ros-noetic-topic-tools=1.15.8-1focal.20200812.185211`
 
 Binary Packages:
 
-- `ros-noetic-topic-tools=1.15.8-1focal.20200724.174830`
+- `ros-noetic-topic-tools=1.15.8-1focal.20200812.185211`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4981,11 +4996,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-trajectory-msgs=1.13.0-1focal.20200724.175840`
+### `dpkg` source package: `ros-noetic-trajectory-msgs=1.13.0-1focal.20200812.172518`
 
 Binary Packages:
 
-- `ros-noetic-trajectory-msgs=1.13.0-1focal.20200724.175840`
+- `ros-noetic-trajectory-msgs=1.13.0-1focal.20200812.172518`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4995,11 +5010,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-noetic-visualization-msgs=1.13.0-1focal.20200724.175849`
+### `dpkg` source package: `ros-noetic-visualization-msgs=1.13.0-1focal.20200812.172527`
 
 Binary Packages:
 
-- `ros-noetic-visualization-msgs=1.13.0-1focal.20200724.175849`
+- `ros-noetic-visualization-msgs=1.13.0-1focal.20200812.172527`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -5440,20 +5455,20 @@ $ apt-get source -qq --print-uris unixodbc=2.3.6-0.1build1
 'http://archive.ubuntu.com/ubuntu/pool/main/u/unixodbc/unixodbc_2.3.6-0.1build1.debian.tar.xz' unixodbc_2.3.6-0.1build1.debian.tar.xz 17988 SHA256:6b55abc12a3f22bf2836585d7ecdb9e82215661cab97af2a3c6c347632654c12
 ```
 
-### `dpkg` source package: `util-linux=2.34-0.1ubuntu9`
+### `dpkg` source package: `util-linux=2.34-0.1ubuntu9.1`
 
 Binary Packages:
 
-- `bsdutils=1:2.34-0.1ubuntu9`
-- `fdisk=2.34-0.1ubuntu9`
-- `libblkid1:amd64=2.34-0.1ubuntu9`
-- `libfdisk1:amd64=2.34-0.1ubuntu9`
-- `libmount1:amd64=2.34-0.1ubuntu9`
-- `libsmartcols1:amd64=2.34-0.1ubuntu9`
-- `libuuid1:amd64=2.34-0.1ubuntu9`
-- `mount=2.34-0.1ubuntu9`
-- `util-linux=2.34-0.1ubuntu9`
-- `uuid-dev:amd64=2.34-0.1ubuntu9`
+- `bsdutils=1:2.34-0.1ubuntu9.1`
+- `fdisk=2.34-0.1ubuntu9.1`
+- `libblkid1:amd64=2.34-0.1ubuntu9.1`
+- `libfdisk1:amd64=2.34-0.1ubuntu9.1`
+- `libmount1:amd64=2.34-0.1ubuntu9.1`
+- `libsmartcols1:amd64=2.34-0.1ubuntu9.1`
+- `libuuid1:amd64=2.34-0.1ubuntu9.1`
+- `mount=2.34-0.1ubuntu9.1`
+- `util-linux=2.34-0.1ubuntu9.1`
+- `uuid-dev:amd64=2.34-0.1ubuntu9.1`
 
 Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdisk/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`, `/usr/share/doc/uuid-dev/copyright`)
 
@@ -5477,10 +5492,10 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris util-linux=2.34-0.1ubuntu9
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.dsc' util-linux_2.34-0.1ubuntu9.dsc 3380 SHA256:d6afdba4e84e53a0e8bb153383173d2409de9ab2679d503a683ebcbaa972b225
+$ apt-get source -qq --print-uris util-linux=2.34-0.1ubuntu9.1
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.1.dsc' util-linux_2.34-0.1ubuntu9.1.dsc 4067 SHA256:83327235f08a42a94267f537e8f81c56ed149727ff333298a7dccd1e556d655f
 'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34.orig.tar.xz' util-linux_2.34.orig.tar.xz 4974812 SHA256:743f9d0c7252b6db246b659c1e1ce0bd45d8d4508b4dfa427bbb4a3e9b9f62b5
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.debian.tar.xz' util-linux_2.34-0.1ubuntu9.debian.tar.xz 90728 SHA256:23a6c2f493ad0b4600a4b0d0d75b9337a1f24735e5a02ddd8cbff4fd34b6c5d7
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.1.debian.tar.xz' util-linux_2.34-0.1ubuntu9.1.debian.tar.xz 91620 SHA256:17d9dfaad33ce33b75c3161d6e699d8eb27a140237ed0126b3133b2a2b4dd84c
 ```
 
 ### `dpkg` source package: `xml-core=0.18+nmu1`
@@ -5502,47 +5517,14 @@ $ apt-get source -qq --print-uris xml-core=0.18+nmu1
 'http://archive.ubuntu.com/ubuntu/pool/main/x/xml-core/xml-core_0.18+nmu1.tar.xz' xml-core_0.18+nmu1.tar.xz 21312 SHA256:3e07592404b8ac38924fb650227cf5c9dcfc9933bd632eb4430635cd54898471
 ```
 
-### `dpkg` source package: `xz-utils=5.2.4-1`
-
-Binary Packages:
-
-- `liblzma5:amd64=5.2.4-1`
-
-Licenses: (parsed from: `/usr/share/doc/liblzma5/copyright`)
-
-- `Autoconf`
-- `GPL-2`
-- `GPL-2+`
-- `GPL-3`
-- `LGPL-2`
-- `LGPL-2.1`
-- `LGPL-2.1+`
-- `PD`
-- `PD-debian`
-- `config-h`
-- `noderivs`
-- `none`
-- `permissive-fsf`
-- `permissive-nowarranty`
-- `probably-PD`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris xz-utils=5.2.4-1
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.4-1.dsc' xz-utils_5.2.4-1.dsc 2518 SHA256:b1572c4efb3c8ebf6f0e044b70e1e0451c919a99d3f80be03b624a54dd7ea593
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.4.orig.tar.xz' xz-utils_5.2.4.orig.tar.xz 1053868 SHA256:9717ae363760dedf573dad241420c5fea86256b65bc21d2cf71b2b12f0544f4b
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.4.orig.tar.xz.asc' xz-utils_5.2.4.orig.tar.xz.asc 879 SHA256:88290c1deeaf674ae2a4821f4373fe0e4cc2a94199eae6dcc26df1e70cc15303
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.4-1.debian.tar.xz' xz-utils_5.2.4-1.debian.tar.xz 135296 SHA256:d37b558444b76e88a69601df008cf1c0343c58cb7765b7bbb2099b0a19619361
-```
-
 ### `dpkg` source package: `xz-utils=5.2.4-1ubuntu1`
 
 Binary Packages:
 
+- `liblzma5:amd64=5.2.4-1ubuntu1`
 - `xz-utils=5.2.4-1ubuntu1`
 
-Licenses: (parsed from: `/usr/share/doc/xz-utils/copyright`)
+Licenses: (parsed from: `/usr/share/doc/liblzma5/copyright`, `/usr/share/doc/xz-utils/copyright`)
 
 - `Autoconf`
 - `GPL-2`
