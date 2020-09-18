@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:aec38cc81f391eff1f7d45928c9ae4d78c8bec57d6db1d16508e629fb63855bc`
-- Created: `2020-09-01T01:48:41.425387478Z`
+- Image ID: `sha256:99cfd70480b3a8e9f1ba77132fb5104221e6993fdb12544b89c39ce8fc3c51b9`
+- Created: `2020-09-15T21:44:50.49860338Z`
 - Virtual Size: ~ 510.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,6 +13,13 @@
   - `LANG=en_US.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-14`
   - `JAVA_VERSION=14.0.2`
+- Labels:
+  - `org.opencontainers.image.authors=Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>`
+  - `org.opencontainers.image.description=Oracle Linux is an open-source       operating system available under the GNU General Public License (GPLv2) and       is suitable for both general purpose or Oracle workloads.`
+  - `org.opencontainers.image.source=https://github.com/oracle/container-images/tree/dist-amd64/7-slim`
+  - `org.opencontainers.image.title=Oracle Linux 7 (slim)`
+  - `org.opencontainers.image.url=https://github.com/oracle/container-images`
+  - `org.opencontainers.image.vendor=Oracle America, Inc`
 
 ## `rpm` (`.rpm`-based packages)
 

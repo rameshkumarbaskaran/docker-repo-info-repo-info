@@ -1,10 +1,10 @@
-# `openjdk:16-ea-15-jdk-slim-buster`
+# `openjdk:16-ea-16-jdk-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:978a9212d1b937e74e1790c799aaf78ab4aa7149c42c0daac46c6dd73a6c817f`
-- Created: `2020-09-11T22:33:46.286607692Z`
-- Virtual Size: ~ 417.06 Mb  
+- Image ID: `sha256:65d9b0f181957faef5c8b36598e9654dc51d88d6c089cc6df74bda1b996ca2a0`
+- Created: `2020-09-17T23:31:42.14316252Z`
+- Virtual Size: ~ 417.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-16/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-16`
-  - `JAVA_VERSION=16-ea+15`
+  - `JAVA_VERSION=16-ea+16`
 
 ## `dpkg` (`.deb`-based packages)
 
