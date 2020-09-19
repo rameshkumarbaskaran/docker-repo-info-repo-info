@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d71ed9c5bbb1e1a941415654f5598b970ee67c8d1219920550215c08c70ef339`
-- Created: `2020-08-28T19:50:06.787762039Z`
-- Virtual Size: ~ 309.20 Mb  
+- Image ID: `sha256:6e209451e45af09f8f447636414ad2c4c06c3ee9e70675e6f0525e81fc1f8e1e`
+- Created: `2020-09-17T00:55:32.690926247Z`
+- Virtual Size: ~ 309.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -138,19 +138,23 @@ $ apt-get source -qq --print-uris audit=1:2.4.5-1ubuntu2.1
 'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.4.5-1ubuntu2.1.debian.tar.xz' audit_2.4.5-1ubuntu2.1.debian.tar.xz 19292 SHA256:285eef1a789f47c9ad6a30dc8427822b624146715a8f603d011bdc117529d5b2
 ```
 
-### `dpkg` source package: `base-files=9.4ubuntu4.12`
+### `dpkg` source package: `base-files=9.4ubuntu4.13`
 
 Binary Packages:
 
-- `base-files=9.4ubuntu4.12`
+- `base-files=9.4ubuntu4.13`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=9.4ubuntu4.13
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.13.dsc' base-files_9.4ubuntu4.13.dsc 1639 SHA256:920d924dcd8b818b0bbebf3a0393ebdf885f04ac8bfa927c566718caba42040a
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.13.tar.xz' base-files_9.4ubuntu4.13.tar.xz 67184 SHA256:a0a0a84ed702415d8259eb8433fafcf386c62dcc662b125f7abe3136a011460c
+```
 
 ### `dpkg` source package: `base-passwd=3.5.39`
 
@@ -1170,20 +1174,25 @@ $ apt-get source -qq --print-uris libusb=2:0.1.12-28
 'http://archive.ubuntu.com/ubuntu/pool/main/libu/libusb/libusb_0.1.12-28.debian.tar.xz' libusb_0.1.12-28.debian.tar.xz 21524 SHA256:eaf2314902b0bb9de3e1fa8c9abfcecea7b78c9824048016beaca34f7cc4351b
 ```
 
-### `dpkg` source package: `linux=4.4.0-187.217`
+### `dpkg` source package: `linux=4.4.0-189.219`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-187.217`
+- `linux-libc-dev:amd64=4.4.0-189.219`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-189.219
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-189.219.dsc' linux_4.4.0-189.219.dsc 11941 SHA256:4dc7caf0a9a8c1fd2d7c5a4f6c082b98c1d94cc22edd2778ff317735b7fb96fe
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-189.219.diff.gz' linux_4.4.0-189.219.diff.gz 16693382 SHA256:b17c679182f35e0e95f6f1bf8ef633d1bba3e0f3e86170b03035b2006c7d73b8
+```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
@@ -1384,12 +1393,12 @@ $ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.9
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.9.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.9.debian.tar.xz 181648 SHA256:d533a0257b2e86abdafc89e386d27585ac91eaf1ca7da33abb982185c704a3d6
 ```
 
-### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.16`
+### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.17`
 
 Binary Packages:
 
-- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.16`
-- `openssl=1.0.2g-1ubuntu4.16`
+- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.17`
+- `openssl=1.0.2g-1ubuntu4.17`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1398,10 +1407,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.0.2g-1ubuntu4.16
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.16.dsc' openssl_1.0.2g-1ubuntu4.16.dsc 2453 SHA256:3a8e643acae8c4e627ed97b05e51c2eaf873680170792db4e5dce4df58b40642
+$ apt-get source -qq --print-uris openssl=1.0.2g-1ubuntu4.17
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.17.dsc' openssl_1.0.2g-1ubuntu4.17.dsc 2453 SHA256:9f22957a7a6ed91978e1f18c9d2af494d307e8ceaa48491e7baa6fb665b985f9
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g.orig.tar.gz' openssl_1.0.2g.orig.tar.gz 5266102 SHA256:b784b1b3907ce39abf4098702dade6365522a253ad1552e267a9a0e89594aa33
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.16.debian.tar.xz' openssl_1.0.2g-1ubuntu4.16.debian.tar.xz 136592 SHA256:d306228914752dd61e390d4d00ce8f6bbf3d3702ecfa116b255eebfb8d52dd33
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.17.debian.tar.xz' openssl_1.0.2g-1ubuntu4.17.debian.tar.xz 137312 SHA256:24417e3826f6ab5b9319cd77b64ee44095b74d8bcbf8e31b49156bf653a13186
 ```
 
 ### `dpkg` source package: `p11-kit=0.23.2-5~ubuntu16.04.1`
