@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:fb10d66e43fdcf533a09929333a51eb851ae91ddc415cb7d5422bd8eb25bae5f`
-- Created: `2020-09-12T00:20:56.930346931Z`
-- Virtual Size: ~ 35.35 Mb  
+- Image ID: `sha256:d92a3b2018c8077fadd07ed0c7ae2607f3f61a8ab54b25e5e9531cc115fa3ceb`
+- Created: `2020-09-19T00:26:45.990132383Z`
+- Virtual Size: ~ 35.34 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20200911`
+  - `build-date=20200918`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -161,7 +161,7 @@ Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `openssl-1.0.2v-2.ph3.x86_64`
+### `rpm` package: `openssl-1.0.2w-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
@@ -215,7 +215,7 @@ Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `toybox-0.8.2-3.ph3.x86_64`
+### `rpm` package: `toybox-0.8.2-4.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
