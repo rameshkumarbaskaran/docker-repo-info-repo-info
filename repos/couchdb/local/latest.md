@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c163d12ba81254da031939dfa918bfe2009802528ff6a29b578d7959ecf2af09`
-- Created: `2020-09-10T01:26:38.206831609Z`
-- Virtual Size: ~ 189.42 Mb  
+- Image ID: `sha256:6cc07e2c5651a21e04d4f82efbe55954539f708e7aebb7cd5a29ecd320bbe7a5`
+- Created: `2020-09-18T02:20:46.798223322Z`
+- Virtual Size: ~ 189.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.11`
   - `TINI_VERSION=0.18.0`
   - `GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61`
-  - `COUCHDB_VERSION=3.1.0`
+  - `COUCHDB_VERSION=3.1.1`
 - Labels:
   - `maintainer=CouchDB Developers dev@couchdb.apache.org`
 
@@ -332,11 +332,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/coreutils/8.30-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/coreutils/8.30-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `couchdb=3.1.0~buster`
+### `dpkg` source package: `couchdb=3.1.1~buster`
 
 Binary Packages:
 
-- `couchdb=3.1.0~buster`
+- `couchdb=3.1.1~buster`
 
 Licenses: (parsed from: `/usr/share/doc/couchdb/copyright`)
 
