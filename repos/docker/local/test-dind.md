@@ -1,17 +1,17 @@
-# `docker:19.03.13-beta2-dind`
+# `docker:19.03.13-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c112297d71f581d628bf8eff83cc58912870b5575a781ae40d1f582732f66f6d`
-- Created: `2020-08-05T09:39:28.663371901Z`
-- Virtual Size: ~ 226.10 Mb  
+- Image ID: `sha256:b3893e48cf281b58a763fb90904fd5d63595f9e5ae5736ee2d892a2dea6a371a`
+- Created: `2020-09-17T23:21:28.643388746Z`
+- Virtual Size: ~ 232.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_CHANNEL=test`
-  - `DOCKER_VERSION=19.03.13-beta2`
+  - `DOCKER_CHANNEL=stable`
+  - `DOCKER_VERSION=19.03.13`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=ed89041433a031cafc0a0f19cfe573c31688d377`
 
@@ -190,16 +190,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `iptables`
 
 ```console
-iptables-1.8.4-r1 description:
+iptables-1.8.4-r2 description:
 Linux kernel firewall, NAT and packet mangling tools
 
-iptables-1.8.4-r1 webpage:
+iptables-1.8.4-r2 webpage:
 https://www.netfilter.org/projects/iptables/index.html
 
-iptables-1.8.4-r1 installed size:
+iptables-1.8.4-r2 installed size:
 2211840
 
-iptables-1.8.4-r1 license:
+iptables-1.8.4-r2 license:
 GPL-2.0-or-later
 
 ```
