@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:83a0d3337b58877ccfe6aae31b5f616f17124e997258255cfc7e3f8d449f5aa3`
-- Created: `2020-09-11T09:28:09.346421803Z`
-- Virtual Size: ~ 120.11 Mb  
+- Image ID: `sha256:75c9672a25dba273c350b4388fbd3e96c953ca6e61979b2934c78c274c03c768`
+- Created: `2020-09-24T22:24:19.386820815Z`
+- Virtual Size: ~ 120.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.5`
+  - `PYTHON_VERSION=3.8.6`
   - `PYTHON_PIP_VERSION=20.2.3`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/fa7dc83944936bf09a0e4cb5d5ec852c0d256599/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=6e0bb0a2c2533361d7f297ed547237caf1b7507f197835974c0dd7eba998c53c`
@@ -166,19 +166,13 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.3+deb10u5
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u5.dsc' base-files_10.3+deb10u5.dsc 1103 SHA256:7724ff9a9a3b2ce469cb04e761ab504b88fa2c74ba45d4d4d6b1e6cebdb11502
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u5.tar.xz' base-files_10.3+deb10u5.tar.xz 65376 SHA256:a86ea7be711a9a91ae781cbd9db1b0a931f76cdd36ea247aae9273f8f4d2a011
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-files/10.3+deb10u5/
 
-- https://sources.debian.net/src/base-files/10.3+deb10u5/ (for browsing the source)
-- https://sources.debian.net/src/base-files/10.3+deb10u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-files/10.3+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
