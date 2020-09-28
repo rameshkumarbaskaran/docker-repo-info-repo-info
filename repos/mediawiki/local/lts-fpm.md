@@ -1,10 +1,10 @@
-# `mediawiki:1.31.8-fpm`
+# `mediawiki:1.31.10-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:919c7964e087628153ae9564ac38ecdefa864f574d4fe7f7c63a38a5414aeb7e`
-- Created: `2020-09-11T07:22:00.394949406Z`
-- Virtual Size: ~ 713.83 Mb  
+- Image ID: `sha256:44caf26bc0f3bc0ac115c03fabea06a8ba4c89a41a434ce342926d44f7ab8b92`
+- Created: `2020-09-25T20:23:36.384991212Z`
+- Virtual Size: ~ 713.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -24,7 +24,7 @@
   - `PHP_SHA256=0f160a3483ffce36be5962fab7bcf09d605ee66c5707df83e4195cb796bbb03a`
   - `PHP_MD5=`
   - `MEDIAWIKI_MAJOR_VERSION=1.31`
-  - `MEDIAWIKI_VERSION=1.31.8`
+  - `MEDIAWIKI_VERSION=1.31.10`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -419,19 +419,13 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.3+deb10u5
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u5.dsc' base-files_10.3+deb10u5.dsc 1103 SHA256:7724ff9a9a3b2ce469cb04e761ab504b88fa2c74ba45d4d4d6b1e6cebdb11502
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u5.tar.xz' base-files_10.3+deb10u5.tar.xz 65376 SHA256:a86ea7be711a9a91ae781cbd9db1b0a931f76cdd36ea247aae9273f8f4d2a011
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-files/10.3+deb10u5/
 
-- https://sources.debian.net/src/base-files/10.3+deb10u5/ (for browsing the source)
-- https://sources.debian.net/src/base-files/10.3+deb10u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-files/10.3+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -2082,9 +2076,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris json-c=0.12.1+ds-2+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.dsc' json-c_0.12.1+ds-2+deb10u1.dsc 2105 SHA256:d64688bc4427ad313277c7074cb01f55ca6a1fe0aa60d2f47defb9101e203426
-'http://security.debian.org/debian-security/pool/updates/main/j/json-c/json-c_0.12.1+ds.orig.tar.gz' json-c_0.12.1+ds.orig.tar.gz 477598 SHA256:d036d20b63cb17ff02f43b86840f6c8c8da2b99077700c1779b16379cebb788d
-'http://security.debian.org/debian-security/pool/updates/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.debian.tar.xz' json-c_0.12.1+ds-2+deb10u1.debian.tar.xz 9460 SHA256:d40d54851a278018d15e1348efd9c169963add8566c455c8551d394337190d75
+'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.dsc' json-c_0.12.1+ds-2+deb10u1.dsc 2105 SHA256:d64688bc4427ad313277c7074cb01f55ca6a1fe0aa60d2f47defb9101e203426
+'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds.orig.tar.gz' json-c_0.12.1+ds.orig.tar.gz 477598 SHA256:d036d20b63cb17ff02f43b86840f6c8c8da2b99077700c1779b16379cebb788d
+'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.debian.tar.xz' json-c_0.12.1+ds-2+deb10u1.debian.tar.xz 9460 SHA256:d40d54851a278018d15e1348efd9c169963add8566c455c8551d394337190d75
 ```
 
 Other potentially useful URLs:
@@ -3247,21 +3241,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libx11=2:1.6.7-1
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1.dsc' libx11_1.6.7-1.dsc 2619 SHA256:ca544ccaf4b4bf08b96ca6f3c096d3b189f437cfd5cba8edb72e75cf050f56c6
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1.diff.gz' libx11_1.6.7-1.diff.gz 49222 SHA256:8215096d47c997b9591daa837fcd7d3970b6a9524dca889d2a1316f9f1dc59ad
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libx11/2:1.6.7-1/
 
-- https://sources.debian.net/src/libx11/2:1.6.7-1/ (for browsing the source)
-- https://sources.debian.net/src/libx11/2:1.6.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libx11/2:1.6.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 

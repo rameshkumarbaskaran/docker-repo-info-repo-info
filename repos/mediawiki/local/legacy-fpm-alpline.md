@@ -1,10 +1,10 @@
-# `mediawiki:1.33.4-fpm-alpine`
+# `mediawiki:1.34.4-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:87dc5f95ed97dde576b0504c768147e0953e0b800d4c416acc4322d548c3719f`
-- Created: `2020-09-04T01:35:23.45169825Z`
-- Virtual Size: ~ 420.63 Mb  
+- Image ID: `sha256:d548168d839b6bd6b849447d9a0b5eee082615d76819b4e02277fe553b971a60`
+- Created: `2020-09-25T20:22:53.446477854Z`
+- Virtual Size: ~ 429.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,14 +17,14 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.33`
-  - `PHP_URL=https://www.php.net/distributions/php-7.2.33.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.2.33.tar.xz.asc`
-  - `PHP_SHA256=0f160a3483ffce36be5962fab7bcf09d605ee66c5707df83e4195cb796bbb03a`
+  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
+  - `PHP_VERSION=7.3.22`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.22.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.22.tar.xz.asc`
+  - `PHP_SHA256=0e66606d3bdab5c2ae3f778136bfe8788e574913a3d8138695e54d98562f1fb5`
   - `PHP_MD5=`
-  - `MEDIAWIKI_MAJOR_VERSION=1.33`
-  - `MEDIAWIKI_VERSION=1.33.4`
+  - `MEDIAWIKI_MAJOR_VERSION=1.34`
+  - `MEDIAWIKI_VERSION=1.34.4`
 
 ## `apk` (`.apk`-based packages)
 
