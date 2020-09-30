@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2afc70b4b32abd7cbc608ea5fbd8ca893dab0c758e4454609c4c50411c8bc63b`
-- Created: `2020-08-05T22:59:28.743606797Z`
-- Virtual Size: ~ 274.00 Mb  
+- Image ID: `sha256:c05a2599cea4a67f4476b96a270f96b16d7cd0c5d480248cc61166d0bf145ac6`
+- Created: `2020-09-30T00:44:36.474786056Z`
+- Virtual Size: ~ 274.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
 - Command: `["mvn"]`
 - Environment:
   - `PATH=/opt/ibm/java/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_VERSION=1.8.0_sr6fp15`
+  - `JAVA_VERSION=1.8.0_sr6fp16`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-XX:+UseContainerSupport`
   - `MAVEN_HOME=/usr/share/maven`
@@ -141,16 +141,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.69.1-r0 description:
+curl-7.69.1-r1 description:
 URL retrival utility and library
 
-curl-7.69.1-r0 webpage:
+curl-7.69.1-r1 webpage:
 https://curl.haxx.se/
 
-curl-7.69.1-r0 installed size:
+curl-7.69.1-r1 installed size:
 229376
 
-curl-7.69.1-r0 license:
+curl-7.69.1-r1 license:
 MIT
 
 ```
@@ -226,16 +226,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r0 description:
+libcurl-7.69.1-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r0 webpage:
+libcurl-7.69.1-r1 webpage:
 https://curl.haxx.se/
 
-libcurl-7.69.1-r0 installed size:
+libcurl-7.69.1-r1 installed size:
 458752
 
-libcurl-7.69.1-r0 license:
+libcurl-7.69.1-r1 license:
 MIT
 
 ```
