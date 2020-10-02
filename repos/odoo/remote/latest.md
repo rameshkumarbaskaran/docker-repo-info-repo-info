@@ -1,7 +1,7 @@
 ## `odoo:latest`
 
 ```console
-$ docker pull odoo@sha256:6c91d4789a2dbc71829f6e0e90e7f3745fd43ec5bb14b8eb4f09fea80890d641
+$ docker pull odoo@sha256:fccc13945d62704dde11bf91d232acd360c85d2e4268f6ee26d0b4eedf20ffea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull odoo@sha256:6c91d4789a2dbc71829f6e0e90e7f3745fd43ec5bb14b8eb4f09fe
 ### `odoo:latest` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:1fbf52736a4d69f1616342b9c111be96f0d0bc3bb47f1e6980143945ec5f4ddd
+$ docker pull odoo@sha256:6f4a949423210174856cfdf998ad18732300bf093c4b8484b1b4edcc9fbc67da
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **382.3 MB (382302737 bytes)**  
+-	Total Size: **389.2 MB (389168484 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f018911ebd84885cf5c5b70a8b0392f7d9229e326197818034fc46065fdb4dac`
+-	Image ID: `sha256:54c5f844039b4f7950d2cb02f75e6547c9eff4fcb960943db4fb6a0e852fd491`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -34,41 +34,41 @@ MAINTAINER Odoo S.A. <info@odoo.com>
 SHELL [/bin/bash -xo pipefail -c]
 # Thu, 10 Sep 2020 12:49:31 GMT
 ENV LANG=C.UTF-8
-# Thu, 10 Sep 2020 12:50:47 GMT
-RUN apt-get update         && apt-get install -y --no-install-recommends             ca-certificates             curl             dirmngr             fonts-noto-cjk             gnupg             libssl-dev             node-less             npm             python3-num2words             python3-pip             python3-phonenumbers             python3-pyldap             python3-qrcode             python3-renderpm             python3-setuptools             python3-slugify             python3-vobject             python3-watchdog             python3-xlrd             python3-xlwt             xz-utils         && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb         && echo '7e35a63f9db14f93ec7feeb0fce76b30c08f2057 wkhtmltox.deb' | sha1sum -c -         && apt-get install -y --no-install-recommends ./wkhtmltox.deb         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
-# Thu, 10 Sep 2020 12:50:55 GMT
-RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list         && GNUPGHOME="$(mktemp -d)"         && export GNUPGHOME         && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'         && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"         && gpg --batch --armor --export "${repokey}" > /etc/apt/trusted.gpg.d/pgdg.gpg.asc         && gpgconf --kill all         && rm -rf "$GNUPGHOME"         && apt-get update          && apt-get install --no-install-recommends -y postgresql-client         && rm -f /etc/apt/sources.list.d/pgdg.list         && rm -rf /var/lib/apt/lists/*
-# Thu, 10 Sep 2020 12:50:59 GMT
+# Fri, 02 Oct 2020 21:39:15 GMT
+RUN apt-get update &&     apt-get install -y --no-install-recommends         ca-certificates         curl         dirmngr         fonts-noto-cjk         gnupg         libssl-dev         node-less         npm         python3-num2words         python3-pdfminer         python3-pip         python3-phonenumbers         python3-pyldap         python3-qrcode         python3-renderpm         python3-setuptools         python3-slugify         python3-vobject         python3-watchdog         python3-xlrd         python3-xlwt         xz-utils     && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb     && echo '7e35a63f9db14f93ec7feeb0fce76b30c08f2057 wkhtmltox.deb' | sha1sum -c -     && apt-get install -y --no-install-recommends ./wkhtmltox.deb     && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
+# Fri, 02 Oct 2020 21:39:24 GMT
+RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list     && GNUPGHOME="$(mktemp -d)"     && export GNUPGHOME     && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"     && gpg --batch --armor --export "${repokey}" > /etc/apt/trusted.gpg.d/pgdg.gpg.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && apt-get update      && apt-get install --no-install-recommends -y postgresql-client     && rm -f /etc/apt/sources.list.d/pgdg.list     && rm -rf /var/lib/apt/lists/*
+# Fri, 02 Oct 2020 21:39:28 GMT
 RUN npm install -g rtlcss
-# Thu, 10 Sep 2020 12:50:59 GMT
-ENV ODOO_VERSION=13.0
-# Thu, 10 Sep 2020 12:50:59 GMT
-ARG ODOO_RELEASE=20200826
-# Thu, 10 Sep 2020 12:50:59 GMT
-ARG ODOO_SHA=9fe7d55e64867d177519e99cc45f9ecfeb3746a3
-# Thu, 10 Sep 2020 12:52:16 GMT
-# ARGS: ODOO_RELEASE=20200826 ODOO_SHA=9fe7d55e64867d177519e99cc45f9ecfeb3746a3
-RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && apt-get update         && apt-get -y install --no-install-recommends ./odoo.deb         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Thu, 10 Sep 2020 12:52:18 GMT
+# Fri, 02 Oct 2020 21:39:28 GMT
+ENV ODOO_VERSION=14.0
+# Fri, 02 Oct 2020 21:39:28 GMT
+ARG ODOO_RELEASE=20201002
+# Fri, 02 Oct 2020 21:39:28 GMT
+ARG ODOO_SHA=70917e1db8d100c791f31afbfcd782dd026bd4c9
+# Fri, 02 Oct 2020 21:40:47 GMT
+# ARGS: ODOO_RELEASE=20201002 ODOO_SHA=70917e1db8d100c791f31afbfcd782dd026bd4c9
+RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb     && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -     && apt-get update     && apt-get -y install --no-install-recommends ./odoo.deb     && rm -rf /var/lib/apt/lists/* odoo.deb
+# Fri, 02 Oct 2020 21:40:49 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Thu, 10 Sep 2020 12:52:19 GMT
+# Fri, 02 Oct 2020 21:40:50 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Thu, 10 Sep 2020 12:52:21 GMT
-# ARGS: ODOO_RELEASE=20200826 ODOO_SHA=9fe7d55e64867d177519e99cc45f9ecfeb3746a3
+# Fri, 02 Oct 2020 21:40:51 GMT
+# ARGS: ODOO_RELEASE=20201002 ODOO_SHA=70917e1db8d100c791f31afbfcd782dd026bd4c9
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Thu, 10 Sep 2020 12:52:21 GMT
+# Fri, 02 Oct 2020 21:40:52 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Thu, 10 Sep 2020 12:52:21 GMT
+# Fri, 02 Oct 2020 21:40:52 GMT
 EXPOSE 8069 8071 8072
-# Thu, 10 Sep 2020 12:52:22 GMT
+# Fri, 02 Oct 2020 21:40:52 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Thu, 10 Sep 2020 12:52:22 GMT
+# Fri, 02 Oct 2020 21:40:53 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Thu, 10 Sep 2020 12:52:23 GMT
+# Fri, 02 Oct 2020 21:40:53 GMT
 USER odoo
-# Thu, 10 Sep 2020 12:52:23 GMT
+# Fri, 02 Oct 2020 21:40:54 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 10 Sep 2020 12:52:23 GMT
+# Fri, 02 Oct 2020 21:40:54 GMT
 CMD ["odoo"]
 ```
 
@@ -77,35 +77,35 @@ CMD ["odoo"]
 		Last Modified: Thu, 10 Sep 2020 00:34:02 GMT  
 		Size: 27.1 MB (27092161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33c2c464f6195f22f9d5287694068d70f208f664cebd88823a71779448bcbfa9`  
-		Last Modified: Thu, 10 Sep 2020 12:57:41 GMT  
-		Size: 204.1 MB (204054893 bytes)  
+	-	`sha256:918cd4aaeb69f3c828531962c0a4f69cbab65f3d22c4289db77087aa80581735`  
+		Last Modified: Fri, 02 Oct 2020 21:45:39 GMT  
+		Size: 210.1 MB (210103756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6aaa85eb54a1a8603e92f874b58a604507cbfe1eab02040736f9c4ff171bfe82`  
-		Last Modified: Thu, 10 Sep 2020 12:57:03 GMT  
-		Size: 2.3 MB (2337739 bytes)  
+	-	`sha256:f28fcced63569e31089b82f73fbfea1199b4041d35b97dfc63c59a8d5c8e631b`  
+		Last Modified: Fri, 02 Oct 2020 21:44:39 GMT  
+		Size: 2.4 MB (2435828 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bbe33153083cfe1763194a3e50a1d17c86450dd6cd294c5138327a733ded54a`  
-		Last Modified: Thu, 10 Sep 2020 12:57:03 GMT  
-		Size: 1.1 MB (1100454 bytes)  
+	-	`sha256:955db14828467740f3a3a069d5a2cb95a3823644a018c5b5aa1fd49ae7fcdb7d`  
+		Last Modified: Fri, 02 Oct 2020 21:44:39 GMT  
+		Size: 1.1 MB (1111094 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5bf4f7107f7f34081752b4d5beacabbd943dac880b48c519b6e7c8d9aaa2ec12`  
-		Last Modified: Thu, 10 Sep 2020 12:57:52 GMT  
-		Size: 147.7 MB (147715085 bytes)  
+	-	`sha256:017e349353bc459654a1cce76c0a565f41da6297e7edf13b64a4486cb7203347`  
+		Last Modified: Fri, 02 Oct 2020 21:45:41 GMT  
+		Size: 148.4 MB (148423239 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:81359091210b3ef6220ab0c621daaf11e9d24c10fdeaf31cdd73b162f4ff9ed8`  
-		Last Modified: Thu, 10 Sep 2020 12:57:01 GMT  
+	-	`sha256:9d71f13db1c6ca72d807ffcd7b71d22513c65606d17a6df7dc78b40e2ae76ae5`  
+		Last Modified: Fri, 02 Oct 2020 21:44:36 GMT  
 		Size: 672.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97901ea432daad25187c703dd676aa8f042058e197797e114e6b88bcd53ef715`  
-		Last Modified: Thu, 10 Sep 2020 12:57:01 GMT  
+	-	`sha256:b6d377fe6745e0cdfeaac46b0acb9b3a4baaba914eaaaa8804dfd11bbf6bb515`  
+		Last Modified: Fri, 02 Oct 2020 21:44:37 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac981b568469f70e139ee3b94e08ad2ebaa9df64e44502da74e467186ca9499c`  
-		Last Modified: Thu, 10 Sep 2020 12:57:01 GMT  
-		Size: 593.0 B  
+	-	`sha256:d16781d5c37efcef4bf1c88b72722d53790b91cffb3f0e74fab79f6643abb2c4`  
+		Last Modified: Fri, 02 Oct 2020 21:44:37 GMT  
+		Size: 594.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce985a91ce2039fc4dddf5dedae0da2c18ce145cb5e0db831508ff2324e62a10`  
-		Last Modified: Thu, 10 Sep 2020 12:57:01 GMT  
+	-	`sha256:41b885b58a509716736b769d8717a56e63196dacad2793e3a9fc80265b1546ab`  
+		Last Modified: Fri, 02 Oct 2020 21:44:37 GMT  
 		Size: 585.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
