@@ -11737,7 +11737,7 @@ CMD ["php-fpm"]
 ## `mediawiki:1.35`
 
 ```console
-$ docker pull mediawiki@sha256:c08f0f5cf7aeb23156b7f892876a1fdb12f098067607a5635ff957c7cef8699b
+$ docker pull mediawiki@sha256:456666d7f2ba383bc526da4b1714b3e4736e0e7ee877eac75a5925c4265bc17a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12301,14 +12301,14 @@ CMD ["apache2-foreground"]
 ### `mediawiki:1.35` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:16712d3454a1df8d6411fbd17dcfcf0a0c950a9156898e851678647bd7a2afaa
+$ docker pull mediawiki@sha256:cc978f5fcfdc97b11c88a1767e4ad73ebf3d0d44b5c86a55e38ab2bfb8161fca
 ```
 
 -	Docker Version: 18.09.7
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v1+json`
--	Total Size: **254.7 MB (254726161 bytes)**  
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **254.7 MB (254726129 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `ea3f2dd2af73a855cef3d338867ea1c7fac696c954449a8f96f9a16ec83b424d`
+-	Image ID: `sha256:0b50ca864b4140713977e0a1b043b5a193736c98b4393bfc93120e53abead1ec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -12396,94 +12396,90 @@ ENV MEDIAWIKI_VERSION=1.35.0
 # Fri, 02 Oct 2020 00:57:06 GMT
 RUN set -eux; 	fetchDeps=" 		gnupg 		dirmngr 	"; 	apt-get update; 	apt-get install -y --no-install-recommends $fetchDeps; 		curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz.sig" -o mediawiki.tar.gz.sig; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 		D7D6767D135A514BEB86E9BA75682B08E8A3FEC4 		441276E9CCD15F44F6D97D18C119E1A64D70938E 		F7F780D82EBFB8A56556E7EE82403E59F9F8CD79 		1D98867E82982C8FE0ABC25F9B69B3109D3BB7B0 	; 	gpg --batch --verify mediawiki.tar.gz.sig mediawiki.tar.gz; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" mediawiki.tar.gz.sig mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
 # Fri, 02 Oct 2020 00:57:13 GMT
-RUN ["\/bin\/sh","-c","#(nop) ","CMD [\"apache2-foreground\"]"]
+CMD ["apache2-foreground"]
 ```
 
 -	Layers:
-	-	`sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4`  
-		Last Modified: Sat, 14 Nov 2015 09:09:44 GMT  
-		Size: 32.0 B  
-		MIME: application/octet-stream
-	-	`sha256:40cf71c811f007d5821b6c9c0013b90f06850937e10b8c3adf88f998415573b2`  
-		Last Modified: Fri, 02 Oct 2020 01:26:55 GMT  
-		Size: 48.7 MB (48668713 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:28b5432dcb739d9fc102f1b78ee0d6e213e4f2ea0c1eed07714c9d32f35c917a`  
-		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
-		Size: 171.0 B  
-		MIME: application/octet-stream
-	-	`sha256:274878df7c5248cc84ae5dd066b5a64a61d2f1746e399622a1e9452551a73706`  
-		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
-		Size: 316.0 B  
-		MIME: application/octet-stream
-	-	`sha256:2b45768307829121ed5410751cf3b355fc8f2667eb3d3d2db07cd0a2211f5686`  
-		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
-		Size: 581.0 B  
-		MIME: application/octet-stream
-	-	`sha256:27d605dfef0bf5474d86d28af6aebaa2663ae02bd7afa4a928c6fda86dc36b6f`  
-		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
-		Size: 2.8 MB (2820480 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:0131d1551ad414656722046822aceff28e3760df34191cb6d72c2eea3d763356`  
-		Last Modified: Fri, 02 Oct 2020 01:26:47 GMT  
-		Size: 62.2 MB (62243028 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:cff8370388f9cddcb418ce7940f9beb0ffb1cf19c260ec9e625e1b64cf9bddb3`  
-		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
-		Size: 896.0 B  
-		MIME: application/octet-stream
-	-	`sha256:72c2f79cf648bf014d2bb6219c914fe535e75accf6a412a1dbdfe457c1c25b87`  
-		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
-		Size: 214.0 B  
-		MIME: application/octet-stream
-	-	`sha256:21860fae9c95161b7132f0b20777a13491e3e5cc662404624c7f40aac2e471bf`  
-		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
-		Size: 250.0 B  
-		MIME: application/octet-stream
-	-	`sha256:b6666755cac8eada0d51e0cdfee8549b532cf7e512022b487ae8f6b5a7e3fe82`  
-		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
-		Size: 2.3 KB (2285 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:dd2fcbbbf97fd20fa7079fcf783d1c8caa1f82940edda75a01921e25a3e23a38`  
-		Last Modified: Thu, 01 Oct 2020 21:39:34 GMT  
-		Size: 13.7 MB (13749845 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:79a7cb233f4cc427da7fe099a17fa591f12d755086d1b3568741fdf698dcaf61`  
-		Last Modified: Thu, 01 Oct 2020 21:39:30 GMT  
-		Size: 494.0 B  
-		MIME: application/octet-stream
-	-	`sha256:d7b0e80d1b705bb3e129609f021b82a55e67cddea28ac6cd40a104d57850e3ff`  
-		Last Modified: Thu, 01 Oct 2020 21:39:33 GMT  
-		Size: 12.5 MB (12470961 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:581bec9454b64e95f61c78367f8b0510c02325367f58837e9469ee0d815a446c`  
-		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
-		Size: 516.0 B  
-		MIME: application/octet-stream
-	-	`sha256:09614c0a2c4fa9cea7eb9c150e1ed7a9ff5e7cd24d48fa89d0bde9ca53088d80`  
-		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
-		Size: 476.0 B  
-		MIME: application/octet-stream
-	-	`sha256:986e8e90a1ce91d29857dc12cecf35e27c100544cc30be822d09ccfc339cbedc`  
-		Last Modified: Thu, 10 Sep 2020 14:16:20 GMT  
-		Size: 18.6 MB (18579534 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:f76bca23f69b13b0ba97ffcb96964a27c90a234bb33d13b977d46f15defb9299`  
-		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
-		Size: 270.0 B  
-		MIME: application/octet-stream
-	-	`sha256:2c348cef873eb53c0c25878ea8bc2e47bfb9eb575a1b3138fc1ef02731b8840f`  
-		Last Modified: Thu, 10 Sep 2020 14:15:45 GMT  
-		Size: 70.3 MB (70337546 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:5b765cd8dd18ccad037620f2765e6c4d1d213e1efd39d254ed77be7e075bde1b`  
-		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
-		Size: 228.0 B  
-		MIME: application/octet-stream
 	-	`sha256:a6d76de28f58f3470aff71c934c0fec4e5d0fad788f8b8bcc50601266fc1b34d`  
 		Last Modified: Wed, 09 Sep 2020 23:59:09 GMT  
 		Size: 25.8 MB (25849325 bytes)  
-		MIME: application/octet-stream
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5b765cd8dd18ccad037620f2765e6c4d1d213e1efd39d254ed77be7e075bde1b`  
+		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
+		Size: 228.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2c348cef873eb53c0c25878ea8bc2e47bfb9eb575a1b3138fc1ef02731b8840f`  
+		Last Modified: Thu, 10 Sep 2020 14:15:45 GMT  
+		Size: 70.3 MB (70337546 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f76bca23f69b13b0ba97ffcb96964a27c90a234bb33d13b977d46f15defb9299`  
+		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
+		Size: 270.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:986e8e90a1ce91d29857dc12cecf35e27c100544cc30be822d09ccfc339cbedc`  
+		Last Modified: Thu, 10 Sep 2020 14:16:20 GMT  
+		Size: 18.6 MB (18579534 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:09614c0a2c4fa9cea7eb9c150e1ed7a9ff5e7cd24d48fa89d0bde9ca53088d80`  
+		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
+		Size: 476.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:581bec9454b64e95f61c78367f8b0510c02325367f58837e9469ee0d815a446c`  
+		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
+		Size: 516.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d7b0e80d1b705bb3e129609f021b82a55e67cddea28ac6cd40a104d57850e3ff`  
+		Last Modified: Thu, 01 Oct 2020 21:39:33 GMT  
+		Size: 12.5 MB (12470961 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:79a7cb233f4cc427da7fe099a17fa591f12d755086d1b3568741fdf698dcaf61`  
+		Last Modified: Thu, 01 Oct 2020 21:39:30 GMT  
+		Size: 494.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd2fcbbbf97fd20fa7079fcf783d1c8caa1f82940edda75a01921e25a3e23a38`  
+		Last Modified: Thu, 01 Oct 2020 21:39:34 GMT  
+		Size: 13.7 MB (13749845 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b6666755cac8eada0d51e0cdfee8549b532cf7e512022b487ae8f6b5a7e3fe82`  
+		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
+		Size: 2.3 KB (2285 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:21860fae9c95161b7132f0b20777a13491e3e5cc662404624c7f40aac2e471bf`  
+		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
+		Size: 250.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:72c2f79cf648bf014d2bb6219c914fe535e75accf6a412a1dbdfe457c1c25b87`  
+		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
+		Size: 214.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cff8370388f9cddcb418ce7940f9beb0ffb1cf19c260ec9e625e1b64cf9bddb3`  
+		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
+		Size: 896.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0131d1551ad414656722046822aceff28e3760df34191cb6d72c2eea3d763356`  
+		Last Modified: Fri, 02 Oct 2020 01:26:47 GMT  
+		Size: 62.2 MB (62243028 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:27d605dfef0bf5474d86d28af6aebaa2663ae02bd7afa4a928c6fda86dc36b6f`  
+		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
+		Size: 2.8 MB (2820480 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2b45768307829121ed5410751cf3b355fc8f2667eb3d3d2db07cd0a2211f5686`  
+		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
+		Size: 581.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:274878df7c5248cc84ae5dd066b5a64a61d2f1746e399622a1e9452551a73706`  
+		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
+		Size: 316.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:28b5432dcb739d9fc102f1b78ee0d6e213e4f2ea0c1eed07714c9d32f35c917a`  
+		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
+		Size: 171.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:40cf71c811f007d5821b6c9c0013b90f06850937e10b8c3adf88f998415573b2`  
+		Last Modified: Fri, 02 Oct 2020 01:26:55 GMT  
+		Size: 48.7 MB (48668713 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.35` - linux; 386
 
@@ -18740,7 +18736,7 @@ CMD ["apache2-foreground"]
 ## `mediawiki:legacy`
 
 ```console
-$ docker pull mediawiki@sha256:62e6c7d593f515371a164cbefc36efc2e8827a5b0cef6eb83fca0aad33bef4c7
+$ docker pull mediawiki@sha256:6edd1c3bb81e4c294fe318db39d247f1c05832d9ddc8f818d44b7ed463353e64
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19304,14 +19300,14 @@ CMD ["apache2-foreground"]
 ### `mediawiki:legacy` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:629153cbc41a784c7717fc38a979eda42b75699d4d3f1a355926c10c04ead6c1
+$ docker pull mediawiki@sha256:e6f07664f85b3ae691811e5e570a08c97f4604ea89d2f2dc64af3cc656a26e4f
 ```
 
 -	Docker Version: 18.09.7
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v1+json`
--	Total Size: **247.4 MB (247403600 bytes)**  
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **247.4 MB (247403568 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `dbc33d6bba27558cfc638ce171adafc4719c53c8ae6680dd070918b38693a620`
+-	Image ID: `sha256:d5993707edfcb0473ca5269db08793c6b22ff6b9e694ada8df67d8f7a348d2d2`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -19399,94 +19395,90 @@ ENV MEDIAWIKI_VERSION=1.34.4
 # Fri, 02 Oct 2020 01:08:15 GMT
 RUN set -eux; 	fetchDeps=" 		gnupg 		dirmngr 	"; 	apt-get update; 	apt-get install -y --no-install-recommends $fetchDeps; 		curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz.sig" -o mediawiki.tar.gz.sig; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 		D7D6767D135A514BEB86E9BA75682B08E8A3FEC4 		441276E9CCD15F44F6D97D18C119E1A64D70938E 		F7F780D82EBFB8A56556E7EE82403E59F9F8CD79 		1D98867E82982C8FE0ABC25F9B69B3109D3BB7B0 	; 	gpg --batch --verify mediawiki.tar.gz.sig mediawiki.tar.gz; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" mediawiki.tar.gz.sig mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
 # Fri, 02 Oct 2020 01:08:18 GMT
-RUN ["\/bin\/sh","-c","#(nop) ","CMD [\"apache2-foreground\"]"]
+CMD ["apache2-foreground"]
 ```
 
 -	Layers:
-	-	`sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4`  
-		Last Modified: Sat, 14 Nov 2015 09:09:44 GMT  
-		Size: 32.0 B  
-		MIME: application/octet-stream
-	-	`sha256:dcd567ea1cf8d2729be5ea4e4dd7dd3d25d15d58dffb6bed0b86c1fd0c9d6e7a`  
-		Last Modified: Fri, 02 Oct 2020 01:28:52 GMT  
-		Size: 41.3 MB (41346152 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:28b5432dcb739d9fc102f1b78ee0d6e213e4f2ea0c1eed07714c9d32f35c917a`  
-		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
-		Size: 171.0 B  
-		MIME: application/octet-stream
-	-	`sha256:274878df7c5248cc84ae5dd066b5a64a61d2f1746e399622a1e9452551a73706`  
-		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
-		Size: 316.0 B  
-		MIME: application/octet-stream
-	-	`sha256:2b45768307829121ed5410751cf3b355fc8f2667eb3d3d2db07cd0a2211f5686`  
-		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
-		Size: 581.0 B  
-		MIME: application/octet-stream
-	-	`sha256:27d605dfef0bf5474d86d28af6aebaa2663ae02bd7afa4a928c6fda86dc36b6f`  
-		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
-		Size: 2.8 MB (2820480 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:0131d1551ad414656722046822aceff28e3760df34191cb6d72c2eea3d763356`  
-		Last Modified: Fri, 02 Oct 2020 01:26:47 GMT  
-		Size: 62.2 MB (62243028 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:cff8370388f9cddcb418ce7940f9beb0ffb1cf19c260ec9e625e1b64cf9bddb3`  
-		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
-		Size: 896.0 B  
-		MIME: application/octet-stream
-	-	`sha256:72c2f79cf648bf014d2bb6219c914fe535e75accf6a412a1dbdfe457c1c25b87`  
-		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
-		Size: 214.0 B  
-		MIME: application/octet-stream
-	-	`sha256:21860fae9c95161b7132f0b20777a13491e3e5cc662404624c7f40aac2e471bf`  
-		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
-		Size: 250.0 B  
-		MIME: application/octet-stream
-	-	`sha256:b6666755cac8eada0d51e0cdfee8549b532cf7e512022b487ae8f6b5a7e3fe82`  
-		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
-		Size: 2.3 KB (2285 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:dd2fcbbbf97fd20fa7079fcf783d1c8caa1f82940edda75a01921e25a3e23a38`  
-		Last Modified: Thu, 01 Oct 2020 21:39:34 GMT  
-		Size: 13.7 MB (13749845 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:79a7cb233f4cc427da7fe099a17fa591f12d755086d1b3568741fdf698dcaf61`  
-		Last Modified: Thu, 01 Oct 2020 21:39:30 GMT  
-		Size: 494.0 B  
-		MIME: application/octet-stream
-	-	`sha256:d7b0e80d1b705bb3e129609f021b82a55e67cddea28ac6cd40a104d57850e3ff`  
-		Last Modified: Thu, 01 Oct 2020 21:39:33 GMT  
-		Size: 12.5 MB (12470961 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:581bec9454b64e95f61c78367f8b0510c02325367f58837e9469ee0d815a446c`  
-		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
-		Size: 516.0 B  
-		MIME: application/octet-stream
-	-	`sha256:09614c0a2c4fa9cea7eb9c150e1ed7a9ff5e7cd24d48fa89d0bde9ca53088d80`  
-		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
-		Size: 476.0 B  
-		MIME: application/octet-stream
-	-	`sha256:986e8e90a1ce91d29857dc12cecf35e27c100544cc30be822d09ccfc339cbedc`  
-		Last Modified: Thu, 10 Sep 2020 14:16:20 GMT  
-		Size: 18.6 MB (18579534 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:f76bca23f69b13b0ba97ffcb96964a27c90a234bb33d13b977d46f15defb9299`  
-		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
-		Size: 270.0 B  
-		MIME: application/octet-stream
-	-	`sha256:2c348cef873eb53c0c25878ea8bc2e47bfb9eb575a1b3138fc1ef02731b8840f`  
-		Last Modified: Thu, 10 Sep 2020 14:15:45 GMT  
-		Size: 70.3 MB (70337546 bytes)  
-		MIME: application/octet-stream
-	-	`sha256:5b765cd8dd18ccad037620f2765e6c4d1d213e1efd39d254ed77be7e075bde1b`  
-		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
-		Size: 228.0 B  
-		MIME: application/octet-stream
 	-	`sha256:a6d76de28f58f3470aff71c934c0fec4e5d0fad788f8b8bcc50601266fc1b34d`  
 		Last Modified: Wed, 09 Sep 2020 23:59:09 GMT  
 		Size: 25.8 MB (25849325 bytes)  
-		MIME: application/octet-stream
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5b765cd8dd18ccad037620f2765e6c4d1d213e1efd39d254ed77be7e075bde1b`  
+		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
+		Size: 228.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2c348cef873eb53c0c25878ea8bc2e47bfb9eb575a1b3138fc1ef02731b8840f`  
+		Last Modified: Thu, 10 Sep 2020 14:15:45 GMT  
+		Size: 70.3 MB (70337546 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f76bca23f69b13b0ba97ffcb96964a27c90a234bb33d13b977d46f15defb9299`  
+		Last Modified: Thu, 10 Sep 2020 14:15:23 GMT  
+		Size: 270.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:986e8e90a1ce91d29857dc12cecf35e27c100544cc30be822d09ccfc339cbedc`  
+		Last Modified: Thu, 10 Sep 2020 14:16:20 GMT  
+		Size: 18.6 MB (18579534 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:09614c0a2c4fa9cea7eb9c150e1ed7a9ff5e7cd24d48fa89d0bde9ca53088d80`  
+		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
+		Size: 476.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:581bec9454b64e95f61c78367f8b0510c02325367f58837e9469ee0d815a446c`  
+		Last Modified: Thu, 10 Sep 2020 14:16:17 GMT  
+		Size: 516.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d7b0e80d1b705bb3e129609f021b82a55e67cddea28ac6cd40a104d57850e3ff`  
+		Last Modified: Thu, 01 Oct 2020 21:39:33 GMT  
+		Size: 12.5 MB (12470961 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:79a7cb233f4cc427da7fe099a17fa591f12d755086d1b3568741fdf698dcaf61`  
+		Last Modified: Thu, 01 Oct 2020 21:39:30 GMT  
+		Size: 494.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd2fcbbbf97fd20fa7079fcf783d1c8caa1f82940edda75a01921e25a3e23a38`  
+		Last Modified: Thu, 01 Oct 2020 21:39:34 GMT  
+		Size: 13.7 MB (13749845 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b6666755cac8eada0d51e0cdfee8549b532cf7e512022b487ae8f6b5a7e3fe82`  
+		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
+		Size: 2.3 KB (2285 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:21860fae9c95161b7132f0b20777a13491e3e5cc662404624c7f40aac2e471bf`  
+		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
+		Size: 250.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:72c2f79cf648bf014d2bb6219c914fe535e75accf6a412a1dbdfe457c1c25b87`  
+		Last Modified: Thu, 01 Oct 2020 21:39:28 GMT  
+		Size: 214.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cff8370388f9cddcb418ce7940f9beb0ffb1cf19c260ec9e625e1b64cf9bddb3`  
+		Last Modified: Thu, 01 Oct 2020 21:39:29 GMT  
+		Size: 896.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0131d1551ad414656722046822aceff28e3760df34191cb6d72c2eea3d763356`  
+		Last Modified: Fri, 02 Oct 2020 01:26:47 GMT  
+		Size: 62.2 MB (62243028 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:27d605dfef0bf5474d86d28af6aebaa2663ae02bd7afa4a928c6fda86dc36b6f`  
+		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
+		Size: 2.8 MB (2820480 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2b45768307829121ed5410751cf3b355fc8f2667eb3d3d2db07cd0a2211f5686`  
+		Last Modified: Fri, 02 Oct 2020 01:26:23 GMT  
+		Size: 581.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:274878df7c5248cc84ae5dd066b5a64a61d2f1746e399622a1e9452551a73706`  
+		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
+		Size: 316.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:28b5432dcb739d9fc102f1b78ee0d6e213e4f2ea0c1eed07714c9d32f35c917a`  
+		Last Modified: Fri, 02 Oct 2020 01:26:21 GMT  
+		Size: 171.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dcd567ea1cf8d2729be5ea4e4dd7dd3d25d15d58dffb6bed0b86c1fd0c9d6e7a`  
+		Last Modified: Fri, 02 Oct 2020 01:28:52 GMT  
+		Size: 41.3 MB (41346152 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:legacy` - linux; 386
 
