@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:82ea643c529582740f410cf8f4fa6338b9d7cd0b5cac69ece599e69ed9557c38`
-- Created: `2020-09-24T21:20:52.45912635Z`
+- Image ID: `sha256:eaa927cb2db13060cef1bb5c200a17f94fcf5a1ff3815e65201332e4bb813d7c`
+- Created: `2020-10-02T01:06:02.340376819Z`
 - Virtual Size: ~ 739.30 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -21,10 +21,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.22`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.22.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.22.tar.xz.asc`
-  - `PHP_SHA256=0e66606d3bdab5c2ae3f778136bfe8788e574913a3d8138695e54d98562f1fb5`
+  - `PHP_VERSION=7.3.23`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.23.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.23.tar.xz.asc`
+  - `PHP_SHA256=2bdd36176f318f451fb3942bf1e935aabb3c2786cac41a9080f084ad6390e034`
   - `PHP_MD5=`
   - `NEXTCLOUD_VERSION=18.0.9`
 
@@ -2372,24 +2372,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libwebp/0.6.1-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libwebp/0.6.1-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libx11=2:1.6.7-1`
+### `dpkg` source package: `libx11=2:1.6.7-1+deb10u1`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.7-1`
-- `libx11-data=2:1.6.7-1`
+- `libx11-6:amd64=2:1.6.7-1+deb10u1`
+- `libx11-data=2:1.6.7-1+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u1
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u1.dsc' libx11_1.6.7-1+deb10u1.dsc 2651 SHA256:32165ead57fed813168f87bd43d5dd387c2a27bba4c77bd8e8075cee90f90fce
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u1.diff.gz' libx11_1.6.7-1+deb10u1.diff.gz 52461 SHA256:ea3a943ea781136b3d5320010039e42039b0e58d5aeeca2d2b7a0593f9ce04ef
+```
 
-- http://snapshot.debian.org/package/libx11/2:1.6.7-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 
@@ -3258,11 +3266,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/popt/1.16-12/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/popt/1.16-12/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-11=11.7-0+deb10u1`
+### `dpkg` source package: `postgresql-11=11.9-0+deb10u1`
 
 Binary Packages:
 
-- `libpq5:amd64=11.7-0+deb10u1`
+- `libpq5:amd64=11.9-0+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 
@@ -3285,17 +3293,17 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-11=11.7-0+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.7-0+deb10u1.dsc' postgresql-11_11.7-0+deb10u1.dsc 3738 SHA256:5729f856ae9818e5c1c1f9be61aab55a8a7dea81b30749670ae531c2c145e564
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.7.orig.tar.bz2' postgresql-11_11.7.orig.tar.bz2 19890063 SHA256:324ae93a8846fbb6a25d562d271bc441ffa8794654c5b2839384834de220a313
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.7-0+deb10u1.debian.tar.xz' postgresql-11_11.7-0+deb10u1.debian.tar.xz 24952 SHA256:dc9097b4d54d393f3e01d90485ea047a401fa12cba814395937047da89616fe3
+$ apt-get source -qq --print-uris postgresql-11=11.9-0+deb10u1
+'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.9-0+deb10u1.dsc' postgresql-11_11.9-0+deb10u1.dsc 3738 SHA256:d4538af8c4f86e48ada0a32c113b0d10df21c640d190e2eac8bfee63a11ec3ed
+'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.9.orig.tar.bz2' postgresql-11_11.9.orig.tar.bz2 19959019 SHA256:35618aa72e0372091f923c42389c6febd07513157b4fbb9408371706afbb6635
+'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.9-0+deb10u1.debian.tar.xz' postgresql-11_11.9-0+deb10u1.debian.tar.xz 25536 SHA256:7044369b5353aa91e672fae6122812682b863468db4fa631d952d34daf8baf36
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/postgresql-11/11.7-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-11/11.7-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-11/11.7-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/postgresql-11/11.9-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/postgresql-11/11.9-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/postgresql-11/11.9-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.15-2`
 

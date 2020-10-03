@@ -1,10 +1,10 @@
-# `nextcloud:18.0.9-fpm-alpine`
+# `nextcloud:19.0.3-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:11b4eb6e4d081e3f37cfa672528f5dfd69ffee62f7ca9bba6b6752649fbde952`
-- Created: `2020-09-24T21:20:58.538256085Z`
-- Virtual Size: ~ 408.70 Mb  
+- Image ID: `sha256:c8dddaa5cb34920337e23d9dd6c3ce62875310b6e773021bd636e709f2c6e228`
+- Created: `2020-10-02T01:14:45.883089256Z`
+- Virtual Size: ~ 435.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,13 +17,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.22`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.22.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.22.tar.xz.asc`
-  - `PHP_SHA256=0e66606d3bdab5c2ae3f778136bfe8788e574913a3d8138695e54d98562f1fb5`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.11`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.11.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.11.tar.xz.asc`
+  - `PHP_SHA256=5d31675a9b9c21b5bd03389418218c30b26558246870caba8eb54f5856e2d6ce`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=18.0.9`
+  - `NEXTCLOUD_VERSION=19.0.3`
 
 ## `apk` (`.apk`-based packages)
 
@@ -404,16 +404,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r0 description:
+libcurl-7.69.1-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r0 webpage:
+libcurl-7.69.1-r1 webpage:
 https://curl.haxx.se/
 
-libcurl-7.69.1-r0 installed size:
+libcurl-7.69.1-r1 installed size:
 458752
 
-libcurl-7.69.1-r0 license:
+libcurl-7.69.1-r1 license:
 MIT
 
 ```
@@ -540,16 +540,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-12.3-r2 description:
+libpq-12.4-r0 description:
 PostgreSQL libraries
 
-libpq-12.3-r2 webpage:
+libpq-12.4-r0 webpage:
 https://www.postgresql.org/
 
-libpq-12.3-r2 installed size:
+libpq-12.4-r0 installed size:
 327680
 
-libpq-12.3-r2 license:
+libpq-12.4-r0 license:
 PostgreSQL
 
 ```
@@ -761,16 +761,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r4 description:
+libxml2-2.9.10-r5 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r4 webpage:
+libxml2-2.9.10-r5 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r4 installed size:
+libxml2-2.9.10-r5 installed size:
 1220608
 
-libxml2-2.9.10-r4 license:
+libxml2-2.9.10-r5 license:
 MIT
 
 ```
@@ -874,6 +874,23 @@ nghttp2-libs-1.41.0-r0 installed size:
 
 nghttp2-libs-1.41.0-r0 license:
 MIT
+
+```
+
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.5-r1 description:
+a regular expressions library
+
+oniguruma-6.9.5-r1 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.5-r1 installed size:
+569344
+
+oniguruma-6.9.5-r1 license:
+BSD-2-Clause
 
 ```
 
