@@ -1,10 +1,10 @@
-# `mediawiki:1.34.4-fpm-alpine`
+# `mediawiki:1.35.0-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d548168d839b6bd6b849447d9a0b5eee082615d76819b4e02277fe553b971a60`
-- Created: `2020-09-25T20:22:53.446477854Z`
-- Virtual Size: ~ 429.75 Mb  
+- Image ID: `sha256:22bd2a3336d88a125276c2de13de59d945822818dd90a12e96c245c3a4cb60d4`
+- Created: `2020-10-02T04:22:59.595520477Z`
+- Virtual Size: ~ 471.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,13 +18,13 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.22`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.22.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.22.tar.xz.asc`
-  - `PHP_SHA256=0e66606d3bdab5c2ae3f778136bfe8788e574913a3d8138695e54d98562f1fb5`
+  - `PHP_VERSION=7.3.23`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.23.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.23.tar.xz.asc`
+  - `PHP_SHA256=2bdd36176f318f451fb3942bf1e935aabb3c2786cac41a9080f084ad6390e034`
   - `PHP_MD5=`
-  - `MEDIAWIKI_MAJOR_VERSION=1.34`
-  - `MEDIAWIKI_VERSION=1.34.4`
+  - `MEDIAWIKI_MAJOR_VERSION=1.35`
+  - `MEDIAWIKI_VERSION=1.35.0`
 
 ## `apk` (`.apk`-based packages)
 
@@ -439,16 +439,16 @@ LGPL-3.0-or-later
 ### `apk` package: `gnutls`
 
 ```console
-gnutls-3.6.14-r0 description:
+gnutls-3.6.15-r0 description:
 A TLS protocol implementation
 
-gnutls-3.6.14-r0 webpage:
+gnutls-3.6.15-r0 webpage:
 https://www.gnutls.org/
 
-gnutls-3.6.14-r0 installed size:
-1757184
+gnutls-3.6.15-r0 installed size:
+1769472
 
-gnutls-3.6.14-r0 license:
+gnutls-3.6.15-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -677,16 +677,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r0 description:
+libcurl-7.69.1-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r0 webpage:
+libcurl-7.69.1-r1 webpage:
 https://curl.haxx.se/
 
-libcurl-7.69.1-r0 installed size:
+libcurl-7.69.1-r1 installed size:
 458752
 
-libcurl-7.69.1-r0 license:
+libcurl-7.69.1-r1 license:
 MIT
 
 ```
@@ -1119,16 +1119,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r4 description:
+libxml2-2.9.10-r5 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r4 webpage:
+libxml2-2.9.10-r5 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r4 installed size:
+libxml2-2.9.10-r5 installed size:
 1220608
 
-libxml2-2.9.10-r4 license:
+libxml2-2.9.10-r5 license:
 MIT
 
 ```
