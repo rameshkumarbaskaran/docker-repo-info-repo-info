@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:01a84233ca905ee158ca963b4d3d68407b081ebe7bac3f9ff4bfc95cdfe7630c`
-- Created: `2020-09-10T12:34:16.658526516Z`
-- Virtual Size: ~ 132.46 Mb  
+- Image ID: `sha256:20ade3ba43bf94d54ffb56fa2692775616c1ec1a6704d8468b257a238e27af4b`
+- Created: `2020-10-05T22:45:58.754436039Z`
+- Virtual Size: ~ 132.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `NGINX_VERSION=1.18.0`
-  - `NJS_VERSION=0.4.2`
+  - `NJS_VERSION=0.4.4`
   - `PKG_RELEASE=1~buster`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -1680,24 +1680,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libwebp/0.6.1-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libwebp/0.6.1-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libx11=2:1.6.7-1`
+### `dpkg` source package: `libx11=2:1.6.7-1+deb10u1`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.7-1`
-- `libx11-data=2:1.6.7-1`
+- `libx11-6:amd64=2:1.6.7-1+deb10u1`
+- `libx11-data=2:1.6.7-1+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u1
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u1.dsc' libx11_1.6.7-1+deb10u1.dsc 2651 SHA256:32165ead57fed813168f87bd43d5dd387c2a27bba4c77bd8e8075cee90f90fce
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u1.diff.gz' libx11_1.6.7-1+deb10u1.diff.gz 52461 SHA256:ea3a943ea781136b3d5320010039e42039b0e58d5aeeca2d2b7a0593f9ce04ef
+```
 
-- http://snapshot.debian.org/package/libx11/2:1.6.7-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 
@@ -2082,11 +2090,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-njs=1.18.0.0.4.2-1~buster`
+### `dpkg` source package: `nginx-module-njs=1.18.0.0.4.4-1~buster`
 
 Binary Packages:
 
-- `nginx-module-njs=1.18.0.0.4.2-1~buster`
+- `nginx-module-njs=1.18.0.0.4.4-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.

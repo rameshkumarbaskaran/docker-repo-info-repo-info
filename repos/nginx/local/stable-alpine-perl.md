@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:05728a16cab4fa50c86ddf86e0c7a574108efa87e2fc3707ba48a5e950ce3570`
-- Created: `2020-07-10T20:30:01.752863553Z`
-- Virtual Size: ~ 55.77 Mb  
+- Image ID: `sha256:2843ee36a0edb48897934e6b5ca061a5380062a3d6f4bacd43431e5832095bce`
+- Created: `2020-10-05T22:47:21.419529076Z`
+- Virtual Size: ~ 56.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `NGINX_VERSION=1.18.0`
-  - `NJS_VERSION=0.4.2`
+  - `NJS_VERSION=0.4.4`
   - `PKG_RELEASE=1`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -124,16 +124,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.67.0-r0 description:
+curl-7.67.0-r1 description:
 URL retrival utility and library
 
-curl-7.67.0-r0 webpage:
+curl-7.67.0-r1 webpage:
 https://curl.haxx.se/
 
-curl-7.67.0-r0 installed size:
+curl-7.67.0-r1 installed size:
 225280
 
-curl-7.67.0-r0 license:
+curl-7.67.0-r1 license:
 MIT
 
 ```
@@ -226,16 +226,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.67.0-r0 description:
+libcurl-7.67.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.67.0-r0 webpage:
+libcurl-7.67.0-r1 webpage:
 https://curl.haxx.se/
 
-libcurl-7.67.0-r0 installed size:
+libcurl-7.67.0-r1 installed size:
 458752
 
-libcurl-7.67.0-r0 license:
+libcurl-7.67.0-r1 license:
 MIT
 
 ```
@@ -413,16 +413,16 @@ BSD-3-Clause
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r3 description:
+libxml2-2.9.10-r4 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r3 webpage:
+libxml2-2.9.10-r4 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r3 installed size:
+libxml2-2.9.10-r4 installed size:
 1220608
 
-libxml2-2.9.10-r3 license:
+libxml2-2.9.10-r4 license:
 MIT
 
 ```
@@ -583,16 +583,16 @@ nginx-module-image-filter-1.18.0-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.18.0.0.4.2-r1 description:
+nginx-module-njs-1.18.0.0.4.4-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.18.0.0.4.2-r1 webpage:
+nginx-module-njs-1.18.0.0.4.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-njs-1.18.0.0.4.2-r1 installed size:
-3084288
+nginx-module-njs-1.18.0.0.4.4-r1 installed size:
+3391488
 
-nginx-module-njs-1.18.0.0.4.2-r1 license:
+nginx-module-njs-1.18.0.0.4.4-r1 license:
 2-clause BSD-like license
 
 ```
