@@ -608,14 +608,9 @@ Licenses: (parsed from: `/usr/share/doc/libbrotli1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris brotli=1.0.3-1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.3-1ubuntu1.2.dsc' brotli_1.0.3-1ubuntu1.2.dsc 2360 SHA512:2fb8dfa6e5429641f6bcf0ab6d6e4c272e7a4f6470558d798057141132877531bc5d9dff47292dc0e7f6968b9d01fc1e04bf035a16f7686e6c7f5a383087341a
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.3.orig.tar.gz' brotli_1.0.3.orig.tar.gz 23815300 SHA512:93adcf437d730ac403e444285ac8aefbb2c8a6b5e1b064e8ee33684c067287a8159e0ee73d2217c167881e87da73fa494792d963a15508fd42b2ac4a5b52823c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.3-1ubuntu1.2.debian.tar.xz' brotli_1.0.3-1ubuntu1.2.debian.tar.xz 17372 SHA512:a18db1fffebe34605fa57c5df01fd765db34e6cb2e91ca238877c7fbf2f769e6bbeedbcaebc8e4fb409e125607fd34e70a7a74a0d54d910e640556248887c365
-```
 
 ### `dpkg` source package: `build-essential=12.4ubuntu1`
 
