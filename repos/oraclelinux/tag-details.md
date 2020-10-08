@@ -7,6 +7,7 @@
 -	[`oraclelinux:6-slim`](#oraclelinux6-slim)
 -	[`oraclelinux:7`](#oraclelinux7)
 -	[`oraclelinux:7.8`](#oraclelinux78)
+-	[`oraclelinux:7.9`](#oraclelinux79)
 -	[`oraclelinux:7-slim`](#oraclelinux7-slim)
 -	[`oraclelinux:8`](#oraclelinux8)
 -	[`oraclelinux:8.0`](#oraclelinux80)
@@ -261,6 +262,10 @@ CMD ["/bin/bash"]
 		Last Modified: Thu, 16 Jul 2020 15:43:51 GMT  
 		Size: 94.5 MB (94502429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `oraclelinux:7.9`
+
+**does not exist** (yet?)
 
 ## `oraclelinux:7-slim`
 
