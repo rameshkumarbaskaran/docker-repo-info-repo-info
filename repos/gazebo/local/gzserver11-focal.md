@@ -5396,14 +5396,9 @@ Licenses: (parsed from: `/usr/share/doc/libpulse0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pulseaudio=1:13.99.1-1ubuntu3.6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.6.dsc' pulseaudio_13.99.1-1ubuntu3.6.dsc 3219 SHA512:a8fd1759c4c406ff7443275f0c9f0f0ac31c358ca57807c0fe42302c447b260a7f63226c1108da05272046b07c94262bb21417ac81b7cb94faf28dd096495927
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1.orig.tar.xz' pulseaudio_13.99.1.orig.tar.xz 1955840 SHA512:426530b6b9dd94dcc848067376857faae42e86878a82784c5bafa615a68dcc7e22702e0cb5835f91160f19fc9934fe3d53b7d387e3f42b6595fa934b172fe2aa
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.6.debian.tar.xz' pulseaudio_13.99.1-1ubuntu3.6.debian.tar.xz 145868 SHA512:f3e101e0e315c3f95b87b539d7e55c09526525aacbbfafeaaab46f2abffcd16ba426d40189b4295e3b6c3d0601fe62dabbe8fbc1ece18dacfc3735fa4089c302
-```
 
 ### `dpkg` source package: `python3-defaults=3.8.2-0ubuntu2`
 
@@ -5454,14 +5449,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.8=3.8.2-1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2-1ubuntu1.2.dsc' python3.8_3.8.2-1ubuntu1.2.dsc 3383 SHA512:75920fbd2f84099931b35648591c1b87a3f3e6e861ef1b0645b2ce9fd2bc94d747b3ca216d43f49fbe24ae0124fbd20bec1ff7b04f9a282f9b379431060512ae
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2.orig.tar.xz' python3.8_3.8.2.orig.tar.xz 17869888 SHA512:ca37ad0e7c5845f5f228566aa8ff654a8f428c7d4a5aaabff29baebb0ca3219b31ba8bb2607f89e37cf3fc564f023b8407e53a4f2c47bd99122c1cc222613e37
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.2-1ubuntu1.2.debian.tar.xz' python3.8_3.8.2-1ubuntu1.2.debian.tar.xz 214328 SHA512:22aeb9fe1ca6c478ff2ec3b210be52d7b657f67515cd22a4b072a2a4f6f5ad169937951bb5667a1e5a42e22bc051c3b2d023822445ab75c899fdceeb214b034f
-```
 
 ### `dpkg` source package: `qhull=2015.2-4`
 
