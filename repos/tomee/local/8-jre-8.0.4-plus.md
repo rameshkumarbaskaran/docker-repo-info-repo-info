@@ -1,21 +1,21 @@
-# `tomee:11-jre-8.0.2-webprofile`
+# `tomee:8-jre-8.0.4-plus`
 
 ## Docker Metadata
 
-- Image ID: `sha256:261427ebb1c6835625e36eef3cd28149f7cdb89b4b78bf4981c6de63d230534c`
-- Created: `2020-09-11T04:52:34.33046332Z`
-- Virtual Size: ~ 334.73 Mb  
+- Image ID: `sha256:ffd103b3c41fa8a7d7f71879e9646227ff7c1a4e50d0d1bdc360aaabcf1eb875`
+- Created: `2020-10-08T18:11:37.998517753Z`
+- Virtual Size: ~ 336.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
 - Environment:
-  - `PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.8`
+  - `JAVA_HOME=/usr/local/openjdk-8`
+  - `JAVA_VERSION=8u265`
   - `GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782`
-  - `TOMEE_VER=8.0.2`
-  - `TOMEE_BUILD=webprofile`
+  - `TOMEE_VER=8.0.4`
+  - `TOMEE_BUILD=plus`
 
 ## `dpkg` (`.deb`-based packages)
 
