@@ -8,6 +8,8 @@
 -	[`consul:1.7.8`](#consul178)
 -	[`consul:1.8`](#consul18)
 -	[`consul:1.8.4`](#consul184)
+-	[`consul:1.9.0-beta`](#consul190-beta)
+-	[`consul:1.9.0-beta1`](#consul190-beta1)
 -	[`consul:latest`](#consullatest)
 
 ## `consul:1.6`
@@ -1887,6 +1889,14 @@ CMD ["agent" "-dev" "-client" "0.0.0.0"]
 		Last Modified: Fri, 11 Sep 2020 22:00:06 GMT  
 		Size: 1.7 KB (1710 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `consul:1.9.0-beta`
+
+**does not exist** (yet?)
+
+## `consul:1.9.0-beta1`
+
+**does not exist** (yet?)
 
 ## `consul:latest`
 
