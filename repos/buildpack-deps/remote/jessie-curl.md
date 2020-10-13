@@ -1,7 +1,7 @@
 ## `buildpack-deps:jessie-curl`
 
 ```console
-$ docker pull buildpack-deps@sha256:c3fee6c4a1cad419c832757b76511bcf6c961a3e6af4e60137a39f47a4c7c7e1
+$ docker pull buildpack-deps@sha256:e2c2b30fb16f8a9275cceed70c670aad162adf454e9ea58e3db0075aa6fbfb2f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -48,35 +48,35 @@ RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get 
 ### `buildpack-deps:jessie-curl` - linux; arm variant v5
 
 ```console
-$ docker pull buildpack-deps@sha256:63d131745d7b939f4e38caf26291c5380ec116443d59fab046772c04b699c123
+$ docker pull buildpack-deps@sha256:580ba12fc7de5c807a2d2aa8b2aa643625d3e95ea66b4d9d79f4e06f90f2ce35
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.6 MB (69621034 bytes)**  
+-	Total Size: **69.6 MB (69620875 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9ee8d1ead31a436872aaaf20bce51680998f9a49610c4fa2a0412d6583ff581f`
+-	Image ID: `sha256:75c5d30df4e51cc77414b18aa8a630298580216fcdbbb611faf6ffc9f835d085`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 09 Sep 2020 23:54:15 GMT
-ADD file:b5770ada526014c416df31779f0c640c62a5e53e8e018a6201d507999ac34e18 in / 
-# Wed, 09 Sep 2020 23:54:19 GMT
+# Tue, 13 Oct 2020 01:52:56 GMT
+ADD file:42e8fc0bef9bee6c3781c97e782ecca25fdd0b109d9b32f5f818c405cb39ecb2 in / 
+# Tue, 13 Oct 2020 01:53:06 GMT
 CMD ["bash"]
-# Thu, 10 Sep 2020 00:37:10 GMT
+# Tue, 13 Oct 2020 03:48:45 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 10 Sep 2020 00:37:12 GMT
+# Tue, 13 Oct 2020 03:48:47 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 ```
 
 -	Layers:
-	-	`sha256:82ebff95f0e21d655344637482b367c7ea0db41b80cbc667bd980d2141287029`  
-		Last Modified: Thu, 10 Sep 2020 00:03:15 GMT  
-		Size: 52.6 MB (52583713 bytes)  
+	-	`sha256:2bb145213cfd3206737c347487d4dc24d6f981a7644616db911ba78e3c4c994c`  
+		Last Modified: Tue, 13 Oct 2020 02:01:52 GMT  
+		Size: 52.6 MB (52583560 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f40e46cda9c751ff385c796d48a3c39740220c3885866739fe62640f9437afa`  
-		Last Modified: Thu, 10 Sep 2020 00:55:04 GMT  
-		Size: 17.0 MB (17037321 bytes)  
+	-	`sha256:bb56e167da2264e063788db42cf4988d4af65e537e81e4b6dca14b5174686d56`  
+		Last Modified: Tue, 13 Oct 2020 04:08:58 GMT  
+		Size: 17.0 MB (17037315 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `buildpack-deps:jessie-curl` - linux; arm variant v7
