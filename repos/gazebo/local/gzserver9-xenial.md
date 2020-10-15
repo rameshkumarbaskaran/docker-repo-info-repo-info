@@ -4384,14 +4384,9 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pam=1.1.8-3.2ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8-3.2ubuntu2.1.dsc' pam_1.1.8-3.2ubuntu2.1.dsc 2249 SHA512:3c9fe2428de363115d2d5907d1889d36c7c5dfc2380e8ed02d0307c23cdb61604ea5d989dc42cdfc46036e0de53733addc56f29aa3b5c633dd94019526368136
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8.orig.tar.gz' pam_1.1.8.orig.tar.gz 1892765 SHA512:dca21547f951a53cdb6bbcbedde694f345ec02ff5931f2f81da26980471206515f891035cacded3e10d6631f7dc2fb8679fdaf737cd50adaf18768a1c56482a2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8-3.2ubuntu2.1.diff.gz' pam_1.1.8-3.2ubuntu2.1.diff.gz 198992 SHA512:15e306e0a7c668f6ba2d60b51ce9c15914df8a9c6be83a176b54c564d16e48be4c63c77dd310a0d952bdd746d37ba339456b03b48d00622cde43e3fad729f0b1
-```
 
 ### `dpkg` source package: `pcre3=2:8.38-3.1`
 
@@ -4677,14 +4672,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.5=3.5.2-2ubuntu0~16.04.11
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.11.dsc' python3.5_3.5.2-2ubuntu0~16.04.11.dsc 3391 SHA512:d0504120d50909be4703881f67e862d422b32e00149365a8c14a6a271c57a52c2d965b1943411b5f0ce61384edc81bbb6c2c88384f629c0df7b079f85ba2a359
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2.orig.tar.xz' python3.5_3.5.2.orig.tar.xz 15222676 SHA512:c07c3366f1c81e214241444bb9da6db9d11da32ad66bfa29cdad5a3b2e34e4d870bda6d4ce3c3910b582942e91f1d8c8a1c1a7b9464cc147b83c9e0007012742
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.11.debian.tar.xz' python3.5_3.5.2-2ubuntu0~16.04.11.debian.tar.xz 236736 SHA512:f26ee677228e963a8c5119d0eddba3bfaf408205f89eabdd6987baa38c8815d577a28dac4fbfc3977ec8620e683ca181b5b0153673d44a54537ae608792ae458
-```
 
 ### `dpkg` source package: `qtbase-opensource-src=5.5.1+dfsg-16ubuntu7.7`
 
