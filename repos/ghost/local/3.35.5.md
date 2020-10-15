@@ -1,10 +1,10 @@
-# `ghost:3.35.4`
+# `ghost:3.35.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:93564ace4d2e95f1fd0ebadfa6b712c355161f2245904f87898699909e7d2914`
-- Created: `2020-10-08T16:48:56.798989219Z`
-- Virtual Size: ~ 438.97 Mb  
+- Image ID: `sha256:e6c08e061fbe24c8100b328ba6d8d69ae811d0b604a3e2b28e836cccda76006a`
+- Created: `2020-10-14T05:07:26.814404763Z`
+- Virtual Size: ~ 439.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -15,10 +15,10 @@
   - `YARN_VERSION=1.22.5`
   - `GOSU_VERSION=1.12`
   - `NODE_ENV=production`
-  - `GHOST_CLI_VERSION=1.14.1`
+  - `GHOST_CLI_VERSION=1.15.0`
   - `GHOST_INSTALL=/var/lib/ghost`
   - `GHOST_CONTENT=/var/lib/ghost/content`
-  - `GHOST_VERSION=3.35.4`
+  - `GHOST_VERSION=3.35.5`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -158,23 +158,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=10.3+deb10u5`
+### `dpkg` source package: `base-files=10.3+deb10u6`
 
 Binary Packages:
 
-- `base-files=10.3+deb10u5`
+- `base-files=10.3+deb10u6`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=10.3+deb10u6
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u6.dsc' base-files_10.3+deb10u6.dsc 1103 SHA256:9b77bbf528cafb65eb6f510fbc3cf1367e55bf915af99740b3579a3e4ac7450f
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u6.tar.xz' base-files_10.3+deb10u6.tar.xz 65400 SHA256:450aed5977afeb8bf6f3f7ad9d67eb8bd08c27e79a434e1f0ed867f0cfcbc5da
+```
 
-- http://snapshot.debian.org/package/base-files/10.3+deb10u5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/10.3+deb10u6/ (for browsing the source)
+- https://sources.debian.net/src/base-files/10.3+deb10u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/10.3+deb10u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
