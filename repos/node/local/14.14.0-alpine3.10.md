@@ -1,17 +1,17 @@
-# `node:14.13.1-alpine3.10`
+# `node:14.14.0-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b9e8500f16e79984a040bae6c2f353d7d91fe7475ced6f30a9d5d7605e0d5111`
-- Created: `2020-10-08T16:23:02.104584913Z`
-- Virtual Size: ~ 116.60 Mb  
+- Image ID: `sha256:8ef85a08015c859c226b1aaf2597f9431b923ec75b24402c8c1075e7b1962a4b`
+- Created: `2020-10-16T18:22:14.474684528Z`
+- Virtual Size: ~ 116.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=14.13.1`
+  - `NODE_VERSION=14.14.0`
   - `YARN_VERSION=1.22.5`
 
 ## `apk` (`.apk`-based packages)
