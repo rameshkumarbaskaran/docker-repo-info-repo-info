@@ -1,10 +1,10 @@
-# `php:8.0.0rc1-fpm-alpine3.12`
+# `php:8.0.0RC2-fpm-alpine3.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6cf0a6c22858f9983f56c928a2c9dcc0f8c99debfd33ac10a6e73e274205d373`
-- Created: `2020-10-02T02:52:22.915583454Z`
-- Virtual Size: ~ 81.78 Mb  
+- Image ID: `sha256:21d74cfedd2cd228a81b71abed508b05db4386d9e5f5b88fb505f0d2717291f3`
+- Created: `2020-10-16T21:39:08.666257783Z`
+- Virtual Size: ~ 81.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.0rc1`
-  - `PHP_URL=https://downloads.php.net/~carusogabriel/php-8.0.0rc1.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~carusogabriel/php-8.0.0rc1.tar.xz.asc`
-  - `PHP_SHA256=350a80e26561ec5b926e84d4f6cbbd76d54d7cb77444fd1b1a16310201fc0f7b`
+  - `PHP_VERSION=8.0.0RC2`
+  - `PHP_URL=https://downloads.php.net/~pollita/php-8.0.0RC2.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~pollita/php-8.0.0RC2.tar.xz.asc`
+  - `PHP_SHA256=97d8031ba1095c3222fc5725710ac18dc4f584e526cbcbfb2817146abb6891ec`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -403,16 +403,16 @@ MIT
 ### `apk` package: `oniguruma`
 
 ```console
-oniguruma-6.9.5-r1 description:
+oniguruma-6.9.5-r2 description:
 a regular expressions library
 
-oniguruma-6.9.5-r1 webpage:
+oniguruma-6.9.5-r2 webpage:
 https://github.com/kkos/oniguruma
 
-oniguruma-6.9.5-r1 installed size:
+oniguruma-6.9.5-r2 installed size:
 569344
 
-oniguruma-6.9.5-r1 license:
+oniguruma-6.9.5-r2 license:
 BSD-2-Clause
 
 ```
