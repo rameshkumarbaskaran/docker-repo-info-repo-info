@@ -1,7 +1,7 @@
 ## `adoptopenjdk:13-hotspot-bionic`
 
 ```console
-$ docker pull adoptopenjdk@sha256:8a9a7d3664b2d1cba0008e4ec04c56efed4428b50f54817f956d40a6794e5ff0
+$ docker pull adoptopenjdk@sha256:aac9deb981772253d6faa3b3ae412dbcb16f0f727860ae093cff2e5764bf5303
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -195,14 +195,14 @@ CMD ["jshell"]
 ### `adoptopenjdk:13-hotspot-bionic` - linux; ppc64le
 
 ```console
-$ docker pull adoptopenjdk@sha256:f50c1a974dc16fd171b3a0666c1773edb9e5dc1b23bc6dc86b264b48e687b16d
+$ docker pull adoptopenjdk@sha256:696856687581bb5c8d66d0cc86e466aeb83cbeb7caf09888daa1f9450ab6e334
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **235.5 MB (235478341 bytes)**  
+-	Total Size: **236.0 MB (236040808 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed89ed909d876bd2da75cb94e106ee6fbf5aae182dd8fc5d4cc9befc02a4327`
+-	Image ID: `sha256:df047c2d0078d9cf4db14da718cb38e44efa25b5eb52fbad3ede72c24e8ddbba`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -218,15 +218,15 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Sat, 26 Sep 2020 03:37:39 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Sat, 26 Sep 2020 03:42:48 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Sat, 26 Sep 2020 03:42:53 GMT
+# Sat, 26 Sep 2020 03:39:11 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Sat, 17 Oct 2020 22:01:49 GMT
 ENV JAVA_VERSION=jdk-13.0.2+8
-# Sat, 26 Sep 2020 03:43:20 GMT
+# Thu, 22 Oct 2020 09:39:58 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='0e6081cb51f8a6f3062bef4f4c45dbe1fccfd3f3b4b5d52522a3edb76581e3af';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.2_8.tar.gz';          ;;        armhf|armv7l)          ESUM='9beec080f2b2a7f6883b024272f4e8d5a0b027325e83647be318215781af1d1a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_arm_linux_hotspot_13.0.2_8.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fb3362e34aac091a4682394d20dcdc3daea51995d369d62c28424573e0fc04aa';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_ppc64le_linux_hotspot_13.0.2_8.tar.gz';          ;;        s390x)          ESUM='1b9e7cd7fdde10fe3534988ef58c36f132b12f814503a034461c95735057467f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_s390x_linux_hotspot_13.0.2_8.tar.gz';          ;;        amd64|x86_64)          ESUM='9ccc063569f19899fd08e41466f8c4cd4e05058abdb5178fa374cb365dcf5998';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_linux_hotspot_13.0.2_8.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Sat, 26 Sep 2020 03:43:29 GMT
+# Thu, 22 Oct 2020 09:40:19 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 26 Sep 2020 03:43:31 GMT
+# Thu, 22 Oct 2020 09:40:53 GMT
 CMD ["jshell"]
 ```
 
@@ -243,13 +243,13 @@ CMD ["jshell"]
 		Last Modified: Sat, 26 Sep 2020 00:05:06 GMT  
 		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebfb6c489efbefe4db059b4b16dca858d7feaa20cac40f8fafd34ee448cc70bd`  
-		Last Modified: Sat, 26 Sep 2020 03:57:29 GMT  
-		Size: 14.0 MB (13956137 bytes)  
+	-	`sha256:30f274fd8d44c41b563fd8be80792424906ae7f32bacbb53d3fc872271889baf`  
+		Last Modified: Sat, 26 Sep 2020 03:54:38 GMT  
+		Size: 14.5 MB (14518670 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f0cee44ac467d720c00e37e106bd2f8ec830c1295dc3cc828e04d2cda0b659e`  
-		Last Modified: Sat, 26 Sep 2020 03:58:04 GMT  
-		Size: 191.1 MB (191112671 bytes)  
+	-	`sha256:023a1e1b5557066dcbb4575ed6066c28eb6ea8f9f2e45257f16c5f86dcbd092c`  
+		Last Modified: Thu, 22 Oct 2020 10:31:57 GMT  
+		Size: 191.1 MB (191112605 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:13-hotspot-bionic` - linux; s390x

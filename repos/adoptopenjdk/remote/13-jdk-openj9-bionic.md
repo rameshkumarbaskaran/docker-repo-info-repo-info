@@ -1,7 +1,7 @@
 ## `adoptopenjdk:13-jdk-openj9-bionic`
 
 ```console
-$ docker pull adoptopenjdk@sha256:b20c162c328033a35a3b3497d71101814cdd0bab88056d345e52bd1ead5a6c73
+$ docker pull adoptopenjdk@sha256:ba16f93d5d99402b5388475dabd955f49134d5052f14437c2470d7efd33801d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -75,14 +75,14 @@ CMD ["jshell"]
 ### `adoptopenjdk:13-jdk-openj9-bionic` - linux; ppc64le
 
 ```console
-$ docker pull adoptopenjdk@sha256:ef7e10ad7ab78a99066b09644646132e54b8ef6b40db94b83fec9b861bb0b8a9
+$ docker pull adoptopenjdk@sha256:bd1699d2e0f0e196515c37ac6db96afbcbcc6a7a43024528c9a0923054b6b776
 ```
 
 -	Docker Version: 18.09.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **251.9 MB (251878997 bytes)**  
+-	Total Size: **252.4 MB (252441514 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d791ff8bb787b57cc310b1818776d527296374dad9144691f5ec568ec1a3d1d8`
+-	Image ID: `sha256:755bbfb4f29ecedf039ea6b17bc35956d90f21cfacd1494938557844a1ae217b`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -98,17 +98,17 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Sat, 26 Sep 2020 03:37:39 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Sat, 26 Sep 2020 03:42:48 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Sat, 26 Sep 2020 03:48:58 GMT
+# Sat, 26 Sep 2020 03:39:11 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Sat, 17 Oct 2020 22:18:04 GMT
 ENV JAVA_VERSION=jdk-13.0.2+8_openj9-0.18.0
-# Sat, 26 Sep 2020 03:49:29 GMT
+# Thu, 22 Oct 2020 09:57:05 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='f71513e525172dfef695b7c27b25e151f232e05b2281648c2b794650c4970832';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_ppc64le_linux_openj9_13.0.2_8_openj9-0.18.0.tar.gz';          ;;        s390x)          ESUM='9e7b2e921710ecaf6d3c743616dc720ef10b7b75ba0b8820bf9f9550bfa52584';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_s390x_linux_openj9_13.0.2_8_openj9-0.18.0.tar.gz';          ;;        amd64|x86_64)          ESUM='aeecf6d30d0c847db81d07793cf97e5dc44890c29366d7d9f8f9f397f6c52590';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_linux_openj9_13.0.2_8_openj9-0.18.0.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Sat, 26 Sep 2020 03:49:45 GMT
+# Thu, 22 Oct 2020 09:57:38 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 26 Sep 2020 03:49:58 GMT
+# Thu, 22 Oct 2020 09:57:50 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Sat, 26 Sep 2020 03:50:07 GMT
+# Thu, 22 Oct 2020 09:58:07 GMT
 CMD ["jshell"]
 ```
 
@@ -125,13 +125,13 @@ CMD ["jshell"]
 		Last Modified: Sat, 26 Sep 2020 00:05:06 GMT  
 		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebfb6c489efbefe4db059b4b16dca858d7feaa20cac40f8fafd34ee448cc70bd`  
-		Last Modified: Sat, 26 Sep 2020 03:57:29 GMT  
-		Size: 14.0 MB (13956137 bytes)  
+	-	`sha256:30f274fd8d44c41b563fd8be80792424906ae7f32bacbb53d3fc872271889baf`  
+		Last Modified: Sat, 26 Sep 2020 03:54:38 GMT  
+		Size: 14.5 MB (14518670 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb4292c37c2e84c329853b7c3bc5dd7d0d014af8b36217dad807c5844e182fec`  
-		Last Modified: Sat, 26 Sep 2020 04:05:39 GMT  
-		Size: 207.5 MB (207513327 bytes)  
+	-	`sha256:c49fdae0dedd2c6935e27c7b06741c8f7edd8ed50e0e5cb3aada009a73cb2a5f`  
+		Last Modified: Thu, 22 Oct 2020 10:39:10 GMT  
+		Size: 207.5 MB (207513311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:13-jdk-openj9-bionic` - linux; s390x
