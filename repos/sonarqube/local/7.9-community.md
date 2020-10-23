@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1d75db840e24f453d98496dd012ebbd3d77ad1927632b95cbea2d8467e0be03a`
-- Created: `2020-10-14T07:10:20.074807365Z`
-- Virtual Size: ~ 483.56 Mb  
+- Image ID: `sha256:5faf2fb17d7d35396c3c4d6e1c8d07547b8d5c271df172407aa9b6acd5ce5378`
+- Created: `2020-10-23T01:02:24.978749285Z`
+- Virtual Size: ~ 484.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["./bin/run.sh"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.8`
+  - `JAVA_VERSION=11.0.9`
   - `SONAR_VERSION=7.9.4`
   - `SONARQUBE_HOME=/opt/sonarqube`
   - `SONARQUBE_JDBC_USERNAME=sonar`
