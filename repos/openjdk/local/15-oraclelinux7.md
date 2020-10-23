@@ -1,10 +1,10 @@
-# `openjdk:15-jdk-oraclelinux7`
+# `openjdk:15.0.1-jdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a39fa0e9b620fa2397bd1e560b253e34f542ad463ae73ae2f402a7011a832055`
-- Created: `2020-10-13T00:43:20.351637171Z`
-- Virtual Size: ~ 512.01 Mb  
+- Image ID: `sha256:71a32dd6d7bf8e2d8815a019adbd2bb08bd06be83c9ca0aaa3ca85c238273140`
+- Created: `2020-10-22T02:39:00.126506534Z`
+- Virtual Size: ~ 512.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/java/openjdk-15/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-15`
-  - `JAVA_VERSION=15`
+  - `JAVA_VERSION=15.0.1`
 - Labels:
   - `org.opencontainers.image.authors=Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>`
   - `org.opencontainers.image.description=Oracle Linux is an open-source       operating system available under the GNU General Public License (GPLv2) and       is suitable for both general purpose or Oracle workloads.`
@@ -1206,15 +1206,15 @@ $ yumdownloader --quiet --source --urls tar-1.26-35.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/tar-1.26-35.el7.src.rpm
 ```
 
-### `rpm` package: `tzdata-2020a-1.el7.noarch`
+### `rpm` package: `tzdata-2020b-3.el7.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls tzdata-2020a-1.el7.noarch
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/tzdata-2020a-1.el7.src.rpm
+$ yumdownloader --quiet --source --urls tzdata-2020b-3.el7.noarch
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/tzdata-2020b-3.el7.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
