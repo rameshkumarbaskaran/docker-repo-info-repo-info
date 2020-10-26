@@ -1,7 +1,7 @@
 ## `fedora:latest`
 
 ```console
-$ docker pull fedora@sha256:0eb61b172a4f718b65d8a866cbc684d394e0e1b51b11b2461120bb3ac48a1449
+$ docker pull fedora@sha256:b9ec86d36fca7b1d3de39cd7c258e8d90c377d312c21a7748071ce49069b8db4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -105,31 +105,31 @@ CMD ["/bin/bash"]
 ### `fedora:latest` - linux; ppc64le
 
 ```console
-$ docker pull fedora@sha256:75f93274eb4694699f1129f66772235525d00b9e997f0951e6aa945dc15067ad
+$ docker pull fedora@sha256:fad1de04f0995ac10a14867fa437c04a949e426950603e9bc134bc0d33d398ad
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **77.9 MB (77859567 bytes)**  
+-	Total Size: **67.2 MB (67168014 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ae7ec47c2961fc5b02a51d84f3ffce5ffbfb96b407c83c5d4c4593a0a96a6a02`
+-	Image ID: `sha256:c3b581280be30ec5351f1ce06bd17264f0f7f5ff4d82fec97275b76feb3046a6`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
 # Wed, 05 Jun 2019 23:19:06 GMT
 LABEL maintainer=Clement Verna <cverna@fedoraproject.org>
-# Thu, 30 Apr 2020 23:39:03 GMT
-ENV DISTTAG=f32container FGC=f32 FBR=f32
-# Thu, 08 Oct 2020 20:37:21 GMT
-ADD file:550a31c71cb74cdb907e4edf53da8460ed5bb4b383165160064ce57a2f571ced in / 
-# Thu, 08 Oct 2020 20:37:37 GMT
+# Fri, 02 Oct 2020 22:39:42 GMT
+ENV DISTTAG=f33container FGC=f33 FBR=f33
+# Mon, 26 Oct 2020 21:18:34 GMT
+ADD file:007d6e2f544290d8aea89d8b54bedf645950f990dd61d279274c63557d5d1e40 in / 
+# Mon, 26 Oct 2020 21:18:43 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:0f52bb96886ceb9253711d81fc3f0e2568ceabae6077ac07049ec46c1021d908`  
-		Last Modified: Thu, 08 Oct 2020 20:52:26 GMT  
-		Size: 77.9 MB (77859567 bytes)  
+	-	`sha256:dd13f988b45c4af8bf8646e3aa29597edeae9b127f0cb01de165a21eed0d1e6a`  
+		Last Modified: Mon, 26 Oct 2020 21:19:51 GMT  
+		Size: 67.2 MB (67168014 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fedora:latest` - linux; s390x
