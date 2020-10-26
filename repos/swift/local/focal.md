@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f678ae129c8182f568d782bb98ab786ae05462765771046f64901333e5d23788`
-- Created: `2020-09-26T02:49:04.027132375Z`
+- Image ID: `sha256:b232a7e934662285c86d7baf4d4b0ce46f3b9842db87758a505ca5959609cabd`
+- Created: `2020-10-23T18:51:53.010844563Z`
 - Virtual Size: ~ 1.68 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -209,11 +209,11 @@ $ apt-get source -qq --print-uris binutils=2.34-6ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.34-6ubuntu1.debian.tar.xz' binutils_2.34-6ubuntu1.debian.tar.xz 155276 SHA256:a96049d0b8833f6b89105bc32fa4d9b79a157d8e753b27721741a0229d801034
 ```
 
-### `dpkg` source package: `brotli=1.0.7-6build1`
+### `dpkg` source package: `brotli=1.0.7-6ubuntu0.1`
 
 Binary Packages:
 
-- `libbrotli1:amd64=1.0.7-6build1`
+- `libbrotli1:amd64=1.0.7-6ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libbrotli1/copyright`)
 
@@ -222,10 +222,10 @@ Licenses: (parsed from: `/usr/share/doc/libbrotli1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris brotli=1.0.7-6build1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.7-6build1.dsc' brotli_1.0.7-6build1.dsc 2316 SHA256:6d46dbb44a7eb0442dc9743a803d6297809817c66a269a41e53009169a071257
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.7.orig.tar.gz' brotli_1.0.7.orig.tar.gz 23827908 SHA256:4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.7-6build1.debian.tar.xz' brotli_1.0.7-6build1.debian.tar.xz 4416 SHA256:7346c025427b3466252dc94d8a0d3e87692107a4d2ca49a382ac4de14e2957d5
+$ apt-get source -qq --print-uris brotli=1.0.7-6ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.7-6ubuntu0.1.dsc' brotli_1.0.7-6ubuntu0.1.dsc 2385 SHA512:139a93e110c6cf50531bdfee5ec4a8751ca81d1e02d2f38b21c1a9a478064286ddeb6bfdf20af488f7e2f53219cf460a00e68b77ef1b860fbf0df67f300d303b
+'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.7.orig.tar.gz' brotli_1.0.7.orig.tar.gz 23827908 SHA512:a82362aa36d2f2094bca0b2808d9de0d57291fb3a4c29d7c0ca0a37e73087ec5ac4df299c8c363e61106fccf2fe7f58b5cf76eb97729e2696058ef43b1d3930a
+'http://archive.ubuntu.com/ubuntu/pool/main/b/brotli/brotli_1.0.7-6ubuntu0.1.debian.tar.xz' brotli_1.0.7-6ubuntu0.1.debian.tar.xz 13672 SHA512:eb24ee68d0a699bb8f382c7f80c313e0bb26bea6b22f74bf01af236eafe345cf602f7544da4a74eb8c8f70defcd6b867018df97a96e5e894535cf731400edaa8
 ```
 
 ### `dpkg` source package: `bzip2=1.0.8-2`
@@ -562,20 +562,20 @@ $ apt-get source -qq --print-uris findutils=4.7.0-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.7.0-1ubuntu1.debian.tar.xz' findutils_4.7.0-1ubuntu1.debian.tar.xz 27700 SHA256:dfb2329fd141384c2d76409c2e99f164cc25954115529245d80d5d41e3167731
 ```
 
-### `dpkg` source package: `gcc-10=10-20200411-0ubuntu1`
+### `dpkg` source package: `gcc-10=10.2.0-5ubuntu1~20.04`
 
 Binary Packages:
 
-- `gcc-10-base:amd64=10-20200411-0ubuntu1`
-- `libatomic1:amd64=10-20200411-0ubuntu1`
-- `libgcc-s1:amd64=10-20200411-0ubuntu1`
-- `libgomp1:amd64=10-20200411-0ubuntu1`
-- `libitm1:amd64=10-20200411-0ubuntu1`
-- `liblsan0:amd64=10-20200411-0ubuntu1`
-- `libquadmath0:amd64=10-20200411-0ubuntu1`
-- `libstdc++6:amd64=10-20200411-0ubuntu1`
-- `libtsan0:amd64=10-20200411-0ubuntu1`
-- `libubsan1:amd64=10-20200411-0ubuntu1`
+- `gcc-10-base:amd64=10.2.0-5ubuntu1~20.04`
+- `libatomic1:amd64=10.2.0-5ubuntu1~20.04`
+- `libgcc-s1:amd64=10.2.0-5ubuntu1~20.04`
+- `libgomp1:amd64=10.2.0-5ubuntu1~20.04`
+- `libitm1:amd64=10.2.0-5ubuntu1~20.04`
+- `liblsan0:amd64=10.2.0-5ubuntu1~20.04`
+- `libquadmath0:amd64=10.2.0-5ubuntu1~20.04`
+- `libstdc++6:amd64=10.2.0-5ubuntu1~20.04`
+- `libtsan0:amd64=10.2.0-5ubuntu1~20.04`
+- `libubsan1:amd64=10.2.0-5ubuntu1~20.04`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/libatomic1/copyright`, `/usr/share/doc/libgcc-s1/copyright`, `/usr/share/doc/libgomp1/copyright`, `/usr/share/doc/libitm1/copyright`, `/usr/share/doc/liblsan0/copyright`, `/usr/share/doc/libquadmath0/copyright`, `/usr/share/doc/libstdc++6/copyright`, `/usr/share/doc/libtsan0/copyright`, `/usr/share/doc/libubsan1/copyright`)
 
@@ -589,20 +589,20 @@ Licenses: (parsed from: `/usr/share/doc/gcc-10-base/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gcc-10=10-20200411-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10-20200411-0ubuntu1.dsc' gcc-10_10-20200411-0ubuntu1.dsc 31097 SHA256:31e14253df2c6e84c158969c6832777a6d249a15af3e8887f96f7adcccb72217
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10-20200411.orig.tar.gz' gcc-10_10-20200411.orig.tar.gz 90370841 SHA256:3370dce39f863735c44f1c5f002132a84d1c7de621d4ca81a24d6613034201a8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10-20200411-0ubuntu1.debian.tar.xz' gcc-10_10-20200411-0ubuntu1.debian.tar.xz 557752 SHA256:b028f2e1e8f430f4c451222fba1caed9aea78e58c6b87970bd2dd119c29ac0fb
+$ apt-get source -qq --print-uris gcc-10=10.2.0-5ubuntu1~20.04
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.2.0-5ubuntu1~20.04.dsc' gcc-10_10.2.0-5ubuntu1~20.04.dsc 31163 SHA512:706dbc165819f21cc0ffc0d8e9ac3058db6bd2309a0665b7d83992b39985ff232cdadd165361cdb1216a5e17d16573eacc64e470d965290206c202c80108e1bb
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.2.0.orig.tar.gz' gcc-10_10.2.0.orig.tar.gz 94773960 SHA512:70911f9489225ddb10527f122be77d20cbaf2e4f2bfe92f756d33ec35c0aba352f342a7ee296310a149ea112f97e835f0d3d61f9bc9d416cfc43ccacb325e7ca
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.2.0-5ubuntu1~20.04.debian.tar.xz' gcc-10_10.2.0-5ubuntu1~20.04.debian.tar.xz 2024876 SHA512:d61af9c1eddf504f7b9ff2721b1f077a11059f0dba50392505c591bebd363bbe3a3b46f9fa67c090ac63bfcea6990efd47d647c35507c48f34f12b68a58fb94a
 ```
 
-### `dpkg` source package: `gcc-9=9.3.0-10ubuntu2`
+### `dpkg` source package: `gcc-9=9.3.0-17ubuntu1~20.04`
 
 Binary Packages:
 
-- `gcc-9-base:amd64=9.3.0-10ubuntu2`
-- `libasan5:amd64=9.3.0-10ubuntu2`
-- `libgcc-9-dev:amd64=9.3.0-10ubuntu2`
-- `libstdc++-9-dev:amd64=9.3.0-10ubuntu2`
+- `gcc-9-base:amd64=9.3.0-17ubuntu1~20.04`
+- `libasan5:amd64=9.3.0-17ubuntu1~20.04`
+- `libgcc-9-dev:amd64=9.3.0-17ubuntu1~20.04`
+- `libstdc++-9-dev:amd64=9.3.0-17ubuntu1~20.04`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-9-base/copyright`, `/usr/share/doc/libasan5/copyright`, `/usr/share/doc/libgcc-9-dev/copyright`, `/usr/share/doc/libstdc++-9-dev/copyright`)
 
@@ -617,10 +617,10 @@ Licenses: (parsed from: `/usr/share/doc/gcc-9-base/copyright`, `/usr/share/doc/l
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gcc-9=9.3.0-10ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0-10ubuntu2.dsc' gcc-9_9.3.0-10ubuntu2.dsc 24227 SHA256:1d22f7b0eb0d5d57faf213e9b19730486e6ce613afdcda5e233e67da193ed065
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 90490748 SHA256:e12a3369d34f49dd18f341dc3d101cc643129663a7b44312fddba595374e718f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0-10ubuntu2.debian.tar.xz' gcc-9_9.3.0-10ubuntu2.debian.tar.xz 621440 SHA256:ea0575c3553d6b6767a1454f80d3752ddf2f217f96b9b416fa38fdcdffe1ffe3
+$ apt-get source -qq --print-uris gcc-9=9.3.0-17ubuntu1~20.04
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0-17ubuntu1~20.04.dsc' gcc-9_9.3.0-17ubuntu1~20.04.dsc 23746 SHA512:bae6c156516a4988546a4518934f661a70243a89ed17883fe382bd984ae6533aab7d9b459986c2ebdb715b64b11ac76b9283447b26be3dbaec0b00c02afeb7f6
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 90490748 SHA512:cebaa27b0ac7485e72f0d7b07e6ef08cd544bf551bc080ee00175cbe319ea8b0592ff54d55633bb189e481f9ba489d513205cf2310e4b5211869a021432ee31f
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0-17ubuntu1~20.04.debian.tar.xz' gcc-9_9.3.0-17ubuntu1~20.04.debian.tar.xz 763792 SHA512:f696a3d92edbadb7cfb29494b68ec00fa9b278ab7657e45933cf2e7564e6a524ac41edde14449114a2e06ad0c1f56473d998687aeb2f98f18c431727d4254d21
 ```
 
 ### `dpkg` source package: `gdbm=1.18.1-5`
@@ -1695,19 +1695,24 @@ $ apt-get source -qq --print-uris libzstd=1.4.4+dfsg-3
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.4+dfsg-3.debian.tar.xz' libzstd_1.4.4+dfsg-3.debian.tar.xz 16068 SHA256:f7fec89f1fae04dfa551d124973167e09e84c864a25961aa20727cc91277b0e6
 ```
 
-### `dpkg` source package: `linux=5.4.0-48.52`
+### `dpkg` source package: `linux=5.4.0-52.57`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.4.0-48.52`
+- `linux-libc-dev:amd64=5.4.0-52.57`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.4.0-52.57
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-52.57.dsc' linux_5.4.0-52.57.dsc 7220 SHA512:1dbc4a4f6a6dd58f6897e4022df9a190d30deeb45c97d3f1a6ad29d0896e732a9521f6f70bf0d7ec4dd94a71f4ae8cde78766dc253f7960839eb71e24367d3cc
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-52.57.diff.gz' linux_5.4.0-52.57.diff.gz 5473770 SHA512:996c553067429268e7e46e97f0a403d8304757a7748d568df222ad5b7caea11cfecdce1109edccb69c5ab653464a01a8316d98639047a23b096f7fe9683490e4
+```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
@@ -2239,13 +2244,13 @@ $ apt-get source -qq --print-uris publicsuffix=20200303.0012-1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/publicsuffix/publicsuffix_20200303.0012-1.debian.tar.xz' publicsuffix_20200303.0012-1.debian.tar.xz 15328 SHA256:3dbbd7b1e20bafc3e5ad73732cb026a4b8e6e5dafa25a9047151e9a28b251647
 ```
 
-### `dpkg` source package: `python2.7=2.7.18~rc1-2`
+### `dpkg` source package: `python2.7=2.7.18-1~20.04`
 
 Binary Packages:
 
-- `libpython2.7:amd64=2.7.18~rc1-2`
-- `libpython2.7-minimal:amd64=2.7.18~rc1-2`
-- `libpython2.7-stdlib:amd64=2.7.18~rc1-2`
+- `libpython2.7:amd64=2.7.18-1~20.04`
+- `libpython2.7-minimal:amd64=2.7.18-1~20.04`
+- `libpython2.7-stdlib:amd64=2.7.18-1~20.04`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`)
 
@@ -2269,10 +2274,10 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python2.7=2.7.18~rc1-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18~rc1-2.dsc' python2.7_2.7.18~rc1-2.dsc 3318 SHA256:edd6bb77243841b0e130ddf827bf05925bfaf5611b22a932c7cd0771e4572a94
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18~rc1.orig.tar.gz' python2.7_2.7.18~rc1.orig.tar.gz 17538275 SHA256:fb8f47668ccb2ab22d8b1f72e0ca9b0022eeafce5b3fe8c422ab935cba62ff3d
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18~rc1-2.diff.gz' python2.7_2.7.18~rc1-2.diff.gz 286573 SHA256:0de99970280590fe68622cd7ffe16df8e68e8962cefc241285fc8965bdedd7dc
+$ apt-get source -qq --print-uris python2.7=2.7.18-1~20.04
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-1~20.04.dsc' python2.7_2.7.18-1~20.04.dsc 2944 SHA512:c08b2386c342aa65899f7a0e3d14812fbca79ebd81306492741d8eb26d070dadbd162a48e7a0c09f1d1175902116f635f1874a3896871f1c2331bdba79b4ace7
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18.orig.tar.gz' python2.7_2.7.18.orig.tar.gz 17539408 SHA512:9a81cea8f8853b183364b399a238604075b00d18badb0cde118b20fe4428135de5d75a3feca0d56a3d8d40d557e3933de573671072d9da6f76f84435d23bf1ba
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-1~20.04.diff.gz' python2.7_2.7.18-1~20.04.diff.gz 287081 SHA512:282392b04d2d92143d1d0f764e66fb50bd09c6223680e0cdc6c25c7db5c16ae4b96f1a2756d3fe7b2c05fef4cdb062d2b7ea5cb084169b648749a2c51ff5ab70
 ```
 
 ### `dpkg` source package: `readline=8.0-4`
@@ -2661,12 +2666,12 @@ $ apt-get source -qq --print-uris z3=4.8.7-4build1
 'http://archive.ubuntu.com/ubuntu/pool/universe/z/z3/z3_4.8.7-4build1.debian.tar.xz' z3_4.8.7-4build1.debian.tar.xz 10080 SHA256:62269275955ed4d2cf9bfe5d1903e3f5bffd6981c7f14660d778365099ebe333
 ```
 
-### `dpkg` source package: `zlib=1:1.2.11.dfsg-2ubuntu1`
+### `dpkg` source package: `zlib=1:1.2.11.dfsg-2ubuntu1.1`
 
 Binary Packages:
 
-- `zlib1g:amd64=1:1.2.11.dfsg-2ubuntu1`
-- `zlib1g-dev:amd64=1:1.2.11.dfsg-2ubuntu1`
+- `zlib1g:amd64=1:1.2.11.dfsg-2ubuntu1.1`
+- `zlib1g-dev:amd64=1:1.2.11.dfsg-2ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/zlib1g/copyright`, `/usr/share/doc/zlib1g-dev/copyright`)
 
@@ -2675,8 +2680,8 @@ Licenses: (parsed from: `/usr/share/doc/zlib1g/copyright`, `/usr/share/doc/zlib1
 Source:
 
 ```console
-$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu1.dsc' zlib_1.2.11.dfsg-2ubuntu1.dsc 2970 SHA256:2e56b0d54d841d974c96e6cc4361da7c75b1848cded85412cdb4b4bc7791233a
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.gz' zlib_1.2.11.dfsg.orig.tar.gz 370248 SHA256:80c481411a4fe8463aeb8270149a0e80bb9eaf7da44132b6e16f2b5af01bc899
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu1.debian.tar.xz' zlib_1.2.11.dfsg-2ubuntu1.debian.tar.xz 49448 SHA256:11c13ba58bd033dbfd2c7408f4a4eaa02035e007dea79ae20f0db580eaa53c9c
+$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu1.1.dsc' zlib_1.2.11.dfsg-2ubuntu1.1.dsc 2953 SHA512:c45111bf4c8d7f90f7cdcac618e25ce257fb4fa4ff01766259f27ba2afde471266e3683bcf40378caec3d4eefa7209811d9007b07ca4fa079b9061ec95a639f4
+'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.gz' zlib_1.2.11.dfsg.orig.tar.gz 370248 SHA512:92819807c0b8de655021bb2d5d182f9b6b381d3072d8c8dc1df34bbaa25d36bcba140c85f754a43cc466aac65850b7a7366aa0c93e804180e5b255e61d5748de
+'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu1.1.debian.tar.xz' zlib_1.2.11.dfsg-2ubuntu1.1.debian.tar.xz 50556 SHA512:6e4cb7b0eeb1645b8ed08a82ef967627abfe2444ca35cbec58a05e84cfdd2d7a45d766809b9a6082ba074185af36f1d5e3995ff63df8b9780170769474fc23c7
 ```
