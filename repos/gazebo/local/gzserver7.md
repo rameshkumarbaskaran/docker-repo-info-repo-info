@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:107d2a5d42c854d62a0bb2dd7c2ebaa79d431d06547703dc1f22adbbb80b27f6`
-- Created: `2020-09-25T23:58:28.742760935Z`
-- Virtual Size: ~ 605.53 Mb  
+- Image ID: `sha256:b9700229b94fe3a18dafaf3c09ce66f1491414b92d122f00eee1a5663226b27b`
+- Created: `2020-10-23T18:33:07.560784464Z`
+- Virtual Size: ~ 608.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/gzserver_entrypoint.sh"]`
@@ -818,11 +818,11 @@ $ apt-get source -qq --print-uris freeimage=3.17.0+ds1-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/universe/f/freeimage/freeimage_3.17.0+ds1-2ubuntu0.1.debian.tar.xz' freeimage_3.17.0+ds1-2ubuntu0.1.debian.tar.xz 23020 SHA512:c0ba1a6ada99ea8630e468753c1fc4eef53a21315675483a52e20210fa2381edf5c2cd18b818ec82035a644494676d78b912f010305137c1515c84d388da4589
 ```
 
-### `dpkg` source package: `freetype=2.6.1-0.1ubuntu2.4`
+### `dpkg` source package: `freetype=2.6.1-0.1ubuntu2.5`
 
 Binary Packages:
 
-- `libfreetype6:amd64=2.6.1-0.1ubuntu2.4`
+- `libfreetype6:amd64=2.6.1-0.1ubuntu2.5`
 
 Licenses: (parsed from: `/usr/share/doc/libfreetype6/copyright`)
 
@@ -835,9 +835,14 @@ Licenses: (parsed from: `/usr/share/doc/libfreetype6/copyright`)
 - `GZip`
 - `OpenGroup-BSD-like`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris freetype=2.6.1-0.1ubuntu2.5
+'http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.6.1-0.1ubuntu2.5.dsc' freetype_2.6.1-0.1ubuntu2.5.dsc 1944 SHA512:46c852f27b64e27ed6861acd493cb8a73e28c2b0fd1e4e2609aec1762b80005f781731de7feec65bb028344f84cd1f77e852acdc8f922edc7158148cc18e0c9c
+'http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.6.1.orig.tar.gz' freetype_2.6.1.orig.tar.gz 2411537 SHA512:526dfe1aa98631f1e4af7d01d00dc93128df426f4df00e41b4a2132914e9218945fbd92e06a4ad7adcd84812752613d0f5c7938c8d69626a802cf01e1dc527ef
+'http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.6.1-0.1ubuntu2.5.diff.gz' freetype_2.6.1-0.1ubuntu2.5.diff.gz 45669 SHA512:b879ae7c77ebf691e42e3905b45e67d40eb9bbf9711b2e1b1204f1c2fd1738e334c30e04a73f847f4c2c4127100282b78d51af5354da0a1673b62744a75cb4ca
+```
 
 ### `dpkg` source package: `freexl=1.0.2-1ubuntu0.1`
 
@@ -3576,22 +3581,27 @@ $ apt-get source -qq --print-uris p11-kit=0.23.2-5~ubuntu16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.2-5~ubuntu16.04.1.debian.tar.xz' p11-kit_0.23.2-5~ubuntu16.04.1.debian.tar.xz 15208 SHA512:26514c75dd90eb2816a66b4e7fc37087600092111fd7a4b47919bee6c9e2c62a5f67d2f167ecdce4c449eb0b7f08c0286e08eaccdc334eadfd3f1a1e39c9242b
 ```
 
-### `dpkg` source package: `pam=1.1.8-3.2ubuntu2.1`
+### `dpkg` source package: `pam=1.1.8-3.2ubuntu2.3`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.1.8-3.2ubuntu2.1`
-- `libpam-modules-bin=1.1.8-3.2ubuntu2.1`
-- `libpam-runtime=1.1.8-3.2ubuntu2.1`
-- `libpam0g:amd64=1.1.8-3.2ubuntu2.1`
+- `libpam-modules:amd64=1.1.8-3.2ubuntu2.3`
+- `libpam-modules-bin=1.1.8-3.2ubuntu2.3`
+- `libpam-runtime=1.1.8-3.2ubuntu2.3`
+- `libpam0g:amd64=1.1.8-3.2ubuntu2.3`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris pam=1.1.8-3.2ubuntu2.3
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8-3.2ubuntu2.3.dsc' pam_1.1.8-3.2ubuntu2.3.dsc 2611 SHA512:f33dfe20b608641d5d2f2396700a83511a58164d9ad22fada18f644e9c27dba5b489c178dcb7077c99307cc42d8ce5b6ba6826000307257a729a522c778fb34e
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8.orig.tar.gz' pam_1.1.8.orig.tar.gz 1892765 SHA512:dca21547f951a53cdb6bbcbedde694f345ec02ff5931f2f81da26980471206515f891035cacded3e10d6631f7dc2fb8679fdaf737cd50adaf18768a1c56482a2
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.1.8-3.2ubuntu2.3.diff.gz' pam_1.1.8-3.2ubuntu2.3.diff.gz 197563 SHA512:19d1ea949966ba6f5935094f68006a35028c4787ceb6cbdd367ded22a28e8b76f17c6c2bb3d446f2f8674bc4427938f6cd65b85b6cc5699bfc64265302090074
+```
 
 ### `dpkg` source package: `pcre3=2:8.38-3.1`
 
@@ -3814,14 +3824,14 @@ $ apt-get source -qq --print-uris python3-defaults=3.5.1-3
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.5.1-3.tar.gz' python3-defaults_3.5.1-3.tar.gz 924115 SHA256:8d1284430b77775d4cea62a33b0685e0523b8dfa2ebcc092d382af5cb5b4f237
 ```
 
-### `dpkg` source package: `python3.5=3.5.2-2ubuntu0~16.04.11`
+### `dpkg` source package: `python3.5=3.5.2-2ubuntu0~16.04.12`
 
 Binary Packages:
 
-- `libpython3.5-minimal:amd64=3.5.2-2ubuntu0~16.04.11`
-- `libpython3.5-stdlib:amd64=3.5.2-2ubuntu0~16.04.11`
-- `python3.5=3.5.2-2ubuntu0~16.04.11`
-- `python3.5-minimal=3.5.2-2ubuntu0~16.04.11`
+- `libpython3.5-minimal:amd64=3.5.2-2ubuntu0~16.04.12`
+- `libpython3.5-stdlib:amd64=3.5.2-2ubuntu0~16.04.12`
+- `python3.5=3.5.2-2ubuntu0~16.04.12`
+- `python3.5-minimal=3.5.2-2ubuntu0~16.04.12`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/share/doc/libpython3.5-stdlib/copyright`, `/usr/share/doc/python3.5/copyright`, `/usr/share/doc/python3.5-minimal/copyright`)
 
@@ -3852,9 +3862,14 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3.5=3.5.2-2ubuntu0~16.04.12
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.12.dsc' python3.5_3.5.2-2ubuntu0~16.04.12.dsc 3391 SHA512:6499399e153d15cbec33b00f77e1eeb8a5f2442532702449572011c1c8270eff586094345a8a3bbd3a3942542c98aa4589c066bb8f3fa83dbca088d6b1d1cfc5
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2.orig.tar.xz' python3.5_3.5.2.orig.tar.xz 15222676 SHA512:c07c3366f1c81e214241444bb9da6db9d11da32ad66bfa29cdad5a3b2e34e4d870bda6d4ce3c3910b582942e91f1d8c8a1c1a7b9464cc147b83c9e0007012742
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.12.debian.tar.xz' python3.5_3.5.2-2ubuntu0~16.04.12.debian.tar.xz 237660 SHA512:d1ff7da471138f23e13d021a38e74b4e1b1fd3b8bca820ac9ef2265e465121a0f2d3fb93e4ac002c085a995bb96eabeddd008da1ce1a48e5724120b25a3baecf
+```
 
 ### `dpkg` source package: `qt4-x11=4:4.8.7+dfsg-5ubuntu2`
 

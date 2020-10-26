@@ -2339,13 +2339,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-common3/copyright`, `/usr/sh
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-common3=3.6.1-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.6.1-1~focal.dsc' ignition-common3_3.6.1-1~focal.dsc 1887 SHA256:c739b024f8387b639ee67d3ca23e3cc0c47f4c0bd98c02e768babccab199f63f
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.6.1-1~focal.tar.xz' ignition-common3_3.6.1-1~focal.tar.xz 6684652 SHA256:077e5d0ab4b4a32fcb581b5394b7764071de9e95ba9522d95e1f9139f8400cf1
-```
 
 ### `dpkg` source package: `ignition-fuel-tools4=4.2.1-2~focal`
 
