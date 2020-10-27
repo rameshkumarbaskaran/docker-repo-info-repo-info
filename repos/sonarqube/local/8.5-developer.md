@@ -1,10 +1,10 @@
-# `sonarqube:8.5.0-developer`
+# `sonarqube:8.5.1-developer`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d77b1f76ec726bcb4d175759d5cc40456edb142c5fe864f526e822f68e99ceb9`
-- Created: `2020-10-07T21:31:58.255639473Z`
-- Virtual Size: ~ 730.21 Mb  
+- Image ID: `sha256:b671c0c905a46dd6fe0c4dde88bf70b0b21e01e1858faf0f9b1352a1cc0ca171`
+- Created: `2020-10-23T17:29:51.014388759Z`
+- Virtual Size: ~ 725.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["bin/run.sh"]`
@@ -17,7 +17,7 @@
   - `LC_ALL=en_US.UTF-8`
   - `JAVA_HOME=/opt/java/openjdk`
   - `SONARQUBE_HOME=/opt/sonarqube`
-  - `SONAR_VERSION=8.5.0.37579`
+  - `SONAR_VERSION=8.5.1.38104`
   - `SQ_DATA_DIR=/opt/sonarqube/data`
   - `SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions`
   - `SQ_LOGS_DIR=/opt/sonarqube/logs`
@@ -181,16 +181,16 @@ MIT
 ### `apk` package: `freetype`
 
 ```console
-freetype-2.10.1-r0 description:
+freetype-2.10.1-r1 description:
 TrueType font rendering library
 
-freetype-2.10.1-r0 webpage:
+freetype-2.10.1-r1 webpage:
 https://www.freetype.org/
 
-freetype-2.10.1-r0 installed size:
+freetype-2.10.1-r1 installed size:
 737280
 
-freetype-2.10.1-r0 license:
+freetype-2.10.1-r1 license:
 FTL GPL-2.0-or-later
 
 ```
