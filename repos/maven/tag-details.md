@@ -14,6 +14,7 @@
 -	[`maven:3.6.3-adoptopenjdk-8-openj9`](#maven363-adoptopenjdk-8-openj9)
 -	[`maven:3.6.3-amazoncorretto`](#maven363-amazoncorretto)
 -	[`maven:3.6.3-amazoncorretto-11`](#maven363-amazoncorretto-11)
+-	[`maven:3.6.3-amazoncorretto-15`](#maven363-amazoncorretto-15)
 -	[`maven:3.6.3-amazoncorretto-8`](#maven363-amazoncorretto-8)
 -	[`maven:3.6.3-ibmjava`](#maven363-ibmjava)
 -	[`maven:3.6.3-ibmjava-8`](#maven363-ibmjava-8)
@@ -45,6 +46,7 @@
 -	[`maven:3.6-adoptopenjdk-8-openj9`](#maven36-adoptopenjdk-8-openj9)
 -	[`maven:3.6-amazoncorretto`](#maven36-amazoncorretto)
 -	[`maven:3.6-amazoncorretto-11`](#maven36-amazoncorretto-11)
+-	[`maven:3.6-amazoncorretto-15`](#maven36-amazoncorretto-15)
 -	[`maven:3.6-amazoncorretto-8`](#maven36-amazoncorretto-8)
 -	[`maven:3.6-ibmjava`](#maven36-ibmjava)
 -	[`maven:3.6-ibmjava-8`](#maven36-ibmjava-8)
@@ -76,6 +78,7 @@
 -	[`maven:3-adoptopenjdk-8-openj9`](#maven3-adoptopenjdk-8-openj9)
 -	[`maven:3-amazoncorretto`](#maven3-amazoncorretto)
 -	[`maven:3-amazoncorretto-11`](#maven3-amazoncorretto-11)
+-	[`maven:3-amazoncorretto-15`](#maven3-amazoncorretto-15)
 -	[`maven:3-amazoncorretto-8`](#maven3-amazoncorretto-8)
 -	[`maven:3-ibmjava`](#maven3-ibmjava)
 -	[`maven:3-ibmjava-8`](#maven3-ibmjava-8)
@@ -3868,6 +3871,10 @@ CMD ["mvn"]
 		Last Modified: Wed, 21 Oct 2020 19:11:22 GMT  
 		Size: 364.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.6.3-amazoncorretto-15`
+
+**does not exist** (yet?)
 
 ## `maven:3.6.3-amazoncorretto-8`
 
@@ -11363,6 +11370,10 @@ CMD ["mvn"]
 		Size: 364.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.6-amazoncorretto-15`
+
+**does not exist** (yet?)
+
 ## `maven:3.6-amazoncorretto-8`
 
 ```console
@@ -18856,6 +18867,10 @@ CMD ["mvn"]
 		Last Modified: Wed, 21 Oct 2020 19:11:22 GMT  
 		Size: 364.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-amazoncorretto-15`
+
+**does not exist** (yet?)
 
 ## `maven:3-amazoncorretto-8`
 
