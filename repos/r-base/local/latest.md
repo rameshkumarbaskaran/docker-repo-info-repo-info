@@ -86,19 +86,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.1.10
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.10.dsc' apt_2.1.10.dsc 2760 SHA256:2368cefda44f61bb73970781be04ae7947290606d929f1682fb3cfa6ddb6ec0a
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.10.tar.xz' apt_2.1.10.tar.xz 2179772 SHA256:aa678d0fcd614a7707e77f3219097401141f5426cd1095c4aa50043920a2c04b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.1.10/
 
-- https://sources.debian.net/src/apt/2.1.10/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.1.10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.1.10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -3216,20 +3210,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-nlme/copyright`)
 - `GPL`
 - `GPL `
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nlme=3.1.149-1
-'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.149-1.dsc' nlme_3.1.149-1.dsc 1834 SHA256:602c276b1f42ba199d78f96d824557fa8bca190a822f7d16eb418b9ff580cb9b
-'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.149.orig.tar.gz' nlme_3.1.149.orig.tar.gz 792097 SHA256:c96263f16a16aa26e985eff82ba4e9ff6d1095d10ff7a187dfe53668c64ec39a
-'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.149-1.debian.tar.xz' nlme_3.1.149-1.debian.tar.xz 7128 SHA256:faf858ab4c80ce43943727a0e8c2e5c03bf2ed9f63733585670484fc486d3b08
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nlme/3.1.149-1/
 
-- https://sources.debian.net/src/nlme/3.1.149-1/ (for browsing the source)
-- https://sources.debian.net/src/nlme/3.1.149-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nlme/3.1.149-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openblas=0.3.10+ds-3`
 
@@ -3245,20 +3232,13 @@ Licenses: (parsed from: `/usr/share/doc/libopenblas0-pthread/copyright`)
 - `BSD-3-clause`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openblas=0.3.10+ds-3
-'http://deb.debian.org/debian/pool/main/o/openblas/openblas_0.3.10+ds-3.dsc' openblas_0.3.10+ds-3.dsc 4916 SHA256:2a65e3c8b2b6cb0d71b33d1ca546c7da18516670ffbf0c40e7be34be88c779e1
-'http://deb.debian.org/debian/pool/main/o/openblas/openblas_0.3.10+ds.orig.tar.xz' openblas_0.3.10+ds.orig.tar.xz 1594332 SHA256:6178ec53c96959888f7c8112887ce678d063898a216a9adcd10da5a449ae1336
-'http://deb.debian.org/debian/pool/main/o/openblas/openblas_0.3.10+ds-3.debian.tar.xz' openblas_0.3.10+ds-3.debian.tar.xz 22780 SHA256:2f845923097808e209c5b902e53ce0e08735ea474e896ee7d9f0c1c735124310
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openblas/0.3.10+ds-3/
 
-- https://sources.debian.net/src/openblas/0.3.10+ds-3/ (for browsing the source)
-- https://sources.debian.net/src/openblas/0.3.10+ds-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openblas/0.3.10+ds-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openldap=2.4.53+dfsg-1`
 
@@ -4258,20 +4238,13 @@ Licenses: (parsed from: `/usr/share/doc/vim-common/copyright`, `/usr/share/doc/v
 - `XPM`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris vim=2:8.2.0716-3
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.2.0716-3.dsc' vim_8.2.0716-3.dsc 2903 SHA256:5df1b221693726addab7db3c8266710a6869079d060511ab42c519c746092f81
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.2.0716.orig.tar.gz' vim_8.2.0716.orig.tar.gz 14944561 SHA256:488c651f7e8d7587a84abf6895ae952b902e8c78426060c65092f5ed09cf8552
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.2.0716-3.debian.tar.xz' vim_8.2.0716-3.debian.tar.xz 169600 SHA256:cad1666d5ad7940db8885a2f6bb7dba2951844f15c4e3f18b9ba25c704193060
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/vim/2:8.2.0716-3/
 
-- https://sources.debian.net/src/vim/2:8.2.0716-3/ (for browsing the source)
-- https://sources.debian.net/src/vim/2:8.2.0716-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/vim/2:8.2.0716-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.20.3-1`
 
