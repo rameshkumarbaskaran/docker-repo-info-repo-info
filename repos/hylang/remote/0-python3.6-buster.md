@@ -1,7 +1,7 @@
 ## `hylang:0-python3.6-buster`
 
 ```console
-$ docker pull hylang@sha256:e50f089e4dd7be3dec8410faf6ccc11de74db794a3c314235d1fc0992615bee4
+$ docker pull hylang@sha256:db0145058dfe83c3fb9d838903c26cc63caf7c2edd7a14067ea31adc8083e13c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -246,14 +246,14 @@ CMD ["hy"]
 ### `hylang:0-python3.6-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull hylang@sha256:5fea30f0289f9fce6d7491cdf4e0c3fb085d666130a13f8b6cb435990318a8a4
+$ docker pull hylang@sha256:a7ff015b2ba4bf4a2633faeb0228df98f8c737c6a0812c0dcce21ad11cf534a3
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **43.4 MB (43372210 bytes)**  
+-	Total Size: **43.4 MB (43372238 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c3621fd09e09d323c037bb94843dad66dcfe0c5beb67ed64aa415984881fd836`
+-	Image ID: `sha256:0e638c4254d5ea3c7df70b0fff3210d10d55256900c2d510fceba4d8d254b131`
 -	Default Command: `["hy"]`
 
 ```dockerfile
@@ -277,19 +277,19 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 20 Oct 2020 18:12:03 GMT
 ENV PYTHON_PIP_VERSION=20.2.4
-# Tue, 20 Oct 2020 18:12:05 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/8283828b8fd6f1783daf55a765384e6d8d2c5014/get-pip.py
-# Tue, 20 Oct 2020 18:12:06 GMT
-ENV PYTHON_GET_PIP_SHA256=2250ab0a7e70f6fd22b955493f7f5cf1ea53e70b584a84a32573644a045b4bfb
-# Tue, 20 Oct 2020 18:12:34 GMT
+# Tue, 03 Nov 2020 21:15:23 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/fa7dc83944936bf09a0e4cb5d5ec852c0d256599/get-pip.py
+# Tue, 03 Nov 2020 21:15:24 GMT
+ENV PYTHON_GET_PIP_SHA256=6e0bb0a2c2533361d7f297ed547237caf1b7507f197835974c0dd7eba998c53c
+# Tue, 03 Nov 2020 21:16:16 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 20 Oct 2020 18:12:35 GMT
+# Tue, 03 Nov 2020 21:16:19 GMT
 CMD ["python3"]
-# Tue, 20 Oct 2020 18:27:59 GMT
+# Tue, 03 Nov 2020 22:43:14 GMT
 ENV HY_VERSION=0.19.0
-# Tue, 20 Oct 2020 18:28:10 GMT
+# Tue, 03 Nov 2020 22:43:22 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION"
-# Tue, 20 Oct 2020 18:28:11 GMT
+# Tue, 03 Nov 2020 22:43:24 GMT
 CMD ["hy"]
 ```
 
@@ -310,13 +310,13 @@ CMD ["hy"]
 		Last Modified: Tue, 13 Oct 2020 08:17:43 GMT  
 		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:00706798531f93720569c223694d9a90f5156245962d01f03a9d1a9186748ae8`  
-		Last Modified: Tue, 20 Oct 2020 18:20:08 GMT  
-		Size: 2.4 MB (2409583 bytes)  
+	-	`sha256:ebe8ee754e619cc6a8f1cdb6090ccaf7f420633b13e15d10fd94512a8f48df5c`  
+		Last Modified: Tue, 03 Nov 2020 21:23:29 GMT  
+		Size: 2.4 MB (2409510 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5f5522c14c5506d91d7ce82e3f024305bb69fbc1732d1046bbc2e0c79aa1e87`  
-		Last Modified: Tue, 20 Oct 2020 18:34:51 GMT  
-		Size: 2.8 MB (2767610 bytes)  
+	-	`sha256:b7e4b071f6980d3fdb56d4f7e4bb0bd3555fab26c059a0f15a5658e174dab9ee`  
+		Last Modified: Tue, 03 Nov 2020 22:48:20 GMT  
+		Size: 2.8 MB (2767711 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hylang:0-python3.6-buster` - linux; 386

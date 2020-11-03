@@ -1,7 +1,7 @@
 ## `hylang:0-buster`
 
 ```console
-$ docker pull hylang@sha256:119b999ae3924c4cf262a6d26bba14748468fdc0aacf72917bd9029a8cbee043
+$ docker pull hylang@sha256:1f7dc13fec3011ec9567692756b82acb98b5ce89dfd4b12d6c9a2e8d12d8f912
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -246,14 +246,14 @@ CMD ["hy"]
 ### `hylang:0-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull hylang@sha256:3f9b555586818889be93a8d4b763f057adc696b4455272c57b413a514616ad47
+$ docker pull hylang@sha256:887849cc427585777ac5f9c0ea759c7974b4b4347801d50c1ba5a9222a141df1
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.4 MB (44354631 bytes)**  
+-	Total Size: **44.4 MB (44354427 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cbd53ffef504cfc27a6fb462e66ba272b97232435b4f300c748d04065a5c0dc9`
+-	Image ID: `sha256:1ebb5fa36b92b1e2c8959d590cf40077ca62ca888b0fb471f66830a7418d337f`
 -	Default Command: `["hy"]`
 
 ```dockerfile
@@ -277,19 +277,19 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 20 Oct 2020 18:05:11 GMT
 ENV PYTHON_PIP_VERSION=20.2.4
-# Tue, 20 Oct 2020 18:05:12 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/8283828b8fd6f1783daf55a765384e6d8d2c5014/get-pip.py
-# Tue, 20 Oct 2020 18:05:15 GMT
-ENV PYTHON_GET_PIP_SHA256=2250ab0a7e70f6fd22b955493f7f5cf1ea53e70b584a84a32573644a045b4bfb
-# Tue, 20 Oct 2020 18:05:54 GMT
+# Tue, 03 Nov 2020 21:08:17 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/fa7dc83944936bf09a0e4cb5d5ec852c0d256599/get-pip.py
+# Tue, 03 Nov 2020 21:08:19 GMT
+ENV PYTHON_GET_PIP_SHA256=6e0bb0a2c2533361d7f297ed547237caf1b7507f197835974c0dd7eba998c53c
+# Tue, 03 Nov 2020 21:08:51 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 20 Oct 2020 18:05:57 GMT
+# Tue, 03 Nov 2020 21:08:53 GMT
 CMD ["python3"]
-# Tue, 20 Oct 2020 18:25:53 GMT
+# Tue, 03 Nov 2020 22:41:15 GMT
 ENV HY_VERSION=0.19.0
-# Tue, 20 Oct 2020 18:26:02 GMT
+# Tue, 03 Nov 2020 22:41:23 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION"
-# Tue, 20 Oct 2020 18:26:03 GMT
+# Tue, 03 Nov 2020 22:41:24 GMT
 CMD ["hy"]
 ```
 
@@ -310,13 +310,13 @@ CMD ["hy"]
 		Last Modified: Tue, 13 Oct 2020 08:16:26 GMT  
 		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ece451e1c4099c912e1912e944a89794e1f2d27ed0931427842671d8fe0aaae8`  
-		Last Modified: Tue, 20 Oct 2020 18:18:19 GMT  
-		Size: 2.4 MB (2409531 bytes)  
+	-	`sha256:d1385bf66951ed4be711845645f1b255fe68525d549546633286084aefda72fb`  
+		Last Modified: Tue, 03 Nov 2020 21:21:32 GMT  
+		Size: 2.4 MB (2409424 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0565969e53d29c24c2752e835ad329dcd9ea10e8fe38cb771a5dc5368624dc0b`  
-		Last Modified: Tue, 20 Oct 2020 18:31:55 GMT  
-		Size: 2.8 MB (2830972 bytes)  
+	-	`sha256:ec24183ab59c89b060a8c9a6d994f11a7c0a9b9d191d290fd09b0395a5cc196a`  
+		Last Modified: Tue, 03 Nov 2020 22:46:28 GMT  
+		Size: 2.8 MB (2830875 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hylang:0-buster` - linux; 386

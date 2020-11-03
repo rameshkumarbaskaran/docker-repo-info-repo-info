@@ -1,7 +1,7 @@
 ## `hylang:0-python3.6-stretch`
 
 ```console
-$ docker pull hylang@sha256:f0614a364453b986fa1bfbc65a934ae9a2330f87f52427f164128f0df8fc41ff
+$ docker pull hylang@sha256:641870a5410c8b8854877d41d4cbd34bc8fa537426e469f897839449b7eef48c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -243,14 +243,14 @@ CMD ["hy"]
 ### `hylang:0-python3.6-stretch` - linux; arm64 variant v8
 
 ```console
-$ docker pull hylang@sha256:081f5f4318312a284be4d83f623318aa7e05bcfce669bb4413197727df19db3d
+$ docker pull hylang@sha256:c4bd2025768446cc24ca142b3963a34ce7da32692cc0ad8cd90feb048870558d
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **37.1 MB (37104516 bytes)**  
+-	Total Size: **37.1 MB (37104578 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:40582ddd4216acab47e3023beb1f03e51ce0461c8edd90fdfa9806e7ce40d639`
+-	Image ID: `sha256:fe24abcfdb6bfa0e45dfde51e0aeef7d023c93d838b247eac5b07d6a19a6ee7d`
 -	Default Command: `["hy"]`
 
 ```dockerfile
@@ -274,19 +274,19 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 20 Oct 2020 18:13:24 GMT
 ENV PYTHON_PIP_VERSION=20.2.4
-# Tue, 20 Oct 2020 18:13:24 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/8283828b8fd6f1783daf55a765384e6d8d2c5014/get-pip.py
-# Tue, 20 Oct 2020 18:13:25 GMT
-ENV PYTHON_GET_PIP_SHA256=2250ab0a7e70f6fd22b955493f7f5cf1ea53e70b584a84a32573644a045b4bfb
-# Tue, 20 Oct 2020 18:14:03 GMT
+# Tue, 03 Nov 2020 21:17:15 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/fa7dc83944936bf09a0e4cb5d5ec852c0d256599/get-pip.py
+# Tue, 03 Nov 2020 21:17:16 GMT
+ENV PYTHON_GET_PIP_SHA256=6e0bb0a2c2533361d7f297ed547237caf1b7507f197835974c0dd7eba998c53c
+# Tue, 03 Nov 2020 21:17:58 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 20 Oct 2020 18:14:04 GMT
+# Tue, 03 Nov 2020 21:18:00 GMT
 CMD ["python3"]
-# Tue, 20 Oct 2020 18:28:18 GMT
+# Tue, 03 Nov 2020 22:43:30 GMT
 ENV HY_VERSION=0.19.0
-# Tue, 20 Oct 2020 18:28:28 GMT
+# Tue, 03 Nov 2020 22:43:40 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION"
-# Tue, 20 Oct 2020 18:28:29 GMT
+# Tue, 03 Nov 2020 22:43:41 GMT
 CMD ["hy"]
 ```
 
@@ -307,13 +307,13 @@ CMD ["hy"]
 		Last Modified: Tue, 13 Oct 2020 08:18:08 GMT  
 		Size: 241.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2567502fb3e0574f1839d04cb97ab1c30ef67727bf214253f486c47e245494b1`  
-		Last Modified: Tue, 20 Oct 2020 18:20:58 GMT  
-		Size: 2.4 MB (2403772 bytes)  
+	-	`sha256:4fd2c339eaa8cf238ffc123a1f210a78bcf20ac2322354d04d7ed8978f113b3e`  
+		Last Modified: Tue, 03 Nov 2020 21:23:54 GMT  
+		Size: 2.4 MB (2403774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ea68f1338bdaa4fccc26e124a049ce30a741518663d1a86a1bc0818c6243c28`  
-		Last Modified: Tue, 20 Oct 2020 18:35:15 GMT  
-		Size: 2.8 MB (2767901 bytes)  
+	-	`sha256:02fe1cbb620c869e31d69172a482fe8811f144deee98c012024446d9e81f6083`  
+		Last Modified: Tue, 03 Nov 2020 22:48:32 GMT  
+		Size: 2.8 MB (2767961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hylang:0-python3.6-stretch` - linux; 386
