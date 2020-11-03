@@ -1,7 +1,7 @@
 ## `python:3-alpine3.12`
 
 ```console
-$ docker pull python@sha256:8a7556174f0c9841df1a85ebe1e221f0151c825574370fa0580d5800ad4fca24
+$ docker pull python@sha256:e88c48bd6a3d28f5a958d2b58663224527ad48eb907f3a03490b7a79a8b40fe2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -281,14 +281,14 @@ CMD ["python3"]
 ### `python:3-alpine3.12` - linux; 386
 
 ```console
-$ docker pull python@sha256:89d359461541976b32436b6c6eb88e0279ec6c9f3f42f80ef67217b993345659
+$ docker pull python@sha256:c977a569d5d982a3fa4ef7a3de13044b9aa55c3bcd23c00e8ec87fded0b0a800
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **18.4 MB (18382151 bytes)**  
+-	Total Size: **18.4 MB (18382327 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e035c1a02e5bef3664ea44a000e4a43d66d9ffd1178dee1e21879ff3477e9a09`
+-	Image ID: `sha256:a2ff2f56ae86b21178385d58bbec10ac7973b99c12bfba2dfea511a76183d92d`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -312,13 +312,13 @@ RUN set -ex 	&& apk add --no-cache --virtual .fetch-deps 		gnupg 		tar 		xz 		&&
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Thu, 22 Oct 2020 06:18:10 GMT
 ENV PYTHON_PIP_VERSION=20.2.4
-# Thu, 22 Oct 2020 06:18:11 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/8283828b8fd6f1783daf55a765384e6d8d2c5014/get-pip.py
-# Thu, 22 Oct 2020 06:18:11 GMT
-ENV PYTHON_GET_PIP_SHA256=2250ab0a7e70f6fd22b955493f7f5cf1ea53e70b584a84a32573644a045b4bfb
-# Thu, 22 Oct 2020 06:18:18 GMT
+# Tue, 03 Nov 2020 20:49:53 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/fa7dc83944936bf09a0e4cb5d5ec852c0d256599/get-pip.py
+# Tue, 03 Nov 2020 20:49:53 GMT
+ENV PYTHON_GET_PIP_SHA256=6e0bb0a2c2533361d7f297ed547237caf1b7507f197835974c0dd7eba998c53c
+# Tue, 03 Nov 2020 20:50:01 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Thu, 22 Oct 2020 06:18:18 GMT
+# Tue, 03 Nov 2020 20:50:01 GMT
 CMD ["python3"]
 ```
 
@@ -339,9 +339,9 @@ CMD ["python3"]
 		Last Modified: Thu, 22 Oct 2020 09:37:33 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:212220459c32433319564ad7965b6a4a3a19a0f1aeaf164e0753c51f63b124df`  
-		Last Modified: Thu, 22 Oct 2020 09:37:34 GMT  
-		Size: 2.1 MB (2120267 bytes)  
+	-	`sha256:bafd73086f2afe7dbe8ebfd7e6348572edc1ac233ce262a080b8f224cdec0c02`  
+		Last Modified: Tue, 03 Nov 2020 20:55:19 GMT  
+		Size: 2.1 MB (2120443 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:3-alpine3.12` - linux; ppc64le
