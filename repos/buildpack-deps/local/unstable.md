@@ -2632,20 +2632,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`, `/usr/share/doc/li
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.3.0-1
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0-1.dsc' libidn2_2.3.0-1.dsc 2411 SHA256:f4f61425610ae4b4c4d3c74431825fb4b4892d4d07e954d7acdf163595d33f14
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0.orig.tar.gz' libidn2_2.3.0.orig.tar.gz 2164993 SHA256:e1cb1db3d2e249a6a3eb6f0946777c2e892d5c5dc7bd91c74394fc3a01cab8b5
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0-1.debian.tar.xz' libidn2_2.3.0-1.debian.tar.xz 10588 SHA256:a515029f13d12a48a6bc07dadc4cef6592db0a7257f48633795ae7128c23116c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libidn2/2.3.0-1/
 
-- https://sources.debian.net/src/libidn2/2.3.0-1/ (for browsing the source)
-- https://sources.debian.net/src/libidn2/2.3.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libidn2/2.3.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libjpeg-turbo=1:2.0.5-1.1`
 
@@ -3754,20 +3747,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.8.14-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.8.14-1.dsc' linux_5.8.14-1.dsc 194661 SHA256:639b3d2c22ef2dbc20d517e625b5827cfa43cb5f8f26799ea8023aa606353835
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.8.14.orig.tar.xz' linux_5.8.14.orig.tar.xz 119195732 SHA256:accb4fd194247ab011b9bf6e1fb4a3e0f6753146482467e00e5c5c6b806c783e
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.8.14-1.debian.tar.xz' linux_5.8.14-1.debian.tar.xz 1248760 SHA256:e20e709be9784305ccc03ea43513a8b59f58443eaeea2c716d2370025c042193
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/5.8.14-1/
 
-- https://sources.debian.net/src/linux/5.8.14-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/5.8.14-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/5.8.14-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=11.1.0`
 
@@ -4481,20 +4467,13 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.46.2-1
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.46.2-1.dsc' pango1.0_1.46.2-1.dsc 3441 SHA256:a34d19bc0ae5fbc4fcee576928d1efbe05740b36c21b3e27acc78fd49086ab3b
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.46.2.orig.tar.xz' pango1.0_1.46.2.orig.tar.xz 535108 SHA256:d89fab5f26767261b493279b65cfb9eb0955cd44c07c5628d36094609fc51841
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.46.2-1.debian.tar.xz' pango1.0_1.46.2-1.debian.tar.xz 33104 SHA256:ebb1d57ee28ba5dca09067e918cfc4d3103d7fd328293aa7c9693ed21af3d20e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pango1.0/1.46.2-1/
 
-- https://sources.debian.net/src/pango1.0/1.46.2-1/ (for browsing the source)
-- https://sources.debian.net/src/pango1.0/1.46.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pango1.0/1.46.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `patch=2.7.6-6`
 
@@ -5099,21 +5078,13 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `Unicode`
 - `Utfwidth`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.14.0-2
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.0-2.dsc' subversion_1.14.0-2.dsc 3807 SHA256:b670c6b9a945215507960afadc66db369d70ffa9026e34e1ed2f97579d5e20d3
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.0.orig.tar.gz' subversion_1.14.0.orig.tar.gz 11519871 SHA256:ef3d1147535e41874c304fb5b9ea32745fbf5d7faecf2ce21d4115b567e937d0
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.0.orig.tar.gz.asc' subversion_1.14.0.orig.tar.gz.asc 3917 SHA256:98333df38d29a64500d4ad1693741d3d087485555207289b4e53af309abac71a
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.14.0-2.debian.tar.xz' subversion_1.14.0-2.debian.tar.xz 427376 SHA256:4ace635711cc477e885937f62b3f9f2cec9c69e01f5fe5c215a01cb5b9211b6b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/subversion/1.14.0-2/
 
-- https://sources.debian.net/src/subversion/1.14.0-2/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.14.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.14.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=246.6-1`
 
