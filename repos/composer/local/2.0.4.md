@@ -1,10 +1,10 @@
-# `composer:2.0.3`
+# `composer:2.0.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5000d1478d82766834d0dbc21df75180a0c178ce6949acbd6de5d8c009dde336`
-- Created: `2020-10-30T02:23:50.890885219Z`
-- Virtual Size: ~ 175.53 Mb  
+- Image ID: `sha256:c3e9f48fdcc919cad0a41ca8b28fc34df6a699c0618a8a28a13a4e5604e43d70`
+- Created: `2020-11-02T23:22:02.37660566Z`
+- Virtual Size: ~ 175.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -24,7 +24,7 @@
   - `PHP_MD5=`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=2.0.3`
+  - `COMPOSER_VERSION=2.0.4`
 
 ## `apk` (`.apk`-based packages)
 
