@@ -1,10 +1,10 @@
-# `mariadb:10.5.6-focal`
+# `mariadb:10.5.7-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c4655f911514fc4403c128227686bb908f858e0575e0e12368ed2a52d4a4a43d`
-- Created: `2020-10-23T18:40:26.32656267Z`
-- Virtual Size: ~ 406.51 Mb  
+- Image ID: `sha256:1b3986d60f138825865a5c22e19d877f0318d60e88383a0e2fb8baa05bd5a461`
+- Created: `2020-11-04T20:24:45.230866779Z`
+- Virtual Size: ~ 413.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.12`
   - `GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8`
   - `MARIADB_MAJOR=10.5`
-  - `MARIADB_VERSION=1:10.5.6+maria~focal`
+  - `MARIADB_VERSION=1:10.5.7+maria~focal`
 
 ## `dpkg` (`.deb`-based packages)
 
