@@ -1,9 +1,9 @@
-# `nginx:1.19.3-alpine-perl`
+# `nginx:1.19.4-alpine-perl`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fe83bc3341a8d87d514a7c8b9aad48a51338331ab88b70697a653c4db2f09013`
-- Created: `2020-10-22T07:53:55.899426521Z`
+- Image ID: `sha256:c7ed3ede458deed0625e3403042a9e2283348f33291ee08beed0546d2b6d8727`
+- Created: `2020-11-05T18:22:04.866978673Z`
 - Virtual Size: ~ 56.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.19.3`
+  - `NGINX_VERSION=1.19.4`
   - `NJS_VERSION=0.4.4`
   - `PKG_RELEASE=1`
 - Labels:
@@ -549,16 +549,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.19.3-r1 description:
+nginx-1.19.4-r1 description:
 High performance web server
 
-nginx-1.19.3-r1 webpage:
+nginx-1.19.4-r1 webpage:
 http://nginx.org/
 
-nginx-1.19.3-r1 installed size:
-2613248
+nginx-1.19.4-r1 installed size:
+2617344
 
-nginx-1.19.3-r1 license:
+nginx-1.19.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -566,16 +566,16 @@ nginx-1.19.3-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.19.3-r1 description:
+nginx-module-geoip-1.19.4-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.19.3-r1 webpage:
+nginx-module-geoip-1.19.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-geoip-1.19.3-r1 installed size:
+nginx-module-geoip-1.19.4-r1 installed size:
 118784
 
-nginx-module-geoip-1.19.3-r1 license:
+nginx-module-geoip-1.19.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -583,16 +583,16 @@ nginx-module-geoip-1.19.3-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.19.3-r1 description:
+nginx-module-image-filter-1.19.4-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.19.3-r1 webpage:
+nginx-module-image-filter-1.19.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-image-filter-1.19.3-r1 installed size:
+nginx-module-image-filter-1.19.4-r1 installed size:
 90112
 
-nginx-module-image-filter-1.19.3-r1 license:
+nginx-module-image-filter-1.19.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -600,16 +600,16 @@ nginx-module-image-filter-1.19.3-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.19.3.0.4.4-r1 description:
+nginx-module-njs-1.19.4.0.4.4-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.19.3.0.4.4-r1 webpage:
+nginx-module-njs-1.19.4.0.4.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-njs-1.19.3.0.4.4-r1 installed size:
+nginx-module-njs-1.19.4.0.4.4-r1 installed size:
 3391488
 
-nginx-module-njs-1.19.3.0.4.4-r1 license:
+nginx-module-njs-1.19.4.0.4.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -617,16 +617,16 @@ nginx-module-njs-1.19.3.0.4.4-r1 license:
 ### `apk` package: `nginx-module-perl`
 
 ```console
-nginx-module-perl-1.19.3-r1 description:
+nginx-module-perl-1.19.4-r1 description:
 nginx Perl dynamic module
 
-nginx-module-perl-1.19.3-r1 webpage:
+nginx-module-perl-1.19.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-perl-1.19.3-r1 installed size:
+nginx-module-perl-1.19.4-r1 installed size:
 163840
 
-nginx-module-perl-1.19.3-r1 license:
+nginx-module-perl-1.19.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -634,16 +634,16 @@ nginx-module-perl-1.19.3-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.19.3-r1 description:
+nginx-module-xslt-1.19.4-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.19.3-r1 webpage:
+nginx-module-xslt-1.19.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-xslt-1.19.3-r1 installed size:
+nginx-module-xslt-1.19.4-r1 installed size:
 86016
 
-nginx-module-xslt-1.19.3-r1 license:
+nginx-module-xslt-1.19.4-r1 license:
 2-clause BSD-like license
 
 ```
