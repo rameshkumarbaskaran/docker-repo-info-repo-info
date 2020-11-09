@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:36d0097e9beb65a95ba4cf48396869dba6333eb5d4ceda1d0b1ca8371b401917`
-- Created: `2020-10-27T21:21:16.638672645Z`
+- Image ID: `sha256:f101ab936ef79aae79ad970e29bea73e8b061947f4aad5e7b48919e6b20a065a`
+- Created: `2020-11-05T18:24:40.6115086Z`
 - Virtual Size: ~ 186.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20201027`
+  - `build-date=20201105`
   - `name=SL7 Base Image`
   - `vendor=Scientific Linux`
 
