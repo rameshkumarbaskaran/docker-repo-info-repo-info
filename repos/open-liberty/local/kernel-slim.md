@@ -1,10 +1,10 @@
-# `open-liberty:full`
+# `open-liberty:kernel-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d9c569e91c0fa83d2a55f7472519dd0aa3599377c2ecdc2afb2d19ca40044b5a`
-- Created: `2020-11-10T00:29:29.258386378Z`
-- Virtual Size: ~ 506.49 Mb  
+- Image ID: `sha256:7b7a3e0c08ce91f29dddb1d2b9bb26ac40148a574b5b3e1b798db53fb6d5dada`
+- Created: `2020-11-10T00:28:20.647478586Z`
+- Virtual Size: ~ 292.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
