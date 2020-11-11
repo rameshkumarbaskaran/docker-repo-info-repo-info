@@ -1,10 +1,10 @@
-# `solr:8.6.3-slim`
+# `solr:8.7.0-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:20dfa6a2a1b0f5e11a7dd1b2eaed70600380b6d0f27c5b10296382dea94bd338`
-- Created: `2020-10-23T00:43:39.295493832Z`
-- Virtual Size: ~ 442.68 Mb  
+- Image ID: `sha256:50f19b202149123b27ed075a2be4efb75cca223826a48ff34ec9093c878f8a55`
+- Created: `2020-11-09T20:31:20.887730948Z`
+- Virtual Size: ~ 448.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,9 +18,9 @@
   - `SOLR_UID=8983`
   - `SOLR_GROUP=solr`
   - `SOLR_GID=8983`
-  - `SOLR_CLOSER_URL=http://www.apache.org/dyn/closer.lua?filename=lucene/solr/8.6.3/solr-8.6.3.tgz&action=download`
-  - `SOLR_DIST_URL=https://www.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz`
-  - `SOLR_ARCHIVE_URL=https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz`
+  - `SOLR_CLOSER_URL=http://www.apache.org/dyn/closer.lua?filename=lucene/solr/8.7.0/solr-8.7.0.tgz&action=download`
+  - `SOLR_DIST_URL=https://www.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz`
+  - `SOLR_ARCHIVE_URL=https://archive.apache.org/dist/lucene/solr/8.7.0/solr-8.7.0.tgz`
   - `SOLR_INCLUDE=/etc/default/solr.in.sh`
   - `SOLR_HOME=/var/solr/data`
   - `SOLR_PID_DIR=/var/solr`
@@ -1584,12 +1584,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/npth/1.6-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/npth/1.6-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u2`
+### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u2`
-- `libldap-common=2.4.47+dfsg-3+deb10u2`
+- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u3`
+- `libldap-common=2.4.47+dfsg-3+deb10u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1598,17 +1598,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3+deb10u2
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u2.dsc' openldap_2.4.47+dfsg-3+deb10u2.dsc 3022 SHA256:e909c6be4bfd1bacf644959bc18ebeebaa13606879f11a7876d044cd688a6f62
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u2.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u2.debian.tar.xz 168684 SHA256:0f6f81f18a2407bd1a6c6003659d8b33145f31033b6f7fd026607554f0bdfcb0
+$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3+deb10u3
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u3.dsc' openldap_2.4.47+dfsg-3+deb10u3.dsc 3022 SHA256:54c7e8b3866860a1f5876c3fed5f1e79699b227be1a46ab46f58b0a2584e9c8b
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u3.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u3.debian.tar.xz 169180 SHA256:e5d36ab03121b2ccf6196538989d84d0229133d4a5bc58e060e961589fe127ba
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u3/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1d-0+deb10u3`
 
