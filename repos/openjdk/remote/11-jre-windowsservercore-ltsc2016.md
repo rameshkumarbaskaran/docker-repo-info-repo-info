@@ -1,7 +1,7 @@
 ## `openjdk:11-jre-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull openjdk@sha256:19dc4bde28e6ddcbd2a438c9af69b14ec32ddb161e20dd70269c737d67d9ed07
+$ docker pull openjdk@sha256:01f9822a0e4abd3f0f61280d1c96b6858ba22be8e45167b9560298576f96291f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull openjdk@sha256:19dc4bde28e6ddcbd2a438c9af69b14ec32ddb161e20dd70269
 ### `openjdk:11-jre-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull openjdk@sha256:b84942df53ef4afe7be7e22c11b1b9d5e37a922726c6e0be231067d5641c2caf
+$ docker pull openjdk@sha256:53dde5fbf3071819fa58accc9ae7943b084d1e2201dbde19599a44f79cbe8bf1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 GB (5830011317 bytes)**  
+-	Total Size: **5.8 GB (5830009207 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:725459c9fb0925e84f817b1e5fefd2f3fdb53006dc6190b0f875c52660944ea7`
+-	Image ID: `sha256:66aa9ede923f23c22367bbe229a3b3cc464711077cbb34352a0e6fa639de56cb`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
@@ -33,11 +33,11 @@ SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference 
 ENV JAVA_HOME=C:\openjdk-11
 # Wed, 11 Nov 2020 18:06:20 GMT
 RUN $newPath = ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	setx /M PATH $newPath
-# Wed, 11 Nov 2020 18:06:21 GMT
-ENV JAVA_VERSION=11.0.9
-# Wed, 11 Nov 2020 18:11:19 GMT
-ENV JAVA_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.9%2B11/OpenJDK11U-jre_x64_windows_11.0.9_11.zip
-# Wed, 11 Nov 2020 18:13:11 GMT
+# Thu, 12 Nov 2020 01:27:19 GMT
+ENV JAVA_VERSION=11.0.9.1
+# Thu, 12 Nov 2020 01:32:07 GMT
+ENV JAVA_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.9.1%2B1/OpenJDK11U-jre_x64_windows_11.0.9.1_1.zip
+# Thu, 12 Nov 2020 01:33:49 GMT
 RUN Write-Host ('Downloading {0} ...' -f $env:JAVA_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $env:JAVA_URL -OutFile 'openjdk.zip'; 		Write-Host 'Expanding ...'; 	New-Item -ItemType Directory -Path C:\temp | Out-Null; 	Expand-Archive openjdk.zip -DestinationPath C:\temp; 	Move-Item -Path C:\temp\* -Destination $env:JAVA_HOME; 	Remove-Item C:\temp; 		Write-Host 'Removing ...'; 	Remove-Item openjdk.zip -Force; 		Write-Host 'Verifying install ...'; 	Write-Host '  java --version'; java --version; 		Write-Host 'Complete.'
 ```
 
@@ -61,15 +61,15 @@ RUN Write-Host ('Downloading {0} ...' -f $env:JAVA_URL); 	[Net.ServicePointManag
 		Last Modified: Wed, 11 Nov 2020 18:31:34 GMT  
 		Size: 10.1 MB (10079557 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d8491fc424d3dcd1c20c550acd287b7dae889b283666f279bb45f7eabf14d1a1`  
-		Last Modified: Wed, 11 Nov 2020 18:31:31 GMT  
-		Size: 1.1 KB (1134 bytes)  
+	-	`sha256:0ac2a2807012820ea28ae6d2d6425305fd549fba3b4b09985d6434503b4ccf8c`  
+		Last Modified: Thu, 12 Nov 2020 01:51:45 GMT  
+		Size: 1.1 KB (1077 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3898c30104cd93ec329040964e3835c35c679337b9a4a8fffc78c2f0aa3d9caf`  
-		Last Modified: Wed, 11 Nov 2020 18:33:38 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:06eea3cf42e5d503ce8f3cfc5de8d14bd0c3ad3a8e9338775fe4402e1cd07cb4`  
+		Last Modified: Thu, 12 Nov 2020 01:53:49 GMT  
+		Size: 1.1 KB (1125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4cf9eb86abe38288477f846645023e681851e5040985bfe2e1bc1c7aef37d888`  
-		Last Modified: Wed, 11 Nov 2020 18:34:38 GMT  
-		Size: 49.4 MB (49368390 bytes)  
+	-	`sha256:5e05753e8453b6422a935a3760f4c8fc3673009918b19bddaa782f54098669ac`  
+		Last Modified: Thu, 12 Nov 2020 01:53:58 GMT  
+		Size: 49.4 MB (49366345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
