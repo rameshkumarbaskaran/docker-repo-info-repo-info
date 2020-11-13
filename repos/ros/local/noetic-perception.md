@@ -3640,14 +3640,9 @@ Licenses: (parsed from: `/usr/share/doc/libexif-dev/copyright`, `/usr/share/doc/
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libexif=0.6.21-6ubuntu0.3
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21-6ubuntu0.3.dsc' libexif_0.6.21-6ubuntu0.3.dsc 2229 SHA512:5586299126b58b1c5b987ffe91f590dbf6fe8c624297178fbe62b2dc9a38812ef5403de3e795548a2e64f88c018308830c400d4aabfdb669ce2c282b0667b463
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21.orig.tar.gz' libexif_0.6.21.orig.tar.gz 2081615 SHA512:0a1fac9460d1d91fea8d8390e335946439de44c0ec0e1fd9fa7006532c64bececd12cd622e800c8f1176092bba926a7075838944ad6b62fa07d285af6f73e9fe
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21-6ubuntu0.3.debian.tar.xz' libexif_0.6.21-6ubuntu0.3.debian.tar.xz 19332 SHA512:32c1df37387bdf5d9b217406bc68a4e18fe163e17043434875450c19e433fe757888e59bc3d60e868d9ba6b13d61f211ca0d4f09688305a5606dbafb673916b9
-```
 
 ### `dpkg` source package: `libfabric=1.6.2-3`
 
@@ -5535,14 +5530,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-52.57
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-52.57.dsc' linux_5.4.0-52.57.dsc 7220 SHA512:1dbc4a4f6a6dd58f6897e4022df9a190d30deeb45c97d3f1a6ad29d0896e732a9521f6f70bf0d7ec4dd94a71f4ae8cde78766dc253f7960839eb71e24367d3cc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-52.57.diff.gz' linux_5.4.0-52.57.diff.gz 5473770 SHA512:996c553067429268e7e46e97f0a403d8304757a7748d568df222ad5b7caea11cfecdce1109edccb69c5ab653464a01a8316d98639047a23b096f7fe9683490e4
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.18+dfsg-1`
 

@@ -3437,14 +3437,9 @@ Licenses: (parsed from: `/usr/share/doc/libexif-dev/copyright`, `/usr/share/doc/
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libexif=0.6.21-4ubuntu0.5
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21-4ubuntu0.5.dsc' libexif_0.6.21-4ubuntu0.5.dsc 2242 SHA512:b587e1c1f2a05de033142235414f40fe60e2814ee729c1125393656274a3076393309cbb2302ae47393c66078fb97b706d580e200aa9c08d07d5fb27f8dbfc26
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21.orig.tar.gz' libexif_0.6.21.orig.tar.gz 2081615 SHA512:0a1fac9460d1d91fea8d8390e335946439de44c0ec0e1fd9fa7006532c64bececd12cd622e800c8f1176092bba926a7075838944ad6b62fa07d285af6f73e9fe
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21-4ubuntu0.5.debian.tar.xz' libexif_0.6.21-4ubuntu0.5.debian.tar.xz 17536 SHA512:58525bc01f4a34a49dcd12deaecd073c7047700cb5f327a667dfd98d98bc88110c2e0ee6f9d675223ddafb46a8286681a3f883f319d1c7806ed8b141a72ffc61
-```
 
 ### `dpkg` source package: `libfabric=1.5.3-1`
 
