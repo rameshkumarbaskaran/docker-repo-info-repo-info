@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c9cc17783d3b16e02028b84d1277de4abe89d74c660cafda7872b7a59b234521`
-- Created: `2020-10-23T00:58:18.866584604Z`
+- Image ID: `sha256:b124883e1a9daea42184fa106f246566c3feeefaf620c1d9af9dfa3169d6643b`
+- Created: `2020-11-12T01:53:14.203141632Z`
 - Virtual Size: ~ 639.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.9`
+  - `JAVA_VERSION=11.0.9.1`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
 
