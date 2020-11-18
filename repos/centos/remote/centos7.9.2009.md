@@ -1,7 +1,7 @@
 ## `centos:centos7.9.2009`
 
 ```console
-$ docker pull centos@sha256:8b65474bd89ef48e04c21db31d1b283558b114f7d34a001cdbaed747bc4dbd16
+$ docker pull centos@sha256:0f4ec88e21daf75124b8a9e5ca03c37a5e937e0e108a255d890492430789b60e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -127,27 +127,27 @@ CMD ["/bin/bash"]
 ### `centos:centos7.9.2009` - linux; ppc64le
 
 ```console
-$ docker pull centos@sha256:4ec83eee30dfbaba2e93f59d36cc360660d13f73c71af179eeb9456dd95d1798
+$ docker pull centos@sha256:b79613a1c63084399b6c21c97ab4e2816ef5e9c513842c1bd4dca46bdd921b31
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **84.6 MB (84625063 bytes)**  
+-	Total Size: **80.5 MB (80516460 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c07e6a6c1b7752a1b4f52900187c28305e959b70e98252285c04a56e5959e84`
+-	Image ID: `sha256:be34dc49654367b9dc96f83eb4facfac8a7edad31abfbf3ff49533ae0164c08f`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Mon, 10 Aug 2020 18:33:24 GMT
-ADD file:5fba9fceedfea3302b61c7402ea9d563423ab34462ee3e19fbf5fa6ff2f021ad in / 
-# Mon, 10 Aug 2020 18:33:32 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20200809
-# Mon, 10 Aug 2020 18:33:41 GMT
+# Tue, 17 Nov 2020 04:05:22 GMT
+ADD file:7f21ae7d20a8e347d8b678bcf26be83abb1ee27d3b567c9cddd993e45ce8ac34 in / 
+# Tue, 17 Nov 2020 04:05:33 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20201113 org.opencontainers.image.title=CentOS Base Image org.opencontainers.image.vendor=CentOS org.opencontainers.image.licenses=GPL-2.0-only org.opencontainers.image.created=2020-11-13 00:00:00+00:00
+# Tue, 17 Nov 2020 04:05:38 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:16f8c5f366209d00d0420a3b8115185797d876241f79d5bf6387ac6078d57179`  
-		Last Modified: Mon, 10 Aug 2020 18:34:57 GMT  
-		Size: 84.6 MB (84625063 bytes)  
+	-	`sha256:3fe478aaff9b8f3ba958253e7339e9016ec07c075b805ebfc8cd372ddd01ee64`  
+		Last Modified: Tue, 17 Nov 2020 04:06:20 GMT  
+		Size: 80.5 MB (80516460 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
