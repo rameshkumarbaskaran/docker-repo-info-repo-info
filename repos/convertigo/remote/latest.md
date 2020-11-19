@@ -1,7 +1,7 @@
 ## `convertigo:latest`
 
 ```console
-$ docker pull convertigo@sha256:a2580474b6812f2ab5055ff2c5b635306983bac68d2b2eea8eff6ffbe4c75903
+$ docker pull convertigo@sha256:a95eb98b3404f47e5d8c35911defd328c2f83c0c78797fa094420daf4e4ca354
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull convertigo@sha256:a2580474b6812f2ab5055ff2c5b635306983bac68d2b2eea
 ### `convertigo:latest` - linux; amd64
 
 ```console
-$ docker pull convertigo@sha256:40dceea9f7d3ef5212459aa6b11a87ade613ed05eb51524abac6a6667be84e3d
+$ docker pull convertigo@sha256:e1faf334d0391a2fd3b35729105c16ca8017196f5364bc9c2341b438ad71a413
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **430.3 MB (430297001 bytes)**  
+-	Total Size: **430.5 MB (430450745 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e9eff4dca7963dfe683fb4f6cac94b368f15bd7be696cda7255e5dc7d1e26a1f`
+-	Image ID: `sha256:944469d9e525834de60a703dd1c4ad7276c5b35d55fa0af6e56f181bd080a78a`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["convertigo"]`
 
@@ -65,65 +65,65 @@ ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
 # Thu, 12 Nov 2020 03:44:43 GMT
 ENV TOMCAT_MAJOR=9
-# Thu, 12 Nov 2020 03:44:43 GMT
-ENV TOMCAT_VERSION=9.0.39
-# Thu, 12 Nov 2020 03:44:44 GMT
-ENV TOMCAT_SHA512=307ca646bac267e529fb0862278f7133fe80813f0af64a44aed949f4c7a9a98aeb9bd7f08b087645b40c6fefdd3a7fe519e4858a3dbf0a19c38c53704f92b575
-# Thu, 12 Nov 2020 03:45:17 GMT
+# Tue, 17 Nov 2020 21:34:51 GMT
+ENV TOMCAT_VERSION=9.0.40
+# Tue, 17 Nov 2020 21:34:51 GMT
+ENV TOMCAT_SHA512=a37c787b659e7123363ea20ff601a2fb5d289d2c0d57d497d301af9e9f316629aca3d406d7d54e7b263fbdd725e0ed29456c10b5586b7e994a50eaa7b07312ec
+# Tue, 17 Nov 2020 21:35:35 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local mvnFile="${1:-}"; 		local success=; 		local distUrl=; 		for distUrl in 			"https://www.apache.org/dyn/closer.cgi?action=download&filename=$distFile" 			"https://www-us.apache.org/dist/$distFile" 			"https://www.apache.org/dist/$distFile" 			"https://archive.apache.org/dist/$distFile" 			${mvnFile:+"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile"} 		; do 			if wget -O "$f" "$distUrl" --progress=dot:giga && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc" "$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		mv webapps webapps.dist; 	mkdir webapps; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| xargs -rt readlink -e 		| sort -u 		| xargs -rt dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work; 		catalina.sh version
-# Thu, 12 Nov 2020 03:45:20 GMT
+# Tue, 17 Nov 2020 21:35:38 GMT
 RUN set -eux; 	nativeLines="$(catalina.sh configtest 2>&1)"; 	nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')"; 	nativeLines="$(echo "$nativeLines" | sort -u)"; 	if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 12 Nov 2020 03:45:20 GMT
+# Tue, 17 Nov 2020 21:35:38 GMT
 EXPOSE 8080
-# Thu, 12 Nov 2020 03:45:20 GMT
+# Tue, 17 Nov 2020 21:35:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 12 Nov 2020 04:13:13 GMT
+# Wed, 18 Nov 2020 17:50:18 GMT
 MAINTAINER Nicolas Albert nicolasa@convertigo.com
-# Thu, 12 Nov 2020 04:13:13 GMT
+# Wed, 18 Nov 2020 17:50:18 GMT
 ENV SWT_GTK3=0
-# Thu, 12 Nov 2020 04:13:13 GMT
+# Wed, 18 Nov 2020 17:50:19 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Thu, 12 Nov 2020 04:13:14 GMT
+# Wed, 18 Nov 2020 17:50:20 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Thu, 12 Nov 2020 04:13:14 GMT
+# Wed, 18 Nov 2020 17:50:20 GMT
 WORKDIR /usr/local/tomcat
-# Thu, 12 Nov 2020 04:13:18 GMT
+# Wed, 18 Nov 2020 17:50:25 GMT
 RUN apt-get update -y   && apt-get install -y --no-install-recommends     ca-certificates     curl     dirmngr     gnupg     unzip   && rm -rf /var/lib/apt/lists/*
-# Thu, 12 Nov 2020 04:13:18 GMT
+# Wed, 18 Nov 2020 17:50:25 GMT
 ENV GOSU_VERSION=1.11
-# Thu, 12 Nov 2020 04:13:19 GMT
+# Wed, 18 Nov 2020 17:50:25 GMT
 ENV GOSU_GPG_KEYS=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Thu, 12 Nov 2020 04:13:19 GMT
+# Wed, 18 Nov 2020 17:50:25 GMT
 ENV TINI_VERSION=0.18.0
-# Thu, 12 Nov 2020 04:13:19 GMT
+# Wed, 18 Nov 2020 17:50:25 GMT
 ENV TINI_GPG_KEYS=6380DC428747F6C393FEACA59A84159D7001A4E5
-# Thu, 12 Nov 2020 04:13:21 GMT
+# Wed, 18 Nov 2020 17:50:27 GMT
 RUN export GNUPGHOME="$(mktemp -d)"   && ( gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$GOSU_GPG_KEYS"   || gpg --batch --keyserver pgp.mit.edu --recv-keys "$GOSU_GPG_KEYS"   || gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$GOSU_GPG_KEYS"   || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$GOSU_GPG_KEYS" )   && curl -o /usr/local/bin/gosu -fSL "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$(dpkg --print-architecture)"   && curl -o /usr/local/bin/gosu.asc -fSL "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$(dpkg --print-architecture).asc"   && gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu   && rm /usr/local/bin/gosu.asc   && chmod +x /usr/local/bin/gosu   && ( gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$TINI_GPG_KEYS"   || gpg --batch --keyserver pgp.mit.edu --recv-keys "$TINI_GPG_KEYS"   || gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$TINI_GPG_KEYS"   || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$TINI_GPG_KEYS" )   && curl -o /usr/local/bin/tini -fSL "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$(dpkg --print-architecture)"   && curl -o /usr/local/bin/tini.asc -fSL "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$(dpkg --print-architecture).asc"   && gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini   && rm /usr/local/bin/tini.asc   && chmod +x /usr/local/bin/tini   && rm -rf /tmp/*
-# Thu, 12 Nov 2020 04:13:22 GMT
+# Wed, 18 Nov 2020 17:50:28 GMT
 RUN useradd -s /bin/false -m convertigo     && mkdir -p /workspace/lib /workspace/classes     && chown -R convertigo:convertigo /workspace
-# Thu, 12 Nov 2020 04:13:23 GMT
+# Wed, 18 Nov 2020 17:50:30 GMT
 RUN sed -i.bak         -e '/protocol="AJP/d'         -e '/AprLifecycleListener/d'         -e '/JasperListener/d'         -e 's/port="8080"/port="28080" maxThreads="64000" relaxedQueryChars="{}[]|"/'         -e 's,</Host>,  <Valve className="org.apache.catalina.valves.RemoteIpValve" />\n      </Host>,'         conf/server.xml     && sed -i.bak         -e 's,<Context>,<Context sessionCookiePath="/">,'         -e 's,</Context>,<Manager pathname="" /><CookieProcessor sameSiteCookies="" /></Context>,'         conf/context.xml     && rm -rf webapps/* bin/*.bat conf/server.xml.bak /tmp/*     && mkdir webapps/ROOT     && chown -R convertigo:convertigo conf temp work logs     && chmod -w conf/*
-# Thu, 12 Nov 2020 04:13:23 GMT
+# Wed, 18 Nov 2020 17:50:30 GMT
 ENV CONVERTIGO_VERSION=7.8.0
-# Thu, 12 Nov 2020 04:13:23 GMT
+# Wed, 18 Nov 2020 17:50:30 GMT
 ENV CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.8.0/convertigo-7.8.0.war
-# Thu, 12 Nov 2020 04:13:23 GMT
+# Wed, 18 Nov 2020 17:50:30 GMT
 ENV CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F
-# Thu, 12 Nov 2020 04:13:30 GMT
+# Wed, 18 Nov 2020 17:50:37 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && ( gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver pgp.mit.edu --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$CONVERTIGO_GPG_KEYS" )     && curl -fSL -o /tmp/convertigo.war $CONVERTIGO_WAR_URL     && curl -fSL -o /tmp/convertigo.war.asc $CONVERTIGO_WAR_URL.asc     && gpg --batch --verify /tmp/convertigo.war.asc /tmp/convertigo.war     && mkdir -p webapps/ROOT webapps/convertigo     && (cd webapps/convertigo         && unzip -q /tmp/convertigo.war         && (chmod -f a+x WEB-INF/xvnc/* || true)         && (test "$(dpkg --print-architecture)" != "i386" && rm -rf WEB-INF/xulrunner WEB-INF/xvnc WEB-INF/lib/swt_* || true)         && rm -rf /tmp/*)
-# Thu, 12 Nov 2020 04:13:30 GMT
+# Wed, 18 Nov 2020 17:50:37 GMT
 COPY file:394d5b837e94d77b6fb87e0ca8bd50995186aaed1c5f3ab5bc0b482f0f769cc3 in webapps/ROOT/index.html 
-# Thu, 12 Nov 2020 04:13:30 GMT
+# Wed, 18 Nov 2020 17:50:38 GMT
 COPY file:589b02719ed77f1ee0adbb9d091153c2e2e219c7df46f5474a836963de39b7cc in / 
-# Thu, 12 Nov 2020 04:13:30 GMT
+# Wed, 18 Nov 2020 17:50:38 GMT
 WORKDIR /workspace
-# Thu, 12 Nov 2020 04:13:31 GMT
+# Wed, 18 Nov 2020 17:50:38 GMT
 VOLUME [/workspace]
-# Thu, 12 Nov 2020 04:13:31 GMT
+# Wed, 18 Nov 2020 17:50:38 GMT
 EXPOSE 28080
-# Thu, 12 Nov 2020 04:13:31 GMT
+# Wed, 18 Nov 2020 17:50:38 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Thu, 12 Nov 2020 04:13:31 GMT
+# Wed, 18 Nov 2020 17:50:39 GMT
 CMD ["convertigo"]
 ```
 
@@ -160,39 +160,39 @@ CMD ["convertigo"]
 		Last Modified: Thu, 12 Nov 2020 03:54:32 GMT  
 		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1b8a428acdcb22d86923ba264658e551a7110eddb154adf410a6c33e7208fac`  
-		Last Modified: Thu, 12 Nov 2020 03:55:40 GMT  
-		Size: 12.3 MB (12294963 bytes)  
+	-	`sha256:0d1faf6119ddb650b8a92e9dd5543731a7c283639a5dfbe87745b03336cb17ed`  
+		Last Modified: Tue, 17 Nov 2020 21:55:45 GMT  
+		Size: 12.4 MB (12448681 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7251ae448a6da2f459284c1b1bf0660bcd20f15f46da8ffb35d7d1c37cdeb23e`  
-		Last Modified: Thu, 12 Nov 2020 03:55:39 GMT  
+	-	`sha256:2f260a3a72b2770852025c28cb143aad237bdec963d3002c958ebc01fa23894b`  
+		Last Modified: Tue, 17 Nov 2020 21:55:42 GMT  
 		Size: 130.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e23f44c33052a5121cf3173c6bcfa1ba9c0a68a2f0fa57fe6b111fcf89082c35`  
-		Last Modified: Thu, 12 Nov 2020 04:13:43 GMT  
-		Size: 360.0 B  
+	-	`sha256:8d6fc08da00a3a54833ffc5c58715ec6993fb3dc19150b1e9508d012bafb573b`  
+		Last Modified: Wed, 18 Nov 2020 17:50:50 GMT  
+		Size: 359.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26c60c1908f1db6da696ee68901b3ba1bcdc5e82a6bb0e455db24e03a3d5c9a0`  
-		Last Modified: Thu, 12 Nov 2020 04:13:43 GMT  
-		Size: 910.1 KB (910077 bytes)  
+	-	`sha256:22388b1dff3f137ef7a31b1de904c6d01a02303928251a34915499ae80ab2e0f`  
+		Last Modified: Wed, 18 Nov 2020 17:50:51 GMT  
+		Size: 910.1 KB (910082 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed4c3ad5f06220eaab5d7d09e7184713a57832a8ff7f3e5a2832e71c24f12818`  
-		Last Modified: Thu, 12 Nov 2020 04:13:41 GMT  
-		Size: 4.3 KB (4295 bytes)  
+	-	`sha256:30451c4da0def62d15ffeb44a53486f9d6fb2554aa9938e1ce330775265548fe`  
+		Last Modified: Wed, 18 Nov 2020 17:50:49 GMT  
+		Size: 4.3 KB (4293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:253008d686f2ff57d4cad91f284f254ba94ebec5692405cbb70ac36df187e897`  
-		Last Modified: Thu, 12 Nov 2020 04:13:41 GMT  
-		Size: 27.3 KB (27318 bytes)  
+	-	`sha256:07fee8069feb4e6feb5042d7b0e7c71082462a28ab76ef02e649c39a83a80740`  
+		Last Modified: Wed, 18 Nov 2020 17:50:48 GMT  
+		Size: 27.3 KB (27319 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b1957008cc92364141931b792d48b8483ad32de16a159ab55975cbc85b1d661`  
-		Last Modified: Thu, 12 Nov 2020 04:13:48 GMT  
-		Size: 94.9 MB (94892143 bytes)  
+	-	`sha256:622f71b3cc7140ad84bb3c1f3828ce29c0be1f1f00b90d1d12d154156e166b68`  
+		Last Modified: Wed, 18 Nov 2020 17:50:56 GMT  
+		Size: 94.9 MB (94892165 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8da4d4f8fa68c60623c181325363199375b3a535131f80a54d1804cf6ce00112`  
-		Last Modified: Thu, 12 Nov 2020 04:13:41 GMT  
-		Size: 454.0 B  
+	-	`sha256:73c2c02e5898bfeeb40a40ce0939d0f55a3247114182d67ce41e7badf92e6711`  
+		Last Modified: Wed, 18 Nov 2020 17:50:49 GMT  
+		Size: 456.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee670d29045f81c718fa941a8f41326d995d98738911d0afd732c6fc02aa7c53`  
-		Last Modified: Thu, 12 Nov 2020 04:13:42 GMT  
-		Size: 1.3 KB (1289 bytes)  
+	-	`sha256:bd2688904167bc9548b8a65852bdf909333487679f9d918914abf7141577ea4f`  
+		Last Modified: Wed, 18 Nov 2020 17:50:49 GMT  
+		Size: 1.3 KB (1288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
