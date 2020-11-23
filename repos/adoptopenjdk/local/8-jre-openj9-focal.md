@@ -1,10 +1,10 @@
-# `adoptopenjdk:8u272-b10-jre-openj9-0.23.0-focal`
+# `adoptopenjdk:8u275-b01-jre-openj9-0.23.0-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0ef293b70c4fbf33d5580dbc86dff8d8b4a79b7725d84aa1bd63aebc7eb67343`
-- Created: `2020-10-28T17:25:12.095097229Z`
-- Virtual Size: ~ 257.62 Mb  
+- Image ID: `sha256:222264f40ec7042289c4ce6f24eff5f28d7f3729ee73528eb4dd26f5e4b155f5`
+- Created: `2020-11-19T19:24:01.608195801Z`
+- Virtual Size: ~ 256.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u272-b10_openj9-0.23.0`
+  - `JAVA_VERSION=jdk8u275-b01_openj9-0.23.0`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle`
   - `OPENJ9_JAVA_OPTIONS=-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`

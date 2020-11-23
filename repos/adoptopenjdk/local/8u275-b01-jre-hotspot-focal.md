@@ -1,10 +1,10 @@
-# `adoptopenjdk:8u272-b10-jre-hotspot-focal`
+# `adoptopenjdk:8u275-b01-jre-hotspot-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:92efaa83ce3f65b79cf2752984626825765ac9ebc9790da2c762082e43c5c733`
-- Created: `2020-10-28T17:20:27.799351627Z`
-- Virtual Size: ~ 226.96 Mb  
+- Image ID: `sha256:3081fdd8e4f723cba2ac2367bc749df9e45d233d75c928f78066d97e8e52fdaa`
+- Created: `2020-11-19T19:19:57.850703923Z`
+- Virtual Size: ~ 227.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u272-b10`
+  - `JAVA_VERSION=jdk8u275-b01`
   - `JAVA_HOME=/opt/java/openjdk`
 
 ## `dpkg` (`.deb`-based packages)
