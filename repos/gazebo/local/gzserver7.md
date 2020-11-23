@@ -911,9 +911,14 @@ Licenses: (parsed from: `/usr/share/doc/gazebo7/copyright`, `/usr/share/doc/gaze
 - `LGPL-3+`
 - `ZLIB`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gazebo7=7.16.1-1~xenial
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo7/gazebo7_7.16.1-1~xenial.dsc' gazebo7_7.16.1-1~xenial.dsc 2019 SHA256:c04e0b0f69a4ac5f58265f23589b39c16033e147d2324f776c7014b28a1c220d
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo7/gazebo7_7.16.1.orig.tar.bz2' gazebo7_7.16.1.orig.tar.bz2 50593740 SHA256:18262736706768ef848e62b1f9b41132a9ecf50c496eab763a02a7cd73a66675
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo7/gazebo7_7.16.1-1~xenial.debian.tar.xz' gazebo7_7.16.1-1~xenial.debian.tar.xz 6788 SHA256:66a749c3e4f2440c4b7f1a0769541fa557f0340e13d7962832af217ff2a4867e
+```
 
 ### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.12`
 
