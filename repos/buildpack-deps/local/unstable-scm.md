@@ -102,21 +102,13 @@ Licenses: (parsed from: `/usr/share/doc/libapr1/copyright`)
 
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apr=1.7.0-3
-'http://deb.debian.org/debian/pool/main/a/apr/apr_1.7.0-3.dsc' apr_1.7.0-3.dsc 2297 SHA256:8bfd016555907f71d97addda58753fa337309e1d8af5123fa0d10e993799589a
-'http://deb.debian.org/debian/pool/main/a/apr/apr_1.7.0.orig.tar.bz2' apr_1.7.0.orig.tar.bz2 872238 SHA256:e2e148f0b2e99b8e5c6caa09f6d4fb4dd3e83f744aa72a952f94f5a14436f7ea
-'http://deb.debian.org/debian/pool/main/a/apr/apr_1.7.0.orig.tar.bz2.asc' apr_1.7.0.orig.tar.bz2.asc 801 SHA256:5a6c4e721ed82116d7877254ae11c076014040af2ff816ea15ec81e77a4a7d43
-'http://deb.debian.org/debian/pool/main/a/apr/apr_1.7.0-3.debian.tar.xz' apr_1.7.0-3.debian.tar.xz 213980 SHA256:5a1683f5bc996ac2b912adc763f310b5bec2b2bd7194ca878a2ed43557805db8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apr/1.7.0-3/
 
-- https://sources.debian.net/src/apr/1.7.0-3/ (for browsing the source)
-- https://sources.debian.net/src/apr/1.7.0-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apr/1.7.0-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `apt=2.1.11`
 
@@ -130,19 +122,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.1.11
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.11.dsc' apt_2.1.11.dsc 2760 SHA256:995d0cccb33dce462889c5531dd94aa21ad73510d6f667b4fe84f82dfe85944d
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.11.tar.xz' apt_2.1.11.tar.xz 2179936 SHA256:f49f0652d5d2cfa157f0197d9ce03953970a108813568bb1c69553fd3d5a4be3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.1.11/
 
-- https://sources.debian.net/src/apt/2.1.11/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.1.11/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.1.11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -260,20 +246,13 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=5.1~rc2-1
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1~rc2-1.dsc' bash_5.1~rc2-1.dsc 2324 SHA256:2e500effc33722fcaec52a989b53df8e0b4eae1171c97dccc87f4061768263b7
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1~rc2.orig.tar.xz' bash_5.1~rc2.orig.tar.xz 5768912 SHA256:c191335496bd91ab85a6eed85e9ffcdaaf23edb77d23d69fdfd7bf65e29b7f80
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1~rc2-1.debian.tar.xz' bash_5.1~rc2-1.debian.tar.xz 88176 SHA256:51242ef94a38881008ef7b7571f17c07e15ddb1af0c02f3f9ab43bf0a98bab7a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bash/5.1~rc2-1/
 
-- https://sources.debian.net/src/bash/5.1~rc2-1/ (for browsing the source)
-- https://sources.debian.net/src/bash/5.1~rc2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bash/5.1~rc2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `brotli=1.0.9-2`
 
@@ -1123,19 +1102,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.58
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.58.dsc' init-system-helpers_1.58.dsc 1896 SHA256:d754ec5e07416c63ead4c8c029d24027c563ff5f83762f2ac5246f716d405784
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.58.tar.xz' init-system-helpers_1.58.tar.xz 40668 SHA256:99f82ffca33b121f7aa31a06b6227f4684d986ff342a27b07433711de883609d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/init-system-helpers/1.58/
 
-- https://sources.debian.net/src/init-system-helpers/1.58/ (for browsing the source)
-- https://sources.debian.net/src/init-system-helpers/1.58/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/init-system-helpers/1.58/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `iproute2=5.9.0-1`
 
@@ -1256,20 +1229,13 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.17-10
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-10.dsc' krb5_1.17-10.dsc 3187 SHA256:1ce061fc29b4c1d12c46c07d7a1fc2a16ed026ed5d7bd3e639483bdc27a2007f
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA256:5a6e2284a53de5702d3dc2be3b9339c963f9b5397d3fbbc53beb249380a781f5
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-10.debian.tar.xz' krb5_1.17-10.debian.tar.xz 143852 SHA256:6d3cefcea2e4839cc3c5e518083048b8eae62a4bc707db05c1900c5bddafa7f5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/krb5/1.17-10/
 
-- https://sources.debian.net/src/krb5/1.17-10/ (for browsing the source)
-- https://sources.debian.net/src/krb5/1.17-10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/krb5/1.17-10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libassuan=2.5.3-7.1`
 
@@ -2797,20 +2763,13 @@ Licenses: (parsed from: `/usr/share/doc/libreadline8/copyright`, `/usr/share/doc
 - `GFDL`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris readline=8.1~rc2-2
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1~rc2-2.dsc' readline_8.1~rc2-2.dsc 2446 SHA256:2e528ee6ca97c9d1c3687cbad50dff5d0744632d87fd31685715040dcf914aa5
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1~rc2.orig.tar.gz' readline_8.1~rc2.orig.tar.gz 2992815 SHA256:480289bd3beea161c7cd69b3ead4acdba04ffe1408c73917c1b404cbdaead1ec
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1~rc2-2.debian.tar.xz' readline_8.1~rc2-2.debian.tar.xz 29200 SHA256:88d317a5ebf0e964a38dea2ca836c45bfb5cea12b5f260312c30e3fc42121217
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/readline/8.1~rc2-2/
 
-- https://sources.debian.net/src/readline/8.1~rc2-2/ (for browsing the source)
-- https://sources.debian.net/src/readline/8.1~rc2-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/readline/8.1~rc2-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rtmpdump=2.4+20151223.gitfa8646d.1-2`
 

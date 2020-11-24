@@ -1337,20 +1337,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.3.0-3
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0-3.dsc' libidn2_2.3.0-3.dsc 1970 SHA256:1662d328fc469b580f50129a846e7a526b0208296c7e9558f8321071ef7cc6c8
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0.orig.tar.gz' libidn2_2.3.0.orig.tar.gz 2164993 SHA256:e1cb1db3d2e249a6a3eb6f0946777c2e892d5c5dc7bd91c74394fc3a01cab8b5
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0-3.debian.tar.xz' libidn2_2.3.0-3.debian.tar.xz 10952 SHA256:4f4e1da19b539a455f1f4dda6b9b630599b6758b0d01c96203aaaf52fbc58916
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libidn2/2.3.0-3/
 
-- https://sources.debian.net/src/libidn2/2.3.0-3/ (for browsing the source)
-- https://sources.debian.net/src/libidn2/2.3.0-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libidn2/2.3.0-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libksba=1.4.0-2`
 
@@ -2060,20 +2053,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.55+dfsg-1
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.55+dfsg-1.dsc' openldap_2.4.55+dfsg-1.dsc 3061 SHA256:61015db33dfdb0b8f0983005512c169e0f5ad458ef5759ca09e71bbae67f8705
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.55+dfsg.orig.tar.gz' openldap_2.4.55+dfsg.orig.tar.gz 5053827 SHA256:fc2e222510fc5c212a1cecad6cb78f32fe2d6b510990c8418474da9deaa96889
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.55+dfsg-1.debian.tar.xz' openldap_2.4.55+dfsg-1.debian.tar.xz 167936 SHA256:19341b95e5c6c93e50e871f4fd2ce809a953d8b5312b2952234dbe84727305a0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.4.55+dfsg-1/
 
-- https://sources.debian.net/src/openldap/2.4.55+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.55+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.55+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1h-1`
 
@@ -2246,21 +2232,13 @@ Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 - `Unicode`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris perl=5.30.3-4
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.3-4.dsc' perl_5.30.3-4.dsc 2983 SHA256:05c8d356f72848b6e26b57949b5fb7dcc6340719df292f83d02ff05fb84cdd98
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.3.orig-regen-configure.tar.gz' perl_5.30.3.orig-regen-configure.tar.gz 870970 SHA256:99174174fbfc550f801076ab8a1a5831c92f75c1b81e553150351f14a111dcf8
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.3.orig.tar.xz' perl_5.30.3.orig.tar.xz 12375128 SHA256:6967595f2e3f3a94544c35152f9a25e0cb8ea24ae45f4bf1882f2e33f4a400f4
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.3-4.debian.tar.xz' perl_5.30.3-4.debian.tar.xz 171184 SHA256:a71ed73cab42cadb8cb9efe430ac075e644fea527f3689b64e4e0fe8b9648ffd
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/perl/5.30.3-4/
 
-- https://sources.debian.net/src/perl/5.30.3-4/ (for browsing the source)
-- https://sources.debian.net/src/perl/5.30.3-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/perl/5.30.3-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pinentry=1.1.0-4`
 

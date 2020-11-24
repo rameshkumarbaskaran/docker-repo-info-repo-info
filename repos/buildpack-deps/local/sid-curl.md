@@ -1352,20 +1352,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.3.0-3
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0-3.dsc' libidn2_2.3.0-3.dsc 1970 SHA256:1662d328fc469b580f50129a846e7a526b0208296c7e9558f8321071ef7cc6c8
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0.orig.tar.gz' libidn2_2.3.0.orig.tar.gz 2164993 SHA256:e1cb1db3d2e249a6a3eb6f0946777c2e892d5c5dc7bd91c74394fc3a01cab8b5
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.0-3.debian.tar.xz' libidn2_2.3.0-3.debian.tar.xz 10952 SHA256:4f4e1da19b539a455f1f4dda6b9b630599b6758b0d01c96203aaaf52fbc58916
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libidn2/2.3.0-3/
 
-- https://sources.debian.net/src/libidn2/2.3.0-3/ (for browsing the source)
-- https://sources.debian.net/src/libidn2/2.3.0-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libidn2/2.3.0-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libksba=1.4.0-2`
 
@@ -1930,21 +1923,13 @@ Licenses: (parsed from: `/usr/share/doc/libncursesw6/copyright`, `/usr/share/doc
 - `MIT/X11`
 - `X11`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ncurses=6.2+20200918-1
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20200918-1.dsc' ncurses_6.2+20200918-1.dsc 4106 SHA256:098f2b79a8479389189c657597131b4d7afcfdfb65670409da45ece4f538e8f5
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20200918.orig.tar.gz' ncurses_6.2+20200918.orig.tar.gz 3527965 SHA256:892bee4263afa0a0977c8d51424b303bc3b0b437e28b19dc8e2c7251747220bb
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20200918.orig.tar.gz.asc' ncurses_6.2+20200918.orig.tar.gz.asc 265 SHA256:3220c8c2a6e4f9ee70aa9bd2c77e07779efabcca0cdd62298b86989e13829e15
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20200918-1.debian.tar.xz' ncurses_6.2+20200918-1.debian.tar.xz 51396 SHA256:1a009aa361094e070834286a787b31c5d57b1db391bd0e4e5e1da61cf83a3b1b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/ncurses/6.2+20200918-1/
 
-- https://sources.debian.net/src/ncurses/6.2+20200918-1/ (for browsing the source)
-- https://sources.debian.net/src/ncurses/6.2+20200918-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ncurses/6.2+20200918-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `netbase=6.2`
 
@@ -2457,20 +2442,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=246.6-2
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_246.6-2.dsc' systemd_246.6-2.dsc 5149 SHA256:2e3093a9cd4ca63587d9d20ab0e4205e52de8fde20bf47138014dc85185595d1
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_246.6.orig.tar.gz' systemd_246.6.orig.tar.gz 9545237 SHA256:e999dbf0cff5b0109c28b307741b7dc315877fe2e1999f25c153548db44bb020
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_246.6-2.debian.tar.xz' systemd_246.6-2.debian.tar.xz 157024 SHA256:ad154d24511ec25d54e480a56026f6017c092e20a2c36d27ac57c41a9dc12df6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/246.6-2/
 
-- https://sources.debian.net/src/systemd/246.6-2/ (for browsing the source)
-- https://sources.debian.net/src/systemd/246.6-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/246.6-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.96-5`
 
