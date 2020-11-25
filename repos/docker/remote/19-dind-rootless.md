@@ -1,7 +1,7 @@
 ## `docker:19-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:b9cb0ce903f30dd0d92409c32cd57e96ae1f11320adf3655739622c1ae6bf629
+$ docker pull docker@sha256:344cef1a1746db49ac83ce974b93dcff8c9ebc2d7adcc80db9074ec393061959
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull docker@sha256:b9cb0ce903f30dd0d92409c32cd57e96ae1f11320adf36557396
 ### `docker:19-dind-rootless` - linux; amd64
 
 ```console
-$ docker pull docker@sha256:6394789b569243613e397a6491bde5a7015a013f87e3c723697f7baaf477e3b6
+$ docker pull docker@sha256:a47b428043bc735759f5213253583f81f70b07c51ef084b9a389bb82b0ffbde4
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **96.6 MB (96601936 bytes)**  
+-	Total Size: **94.0 MB (93970809 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:76688e5913de798a21eb564589a0b9f1c22c429111614af8e793e12a82a89752`
+-	Image ID: `sha256:0ecc7eff4f052985de175418e125b299f26778f3a45a637b4cb303a34d4e6842`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -71,17 +71,13 @@ RUN apk add --no-cache iproute2
 RUN mkdir /run/user && chmod 1777 /run/user
 # Fri, 23 Oct 2020 17:18:03 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 23 Oct 2020 17:18:06 GMT
-RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-19.03.13.tgz'; 			;; 		*) echo >&2 "error: unsupported architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O rootless.tgz "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		vpnkit --version
-# Fri, 06 Nov 2020 18:20:16 GMT
-ENV ROOTLESSKIT_VERSION=0.11.0
-# Fri, 06 Nov 2020 18:20:27 GMT
-RUN set -eux; 	apk add --no-cache --virtual .rootlesskit-build-deps 		go 		libc-dev 	; 	wget -O rootlesskit.tgz "https://github.com/rootless-containers/rootlesskit/archive/v${ROOTLESSKIT_VERSION}.tar.gz"; 	export GOPATH='/go'; mkdir "$GOPATH"; 	mkdir -p "$GOPATH/src/github.com/rootless-containers/rootlesskit"; 	tar --extract --file rootlesskit.tgz --directory "$GOPATH/src/github.com/rootless-containers/rootlesskit" --strip-components 1; 	rm rootlesskit.tgz; 	go build -o /usr/local/bin/rootlesskit github.com/rootless-containers/rootlesskit/cmd/rootlesskit; 	go build -o /usr/local/bin/rootlesskit-docker-proxy github.com/rootless-containers/rootlesskit/cmd/rootlesskit-docker-proxy; 	rm -rf "$GOPATH"; 	apk del --no-network .rootlesskit-build-deps; 	rootlesskit --version
-# Fri, 06 Nov 2020 18:20:28 GMT
+# Wed, 25 Nov 2020 22:20:06 GMT
+RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		'x86_64') 			url='https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-19.03.13.tgz'; 			;; 		*) echo >&2 "error: unsupported architecture ($apkArch)"; exit 1 ;; 	esac; 		wget -O rootless.tgz "$url"; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/rootlesskit' 		'docker-rootless-extras/rootlesskit-docker-proxy' 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		rootlesskit --version; 	vpnkit --version
+# Wed, 25 Nov 2020 22:20:07 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 06 Nov 2020 18:20:28 GMT
+# Wed, 25 Nov 2020 22:20:08 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 06 Nov 2020 18:20:29 GMT
+# Wed, 25 Nov 2020 22:20:08 GMT
 USER rootless
 ```
 
@@ -142,15 +138,11 @@ USER rootless
 		Last Modified: Fri, 23 Oct 2020 17:19:36 GMT  
 		Size: 1.3 KB (1307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d740077150d7f5660e756b488b64db6481bb8550c9b759957825057c46bf8800`  
-		Last Modified: Fri, 23 Oct 2020 17:19:39 GMT  
-		Size: 9.1 MB (9109461 bytes)  
+	-	`sha256:feb52382480a0b9a3db5c64ed9818b1b6ad6ecd2b8f7ec097ffe95a6f485d173`  
+		Last Modified: Wed, 25 Nov 2020 22:20:52 GMT  
+		Size: 19.4 MB (19406999 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eda9d7e22f0035a6e6dc814ab5476cf59c5490bc4f80a97f2edcb251f2493120`  
-		Last Modified: Fri, 06 Nov 2020 18:21:09 GMT  
-		Size: 12.9 MB (12928666 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b50490d9bc048dba07167cbe5365aac5c87fa6407b23ff6c6ecda749f4afaaaf`  
-		Last Modified: Fri, 06 Nov 2020 18:21:07 GMT  
-		Size: 192.0 B  
+	-	`sha256:a8f81ab28f2c1580e06bfc920784499ce178a5e2de439d296d39c4c393909587`  
+		Last Modified: Wed, 25 Nov 2020 22:20:49 GMT  
+		Size: 193.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
