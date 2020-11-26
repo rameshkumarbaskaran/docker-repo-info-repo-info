@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:fb76d2324ecc78ca9911cc9c7f388415737df6df3ee51c00bb84c340c14e1fff`
-- Created: `2020-11-03T21:50:43.97485286Z`
-- Virtual Size: ~ 48.37 Mb  
+- Image ID: `sha256:6ad6ad301ec3e21b8c02a770f676231a604288973d35dc5f2f684e0fcafb0320`
+- Created: `2020-11-25T05:33:25.711210502Z`
+- Virtual Size: ~ 48.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -91,16 +91,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r1 description:
-Common CA certificates PEM files
+ca-certificates-20191127-r2 description:
+Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r1 webpage:
+ca-certificates-20191127-r2 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r1 installed size:
-741376
+ca-certificates-20191127-r2 installed size:
+737280
 
-ca-certificates-20191127-r1 license:
+ca-certificates-20191127-r2 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -193,16 +193,16 @@ MIT
 ### `apk` package: `krb5-libs`
 
 ```console
-krb5-libs-1.17.1-r0 description:
+krb5-libs-1.17.2-r0 description:
 The shared libraries used by Kerberos 5
 
-krb5-libs-1.17.1-r0 webpage:
+krb5-libs-1.17.2-r0 webpage:
 https://web.mit.edu/kerberos/www/
 
-krb5-libs-1.17.1-r0 installed size:
+krb5-libs-1.17.2-r0 installed size:
 2023424
 
-krb5-libs-1.17.1-r0 license:
+krb5-libs-1.17.2-r0 license:
 MIT
 
 ```
@@ -414,16 +414,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r2 description:
+musl-1.1.24-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r2 webpage:
+musl-1.1.24-r3 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r2 installed size:
+musl-1.1.24-r3 installed size:
 614400
 
-musl-1.1.24-r2 license:
+musl-1.1.24-r3 license:
 MIT
 
 ```
