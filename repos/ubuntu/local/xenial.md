@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:dfeff22e96ae3ad07737cd170c0af288948ce426dafdccad5640f991087adde4`
-- Created: `2020-10-23T17:33:10.739469082Z`
-- Virtual Size: ~ 130.56 Mb  
+- Image ID: `sha256:9499db7817713c4d10240ca9f5386b605ecff7975179f5a46e7ffd59fff462ee`
+- Created: `2020-11-25T22:26:14.463543028Z`
+- Virtual Size: ~ 130.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -959,11 +959,11 @@ $ apt-get source -qq --print-uris pcre3=2:8.38-3.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.38-3.1.debian.tar.gz' pcre3_8.38-3.1.debian.tar.gz 32289 SHA256:9ee1b838c1de50cb5f6641016d0dd21b06f1038b9b7c3b1098e0a89b9c24b39f
 ```
 
-### `dpkg` source package: `perl=5.22.1-9ubuntu0.6`
+### `dpkg` source package: `perl=5.22.1-9ubuntu0.9`
 
 Binary Packages:
 
-- `perl-base=5.22.1-9ubuntu0.6`
+- `perl-base=5.22.1-9ubuntu0.9`
 
 Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 
@@ -994,9 +994,14 @@ Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 - `Unicode`
 - `ZLIB`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris perl=5.22.1-9ubuntu0.9
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1-9ubuntu0.9.dsc' perl_5.22.1-9ubuntu0.9.dsc 2480 SHA512:78551f83138bae837431f926892f0dc07490b18b9e84c33a7baa1f301818cad74d40460889542f757530334510dc8bf7a60723fa9e3c5ff22c73abc8d8f49d63
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1.orig.tar.xz' perl_5.22.1.orig.tar.xz 11223940 SHA512:f214bf6959e582a04034c9343a270fcc4fdcf959a8fbb393433865446e634024809d194cfd07ab614b2c09a5a73caec0a74945bbbb3d690663a5f6f10eb168b8
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1-9ubuntu0.9.debian.tar.xz' perl_5.22.1-9ubuntu0.9.debian.tar.xz 167048 SHA512:77a9b2cbc73521969c77530819544c4f2a20e21bca2ee17092906b2804b5d575efc66626c1a9698dea4a3e4f2fd78c19f0c83a7824eb085e4bfd5fdcd2e28177
+```
 
 ### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.5`
 

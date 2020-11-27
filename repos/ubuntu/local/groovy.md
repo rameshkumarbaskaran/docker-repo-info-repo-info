@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:da5958a2de8e69f762888ac8df90e995c74b5643f0a72ae09176f178de25b67c`
-- Created: `2020-10-23T17:32:48.778676495Z`
-- Virtual Size: ~ 79.46 Mb  
+- Image ID: `sha256:671495eee4d808a4c78517c3be67355ae0afef2796157cbf42e1efcd0f2a1ccf`
+- Created: `2020-11-25T22:25:42.138514649Z`
+- Virtual Size: ~ 79.47 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -637,14 +637,14 @@ $ apt-get source -qq --print-uris keyutils=1.6.1-2ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/k/keyutils/keyutils_1.6.1-2ubuntu1.debian.tar.xz' keyutils_1.6.1-2ubuntu1.debian.tar.xz 14364 SHA512:fcb3cf61cd6c4bb8f8dcb4f6fd19decea14642975c6fe40def1a9b36c9eb8b12bf241dedd7f10b2f7655286aa7833970b157b53f32deb48931b6d6f8f2ba5b50
 ```
 
-### `dpkg` source package: `krb5=1.17-10`
+### `dpkg` source package: `krb5=1.17-10ubuntu0.1`
 
 Binary Packages:
 
-- `libgssapi-krb5-2:amd64=1.17-10`
-- `libk5crypto3:amd64=1.17-10`
-- `libkrb5-3:amd64=1.17-10`
-- `libkrb5support0:amd64=1.17-10`
+- `libgssapi-krb5-2:amd64=1.17-10ubuntu0.1`
+- `libk5crypto3:amd64=1.17-10ubuntu0.1`
+- `libkrb5-3:amd64=1.17-10ubuntu0.1`
+- `libkrb5support0:amd64=1.17-10ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
 
@@ -653,10 +653,10 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 Source:
 
 ```console
-$ apt-get source -qq --print-uris krb5=1.17-10
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10.dsc' krb5_1.17-10.dsc 3187 SHA512:45e81c598fd41bcd246786bf69bf26ecc335c968c1586cf2de58970c80a053cffbdb41c21263f95969749b4091e97fc9495d46ddbf9584868cca63380d628073
+$ apt-get source -qq --print-uris krb5=1.17-10ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10ubuntu0.1.dsc' krb5_1.17-10ubuntu0.1.dsc 3647 SHA512:c383843773576c6111adf19c0f0382f98e0c060819ef54eb727bab725fe8ef937697e64a8d36a3ebc591f5d085b5fb9f2afb1620878915e6cccf91046fd2cc42
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA512:7462a578b936bd17f155a362dbb5d388e157a80a096549028be6c55400b11361c7f8a28e424fd5674801873651df4e694d536cae66728b7ae5e840e532358c52
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10.debian.tar.xz' krb5_1.17-10.debian.tar.xz 143852 SHA512:79f7b8f7ca4fb481c1b4f8b229c411e5400c9add8b95c3d22f162f5d1a22f1a947f1d16eda6cdf9e897c129ffca7af35d9553335d9081e7ffa5dd573d040615d
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10ubuntu0.1.debian.tar.xz' krb5_1.17-10ubuntu0.1.debian.tar.xz 145000 SHA512:285fe4a4eaee211b93d05175a44f89ccde54154828b7f1f895072dc3f0e7ac62de4d0a4dce04ef05a87cf1e515eedf14d8820506479e0df086850cfe6374825a
 ```
 
 ### `dpkg` source package: `libcap-ng=0.7.9-2.2`
