@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d49e3b08ffea425aef3e4f3f6db13b8786e38ad0ce263d377d062d8382304b81`
-- Created: `2020-11-04T01:46:10.34765105Z`
-- Virtual Size: ~ 42.63 Mb  
+- Image ID: `sha256:5c77c8c1fcf78e4e6f658b43445ff1c44b71595936b4a4f8f3d66d53d11abe76`
+- Created: `2020-11-25T02:15:49.591800198Z`
+- Virtual Size: ~ 44.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -192,16 +192,16 @@ MIT
 ### `apk` package: `krb5-libs`
 
 ```console
-krb5-libs-1.18.2-r0 description:
+krb5-libs-1.18.3-r0 description:
 The shared libraries used by Kerberos 5
 
-krb5-libs-1.18.2-r0 webpage:
+krb5-libs-1.18.3-r0 webpage:
 https://web.mit.edu/kerberos/www/
 
-krb5-libs-1.18.2-r0 installed size:
+krb5-libs-1.18.3-r0 installed size:
 2007040
 
-krb5-libs-1.18.2-r0 license:
+krb5-libs-1.18.3-r0 license:
 MIT
 
 ```
@@ -430,16 +430,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```
@@ -560,6 +560,23 @@ ssl_client-1.31.1-r19 installed size:
 
 ssl_client-1.31.1-r19 license:
 GPL-2.0-only
+
+```
+
+### `apk` package: `tzdata`
+
+```console
+tzdata-2020c-r1 description:
+Timezone data
+
+tzdata-2020c-r1 webpage:
+https://www.iana.org/time-zones
+
+tzdata-2020c-r1 installed size:
+3526656
+
+tzdata-2020c-r1 license:
+Public-Domain
 
 ```
 
