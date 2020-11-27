@@ -1,17 +1,17 @@
-# `nginx:1.19.4-alpine-perl`
+# `nginx:1.19.5-alpine-perl`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c7ed3ede458deed0625e3403042a9e2283348f33291ee08beed0546d2b6d8727`
-- Created: `2020-11-05T18:22:04.866978673Z`
-- Virtual Size: ~ 56.04 Mb  
+- Image ID: `sha256:3e5b91f263b7535efbcbfa7bed32082eded74b7a60f17397233269eadd4b4672`
+- Created: `2020-11-25T00:31:12.558882439Z`
+- Virtual Size: ~ 56.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.19.4`
+  - `NGINX_VERSION=1.19.5`
   - `NJS_VERSION=0.4.4`
   - `PKG_RELEASE=1`
 - Labels:
@@ -549,16 +549,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.19.4-r1 description:
+nginx-1.19.5-r1 description:
 High performance web server
 
-nginx-1.19.4-r1 webpage:
+nginx-1.19.5-r1 webpage:
 http://nginx.org/
 
-nginx-1.19.4-r1 installed size:
+nginx-1.19.5-r1 installed size:
 2617344
 
-nginx-1.19.4-r1 license:
+nginx-1.19.5-r1 license:
 2-clause BSD-like license
 
 ```
@@ -566,16 +566,16 @@ nginx-1.19.4-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.19.4-r1 description:
+nginx-module-geoip-1.19.5-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.19.4-r1 webpage:
+nginx-module-geoip-1.19.5-r1 webpage:
 http://nginx.org/
 
-nginx-module-geoip-1.19.4-r1 installed size:
+nginx-module-geoip-1.19.5-r1 installed size:
 118784
 
-nginx-module-geoip-1.19.4-r1 license:
+nginx-module-geoip-1.19.5-r1 license:
 2-clause BSD-like license
 
 ```
@@ -583,16 +583,16 @@ nginx-module-geoip-1.19.4-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.19.4-r1 description:
+nginx-module-image-filter-1.19.5-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.19.4-r1 webpage:
+nginx-module-image-filter-1.19.5-r1 webpage:
 http://nginx.org/
 
-nginx-module-image-filter-1.19.4-r1 installed size:
+nginx-module-image-filter-1.19.5-r1 installed size:
 90112
 
-nginx-module-image-filter-1.19.4-r1 license:
+nginx-module-image-filter-1.19.5-r1 license:
 2-clause BSD-like license
 
 ```
@@ -600,16 +600,16 @@ nginx-module-image-filter-1.19.4-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.19.4.0.4.4-r1 description:
+nginx-module-njs-1.19.5.0.4.4-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.19.4.0.4.4-r1 webpage:
+nginx-module-njs-1.19.5.0.4.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-njs-1.19.4.0.4.4-r1 installed size:
+nginx-module-njs-1.19.5.0.4.4-r1 installed size:
 3391488
 
-nginx-module-njs-1.19.4.0.4.4-r1 license:
+nginx-module-njs-1.19.5.0.4.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -617,16 +617,16 @@ nginx-module-njs-1.19.4.0.4.4-r1 license:
 ### `apk` package: `nginx-module-perl`
 
 ```console
-nginx-module-perl-1.19.4-r1 description:
+nginx-module-perl-1.19.5-r1 description:
 nginx Perl dynamic module
 
-nginx-module-perl-1.19.4-r1 webpage:
+nginx-module-perl-1.19.5-r1 webpage:
 http://nginx.org/
 
-nginx-module-perl-1.19.4-r1 installed size:
+nginx-module-perl-1.19.5-r1 installed size:
 163840
 
-nginx-module-perl-1.19.4-r1 license:
+nginx-module-perl-1.19.5-r1 license:
 2-clause BSD-like license
 
 ```
@@ -634,16 +634,16 @@ nginx-module-perl-1.19.4-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.19.4-r1 description:
+nginx-module-xslt-1.19.5-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.19.4-r1 webpage:
+nginx-module-xslt-1.19.5-r1 webpage:
 http://nginx.org/
 
-nginx-module-xslt-1.19.4-r1 installed size:
+nginx-module-xslt-1.19.5-r1 installed size:
 86016
 
-nginx-module-xslt-1.19.4-r1 license:
+nginx-module-xslt-1.19.5-r1 license:
 2-clause BSD-like license
 
 ```
@@ -719,16 +719,16 @@ GPL-2.0-only
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2020c-r0 description:
+tzdata-2020c-r1 description:
 Timezone data
 
-tzdata-2020c-r0 webpage:
+tzdata-2020c-r1 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2020c-r0 installed size:
+tzdata-2020c-r1 installed size:
 3526656
 
-tzdata-2020c-r0 license:
+tzdata-2020c-r1 license:
 Public-Domain
 
 ```

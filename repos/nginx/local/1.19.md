@@ -1,17 +1,17 @@
-# `nginx:1.19.4`
+# `nginx:1.19.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:daee903b4e436178418e41d8dc223b73632144847e5fe81d061296e667f16ef2`
-- Created: `2020-11-18T07:48:35.319575714Z`
-- Virtual Size: ~ 132.89 Mb  
+- Image ID: `sha256:bc9a0695f5712dcaaa09a5adc415a3936ccba13fc2587dfd76b1b8aeea3f221c`
+- Created: `2020-11-25T00:30:19.011398516Z`
+- Virtual Size: ~ 132.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.19.4`
+  - `NGINX_VERSION=1.19.5`
   - `NJS_VERSION=0.4.4`
   - `PKG_RELEASE=1~buster`
 - Labels:
@@ -1136,14 +1136,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/keyutils/1.6-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/keyutils/1.6-6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `krb5=1.17-3`
+### `dpkg` source package: `krb5=1.17-3+deb10u1`
 
 Binary Packages:
 
-- `libgssapi-krb5-2:amd64=1.17-3`
-- `libk5crypto3:amd64=1.17-3`
-- `libkrb5-3:amd64=1.17-3`
-- `libkrb5support0:amd64=1.17-3`
+- `libgssapi-krb5-2:amd64=1.17-3+deb10u1`
+- `libk5crypto3:amd64=1.17-3+deb10u1`
+- `libkrb5-3:amd64=1.17-3+deb10u1`
+- `libkrb5support0:amd64=1.17-3+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
 
@@ -1152,17 +1152,17 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 Source:
 
 ```console
-$ apt-get source -qq --print-uris krb5=1.17-3
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-3.dsc' krb5_1.17-3.dsc 3302 SHA256:56112c60a10a49126359478893d2f51cee5513e41f6ec7269360c7abe8850f3f
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA256:5a6e2284a53de5702d3dc2be3b9339c963f9b5397d3fbbc53beb249380a781f5
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-3.debian.tar.xz' krb5_1.17-3.debian.tar.xz 99396 SHA256:35da9d221e3a29c57c38c9d326d625a5b9199f3d7d64983483bd82f871083c9f
+$ apt-get source -qq --print-uris krb5=1.17-3+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.17-3+deb10u1.dsc' krb5_1.17-3+deb10u1.dsc 3573 SHA256:e9edb5d47d4f7dc345e01adc45f1d302f5f19012f8c38d234ef9b2c08bbef7cc
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA256:5a6e2284a53de5702d3dc2be3b9339c963f9b5397d3fbbc53beb249380a781f5
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.17-3+deb10u1.debian.tar.xz' krb5_1.17-3+deb10u1.debian.tar.xz 100584 SHA256:396ecf9ec5b4ac91d2ce8527d7f6b2309e70fc5b14ea1158eb7e367c48e9c5ca
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/krb5/1.17-3/ (for browsing the source)
-- https://sources.debian.net/src/krb5/1.17-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/krb5/1.17-3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/krb5/1.17-3+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/krb5/1.17-3+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/krb5/1.17-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libbsd=0.9.1-2`
 
@@ -2068,11 +2068,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nghttp2/1.36.0-2+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nghttp2/1.36.0-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nginx-module-geoip=1.19.4-1~buster`
+### `dpkg` source package: `nginx-module-geoip=1.19.5-1~buster`
 
 Binary Packages:
 
-- `nginx-module-geoip=1.19.4-1~buster`
+- `nginx-module-geoip=1.19.5-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2082,11 +2082,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-image-filter=1.19.4-1~buster`
+### `dpkg` source package: `nginx-module-image-filter=1.19.5-1~buster`
 
 Binary Packages:
 
-- `nginx-module-image-filter=1.19.4-1~buster`
+- `nginx-module-image-filter=1.19.5-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2096,11 +2096,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-njs=1.19.4+0.4.4-1~buster`
+### `dpkg` source package: `nginx-module-njs=1.19.5+0.4.4-1~buster`
 
 Binary Packages:
 
-- `nginx-module-njs=1.19.4+0.4.4-1~buster`
+- `nginx-module-njs=1.19.5+0.4.4-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2110,11 +2110,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-xslt=1.19.4-1~buster`
+### `dpkg` source package: `nginx-module-xslt=1.19.5-1~buster`
 
 Binary Packages:
 
-- `nginx-module-xslt=1.19.4-1~buster`
+- `nginx-module-xslt=1.19.5-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2124,11 +2124,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx=1.19.4-1~buster`
+### `dpkg` source package: `nginx=1.19.5-1~buster`
 
 Binary Packages:
 
-- `nginx=1.19.4-1~buster`
+- `nginx=1.19.5-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
