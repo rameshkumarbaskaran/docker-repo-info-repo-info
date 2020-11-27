@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:13f4e556af339ed0a23a0d96d63d8cc7abd2b592e7990123bd49d86be3d48139`
-- Created: `2020-10-23T18:01:32.388437563Z`
-- Virtual Size: ~ 98.14 Mb  
+- Image ID: `sha256:239d59ea49e6afc7e1d772aebf700389792613e4fde7dcb18e88ba3ef7812abf`
+- Created: `2020-11-26T01:09:41.574317272Z`
+- Virtual Size: ~ 98.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -214,11 +214,11 @@ $ apt-get source -qq --print-uris bzip2=1.0.8-4ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.8-4ubuntu2.debian.tar.bz2' bzip2_1.0.8-4ubuntu2.debian.tar.bz2 26561 SHA512:6ac1e2e3e22d989ab49e8f01aab592c35dff9950e2ed4439e9df650d3cd2ed7061796bc1e76c7fe9216e2fef4e1b59991fadb508f7c7bed9178d6dcb26247f8e
 ```
 
-### `dpkg` source package: `ca-certificates=20200601`
+### `dpkg` source package: `ca-certificates=20201027ubuntu0.20.10.1`
 
 Binary Packages:
 
-- `ca-certificates=20200601`
+- `ca-certificates=20201027ubuntu0.20.10.1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 
@@ -229,9 +229,9 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris ca-certificates=20200601
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20200601.dsc' ca-certificates_20200601.dsc 1582 SHA512:ebb9a92fe43ee91e24a1fc57276cabf2b34317af0ddb7fdab2d69d2ad96b442bbf9fe8b7feb8fbcbeda6e84d25635f6d58c37e4ce489d4b4951bc1d3887c0224
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20200601.tar.xz' ca-certificates_20200601.tar.xz 245668 SHA512:7bfd3122430be0a46bd10dcb0e0664561d1e0b2656b9f37677d89f71a1dcb0e668c25ffe08412888125fa9a53ee8245a4b3fc1004c419a159766665b1241113c
+$ apt-get source -qq --print-uris ca-certificates=20201027ubuntu0.20.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.20.10.1.dsc' ca-certificates_20201027ubuntu0.20.10.1.dsc 1944 SHA512:caa59569228ce0056a810626d916da3d6e70069085302f5cadfd3e0a4f61e793aa1dbf7dd6bc6388f8c0facd900be0c8dbe89954e94e735eb9709827c496b7fd
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.20.10.1.tar.xz' ca-certificates_20201027ubuntu0.20.10.1.tar.xz 242528 SHA512:4f386608440c42574bff8cff6471b6e9dbf988c1cb43da2085d60e76d42eeabfb875e3f61ad75570aaa9a448098c2dde5a577858a4acd5497c615a121e282893
 ```
 
 ### `dpkg` source package: `cdebconf=0.252ubuntu1`
@@ -764,14 +764,14 @@ $ apt-get source -qq --print-uris keyutils=1.6.1-2ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/k/keyutils/keyutils_1.6.1-2ubuntu1.debian.tar.xz' keyutils_1.6.1-2ubuntu1.debian.tar.xz 14364 SHA512:fcb3cf61cd6c4bb8f8dcb4f6fd19decea14642975c6fe40def1a9b36c9eb8b12bf241dedd7f10b2f7655286aa7833970b157b53f32deb48931b6d6f8f2ba5b50
 ```
 
-### `dpkg` source package: `krb5=1.17-10`
+### `dpkg` source package: `krb5=1.17-10ubuntu0.1`
 
 Binary Packages:
 
-- `libgssapi-krb5-2:amd64=1.17-10`
-- `libk5crypto3:amd64=1.17-10`
-- `libkrb5-3:amd64=1.17-10`
-- `libkrb5support0:amd64=1.17-10`
+- `libgssapi-krb5-2:amd64=1.17-10ubuntu0.1`
+- `libk5crypto3:amd64=1.17-10ubuntu0.1`
+- `libkrb5-3:amd64=1.17-10ubuntu0.1`
+- `libkrb5support0:amd64=1.17-10ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
 
@@ -780,10 +780,10 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 Source:
 
 ```console
-$ apt-get source -qq --print-uris krb5=1.17-10
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10.dsc' krb5_1.17-10.dsc 3187 SHA512:45e81c598fd41bcd246786bf69bf26ecc335c968c1586cf2de58970c80a053cffbdb41c21263f95969749b4091e97fc9495d46ddbf9584868cca63380d628073
+$ apt-get source -qq --print-uris krb5=1.17-10ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10ubuntu0.1.dsc' krb5_1.17-10ubuntu0.1.dsc 3647 SHA512:c383843773576c6111adf19c0f0382f98e0c060819ef54eb727bab725fe8ef937697e64a8d36a3ebc591f5d085b5fb9f2afb1620878915e6cccf91046fd2cc42
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA512:7462a578b936bd17f155a362dbb5d388e157a80a096549028be6c55400b11361c7f8a28e424fd5674801873651df4e694d536cae66728b7ae5e840e532358c52
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10.debian.tar.xz' krb5_1.17-10.debian.tar.xz 143852 SHA512:79f7b8f7ca4fb481c1b4f8b229c411e5400c9add8b95c3d22f162f5d1a22f1a947f1d16eda6cdf9e897c129ffca7af35d9553335d9081e7ffa5dd573d040615d
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-10ubuntu0.1.debian.tar.xz' krb5_1.17-10ubuntu0.1.debian.tar.xz 145000 SHA512:285fe4a4eaee211b93d05175a44f89ccde54154828b7f1f895072dc3f0e7ac62de4d0a4dce04ef05a87cf1e515eedf14d8820506479e0df086850cfe6374825a
 ```
 
 ### `dpkg` source package: `libassuan=2.5.3-7.1`
@@ -1465,11 +1465,11 @@ $ apt-get source -qq --print-uris npth=1.6-2
 'http://archive.ubuntu.com/ubuntu/pool/main/n/npth/npth_1.6-2.debian.tar.xz' npth_1.6-2.debian.tar.xz 10612 SHA512:b76317daa87dcbfe2f5d294b8b350cb210b780192fe15618172679caaa235f90969814b66fcc43838c2df43a77317bba0dcd29c0aaf72a603dcb1d26fbbf52d1
 ```
 
-### `dpkg` source package: `openldap=2.4.53+dfsg-1ubuntu1`
+### `dpkg` source package: `openldap=2.4.53+dfsg-1ubuntu1.2`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.53+dfsg-1ubuntu1`
+- `libldap-2.4-2:amd64=2.4.53+dfsg-1ubuntu1.2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1478,10 +1478,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.53+dfsg-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.53+dfsg-1ubuntu1.dsc' openldap_2.4.53+dfsg-1ubuntu1.dsc 3154 SHA512:de28fd7c565284166b9ea00a247c49702059a8db02e0af5b085508ca796af5268be3e62fa8214f45eaf85fbb08715e28849c26d6f36af5e65041a8315e4c7772
+$ apt-get source -qq --print-uris openldap=2.4.53+dfsg-1ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.53+dfsg-1ubuntu1.2.dsc' openldap_2.4.53+dfsg-1ubuntu1.2.dsc 3162 SHA512:f298824d94bd3b14fd437a0cd4410c0ea09ced2372c7080d0658144804da64058ad7732d1f5f1a1f0241e97900bc00c609c7c9d469fd53afcbde35368fc893bf
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.53+dfsg.orig.tar.gz' openldap_2.4.53+dfsg.orig.tar.gz 5013515 SHA512:06cf88fe390cb04592407a0767e5051d4e6a8878f30386a0837710a406b037fde09953185ce395c189d69378114a6330ba54c7097d43322d6a3152d1a5b12de4
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.53+dfsg-1ubuntu1.debian.tar.xz' openldap_2.4.53+dfsg-1ubuntu1.debian.tar.xz 181644 SHA512:2e3391eef159ac71cb5e1e0febe6bb6b2353c75fe024895d8e8a1e14763089cd6a3c485d418c34a465aff5cffcb47a5b6d87d4ad1a634a044b18cfd8e6fdb8a6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.53+dfsg-1ubuntu1.2.debian.tar.xz' openldap_2.4.53+dfsg-1ubuntu1.2.debian.tar.xz 182640 SHA512:249f0733b7d4ee1b6353ae44810eafd2f4e47043161402089686bacffc68672f1a1f15e2ec4fefd86b24d09f8ed8a0403254178e8c4a45b4c774bcfc3be9116b
 ```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu4`

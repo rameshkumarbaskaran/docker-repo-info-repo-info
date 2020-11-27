@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a4a829b04e68d80892adcb66048f5e7e4a4e48f411e47c34c9eb70ca857cbd49`
-- Created: `2020-10-23T18:04:42.302176179Z`
-- Virtual Size: ~ 270.42 Mb  
+- Image ID: `sha256:4d95c6b23ce7974661e2ce46f1f440382f122b57395637cdfc075f99b21fb8b3`
+- Created: `2020-11-26T01:13:00.643312497Z`
+- Virtual Size: ~ 270.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -269,11 +269,11 @@ $ apt-get source -qq --print-uris bzr=2.7.0-2ubuntu3.1
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0-2ubuntu3.1.debian.tar.xz' bzr_2.7.0-2ubuntu3.1.debian.tar.xz 42660 SHA512:3d6f07cadfac56c0aea0b8a02921d558ad6a16665abf6ce2b88b3277b8ae3fd9fe1d8cbd98571e3e637b361281a78996a69da15b9d469110716b4d5fcd727a7f
 ```
 
-### `dpkg` source package: `ca-certificates=20190110~16.04.1`
+### `dpkg` source package: `ca-certificates=20201027ubuntu0.16.04.1`
 
 Binary Packages:
 
-- `ca-certificates=20190110~16.04.1`
+- `ca-certificates=20201027ubuntu0.16.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 
@@ -281,9 +281,13 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris ca-certificates=20201027ubuntu0.16.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.16.04.1.dsc' ca-certificates_20201027ubuntu0.16.04.1.dsc 1997 SHA512:2172b9d9c2db4c6e72671a3e1ff5367af03d174c9ad2404e08fc974d010bd7c3a88109972360d134de647e10f44d312e5dd50a60496e0696c69e9d7096d1e588
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.16.04.1.tar.xz' ca-certificates_20201027ubuntu0.16.04.1.tar.xz 241984 SHA512:b04247b94f0bbe98994d2be59e6335e56d9a9e7e5e001f5ee015edef1a41541e4ff6f29d8102327538685b04a51b6319683d2938be2a0ce7b0159811bf1c47f1
+```
 
 ### `dpkg` source package: `cdebconf=0.198ubuntu1`
 
@@ -972,22 +976,27 @@ $ apt-get source -qq --print-uris kmod=22-1ubuntu5.2
 'http://archive.ubuntu.com/ubuntu/pool/main/k/kmod/kmod_22-1ubuntu5.2.debian.tar.xz' kmod_22-1ubuntu5.2.debian.tar.xz 14524 SHA512:184d70264a6cf50b8df6e8bf19950c295c8c404633c2a782f75188e1c9fec639e6c673f594995f398e85c82613ffb4565131b62b7b8062dbae3de079c8778565
 ```
 
-### `dpkg` source package: `krb5=1.13.2+dfsg-5ubuntu2.1`
+### `dpkg` source package: `krb5=1.13.2+dfsg-5ubuntu2.2`
 
 Binary Packages:
 
-- `libgssapi-krb5-2:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libk5crypto3:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libkrb5-3:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libkrb5support0:amd64=1.13.2+dfsg-5ubuntu2.1`
+- `libgssapi-krb5-2:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libk5crypto3:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libkrb5-3:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libkrb5support0:amd64=1.13.2+dfsg-5ubuntu2.2`
 
 Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris krb5=1.13.2+dfsg-5ubuntu2.2
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg-5ubuntu2.2.dsc' krb5_1.13.2+dfsg-5ubuntu2.2.dsc 3520 SHA512:0ba1ff8222d7d715f400468fafc6b2c1dc63fa45c0f0c0e0e513c94cce42249e5ff9f9cd16303145c084a34db13794bcd0b3f1c50acac41ca6ed8c6cfe17c58b
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg.orig.tar.gz' krb5_1.13.2+dfsg.orig.tar.gz 11884064 SHA512:d9562deaee7144c786c279e6e3415fe248fa1a71db8868ff05d1d7ef651274146d9e2c96f37c045fefd43364662ec41714bdd2d59a5ff16634ad7a510d4b3eab
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg-5ubuntu2.2.debian.tar.xz' krb5_1.13.2+dfsg-5ubuntu2.2.debian.tar.xz 114232 SHA512:c944b16fdb0d730da220a8a5836cb283d5c3912598f99698bb0a9a493d3d38a76ec626ac1f07df2346eefac30cf2be49bea6c4fcaccdef209866a5287ec1017f
+```
 
 ### `dpkg` source package: `libbsd=0.8.2-1ubuntu0.1`
 
@@ -1504,19 +1513,24 @@ $ apt-get source -qq --print-uris nettle=3.2-1ubuntu0.16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.2-1ubuntu0.16.04.1.debian.tar.xz' nettle_3.2-1ubuntu0.16.04.1.debian.tar.xz 21340 SHA512:97a4c851a63dad2298809aa29f2ab8a37367fc21f5d134ad297124f648991e5da648a628a068e423fd3375633ed364ba920cdd03bb36f3ad349c9b598d21ff67
 ```
 
-### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.9`
+### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.11`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.9`
+- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.11`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.11
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.11.dsc' openldap_2.4.42+dfsg-2ubuntu3.11.dsc 3058 SHA512:61ab2e2fd9696eeea80cdfd3416508058408fcb1ac4ddbcafd9502480df8f731bcd1f77757f1f113e7a35276d5b00f0fcb07af852dd5e0afdc23420b43381f16
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA512:4ed671baef513927cc340dac15b8979dba766d4fd629cae0bad1e125d09bc4ae61fda6912e06c53f8ef2cee6c2e28379b4e0c419c00c8254dc0cc0c715caf200
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.11.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.11.debian.tar.xz 183320 SHA512:cee22eb64b028773d7e4245e967e734fca5a02d25e3841a526a8f2c5a698f96b95d500093c51fe53e4fcf487556032dfd30c265e3e367a5229a8ab1b09f9088d
+```
 
 ### `dpkg` source package: `openssh=1:7.2p2-4ubuntu2.10`
 
@@ -1621,14 +1635,14 @@ $ apt-get source -qq --print-uris pcre3=2:8.38-3.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.38-3.1.debian.tar.gz' pcre3_8.38-3.1.debian.tar.gz 32289 SHA256:9ee1b838c1de50cb5f6641016d0dd21b06f1038b9b7c3b1098e0a89b9c24b39f
 ```
 
-### `dpkg` source package: `perl=5.22.1-9ubuntu0.6`
+### `dpkg` source package: `perl=5.22.1-9ubuntu0.9`
 
 Binary Packages:
 
-- `libperl5.22:amd64=5.22.1-9ubuntu0.6`
-- `perl=5.22.1-9ubuntu0.6`
-- `perl-base=5.22.1-9ubuntu0.6`
-- `perl-modules-5.22=5.22.1-9ubuntu0.6`
+- `libperl5.22:amd64=5.22.1-9ubuntu0.9`
+- `perl=5.22.1-9ubuntu0.9`
+- `perl-base=5.22.1-9ubuntu0.9`
+- `perl-modules-5.22=5.22.1-9ubuntu0.9`
 
 Licenses: (parsed from: `/usr/share/doc/libperl5.22/copyright`, `/usr/share/doc/perl/copyright`, `/usr/share/doc/perl-base/copyright`, `/usr/share/doc/perl-modules-5.22/copyright`)
 
@@ -1659,9 +1673,14 @@ Licenses: (parsed from: `/usr/share/doc/libperl5.22/copyright`, `/usr/share/doc/
 - `Unicode`
 - `ZLIB`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris perl=5.22.1-9ubuntu0.9
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1-9ubuntu0.9.dsc' perl_5.22.1-9ubuntu0.9.dsc 2480 SHA512:78551f83138bae837431f926892f0dc07490b18b9e84c33a7baa1f301818cad74d40460889542f757530334510dc8bf7a60723fa9e3c5ff22c73abc8d8f49d63
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1.orig.tar.xz' perl_5.22.1.orig.tar.xz 11223940 SHA512:f214bf6959e582a04034c9343a270fcc4fdcf959a8fbb393433865446e634024809d194cfd07ab614b2c09a5a73caec0a74945bbbb3d690663a5f6f10eb168b8
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1-9ubuntu0.9.debian.tar.xz' perl_5.22.1-9ubuntu0.9.debian.tar.xz 167048 SHA512:77a9b2cbc73521969c77530819544c4f2a20e21bca2ee17092906b2804b5d575efc66626c1a9698dea4a3e4f2fd78c19f0c83a7824eb085e4bfd5fdcd2e28177
+```
 
 ### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.5`
 

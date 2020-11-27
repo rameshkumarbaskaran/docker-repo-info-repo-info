@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:35259892054300f2154e641c9206da71cc4072e1c79259b545862298b64105d3`
-- Created: `2020-10-23T18:06:41.643608049Z`
-- Virtual Size: ~ 652.79 Mb  
+- Image ID: `sha256:05ce3a63508d9d5ce7152edc825ef0625bd66aa35315c2c3f682df8e2a6640a2`
+- Created: `2020-11-26T01:14:46.966009099Z`
+- Virtual Size: ~ 652.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -413,11 +413,11 @@ $ apt-get source -qq --print-uris bzr=2.7.0-2ubuntu3.1
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0-2ubuntu3.1.debian.tar.xz' bzr_2.7.0-2ubuntu3.1.debian.tar.xz 42660 SHA512:3d6f07cadfac56c0aea0b8a02921d558ad6a16665abf6ce2b88b3277b8ae3fd9fe1d8cbd98571e3e637b361281a78996a69da15b9d469110716b4d5fcd727a7f
 ```
 
-### `dpkg` source package: `ca-certificates=20190110~16.04.1`
+### `dpkg` source package: `ca-certificates=20201027ubuntu0.16.04.1`
 
 Binary Packages:
 
-- `ca-certificates=20190110~16.04.1`
+- `ca-certificates=20201027ubuntu0.16.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 
@@ -425,9 +425,13 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris ca-certificates=20201027ubuntu0.16.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.16.04.1.dsc' ca-certificates_20201027ubuntu0.16.04.1.dsc 1997 SHA512:2172b9d9c2db4c6e72671a3e1ff5367af03d174c9ad2404e08fc974d010bd7c3a88109972360d134de647e10f44d312e5dd50a60496e0696c69e9d7096d1e588
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.16.04.1.tar.xz' ca-certificates_20201027ubuntu0.16.04.1.tar.xz 241984 SHA512:b04247b94f0bbe98994d2be59e6335e56d9a9e7e5e001f5ee015edef1a41541e4ff6f29d8102327538685b04a51b6319683d2938be2a0ce7b0159811bf1c47f1
+```
 
 ### `dpkg` source package: `cairo=1.14.6-1`
 
@@ -1754,28 +1758,33 @@ $ apt-get source -qq --print-uris kmod=22-1ubuntu5.2
 'http://archive.ubuntu.com/ubuntu/pool/main/k/kmod/kmod_22-1ubuntu5.2.debian.tar.xz' kmod_22-1ubuntu5.2.debian.tar.xz 14524 SHA512:184d70264a6cf50b8df6e8bf19950c295c8c404633c2a782f75188e1c9fec639e6c673f594995f398e85c82613ffb4565131b62b7b8062dbae3de079c8778565
 ```
 
-### `dpkg` source package: `krb5=1.13.2+dfsg-5ubuntu2.1`
+### `dpkg` source package: `krb5=1.13.2+dfsg-5ubuntu2.2`
 
 Binary Packages:
 
-- `krb5-multidev=1.13.2+dfsg-5ubuntu2.1`
-- `libgssapi-krb5-2:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libgssrpc4:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libk5crypto3:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libkadm5clnt-mit9:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libkadm5srv-mit9:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libkdb5-8:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libkrb5-3:amd64=1.13.2+dfsg-5ubuntu2.1`
-- `libkrb5-dev=1.13.2+dfsg-5ubuntu2.1`
-- `libkrb5support0:amd64=1.13.2+dfsg-5ubuntu2.1`
+- `krb5-multidev=1.13.2+dfsg-5ubuntu2.2`
+- `libgssapi-krb5-2:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libgssrpc4:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libk5crypto3:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libkadm5clnt-mit9:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libkadm5srv-mit9:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libkdb5-8:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libkrb5-3:amd64=1.13.2+dfsg-5ubuntu2.2`
+- `libkrb5-dev=1.13.2+dfsg-5ubuntu2.2`
+- `libkrb5support0:amd64=1.13.2+dfsg-5ubuntu2.2`
 
 Licenses: (parsed from: `/usr/share/doc/krb5-multidev/copyright`, `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libgssrpc4/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkadm5clnt-mit9/copyright`, `/usr/share/doc/libkadm5srv-mit9/copyright`, `/usr/share/doc/libkdb5-8/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5-dev/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris krb5=1.13.2+dfsg-5ubuntu2.2
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg-5ubuntu2.2.dsc' krb5_1.13.2+dfsg-5ubuntu2.2.dsc 3520 SHA512:0ba1ff8222d7d715f400468fafc6b2c1dc63fa45c0f0c0e0e513c94cce42249e5ff9f9cd16303145c084a34db13794bcd0b3f1c50acac41ca6ed8c6cfe17c58b
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg.orig.tar.gz' krb5_1.13.2+dfsg.orig.tar.gz 11884064 SHA512:d9562deaee7144c786c279e6e3415fe248fa1a71db8868ff05d1d7ef651274146d9e2c96f37c045fefd43364662ec41714bdd2d59a5ff16634ad7a510d4b3eab
+'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg-5ubuntu2.2.debian.tar.xz' krb5_1.13.2+dfsg-5ubuntu2.2.debian.tar.xz 114232 SHA512:c944b16fdb0d730da220a8a5836cb283d5c3912598f99698bb0a9a493d3d38a76ec626ac1f07df2346eefac30cf2be49bea6c4fcaccdef209866a5287ec1017f
+```
 
 ### `dpkg` source package: `lcms2=2.6-3ubuntu2.1`
 
@@ -1959,12 +1968,12 @@ $ apt-get source -qq --print-uris libevent=2.0.21-stable-2ubuntu0.16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/libe/libevent/libevent_2.0.21-stable-2ubuntu0.16.04.1.debian.tar.xz' libevent_2.0.21-stable-2ubuntu0.16.04.1.debian.tar.xz 14084 SHA512:60087d30510360006d5f67b344260a25440eb2dc9e6da581d4f9c55a6a17d70b93d8cd1168db5007198baf2a618a50fe3d6dbe63d899a766356b71f431d09465
 ```
 
-### `dpkg` source package: `libexif=0.6.21-2ubuntu0.5`
+### `dpkg` source package: `libexif=0.6.21-2ubuntu0.6`
 
 Binary Packages:
 
-- `libexif-dev=0.6.21-2ubuntu0.5`
-- `libexif12:amd64=0.6.21-2ubuntu0.5`
+- `libexif-dev=0.6.21-2ubuntu0.6`
+- `libexif12:amd64=0.6.21-2ubuntu0.6`
 
 Licenses: (parsed from: `/usr/share/doc/libexif-dev/copyright`, `/usr/share/doc/libexif12/copyright`)
 
@@ -1974,9 +1983,14 @@ Licenses: (parsed from: `/usr/share/doc/libexif-dev/copyright`, `/usr/share/doc/
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libexif=0.6.21-2ubuntu0.6
+'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21-2ubuntu0.6.dsc' libexif_0.6.21-2ubuntu0.6.dsc 2185 SHA512:0e2a1bb26398c8df5d387b29f004b7c3683c962c70432ea0ec730b8be3ed089b9bdc826ab220876a646aefb39af38fce9a8b06bb751b00536e13f0ba5d2aa0ea
+'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21.orig.tar.gz' libexif_0.6.21.orig.tar.gz 2081615 SHA512:0a1fac9460d1d91fea8d8390e335946439de44c0ec0e1fd9fa7006532c64bececd12cd622e800c8f1176092bba926a7075838944ad6b62fa07d285af6f73e9fe
+'http://archive.ubuntu.com/ubuntu/pool/main/libe/libexif/libexif_0.6.21-2ubuntu0.6.debian.tar.xz' libexif_0.6.21-2ubuntu0.6.debian.tar.xz 17320 SHA512:cc845900b0018f8366b380579a2e201940454410197aec7608ccc7c349e9949a354db6116cbf5ebe723cd347b4eb216cb0a76c132d1ef892db7a1937dd0c8201
+```
 
 ### `dpkg` source package: `libffi=3.2.1-4`
 
@@ -2896,20 +2910,25 @@ $ apt-get source -qq --print-uris libyaml=0.1.6-3
 'http://archive.ubuntu.com/ubuntu/pool/main/liby/libyaml/libyaml_0.1.6-3.debian.tar.xz' libyaml_0.1.6-3.debian.tar.xz 4268 SHA256:fd567e6918903833e5c4f1f87254c550eca07c2bba1ccbe6031da33243cf4297
 ```
 
-### `dpkg` source package: `linux=4.4.0-193.224`
+### `dpkg` source package: `linux=4.4.0-194.226`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-193.224`
+- `linux-libc-dev:amd64=4.4.0-194.226`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-194.226
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-194.226.dsc' linux_4.4.0-194.226.dsc 11596 SHA512:c29227608e7adebe8ddaec1bceb2e0300fb6cb1ef55679311a3eee1d4d6f8b233174a3186ddc50deb3224ee27e03ebb9dedb297d37ea3a9499c07a0e2c8b675d
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA512:28ef89b62f663f2d90b58274799b7ebeff04699f08d0b83f650b0de179d4ef354450c81ecda07522b493c43d5eb2d530fa0f552a2794d48f84878e05efa39cc3
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-194.226.diff.gz' linux_4.4.0-194.226.diff.gz 16775263 SHA512:c63471bda5d161de4f9703c78bc9010f95d4868d49d159495debbcd7e3347aecae428e06e955a07cecd29150a3510580840e72cf2db4193d5d3a8bf21f4a68f1
+```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
@@ -3147,13 +3166,13 @@ $ apt-get source -qq --print-uris mpfr4=3.1.4-1
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mpfr4/mpfr4_3.1.4-1.debian.tar.xz' mpfr4_3.1.4-1.debian.tar.xz 9656 SHA256:e0562521ac0ef9fc2039ef1305962ee1ad529ae2210e197cee0080b1facc4d60
 ```
 
-### `dpkg` source package: `mysql-5.7=5.7.31-0ubuntu0.16.04.1`
+### `dpkg` source package: `mysql-5.7=5.7.32-0ubuntu0.16.04.1`
 
 Binary Packages:
 
-- `libmysqlclient-dev=5.7.31-0ubuntu0.16.04.1`
-- `libmysqlclient20:amd64=5.7.31-0ubuntu0.16.04.1`
-- `mysql-common=5.7.31-0ubuntu0.16.04.1`
+- `libmysqlclient-dev=5.7.32-0ubuntu0.16.04.1`
+- `libmysqlclient20:amd64=5.7.32-0ubuntu0.16.04.1`
+- `mysql-common=5.7.32-0ubuntu0.16.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/share/doc/libmysqlclient20/copyright`, `/usr/share/doc/mysql-common/copyright`)
 
@@ -3171,9 +3190,14 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris mysql-5.7=5.7.32-0ubuntu0.16.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.32-0ubuntu0.16.04.1.dsc' mysql-5.7_5.7.32-0ubuntu0.16.04.1.dsc 3380 SHA512:aa8d43e75e1287d6eead6e2fa666190ade27f8ad910370778c3e6a72fd5962c360a83fa6a9fb9977f83eb87d38fb25b590c76310920e80c7b31639f6fa415722
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.32.orig.tar.gz' mysql-5.7_5.7.32.orig.tar.gz 52882168 SHA512:33a617d040efd065ea1c2ad84be537f851480abd5cc8a6879b7f170bc4e6db9432bd03f2a6bc680b71f17839c508cab0e7ef1a3aba032197da1b7943c916c77a
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.32-0ubuntu0.16.04.1.debian.tar.xz' mysql-5.7_5.7.32-0ubuntu0.16.04.1.debian.tar.xz 251148 SHA512:872a8ceb3e352e6dced9d36824cdb582ee7d11859401546ee83fadea17fb9e7e40cd671567ebba7683647ea67b6d970b2f62268b68aecc6b5330850ac77212b7
+```
 
 ### `dpkg` source package: `ncurses=6.0+20160213-1ubuntu1`
 
@@ -3269,19 +3293,24 @@ $ apt-get source -qq --print-uris openexr=2.2.0-10ubuntu2.3
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.3.debian.tar.xz' openexr_2.2.0-10ubuntu2.3.debian.tar.xz 44996 SHA512:a41fe7a9a36fbe368250627fbe0dfd278222b38f56a17878e744cd4759af3e62df514870316dfe699a0d348d64b04a6dd101b33a3c79309b31546a42d8db37a6
 ```
 
-### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.9`
+### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.11`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.9`
+- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.11`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.11
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.11.dsc' openldap_2.4.42+dfsg-2ubuntu3.11.dsc 3058 SHA512:61ab2e2fd9696eeea80cdfd3416508058408fcb1ac4ddbcafd9502480df8f731bcd1f77757f1f113e7a35276d5b00f0fcb07af852dd5e0afdc23420b43381f16
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA512:4ed671baef513927cc340dac15b8979dba766d4fd629cae0bad1e125d09bc4ae61fda6912e06c53f8ef2cee6c2e28379b4e0c419c00c8254dc0cc0c715caf200
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.11.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.11.debian.tar.xz 183320 SHA512:cee22eb64b028773d7e4245e967e734fca5a02d25e3841a526a8f2c5a698f96b95d500093c51fe53e4fcf487556032dfd30c265e3e367a5229a8ab1b09f9088d
+```
 
 ### `dpkg` source package: `openssh=1:7.2p2-4ubuntu2.10`
 
@@ -3432,14 +3461,14 @@ $ apt-get source -qq --print-uris pcre3=2:8.38-3.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.38-3.1.debian.tar.gz' pcre3_8.38-3.1.debian.tar.gz 32289 SHA256:9ee1b838c1de50cb5f6641016d0dd21b06f1038b9b7c3b1098e0a89b9c24b39f
 ```
 
-### `dpkg` source package: `perl=5.22.1-9ubuntu0.6`
+### `dpkg` source package: `perl=5.22.1-9ubuntu0.9`
 
 Binary Packages:
 
-- `libperl5.22:amd64=5.22.1-9ubuntu0.6`
-- `perl=5.22.1-9ubuntu0.6`
-- `perl-base=5.22.1-9ubuntu0.6`
-- `perl-modules-5.22=5.22.1-9ubuntu0.6`
+- `libperl5.22:amd64=5.22.1-9ubuntu0.9`
+- `perl=5.22.1-9ubuntu0.9`
+- `perl-base=5.22.1-9ubuntu0.9`
+- `perl-modules-5.22=5.22.1-9ubuntu0.9`
 
 Licenses: (parsed from: `/usr/share/doc/libperl5.22/copyright`, `/usr/share/doc/perl/copyright`, `/usr/share/doc/perl-base/copyright`, `/usr/share/doc/perl-modules-5.22/copyright`)
 
@@ -3470,9 +3499,14 @@ Licenses: (parsed from: `/usr/share/doc/libperl5.22/copyright`, `/usr/share/doc/
 - `Unicode`
 - `ZLIB`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris perl=5.22.1-9ubuntu0.9
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1-9ubuntu0.9.dsc' perl_5.22.1-9ubuntu0.9.dsc 2480 SHA512:78551f83138bae837431f926892f0dc07490b18b9e84c33a7baa1f301818cad74d40460889542f757530334510dc8bf7a60723fa9e3c5ff22c73abc8d8f49d63
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1.orig.tar.xz' perl_5.22.1.orig.tar.xz 11223940 SHA512:f214bf6959e582a04034c9343a270fcc4fdcf959a8fbb393433865446e634024809d194cfd07ab614b2c09a5a73caec0a74945bbbb3d690663a5f6f10eb168b8
+'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.22.1-9ubuntu0.9.debian.tar.xz' perl_5.22.1-9ubuntu0.9.debian.tar.xz 167048 SHA512:77a9b2cbc73521969c77530819544c4f2a20e21bca2ee17092906b2804b5d575efc66626c1a9698dea4a3e4f2fd78c19f0c83a7824eb085e4bfd5fdcd2e28177
+```
 
 ### `dpkg` source package: `pixman=0.33.6-1`
 
@@ -3513,12 +3547,12 @@ $ apt-get source -qq --print-uris pkg-config=0.29.1-0ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pkg-config/pkg-config_0.29.1-0ubuntu1.diff.gz' pkg-config_0.29.1-0ubuntu1.diff.gz 12597 SHA256:1c44aeeec1896a69f21861e9b9e18bb783258d57f4bd678b173b3890f1a209bf
 ```
 
-### `dpkg` source package: `postgresql-9.5=9.5.23-0ubuntu0.16.04.1`
+### `dpkg` source package: `postgresql-9.5=9.5.24-0ubuntu0.16.04.1`
 
 Binary Packages:
 
-- `libpq-dev=9.5.23-0ubuntu0.16.04.1`
-- `libpq5:amd64=9.5.23-0ubuntu0.16.04.1`
+- `libpq-dev=9.5.24-0ubuntu0.16.04.1`
+- `libpq5:amd64=9.5.24-0ubuntu0.16.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/libpq5/copyright`)
 
@@ -3529,9 +3563,14 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `Tcl`
 - `almost exclusively BSD`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris postgresql-9.5=9.5.24-0ubuntu0.16.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.24-0ubuntu0.16.04.1.dsc' postgresql-9.5_9.5.24-0ubuntu0.16.04.1.dsc 3678 SHA512:c89c1699e6861f166807f206a26ed2468aaf5e04279366fc23635381ba90e5ad0ae35e14c90a048cc2e45d7d1acea8a3c88acc7e9a96a1e4f4b32f74a4ec57fc
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.24.orig.tar.bz2' postgresql-9.5_9.5.24.orig.tar.bz2 17881872 SHA512:6e649cd31f2761e2d070d8028b59a690ad76ff3d83a3aa982c4b222c8ea2927fda5e8f473330526673e27ad4b3cc99e8c66810e097c3dfc6517571405c6aede3
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.24-0ubuntu0.16.04.1.debian.tar.xz' postgresql-9.5_9.5.24-0ubuntu0.16.04.1.debian.tar.xz 28696 SHA512:99779695e499ee28b3a95af4b661cdf06c0f39bdd2fd6332d3c4d02368ab0cfd516b125ed1d8249c1dbccf3406224460af56e42445b2d62da5474c3726786154
+```
 
 ### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.5`
 
