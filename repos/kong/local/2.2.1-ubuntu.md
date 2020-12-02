@@ -1,10 +1,10 @@
-# `kong:2.2.0-ubuntu`
+# `kong:2.2.1-ubuntu`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8ec5e861d8304949796129c16a962dc6650ce31f66e61614ceddb33453373f00`
-- Created: `2020-11-26T01:23:08.930939195Z`
-- Virtual Size: ~ 338.69 Mb  
+- Image ID: `sha256:70caff3fdf6dd6a544ed6d0713696b69ac0d0913450ac32e69d2f5c4c2f44a93`
+- Created: `2020-12-02T01:05:39.799950813Z`
+- Virtual Size: ~ 338.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.2.0`
+  - `KONG_VERSION=2.2.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -884,11 +884,11 @@ $ apt-get source -qq --print-uris kmod=22-1ubuntu5.2
 'http://archive.ubuntu.com/ubuntu/pool/main/k/kmod/kmod_22-1ubuntu5.2.debian.tar.xz' kmod_22-1ubuntu5.2.debian.tar.xz 14524 SHA512:184d70264a6cf50b8df6e8bf19950c295c8c404633c2a782f75188e1c9fec639e6c673f594995f398e85c82613ffb4565131b62b7b8062dbae3de079c8778565
 ```
 
-### `dpkg` source package: `kong=2.2.0`
+### `dpkg` source package: `kong=2.2.1`
 
 Binary Packages:
 
-- `kong=2.2.0`
+- `kong=2.2.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1174,11 +1174,11 @@ $ apt-get source -qq --print-uris libusb=2:0.1.12-28
 'http://archive.ubuntu.com/ubuntu/pool/main/libu/libusb/libusb_0.1.12-28.debian.tar.xz' libusb_0.1.12-28.debian.tar.xz 21524 SHA256:eaf2314902b0bb9de3e1fa8c9abfcecea7b78c9824048016beaca34f7cc4351b
 ```
 
-### `dpkg` source package: `linux=4.4.0-194.226`
+### `dpkg` source package: `linux=4.4.0-197.229`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-194.226`
+- `linux-libc-dev:amd64=4.4.0-197.229`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1188,10 +1188,10 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.4.0-194.226
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-194.226.dsc' linux_4.4.0-194.226.dsc 11596 SHA512:c29227608e7adebe8ddaec1bceb2e0300fb6cb1ef55679311a3eee1d4d6f8b233174a3186ddc50deb3224ee27e03ebb9dedb297d37ea3a9499c07a0e2c8b675d
+$ apt-get source -qq --print-uris linux=4.4.0-197.229
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-197.229.dsc' linux_4.4.0-197.229.dsc 11628 SHA512:5bbc73a1b50c2e5a2e67daa4ac52b8ba948835776e796f0937a1f9fec13a6692652db2e50c4817f7ddcc3d45b05911298babd311c277566035483a167a1c3e9e
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA512:28ef89b62f663f2d90b58274799b7ebeff04699f08d0b83f650b0de179d4ef354450c81ecda07522b493c43d5eb2d530fa0f552a2794d48f84878e05efa39cc3
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-194.226.diff.gz' linux_4.4.0-194.226.diff.gz 16775263 SHA512:c63471bda5d161de4f9703c78bc9010f95d4868d49d159495debbcd7e3347aecae428e06e955a07cecd29150a3510580840e72cf2db4193d5d3a8bf21f4a68f1
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-197.229.diff.gz' linux_4.4.0-197.229.diff.gz 16855374 SHA512:58e796c1f47d9f3520bb7cf05e6b3e4d33de3e9a71db542fbf0b8c7026f00f87d8e9bf687f40e4e5e58bdd4a9018e8bedd20cad3240e98313eb63db1e2f19d87
 ```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
