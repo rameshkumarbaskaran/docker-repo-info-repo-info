@@ -61,7 +61,7 @@
 ## `mongo:3`
 
 ```console
-$ docker pull mongo@sha256:dabe62ce4c3ac75c2e953bfa13050b57a7647a3860fdbd1c43be6448f0cc03c7
+$ docker pull mongo@sha256:ab06635a5d759cda31e489fcad06648a3be628e4ad271e3d6d79e51c883c5b26
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -320,14 +320,14 @@ CMD ["mongod"]
 ### `mongo:3` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -344,13 +344,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -378,34 +378,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:3` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -422,13 +422,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -455,27 +455,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6`
 
 ```console
-$ docker pull mongo@sha256:dabe62ce4c3ac75c2e953bfa13050b57a7647a3860fdbd1c43be6448f0cc03c7
+$ docker pull mongo@sha256:ab06635a5d759cda31e489fcad06648a3be628e4ad271e3d6d79e51c883c5b26
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -734,14 +734,14 @@ CMD ["mongod"]
 ### `mongo:3.6` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -758,13 +758,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -792,34 +792,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:3.6` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -836,13 +836,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -869,27 +869,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6.21`
 
 ```console
-$ docker pull mongo@sha256:dabe62ce4c3ac75c2e953bfa13050b57a7647a3860fdbd1c43be6448f0cc03c7
+$ docker pull mongo@sha256:ab06635a5d759cda31e489fcad06648a3be628e4ad271e3d6d79e51c883c5b26
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1148,14 +1148,14 @@ CMD ["mongod"]
 ### `mongo:3.6.21` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -1172,13 +1172,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -1206,34 +1206,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:3.6.21` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -1250,13 +1250,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -1283,27 +1283,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6.21-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:941b8b2b079d42957db98ece97a811729e3f028ce0cbd5051369566474d0f4e9
+$ docker pull mongo@sha256:17a483f653296fcb97474a5709b979d8632bfaa64142b53db27a7ff6569e2d49
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1314,14 +1314,14 @@ $ docker pull mongo@sha256:941b8b2b079d42957db98ece97a811729e3f028ce0cbd50513695
 ### `mongo:3.6.21-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -1338,13 +1338,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -1372,34 +1372,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:3.6.21-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -1416,13 +1416,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -1449,27 +1449,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6.21-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:aa0239ce268d3dbade8052502c8b3b4af1c48c572259227478acb9959854ea0d
+$ docker pull mongo@sha256:2d58d50c81777e85e41493a44baa8eace98ac3183709655c12d3897925833b70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1479,14 +1479,14 @@ $ docker pull mongo@sha256:aa0239ce268d3dbade8052502c8b3b4af1c48c572259227478acb
 ### `mongo:3.6.21-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -1503,13 +1503,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -1536,27 +1536,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6.21-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:9de341f450ea228deb1e508569f9b4ccbd08dfd430c14dcd7e9cb3088a295882
+$ docker pull mongo@sha256:db899c01e765f7cbfbe6447006fcb3215070c918635e92b8935ee814d6eeb3d2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1566,14 +1566,14 @@ $ docker pull mongo@sha256:9de341f450ea228deb1e508569f9b4ccbd08dfd430c14dcd7e9cb
 ### `mongo:3.6.21-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -1590,13 +1590,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -1624,21 +1624,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6.21-xenial`
@@ -1901,7 +1901,7 @@ CMD ["mongod"]
 ## `mongo:3.6-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:941b8b2b079d42957db98ece97a811729e3f028ce0cbd5051369566474d0f4e9
+$ docker pull mongo@sha256:17a483f653296fcb97474a5709b979d8632bfaa64142b53db27a7ff6569e2d49
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1912,14 +1912,14 @@ $ docker pull mongo@sha256:941b8b2b079d42957db98ece97a811729e3f028ce0cbd50513695
 ### `mongo:3.6-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -1936,13 +1936,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -1970,34 +1970,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:3.6-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -2014,13 +2014,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -2047,27 +2047,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:aa0239ce268d3dbade8052502c8b3b4af1c48c572259227478acb9959854ea0d
+$ docker pull mongo@sha256:2d58d50c81777e85e41493a44baa8eace98ac3183709655c12d3897925833b70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2077,14 +2077,14 @@ $ docker pull mongo@sha256:aa0239ce268d3dbade8052502c8b3b4af1c48c572259227478acb
 ### `mongo:3.6-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -2101,13 +2101,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -2134,27 +2134,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:9de341f450ea228deb1e508569f9b4ccbd08dfd430c14dcd7e9cb3088a295882
+$ docker pull mongo@sha256:db899c01e765f7cbfbe6447006fcb3215070c918635e92b8935ee814d6eeb3d2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2164,14 +2164,14 @@ $ docker pull mongo@sha256:9de341f450ea228deb1e508569f9b4ccbd08dfd430c14dcd7e9cb
 ### `mongo:3.6-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -2188,13 +2188,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -2222,21 +2222,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3.6-xenial`
@@ -2499,7 +2499,7 @@ CMD ["mongod"]
 ## `mongo:3-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:941b8b2b079d42957db98ece97a811729e3f028ce0cbd5051369566474d0f4e9
+$ docker pull mongo@sha256:17a483f653296fcb97474a5709b979d8632bfaa64142b53db27a7ff6569e2d49
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2510,14 +2510,14 @@ $ docker pull mongo@sha256:941b8b2b079d42957db98ece97a811729e3f028ce0cbd50513695
 ### `mongo:3-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -2534,13 +2534,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -2568,34 +2568,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:3-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -2612,13 +2612,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -2645,27 +2645,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:aa0239ce268d3dbade8052502c8b3b4af1c48c572259227478acb9959854ea0d
+$ docker pull mongo@sha256:2d58d50c81777e85e41493a44baa8eace98ac3183709655c12d3897925833b70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2675,14 +2675,14 @@ $ docker pull mongo@sha256:aa0239ce268d3dbade8052502c8b3b4af1c48c572259227478acb
 ### `mongo:3-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:0dc7b622fd571ecb3f746a1ce9136838bac0102d25bda9f030cad57ca163aac0
+$ docker pull mongo@sha256:5c2fe9a14703fe6758606cd951dfdbfcae0d3f72cd3cda2115f85f1442b357c0
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2618263135 bytes)**  
+-	Total Size: **2.6 GB (2617001793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a223975e8a834b5b0c86d72555b98adfbfaec2a6bb56d5c9be3fce3f540b51a`
+-	Image ID: `sha256:aacdeb6a37485d1e143d602f963ba1808a81c9cf51fa9d2ecbb3dd93b000d414`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -2699,13 +2699,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:33:43 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 20:23:04 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 20:23:05 GMT
+# Wed, 02 Dec 2020 21:22:40 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:22:41 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 20:23:06 GMT
+# Wed, 02 Dec 2020 21:22:42 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 20:23:07 GMT
+# Wed, 02 Dec 2020 21:22:43 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -2732,27 +2732,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
 		Size: 1.2 KB (1153 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b8633ee3bcbcfec91fe5046656a3a69639a28474d9a52d981e528e7346b23a7`  
-		Last Modified: Mon, 16 Nov 2020 20:26:13 GMT  
-		Size: 230.2 MB (230225934 bytes)  
+	-	`sha256:fef21209f2c516220122d6dd8d9e26dbe81edc5da64f38df51a2a5afa2698722`  
+		Last Modified: Wed, 02 Dec 2020 21:49:18 GMT  
+		Size: 229.0 MB (228964578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ab46e4304e181b53e5685f949c95f3b93cd304f032468549af13ad5b61d703e`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1150 bytes)  
+	-	`sha256:674aaec99807ed1fb5df1ecf1b7d44db86b14112c978084a1b625c838d2b3bd9`  
+		Last Modified: Wed, 02 Dec 2020 21:48:32 GMT  
+		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a010b2add3bb64b61e3831ff3e7830b163ce9ed36e37ff51412fc9b00b925f15`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.1 KB (1127 bytes)  
+	-	`sha256:395b91e1dc6990dba34e968456f130a2807e4ef2a7b4648f9a578796266c8a19`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.2 KB (1169 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edafaada1074c1fc805cb5657ba35f464508bfc97f2084f84a8d26d2d2f80c6a`  
-		Last Modified: Mon, 16 Nov 2020 20:25:27 GMT  
-		Size: 1.2 KB (1154 bytes)  
+	-	`sha256:211b5c97b539165422966ded4c9e467c6172162d3b7a92f6a16962df2b86208b`  
+		Last Modified: Wed, 02 Dec 2020 21:48:33 GMT  
+		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:9de341f450ea228deb1e508569f9b4ccbd08dfd430c14dcd7e9cb3088a295882
+$ docker pull mongo@sha256:db899c01e765f7cbfbe6447006fcb3215070c918635e92b8935ee814d6eeb3d2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2762,14 +2762,14 @@ $ docker pull mongo@sha256:9de341f450ea228deb1e508569f9b4ccbd08dfd430c14dcd7e9cb
 ### `mongo:3-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:3727cb5f5745a404238f2930e7a89239db309b05ebb116ef30bd662bfbe2d3a9
+$ docker pull mongo@sha256:b23ecdbb20b459b5a3485a3eea8ddf548f182e1b37ae13b9ad934a9a42bdf2c1
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6001489373 bytes)**  
+-	Total Size: **6.0 GB (6000323525 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5d6e960a4c42386cb0fd948aeedc113dfc2ebafe63ec3eb3b346537940a88ad`
+-	Image ID: `sha256:b2ee252c6f7893e526033f15d52eca010bb21159f71fd73d5b26c14898793d6c`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -2786,13 +2786,13 @@ ENV MONGO_VERSION=3.6.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.21-signed.msi
 # Mon, 16 Nov 2020 19:15:09 GMT
 ENV MONGO_DOWNLOAD_SHA256=0b64db8d8a615976b76617c3425c9fc0500e18324be0de878a6c6143d1e8b5e2
-# Mon, 16 Nov 2020 19:33:23 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Mon, 16 Nov 2020 19:33:24 GMT
+# Wed, 02 Dec 2020 21:19:03 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=Server,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:19:03 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:04 GMT
 EXPOSE 27017
-# Mon, 16 Nov 2020 19:33:25 GMT
+# Wed, 02 Dec 2020 21:19:05 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -2820,21 +2820,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
 		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08dc2c02ceef418646c5db2452627cd3b4ca7a8dc1218b2524f9e37b4b3c023f`  
-		Last Modified: Mon, 16 Nov 2020 20:25:12 GMT  
-		Size: 230.9 MB (230922544 bytes)  
+	-	`sha256:929302a044aacf538041da73b8469f73d8c367e168b99a07db563318dceebf9f`  
+		Last Modified: Wed, 02 Dec 2020 21:48:18 GMT  
+		Size: 229.8 MB (229756708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c111facdbc2648f33aec1e8f6c8cd0f4e10ef59d535280f4d0fd56e73567b09c`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.2 KB (1152 bytes)  
+	-	`sha256:9edeb305ad931330d44d10cb9f2c3727a57f492f733d85f39702d375eb83ba15`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a52aedae7e98d0fb35f9650eb3abcaff4da262fd9c16657d43c13fffc1c39f7d`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:949350aa9526e86df2db146c94d31258d618d75ec8ff5e05bf9361d096810354`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aeeb619228391d1e59c79120414ccba28c197c19b23aead421c4516d37b61b2`  
-		Last Modified: Mon, 16 Nov 2020 20:24:26 GMT  
-		Size: 1.1 KB (1143 bytes)  
+	-	`sha256:a6cd5a0deb8640cab74b0d681cb10cfcbbfa5c6d097e4c0f3ebfc92a75fdd373`  
+		Last Modified: Wed, 02 Dec 2020 21:47:30 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:3-xenial`
@@ -3097,7 +3097,7 @@ CMD ["mongod"]
 ## `mongo:4`
 
 ```console
-$ docker pull mongo@sha256:d54fb51a493131117a8b85a2d46ed7d64a2cb79607fb3ce350d1722c0cafc812
+$ docker pull mongo@sha256:7ab905728ac01b90a72e3b38514778e54d798c3e0637283a260a76c312a67b34
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3468,14 +3468,14 @@ CMD ["mongod"]
 ### `mongo:4` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -3492,13 +3492,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -3526,34 +3526,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -3570,13 +3570,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -3603,27 +3603,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0`
 
 ```console
-$ docker pull mongo@sha256:0695ca6174f9e34f5de6d433b94451a16517bd69a1d81293534ffa065f7a6966
+$ docker pull mongo@sha256:2c705bd43236b1513539848a962fb73e3b3af497d68e75313aef4c9bb7ff5f55
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3882,14 +3882,14 @@ CMD ["mongod"]
 ### `mongo:4.0` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:b6def862878f8f793f0f97d5c1f3d73c48138719fce2bdf349fc4bc873c9ec8c
+$ docker pull mongo@sha256:e412470c5c908b9f3adce1d987f817821640dddeccaa55aa70edbfd4385ea5c8
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6470510457 bytes)**  
+-	Total Size: **6.0 GB (6004680078 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e0b44de5b5efe73f2d9adb001cbb543fb3abf6352698b5e1b7f9ccb61171e2f`
+-	Image ID: `sha256:ea33b718651574ae76ff84ed8c5019507ef64e9cdd5392d43911d28fb1a0bac1`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -3906,13 +3906,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:15:13 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:37:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:37:38 GMT
+# Wed, 02 Dec 2020 21:26:46 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:26:47 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:37:39 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:37:40 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -3940,34 +3940,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:00:11 GMT  
 		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b299a49c3639c1d63b418234d1a6b08e44d1e58b73f286712c4a138ed27c05c`  
-		Last Modified: Thu, 12 Nov 2020 20:01:50 GMT  
-		Size: 699.9 MB (699943626 bytes)  
+	-	`sha256:5afcd78c6473ac27105fa7e561c3b23ce8237d1e7b3ce7489d3703a73d382d7e`  
+		Last Modified: Wed, 02 Dec 2020 21:50:22 GMT  
+		Size: 234.1 MB (234113231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:415e636b8e366df3428242583685927b20c900e999f2c8e4d9a5fbfe918171f8`  
-		Last Modified: Thu, 12 Nov 2020 20:00:12 GMT  
-		Size: 1.1 KB (1144 bytes)  
+	-	`sha256:00f533ded080d7db318db26a33a6ca54bc09250e0bc8697cdf7eaad2b3ea6600`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30febe3fa863655163af344f744dcda1fc6b8041eae34afd7e14d13c56585c7d`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1132 bytes)  
+	-	`sha256:f4f564b0092fa6f33602db9fc9cb250fdc092dd5a9a8f2ccf86ec574420c4253`  
+		Last Modified: Wed, 02 Dec 2020 21:49:34 GMT  
+		Size: 1.2 KB (1155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e11eb3f9113ce12985469f98da6110ee0194cf8813c114b76cfecee891426cc0`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1130 bytes)  
+	-	`sha256:6762c3529cd07eea9662280b2479dc429e344237533dc535d040069e2250d5b8`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.0` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:bf9ca47a04d5c76d39cd4787047e24bfb8590662240ba8d55da885b5a17f1c38
+$ docker pull mongo@sha256:b1bf6364a557400c0e5423e4c17c17a5dd31847703a528a36ef2f238a3892f50
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2622916749 bytes)**  
+-	Total Size: **2.6 GB (2621345139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e342ddee20002b68804c929736fcc8c8c34acb17d83ba7b4f1f8e0d82f90bcf9`
+-	Image ID: `sha256:394c6c1a7822d1b78aa51c451b22613b6cadf5b6379bc29cbd9945acc7a4cfaf`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -3984,13 +3984,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:37:48 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:57:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:57:38 GMT
+# Wed, 02 Dec 2020 21:30:20 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:30:21 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:22 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:23 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -4017,27 +4017,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:02:07 GMT  
 		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ad73fa7dc7550276f0b1d89f62a9dbc3bd5184518e5f6b11756f51f1ba27f3b`  
-		Last Modified: Thu, 12 Nov 2020 20:02:54 GMT  
-		Size: 234.9 MB (234879494 bytes)  
+	-	`sha256:407605eeaead675cd013a4d0aacf3fe2ec1db357e3b9336f4ecf127a2123a2b2`  
+		Last Modified: Wed, 02 Dec 2020 21:51:22 GMT  
+		Size: 233.3 MB (233307942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:586b4472c44c74cf334d882f04555c8e200ff0f50e83bf20502607b1a305ae0d`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.2 KB (1151 bytes)  
+	-	`sha256:10e376fd312e029944934358b3670bd4f486e3d9184a109610d29199db095ac3`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed695a6fa860278666ce586c4a896ac3bddf75c9614a6fb1f9b281570084ccea`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1129 bytes)  
+	-	`sha256:8a38e45e85026380f3251e805fe368bc7b061ebcf18f8138ec01453a379a1906`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a650606a0123662f5d77dad6c36941cacb4a5ebdde9ee1c49235abce3e23446`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1142 bytes)  
+	-	`sha256:ec498a0da12edd4725ce593ce1509fcc996604db2ac5dda85808c3796b55b61a`  
+		Last Modified: Wed, 02 Dec 2020 21:50:34 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0.21`
 
 ```console
-$ docker pull mongo@sha256:0695ca6174f9e34f5de6d433b94451a16517bd69a1d81293534ffa065f7a6966
+$ docker pull mongo@sha256:2c705bd43236b1513539848a962fb73e3b3af497d68e75313aef4c9bb7ff5f55
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4296,14 +4296,14 @@ CMD ["mongod"]
 ### `mongo:4.0.21` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:b6def862878f8f793f0f97d5c1f3d73c48138719fce2bdf349fc4bc873c9ec8c
+$ docker pull mongo@sha256:e412470c5c908b9f3adce1d987f817821640dddeccaa55aa70edbfd4385ea5c8
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6470510457 bytes)**  
+-	Total Size: **6.0 GB (6004680078 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e0b44de5b5efe73f2d9adb001cbb543fb3abf6352698b5e1b7f9ccb61171e2f`
+-	Image ID: `sha256:ea33b718651574ae76ff84ed8c5019507ef64e9cdd5392d43911d28fb1a0bac1`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -4320,13 +4320,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:15:13 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:37:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:37:38 GMT
+# Wed, 02 Dec 2020 21:26:46 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:26:47 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:37:39 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:37:40 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -4354,34 +4354,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:00:11 GMT  
 		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b299a49c3639c1d63b418234d1a6b08e44d1e58b73f286712c4a138ed27c05c`  
-		Last Modified: Thu, 12 Nov 2020 20:01:50 GMT  
-		Size: 699.9 MB (699943626 bytes)  
+	-	`sha256:5afcd78c6473ac27105fa7e561c3b23ce8237d1e7b3ce7489d3703a73d382d7e`  
+		Last Modified: Wed, 02 Dec 2020 21:50:22 GMT  
+		Size: 234.1 MB (234113231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:415e636b8e366df3428242583685927b20c900e999f2c8e4d9a5fbfe918171f8`  
-		Last Modified: Thu, 12 Nov 2020 20:00:12 GMT  
-		Size: 1.1 KB (1144 bytes)  
+	-	`sha256:00f533ded080d7db318db26a33a6ca54bc09250e0bc8697cdf7eaad2b3ea6600`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30febe3fa863655163af344f744dcda1fc6b8041eae34afd7e14d13c56585c7d`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1132 bytes)  
+	-	`sha256:f4f564b0092fa6f33602db9fc9cb250fdc092dd5a9a8f2ccf86ec574420c4253`  
+		Last Modified: Wed, 02 Dec 2020 21:49:34 GMT  
+		Size: 1.2 KB (1155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e11eb3f9113ce12985469f98da6110ee0194cf8813c114b76cfecee891426cc0`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1130 bytes)  
+	-	`sha256:6762c3529cd07eea9662280b2479dc429e344237533dc535d040069e2250d5b8`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.0.21` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:bf9ca47a04d5c76d39cd4787047e24bfb8590662240ba8d55da885b5a17f1c38
+$ docker pull mongo@sha256:b1bf6364a557400c0e5423e4c17c17a5dd31847703a528a36ef2f238a3892f50
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2622916749 bytes)**  
+-	Total Size: **2.6 GB (2621345139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e342ddee20002b68804c929736fcc8c8c34acb17d83ba7b4f1f8e0d82f90bcf9`
+-	Image ID: `sha256:394c6c1a7822d1b78aa51c451b22613b6cadf5b6379bc29cbd9945acc7a4cfaf`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -4398,13 +4398,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:37:48 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:57:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:57:38 GMT
+# Wed, 02 Dec 2020 21:30:20 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:30:21 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:22 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:23 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -4431,27 +4431,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:02:07 GMT  
 		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ad73fa7dc7550276f0b1d89f62a9dbc3bd5184518e5f6b11756f51f1ba27f3b`  
-		Last Modified: Thu, 12 Nov 2020 20:02:54 GMT  
-		Size: 234.9 MB (234879494 bytes)  
+	-	`sha256:407605eeaead675cd013a4d0aacf3fe2ec1db357e3b9336f4ecf127a2123a2b2`  
+		Last Modified: Wed, 02 Dec 2020 21:51:22 GMT  
+		Size: 233.3 MB (233307942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:586b4472c44c74cf334d882f04555c8e200ff0f50e83bf20502607b1a305ae0d`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.2 KB (1151 bytes)  
+	-	`sha256:10e376fd312e029944934358b3670bd4f486e3d9184a109610d29199db095ac3`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed695a6fa860278666ce586c4a896ac3bddf75c9614a6fb1f9b281570084ccea`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1129 bytes)  
+	-	`sha256:8a38e45e85026380f3251e805fe368bc7b061ebcf18f8138ec01453a379a1906`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a650606a0123662f5d77dad6c36941cacb4a5ebdde9ee1c49235abce3e23446`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1142 bytes)  
+	-	`sha256:ec498a0da12edd4725ce593ce1509fcc996604db2ac5dda85808c3796b55b61a`  
+		Last Modified: Wed, 02 Dec 2020 21:50:34 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0.21-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:bb867978679b3552d42ed9e6bce2a9a1f91711b5eefb947e0155be208a12f2d7
+$ docker pull mongo@sha256:fcf29dddbd7aed4bf0bcc10384421eeff17a7c762d323f43a9a4bd325f3b8b9e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4462,14 +4462,14 @@ $ docker pull mongo@sha256:bb867978679b3552d42ed9e6bce2a9a1f91711b5eefb947e0155b
 ### `mongo:4.0.21-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:b6def862878f8f793f0f97d5c1f3d73c48138719fce2bdf349fc4bc873c9ec8c
+$ docker pull mongo@sha256:e412470c5c908b9f3adce1d987f817821640dddeccaa55aa70edbfd4385ea5c8
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6470510457 bytes)**  
+-	Total Size: **6.0 GB (6004680078 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e0b44de5b5efe73f2d9adb001cbb543fb3abf6352698b5e1b7f9ccb61171e2f`
+-	Image ID: `sha256:ea33b718651574ae76ff84ed8c5019507ef64e9cdd5392d43911d28fb1a0bac1`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -4486,13 +4486,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:15:13 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:37:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:37:38 GMT
+# Wed, 02 Dec 2020 21:26:46 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:26:47 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:37:39 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:37:40 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -4520,34 +4520,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:00:11 GMT  
 		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b299a49c3639c1d63b418234d1a6b08e44d1e58b73f286712c4a138ed27c05c`  
-		Last Modified: Thu, 12 Nov 2020 20:01:50 GMT  
-		Size: 699.9 MB (699943626 bytes)  
+	-	`sha256:5afcd78c6473ac27105fa7e561c3b23ce8237d1e7b3ce7489d3703a73d382d7e`  
+		Last Modified: Wed, 02 Dec 2020 21:50:22 GMT  
+		Size: 234.1 MB (234113231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:415e636b8e366df3428242583685927b20c900e999f2c8e4d9a5fbfe918171f8`  
-		Last Modified: Thu, 12 Nov 2020 20:00:12 GMT  
-		Size: 1.1 KB (1144 bytes)  
+	-	`sha256:00f533ded080d7db318db26a33a6ca54bc09250e0bc8697cdf7eaad2b3ea6600`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30febe3fa863655163af344f744dcda1fc6b8041eae34afd7e14d13c56585c7d`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1132 bytes)  
+	-	`sha256:f4f564b0092fa6f33602db9fc9cb250fdc092dd5a9a8f2ccf86ec574420c4253`  
+		Last Modified: Wed, 02 Dec 2020 21:49:34 GMT  
+		Size: 1.2 KB (1155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e11eb3f9113ce12985469f98da6110ee0194cf8813c114b76cfecee891426cc0`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1130 bytes)  
+	-	`sha256:6762c3529cd07eea9662280b2479dc429e344237533dc535d040069e2250d5b8`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.0.21-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:bf9ca47a04d5c76d39cd4787047e24bfb8590662240ba8d55da885b5a17f1c38
+$ docker pull mongo@sha256:b1bf6364a557400c0e5423e4c17c17a5dd31847703a528a36ef2f238a3892f50
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2622916749 bytes)**  
+-	Total Size: **2.6 GB (2621345139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e342ddee20002b68804c929736fcc8c8c34acb17d83ba7b4f1f8e0d82f90bcf9`
+-	Image ID: `sha256:394c6c1a7822d1b78aa51c451b22613b6cadf5b6379bc29cbd9945acc7a4cfaf`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -4564,13 +4564,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:37:48 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:57:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:57:38 GMT
+# Wed, 02 Dec 2020 21:30:20 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:30:21 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:22 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:23 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -4597,27 +4597,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:02:07 GMT  
 		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ad73fa7dc7550276f0b1d89f62a9dbc3bd5184518e5f6b11756f51f1ba27f3b`  
-		Last Modified: Thu, 12 Nov 2020 20:02:54 GMT  
-		Size: 234.9 MB (234879494 bytes)  
+	-	`sha256:407605eeaead675cd013a4d0aacf3fe2ec1db357e3b9336f4ecf127a2123a2b2`  
+		Last Modified: Wed, 02 Dec 2020 21:51:22 GMT  
+		Size: 233.3 MB (233307942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:586b4472c44c74cf334d882f04555c8e200ff0f50e83bf20502607b1a305ae0d`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.2 KB (1151 bytes)  
+	-	`sha256:10e376fd312e029944934358b3670bd4f486e3d9184a109610d29199db095ac3`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed695a6fa860278666ce586c4a896ac3bddf75c9614a6fb1f9b281570084ccea`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1129 bytes)  
+	-	`sha256:8a38e45e85026380f3251e805fe368bc7b061ebcf18f8138ec01453a379a1906`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a650606a0123662f5d77dad6c36941cacb4a5ebdde9ee1c49235abce3e23446`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1142 bytes)  
+	-	`sha256:ec498a0da12edd4725ce593ce1509fcc996604db2ac5dda85808c3796b55b61a`  
+		Last Modified: Wed, 02 Dec 2020 21:50:34 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0.21-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:ea2fd5b315a4588b4e81d3e6e438ac04af57996236df6af3db233a72b8e59fc1
+$ docker pull mongo@sha256:3daf53b91d4f777115e58d3994afdf3c1ba456ae4b8f7b26273fde5de2d53db9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4627,14 +4627,14 @@ $ docker pull mongo@sha256:ea2fd5b315a4588b4e81d3e6e438ac04af57996236df6af3db233
 ### `mongo:4.0.21-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:bf9ca47a04d5c76d39cd4787047e24bfb8590662240ba8d55da885b5a17f1c38
+$ docker pull mongo@sha256:b1bf6364a557400c0e5423e4c17c17a5dd31847703a528a36ef2f238a3892f50
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2622916749 bytes)**  
+-	Total Size: **2.6 GB (2621345139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e342ddee20002b68804c929736fcc8c8c34acb17d83ba7b4f1f8e0d82f90bcf9`
+-	Image ID: `sha256:394c6c1a7822d1b78aa51c451b22613b6cadf5b6379bc29cbd9945acc7a4cfaf`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -4651,13 +4651,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:37:48 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:57:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:57:38 GMT
+# Wed, 02 Dec 2020 21:30:20 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:30:21 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:22 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:23 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -4684,27 +4684,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:02:07 GMT  
 		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ad73fa7dc7550276f0b1d89f62a9dbc3bd5184518e5f6b11756f51f1ba27f3b`  
-		Last Modified: Thu, 12 Nov 2020 20:02:54 GMT  
-		Size: 234.9 MB (234879494 bytes)  
+	-	`sha256:407605eeaead675cd013a4d0aacf3fe2ec1db357e3b9336f4ecf127a2123a2b2`  
+		Last Modified: Wed, 02 Dec 2020 21:51:22 GMT  
+		Size: 233.3 MB (233307942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:586b4472c44c74cf334d882f04555c8e200ff0f50e83bf20502607b1a305ae0d`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.2 KB (1151 bytes)  
+	-	`sha256:10e376fd312e029944934358b3670bd4f486e3d9184a109610d29199db095ac3`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed695a6fa860278666ce586c4a896ac3bddf75c9614a6fb1f9b281570084ccea`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1129 bytes)  
+	-	`sha256:8a38e45e85026380f3251e805fe368bc7b061ebcf18f8138ec01453a379a1906`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a650606a0123662f5d77dad6c36941cacb4a5ebdde9ee1c49235abce3e23446`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1142 bytes)  
+	-	`sha256:ec498a0da12edd4725ce593ce1509fcc996604db2ac5dda85808c3796b55b61a`  
+		Last Modified: Wed, 02 Dec 2020 21:50:34 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0.21-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:239480a4c4401c58f2a33dc7e0c026959b985a7a2ffcbdb68aebbf9050e7b307
+$ docker pull mongo@sha256:41973befd3ee05838dd811281e1b66aef225ed153c666201c446c27a5da0d886
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4714,14 +4714,14 @@ $ docker pull mongo@sha256:239480a4c4401c58f2a33dc7e0c026959b985a7a2ffcbdb68aebb
 ### `mongo:4.0.21-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:b6def862878f8f793f0f97d5c1f3d73c48138719fce2bdf349fc4bc873c9ec8c
+$ docker pull mongo@sha256:e412470c5c908b9f3adce1d987f817821640dddeccaa55aa70edbfd4385ea5c8
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6470510457 bytes)**  
+-	Total Size: **6.0 GB (6004680078 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e0b44de5b5efe73f2d9adb001cbb543fb3abf6352698b5e1b7f9ccb61171e2f`
+-	Image ID: `sha256:ea33b718651574ae76ff84ed8c5019507ef64e9cdd5392d43911d28fb1a0bac1`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -4738,13 +4738,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:15:13 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:37:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:37:38 GMT
+# Wed, 02 Dec 2020 21:26:46 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:26:47 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:37:39 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:37:40 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -4772,21 +4772,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:00:11 GMT  
 		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b299a49c3639c1d63b418234d1a6b08e44d1e58b73f286712c4a138ed27c05c`  
-		Last Modified: Thu, 12 Nov 2020 20:01:50 GMT  
-		Size: 699.9 MB (699943626 bytes)  
+	-	`sha256:5afcd78c6473ac27105fa7e561c3b23ce8237d1e7b3ce7489d3703a73d382d7e`  
+		Last Modified: Wed, 02 Dec 2020 21:50:22 GMT  
+		Size: 234.1 MB (234113231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:415e636b8e366df3428242583685927b20c900e999f2c8e4d9a5fbfe918171f8`  
-		Last Modified: Thu, 12 Nov 2020 20:00:12 GMT  
-		Size: 1.1 KB (1144 bytes)  
+	-	`sha256:00f533ded080d7db318db26a33a6ca54bc09250e0bc8697cdf7eaad2b3ea6600`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30febe3fa863655163af344f744dcda1fc6b8041eae34afd7e14d13c56585c7d`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1132 bytes)  
+	-	`sha256:f4f564b0092fa6f33602db9fc9cb250fdc092dd5a9a8f2ccf86ec574420c4253`  
+		Last Modified: Wed, 02 Dec 2020 21:49:34 GMT  
+		Size: 1.2 KB (1155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e11eb3f9113ce12985469f98da6110ee0194cf8813c114b76cfecee891426cc0`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1130 bytes)  
+	-	`sha256:6762c3529cd07eea9662280b2479dc429e344237533dc535d040069e2250d5b8`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0.21-xenial`
@@ -5049,7 +5049,7 @@ CMD ["mongod"]
 ## `mongo:4.0-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:bb867978679b3552d42ed9e6bce2a9a1f91711b5eefb947e0155be208a12f2d7
+$ docker pull mongo@sha256:fcf29dddbd7aed4bf0bcc10384421eeff17a7c762d323f43a9a4bd325f3b8b9e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5060,14 +5060,14 @@ $ docker pull mongo@sha256:bb867978679b3552d42ed9e6bce2a9a1f91711b5eefb947e0155b
 ### `mongo:4.0-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:b6def862878f8f793f0f97d5c1f3d73c48138719fce2bdf349fc4bc873c9ec8c
+$ docker pull mongo@sha256:e412470c5c908b9f3adce1d987f817821640dddeccaa55aa70edbfd4385ea5c8
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6470510457 bytes)**  
+-	Total Size: **6.0 GB (6004680078 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e0b44de5b5efe73f2d9adb001cbb543fb3abf6352698b5e1b7f9ccb61171e2f`
+-	Image ID: `sha256:ea33b718651574ae76ff84ed8c5019507ef64e9cdd5392d43911d28fb1a0bac1`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -5084,13 +5084,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:15:13 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:37:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:37:38 GMT
+# Wed, 02 Dec 2020 21:26:46 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:26:47 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:37:39 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:37:40 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -5118,34 +5118,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:00:11 GMT  
 		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b299a49c3639c1d63b418234d1a6b08e44d1e58b73f286712c4a138ed27c05c`  
-		Last Modified: Thu, 12 Nov 2020 20:01:50 GMT  
-		Size: 699.9 MB (699943626 bytes)  
+	-	`sha256:5afcd78c6473ac27105fa7e561c3b23ce8237d1e7b3ce7489d3703a73d382d7e`  
+		Last Modified: Wed, 02 Dec 2020 21:50:22 GMT  
+		Size: 234.1 MB (234113231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:415e636b8e366df3428242583685927b20c900e999f2c8e4d9a5fbfe918171f8`  
-		Last Modified: Thu, 12 Nov 2020 20:00:12 GMT  
-		Size: 1.1 KB (1144 bytes)  
+	-	`sha256:00f533ded080d7db318db26a33a6ca54bc09250e0bc8697cdf7eaad2b3ea6600`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30febe3fa863655163af344f744dcda1fc6b8041eae34afd7e14d13c56585c7d`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1132 bytes)  
+	-	`sha256:f4f564b0092fa6f33602db9fc9cb250fdc092dd5a9a8f2ccf86ec574420c4253`  
+		Last Modified: Wed, 02 Dec 2020 21:49:34 GMT  
+		Size: 1.2 KB (1155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e11eb3f9113ce12985469f98da6110ee0194cf8813c114b76cfecee891426cc0`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1130 bytes)  
+	-	`sha256:6762c3529cd07eea9662280b2479dc429e344237533dc535d040069e2250d5b8`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.0-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:bf9ca47a04d5c76d39cd4787047e24bfb8590662240ba8d55da885b5a17f1c38
+$ docker pull mongo@sha256:b1bf6364a557400c0e5423e4c17c17a5dd31847703a528a36ef2f238a3892f50
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2622916749 bytes)**  
+-	Total Size: **2.6 GB (2621345139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e342ddee20002b68804c929736fcc8c8c34acb17d83ba7b4f1f8e0d82f90bcf9`
+-	Image ID: `sha256:394c6c1a7822d1b78aa51c451b22613b6cadf5b6379bc29cbd9945acc7a4cfaf`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -5162,13 +5162,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:37:48 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:57:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:57:38 GMT
+# Wed, 02 Dec 2020 21:30:20 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:30:21 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:22 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:23 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -5195,27 +5195,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:02:07 GMT  
 		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ad73fa7dc7550276f0b1d89f62a9dbc3bd5184518e5f6b11756f51f1ba27f3b`  
-		Last Modified: Thu, 12 Nov 2020 20:02:54 GMT  
-		Size: 234.9 MB (234879494 bytes)  
+	-	`sha256:407605eeaead675cd013a4d0aacf3fe2ec1db357e3b9336f4ecf127a2123a2b2`  
+		Last Modified: Wed, 02 Dec 2020 21:51:22 GMT  
+		Size: 233.3 MB (233307942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:586b4472c44c74cf334d882f04555c8e200ff0f50e83bf20502607b1a305ae0d`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.2 KB (1151 bytes)  
+	-	`sha256:10e376fd312e029944934358b3670bd4f486e3d9184a109610d29199db095ac3`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed695a6fa860278666ce586c4a896ac3bddf75c9614a6fb1f9b281570084ccea`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1129 bytes)  
+	-	`sha256:8a38e45e85026380f3251e805fe368bc7b061ebcf18f8138ec01453a379a1906`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a650606a0123662f5d77dad6c36941cacb4a5ebdde9ee1c49235abce3e23446`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1142 bytes)  
+	-	`sha256:ec498a0da12edd4725ce593ce1509fcc996604db2ac5dda85808c3796b55b61a`  
+		Last Modified: Wed, 02 Dec 2020 21:50:34 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:ea2fd5b315a4588b4e81d3e6e438ac04af57996236df6af3db233a72b8e59fc1
+$ docker pull mongo@sha256:3daf53b91d4f777115e58d3994afdf3c1ba456ae4b8f7b26273fde5de2d53db9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5225,14 +5225,14 @@ $ docker pull mongo@sha256:ea2fd5b315a4588b4e81d3e6e438ac04af57996236df6af3db233
 ### `mongo:4.0-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:bf9ca47a04d5c76d39cd4787047e24bfb8590662240ba8d55da885b5a17f1c38
+$ docker pull mongo@sha256:b1bf6364a557400c0e5423e4c17c17a5dd31847703a528a36ef2f238a3892f50
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2622916749 bytes)**  
+-	Total Size: **2.6 GB (2621345139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e342ddee20002b68804c929736fcc8c8c34acb17d83ba7b4f1f8e0d82f90bcf9`
+-	Image ID: `sha256:394c6c1a7822d1b78aa51c451b22613b6cadf5b6379bc29cbd9945acc7a4cfaf`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -5249,13 +5249,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:37:48 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:57:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:57:38 GMT
+# Wed, 02 Dec 2020 21:30:20 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:30:21 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:22 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:57:39 GMT
+# Wed, 02 Dec 2020 21:30:23 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -5282,27 +5282,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:02:07 GMT  
 		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ad73fa7dc7550276f0b1d89f62a9dbc3bd5184518e5f6b11756f51f1ba27f3b`  
-		Last Modified: Thu, 12 Nov 2020 20:02:54 GMT  
-		Size: 234.9 MB (234879494 bytes)  
+	-	`sha256:407605eeaead675cd013a4d0aacf3fe2ec1db357e3b9336f4ecf127a2123a2b2`  
+		Last Modified: Wed, 02 Dec 2020 21:51:22 GMT  
+		Size: 233.3 MB (233307942 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:586b4472c44c74cf334d882f04555c8e200ff0f50e83bf20502607b1a305ae0d`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.2 KB (1151 bytes)  
+	-	`sha256:10e376fd312e029944934358b3670bd4f486e3d9184a109610d29199db095ac3`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1126 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed695a6fa860278666ce586c4a896ac3bddf75c9614a6fb1f9b281570084ccea`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1129 bytes)  
+	-	`sha256:8a38e45e85026380f3251e805fe368bc7b061ebcf18f8138ec01453a379a1906`  
+		Last Modified: Wed, 02 Dec 2020 21:50:35 GMT  
+		Size: 1.1 KB (1115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a650606a0123662f5d77dad6c36941cacb4a5ebdde9ee1c49235abce3e23446`  
-		Last Modified: Thu, 12 Nov 2020 20:02:06 GMT  
-		Size: 1.1 KB (1142 bytes)  
+	-	`sha256:ec498a0da12edd4725ce593ce1509fcc996604db2ac5dda85808c3796b55b61a`  
+		Last Modified: Wed, 02 Dec 2020 21:50:34 GMT  
+		Size: 1.1 KB (1123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:239480a4c4401c58f2a33dc7e0c026959b985a7a2ffcbdb68aebbf9050e7b307
+$ docker pull mongo@sha256:41973befd3ee05838dd811281e1b66aef225ed153c666201c446c27a5da0d886
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5312,14 +5312,14 @@ $ docker pull mongo@sha256:239480a4c4401c58f2a33dc7e0c026959b985a7a2ffcbdb68aebb
 ### `mongo:4.0-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:b6def862878f8f793f0f97d5c1f3d73c48138719fce2bdf349fc4bc873c9ec8c
+$ docker pull mongo@sha256:e412470c5c908b9f3adce1d987f817821640dddeccaa55aa70edbfd4385ea5c8
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6470510457 bytes)**  
+-	Total Size: **6.0 GB (6004680078 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e0b44de5b5efe73f2d9adb001cbb543fb3abf6352698b5e1b7f9ccb61171e2f`
+-	Image ID: `sha256:ea33b718651574ae76ff84ed8c5019507ef64e9cdd5392d43911d28fb1a0bac1`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -5336,13 +5336,13 @@ ENV MONGO_VERSION=4.0.21
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.21-signed.msi
 # Thu, 12 Nov 2020 19:15:13 GMT
 ENV MONGO_DOWNLOAD_SHA256=6dcb6a76e19e7bcbdc0d97155c29f50e0ab3f6bd6c6f77d4b9003ee3cd474ef0
-# Thu, 12 Nov 2020 19:37:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Thu, 12 Nov 2020 19:37:38 GMT
+# Wed, 02 Dec 2020 21:26:46 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:26:47 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Thu, 12 Nov 2020 19:37:39 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 EXPOSE 27017
-# Thu, 12 Nov 2020 19:37:40 GMT
+# Wed, 02 Dec 2020 21:26:48 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -5370,21 +5370,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Thu, 12 Nov 2020 20:00:11 GMT  
 		Size: 1.1 KB (1144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b299a49c3639c1d63b418234d1a6b08e44d1e58b73f286712c4a138ed27c05c`  
-		Last Modified: Thu, 12 Nov 2020 20:01:50 GMT  
-		Size: 699.9 MB (699943626 bytes)  
+	-	`sha256:5afcd78c6473ac27105fa7e561c3b23ce8237d1e7b3ce7489d3703a73d382d7e`  
+		Last Modified: Wed, 02 Dec 2020 21:50:22 GMT  
+		Size: 234.1 MB (234113231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:415e636b8e366df3428242583685927b20c900e999f2c8e4d9a5fbfe918171f8`  
-		Last Modified: Thu, 12 Nov 2020 20:00:12 GMT  
-		Size: 1.1 KB (1144 bytes)  
+	-	`sha256:00f533ded080d7db318db26a33a6ca54bc09250e0bc8697cdf7eaad2b3ea6600`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30febe3fa863655163af344f744dcda1fc6b8041eae34afd7e14d13c56585c7d`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1132 bytes)  
+	-	`sha256:f4f564b0092fa6f33602db9fc9cb250fdc092dd5a9a8f2ccf86ec574420c4253`  
+		Last Modified: Wed, 02 Dec 2020 21:49:34 GMT  
+		Size: 1.2 KB (1155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e11eb3f9113ce12985469f98da6110ee0194cf8813c114b76cfecee891426cc0`  
-		Last Modified: Thu, 12 Nov 2020 20:00:10 GMT  
-		Size: 1.1 KB (1130 bytes)  
+	-	`sha256:6762c3529cd07eea9662280b2479dc429e344237533dc535d040069e2250d5b8`  
+		Last Modified: Wed, 02 Dec 2020 21:49:37 GMT  
+		Size: 1.1 KB (1138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.0-xenial`
@@ -5647,7 +5647,7 @@ CMD ["mongod"]
 ## `mongo:4.2`
 
 ```console
-$ docker pull mongo@sha256:4325331e60e37722c439a8ff070ef3fdd7c05f58814396180563c8b869e908ae
+$ docker pull mongo@sha256:3d8f89ad966b482b2e5772422a9a988aa67152837c92b03e5561760c67b91936
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5898,14 +5898,14 @@ CMD ["mongod"]
 ### `mongo:4.2` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:0c3530b5c53c029794cecaa70f54f9cc7b3be8d1c942d7f6a519548fe537eeee
+$ docker pull mongo@sha256:c2cbab396e344eefbd535484ed22487cf27dcc062994bb9435f0fc82e2eb3ab6
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6527219093 bytes)**  
+-	Total Size: **6.1 GB (6061414033 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4295d9e8c60c0511c1b9671338cef790c975d92909dd4c44855fe10953c17bde`
+-	Image ID: `sha256:b6aa43cd5bcb46a0f10508a87f5926e608669b728489b9ded62ef5eacacd7cdc`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -5922,13 +5922,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:15:27 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 02:39:41 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 02:39:42 GMT
+# Wed, 02 Dec 2020 21:35:00 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:35:02 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 02:39:43 GMT
+# Wed, 02 Dec 2020 21:35:03 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 02:39:44 GMT
+# Wed, 02 Dec 2020 21:35:04 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -5956,34 +5956,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
 		Size: 1.2 KB (1151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5740c03cc43019adcf4583234402eb7dd9b573859592c24d7bf1b0482946b47`  
-		Last Modified: Sat, 21 Nov 2020 03:45:25 GMT  
-		Size: 756.7 MB (756652219 bytes)  
+	-	`sha256:acdbc685d6283d61b783d1a85f4623e76562171b5002e4f3d92b8f53bf1bddba`  
+		Last Modified: Wed, 02 Dec 2020 21:52:34 GMT  
+		Size: 290.8 MB (290847200 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f73253df88b204cded18723ad3322855547646b1aea838b91fbd9da50cddcb08`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.2 KB (1158 bytes)  
+	-	`sha256:59f65364060b576975b235b165a777540995097ddf90358b7e26bb7289cca2fe`  
+		Last Modified: Wed, 02 Dec 2020 21:51:36 GMT  
+		Size: 1.1 KB (1102 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfddceb756aa74b9f84303e53fb896da90b2dc21b444b5298ed79b88bae7a6cd`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1121 bytes)  
+	-	`sha256:a6c7ea7db0643567d961551ad9f14d13bd4b316c9670db5ec5e3d70097d91234`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:000cdbdcf90d2c6c3037c354f84620436097e506d30aa57e3e5e80fb2906deba`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1131 bytes)  
+	-	`sha256:e70bc45a9da1ee1ec3cb529cf7377abd123b425735237e22e5b503475d30acfa`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.2` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:e057195cf9feea5514e3569d8d1262c595c80e4a9c4f146d712bcdc6ce7fd8db
+$ docker pull mongo@sha256:c25321cc72d81edd01f5ecb4932c5a38035cd10dacaa1d6aea21f898b38b5adc
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2679660026 bytes)**  
+-	Total Size: **2.7 GB (2678077200 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a1b9cbe486ab38689096ce356f7886d3ef4aec37750b1059b630b76a58a26063`
+-	Image ID: `sha256:516d85b31d48a7493f1071455b913a57253178fc4b70f4602900aa16f695b878`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -6000,13 +6000,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:40:03 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 03:01:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:01:38 GMT
+# Wed, 02 Dec 2020 21:39:07 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:39:08 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:09 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:10 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -6033,27 +6033,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
 		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1593f65b48b9692321639ddef4ee268867f075319286eccb9f17c366f2819bb0`  
-		Last Modified: Sat, 21 Nov 2020 03:46:47 GMT  
-		Size: 291.6 MB (291622758 bytes)  
+	-	`sha256:330e1aec4c0f125188f33d273e6af2ff95b3b067498c23200133ef1c4703f1f0`  
+		Last Modified: Wed, 02 Dec 2020 21:53:47 GMT  
+		Size: 290.0 MB (290039869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24abeb5992757cbbc07a0bbd3dfc675512cf613db7a2dc26ae22f024b813c899`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1147 bytes)  
+	-	`sha256:17d4c52e8b85505d4673ed47b757cba48fe68c172dd3238c6a6a2aa287b219bc`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9991bece48f06544eeeaaca4d8652d27877f96a723467d1b63d8bb55525ea45`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:c570130fd96e0641fd914da65ebd66e9798f8069788be32072c8d02a5b1d8fe4`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50b4a357f03a4649c09cbb3a9aec8658d88b87652c482cd17f532fbc863f5066`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:925bc0bd3bcc1ad5d49500570da8da0137013943a9a446abffcd7b846962eef9`  
+		Last Modified: Wed, 02 Dec 2020 21:52:50 GMT  
+		Size: 1.2 KB (1159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.2.11`
 
 ```console
-$ docker pull mongo@sha256:4325331e60e37722c439a8ff070ef3fdd7c05f58814396180563c8b869e908ae
+$ docker pull mongo@sha256:3d8f89ad966b482b2e5772422a9a988aa67152837c92b03e5561760c67b91936
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6304,14 +6304,14 @@ CMD ["mongod"]
 ### `mongo:4.2.11` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:0c3530b5c53c029794cecaa70f54f9cc7b3be8d1c942d7f6a519548fe537eeee
+$ docker pull mongo@sha256:c2cbab396e344eefbd535484ed22487cf27dcc062994bb9435f0fc82e2eb3ab6
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6527219093 bytes)**  
+-	Total Size: **6.1 GB (6061414033 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4295d9e8c60c0511c1b9671338cef790c975d92909dd4c44855fe10953c17bde`
+-	Image ID: `sha256:b6aa43cd5bcb46a0f10508a87f5926e608669b728489b9ded62ef5eacacd7cdc`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -6328,13 +6328,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:15:27 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 02:39:41 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 02:39:42 GMT
+# Wed, 02 Dec 2020 21:35:00 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:35:02 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 02:39:43 GMT
+# Wed, 02 Dec 2020 21:35:03 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 02:39:44 GMT
+# Wed, 02 Dec 2020 21:35:04 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -6362,34 +6362,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
 		Size: 1.2 KB (1151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5740c03cc43019adcf4583234402eb7dd9b573859592c24d7bf1b0482946b47`  
-		Last Modified: Sat, 21 Nov 2020 03:45:25 GMT  
-		Size: 756.7 MB (756652219 bytes)  
+	-	`sha256:acdbc685d6283d61b783d1a85f4623e76562171b5002e4f3d92b8f53bf1bddba`  
+		Last Modified: Wed, 02 Dec 2020 21:52:34 GMT  
+		Size: 290.8 MB (290847200 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f73253df88b204cded18723ad3322855547646b1aea838b91fbd9da50cddcb08`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.2 KB (1158 bytes)  
+	-	`sha256:59f65364060b576975b235b165a777540995097ddf90358b7e26bb7289cca2fe`  
+		Last Modified: Wed, 02 Dec 2020 21:51:36 GMT  
+		Size: 1.1 KB (1102 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfddceb756aa74b9f84303e53fb896da90b2dc21b444b5298ed79b88bae7a6cd`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1121 bytes)  
+	-	`sha256:a6c7ea7db0643567d961551ad9f14d13bd4b316c9670db5ec5e3d70097d91234`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:000cdbdcf90d2c6c3037c354f84620436097e506d30aa57e3e5e80fb2906deba`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1131 bytes)  
+	-	`sha256:e70bc45a9da1ee1ec3cb529cf7377abd123b425735237e22e5b503475d30acfa`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.2.11` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:e057195cf9feea5514e3569d8d1262c595c80e4a9c4f146d712bcdc6ce7fd8db
+$ docker pull mongo@sha256:c25321cc72d81edd01f5ecb4932c5a38035cd10dacaa1d6aea21f898b38b5adc
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2679660026 bytes)**  
+-	Total Size: **2.7 GB (2678077200 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a1b9cbe486ab38689096ce356f7886d3ef4aec37750b1059b630b76a58a26063`
+-	Image ID: `sha256:516d85b31d48a7493f1071455b913a57253178fc4b70f4602900aa16f695b878`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -6406,13 +6406,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:40:03 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 03:01:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:01:38 GMT
+# Wed, 02 Dec 2020 21:39:07 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:39:08 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:09 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:10 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -6439,21 +6439,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
 		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1593f65b48b9692321639ddef4ee268867f075319286eccb9f17c366f2819bb0`  
-		Last Modified: Sat, 21 Nov 2020 03:46:47 GMT  
-		Size: 291.6 MB (291622758 bytes)  
+	-	`sha256:330e1aec4c0f125188f33d273e6af2ff95b3b067498c23200133ef1c4703f1f0`  
+		Last Modified: Wed, 02 Dec 2020 21:53:47 GMT  
+		Size: 290.0 MB (290039869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24abeb5992757cbbc07a0bbd3dfc675512cf613db7a2dc26ae22f024b813c899`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1147 bytes)  
+	-	`sha256:17d4c52e8b85505d4673ed47b757cba48fe68c172dd3238c6a6a2aa287b219bc`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9991bece48f06544eeeaaca4d8652d27877f96a723467d1b63d8bb55525ea45`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:c570130fd96e0641fd914da65ebd66e9798f8069788be32072c8d02a5b1d8fe4`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50b4a357f03a4649c09cbb3a9aec8658d88b87652c482cd17f532fbc863f5066`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:925bc0bd3bcc1ad5d49500570da8da0137013943a9a446abffcd7b846962eef9`  
+		Last Modified: Wed, 02 Dec 2020 21:52:50 GMT  
+		Size: 1.2 KB (1159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.2.11-bionic`
@@ -6708,7 +6708,7 @@ CMD ["mongod"]
 ## `mongo:4.2.11-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:6865e7e4c7e8cba37ff427475d317155fc709870df6adc4c784426d8b0c759a0
+$ docker pull mongo@sha256:9e733314ae3d7ea2947dd5dab360e3eb34711dd90ff110edc4ed7e2c223cb038
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6719,14 +6719,14 @@ $ docker pull mongo@sha256:6865e7e4c7e8cba37ff427475d317155fc709870df6adc4c78442
 ### `mongo:4.2.11-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:0c3530b5c53c029794cecaa70f54f9cc7b3be8d1c942d7f6a519548fe537eeee
+$ docker pull mongo@sha256:c2cbab396e344eefbd535484ed22487cf27dcc062994bb9435f0fc82e2eb3ab6
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6527219093 bytes)**  
+-	Total Size: **6.1 GB (6061414033 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4295d9e8c60c0511c1b9671338cef790c975d92909dd4c44855fe10953c17bde`
+-	Image ID: `sha256:b6aa43cd5bcb46a0f10508a87f5926e608669b728489b9ded62ef5eacacd7cdc`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -6743,13 +6743,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:15:27 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 02:39:41 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 02:39:42 GMT
+# Wed, 02 Dec 2020 21:35:00 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:35:02 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 02:39:43 GMT
+# Wed, 02 Dec 2020 21:35:03 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 02:39:44 GMT
+# Wed, 02 Dec 2020 21:35:04 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -6777,34 +6777,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
 		Size: 1.2 KB (1151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5740c03cc43019adcf4583234402eb7dd9b573859592c24d7bf1b0482946b47`  
-		Last Modified: Sat, 21 Nov 2020 03:45:25 GMT  
-		Size: 756.7 MB (756652219 bytes)  
+	-	`sha256:acdbc685d6283d61b783d1a85f4623e76562171b5002e4f3d92b8f53bf1bddba`  
+		Last Modified: Wed, 02 Dec 2020 21:52:34 GMT  
+		Size: 290.8 MB (290847200 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f73253df88b204cded18723ad3322855547646b1aea838b91fbd9da50cddcb08`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.2 KB (1158 bytes)  
+	-	`sha256:59f65364060b576975b235b165a777540995097ddf90358b7e26bb7289cca2fe`  
+		Last Modified: Wed, 02 Dec 2020 21:51:36 GMT  
+		Size: 1.1 KB (1102 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfddceb756aa74b9f84303e53fb896da90b2dc21b444b5298ed79b88bae7a6cd`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1121 bytes)  
+	-	`sha256:a6c7ea7db0643567d961551ad9f14d13bd4b316c9670db5ec5e3d70097d91234`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:000cdbdcf90d2c6c3037c354f84620436097e506d30aa57e3e5e80fb2906deba`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1131 bytes)  
+	-	`sha256:e70bc45a9da1ee1ec3cb529cf7377abd123b425735237e22e5b503475d30acfa`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.2.11-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:e057195cf9feea5514e3569d8d1262c595c80e4a9c4f146d712bcdc6ce7fd8db
+$ docker pull mongo@sha256:c25321cc72d81edd01f5ecb4932c5a38035cd10dacaa1d6aea21f898b38b5adc
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2679660026 bytes)**  
+-	Total Size: **2.7 GB (2678077200 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a1b9cbe486ab38689096ce356f7886d3ef4aec37750b1059b630b76a58a26063`
+-	Image ID: `sha256:516d85b31d48a7493f1071455b913a57253178fc4b70f4602900aa16f695b878`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -6821,13 +6821,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:40:03 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 03:01:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:01:38 GMT
+# Wed, 02 Dec 2020 21:39:07 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:39:08 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:09 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:10 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -6854,27 +6854,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
 		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1593f65b48b9692321639ddef4ee268867f075319286eccb9f17c366f2819bb0`  
-		Last Modified: Sat, 21 Nov 2020 03:46:47 GMT  
-		Size: 291.6 MB (291622758 bytes)  
+	-	`sha256:330e1aec4c0f125188f33d273e6af2ff95b3b067498c23200133ef1c4703f1f0`  
+		Last Modified: Wed, 02 Dec 2020 21:53:47 GMT  
+		Size: 290.0 MB (290039869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24abeb5992757cbbc07a0bbd3dfc675512cf613db7a2dc26ae22f024b813c899`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1147 bytes)  
+	-	`sha256:17d4c52e8b85505d4673ed47b757cba48fe68c172dd3238c6a6a2aa287b219bc`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9991bece48f06544eeeaaca4d8652d27877f96a723467d1b63d8bb55525ea45`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:c570130fd96e0641fd914da65ebd66e9798f8069788be32072c8d02a5b1d8fe4`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50b4a357f03a4649c09cbb3a9aec8658d88b87652c482cd17f532fbc863f5066`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:925bc0bd3bcc1ad5d49500570da8da0137013943a9a446abffcd7b846962eef9`  
+		Last Modified: Wed, 02 Dec 2020 21:52:50 GMT  
+		Size: 1.2 KB (1159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.2.11-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:45a55b6e57fed385d2527c9a03d48f22de477e843f71ac8728f3628312621170
+$ docker pull mongo@sha256:c5abf954175aeb60dca5ef4f3c3b38f781d6a13b6d3f81286a886686c5be95f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6884,14 +6884,14 @@ $ docker pull mongo@sha256:45a55b6e57fed385d2527c9a03d48f22de477e843f71ac8728f36
 ### `mongo:4.2.11-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:e057195cf9feea5514e3569d8d1262c595c80e4a9c4f146d712bcdc6ce7fd8db
+$ docker pull mongo@sha256:c25321cc72d81edd01f5ecb4932c5a38035cd10dacaa1d6aea21f898b38b5adc
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2679660026 bytes)**  
+-	Total Size: **2.7 GB (2678077200 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a1b9cbe486ab38689096ce356f7886d3ef4aec37750b1059b630b76a58a26063`
+-	Image ID: `sha256:516d85b31d48a7493f1071455b913a57253178fc4b70f4602900aa16f695b878`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -6908,13 +6908,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:40:03 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 03:01:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:01:38 GMT
+# Wed, 02 Dec 2020 21:39:07 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:39:08 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:09 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:10 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -6941,27 +6941,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
 		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1593f65b48b9692321639ddef4ee268867f075319286eccb9f17c366f2819bb0`  
-		Last Modified: Sat, 21 Nov 2020 03:46:47 GMT  
-		Size: 291.6 MB (291622758 bytes)  
+	-	`sha256:330e1aec4c0f125188f33d273e6af2ff95b3b067498c23200133ef1c4703f1f0`  
+		Last Modified: Wed, 02 Dec 2020 21:53:47 GMT  
+		Size: 290.0 MB (290039869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24abeb5992757cbbc07a0bbd3dfc675512cf613db7a2dc26ae22f024b813c899`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1147 bytes)  
+	-	`sha256:17d4c52e8b85505d4673ed47b757cba48fe68c172dd3238c6a6a2aa287b219bc`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9991bece48f06544eeeaaca4d8652d27877f96a723467d1b63d8bb55525ea45`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:c570130fd96e0641fd914da65ebd66e9798f8069788be32072c8d02a5b1d8fe4`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50b4a357f03a4649c09cbb3a9aec8658d88b87652c482cd17f532fbc863f5066`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:925bc0bd3bcc1ad5d49500570da8da0137013943a9a446abffcd7b846962eef9`  
+		Last Modified: Wed, 02 Dec 2020 21:52:50 GMT  
+		Size: 1.2 KB (1159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.2.11-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:ffa1560c1ba43eb704cadd694261a5ab64423e9bf1ccacadf7b5c69ef9d683b5
+$ docker pull mongo@sha256:f8707ddda33a1072ea8d4e76cd29674d69f6326923616a61e0cc92e635cb12fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6971,14 +6971,14 @@ $ docker pull mongo@sha256:ffa1560c1ba43eb704cadd694261a5ab64423e9bf1ccacadf7b5c
 ### `mongo:4.2.11-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:0c3530b5c53c029794cecaa70f54f9cc7b3be8d1c942d7f6a519548fe537eeee
+$ docker pull mongo@sha256:c2cbab396e344eefbd535484ed22487cf27dcc062994bb9435f0fc82e2eb3ab6
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6527219093 bytes)**  
+-	Total Size: **6.1 GB (6061414033 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4295d9e8c60c0511c1b9671338cef790c975d92909dd4c44855fe10953c17bde`
+-	Image ID: `sha256:b6aa43cd5bcb46a0f10508a87f5926e608669b728489b9ded62ef5eacacd7cdc`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -6995,13 +6995,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:15:27 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 02:39:41 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 02:39:42 GMT
+# Wed, 02 Dec 2020 21:35:00 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:35:02 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 02:39:43 GMT
+# Wed, 02 Dec 2020 21:35:03 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 02:39:44 GMT
+# Wed, 02 Dec 2020 21:35:04 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -7029,21 +7029,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
 		Size: 1.2 KB (1151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5740c03cc43019adcf4583234402eb7dd9b573859592c24d7bf1b0482946b47`  
-		Last Modified: Sat, 21 Nov 2020 03:45:25 GMT  
-		Size: 756.7 MB (756652219 bytes)  
+	-	`sha256:acdbc685d6283d61b783d1a85f4623e76562171b5002e4f3d92b8f53bf1bddba`  
+		Last Modified: Wed, 02 Dec 2020 21:52:34 GMT  
+		Size: 290.8 MB (290847200 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f73253df88b204cded18723ad3322855547646b1aea838b91fbd9da50cddcb08`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.2 KB (1158 bytes)  
+	-	`sha256:59f65364060b576975b235b165a777540995097ddf90358b7e26bb7289cca2fe`  
+		Last Modified: Wed, 02 Dec 2020 21:51:36 GMT  
+		Size: 1.1 KB (1102 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfddceb756aa74b9f84303e53fb896da90b2dc21b444b5298ed79b88bae7a6cd`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1121 bytes)  
+	-	`sha256:a6c7ea7db0643567d961551ad9f14d13bd4b316c9670db5ec5e3d70097d91234`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:000cdbdcf90d2c6c3037c354f84620436097e506d30aa57e3e5e80fb2906deba`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1131 bytes)  
+	-	`sha256:e70bc45a9da1ee1ec3cb529cf7377abd123b425735237e22e5b503475d30acfa`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.2-bionic`
@@ -7298,7 +7298,7 @@ CMD ["mongod"]
 ## `mongo:4.2-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:6865e7e4c7e8cba37ff427475d317155fc709870df6adc4c784426d8b0c759a0
+$ docker pull mongo@sha256:9e733314ae3d7ea2947dd5dab360e3eb34711dd90ff110edc4ed7e2c223cb038
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7309,14 +7309,14 @@ $ docker pull mongo@sha256:6865e7e4c7e8cba37ff427475d317155fc709870df6adc4c78442
 ### `mongo:4.2-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:0c3530b5c53c029794cecaa70f54f9cc7b3be8d1c942d7f6a519548fe537eeee
+$ docker pull mongo@sha256:c2cbab396e344eefbd535484ed22487cf27dcc062994bb9435f0fc82e2eb3ab6
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6527219093 bytes)**  
+-	Total Size: **6.1 GB (6061414033 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4295d9e8c60c0511c1b9671338cef790c975d92909dd4c44855fe10953c17bde`
+-	Image ID: `sha256:b6aa43cd5bcb46a0f10508a87f5926e608669b728489b9ded62ef5eacacd7cdc`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -7333,13 +7333,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:15:27 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 02:39:41 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 02:39:42 GMT
+# Wed, 02 Dec 2020 21:35:00 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:35:02 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 02:39:43 GMT
+# Wed, 02 Dec 2020 21:35:03 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 02:39:44 GMT
+# Wed, 02 Dec 2020 21:35:04 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -7367,34 +7367,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
 		Size: 1.2 KB (1151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5740c03cc43019adcf4583234402eb7dd9b573859592c24d7bf1b0482946b47`  
-		Last Modified: Sat, 21 Nov 2020 03:45:25 GMT  
-		Size: 756.7 MB (756652219 bytes)  
+	-	`sha256:acdbc685d6283d61b783d1a85f4623e76562171b5002e4f3d92b8f53bf1bddba`  
+		Last Modified: Wed, 02 Dec 2020 21:52:34 GMT  
+		Size: 290.8 MB (290847200 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f73253df88b204cded18723ad3322855547646b1aea838b91fbd9da50cddcb08`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.2 KB (1158 bytes)  
+	-	`sha256:59f65364060b576975b235b165a777540995097ddf90358b7e26bb7289cca2fe`  
+		Last Modified: Wed, 02 Dec 2020 21:51:36 GMT  
+		Size: 1.1 KB (1102 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfddceb756aa74b9f84303e53fb896da90b2dc21b444b5298ed79b88bae7a6cd`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1121 bytes)  
+	-	`sha256:a6c7ea7db0643567d961551ad9f14d13bd4b316c9670db5ec5e3d70097d91234`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:000cdbdcf90d2c6c3037c354f84620436097e506d30aa57e3e5e80fb2906deba`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1131 bytes)  
+	-	`sha256:e70bc45a9da1ee1ec3cb529cf7377abd123b425735237e22e5b503475d30acfa`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.2-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:e057195cf9feea5514e3569d8d1262c595c80e4a9c4f146d712bcdc6ce7fd8db
+$ docker pull mongo@sha256:c25321cc72d81edd01f5ecb4932c5a38035cd10dacaa1d6aea21f898b38b5adc
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2679660026 bytes)**  
+-	Total Size: **2.7 GB (2678077200 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a1b9cbe486ab38689096ce356f7886d3ef4aec37750b1059b630b76a58a26063`
+-	Image ID: `sha256:516d85b31d48a7493f1071455b913a57253178fc4b70f4602900aa16f695b878`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -7411,13 +7411,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:40:03 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 03:01:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:01:38 GMT
+# Wed, 02 Dec 2020 21:39:07 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:39:08 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:09 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:10 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -7444,27 +7444,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
 		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1593f65b48b9692321639ddef4ee268867f075319286eccb9f17c366f2819bb0`  
-		Last Modified: Sat, 21 Nov 2020 03:46:47 GMT  
-		Size: 291.6 MB (291622758 bytes)  
+	-	`sha256:330e1aec4c0f125188f33d273e6af2ff95b3b067498c23200133ef1c4703f1f0`  
+		Last Modified: Wed, 02 Dec 2020 21:53:47 GMT  
+		Size: 290.0 MB (290039869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24abeb5992757cbbc07a0bbd3dfc675512cf613db7a2dc26ae22f024b813c899`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1147 bytes)  
+	-	`sha256:17d4c52e8b85505d4673ed47b757cba48fe68c172dd3238c6a6a2aa287b219bc`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9991bece48f06544eeeaaca4d8652d27877f96a723467d1b63d8bb55525ea45`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:c570130fd96e0641fd914da65ebd66e9798f8069788be32072c8d02a5b1d8fe4`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50b4a357f03a4649c09cbb3a9aec8658d88b87652c482cd17f532fbc863f5066`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:925bc0bd3bcc1ad5d49500570da8da0137013943a9a446abffcd7b846962eef9`  
+		Last Modified: Wed, 02 Dec 2020 21:52:50 GMT  
+		Size: 1.2 KB (1159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.2-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:45a55b6e57fed385d2527c9a03d48f22de477e843f71ac8728f3628312621170
+$ docker pull mongo@sha256:c5abf954175aeb60dca5ef4f3c3b38f781d6a13b6d3f81286a886686c5be95f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7474,14 +7474,14 @@ $ docker pull mongo@sha256:45a55b6e57fed385d2527c9a03d48f22de477e843f71ac8728f36
 ### `mongo:4.2-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:e057195cf9feea5514e3569d8d1262c595c80e4a9c4f146d712bcdc6ce7fd8db
+$ docker pull mongo@sha256:c25321cc72d81edd01f5ecb4932c5a38035cd10dacaa1d6aea21f898b38b5adc
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2679660026 bytes)**  
+-	Total Size: **2.7 GB (2678077200 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a1b9cbe486ab38689096ce356f7886d3ef4aec37750b1059b630b76a58a26063`
+-	Image ID: `sha256:516d85b31d48a7493f1071455b913a57253178fc4b70f4602900aa16f695b878`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -7498,13 +7498,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:40:03 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 03:01:37 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:01:38 GMT
+# Wed, 02 Dec 2020 21:39:07 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:39:08 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:09 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:01:39 GMT
+# Wed, 02 Dec 2020 21:39:10 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -7531,27 +7531,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
 		Size: 1.1 KB (1129 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1593f65b48b9692321639ddef4ee268867f075319286eccb9f17c366f2819bb0`  
-		Last Modified: Sat, 21 Nov 2020 03:46:47 GMT  
-		Size: 291.6 MB (291622758 bytes)  
+	-	`sha256:330e1aec4c0f125188f33d273e6af2ff95b3b067498c23200133ef1c4703f1f0`  
+		Last Modified: Wed, 02 Dec 2020 21:53:47 GMT  
+		Size: 290.0 MB (290039869 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24abeb5992757cbbc07a0bbd3dfc675512cf613db7a2dc26ae22f024b813c899`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1147 bytes)  
+	-	`sha256:17d4c52e8b85505d4673ed47b757cba48fe68c172dd3238c6a6a2aa287b219bc`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9991bece48f06544eeeaaca4d8652d27877f96a723467d1b63d8bb55525ea45`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:c570130fd96e0641fd914da65ebd66e9798f8069788be32072c8d02a5b1d8fe4`  
+		Last Modified: Wed, 02 Dec 2020 21:52:49 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50b4a357f03a4649c09cbb3a9aec8658d88b87652c482cd17f532fbc863f5066`  
-		Last Modified: Sat, 21 Nov 2020 03:45:38 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:925bc0bd3bcc1ad5d49500570da8da0137013943a9a446abffcd7b846962eef9`  
+		Last Modified: Wed, 02 Dec 2020 21:52:50 GMT  
+		Size: 1.2 KB (1159 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.2-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:ffa1560c1ba43eb704cadd694261a5ab64423e9bf1ccacadf7b5c69ef9d683b5
+$ docker pull mongo@sha256:f8707ddda33a1072ea8d4e76cd29674d69f6326923616a61e0cc92e635cb12fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7561,14 +7561,14 @@ $ docker pull mongo@sha256:ffa1560c1ba43eb704cadd694261a5ab64423e9bf1ccacadf7b5c
 ### `mongo:4.2-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:0c3530b5c53c029794cecaa70f54f9cc7b3be8d1c942d7f6a519548fe537eeee
+$ docker pull mongo@sha256:c2cbab396e344eefbd535484ed22487cf27dcc062994bb9435f0fc82e2eb3ab6
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.5 GB (6527219093 bytes)**  
+-	Total Size: **6.1 GB (6061414033 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4295d9e8c60c0511c1b9671338cef790c975d92909dd4c44855fe10953c17bde`
+-	Image ID: `sha256:b6aa43cd5bcb46a0f10508a87f5926e608669b728489b9ded62ef5eacacd7cdc`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -7585,13 +7585,13 @@ ENV MONGO_VERSION=4.2.11
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.11-signed.msi
 # Sat, 21 Nov 2020 02:15:27 GMT
 ENV MONGO_DOWNLOAD_SHA256=e8f60257d6f556225e085a8e5d0e33d78f16aaf97d421e4e565a7e96dd07d1ef
-# Sat, 21 Nov 2020 02:39:41 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 02:39:42 GMT
+# Wed, 02 Dec 2020 21:35:00 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools,MonitoringTools,ImportExportTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:35:02 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 02:39:43 GMT
+# Wed, 02 Dec 2020 21:35:03 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 02:39:44 GMT
+# Wed, 02 Dec 2020 21:35:04 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -7619,27 +7619,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
 		Size: 1.2 KB (1151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5740c03cc43019adcf4583234402eb7dd9b573859592c24d7bf1b0482946b47`  
-		Last Modified: Sat, 21 Nov 2020 03:45:25 GMT  
-		Size: 756.7 MB (756652219 bytes)  
+	-	`sha256:acdbc685d6283d61b783d1a85f4623e76562171b5002e4f3d92b8f53bf1bddba`  
+		Last Modified: Wed, 02 Dec 2020 21:52:34 GMT  
+		Size: 290.8 MB (290847200 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f73253df88b204cded18723ad3322855547646b1aea838b91fbd9da50cddcb08`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.2 KB (1158 bytes)  
+	-	`sha256:59f65364060b576975b235b165a777540995097ddf90358b7e26bb7289cca2fe`  
+		Last Modified: Wed, 02 Dec 2020 21:51:36 GMT  
+		Size: 1.1 KB (1102 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bfddceb756aa74b9f84303e53fb896da90b2dc21b444b5298ed79b88bae7a6cd`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1121 bytes)  
+	-	`sha256:a6c7ea7db0643567d961551ad9f14d13bd4b316c9670db5ec5e3d70097d91234`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:000cdbdcf90d2c6c3037c354f84620436097e506d30aa57e3e5e80fb2906deba`  
-		Last Modified: Sat, 21 Nov 2020 03:43:22 GMT  
-		Size: 1.1 KB (1131 bytes)  
+	-	`sha256:e70bc45a9da1ee1ec3cb529cf7377abd123b425735237e22e5b503475d30acfa`  
+		Last Modified: Wed, 02 Dec 2020 21:51:37 GMT  
+		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4`
 
 ```console
-$ docker pull mongo@sha256:d54fb51a493131117a8b85a2d46ed7d64a2cb79607fb3ce350d1722c0cafc812
+$ docker pull mongo@sha256:7ab905728ac01b90a72e3b38514778e54d798c3e0637283a260a76c312a67b34
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8010,14 +8010,14 @@ CMD ["mongod"]
 ### `mongo:4.4` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -8034,13 +8034,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -8068,34 +8068,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.4` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -8112,13 +8112,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -8145,27 +8145,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4.2`
 
 ```console
-$ docker pull mongo@sha256:d54fb51a493131117a8b85a2d46ed7d64a2cb79607fb3ce350d1722c0cafc812
+$ docker pull mongo@sha256:7ab905728ac01b90a72e3b38514778e54d798c3e0637283a260a76c312a67b34
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8536,14 +8536,14 @@ CMD ["mongod"]
 ### `mongo:4.4.2` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -8560,13 +8560,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -8594,34 +8594,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.4.2` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -8638,13 +8638,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -8671,21 +8671,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4.2-bionic`
@@ -9060,7 +9060,7 @@ CMD ["mongod"]
 ## `mongo:4.4.2-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59983504e2658
+$ docker pull mongo@sha256:c03a81c1c688e9bf83194277e33cc3d3b1afd01f539e47a3e6fde4c93d7e5611
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9071,14 +9071,14 @@ $ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59
 ### `mongo:4.4.2-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -9095,13 +9095,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -9129,34 +9129,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.4.2-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -9173,13 +9173,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -9206,27 +9206,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4.2-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe10afca24bd5
+$ docker pull mongo@sha256:6acd97216542cec1489bb1f8bc79df24634fbe8e2f8d5d5cab28f346d620b8d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9236,14 +9236,14 @@ $ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe
 ### `mongo:4.4.2-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -9260,13 +9260,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -9293,27 +9293,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4.2-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4c9269cb76a6
+$ docker pull mongo@sha256:53b984ff1eb44058764b0194eb6a7a4facce30b66cd62a55c40567172facfa8e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9323,14 +9323,14 @@ $ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4
 ### `mongo:4.4.2-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -9347,13 +9347,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -9381,21 +9381,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4-bionic`
@@ -9770,7 +9770,7 @@ CMD ["mongod"]
 ## `mongo:4.4-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59983504e2658
+$ docker pull mongo@sha256:c03a81c1c688e9bf83194277e33cc3d3b1afd01f539e47a3e6fde4c93d7e5611
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9781,14 +9781,14 @@ $ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59
 ### `mongo:4.4-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -9805,13 +9805,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -9839,34 +9839,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4.4-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -9883,13 +9883,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -9916,27 +9916,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe10afca24bd5
+$ docker pull mongo@sha256:6acd97216542cec1489bb1f8bc79df24634fbe8e2f8d5d5cab28f346d620b8d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9946,14 +9946,14 @@ $ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe
 ### `mongo:4.4-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -9970,13 +9970,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -10003,27 +10003,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4.4-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4c9269cb76a6
+$ docker pull mongo@sha256:53b984ff1eb44058764b0194eb6a7a4facce30b66cd62a55c40567172facfa8e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10033,14 +10033,14 @@ $ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4
 ### `mongo:4.4-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -10057,13 +10057,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -10091,21 +10091,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4-bionic`
@@ -10480,7 +10480,7 @@ CMD ["mongod"]
 ## `mongo:4-windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59983504e2658
+$ docker pull mongo@sha256:c03a81c1c688e9bf83194277e33cc3d3b1afd01f539e47a3e6fde4c93d7e5611
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10491,14 +10491,14 @@ $ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59
 ### `mongo:4-windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -10515,13 +10515,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -10549,34 +10549,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:4-windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -10593,13 +10593,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -10626,27 +10626,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4-windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe10afca24bd5
+$ docker pull mongo@sha256:6acd97216542cec1489bb1f8bc79df24634fbe8e2f8d5d5cab28f346d620b8d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10656,14 +10656,14 @@ $ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe
 ### `mongo:4-windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -10680,13 +10680,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -10713,27 +10713,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:4-windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4c9269cb76a6
+$ docker pull mongo@sha256:53b984ff1eb44058764b0194eb6a7a4facce30b66cd62a55c40567172facfa8e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10743,14 +10743,14 @@ $ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4
 ### `mongo:4-windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -10767,13 +10767,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -10801,21 +10801,21 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:bionic`
@@ -11190,7 +11190,7 @@ CMD ["mongod"]
 ## `mongo:latest`
 
 ```console
-$ docker pull mongo@sha256:d54fb51a493131117a8b85a2d46ed7d64a2cb79607fb3ce350d1722c0cafc812
+$ docker pull mongo@sha256:7ab905728ac01b90a72e3b38514778e54d798c3e0637283a260a76c312a67b34
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11561,14 +11561,14 @@ CMD ["mongod"]
 ### `mongo:latest` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -11585,13 +11585,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -11619,34 +11619,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:latest` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -11663,13 +11663,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -11696,27 +11696,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:windowsservercore`
 
 ```console
-$ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59983504e2658
+$ docker pull mongo@sha256:c03a81c1c688e9bf83194277e33cc3d3b1afd01f539e47a3e6fde4c93d7e5611
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11727,14 +11727,14 @@ $ docker pull mongo@sha256:e2ba03a0ded072e64dec1f73bda2afdd54124a1f7b2d984b72a59
 ### `mongo:windowsservercore` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -11751,13 +11751,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -11785,34 +11785,34 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:windowsservercore` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -11829,13 +11829,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -11862,27 +11862,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:windowsservercore-1809`
 
 ```console
-$ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe10afca24bd5
+$ docker pull mongo@sha256:6acd97216542cec1489bb1f8bc79df24634fbe8e2f8d5d5cab28f346d620b8d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11892,14 +11892,14 @@ $ docker pull mongo@sha256:5a54f4e705b0b381c20194e618caaf978bbdb738e8c851a37ccbe
 ### `mongo:windowsservercore-1809` - windows version 10.0.17763.1577; amd64
 
 ```console
-$ docker pull mongo@sha256:4e5cbd3b99278c48b87832a3fead62a308ce24dd4d2c06303f0a00490431abb7
+$ docker pull mongo@sha256:787e3cedfc577c8cb9721e2e4d6abc5f89986bccd464d8fca34edd628d654a0a
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.6 GB (2629330010 bytes)**  
+-	Total Size: **2.6 GB (2627753346 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0dc696cbf082f856a3388c8361ec630b64eb73206d3a9dccf95470546cf5d7`
+-	Image ID: `sha256:45dd5b46ce0c17d5e67173edef69dbc12a6af6d7122cc6283d1e97e26b52459a`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -11916,13 +11916,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:22:11 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:42:22 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:42:23 GMT
+# Wed, 02 Dec 2020 21:46:33 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:46:34 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:42:24 GMT
+# Wed, 02 Dec 2020 21:46:35 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:42:25 GMT
+# Wed, 02 Dec 2020 21:46:36 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -11949,27 +11949,27 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
 		Size: 1.1 KB (1145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1802e4b7ae6421ee510c45fc7927b8f78c752a198ec643a8da6ffb222a8aca6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:51 GMT  
-		Size: 241.3 MB (241292780 bytes)  
+	-	`sha256:c241b9609102a85784b1594bc4a5397584581a97bbd425ea1e981d925b600d87`  
+		Last Modified: Wed, 02 Dec 2020 21:55:46 GMT  
+		Size: 239.7 MB (239716069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2adedec6a7e9f6a86d8068a2f4ba1ec2720e3429fecbd41b24abd4693f4b70b6`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.1 KB (1126 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c30732b5b719f6d77f2d2d1522c5b968206622d21397238db0ccd7c268c445ea`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
-		Size: 1.2 KB (1154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c005019f01ac1fb34b3fef05d8ee2e306b8528e9119f61417bf5cac5c34e3d13`  
-		Last Modified: Sat, 21 Nov 2020 03:48:04 GMT  
+	-	`sha256:d7c4998aeafcbddae4e7659e6f20cfa633b8238be55ee98d85bd96cfc400b601`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
 		Size: 1.1 KB (1149 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c85ac1e211b95482f80f33e73808bbe2a7a8e99d012759eb9679ad204d206d17`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.1 KB (1150 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:141d325b7ba3e6dff84ad890f47c0fdf2b77b466c4caed30a6cde01b7470b020`  
+		Last Modified: Wed, 02 Dec 2020 21:55:04 GMT  
+		Size: 1.2 KB (1177 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `mongo:windowsservercore-ltsc2016`
 
 ```console
-$ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4c9269cb76a6
+$ docker pull mongo@sha256:53b984ff1eb44058764b0194eb6a7a4facce30b66cd62a55c40567172facfa8e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11979,14 +11979,14 @@ $ docker pull mongo@sha256:042d0e99889633cf61699be018971e678efaee6dc85894b40b1b4
 ### `mongo:windowsservercore-ltsc2016` - windows version 10.0.14393.4046; amd64
 
 ```console
-$ docker pull mongo@sha256:bede630f222631f13ec728e62131df9dd00f5249abcef5b6eac088750387b178
+$ docker pull mongo@sha256:f818130aea92f91db474aca45dc2062b870bbddcdc00690d0a8c0b85042ddd74
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.0 GB (6012776661 bytes)**  
+-	Total Size: **6.0 GB (6011079635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:baf2d748e44c86afa82cec0b65e5f5a608c9d06221aab479dc1ce10bf058a4f8`
+-	Image ID: `sha256:3eb2db55e9b6385d4d003261ada6ac30e95214b8eb2edb99fe413a43c1c28de9`
 -	Default Command: `["mongod","--bind_ip_all"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
@@ -12003,13 +12003,13 @@ ENV MONGO_VERSION=4.4.2
 ENV MONGO_DOWNLOAD_URL=https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.2-signed.msi
 # Sat, 21 Nov 2020 03:01:52 GMT
 ENV MONGO_DOWNLOAD_SHA256=84a1f6899e25f90a7d7c2b5996e9e15584a9af54c08832682c962c5794fcab0f
-# Sat, 21 Nov 2020 03:21:55 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=all' 		); 	$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
-# Sat, 21 Nov 2020 03:21:56 GMT
+# Wed, 02 Dec 2020 21:43:11 GMT
+RUN Write-Host ('Downloading {0} ...' -f $env:MONGO_DOWNLOAD_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	(New-Object System.Net.WebClient).DownloadFile($env:MONGO_DOWNLOAD_URL, 'mongo.msi'); 		if ($env:MONGO_DOWNLOAD_SHA256) { 		Write-Host ('Verifying sha256 ({0}) ...' -f $env:MONGO_DOWNLOAD_SHA256); 		if ((Get-FileHash mongo.msi -Algorithm sha256).Hash -ne $env:MONGO_DOWNLOAD_SHA256) { 			Write-Host 'FAILED!'; 			exit 1; 		}; 	}; 		Write-Host 'Installing ...'; 	Start-Process msiexec -Wait 		-ArgumentList @( 			'/i', 			'mongo.msi', 			'/quiet', 			'/qn', 			'/l*v', 'install.log', 			'INSTALLLOCATION=C:\mongodb', 			'ADDLOCAL=ServerNoService,Client,Router,MiscellaneousTools' 		); 	if (-Not (Test-Path C:\mongodb\bin\mongo.exe -PathType Leaf)) { 		Write-Host 'Installer failed!'; 		Get-Content install.log; 		exit 1; 	}; 	Remove-Item install.log; 		$env:PATH = 'C:\mongodb\bin;' + $env:PATH; 	[Environment]::SetEnvironmentVariable('PATH', $env:PATH, [EnvironmentVariableTarget]::Machine); 		Write-Host 'Verifying install ...'; 	Write-Host '  mongo --version'; mongo --version; 	Write-Host '  mongod --version'; mongod --version; 		Write-Host 'Removing ...'; 	Remove-Item C:\windows\installer\*.msi -Force; 	Remove-Item mongo.msi -Force; 		Write-Host 'Complete.';
+# Wed, 02 Dec 2020 21:43:13 GMT
 VOLUME [C:\data\db C:\data\configdb]
-# Sat, 21 Nov 2020 03:21:57 GMT
+# Wed, 02 Dec 2020 21:43:14 GMT
 EXPOSE 27017
-# Sat, 21 Nov 2020 03:21:58 GMT
+# Wed, 02 Dec 2020 21:43:15 GMT
 CMD ["mongod" "--bind_ip_all"]
 ```
 
@@ -12037,19 +12037,19 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
 		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdf24eb2afd97deff3ee453c30badbbd849ade1c7c0086bd9e8806184ae1ce12`  
-		Last Modified: Sat, 21 Nov 2020 03:47:47 GMT  
-		Size: 242.2 MB (242209931 bytes)  
+	-	`sha256:879ec6b1c2652a60aa98b63a7743d453d9ac4079829111203f4ce8ee779af35e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:46 GMT  
+		Size: 240.5 MB (240512854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f28ded29624d1edbf9a1ff8f448b45d60d675742554650c1240ea15edbb840e`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1124 bytes)  
+	-	`sha256:7170f2c68119eaafee163b3968ecda0a258c108d0a4ba01975a7a7a4398b7e87`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec8dbdd136bb6499d7ef60a130937a1cb46f90f0eb5a139ed6bc7b26f9f9ce51`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:f8bc9f6c559ae414f40545ec7396d78c8f527512ef768371555e04f0dca8777e`  
+		Last Modified: Wed, 02 Dec 2020 21:54:05 GMT  
+		Size: 1.1 KB (1127 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce9482967e566fff56f5acfc8c03f685fd06a0a5c5add8f7325e5f149ba1a03f`  
-		Last Modified: Sat, 21 Nov 2020 03:47:00 GMT  
-		Size: 1.1 KB (1103 bytes)  
+	-	`sha256:1ab1e8ac5f8638fb90fa606852410598af5944ada783d40571ab63fcceb68c7b`  
+		Last Modified: Wed, 02 Dec 2020 21:54:04 GMT  
+		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
