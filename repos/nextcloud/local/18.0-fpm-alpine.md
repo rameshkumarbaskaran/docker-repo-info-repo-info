@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:310d2c82856eb1d261c32ac016b2a7a78eaf2c4f2c5a041b1ca511e5fa9da493`
-- Created: `2020-11-19T20:47:05.495225675Z`
-- Virtual Size: ~ 404.90 Mb  
+- Image ID: `sha256:23ab8ab47e75e883933a4a1a1605cb771ff7073119aded60c189b01b98274b17`
+- Created: `2020-12-01T08:47:37.449146176Z`
+- Virtual Size: ~ 405.49 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.24`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.24.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.24.tar.xz.asc`
-  - `PHP_SHA256=78b0b417a147ab7572c874334d11654e3c61ec5b3f2170098e5db02fb0c89888`
+  - `PHP_VERSION=7.3.25`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.25.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.25.tar.xz.asc`
+  - `PHP_SHA256=c71c00ad03079efb78d1a6b8623ca4f725be697dbd9a46debacbcc9a2475f329`
   - `NEXTCLOUD_VERSION=18.0.11`
 
 ## `apk` (`.apk`-based packages)
@@ -539,16 +539,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-12.4-r0 description:
+libpq-12.5-r0 description:
 PostgreSQL libraries
 
-libpq-12.4-r0 webpage:
+libpq-12.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-12.4-r0 installed size:
+libpq-12.5-r0 installed size:
 327680
 
-libpq-12.4-r0 license:
+libpq-12.5-r0 license:
 PostgreSQL
 
 ```
@@ -794,16 +794,16 @@ BSD-3-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```
