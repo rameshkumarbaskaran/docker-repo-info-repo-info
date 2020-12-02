@@ -1,7 +1,7 @@
 ## `matomo:fpm`
 
 ```console
-$ docker pull matomo@sha256:f6cd1423c36b77404beea2d8433dc9b0126066d0c3e93d99f8e61b4ad7a58998
+$ docker pull matomo@sha256:bb6a482f9dad3c97ced1e494e8796f7eb7b39403e58bfc031819d79b32de4834
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -924,14 +924,14 @@ CMD ["php-fpm"]
 ### `matomo:fpm` - linux; ppc64le
 
 ```console
-$ docker pull matomo@sha256:f8e52c73dbb98c8e7d6762c1bacbb010fe9b10ec990df3f69ebe2bbe57ccba1b
+$ docker pull matomo@sha256:7caa0c661342b6b199cc6a19b32ef993a3d5e299eeca18342c83e7dc83cb1715
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **173.7 MB (173718368 bytes)**  
+-	Total Size: **172.4 MB (172377819 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:376b16b32637d4ee9d7da1ac5010e416c841f6de2067c1191b37812def9b2fc4`
+-	Image ID: `sha256:b9183323bd87dab6bd0dc32391408c2c9d45d22dddc4a8ad21ad5a9553386eba`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -994,19 +994,19 @@ LABEL maintainer=pierre@piwik.org
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libldap2-dev 		libpng-dev 		libzip-dev 	; 		debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure gd --with-freetype --with-jpeg; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		gd 		ldap 		mysqli 		opcache 		pdo_mysql 		zip 	; 		pecl install APCu-5.1.19; 	pecl install redis-5.3.1; 		docker-php-ext-enable 		apcu 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
 # Tue, 01 Dec 2020 08:51:39 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Tue, 01 Dec 2020 08:51:43 GMT
-ENV MATOMO_VERSION=3.14.1
-# Tue, 01 Dec 2020 08:52:47 GMT
+# Wed, 02 Dec 2020 00:49:08 GMT
+ENV MATOMO_VERSION=4.0.3
+# Wed, 02 Dec 2020 00:52:53 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends 		$fetchDeps 	; 		curl -fsSL -o matomo.tar.gz 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz"; 	curl -fsSL -o matomo.tar.gz.asc 		"https://builds.matomo.org/matomo-${MATOMO_VERSION}.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 814E346FA01A20DBB04B6807B5DBD5925590A237; 	gpg --batch --verify matomo.tar.gz.asc matomo.tar.gz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" matomo.tar.gz.asc; 	tar -xzf matomo.tar.gz -C /usr/src/; 	rm matomo.tar.gz; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Tue, 01 Dec 2020 08:52:51 GMT
+# Wed, 02 Dec 2020 00:53:01 GMT
 COPY file:5a36d7fba12e383595e7235267e54c5714dbf865acd4c4596c92ac0f17d139b3 in /usr/local/etc/php/conf.d/php-matomo.ini 
-# Tue, 01 Dec 2020 08:52:52 GMT
+# Wed, 02 Dec 2020 00:53:03 GMT
 COPY file:0fafaeb399f05cbf0a84d0276a6353eb053cd1a1537e5631be96c2a2ffa2fd31 in /entrypoint.sh 
-# Tue, 01 Dec 2020 08:52:55 GMT
+# Wed, 02 Dec 2020 00:53:06 GMT
 VOLUME [/var/www/html]
-# Tue, 01 Dec 2020 08:52:58 GMT
+# Wed, 02 Dec 2020 00:53:09 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 01 Dec 2020 08:53:02 GMT
+# Wed, 02 Dec 2020 00:53:11 GMT
 CMD ["php-fpm"]
 ```
 
@@ -1059,16 +1059,16 @@ CMD ["php-fpm"]
 		Last Modified: Tue, 01 Dec 2020 08:57:00 GMT  
 		Size: 331.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25a782067513223ce186d236b83bbfc23e87aa72d2a370ece5a326fb01ad6475`  
-		Last Modified: Tue, 01 Dec 2020 08:57:05 GMT  
-		Size: 16.3 MB (16305280 bytes)  
+	-	`sha256:bad68e05bb4a7668f0e5ab6ac5a15fe0a5ce3edb7291adc7a563bd90a8c21d41`  
+		Last Modified: Wed, 02 Dec 2020 00:56:27 GMT  
+		Size: 15.0 MB (14964731 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:312fcdf4e5e8200a765ed99286dbf0a44bb3027e282012e442724a342e670ae7`  
-		Last Modified: Tue, 01 Dec 2020 08:57:00 GMT  
+	-	`sha256:8b30fec6c261d91349a73eea25a301addf5a425be41e22e3563db864fa0b2ed3`  
+		Last Modified: Wed, 02 Dec 2020 00:56:23 GMT  
 		Size: 310.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3231ed565a4b204599e9bec2005ab2df97b721c8c678bdf79f4a1e741ec0908`  
-		Last Modified: Tue, 01 Dec 2020 08:57:00 GMT  
+	-	`sha256:00d84371a1a1ba16c00bec43279a3affe00f389fce7c0a53b5cf3e6f8379c025`  
+		Last Modified: Wed, 02 Dec 2020 00:56:23 GMT  
 		Size: 227.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
