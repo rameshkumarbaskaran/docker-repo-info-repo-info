@@ -1683,20 +1683,13 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.17-10
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-10.dsc' krb5_1.17-10.dsc 3187 SHA256:1ce061fc29b4c1d12c46c07d7a1fc2a16ed026ed5d7bd3e639483bdc27a2007f
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA256:5a6e2284a53de5702d3dc2be3b9339c963f9b5397d3fbbc53beb249380a781f5
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-10.debian.tar.xz' krb5_1.17-10.debian.tar.xz 143852 SHA256:6d3cefcea2e4839cc3c5e518083048b8eae62a4bc707db05c1900c5bddafa7f5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/krb5/1.17-10/
 
-- https://sources.debian.net/src/krb5/1.17-10/ (for browsing the source)
-- https://sources.debian.net/src/krb5/1.17-10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/krb5/1.17-10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lapack=3.9.0-3`
 
@@ -2891,16 +2884,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.9.6-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.9.6-1.dsc' linux_5.9.6-1.dsc 192680 SHA256:54e2bdfb1240ac9a6014866ed14d5e79168aa3a2bad0e8e9584f7dd9bb1c39ae
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.9.6.orig.tar.xz' linux_5.9.6.orig.tar.xz 120302296 SHA256:821735275df4dfd37bd2dc9b958defc576fc3132347904b39ac6f7478b63f739
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.9.6-1.debian.tar.xz' linux_5.9.6-1.debian.tar.xz 1269952 SHA256:bcafdb72807dcc9b5132e1959bebf5668f733fd75d9433cea512f0a159fca830
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.9.6-1.dsc' linux_5.9.6-1.dsc 192680 SHA256:54e2bdfb1240ac9a6014866ed14d5e79168aa3a2bad0e8e9584f7dd9bb1c39ae
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.9.6.orig.tar.xz' linux_5.9.6.orig.tar.xz 120302296 SHA256:821735275df4dfd37bd2dc9b958defc576fc3132347904b39ac6f7478b63f739
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.9.6-1.debian.tar.xz' linux_5.9.6-1.debian.tar.xz 1269952 SHA256:bcafdb72807dcc9b5132e1959bebf5668f733fd75d9433cea512f0a159fca830
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/linux/5.9.6-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/5.9.6-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/5.9.6-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `littler=0.3.12-1`
 
@@ -3962,20 +3949,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=246.6-2
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_246.6-2.dsc' systemd_246.6-2.dsc 5149 SHA256:2e3093a9cd4ca63587d9d20ab0e4205e52de8fde20bf47138014dc85185595d1
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_246.6.orig.tar.gz' systemd_246.6.orig.tar.gz 9545237 SHA256:e999dbf0cff5b0109c28b307741b7dc315877fe2e1999f25c153548db44bb020
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_246.6-2.debian.tar.xz' systemd_246.6-2.debian.tar.xz 157024 SHA256:ad154d24511ec25d54e480a56026f6017c092e20a2c36d27ac57c41a9dc12df6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/246.6-2/
 
-- https://sources.debian.net/src/systemd/246.6-2/ (for browsing the source)
-- https://sources.debian.net/src/systemd/246.6-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/246.6-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.96-5`
 
