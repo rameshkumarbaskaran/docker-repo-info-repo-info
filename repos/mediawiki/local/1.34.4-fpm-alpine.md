@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:96d6b2a011405125b86c0253e02aca35394b99b9e7fc8feee37e985b3b7039d9`
-- Created: `2020-11-06T03:49:18.878602474Z`
-- Virtual Size: ~ 429.17 Mb  
+- Image ID: `sha256:dbaf5a7ad896d7fb4f57d0be5c5efd54eed28299964f2d775bef398e0959af2a`
+- Created: `2020-12-01T08:37:20.416015809Z`
+- Virtual Size: ~ 429.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.24`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.24.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.24.tar.xz.asc`
-  - `PHP_SHA256=78b0b417a147ab7572c874334d11654e3c61ec5b3f2170098e5db02fb0c89888`
+  - `PHP_VERSION=7.3.25`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.25.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.25.tar.xz.asc`
+  - `PHP_SHA256=c71c00ad03079efb78d1a6b8623ca4f725be697dbd9a46debacbcc9a2475f329`
   - `MEDIAWIKI_MAJOR_VERSION=1.34`
   - `MEDIAWIKI_VERSION=1.34.4`
 
@@ -863,16 +863,16 @@ Libpng
 ### `apk` package: `librsvg`
 
 ```console
-librsvg-2.48.8-r0 description:
+librsvg-2.48.9-r0 description:
 SAX-based renderer for SVG files into a GdkPixbuf
 
-librsvg-2.48.8-r0 webpage:
+librsvg-2.48.9-r0 webpage:
 https://wiki.gnome.org/Projects/LibRsvg
 
-librsvg-2.48.8-r0 installed size:
+librsvg-2.48.9-r0 installed size:
 9695232
 
-librsvg-2.48.8-r0 license:
+librsvg-2.48.9-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -1152,16 +1152,16 @@ custom
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```

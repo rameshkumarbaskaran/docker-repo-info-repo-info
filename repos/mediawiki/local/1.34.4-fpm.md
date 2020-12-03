@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c421e7d9c3f4d92cb793680c8ec36f46e45f66a517425669b6f8ff3728e0ea94`
-- Created: `2020-11-19T04:46:54.855044366Z`
-- Virtual Size: ~ 731.80 Mb  
+- Image ID: `sha256:51082e4d21e8485bd9df92402010686d6244b3046d8d194a59ddb86e9b294eb8`
+- Created: `2020-12-01T08:37:04.424189627Z`
+- Virtual Size: ~ 731.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.24`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.24.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.24.tar.xz.asc`
-  - `PHP_SHA256=78b0b417a147ab7572c874334d11654e3c61ec5b3f2170098e5db02fb0c89888`
+  - `PHP_VERSION=7.3.25`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.25.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.25.tar.xz.asc`
+  - `PHP_SHA256=c71c00ad03079efb78d1a6b8623ca4f725be697dbd9a46debacbcc9a2475f329`
   - `MEDIAWIKI_MAJOR_VERSION=1.34`
   - `MEDIAWIKI_VERSION=1.34.4`
 
@@ -2753,11 +2753,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libpng1.6/1.6.36-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libpng1.6/1.6.36-6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libproxy=0.4.15-5`
+### `dpkg` source package: `libproxy=0.4.15-5+deb10u1`
 
 Binary Packages:
 
-- `libproxy1v5:amd64=0.4.15-5`
+- `libproxy1v5:amd64=0.4.15-5+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libproxy1v5/copyright`)
 
@@ -2767,17 +2767,17 @@ Licenses: (parsed from: `/usr/share/doc/libproxy1v5/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libproxy=0.4.15-5
-'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15-5.dsc' libproxy_0.4.15-5.dsc 3593 SHA256:9036b9d92d4b42e33d247938899b5d74f4b732f44d555ed1aea86c0a97fbb65f
-'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15.orig.tar.gz' libproxy_0.4.15.orig.tar.gz 93084 SHA256:18f58b0a0043b6881774187427ead158d310127fc46a1c668ad6d207fb28b4e0
-'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15-5.debian.tar.xz' libproxy_0.4.15-5.debian.tar.xz 11556 SHA256:d3731410a393fd4bb5aa34e2991d4504866a9b60bf9fb1d95c7515277ade16fb
+$ apt-get source -qq --print-uris libproxy=0.4.15-5+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/libp/libproxy/libproxy_0.4.15-5+deb10u1.dsc' libproxy_0.4.15-5+deb10u1.dsc 3780 SHA256:37f6507bbdb7048836668d4a568403bd01a4d9d76332c0914a278e7bb4a9a3ec
+'http://security.debian.org/debian-security/pool/updates/main/libp/libproxy/libproxy_0.4.15.orig.tar.gz' libproxy_0.4.15.orig.tar.gz 93084 SHA256:18f58b0a0043b6881774187427ead158d310127fc46a1c668ad6d207fb28b4e0
+'http://security.debian.org/debian-security/pool/updates/main/libp/libproxy/libproxy_0.4.15-5+deb10u1.debian.tar.xz' libproxy_0.4.15-5+deb10u1.debian.tar.xz 13420 SHA256:fb030935e8761becfb715d8b60c6c4de82158b1382dafa90d87e6bbb43d4d466
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libproxy/0.4.15-5/ (for browsing the source)
-- https://sources.debian.net/src/libproxy/0.4.15-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libproxy/0.4.15-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libproxy/0.4.15-5+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/libproxy/0.4.15-5+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libproxy/0.4.15-5+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libpsl=0.20.2-2`
 
