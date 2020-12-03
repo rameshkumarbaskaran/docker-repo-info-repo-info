@@ -1,10 +1,10 @@
-# `drupal:8.9.9-fpm-alpine3.12`
+# `drupal:8.9.10-fpm-alpine3.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:25daad811f07d93e7e1780d1be5e541816ccfe2e1f7951213dc2f35c49b70938`
-- Created: `2020-11-19T04:01:03.243020798Z`
-- Virtual Size: ~ 174.49 Mb  
+- Image ID: `sha256:cf99926973655d9ff0244eda7a138b4c4bc8039a45321a3b5201a1783c192723`
+- Created: `2020-12-01T23:32:15.988478328Z`
+- Virtual Size: ~ 175.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,11 +18,11 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.12`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.12.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.12.tar.xz.asc`
-  - `PHP_SHA256=e82d2bcead05255f6b7d2ff4e2561bc334204955820cabc2457b5239fde96b76`
-  - `DRUPAL_VERSION=8.9.9`
+  - `PHP_VERSION=7.4.13`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.13.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.13.tar.xz.asc`
+  - `PHP_SHA256=aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4`
+  - `DRUPAL_VERSION=8.9.10`
 
 ## `apk` (`.apk`-based packages)
 
@@ -369,16 +369,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-12.4-r0 description:
+libpq-12.5-r0 description:
 PostgreSQL libraries
 
-libpq-12.4-r0 webpage:
+libpq-12.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-12.4-r0 installed size:
+libpq-12.5-r0 installed size:
 327680
 
-libpq-12.4-r0 license:
+libpq-12.5-r0 license:
 PostgreSQL
 
 ```
@@ -488,16 +488,16 @@ BSD-3-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```
