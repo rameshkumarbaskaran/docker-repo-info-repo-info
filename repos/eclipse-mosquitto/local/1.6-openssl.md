@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:37cffca9e59996bafcc39cbcd0f35f38d5c7f9292f9caa5011d2900deec7baa2`
-- Created: `2020-10-22T04:40:25.83167636Z`
-- Virtual Size: ~ 6.76 Mb  
+- Image ID: `sha256:41311cd6c1b7d28b76cd83135e04787607dddd5fb3edc48cb327bad522e94d08`
+- Created: `2020-12-03T22:25:05.079565374Z`
+- Virtual Size: ~ 7.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -15,6 +15,7 @@
   - `DOWNLOAD_SHA256=548d73d19fb787dd0530334e398fd256ef3a581181678488a741a995c4f007fb`
   - `GPG_KEYS=A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7`
   - `LWS_VERSION=2.4.2`
+  - `LWS_SHA256=73012d7fcf428dedccc816e83a63a01462e27819d5537b8e0d0c7264bfacfad6`
 - Labels:
   - `description=Eclipse Mosquitto MQTT Broker`
   - `maintainer=Roger Light <roger@atchoo.org>`
@@ -194,16 +195,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```
