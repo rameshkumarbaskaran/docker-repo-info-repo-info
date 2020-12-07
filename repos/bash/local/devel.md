@@ -1,9 +1,9 @@
-# `bash:devel-20201118`
+# `bash:devel-20201128`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7a34be13f7ae6faf06c40269e1a0bf27da724b289882348908847e490de00f0b`
-- Created: `2020-12-01T23:27:25.793961962Z`
+- Image ID: `sha256:b0b0a8238aef3bf711e1d9e2d158d838cf6cf886f6894cec519711324801b4b5`
+- Created: `2020-12-04T00:20:16.090871243Z`
 - Virtual Size: ~ 14.28 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Command: `["bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `_BASH_COMMIT=66c2247c48819478146f34cc5dff3d43d743b857`
-  - `_BASH_VERSION=devel-20201118`
+  - `_BASH_COMMIT=9b44e16c6f716cf26c81a51c3b2e8a2cc4a31043`
+  - `_BASH_VERSION=devel-20201128`
 
 ## `apk` (`.apk`-based packages)
 
