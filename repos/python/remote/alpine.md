@@ -1,7 +1,7 @@
 ## `python:alpine`
 
 ```console
-$ docker pull python@sha256:8801dc8b276f365969c242b9c725b0fc4e0c79207511bf138e6c07216f5cbca2
+$ docker pull python@sha256:030bcd24d3cffabd389f353248b102ff50267252232fef0b6ed0e16799a3dfef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -149,14 +149,14 @@ CMD ["python3"]
 ### `python:alpine` - linux; arm variant v7
 
 ```console
-$ docker pull python@sha256:2dd33eef2f311486b49034b4a932b12ab4a2e4ae0a17a4b66a69c7434869e2f5
+$ docker pull python@sha256:44ad35b018e6a4aafbd76b3ac3b82d74ab0e59998833252891fb1f2389768098
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **17.2 MB (17225960 bytes)**  
+-	Total Size: **15.8 MB (15800243 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fe605a569e0dad0e72b157ed05ef073c8d89cd86f0ea65ee40c8d61bb94fc6b`
+-	Image ID: `sha256:ed1c86ce888a1761b71966e8ff8faba0a7fed9b5fed73ac155bed124c59508f1`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -172,21 +172,21 @@ ENV LANG=C.UTF-8
 RUN set -eux; 	apk add --no-cache 		ca-certificates 		tzdata 	;
 # Wed, 25 Nov 2020 04:03:48 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Wed, 25 Nov 2020 04:03:49 GMT
-ENV PYTHON_VERSION=3.9.0
-# Wed, 25 Nov 2020 04:08:56 GMT
+# Tue, 08 Dec 2020 02:27:38 GMT
+ENV PYTHON_VERSION=3.9.1
+# Tue, 08 Dec 2020 02:32:42 GMT
 RUN set -ex 	&& apk add --no-cache --virtual .fetch-deps 		gnupg 		tar 		xz 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& apk add --no-cache --virtual .build-deps  		bluez-dev 		bzip2-dev 		coreutils 		dpkg-dev dpkg 		expat-dev 		findutils 		gcc 		gdbm-dev 		libc-dev 		libffi-dev 		libnsl-dev 		libtirpc-dev 		linux-headers 		make 		ncurses-dev 		openssl-dev 		pax-utils 		readline-dev 		sqlite-dev 		tcl-dev 		tk 		tk-dev 		util-linux-dev 		xz-dev 		zlib-dev 	&& apk del --no-network .fetch-deps 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 		EXTRA_CFLAGS="-DTHREAD_STACK_SIZE=0x100000" 		LDFLAGS="-Wl,--strip-all" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';' 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		| xargs -rt apk add --no-cache --virtual .python-rundeps 	&& apk del --no-network .build-deps 		&& python3 --version
-# Wed, 25 Nov 2020 04:08:59 GMT
+# Tue, 08 Dec 2020 02:32:45 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Thu, 03 Dec 2020 22:05:12 GMT
+# Tue, 08 Dec 2020 02:32:45 GMT
 ENV PYTHON_PIP_VERSION=20.3.1
-# Thu, 03 Dec 2020 22:05:14 GMT
+# Tue, 08 Dec 2020 02:32:46 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/91630a4867b1f93ba0a12aa81d0ec4ecc1e7eeb9/get-pip.py
-# Thu, 03 Dec 2020 22:05:14 GMT
+# Tue, 08 Dec 2020 02:32:47 GMT
 ENV PYTHON_GET_PIP_SHA256=d48ae68f297cac54db17e4107b800faae0e5210131f9f386c30c0166bf8d81b7
-# Thu, 03 Dec 2020 22:05:29 GMT
+# Tue, 08 Dec 2020 02:32:59 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Thu, 03 Dec 2020 22:05:32 GMT
+# Tue, 08 Dec 2020 02:33:00 GMT
 CMD ["python3"]
 ```
 
@@ -199,17 +199,17 @@ CMD ["python3"]
 		Last Modified: Wed, 25 Nov 2020 06:00:31 GMT  
 		Size: 650.2 KB (650191 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c745c750ac588bce0d88211cde5c74fccc52dfca4d30717a89d62f0e2d87b4a3`  
-		Last Modified: Wed, 25 Nov 2020 06:01:08 GMT  
-		Size: 12.0 MB (12033704 bytes)  
+	-	`sha256:cf6455c1b112f67daec444a66aa5698f7f758a5fdbefbdf9ce0b02474e358fa8`  
+		Last Modified: Tue, 08 Dec 2020 02:35:56 GMT  
+		Size: 10.6 MB (10607950 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a9d34194eea8caf256ef194e5432a247f2de26d4be3192a1d1f509edcd64c07`  
-		Last Modified: Wed, 25 Nov 2020 06:01:05 GMT  
-		Size: 233.0 B  
+	-	`sha256:8b432ad3eb7df12fd3155ef73fdec87bbd1b805e089b3f88063c9d05b2a98c32`  
+		Last Modified: Tue, 08 Dec 2020 02:35:53 GMT  
+		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6b40652378bfaf232e71449b39623f5052a2ca5bba954b44fff982ec2c2c399b`  
-		Last Modified: Thu, 03 Dec 2020 22:15:31 GMT  
-		Size: 2.1 MB (2136157 bytes)  
+	-	`sha256:e9b13f7897c240c32763af018bb59afa82dc3c542e8a321d0bb58251d805d023`  
+		Last Modified: Tue, 08 Dec 2020 02:35:54 GMT  
+		Size: 2.1 MB (2136196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:alpine` - linux; arm64 variant v8
