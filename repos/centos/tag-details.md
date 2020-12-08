@@ -436,7 +436,7 @@ CMD ["/bin/bash"]
 ## `centos:8`
 
 ```console
-$ docker pull centos@sha256:76d24f3ba3317fa945743bb3746fbaf3a0b752f10b10376960de01da70685fbd
+$ docker pull centos@sha256:d5bedf7c377e654dc22ded43287172863939825628a1d6fdf09d9209942cb8ec
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -476,29 +476,29 @@ CMD ["/bin/bash"]
 ### `centos:8` - linux; arm64 variant v8
 
 ```console
-$ docker pull centos@sha256:eb047b4091f883c3fa254eedadf92c44ea5263a8ae01a399d0b13149a8f0708c
+$ docker pull centos@sha256:7723d6b5d15b1c64d0a82ee6298c66cf8c27179e1c8a458e719041ffd08cd091
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.4 MB (75431202 bytes)**  
+-	Total Size: **75.6 MB (75613064 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9d5bccb1776bd298334234395ecd1e33ec7050e8ee3fc821daed7c484588b17b`
+-	Image ID: `sha256:a0477e85b8aebf57d58bfa74a6598eccfd3fcc43a78c8e29c380cde2e7300a1b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Mon, 10 Aug 2020 18:39:46 GMT
-ADD file:9aef459f0ff88a7706ee982d7bfa724ae81676e2bf94ebc8fcd9043c73e72499 in / 
-# Mon, 10 Aug 2020 18:39:50 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20200809
-# Mon, 10 Aug 2020 18:39:51 GMT
+# Mon, 07 Dec 2020 23:42:06 GMT
+ADD file:edd6e1253ec7bbb67b5a28d40c7d28b34a443c2cfa327bebf55c8b0b19484bf9 in / 
+# Mon, 07 Dec 2020 23:42:09 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20201204
+# Mon, 07 Dec 2020 23:42:10 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:deeb10e3e252e0ed6520bbaa2570413f3c1517305f8f397c3d59ae791ac23678`  
-		Last Modified: Mon, 10 Aug 2020 18:41:23 GMT  
-		Size: 75.4 MB (75431202 bytes)  
+	-	`sha256:333cbcae3fb80b9a46084ae4caea81a84aafda9700fb646ab89206d0cfe213fd`  
+		Last Modified: Mon, 07 Dec 2020 23:42:49 GMT  
+		Size: 75.6 MB (75613064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `centos:8` - linux; ppc64le
@@ -531,7 +531,41 @@ CMD ["/bin/bash"]
 
 ## `centos:8.3.2011`
 
-**does not exist** (yet?)
+```console
+$ docker pull centos@sha256:1c8e2b07894ea1a7222bb25e99df4bc2a4a0cc4737a8b3e109fc1b191dade92d
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; arm64 variant v8
+
+### `centos:8.3.2011` - linux; arm64 variant v8
+
+```console
+$ docker pull centos@sha256:7723d6b5d15b1c64d0a82ee6298c66cf8c27179e1c8a458e719041ffd08cd091
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **75.6 MB (75613064 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:a0477e85b8aebf57d58bfa74a6598eccfd3fcc43a78c8e29c380cde2e7300a1b`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Mon, 07 Dec 2020 23:42:06 GMT
+ADD file:edd6e1253ec7bbb67b5a28d40c7d28b34a443c2cfa327bebf55c8b0b19484bf9 in / 
+# Mon, 07 Dec 2020 23:42:09 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20201204
+# Mon, 07 Dec 2020 23:42:10 GMT
+CMD ["/bin/bash"]
+```
+
+-	Layers:
+	-	`sha256:333cbcae3fb80b9a46084ae4caea81a84aafda9700fb646ab89206d0cfe213fd`  
+		Last Modified: Mon, 07 Dec 2020 23:42:49 GMT  
+		Size: 75.6 MB (75613064 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `centos:centos6`
 
@@ -953,7 +987,7 @@ CMD ["/bin/bash"]
 ## `centos:centos8`
 
 ```console
-$ docker pull centos@sha256:76d24f3ba3317fa945743bb3746fbaf3a0b752f10b10376960de01da70685fbd
+$ docker pull centos@sha256:d5bedf7c377e654dc22ded43287172863939825628a1d6fdf09d9209942cb8ec
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -993,29 +1027,29 @@ CMD ["/bin/bash"]
 ### `centos:centos8` - linux; arm64 variant v8
 
 ```console
-$ docker pull centos@sha256:eb047b4091f883c3fa254eedadf92c44ea5263a8ae01a399d0b13149a8f0708c
+$ docker pull centos@sha256:7723d6b5d15b1c64d0a82ee6298c66cf8c27179e1c8a458e719041ffd08cd091
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.4 MB (75431202 bytes)**  
+-	Total Size: **75.6 MB (75613064 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9d5bccb1776bd298334234395ecd1e33ec7050e8ee3fc821daed7c484588b17b`
+-	Image ID: `sha256:a0477e85b8aebf57d58bfa74a6598eccfd3fcc43a78c8e29c380cde2e7300a1b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Mon, 10 Aug 2020 18:39:46 GMT
-ADD file:9aef459f0ff88a7706ee982d7bfa724ae81676e2bf94ebc8fcd9043c73e72499 in / 
-# Mon, 10 Aug 2020 18:39:50 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20200809
-# Mon, 10 Aug 2020 18:39:51 GMT
+# Mon, 07 Dec 2020 23:42:06 GMT
+ADD file:edd6e1253ec7bbb67b5a28d40c7d28b34a443c2cfa327bebf55c8b0b19484bf9 in / 
+# Mon, 07 Dec 2020 23:42:09 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20201204
+# Mon, 07 Dec 2020 23:42:10 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:deeb10e3e252e0ed6520bbaa2570413f3c1517305f8f397c3d59ae791ac23678`  
-		Last Modified: Mon, 10 Aug 2020 18:41:23 GMT  
-		Size: 75.4 MB (75431202 bytes)  
+	-	`sha256:333cbcae3fb80b9a46084ae4caea81a84aafda9700fb646ab89206d0cfe213fd`  
+		Last Modified: Mon, 07 Dec 2020 23:42:49 GMT  
+		Size: 75.6 MB (75613064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `centos:centos8` - linux; ppc64le
@@ -1048,12 +1082,46 @@ CMD ["/bin/bash"]
 
 ## `centos:centos8.3.2011`
 
-**does not exist** (yet?)
+```console
+$ docker pull centos@sha256:1c8e2b07894ea1a7222bb25e99df4bc2a4a0cc4737a8b3e109fc1b191dade92d
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+	-	linux; arm64 variant v8
+
+### `centos:centos8.3.2011` - linux; arm64 variant v8
+
+```console
+$ docker pull centos@sha256:7723d6b5d15b1c64d0a82ee6298c66cf8c27179e1c8a458e719041ffd08cd091
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **75.6 MB (75613064 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:a0477e85b8aebf57d58bfa74a6598eccfd3fcc43a78c8e29c380cde2e7300a1b`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Mon, 07 Dec 2020 23:42:06 GMT
+ADD file:edd6e1253ec7bbb67b5a28d40c7d28b34a443c2cfa327bebf55c8b0b19484bf9 in / 
+# Mon, 07 Dec 2020 23:42:09 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20201204
+# Mon, 07 Dec 2020 23:42:10 GMT
+CMD ["/bin/bash"]
+```
+
+-	Layers:
+	-	`sha256:333cbcae3fb80b9a46084ae4caea81a84aafda9700fb646ab89206d0cfe213fd`  
+		Last Modified: Mon, 07 Dec 2020 23:42:49 GMT  
+		Size: 75.6 MB (75613064 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `centos:latest`
 
 ```console
-$ docker pull centos@sha256:76d24f3ba3317fa945743bb3746fbaf3a0b752f10b10376960de01da70685fbd
+$ docker pull centos@sha256:d5bedf7c377e654dc22ded43287172863939825628a1d6fdf09d9209942cb8ec
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1093,29 +1161,29 @@ CMD ["/bin/bash"]
 ### `centos:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull centos@sha256:eb047b4091f883c3fa254eedadf92c44ea5263a8ae01a399d0b13149a8f0708c
+$ docker pull centos@sha256:7723d6b5d15b1c64d0a82ee6298c66cf8c27179e1c8a458e719041ffd08cd091
 ```
 
--	Docker Version: 18.09.7
+-	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **75.4 MB (75431202 bytes)**  
+-	Total Size: **75.6 MB (75613064 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9d5bccb1776bd298334234395ecd1e33ec7050e8ee3fc821daed7c484588b17b`
+-	Image ID: `sha256:a0477e85b8aebf57d58bfa74a6598eccfd3fcc43a78c8e29c380cde2e7300a1b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Mon, 10 Aug 2020 18:39:46 GMT
-ADD file:9aef459f0ff88a7706ee982d7bfa724ae81676e2bf94ebc8fcd9043c73e72499 in / 
-# Mon, 10 Aug 2020 18:39:50 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20200809
-# Mon, 10 Aug 2020 18:39:51 GMT
+# Mon, 07 Dec 2020 23:42:06 GMT
+ADD file:edd6e1253ec7bbb67b5a28d40c7d28b34a443c2cfa327bebf55c8b0b19484bf9 in / 
+# Mon, 07 Dec 2020 23:42:09 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20201204
+# Mon, 07 Dec 2020 23:42:10 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:deeb10e3e252e0ed6520bbaa2570413f3c1517305f8f397c3d59ae791ac23678`  
-		Last Modified: Mon, 10 Aug 2020 18:41:23 GMT  
-		Size: 75.4 MB (75431202 bytes)  
+	-	`sha256:333cbcae3fb80b9a46084ae4caea81a84aafda9700fb646ab89206d0cfe213fd`  
+		Last Modified: Mon, 07 Dec 2020 23:42:49 GMT  
+		Size: 75.6 MB (75613064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `centos:latest` - linux; ppc64le
