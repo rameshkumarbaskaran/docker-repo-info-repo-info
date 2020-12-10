@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:fc67788580c45d661eca9eee275f454bad6b9f39847268008a4d3b32f6e5c7e6`
-- Created: `2020-08-14T21:13:13.258424205Z`
-- Virtual Size: ~ 278.28 Mb  
+- Image ID: `sha256:2cb58d00fcf7cc3361f0035e54d47062c0ce389f12ad5e44b81134e9152e0aab`
+- Created: `2020-12-08T00:56:04.025499721Z`
+- Virtual Size: ~ 272.56 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["rethinkdb","--bind","all"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RETHINKDB_PACKAGE_VERSION=2.4.1`
 - Labels:
-  - `org.label-schema.build-date=20200809`
+  - `org.label-schema.build-date=20201204`
   - `org.label-schema.license=GPLv2`
   - `org.label-schema.name=CentOS Base Image`
   - `org.label-schema.schema-version=1.0`
