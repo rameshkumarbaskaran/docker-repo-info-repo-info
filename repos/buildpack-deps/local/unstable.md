@@ -641,20 +641,13 @@ Licenses: (parsed from: `/usr/share/doc/dash/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dash=0.5.11+git20200708+dd9ef66-2
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-2.dsc' dash_0.5.11+git20200708+dd9ef66-2.dsc 1906 SHA256:8e235f05db6af16a51d0570131095744122b33da0011fd8e81072d80683ebd2d
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66.orig.tar.gz' dash_0.5.11+git20200708+dd9ef66.orig.tar.gz 167776 SHA256:ab70b1f165bfedadd1282da546f1c917f1b7ccb2c5c2f898310a963e2ab5520c
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-2.debian.tar.xz' dash_0.5.11+git20200708+dd9ef66-2.debian.tar.xz 42292 SHA256:735ec38434c77cb3514f64cdabd96995c00462c4400ceed09011a5cac3aa971c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/dash/0.5.11+git20200708+dd9ef66-2/
 
-- https://sources.debian.net/src/dash/0.5.11+git20200708+dd9ef66-2/ (for browsing the source)
-- https://sources.debian.net/src/dash/0.5.11+git20200708+dd9ef66-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/dash/0.5.11+git20200708+dd9ef66-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dav1d=0.7.1-3`
 
@@ -1518,21 +1511,13 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.6.15-4
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.15-4.dsc' gnutls28_3.6.15-4.dsc 3496 SHA256:697b456a8858ec035e431130bdf1fbb74c889b62ab7ef8a53c4d321d465f6de0
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.15.orig.tar.xz' gnutls28_3.6.15.orig.tar.xz 6081656 SHA256:0ea8c3283de8d8335d7ae338ef27c53a916f15f382753b174c18b45ffd481558
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.15.orig.tar.xz.asc' gnutls28_3.6.15.orig.tar.xz.asc 833 SHA256:49abc685c9504b4b4de7a0cd8075ee9a4c01f0a6e2b2c9b86a24c58b1e7ac7c5
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.15-4.debian.tar.xz' gnutls28_3.6.15-4.debian.tar.xz 63856 SHA256:561f540c56da648cc79fe1c06f50be8ba315d7572bd0094134eb3b7bc7489f7e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnutls28/3.6.15-4/
 
-- https://sources.debian.net/src/gnutls28/3.6.15-4/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.6.15-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.6.15-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gobject-introspection=1.66.1-1`
 
@@ -1744,21 +1729,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris icu=67.1-4
-'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1-4.dsc' icu_67.1-4.dsc 2219 SHA256:dddc58edc5dffde554a9a7644b04243c29448c898395ea8652ed1ee4da5b4a3b
-'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1.orig.tar.gz' icu_67.1.orig.tar.gz 24518055 SHA256:94a80cd6f251a53bd2a997f6f1b5ac6653fe791dfab66e1eb0227740fb86d5dc
-'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1.orig.tar.gz.asc' icu_67.1.orig.tar.gz.asc 833 SHA256:0044119f3df92ff3055dc3609f527fa1290177f6ef1b6650ea136698b245e537
-'http://deb.debian.org/debian/pool/main/i/icu/icu_67.1-4.debian.tar.xz' icu_67.1-4.debian.tar.xz 29480 SHA256:cea4d6bf3847a862d5a495fb70d4960682e48052094d214f951e2d9f0dbaccf1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/icu/67.1-4/
 
-- https://sources.debian.net/src/icu/67.1-4/ (for browsing the source)
-- https://sources.debian.net/src/icu/67.1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/67.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ilmbase=2.5.3-2`
 
@@ -2722,20 +2699,13 @@ Licenses: (parsed from: `/usr/share/doc/libmaxminddb-dev/copyright`, `/usr/share
 - `GPL`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libmaxminddb=1.3.2-1
-'http://deb.debian.org/debian/pool/main/libm/libmaxminddb/libmaxminddb_1.3.2-1.dsc' libmaxminddb_1.3.2-1.dsc 2104 SHA256:c75309a506da7a68fe74b13ab3f8f3024a377859ec9fb77aa2e4c057550c1158
-'http://deb.debian.org/debian/pool/main/libm/libmaxminddb/libmaxminddb_1.3.2.orig.tar.gz' libmaxminddb_1.3.2.orig.tar.gz 248665 SHA256:5fa35b5e7ae3ed11b9c392d6ea38572966c1ceaeab4e2598174911978ea0c027
-'http://deb.debian.org/debian/pool/main/libm/libmaxminddb/libmaxminddb_1.3.2-1.debian.tar.xz' libmaxminddb_1.3.2-1.debian.tar.xz 4868 SHA256:25b816d507995b6fe8d8430f43215f79cc1191e0f931e130e70a7060fa2992ee
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libmaxminddb/1.3.2-1/
 
-- https://sources.debian.net/src/libmaxminddb/1.3.2-1/ (for browsing the source)
-- https://sources.debian.net/src/libmaxminddb/1.3.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libmaxminddb/1.3.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libmnl=1.0.4-3`
 
