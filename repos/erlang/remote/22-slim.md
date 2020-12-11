@@ -1,7 +1,7 @@
 ## `erlang:22-slim`
 
 ```console
-$ docker pull erlang@sha256:e37e4c5c15062ad5706639f9d2ba84c20471300bda7fef56970781c90bd1c796
+$ docker pull erlang@sha256:578d5bf6358526c0ea36299c78496dd87db3ea113dcc73c9c27338d125cdc969
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -168,39 +168,39 @@ CMD ["erl"]
 ### `erlang:22-slim` - linux; ppc64le
 
 ```console
-$ docker pull erlang@sha256:89c066ace16f4deda1445d5ae5d41db5f26e6963384351c4129a7c6b4da57baf
+$ docker pull erlang@sha256:7be8d409e54c73d7c28d858a5529aad352cbb53aa217a1aa650d7fbcc32cd8f4
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **111.5 MB (111543339 bytes)**  
+-	Total Size: **111.5 MB (111542132 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b1fcc7f4cd6c6ce5e55addeca97ac678bafbb4ad87680296cce34b61f60455b7`
+-	Image ID: `sha256:6032a1ea684a865f7010085519364a35ec8820cf357d73a2ca8a04a43bc61030`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 17 Nov 2020 23:22:28 GMT
-ADD file:b5112ae3b22de1d8a373191ad01151a6c1cdde605887b1836672be39787e2213 in / 
-# Tue, 17 Nov 2020 23:22:37 GMT
+# Fri, 11 Dec 2020 03:33:14 GMT
+ADD file:3f6d74a3193dcc81fb8d9c0a830337812d5ed7618d5f16c8eb193d30f827c49d in / 
+# Fri, 11 Dec 2020 03:33:24 GMT
 CMD ["bash"]
-# Wed, 09 Dec 2020 04:22:24 GMT
+# Fri, 11 Dec 2020 06:15:34 GMT
 ENV OTP_VERSION=22.3.4.13
-# Wed, 09 Dec 2020 04:22:33 GMT
+# Fri, 11 Dec 2020 06:15:39 GMT
 LABEL org.opencontainers.image.version=22.3.4.13
-# Wed, 09 Dec 2020 04:44:34 GMT
+# Fri, 11 Dec 2020 06:28:23 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="0da6f7702301d237f82514898f5ec8669412a60fc3b8ea6ce2c168bec1edf7fb" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 09 Dec 2020 04:44:45 GMT
+# Fri, 11 Dec 2020 06:28:30 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:94e00adb98ff1f971add74025ff2a8ca87e003568d828bdb0df26ecd46c269a2`  
-		Last Modified: Tue, 17 Nov 2020 23:31:43 GMT  
-		Size: 54.1 MB (54143125 bytes)  
+	-	`sha256:fbe5c9ac66677a4494c2d36707222498adce02d2dcb8e08d2f8a59a0f10b2582`  
+		Last Modified: Fri, 11 Dec 2020 03:41:06 GMT  
+		Size: 54.1 MB (54142548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2af21654eb52a4475c1cd3d60921539acab2f96a46b507dd8444f02b973e8669`  
-		Last Modified: Wed, 09 Dec 2020 04:57:32 GMT  
-		Size: 57.4 MB (57400214 bytes)  
+	-	`sha256:74e8845c4156ebd1dd51701b7d2f28c3d762f25991eda2c33199cdcf1414a1a1`  
+		Last Modified: Fri, 11 Dec 2020 06:30:17 GMT  
+		Size: 57.4 MB (57399584 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22-slim` - linux; s390x
