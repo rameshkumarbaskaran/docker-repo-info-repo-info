@@ -1,7 +1,7 @@
 ## `znc:slim`
 
 ```console
-$ docker pull znc@sha256:5c24c6f06735a81010ff3c480a64dcee7b5a4038549b6ef72a4f51238f553df9
+$ docker pull znc@sha256:051808ad61cf20c29887e59ad028d5583ac9b4af1a2ef2acbaa7a23a5d3af8a1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -163,74 +163,74 @@ ENTRYPOINT ["/entrypoint.sh"]
 ### `znc:slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull znc@sha256:be3c031c422e9dc4116dfd74c0f2cc651016f2bc46af80e8d6e1925e2973d138
+$ docker pull znc@sha256:4b0e3eb168b9b69a970502a877d670fec6683424f3ad991fde74a0e5e84e4bce
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.0 MB (46991596 bytes)**  
+-	Total Size: **47.1 MB (47117198 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:eccd6fc946d85d81bc6874201425f7e3ba05449ae7f0e8df2334df9be85efa12`
+-	Image ID: `sha256:f68085a2eeb9f486a8bacff6532aa7b60a2d30f995b2dfdaf92aac4f0b21e696`
 -	Entrypoint: `["\/entrypoint.sh"]`
 
 ```dockerfile
-# Thu, 22 Oct 2020 02:01:01 GMT
-ADD file:55c4e9752146061a2b5f76027221329f423687987c0744ef577130c60ff0ba42 in / 
-# Thu, 22 Oct 2020 02:01:06 GMT
+# Fri, 11 Dec 2020 02:42:58 GMT
+ADD file:a1a6d0f8dffb9bc75438921cdb5c04d2f2f49400a7526dcf3d8dff9238e3235a in / 
+# Fri, 11 Dec 2020 02:43:00 GMT
 CMD ["/bin/sh"]
-# Thu, 22 Oct 2020 09:01:42 GMT
+# Fri, 11 Dec 2020 16:11:14 GMT
 ENV GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E
-# Thu, 22 Oct 2020 09:01:45 GMT
+# Fri, 11 Dec 2020 16:11:16 GMT
 ARG CMAKEFLAGS=-DCMAKE_INSTALL_PREFIX=/opt/znc -DWANT_CYRUS=YES -DWANT_PERL=YES -DWANT_PYTHON=YES
-# Thu, 22 Oct 2020 09:01:48 GMT
+# Fri, 11 Dec 2020 16:11:19 GMT
 ARG MAKEFLAGS=
-# Thu, 22 Oct 2020 09:01:50 GMT
+# Fri, 11 Dec 2020 16:11:20 GMT
 ENV ZNC_VERSION=1.8.2
-# Thu, 22 Oct 2020 09:10:37 GMT
+# Fri, 11 Dec 2020 16:20:04 GMT
 # ARGS: CMAKEFLAGS=-DCMAKE_INSTALL_PREFIX=/opt/znc -DWANT_CYRUS=YES -DWANT_PERL=YES -DWANT_PYTHON=YES MAKEFLAGS=
 RUN set -x     && adduser -S znc     && addgroup -S znc     && apk add --no-cache --virtual runtime-dependencies         boost         ca-certificates         cyrus-sasl         icu         libressl         su-exec         tini         tzdata     && apk add --no-cache --virtual build-dependencies         boost-dev         build-base         cmake         curl         cyrus-sasl-dev         gettext         gnupg         icu-dev         libressl-dev         perl-dev         python3-dev     && mkdir /znc-src && cd /znc-src     && curl -fsSL "https://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz" -o znc.tgz     && curl -fsSL "https://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz.sig" -o znc.tgz.sig     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "${GPG_KEY}"     && gpg --batch --verify znc.tgz.sig znc.tgz     && rm -rf "$GNUPGHOME"     && tar -zxf znc.tgz --strip-components=1     && mkdir build && cd build     && cmake .. ${CMAKEFLAGS}     && make $MAKEFLAGS     && make install     && apk del build-dependencies     && cd / && rm -rf /znc-src
-# Thu, 22 Oct 2020 09:10:42 GMT
+# Fri, 11 Dec 2020 16:20:07 GMT
 COPY file:15e47c9cc6835e0818d6896aa6537a8adda40ff814c287685183c73fa9df4713 in / 
-# Thu, 22 Oct 2020 09:10:44 GMT
+# Fri, 11 Dec 2020 16:20:08 GMT
 COPY file:dfda6761eff5635f2f7a6c1d540b2b14ea67514867578d12226629a780844185 in /startup-sequence/ 
-# Thu, 22 Oct 2020 09:10:46 GMT
+# Fri, 11 Dec 2020 16:20:08 GMT
 COPY file:809dccdc6a2a9f5e2a058644d9f71b2f167ab0f237913902896fef13b6315814 in /startup-sequence/ 
-# Thu, 22 Oct 2020 09:10:47 GMT
+# Fri, 11 Dec 2020 16:20:09 GMT
 COPY file:84986dd2ebc690804b4c47eb72d1af3a52ba257c76202478879604756431ff5c in /startup-sequence/ 
-# Thu, 22 Oct 2020 09:10:48 GMT
+# Fri, 11 Dec 2020 16:20:10 GMT
 COPY file:50e035ea8915a4bc88fd57c8f79152224f23e0c4c4b68ea8469294aedbddd039 in /startup-sequence/ 
-# Thu, 22 Oct 2020 09:10:49 GMT
+# Fri, 11 Dec 2020 16:20:11 GMT
 VOLUME [/znc-data]
-# Thu, 22 Oct 2020 09:10:50 GMT
+# Fri, 11 Dec 2020 16:20:13 GMT
 ENTRYPOINT ["/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:5f621e34cdf485f410766dc9a0fc7855d17916d0f6583b58cbdce7c28831f527`  
-		Last Modified: Thu, 22 Oct 2020 02:01:38 GMT  
-		Size: 2.7 MB (2706555 bytes)  
+	-	`sha256:a3cc7d3b244e0bac4f32b7529f804d1ab735b088ea432061c3949b2a890b919f`  
+		Last Modified: Fri, 11 Dec 2020 02:43:46 GMT  
+		Size: 2.7 MB (2706619 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64e69975ef2f071f47e6a8159018b0000af3316f435fb29b5e12f80bf23b0865`  
-		Last Modified: Thu, 22 Oct 2020 09:11:48 GMT  
-		Size: 44.3 MB (44283612 bytes)  
+	-	`sha256:6ac6e464ad24da9516f655f0228fb276f74815cd06156803e4432b9fc4be2098`  
+		Last Modified: Fri, 11 Dec 2020 16:21:16 GMT  
+		Size: 44.4 MB (44409155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:89bfd76a6014b83f46b976d0c98dafebcf9e6a91e832788475c5ff60794ae02b`  
-		Last Modified: Thu, 22 Oct 2020 09:11:35 GMT  
-		Size: 173.0 B  
+	-	`sha256:41bbd0e05025f0c4992630cb3bb5105e724939028c062c132bad1a8c190004fe`  
+		Last Modified: Fri, 11 Dec 2020 16:21:01 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:91d791235545f3c8e17af33e674365b13808cc6348a52c0dc3ec48723eee0e61`  
-		Last Modified: Thu, 22 Oct 2020 09:11:35 GMT  
-		Size: 306.0 B  
+	-	`sha256:60dca191f4c5d99f44dcf82d3c2527e0ab0ad3a86f6aa3a0f556e495e68bfbc7`  
+		Last Modified: Fri, 11 Dec 2020 16:21:01 GMT  
+		Size: 303.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee7e28d6f56306765f31465d151ca375f40116b5f37d3e5e5a09b02f164bf94e`  
-		Last Modified: Thu, 22 Oct 2020 09:11:35 GMT  
-		Size: 235.0 B  
+	-	`sha256:1c686c17fb5ab063733738eb735c4f42dd519feb900da39f380ce6142b4163ae`  
+		Last Modified: Fri, 11 Dec 2020 16:21:01 GMT  
+		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e8c670d0a39679602a9fa0b0a413c87efddceeedd82dc9127eb44c77a4b10df`  
-		Last Modified: Thu, 22 Oct 2020 09:11:36 GMT  
+	-	`sha256:fcad2c86b1fd477486d9c330a3d6cb63b27b7def734a811d2a3aff7e3759438a`  
+		Last Modified: Fri, 11 Dec 2020 16:21:01 GMT  
 		Size: 373.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7fefce2f133a082ab2963d6a2ef3843f0bbec30c94ce4379cfcaff169dda03c`  
-		Last Modified: Thu, 22 Oct 2020 09:11:35 GMT  
+	-	`sha256:bf7af14d720cc42e13ae5bba2556632e40bf2bb1803b6a52e055f4aa6124653d`  
+		Last Modified: Fri, 11 Dec 2020 16:21:01 GMT  
 		Size: 342.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
