@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:831faba38c19566a9dc7b2b6011a1ae8926bbe218aab06d8a831529a88da52c8`
-- Created: `2020-11-19T06:28:47.578503828Z`
-- Virtual Size: ~ 771.62 Mb  
+- Image ID: `sha256:44fb480c5f5c1e4496c9c24df6d9e1613abacc38fadd91bfde1b04a5146219e1`
+- Created: `2020-12-10T18:04:05.655434771Z`
+- Virtual Size: ~ 776.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/docker-entrypoint.sh"]`
@@ -19,8 +19,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=9`
-  - `TOMCAT_VERSION=9.0.40`
-  - `TOMCAT_SHA512=a37c787b659e7123363ea20ff601a2fb5d289d2c0d57d497d301af9e9f316629aca3d406d7d54e7b263fbdd725e0ed29456c10b5586b7e994a50eaa7b07312ec`
+  - `TOMCAT_VERSION=9.0.41`
+  - `TOMCAT_SHA512=b6450e590a37c5bccf049b1176c441f0964796995e80d4c7c7d9fb74f9ad817107c303b6b83ed3d71c9251b2b8acf334b90a4abdf9deea122e338643cece0766`
   - `SWT_GTK3=0`
   - `GOSU_VERSION=1.11`
   - `GOSU_GPG_KEYS=B42F6819007F00F88E364FD4036A9C25BF357DD4`
@@ -2281,7 +2281,6 @@ Other potentially useful URLs:
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1d-0+deb10u3`
 - `openssl=1.1.1d-0+deb10u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
@@ -2303,6 +2302,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openssl/1.1.1d-0+deb10u3/ (for browsing the source)
 - https://sources.debian.net/src/openssl/1.1.1d-0+deb10u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u3/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `openssl=1.1.1d-0+deb10u4`
+
+Binary Packages:
+
+- `libssl1.1:amd64=1.1.1d-0+deb10u4`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u4
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u4.dsc' openssl_1.1.1d-0+deb10u4.dsc 2472 SHA256:b902902750711baf35c087bd220f0fc055ad41f9e810df07246e035fac195cf1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u4.debian.tar.xz' openssl_1.1.1d-0+deb10u4.debian.tar.xz 91472 SHA256:3f6a76b437f5407fe9dba0a47b9d5ba427c83255f17769c4d8532788146fa6ca
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u4/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2`
 
