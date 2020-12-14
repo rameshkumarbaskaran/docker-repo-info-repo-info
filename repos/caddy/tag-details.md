@@ -21,6 +21,15 @@
 -	[`caddy:2.2.1-windowsservercore`](#caddy221-windowsservercore)
 -	[`caddy:2.2.1-windowsservercore-1809`](#caddy221-windowsservercore-1809)
 -	[`caddy:2.2.1-windowsservercore-ltsc2016`](#caddy221-windowsservercore-ltsc2016)
+-	[`caddy:2.3.0-rc.1`](#caddy230-rc1)
+-	[`caddy:2.3.0-rc.1-alpine`](#caddy230-rc1-alpine)
+-	[`caddy:2.3.0-rc.1-builder`](#caddy230-rc1-builder)
+-	[`caddy:2.3.0-rc.1-builder-alpine`](#caddy230-rc1-builder-alpine)
+-	[`caddy:2.3.0-rc.1-builder-windowsservercore-1809`](#caddy230-rc1-builder-windowsservercore-1809)
+-	[`caddy:2.3.0-rc.1-builder-windowsservercore-ltsc2016`](#caddy230-rc1-builder-windowsservercore-ltsc2016)
+-	[`caddy:2.3.0-rc.1-windowsservercore`](#caddy230-rc1-windowsservercore)
+-	[`caddy:2.3.0-rc.1-windowsservercore-1809`](#caddy230-rc1-windowsservercore-1809)
+-	[`caddy:2.3.0-rc.1-windowsservercore-ltsc2016`](#caddy230-rc1-windowsservercore-ltsc2016)
 -	[`caddy:2-alpine`](#caddy2-alpine)
 -	[`caddy:2-builder`](#caddy2-builder)
 -	[`caddy:2-builder-alpine`](#caddy2-builder-alpine)
@@ -8158,6 +8167,42 @@ CMD ["caddy" "run" "--config" "/etc/caddy/Caddyfile" "--adapter" "caddyfile"]
 		Last Modified: Wed, 09 Dec 2020 23:00:02 GMT  
 		Size: 1.1 KB (1102 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `caddy:2.3.0-rc.1`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-alpine`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-builder`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-builder-alpine`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-builder-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-builder-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-windowsservercore`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `caddy:2.3.0-rc.1-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `caddy:2-alpine`
 
