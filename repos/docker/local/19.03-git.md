@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d9ed80ea9a6afb9549bdc68ddadd437dbd168ea952021a7a93e00f778f5dab00`
-- Created: `2020-12-02T01:47:10.964435703Z`
+- Image ID: `sha256:183e97bebf36f6cad44bc7c0dce5103bcf992d95c9de726740cdd765204c538f`
+- Created: `2020-12-11T05:30:58.592727699Z`
 - Virtual Size: ~ 235.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -189,16 +189,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r1 description:
+libcurl-7.69.1-r2 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r1 webpage:
+libcurl-7.69.1-r2 webpage:
 https://curl.haxx.se/
 
-libcurl-7.69.1-r1 installed size:
+libcurl-7.69.1-r2 installed size:
 458752
 
-libcurl-7.69.1-r1 license:
+libcurl-7.69.1-r2 license:
 MIT
 
 ```
@@ -257,16 +257,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```
@@ -274,16 +274,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.24-r9 description:
+musl-utils-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.24-r9 webpage:
+musl-utils-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-utils-1.1.24-r9 installed size:
+musl-utils-1.1.24-r10 installed size:
 151552
 
-musl-utils-1.1.24-r9 license:
+musl-utils-1.1.24-r10 license:
 MIT BSD GPL2+
 
 ```

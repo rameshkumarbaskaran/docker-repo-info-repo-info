@@ -1,16 +1,16 @@
-# `docker:19.03.14-dind`
+# `docker:20.10.0-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6f19136cf89d49aee8fa560eaab20e034c6ee17bbce55a9d33e1fbe5baa35b03`
-- Created: `2020-12-02T01:46:54.579038689Z`
-- Virtual Size: ~ 234.92 Mb  
+- Image ID: `sha256:90109ab0c2dc17a53d4b154aa8295a94338f5a3d044886bd72aa4b5b5fa6cac7`
+- Created: `2020-12-12T18:12:33.631501045Z`
+- Virtual Size: ~ 255.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=19.03.14`
+  - `DOCKER_VERSION=20.10.0`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=ed89041433a031cafc0a0f19cfe573c31688d377`
 
@@ -183,6 +183,23 @@ e2fsprogs-libs-1.45.6-r0 installed size:
 
 e2fsprogs-libs-1.45.6-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
+
+```
+
+### `apk` package: `ip6tables`
+
+```console
+ip6tables-1.8.4-r2 description:
+Linux kernel firewall, NAT and packet mangling tools
+
+ip6tables-1.8.4-r2 webpage:
+https://www.netfilter.org/projects/iptables/index.html
+
+ip6tables-1.8.4-r2 installed size:
+380928
+
+ip6tables-1.8.4-r2 license:
+GPL-2.0-or-later
 
 ```
 
@@ -512,16 +529,16 @@ GPL
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```
@@ -529,16 +546,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.24-r9 description:
+musl-utils-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.24-r9 webpage:
+musl-utils-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-utils-1.1.24-r9 installed size:
+musl-utils-1.1.24-r10 installed size:
 151552
 
-musl-utils-1.1.24-r9 license:
+musl-utils-1.1.24-r10 license:
 MIT BSD GPL2+
 
 ```
@@ -614,16 +631,16 @@ BSD
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1g-r0 description:
+openssl-1.1.1i-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1g-r0 webpage:
+openssl-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1g-r0 installed size:
+openssl-1.1.1i-r0 installed size:
 675840
 
-openssl-1.1.1g-r0 license:
+openssl-1.1.1i-r0 license:
 OpenSSL
 
 ```
