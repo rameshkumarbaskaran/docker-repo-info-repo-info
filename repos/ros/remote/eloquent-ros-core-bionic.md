@@ -1,7 +1,7 @@
 ## `ros:eloquent-ros-core-bionic`
 
 ```console
-$ docker pull ros@sha256:fce949c75ff82cb93b3bedb9aaaaef3ac404e4162eba9e0b3d11887b34c14e51
+$ docker pull ros@sha256:a4c36d61a582cfb22d9221cbcbf5060af9c32ef9749cc6797e833af11f00446e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -100,14 +100,14 @@ CMD ["bash"]
 ### `ros:eloquent-ros-core-bionic` - linux; arm variant v7
 
 ```console
-$ docker pull ros@sha256:b611951f1f1a8bade8621b0a215a8a1140a3d4b0f0e39b505f27dac9ff01cdd0
+$ docker pull ros@sha256:cfd025e27e19134f36a61a9ea85ce7a245717a938dc048412cf716e359433d57
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.8 MB (183800004 bytes)**  
+-	Total Size: **183.8 MB (183835087 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9ccbe925751806a6a4b8c8e895b31212c51ab1552bd8762b1d56d044f20cf5de`
+-	Image ID: `sha256:5547c5e8c0e647bdfdc53b836facb7825047a61a1d54cc830347ba031013191c`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -136,13 +136,13 @@ ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 # Thu, 26 Nov 2020 00:56:32 GMT
 ENV ROS_DISTRO=eloquent
-# Thu, 26 Nov 2020 00:59:32 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-eloquent-ros-core=0.8.4-1*     && rm -rf /var/lib/apt/lists/*
-# Thu, 26 Nov 2020 00:59:36 GMT
+# Mon, 14 Dec 2020 22:05:21 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-eloquent-ros-core=0.8.5-1*     && rm -rf /var/lib/apt/lists/*
+# Mon, 14 Dec 2020 22:05:28 GMT
 COPY file:57f71198b74c2c1967889acdfddb85d428137580d18be4211971fc7381557b6c in / 
-# Thu, 26 Nov 2020 00:59:38 GMT
+# Mon, 14 Dec 2020 22:05:31 GMT
 ENTRYPOINT ["/ros_entrypoint.sh"]
-# Thu, 26 Nov 2020 00:59:39 GMT
+# Mon, 14 Dec 2020 22:05:32 GMT
 CMD ["bash"]
 ```
 
@@ -175,26 +175,26 @@ CMD ["bash"]
 		Last Modified: Thu, 26 Nov 2020 01:17:16 GMT  
 		Size: 228.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e9ac75e5a0bc460d93c871bc33607195018d1fade138e375eb51b6d4762666e8`  
-		Last Modified: Thu, 26 Nov 2020 01:20:01 GMT  
-		Size: 156.6 MB (156581709 bytes)  
+	-	`sha256:3fda02e3bae9bed732d3a98eaa61114060ee314309248b9591a19e2c3a5ca619`  
+		Last Modified: Mon, 14 Dec 2020 22:14:01 GMT  
+		Size: 156.6 MB (156616792 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c8862a613a9a5b4c580bc603dd110c935bdb302782bfe2432cff9a949da28bb6`  
-		Last Modified: Thu, 26 Nov 2020 01:19:14 GMT  
+	-	`sha256:9469a6b9a2c337bdd28749ae380e20c3ac46e5ce3de2c6cd0db8d2ad5641dd8c`  
+		Last Modified: Mon, 14 Dec 2020 22:13:14 GMT  
 		Size: 195.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:eloquent-ros-core-bionic` - linux; arm64 variant v8
 
 ```console
-$ docker pull ros@sha256:c034441bfa6ab6801baa012d4564517dc176dd8b10d5407c757211075aa7cb9d
+$ docker pull ros@sha256:dca2073520dc6e61fe59ec53059867be9b0909f6f6376e46dd3f638745b98f9f
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.4 MB (197427886 bytes)**  
+-	Total Size: **197.4 MB (197432286 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9799feb15a49f364004737613ee9179bd9aa228735537a2334431c4aa4012784`
+-	Image ID: `sha256:8cbb5d5104da4c609acafa473e456dab03669677e432343c8be7cb143eec14ef`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -223,13 +223,13 @@ ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 # Thu, 26 Nov 2020 00:28:14 GMT
 ENV ROS_DISTRO=eloquent
-# Thu, 26 Nov 2020 00:30:27 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-eloquent-ros-core=0.8.4-1*     && rm -rf /var/lib/apt/lists/*
-# Thu, 26 Nov 2020 00:30:35 GMT
+# Mon, 14 Dec 2020 22:05:37 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-eloquent-ros-core=0.8.5-1*     && rm -rf /var/lib/apt/lists/*
+# Mon, 14 Dec 2020 22:05:41 GMT
 COPY file:57f71198b74c2c1967889acdfddb85d428137580d18be4211971fc7381557b6c in / 
-# Thu, 26 Nov 2020 00:30:41 GMT
+# Mon, 14 Dec 2020 22:05:42 GMT
 ENTRYPOINT ["/ros_entrypoint.sh"]
-# Thu, 26 Nov 2020 00:30:46 GMT
+# Mon, 14 Dec 2020 22:05:42 GMT
 CMD ["bash"]
 ```
 
@@ -262,11 +262,11 @@ CMD ["bash"]
 		Last Modified: Thu, 26 Nov 2020 01:14:28 GMT  
 		Size: 230.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e4d605280adbf376408b3a2b2f361d389b6f249a2f8438f33462cf790313b824`  
-		Last Modified: Thu, 26 Nov 2020 01:17:04 GMT  
-		Size: 168.4 MB (168399033 bytes)  
+	-	`sha256:fb4aaa03f14c0c4602fd40d4d9690deff2089b69339d4cba377e394c2308bbdb`  
+		Last Modified: Mon, 14 Dec 2020 22:16:08 GMT  
+		Size: 168.4 MB (168403434 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f0d75573abfa7a819ff13427f39d08fbedc0ce4662641506cc65e7c7dccb7eb`  
-		Last Modified: Thu, 26 Nov 2020 01:16:21 GMT  
-		Size: 195.0 B  
+	-	`sha256:ef5c7b95ab4fbd58b388933995857fff4f8fa181e000f8cc44b5b43eb5f92856`  
+		Last Modified: Mon, 14 Dec 2020 22:15:27 GMT  
+		Size: 194.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
