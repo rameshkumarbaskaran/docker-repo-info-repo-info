@@ -589,13 +589,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.58
-'http://archive.ubuntu.com/ubuntu/pool/main/i/init-system-helpers/init-system-helpers_1.58.dsc' init-system-helpers_1.58.dsc 1896 SHA512:eae4ad120fd7d0e289d70a2092fcc1614f92144022702094a794cb96523325eea572027f1cd5bc9413a1c423db03c91f9eee3b820a9f8c616adc96622082b932
-'http://archive.ubuntu.com/ubuntu/pool/main/i/init-system-helpers/init-system-helpers_1.58.tar.xz' init-system-helpers_1.58.tar.xz 40668 SHA512:bab1b9f186a5183fc98d9230765b81136a5c861d5c83c93296d99072beb59cdbaa241d4b4e5631e8a2bd6ba61390c21a86ccba4587aeaa9a6b7929146f0ccded
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/init-system-helpers/1.58/
+
 
 ### `dpkg` source package: `keyutils=1.6.1-2ubuntu1`
 
@@ -870,14 +870,9 @@ Licenses: (parsed from: `/usr/share/doc/libselinux1/copyright`)
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libselinux=3.1-2build1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_3.1-2build1.dsc' libselinux_3.1-2build1.dsc 2680 SHA512:c259bf7b4789cdb3b2847a4dc6d4fca180de36fe441c123ece9e474b74765e4ad38375eb42ab6d1fb849b9a14cf9128a5b7b4b5640cd5966b9658fca77ee577d
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_3.1.orig.tar.gz' libselinux_3.1.orig.tar.gz 204703 SHA512:57730cddd2d4751556d9e1f207c0f85119c81848f0620c16239e997150989e3f9a586a8c23861fd51ed89f7e084ad441190a58a288258a49a95f7beef7dbbb13
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_3.1-2build1.debian.tar.xz' libselinux_3.1-2build1.debian.tar.xz 23840 SHA512:8ba5bb7329e5e47720ced56da859411c78241d679cc9b979f1f12ca62be2116ce55bfa20dc81ed2b26acd0dc67dacc7538f6f04e382c32a6c90ddd1a073cd005
-```
 
 ### `dpkg` source package: `libsemanage=3.1-1build1`
 
@@ -891,14 +886,9 @@ Licenses: (parsed from: `/usr/share/doc/libsemanage-common/copyright`, `/usr/sha
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsemanage=3.1-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_3.1-1build1.dsc' libsemanage_3.1-1build1.dsc 2709 SHA512:131e23108441c2a22efb087d4983d26a1a6dbd80fcd938557c69042544146807df5cdaa7a04e1a8af967f7c1e708f8e7d96af7030611f7e0a007d80220ef19a8
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_3.1.orig.tar.gz' libsemanage_3.1.orig.tar.gz 179601 SHA512:8609ca7d13b5c603677740f2b14558fea3922624af182d20d618237ba11fcf2559fab82fc68d1efa6ff118f064d426f005138521652c761de92cd66150102197
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_3.1-1build1.debian.tar.xz' libsemanage_3.1-1build1.debian.tar.xz 17644 SHA512:7d5847432e809ea224967ce174f9ed358e0650dc25840d74c481aa2378f448548f8603996ddeca7413aef62fcb47c673d1fd7d7e83a4f19810644decb28b974c
-```
 
 ### `dpkg` source package: `libsepol=3.1-1`
 
@@ -1227,14 +1217,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pcre2=10.34-7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre2/pcre2_10.34-7.dsc' pcre2_10.34-7.dsc 2286 SHA512:c9830f64827dceb42b7bdaba73069367d07dfc9a1f978cc85c563a799abaa2a5484730be6c89dbee84a4ea5e769fb7cd9bfcd2b71bcd81cb58da1f9fa1dc9379
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre2/pcre2_10.34.orig.tar.gz' pcre2_10.34.orig.tar.gz 2271533 SHA512:820b3805fc7fcf3a80dfd42ff570efc8518fe3c50f3feb720319b95316619e5b8f6601b3c9522606315aecd5558ccfc8a04a89fab9921fdfc3400dc2caf17c22
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre2/pcre2_10.34-7.diff.gz' pcre2_10.34-7.diff.gz 7068 SHA512:12d6ef86a0e80928a1da98f9fb00ee8b272232ab74e6aade51d76a007ebca310e1d15a1a5058c40932ae25062655e60aa51e37123944af9f852bbd8c7e7c54e6
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pcre2/10.34-7/
+
 
 ### `dpkg` source package: `pcre3=2:8.39-13`
 
