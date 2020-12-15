@@ -1,18 +1,18 @@
-# `aerospike:5.2.0.10`
+# `aerospike:5.3.0.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:82e5381aae1d1c057b2162d8218e48483936aa3d250b3fc8996c0585ab8b58b0`
-- Created: `2020-12-02T22:20:59.566171708Z`
-- Virtual Size: ~ 160.66 Mb  
+- Image ID: `sha256:8b35556ab7f65ccf44d05b5164530c45f3f1f92204f6cd4b98267c8b8d56465e`
+- Created: `2020-12-14T20:21:20.955841921Z`
+- Virtual Size: ~ 194.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/bin/dumb-init","--","/entrypoint.sh"]`
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=5.2.0.10`
-  - `AEROSPIKE_SHA256=7b765d77cc391d7ea3991c335801972b703e01ac19b9116d266b5c0b57f1ca8d`
+  - `AEROSPIKE_VERSION=5.3.0.2`
+  - `AEROSPIKE_SHA256=11f33419443e486821608e74bf7db318e184686503043cc1a3e7e07ab90eb059`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -66,11 +66,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.115/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.115/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-community=5.2.0.10-1`
+### `dpkg` source package: `aerospike-server-community=5.3.0.2-1`
 
 Binary Packages:
 
-- `aerospike-server-community=5.2.0.10-1`
+- `aerospike-server-community=5.3.0.2-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -80,11 +80,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `aerospike-tools=3.31.0`
+### `dpkg` source package: `aerospike-tools=4.0.4`
 
 Binary Packages:
 
-- `aerospike-tools=3.31.0`
+- `aerospike-tools=4.0.4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -94,12 +94,12 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `apt=1.4.10`
+### `dpkg` source package: `apt=1.4.11`
 
 Binary Packages:
 
-- `apt=1.4.10`
-- `libapt-pkg5.0:amd64=1.4.10`
+- `apt=1.4.11`
+- `libapt-pkg5.0:amd64=1.4.11`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg5.0/copyright`)
 
@@ -109,16 +109,16 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apt=1.4.10
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.4.10.dsc' apt_1.4.10.dsc 2553 SHA256:4b05e85f29d5f9809e33b237612bffefc8afd9df30da18a6c34ac6ce58b60596
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.4.10.tar.xz' apt_1.4.10.tar.xz 2080560 SHA256:eaa314e8ebc9e62fedf316d196d1a99d894fd715e6385ed18afd41cc2cd5b127
+$ apt-get source -qq --print-uris apt=1.4.11
+'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.4.11.dsc' apt_1.4.11.dsc 2553 SHA256:019679d78fbfc08b4bebd7ace4ff6d8ec3e519096eab7bf2bd50ec6a0de9ea7d
+'http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.4.11.tar.xz' apt_1.4.11.tar.xz 2083192 SHA256:4d37de2dbe19385adc56a2f2e323d2fdcbc64d0d282a13f561288505a6e17363
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/apt/1.4.10/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.4.10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.4.10/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/apt/1.4.11/ (for browsing the source)
+- https://sources.debian.net/src/apt/1.4.11/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apt/1.4.11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.47-2`
 
@@ -504,6 +504,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/debianutils/4.8.1.1/ (for browsing the source)
 - https://sources.debian.net/src/debianutils/4.8.1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/debianutils/4.8.1.1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `dh-python=2.20170125`
+
+Binary Packages:
+
+- `dh-python=2.20170125`
+
+Licenses: (parsed from: `/usr/share/doc/dh-python/copyright`)
+
+- `Expat`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris dh-python=2.20170125
+'http://deb.debian.org/debian/pool/main/d/dh-python/dh-python_2.20170125.dsc' dh-python_2.20170125.dsc 1908 SHA256:ef4f2951cea36ae4aac29126a1017505f98b595432fb5bdac0f21b4b4d72c1b4
+'http://deb.debian.org/debian/pool/main/d/dh-python/dh-python_2.20170125.tar.xz' dh-python_2.20170125.tar.xz 91332 SHA256:2e09c162ee2442a03511b7ebe83896e1e3c1df79ce97a22d2f8a8b4cfec9f1e3
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/dh-python/2.20170125/ (for browsing the source)
+- https://sources.debian.net/src/dh-python/2.20170125/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/dh-python/2.20170125/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `diffutils=1:3.5-3`
 
@@ -1682,6 +1706,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/mime-support/3.60/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/mime-support/3.60/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `mpdecimal=2.4.2-1`
+
+Binary Packages:
+
+- `libmpdec2:amd64=2.4.2-1`
+
+Licenses: (parsed from: `/usr/share/doc/libmpdec2/copyright`)
+
+- `BSD`
+- `GPL-2`
+- `GPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris mpdecimal=2.4.2-1
+'http://deb.debian.org/debian/pool/main/m/mpdecimal/mpdecimal_2.4.2-1.dsc' mpdecimal_2.4.2-1.dsc 1893 SHA256:5bc782829357ebc9f0c12084642319e5ac89784a119433f8bfba7a11008d7c13
+'http://deb.debian.org/debian/pool/main/m/mpdecimal/mpdecimal_2.4.2.orig.tar.gz' mpdecimal_2.4.2.orig.tar.gz 2271529 SHA256:83c628b90f009470981cf084c5418329c88b19835d8af3691b930afccb7d79c7
+'http://deb.debian.org/debian/pool/main/m/mpdecimal/mpdecimal_2.4.2-1.debian.tar.xz' mpdecimal_2.4.2-1.debian.tar.xz 5172 SHA256:b95fb775fd04a7ad34fa5bd2c222b49ee2dfd7f0e15295dbd3f7fb86a9b0194b
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/mpdecimal/2.4.2-1/ (for browsing the source)
+- https://sources.debian.net/src/mpdecimal/2.4.2-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/mpdecimal/2.4.2-1/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `ncurses=6.0+20161126-1+deb9u2`
 
 Binary Packages:
@@ -1778,30 +1829,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nghttp2/1.18.1-1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nghttp2/1.18.1-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u5`
+### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u6`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.44+dfsg-5+deb9u5`
-- `libldap-common=2.4.44+dfsg-5+deb9u5`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u5/
-
-
-### `dpkg` source package: `openssl1.0=1.0.2u-1~deb9u2`
-
-Binary Packages:
-
-- `libssl1.0.2:amd64=1.0.2u-1~deb9u2`
+- `libldap-2.4-2:amd64=2.4.44+dfsg-5+deb9u6`
+- `libldap-common=2.4.44+dfsg-5+deb9u6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1810,23 +1843,48 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl1.0=1.0.2u-1~deb9u2
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u-1~deb9u2.dsc' openssl1.0_1.0.2u-1~deb9u2.dsc 2301 SHA256:dc6e3ba0885c093e1dc6f018c9ed3a78f274e8995a21e12e2c50659c1c085b9c
+$ apt-get source -qq --print-uris openldap=2.4.44+dfsg-5+deb9u6
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u6.dsc' openldap_2.4.44+dfsg-5+deb9u6.dsc 3017 SHA256:a7a8776db8d918c9023d273293cc7de947a8b91713c278265366d87a5dbc20e7
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.44+dfsg.orig.tar.gz' openldap_2.4.44+dfsg.orig.tar.gz 4826590 SHA256:d5187c229bec163c5d97845846e1b87917755f85b04f444c08836384f4bd7ffe
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u6.debian.tar.xz' openldap_2.4.44+dfsg-5+deb9u6.debian.tar.xz 170160 SHA256:3fa90cda891238b2a5090e1b885c0c1a5406270ef4c4c9deb614d48bb7d0b360
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u6/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u6/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `openssl1.0=1.0.2u-1~deb9u3`
+
+Binary Packages:
+
+- `libssl1.0.2:amd64=1.0.2u-1~deb9u3`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl1.0=1.0.2u-1~deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u-1~deb9u3.dsc' openssl1.0_1.0.2u-1~deb9u3.dsc 2301 SHA256:c0bb919cf3f33fbf7483845868f3131d4fc8626969a56401a59cb9fdf1619e33
 'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u.orig.tar.gz' openssl1.0_1.0.2u.orig.tar.gz 5355412 SHA256:ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u-1~deb9u2.debian.tar.xz' openssl1.0_1.0.2u-1~deb9u2.debian.tar.xz 95328 SHA256:b2fa5e1cfc97c1b32d18fc90844e2dceccb198b757d193a01394a71ce7c876bf
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2u-1~deb9u3.debian.tar.xz' openssl1.0_1.0.2u-1~deb9u3.debian.tar.xz 99100 SHA256:2a793998cd9387862f5ad9ce4dd582e8e7f8524a7a4d9154f8dfd6127bab6313
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl1.0/1.0.2u-1~deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/openssl1.0/1.0.2u-1~deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl1.0/1.0.2u-1~deb9u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl1.0/1.0.2u-1~deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/openssl1.0/1.0.2u-1~deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl1.0/1.0.2u-1~deb9u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.0l-1~deb9u1`
+### `dpkg` source package: `openssl=1.1.0l-1~deb9u2`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.0l-1~deb9u1`
+- `libssl1.1:amd64=1.1.0l-1~deb9u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1835,18 +1893,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.1.0l-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0l-1~deb9u1.dsc' openssl_1.1.0l-1~deb9u1.dsc 2437 SHA256:9ae8fb3e89110ad3c75ba6a52b8f40cc5419b56f31c5c8b6f6aca0949cd90ea7
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0l.orig.tar.gz' openssl_1.1.0l.orig.tar.gz 5294857 SHA256:74a2f756c64fd7386a29184dc0344f4831192d61dc2481a93a4c5dd727f41148
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0l.orig.tar.gz.asc' openssl_1.1.0l.orig.tar.gz.asc 488 SHA256:afc83de9f9f1ef5f79ab8a31bbdeb26f9ac9a07cfdab7628a773267d31f85e42
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0l-1~deb9u1.debian.tar.xz' openssl_1.1.0l-1~deb9u1.debian.tar.xz 72100 SHA256:78290d8a50219fe9c1c5676084a5567b23aff12f701bcd975e4c0d32264d5116
+$ apt-get source -qq --print-uris openssl=1.1.0l-1~deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l-1~deb9u2.dsc' openssl_1.1.0l-1~deb9u2.dsc 2611 SHA256:f314e49b7d8419cb3cadc15315159c6c61a39a837c645eeec4569862c4be366c
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l.orig.tar.gz' openssl_1.1.0l.orig.tar.gz 5294857 SHA256:74a2f756c64fd7386a29184dc0344f4831192d61dc2481a93a4c5dd727f41148
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l.orig.tar.gz.asc' openssl_1.1.0l.orig.tar.gz.asc 488 SHA256:afc83de9f9f1ef5f79ab8a31bbdeb26f9ac9a07cfdab7628a773267d31f85e42
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l-1~deb9u2.debian.tar.xz' openssl_1.1.0l-1~deb9u2.debian.tar.xz 76012 SHA256:4e240509d4b36ff7c76b3cb927fc05b7b40a55424eab53d1ef79d211eda0878e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl/1.1.0l-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.0l-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.0l-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl/1.1.0l-1~deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.0l-1~deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.0l-1~deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.3-2`
 
@@ -2134,6 +2192,85 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python2.7/2.7.13-2+deb9u4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python2.7/2.7.13-2+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `python3-defaults=3.5.3-1`
+
+Binary Packages:
+
+- `libpython3-stdlib:amd64=3.5.3-1`
+- `python3=3.5.3-1`
+- `python3-minimal=3.5.3-1`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris python3-defaults=3.5.3-1
+'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.5.3-1.dsc' python3-defaults_3.5.3-1.dsc 2776 SHA256:2bec1dd8a5836d5a19fbbd48d7c49aec40642669036297a34bbfd8b0b2d61439
+'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.5.3-1.tar.gz' python3-defaults_3.5.3-1.tar.gz 1007580 SHA256:aa58a9fceb9975f71be344e594393cf3384dd6b55d9541abf0bee7c5dce8ec15
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/python3-defaults/3.5.3-1/ (for browsing the source)
+- https://sources.debian.net/src/python3-defaults/3.5.3-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python3-defaults/3.5.3-1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `python3.5=3.5.3-1+deb9u3`
+
+Binary Packages:
+
+- `libpython3.5-minimal:amd64=3.5.3-1+deb9u3`
+- `libpython3.5-stdlib:amd64=3.5.3-1+deb9u3`
+- `python3.5=3.5.3-1+deb9u3`
+- `python3.5-minimal=3.5.3-1+deb9u3`
+
+Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/share/doc/libpython3.5-stdlib/copyright`, `/usr/share/doc/python3.5/copyright`, `/usr/share/doc/python3.5-minimal/copyright`)
+
+- `* Permission to use this software in any way is granted without`
+- `Apache`
+- `Apache-2`
+- `Apache-2.0`
+- `By obtaining, using, and/or copying this software and/or its`
+- `Expat`
+- `GPL-2`
+- `ISC`
+- `LGPL-2.1+`
+- `PSF-2`
+- `Permission  is  hereby granted,  free  of charge,  to  any person`
+- `Permission is hereby granted, free of charge, to any person obtaining`
+- `Permission to use, copy, modify,`
+- `Python`
+- `Redistribution`
+- `This software is provided 'as-is', without any express`
+- `This software is provided as-is, without express`
+- `binary forms, with`
+- `distribute this software`
+- `distribute this software and`
+- `distribute this software for any`
+- `implied`
+- `its`
+- `see above, some license as Python`
+- `use in source`
+- `without`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris python3.5=3.5.3-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/p/python3.5/python3.5_3.5.3-1+deb9u3.dsc' python3.5_3.5.3-1+deb9u3.dsc 3370 SHA256:5239b3f3e272d68fcb834dc59a34677988037817a45acbf88e3cace53e6af41d
+'http://security.debian.org/debian-security/pool/updates/main/p/python3.5/python3.5_3.5.3.orig.tar.xz' python3.5_3.5.3.orig.tar.xz 15213396 SHA256:eefe2ad6575855423ab630f5b51a8ef6e5556f774584c06beab4926f930ddbb0
+'http://security.debian.org/debian-security/pool/updates/main/p/python3.5/python3.5_3.5.3-1+deb9u3.debian.tar.xz' python3.5_3.5.3-1+deb9u3.debian.tar.xz 250516 SHA256:112d70ba85641fa036753555c82a205403f18bfbeb6d48acee66a3f987d72552
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/python3.5/3.5.3-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/python3.5/3.5.3-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python3.5/3.5.3-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `readline=7.0-3`
 
 Binary Packages:
@@ -2262,11 +2399,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/shadow/1:4.4-4.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/shadow/1:4.4-4.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `sqlite3=3.16.2-5+deb9u2`
+### `dpkg` source package: `sqlite3=3.16.2-5+deb9u3`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.16.2-5+deb9u2`
+- `libsqlite3-0:amd64=3.16.2-5+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -2274,13 +2411,21 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris sqlite3=3.16.2-5+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/s/sqlite3/sqlite3_3.16.2-5+deb9u3.dsc' sqlite3_3.16.2-5+deb9u3.dsc 2538 SHA256:5740232134049763d1fd103bfc96a003e0c75f541b0a0a64500fa782d04f1f78
+'http://security.debian.org/debian-security/pool/updates/main/s/sqlite3/sqlite3_3.16.2.orig-www.tar.xz' sqlite3_3.16.2.orig-www.tar.xz 3383968 SHA256:d5dd3de405c55c63c9f99fbfcf3defc91a54a81b5656c510cd46544aaed134fa
+'http://security.debian.org/debian-security/pool/updates/main/s/sqlite3/sqlite3_3.16.2.orig.tar.xz' sqlite3_3.16.2.orig.tar.xz 5634120 SHA256:bf7b1e8ea7577253b7f8a8287d111d542d1792cf1768edc66541ac851ff92453
+'http://security.debian.org/debian-security/pool/updates/main/s/sqlite3/sqlite3_3.16.2-5+deb9u3.debian.tar.xz' sqlite3_3.16.2-5+deb9u3.debian.tar.xz 37752 SHA256:8194b95caa0c56e90ae78a9924b23c73ae88ec5c754e075d6d3a6278779c7f79
+```
 
-- http://snapshot.debian.org/package/sqlite3/3.16.2-5+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/sqlite3/3.16.2-5+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/sqlite3/3.16.2-5+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/sqlite3/3.16.2-5+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=232-25+deb9u12`
 
