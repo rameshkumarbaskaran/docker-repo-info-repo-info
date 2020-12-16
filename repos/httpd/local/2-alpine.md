@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ee0260a87a86acc47de812e3fca9cebddbb6626c9bceaaeefaeac7e0f937de83`
-- Created: `2020-10-22T04:21:53.759539961Z`
+- Image ID: `sha256:7c3185ece9336dd0ea49d77f529b65266a8206229895006c8e5afb451b908d2e`
+- Created: `2020-12-11T12:21:45.197204648Z`
 - Virtual Size: ~ 55.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -309,16 +309,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r1 description:
+libcurl-7.69.1-r2 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r1 webpage:
+libcurl-7.69.1-r2 webpage:
 https://curl.haxx.se/
 
-libcurl-7.69.1-r1 installed size:
+libcurl-7.69.1-r2 installed size:
 458752
 
-libcurl-7.69.1-r1 license:
+libcurl-7.69.1-r2 license:
 MIT
 
 ```
@@ -326,16 +326,16 @@ MIT
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.50-r0 description:
+libldap-2.4.50-r1 description:
 OpenLDAP libraries
 
-libldap-2.4.50-r0 webpage:
+libldap-2.4.50-r1 webpage:
 https://www.openldap.org
 
-libldap-2.4.50-r0 installed size:
+libldap-2.4.50-r1 installed size:
 626688
 
-libldap-2.4.50-r0 license:
+libldap-2.4.50-r1 license:
 custom
 
 ```
@@ -445,16 +445,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r9 description:
+musl-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r9 webpage:
+musl-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r9 installed size:
+musl-1.1.24-r10 installed size:
 614400
 
-musl-1.1.24-r9 license:
+musl-1.1.24-r10 license:
 MIT
 
 ```
@@ -462,16 +462,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.24-r9 description:
+musl-utils-1.1.24-r10 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.24-r9 webpage:
+musl-utils-1.1.24-r10 webpage:
 https://musl.libc.org/
 
-musl-utils-1.1.24-r9 installed size:
+musl-utils-1.1.24-r10 installed size:
 151552
 
-musl-utils-1.1.24-r9 license:
+musl-utils-1.1.24-r10 license:
 MIT BSD GPL2+
 
 ```
