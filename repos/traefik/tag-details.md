@@ -12,7 +12,13 @@
 -	[`traefik:2.3.5`](#traefik235)
 -	[`traefik:2.3.5-windowsservercore-1809`](#traefik235-windowsservercore-1809)
 -	[`traefik:2.3-windowsservercore-1809`](#traefik23-windowsservercore-1809)
+-	[`traefik:2.4`](#traefik24)
+-	[`traefik:2.4.0-rc1`](#traefik240-rc1)
+-	[`traefik:2.4.0-rc1-windowsservercore-1809`](#traefik240-rc1-windowsservercore-1809)
+-	[`traefik:2.4-windowsservercore-1809`](#traefik24-windowsservercore-1809)
 -	[`traefik:latest`](#traefiklatest)
+-	[`traefik:livarot`](#traefiklivarot)
+-	[`traefik:livarot-windowsservercore-1809`](#traefiklivarot-windowsservercore-1809)
 -	[`traefik:maroilles`](#traefikmaroilles)
 -	[`traefik:maroilles-alpine`](#traefikmaroilles-alpine)
 -	[`traefik:maroilles-windowsservercore-1809`](#traefikmaroilles-windowsservercore-1809)
@@ -28,6 +34,10 @@
 -	[`traefik:v2.3.5`](#traefikv235)
 -	[`traefik:v2.3.5-windowsservercore-1809`](#traefikv235-windowsservercore-1809)
 -	[`traefik:v2.3-windowsservercore-1809`](#traefikv23-windowsservercore-1809)
+-	[`traefik:v2.4`](#traefikv24)
+-	[`traefik:v2.4.0-rc1`](#traefikv240-rc1)
+-	[`traefik:v2.4.0-rc1-windowsservercore-1809`](#traefikv240-rc1-windowsservercore-1809)
+-	[`traefik:v2.4-windowsservercore-1809`](#traefikv24-windowsservercore-1809)
 -	[`traefik:windowsservercore-1809`](#traefikwindowsservercore-1809)
 
 ## `traefik:1.7`
@@ -1278,6 +1288,22 @@ LABEL org.opencontainers.image.vendor=Traefik Labs org.opencontainers.image.url=
 		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `traefik:2.4`
+
+**does not exist** (yet?)
+
+## `traefik:2.4.0-rc1`
+
+**does not exist** (yet?)
+
+## `traefik:2.4.0-rc1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:2.4-windowsservercore-1809`
+
+**does not exist** (yet?)
+
 ## `traefik:latest`
 
 ```console
@@ -1448,6 +1474,14 @@ LABEL org.opencontainers.image.vendor=Traefik Labs org.opencontainers.image.url=
 		Last Modified: Fri, 11 Dec 2020 02:41:25 GMT  
 		Size: 369.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:livarot`
+
+**does not exist** (yet?)
+
+## `traefik:livarot-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:maroilles`
 
@@ -3320,6 +3354,22 @@ LABEL org.opencontainers.image.vendor=Traefik Labs org.opencontainers.image.url=
 		Last Modified: Fri, 11 Dec 2020 01:46:15 GMT  
 		Size: 1.1 KB (1132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:v2.4`
+
+**does not exist** (yet?)
+
+## `traefik:v2.4.0-rc1`
+
+**does not exist** (yet?)
+
+## `traefik:v2.4.0-rc1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:v2.4-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:windowsservercore-1809`
 
