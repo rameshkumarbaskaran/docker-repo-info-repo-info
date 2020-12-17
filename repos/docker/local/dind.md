@@ -1,16 +1,16 @@
-# `docker:20.10.0-dind`
+# `docker:20.10.1-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:90109ab0c2dc17a53d4b154aa8295a94338f5a3d044886bd72aa4b5b5fa6cac7`
-- Created: `2020-12-12T18:12:33.631501045Z`
-- Virtual Size: ~ 255.77 Mb  
+- Image ID: `sha256:8d54f09a2b777ef4b919ec16217a8b67e1f388f61b5c6bf6b3d8e8a06e74caab`
+- Created: `2020-12-17T12:38:06.632083705Z`
+- Virtual Size: ~ 255.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=20.10.0`
+  - `DOCKER_VERSION=20.10.1`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=ed89041433a031cafc0a0f19cfe573c31688d377`
 
@@ -325,16 +325,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1g-r0 description:
+libcrypto1.1-1.1.1i-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1g-r0 webpage:
+libcrypto1.1-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1g-r0 installed size:
-2760704
+libcrypto1.1-1.1.1i-r0 installed size:
+2764800
 
-libcrypto1.1-1.1.1g-r0 license:
+libcrypto1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -410,16 +410,16 @@ GPL-2.0-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1g-r0 description:
+libssl1.1-1.1.1i-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1g-r0 webpage:
+libssl1.1-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1g-r0 installed size:
+libssl1.1-1.1.1i-r0 installed size:
 540672
 
-libssl1.1-1.1.1g-r0 license:
+libssl1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -597,16 +597,16 @@ MIT
 ### `apk` package: `openssh-client`
 
 ```console
-openssh-client-8.3_p1-r0 description:
+openssh-client-8.3_p1-r1 description:
 OpenBSD's SSH client
 
-openssh-client-8.3_p1-r0 webpage:
+openssh-client-8.3_p1-r1 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-8.3_p1-r0 installed size:
+openssh-client-8.3_p1-r1 installed size:
 3596288
 
-openssh-client-8.3_p1-r0 license:
+openssh-client-8.3_p1-r1 license:
 BSD
 
 ```
@@ -614,16 +614,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-8.3_p1-r0 description:
+openssh-keygen-8.3_p1-r1 description:
 ssh helper program for generating keys
 
-openssh-keygen-8.3_p1-r0 webpage:
+openssh-keygen-8.3_p1-r1 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-8.3_p1-r0 installed size:
+openssh-keygen-8.3_p1-r1 installed size:
 430080
 
-openssh-keygen-8.3_p1-r0 license:
+openssh-keygen-8.3_p1-r1 license:
 BSD
 
 ```
