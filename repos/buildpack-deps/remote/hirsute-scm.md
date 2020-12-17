@@ -1,12 +1,13 @@
 ## `buildpack-deps:hirsute-scm`
 
 ```console
-$ docker pull buildpack-deps@sha256:47d8a12329ce531c98db58770ef3a54104608607265da5e8c72ad1a2a4d3019f
+$ docker pull buildpack-deps@sha256:b2f44425b1e0d8a14e81ce607f2c7de279536c3b88ac7b7d7de37480a93b2638
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
 	-	linux; arm variant v7
+	-	linux; arm64 variant v8
 
 ### `buildpack-deps:hirsute-scm` - linux; arm variant v7
 
@@ -64,4 +65,62 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercuri
 	-	`sha256:d1eaf6ce3ed47b1a43b079ba4bed46a379c125af9ddec54251aaeeb847f941f2`  
 		Last Modified: Thu, 17 Dec 2020 09:02:13 GMT  
 		Size: 41.9 MB (41918985 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `buildpack-deps:hirsute-scm` - linux; arm64 variant v8
+
+```console
+$ docker pull buildpack-deps@sha256:a436f91924bc8aaef0a435e168524194d1ac5defbefc17f70027b0ed3297d811
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **85.3 MB (85261072 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:a921027bf4557955b67cc377f351011fe1972df62063019bfe58c36baa610099`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Wed, 25 Nov 2020 22:43:49 GMT
+ADD file:684109072834ffe6e5130fb786fe91fb344b842b0adfdfed022c072948606081 in / 
+# Wed, 25 Nov 2020 22:43:52 GMT
+RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
+# Wed, 25 Nov 2020 22:43:54 GMT
+RUN [ -z "$(apt-get indextargets)" ]
+# Wed, 25 Nov 2020 22:43:56 GMT
+RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
+# Wed, 25 Nov 2020 22:43:57 GMT
+CMD ["/bin/bash"]
+# Thu, 17 Dec 2020 10:27:38 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
+# Thu, 17 Dec 2020 10:27:52 GMT
+RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
+# Thu, 17 Dec 2020 10:28:41 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:4de913dcc000107d6987a8212435904776bb6d08325b00bcf57becd50f5aacde`  
+		Last Modified: Mon, 23 Nov 2020 22:53:53 GMT  
+		Size: 29.9 MB (29924288 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1104249546118ee3a916a469a5b852ee61a921a17589c55aadd35286f864487d`  
+		Last Modified: Wed, 25 Nov 2020 22:45:25 GMT  
+		Size: 847.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ff31b6873067a11ca32a6a935eae861c6cfa61b77f3d57b7e7223bda5e9162ac`  
+		Last Modified: Wed, 25 Nov 2020 22:45:25 GMT  
+		Size: 188.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:86b531874dd96010e121cdf89631969afcb00ff3b121dd2aba82b26af641b141`  
+		Last Modified: Thu, 17 Dec 2020 10:47:13 GMT  
+		Size: 5.4 MB (5390356 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ce68abf4d50703a9e41c0014aa88574581434e05e9a1128a80de5c8beedd6fbb`  
+		Last Modified: Thu, 17 Dec 2020 10:47:13 GMT  
+		Size: 3.6 MB (3637680 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b4ffda80240334287fbfd80ba24324f45c5c796de703a186c9e214abf84b17bd`  
+		Last Modified: Thu, 17 Dec 2020 10:47:35 GMT  
+		Size: 46.3 MB (46307713 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
