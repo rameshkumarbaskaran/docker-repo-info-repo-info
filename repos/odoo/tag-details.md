@@ -13,7 +13,7 @@
 ## `odoo:12`
 
 ```console
-$ docker pull odoo@sha256:ae98f96e5ba9e46c1aad48eb4d9e86293481e49565bf1906235011383b516af5
+$ docker pull odoo@sha256:c63e9b85a494ae1d394ae9de8e2321f56c01eed5197e5d87a31bd34f271ec7e7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23,14 +23,14 @@ $ docker pull odoo@sha256:ae98f96e5ba9e46c1aad48eb4d9e86293481e49565bf1906235011
 ### `odoo:12` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:ec6997ea071e45a588d62b409014fddd4b5d309358a19c421f26eb1e0ee97ebb
+$ docker pull odoo@sha256:40f010eaba53ac9d1d2e26c8167cdb87b0111887e9bd37e3e0e473dbac29d628
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **396.7 MB (396691270 bytes)**  
+-	Total Size: **396.7 MB (396689198 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:038eace26139681cf99737b52f89afe447d7783714a7439fdbb8722c59750813`
+-	Image ID: `sha256:ed6c33e27e1a276b78fd6510c6adec7b17ebbfbff8d50663830a97d8ea0c526b`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -56,33 +56,33 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' > /etc
 RUN echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodesource.list     && GNUPGHOME="$(mktemp -d)"     && export GNUPGHOME     && repokey='9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280'     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"     && gpg --batch --armor --export "${repokey}" > /etc/apt/trusted.gpg.d/nodejs.gpg.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && apt-get update     && apt-get install --no-install-recommends -y nodejs     && npm install -g rtlcss     && rm -rf /var/lib/apt/lists/*
 # Fri, 11 Dec 2020 17:24:10 GMT
 ENV ODOO_VERSION=12.0
-# Fri, 11 Dec 2020 17:24:10 GMT
-ARG ODOO_RELEASE=20201208
-# Fri, 11 Dec 2020 17:24:10 GMT
-ARG ODOO_SHA=9b055f129756442f58fce0b3d819be4a0e61709e
-# Fri, 11 Dec 2020 17:24:57 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=9b055f129756442f58fce0b3d819be4a0e61709e
+# Fri, 18 Dec 2020 19:56:10 GMT
+ARG ODOO_RELEASE=20201218
+# Fri, 18 Dec 2020 19:56:11 GMT
+ARG ODOO_SHA=c26bc7a3df829bf7e01eae0fb54a5c9d1dbe56ab
+# Fri, 18 Dec 2020 19:57:20 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=c26bc7a3df829bf7e01eae0fb54a5c9d1dbe56ab
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && apt-get update         && apt-get -y install --no-install-recommends ./odoo.deb         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Fri, 11 Dec 2020 17:24:58 GMT
+# Fri, 18 Dec 2020 19:57:21 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Fri, 11 Dec 2020 17:24:59 GMT
+# Fri, 18 Dec 2020 19:57:21 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Fri, 11 Dec 2020 17:25:00 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=9b055f129756442f58fce0b3d819be4a0e61709e
+# Fri, 18 Dec 2020 19:57:23 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=c26bc7a3df829bf7e01eae0fb54a5c9d1dbe56ab
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Fri, 11 Dec 2020 17:25:00 GMT
+# Fri, 18 Dec 2020 19:57:23 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Fri, 11 Dec 2020 17:25:00 GMT
+# Fri, 18 Dec 2020 19:57:24 GMT
 EXPOSE 8069 8071 8072
-# Fri, 11 Dec 2020 17:25:00 GMT
+# Fri, 18 Dec 2020 19:57:24 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:24 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:25 GMT
 USER odoo
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:25 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:25 GMT
 CMD ["odoo"]
 ```
 
@@ -107,31 +107,31 @@ CMD ["odoo"]
 		Last Modified: Fri, 11 Dec 2020 17:27:38 GMT  
 		Size: 22.1 MB (22069709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea661c3d4a71059d87a3123d2601b1d4bcdecb29397ded4a933954a2dcb8acae`  
-		Last Modified: Fri, 11 Dec 2020 17:28:36 GMT  
-		Size: 130.3 MB (130261003 bytes)  
+	-	`sha256:9ec720321086c81c409340aef4c38decf2d67dff62e86f4cf8b3618e3f5c8d07`  
+		Last Modified: Fri, 18 Dec 2020 20:00:01 GMT  
+		Size: 130.3 MB (130258935 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdb433ff907be5118444a8a0fad44cbbf57d98649958b714d69c2d551d00347b`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
-		Size: 672.0 B  
+	-	`sha256:db79354304bf235af83f3d10bae0709e8d98112f922431233d43f01ef8292fd8`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
+		Size: 670.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f99d4a73f46b2cb71ec92948003985fcb8bd7f1a90c436a26baf5e45a65b1c9b`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
+	-	`sha256:9d56f6ca456b5705b1ca8fabbeaa75d86f6bc7db6ff48d2d929d0a91c57182d3`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:07ce7b9e19236503cdc25057e45ee97968520e550d4fcbf096f8acd68b773049`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
-		Size: 595.0 B  
+	-	`sha256:3d9371022835c0a54067cdb2544da6bfbf64ce6632e1b638d795d6445a9579a9`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
+		Size: 593.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61bccdc2d363956d2314d00dfb7d23745666edcac4b9d8407ca98eabbd4dde6d`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
+	-	`sha256:7f6745c3a6d506a5e0128a176d39e1101562ddceb8cdb582ded9962bd4715d89`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
 		Size: 591.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:12.0`
 
 ```console
-$ docker pull odoo@sha256:ae98f96e5ba9e46c1aad48eb4d9e86293481e49565bf1906235011383b516af5
+$ docker pull odoo@sha256:c63e9b85a494ae1d394ae9de8e2321f56c01eed5197e5d87a31bd34f271ec7e7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -141,14 +141,14 @@ $ docker pull odoo@sha256:ae98f96e5ba9e46c1aad48eb4d9e86293481e49565bf1906235011
 ### `odoo:12.0` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:ec6997ea071e45a588d62b409014fddd4b5d309358a19c421f26eb1e0ee97ebb
+$ docker pull odoo@sha256:40f010eaba53ac9d1d2e26c8167cdb87b0111887e9bd37e3e0e473dbac29d628
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **396.7 MB (396691270 bytes)**  
+-	Total Size: **396.7 MB (396689198 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:038eace26139681cf99737b52f89afe447d7783714a7439fdbb8722c59750813`
+-	Image ID: `sha256:ed6c33e27e1a276b78fd6510c6adec7b17ebbfbff8d50663830a97d8ea0c526b`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -174,33 +174,33 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' > /etc
 RUN echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodesource.list     && GNUPGHOME="$(mktemp -d)"     && export GNUPGHOME     && repokey='9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280'     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"     && gpg --batch --armor --export "${repokey}" > /etc/apt/trusted.gpg.d/nodejs.gpg.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && apt-get update     && apt-get install --no-install-recommends -y nodejs     && npm install -g rtlcss     && rm -rf /var/lib/apt/lists/*
 # Fri, 11 Dec 2020 17:24:10 GMT
 ENV ODOO_VERSION=12.0
-# Fri, 11 Dec 2020 17:24:10 GMT
-ARG ODOO_RELEASE=20201208
-# Fri, 11 Dec 2020 17:24:10 GMT
-ARG ODOO_SHA=9b055f129756442f58fce0b3d819be4a0e61709e
-# Fri, 11 Dec 2020 17:24:57 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=9b055f129756442f58fce0b3d819be4a0e61709e
+# Fri, 18 Dec 2020 19:56:10 GMT
+ARG ODOO_RELEASE=20201218
+# Fri, 18 Dec 2020 19:56:11 GMT
+ARG ODOO_SHA=c26bc7a3df829bf7e01eae0fb54a5c9d1dbe56ab
+# Fri, 18 Dec 2020 19:57:20 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=c26bc7a3df829bf7e01eae0fb54a5c9d1dbe56ab
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && apt-get update         && apt-get -y install --no-install-recommends ./odoo.deb         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Fri, 11 Dec 2020 17:24:58 GMT
+# Fri, 18 Dec 2020 19:57:21 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Fri, 11 Dec 2020 17:24:59 GMT
+# Fri, 18 Dec 2020 19:57:21 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Fri, 11 Dec 2020 17:25:00 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=9b055f129756442f58fce0b3d819be4a0e61709e
+# Fri, 18 Dec 2020 19:57:23 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=c26bc7a3df829bf7e01eae0fb54a5c9d1dbe56ab
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Fri, 11 Dec 2020 17:25:00 GMT
+# Fri, 18 Dec 2020 19:57:23 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Fri, 11 Dec 2020 17:25:00 GMT
+# Fri, 18 Dec 2020 19:57:24 GMT
 EXPOSE 8069 8071 8072
-# Fri, 11 Dec 2020 17:25:00 GMT
+# Fri, 18 Dec 2020 19:57:24 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:24 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:25 GMT
 USER odoo
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:25 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 11 Dec 2020 17:25:01 GMT
+# Fri, 18 Dec 2020 19:57:25 GMT
 CMD ["odoo"]
 ```
 
@@ -225,31 +225,31 @@ CMD ["odoo"]
 		Last Modified: Fri, 11 Dec 2020 17:27:38 GMT  
 		Size: 22.1 MB (22069709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea661c3d4a71059d87a3123d2601b1d4bcdecb29397ded4a933954a2dcb8acae`  
-		Last Modified: Fri, 11 Dec 2020 17:28:36 GMT  
-		Size: 130.3 MB (130261003 bytes)  
+	-	`sha256:9ec720321086c81c409340aef4c38decf2d67dff62e86f4cf8b3618e3f5c8d07`  
+		Last Modified: Fri, 18 Dec 2020 20:00:01 GMT  
+		Size: 130.3 MB (130258935 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdb433ff907be5118444a8a0fad44cbbf57d98649958b714d69c2d551d00347b`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
-		Size: 672.0 B  
+	-	`sha256:db79354304bf235af83f3d10bae0709e8d98112f922431233d43f01ef8292fd8`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
+		Size: 670.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f99d4a73f46b2cb71ec92948003985fcb8bd7f1a90c436a26baf5e45a65b1c9b`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
+	-	`sha256:9d56f6ca456b5705b1ca8fabbeaa75d86f6bc7db6ff48d2d929d0a91c57182d3`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:07ce7b9e19236503cdc25057e45ee97968520e550d4fcbf096f8acd68b773049`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
-		Size: 595.0 B  
+	-	`sha256:3d9371022835c0a54067cdb2544da6bfbf64ce6632e1b638d795d6445a9579a9`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
+		Size: 593.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61bccdc2d363956d2314d00dfb7d23745666edcac4b9d8407ca98eabbd4dde6d`  
-		Last Modified: Fri, 11 Dec 2020 17:27:22 GMT  
+	-	`sha256:7f6745c3a6d506a5e0128a176d39e1101562ddceb8cdb582ded9962bd4715d89`  
+		Last Modified: Fri, 18 Dec 2020 19:59:34 GMT  
 		Size: 591.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:13`
 
 ```console
-$ docker pull odoo@sha256:8f9a2561fd85d28668ce8273d2b2d85b900265255acbc4956cb96891108afeff
+$ docker pull odoo@sha256:2de9f439cf4e35d9adfe9e5646d9f7f219486364e7ccd496ac885fba16860d75
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -259,14 +259,14 @@ $ docker pull odoo@sha256:8f9a2561fd85d28668ce8273d2b2d85b900265255acbc4956cb968
 ### `odoo:13` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:cbaa58abeddde4b9774899abfdfd734f0b8371f5530192f2c0a70b99262b37b9
+$ docker pull odoo@sha256:43e201b148306ab5dd7ac08610b3ae26e5f1a9846c6100254c4b92d0490ac43a
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **386.2 MB (386240200 bytes)**  
+-	Total Size: **386.3 MB (386283878 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c2537e096d149e03565864f4a07f4378a344e2447ef1af64b643ccbdd120439`
+-	Image ID: `sha256:2207ad6c420e3b3e1a2e75919afbbd8c8b0d875f4937db30abe58355f215dde2`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -290,33 +290,33 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 RUN npm install -g rtlcss
 # Fri, 11 Dec 2020 17:20:27 GMT
 ENV ODOO_VERSION=13.0
-# Fri, 11 Dec 2020 17:20:27 GMT
-ARG ODOO_RELEASE=20201208
-# Fri, 11 Dec 2020 17:20:27 GMT
-ARG ODOO_SHA=acb26cf02f554009ba99510acc5631d29616dd10
-# Fri, 11 Dec 2020 17:21:42 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=acb26cf02f554009ba99510acc5631d29616dd10
+# Fri, 18 Dec 2020 19:54:54 GMT
+ARG ODOO_RELEASE=20201218
+# Fri, 18 Dec 2020 19:54:54 GMT
+ARG ODOO_SHA=44cff0f8fe5b54cdf7887c388dccf7d462790ccc
+# Fri, 18 Dec 2020 19:55:53 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=44cff0f8fe5b54cdf7887c388dccf7d462790ccc
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && apt-get update         && apt-get -y install --no-install-recommends ./odoo.deb         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Fri, 11 Dec 2020 17:21:43 GMT
+# Fri, 18 Dec 2020 19:55:55 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Fri, 11 Dec 2020 17:21:43 GMT
+# Fri, 18 Dec 2020 19:55:55 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Fri, 11 Dec 2020 17:21:44 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=acb26cf02f554009ba99510acc5631d29616dd10
+# Fri, 18 Dec 2020 19:55:56 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=44cff0f8fe5b54cdf7887c388dccf7d462790ccc
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Fri, 11 Dec 2020 17:21:44 GMT
+# Fri, 18 Dec 2020 19:55:56 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Fri, 11 Dec 2020 17:21:44 GMT
+# Fri, 18 Dec 2020 19:55:56 GMT
 EXPOSE 8069 8071 8072
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:56 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 USER odoo
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 CMD ["odoo"]
 ```
 
@@ -337,31 +337,31 @@ CMD ["odoo"]
 		Last Modified: Fri, 11 Dec 2020 17:26:22 GMT  
 		Size: 927.4 KB (927358 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5bd2c6e256a2ed51149b10f99f61298efc64e98e95d23a70e9215dd3cb6c600e`  
-		Last Modified: Fri, 11 Dec 2020 17:27:14 GMT  
-		Size: 148.8 MB (148789866 bytes)  
+	-	`sha256:281bd27eb1f02a310002b952c465a0c7bac22a160ed0a215577534cccd5220cc`  
+		Last Modified: Fri, 18 Dec 2020 19:59:28 GMT  
+		Size: 148.8 MB (148833548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8453de851530c6c482e2ad17e6a3db08f99aa6a3bf6435cf3ed2628d53fae35d`  
-		Last Modified: Fri, 11 Dec 2020 17:26:21 GMT  
-		Size: 673.0 B  
+	-	`sha256:1292264587e55cbcae3b6e6a7b1f0703f3d7508812f35921583a69768b9c5c2a`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
+		Size: 672.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3581a3b45b26943652541275fc750909b6bdcd1f618a8f7afcd167d1b6100b5e`  
-		Last Modified: Fri, 11 Dec 2020 17:26:19 GMT  
-		Size: 555.0 B  
+	-	`sha256:96aef1c18c2b9723fa466628c9dcf8823795fe58b711cecd8446e9338aa44e58`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ead780d90b5cfa8a30ced0e218f9e8257f0e2f538714b07485719dee031b94a`  
-		Last Modified: Fri, 11 Dec 2020 17:26:21 GMT  
-		Size: 595.0 B  
+	-	`sha256:081823ff960ce21fe5dc47036527f998e1c50abdaeab4046f484e244918432f7`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
+		Size: 594.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3b4f1b6d9f073a7fbad430f3c9f1dcfe55628422e9a211284bee0b1ddcd0f801`  
-		Last Modified: Fri, 11 Dec 2020 17:26:19 GMT  
+	-	`sha256:2cf3b172cae56819da784c3b83b997cad1817c77d4817b88d4fe1ac5db9aeda4`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
 		Size: 583.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:13.0`
 
 ```console
-$ docker pull odoo@sha256:8f9a2561fd85d28668ce8273d2b2d85b900265255acbc4956cb96891108afeff
+$ docker pull odoo@sha256:2de9f439cf4e35d9adfe9e5646d9f7f219486364e7ccd496ac885fba16860d75
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -371,14 +371,14 @@ $ docker pull odoo@sha256:8f9a2561fd85d28668ce8273d2b2d85b900265255acbc4956cb968
 ### `odoo:13.0` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:cbaa58abeddde4b9774899abfdfd734f0b8371f5530192f2c0a70b99262b37b9
+$ docker pull odoo@sha256:43e201b148306ab5dd7ac08610b3ae26e5f1a9846c6100254c4b92d0490ac43a
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **386.2 MB (386240200 bytes)**  
+-	Total Size: **386.3 MB (386283878 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5c2537e096d149e03565864f4a07f4378a344e2447ef1af64b643ccbdd120439`
+-	Image ID: `sha256:2207ad6c420e3b3e1a2e75919afbbd8c8b0d875f4937db30abe58355f215dde2`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -402,33 +402,33 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 RUN npm install -g rtlcss
 # Fri, 11 Dec 2020 17:20:27 GMT
 ENV ODOO_VERSION=13.0
-# Fri, 11 Dec 2020 17:20:27 GMT
-ARG ODOO_RELEASE=20201208
-# Fri, 11 Dec 2020 17:20:27 GMT
-ARG ODOO_SHA=acb26cf02f554009ba99510acc5631d29616dd10
-# Fri, 11 Dec 2020 17:21:42 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=acb26cf02f554009ba99510acc5631d29616dd10
+# Fri, 18 Dec 2020 19:54:54 GMT
+ARG ODOO_RELEASE=20201218
+# Fri, 18 Dec 2020 19:54:54 GMT
+ARG ODOO_SHA=44cff0f8fe5b54cdf7887c388dccf7d462790ccc
+# Fri, 18 Dec 2020 19:55:53 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=44cff0f8fe5b54cdf7887c388dccf7d462790ccc
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && apt-get update         && apt-get -y install --no-install-recommends ./odoo.deb         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Fri, 11 Dec 2020 17:21:43 GMT
+# Fri, 18 Dec 2020 19:55:55 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Fri, 11 Dec 2020 17:21:43 GMT
+# Fri, 18 Dec 2020 19:55:55 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Fri, 11 Dec 2020 17:21:44 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=acb26cf02f554009ba99510acc5631d29616dd10
+# Fri, 18 Dec 2020 19:55:56 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=44cff0f8fe5b54cdf7887c388dccf7d462790ccc
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Fri, 11 Dec 2020 17:21:44 GMT
+# Fri, 18 Dec 2020 19:55:56 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Fri, 11 Dec 2020 17:21:44 GMT
+# Fri, 18 Dec 2020 19:55:56 GMT
 EXPOSE 8069 8071 8072
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:56 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 USER odoo
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 11 Dec 2020 17:21:45 GMT
+# Fri, 18 Dec 2020 19:55:57 GMT
 CMD ["odoo"]
 ```
 
@@ -449,31 +449,31 @@ CMD ["odoo"]
 		Last Modified: Fri, 11 Dec 2020 17:26:22 GMT  
 		Size: 927.4 KB (927358 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5bd2c6e256a2ed51149b10f99f61298efc64e98e95d23a70e9215dd3cb6c600e`  
-		Last Modified: Fri, 11 Dec 2020 17:27:14 GMT  
-		Size: 148.8 MB (148789866 bytes)  
+	-	`sha256:281bd27eb1f02a310002b952c465a0c7bac22a160ed0a215577534cccd5220cc`  
+		Last Modified: Fri, 18 Dec 2020 19:59:28 GMT  
+		Size: 148.8 MB (148833548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8453de851530c6c482e2ad17e6a3db08f99aa6a3bf6435cf3ed2628d53fae35d`  
-		Last Modified: Fri, 11 Dec 2020 17:26:21 GMT  
-		Size: 673.0 B  
+	-	`sha256:1292264587e55cbcae3b6e6a7b1f0703f3d7508812f35921583a69768b9c5c2a`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
+		Size: 672.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3581a3b45b26943652541275fc750909b6bdcd1f618a8f7afcd167d1b6100b5e`  
-		Last Modified: Fri, 11 Dec 2020 17:26:19 GMT  
-		Size: 555.0 B  
+	-	`sha256:96aef1c18c2b9723fa466628c9dcf8823795fe58b711cecd8446e9338aa44e58`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ead780d90b5cfa8a30ced0e218f9e8257f0e2f538714b07485719dee031b94a`  
-		Last Modified: Fri, 11 Dec 2020 17:26:21 GMT  
-		Size: 595.0 B  
+	-	`sha256:081823ff960ce21fe5dc47036527f998e1c50abdaeab4046f484e244918432f7`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
+		Size: 594.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3b4f1b6d9f073a7fbad430f3c9f1dcfe55628422e9a211284bee0b1ddcd0f801`  
-		Last Modified: Fri, 11 Dec 2020 17:26:19 GMT  
+	-	`sha256:2cf3b172cae56819da784c3b83b997cad1817c77d4817b88d4fe1ac5db9aeda4`  
+		Last Modified: Fri, 18 Dec 2020 19:58:53 GMT  
 		Size: 583.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:14`
 
 ```console
-$ docker pull odoo@sha256:9c8398763f0a202195379733226d8e6091cb02e0e7f0fa479ae820c05f68deb2
+$ docker pull odoo@sha256:081f8846546ce60f354ec74156acccd673f7b66ad42bbf2a337bec30f7431591
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -483,14 +483,14 @@ $ docker pull odoo@sha256:9c8398763f0a202195379733226d8e6091cb02e0e7f0fa479ae820
 ### `odoo:14` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:3569f9fc3f37a71ac4445bb2de30c7c760ff9af27a47579a8af8160b65730c7c
+$ docker pull odoo@sha256:1a8827774caab07a37eb451014585f9574070da3ec65044746960e513564e013
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.2 MB (404214462 bytes)**  
+-	Total Size: **404.3 MB (404278250 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a6cd4ad707b86f3ce69aa4b495affde6258edb55a540e737f5e2de45b6969c7`
+-	Image ID: `sha256:27c34e85682c0eec6617af427f7838e9849f21f92a3a240255e0b400c8f4b94d`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -514,33 +514,33 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 RUN npm install -g rtlcss
 # Fri, 11 Dec 2020 17:17:16 GMT
 ENV ODOO_VERSION=14.0
-# Fri, 11 Dec 2020 17:17:16 GMT
-ARG ODOO_RELEASE=20201208
-# Fri, 11 Dec 2020 17:17:16 GMT
-ARG ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
-# Fri, 11 Dec 2020 17:18:15 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
+# Fri, 18 Dec 2020 19:53:49 GMT
+ARG ODOO_RELEASE=20201218
+# Fri, 18 Dec 2020 19:53:49 GMT
+ARG ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
+# Fri, 18 Dec 2020 19:54:43 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb     && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -     && apt-get update     && apt-get -y install --no-install-recommends ./odoo.deb     && rm -rf /var/lib/apt/lists/* odoo.deb
-# Fri, 11 Dec 2020 17:18:17 GMT
+# Fri, 18 Dec 2020 19:54:44 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Fri, 11 Dec 2020 17:18:18 GMT
+# Fri, 18 Dec 2020 19:54:44 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Fri, 11 Dec 2020 17:18:19 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
+# Fri, 18 Dec 2020 19:54:45 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Fri, 11 Dec 2020 17:18:19 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Fri, 11 Dec 2020 17:18:19 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 EXPOSE 8069 8071 8072
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 USER odoo
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:47 GMT
 CMD ["odoo"]
 ```
 
@@ -561,31 +561,31 @@ CMD ["odoo"]
 		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
 		Size: 927.4 KB (927408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f390f29d1a221d4588ac1a2b553a70ff517a91836d630aa350150b9bc619bdf4`  
-		Last Modified: Fri, 11 Dec 2020 17:26:12 GMT  
-		Size: 160.7 MB (160720940 bytes)  
+	-	`sha256:28ec16a7fdd6e0c0f407e3a27fd4cb3d411dbe897989b90e72943f3091c66ddb`  
+		Last Modified: Fri, 18 Dec 2020 19:58:46 GMT  
+		Size: 160.8 MB (160784729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09b323ab5c3f88bf247561a0fd558d05a7a76d7b5a31b7b739887ed7225ec44b`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
-		Size: 673.0 B  
+	-	`sha256:5e0ea39d8e51a8daab3dc808a07ffe67161edb7a0a1047941222f9c49578883f`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 670.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abe64693cfd693e783fff8b089c6d70574a60134d3e8282b3a0541eab98c58e4`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
+	-	`sha256:00114de53a4a62fd509ac73e7c124f80043fab355f6ddfeb8544e3efbd8ee3aa`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e47370cf02b2e124a425a0247fb5096623be6c3839e68887a55c60d25e2cd6`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
-		Size: 592.0 B  
+	-	`sha256:58c6820d46466f592923c1348b44496861a049aefdbcea8d87c4979dddd7160c`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 593.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c1a10b2ec20203fac8cf65cfb5d1f2da38c32632ad61e9129bf27c439b6c429`  
-		Last Modified: Fri, 11 Dec 2020 17:25:18 GMT  
-		Size: 584.0 B  
+	-	`sha256:d14f21a099442af06b1adb9bfbb4cb6dd7eeef006b4ca1bf13184da39fe5ac34`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 585.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:14.0`
 
 ```console
-$ docker pull odoo@sha256:9c8398763f0a202195379733226d8e6091cb02e0e7f0fa479ae820c05f68deb2
+$ docker pull odoo@sha256:081f8846546ce60f354ec74156acccd673f7b66ad42bbf2a337bec30f7431591
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -595,14 +595,14 @@ $ docker pull odoo@sha256:9c8398763f0a202195379733226d8e6091cb02e0e7f0fa479ae820
 ### `odoo:14.0` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:3569f9fc3f37a71ac4445bb2de30c7c760ff9af27a47579a8af8160b65730c7c
+$ docker pull odoo@sha256:1a8827774caab07a37eb451014585f9574070da3ec65044746960e513564e013
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.2 MB (404214462 bytes)**  
+-	Total Size: **404.3 MB (404278250 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a6cd4ad707b86f3ce69aa4b495affde6258edb55a540e737f5e2de45b6969c7`
+-	Image ID: `sha256:27c34e85682c0eec6617af427f7838e9849f21f92a3a240255e0b400c8f4b94d`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -626,33 +626,33 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 RUN npm install -g rtlcss
 # Fri, 11 Dec 2020 17:17:16 GMT
 ENV ODOO_VERSION=14.0
-# Fri, 11 Dec 2020 17:17:16 GMT
-ARG ODOO_RELEASE=20201208
-# Fri, 11 Dec 2020 17:17:16 GMT
-ARG ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
-# Fri, 11 Dec 2020 17:18:15 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
+# Fri, 18 Dec 2020 19:53:49 GMT
+ARG ODOO_RELEASE=20201218
+# Fri, 18 Dec 2020 19:53:49 GMT
+ARG ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
+# Fri, 18 Dec 2020 19:54:43 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb     && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -     && apt-get update     && apt-get -y install --no-install-recommends ./odoo.deb     && rm -rf /var/lib/apt/lists/* odoo.deb
-# Fri, 11 Dec 2020 17:18:17 GMT
+# Fri, 18 Dec 2020 19:54:44 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Fri, 11 Dec 2020 17:18:18 GMT
+# Fri, 18 Dec 2020 19:54:44 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Fri, 11 Dec 2020 17:18:19 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
+# Fri, 18 Dec 2020 19:54:45 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Fri, 11 Dec 2020 17:18:19 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Fri, 11 Dec 2020 17:18:19 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 EXPOSE 8069 8071 8072
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 USER odoo
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:47 GMT
 CMD ["odoo"]
 ```
 
@@ -673,31 +673,31 @@ CMD ["odoo"]
 		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
 		Size: 927.4 KB (927408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f390f29d1a221d4588ac1a2b553a70ff517a91836d630aa350150b9bc619bdf4`  
-		Last Modified: Fri, 11 Dec 2020 17:26:12 GMT  
-		Size: 160.7 MB (160720940 bytes)  
+	-	`sha256:28ec16a7fdd6e0c0f407e3a27fd4cb3d411dbe897989b90e72943f3091c66ddb`  
+		Last Modified: Fri, 18 Dec 2020 19:58:46 GMT  
+		Size: 160.8 MB (160784729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09b323ab5c3f88bf247561a0fd558d05a7a76d7b5a31b7b739887ed7225ec44b`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
-		Size: 673.0 B  
+	-	`sha256:5e0ea39d8e51a8daab3dc808a07ffe67161edb7a0a1047941222f9c49578883f`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 670.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abe64693cfd693e783fff8b089c6d70574a60134d3e8282b3a0541eab98c58e4`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
+	-	`sha256:00114de53a4a62fd509ac73e7c124f80043fab355f6ddfeb8544e3efbd8ee3aa`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e47370cf02b2e124a425a0247fb5096623be6c3839e68887a55c60d25e2cd6`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
-		Size: 592.0 B  
+	-	`sha256:58c6820d46466f592923c1348b44496861a049aefdbcea8d87c4979dddd7160c`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 593.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c1a10b2ec20203fac8cf65cfb5d1f2da38c32632ad61e9129bf27c439b6c429`  
-		Last Modified: Fri, 11 Dec 2020 17:25:18 GMT  
-		Size: 584.0 B  
+	-	`sha256:d14f21a099442af06b1adb9bfbb4cb6dd7eeef006b4ca1bf13184da39fe5ac34`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 585.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:latest`
 
 ```console
-$ docker pull odoo@sha256:9c8398763f0a202195379733226d8e6091cb02e0e7f0fa479ae820c05f68deb2
+$ docker pull odoo@sha256:081f8846546ce60f354ec74156acccd673f7b66ad42bbf2a337bec30f7431591
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -707,14 +707,14 @@ $ docker pull odoo@sha256:9c8398763f0a202195379733226d8e6091cb02e0e7f0fa479ae820
 ### `odoo:latest` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:3569f9fc3f37a71ac4445bb2de30c7c760ff9af27a47579a8af8160b65730c7c
+$ docker pull odoo@sha256:1a8827774caab07a37eb451014585f9574070da3ec65044746960e513564e013
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.2 MB (404214462 bytes)**  
+-	Total Size: **404.3 MB (404278250 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a6cd4ad707b86f3ce69aa4b495affde6258edb55a540e737f5e2de45b6969c7`
+-	Image ID: `sha256:27c34e85682c0eec6617af427f7838e9849f21f92a3a240255e0b400c8f4b94d`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 -	`SHELL`: `["\/bin\/bash","-xo","pipefail","-c"]`
@@ -738,33 +738,33 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 RUN npm install -g rtlcss
 # Fri, 11 Dec 2020 17:17:16 GMT
 ENV ODOO_VERSION=14.0
-# Fri, 11 Dec 2020 17:17:16 GMT
-ARG ODOO_RELEASE=20201208
-# Fri, 11 Dec 2020 17:17:16 GMT
-ARG ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
-# Fri, 11 Dec 2020 17:18:15 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
+# Fri, 18 Dec 2020 19:53:49 GMT
+ARG ODOO_RELEASE=20201218
+# Fri, 18 Dec 2020 19:53:49 GMT
+ARG ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
+# Fri, 18 Dec 2020 19:54:43 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb     && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -     && apt-get update     && apt-get -y install --no-install-recommends ./odoo.deb     && rm -rf /var/lib/apt/lists/* odoo.deb
-# Fri, 11 Dec 2020 17:18:17 GMT
+# Fri, 18 Dec 2020 19:54:44 GMT
 COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
-# Fri, 11 Dec 2020 17:18:18 GMT
+# Fri, 18 Dec 2020 19:54:44 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Fri, 11 Dec 2020 17:18:19 GMT
-# ARGS: ODOO_RELEASE=20201208 ODOO_SHA=37dd5d71d5b8439fddf88d7e161cc3502721c4b5
+# Fri, 18 Dec 2020 19:54:45 GMT
+# ARGS: ODOO_RELEASE=20201218 ODOO_SHA=cd893ce96b3bf7e3448f2414f4537685f521acd8
 RUN chown odoo /etc/odoo/odoo.conf     && mkdir -p /mnt/extra-addons     && chown -R odoo /mnt/extra-addons
-# Fri, 11 Dec 2020 17:18:19 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Fri, 11 Dec 2020 17:18:19 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 EXPOSE 8069 8071 8072
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:46 GMT
 USER odoo
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 11 Dec 2020 17:18:20 GMT
+# Fri, 18 Dec 2020 19:54:47 GMT
 CMD ["odoo"]
 ```
 
@@ -785,23 +785,23 @@ CMD ["odoo"]
 		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
 		Size: 927.4 KB (927408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f390f29d1a221d4588ac1a2b553a70ff517a91836d630aa350150b9bc619bdf4`  
-		Last Modified: Fri, 11 Dec 2020 17:26:12 GMT  
-		Size: 160.7 MB (160720940 bytes)  
+	-	`sha256:28ec16a7fdd6e0c0f407e3a27fd4cb3d411dbe897989b90e72943f3091c66ddb`  
+		Last Modified: Fri, 18 Dec 2020 19:58:46 GMT  
+		Size: 160.8 MB (160784729 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09b323ab5c3f88bf247561a0fd558d05a7a76d7b5a31b7b739887ed7225ec44b`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
-		Size: 673.0 B  
+	-	`sha256:5e0ea39d8e51a8daab3dc808a07ffe67161edb7a0a1047941222f9c49578883f`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 670.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abe64693cfd693e783fff8b089c6d70574a60134d3e8282b3a0541eab98c58e4`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
+	-	`sha256:00114de53a4a62fd509ac73e7c124f80043fab355f6ddfeb8544e3efbd8ee3aa`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e47370cf02b2e124a425a0247fb5096623be6c3839e68887a55c60d25e2cd6`  
-		Last Modified: Fri, 11 Dec 2020 17:25:19 GMT  
-		Size: 592.0 B  
+	-	`sha256:58c6820d46466f592923c1348b44496861a049aefdbcea8d87c4979dddd7160c`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 593.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c1a10b2ec20203fac8cf65cfb5d1f2da38c32632ad61e9129bf27c439b6c429`  
-		Last Modified: Fri, 11 Dec 2020 17:25:18 GMT  
-		Size: 584.0 B  
+	-	`sha256:d14f21a099442af06b1adb9bfbb4cb6dd7eeef006b4ca1bf13184da39fe5ac34`  
+		Last Modified: Fri, 18 Dec 2020 19:57:55 GMT  
+		Size: 585.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
