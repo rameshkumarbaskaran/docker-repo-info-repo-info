@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:633377eeaf645f7f47188400665b88acbbed523b78c7fa3a48abc92c885f5f79`
-- Created: `2020-12-11T20:38:56.225381564Z`
+- Image ID: `sha256:366ebcdba56f8d285b428842089ac64089396ec08d9d3f93d6eb728b24be8a6b`
+- Created: `2020-12-17T16:59:57.683205786Z`
 - Virtual Size: ~ 156.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1541,30 +1541,23 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/3.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/3.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.9.0-1`
+### `dpkg` source package: `libssh2=1.9.0-2`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.9.0-1`
+- `libssh2-1:amd64=1.9.0-2`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh2=1.9.0-1
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.dsc' libssh2_1.9.0-1.dsc 2007 SHA256:54ab86484980abd8dfaedc53b089674ee0e94373d544b218f0431bcc1aae903f
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0.orig.tar.gz' libssh2_1.9.0.orig.tar.gz 888551 SHA256:d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.debian.tar.xz' libssh2_1.9.0-1.debian.tar.xz 9048 SHA256:df785c1d05cab187ad4c954a2f94c7a70aaa8e7148b873b5a837c240cd2bc16b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libssh2/1.9.0-2/
 
-- https://sources.debian.net/src/libssh2/1.9.0-1/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.9.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.9.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.16.0-2`
 

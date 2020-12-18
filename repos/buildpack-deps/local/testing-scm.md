@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1b100c95ffb741a530d138581a453d9f8be7d771e19aa1122d331f1bf0bad0f9`
-- Created: `2020-12-11T20:36:31.39357039Z`
-- Virtual Size: ~ 305.97 Mb  
+- Image ID: `sha256:09989e05ede7a36cf87c89baa0d7b7ee17a770d340354116be84e9735573bc03`
+- Created: `2020-12-17T16:56:19.136291903Z`
+- Virtual Size: ~ 306.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -1836,23 +1836,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/3.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/3.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.8.0-2.1`
+### `dpkg` source package: `libssh2=1.9.0-2`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.8.0-2.1`
+- `libssh2-1:amd64=1.9.0-2`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libssh2=1.9.0-2
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-2.dsc' libssh2_1.9.0-2.dsc 2007 SHA256:fbf9500e064cdd307a634772d0d417de910fcba874e3edbb72cce538f0389a11
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0.orig.tar.gz' libssh2_1.9.0.orig.tar.gz 888551 SHA256:d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-2.debian.tar.xz' libssh2_1.9.0-2.debian.tar.xz 9116 SHA256:7081ec54751720082d3f95ef73e2b52a46f72a67ab765932576c11aeb54df7d9
+```
 
-- http://snapshot.debian.org/package/libssh2/1.8.0-2.1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libssh2/1.9.0-2/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.9.0-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.9.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.16.0-2`
 
@@ -2716,25 +2723,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python3.9/3.9.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python3.9/3.9.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `readline=8.1~rc3-1`
+### `dpkg` source package: `readline=8.1-1`
 
 Binary Packages:
 
-- `libreadline8:amd64=8.1~rc3-1`
-- `readline-common=8.1~rc3-1`
+- `libreadline8:amd64=8.1-1`
+- `readline-common=8.1-1`
 
 Licenses: (parsed from: `/usr/share/doc/libreadline8/copyright`, `/usr/share/doc/readline-common/copyright`)
 
 - `GFDL`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris readline=8.1-1
+'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1-1.dsc' readline_8.1-1.dsc 2418 SHA256:53356fdf2ee122ab75c7b535d292385311f7dea425ccc42143d2b9a2accfc657
+'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1.orig.tar.gz' readline_8.1.orig.tar.gz 2993288 SHA256:f8ceb4ee131e3232226a17f51b164afc46cd0b9e6cef344be87c65962cb82b02
+'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1-1.debian.tar.xz' readline_8.1-1.debian.tar.xz 29220 SHA256:852267a95aeec23b267c838469fee346e83a29e7a08071178dc87682591cffbf
+```
 
-- http://snapshot.debian.org/package/readline/8.1~rc3-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/readline/8.1-1/ (for browsing the source)
+- https://sources.debian.net/src/readline/8.1-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/readline/8.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rtmpdump=2.4+20151223.gitfa8646d.1-2`
 

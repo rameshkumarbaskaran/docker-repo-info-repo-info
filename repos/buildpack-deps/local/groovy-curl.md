@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:239d59ea49e6afc7e1d772aebf700389792613e4fde7dcb18e88ba3ef7812abf`
-- Created: `2020-11-26T01:09:41.574317272Z`
-- Virtual Size: ~ 98.16 Mb  
+- Image ID: `sha256:84cff1e3b81f50e0ab9e8526661f26be09e92c6f9ed85223734e54d23628aa8f`
+- Created: `2020-12-17T17:12:07.836811565Z`
+- Virtual Size: ~ 101.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -271,12 +271,12 @@ $ apt-get source -qq --print-uris coreutils=8.32-3ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-3ubuntu1.debian.tar.xz' coreutils_8.32-3ubuntu1.debian.tar.xz 40716 SHA512:87a9050739a7712cb9a4b262a58393f88d979f02fef46f448eb052f1a08b35c2903c6d925d3cc8c3b72b6f8c37cff30e71136f23f7f1dd1ebc3709d116904673
 ```
 
-### `dpkg` source package: `curl=7.68.0-1ubuntu4`
+### `dpkg` source package: `curl=7.68.0-1ubuntu4.2`
 
 Binary Packages:
 
-- `curl=7.68.0-1ubuntu4`
-- `libcurl4:amd64=7.68.0-1ubuntu4`
+- `curl=7.68.0-1ubuntu4.2`
+- `libcurl4:amd64=7.68.0-1ubuntu4.2`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -290,10 +290,10 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 Source:
 
 ```console
-$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu4.dsc' curl_7.68.0-1ubuntu4.dsc 2725 SHA512:fb4f99c4dde9ee397b72d0f6a377c425ec72b003d8c4b85c106764bed2e44f26e70d3b70c3d6c16c13c54fb75aba75ec5c318224e33b7c155a573733745a7587
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu4.2
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu4.2.dsc' curl_7.68.0-1ubuntu4.2.dsc 2733 SHA512:30bbaa82a4db8227ba7f91ec58cb37372bfd42a2b944252d13e7641dc7f595b8f74eccdbd4eaf4a6268a7ec90986b02367be474ef75a7d3666b34b3795e2363a
 'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu4.debian.tar.xz' curl_7.68.0-1ubuntu4.debian.tar.xz 33456 SHA512:abeffd1a5a18b66a4fa320dfd461dfbebcfb9d7053bfb3e1d7fb0337920f01030551ee8b8b637dbe76b06b1d41e79af934798d79f69894ca03fc9b98579b7705
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu4.2.debian.tar.xz' curl_7.68.0-1ubuntu4.2.debian.tar.xz 38624 SHA512:2012f4383b90946213e06b52bbec72dde90798c6bb3650ecdac846d9001f9bcbf67e1f2ebc5afb4529f4d0b3d8dde554dee04e3550b21113ca0961143daf5da7
 ```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu1`
@@ -1489,7 +1489,6 @@ $ apt-get source -qq --print-uris openldap=2.4.53+dfsg-1ubuntu1.2
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.1f-1ubuntu4`
-- `openssl=1.1.1f-1ubuntu4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1503,6 +1502,26 @@ $ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu4
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz.asc' openssl_1.1.1f.orig.tar.gz.asc 488 SHA512:63b01ffc23b2fec2cfc147d382b486a136e5610e181be94aa333022803a442ded37e8276fefb62b3176b571b94a1d2243c05b86b52ad7784fe0068d1ad948562
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu4.debian.tar.xz' openssl_1.1.1f-1ubuntu4.debian.tar.xz 149616 SHA512:0afc642ee3c0a36afa45c9f4c5f9288ffd6767bae6089a2a4cc199ea8d05c72590fb75409a2e9203e1a4c5691f8d6760236af0085322a2d8c4344e3e1f4b3ef6
+```
+
+### `dpkg` source package: `openssl=1.1.1f-1ubuntu4.1`
+
+Binary Packages:
+
+- `openssl=1.1.1f-1ubuntu4.1`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu4.1
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu4.1.dsc' openssl_1.1.1f-1ubuntu4.1.dsc 2713 SHA512:94b830c04ec79b6f237af63d1da03094f8427f2e65df5c908c771b0394c45951fa08808de3944e244e65c79768d90d08c4c928dd4b709efe7b01b64f7fc40a3a
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz.asc' openssl_1.1.1f.orig.tar.gz.asc 488 SHA512:63b01ffc23b2fec2cfc147d382b486a136e5610e181be94aa333022803a442ded37e8276fefb62b3176b571b94a1d2243c05b86b52ad7784fe0068d1ad948562
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu4.1.debian.tar.xz' openssl_1.1.1f-1ubuntu4.1.debian.tar.xz 154368 SHA512:e997a4ed8ff5d9c3e23e580d79f57019dfc02ca376ffffe895bf2d07f132fbf9796bab421a4e624d248783d75f2d10868f9271c94b5f5328ce1f44333d1ce2f0
 ```
 
 ### `dpkg` source package: `p11-kit=0.23.21-2build1`
@@ -1873,6 +1892,26 @@ $ apt-get source -qq --print-uris tar=1.30+dfsg-7
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30+dfsg-7.dsc' tar_1.30+dfsg-7.dsc 1981 SHA512:f4bd8b1605b40b64d340ec6640e0c3d745c6a420238158d07b1ed9110d0adf2ef16a0c55d3dfce28c0ff9e4befa255bda369f6247fb612c44e50dd5dd2e748dc
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30+dfsg.orig.tar.xz' tar_1.30+dfsg.orig.tar.xz 1883220 SHA512:f9b3843bd4da03f58d6f88de70ecb36b8ac29312714fd2120ff00f17c99e6d77cc82a8f9de348f4c2bdba9a6cc8e8c6c78039b6c14cdee15d68f2517000c36f2
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30+dfsg-7.debian.tar.xz' tar_1.30+dfsg-7.debian.tar.xz 22168 SHA512:86bb22465adc886b86a79704ea398bf68bd8365f6b149ac555d9e4d3b7d24231c08c2ab8065661fac45ea2b199e415dbb33e55a4b0e5edf06c361092b6a847e3
+```
+
+### `dpkg` source package: `tzdata=2020d-1ubuntu1`
+
+Binary Packages:
+
+- `tzdata=2020d-1ubuntu1`
+
+Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
+
+- `ICU`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris tzdata=2020d-1ubuntu1
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d-1ubuntu1.dsc' tzdata_2020d-1ubuntu1.dsc 2358 SHA512:63bd42701c33ed6bb5a155e0dd339dce49b03ce6c609a5f63f865f1fae4e72671d63f7c0b0c566cb7105f34fccc22299a886786c285d3b5f2adc2773336a1661
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d.orig.tar.gz' tzdata_2020d.orig.tar.gz 401479 SHA512:362e4569a666b0776614be3f63f1fe3d5ae259055e7051c9875f36023db9c52b0c5a10c19067114443a4cf2bf92475f8a0aebdf79bac836d967527fcdea4e9b6
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d.orig.tar.gz.asc' tzdata_2020d.orig.tar.gz.asc 833 SHA512:db287ab3ffa8821de71da61ba6be03dcf930ab9dad590e909d3efa8867dbd56cfa44b22ef5e3a12e7db0556385d303ae9f4a19f7bd7067a7c9fa137ef7c338e1
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d-1ubuntu1.debian.tar.xz' tzdata_2020d-1ubuntu1.debian.tar.xz 164544 SHA512:e758f4c9b588acba8aa48eaaa8a618b79282748fd12351ffc90a59b785d21cf92801362ad1e68a48f62b71bec8b54f7478ffb066ad67a36aab95eb39dfab9266
 ```
 
 ### `dpkg` source package: `ubuntu-keyring=2020.06.17.1`

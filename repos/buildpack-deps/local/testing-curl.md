@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:855ed4dd0332982fb0d69380d5fe40085b19dd27bfb0373f94afad49e5eb9c3a`
-- Created: `2020-12-11T20:36:12.141019256Z`
-- Virtual Size: ~ 155.80 Mb  
+- Image ID: `sha256:b4929eb0318a63ff2edc82a8493199ec1f541063b01d030ea7487a7ea5a841f6`
+- Created: `2020-12-17T16:55:57.088850885Z`
+- Virtual Size: ~ 155.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -208,20 +208,13 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=5.1~rc3-1
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1~rc3-1.dsc' bash_5.1~rc3-1.dsc 2324 SHA256:7f5632fd75ea41a2a9d7ba4225b7f084a5bfb5e4cf37ec9180a6e3b304eb0bd5
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1~rc3.orig.tar.xz' bash_5.1~rc3.orig.tar.xz 5769384 SHA256:94bcf4c89ae39a4875996f864b2705148e5359acffce50fe47c1bf7e961ca69b
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1~rc3-1.debian.tar.xz' bash_5.1~rc3-1.debian.tar.xz 88132 SHA256:2088f054e45d9f4b390aecbcade344c82b630775141c73ee959bf8b82b73c86a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bash/5.1~rc3-1/
 
-- https://sources.debian.net/src/bash/5.1~rc3-1/ (for browsing the source)
-- https://sources.debian.net/src/bash/5.1~rc3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bash/5.1~rc3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `brotli=1.0.9-2`
 
@@ -426,20 +419,13 @@ Licenses: (parsed from: `/usr/share/doc/dash/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dash=0.5.11+git20200708+dd9ef66-2
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-2.dsc' dash_0.5.11+git20200708+dd9ef66-2.dsc 1906 SHA256:8e235f05db6af16a51d0570131095744122b33da0011fd8e81072d80683ebd2d
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66.orig.tar.gz' dash_0.5.11+git20200708+dd9ef66.orig.tar.gz 167776 SHA256:ab70b1f165bfedadd1282da546f1c917f1b7ccb2c5c2f898310a963e2ab5520c
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-2.debian.tar.xz' dash_0.5.11+git20200708+dd9ef66-2.debian.tar.xz 42292 SHA256:735ec38434c77cb3514f64cdabd96995c00462c4400ceed09011a5cac3aa971c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/dash/0.5.11+git20200708+dd9ef66-2/
 
-- https://sources.debian.net/src/dash/0.5.11+git20200708+dd9ef66-2/ (for browsing the source)
-- https://sources.debian.net/src/dash/0.5.11+git20200708+dd9ef66-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/dash/0.5.11+git20200708+dd9ef66-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `db5.3=5.3.28+dfsg1-0.6`
 
@@ -1554,11 +1540,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/3.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/3.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.8.0-2.1`
+### `dpkg` source package: `libssh2=1.9.0-2`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.8.0-2.1`
+- `libssh2-1:amd64=1.9.0-2`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
@@ -1567,17 +1553,17 @@ Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libssh2=1.8.0-2.1
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0-2.1.dsc' libssh2_1.8.0-2.1.dsc 1958 SHA256:33f070a4a32db5d3952457986d8f80c9cf874dd144d81f5bce062171564b35d9
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0.orig.tar.gz' libssh2_1.8.0.orig.tar.gz 846989 SHA256:4382d33de790b28f862e53ed59ffbd65f3def7a06e8b6e9ca1b6f70453b4d5e0
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.8.0-2.1.debian.tar.xz' libssh2_1.8.0-2.1.debian.tar.xz 13988 SHA256:e3c34166cddaba7f2162132ef4f4bdc1490c499ee6610bde81f773adef43489e
+$ apt-get source -qq --print-uris libssh2=1.9.0-2
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-2.dsc' libssh2_1.9.0-2.dsc 2007 SHA256:fbf9500e064cdd307a634772d0d417de910fcba874e3edbb72cce538f0389a11
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0.orig.tar.gz' libssh2_1.9.0.orig.tar.gz 888551 SHA256:d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-2.debian.tar.xz' libssh2_1.9.0-2.debian.tar.xz 9116 SHA256:7081ec54751720082d3f95ef73e2b52a46f72a67ab765932576c11aeb54df7d9
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libssh2/1.8.0-2.1/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.8.0-2.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.8.0-2.1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libssh2/1.9.0-2/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.9.0-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.9.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.16.0-2`
 
@@ -2167,12 +2153,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.1.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.1.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `readline=8.1~rc3-1`
+### `dpkg` source package: `readline=8.1-1`
 
 Binary Packages:
 
-- `libreadline8:amd64=8.1~rc3-1`
-- `readline-common=8.1~rc3-1`
+- `libreadline8:amd64=8.1-1`
+- `readline-common=8.1-1`
 
 Licenses: (parsed from: `/usr/share/doc/libreadline8/copyright`, `/usr/share/doc/readline-common/copyright`)
 
@@ -2182,17 +2168,17 @@ Licenses: (parsed from: `/usr/share/doc/libreadline8/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris readline=8.1~rc3-1
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1~rc3-1.dsc' readline_8.1~rc3-1.dsc 2446 SHA256:073b3e585d1c755065ad61e947c84345d4215ed9a91ffc58094bdd91369a49c5
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1~rc3.orig.tar.gz' readline_8.1~rc3.orig.tar.gz 2992934 SHA256:1b91ca9c25e6dcf444dde69a66d09d285b98b22517c3425989e5e30bd8b6a2d6
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1~rc3-1.debian.tar.xz' readline_8.1~rc3-1.debian.tar.xz 29212 SHA256:5b8b81a6504df1b302f9e79d6f168c0e39b05dd00e13a307363aa29681f20b5e
+$ apt-get source -qq --print-uris readline=8.1-1
+'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1-1.dsc' readline_8.1-1.dsc 2418 SHA256:53356fdf2ee122ab75c7b535d292385311f7dea425ccc42143d2b9a2accfc657
+'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1.orig.tar.gz' readline_8.1.orig.tar.gz 2993288 SHA256:f8ceb4ee131e3232226a17f51b164afc46cd0b9e6cef344be87c65962cb82b02
+'http://deb.debian.org/debian/pool/main/r/readline/readline_8.1-1.debian.tar.xz' readline_8.1-1.debian.tar.xz 29220 SHA256:852267a95aeec23b267c838469fee346e83a29e7a08071178dc87682591cffbf
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/readline/8.1~rc3-1/ (for browsing the source)
-- https://sources.debian.net/src/readline/8.1~rc3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/readline/8.1~rc3-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/readline/8.1-1/ (for browsing the source)
+- https://sources.debian.net/src/readline/8.1-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/readline/8.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rtmpdump=2.4+20151223.gitfa8646d.1-2`
 

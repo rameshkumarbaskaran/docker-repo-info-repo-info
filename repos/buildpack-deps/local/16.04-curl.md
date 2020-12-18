@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c903c80c19cf25335a91c0d1fe04456e9b1e0322133194c1cb0d5e07e952d8d9`
-- Created: `2020-11-26T01:12:33.363632864Z`
-- Virtual Size: ~ 147.32 Mb  
+- Image ID: `sha256:f25b9d68c10f7c66e19ab26d2d15b94fc24b6cc18e96b39783845c8f034aa84d`
+- Created: `2020-12-17T17:19:33.435872048Z`
+- Virtual Size: ~ 148.97 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -283,12 +283,12 @@ $ apt-get source -qq --print-uris cryptsetup=2:1.6.6-5ubuntu2.1
 'http://archive.ubuntu.com/ubuntu/pool/main/c/cryptsetup/cryptsetup_1.6.6-5ubuntu2.1.debian.tar.xz' cryptsetup_1.6.6-5ubuntu2.1.debian.tar.xz 91808 SHA512:c17d030969620bdebe5e2822ab37d6996d15ac2d2483f91be86080c6f5793915b4b922e43d7e567abaea762076bee98d01c68e1d0f4cd058c3a2b8fbcfd5cf22
 ```
 
-### `dpkg` source package: `curl=7.47.0-1ubuntu2.16`
+### `dpkg` source package: `curl=7.47.0-1ubuntu2.18`
 
 Binary Packages:
 
-- `curl=7.47.0-1ubuntu2.16`
-- `libcurl3-gnutls:amd64=7.47.0-1ubuntu2.16`
+- `curl=7.47.0-1ubuntu2.18`
+- `libcurl3-gnutls:amd64=7.47.0-1ubuntu2.18`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`)
 
@@ -299,9 +299,14 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.47.0-1ubuntu2.18
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.18.dsc' curl_7.47.0-1ubuntu2.18.dsc 2733 SHA512:80b1f030901705f12a3ba3ecec1b2da34f76c5ffc4ed54055cc160ffacf1b677dc069179b2d3ffb24c22176f68cd761e0b93cc94165c035ce5a94fc7ba2670f0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0.orig.tar.gz' curl_7.47.0.orig.tar.gz 4563163 SHA512:567d6a17bad1439147a419eff7e3b4a8f81104e903d856a33a1ccfaf77723cc70004fa697505443a5edcee1b644eba2c79484b41c00e35320bec6ef928db43d9
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.18.debian.tar.xz' curl_7.47.0-1ubuntu2.18.debian.tar.xz 60604 SHA512:435f81a36d17e098f879795a51483562829a84406383f65430a34f40f7efb58e35be5dc61ba5c2895e3cef5d35e6b8908147f1f8f47f2d6b6598ba8b0c15e228
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.26.dfsg1-14ubuntu0.2`
 
@@ -1238,20 +1243,25 @@ $ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.11
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.11.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.11.debian.tar.xz 183320 SHA512:cee22eb64b028773d7e4245e967e734fca5a02d25e3841a526a8f2c5a698f96b95d500093c51fe53e4fcf487556032dfd30c265e3e367a5229a8ab1b09f9088d
 ```
 
-### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.17`
+### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.18`
 
 Binary Packages:
 
-- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.17`
-- `openssl=1.0.2g-1ubuntu4.17`
+- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.18`
+- `openssl=1.0.2g-1ubuntu4.18`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssl=1.0.2g-1ubuntu4.18
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.18.dsc' openssl_1.0.2g-1ubuntu4.18.dsc 2453 SHA512:3326f5ac9ee817b6afe1959ecd0157370d04bdcdda98011c4d373a224a07c481ba56107aed401b4b06109486495ecc2434f120888791357063ef2b3363c608ed
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g.orig.tar.gz' openssl_1.0.2g.orig.tar.gz 5266102 SHA512:4d96b6c8a232203483d6e8bee81da01ba10977bfbac92f25304a36dec9ea584b7ef917bc45e097cc7dbe681d71a4570d649c22244c178393ae91fab48323f735
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.18.debian.tar.xz' openssl_1.0.2g-1ubuntu4.18.debian.tar.xz 140736 SHA512:e4dcc700d308edf302b0317495918f8e4946e47d375d3e811bff60fc6a2775277465073d567cf62cc7fc0a36e9526600d56705eac1f515c4f5302a1511ecb4ba
+```
 
 ### `dpkg` source package: `p11-kit=0.23.2-5~ubuntu16.04.1`
 
@@ -1572,6 +1582,25 @@ $ apt-get source -qq --print-uris tar=1.28-2.1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.28-2.1ubuntu0.1.dsc' tar_1.28-2.1ubuntu0.1.dsc 2025 SHA512:8684a8b31fe8068e852f3cddaf58906b7cbff7bae57d949ed5c74e4f57ba346527e10eaa82ca590d4f14d8265a98f8621e0d64608ea6eee805812ae822582e45
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.28.orig.tar.xz' tar_1.28.orig.tar.xz 1756440 SHA512:dc91045b84bf5df513ae936be14977b029644a77ac03f58d21d34e61e50d8069f95526b9e706f2da7d41d3d0ed7de88bf13c2c066e63a80e5651a24077e604c2
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.28-2.1ubuntu0.1.debian.tar.xz' tar_1.28-2.1ubuntu0.1.debian.tar.xz 36868 SHA512:17c96a2fec2c40c92f4f28a5c054811b8a6623cf5c5f6eb7b1f782fb41a1f5e6f516a38fae96dee8b4250acbe0f4dd162801406fcc495a0ffcf1a7257e1206dd
+```
+
+### `dpkg` source package: `tzdata=2020d-0ubuntu0.16.04`
+
+Binary Packages:
+
+- `tzdata=2020d-0ubuntu0.16.04`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris tzdata=2020d-0ubuntu0.16.04
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d-0ubuntu0.16.04.dsc' tzdata_2020d-0ubuntu0.16.04.dsc 2136 SHA512:6fc4dad73a394203049930a5dd37da531a9fc7940f760f620657f910ef93782b614ec8b7bddac63ece8a0c144bd22d81f8c0f20c49f362abda75f504a4f7a359
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d.orig.tar.gz' tzdata_2020d.orig.tar.gz 401479 SHA512:362e4569a666b0776614be3f63f1fe3d5ae259055e7051c9875f36023db9c52b0c5a10c19067114443a4cf2bf92475f8a0aebdf79bac836d967527fcdea4e9b6
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d-0ubuntu0.16.04.debian.tar.xz' tzdata_2020d-0ubuntu0.16.04.debian.tar.xz 101772 SHA512:83b9c51008d31e7e872e2cb169555d55fe1250dcb5f388c9048edbf6848dae09a9bd3e205cef7523bef77c1bc73373b87576956eb20946e4289ee33070d9ad5b
 ```
 
 ### `dpkg` source package: `ubuntu-keyring=2012.05.19.1`

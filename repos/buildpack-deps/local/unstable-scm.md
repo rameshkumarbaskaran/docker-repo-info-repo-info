@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a112a83c31adde593315680306247c536a2660d88385f90a1ea439b222bd0fcb`
-- Created: `2020-12-11T20:39:17.266264512Z`
-- Virtual Size: ~ 306.33 Mb  
+- Image ID: `sha256:0fce4d1158c2ea89a5cd6aec41fcfd440895acb0dce75f4a9e193f4460dbe96f`
+- Created: `2020-12-17T17:00:24.058441854Z`
+- Virtual Size: ~ 313.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -1110,19 +1110,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.59
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.59.dsc' init-system-helpers_1.59.dsc 1896 SHA256:8e538973931385b28d2e088c782bf7e05033a9d76eede8dc08557f005e71fb5b
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.59.tar.xz' init-system-helpers_1.59.tar.xz 40720 SHA256:59099e81e83a2cb0e734a9b01bf1079e85722976b3babb9ec934e87bc206f373
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/init-system-helpers/1.59/
 
-- https://sources.debian.net/src/init-system-helpers/1.59/ (for browsing the source)
-- https://sources.debian.net/src/init-system-helpers/1.59/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/init-system-helpers/1.59/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `iproute2=5.9.0-1`
 
@@ -1837,11 +1831,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/3.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/3.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.9.0-1`
+### `dpkg` source package: `libssh2=1.9.0-2`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.9.0-1`
+- `libssh2-1:amd64=1.9.0-2`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
@@ -1850,17 +1844,17 @@ Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libssh2=1.9.0-1
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.dsc' libssh2_1.9.0-1.dsc 2007 SHA256:54ab86484980abd8dfaedc53b089674ee0e94373d544b218f0431bcc1aae903f
+$ apt-get source -qq --print-uris libssh2=1.9.0-2
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-2.dsc' libssh2_1.9.0-2.dsc 2007 SHA256:fbf9500e064cdd307a634772d0d417de910fcba874e3edbb72cce538f0389a11
 'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0.orig.tar.gz' libssh2_1.9.0.orig.tar.gz 888551 SHA256:d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.debian.tar.xz' libssh2_1.9.0-1.debian.tar.xz 9048 SHA256:df785c1d05cab187ad4c954a2f94c7a70aaa8e7148b873b5a837c240cd2bc16b
+'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-2.debian.tar.xz' libssh2_1.9.0-2.debian.tar.xz 9116 SHA256:7081ec54751720082d3f95ef73e2b52a46f72a67ab765932576c11aeb54df7d9
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libssh2/1.9.0-1/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.9.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.9.0-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libssh2/1.9.0-2/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.9.0-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.9.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.16.0-2`
 
@@ -2523,14 +2517,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pcre3/2:8.39-13/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pcre3/2:8.39-13/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `perl=5.32.0-5`
+### `dpkg` source package: `perl=5.32.0-6`
 
 Binary Packages:
 
-- `libperl5.32:amd64=5.32.0-5`
-- `perl=5.32.0-5`
-- `perl-base=5.32.0-5`
-- `perl-modules-5.32=5.32.0-5`
+- `libperl5.32:amd64=5.32.0-6`
+- `perl=5.32.0-6`
+- `perl-base=5.32.0-6`
+- `perl-modules-5.32=5.32.0-6`
 
 Licenses: (parsed from: `/usr/share/doc/libperl5.32/copyright`, `/usr/share/doc/perl/copyright`, `/usr/share/doc/perl-base/copyright`, `/usr/share/doc/perl-modules-5.32/copyright`)
 
@@ -2565,18 +2559,18 @@ Licenses: (parsed from: `/usr/share/doc/libperl5.32/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris perl=5.32.0-5
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.0-5.dsc' perl_5.32.0-5.dsc 2882 SHA256:277e41e59b10dcbe513a0589dc40d1361aa710a1dd3294c2db3545f966e72ee8
+$ apt-get source -qq --print-uris perl=5.32.0-6
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.0-6.dsc' perl_5.32.0-6.dsc 2997 SHA256:462ccbf2488da171a1b53c6b00ef6c047466307a7ee1a14b19913d37714a5020
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.0.orig-regen-configure.tar.gz' perl_5.32.0.orig-regen-configure.tar.gz 833536 SHA256:c40fa434ff0d6889f31e5e44d36dc568c77887159b55e7b12e49e979d4c4bd55
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.0.orig.tar.xz' perl_5.32.0.orig.tar.xz 12717336 SHA256:6f436b447cf56d22464f980fac1916e707a040e96d52172984c5d184c09b859b
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.0-5.debian.tar.xz' perl_5.32.0-5.debian.tar.xz 163568 SHA256:c9fa9b1a567d6372943fdc89f4f74affc1a10ecc9d0bf9f640d995b0554fc6d9
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.0-6.debian.tar.xz' perl_5.32.0-6.debian.tar.xz 164248 SHA256:8c282ed61faa72b5847f7e963b4d9c8078850f6462931da369dd8d36ea4ad7fb
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/perl/5.32.0-5/ (for browsing the source)
-- https://sources.debian.net/src/perl/5.32.0-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/perl/5.32.0-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/perl/5.32.0-6/ (for browsing the source)
+- https://sources.debian.net/src/perl/5.32.0-6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/perl/5.32.0-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pinentry=1.1.0-4`
 

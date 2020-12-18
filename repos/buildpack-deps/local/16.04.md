@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:05ce3a63508d9d5ce7152edc825ef0625bd66aa35315c2c3f682df8e2a6640a2`
-- Created: `2020-11-26T01:14:46.966009099Z`
-- Virtual Size: ~ 652.94 Mb  
+- Image ID: `sha256:319190d7620b68eb48d2cdd9df50de9143d694060213a942158a92dd6b0d2a23`
+- Created: `2020-12-17T17:22:31.673870652Z`
+- Virtual Size: ~ 654.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -551,14 +551,14 @@ $ apt-get source -qq --print-uris cups=2.1.3-4ubuntu0.11
 'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.1.3-4ubuntu0.11.debian.tar.xz' cups_2.1.3-4ubuntu0.11.debian.tar.xz 356476 SHA512:b57ab661a003b62d60c90c0d22bdea4f046b0b052326f821070ed7c08b2a208fb2cfb789613f5a9ebec2c694916602d119862c9880904f45d266fdcff2e4ea9a
 ```
 
-### `dpkg` source package: `curl=7.47.0-1ubuntu2.16`
+### `dpkg` source package: `curl=7.47.0-1ubuntu2.18`
 
 Binary Packages:
 
-- `curl=7.47.0-1ubuntu2.16`
-- `libcurl3:amd64=7.47.0-1ubuntu2.16`
-- `libcurl3-gnutls:amd64=7.47.0-1ubuntu2.16`
-- `libcurl4-openssl-dev:amd64=7.47.0-1ubuntu2.16`
+- `curl=7.47.0-1ubuntu2.18`
+- `libcurl3:amd64=7.47.0-1ubuntu2.18`
+- `libcurl3-gnutls:amd64=7.47.0-1ubuntu2.18`
+- `libcurl4-openssl-dev:amd64=7.47.0-1ubuntu2.18`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
 
@@ -569,9 +569,14 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.47.0-1ubuntu2.18
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.18.dsc' curl_7.47.0-1ubuntu2.18.dsc 2733 SHA512:80b1f030901705f12a3ba3ecec1b2da34f76c5ffc4ed54055cc160ffacf1b677dc069179b2d3ffb24c22176f68cd761e0b93cc94165c035ce5a94fc7ba2670f0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0.orig.tar.gz' curl_7.47.0.orig.tar.gz 4563163 SHA512:567d6a17bad1439147a419eff7e3b4a8f81104e903d856a33a1ccfaf77723cc70004fa697505443a5edcee1b644eba2c79484b41c00e35320bec6ef928db43d9
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.18.debian.tar.xz' curl_7.47.0-1ubuntu2.18.debian.tar.xz 60604 SHA512:435f81a36d17e098f879795a51483562829a84406383f65430a34f40f7efb58e35be5dc61ba5c2895e3cef5d35e6b8908147f1f8f47f2d6b6598ba8b0c15e228
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.26.dfsg1-14ubuntu0.2`
 
@@ -1545,23 +1550,23 @@ $ apt-get source -qq --print-uris ilmbase=2.2.0-11ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/i/ilmbase/ilmbase_2.2.0-11ubuntu2.debian.tar.xz' ilmbase_2.2.0-11ubuntu2.debian.tar.xz 13400 SHA256:400b77a32f7a04d78ff0462f32dc1e4073f5e1225ed070c63fa6a0ec619905c5
 ```
 
-### `dpkg` source package: `imagemagick=8:6.8.9.9-7ubuntu5.15`
+### `dpkg` source package: `imagemagick=8:6.8.9.9-7ubuntu5.16`
 
 Binary Packages:
 
-- `imagemagick=8:6.8.9.9-7ubuntu5.15`
-- `imagemagick-6.q16=8:6.8.9.9-7ubuntu5.15`
-- `imagemagick-common=8:6.8.9.9-7ubuntu5.15`
-- `libmagickcore-6-arch-config:amd64=8:6.8.9.9-7ubuntu5.15`
-- `libmagickcore-6-headers=8:6.8.9.9-7ubuntu5.15`
-- `libmagickcore-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.15`
-- `libmagickcore-6.q16-2-extra:amd64=8:6.8.9.9-7ubuntu5.15`
-- `libmagickcore-6.q16-dev:amd64=8:6.8.9.9-7ubuntu5.15`
-- `libmagickcore-dev=8:6.8.9.9-7ubuntu5.15`
-- `libmagickwand-6-headers=8:6.8.9.9-7ubuntu5.15`
-- `libmagickwand-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.15`
-- `libmagickwand-6.q16-dev:amd64=8:6.8.9.9-7ubuntu5.15`
-- `libmagickwand-dev=8:6.8.9.9-7ubuntu5.15`
+- `imagemagick=8:6.8.9.9-7ubuntu5.16`
+- `imagemagick-6.q16=8:6.8.9.9-7ubuntu5.16`
+- `imagemagick-common=8:6.8.9.9-7ubuntu5.16`
+- `libmagickcore-6-arch-config:amd64=8:6.8.9.9-7ubuntu5.16`
+- `libmagickcore-6-headers=8:6.8.9.9-7ubuntu5.16`
+- `libmagickcore-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.16`
+- `libmagickcore-6.q16-2-extra:amd64=8:6.8.9.9-7ubuntu5.16`
+- `libmagickcore-6.q16-dev:amd64=8:6.8.9.9-7ubuntu5.16`
+- `libmagickcore-dev=8:6.8.9.9-7ubuntu5.16`
+- `libmagickwand-6-headers=8:6.8.9.9-7ubuntu5.16`
+- `libmagickwand-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.16`
+- `libmagickwand-6.q16-dev:amd64=8:6.8.9.9-7ubuntu5.16`
+- `libmagickwand-dev=8:6.8.9.9-7ubuntu5.16`
 
 Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/imagemagick-6.q16/copyright`, `/usr/share/doc/imagemagick-common/copyright`, `/usr/share/doc/libmagickcore-6-arch-config/copyright`, `/usr/share/doc/libmagickcore-6-headers/copyright`, `/usr/share/doc/libmagickcore-6.q16-2/copyright`, `/usr/share/doc/libmagickcore-6.q16-2-extra/copyright`, `/usr/share/doc/libmagickcore-6.q16-dev/copyright`, `/usr/share/doc/libmagickcore-dev/copyright`, `/usr/share/doc/libmagickwand-6-headers/copyright`, `/usr/share/doc/libmagickwand-6.q16-2/copyright`, `/usr/share/doc/libmagickwand-6.q16-dev/copyright`, `/usr/share/doc/libmagickwand-dev/copyright`)
 
@@ -1582,10 +1587,10 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris imagemagick=8:6.8.9.9-7ubuntu5.15
-'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5.15.dsc' imagemagick_6.8.9.9-7ubuntu5.15.dsc 4337 SHA512:bdaa1aff7fe08ad7f3b83d4570443cf09b793753fc8669ffd96e443bd61c63e533672d32fdca19d50a9d0027f182f52272e15b5164be3c9f36b4cb0a58180c36
+$ apt-get source -qq --print-uris imagemagick=8:6.8.9.9-7ubuntu5.16
+'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5.16.dsc' imagemagick_6.8.9.9-7ubuntu5.16.dsc 4163 SHA512:cb54d91d6fbc364d13a145b2adabdc5e8e4a64a4ce86c003c593a69badcbcf6b9bfea06ba06b6c1121b7a8494725447d503e207a38ab2c681ba7433a597b4ebe
 'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9.orig.tar.xz' imagemagick_6.8.9.9.orig.tar.xz 7891624 SHA512:c30067ae55e2905fdd23c70de83198b52937a5b87396b5b89d3324f19a77ac8f654f6bbeeb07d4dcef1b4d609e9f53e1d1dd70848aa1452b58a548a240f7a3a3
-'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5.15.debian.tar.xz' imagemagick_6.8.9.9-7ubuntu5.15.debian.tar.xz 318708 SHA512:fe534b33e291d6319bcb120f472a6a69e7837c9532a0b0c1a77b83980d44fd4ff6c06fb11b4957c34e5cafd1a1ef3fc66f6224747fda0ba8608748e3b4593167
+'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5.16.debian.tar.xz' imagemagick_6.8.9.9-7ubuntu5.16.debian.tar.xz 319324 SHA512:30e45e9310d0cea91deb4489ffee24ac7b26395eddf2aecbaaeb552c26f4166f8fa47ceba36b0e0e904fddcb231af4cf798b7f8368b3ec2b4080f088f3d6a709
 ```
 
 ### `dpkg` source package: `init-system-helpers=1.29ubuntu4`
@@ -2901,20 +2906,25 @@ $ apt-get source -qq --print-uris libyaml=0.1.6-3
 'http://archive.ubuntu.com/ubuntu/pool/main/liby/libyaml/libyaml_0.1.6-3.debian.tar.xz' libyaml_0.1.6-3.debian.tar.xz 4268 SHA256:fd567e6918903833e5c4f1f87254c550eca07c2bba1ccbe6031da33243cf4297
 ```
 
-### `dpkg` source package: `linux=4.4.0-194.226`
+### `dpkg` source package: `linux=4.4.0-197.229`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-194.226`
+- `linux-libc-dev:amd64=4.4.0-197.229`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-197.229
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-197.229.dsc' linux_4.4.0-197.229.dsc 11628 SHA512:5bbc73a1b50c2e5a2e67daa4ac52b8ba948835776e796f0937a1f9fec13a6692652db2e50c4817f7ddcc3d45b05911298babd311c277566035483a167a1c3e9e
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA512:28ef89b62f663f2d90b58274799b7ebeff04699f08d0b83f650b0de179d4ef354450c81ecda07522b493c43d5eb2d530fa0f552a2794d48f84878e05efa39cc3
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-197.229.diff.gz' linux_4.4.0-197.229.diff.gz 16855374 SHA512:58e796c1f47d9f3520bb7cf05e6b3e4d33de3e9a71db542fbf0b8c7026f00f87d8e9bf687f40e4e5e58bdd4a9018e8bedd20cad3240e98313eb63db1e2f19d87
+```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
@@ -3317,21 +3327,26 @@ $ apt-get source -qq --print-uris openssh=1:7.2p2-4ubuntu2.10
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_7.2p2-4ubuntu2.10.debian.tar.xz' openssh_7.2p2-4ubuntu2.10.debian.tar.xz 178928 SHA512:bf815a840f256cfd33cd2b8c63bac77b345c61f23ed7584fa2f614dc4cfa0925a33a0d423024bdab1a8d528168a1e30dfabc2789c52b04baaacc120c7c07f2d3
 ```
 
-### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.17`
+### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.18`
 
 Binary Packages:
 
-- `libssl-dev:amd64=1.0.2g-1ubuntu4.17`
-- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.17`
-- `openssl=1.0.2g-1ubuntu4.17`
+- `libssl-dev:amd64=1.0.2g-1ubuntu4.18`
+- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.18`
+- `openssl=1.0.2g-1ubuntu4.18`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssl=1.0.2g-1ubuntu4.18
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.18.dsc' openssl_1.0.2g-1ubuntu4.18.dsc 2453 SHA512:3326f5ac9ee817b6afe1959ecd0157370d04bdcdda98011c4d373a224a07c481ba56107aed401b4b06109486495ecc2434f120888791357063ef2b3363c608ed
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g.orig.tar.gz' openssl_1.0.2g.orig.tar.gz 5266102 SHA512:4d96b6c8a232203483d6e8bee81da01ba10977bfbac92f25304a36dec9ea584b7ef917bc45e097cc7dbe681d71a4570d649c22244c178393ae91fab48323f735
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.18.debian.tar.xz' openssl_1.0.2g-1ubuntu4.18.debian.tar.xz 140736 SHA512:e4dcc700d308edf302b0317495918f8e4946e47d375d3e811bff60fc6a2775277465073d567cf62cc7fc0a36e9526600d56705eac1f515c4f5302a1511ecb4ba
+```
 
 ### `dpkg` source package: `p11-kit=0.23.2-5~ubuntu16.04.1`
 
@@ -3925,6 +3940,25 @@ $ apt-get source -qq --print-uris tiff=4.0.6-1ubuntu0.7
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.0.6-1ubuntu0.7.debian.tar.xz' tiff_4.0.6-1ubuntu0.7.debian.tar.xz 63940 SHA512:ca2b3fc10697d4254854308d084c1a90d39a2fed4784457189edde377abc98f2fca001d73d25a38963153ff95e96403135bb6c4e3ff1facb7c142d00b17cde05
 ```
 
+### `dpkg` source package: `tzdata=2020d-0ubuntu0.16.04`
+
+Binary Packages:
+
+- `tzdata=2020d-0ubuntu0.16.04`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris tzdata=2020d-0ubuntu0.16.04
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d-0ubuntu0.16.04.dsc' tzdata_2020d-0ubuntu0.16.04.dsc 2136 SHA512:6fc4dad73a394203049930a5dd37da531a9fc7940f760f620657f910ef93782b614ec8b7bddac63ece8a0c144bd22d81f8c0f20c49f362abda75f504a4f7a359
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d.orig.tar.gz' tzdata_2020d.orig.tar.gz 401479 SHA512:362e4569a666b0776614be3f63f1fe3d5ae259055e7051c9875f36023db9c52b0c5a10c19067114443a4cf2bf92475f8a0aebdf79bac836d967527fcdea4e9b6
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020d-0ubuntu0.16.04.debian.tar.xz' tzdata_2020d-0ubuntu0.16.04.debian.tar.xz 101772 SHA512:83b9c51008d31e7e872e2cb169555d55fe1250dcb5f388c9048edbf6848dae09a9bd3e205cef7523bef77c1bc73373b87576956eb20946e4289ee33070d9ad5b
+```
+
 ### `dpkg` source package: `ubuntu-keyring=2012.05.19.1`
 
 Binary Packages:
@@ -3961,11 +3995,11 @@ $ apt-get source -qq --print-uris ucf=3.0036
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ucf/ucf_3.0036.tar.xz' ucf_3.0036.tar.xz 65020 SHA256:34aa44416106f1205376918386b2896edf21dd42b633133b5f8fedecae17fca8
 ```
 
-### `dpkg` source package: `unzip=6.0-20ubuntu1`
+### `dpkg` source package: `unzip=6.0-20ubuntu1.1`
 
 Binary Packages:
 
-- `unzip=6.0-20ubuntu1`
+- `unzip=6.0-20ubuntu1.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3974,10 +4008,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris unzip=6.0-20ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-20ubuntu1.dsc' unzip_6.0-20ubuntu1.dsc 1782 SHA256:b3a01c0cf67b19ae87c621f1362474283841a88e4388335dbe29dd331efb6814
-'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0.orig.tar.gz' unzip_6.0.orig.tar.gz 1376845 SHA256:036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
-'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-20ubuntu1.debian.tar.xz' unzip_6.0-20ubuntu1.debian.tar.xz 19896 SHA256:0ddf122ef15b739e3ea06db4b9e80f40759dce23a2c886678881453a43bd0842
+$ apt-get source -qq --print-uris unzip=6.0-20ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-20ubuntu1.1.dsc' unzip_6.0-20ubuntu1.1.dsc 1630 SHA512:3c16ad1c49c5df79eaa9d5d6f7ce48e2f11f50e8f90f190a887ec78e9fdc8362bf1d9657df2198d88db25bf8c84c7de35e19ad3d91558988238c9b0b3c4b1a90
+'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0.orig.tar.gz' unzip_6.0.orig.tar.gz 1376845 SHA512:0694e403ebc57b37218e00ec1a406cae5cc9c5b52b6798e0d4590840b6cdbf9ddc0d9471f67af783e960f8fa2e620394d51384257dca23d06bcd90224a80ce5d
+'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-20ubuntu1.1.debian.tar.xz' unzip_6.0-20ubuntu1.1.debian.tar.xz 25832 SHA512:0eace4b03ea5c3760e5b5654aa8e51940f848ecdafdc445327d3ee837f33e039a6aa53b35c1d737e11800e41203488f3229b78292c712d488734cce4414b6543
 ```
 
 ### `dpkg` source package: `ustr=1.0.4-5`
