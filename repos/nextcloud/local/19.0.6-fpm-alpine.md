@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cf296af562eb09950a9454be6e25c458b33a827f32afb85f0dce3e7187de841d`
-- Created: `2020-12-12T00:58:54.075670446Z`
-- Virtual Size: ~ 436.34 Mb  
+- Image ID: `sha256:d73bea0119c94cc54d8c23da4b98ee26b5283d614bb81472bec540db0841833c`
+- Created: `2020-12-17T18:30:20.867024975Z`
+- Virtual Size: ~ 432.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -165,16 +165,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.69.1-r2 description:
+curl-7.69.1-r3 description:
 URL retrival utility and library
 
-curl-7.69.1-r2 webpage:
+curl-7.69.1-r3 webpage:
 https://curl.haxx.se/
 
-curl-7.69.1-r2 installed size:
+curl-7.69.1-r3 installed size:
 229376
 
-curl-7.69.1-r2 license:
+curl-7.69.1-r3 license:
 MIT
 
 ```
@@ -284,16 +284,16 @@ MIT ICU Unicode-TOU
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.10.25-r0 description:
+imagemagick-libs-7.0.10.48-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.10.25-r0 webpage:
+imagemagick-libs-7.0.10.48-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.10.25-r0 installed size:
-3293184
+imagemagick-libs-7.0.10.48-r0 installed size:
+3313664
 
-imagemagick-libs-7.0.10.25-r0 license:
+imagemagick-libs-7.0.10.48-r0 license:
 ImageMagick
 
 ```
@@ -403,16 +403,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r2 description:
+libcurl-7.69.1-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r2 webpage:
+libcurl-7.69.1-r3 webpage:
 https://curl.haxx.se/
 
-libcurl-7.69.1-r2 installed size:
+libcurl-7.69.1-r3 installed size:
 458752
 
-libcurl-7.69.1-r2 license:
+libcurl-7.69.1-r3 license:
 MIT
 
 ```
@@ -896,16 +896,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1g-r0 description:
+openssl-1.1.1i-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1g-r0 webpage:
+openssl-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1g-r0 installed size:
+openssl-1.1.1i-r0 installed size:
 675840
 
-openssl-1.1.1g-r0 license:
+openssl-1.1.1i-r0 license:
 OpenSSL
 
 ```
