@@ -2385,16 +2385,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libssh2=1.9.0-1
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.dsc' libssh2_1.9.0-1.dsc 2007 SHA256:54ab86484980abd8dfaedc53b089674ee0e94373d544b218f0431bcc1aae903f
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0.orig.tar.gz' libssh2_1.9.0.orig.tar.gz 888551 SHA256:d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd
-'http://deb.debian.org/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.debian.tar.xz' libssh2_1.9.0-1.debian.tar.xz 9048 SHA256:df785c1d05cab187ad4c954a2f94c7a70aaa8e7148b873b5a837c240cd2bc16b
+'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.dsc' libssh2_1.9.0-1.dsc 2007 SHA256:54ab86484980abd8dfaedc53b089674ee0e94373d544b218f0431bcc1aae903f
+'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.9.0.orig.tar.gz' libssh2_1.9.0.orig.tar.gz 888551 SHA256:d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd
+'http://http.debian.net/debian/pool/main/libs/libssh2/libssh2_1.9.0-1.debian.tar.xz' libssh2_1.9.0-1.debian.tar.xz 9048 SHA256:df785c1d05cab187ad4c954a2f94c7a70aaa8e7148b873b5a837c240cd2bc16b
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/libssh2/1.9.0-1/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.9.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.9.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.16.0-2`
 
@@ -3190,10 +3184,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nlme=3.1.151-1
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.151-1.dsc' nlme_3.1.151-1.dsc 1840 SHA256:30a00a7b2162334e762cc9962c0dfeaffc1fd594dd86f5875af5347439e9ba3a
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.151.orig.tar.gz' nlme_3.1.151.orig.tar.gz 805592 SHA256:a2c626bad68bf582663005170d1b9d844a10dca8efb13597f15ffb4b1fe886ca
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.151-1.debian.tar.xz' nlme_3.1.151-1.debian.tar.xz 7140 SHA256:e42e0a3aebafdd7ae25ce7f4018f77a2fded8d33f763b44b7d5425b45c490b82
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.151-1.dsc' nlme_3.1.151-1.dsc 1840 SHA256:30a00a7b2162334e762cc9962c0dfeaffc1fd594dd86f5875af5347439e9ba3a
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.151.orig.tar.gz' nlme_3.1.151.orig.tar.gz 805592 SHA256:a2c626bad68bf582663005170d1b9d844a10dca8efb13597f15ffb4b1fe886ca
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.151-1.debian.tar.xz' nlme_3.1.151-1.debian.tar.xz 7140 SHA256:e42e0a3aebafdd7ae25ce7f4018f77a2fded8d33f763b44b7d5425b45c490b82
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/nlme/3.1.151-1/ (for browsing the source)
+- https://sources.debian.net/src/nlme/3.1.151-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/nlme/3.1.151-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openblas=0.3.12+ds-2`
 
@@ -4049,20 +4049,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff5/copyright`)
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.1.0+git191117-2
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117-2.dsc' tiff_4.1.0+git191117-2.dsc 2242 SHA256:b206142f5d27dc3e5cdc005266a848afdc59a23f42f9fb9e93de33c38aaf85f6
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117.orig.tar.xz' tiff_4.1.0+git191117.orig.tar.xz 1533524 SHA256:67e1d045e994adb7144b0cca228d70dd6d520aaf8c75c342064bc0fd601e6e42
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117-2.debian.tar.xz' tiff_4.1.0+git191117-2.debian.tar.xz 19384 SHA256:faaeeccdd5d1484b4ef2e8c4c6e31a3ebbad2ae947c5e4caba6de564c8958a00
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.1.0+git191117-2/
 
-- https://sources.debian.net/src/tiff/4.1.0+git191117-2/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.1.0+git191117-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.1.0+git191117-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tk8.6=8.6.10-1`
 
