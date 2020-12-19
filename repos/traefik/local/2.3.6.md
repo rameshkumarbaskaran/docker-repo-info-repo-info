@@ -1,10 +1,10 @@
-# `traefik:v2.3.5`
+# `traefik:v2.3.6`
 
 ## Docker Metadata
 
-- Image ID: `sha256:be7b24bf0a064af958a48874bc91358daf472e5aa1d38786bdd99cbfe9edf943`
-- Created: `2020-12-11T02:01:23.886414368Z`
-- Virtual Size: ~ 92.48 Mb  
+- Image ID: `sha256:b52fea93906adbf3a0068165e55c2640a0efa634f983334c78db5f96476df9e8`
+- Created: `2020-12-18T07:11:26.12433752Z`
+- Virtual Size: ~ 92.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `org.opencontainers.image.title=Traefik`
   - `org.opencontainers.image.url=https://traefik.io`
   - `org.opencontainers.image.vendor=Traefik Labs`
-  - `org.opencontainers.image.version=v2.3.5`
+  - `org.opencontainers.image.version=v2.3.6`
 
 ## `apk` (`.apk`-based packages)
 
@@ -92,16 +92,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r1 description:
-Common CA certificates PEM files
+ca-certificates-20191127-r2 description:
+Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r1 webpage:
+ca-certificates-20191127-r2 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r1 installed size:
-741376
+ca-certificates-20191127-r2 installed size:
+737280
 
-ca-certificates-20191127-r1 license:
+ca-certificates-20191127-r2 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -109,16 +109,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
-ca-certificates-cacert-20191127-r1 description:
+ca-certificates-cacert-20191127-r2 description:
 Mozilla bundled certificates
 
-ca-certificates-cacert-20191127-r1 webpage:
+ca-certificates-cacert-20191127-r2 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-cacert-20191127-r1 installed size:
+ca-certificates-cacert-20191127-r2 installed size:
 245760
 
-ca-certificates-cacert-20191127-r1 license:
+ca-certificates-cacert-20191127-r2 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -143,16 +143,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1g-r0 description:
+libcrypto1.1-1.1.1i-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1g-r0 webpage:
+libcrypto1.1-1.1.1i-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1g-r0 installed size:
-2760704
+libcrypto1.1-1.1.1i-r0 installed size:
+2764800
 
-libcrypto1.1-1.1.1g-r0 license:
+libcrypto1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -160,16 +160,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1g-r0 description:
+libssl1.1-1.1.1i-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1g-r0 webpage:
+libssl1.1-1.1.1i-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1g-r0 installed size:
+libssl1.1-1.1.1i-r0 installed size:
 540672
 
-libssl1.1-1.1.1g-r0 license:
+libssl1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -194,16 +194,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.24-r2 description:
+musl-1.1.24-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.24-r2 webpage:
+musl-1.1.24-r3 webpage:
 https://musl.libc.org/
 
-musl-1.1.24-r2 installed size:
+musl-1.1.24-r3 installed size:
 614400
 
-musl-1.1.24-r2 license:
+musl-1.1.24-r3 license:
 MIT
 
 ```
@@ -211,16 +211,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.24-r2 description:
+musl-utils-1.1.24-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.24-r2 webpage:
+musl-utils-1.1.24-r3 webpage:
 https://musl.libc.org/
 
-musl-utils-1.1.24-r2 installed size:
+musl-utils-1.1.24-r3 installed size:
 151552
 
-musl-utils-1.1.24-r2 license:
+musl-utils-1.1.24-r3 license:
 MIT BSD GPL2+
 
 ```
@@ -262,16 +262,16 @@ GPL-2.0-only
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019c-r0 description:
+tzdata-2020c-r1 description:
 Timezone data
 
-tzdata-2019c-r0 webpage:
+tzdata-2020c-r1 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019c-r0 installed size:
-3538944
+tzdata-2020c-r1 installed size:
+3526656
 
-tzdata-2019c-r0 license:
+tzdata-2020c-r1 license:
 Public-Domain
 
 ```
