@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b005dab4f75a0235f6f7a834b68ee56c7b076780ec00cfc5b68dced05ab685e9`
-- Created: `2020-12-10T17:18:21.679456289Z`
-- Virtual Size: ~ 546.32 Mb  
+- Image ID: `sha256:48122da8a196d23091c199163c8b3fcb19a74650c2748c89414b3c1b7f46fe74`
+- Created: `2020-12-18T09:00:33.631976505Z`
+- Virtual Size: ~ 549.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -883,15 +883,15 @@ $ yumdownloader --quiet --source --urls openldap-2.4.44-22.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/openldap-2.4.44-22.el7.src.rpm
 ```
 
-### `rpm` package: `openssl-libs-1.0.2k-19.0.1.el7.x86_64`
+### `rpm` package: `openssl-libs-1.0.2k-21.el7_9.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.0.1.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/openssl-1.0.2k-19.0.1.el7.src.rpm
+$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-21.el7_9
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/openssl-1.0.2k-21.el7_9.src.rpm
 ```
 
 ### `rpm` package: `oraclelinux-release-7.9-1.0.9.el7.x86_64`
