@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:071a0207ecd6e9f2234f9e82125d6e9dd6ea93bea7f8530894a9b30a96b36332`
-- Created: `2020-12-12T04:19:42.986399237Z`
-- Virtual Size: ~ 347.60 Mb  
+- Image ID: `sha256:6c8fa11137f8286399c1a5e5f15f29767f7032fb6bffe20f21ca860f5c1d3a81`
+- Created: `2020-12-17T19:23:36.435613Z`
+- Virtual Size: ~ 347.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`
@@ -172,16 +172,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1g-r0 description:
+libcrypto1.1-1.1.1i-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1g-r0 webpage:
+libcrypto1.1-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1g-r0 installed size:
-2760704
+libcrypto1.1-1.1.1i-r0 installed size:
+2764800
 
-libcrypto1.1-1.1.1g-r0 license:
+libcrypto1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -206,16 +206,16 @@ MIT
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1g-r0 description:
+libssl1.1-1.1.1i-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1g-r0 webpage:
+libssl1.1-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1g-r0 installed size:
+libssl1.1-1.1.1i-r0 installed size:
 540672
 
-libssl1.1-1.1.1g-r0 license:
+libssl1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -342,16 +342,16 @@ MIT
 ### `apk` package: `p11-kit`
 
 ```console
-p11-kit-0.23.20-r5 description:
+p11-kit-0.23.22-r0 description:
 Library for loading and sharing PKCS#11 modules
 
-p11-kit-0.23.20-r5 webpage:
+p11-kit-0.23.22-r0 webpage:
 https://p11-glue.freedesktop.org/
 
-p11-kit-0.23.20-r5 installed size:
-1216512
+p11-kit-0.23.22-r0 installed size:
+1228800
 
-p11-kit-0.23.20-r5 license:
+p11-kit-0.23.22-r0 license:
 BSD-3-Clause
 
 ```
@@ -359,16 +359,16 @@ BSD-3-Clause
 ### `apk` package: `p11-kit-trust`
 
 ```console
-p11-kit-trust-0.23.20-r5 description:
+p11-kit-trust-0.23.22-r0 description:
 System trust module from p11-kit
 
-p11-kit-trust-0.23.20-r5 webpage:
+p11-kit-trust-0.23.22-r0 webpage:
 https://p11-glue.freedesktop.org/
 
-p11-kit-trust-0.23.20-r5 installed size:
-471040
+p11-kit-trust-0.23.22-r0 installed size:
+462848
 
-p11-kit-trust-0.23.20-r5 license:
+p11-kit-trust-0.23.22-r0 license:
 BSD-3-Clause
 
 ```
