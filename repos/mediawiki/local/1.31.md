@@ -1,10 +1,10 @@
-# `mediawiki:1.31.10`
+# `mediawiki:1.31.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8cfecadaa1cdde2a967d552c9966461d008ff53ff13f98364c7b4ce286d58608`
-- Created: `2020-12-12T00:04:24.9086747Z`
-- Virtual Size: ~ 725.64 Mb  
+- Image ID: `sha256:a473c9f2a366732a0014f014fd8e13325c8d024d51663c8c59f2a6aa9bbd77a2`
+- Created: `2020-12-21T20:29:19.787118766Z`
+- Virtual Size: ~ 726.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -20,13 +20,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.34`
-  - `PHP_URL=https://www.php.net/distributions/php-7.2.34.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.2.34.tar.xz.asc`
-  - `PHP_SHA256=409e11bc6a2c18707dfc44bc61c820ddfd81e17481470f3405ee7822d8379903`
+  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
+  - `PHP_VERSION=7.3.25`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.25.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.25.tar.xz.asc`
+  - `PHP_SHA256=c71c00ad03079efb78d1a6b8623ca4f725be697dbd9a46debacbcc9a2475f329`
   - `MEDIAWIKI_MAJOR_VERSION=1.31`
-  - `MEDIAWIKI_VERSION=1.31.10`
+  - `MEDIAWIKI_VERSION=1.31.12`
 
 ## `dpkg` (`.deb`-based packages)
 
