@@ -1,9 +1,9 @@
-# `aerospike:5.3.0.2`
+# `aerospike:5.3.0.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8b35556ab7f65ccf44d05b5164530c45f3f1f92204f6cd4b98267c8b8d56465e`
-- Created: `2020-12-14T20:21:20.955841921Z`
+- Image ID: `sha256:6a5fbc24c21b769ed55236b2519590e5624dad44b6ca063e271281d5068d6eb5`
+- Created: `2020-12-21T19:21:07.183507961Z`
 - Virtual Size: ~ 194.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=5.3.0.2`
-  - `AEROSPIKE_SHA256=11f33419443e486821608e74bf7db318e184686503043cc1a3e7e07ab90eb059`
+  - `AEROSPIKE_VERSION=5.3.0.3`
+  - `AEROSPIKE_SHA256=a37fc7f70aec0976ae959b36a94ef7022e539e87f1abf20054e53742c40ed058`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -66,11 +66,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.115/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.115/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-community=5.3.0.2-1`
+### `dpkg` source package: `aerospike-server-community=5.3.0.3-1`
 
 Binary Packages:
 
-- `aerospike-server-community=5.3.0.2-1`
+- `aerospike-server-community=5.3.0.3-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -323,12 +323,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/coreutils/8.26-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/coreutils/8.26-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `curl=7.52.1-5+deb9u12`
+### `dpkg` source package: `curl=7.52.1-5+deb9u13`
 
 Binary Packages:
 
-- `libcurl3:amd64=7.52.1-5+deb9u12`
-- `libcurl4-openssl-dev:amd64=7.52.1-5+deb9u12`
+- `libcurl3:amd64=7.52.1-5+deb9u13`
+- `libcurl4-openssl-dev:amd64=7.52.1-5+deb9u13`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
 
@@ -342,17 +342,17 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/lib
 Source:
 
 ```console
-$ apt-get source -qq --print-uris curl=7.52.1-5+deb9u12
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u12.dsc' curl_7.52.1-5+deb9u12.dsc 2956 SHA256:8eb3a46742209ecc0933b23fd96634a29e95a889cffa3b6eb944350d282cb20a
+$ apt-get source -qq --print-uris curl=7.52.1-5+deb9u13
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u13.dsc' curl_7.52.1-5+deb9u13.dsc 2797 SHA256:394b35eceaaf3c3545b3fcc673ef43c4d81f0f26f27392333e7c593e63c2d24e
 'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1.orig.tar.gz' curl_7.52.1.orig.tar.gz 3504621 SHA256:a8984e8b20880b621f61a62d95ff3c0763a3152093a9f9ce4287cfd614add6ae
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u12.debian.tar.xz' curl_7.52.1-5+deb9u12.debian.tar.xz 45088 SHA256:048b49e321889c9eb96c68ee58075a872486a98245c59253718c0a8b5a8f1b34
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u13.debian.tar.xz' curl_7.52.1-5+deb9u13.debian.tar.xz 48744 SHA256:685ebde74e62c02bb6c0c55b0430be76ee85fe038f468b47330c23c18f74647f
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/curl/7.52.1-5+deb9u12/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.52.1-5+deb9u12/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u12/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u13/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u13/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u13/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3+deb9u1`
 
