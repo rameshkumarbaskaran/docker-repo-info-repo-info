@@ -1,10 +1,10 @@
-# `alpine:20200917`
+# `alpine:20201218`
 
 ## Docker Metadata
 
-- Image ID: `sha256:003bcf04572978ef01379cf3cf9129ca7c11fc46e19f51c90baa59513f56642d`
-- Created: `2020-09-18T02:19:16.192038762Z`
-- Virtual Size: ~ 5.62 Mb  
+- Image ID: `sha256:430cc6504dbd5a0acf9058733dc015452aa0af1b826c3c408c539f4f302591b7`
+- Created: `2020-12-18T19:33:58.370845825Z`
+- Virtual Size: ~ 5.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -50,16 +50,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.12.0_rc1-r2 description:
+apk-tools-2.12.0-r3 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.12.0_rc1-r2 webpage:
+apk-tools-2.12.0-r3 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.12.0_rc1-r2 installed size:
-303104
+apk-tools-2.12.0-r3 installed size:
+311296
 
-apk-tools-2.12.0_rc1-r2 license:
+apk-tools-2.12.0-r3 license:
 GPL-2.0-only
 
 ```
@@ -67,16 +67,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.32.0-r3 description:
+busybox-1.32.0-r8 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.32.0-r3 webpage:
+busybox-1.32.0-r8 webpage:
 https://busybox.net/
 
-busybox-1.32.0-r3 installed size:
-966656
+busybox-1.32.0-r8 installed size:
+946176
 
-busybox-1.32.0-r3 license:
+busybox-1.32.0-r8 license:
 GPL-2.0-only
 
 ```
@@ -84,17 +84,17 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r4 description:
+ca-certificates-bundle-20191127-r5 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r4 webpage:
+ca-certificates-bundle-20191127-r5 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r4 installed size:
+ca-certificates-bundle-20191127-r5 installed size:
 233472
 
-ca-certificates-bundle-20191127-r4 license:
-MPL-2.0 GPL-2.0-or-later
+ca-certificates-bundle-20191127-r5 license:
+MPL-2.0 AND MIT
 
 ```
 
@@ -118,16 +118,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1g-r0 description:
+libcrypto1.1-1.1.1i-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1g-r0 webpage:
+libcrypto1.1-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1g-r0 installed size:
-2760704
+libcrypto1.1-1.1.1i-r0 installed size:
+2768896
 
-libcrypto1.1-1.1.1g-r0 license:
+libcrypto1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -135,16 +135,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1g-r0 description:
+libssl1.1-1.1.1i-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1g-r0 webpage:
+libssl1.1-1.1.1i-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1g-r0 installed size:
+libssl1.1-1.1.1i-r0 installed size:
 540672
 
-libssl1.1-1.1.1g-r0 license:
+libssl1.1-1.1.1i-r0 license:
 OpenSSL
 
 ```
@@ -169,16 +169,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.1-r1 description:
+musl-1.2.2_pre6-r0 description:
 the musl c library (libc) implementation
 
-musl-1.2.1-r1 webpage:
+musl-1.2.2_pre6-r0 webpage:
 https://musl.libc.org/
 
-musl-1.2.1-r1 installed size:
-618496
+musl-1.2.2_pre6-r0 installed size:
+622592
 
-musl-1.2.1-r1 license:
+musl-1.2.2_pre6-r0 license:
 MIT
 
 ```
@@ -186,16 +186,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.1-r1 description:
+musl-utils-1.2.2_pre6-r0 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.1-r1 webpage:
+musl-utils-1.2.2_pre6-r0 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.1-r1 installed size:
-147456
+musl-utils-1.2.2_pre6-r0 installed size:
+143360
 
-musl-utils-1.2.1-r1 license:
+musl-utils-1.2.2_pre6-r0 license:
 MIT BSD GPL2+
 
 ```
@@ -220,16 +220,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.32.0-r3 description:
+ssl_client-1.32.0-r8 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.32.0-r3 webpage:
+ssl_client-1.32.0-r8 webpage:
 https://busybox.net/
 
-ssl_client-1.32.0-r3 installed size:
+ssl_client-1.32.0-r8 installed size:
 28672
 
-ssl_client-1.32.0-r3 license:
+ssl_client-1.32.0-r8 license:
 GPL-2.0-only
 
 ```
