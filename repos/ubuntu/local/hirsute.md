@@ -110,14 +110,9 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:2.8.5-3ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.5-3ubuntu2.dsc' audit_2.8.5-3ubuntu2.dsc 2854 SHA512:9dce437d917f90f6e73e62accb20f18ee9fc5f61199087b787b7f16f7b40c591bdb5671bbc0b41ea5b7948aa2c1f55737786d861e92abfbfab8f5010a25d6f2e
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.5.orig.tar.gz' audit_2.8.5.orig.tar.gz 1140694 SHA512:7d416aaa21c1a167f8e911ca82aecbaba804424f3243f505066c43ecc4a62a34feb2c27555e99d3268608404793dccca0f828c63670e3aa816016fb493f8174a
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.5-3ubuntu2.debian.tar.xz' audit_2.8.5-3ubuntu2.debian.tar.xz 19976 SHA512:9b15c180cbc55b4129b62a281bf70937cf3300afda92c0e01b441076b2b74e8704f5e3e10a32053a8c1f61565f0b15df403f358d0db7442933cce34aa118bd3d
-```
 
 ### `dpkg` source package: `base-files=11ubuntu16`
 
@@ -214,15 +209,9 @@ Licenses: (parsed from: `/usr/share/doc/coreutils/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris coreutils=8.32-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4ubuntu1.dsc' coreutils_8.32-4ubuntu1.dsc 2291 SHA512:e074cd186fe619dcfdf912097d7fd287a2932d34f65942e168ec37628da441ad85d68e9acc42989547a7222c48353c431fb3592ff8ada8d9bd998d8feaa9bac2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32.orig.tar.xz' coreutils_8.32.orig.tar.xz 5547836 SHA512:1c8f3584efd61b4b02e7ac5db8e103b63cfb2063432caaf1e64cb2dcc56d8c657d1133bbf10bd41468d6a1f31142e6caa81d16ae68fa3e6e84075c253613a145
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32.orig.tar.xz.asc' coreutils_8.32.orig.tar.xz.asc 833 SHA512:9c73b35c9e8f7c2b8eff317afcb5aa3234c5f41c80d1882f3c2342906f3fdc876ae45d1256dd1b8fd3cb58c50925f3c13f93de5018626634fdca3c72c14a9acb
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4ubuntu1.debian.tar.xz' coreutils_8.32-4ubuntu1.debian.tar.xz 40844 SHA512:badf45cca6eb11ab6e5f0b901ae0a5e9de58e028badda13e4f202d8c7765f4ffa58085a20a07a6f63cda8f3a3fa6a5572e9f295e7e10f62deb04947a4a9eab5f
-```
 
 ### `dpkg` source package: `dash=0.5.11+git20200708+dd9ef66+really0.5.10.2-0ubuntu1`
 
