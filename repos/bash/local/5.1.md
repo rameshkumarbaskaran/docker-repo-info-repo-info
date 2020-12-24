@@ -1,9 +1,9 @@
-# `bash:5.1.0`
+# `bash:5.1.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:15bad1f012ce8ec98a630e0066b22a11de9089261ced2c51e3a4f28f3adf9172`
-- Created: `2020-12-17T12:15:47.300672174Z`
+- Image ID: `sha256:a3cae8598d5253f1b8fca188d804cff0c7f69b694523b40f412ff102f4532505`
+- Created: `2020-12-21T19:24:30.808963631Z`
 - Virtual Size: ~ 13.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,9 @@
 - Command: `["bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `_BASH_VERSION=5.1.0`
+  - `_BASH_VERSION=5.1.4`
   - `_BASH_BASELINE=5.1`
+  - `_BASH_LATEST_PATCH=4`
 
 ## `apk` (`.apk`-based packages)
 
