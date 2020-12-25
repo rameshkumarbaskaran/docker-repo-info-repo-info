@@ -179,14 +179,13 @@ Licenses: (parsed from: `/usr/share/doc/autoconf/copyright`)
 - `permissive-without-disclaimer`
 - `permissive-without-notices-or-disclaimer`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris autoconf=2.69-12
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autoconf/autoconf_2.69-12.dsc' autoconf_2.69-12.dsc 1991 SHA512:1feb31ca559bffcd493c2a857609609b76ab3d4ced6223034e01e9c6331aa6a58835e0e3d59409ec65999344fed12974325a1b5c3e625c0ad60faffbb3fad83e
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autoconf/autoconf_2.69.orig.tar.xz' autoconf_2.69.orig.tar.xz 1214744 SHA512:995d3e5a8eb1eb37e2b7fae53c6ec7a9b4df997286b7d643344818f94636756b1bf5ff5ea9155e755cb9461149a853dfbf2886fc6bd7132e5afa9c168e306e9b
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autoconf/autoconf_2.69-12.debian.tar.xz' autoconf_2.69-12.debian.tar.xz 23848 SHA512:135e4f190128ad4c0a0eb4b55c28ed5a0417c60fe2823e437c8b545e8419e151c2769a48a07b4c53ef60a3fcfe2d55d8b15325474bb49744812ff95e94275870
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/autoconf/2.69-12/
+
 
 ### `dpkg` source package: `automake-1.16=1:1.16.3-1ubuntu1`
 
@@ -224,13 +223,13 @@ Licenses: (parsed from: `/usr/share/doc/autotools-dev/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris autotools-dev=20180224.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autotools-dev/autotools-dev_20180224.1.dsc' autotools-dev_20180224.1.dsc 1643 SHA512:636182e70c202dd9c0c0c5ad94f65047b40b5d763e7bc31a5fe5fb3f8150cc51547a6ded77f680c3558ba074cbfab264345b5683bc50c79b116fda588b3f3298
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autotools-dev/autotools-dev_20180224.1.tar.xz' autotools-dev_20180224.1.tar.xz 68256 SHA512:ca96e20be9055d69477bc04e184d6dbe1a18d70f466c086f649a74271bd5d1ce88ecd22236a3dc74488fccf19aa5d584a90e9e58bf10f50fa2e62023ff6e3440
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/autotools-dev/20180224.1/
+
 
 ### `dpkg` source package: `base-files=11ubuntu16`
 
@@ -2021,15 +2020,13 @@ Licenses: (parsed from: `/usr/share/doc/libksba8/copyright`)
 - `GPL-3`
 - `LGPL-2.1-or-later`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libksba=1.5.0-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.5.0-2.dsc' libksba_1.5.0-2.dsc 2470 SHA512:5cd3a0c450dcc649417a6e8b4d3ccbd9d319dad36d4f337fff8758c1ef9f2e76d806c9d78f6ec1d8e4c15f961930b299b34c45f46fd69c01d5e9d3b958e50ebb
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.5.0.orig.tar.bz2' libksba_1.5.0.orig.tar.bz2 656518 SHA512:84383e8b084bf47ac646a9aacb174e510ffcab4b966b649e4351990eaf7ce78cc9d199e6c4f3a1be697888c857ee86ecef949c06156790c7d8d0bd0fb0142721
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.5.0.orig.tar.bz2.asc' libksba_1.5.0.orig.tar.bz2.asc 228 SHA512:04f2ebeb83ee672b67542ff1c068f0e61bbea61b3917dd9e7af5fceb85e2e4dec191cf1e487344e50f26893c4b9045ba7f21cc6968b4ef675a2407681b856aaf
-'http://archive.ubuntu.com/ubuntu/pool/main/libk/libksba/libksba_1.5.0-2.debian.tar.xz' libksba_1.5.0-2.debian.tar.xz 13780 SHA512:ead8a222e4f8ce022d571f1203b4bf07c747c61168fb0c57e9e9f1bddfa3d7ee7945fe054deb6ce7fd22854dbb0040a61ac0eafaccc903d59d3cd2507c0f69b0
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libksba/1.5.0-2/
+
 
 ### `dpkg` source package: `liblqr=0.4.2-2.1`
 
@@ -4291,14 +4288,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xorg-sgml-doctools=1:1.11-1
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xorg-sgml-doctools/xorg-sgml-doctools_1.11-1.dsc' xorg-sgml-doctools_1.11-1.dsc 1975 SHA512:3f97156991011d90e9b69b183714290859673b024c2d94bd0a4a22b3e3f0ba66e487d4eca0219a202fd2e303beae46ed1419fed505c85aa20a433837df1a2975
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xorg-sgml-doctools/xorg-sgml-doctools_1.11.orig.tar.gz' xorg-sgml-doctools_1.11.orig.tar.gz 150367 SHA512:a2386e41a8e2f7deaded61e00eaeab922647c0d0f4e36268c4337dc71d2412b0ec433140d080a0fd118b6112ed0a4f960280f932fe8d4a90ea9dc8bedf1eb75e
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xorg-sgml-doctools/xorg-sgml-doctools_1.11-1.diff.gz' xorg-sgml-doctools_1.11-1.diff.gz 3194 SHA512:8877a9ab1bd95620517d0945632a3b0c7ae8f4d89b61a9895fabb4266fe949a3727e62d301f83b14a61bf06231fa55dd7fe016108d401e7c39cfc34c5c7c9b18
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/xorg-sgml-doctools/1:1.11-1/
+
 
 ### `dpkg` source package: `xorg=1:7.7+19ubuntu15`
 
