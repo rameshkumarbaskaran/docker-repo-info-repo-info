@@ -1,17 +1,17 @@
-# `node:15.4.0-stretch`
+# `node:15.5.0-stretch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6f7f341ab8b86ae1e8ce376b8f962f33d0cd3d9d9cd07acd77396d91bac34d8b`
-- Created: `2020-12-18T02:47:38.024242571Z`
-- Virtual Size: ~ 935.51 Mb  
+- Image ID: `sha256:5cfe2963d143c8b95a7f3dade30b94346f62c2d43ffbd26837db150d892a16ce`
+- Created: `2020-12-23T20:25:59.156071601Z`
+- Virtual Size: ~ 935.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=15.4.0`
+  - `NODE_VERSION=15.5.0`
   - `YARN_VERSION=1.22.5`
 
 ## `dpkg` (`.deb`-based packages)
