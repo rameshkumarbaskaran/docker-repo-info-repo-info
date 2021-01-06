@@ -1,10 +1,10 @@
-# `friendica:2020.09-apache`
+# `friendica:2021.01-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8821c8ef84d5ebc6184a3b205a7cb4381d29ac0b4aa0f8324f958d60bc35fb00`
-- Created: `2020-12-11T23:31:29.651520394Z`
-- Virtual Size: ~ 613.81 Mb  
+- Image ID: `sha256:89e97de8b0322de76ee915ae149fc52a7589a5a0262ab9445cfa420525eff9a6`
+- Created: `2021-01-05T22:20:02.199761411Z`
+- Virtual Size: ~ 616.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -26,8 +26,8 @@
   - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.25.tar.xz.asc`
   - `PHP_SHA256=c71c00ad03079efb78d1a6b8623ca4f725be697dbd9a46debacbcc9a2475f329`
   - `TINI_VERSION=v0.19.0`
-  - `FRIENDICA_VERSION=2020.09-1`
-  - `FRIENDICA_ADDONS=2020.09-1`
+  - `FRIENDICA_VERSION=2021.01`
+  - `FRIENDICA_ADDONS=2021.01`
 
 ## `dpkg` (`.deb`-based packages)
 
