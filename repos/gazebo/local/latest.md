@@ -67,14 +67,9 @@ Licenses: (parsed from: `/usr/share/doc/libasound2/copyright`, `/usr/share/doc/l
 - `LGPL-2.1`
 - `LPGL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris alsa-lib=1.2.2-2.1ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/alsa-lib_1.2.2-2.1ubuntu2.2.dsc' alsa-lib_1.2.2-2.1ubuntu2.2.dsc 2029 SHA512:4674863e1e595a71e30d8fbf1f5bba4b8d1d4afae0cd39f2fd2f94e16b344931f0ef556b54ae215234bb6a1813d7bf9feb5b0d947298fbd0bf1dc786c66ebe97
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/alsa-lib_1.2.2.orig.tar.bz2' alsa-lib_1.2.2.orig.tar.bz2 1030747 SHA512:d21adb3ff998918c7d1820f9ce2aaf4202dd45ccb87cb092d49da8b2402b6ddaad06325be0fd59f17393a5d9958e3743bfccb4b14bdb947a42e7d791d73c7033
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/alsa-lib_1.2.2-2.1ubuntu2.2.debian.tar.xz' alsa-lib_1.2.2-2.1ubuntu2.2.debian.tar.xz 58220 SHA512:c97dd7beb4176ee8d976cb60b0f73469f72bfc946499b526c8d3185f8b363d7d3d18fa8b9b4b8a983dbdb1e0d4b6d268071431d8ad7a57d705db1a7cb1b25b82
-```
 
 ### `dpkg` source package: `aom=1.0.0.errata1-3build1`
 
@@ -2447,14 +2442,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-transport8/copyright`, `/usr
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-transport8=8.1.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.1.0-1~focal.dsc' ignition-transport8_8.1.0-1~focal.dsc 1769 SHA256:fb92325e42ae31705f959f01ce32f66c86f783b2e1d4087b607d59bb91f66062
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.1.0.orig.tar.bz2' ignition-transport8_8.1.0.orig.tar.bz2 554529 SHA256:48971eb0d83a54efe8637762f3ad1117e916cfee9d8325a2b3997f9ee55ff673
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.1.0-1~focal.debian.tar.xz' ignition-transport8_8.1.0-1~focal.debian.tar.xz 3036 SHA256:432f12aced7e02c8c54eba5227c24d85a73656b8fd7bac1de761a16133504520
-```
 
 ### `dpkg` source package: `ilmbase=2.3.0-6build1`
 
@@ -3458,14 +3448,9 @@ Licenses: (parsed from: `/usr/share/doc/libegl-dev/copyright`, `/usr/share/doc/l
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libglvnd=1.3.1-1ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libglvnd_1.3.1-1ubuntu0.20.04.1.dsc' libglvnd_1.3.1-1ubuntu0.20.04.1.dsc 2763 SHA512:db6326423cdc4bb30d4cb93efb76ca20c2409909f30e64f4554908c0fcd008466c17048a31373de193bc4c81209946196a9fafe18cca91f2d1ca9d9bfbe6b02c
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libglvnd_1.3.1.orig.tar.gz' libglvnd_1.3.1.orig.tar.gz 1031831 SHA512:6f7957839171fdbe0f8ab061da8f49a28b9021d6103a1e7b07edd63885129c83a92ac0878d06c295f7db67257108b27d0edcacc3a2859ba8c542c0a7c03715d1
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libglvnd_1.3.1-1ubuntu0.20.04.1.debian.tar.xz' libglvnd_1.3.1-1ubuntu0.20.04.1.debian.tar.xz 21884 SHA512:b020690adc6de6617a0c4da422fe30a83ef48849219b501c9d60e11489f8bf27238ee9a7f7a39a99bc04c2852bfbb640e4d4719c40aeaa9127b7bfda5368c793
-```
 
 ### `dpkg` source package: `libgpg-error=1.37-1`
 
@@ -5398,14 +5383,9 @@ Licenses: (parsed from: `/usr/share/doc/libegl-mesa0/copyright`, `/usr/share/doc
 - `MLAA`
 - `SGI`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mesa=20.0.8-0ubuntu1~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8-0ubuntu1~20.04.1.dsc' mesa_20.0.8-0ubuntu1~20.04.1.dsc 5398 SHA512:0eddc1273c157e0825e8b360fbe7399a9885b7f131d06510348c6b3010a0d3eb863e9b552640f2fa00082a030bc2c0a2d5f6eeb98b9116738a3e447c2d3c7471
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8.orig.tar.gz' mesa_20.0.8.orig.tar.gz 19030315 SHA512:d6a0365c8248c704548d74d6035da43a0791f3306176e873f7929ae34ac2254370190c6cd40cf5e8bfc2455dfbc02f40569a9b12c4b18c2048b29e635427cd53
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8-0ubuntu1~20.04.1.diff.gz' mesa_20.0.8-0ubuntu1~20.04.1.diff.gz 114033 SHA512:b29115f72ff32dea1a43a0e216ea13f86763096bf9dad40112a0e821e6631da77ec0568995ae366d905f04c11a10254cf0f735573438c652252f9ecfdc259178
-```
 
 ### `dpkg` source package: `mime-support=3.64ubuntu1`
 
@@ -6036,15 +6016,9 @@ Licenses: (parsed from: `/usr/share/doc/libopenexr24/copyright`)
 - `GPL-2+`
 - `openexr`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openexr=2.3.0-6ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openexr/openexr_2.3.0-6ubuntu0.2.dsc' openexr_2.3.0-6ubuntu0.2.dsc 2638 SHA512:67974c2e8d22f9540aabc12300d7de2468ab176567b8cff0cea6fe7b5c50d8899f2ea7c68993c8157b3a381b3b3f4d498c745a96c29749d4427f1a5bb6344590
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openexr/openexr_2.3.0.orig.tar.gz' openexr_2.3.0.orig.tar.gz 18416222 SHA512:f6810505428674451627ef09e5dfbf13d7413e118f9defec4d160d9f1327b47699fe770a96b61da7820d2a357ccb722ad909ba4ba0924703fa5fd532cdf0da69
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openexr/openexr_2.3.0.orig.tar.gz.asc' openexr_2.3.0.orig.tar.gz.asc 566 SHA512:7110ddb22b2be7b570dcb1df278b2f7f39f2c5afd470094fd2a41c2f376d3991f756cbc5bef76dfc5bd7e1f55442bc8dff468d47224a495838083ef7de0c2a40
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openexr/openexr_2.3.0-6ubuntu0.2.debian.tar.xz' openexr_2.3.0-6ubuntu0.2.debian.tar.xz 33680 SHA512:619ac9d2350220003ba6d6f3e1ff9381f57b9150db328931b44fd0ddfabb411a52d7d4764597913cf087d0e4d57595ed17110709719bff0026779e7e9227d026
-```
 
 ### `dpkg` source package: `openjpeg2=2.3.1-1ubuntu4`
 

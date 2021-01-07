@@ -2698,14 +2698,9 @@ Licenses: (parsed from: `/usr/share/doc/libproxy1v5/copyright`)
 - `GPL`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libproxy=0.4.11-5ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libproxy/libproxy_0.4.11-5ubuntu1.1.dsc' libproxy_0.4.11-5ubuntu1.1.dsc 3263 SHA512:f3716c887fe3ce3631d55ebae48ba78beeeae8cdc914cf33eee3df8adaa19085664ab10eef17e4f062699f4826e1cb34e4e4a7598820b5c62686cbe27bf125ac
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libproxy/libproxy_0.4.11.orig.tar.gz' libproxy_0.4.11.orig.tar.gz 93757 SHA512:563a837946a73c41e0773cec93332c6308245c0b807a40a0fb052c2445deae4a117ba2780a350c799717fd11c4dbe410183a38ea050a4f04db0b1adcb6f9ad98
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libproxy/libproxy_0.4.11-5ubuntu1.1.debian.tar.xz' libproxy_0.4.11-5ubuntu1.1.debian.tar.xz 10824 SHA512:97e325166ea38568fc50736489f22a6415f849b5b3f3903b99ef7815ec40f074885ebec471f77c555453c6cfb889ae34010ae7c306280d5ad4c44a5a71d31197
-```
 
 ### `dpkg` source package: `libraw1394=2.1.1-2`
 
@@ -4210,14 +4205,9 @@ Licenses: (parsed from: `/usr/share/doc/libopenexr22/copyright`)
 
 - `openexr`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openexr=2.2.0-10ubuntu2.3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.3.dsc' openexr_2.2.0-10ubuntu2.3.dsc 2395 SHA512:0ef042496699ea4ef45e4b6e550355b30ca6127cf99d8fb373b0df01c3e156d8219ff6cffe24888772b0a51cd17bff6dbbb47a86d0da36d4d4e0b675ff87be15
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0.orig.tar.gz' openexr_2.2.0.orig.tar.gz 14489661 SHA512:017abbeeb6b814508180721bc8e8940094965c4c55b135a198c6bcb109a04bf7f72e4aee81ee72cb2185fe818a41d892b383e8d2d59f40c673198948cb79279a
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.0-10ubuntu2.3.debian.tar.xz' openexr_2.2.0-10ubuntu2.3.debian.tar.xz 44996 SHA512:a41fe7a9a36fbe368250627fbe0dfd278222b38f56a17878e744cd4759af3e62df514870316dfe699a0d348d64b04a6dd101b33a3c79309b31546a42d8db37a6
-```
 
 ### `dpkg` source package: `openjpeg2=2.1.2-1.1+deb9u5build0.16.04.1`
 
@@ -4353,14 +4343,9 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.23.2-5~ubuntu16.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.2-5~ubuntu16.04.1.dsc' p11-kit_0.23.2-5~ubuntu16.04.1.dsc 2326 SHA512:e9563291cf8752d08dc5632652c87f8f8552f27f7b54209339ee1b1d67ec8674882621c4a7f381f455e3454acb6afd6f232c61b71ae84b16f3eecdd209247bd3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.2.orig.tar.gz' p11-kit_0.23.2.orig.tar.gz 1022733 SHA512:b665d89f0d752a41b01ec53e29c801c4fdcaf3f21fce524984b10acef0477ad5dbac085edd35ffb747423d0e1e09660b8d29501c979cf54937d3b9d2561cf18f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.2-5~ubuntu16.04.1.debian.tar.xz' p11-kit_0.23.2-5~ubuntu16.04.1.debian.tar.xz 15208 SHA512:26514c75dd90eb2816a66b4e7fc37087600092111fd7a4b47919bee6c9e2c62a5f67d2f167ecdce4c449eb0b7f08c0286e08eaccdc334eadfd3f1a1e39c9242b
-```
 
 ### `dpkg` source package: `pam=1.1.8-3.2ubuntu2.3`
 
