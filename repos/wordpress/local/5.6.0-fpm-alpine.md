@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9517239b255d673ec04cd4af751e0d72d7ec2838f49734697feab2dc49040bed`
-- Created: `2020-12-17T18:45:55.323243399Z`
-- Virtual Size: ~ 243.41 Mb  
+- Image ID: `sha256:7a96c4aac67eb8efe96fc434f3cd86ea7e415eea283a839681d54e2141b04946`
+- Created: `2021-01-08T00:25:29.949444832Z`
+- Virtual Size: ~ 241.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,12 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.13`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.13.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.13.tar.xz.asc`
-  - `PHP_SHA256=aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4`
-  - `WORDPRESS_VERSION=5.6`
-  - `WORDPRESS_SHA1=db8b75bfc9de27490434b365c12fd805ca6784ce`
+  - `PHP_VERSION=7.4.14`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.14.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.14.tar.xz.asc`
+  - `PHP_SHA256=f9f3c37969fcd9006c1dbb1dd76ab53f28c698a1646fa2dde8547c3f45e02886`
 
 ## `apk` (`.apk`-based packages)
 

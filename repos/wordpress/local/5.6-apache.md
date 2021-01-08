@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bc5f6567b76345eb23d6d0c13a9c4540d9cf754ac536d406d9dbc341147c6c77`
-- Created: `2020-12-12T01:38:17.991751063Z`
-- Virtual Size: ~ 549.86 Mb  
+- Image ID: `sha256:c47f1587bb103310dce926f543bbb6f7c8078753566a3c669e2f6bcdc2c85a04`
+- Created: `2021-01-08T00:22:25.527391103Z`
+- Virtual Size: ~ 549.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -21,12 +21,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.13`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.13.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.13.tar.xz.asc`
-  - `PHP_SHA256=aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4`
-  - `WORDPRESS_VERSION=5.6`
-  - `WORDPRESS_SHA1=db8b75bfc9de27490434b365c12fd805ca6784ce`
+  - `PHP_VERSION=7.4.14`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.14.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.14.tar.xz.asc`
+  - `PHP_SHA256=f9f3c37969fcd9006c1dbb1dd76ab53f28c698a1646fa2dde8547c3f45e02886`
 
 ## `dpkg` (`.deb`-based packages)
 
