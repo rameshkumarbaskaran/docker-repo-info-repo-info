@@ -1,10 +1,10 @@
-# `neo4j:4.2.1-enterprise`
+# `neo4j:4.2.2-enterprise`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a57f550b4a1b028f98ba164b361c3446de24d2f795712f7f80d070cddec59b42`
-- Created: `2020-12-12T02:45:05.972658506Z`
-- Virtual Size: ~ 578.19 Mb  
+- Image ID: `sha256:c9883b8761fba83784ddb6ab9065ca7e3146e17c606210678e95ce53c93bb386`
+- Created: `2021-01-08T19:22:42.654956216Z`
+- Virtual Size: ~ 570.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/sbin/tini","-g","--","/docker-entrypoint.sh"]`
@@ -14,8 +14,8 @@
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
   - `JAVA_VERSION=11.0.9.1`
-  - `NEO4J_SHA256=99632ec400701563451032848c76e776e05bee7657f75a37bb2ba81c5f4ced21`
-  - `NEO4J_TARBALL=neo4j-enterprise-4.2.1-unix.tar.gz`
+  - `NEO4J_SHA256=81795a9bc84d800a318d22668d2eb34b73d0ab7319f4f2f9b4cd4c8a650ffcf0`
+  - `NEO4J_TARBALL=neo4j-enterprise-4.2.2-unix.tar.gz`
   - `NEO4J_EDITION=enterprise`
   - `NEO4J_HOME=/var/lib/neo4j`
 
