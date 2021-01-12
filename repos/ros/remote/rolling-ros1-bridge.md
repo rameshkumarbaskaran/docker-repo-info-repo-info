@@ -1,7 +1,7 @@
 ## `ros:rolling-ros1-bridge`
 
 ```console
-$ docker pull ros@sha256:7167cf4676269e8167d2a64c4e5ecd9913f7d9eb0d343f9d6649bf94cd6d463d
+$ docker pull ros@sha256:c3ff4ee552a4aa9b54db5a34738e091128566266fc43d5465ad13ec964dd38e2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -157,14 +157,14 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 ### `ros:rolling-ros1-bridge` - linux; arm64 variant v8
 
 ```console
-$ docker pull ros@sha256:bcf54509d8ad2208e18ab3a289a5dbd0d143fd14b0f720b64864d2095b9a398a
+$ docker pull ros@sha256:87eff54e79af0ccf3aed9daf5db726445233b2e31c6db1f603320785bfd90955
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **307.5 MB (307497933 bytes)**  
+-	Total Size: **307.9 MB (307927151 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:60aba44957da60db0ef0e6edcbe938291f978769e41dad6f33f6ad05ad88168d`
+-	Image ID: `sha256:1fd23a14eede313e07e3e9e61265802f6609262fa446166abb02030ce3618c87`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -219,9 +219,9 @@ ENV ROS1_DISTRO=noetic
 ENV ROS2_DISTRO=rolling
 # Wed, 02 Dec 2020 19:07:58 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.9-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Wed, 02 Dec 2020 19:08:36 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.9.4-2*     ros-rolling-demo-nodes-cpp=0.10.1-1*     ros-rolling-demo-nodes-py=0.10.1-1*     && rm -rf /var/lib/apt/lists/*
-# Wed, 02 Dec 2020 19:08:39 GMT
+# Mon, 11 Jan 2021 23:53:33 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.0-1*     ros-rolling-demo-nodes-cpp=0.11.0-1*     ros-rolling-demo-nodes-py=0.11.0-1*     && rm -rf /var/lib/apt/lists/*
+# Mon, 11 Jan 2021 23:53:35 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
@@ -290,11 +290,11 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 		Last Modified: Wed, 02 Dec 2020 19:10:59 GMT  
 		Size: 76.1 MB (76141532 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09f3c130935cd8fef4a8c6e4277be16a6c0ddd665b8815b2245046b9254f5372`  
-		Last Modified: Wed, 02 Dec 2020 19:10:39 GMT  
-		Size: 23.1 MB (23051783 bytes)  
+	-	`sha256:ad74a92b88a29355a592f9ed9b7a92b34e126fd01b6592aae9d98042bbac5064`  
+		Last Modified: Mon, 11 Jan 2021 23:56:02 GMT  
+		Size: 23.5 MB (23481001 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c874872deac633aadd96ec6655a19186b9977f52d94eb29327a962cb96d04c4f`  
-		Last Modified: Wed, 02 Dec 2020 19:10:32 GMT  
+	-	`sha256:6e27c5b290fd5546ba6d6bbbb7c80065edc7f86741e949a5022f0e4293a76978`  
+		Last Modified: Mon, 11 Jan 2021 23:55:57 GMT  
 		Size: 244.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
