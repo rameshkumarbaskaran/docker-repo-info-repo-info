@@ -1,7 +1,7 @@
 ## `debian:stable-slim`
 
 ```console
-$ docker pull debian@sha256:3d67e47c324cf3b43e498d9502ccbd8e2b5f24e98f2be11cb6e12178de85d561
+$ docker pull debian@sha256:8e75af576baa10409a1cd8e9d1b0b7b8a636b89ae8665b84697c100511a65350
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -148,27 +148,27 @@ CMD ["bash"]
 ### `debian:stable-slim` - linux; mips64le
 
 ```console
-$ docker pull debian@sha256:19cea2a73fd9f7b527027e95343016e5e9ec2b5896ac491e2b65e70c82fa4e07
+$ docker pull debian@sha256:017331e6a848ae4d08bb28783123ba802eef73aa35e8d0f5fc718af27b873e8f
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **25.8 MB (25769872 bytes)**  
+-	Total Size: **25.8 MB (25778675 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72a3d2667847fd77d536fbe6df5ff94236b61d005e23544222a3f394e2e95d6c`
+-	Image ID: `sha256:d5ff8eec8a10a970827b75a08724fb7d6552e924bc5dc0a83c8de77282f10247`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Fri, 11 Dec 2020 02:05:01 GMT
-ADD file:21a0e2bf9e299ee0c360e3e079eb566ad0a2a1e5e17127a38a1a53f5776ae150 in / 
-# Fri, 11 Dec 2020 02:05:02 GMT
+# Tue, 12 Jan 2021 01:17:52 GMT
+ADD file:5151108267b5956537ab5cf9550b26103bcfcf0d7f65e5f360ed005860cb5494 in / 
+# Tue, 12 Jan 2021 01:17:53 GMT
 CMD ["bash"]
 ```
 
 -	Layers:
-	-	`sha256:588ad7433f967981ae530374b6f71c8fc3cc17b6a2385cb170d4ce533de811f8`  
-		Last Modified: Fri, 11 Dec 2020 02:13:03 GMT  
-		Size: 25.8 MB (25769872 bytes)  
+	-	`sha256:5cb8df48021361b595da93e3047522431a5e4f53ccba9e8ce3f1ed40e20c3fb3`  
+		Last Modified: Tue, 12 Jan 2021 01:26:12 GMT  
+		Size: 25.8 MB (25778675 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:stable-slim` - linux; ppc64le
