@@ -8265,14 +8265,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xdg-utils=1.1.2-1ubuntu2.4
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xdg-utils/xdg-utils_1.1.2-1ubuntu2.4.dsc' xdg-utils_1.1.2-1ubuntu2.4.dsc 2185 SHA512:2695d35dd7d809ace4b17b2298fe928370e77656682aa282a0aab215f25953881e64125fb646ee84971a3267684d9bf6055a7fbb698169e2af1ac6bdfcfebea0
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xdg-utils/xdg-utils_1.1.2.orig.tar.gz' xdg-utils_1.1.2.orig.tar.gz 296735 SHA512:1927506065788b5f8bba8b0617a8ee585265342fa40c4b73000d320acd5909036daef94d49495b00982dbb67b7706b2f1ed949cb4cc519dfa534be2c1c8f74db
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xdg-utils/xdg-utils_1.1.2-1ubuntu2.4.debian.tar.xz' xdg-utils_1.1.2-1ubuntu2.4.debian.tar.xz 13012 SHA512:567fd144035c80649b78b1826eb177721ec4b8a29a916a19e17789da1ee1f64c48057ee37f4b27ada2370670c6d0ebfe1b5cf1cb5bc216f3ade66b100d63b611
-```
 
 ### `dpkg` source package: `xft=2.3.2-1`
 
