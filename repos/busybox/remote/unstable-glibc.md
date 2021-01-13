@@ -1,17 +1,44 @@
 ## `busybox:unstable-glibc`
 
 ```console
-$ docker pull busybox@sha256:17a07808d0fc816b78e426049a826323ba45e8dcd01181eb62e4d4aa0cd43e74
+$ docker pull busybox@sha256:5c2e0eceb25d4237e24969fb917e2b36171511a05bface4855595242c5464b8a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; mips64le
 	-	linux; s390x
+
+### `busybox:unstable-glibc` - linux; amd64
+
+```console
+$ docker pull busybox@sha256:d263f8eceef36369a9dac1e622f2111d5026311ee82297a96291e5d296f1cef4
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.8 MB (2844886 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:1b4201a19ff26e1b6e02b198b10584e0ca30fd05e8ce6cc1c97c435e6cfb57a3`
+-	Default Command: `["sh"]`
+
+```dockerfile
+# Wed, 13 Jan 2021 09:26:07 GMT
+ADD file:5fba398dbfc9202adf3898d9e01929839c3d9e95cfa7931f265496fe9f2c46b1 in / 
+# Wed, 13 Jan 2021 09:26:07 GMT
+CMD ["sh"]
+```
+
+-	Layers:
+	-	`sha256:935560180a1165c5f78cc69026cf1b1532858818c94ed4f08459e236ef729d41`  
+		Last Modified: Wed, 13 Jan 2021 09:27:52 GMT  
+		Size: 2.8 MB (2844886 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `busybox:unstable-glibc` - linux; arm variant v5
 
