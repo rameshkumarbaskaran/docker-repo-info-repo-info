@@ -1,10 +1,10 @@
-# `postfixadmin:3.2.4-apache`
+# `postfixadmin:3.3.3-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:eec397a39b0b52ab799a320665c00e547976bdda1de180ecf8e6ed6c663f8cbe`
-- Created: `2021-01-12T23:03:02.539766347Z`
-- Virtual Size: ~ 417.96 Mb  
+- Image ID: `sha256:e8686f254e627b339865ed1f855632247785f99658ae219614894831f22d10bb`
+- Created: `2021-01-15T19:21:35.396898169Z`
+- Virtual Size: ~ 426.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -20,13 +20,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.26`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.26.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.26.tar.xz.asc`
-  - `PHP_SHA256=d93052f4cb2882090b6a37fd1e0c764be1605a2461152b7f6b8f04fa48875208`
-  - `POSTFIXADMIN_VERSION=3.2.4`
-  - `POSTFIXADMIN_SHA512=2bd7ae05addbaf3c6c7eebea16ec1e21b2c67c8e6161446ed82a9553c26c04e19c1ec9ce248a9b9df504df56d309590259e6f04907b04b593548028b40e40d47`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.14`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.14.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.14.tar.xz.asc`
+  - `PHP_SHA256=f9f3c37969fcd9006c1dbb1dd76ab53f28c698a1646fa2dde8547c3f45e02886`
+  - `POSTFIXADMIN_VERSION=3.3.3`
+  - `POSTFIXADMIN_SHA512=363b91eb07f263a0f595e020725cacf9f9de058adaef3987efb3257d0e6fba526b075f8328e47763256278797ec946305d1e4c8ff5c55d77753f9ed72bfa4121`
   - `APACHE_DOCUMENT_ROOT=/var/www/html/public`
 - Labels:
   - `maintainer=David Goodwin <david@codepoets.co.uk> (@DavidGoodwin)`
@@ -1174,6 +1174,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gnutls28/3.6.7-4+deb10u5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gnutls28/3.6.7-4+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `gosu=1.10-1`
+
+Binary Packages:
+
+- `gosu=1.10-1+b23`
+
+Licenses: (parsed from: `/usr/share/doc/gosu/copyright`)
+
+- `GPL-3`
+- `GPL-3+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris gosu=1.10-1
+'http://deb.debian.org/debian/pool/main/g/gosu/gosu_1.10-1.dsc' gosu_1.10-1.dsc 2000 SHA256:4a1c7ae5b4110890a8df73d05c02b32c8dc739604bce17226e4008fcc9811221
+'http://deb.debian.org/debian/pool/main/g/gosu/gosu_1.10.orig.tar.gz' gosu_1.10.orig.tar.gz 17683 SHA256:bcbe8ada8c435a253b1fa438f505dd311832a88f52316fd7d30342b106a4242c
+'http://deb.debian.org/debian/pool/main/g/gosu/gosu_1.10-1.debian.tar.xz' gosu_1.10-1.debian.tar.xz 2900 SHA256:9893c3b098b392a9bb9b0a621e671025dbc5ea6c42c3a9b7ea171e36e956e78e
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gosu/1.10-1/ (for browsing the source)
+- https://sources.debian.net/src/gosu/1.10-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gosu/1.10-1/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `grep=3.3-1`
 
 Binary Packages:
@@ -1616,6 +1642,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libidn2/2.0.5-1+deb10u1/ (for browsing the source)
 - https://sources.debian.net/src/libidn2/2.0.5-1+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libidn2/2.0.5-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libonig=6.9.1-1`
+
+Binary Packages:
+
+- `libonig5:amd64=6.9.1-1`
+
+Licenses: (parsed from: `/usr/share/doc/libonig5/copyright`)
+
+- `BSD-2-clause`
+- `GPL-2`
+- `GPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libonig=6.9.1-1
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1-1.dsc' libonig_6.9.1-1.dsc 1854 SHA256:597b84337f078a46e9212eeedf39ba22723bf7447cf3d117a15c5635a390f955
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1.orig.tar.gz' libonig_6.9.1.orig.tar.gz 535443 SHA256:733a91e257c20cb17b81596db48fd0fbd2e0074fe922ae4c2bc4fefcec110aae
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1-1.debian.tar.xz' libonig_6.9.1-1.debian.tar.xz 7800 SHA256:29e99f42ee8dcf7498b85de13c4e2b07548e52fed9f40bd85f90431db7f03ab6
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libonig/6.9.1-1/ (for browsing the source)
+- https://sources.debian.net/src/libonig/6.9.1-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libonig/6.9.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libpsl=0.20.2-2`
 
