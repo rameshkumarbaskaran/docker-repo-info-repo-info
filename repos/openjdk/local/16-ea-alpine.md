@@ -1,17 +1,17 @@
-# `openjdk:16-ea-23-jdk-alpine3.12`
+# `openjdk:16-ea-32-jdk-alpine3.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:785ec88a68e0d78cf1da92735771bf56bebfa93609b75eb700ae78a89980c5ea`
-- Created: `2020-12-17T13:16:14.391211305Z`
-- Virtual Size: ~ 321.31 Mb  
+- Image ID: `sha256:84a89307004658e5ac4e9cee4429a9cd6a057fb8ae7069e2e604c964b8fbf258`
+- Created: `2021-01-15T23:26:44.036961224Z`
+- Virtual Size: ~ 324.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
 - Environment:
   - `PATH=/opt/openjdk-16/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/openjdk-16`
-  - `JAVA_VERSION=16-ea+23`
+  - `JAVA_VERSION=16-ea+32`
 
 ## `apk` (`.apk`-based packages)
 
