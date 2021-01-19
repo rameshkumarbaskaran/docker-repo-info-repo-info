@@ -8,6 +8,7 @@
 -	[`golang:1.14.13-alpine`](#golang11413-alpine)
 -	[`golang:1.14.13-alpine3.11`](#golang11413-alpine311)
 -	[`golang:1.14.13-alpine3.12`](#golang11413-alpine312)
+-	[`golang:1.14.13-alpine3.13`](#golang11413-alpine313)
 -	[`golang:1.14.13-buster`](#golang11413-buster)
 -	[`golang:1.14.13-nanoserver`](#golang11413-nanoserver)
 -	[`golang:1.14.13-nanoserver-1809`](#golang11413-nanoserver-1809)
@@ -18,6 +19,7 @@
 -	[`golang:1.14-alpine`](#golang114-alpine)
 -	[`golang:1.14-alpine3.11`](#golang114-alpine311)
 -	[`golang:1.14-alpine3.12`](#golang114-alpine312)
+-	[`golang:1.14-alpine3.13`](#golang114-alpine313)
 -	[`golang:1.14-buster`](#golang114-buster)
 -	[`golang:1.14-nanoserver`](#golang114-nanoserver)
 -	[`golang:1.14-nanoserver-1809`](#golang114-nanoserver-1809)
@@ -29,6 +31,7 @@
 -	[`golang:1.15.6`](#golang1156)
 -	[`golang:1.15.6-alpine`](#golang1156-alpine)
 -	[`golang:1.15.6-alpine3.12`](#golang1156-alpine312)
+-	[`golang:1.15.6-alpine3.13`](#golang1156-alpine313)
 -	[`golang:1.15.6-buster`](#golang1156-buster)
 -	[`golang:1.15.6-nanoserver`](#golang1156-nanoserver)
 -	[`golang:1.15.6-nanoserver-1809`](#golang1156-nanoserver-1809)
@@ -37,6 +40,7 @@
 -	[`golang:1.15.6-windowsservercore-ltsc2016`](#golang1156-windowsservercore-ltsc2016)
 -	[`golang:1.15-alpine`](#golang115-alpine)
 -	[`golang:1.15-alpine3.12`](#golang115-alpine312)
+-	[`golang:1.15-alpine3.13`](#golang115-alpine313)
 -	[`golang:1.15-buster`](#golang115-buster)
 -	[`golang:1.15-nanoserver`](#golang115-nanoserver)
 -	[`golang:1.15-nanoserver-1809`](#golang115-nanoserver-1809)
@@ -46,6 +50,7 @@
 -	[`golang:1.16beta1`](#golang116beta1)
 -	[`golang:1.16beta1-alpine`](#golang116beta1-alpine)
 -	[`golang:1.16beta1-alpine3.12`](#golang116beta1-alpine312)
+-	[`golang:1.16beta1-alpine3.13`](#golang116beta1-alpine313)
 -	[`golang:1.16beta1-buster`](#golang116beta1-buster)
 -	[`golang:1.16beta1-nanoserver`](#golang116beta1-nanoserver)
 -	[`golang:1.16beta1-nanoserver-1809`](#golang116beta1-nanoserver-1809)
@@ -55,6 +60,7 @@
 -	[`golang:1.16-rc`](#golang116-rc)
 -	[`golang:1.16-rc-alpine`](#golang116-rc-alpine)
 -	[`golang:1.16-rc-alpine3.12`](#golang116-rc-alpine312)
+-	[`golang:1.16-rc-alpine3.13`](#golang116-rc-alpine313)
 -	[`golang:1.16-rc-buster`](#golang116-rc-buster)
 -	[`golang:1.16-rc-nanoserver`](#golang116-rc-nanoserver)
 -	[`golang:1.16-rc-nanoserver-1809`](#golang116-rc-nanoserver-1809)
@@ -63,6 +69,7 @@
 -	[`golang:1.16-rc-windowsservercore-ltsc2016`](#golang116-rc-windowsservercore-ltsc2016)
 -	[`golang:1-alpine`](#golang1-alpine)
 -	[`golang:1-alpine3.12`](#golang1-alpine312)
+-	[`golang:1-alpine3.13`](#golang1-alpine313)
 -	[`golang:1-buster`](#golang1-buster)
 -	[`golang:1-nanoserver`](#golang1-nanoserver)
 -	[`golang:1-nanoserver-1809`](#golang1-nanoserver-1809)
@@ -71,6 +78,7 @@
 -	[`golang:1-windowsservercore-ltsc2016`](#golang1-windowsservercore-ltsc2016)
 -	[`golang:alpine`](#golangalpine)
 -	[`golang:alpine3.12`](#golangalpine312)
+-	[`golang:alpine3.13`](#golangalpine313)
 -	[`golang:buster`](#golangbuster)
 -	[`golang:latest`](#golanglatest)
 -	[`golang:nanoserver`](#golangnanoserver)
@@ -78,6 +86,7 @@
 -	[`golang:rc`](#golangrc)
 -	[`golang:rc-alpine`](#golangrc-alpine)
 -	[`golang:rc-alpine3.12`](#golangrc-alpine312)
+-	[`golang:rc-alpine3.13`](#golangrc-alpine313)
 -	[`golang:rc-buster`](#golangrc-buster)
 -	[`golang:rc-nanoserver`](#golangrc-nanoserver)
 -	[`golang:rc-nanoserver-1809`](#golangrc-nanoserver-1809)
@@ -3754,6 +3763,10 @@ WORKDIR /go
 		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `golang:1.14.13-alpine3.13`
+
+**does not exist** (yet?)
+
 ## `golang:1.14.13-buster`
 
 ```console
@@ -6544,6 +6557,10 @@ WORKDIR /go
 		Last Modified: Thu, 17 Dec 2020 01:41:56 GMT  
 		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `golang:1.14-alpine3.13`
+
+**does not exist** (yet?)
 
 ## `golang:1.14-buster`
 
@@ -10472,6 +10489,10 @@ WORKDIR /go
 		Size: 157.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `golang:1.15.6-alpine3.13`
+
+**does not exist** (yet?)
+
 ## `golang:1.15.6-buster`
 
 ```console
@@ -12525,6 +12546,10 @@ WORKDIR /go
 		Last Modified: Thu, 17 Dec 2020 01:41:20 GMT  
 		Size: 157.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `golang:1.15-alpine3.13`
+
+**does not exist** (yet?)
 
 ## `golang:1.15-buster`
 
@@ -15244,6 +15269,10 @@ WORKDIR /go
 		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `golang:1.16beta1-alpine3.13`
+
+**does not exist** (yet?)
+
 ## `golang:1.16beta1-buster`
 
 ```console
@@ -17962,6 +17991,10 @@ WORKDIR /go
 		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `golang:1.16-rc-alpine3.13`
+
+**does not exist** (yet?)
+
 ## `golang:1.16-rc-buster`
 
 ```console
@@ -20016,6 +20049,10 @@ WORKDIR /go
 		Size: 157.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `golang:1-alpine3.13`
+
+**does not exist** (yet?)
+
 ## `golang:1-buster`
 
 ```console
@@ -22069,6 +22106,10 @@ WORKDIR /go
 		Last Modified: Thu, 17 Dec 2020 01:41:20 GMT  
 		Size: 157.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `golang:alpine3.13`
+
+**does not exist** (yet?)
 
 ## `golang:buster`
 
@@ -25278,6 +25319,10 @@ WORKDIR /go
 		Last Modified: Fri, 18 Dec 2020 21:47:02 GMT  
 		Size: 156.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `golang:rc-alpine3.13`
+
+**does not exist** (yet?)
 
 ## `golang:rc-buster`
 
