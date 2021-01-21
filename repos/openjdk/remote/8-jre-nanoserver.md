@@ -1,7 +1,7 @@
 ## `openjdk:8-jre-nanoserver`
 
 ```console
-$ docker pull openjdk@sha256:dd0d04a064a179616b74aab61add7690e0f0379241545b50084594515220ac5c
+$ docker pull openjdk@sha256:94cbcd3f563fd873e19f299a4d0aa8a50b93167ac3e7f2622bf3346aa8656edb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull openjdk@sha256:dd0d04a064a179616b74aab61add7690e0f0379241545b50084
 ### `openjdk:8-jre-nanoserver` - windows version 10.0.17763.1697; amd64
 
 ```console
-$ docker pull openjdk@sha256:849389684b9ab2e326e1af7908688c0e79e5ca0870a86bf6a464533c494be85e
+$ docker pull openjdk@sha256:7b0bb1771204087be242e21b6def8617f9ecb5bfaaf946631100da762e7ce091
 ```
 
 -	Docker Version: 19.03.5
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **139.7 MB (139680728 bytes)**  
+-	Total Size: **139.7 MB (139688383 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6c83888d8852f90675995508278ec7ffcc81b3bb74fbbdaf511d8a4068bb3d92`
+-	Image ID: `sha256:e5375ee0b962c2dc89b2794250e2d9aa86d4fdf5954e2b8b15d80a1283dca5cd`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
 -	`SHELL`: `["cmd","\/s","\/c"]`
 
@@ -35,11 +35,11 @@ USER ContainerAdministrator
 RUN echo Updating PATH: %JAVA_HOME%\bin;%PATH% 	&& setx /M PATH %JAVA_HOME%\bin;%PATH%
 # Wed, 13 Jan 2021 21:02:06 GMT
 USER ContainerUser
-# Wed, 13 Jan 2021 21:02:07 GMT
-ENV JAVA_VERSION=8u275
-# Wed, 13 Jan 2021 21:05:59 GMT
-COPY dir:9c574feda3d434860f596ed9945da2b2916773d80cfb9282fa700c98a8998c43 in C:\openjdk-8 
-# Wed, 13 Jan 2021 21:06:15 GMT
+# Thu, 21 Jan 2021 02:28:33 GMT
+ENV JAVA_VERSION=8u282
+# Thu, 21 Jan 2021 02:32:29 GMT
+COPY dir:f51b6315789fea62bc81073100310d85cf4082234fc7f3bd9b51f6f4a883a8f3 in C:\openjdk-8 
+# Thu, 21 Jan 2021 02:32:40 GMT
 RUN echo Verifying install ... 	&& echo   java -version && java -version
 ```
 
@@ -67,15 +67,15 @@ RUN echo Verifying install ... 	&& echo   java -version && java -version
 		Last Modified: Wed, 13 Jan 2021 21:40:45 GMT  
 		Size: 867.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f83556138e5e33052e04fc0c4ca5ada197920308b05d44e1bd581fa77f14e050`  
-		Last Modified: Wed, 13 Jan 2021 21:40:46 GMT  
-		Size: 864.0 B  
+	-	`sha256:4fc2fc16e463968ba0f00e322f83fc0819e7f06bf947cea8f7d2c52ac625316b`  
+		Last Modified: Thu, 21 Jan 2021 02:46:21 GMT  
+		Size: 1.0 KB (1036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29c289dec2399aca3aa9e53e94a9388ac8abf1e373b4fa056977ccc5975ad97a`  
-		Last Modified: Wed, 13 Jan 2021 21:42:11 GMT  
-		Size: 38.2 MB (38191127 bytes)  
+	-	`sha256:c7e6acb8654ea7fe380cd4aa33f20d899ccb2ec84f79419f8f0833ab6d579c28`  
+		Last Modified: Thu, 21 Jan 2021 02:49:28 GMT  
+		Size: 38.2 MB (38198654 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19aa40c55520792423fe8feeba8aca140cafea182ee87578b2d012bfdd481ee7`  
-		Last Modified: Wed, 13 Jan 2021 21:42:05 GMT  
-		Size: 80.2 KB (80233 bytes)  
+	-	`sha256:6e636174d9ec36847d4fdb21632d6a244a2aa6f2a74081b81efe96371c0bf97e`  
+		Last Modified: Thu, 21 Jan 2021 02:49:20 GMT  
+		Size: 80.2 KB (80189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
