@@ -1,7 +1,7 @@
 ## `sapmachine:lts`
 
 ```console
-$ docker pull sapmachine@sha256:bf06f5ba32dcfb908bf09824537fd68ceec4ea1270618d0cc333aa6c241a67cc
+$ docker pull sapmachine@sha256:125200e26c54fb6ffce84eca36761b06347087c6ae83d6745f13ef9cce281050
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,55 +11,55 @@ $ docker pull sapmachine@sha256:bf06f5ba32dcfb908bf09824537fd68ceec4ea1270618d0c
 ### `sapmachine:lts` - linux; amd64
 
 ```console
-$ docker pull sapmachine@sha256:53c9423b0bd603b53641c5870704b0017c8334ce5dbb97aa0ba8cd881258159c
+$ docker pull sapmachine@sha256:5d347dd1434bf35cdef12d7cb9c27f12ad4d7480917206ada258fdbf81461592
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **234.8 MB (234762273 bytes)**  
+-	Total Size: **234.8 MB (234765431 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b046d94c8e0036575cecade48dfe3e88bdfbb7cebc1fbc24906569dbe28deb0f`
+-	Image ID: `sha256:d1c476b6936739bc87400776c1d991ea76ae0c3a5a2a42c1bb0d1b556c4306c2`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
-# Wed, 25 Nov 2020 22:25:26 GMT
-ADD file:4f15c4475fbafb3fe335e415e3ea1ac416c34af911fcdfe273c5759438aa8eb4 in / 
-# Wed, 25 Nov 2020 22:25:27 GMT
+# Thu, 21 Jan 2021 03:38:20 GMT
+ADD file:2a90223d9f00d31e31eff6b207c57af4b7d27276195b94bec991457a6998180c in / 
+# Thu, 21 Jan 2021 03:38:21 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Wed, 25 Nov 2020 22:25:28 GMT
+# Thu, 21 Jan 2021 03:38:22 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Wed, 25 Nov 2020 22:25:29 GMT
+# Thu, 21 Jan 2021 03:38:23 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Wed, 25 Nov 2020 22:25:29 GMT
+# Thu, 21 Jan 2021 03:38:23 GMT
 CMD ["/bin/bash"]
-# Thu, 26 Nov 2020 02:41:19 GMT
+# Thu, 21 Jan 2021 10:51:48 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends wget ca-certificates gnupg2     && rm -rf /var/lib/apt/lists/*
-# Thu, 26 Nov 2020 02:42:19 GMT
+# Thu, 21 Jan 2021 10:52:49 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && wget -q -O - https://dist.sapmachine.io/debian/sapmachine.old.key | gpg --batch --import     && gpg --batch --export --armor 'DA4C 00C1 BDB1 3763 8608 4E20 C7EB 4578 740A EEA2' > /etc/apt/trusted.gpg.d/sapmachine.old.gpg.asc     && wget -q -O - https://dist.sapmachine.io/debian/sapmachine.key | gpg --batch --import     && gpg --batch --export --armor 'CACB 9FE0 9150 307D 1D22 D829 6275 4C3B 3ABC FE23' > /etc/apt/trusted.gpg.d/sapmachine.gpg.asc     && gpgconf --kill all && rm -rf "$GNUPGHOME"     && echo "deb http://dist.sapmachine.io/debian/amd64/ ./" > /etc/apt/sources.list.d/sapmachine.list     && apt-get update     && apt-get -y --no-install-recommends install sapmachine-11-jdk=11.0.9.1     && rm -rf /var/lib/apt/lists/*
-# Thu, 26 Nov 2020 02:42:19 GMT
+# Thu, 21 Jan 2021 10:52:49 GMT
 ENV JAVA_HOME=/usr/lib/jvm/sapmachine-11
-# Thu, 26 Nov 2020 02:42:19 GMT
+# Thu, 21 Jan 2021 10:52:50 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:da7391352a9bb76b292a568c066aa4c3cbae8d494e6a3c68e3c596d34f7c75f8`  
-		Last Modified: Fri, 06 Nov 2020 15:20:07 GMT  
-		Size: 28.6 MB (28563271 bytes)  
+	-	`sha256:83ee3a23efb7c75849515a6d46551c608b255d8402a4d3753752b88e0dc188fa`  
+		Last Modified: Thu, 21 Jan 2021 03:40:40 GMT  
+		Size: 28.6 MB (28565893 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14428a6d4bcdba49a64127900a0691fb00a3f329aced25eb77e3b65646638f8d`  
-		Last Modified: Wed, 25 Nov 2020 22:26:39 GMT  
-		Size: 847.0 B  
+	-	`sha256:db98fc6f11f08950985a203e07755c3262c680d00084f601e7304b768c83b3b1`  
+		Last Modified: Thu, 21 Jan 2021 03:40:35 GMT  
+		Size: 843.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c2d948710f21ad82dce71743b1654b45acb5c059cf5c19da491582cef6f2601`  
-		Last Modified: Wed, 25 Nov 2020 22:26:40 GMT  
+	-	`sha256:f611acd52c6cad803b06b5ba932e4aabd0f2d0d5a4d050c81de2832fcb781274`  
+		Last Modified: Thu, 21 Jan 2021 03:40:35 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:321870518bab8b5bcb6f8e4e3802e9dcb85c027256bd1f4cb33361c4d3a62772`  
-		Last Modified: Thu, 26 Nov 2020 02:42:29 GMT  
-		Size: 8.3 MB (8336131 bytes)  
+	-	`sha256:9cc3fcd50a3b4c63180091eee0f11c641ad42639e9a4558876fdfbfe74fb4ef4`  
+		Last Modified: Thu, 21 Jan 2021 10:53:08 GMT  
+		Size: 8.3 MB (8336723 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6165eeb7030b8f793dc6c50712f77fe77470ddaacee667faa04bc7ad6416b883`  
-		Last Modified: Thu, 26 Nov 2020 02:43:27 GMT  
-		Size: 197.9 MB (197861862 bytes)  
+	-	`sha256:928f71c3fcfa9e12862ae83b10583c97c09b1c371a122749a90b65bfbae56d0e`  
+		Last Modified: Thu, 21 Jan 2021 10:53:50 GMT  
+		Size: 197.9 MB (197861810 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
