@@ -1,9 +1,9 @@
-# `kong:2.3.0-ubuntu`
+# `kong:2.3.1-ubuntu`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3746da73ed0f06998d2b2e60537b92f5f1ecc5c7fd247cd02a339d6f77c0383c`
-- Created: `2021-01-21T10:27:31.862467206Z`
+- Image ID: `sha256:ecdda63d33dee4365e82d62414c95e28dac508e4f96086475f17d7411fe7ef11`
+- Created: `2021-01-27T06:33:13.394616638Z`
 - Virtual Size: ~ 339.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.3.0`
+  - `KONG_VERSION=2.3.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -884,11 +884,11 @@ $ apt-get source -qq --print-uris kmod=22-1ubuntu5.2
 'http://archive.ubuntu.com/ubuntu/pool/main/k/kmod/kmod_22-1ubuntu5.2.debian.tar.xz' kmod_22-1ubuntu5.2.debian.tar.xz 14524 SHA512:184d70264a6cf50b8df6e8bf19950c295c8c404633c2a782f75188e1c9fec639e6c673f594995f398e85c82613ffb4565131b62b7b8062dbae3de079c8778565
 ```
 
-### `dpkg` source package: `kong=2.3.0`
+### `dpkg` source package: `kong=2.3.1`
 
 Binary Packages:
 
-- `kong=2.3.0`
+- `kong=2.3.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1174,25 +1174,20 @@ $ apt-get source -qq --print-uris libusb=2:0.1.12-28
 'http://archive.ubuntu.com/ubuntu/pool/main/libu/libusb/libusb_0.1.12-28.debian.tar.xz' libusb_0.1.12-28.debian.tar.xz 21524 SHA256:eaf2314902b0bb9de3e1fa8c9abfcecea7b78c9824048016beaca34f7cc4351b
 ```
 
-### `dpkg` source package: `linux=4.4.0-200.232`
+### `dpkg` source package: `linux=4.4.0-201.233`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-200.232`
+- `linux-libc-dev:amd64=4.4.0-201.233`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.4.0-200.232
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-200.232.dsc' linux_4.4.0-200.232.dsc 11596 SHA512:f50087e03ceefcd787c8e0ecf1b8cd4400e49d6837da0e351e809f0fe6dbe6ffd5fbff0c2f64e9167bfe644208d83807ec65dffea9e575b3aa32a193f67b130e
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA512:28ef89b62f663f2d90b58274799b7ebeff04699f08d0b83f650b0de179d4ef354450c81ecda07522b493c43d5eb2d530fa0f552a2794d48f84878e05efa39cc3
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-200.232.diff.gz' linux_4.4.0-200.232.diff.gz 16904146 SHA512:b75129ed595bc79a9aeee1cbe90a7615cce90e96cd77478a0e5c676d2248ebb66d90ae128cd7c81ed63436d5bbe286aac0828b94913de35023692bc5c14b5577
-```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 

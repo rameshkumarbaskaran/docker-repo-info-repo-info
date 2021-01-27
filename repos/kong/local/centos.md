@@ -1,9 +1,9 @@
-# `kong:2.3.0-centos`
+# `kong:2.3.1-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a456825d3bd4323426411c3664b786e230578fb4d643fc59c1a756933ca42d63`
-- Created: `2021-01-13T21:21:41.89943483Z`
+- Image ID: `sha256:a6ddf4deeb4ee04ebf0f68f79a2ee0486fd26465754de034da59bd93c53d6b5b`
+- Created: `2021-01-27T06:33:57.739038395Z`
 - Virtual Size: ~ 364.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.3.0`
+  - `KONG_VERSION=2.3.1`
 - Labels:
   - `maintainer=Kong <support@konghq.com>`
   - `org.label-schema.build-date=20201113`
@@ -831,7 +831,7 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/kmod-20-28.el7.src.rpm
 ```
 
-### `rpm` package: `kong-2.3.0-1.x86_64`
+### `rpm` package: `kong-2.3.1-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 2.0
 
