@@ -194,11 +194,21 @@ CMD ["/bin/bash"]
 
 ## `amazonlinux:2018.03.0.20210126.1`
 
-**does not exist** (yet?)
+```console
+$ docker pull amazonlinux@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `amazonlinux:2018.03.0.20210126.1-with-sources`
 
-**does not exist** (yet?)
+```console
+$ docker pull amazonlinux@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `amazonlinux:2018.03-with-sources`
 
@@ -244,11 +254,21 @@ RUN mkdir /usr/src/srpm  && curl -o /usr/src/srpm/srpm-bundle.tar.gz "https://am
 
 ## `amazonlinux:2.0.20210126.0`
 
-**does not exist** (yet?)
+```console
+$ docker pull amazonlinux@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `amazonlinux:2.0.20210126.0-with-sources`
 
-**does not exist** (yet?)
+```console
+$ docker pull amazonlinux@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `amazonlinux:2-with-sources`
 
