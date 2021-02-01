@@ -3,8 +3,10 @@
 # Tags of `mageia`
 
 -	[`mageia:7`](#mageia7)
+-	[`mageia:8`](#mageia8)
 -	[`mageia:cauldron`](#mageiacauldron)
 -	[`mageia:latest`](#mageialatest)
+-	[`mageia:rc`](#mageiarc)
 
 ## `mageia:7`
 
@@ -101,6 +103,10 @@ CMD ["/bin/bash"]
 		Last Modified: Mon, 18 Jan 2021 22:41:10 GMT  
 		Size: 97.5 MB (97496575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `mageia:8`
+
+**does not exist** (yet?)
 
 ## `mageia:cauldron`
 
@@ -293,3 +299,7 @@ CMD ["/bin/bash"]
 		Last Modified: Mon, 18 Jan 2021 22:41:10 GMT  
 		Size: 97.5 MB (97496575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `mageia:rc`
+
+**does not exist** (yet?)
