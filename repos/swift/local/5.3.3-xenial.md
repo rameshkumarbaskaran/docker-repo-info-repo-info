@@ -1,9 +1,9 @@
-# `swift:5.3.2-xenial`
+# `swift:5.3.3-xenial`
 
 ## Docker Metadata
 
-- Image ID: `sha256:91c1cf3e784fa82a11e601be34268ee2088ba8471cca6f5db52b281e0a5f835d`
-- Created: `2021-01-21T09:08:37.762998851Z`
+- Image ID: `sha256:e087f93939f3770507919cfaaaed68dbb090ce550c2a8683f946a307a91ca0ff`
+- Created: `2021-01-30T01:58:52.828576212Z`
 - Virtual Size: ~ 1.76 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu16.04`
-  - `SWIFT_BRANCH=swift-5.3.2-release`
-  - `SWIFT_VERSION=swift-5.3.2-RELEASE`
+  - `SWIFT_BRANCH=swift-5.3.3-release`
+  - `SWIFT_VERSION=swift-5.3.3-RELEASE`
   - `SWIFT_WEBROOT=https://swift.org/builds/`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
@@ -2634,14 +2634,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2020f-0ubuntu0.16.04
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020f-0ubuntu0.16.04.dsc' tzdata_2020f-0ubuntu0.16.04.dsc 2136 SHA512:e102767b728d2217ed2d0839b8308d82abe1822195c8cda4e3fc7eb8d1b7d71fb4159231e6296998d0cede3e1f115c8ffdd036111ac44a5aa130ebc0bec3c402
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020f.orig.tar.gz' tzdata_2020f.orig.tar.gz 411739 SHA512:dd312def18c807452fda2e697514e2064c5f51ebdbedd0cfe6f231252c76ee5d4409f653b295ed5657b7d30b868690047fdb70a10942e69eaa40b77473e3f9ca
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020f-0ubuntu0.16.04.debian.tar.xz' tzdata_2020f-0ubuntu0.16.04.debian.tar.xz 101792 SHA512:47342fafbb3ffb9246b0f3c4cbef67c6efd0d9cc1ee3bd6938ed76ae8a5997a235c005fd4905395038b6c575015760a535a1c091a4ead4f37f70ebc25b088b49
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2012.05.19.1`
 
