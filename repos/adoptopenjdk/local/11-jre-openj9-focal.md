@@ -1,10 +1,10 @@
-# `adoptopenjdk:11.0.9_11-jre-openj9-0.23.0-focal`
+# `adoptopenjdk:11.0.10_9-jre-openj9-0.24.0-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:41145477466d4fa60ee723825c7725b44e34598bc09504d316beb76f0fd93256`
-- Created: `2021-01-21T07:20:31.07916637Z`
-- Virtual Size: ~ 252.46 Mb  
+- Image ID: `sha256:4de7ba01dd33ba29c0e28a8ccd3eb82e4bcd3923dbd222a6767904cc3eb04107`
+- Created: `2021-01-30T01:24:26.084376987Z`
+- Virtual Size: ~ 250.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -13,10 +13,9 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.9+11_openj9-0.23.0`
+  - `JAVA_VERSION=jdk-11.0.10+9_openj9-0.24.0`
   - `JAVA_HOME=/opt/java/openjdk`
-  - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle`
-  - `OPENJ9_JAVA_OPTIONS=-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
+  - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -136,13 +135,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu5.2
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.2.dsc' base-files_11ubuntu5.2.dsc 1676 SHA512:8f10b639796469f1d8b9eff30fccf8418148b8a4d863771ce9f5936c4b33ff9e1d4adfd0a7140a5eff54096c31c0cb566996215b7985cbf591594cf9a0d23fd9
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu5.2.tar.xz' base-files_11ubuntu5.2.tar.xz 80528 SHA512:45aee06a5fb08562aff51fd1ceedbf9749535820754b9a64da989326b6c05c2e73b88d1cb3e03d078ce899a84b4c383cd19ad6a5be32573c936293bd5d2932cf
-```
 
 ### `dpkg` source package: `base-passwd=3.5.47`
 
@@ -1739,14 +1734,9 @@ Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
 
 - `ICU`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2020f-0ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020f-0ubuntu0.20.04.1.dsc' tzdata_2020f-0ubuntu0.20.04.1.dsc 2149 SHA512:0875ee801239786f8f2a22cb54592ebfd77797bacc4ce51d84c3fa3b3524f50568b550579c302dc1c8abb0412539b65ac1addb0e96ee36a3a31e45449807faa5
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020f.orig.tar.gz' tzdata_2020f.orig.tar.gz 411739 SHA512:dd312def18c807452fda2e697514e2064c5f51ebdbedd0cfe6f231252c76ee5d4409f653b295ed5657b7d30b868690047fdb70a10942e69eaa40b77473e3f9ca
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2020f-0ubuntu0.20.04.1.debian.tar.xz' tzdata_2020f-0ubuntu0.20.04.1.debian.tar.xz 166416 SHA512:449efefe43374fdd75a27b3e86398b1bcd9eafdfce8b5f244fa7f4a3e9f45c3fb2f5d54899a53fa0932fd3284dc910d0f08506a7ae93f302360c10c74fcd7d8d
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2020.02.11.2`
 
