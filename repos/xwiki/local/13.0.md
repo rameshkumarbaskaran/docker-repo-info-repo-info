@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c539cf42bc66fc2282a26b6e29cb5778915e975015670e5a49432822613cf81f`
-- Created: `2021-01-27T06:19:55.175769122Z`
-- Virtual Size: ~ 1.30 Gb  
+- Image ID: `sha256:d64bc2f8b2af7257013432b963e43cd17ebf8430b3a052f7c998bacc29365c1b`
+- Created: `2021-02-02T00:34:10.236102522Z`
+- Virtual Size: ~ 1.31 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.9.1+1`
+  - `JAVA_VERSION=jdk-11.0.10+9`
   - `JAVA_HOME=/opt/java/openjdk`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
@@ -823,11 +823,11 @@ $ apt-get source -qq --print-uris gcc-10=10.2.0-5ubuntu1~20.04
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-10/gcc-10_10.2.0-5ubuntu1~20.04.debian.tar.xz' gcc-10_10.2.0-5ubuntu1~20.04.debian.tar.xz 2024876 SHA512:d61af9c1eddf504f7b9ff2721b1f077a11059f0dba50392505c591bebd363bbe3a3b46f9fa67c090ac63bfcea6990efd47d647c35507c48f34f12b68a58fb94a
 ```
 
-### `dpkg` source package: `glib2.0=2.64.3-1~ubuntu20.04.1`
+### `dpkg` source package: `glib2.0=2.64.6-1~ubuntu20.04.1`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.64.3-1~ubuntu20.04.1`
+- `libglib2.0-0:amd64=2.64.6-1~ubuntu20.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 
@@ -835,19 +835,23 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 - `GPL-2+`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris glib2.0=2.64.6-1~ubuntu20.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1~ubuntu20.04.1.dsc' glib2.0_2.64.6-1~ubuntu20.04.1.dsc 3256 SHA512:53a38fdfa204d2259e7603e85569d4ddcbc87cdcb2e5af3b5de93ec1b3c600a3fbae5316551f3409333b5eadf0f347ceb7ad5d3262aacd369453fb220f61920c
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6.orig.tar.xz' glib2.0_2.64.6.orig.tar.xz 4781576 SHA512:5cd82c4d9b143e7aa130c24e25fb9def06dd915ef8ad8ed3883931bf5cddecf69c2e669ef6aa1d910484ede75b671e7c48a4f3fe50aa78955bff57b04f0cf958
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1~ubuntu20.04.1.debian.tar.xz' glib2.0_2.64.6-1~ubuntu20.04.1.debian.tar.xz 92696 SHA512:fea360467af2df16529fcee10740fc04f7d30325907ef7d612441bbed544eeccffc19cbea30f0171284e4be8ef35300f16ed761149d1d9f5f83a76625a3f1298
+```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.1`
 
 Binary Packages:
 
 - `libc-bin=2.31-0ubuntu9.1`
-- `libc6:amd64=2.31-0ubuntu9.1`
 - `locales=2.31-0ubuntu9.1`
 
-Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/locales/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/locales/copyright`)
 
 - `GPL-2`
 - `LGPL-2.1`
@@ -855,6 +859,26 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `glibc=2.31-0ubuntu9.2`
+
+Binary Packages:
+
+- `libc6:amd64=2.31-0ubuntu9.2`
+
+Licenses: (parsed from: `/usr/share/doc/libc6/copyright`)
+
+- `GPL-2`
+- `LGPL-2.1`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris glibc=2.31-0ubuntu9.2
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.2.dsc' glibc_2.31-0ubuntu9.2.dsc 9561 SHA512:12afcea8313015a2de4bfed05818d5a52dccfa82a4dcf2264f155b38bcb39507d5a765aa6dd58105194af364d2366ae4c88ac1877173c2ef3776b5d0fc75443c
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17317924 SHA512:2ff56628fe935cacbdf1825534f15d45cb87a159cbdb2e6a981590eeb6174ed4b3ff7041519cdecbd4f624ac20b745e2dd9614c420dd3ea186b8f36bc4c2453c
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.2.debian.tar.xz' glibc_2.31-0ubuntu9.2.debian.tar.xz 847208 SHA512:6985930d47b70f2c3cfd0ece3d5dce8414befd061cfbae7a1e8804f02ef81d73d4a219bc780492c8a6ca3c5a559b58082bea57372b2b9072539059a1694578e0
+```
 
 ### `dpkg` source package: `gmp=2:6.2.0+dfsg-4`
 
