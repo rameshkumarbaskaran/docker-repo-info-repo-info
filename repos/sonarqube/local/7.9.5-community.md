@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c94e7b730962b803c999c088f628ef1d5662fb6631f6dcbea82450447d0faef8`
-- Created: `2021-01-21T05:13:28.132105597Z`
-- Virtual Size: ~ 483.08 Mb  
+- Image ID: `sha256:314e5390544d7d0915ad7905cf3dd52a7804335d043d5f877a2486191f2d578f`
+- Created: `2021-02-01T23:03:38.396398168Z`
+- Virtual Size: ~ 498.26 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["./bin/run.sh"]`
 - Environment:
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
+  - `LANG=C.UTF-8`
   - `JAVA_VERSION=11.0.10`
   - `SONAR_VERSION=7.9.5`
   - `SONARQUBE_HOME=/opt/sonarqube`
@@ -2078,21 +2078,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2020e-0+deb10u1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020e-0+deb10u1.dsc' tzdata_2020e-0+deb10u1.dsc 2264 SHA256:5a71897dde8b6c3ff6240ebe0c550b2287432e2a3f30f8eccc47722e3f809a00
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020e.orig.tar.gz' tzdata_2020e.orig.tar.gz 411619 SHA256:0be1ba329eae29ae1b54057c3547b3e672f73b3ae7643aa87dac85122bec037e
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020e.orig.tar.gz.asc' tzdata_2020e.orig.tar.gz.asc 833 SHA256:3d3f95883bdfb1a9b06a1f8a1010378421e6d603a281f3d3085ce84a10e0e722
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2020e-0+deb10u1.debian.tar.xz' tzdata_2020e-0+deb10u1.debian.tar.xz 106176 SHA256:9c895355a497621b27dbcdf74271efc3512136b1a07d07b0e3c179b5582beda3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2020e-0+deb10u1/
 
-- https://sources.debian.net/src/tzdata/2020e-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2020e-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2020e-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unzip=6.0-23+deb10u1`
 
