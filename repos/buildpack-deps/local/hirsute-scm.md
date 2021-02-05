@@ -1634,15 +1634,9 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=5.5.2-1build1
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_5.5.2-1build1.dsc' mercurial_5.5.2-1build1.dsc 2762 SHA512:bc345b384f39374a149276e37e4f9da5688bea310d4434cea4e4c12cd828dbdddf8c0222d8ce039cb8b183e3eb97ead7d0634c4d766d1df7dc75da85f7bd295d
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_5.5.2.orig.tar.gz' mercurial_5.5.2.orig.tar.gz 7761053 SHA512:e154592deed6168a32e7fd075fa034908ca72826ae49a92c84a6ad82b820753906578f064ac623018442d83d125a551eecc057179e66ac7217398a192e903629
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_5.5.2.orig.tar.gz.asc' mercurial_5.5.2.orig.tar.gz.asc 833 SHA512:23d703b5d102d07e76d2ff09482921eea6b923c649c9b01e9922efb0b4b484d4ce16f6c71fa36223d39c0a3184a19f78446c743cf4bc4ff440652e75dae74ce6
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_5.5.2-1build1.debian.tar.xz' mercurial_5.5.2-1build1.debian.tar.xz 63428 SHA512:83976a69664780b777f86089fcd43239faf38a50d70af03ddea3651faac7fe02c5077ba23adc8dcfd72d2e268b876330461a71c1fc3e9fe1d62212dc78e0f04d
-```
 
 ### `dpkg` source package: `mime-support=3.66`
 

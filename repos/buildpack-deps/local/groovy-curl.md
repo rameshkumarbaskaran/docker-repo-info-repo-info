@@ -226,13 +226,9 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ca-certificates=20201027ubuntu0.20.10.1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.20.10.1.dsc' ca-certificates_20201027ubuntu0.20.10.1.dsc 1944 SHA512:caa59569228ce0056a810626d916da3d6e70069085302f5cadfd3e0a4f61e793aa1dbf7dd6bc6388f8c0facd900be0c8dbe89954e94e735eb9709827c496b7fd
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20201027ubuntu0.20.10.1.tar.xz' ca-certificates_20201027ubuntu0.20.10.1.tar.xz 242528 SHA512:4f386608440c42574bff8cff6471b6e9dbf988c1cb43da2085d60e76d42eeabfb875e3f61ad75570aaa9a448098c2dde5a577858a4acd5497c615a121e282893
-```
 
 ### `dpkg` source package: `cdebconf=0.252ubuntu1`
 

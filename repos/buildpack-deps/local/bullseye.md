@@ -1857,20 +1857,13 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `TatcherUlrichPublicDomain`
 - `aclocal`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris imagemagick=8:6.9.11.24+dfsg-1
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.11.24+dfsg-1.dsc' imagemagick_6.9.11.24+dfsg-1.dsc 5079 SHA256:3d16073f17e1428a549884e1ee4afbd9255cd9d6c1fb802d8f1575759fda49c5
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.11.24+dfsg.orig.tar.xz' imagemagick_6.9.11.24+dfsg.orig.tar.xz 9037972 SHA256:23b737f3391e542c831c785280ea66e267e58ff0d0480b08a4607e90c24e8a16
-'http://deb.debian.org/debian/pool/main/i/imagemagick/imagemagick_6.9.11.24+dfsg-1.debian.tar.xz' imagemagick_6.9.11.24+dfsg-1.debian.tar.xz 224972 SHA256:c8a28a0838e2b7a1aab2257806ad59d18d9859ae264a5adbc085d231e590e5ee
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/imagemagick/8:6.9.11.24+dfsg-1/
 
-- https://sources.debian.net/src/imagemagick/8:6.9.11.24+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/imagemagick/8:6.9.11.24+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/imagemagick/8:6.9.11.24+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.60`
 
@@ -2977,20 +2970,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-rsvg-2.0/copyright`, `/usr/share/
 - `Unlicense,`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris librsvg=2.50.2+dfsg-1
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.50.2+dfsg-1.dsc' librsvg_2.50.2+dfsg-1.dsc 2963 SHA256:2797e965cb6c60e77312ea0324f0c2d7bf546940389b6dc9c4dd640f98d85411
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.50.2+dfsg.orig.tar.xz' librsvg_2.50.2+dfsg.orig.tar.xz 13703308 SHA256:329caa20ee437b7155254ec2c694aa568dfa5be800a2583e5f19f58dcf9e04a0
-'http://deb.debian.org/debian/pool/main/libr/librsvg/librsvg_2.50.2+dfsg-1.debian.tar.xz' librsvg_2.50.2+dfsg-1.debian.tar.xz 30372 SHA256:49fc6045e2fdf5140a6556defc4e41f4ccb0d632b5e494653d6ebe9cbd9ca4a5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/librsvg/2.50.2+dfsg-1/
 
-- https://sources.debian.net/src/librsvg/2.50.2+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/librsvg/2.50.2+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/librsvg/2.50.2+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libseccomp=2.5.1-1`
 
@@ -3452,20 +3438,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxcb=1.14-2.1
-'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.14-2.1.dsc' libxcb_1.14-2.1.dsc 5377 SHA256:d8e6540c3247c67334c073c34ce6d6313252fc230153d443801dea0b988d9112
-'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.14.orig.tar.gz' libxcb_1.14.orig.tar.gz 640322 SHA256:2c7fcddd1da34d9b238c9caeda20d3bd7486456fc50b3cc6567185dbd5b0ad02
-'http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.14-2.1.diff.gz' libxcb_1.14-2.1.diff.gz 26530 SHA256:ca00891d107c73107da10fad3a01ee6acca7893e549f8a2b38a8b65272373ef7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxcb/1.14-2.1/
 
-- https://sources.debian.net/src/libxcb/1.14-2.1/ (for browsing the source)
-- https://sources.debian.net/src/libxcb/1.14-2.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxcb/1.14-2.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxcrypt=1:4.4.17-1`
 
