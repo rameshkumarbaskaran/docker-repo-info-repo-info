@@ -15,7 +15,7 @@
 ## `couchdb:2`
 
 ```console
-$ docker pull couchdb@sha256:ef82b77dd5ffec80f154c203d7a96df6934baa423b2a8b9450df6fd692472075
+$ docker pull couchdb@sha256:c6f6416ed030337ee29dee22da77e80ebcff1bd44cc82bff29a37f46003fb247
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -26,105 +26,105 @@ $ docker pull couchdb@sha256:ef82b77dd5ffec80f154c203d7a96df6934baa423b2a8b9450d
 ### `couchdb:2` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:4eeba0428570ea0dc90d1cbf148454956052f314935d4c48208d32fc69cc9be5
+$ docker pull couchdb@sha256:a31f9981839e671f63f58e089e1785096ddd7c6d3e3b9d443bf792af305ef78f
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **82.4 MB (82401068 bytes)**  
+-	Total Size: **82.4 MB (82401141 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:493c01c773ded205388203a5eb88aad25eb14e3009066d49089f04d5d011007a`
+-	Image ID: `sha256:25cabb705e9a8664b0cbb323c579250016c500459ed2769db68cf545989f0874`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:35:21 GMT
-ADD file:f47757e25d3861a5c0180542919c21264323d4dace1f5a6761fc2f38b53a9003 in / 
-# Tue, 12 Jan 2021 00:35:21 GMT
+# Tue, 09 Feb 2021 02:23:30 GMT
+ADD file:da0c935ddc86ca9e44bdd5f61b46c7b43a115ee4bc356324265a7ad6323f61ae in / 
+# Tue, 09 Feb 2021 02:23:30 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:51:50 GMT
+# Tue, 09 Feb 2021 02:50:14 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:51:51 GMT
+# Tue, 09 Feb 2021 02:50:15 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:52:12 GMT
+# Tue, 09 Feb 2021 02:53:28 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:52:12 GMT
+# Tue, 09 Feb 2021 02:53:28 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:53:18 GMT
+# Tue, 09 Feb 2021 02:53:31 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:53:19 GMT
+# Tue, 09 Feb 2021 02:53:31 GMT
 ENV COUCHDB_VERSION=2.3.1
-# Tue, 12 Jan 2021 03:53:20 GMT
+# Tue, 09 Feb 2021 02:53:32 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb stretch main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:53:43 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~stretch     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:53:43 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 COPY --chown=couchdb:couchdbfile:74a26e2e31f9b408e93e4a065004a86e00211d06a4ce6ab1fbc23640bd92a929 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:53:44 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:53:44 GMT
+# Tue, 09 Feb 2021 02:53:55 GMT
 COPY file:a03eff89f810529ca878388de0c227b20fb661957d2117d1664d535138fc12e6 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:55 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:53:46 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:8aff230071c97ddc86b6d29fbbb7a4caae7a0183a83f08aa5a06e69e26ce2c81`  
-		Last Modified: Tue, 12 Jan 2021 00:43:25 GMT  
-		Size: 22.5 MB (22528609 bytes)  
+	-	`sha256:cae7303ade7f17f84fe86b2a44880e9725cf7d6dcd17f79485360712b6af6dcd`  
+		Last Modified: Tue, 09 Feb 2021 02:29:36 GMT  
+		Size: 22.5 MB (22528600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:276e247f0cd63a1fe827f9b85dd8d969ae4d1dd8a33c60d314c097e1bb4653f0`  
-		Last Modified: Tue, 12 Jan 2021 03:54:49 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9f24c5543afbd66b0d5933bad0b68d6c3527e8e8147f6be98ed97e9dc6951a51`  
+		Last Modified: Tue, 09 Feb 2021 02:54:41 GMT  
+		Size: 3.4 KB (3413 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71b2066d261b6ece5cf40fbc6ccfb3c25564dd961837135be8e5b028fa8d4e50`  
-		Last Modified: Tue, 12 Jan 2021 03:54:50 GMT  
-		Size: 8.5 MB (8471914 bytes)  
+	-	`sha256:284ea757b0b914b9d0e87df91683ae2635e970d5d56b7527432c6a84f830dd7c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:42 GMT  
+		Size: 8.5 MB (8471960 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd4d1b0a4337f95727e774ed6509fdc16bdcc24fd85e81bb453517ae3d89f415`  
-		Last Modified: Tue, 12 Jan 2021 03:54:48 GMT  
-		Size: 1.2 MB (1190389 bytes)  
+	-	`sha256:e5516370f79e6879d9d93e2d9e737e64f857a7661b5fd7e36766130f7c1e6b25`  
+		Last Modified: Tue, 09 Feb 2021 02:54:41 GMT  
+		Size: 1.2 MB (1190431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83230eedf25eafa49423179d1d5fd973cf6027ef8eb030b39ee0c23fc96a3184`  
-		Last Modified: Tue, 12 Jan 2021 03:54:48 GMT  
-		Size: 3.1 KB (3061 bytes)  
+	-	`sha256:304b2c871bd8401e28233d77eba06efed9a22f5c284fd0629800cac068695a46`  
+		Last Modified: Tue, 09 Feb 2021 02:54:40 GMT  
+		Size: 3.1 KB (3055 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d50eec4085f700aaed8cb7583d1315eb10cef41023049268e061054320a38bd4`  
-		Last Modified: Tue, 12 Jan 2021 03:54:47 GMT  
-		Size: 224.0 B  
+	-	`sha256:eb9b604a874624e862870e1ece70a416f78eb6e481905f2ab516c68ed339ac9a`  
+		Last Modified: Tue, 09 Feb 2021 02:54:40 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3896d223e87c808c03543b6ec19d4eeb0bbe14a937800ab1248468bb7a3042cb`  
-		Last Modified: Tue, 12 Jan 2021 03:54:53 GMT  
-		Size: 50.2 MB (50200111 bytes)  
+	-	`sha256:779aced152fbb9dbcb384ac8ffce783b5b420f6a974ecc3ef9686f39ce6cbade`  
+		Last Modified: Tue, 09 Feb 2021 02:54:46 GMT  
+		Size: 50.2 MB (50200115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9189261b9f49b6febe68dd585900c38a763d81895ddd4f82bd503f3c13d8d427`  
-		Last Modified: Tue, 12 Jan 2021 03:54:47 GMT  
+	-	`sha256:e1f43a813790d945f64e1caeab0dc01c907c0668b74007af141ff40e33f115cc`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
 		Size: 387.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0dd0e70fe85e2d846c9c55376f500be720da3f8468b20cb3507fabd4b47de552`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
-		Size: 768.0 B  
+	-	`sha256:b97299e0ececf1275904394f69397dbb398cd49e25613f3858de6e5344366e0a`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
+		Size: 766.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cf6aed357877fc58ba1cdfe094e75f8e8329175d6fea2c003abd24a973748f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
-		Size: 2.1 KB (2070 bytes)  
+	-	`sha256:31d7696050ae60ab83bf50b8846457f58abd17eae6231b0e356862e549fb768c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
+		Size: 2.1 KB (2068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b404ef974526a12ada33f0e265a832b6b77d5c0f326af7d07d8be7b2bc625fa`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
+	-	`sha256:ec662ea07a82b27e1eef9aeb3a5217f0cd16e558d63f2c56204bd339222bec3f`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -236,7 +236,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:2.3`
 
 ```console
-$ docker pull couchdb@sha256:ef82b77dd5ffec80f154c203d7a96df6934baa423b2a8b9450df6fd692472075
+$ docker pull couchdb@sha256:c6f6416ed030337ee29dee22da77e80ebcff1bd44cc82bff29a37f46003fb247
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -247,105 +247,105 @@ $ docker pull couchdb@sha256:ef82b77dd5ffec80f154c203d7a96df6934baa423b2a8b9450d
 ### `couchdb:2.3` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:4eeba0428570ea0dc90d1cbf148454956052f314935d4c48208d32fc69cc9be5
+$ docker pull couchdb@sha256:a31f9981839e671f63f58e089e1785096ddd7c6d3e3b9d443bf792af305ef78f
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **82.4 MB (82401068 bytes)**  
+-	Total Size: **82.4 MB (82401141 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:493c01c773ded205388203a5eb88aad25eb14e3009066d49089f04d5d011007a`
+-	Image ID: `sha256:25cabb705e9a8664b0cbb323c579250016c500459ed2769db68cf545989f0874`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:35:21 GMT
-ADD file:f47757e25d3861a5c0180542919c21264323d4dace1f5a6761fc2f38b53a9003 in / 
-# Tue, 12 Jan 2021 00:35:21 GMT
+# Tue, 09 Feb 2021 02:23:30 GMT
+ADD file:da0c935ddc86ca9e44bdd5f61b46c7b43a115ee4bc356324265a7ad6323f61ae in / 
+# Tue, 09 Feb 2021 02:23:30 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:51:50 GMT
+# Tue, 09 Feb 2021 02:50:14 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:51:51 GMT
+# Tue, 09 Feb 2021 02:50:15 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:52:12 GMT
+# Tue, 09 Feb 2021 02:53:28 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:52:12 GMT
+# Tue, 09 Feb 2021 02:53:28 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:53:18 GMT
+# Tue, 09 Feb 2021 02:53:31 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:53:19 GMT
+# Tue, 09 Feb 2021 02:53:31 GMT
 ENV COUCHDB_VERSION=2.3.1
-# Tue, 12 Jan 2021 03:53:20 GMT
+# Tue, 09 Feb 2021 02:53:32 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb stretch main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:53:43 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~stretch     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:53:43 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 COPY --chown=couchdb:couchdbfile:74a26e2e31f9b408e93e4a065004a86e00211d06a4ce6ab1fbc23640bd92a929 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:53:44 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:53:44 GMT
+# Tue, 09 Feb 2021 02:53:55 GMT
 COPY file:a03eff89f810529ca878388de0c227b20fb661957d2117d1664d535138fc12e6 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:55 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:53:46 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:8aff230071c97ddc86b6d29fbbb7a4caae7a0183a83f08aa5a06e69e26ce2c81`  
-		Last Modified: Tue, 12 Jan 2021 00:43:25 GMT  
-		Size: 22.5 MB (22528609 bytes)  
+	-	`sha256:cae7303ade7f17f84fe86b2a44880e9725cf7d6dcd17f79485360712b6af6dcd`  
+		Last Modified: Tue, 09 Feb 2021 02:29:36 GMT  
+		Size: 22.5 MB (22528600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:276e247f0cd63a1fe827f9b85dd8d969ae4d1dd8a33c60d314c097e1bb4653f0`  
-		Last Modified: Tue, 12 Jan 2021 03:54:49 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9f24c5543afbd66b0d5933bad0b68d6c3527e8e8147f6be98ed97e9dc6951a51`  
+		Last Modified: Tue, 09 Feb 2021 02:54:41 GMT  
+		Size: 3.4 KB (3413 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71b2066d261b6ece5cf40fbc6ccfb3c25564dd961837135be8e5b028fa8d4e50`  
-		Last Modified: Tue, 12 Jan 2021 03:54:50 GMT  
-		Size: 8.5 MB (8471914 bytes)  
+	-	`sha256:284ea757b0b914b9d0e87df91683ae2635e970d5d56b7527432c6a84f830dd7c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:42 GMT  
+		Size: 8.5 MB (8471960 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd4d1b0a4337f95727e774ed6509fdc16bdcc24fd85e81bb453517ae3d89f415`  
-		Last Modified: Tue, 12 Jan 2021 03:54:48 GMT  
-		Size: 1.2 MB (1190389 bytes)  
+	-	`sha256:e5516370f79e6879d9d93e2d9e737e64f857a7661b5fd7e36766130f7c1e6b25`  
+		Last Modified: Tue, 09 Feb 2021 02:54:41 GMT  
+		Size: 1.2 MB (1190431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83230eedf25eafa49423179d1d5fd973cf6027ef8eb030b39ee0c23fc96a3184`  
-		Last Modified: Tue, 12 Jan 2021 03:54:48 GMT  
-		Size: 3.1 KB (3061 bytes)  
+	-	`sha256:304b2c871bd8401e28233d77eba06efed9a22f5c284fd0629800cac068695a46`  
+		Last Modified: Tue, 09 Feb 2021 02:54:40 GMT  
+		Size: 3.1 KB (3055 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d50eec4085f700aaed8cb7583d1315eb10cef41023049268e061054320a38bd4`  
-		Last Modified: Tue, 12 Jan 2021 03:54:47 GMT  
-		Size: 224.0 B  
+	-	`sha256:eb9b604a874624e862870e1ece70a416f78eb6e481905f2ab516c68ed339ac9a`  
+		Last Modified: Tue, 09 Feb 2021 02:54:40 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3896d223e87c808c03543b6ec19d4eeb0bbe14a937800ab1248468bb7a3042cb`  
-		Last Modified: Tue, 12 Jan 2021 03:54:53 GMT  
-		Size: 50.2 MB (50200111 bytes)  
+	-	`sha256:779aced152fbb9dbcb384ac8ffce783b5b420f6a974ecc3ef9686f39ce6cbade`  
+		Last Modified: Tue, 09 Feb 2021 02:54:46 GMT  
+		Size: 50.2 MB (50200115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9189261b9f49b6febe68dd585900c38a763d81895ddd4f82bd503f3c13d8d427`  
-		Last Modified: Tue, 12 Jan 2021 03:54:47 GMT  
+	-	`sha256:e1f43a813790d945f64e1caeab0dc01c907c0668b74007af141ff40e33f115cc`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
 		Size: 387.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0dd0e70fe85e2d846c9c55376f500be720da3f8468b20cb3507fabd4b47de552`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
-		Size: 768.0 B  
+	-	`sha256:b97299e0ececf1275904394f69397dbb398cd49e25613f3858de6e5344366e0a`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
+		Size: 766.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cf6aed357877fc58ba1cdfe094e75f8e8329175d6fea2c003abd24a973748f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
-		Size: 2.1 KB (2070 bytes)  
+	-	`sha256:31d7696050ae60ab83bf50b8846457f58abd17eae6231b0e356862e549fb768c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
+		Size: 2.1 KB (2068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b404ef974526a12ada33f0e265a832b6b77d5c0f326af7d07d8be7b2bc625fa`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
+	-	`sha256:ec662ea07a82b27e1eef9aeb3a5217f0cd16e558d63f2c56204bd339222bec3f`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -457,7 +457,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:2.3.1`
 
 ```console
-$ docker pull couchdb@sha256:ef82b77dd5ffec80f154c203d7a96df6934baa423b2a8b9450df6fd692472075
+$ docker pull couchdb@sha256:c6f6416ed030337ee29dee22da77e80ebcff1bd44cc82bff29a37f46003fb247
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -468,105 +468,105 @@ $ docker pull couchdb@sha256:ef82b77dd5ffec80f154c203d7a96df6934baa423b2a8b9450d
 ### `couchdb:2.3.1` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:4eeba0428570ea0dc90d1cbf148454956052f314935d4c48208d32fc69cc9be5
+$ docker pull couchdb@sha256:a31f9981839e671f63f58e089e1785096ddd7c6d3e3b9d443bf792af305ef78f
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **82.4 MB (82401068 bytes)**  
+-	Total Size: **82.4 MB (82401141 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:493c01c773ded205388203a5eb88aad25eb14e3009066d49089f04d5d011007a`
+-	Image ID: `sha256:25cabb705e9a8664b0cbb323c579250016c500459ed2769db68cf545989f0874`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:35:21 GMT
-ADD file:f47757e25d3861a5c0180542919c21264323d4dace1f5a6761fc2f38b53a9003 in / 
-# Tue, 12 Jan 2021 00:35:21 GMT
+# Tue, 09 Feb 2021 02:23:30 GMT
+ADD file:da0c935ddc86ca9e44bdd5f61b46c7b43a115ee4bc356324265a7ad6323f61ae in / 
+# Tue, 09 Feb 2021 02:23:30 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:51:50 GMT
+# Tue, 09 Feb 2021 02:50:14 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:51:51 GMT
+# Tue, 09 Feb 2021 02:50:15 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:52:02 GMT
+# Tue, 09 Feb 2021 02:50:26 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:52:12 GMT
+# Tue, 09 Feb 2021 02:53:28 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:52:12 GMT
+# Tue, 09 Feb 2021 02:53:28 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:53:18 GMT
+# Tue, 09 Feb 2021 02:53:31 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:53:19 GMT
+# Tue, 09 Feb 2021 02:53:31 GMT
 ENV COUCHDB_VERSION=2.3.1
-# Tue, 12 Jan 2021 03:53:20 GMT
+# Tue, 09 Feb 2021 02:53:32 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb stretch main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:53:43 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~stretch     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:53:43 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 COPY --chown=couchdb:couchdbfile:74a26e2e31f9b408e93e4a065004a86e00211d06a4ce6ab1fbc23640bd92a929 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:53:44 GMT
+# Tue, 09 Feb 2021 02:53:54 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:53:44 GMT
+# Tue, 09 Feb 2021 02:53:55 GMT
 COPY file:a03eff89f810529ca878388de0c227b20fb661957d2117d1664d535138fc12e6 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:55 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:53:45 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:53:46 GMT
+# Tue, 09 Feb 2021 02:53:56 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:8aff230071c97ddc86b6d29fbbb7a4caae7a0183a83f08aa5a06e69e26ce2c81`  
-		Last Modified: Tue, 12 Jan 2021 00:43:25 GMT  
-		Size: 22.5 MB (22528609 bytes)  
+	-	`sha256:cae7303ade7f17f84fe86b2a44880e9725cf7d6dcd17f79485360712b6af6dcd`  
+		Last Modified: Tue, 09 Feb 2021 02:29:36 GMT  
+		Size: 22.5 MB (22528600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:276e247f0cd63a1fe827f9b85dd8d969ae4d1dd8a33c60d314c097e1bb4653f0`  
-		Last Modified: Tue, 12 Jan 2021 03:54:49 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9f24c5543afbd66b0d5933bad0b68d6c3527e8e8147f6be98ed97e9dc6951a51`  
+		Last Modified: Tue, 09 Feb 2021 02:54:41 GMT  
+		Size: 3.4 KB (3413 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71b2066d261b6ece5cf40fbc6ccfb3c25564dd961837135be8e5b028fa8d4e50`  
-		Last Modified: Tue, 12 Jan 2021 03:54:50 GMT  
-		Size: 8.5 MB (8471914 bytes)  
+	-	`sha256:284ea757b0b914b9d0e87df91683ae2635e970d5d56b7527432c6a84f830dd7c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:42 GMT  
+		Size: 8.5 MB (8471960 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd4d1b0a4337f95727e774ed6509fdc16bdcc24fd85e81bb453517ae3d89f415`  
-		Last Modified: Tue, 12 Jan 2021 03:54:48 GMT  
-		Size: 1.2 MB (1190389 bytes)  
+	-	`sha256:e5516370f79e6879d9d93e2d9e737e64f857a7661b5fd7e36766130f7c1e6b25`  
+		Last Modified: Tue, 09 Feb 2021 02:54:41 GMT  
+		Size: 1.2 MB (1190431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83230eedf25eafa49423179d1d5fd973cf6027ef8eb030b39ee0c23fc96a3184`  
-		Last Modified: Tue, 12 Jan 2021 03:54:48 GMT  
-		Size: 3.1 KB (3061 bytes)  
+	-	`sha256:304b2c871bd8401e28233d77eba06efed9a22f5c284fd0629800cac068695a46`  
+		Last Modified: Tue, 09 Feb 2021 02:54:40 GMT  
+		Size: 3.1 KB (3055 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d50eec4085f700aaed8cb7583d1315eb10cef41023049268e061054320a38bd4`  
-		Last Modified: Tue, 12 Jan 2021 03:54:47 GMT  
-		Size: 224.0 B  
+	-	`sha256:eb9b604a874624e862870e1ece70a416f78eb6e481905f2ab516c68ed339ac9a`  
+		Last Modified: Tue, 09 Feb 2021 02:54:40 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3896d223e87c808c03543b6ec19d4eeb0bbe14a937800ab1248468bb7a3042cb`  
-		Last Modified: Tue, 12 Jan 2021 03:54:53 GMT  
-		Size: 50.2 MB (50200111 bytes)  
+	-	`sha256:779aced152fbb9dbcb384ac8ffce783b5b420f6a974ecc3ef9686f39ce6cbade`  
+		Last Modified: Tue, 09 Feb 2021 02:54:46 GMT  
+		Size: 50.2 MB (50200115 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9189261b9f49b6febe68dd585900c38a763d81895ddd4f82bd503f3c13d8d427`  
-		Last Modified: Tue, 12 Jan 2021 03:54:47 GMT  
+	-	`sha256:e1f43a813790d945f64e1caeab0dc01c907c0668b74007af141ff40e33f115cc`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
 		Size: 387.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0dd0e70fe85e2d846c9c55376f500be720da3f8468b20cb3507fabd4b47de552`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
-		Size: 768.0 B  
+	-	`sha256:b97299e0ececf1275904394f69397dbb398cd49e25613f3858de6e5344366e0a`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
+		Size: 766.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cf6aed357877fc58ba1cdfe094e75f8e8329175d6fea2c003abd24a973748f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
-		Size: 2.1 KB (2070 bytes)  
+	-	`sha256:31d7696050ae60ab83bf50b8846457f58abd17eae6231b0e356862e549fb768c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
+		Size: 2.1 KB (2068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b404ef974526a12ada33f0e265a832b6b77d5c0f326af7d07d8be7b2bc625fa`  
-		Last Modified: Tue, 12 Jan 2021 03:54:46 GMT  
+	-	`sha256:ec662ea07a82b27e1eef9aeb3a5217f0cd16e558d63f2c56204bd339222bec3f`  
+		Last Modified: Tue, 09 Feb 2021 02:54:39 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -678,7 +678,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:3`
 
 ```console
-$ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebedb4ca584287950
+$ docker pull couchdb@sha256:a54d8d2e6774c76ee2e9667ad2ddd5792b35d53bbc11cb3792b7378720c4758c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -690,106 +690,106 @@ $ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebed
 ### `couchdb:3` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:7e374287cfa1f7d4ce9bd70286f143f99aa2b67c4c762c28a1c09d2dbfc993ea
+$ docker pull couchdb@sha256:ea8924bf83475e1f5e74a69956551f04142f9a67777152bfede5005ed1dc53e8
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83352073 bytes)**  
+-	Total Size: **83.4 MB (83358736 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:65ce6e3f7fc66f50cb6acfc26a74ec2cf23d4ae741318fea21fe49214b0fde4d`
+-	Image ID: `sha256:c2999ad766151ef4c2e88bea2c373f6e8ad2be92c730e8cbf80b43ca6bfd9d25`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:32:51 GMT
-ADD file:422aca8901ae3d869a815051cea7f1e4c0204fad16884e7cd01da57d142f2e3a in / 
-# Tue, 12 Jan 2021 00:32:51 GMT
+# Tue, 09 Feb 2021 02:20:55 GMT
+ADD file:d5c41bfaf15180481d8606f50799297e3f49b8a258c7c2cd988ab2bf0013272d in / 
+# Tue, 09 Feb 2021 02:20:56 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:49:23 GMT
+# Tue, 09 Feb 2021 02:48:57 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:49:24 GMT
+# Tue, 09 Feb 2021 02:48:59 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:17 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:18 GMT
 ENV COUCHDB_VERSION=3.1.1
-# Tue, 12 Jan 2021 03:50:52 GMT
+# Tue, 09 Feb 2021 02:49:19 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb buster main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~buster     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:459581cb8ff69dbc1cb246db7b488d5b6127e57fcbb0d0df1288722b5cd25111 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:36 GMT
 COPY file:5f96ca1bf2f6f650a65a16c93abec310412df7ca501bf32df2ac20f99b1a0742 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:51:10 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:a076a628af6f7dcabc536bee373c0d9b48d9f0516788e64080c4e841746e6ce6`  
-		Last Modified: Tue, 12 Jan 2021 00:39:13 GMT  
-		Size: 27.1 MB (27108069 bytes)  
+	-	`sha256:45b42c59be334ecda0daaa139b2f7d310e45c564c5f12263b1b8e68ec9e810ed`  
+		Last Modified: Tue, 09 Feb 2021 02:26:39 GMT  
+		Size: 27.1 MB (27095142 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60d64397181ee91050f1762374def7688fa28fb694ebca9607b9a3aa6572354f`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9e373636a8de261ee740f13670af73cc344c95780af6594bbb88308e4fb80091`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 3.4 KB (3412 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76bde8705eb543fe6c86547d8d82bdad7e03cd0320b4bcc5c5467fcd20ccc7f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 6.7 MB (6669496 bytes)  
+	-	`sha256:52dbd9376ea8e36c10d7f12a0f3fa8f19519ed00d6d232d0a7e1ce7a93a951c1`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 6.7 MB (6689036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb9a606c61dbd6d0681e686307acfb5b6e6bcb485fc6b356eaa343345bf8bf5`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 1.2 MB (1192711 bytes)  
+	-	`sha256:79dbee4f36087ded83ba78b813259bfeec8cc68e806cd1fdd66b6224d193e504`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 1.2 MB (1192769 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eb1a1ddacf3c4338daf4eed21374c917616c024869366a44a751e6f928d9a4e`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.5 KB (2493 bytes)  
+	-	`sha256:d6b24ba904af958a0ec4a808b5eb8f86943eb4cb9c91cfaa9d7472a204e204ad`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 2.5 KB (2490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aeda1d5eae36c1bd6568e3b906ef6ca5ed27985a7af8c1057c35bfd3126ed74a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 227.0 B  
+	-	`sha256:a449f7cd6b7f7bcf74740aefa1fcad852f3c9ab3508bba67caa858b67d6b6667`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 224.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2cd25ac1f11f65d4adf8b07aa5c68003d5d0aad332d9f4de1c5794bc8d01d9c`  
-		Last Modified: Tue, 12 Jan 2021 03:54:17 GMT  
-		Size: 48.4 MB (48372335 bytes)  
+	-	`sha256:72706ac6450f6ff61016c297473dea8a08323c2427a5468fe8d26e88c123a57f`  
+		Last Modified: Tue, 09 Feb 2021 02:54:20 GMT  
+		Size: 48.4 MB (48372346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ce00a4cabfe9a6b357d6cdddb273bc5278fa186e57e03c993c24a7761db7c6a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 383.0 B  
+	-	`sha256:c1253ef63728f661bf7b982f405b091e456aff7d53ed12ddf2015f48306bf8dd`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 380.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f64ca45e2f7eea6fffc4e0a895ecc6e577d174f80605db75d40a7dd3ec790393`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 766.0 B  
+	-	`sha256:7c4dffd9881ef68e2748f51b2e7e95ecc022a52987ba1861bc1b1e3c7b8e3f8c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:15 GMT  
+		Size: 763.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6081e575864d56d24bb01a6060a7cdd1c7d76326419942b0c3629ec908c38bb`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.1 KB (2058 bytes)  
+	-	`sha256:6c55cf9ae0d60c91b586913d0da2573eee1b24d707798cd910b5e45ca9b7d323`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 2.1 KB (2056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6904a13f618518b1a0236409c8ae4e7181903606432c2a4624418ac7b53b3809`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 121.0 B  
+	-	`sha256:f663c6aa9b98941f7804f17f046df67cfd49f3e1cfd69bad472b13f6bc880181`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 118.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `couchdb:3` - linux; arm64 variant v8
@@ -1005,7 +1005,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:3.0`
 
 ```console
-$ docker pull couchdb@sha256:b55253cd9e7ee4074a3a4118257bf9978821b531f77bbb3e858e166455c785fd
+$ docker pull couchdb@sha256:c8e1c931facd2ce40f85b7510b11470c5b41ac714aa1e6969521299f37ef7cb1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1017,106 +1017,106 @@ $ docker pull couchdb@sha256:b55253cd9e7ee4074a3a4118257bf9978821b531f77bbb3e858
 ### `couchdb:3.0` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:14299273fffef70621d4cf2c2300cb8df29a4e92d929c9f1d731124d87a228ec
+$ docker pull couchdb@sha256:e9636fdccd4228d9291a44e8ae84b603fbd656f600292b757a18ee31fa1b0a80
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.2 MB (83209548 bytes)**  
+-	Total Size: **83.2 MB (83216350 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:208bc68637a5b3e7feb35a7742dc9a5ea3d5a2981a3fa832844db3ed8c5ec230`
+-	Image ID: `sha256:6dedea16d1c70f99fd637a246375e87e86e130448d0b78fe70c903dc1868eca7`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:32:51 GMT
-ADD file:422aca8901ae3d869a815051cea7f1e4c0204fad16884e7cd01da57d142f2e3a in / 
-# Tue, 12 Jan 2021 00:32:51 GMT
+# Tue, 09 Feb 2021 02:20:55 GMT
+ADD file:d5c41bfaf15180481d8606f50799297e3f49b8a258c7c2cd988ab2bf0013272d in / 
+# Tue, 09 Feb 2021 02:20:56 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:49:23 GMT
+# Tue, 09 Feb 2021 02:48:57 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:49:24 GMT
+# Tue, 09 Feb 2021 02:48:59 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:17 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:51:25 GMT
+# Tue, 09 Feb 2021 02:49:44 GMT
 ENV COUCHDB_VERSION=3.0.1
-# Tue, 12 Jan 2021 03:51:26 GMT
+# Tue, 09 Feb 2021 02:49:45 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb buster main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:51:43 GMT
+# Tue, 09 Feb 2021 02:50:03 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~buster     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:51:44 GMT
+# Tue, 09 Feb 2021 02:50:04 GMT
 COPY --chown=couchdb:couchdbfile:459581cb8ff69dbc1cb246db7b488d5b6127e57fcbb0d0df1288722b5cd25111 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:51:44 GMT
+# Tue, 09 Feb 2021 02:50:04 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:51:44 GMT
+# Tue, 09 Feb 2021 02:50:04 GMT
 COPY file:5f96ca1bf2f6f650a65a16c93abec310412df7ca501bf32df2ac20f99b1a0742 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:51:45 GMT
+# Tue, 09 Feb 2021 02:50:05 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:05 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:05 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:06 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:06 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:a076a628af6f7dcabc536bee373c0d9b48d9f0516788e64080c4e841746e6ce6`  
-		Last Modified: Tue, 12 Jan 2021 00:39:13 GMT  
-		Size: 27.1 MB (27108069 bytes)  
+	-	`sha256:45b42c59be334ecda0daaa139b2f7d310e45c564c5f12263b1b8e68ec9e810ed`  
+		Last Modified: Tue, 09 Feb 2021 02:26:39 GMT  
+		Size: 27.1 MB (27095142 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60d64397181ee91050f1762374def7688fa28fb694ebca9607b9a3aa6572354f`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9e373636a8de261ee740f13670af73cc344c95780af6594bbb88308e4fb80091`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 3.4 KB (3412 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76bde8705eb543fe6c86547d8d82bdad7e03cd0320b4bcc5c5467fcd20ccc7f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 6.7 MB (6669496 bytes)  
+	-	`sha256:52dbd9376ea8e36c10d7f12a0f3fa8f19519ed00d6d232d0a7e1ce7a93a951c1`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 6.7 MB (6689036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb9a606c61dbd6d0681e686307acfb5b6e6bcb485fc6b356eaa343345bf8bf5`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 1.2 MB (1192711 bytes)  
+	-	`sha256:79dbee4f36087ded83ba78b813259bfeec8cc68e806cd1fdd66b6224d193e504`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 1.2 MB (1192769 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eb1a1ddacf3c4338daf4eed21374c917616c024869366a44a751e6f928d9a4e`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.5 KB (2493 bytes)  
+	-	`sha256:d6b24ba904af958a0ec4a808b5eb8f86943eb4cb9c91cfaa9d7472a204e204ad`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 2.5 KB (2490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:37f6d8a1e69cb734127ef8e2f1e583eb1897afdd9417ff386052be6638c50f17`  
-		Last Modified: Tue, 12 Jan 2021 03:54:33 GMT  
-		Size: 224.0 B  
+	-	`sha256:ed9533075ff96caacf0c57da5ad72d54e9087e973fae30cd733db1483cf212b2`  
+		Last Modified: Tue, 09 Feb 2021 02:54:29 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f9b966e7658128aa8967b1a7e46e8b4168f87665da1997827e7085661bdb424c`  
-		Last Modified: Tue, 12 Jan 2021 03:54:37 GMT  
-		Size: 48.2 MB (48229815 bytes)  
+	-	`sha256:f8eab3c30d138f97ba72527cfa47fa3381c392ead7ec6a1e1d7efb552e09ba08`  
+		Last Modified: Tue, 09 Feb 2021 02:54:34 GMT  
+		Size: 48.2 MB (48229954 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30dbf89c4c399d8ab508357d9d769cca701354b62afdace374f340b7fa9321ae`  
-		Last Modified: Tue, 12 Jan 2021 03:54:30 GMT  
-		Size: 381.0 B  
+	-	`sha256:aeba70f1a1fb5b2663bd240d7691c29bafc4be22d3d3aefd65395d651be8e7db`  
+		Last Modified: Tue, 09 Feb 2021 02:54:28 GMT  
+		Size: 382.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ab0a745a988bd2d9abf9852a5088a52a485d0b7cdf98170ecfc7173de0c94f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:30 GMT  
-		Size: 767.0 B  
+	-	`sha256:69206076b0c80e4cd0faacbb7b84bf1d86b046a5d611281c4b88def272622b67`  
+		Last Modified: Tue, 09 Feb 2021 02:54:28 GMT  
+		Size: 765.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d87fa0cc8a5f8e7898806c93a106b40ec41eb1c0fe15a9d280982c08f4d1f07`  
-		Last Modified: Tue, 12 Jan 2021 03:54:31 GMT  
-		Size: 2.1 KB (2058 bytes)  
+	-	`sha256:812ac9ee977bbc9ffe2e1a9164aca3481806783fc7a9dd2cc10127fcf3673eea`  
+		Last Modified: Tue, 09 Feb 2021 02:54:29 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50a5c1d8eb23b4ef8d4ff616463016e77a52f2cc56110cd136dfd10cb22fa49d`  
-		Last Modified: Tue, 12 Jan 2021 03:54:34 GMT  
-		Size: 120.0 B  
+	-	`sha256:b34a8ea8be6d0ef25e74c9a48c2f319ecb33b83174321049f62b616831635b8c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:28 GMT  
+		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `couchdb:3.0` - linux; arm64 variant v8
@@ -1332,7 +1332,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:3.0.1`
 
 ```console
-$ docker pull couchdb@sha256:b55253cd9e7ee4074a3a4118257bf9978821b531f77bbb3e858e166455c785fd
+$ docker pull couchdb@sha256:c8e1c931facd2ce40f85b7510b11470c5b41ac714aa1e6969521299f37ef7cb1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1344,106 +1344,106 @@ $ docker pull couchdb@sha256:b55253cd9e7ee4074a3a4118257bf9978821b531f77bbb3e858
 ### `couchdb:3.0.1` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:14299273fffef70621d4cf2c2300cb8df29a4e92d929c9f1d731124d87a228ec
+$ docker pull couchdb@sha256:e9636fdccd4228d9291a44e8ae84b603fbd656f600292b757a18ee31fa1b0a80
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.2 MB (83209548 bytes)**  
+-	Total Size: **83.2 MB (83216350 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:208bc68637a5b3e7feb35a7742dc9a5ea3d5a2981a3fa832844db3ed8c5ec230`
+-	Image ID: `sha256:6dedea16d1c70f99fd637a246375e87e86e130448d0b78fe70c903dc1868eca7`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:32:51 GMT
-ADD file:422aca8901ae3d869a815051cea7f1e4c0204fad16884e7cd01da57d142f2e3a in / 
-# Tue, 12 Jan 2021 00:32:51 GMT
+# Tue, 09 Feb 2021 02:20:55 GMT
+ADD file:d5c41bfaf15180481d8606f50799297e3f49b8a258c7c2cd988ab2bf0013272d in / 
+# Tue, 09 Feb 2021 02:20:56 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:49:23 GMT
+# Tue, 09 Feb 2021 02:48:57 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:49:24 GMT
+# Tue, 09 Feb 2021 02:48:59 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:17 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:51:25 GMT
+# Tue, 09 Feb 2021 02:49:44 GMT
 ENV COUCHDB_VERSION=3.0.1
-# Tue, 12 Jan 2021 03:51:26 GMT
+# Tue, 09 Feb 2021 02:49:45 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb buster main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:51:43 GMT
+# Tue, 09 Feb 2021 02:50:03 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~buster     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:51:44 GMT
+# Tue, 09 Feb 2021 02:50:04 GMT
 COPY --chown=couchdb:couchdbfile:459581cb8ff69dbc1cb246db7b488d5b6127e57fcbb0d0df1288722b5cd25111 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:51:44 GMT
+# Tue, 09 Feb 2021 02:50:04 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:51:44 GMT
+# Tue, 09 Feb 2021 02:50:04 GMT
 COPY file:5f96ca1bf2f6f650a65a16c93abec310412df7ca501bf32df2ac20f99b1a0742 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:51:45 GMT
+# Tue, 09 Feb 2021 02:50:05 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:05 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:05 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:06 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:51:46 GMT
+# Tue, 09 Feb 2021 02:50:06 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:a076a628af6f7dcabc536bee373c0d9b48d9f0516788e64080c4e841746e6ce6`  
-		Last Modified: Tue, 12 Jan 2021 00:39:13 GMT  
-		Size: 27.1 MB (27108069 bytes)  
+	-	`sha256:45b42c59be334ecda0daaa139b2f7d310e45c564c5f12263b1b8e68ec9e810ed`  
+		Last Modified: Tue, 09 Feb 2021 02:26:39 GMT  
+		Size: 27.1 MB (27095142 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60d64397181ee91050f1762374def7688fa28fb694ebca9607b9a3aa6572354f`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9e373636a8de261ee740f13670af73cc344c95780af6594bbb88308e4fb80091`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 3.4 KB (3412 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76bde8705eb543fe6c86547d8d82bdad7e03cd0320b4bcc5c5467fcd20ccc7f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 6.7 MB (6669496 bytes)  
+	-	`sha256:52dbd9376ea8e36c10d7f12a0f3fa8f19519ed00d6d232d0a7e1ce7a93a951c1`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 6.7 MB (6689036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb9a606c61dbd6d0681e686307acfb5b6e6bcb485fc6b356eaa343345bf8bf5`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 1.2 MB (1192711 bytes)  
+	-	`sha256:79dbee4f36087ded83ba78b813259bfeec8cc68e806cd1fdd66b6224d193e504`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 1.2 MB (1192769 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eb1a1ddacf3c4338daf4eed21374c917616c024869366a44a751e6f928d9a4e`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.5 KB (2493 bytes)  
+	-	`sha256:d6b24ba904af958a0ec4a808b5eb8f86943eb4cb9c91cfaa9d7472a204e204ad`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 2.5 KB (2490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:37f6d8a1e69cb734127ef8e2f1e583eb1897afdd9417ff386052be6638c50f17`  
-		Last Modified: Tue, 12 Jan 2021 03:54:33 GMT  
-		Size: 224.0 B  
+	-	`sha256:ed9533075ff96caacf0c57da5ad72d54e9087e973fae30cd733db1483cf212b2`  
+		Last Modified: Tue, 09 Feb 2021 02:54:29 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f9b966e7658128aa8967b1a7e46e8b4168f87665da1997827e7085661bdb424c`  
-		Last Modified: Tue, 12 Jan 2021 03:54:37 GMT  
-		Size: 48.2 MB (48229815 bytes)  
+	-	`sha256:f8eab3c30d138f97ba72527cfa47fa3381c392ead7ec6a1e1d7efb552e09ba08`  
+		Last Modified: Tue, 09 Feb 2021 02:54:34 GMT  
+		Size: 48.2 MB (48229954 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30dbf89c4c399d8ab508357d9d769cca701354b62afdace374f340b7fa9321ae`  
-		Last Modified: Tue, 12 Jan 2021 03:54:30 GMT  
-		Size: 381.0 B  
+	-	`sha256:aeba70f1a1fb5b2663bd240d7691c29bafc4be22d3d3aefd65395d651be8e7db`  
+		Last Modified: Tue, 09 Feb 2021 02:54:28 GMT  
+		Size: 382.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ab0a745a988bd2d9abf9852a5088a52a485d0b7cdf98170ecfc7173de0c94f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:30 GMT  
-		Size: 767.0 B  
+	-	`sha256:69206076b0c80e4cd0faacbb7b84bf1d86b046a5d611281c4b88def272622b67`  
+		Last Modified: Tue, 09 Feb 2021 02:54:28 GMT  
+		Size: 765.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d87fa0cc8a5f8e7898806c93a106b40ec41eb1c0fe15a9d280982c08f4d1f07`  
-		Last Modified: Tue, 12 Jan 2021 03:54:31 GMT  
-		Size: 2.1 KB (2058 bytes)  
+	-	`sha256:812ac9ee977bbc9ffe2e1a9164aca3481806783fc7a9dd2cc10127fcf3673eea`  
+		Last Modified: Tue, 09 Feb 2021 02:54:29 GMT  
+		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50a5c1d8eb23b4ef8d4ff616463016e77a52f2cc56110cd136dfd10cb22fa49d`  
-		Last Modified: Tue, 12 Jan 2021 03:54:34 GMT  
-		Size: 120.0 B  
+	-	`sha256:b34a8ea8be6d0ef25e74c9a48c2f319ecb33b83174321049f62b616831635b8c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:28 GMT  
+		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `couchdb:3.0.1` - linux; arm64 variant v8
@@ -1659,7 +1659,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:3.1`
 
 ```console
-$ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebedb4ca584287950
+$ docker pull couchdb@sha256:a54d8d2e6774c76ee2e9667ad2ddd5792b35d53bbc11cb3792b7378720c4758c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1671,106 +1671,106 @@ $ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebed
 ### `couchdb:3.1` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:7e374287cfa1f7d4ce9bd70286f143f99aa2b67c4c762c28a1c09d2dbfc993ea
+$ docker pull couchdb@sha256:ea8924bf83475e1f5e74a69956551f04142f9a67777152bfede5005ed1dc53e8
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83352073 bytes)**  
+-	Total Size: **83.4 MB (83358736 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:65ce6e3f7fc66f50cb6acfc26a74ec2cf23d4ae741318fea21fe49214b0fde4d`
+-	Image ID: `sha256:c2999ad766151ef4c2e88bea2c373f6e8ad2be92c730e8cbf80b43ca6bfd9d25`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:32:51 GMT
-ADD file:422aca8901ae3d869a815051cea7f1e4c0204fad16884e7cd01da57d142f2e3a in / 
-# Tue, 12 Jan 2021 00:32:51 GMT
+# Tue, 09 Feb 2021 02:20:55 GMT
+ADD file:d5c41bfaf15180481d8606f50799297e3f49b8a258c7c2cd988ab2bf0013272d in / 
+# Tue, 09 Feb 2021 02:20:56 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:49:23 GMT
+# Tue, 09 Feb 2021 02:48:57 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:49:24 GMT
+# Tue, 09 Feb 2021 02:48:59 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:17 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:18 GMT
 ENV COUCHDB_VERSION=3.1.1
-# Tue, 12 Jan 2021 03:50:52 GMT
+# Tue, 09 Feb 2021 02:49:19 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb buster main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~buster     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:459581cb8ff69dbc1cb246db7b488d5b6127e57fcbb0d0df1288722b5cd25111 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:36 GMT
 COPY file:5f96ca1bf2f6f650a65a16c93abec310412df7ca501bf32df2ac20f99b1a0742 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:51:10 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:a076a628af6f7dcabc536bee373c0d9b48d9f0516788e64080c4e841746e6ce6`  
-		Last Modified: Tue, 12 Jan 2021 00:39:13 GMT  
-		Size: 27.1 MB (27108069 bytes)  
+	-	`sha256:45b42c59be334ecda0daaa139b2f7d310e45c564c5f12263b1b8e68ec9e810ed`  
+		Last Modified: Tue, 09 Feb 2021 02:26:39 GMT  
+		Size: 27.1 MB (27095142 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60d64397181ee91050f1762374def7688fa28fb694ebca9607b9a3aa6572354f`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9e373636a8de261ee740f13670af73cc344c95780af6594bbb88308e4fb80091`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 3.4 KB (3412 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76bde8705eb543fe6c86547d8d82bdad7e03cd0320b4bcc5c5467fcd20ccc7f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 6.7 MB (6669496 bytes)  
+	-	`sha256:52dbd9376ea8e36c10d7f12a0f3fa8f19519ed00d6d232d0a7e1ce7a93a951c1`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 6.7 MB (6689036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb9a606c61dbd6d0681e686307acfb5b6e6bcb485fc6b356eaa343345bf8bf5`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 1.2 MB (1192711 bytes)  
+	-	`sha256:79dbee4f36087ded83ba78b813259bfeec8cc68e806cd1fdd66b6224d193e504`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 1.2 MB (1192769 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eb1a1ddacf3c4338daf4eed21374c917616c024869366a44a751e6f928d9a4e`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.5 KB (2493 bytes)  
+	-	`sha256:d6b24ba904af958a0ec4a808b5eb8f86943eb4cb9c91cfaa9d7472a204e204ad`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 2.5 KB (2490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aeda1d5eae36c1bd6568e3b906ef6ca5ed27985a7af8c1057c35bfd3126ed74a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 227.0 B  
+	-	`sha256:a449f7cd6b7f7bcf74740aefa1fcad852f3c9ab3508bba67caa858b67d6b6667`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 224.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2cd25ac1f11f65d4adf8b07aa5c68003d5d0aad332d9f4de1c5794bc8d01d9c`  
-		Last Modified: Tue, 12 Jan 2021 03:54:17 GMT  
-		Size: 48.4 MB (48372335 bytes)  
+	-	`sha256:72706ac6450f6ff61016c297473dea8a08323c2427a5468fe8d26e88c123a57f`  
+		Last Modified: Tue, 09 Feb 2021 02:54:20 GMT  
+		Size: 48.4 MB (48372346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ce00a4cabfe9a6b357d6cdddb273bc5278fa186e57e03c993c24a7761db7c6a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 383.0 B  
+	-	`sha256:c1253ef63728f661bf7b982f405b091e456aff7d53ed12ddf2015f48306bf8dd`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 380.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f64ca45e2f7eea6fffc4e0a895ecc6e577d174f80605db75d40a7dd3ec790393`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 766.0 B  
+	-	`sha256:7c4dffd9881ef68e2748f51b2e7e95ecc022a52987ba1861bc1b1e3c7b8e3f8c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:15 GMT  
+		Size: 763.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6081e575864d56d24bb01a6060a7cdd1c7d76326419942b0c3629ec908c38bb`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.1 KB (2058 bytes)  
+	-	`sha256:6c55cf9ae0d60c91b586913d0da2573eee1b24d707798cd910b5e45ca9b7d323`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 2.1 KB (2056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6904a13f618518b1a0236409c8ae4e7181903606432c2a4624418ac7b53b3809`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 121.0 B  
+	-	`sha256:f663c6aa9b98941f7804f17f046df67cfd49f3e1cfd69bad472b13f6bc880181`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 118.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `couchdb:3.1` - linux; arm64 variant v8
@@ -1986,7 +1986,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:3.1.1`
 
 ```console
-$ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebedb4ca584287950
+$ docker pull couchdb@sha256:a54d8d2e6774c76ee2e9667ad2ddd5792b35d53bbc11cb3792b7378720c4758c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1998,106 +1998,106 @@ $ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebed
 ### `couchdb:3.1.1` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:7e374287cfa1f7d4ce9bd70286f143f99aa2b67c4c762c28a1c09d2dbfc993ea
+$ docker pull couchdb@sha256:ea8924bf83475e1f5e74a69956551f04142f9a67777152bfede5005ed1dc53e8
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83352073 bytes)**  
+-	Total Size: **83.4 MB (83358736 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:65ce6e3f7fc66f50cb6acfc26a74ec2cf23d4ae741318fea21fe49214b0fde4d`
+-	Image ID: `sha256:c2999ad766151ef4c2e88bea2c373f6e8ad2be92c730e8cbf80b43ca6bfd9d25`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:32:51 GMT
-ADD file:422aca8901ae3d869a815051cea7f1e4c0204fad16884e7cd01da57d142f2e3a in / 
-# Tue, 12 Jan 2021 00:32:51 GMT
+# Tue, 09 Feb 2021 02:20:55 GMT
+ADD file:d5c41bfaf15180481d8606f50799297e3f49b8a258c7c2cd988ab2bf0013272d in / 
+# Tue, 09 Feb 2021 02:20:56 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:49:23 GMT
+# Tue, 09 Feb 2021 02:48:57 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:49:24 GMT
+# Tue, 09 Feb 2021 02:48:59 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:17 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:18 GMT
 ENV COUCHDB_VERSION=3.1.1
-# Tue, 12 Jan 2021 03:50:52 GMT
+# Tue, 09 Feb 2021 02:49:19 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb buster main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~buster     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:459581cb8ff69dbc1cb246db7b488d5b6127e57fcbb0d0df1288722b5cd25111 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:36 GMT
 COPY file:5f96ca1bf2f6f650a65a16c93abec310412df7ca501bf32df2ac20f99b1a0742 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:51:10 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:a076a628af6f7dcabc536bee373c0d9b48d9f0516788e64080c4e841746e6ce6`  
-		Last Modified: Tue, 12 Jan 2021 00:39:13 GMT  
-		Size: 27.1 MB (27108069 bytes)  
+	-	`sha256:45b42c59be334ecda0daaa139b2f7d310e45c564c5f12263b1b8e68ec9e810ed`  
+		Last Modified: Tue, 09 Feb 2021 02:26:39 GMT  
+		Size: 27.1 MB (27095142 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60d64397181ee91050f1762374def7688fa28fb694ebca9607b9a3aa6572354f`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9e373636a8de261ee740f13670af73cc344c95780af6594bbb88308e4fb80091`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 3.4 KB (3412 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76bde8705eb543fe6c86547d8d82bdad7e03cd0320b4bcc5c5467fcd20ccc7f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 6.7 MB (6669496 bytes)  
+	-	`sha256:52dbd9376ea8e36c10d7f12a0f3fa8f19519ed00d6d232d0a7e1ce7a93a951c1`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 6.7 MB (6689036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb9a606c61dbd6d0681e686307acfb5b6e6bcb485fc6b356eaa343345bf8bf5`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 1.2 MB (1192711 bytes)  
+	-	`sha256:79dbee4f36087ded83ba78b813259bfeec8cc68e806cd1fdd66b6224d193e504`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 1.2 MB (1192769 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eb1a1ddacf3c4338daf4eed21374c917616c024869366a44a751e6f928d9a4e`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.5 KB (2493 bytes)  
+	-	`sha256:d6b24ba904af958a0ec4a808b5eb8f86943eb4cb9c91cfaa9d7472a204e204ad`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 2.5 KB (2490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aeda1d5eae36c1bd6568e3b906ef6ca5ed27985a7af8c1057c35bfd3126ed74a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 227.0 B  
+	-	`sha256:a449f7cd6b7f7bcf74740aefa1fcad852f3c9ab3508bba67caa858b67d6b6667`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 224.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2cd25ac1f11f65d4adf8b07aa5c68003d5d0aad332d9f4de1c5794bc8d01d9c`  
-		Last Modified: Tue, 12 Jan 2021 03:54:17 GMT  
-		Size: 48.4 MB (48372335 bytes)  
+	-	`sha256:72706ac6450f6ff61016c297473dea8a08323c2427a5468fe8d26e88c123a57f`  
+		Last Modified: Tue, 09 Feb 2021 02:54:20 GMT  
+		Size: 48.4 MB (48372346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ce00a4cabfe9a6b357d6cdddb273bc5278fa186e57e03c993c24a7761db7c6a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 383.0 B  
+	-	`sha256:c1253ef63728f661bf7b982f405b091e456aff7d53ed12ddf2015f48306bf8dd`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 380.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f64ca45e2f7eea6fffc4e0a895ecc6e577d174f80605db75d40a7dd3ec790393`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 766.0 B  
+	-	`sha256:7c4dffd9881ef68e2748f51b2e7e95ecc022a52987ba1861bc1b1e3c7b8e3f8c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:15 GMT  
+		Size: 763.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6081e575864d56d24bb01a6060a7cdd1c7d76326419942b0c3629ec908c38bb`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.1 KB (2058 bytes)  
+	-	`sha256:6c55cf9ae0d60c91b586913d0da2573eee1b24d707798cd910b5e45ca9b7d323`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 2.1 KB (2056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6904a13f618518b1a0236409c8ae4e7181903606432c2a4624418ac7b53b3809`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 121.0 B  
+	-	`sha256:f663c6aa9b98941f7804f17f046df67cfd49f3e1cfd69bad472b13f6bc880181`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 118.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `couchdb:3.1.1` - linux; arm64 variant v8
@@ -2313,7 +2313,7 @@ CMD ["/opt/couchdb/bin/couchdb"]
 ## `couchdb:latest`
 
 ```console
-$ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebedb4ca584287950
+$ docker pull couchdb@sha256:a54d8d2e6774c76ee2e9667ad2ddd5792b35d53bbc11cb3792b7378720c4758c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2325,106 +2325,106 @@ $ docker pull couchdb@sha256:9c8aa0cf9e8029f1162fb467054d23f7b6ea7d1918b181eebed
 ### `couchdb:latest` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:7e374287cfa1f7d4ce9bd70286f143f99aa2b67c4c762c28a1c09d2dbfc993ea
+$ docker pull couchdb@sha256:ea8924bf83475e1f5e74a69956551f04142f9a67777152bfede5005ed1dc53e8
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83352073 bytes)**  
+-	Total Size: **83.4 MB (83358736 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:65ce6e3f7fc66f50cb6acfc26a74ec2cf23d4ae741318fea21fe49214b0fde4d`
+-	Image ID: `sha256:c2999ad766151ef4c2e88bea2c373f6e8ad2be92c730e8cbf80b43ca6bfd9d25`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 12 Jan 2021 00:32:51 GMT
-ADD file:422aca8901ae3d869a815051cea7f1e4c0204fad16884e7cd01da57d142f2e3a in / 
-# Tue, 12 Jan 2021 00:32:51 GMT
+# Tue, 09 Feb 2021 02:20:55 GMT
+ADD file:d5c41bfaf15180481d8606f50799297e3f49b8a258c7c2cd988ab2bf0013272d in / 
+# Tue, 09 Feb 2021 02:20:56 GMT
 CMD ["bash"]
-# Tue, 12 Jan 2021 03:49:23 GMT
+# Tue, 09 Feb 2021 02:48:57 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Tue, 12 Jan 2021 03:49:24 GMT
+# Tue, 09 Feb 2021 02:48:59 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 RUN set -ex;     apt-get update;     apt-get install -y --no-install-recommends         apt-transport-https         ca-certificates         dirmngr         gnupg      ;     rm -rf /var/lib/apt/lists/*
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV GOSU_VERSION=1.11
-# Tue, 12 Jan 2021 03:49:33 GMT
+# Tue, 09 Feb 2021 02:49:08 GMT
 ENV TINI_VERSION=0.18.0
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends wget;     rm -rf /var/lib/apt/lists/*;         dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')";         wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch";     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;     done;     gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu;     rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc;     chmod +x /usr/local/bin/gosu;     gosu nobody true;         wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch";     wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc";     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do     gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;     done;     gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;     rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc;     chmod +x /usr/local/bin/tini;     apt-get purge -y --auto-remove wget;     tini --version
-# Tue, 12 Jan 2021 03:49:39 GMT
+# Tue, 09 Feb 2021 02:49:16 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:17 GMT
 RUN set -xe;     export GNUPGHOME="$(mktemp -d)";     echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;     for server in $(shuf -e pgpkeys.mit.edu         ha.pool.sks-keyservers.net         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;     done;     gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;     command -v gpgconf && gpgconf --kill all || :;     rm -rf "$GNUPGHOME";     apt-key list
-# Tue, 12 Jan 2021 03:50:51 GMT
+# Tue, 09 Feb 2021 02:49:18 GMT
 ENV COUCHDB_VERSION=3.1.1
-# Tue, 12 Jan 2021 03:50:52 GMT
+# Tue, 09 Feb 2021 02:49:19 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb buster main" > /etc/apt/sources.list.d/couchdb.list
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 RUN set -xe;     apt-get update;         echo "couchdb couchdb/mode select none" | debconf-set-selections;     DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages             couchdb="$COUCHDB_VERSION"~buster     ;     rmdir /var/lib/couchdb /var/log/couchdb;     rm /opt/couchdb/data /opt/couchdb/var/log;     mkdir -p /opt/couchdb/data /opt/couchdb/var/log;     chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;     chmod 777 /opt/couchdb/data /opt/couchdb/var/log;     rm /opt/couchdb/etc/default.d/10-filelog.ini;     find /opt/couchdb \! \( -user couchdb -group couchdb \) -exec chown -f couchdb:couchdb '{}' +;     find /opt/couchdb/etc -type d ! -perm 0755 -exec chmod -f 0755 '{}' +;     find /opt/couchdb/etc -type f ! -perm 0644 -exec chmod -f 0644 '{}' +;     chmod -f 0777 /opt/couchdb/etc/local.d;     rm -rf /var/lib/apt/lists/*;
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:459581cb8ff69dbc1cb246db7b488d5b6127e57fcbb0d0df1288722b5cd25111 in /opt/couchdb/etc/default.d/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:35 GMT
 COPY --chown=couchdb:couchdbfile:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Tue, 12 Jan 2021 03:51:09 GMT
+# Tue, 09 Feb 2021 02:49:36 GMT
 COPY file:5f96ca1bf2f6f650a65a16c93abec310412df7ca501bf32df2ac20f99b1a0742 in /usr/local/bin 
-# Tue, 12 Jan 2021 03:51:10 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 VOLUME [/opt/couchdb/data]
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 EXPOSE 4369 5984 9100
-# Tue, 12 Jan 2021 03:51:11 GMT
+# Tue, 09 Feb 2021 02:49:37 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:a076a628af6f7dcabc536bee373c0d9b48d9f0516788e64080c4e841746e6ce6`  
-		Last Modified: Tue, 12 Jan 2021 00:39:13 GMT  
-		Size: 27.1 MB (27108069 bytes)  
+	-	`sha256:45b42c59be334ecda0daaa139b2f7d310e45c564c5f12263b1b8e68ec9e810ed`  
+		Last Modified: Tue, 09 Feb 2021 02:26:39 GMT  
+		Size: 27.1 MB (27095142 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60d64397181ee91050f1762374def7688fa28fb694ebca9607b9a3aa6572354f`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 3.4 KB (3414 bytes)  
+	-	`sha256:9e373636a8de261ee740f13670af73cc344c95780af6594bbb88308e4fb80091`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 3.4 KB (3412 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76bde8705eb543fe6c86547d8d82bdad7e03cd0320b4bcc5c5467fcd20ccc7f7`  
-		Last Modified: Tue, 12 Jan 2021 03:54:15 GMT  
-		Size: 6.7 MB (6669496 bytes)  
+	-	`sha256:52dbd9376ea8e36c10d7f12a0f3fa8f19519ed00d6d232d0a7e1ce7a93a951c1`  
+		Last Modified: Tue, 09 Feb 2021 02:54:17 GMT  
+		Size: 6.7 MB (6689036 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fb9a606c61dbd6d0681e686307acfb5b6e6bcb485fc6b356eaa343345bf8bf5`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 1.2 MB (1192711 bytes)  
+	-	`sha256:79dbee4f36087ded83ba78b813259bfeec8cc68e806cd1fdd66b6224d193e504`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 1.2 MB (1192769 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eb1a1ddacf3c4338daf4eed21374c917616c024869366a44a751e6f928d9a4e`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.5 KB (2493 bytes)  
+	-	`sha256:d6b24ba904af958a0ec4a808b5eb8f86943eb4cb9c91cfaa9d7472a204e204ad`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 2.5 KB (2490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aeda1d5eae36c1bd6568e3b906ef6ca5ed27985a7af8c1057c35bfd3126ed74a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 227.0 B  
+	-	`sha256:a449f7cd6b7f7bcf74740aefa1fcad852f3c9ab3508bba67caa858b67d6b6667`  
+		Last Modified: Tue, 09 Feb 2021 02:54:16 GMT  
+		Size: 224.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2cd25ac1f11f65d4adf8b07aa5c68003d5d0aad332d9f4de1c5794bc8d01d9c`  
-		Last Modified: Tue, 12 Jan 2021 03:54:17 GMT  
-		Size: 48.4 MB (48372335 bytes)  
+	-	`sha256:72706ac6450f6ff61016c297473dea8a08323c2427a5468fe8d26e88c123a57f`  
+		Last Modified: Tue, 09 Feb 2021 02:54:20 GMT  
+		Size: 48.4 MB (48372346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ce00a4cabfe9a6b357d6cdddb273bc5278fa186e57e03c993c24a7761db7c6a`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 383.0 B  
+	-	`sha256:c1253ef63728f661bf7b982f405b091e456aff7d53ed12ddf2015f48306bf8dd`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 380.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f64ca45e2f7eea6fffc4e0a895ecc6e577d174f80605db75d40a7dd3ec790393`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 766.0 B  
+	-	`sha256:7c4dffd9881ef68e2748f51b2e7e95ecc022a52987ba1861bc1b1e3c7b8e3f8c`  
+		Last Modified: Tue, 09 Feb 2021 02:54:15 GMT  
+		Size: 763.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6081e575864d56d24bb01a6060a7cdd1c7d76326419942b0c3629ec908c38bb`  
-		Last Modified: Tue, 12 Jan 2021 03:54:12 GMT  
-		Size: 2.1 KB (2058 bytes)  
+	-	`sha256:6c55cf9ae0d60c91b586913d0da2573eee1b24d707798cd910b5e45ca9b7d323`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 2.1 KB (2056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6904a13f618518b1a0236409c8ae4e7181903606432c2a4624418ac7b53b3809`  
-		Last Modified: Tue, 12 Jan 2021 03:54:10 GMT  
-		Size: 121.0 B  
+	-	`sha256:f663c6aa9b98941f7804f17f046df67cfd49f3e1cfd69bad472b13f6bc880181`  
+		Last Modified: Tue, 09 Feb 2021 02:54:14 GMT  
+		Size: 118.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `couchdb:latest` - linux; arm64 variant v8
