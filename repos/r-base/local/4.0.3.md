@@ -86,19 +86,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.1.18
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.18.dsc' apt_2.1.18.dsc 2784 SHA256:0aaef5cc2260d31d2415fcf5aaa3fdfacf882b2771e234ab2235998a0fefb2ec
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.1.18.tar.xz' apt_2.1.18.tar.xz 2192808 SHA256:224ade1bc189303b0620c55ac278cb419fdff7693765e6e864f82cf73bd3c766
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.1.18/
 
-- https://sources.debian.net/src/apt/2.1.18/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.1.18/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.1.18/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-6`
 
@@ -192,19 +186,13 @@ Licenses: (parsed from: `/usr/share/doc/base-passwd/copyright`)
 - `GPL-2`
 - `PD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-passwd=3.5.48
-'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.5.48.dsc' base-passwd_3.5.48.dsc 1757 SHA256:846789aa0586335f225865ba0c025544adbdb46c1f31596da9755cbf407a316e
-'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.5.48.tar.xz' base-passwd_3.5.48.tar.xz 53080 SHA256:bd14fb0f21c3d5ed3cae691bc95d3828572d957cf28f582803fb04f1638fbbbc
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-passwd/3.5.48/
 
-- https://sources.debian.net/src/base-passwd/3.5.48/ (for browsing the source)
-- https://sources.debian.net/src/base-passwd/3.5.48/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-passwd/3.5.48/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bash=5.1-2`
 
@@ -617,20 +605,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris db5.3=5.3.28+dfsg1-0.6
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1-0.6.dsc' db5.3_5.3.28+dfsg1-0.6.dsc 3138 SHA256:0cd8010ff17180156bc2d91518ca15c4e32bdee7638a1289cdc5c0a803f50279
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1.orig.tar.xz' db5.3_5.3.28+dfsg1.orig.tar.xz 19723860 SHA256:b19bf3dd8ce74b95a7b215be9a7c8489e8e8f18da60d64d6340a06e75f497749
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1-0.6.debian.tar.xz' db5.3_5.3.28+dfsg1-0.6.debian.tar.xz 29196 SHA256:8e7264cfd368d04133a818cdbd3191b874c534f4ad7f83cfdbb3cccf12b5f052
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/db5.3/5.3.28+dfsg1-0.6/
 
-- https://sources.debian.net/src/db5.3/5.3.28+dfsg1-0.6/ (for browsing the source)
-- https://sources.debian.net/src/db5.3/5.3.28+dfsg1-0.6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/db5.3/5.3.28+dfsg1-0.6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debconf=1.5.74`
 
@@ -1070,10 +1051,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-9=9.3.0-22
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.3.0-22.dsc' gcc-9_9.3.0-22.dsc 21926 SHA256:14a0ea03cee0eb5450cc630a3bdf47da157062b3e7622ac45f6ae14a321eae96
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 88686943 SHA256:824044ffa96eb337bb1c1d4cf6a82691d0290d6f42e1d13362eea855458de060
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.3.0-22.debian.tar.xz' gcc-9_9.3.0-22.debian.tar.xz 904252 SHA256:68d55260456847880c71831b69c19cb81e9d1abf09274ab77ab6c081e177d94d
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0-22.dsc' gcc-9_9.3.0-22.dsc 21926 SHA256:14a0ea03cee0eb5450cc630a3bdf47da157062b3e7622ac45f6ae14a321eae96
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 88686943 SHA256:824044ffa96eb337bb1c1d4cf6a82691d0290d6f42e1d13362eea855458de060
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0-22.debian.tar.xz' gcc-9_9.3.0-22.debian.tar.xz 904252 SHA256:68d55260456847880c71831b69c19cb81e9d1abf09274ab77ab6c081e177d94d
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-9/9.3.0-22/ (for browsing the source)
+- https://sources.debian.net/src/gcc-9/9.3.0-22/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-9/9.3.0-22/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-defaults=1.190`
 
@@ -1149,10 +1136,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glib2.0=2.66.6-2
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.66.6-2.dsc' glib2.0_2.66.6-2.dsc 3383 SHA256:16d3a8a979860754db141f31633d82ba39f12d97d1d2eb8865dcc22115b5dc7b
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.66.6.orig.tar.xz' glib2.0_2.66.6.orig.tar.xz 4841768 SHA256:80fff9c63d2725834328071c42003c311f77f91caf2285195c587c62f5638329
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.66.6-2.debian.tar.xz' glib2.0_2.66.6-2.debian.tar.xz 99948 SHA256:e89b29e2e23efc4c05566987f09b9c4725b347eee392378b9475c7c58e2d74b0
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.66.6-2.dsc' glib2.0_2.66.6-2.dsc 3383 SHA256:16d3a8a979860754db141f31633d82ba39f12d97d1d2eb8865dcc22115b5dc7b
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.66.6.orig.tar.xz' glib2.0_2.66.6.orig.tar.xz 4841768 SHA256:80fff9c63d2725834328071c42003c311f77f91caf2285195c587c62f5638329
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.66.6-2.debian.tar.xz' glib2.0_2.66.6-2.debian.tar.xz 99948 SHA256:e89b29e2e23efc4c05566987f09b9c4725b347eee392378b9475c7c58e2d74b0
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/glib2.0/2.66.6-2/ (for browsing the source)
+- https://sources.debian.net/src/glib2.0/2.66.6-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glib2.0/2.66.6-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.31-9`
 
@@ -1726,11 +1719,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libbsd=0.11.3-1
-'http://http.debian.net/debian/pool/main/libb/libbsd/libbsd_0.11.3-1.dsc' libbsd_0.11.3-1.dsc 2292 SHA256:714c9cee71ddcea7a91593c56ca9ab297856e4f597743a32cda909544fe04ccb
-'http://http.debian.net/debian/pool/main/libb/libbsd/libbsd_0.11.3.orig.tar.xz' libbsd_0.11.3.orig.tar.xz 399712 SHA256:ff95cf8184151dacae4247832f8d4ea8800fa127dbd15033ecfe839f285b42a1
-'http://http.debian.net/debian/pool/main/libb/libbsd/libbsd_0.11.3.orig.tar.xz.asc' libbsd_0.11.3.orig.tar.xz.asc 833 SHA256:213f30c9537e2a180ebdad6445402ea879f83c3a85907f7509ae7f7304f7ce1b
-'http://http.debian.net/debian/pool/main/libb/libbsd/libbsd_0.11.3-1.debian.tar.xz' libbsd_0.11.3-1.debian.tar.xz 17504 SHA256:b414f384d71ebd8ed67b759526df4c83529946414c71cc3c5e5b98bc9323ad3b
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.3-1.dsc' libbsd_0.11.3-1.dsc 2292 SHA256:714c9cee71ddcea7a91593c56ca9ab297856e4f597743a32cda909544fe04ccb
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.3.orig.tar.xz' libbsd_0.11.3.orig.tar.xz 399712 SHA256:ff95cf8184151dacae4247832f8d4ea8800fa127dbd15033ecfe839f285b42a1
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.3.orig.tar.xz.asc' libbsd_0.11.3.orig.tar.xz.asc 833 SHA256:213f30c9537e2a180ebdad6445402ea879f83c3a85907f7509ae7f7304f7ce1b
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.3-1.debian.tar.xz' libbsd_0.11.3-1.debian.tar.xz 17504 SHA256:b414f384d71ebd8ed67b759526df4c83529946414c71cc3c5e5b98bc9323ad3b
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libbsd/0.11.3-1/ (for browsing the source)
+- https://sources.debian.net/src/libbsd/0.11.3-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libbsd/0.11.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libcap-ng=0.7.9-2.2`
 
@@ -2002,11 +2001,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libmd=1.0.3-3
-'http://http.debian.net/debian/pool/main/libm/libmd/libmd_1.0.3-3.dsc' libmd_1.0.3-3.dsc 2248 SHA256:c3be656dc94c906898358e1d27394e1aec1769a0b5e09e8a4e8cace735ce9967
-'http://http.debian.net/debian/pool/main/libm/libmd/libmd_1.0.3.orig.tar.xz' libmd_1.0.3.orig.tar.xz 258584 SHA256:5a02097f95cc250a3f1001865e4dbba5f1d15554120f95693c0541923c52af4a
-'http://http.debian.net/debian/pool/main/libm/libmd/libmd_1.0.3.orig.tar.xz.asc' libmd_1.0.3.orig.tar.xz.asc 833 SHA256:690c82c27026093e0367b24de5f786b29f6cedacbae67bad3199190689940d3d
-'http://http.debian.net/debian/pool/main/libm/libmd/libmd_1.0.3-3.debian.tar.xz' libmd_1.0.3-3.debian.tar.xz 10104 SHA256:90f09c473c5ff61e3d937c656f12470610cc731cf9061490f651293d04f3c385
+'http://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.0.3-3.dsc' libmd_1.0.3-3.dsc 2248 SHA256:c3be656dc94c906898358e1d27394e1aec1769a0b5e09e8a4e8cace735ce9967
+'http://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.0.3.orig.tar.xz' libmd_1.0.3.orig.tar.xz 258584 SHA256:5a02097f95cc250a3f1001865e4dbba5f1d15554120f95693c0541923c52af4a
+'http://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.0.3.orig.tar.xz.asc' libmd_1.0.3.orig.tar.xz.asc 833 SHA256:690c82c27026093e0367b24de5f786b29f6cedacbae67bad3199190689940d3d
+'http://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.0.3-3.debian.tar.xz' libmd_1.0.3-3.debian.tar.xz 10104 SHA256:90f09c473c5ff61e3d937c656f12470610cc731cf9061490f651293d04f3c385
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libmd/1.0.3-3/ (for browsing the source)
+- https://sources.debian.net/src/libmd/1.0.3-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libmd/1.0.3-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libnsl=1.3.0-2`
 
@@ -3080,10 +3085,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nlme=3.1.152-1
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.152-1.dsc' nlme_3.1.152-1.dsc 1840 SHA256:40ec4a814f6635fc20e8731a341d383e22f24b10e1e76b8643afc461d2a5e331
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.152.orig.tar.gz' nlme_3.1.152.orig.tar.gz 805569 SHA256:5b65d1b1f121caf29e60341acf6d85e267fd94ed517748cf42d36359f74e515e
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.152-1.debian.tar.xz' nlme_3.1.152-1.debian.tar.xz 7160 SHA256:19099d0abc092653c53e4c1c8cfd36f0abe978aaaa5259f9d0e32881a851b8e6
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.152-1.dsc' nlme_3.1.152-1.dsc 1840 SHA256:40ec4a814f6635fc20e8731a341d383e22f24b10e1e76b8643afc461d2a5e331
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.152.orig.tar.gz' nlme_3.1.152.orig.tar.gz 805569 SHA256:5b65d1b1f121caf29e60341acf6d85e267fd94ed517748cf42d36359f74e515e
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.152-1.debian.tar.xz' nlme_3.1.152-1.debian.tar.xz 7160 SHA256:19099d0abc092653c53e4c1c8cfd36f0abe978aaaa5259f9d0e32881a851b8e6
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/nlme/3.1.152-1/ (for browsing the source)
+- https://sources.debian.net/src/nlme/3.1.152-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/nlme/3.1.152-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openblas=0.3.13+ds-2`
 
@@ -4209,10 +4220,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xdg-utils=1.1.3-4
-'http://http.debian.net/debian/pool/main/x/xdg-utils/xdg-utils_1.1.3-4.dsc' xdg-utils_1.1.3-4.dsc 2093 SHA256:e0e32c5c302b74819fe432a21cc4ef0fc7da9d29db9ff8bf934104a8ea715cea
-'http://http.debian.net/debian/pool/main/x/xdg-utils/xdg-utils_1.1.3.orig.tar.gz' xdg-utils_1.1.3.orig.tar.gz 297170 SHA256:d798b08af8a8e2063ddde6c9fa3398ca81484f27dec642c5627ffcaa0d4051d9
-'http://http.debian.net/debian/pool/main/x/xdg-utils/xdg-utils_1.1.3-4.debian.tar.xz' xdg-utils_1.1.3-4.debian.tar.xz 15484 SHA256:7f980ab16b9c7e13726a053b9e5113062ab9669409b45d68f4c8944375fd95d4
+'http://deb.debian.org/debian/pool/main/x/xdg-utils/xdg-utils_1.1.3-4.dsc' xdg-utils_1.1.3-4.dsc 2093 SHA256:e0e32c5c302b74819fe432a21cc4ef0fc7da9d29db9ff8bf934104a8ea715cea
+'http://deb.debian.org/debian/pool/main/x/xdg-utils/xdg-utils_1.1.3.orig.tar.gz' xdg-utils_1.1.3.orig.tar.gz 297170 SHA256:d798b08af8a8e2063ddde6c9fa3398ca81484f27dec642c5627ffcaa0d4051d9
+'http://deb.debian.org/debian/pool/main/x/xdg-utils/xdg-utils_1.1.3-4.debian.tar.xz' xdg-utils_1.1.3-4.debian.tar.xz 15484 SHA256:7f980ab16b9c7e13726a053b9e5113062ab9669409b45d68f4c8944375fd95d4
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/xdg-utils/1.1.3-4/ (for browsing the source)
+- https://sources.debian.net/src/xdg-utils/1.1.3-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/xdg-utils/1.1.3-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xft=2.3.2-2`
 
