@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8f096c51f672d0e7e2cd8f41563092e544dcdd931460e570277e0631ffddf670`
-- Created: `2021-02-04T23:37:21.519289822Z`
+- Image ID: `sha256:3e5b172ba187efa1835a4aa270603109c17a7eb24e922a18a82582d64fb77496`
+- Created: `2021-02-13T00:02:30.212537286Z`
 - Virtual Size: ~ 141.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -22,6 +22,9 @@
   - `PHP_URL=https://www.php.net/distributions/php-7.4.15.tar.xz`
   - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.15.tar.xz.asc`
   - `PHP_SHA256=9b859c65f0cf7b3eff9d4a28cfab719fb3d36a1db3c20d874a79b5ec44d43cb8`
+  - `MAX_EXECUTION_TIME=600`
+  - `MEMORY_LIMIT=512M`
+  - `UPLOAD_LIMIT=2048K`
   - `VERSION=5.0.4`
   - `SHA256=1578c1a08e594da4f4f62e676ccbdbd17784c3de769b094ba42c35bf05c057db`
   - `URL=https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.tar.xz`
