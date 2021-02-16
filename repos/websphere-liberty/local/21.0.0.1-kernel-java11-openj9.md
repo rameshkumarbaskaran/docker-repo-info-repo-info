@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3a2a3d19be0892595d1e1a6153286c1e9243acdcb0102e9a2e58b8ed61585326`
-- Created: `2021-01-25T20:42:16.049592499Z`
-- Virtual Size: ~ 288.32 Mb  
+- Image ID: `sha256:79d6211c98599999c3a6bace387faef1980d4240ba926e2dba6bbb0abc4d6ca0`
+- Created: `2021-02-13T00:14:27.016125325Z`
+- Virtual Size: ~ 286.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
@@ -14,10 +14,9 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.9+11_openj9-0.23.0`
+  - `JAVA_VERSION=jdk-11.0.10+9_openj9-0.24.0`
   - `JAVA_HOME=/opt/java/openjdk`
-  - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle`
-  - `OPENJ9_JAVA_OPTIONS=-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
+  - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
   - `LIBERTY_VERSION=21.0.0_01`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ibm/wlp/output`
