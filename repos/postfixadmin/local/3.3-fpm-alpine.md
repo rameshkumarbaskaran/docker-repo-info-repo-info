@@ -1,9 +1,9 @@
-# `postfixadmin:3.3.5-fpm-alpine`
+# `postfixadmin:3.3.7-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2b33e539dca134607ce3c475314f065dfd0593cd9c7a9d1e57f47248ff367015`
-- Created: `2021-02-04T23:09:09.729708802Z`
+- Image ID: `sha256:33be60a1560fdc91e838cc0e80c0a7bd691929230fedba148667d6fa9d3d443d`
+- Created: `2021-02-18T07:19:35.970824476Z`
 - Virtual Size: ~ 95.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -22,8 +22,8 @@
   - `PHP_URL=https://www.php.net/distributions/php-7.4.15.tar.xz`
   - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.15.tar.xz.asc`
   - `PHP_SHA256=9b859c65f0cf7b3eff9d4a28cfab719fb3d36a1db3c20d874a79b5ec44d43cb8`
-  - `POSTFIXADMIN_VERSION=3.3.5`
-  - `POSTFIXADMIN_SHA512=1db7dd42335d1704501f2491ceed3f0ecb3063a1df4b6487a1f1aac397f658e3479e4ccbc374b3e2f854f90406c1465a68579b1bd9a98386dbd6dda6b22d94c5`
+  - `POSTFIXADMIN_VERSION=3.3.7`
+  - `POSTFIXADMIN_SHA512=c635b885235f2683532ff4fcd6d3e123fa5af8314cfcdbcdf412d7242444bb9c040a6eeb2f6b0669b9f5dd9fc56c53127779727768c68699885cc642717453ca`
 - Labels:
   - `maintainer=David Goodwin <david@codepoets.co.uk> (@DavidGoodwin)`
 
@@ -134,16 +134,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.32.1-r2 description:
+busybox-1.32.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.32.1-r2 webpage:
+busybox-1.32.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.32.1-r2 installed size:
+busybox-1.32.1-r3 installed size:
 946176
 
-busybox-1.32.1-r2 license:
+busybox-1.32.1-r3 license:
 GPL-2.0-only
 
 ```
@@ -270,16 +270,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1i-r0 description:
+libcrypto1.1-1.1.1j-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1i-r0 webpage:
+libcrypto1.1-1.1.1j-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1i-r0 installed size:
+libcrypto1.1-1.1.1j-r0 installed size:
 2768896
 
-libcrypto1.1-1.1.1i-r0 license:
+libcrypto1.1-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -321,16 +321,16 @@ BSD-3-Clause
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.56-r0 description:
+libldap-2.4.57-r0 description:
 OpenLDAP libraries
 
-libldap-2.4.56-r0 webpage:
+libldap-2.4.57-r0 webpage:
 https://www.openldap.org/
 
-libldap-2.4.56-r0 installed size:
+libldap-2.4.57-r0 installed size:
 630784
 
-libldap-2.4.56-r0 license:
+libldap-2.4.57-r0 license:
 custom
 
 ```
@@ -389,16 +389,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1i-r0 description:
+libssl1.1-1.1.1j-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1i-r0 webpage:
+libssl1.1-1.1.1j-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1i-r0 installed size:
+libssl1.1-1.1.1j-r0 installed size:
 540672
 
-libssl1.1-1.1.1i-r0 license:
+libssl1.1-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -542,16 +542,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1i-r0 description:
+openssl-1.1.1j-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1i-r0 webpage:
+openssl-1.1.1j-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1i-r0 installed size:
-679936
+openssl-1.1.1j-r0 installed size:
+675840
 
-openssl-1.1.1i-r0 license:
+openssl-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -610,16 +610,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.32.1-r2 description:
+ssl_client-1.32.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.32.1-r2 webpage:
+ssl_client-1.32.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.32.1-r2 installed size:
+ssl_client-1.32.1-r3 installed size:
 28672
 
-ssl_client-1.32.1-r2 license:
+ssl_client-1.32.1-r3 license:
 GPL-2.0-only
 
 ```
