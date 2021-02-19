@@ -1,7 +1,7 @@
 ## `openjdk:17-ea-alpine3.12`
 
 ```console
-$ docker pull openjdk@sha256:50f9b632a40a175f45e9505d3eb82a99edac7da56ac9ab51cc33033d11dee18a
+$ docker pull openjdk@sha256:44cf7d3a2bb42efc34e5afe04496dba1ab5df2c3e983798ce4db4a45443f2aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull openjdk@sha256:50f9b632a40a175f45e9505d3eb82a99edac7da56ac9ab51cc3
 ### `openjdk:17-ea-alpine3.12` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:7349bbb1f74b4260819f6dec995abbac3152a0bfa7696cc777f58a5744facea4
+$ docker pull openjdk@sha256:f8e2f12ca2d7a0d9825e34604e03448b2cd21b10ecf172400ce86da269e1827f
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **190.8 MB (190797599 bytes)**  
+-	Total Size: **190.6 MB (190615799 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e8d58131561b93f8c13468f732a4303b6dcaf137297c13341e495903e9b852ac`
+-	Image ID: `sha256:17148c936d6be48784fa75a7b0473af2f1d84f3d4339359883893048b00f095e`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -32,11 +32,11 @@ RUN apk add --no-cache java-cacerts
 ENV JAVA_HOME=/opt/openjdk-17
 # Mon, 01 Feb 2021 19:47:03 GMT
 ENV PATH=/opt/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 01 Feb 2021 19:47:03 GMT
-ENV JAVA_VERSION=17-ea+5
-# Mon, 01 Feb 2021 19:47:20 GMT
-RUN set -eux; 		arch="$(apk --print-arch)"; 	case "$arch" in 		'x86_64') 			downloadUrl='https://download.java.net/java/early_access/alpine/5/binaries/openjdk-17-ea+5_linux-x64-musl_bin.tar.gz'; 			downloadSha256='709daae3577453dba8e4ea03e8b52daeb11370648d2da1d012df527556c0cda2'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		rm -rf "$JAVA_HOME/lib/security/cacerts"; 	ln -sT /etc/ssl/certs/java/cacerts "$JAVA_HOME/lib/security/cacerts"; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Mon, 01 Feb 2021 19:47:20 GMT
+# Thu, 18 Feb 2021 23:24:00 GMT
+ENV JAVA_VERSION=17-ea+10
+# Thu, 18 Feb 2021 23:24:15 GMT
+RUN set -eux; 		arch="$(apk --print-arch)"; 	case "$arch" in 		'x86_64') 			downloadUrl='https://download.java.net/java/early_access/alpine/10/binaries/openjdk-17-ea+10_linux-x64-musl_bin.tar.gz'; 			downloadSha256='fc3ea4225030a5df6191b6027051e705e6c34b72115dfdb36d170d735cb409d5'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		rm -rf "$JAVA_HOME/lib/security/cacerts"; 	ln -sT /etc/ssl/certs/java/cacerts "$JAVA_HOME/lib/security/cacerts"; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
+# Thu, 18 Feb 2021 23:24:15 GMT
 CMD ["jshell"]
 ```
 
@@ -49,7 +49,7 @@ CMD ["jshell"]
 		Last Modified: Thu, 17 Dec 2020 13:21:09 GMT  
 		Size: 927.2 KB (927220 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49c7aa5543b72e13681e9111aa6ea8986c5f8ec75693b90e6745e56d90228326`  
-		Last Modified: Mon, 01 Feb 2021 20:03:08 GMT  
-		Size: 187.1 MB (187071313 bytes)  
+	-	`sha256:c0918f7ac41a2f7c65dcb7ef3546d77c0adfd7c8a39b07db83b604e322dca4b0`  
+		Last Modified: Thu, 18 Feb 2021 23:30:28 GMT  
+		Size: 186.9 MB (186889513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
