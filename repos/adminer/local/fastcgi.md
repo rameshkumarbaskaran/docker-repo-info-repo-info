@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3e12f0b06338f56ce829c3a273296dddf8d7da63efe82e151c2c5532ebb6649a`
-- Created: `2021-02-10T21:19:31.115710911Z`
-- Virtual Size: ~ 89.84 Mb  
+- Image ID: `sha256:42622dabee84ff65a432fbdb0a0fbaac48260d47c0ef211d2132dc44ed1c4923`
+- Created: `2021-02-18T07:24:55.814995632Z`
+- Virtual Size: ~ 89.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh","docker-php-entrypoint"]`
@@ -116,16 +116,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.32.1-r2 description:
+busybox-1.32.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.32.1-r2 webpage:
+busybox-1.32.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.32.1-r2 installed size:
+busybox-1.32.1-r3 installed size:
 946176
 
-busybox-1.32.1-r2 license:
+busybox-1.32.1-r3 license:
 GPL-2.0-only
 
 ```
@@ -252,16 +252,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1i-r0 description:
+libcrypto1.1-1.1.1j-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1i-r0 webpage:
+libcrypto1.1-1.1.1j-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1i-r0 installed size:
+libcrypto1.1-1.1.1j-r0 installed size:
 2768896
 
-libcrypto1.1-1.1.1i-r0 license:
+libcrypto1.1-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -303,16 +303,16 @@ BSD-3-Clause
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.56-r0 description:
+libldap-2.4.57-r0 description:
 OpenLDAP libraries
 
-libldap-2.4.56-r0 webpage:
+libldap-2.4.57-r0 webpage:
 https://www.openldap.org/
 
-libldap-2.4.56-r0 installed size:
+libldap-2.4.57-r0 installed size:
 630784
 
-libldap-2.4.56-r0 license:
+libldap-2.4.57-r0 license:
 custom
 
 ```
@@ -371,16 +371,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1i-r0 description:
+libssl1.1-1.1.1j-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1i-r0 webpage:
+libssl1.1-1.1.1j-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1i-r0 installed size:
+libssl1.1-1.1.1j-r0 installed size:
 540672
 
-libssl1.1-1.1.1i-r0 license:
+libssl1.1-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -524,16 +524,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1i-r0 description:
+openssl-1.1.1j-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1i-r0 webpage:
+openssl-1.1.1j-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1i-r0 installed size:
-679936
+openssl-1.1.1j-r0 installed size:
+675840
 
-openssl-1.1.1i-r0 license:
+openssl-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -592,16 +592,16 @@ Public-Domain
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.32.1-r2 description:
+ssl_client-1.32.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.32.1-r2 webpage:
+ssl_client-1.32.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.32.1-r2 installed size:
+ssl_client-1.32.1-r3 installed size:
 28672
 
-ssl_client-1.32.1-r2 license:
+ssl_client-1.32.1-r3 license:
 GPL-2.0-only
 
 ```
