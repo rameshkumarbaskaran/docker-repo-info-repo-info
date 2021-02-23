@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:728ab1cb2c63d376048d697f490684be8f5ba63657a654dfd059bb91db9f3012`
-- Created: `2021-01-25T20:27:04.252722939Z`
-- Virtual Size: ~ 573.42 Mb  
+- Image ID: `sha256:175d554545b0a9cd02c4fa7db68d5f5146a0746177d1a336759f3a08fa420bfe`
+- Created: `2021-02-22T20:31:54.115620627Z`
+- Virtual Size: ~ 571.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -14,24 +14,24 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk8u275-b01_openj9-0.23.0`
+  - `JAVA_VERSION=jdk8u282-b08_openj9-0.24.0`
   - `JAVA_HOME=/opt/java/openjdk`
-  - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle`
-  - `OPENJ9_JAVA_OPTIONS=-Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
+  - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ol/wlp/output`
   - `WLP_SKIP_MAXPERMSIZE=true`
   - `OPENJ9_SCC=true`
   - `RANDFILE=/tmp/.rnd`
+  - `OPENJ9_JAVA_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter, Leo Christy Jesuraj`
   - `org.opencontainers.image.description=This image contains the Open Liberty beta runtime with AdoptOpenJDK 8 with OpenJ9 and Ubuntu as the base OS.  For more information on this image please see https://github.com/OpenLiberty/ci.docker#building-an-application-image`
-  - `org.opencontainers.image.revision=cl210120210113-1459`
+  - `org.opencontainers.image.revision=cl210220210209-1100`
   - `org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker`
   - `org.opencontainers.image.title=Open Liberty Beta`
   - `org.opencontainers.image.url=https://openliberty.io/`
   - `org.opencontainers.image.vendor=Open Liberty`
-  - `org.opencontainers.image.version=21.0.0.2-beta`
+  - `org.opencontainers.image.version=21.0.0.3-beta`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1389,7 +1389,6 @@ This is *usually* due to a new package version being released and the old versio
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.1f-1ubuntu2.1`
-- `openssl=1.1.1f-1ubuntu2.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1398,6 +1397,26 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.2`
+
+Binary Packages:
+
+- `openssl=1.1.1f-1ubuntu2.2`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.2
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.2.dsc' openssl_1.1.1f-1ubuntu2.2.dsc 2713 SHA512:704047c333d97ee1cf0d998d3042abd8fd7d15ad46e21e772313ab1f2844ff6cea3628d1695a4ab2e5c8386b9ab16ba3bcd72844e81015268c11be38d9b1501f
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz.asc' openssl_1.1.1f.orig.tar.gz.asc 488 SHA512:63b01ffc23b2fec2cfc147d382b486a136e5610e181be94aa333022803a442ded37e8276fefb62b3176b571b94a1d2243c05b86b52ad7784fe0068d1ad948562
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.2.debian.tar.xz' openssl_1.1.1f-1ubuntu2.2.debian.tar.xz 148044 SHA512:d684d8aa1dc8a9e9c8baf0f82cba5787b5e2af2438789bda77269d933879050823e366e4f1f7bccb4daa3a6d1e9e2813a3b8c0a247045a962917bfa254416046
+```
 
 ### `dpkg` source package: `p11-kit=0.23.20-1ubuntu0.1`
 
