@@ -1,7 +1,7 @@
 ## `python:rc-slim-buster`
 
 ```console
-$ docker pull python@sha256:7206ccb8eaf3620532045a69e84be28cd3e4b9be1e2469829c0121cd6d209201
+$ docker pull python@sha256:8a793f7e1e18024d5089ec8ccc785eeecf1f92eb47cf6ead371f7fe748ef7fe3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18,14 +18,14 @@ $ docker pull python@sha256:7206ccb8eaf3620532045a69e84be28cd3e4b9be1e2469829c01
 ### `python:rc-slim-buster` - linux; amd64
 
 ```console
-$ docker pull python@sha256:f8bce6da947274ea4d8d64783af2e2a47768e8b67aa7aecc2b06cc7c0747e5e5
+$ docker pull python@sha256:d177788651039fe7749b4753a6f8fafbb5e38dbe8921ae4ba51f1e3c266405be
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **43.3 MB (43266228 bytes)**  
+-	Total Size: **43.3 MB (43266408 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1445a864bdaa482f1e280c771bdfc42151926d25993259782ed8f9cd12d6edce`
+-	Image ID: `sha256:eb82642906892c7ccb2741841a74130e07a230b51b72147cad5022bf27db1f05`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -49,13 +49,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 07:32:23 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 07:32:23 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 07:32:23 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 07:32:38 GMT
+# Mon, 22 Feb 2021 23:29:01 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 23:29:01 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 23:29:16 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 07:32:38 GMT
+# Mon, 22 Feb 2021 23:29:16 GMT
 CMD ["python3"]
 ```
 
@@ -76,22 +76,22 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 09:51:10 GMT  
 		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7346110a16714f6dc20fc31b7340f44b523ab31cbbcc5d0531bc10583293be15`  
-		Last Modified: Tue, 09 Feb 2021 09:51:10 GMT  
-		Size: 2.5 MB (2452142 bytes)  
+	-	`sha256:5403a997933a432083996c5752142b5cbfb107d819fa22ebed97630dc2448cc5`  
+		Last Modified: Mon, 22 Feb 2021 23:36:17 GMT  
+		Size: 2.5 MB (2452322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc-slim-buster` - linux; arm variant v5
 
 ```console
-$ docker pull python@sha256:0fa773a1fdb188390110ccb3a0f9a75895b50785ae1e0ef9049320c00478ab7a
+$ docker pull python@sha256:3cb3c716209d57899a180e8c0a4ae4a0f9f1fcbcdbc9fb2d28911350a3ea11bc
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **40.4 MB (40361702 bytes)**  
+-	Total Size: **40.4 MB (40361773 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72fd080facd51c52877fd3aac03f5bcafb1f53b1725e8e75c00bd9639cb65a68`
+-	Image ID: `sha256:02be0b64fda513b330a15640b44a4ac320da3afdfef7dc9542df60300e1d7a88`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -115,13 +115,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 04:49:10 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 04:49:11 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 04:49:12 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 04:49:47 GMT
+# Mon, 22 Feb 2021 22:49:16 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 22:49:17 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 22:49:53 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 04:49:50 GMT
+# Mon, 22 Feb 2021 22:49:55 GMT
 CMD ["python3"]
 ```
 
@@ -142,22 +142,22 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 07:09:03 GMT  
 		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7711a4d657c261bf2a9605cadc0362d51695394dcc3a7d33b71688bb317455e4`  
-		Last Modified: Tue, 09 Feb 2021 07:09:04 GMT  
-		Size: 2.5 MB (2452248 bytes)  
+	-	`sha256:8f5c8763352caf2e7dfa5ea7f81e8797a73cff2828e4823ca2dbc0570ecd4c40`  
+		Last Modified: Mon, 22 Feb 2021 22:58:02 GMT  
+		Size: 2.5 MB (2452319 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc-slim-buster` - linux; arm variant v7
 
 ```console
-$ docker pull python@sha256:798bae5018a4370f2c1354e0ea23fd127de7bf7b72cb28f930cfacb9b823a1d0
+$ docker pull python@sha256:864f662b39531e6da563842d651b147a8b5beb67841aeeb10fd22accd0fa3724
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **37.7 MB (37652109 bytes)**  
+-	Total Size: **37.7 MB (37652084 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:28e83219007a17d467b2c4411048412eec7b230b2ed367fd68741e5bc729d417`
+-	Image ID: `sha256:8a8865f11fe0d5d61c56cd82a187b94e610238ef7de43aba9995127b02c3cf18`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -181,13 +181,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 13:34:48 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 13:34:49 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 13:34:50 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 13:35:14 GMT
+# Mon, 22 Feb 2021 22:59:41 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 22:59:42 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 23:00:14 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 13:35:15 GMT
+# Mon, 22 Feb 2021 23:00:16 GMT
 CMD ["python3"]
 ```
 
@@ -208,22 +208,22 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 16:11:20 GMT  
 		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:738a02ab379b1fac8c621607cfec624fac16c210254d88389e165eaf000a97dc`  
-		Last Modified: Tue, 09 Feb 2021 16:11:21 GMT  
-		Size: 2.5 MB (2452071 bytes)  
+	-	`sha256:842dd8c48940bdcce8d4c06a907f343ab43385dbd6020e2823e2e63e7b33eb19`  
+		Last Modified: Mon, 22 Feb 2021 23:14:42 GMT  
+		Size: 2.5 MB (2452046 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc-slim-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull python@sha256:77e021538234ecb651dfc546d4ddd392d82ff54fb76b5143b72f5d7edfb43cc2
+$ docker pull python@sha256:37e9f6aa4fa942fb493f228f7156434fdc3142fceb0c727d8b41de88a7d3a109
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **41.9 MB (41899490 bytes)**  
+-	Total Size: **41.9 MB (41899540 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:874a6a7add2644563dbb5f636229885115b226dbc73033c7ea5aaaf6bd007c30`
+-	Image ID: `sha256:69f7068f512fd500c3fedf3ee5b00b1bb9add31cb7157071a8d587d5ec4534ee`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -247,13 +247,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 15:16:53 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 15:16:53 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 15:16:54 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 15:17:21 GMT
+# Mon, 22 Feb 2021 23:14:36 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 23:14:37 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 23:15:07 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 15:17:23 GMT
+# Mon, 22 Feb 2021 23:15:08 GMT
 CMD ["python3"]
 ```
 
@@ -274,22 +274,22 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 17:27:20 GMT  
 		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c131e421979c439e571b05027759598a343e1b63bfda7d4b6ad976719e0794ef`  
-		Last Modified: Tue, 09 Feb 2021 17:27:21 GMT  
-		Size: 2.5 MB (2452359 bytes)  
+	-	`sha256:aa792dae90a7fc21f4fe63a9110a17c2f002b5186c7861c3f46cef75f27544c3`  
+		Last Modified: Mon, 22 Feb 2021 23:26:45 GMT  
+		Size: 2.5 MB (2452409 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc-slim-buster` - linux; 386
 
 ```console
-$ docker pull python@sha256:ab60be98f0a1bb8d6a694c150877111126c4cb747c2d68719454a03a0a21c43a
+$ docker pull python@sha256:402838ac8063b88e609f6ade76f9b9ce9af6f6eeae4a5c3ae6cb28c9fabaf971
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.1 MB (44075138 bytes)**  
+-	Total Size: **44.1 MB (44075159 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d9fff0f9377d24a8cd0c95c18d6bdac1d039d08d7b748a84b62d711bdb34c2ee`
+-	Image ID: `sha256:57ff6dde939a7ddca2e3d4c802d2187f613a8bd243da62aa83394c461826e550`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -313,13 +313,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 15:49:23 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 15:49:24 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 15:49:24 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 15:49:52 GMT
+# Mon, 22 Feb 2021 22:41:51 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 22:41:51 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 22:42:07 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 15:49:52 GMT
+# Mon, 22 Feb 2021 22:42:08 GMT
 CMD ["python3"]
 ```
 
@@ -340,22 +340,22 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 18:29:53 GMT  
 		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eda7dca8bb953b064b6e2dcf7ad401af2573078ac215b7ae72ffc2ca74ab24e1`  
-		Last Modified: Tue, 09 Feb 2021 18:29:54 GMT  
-		Size: 2.5 MB (2452031 bytes)  
+	-	`sha256:5db4abd5dbb142beadd4e1ec8a72016b10ee04924fc8b093f7bdbe891c556e0e`  
+		Last Modified: Mon, 22 Feb 2021 22:49:08 GMT  
+		Size: 2.5 MB (2452052 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc-slim-buster` - linux; mips64le
 
 ```console
-$ docker pull python@sha256:3d523f71f48462157aec6bf9712caf8b3050e9b1452c033016e6ccacdeea5dd5
+$ docker pull python@sha256:3c587334b3db87ace81d341451bdee0aff4f5e92b9db88a42a77e5e54eeba2bb
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **41.4 MB (41389206 bytes)**  
+-	Total Size: **41.4 MB (41389244 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:43731a3c0e0a3cdb9133e3a9849df548221f5be8cb469e421ba51120bf0e56de`
+-	Image ID: `sha256:e0e9ea659d0d92d037c7c77e9ca10235f08294d238c47908036ec3150d674556`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -379,13 +379,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 11:11:53 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 11:11:53 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 11:11:53 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 11:12:36 GMT
+# Mon, 22 Feb 2021 23:09:26 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 23:09:26 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 23:10:09 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 11:12:37 GMT
+# Mon, 22 Feb 2021 23:10:10 GMT
 CMD ["python3"]
 ```
 
@@ -406,22 +406,22 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 16:18:40 GMT  
 		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5b5e5caf2d0200a402573b0c360c93ca65b12bb78b30be785ae08f34a2e8315`  
-		Last Modified: Tue, 09 Feb 2021 16:18:43 GMT  
-		Size: 2.5 MB (2451895 bytes)  
+	-	`sha256:5862568de178c34b1f36c6625b2f67c6d7b7a0b681e64fe517b616e087d072e7`  
+		Last Modified: Mon, 22 Feb 2021 23:15:56 GMT  
+		Size: 2.5 MB (2451933 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc-slim-buster` - linux; ppc64le
 
 ```console
-$ docker pull python@sha256:a21f1b127bcefdd6f32705e692d540a2f3b6c9e68a48e3cc185ece92e6e16026
+$ docker pull python@sha256:890a4dfa59dcac01346aeb45a36e70c44463d05f1fa0f47717ba76c39372e799
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **47.6 MB (47649953 bytes)**  
+-	Total Size: **47.6 MB (47649905 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e85eb4749783dbe0c6f9116ffbf27e67b82ec9638749d459d58b4fce0efd25c`
+-	Image ID: `sha256:2522a753bcea4e5572d3e7cab25a8b3ba93b87670984b216e80ef688fe5bdd61`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -445,13 +445,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 19:06:39 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 19:06:46 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 19:06:52 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 19:07:52 GMT
+# Mon, 22 Feb 2021 23:56:22 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 23:56:30 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 23:58:04 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 19:07:57 GMT
+# Mon, 22 Feb 2021 23:58:12 GMT
 CMD ["python3"]
 ```
 
@@ -472,22 +472,22 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 21:44:37 GMT  
 		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4da31e84af565dcab87634e6c7c89dd10cdc8988c4bb5816c3dedd1e96ed47f`  
-		Last Modified: Tue, 09 Feb 2021 21:44:37 GMT  
-		Size: 2.5 MB (2454491 bytes)  
+	-	`sha256:1743d6af405b157147a4f073ff1d17d39a558038a6b549614d1d079b1a49bd13`  
+		Last Modified: Tue, 23 Feb 2021 00:28:59 GMT  
+		Size: 2.5 MB (2454443 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc-slim-buster` - linux; s390x
 
 ```console
-$ docker pull python@sha256:40781129df9a62b182a2542255c4d90ba13fd453e2b480b7cc380e05dc58db07
+$ docker pull python@sha256:63a7bf4050e9118f5f072c532637ad7257933bbd7ca4f472bd3289e70da2a1c2
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **41.4 MB (41415192 bytes)**  
+-	Total Size: **41.4 MB (41415314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d97160ade84a40334c0fb3d9ffebbdbaa72b564ee73e963e9559582d128635d4`
+-	Image ID: `sha256:560e322761315ce26adf9f26ab7ae1ca243115f70bf99f98b1046b51aa1f9041`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -511,13 +511,13 @@ RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Tue, 09 Feb 2021 06:44:58 GMT
 ENV PYTHON_PIP_VERSION=21.0.1
-# Tue, 09 Feb 2021 06:44:58 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py
-# Tue, 09 Feb 2021 06:44:58 GMT
-ENV PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4
-# Tue, 09 Feb 2021 06:45:09 GMT
+# Mon, 22 Feb 2021 22:48:18 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py
+# Mon, 22 Feb 2021 22:48:19 GMT
+ENV PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565
+# Mon, 22 Feb 2021 22:48:36 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 09 Feb 2021 06:45:09 GMT
+# Mon, 22 Feb 2021 22:48:36 GMT
 CMD ["python3"]
 ```
 
@@ -538,7 +538,7 @@ CMD ["python3"]
 		Last Modified: Tue, 09 Feb 2021 07:29:05 GMT  
 		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70b37517f4abd9fea43e73a22d056f8d934cff86660368eecb65d97bffb79c30`  
-		Last Modified: Tue, 09 Feb 2021 07:29:05 GMT  
-		Size: 2.5 MB (2451790 bytes)  
+	-	`sha256:6cb0d09b004c5be716346d2879edc2fa03f2786ff34ef8105dff82fefa28988f`  
+		Last Modified: Mon, 22 Feb 2021 22:56:14 GMT  
+		Size: 2.5 MB (2451912 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
