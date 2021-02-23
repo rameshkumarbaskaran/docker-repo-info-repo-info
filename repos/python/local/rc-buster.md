@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:832d70028a0d25b081a811a2b93b0c04c48168648a9f3fab5162804866d24db2`
-- Created: `2021-02-09T07:22:06.488695412Z`
+- Image ID: `sha256:eac2b0baceb07e219efee315a89d8fdd3188b1b5f2d8a0de021cd53b7cf7a2a9`
+- Created: `2021-02-22T23:28:57.011773355Z`
 - Virtual Size: ~ 887.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -14,8 +14,8 @@
   - `GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D`
   - `PYTHON_VERSION=3.10.0a5`
   - `PYTHON_PIP_VERSION=21.0.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4be3fe44ad9dedc028629ed1497052d65d281b8e/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=8006625804f55e1bd99ad4214fd07082fee27a1c35945648a58f9087a714e9d4`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -4167,20 +4167,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3+deb10u5
-'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u5.dsc' openldap_2.4.47+dfsg-3+deb10u5.dsc 3022 SHA256:dc033c8f90b574a64b0096b23ae7f800cce770469169e870f618719615cf545c
-'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
-'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u5.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u5.debian.tar.xz 173452 SHA256:9b7edeb2b31e4e94c269acd83072e93925232ffddb1ea3f61ebedccb41276efe
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u5/
 
-- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u5/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssh=1:7.9p1-10+deb10u2`
 
