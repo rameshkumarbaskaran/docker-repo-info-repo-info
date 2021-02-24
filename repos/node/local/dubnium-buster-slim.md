@@ -1,9 +1,9 @@
-# `node:10.23.3-buster-slim`
+# `node:10.24.0-buster-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:14a5b1817d3b0b0cc9ff5397f2e563fabc94b0da6104e56d552dae9163a7ef1f`
-- Created: `2021-02-12T23:32:45.581711334Z`
+- Image ID: `sha256:5a04315453bd72f7361bcba46ded829da0fc8f42e1f46e79f7aada8a463e4d22`
+- Created: `2021-02-23T21:38:13.388844018Z`
 - Virtual Size: ~ 147.97 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.23.3`
+  - `NODE_VERSION=10.24.0`
   - `YARN_VERSION=1.22.5`
 
 ## `dpkg` (`.deb`-based packages)

@@ -1,9 +1,9 @@
-# `node:12.20.2-stretch-slim`
+# `node:12.21.0-stretch-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6a768347c57da43d848dd9e4177d4504df774d50e700084c96eab270a49af659`
-- Created: `2021-02-12T23:31:24.600234282Z`
+- Image ID: `sha256:e394f0be14a59d321a5d459b7441fb051df5e942b2e469c8bb4fd5cc7d2ccaf4`
+- Created: `2021-02-23T21:35:54.532168536Z`
 - Virtual Size: ~ 141.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=12.20.2`
+  - `NODE_VERSION=12.21.0`
   - `YARN_VERSION=1.22.5`
 
 ## `dpkg` (`.deb`-based packages)
