@@ -1,19 +1,19 @@
-# `redis:6.0.10-alpine`
+# `redis:6.2.0-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fff9e978fcdbfcd8540242fce04b23c78b7c4442162b737f765eae53b0ddca5b`
-- Created: `2021-02-18T06:26:05.859020746Z`
-- Virtual Size: ~ 31.30 Mb  
+- Image ID: `sha256:dad7dd459239bf2f1deb947d39ec7a0ec50f3a57daab8a0e5cee7f7b1250b770`
+- Created: `2021-02-22T23:42:15.707589408Z`
+- Virtual Size: ~ 32.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["redis-server"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `REDIS_VERSION=6.0.10`
-  - `REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-6.0.10.tar.gz`
-  - `REDIS_DOWNLOAD_SHA=79bbb894f9dceb33ca699ee3ca4a4e1228be7fb5547aeb2f99d921e86c1285bd`
+  - `REDIS_VERSION=6.2.0`
+  - `REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-6.2.0.tar.gz`
+  - `REDIS_DOWNLOAD_SHA=67d624c25d962bd68aff8812a135df85bad07556b8825f3bcd5b522a9932dbca`
 
 ## `apk` (`.apk`-based packages)
 
