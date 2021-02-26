@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0245c0f13e83fae3aa660dce3ad7bfa071e6483f219e07619d2ca7ffd5f33358`
-- Created: `2021-02-17T21:38:04.351409427Z`
-- Virtual Size: ~ 343.30 Mb  
+- Image ID: `sha256:9a2c07a33395c180d500c2dee5629bcff8bfe35736d7daf69e18a54c3deca2a8`
+- Created: `2021-02-24T20:37:11.109209157Z`
+- Virtual Size: ~ 343.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -176,16 +176,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1i-r0 description:
+libcrypto1.1-1.1.1j-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1i-r0 webpage:
+libcrypto1.1-1.1.1j-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1i-r0 installed size:
+libcrypto1.1-1.1.1j-r0 installed size:
 2764800
 
-libcrypto1.1-1.1.1i-r0 license:
+libcrypto1.1-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -210,16 +210,16 @@ GPL LGPL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1i-r0 description:
+libssl1.1-1.1.1j-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1i-r0 webpage:
+libssl1.1-1.1.1j-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1i-r0 installed size:
+libssl1.1-1.1.1j-r0 installed size:
 540672
 
-libssl1.1-1.1.1i-r0 license:
+libssl1.1-1.1.1j-r0 license:
 OpenSSL
 
 ```
@@ -312,16 +312,16 @@ MIT
 ### `apk` package: `nodejs`
 
 ```console
-nodejs-12.20.1-r0 description:
+nodejs-12.21.0-r0 description:
 JavaScript runtime built on V8 engine - LTS version
 
-nodejs-12.20.1-r0 webpage:
+nodejs-12.21.0-r0 webpage:
 https://nodejs.org/
 
-nodejs-12.20.1-r0 installed size:
+nodejs-12.21.0-r0 installed size:
 30670848
 
-nodejs-12.20.1-r0 license:
+nodejs-12.21.0-r0 license:
 MIT
 
 ```
