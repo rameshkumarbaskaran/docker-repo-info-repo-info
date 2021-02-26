@@ -1,9 +1,9 @@
-# `gradle:6.8.2-jdk11-openj9`
+# `gradle:6.8.3-jdk11-openj9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9fd6348b55865bbd1d4fc83a78fa6a41f0571f4a167d7a182825d5a091176269`
-- Created: `2021-02-05T18:25:36.6540773Z`
+- Image ID: `sha256:9d004ed51cb2cd331e4a954dff22bacabfef9863ef60df6477d2c7b5172bac95`
+- Created: `2021-02-26T04:51:59.735708658Z`
 - Virtual Size: ~ 759.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -17,7 +17,7 @@
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
   - `GRADLE_HOME=/opt/gradle`
-  - `GRADLE_VERSION=6.8.2`
+  - `GRADLE_VERSION=6.8.3`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2120,14 +2120,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.8=3.8.5-1~20.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.5-1~20.04.dsc' python3.8_3.8.5-1~20.04.dsc 3340 SHA512:4db414a66d5c633bea398e6c7600be87392abf968e224d3c4a9df2870ecfa24d0aa8846997504b089013018ca8ae0298262ddf0859322065dbb098d456f00b32
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.5.orig.tar.xz' python3.8_3.8.5.orig.tar.xz 18019640 SHA512:460cee65d7df7150694590575502d7f22e548ebfc99c8f8b363eef8bf30ee72e58d8ffacb1d607824f877f880eb9fd6775a508388029583e1e1df3380f3f9587
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.5-1~20.04.debian.tar.xz' python3.8_3.8.5-1~20.04.debian.tar.xz 210244 SHA512:810d54363ef596ecfba8065cf6f11fcbe7e3a80087d0a0418f5c562fecf42b0ddf5d6e9b97d3ce06c83cb68daeeb7eec0829be038976c541d12b923a30c481d5
-```
 
 ### `dpkg` source package: `readline=8.0-4`
 

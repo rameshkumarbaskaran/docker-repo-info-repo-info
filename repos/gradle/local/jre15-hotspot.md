@@ -1,9 +1,9 @@
-# `gradle:6.8.2-jre15`
+# `gradle:6.8.3-jre15`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9facbb2d6c98339b89a7d10fe8453fe472b90a9531ad8b45bba2ea60a4319430`
-- Created: `2021-02-05T18:23:53.00604466Z`
+- Image ID: `sha256:557e2bbdccf6679de699e0fd1aa326512938e7fe4a8570b0063b4524f1ddd8aa`
+- Created: `2021-02-26T04:51:06.358277102Z`
 - Virtual Size: ~ 601.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,7 +16,7 @@
   - `JAVA_VERSION=jdk-15.0.2+7`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GRADLE_HOME=/opt/gradle`
-  - `GRADLE_VERSION=6.8.2`
+  - `GRADLE_VERSION=6.8.3`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2119,14 +2119,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.8=3.8.5-1~20.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.5-1~20.04.dsc' python3.8_3.8.5-1~20.04.dsc 3340 SHA512:4db414a66d5c633bea398e6c7600be87392abf968e224d3c4a9df2870ecfa24d0aa8846997504b089013018ca8ae0298262ddf0859322065dbb098d456f00b32
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.5.orig.tar.xz' python3.8_3.8.5.orig.tar.xz 18019640 SHA512:460cee65d7df7150694590575502d7f22e548ebfc99c8f8b363eef8bf30ee72e58d8ffacb1d607824f877f880eb9fd6775a508388029583e1e1df3380f3f9587
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.5-1~20.04.debian.tar.xz' python3.8_3.8.5-1~20.04.debian.tar.xz 210244 SHA512:810d54363ef596ecfba8065cf6f11fcbe7e3a80087d0a0418f5c562fecf42b0ddf5d6e9b97d3ce06c83cb68daeeb7eec0829be038976c541d12b923a30c481d5
-```
 
 ### `dpkg` source package: `readline=8.0-4`
 
