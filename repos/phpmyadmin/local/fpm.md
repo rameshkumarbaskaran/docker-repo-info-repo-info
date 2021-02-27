@@ -1,10 +1,10 @@
-# `phpmyadmin:5.0.4-fpm`
+# `phpmyadmin:5.1.0-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:186d6a0f075e303a441974bc8d328ca9f4b06ab6442c5890e418817c415c44de`
-- Created: `2021-02-13T00:02:08.490256364Z`
-- Virtual Size: ~ 460.21 Mb  
+- Image ID: `sha256:574272eb0bd37abb3e40ca26e7cb8cf22a6248661d2b5589094eb07a9505749b`
+- Created: `2021-02-24T19:27:06.952225099Z`
+- Virtual Size: ~ 467.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -25,9 +25,9 @@
   - `MAX_EXECUTION_TIME=600`
   - `MEMORY_LIMIT=512M`
   - `UPLOAD_LIMIT=2048K`
-  - `VERSION=5.0.4`
-  - `SHA256=1578c1a08e594da4f4f62e676ccbdbd17784c3de769b094ba42c35bf05c057db`
-  - `URL=https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.tar.xz`
+  - `VERSION=5.1.0`
+  - `SHA256=aa8ccf357f672012384df34e1c2bc70147476761c8458a0dad6233497e142c68`
+  - `URL=https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.tar.xz`
 - Labels:
   - `org.opencontainers.image.authors=The phpMyAdmin Team <developers@phpmyadmin.net>`
   - `org.opencontainers.image.description=Run phpMyAdmin with Alpine, Apache and PHP FPM.`
@@ -37,7 +37,7 @@
   - `org.opencontainers.image.title=Official phpMyAdmin Docker image`
   - `org.opencontainers.image.url=https://github.com/phpmyadmin/docker#readme`
   - `org.opencontainers.image.vendor=phpMyAdmin`
-  - `org.opencontainers.image.version=5.0.4`
+  - `org.opencontainers.image.version=5.1.0`
 
 ## `dpkg` (`.deb`-based packages)
 
