@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5a20c9642f41cacee65a36460744db6a079b823dd835bfe4bf2e6a9fc407ef57`
-- Created: `2021-02-17T19:25:29.687546917Z`
-- Virtual Size: ~ 1.37 Gb  
+- Image ID: `sha256:4ec4f9b29b7a3ddb79b9dba98d4eaa6f29190bfe9acd24ab2e28da949c23a8c1`
+- Created: `2021-02-26T22:52:05.30185121Z`
+- Virtual Size: ~ 1.39 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -9525,11 +9525,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/npth/1.6-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/npth/1.6-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `odoo=14.0.20210217`
+### `dpkg` source package: `odoo=14.0.20210226`
 
 Binary Packages:
 
-- `odoo=14.0.20210217`
+- `odoo=14.0.20210226`
 
 Licenses: (parsed from: `/usr/share/doc/odoo/copyright`)
 
@@ -11676,32 +11676,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sqlite3/3.27.2-3+deb10u1/ (for browsing the source)
 - https://sources.debian.net/src/sqlite3/3.27.2-3+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sqlite3/3.27.2-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `suds=0.7~git20150727.94664dd-5`
-
-Binary Packages:
-
-- `python3-suds=0.7~git20150727.94664dd-5`
-
-Licenses: (parsed from: `/usr/share/doc/python3-suds/copyright`)
-
-- `LGPL-3`
-- `LGPL-3+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris suds=0.7~git20150727.94664dd-5
-'http://deb.debian.org/debian/pool/main/s/suds/suds_0.7~git20150727.94664dd-5.dsc' suds_0.7~git20150727.94664dd-5.dsc 2303 SHA256:5b4ba2c1fd6ea505c5f0de60a7bba293bd314f83ab83d21f6c3a9c154cc6e001
-'http://deb.debian.org/debian/pool/main/s/suds/suds_0.7~git20150727.94664dd.orig.tar.bz2' suds_0.7~git20150727.94664dd.orig.tar.bz2 228590 SHA256:7c1344f70c0d284cb9864e2c0db7e1146a1c6213a6dac7d3306ec63f2938a93f
-'http://deb.debian.org/debian/pool/main/s/suds/suds_0.7~git20150727.94664dd-5.debian.tar.xz' suds_0.7~git20150727.94664dd-5.debian.tar.xz 5092 SHA256:255debb274e2b132827be70fb5ca7c782057c4924ffc3f04785829f19d6afd8f
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/suds/0.7~git20150727.94664dd-5/ (for browsing the source)
-- https://sources.debian.net/src/suds/0.7~git20150727.94664dd-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/suds/0.7~git20150727.94664dd-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=241-7~deb10u6`
 
