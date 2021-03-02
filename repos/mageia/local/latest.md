@@ -1,10 +1,10 @@
-# `mageia:7`
+# `mageia:8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a0ea08edf134d4d88d37e0901442a139fc8c26fcfd092666d2f59a671035fa58`
-- Created: `2021-02-10T09:09:10.211664581Z`
-- Virtual Size: ~ 293.39 Mb  
+- Image ID: `sha256:bdd8a56a9f4b25833989a571ae4bfc0c622c9487bf20ff4f5dfe073d66bfc1d4`
+- Created: `2021-02-27T01:20:43.137041626Z`
+- Virtual Size: ~ 312.80 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
