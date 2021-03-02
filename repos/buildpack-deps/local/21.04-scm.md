@@ -161,13 +161,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu16
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu16.dsc' base-files_11ubuntu16.dsc 1697 SHA512:ab78458ed36b750eaecd16f7d5b5ae3adddd7d1dc49fa269ec5137cf2ceaeebf891f2fda78510a4244155d4c94e93f940abad4fe395358926afc03de2ce1b89c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu16.tar.xz' base-files_11ubuntu16.tar.xz 80900 SHA512:f741e6dfe8e44b56a83dcb65a01baa0bcbbf7b3fa91b85d6b24d5f2a9652166b45bbf9de872836f885417901aaf8171965fe4ded9fe56fc84d016e2c05d2ab06
-```
 
 ### `dpkg` source package: `base-passwd=3.5.48`
 
@@ -276,13 +272,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cdebconf=0.256ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.256ubuntu1.dsc' cdebconf_0.256ubuntu1.dsc 2865 SHA512:1fca0c6e2a9b4fe03646f05e3ac08b8bf250bdc76c55087d874f51e400719c9f6dc09262f666819b37a9ccd28b6279aa725a60a3595ff009dd80d19b677f4590
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cdebconf/cdebconf_0.256ubuntu1.tar.xz' cdebconf_0.256ubuntu1.tar.xz 279604 SHA512:daedcf25351b97bec5c6179f6032c12606e818cc7b15ff76c051222c320011648754596175009bb33da8c083f2f65f5eb228aa77e2246da167e5a440b0eb0972
-```
 
 ### `dpkg` source package: `coreutils=8.32-4ubuntu2`
 
@@ -495,14 +487,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.10-1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.10-1.dsc' expat_2.2.10-1.dsc 1962 SHA512:7e8d988db934d374c408f6edf2e2ae14d30e7011b36e5d76c776482ab8d13d99e160e0e67e1b14ed2de1b6609c4f161333f55b9aead2937f99916d3e51a02944
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.10.orig.tar.gz' expat_2.2.10.orig.tar.gz 8276395 SHA512:5f2d00ead20139aae89910cc08246cf15f7562af2a4fe1b37ebe4c1500a71d9f0a655ebc43f10164ac846be3186ff43f2b94287b18d2a3af882cbd0a1de41a36
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.10-1.debian.tar.xz' expat_2.2.10-1.debian.tar.xz 10688 SHA512:233902d4d5df5da236bdbf73a0a942699baf931297dd2a6ed4ef7a251174a605de7be8fecc2ee1dcb96786f2584e277073f5f587352654319f77215c80f7f6d1
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/expat/2.2.10-1/
+
 
 ### `dpkg` source package: `findutils=4.7.0-1ubuntu2`
 
@@ -1745,15 +1736,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.4p1-3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1-3.dsc' openssh_8.4p1-3.dsc 3353 SHA512:ebb6403ee32af3a350cd7c70dfd50d0361c6b3e076f5f3583aa403a4418ac37e8479b5cb099cf2385d7e8a48c56cfa055a1b7043337131d9e2afaa383d140c13
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz' openssh_8.4p1.orig.tar.gz 1742201 SHA512:d65275b082c46c5efe7cf3264fa6794d6e99a36d4a54b50554fc56979d6c0837381587fd5399195e1db680d2a5ad1ef0b99a180eac2b4de5637906cb7a89e9ce
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz.asc' openssh_8.4p1.orig.tar.gz.asc 683 SHA512:3d9a026db27729a5a56785db3824230ccf2a3beca4bb48ef465e44d869b944dbc5d443152a1b1be21bc9c213c465d3d7ca1f876a387d0a6b9682a0cfec3e6e32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1-3.debian.tar.xz' openssh_8.4p1-3.debian.tar.xz 178784 SHA512:e4844f4918ba7e7ea59d5fe69d5106219b17647dd20f2d09e1b44d08f9bb26d0fd9f7d6c77c5b3cbc02c12167620025512dab60656079492509626b37a43cf44
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/openssh/1:8.4p1-3/
+
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu5`
 
@@ -1846,14 +1835,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pcre3=2:8.39-13
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-13.dsc' pcre3_8.39-13.dsc 2226 SHA512:5a12d0001341c4bdda5b087ef418d5f4e2ab5d27d3fb117319fce82e86ffe0167e2bf1e8afee1fb71fb479fc697fd1243ead3d89519a628a84ede2f99bf79cd0
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39.orig.tar.bz2' pcre3_8.39.orig.tar.bz2 1560758 SHA512:8b0f14ae5947c4b2d74876a795b04e532fd71c2479a64dbe0ed817e7c7894ea3cae533413de8c17322d305cb7f4e275d72b43e4e828eaca77dc4bcaf04529cf6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-13.debian.tar.gz' pcre3_8.39-13.debian.tar.gz 27002 SHA512:1dda1a982ecf1cf888e4f716101e84d99f427cd46874ab4d4116b0bda0852ef5cb7f57cec0edc7cab24c5095431694787dc052dab771621449f7c9d8c2367b86
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pcre3/2:8.39-13/
+
 
 ### `dpkg` source package: `perl=5.32.0-6`
 
@@ -2331,14 +2319,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.36.1-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.36.1-1ubuntu2.dsc' util-linux_2.36.1-1ubuntu2.dsc 4422 SHA512:87b280d39f9def6e0256d5a24b2807ea9b069524160a5d3fed1d324a9d94c9b45b694b302b0e95d70af9679a277ac5c58b26877e39f59de9d1a76bdcfbffe4ca
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.36.1.orig.tar.xz' util-linux_2.36.1.orig.tar.xz 5231880 SHA512:9dfd01ae4c16fa35015dafd222d555988b72e4d1d2fbadd140791b9ef78f84fa8254d4d08dc67cabf41e873338867f19e786b989d708ccfe5161c4f7679bba7a
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.36.1-1ubuntu2.debian.tar.xz' util-linux_2.36.1-1ubuntu2.debian.tar.xz 99248 SHA512:96f0744d877246cdb46bb2a2d3edff37a69c3f7f1163b1f743be181101e8a76b29029a37bb9f7afa1db95a988a90cda0dc902e930fb42a9bdae3299f09ccd1c0
-```
 
 ### `dpkg` source package: `wget=1.21-1ubuntu1`
 
@@ -2419,11 +2402,6 @@ Licenses: (parsed from: `/usr/share/doc/zlib1g/copyright`)
 
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-2ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu4.dsc' zlib_1.2.11.dfsg-2ubuntu4.dsc 2945 SHA512:afe11a895b3c5355d897543fb74716c2c78c2c273a51f75f53b10a49c678217d31ef7ed6b66a3d3423263dd918379d356bd47da139a3468adcdf2ecb18195a5a
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.gz' zlib_1.2.11.dfsg.orig.tar.gz 370248 SHA512:92819807c0b8de655021bb2d5d182f9b6b381d3072d8c8dc1df34bbaa25d36bcba140c85f754a43cc466aac65850b7a7366aa0c93e804180e5b255e61d5748de
-'http://archive.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.11.dfsg-2ubuntu4.debian.tar.xz' zlib_1.2.11.dfsg-2ubuntu4.debian.tar.xz 50768 SHA512:bd064f5baa8feec0fedb0406169a1a9ba0ba6bd0a581efbaa7c43e88707a429b26dfe3b7eacaa5f6657c3ab29320896473ba6418374583bc2602e3dd9de839af
-```

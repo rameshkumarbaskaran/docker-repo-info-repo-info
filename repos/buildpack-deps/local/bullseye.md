@@ -1355,20 +1355,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.30.0-1
-'http://deb.debian.org/debian/pool/main/g/git/git_2.30.0-1.dsc' git_2.30.0-1.dsc 2867 SHA256:03e68585c8a2e0a1f1ee70aa1e80b10a6b771dacc29972b39916cdc23eeb81b4
-'http://deb.debian.org/debian/pool/main/g/git/git_2.30.0.orig.tar.xz' git_2.30.0.orig.tar.xz 6325652 SHA256:55735021109565721af805af382c45cce73c3cfaa59daad22443d1477d334d19
-'http://deb.debian.org/debian/pool/main/g/git/git_2.30.0-1.debian.tar.xz' git_2.30.0-1.debian.tar.xz 669656 SHA256:96406d78b1a1497d15502aba49903353067703fbe367d8ff0af2d322ab3275b2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.30.0-1/
 
-- https://sources.debian.net/src/git/1:2.30.0-1/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.30.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.30.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.66.6-1`
 
@@ -4591,20 +4584,13 @@ Licenses: (parsed from: `/usr/share/doc/libprocps8/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:3.3.16-5
-'http://deb.debian.org/debian/pool/main/p/procps/procps_3.3.16-5.dsc' procps_3.3.16-5.dsc 2127 SHA256:5e61bfeff182f19a1961ee763b8472e3545faced9524fcfdb04903488f85c5a4
-'http://deb.debian.org/debian/pool/main/p/procps/procps_3.3.16.orig.tar.xz' procps_3.3.16.orig.tar.xz 621892 SHA256:2919299e579d29be3501a802dfe77e6f23be228149d0396d83d0ffbe8fa7efbf
-'http://deb.debian.org/debian/pool/main/p/procps/procps_3.3.16-5.debian.tar.xz' procps_3.3.16-5.debian.tar.xz 29384 SHA256:4931905daf991ec076dc25001dcc242f080f51354577d99068ebf3d81d84bbe3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/procps/2:3.3.16-5/
 
-- https://sources.debian.net/src/procps/2:3.3.16-5/ (for browsing the source)
-- https://sources.debian.net/src/procps/2:3.3.16-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/procps/2:3.3.16-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.9.1-1`
 
@@ -4643,20 +4629,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.9.1-2
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.1-2.dsc' python3-stdlib-extensions_3.9.1-2.dsc 2450 SHA256:77b9923a1a49ac9cf35dd648b8cbb1d08d6dfaa38b6fce6820c5557fb7251b63
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.1.orig.tar.xz' python3-stdlib-extensions_3.9.1.orig.tar.xz 1096448 SHA256:48223c1ec0f8a36161c2edfb60dae6c35763341489a789a142c70bb56363e6db
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.1-2.debian.tar.xz' python3-stdlib-extensions_3.9.1-2.debian.tar.xz 18572 SHA256:ca8ba13f33a7ae118ff1a52a9aff973eefde7db0c54472c07ab419539748e915
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.9.1-2/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.9.1-2/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.9.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.9.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.9=3.9.1-4`
 
@@ -5003,20 +4982,13 @@ Licenses: (parsed from: `/usr/share/doc/tar/copyright`)
 - `GPL-2`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tar=1.32+dfsg-1
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.32+dfsg-1.dsc' tar_1.32+dfsg-1.dsc 2015 SHA256:8154c63983aadb982496a047384688c223bb8ffe50146dd05d4138c66dec75cd
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.32+dfsg.orig.tar.xz' tar_1.32+dfsg.orig.tar.xz 1910772 SHA256:9cb89ab8997d5469b24c7a676f0f0ae5b84d730c3d44d9afeabad63431ec8d27
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.32+dfsg-1.debian.tar.xz' tar_1.32+dfsg-1.debian.tar.xz 19460 SHA256:2d4bfe8c6121762fb99d440ad6ab98ad761e02d933d53bdaa5d932661473868c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tar/1.32+dfsg-1/
 
-- https://sources.debian.net/src/tar/1.32+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/tar/1.32+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tar/1.32+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tiff=4.2.0-1`
 

@@ -509,19 +509,13 @@ Licenses: (parsed from: `/usr/share/doc/debconf/copyright`)
 
 - `BSD-2-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris debconf=1.5.74
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.74.dsc' debconf_1.5.74.dsc 2082 SHA256:7576b8798165e30aaea23bad812eec729dd091a1ca59063328e7f68223b79af1
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.74.tar.xz' debconf_1.5.74.tar.xz 571108 SHA256:11b3fa02ddafe813c301aa150fef4d510d77afa64cbfe09c7e614995147c48e0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/debconf/1.5.74/
 
-- https://sources.debian.net/src/debconf/1.5.74/ (for browsing the source)
-- https://sources.debian.net/src/debconf/1.5.74/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/debconf/1.5.74/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debian-archive-keyring=2019.1`
 
@@ -2458,20 +2452,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.9-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.9=3.9.1-4
-'http://deb.debian.org/debian/pool/main/p/python3.9/python3.9_3.9.1-4.dsc' python3.9_3.9.1-4.dsc 3432 SHA256:7458da4ea7068d810a21c016b3e000a695497bd31e6cd067d47f10f061b93c73
-'http://deb.debian.org/debian/pool/main/p/python3.9/python3.9_3.9.1.orig.tar.xz' python3.9_3.9.1.orig.tar.xz 18897104 SHA256:991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff
-'http://deb.debian.org/debian/pool/main/p/python3.9/python3.9_3.9.1-4.debian.tar.xz' python3.9_3.9.1-4.debian.tar.xz 322620 SHA256:26ffc57a10ee587503f0f4fd7fe1ab924c0e2b0b0fcc1945ed79ca65b8d3e95b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.9/3.9.1-4/
 
-- https://sources.debian.net/src/python3.9/3.9.1-4/ (for browsing the source)
-- https://sources.debian.net/src/python3.9/3.9.1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.9/3.9.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.1-1`
 

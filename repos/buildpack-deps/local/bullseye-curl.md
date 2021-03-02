@@ -1692,20 +1692,13 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 - `SIL-OFL-1.1`
 - `all-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nghttp2=1.42.0-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.42.0-1.dsc' nghttp2_1.42.0-1.dsc 2548 SHA256:c4460cc87bec8a0110ae2dba27397a3fdfac89ceabefeb07fc3665ecdd22340e
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.42.0.orig.tar.bz2' nghttp2_1.42.0.orig.tar.bz2 4523037 SHA256:10473848c2636fa9de6b469b04d0a0336cf8268486f7a6bde7cb2d0634736624
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.42.0-1.debian.tar.xz' nghttp2_1.42.0-1.debian.tar.xz 16352 SHA256:157ede2fe87d72b31247b2af914d1e417058aab18dd6aeccfb97ecc483361924
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nghttp2/1.42.0-1/
 
-- https://sources.debian.net/src/nghttp2/1.42.0-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.42.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.42.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `npth=1.6-3`
 
@@ -2069,21 +2062,13 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.34.1-1
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.34.1-1.dsc' sqlite3_3.34.1-1.dsc 2410 SHA256:394076ba866c786931f5b811606a09d59ed46d60b53506366bbd140119e0a401
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.34.1.orig-www.tar.xz' sqlite3_3.34.1.orig-www.tar.xz 5581512 SHA256:c63647f3fb6c4b0620d6587e2a744021401df92c307b55e236a7eb28c5000fa7
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.34.1.orig.tar.xz' sqlite3_3.34.1.orig.tar.xz 7343284 SHA256:082f583440c662cb484ae1c124ffe285b587bbb7837e095e693026e6df50334d
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.34.1-1.debian.tar.xz' sqlite3_3.34.1-1.debian.tar.xz 21660 SHA256:195901b7c6fc735fd5341880a0c817579c3510c7ba7094111b375e0f96dab645
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sqlite3/3.34.1-1/
 
-- https://sources.debian.net/src/sqlite3/3.34.1-1/ (for browsing the source)
-- https://sources.debian.net/src/sqlite3/3.34.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sqlite3/3.34.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=247.3-1`
 
