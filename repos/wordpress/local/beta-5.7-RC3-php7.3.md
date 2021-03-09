@@ -1,10 +1,10 @@
-# `wordpress:beta-5.7-RC1-apache`
+# `wordpress:beta-5.7-RC3-php7.3-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1baa31e79b32391944b963cac46dfdbdcc1366b0656b68cbbe9301e05bbf1983`
-- Created: `2021-02-24T19:29:23.063677717Z`
-- Virtual Size: ~ 550.75 Mb  
+- Image ID: `sha256:0e7d0b46c4b2fefcbd001344310574a83ea1a9d4684ca1374f95a90e64c3f178`
+- Created: `2021-03-09T01:35:43.305329319Z`
+- Virtual Size: ~ 546.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,11 +20,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.15`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.15.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.15.tar.xz.asc`
-  - `PHP_SHA256=9b859c65f0cf7b3eff9d4a28cfab719fb3d36a1db3c20d874a79b5ec44d43cb8`
+  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
+  - `PHP_VERSION=7.3.27`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.27.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.27.tar.xz.asc`
+  - `PHP_SHA256=65f616e2d5b6faacedf62830fa047951b0136d5da34ae59e6744cbaf5dca148d`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2201,33 +2201,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/liblqr/0.4.2-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/liblqr/0.4.2-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libonig=6.9.1-1`
-
-Binary Packages:
-
-- `libonig5:amd64=6.9.1-1`
-
-Licenses: (parsed from: `/usr/share/doc/libonig5/copyright`)
-
-- `BSD-2-clause`
-- `GPL-2`
-- `GPL-2+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris libonig=6.9.1-1
-'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1-1.dsc' libonig_6.9.1-1.dsc 1854 SHA256:597b84337f078a46e9212eeedf39ba22723bf7447cf3d117a15c5635a390f955
-'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1.orig.tar.gz' libonig_6.9.1.orig.tar.gz 535443 SHA256:733a91e257c20cb17b81596db48fd0fbd2e0074fe922ae4c2bc4fefcec110aae
-'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1-1.debian.tar.xz' libonig_6.9.1-1.debian.tar.xz 7800 SHA256:29e99f42ee8dcf7498b85de13c4e2b07548e52fed9f40bd85f90431db7f03ab6
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/libonig/6.9.1-1/ (for browsing the source)
-- https://sources.debian.net/src/libonig/6.9.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libonig/6.9.1-1/ (for access to the source package after it no longer exists in the archive)
-
 ### `dpkg` source package: `libpaper=1.1.28`
 
 Binary Packages:
@@ -3243,31 +3216,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openjpeg2/2.3.0-2+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openjpeg2/2.3.0-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u5`
+### `dpkg` source package: `openldap=2.4.47+dfsg-3+deb10u6`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u5`
-- `libldap-common=2.4.47+dfsg-3+deb10u5`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u5/
-
-
-### `dpkg` source package: `openssl=1.1.1d-0+deb10u4`
-
-Binary Packages:
-
-- `libssl1.1:amd64=1.1.1d-0+deb10u4`
-- `openssl=1.1.1d-0+deb10u4`
+- `libldap-2.4-2:amd64=2.4.47+dfsg-3+deb10u6`
+- `libldap-common=2.4.47+dfsg-3+deb10u6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3276,18 +3230,44 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u4
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0+deb10u4.dsc' openssl_1.1.1d-0+deb10u4.dsc 2472 SHA256:b902902750711baf35c087bd220f0fc055ad41f9e810df07246e035fac195cf1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0+deb10u4.debian.tar.xz' openssl_1.1.1d-0+deb10u4.debian.tar.xz 91472 SHA256:3f6a76b437f5407fe9dba0a47b9d5ba427c83255f17769c4d8532788146fa6ca
+$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3+deb10u6
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u6.dsc' openldap_2.4.47+dfsg-3+deb10u6.dsc 3022 SHA256:14f48c8d0ffddaaf51edf064d9abe90d6f7466c710d6e78c520db48998eaebb0
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u6.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u6.debian.tar.xz 173600 SHA256:d21ccc7d2fc3b38dd68e8f4dd73bcff51d377e4ad47e6372ea4f806729856b79
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u4/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u6/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u6/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `openssl=1.1.1d-0+deb10u5`
+
+Binary Packages:
+
+- `libssl1.1:amd64=1.1.1d-0+deb10u5`
+- `openssl=1.1.1d-0+deb10u5`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u5
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u5.dsc' openssl_1.1.1d-0+deb10u5.dsc 2472 SHA256:a09e1135475dc740ceeb86c3c9ce8eec6bcc931df2a06a70f461ff0ce477c180
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u5.debian.tar.xz' openssl_1.1.1d-0+deb10u5.debian.tar.xz 95940 SHA256:70c3d201429bf5cdb198837da7ebe9e2bfe956f929ddc069f06cbb7508989c50
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u5/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2+deb10u1`
 

@@ -1,10 +1,10 @@
-# `wordpress:beta-5.7-RC1-php7.3-fpm-alpine`
+# `wordpress:beta-5.7-RC3-php7.3-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:afd8119182dcb5c574fd104ea6c57f49ccb1ea4e38a791b03a18c2fbff2572eb`
-- Created: `2021-02-24T19:30:29.142882578Z`
-- Virtual Size: ~ 241.35 Mb  
+- Image ID: `sha256:2e3a3eb452d0c46b625a9448e2e319d2a1e120563a8a89c7b672525d01a05e1a`
+- Created: `2021-03-09T01:36:01.198185589Z`
+- Virtual Size: ~ 241.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -266,16 +266,16 @@ GPL-2.0-only
 ### `apk` package: `curl`
 
 ```console
-curl-7.74.0-r0 description:
+curl-7.74.0-r1 description:
 URL retrival utility and library
 
-curl-7.74.0-r0 webpage:
+curl-7.74.0-r1 webpage:
 https://curl.haxx.se/
 
-curl-7.74.0-r0 installed size:
+curl-7.74.0-r1 installed size:
 245760
 
-curl-7.74.0-r0 license:
+curl-7.74.0-r1 license:
 MIT
 
 ```
@@ -657,16 +657,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.74.0-r0 description:
+libcurl-7.74.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.74.0-r0 webpage:
+libcurl-7.74.0-r1 webpage:
 https://curl.haxx.se/
 
-libcurl-7.74.0-r0 installed size:
+libcurl-7.74.0-r1 installed size:
 495616
 
-libcurl-7.74.0-r0 license:
+libcurl-7.74.0-r1 license:
 MIT
 
 ```

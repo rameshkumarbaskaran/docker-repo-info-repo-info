@@ -1,10 +1,10 @@
-# `wordpress:beta-5.7-RC1-php8.0-fpm-alpine`
+# `wordpress:beta-5.7-RC3-php8.0-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7295c16d11c344a4b2272a6a5366dc1a88a153ce3318a39147d8eeef6543b99`
-- Created: `2021-02-24T19:31:02.80925707Z`
-- Virtual Size: ~ 199.13 Mb  
+- Image ID: `sha256:7d4987e3e41b53dee59fb906b04384228e4fa646838e5c4adf145fde27896ecb`
+- Created: `2021-03-09T01:36:24.603959196Z`
+- Virtual Size: ~ 199.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.2`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.2.tar.xz?a=1`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.2.tar.xz.asc?a=1`
-  - `PHP_SHA256=84dd6e36f48c3a71ff5dceba375c1f6b34b71d4fa9e06b720780127176468ccc`
+  - `PHP_VERSION=8.0.3`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.3.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.3.tar.xz.asc`
+  - `PHP_SHA256=c9816aa9745a9695672951eaff3a35ca5eddcb9cacf87a4f04b9fb1169010251`
 
 ## `apk` (`.apk`-based packages)
 
@@ -215,16 +215,16 @@ GPL-2.0-only
 ### `apk` package: `curl`
 
 ```console
-curl-7.74.0-r0 description:
+curl-7.74.0-r1 description:
 URL retrival utility and library
 
-curl-7.74.0-r0 webpage:
+curl-7.74.0-r1 webpage:
 https://curl.haxx.se/
 
-curl-7.74.0-r0 installed size:
+curl-7.74.0-r1 installed size:
 245760
 
-curl-7.74.0-r0 license:
+curl-7.74.0-r1 license:
 MIT
 
 ```
@@ -453,16 +453,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.74.0-r0 description:
+libcurl-7.74.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.74.0-r0 webpage:
+libcurl-7.74.0-r1 webpage:
 https://curl.haxx.se/
 
-libcurl-7.74.0-r0 installed size:
+libcurl-7.74.0-r1 installed size:
 495616
 
-libcurl-7.74.0-r0 license:
+libcurl-7.74.0-r1 license:
 MIT
 
 ```
