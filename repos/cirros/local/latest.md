@@ -1,9 +1,9 @@
-# `cirros:0.5.1`
+# `cirros:0.5.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3c82e4d066cf6f9e50efaead6e3ff7fddddf5527826afd68e5a969579fc4db4a`
-- Created: `2020-03-06T22:19:37.675037702Z`
+- Image ID: `sha256:f9cae1daf5f682cb6403a766b3e6afd73a102296910f27ea1ec392b54dc0c188`
+- Created: `2021-03-08T21:36:45.370448306Z`
 - Virtual Size: ~ 12.56 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
