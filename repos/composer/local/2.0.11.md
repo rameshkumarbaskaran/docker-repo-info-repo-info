@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a4f3a7af1be94153a0b15c3ccb558d6c61ae16bc5cc977531a668b032c14719f`
-- Created: `2021-02-26T01:21:41.308316581Z`
-- Virtual Size: ~ 172.75 Mb  
+- Image ID: `sha256:ff854871a5957060e93934887728d773bd21351468fc6b4b6ac5465ad2c81ea2`
+- Created: `2021-03-06T08:53:56.373277281Z`
+- Virtual Size: ~ 172.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.2`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.2.tar.xz?a=1`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.2.tar.xz.asc?a=1`
-  - `PHP_SHA256=84dd6e36f48c3a71ff5dceba375c1f6b34b71d4fa9e06b720780127176468ccc`
+  - `PHP_VERSION=8.0.3`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.3.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.3.tar.xz.asc`
+  - `PHP_SHA256=c9816aa9745a9695672951eaff3a35ca5eddcb9cacf87a4f04b9fb1169010251`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
   - `COMPOSER_VERSION=2.0.11`
@@ -234,16 +234,16 @@ GPL-3.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.74.0-r0 description:
+curl-7.74.0-r1 description:
 URL retrival utility and library
 
-curl-7.74.0-r0 webpage:
+curl-7.74.0-r1 webpage:
 https://curl.haxx.se/
 
-curl-7.74.0-r0 installed size:
+curl-7.74.0-r1 installed size:
 245760
 
-curl-7.74.0-r0 license:
+curl-7.74.0-r1 license:
 MIT
 
 ```
@@ -387,16 +387,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.74.0-r0 description:
+libcurl-7.74.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.74.0-r0 webpage:
+libcurl-7.74.0-r1 webpage:
 https://curl.haxx.se/
 
-libcurl-7.74.0-r0 installed size:
+libcurl-7.74.0-r1 installed size:
 495616
 
-libcurl-7.74.0-r0 license:
+libcurl-7.74.0-r1 license:
 MIT
 
 ```
@@ -795,16 +795,16 @@ BSD-3-Clause
 ### `apk` package: `python3`
 
 ```console
-python3-3.8.7-r0 description:
+python3-3.8.7-r1 description:
 A high-level scripting language
 
-python3-3.8.7-r0 webpage:
+python3-3.8.7-r1 webpage:
 https://www.python.org/
 
-python3-3.8.7-r0 installed size:
-47054848
+python3-3.8.7-r1 installed size:
+47058944
 
-python3-3.8.7-r0 license:
+python3-3.8.7-r1 license:
 PSF-2.0
 
 ```
