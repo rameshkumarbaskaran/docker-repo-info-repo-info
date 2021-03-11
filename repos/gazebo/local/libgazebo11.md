@@ -1971,14 +1971,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.64.6-1~ubuntu20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1~ubuntu20.04.1.dsc' glib2.0_2.64.6-1~ubuntu20.04.1.dsc 3256 SHA512:53a38fdfa204d2259e7603e85569d4ddcbc87cdcb2e5af3b5de93ec1b3c600a3fbae5316551f3409333b5eadf0f347ceb7ad5d3262aacd369453fb220f61920c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6.orig.tar.xz' glib2.0_2.64.6.orig.tar.xz 4781576 SHA512:5cd82c4d9b143e7aa130c24e25fb9def06dd915ef8ad8ed3883931bf5cddecf69c2e669ef6aa1d910484ede75b671e7c48a4f3fe50aa78955bff57b04f0cf958
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1~ubuntu20.04.1.debian.tar.xz' glib2.0_2.64.6-1~ubuntu20.04.1.debian.tar.xz 92696 SHA512:fea360467af2df16529fcee10740fc04f7d30325907ef7d612441bbed544eeccffc19cbea30f0171284e4be8ef35300f16ed761149d1d9f5f83a76625a3f1298
-```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.2`
 
@@ -2367,13 +2362,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-common3/copyright`, `/usr/sh
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-common3=3.10.1-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.10.1-1~focal.dsc' ignition-common3_3.10.1-1~focal.dsc 1891 SHA256:c10d20b111079a2ffce4bc42081e47fa9589c8e29253eb40ac8c714d0a9c0df3
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.10.1-1~focal.tar.xz' ignition-common3_3.10.1-1~focal.tar.xz 6690016 SHA256:4cdd120cf601375e8ae5b275de22d8aba8f29bdbf3b0383481d13d74bdfa183d
-```
 
 ### `dpkg` source package: `ignition-fuel-tools4=4.3.0-1~focal`
 
@@ -5893,14 +5884,9 @@ Licenses: (parsed from: `/usr/share/doc/libxnvctrl0/copyright`)
 - `other-Metrolink`
 - `other-XFree`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nvidia-settings=440.82-0ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_440.82-0ubuntu0.20.04.1.dsc' nvidia-settings_440.82-0ubuntu0.20.04.1.dsc 2480 SHA512:f8fa55761479290eef387aef2484cadd2f681faa676f2f5e063f2b819f38782203fb7386acbd9cb4d13335e95a97bae7c08c2b12b643c1435e0f813eb079963c
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_440.82.orig.tar.bz2' nvidia-settings_440.82.orig.tar.bz2 1128498 SHA512:8f9b546f65a1bd17f6336df9e62b0d1403581d3f60276793a536ff39bf67038def1c2738545b24b04eb465860f0cb97b5b9688d7dfb759fda567c05b1cc651ff
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_440.82-0ubuntu0.20.04.1.debian.tar.xz' nvidia-settings_440.82-0ubuntu0.20.04.1.debian.tar.xz 23976 SHA512:a1770bfe6aaa3161396be1a95e64be178df6e41d645b337b1b4457fbdad425667758d5d7d5678e7eb04bb16088e53a362a4fe7dbc298a049984db4ab2a0df7bc
-```
 
 ### `dpkg` source package: `ocl-icd=2.2.11-1ubuntu1`
 
@@ -6177,14 +6163,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.2p1-4ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.1.dsc' openssh_8.2p1-4ubuntu0.1.dsc 3098 SHA512:0e51e026137b7e93d36167da66b8135e722f90cfc7d3a648336dab728f71e74988d1605bb73c788f1cf01161ceed7120a21a07c49e540c8ea16db853e496c51f
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1.orig.tar.gz' openssh_8.2p1.orig.tar.gz 1701197 SHA512:c4db64e52a3a4c410de9de49f9cb104dd493b10250af3599b92457dd986277b3fd99a6f51cec94892fd1be5bd0369c5757262ea7805f0de464b245c3d34c120a
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.1.debian.tar.xz' openssh_8.2p1-4ubuntu0.1.debian.tar.xz 174784 SHA512:cca56b046669198489802c00d495b507f5a47b2f92b80f8e073eeae199bf2f5948078feefd2aaa9eeaec6ec93a8bebc7a68db6c0bc43bcb5325e43a9b4bc8ebe
-```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.2`
 

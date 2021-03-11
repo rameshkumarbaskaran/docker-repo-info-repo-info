@@ -7592,20 +7592,13 @@ Licenses: (parsed from: `/usr/share/doc/libzmq5/copyright`)
 - `LGPL-3.0+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris zeromq3=4.2.1-4+deb9u3
-'http://security.debian.org/debian-security/pool/updates/main/z/zeromq3/zeromq3_4.2.1-4+deb9u3.dsc' zeromq3_4.2.1-4+deb9u3.dsc 2083 SHA256:2fc8ffd4d7de749a9cb69f579bd84a22b0b6b3b7a43548c8a956a2f1d407f4c1
-'http://security.debian.org/debian-security/pool/updates/main/z/zeromq3/zeromq3_4.2.1.orig.tar.gz' zeromq3_4.2.1.orig.tar.gz 586163 SHA256:f68bc45b51297577522aa83d8f05727dba54e567a177330c82918454b656f74f
-'http://security.debian.org/debian-security/pool/updates/main/z/zeromq3/zeromq3_4.2.1-4+deb9u3.debian.tar.xz' zeromq3_4.2.1-4+deb9u3.debian.tar.xz 24668 SHA256:f1d9a1cc891d2bbb592f0a0cf679b2b51c18adeb60be2e17679d2dfa0b8ecc2d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/zeromq3/4.2.1-4+deb9u3/
 
-- https://sources.debian.net/src/zeromq3/4.2.1-4+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/zeromq3/4.2.1-4+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/zeromq3/4.2.1-4+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `zlib=1:1.2.8.dfsg-5`
 
