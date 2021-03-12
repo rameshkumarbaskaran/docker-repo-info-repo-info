@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:86e38d24b35840fa7312018708201e86ea90407dc220b161db922b31df663c84`
-- Created: `2021-01-21T10:09:27.803332579Z`
+- Image ID: `sha256:d3b952a65f3618dd6b54d817b4b0d80c5b497e3d693c7a856c0770fba8fbfb81`
+- Created: `2021-03-12T11:44:51.058597246Z`
 - Virtual Size: ~ 132.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -939,11 +939,11 @@ $ apt-get source -qq --print-uris ncurses=6.0+20160213-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.0+20160213-1ubuntu1.debian.tar.xz' ncurses_6.0+20160213-1ubuntu1.debian.tar.xz 54496 SHA256:9551738e1bdc425d12897cc459ce5ce40b5e12530b144b731c0a7b3e077c07c7
 ```
 
-### `dpkg` source package: `neurodebian=0.40.1~nd16.04+1`
+### `dpkg` source package: `neurodebian=0.41.0~nd16.04+1`
 
 Binary Packages:
 
-- `neurodebian-freeze=0.40.1~nd16.04+1`
+- `neurodebian-freeze=0.41.0~nd16.04+1`
 
 Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 
@@ -952,9 +952,13 @@ Licenses: (parsed from: `/usr/share/doc/neurodebian-freeze/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris neurodebian=0.41.0~nd16.04+1
+'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.41.0~nd16.04+1.dsc' neurodebian_0.41.0~nd16.04+1.dsc 1543 SHA256:0096cb37f37dcc48093e12d2de4f367efc2ac9846a3cc97ea97c0adcdf64360f
+'http://neuro.debian.net/debian/pool/main/n/neurodebian/neurodebian_0.41.0~nd16.04+1.tar.xz' neurodebian_0.41.0~nd16.04+1.tar.xz 8313680 SHA256:eace85dec11e7545bde9fc074c8c6fa27f705c35928cf20f4f9b80eb374588f4
+```
 
 ### `dpkg` source package: `pam=1.1.8-3.2ubuntu2.3`
 
