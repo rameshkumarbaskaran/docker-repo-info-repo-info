@@ -1,10 +1,10 @@
-# `plone:5.2.2-alpine`
+# `plone:5.2.4-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:002d679ed64eb8449bbf2e56c41c946e40953df63e00902ca61c8e44608b0341`
-- Created: `2021-02-23T00:17:38.524227467Z`
-- Virtual Size: ~ 399.69 Mb  
+- Image ID: `sha256:7b50df7f86a4b873a905c3bd8ed9cfd2ca0892bccce225dbab3a6812eb2ec0e2`
+- Created: `2021-03-11T19:45:17.694474919Z`
+- Virtual Size: ~ 490.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -17,21 +17,14 @@
   - `PYTHON_PIP_VERSION=21.0.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/b60e2320d9e8d02348525bd74e871e466afdf77c/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=c3b81e5d06371e135fb3156dc7d8fd6270735088428c4a9a5ec1f342e2024565`
-  - `PIP=20.2.3`
-  - `ZC_BUILDOUT=2.13.3`
-  - `SETUPTOOLS=50.3.0`
-  - `WHEEL=0.35.1`
+  - `PIP=21.0.1`
+  - `ZC_BUILDOUT=2.13.4`
+  - `SETUPTOOLS=51.3.3`
+  - `WHEEL=0.36.2`
   - `PLONE_MAJOR=5.2`
-  - `PLONE_VERSION=5.2.2`
-  - `PLONE_VERSION_RELEASE=Plone-5.2.2-UnifiedInstaller`
-  - `PLONE_MD5=a603eddfd3abb0528f0861472ebac934`
-- Labels:
-  - `description=Plone image, based on Unified Installer`
-  - `maintainer=Plone Community`
-  - `name=Plone 5.2`
-  - `os=alpine`
-  - `os.version=3.12`
-  - `plone=5.2.2`
+  - `PLONE_VERSION=5.2.4`
+  - `PLONE_VERSION_RELEASE=Plone-5.2.4-UnifiedInstaller-1.0`
+  - `PLONE_MD5=b682cdf2384e692c033077f448b68afd`
 
 ## `apk` (`.apk`-based packages)
 
@@ -100,6 +93,23 @@ bash-5.1.0-r0 installed size:
 
 bash-5.1.0-r0 license:
 GPL-3.0-or-later
+
+```
+
+### `apk` package: `brotli-libs`
+
+```console
+brotli-libs-1.0.9-r3 description:
+Generic lossless compressor (libraries)
+
+brotli-libs-1.0.9-r3 webpage:
+https://github.com/google/brotli
+
+brotli-libs-1.0.9-r3 installed size:
+737280
+
+brotli-libs-1.0.9-r3 license:
+MIT
 
 ```
 
@@ -185,6 +195,23 @@ gdbm-1.19-r0 installed size:
 
 gdbm-1.19-r0 license:
 GPL-3.0-or-later
+
+```
+
+### `apk` package: `git`
+
+```console
+git-2.30.2-r0 description:
+Distributed version control system
+
+git-2.30.2-r0 webpage:
+https://www.git-scm.com/
+
+git-2.30.2-r0 installed size:
+10612736
+
+git-2.30.2-r0 license:
+GPL-2.0-or-later
 
 ```
 
@@ -324,6 +351,40 @@ OpenSSL
 
 ```
 
+### `apk` package: `libcurl`
+
+```console
+libcurl-7.74.0-r1 description:
+The multiprotocol file transfer library
+
+libcurl-7.74.0-r1 webpage:
+https://curl.haxx.se/
+
+libcurl-7.74.0-r1 installed size:
+495616
+
+libcurl-7.74.0-r1 license:
+MIT
+
+```
+
+### `apk` package: `libedit`
+
+```console
+libedit-20191231.3.1-r1 description:
+BSD line editing library
+
+libedit-20191231.3.1-r1 webpage:
+https://www.thrysoee.dk/editline
+
+libedit-20191231.3.1-r1 installed size:
+200704
+
+libedit-20191231.3.1-r1 license:
+BSD-3-Clause
+
+```
+
 ### `apk` package: `libffi`
 
 ```console
@@ -409,6 +470,23 @@ BSD-3-Clause IJG Zlib
 
 ```
 
+### `apk` package: `libldap`
+
+```console
+libldap-2.4.57-r1 description:
+OpenLDAP libraries
+
+libldap-2.4.57-r1 webpage:
+https://www.openldap.org/
+
+libldap-2.4.57-r1 installed size:
+630784
+
+libldap-2.4.57-r1 license:
+custom
+
+```
+
 ### `apk` package: `libnsl`
 
 ```console
@@ -423,6 +501,40 @@ libnsl-1.3.0-r0 installed size:
 
 libnsl-1.3.0-r0 license:
 LGPL-2.0-or-later
+
+```
+
+### `apk` package: `libpq`
+
+```console
+libpq-13.2-r0 description:
+PostgreSQL libraries
+
+libpq-13.2-r0 webpage:
+https://www.postgresql.org/
+
+libpq-13.2-r0 installed size:
+335872
+
+libpq-13.2-r0 license:
+PostgreSQL
+
+```
+
+### `apk` package: `libsasl`
+
+```console
+libsasl-2.1.27-r10 description:
+Cyrus Simple Authentication and Security Layer (SASL) library
+
+libsasl-2.1.27-r10 webpage:
+https://www.cyrusimap.org/sasl/
+
+libsasl-2.1.27-r10 installed size:
+196608
+
+libsasl-2.1.27-r10 license:
+custom
 
 ```
 
@@ -562,6 +674,23 @@ custom
 
 ```
 
+### `apk` package: `mariadb-connector-c`
+
+```console
+mariadb-connector-c-3.1.11-r0 description:
+The MariaDB Native Client library (C driver)
+
+mariadb-connector-c-3.1.11-r0 webpage:
+https://mariadb.org/
+
+mariadb-connector-c-3.1.11-r0 installed size:
+479232
+
+mariadb-connector-c-3.1.11-r0 license:
+LGPL-2.1-or-later
+
+```
+
 ### `apk` package: `musl`
 
 ```console
@@ -630,6 +759,40 @@ MIT
 
 ```
 
+### `apk` package: `nghttp2-libs`
+
+```console
+nghttp2-libs-1.42.0-r1 description:
+Experimental HTTP/2 client, server and proxy (libraries)
+
+nghttp2-libs-1.42.0-r1 webpage:
+https://nghttp2.org
+
+nghttp2-libs-1.42.0-r1 installed size:
+172032
+
+nghttp2-libs-1.42.0-r1 license:
+MIT
+
+```
+
+### `apk` package: `pcre2`
+
+```console
+pcre2-10.36-r0 description:
+Perl-compatible regular expression library
+
+pcre2-10.36-r0 webpage:
+https://pcre.org/
+
+pcre2-10.36-r0 installed size:
+667648
+
+pcre2-10.36-r0 license:
+BSD-3-Clause
+
+```
+
 ### `apk` package: `popt`
 
 ```console
@@ -644,6 +807,23 @@ popt-1.18-r0 installed size:
 
 popt-1.18-r0 license:
 MIT
+
+```
+
+### `apk` package: `postgresql-client`
+
+```console
+postgresql-client-13.2-r0 description:
+PostgreSQL client
+
+postgresql-client-13.2-r0 webpage:
+https://www.postgresql.org/
+
+postgresql-client-13.2-r0 installed size:
+2281472
+
+postgresql-client-13.2-r0 license:
+PostgreSQL
 
 ```
 
