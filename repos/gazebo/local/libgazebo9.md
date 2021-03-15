@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:338aa1c8898fd9de2cfcb2146d82f8aa96c8afadaa800b2f2c86a0c80ffe8a11`
-- Created: `2021-03-04T04:05:35.145800007Z`
+- Image ID: `sha256:0f0bfb95558628c208f2a4693ac360e2ab8009b06daef4166de4fe1f57f81f10`
+- Created: `2021-03-12T09:52:11.291979802Z`
 - Virtual Size: ~ 1.24 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1480,23 +1480,28 @@ $ apt-get source -qq --print-uris giflib=5.1.4-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/giflib/giflib_5.1.4-2ubuntu0.1.debian.tar.xz' giflib_5.1.4-2ubuntu0.1.debian.tar.xz 8768 SHA512:e1dc47d73443a9d436482b8945e9f35012f6de278976bdee125d7fd4baa54dcd3c5ee3643e9a1052cfa871917ee5047b22610f4336d8643958ba1e849dfe7b9e
 ```
 
-### `dpkg` source package: `glib2.0=2.56.4-0ubuntu0.18.04.6`
+### `dpkg` source package: `glib2.0=2.56.4-0ubuntu0.18.04.7`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.56.4-0ubuntu0.18.04.6`
-- `libglib2.0-bin=2.56.4-0ubuntu0.18.04.6`
-- `libglib2.0-data=2.56.4-0ubuntu0.18.04.6`
-- `libglib2.0-dev:amd64=2.56.4-0ubuntu0.18.04.6`
-- `libglib2.0-dev-bin=2.56.4-0ubuntu0.18.04.6`
+- `libglib2.0-0:amd64=2.56.4-0ubuntu0.18.04.7`
+- `libglib2.0-bin=2.56.4-0ubuntu0.18.04.7`
+- `libglib2.0-data=2.56.4-0ubuntu0.18.04.7`
+- `libglib2.0-dev:amd64=2.56.4-0ubuntu0.18.04.7`
+- `libglib2.0-dev-bin=2.56.4-0ubuntu0.18.04.7`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc/libglib2.0-bin/copyright`, `/usr/share/doc/libglib2.0-data/copyright`, `/usr/share/doc/libglib2.0-dev/copyright`, `/usr/share/doc/libglib2.0-dev-bin/copyright`)
 
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris glib2.0=2.56.4-0ubuntu0.18.04.7
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.7.dsc' glib2.0_2.56.4-0ubuntu0.18.04.7.dsc 3612 SHA512:b8d19b4216637928449bf9b5bea413c5e791968c303a6bf0e3e8dac3bc8fa714e96fcdac2f79e4beffd02b49d296b275a75464618b9208db3bec68babbf212cd
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4.orig.tar.xz' glib2.0_2.56.4.orig.tar.xz 7029768 SHA512:280a46c2af13283a08c15ff0b4f5492659c2884521930600ad45310ed181c44a878ad8f9b36bae68ed6e7d92db6f1630f7bf015148c513dc317d25807f13abb0
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.7.debian.tar.xz' glib2.0_2.56.4-0ubuntu0.18.04.7.debian.tar.xz 102932 SHA512:e64261afb5cd6f6ad96a85e255f0b85b0f4e4b1a404666a91e327a3e0b363225e48e22c65cd3c3d767218303cb47de3fb7b8499476270d69bf7ba3b3e1108525
+```
 
 ### `dpkg` source package: `glibc=2.27-3ubuntu1.4`
 

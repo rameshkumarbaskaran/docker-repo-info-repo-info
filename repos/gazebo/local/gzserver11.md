@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f9db29628c66c5aadd66a400faad75332fe9160f6b851892c4d3a170a4505289`
-- Created: `2021-03-04T04:14:15.409329442Z`
+- Image ID: `sha256:1d366174bf7fa48d729600ee4eaabc54d576853e1d9b8c5ecda28b9bea8c00ea`
+- Created: `2021-03-12T10:08:31.999026734Z`
 - Virtual Size: ~ 799.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1427,11 +1427,11 @@ $ apt-get source -qq --print-uris giflib=5.1.9-1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/giflib/giflib_5.1.9-1.debian.tar.xz' giflib_5.1.9-1.debian.tar.xz 8308 SHA256:fa7d879571e40ecbea6934f0fa3100a7cba0f7313c2de8ff61d62294970ad86d
 ```
 
-### `dpkg` source package: `glib2.0=2.64.6-1~ubuntu20.04.1`
+### `dpkg` source package: `glib2.0=2.64.6-1~ubuntu20.04.2`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.64.6-1~ubuntu20.04.1`
+- `libglib2.0-0:amd64=2.64.6-1~ubuntu20.04.2`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 
@@ -1439,9 +1439,14 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 - `GPL-2+`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris glib2.0=2.64.6-1~ubuntu20.04.2
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1~ubuntu20.04.2.dsc' glib2.0_2.64.6-1~ubuntu20.04.2.dsc 3338 SHA512:e115b94aaaf3fe1464734217384bb2a0e386cbb77b9eb34c00d40a5f02f6c6016bd9dc7be47af68f2406503fd1ef7cc6d9a139e5426dc0750d7d6ad54cff0f8f
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6.orig.tar.xz' glib2.0_2.64.6.orig.tar.xz 4781576 SHA512:5cd82c4d9b143e7aa130c24e25fb9def06dd915ef8ad8ed3883931bf5cddecf69c2e669ef6aa1d910484ede75b671e7c48a4f3fe50aa78955bff57b04f0cf958
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.64.6-1~ubuntu20.04.2.debian.tar.xz' glib2.0_2.64.6-1~ubuntu20.04.2.debian.tar.xz 108060 SHA512:2a4d3a9886bfdf2a503ffe4dd95cf28942a5ec14d739b918c7824cab5e29e2b090410f46b68be1d7098a56d2ae4738eaf4d3cd97001df8a62e657aba4c78262c
+```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.2`
 
@@ -1757,20 +1762,24 @@ $ apt-get source -qq --print-uris icu=66.1-2ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_66.1-2ubuntu2.debian.tar.xz' icu_66.1-2ubuntu2.debian.tar.xz 25500 SHA256:480775da69cad60a4dc1aa20097db1d87f5435406bafa3394394c8a546a514df
 ```
 
-### `dpkg` source package: `ignition-common3=3.10.1-1~focal`
+### `dpkg` source package: `ignition-common3=3.11.1-1~focal`
 
 Binary Packages:
 
-- `libignition-common3:amd64=3.10.1-1~focal`
+- `libignition-common3:amd64=3.11.1-1~focal`
 
 Licenses: (parsed from: `/usr/share/doc/libignition-common3/copyright`)
 
 - `Apache`
 - `Apache-2.0`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris ignition-common3=3.11.1-1~focal
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.11.1-1~focal.dsc' ignition-common3_3.11.1-1~focal.dsc 1891 SHA256:2bc9b5592fb6d5993e05189cf0b22444583cefc4db573406404e9f134b2c7479
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-common3/ignition-common3_3.11.1-1~focal.tar.xz' ignition-common3_3.11.1-1~focal.tar.xz 6714420 SHA256:14d7c131074a5593010082549fd64dafd328e19ea9bfce7d45fae1aec9efa801
+```
 
 ### `dpkg` source package: `ignition-fuel-tools4=4.3.0-1~focal`
 
