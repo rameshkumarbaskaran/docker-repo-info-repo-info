@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ec77776ad237484ae2ba463aa4246f529828e3a7dae22f59328fb310ca0d3591`
-- Created: `2020-04-24T13:23:55.378693897Z`
-- Virtual Size: ~ 44.89 Mb  
+- Image ID: `sha256:1b84547e9c6cfe8be39cc6870d9b942554d48005ecf5cd2ba4156a3a380fa53a`
+- Created: `2021-03-13T11:39:32.393575126Z`
+- Virtual Size: ~ 43.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/bin/entrypoint.sh"]`
@@ -92,16 +92,16 @@ GPL-2.0
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r0 description:
-Common CA certificates PEM files
+ca-certificates-20191127-r2 description:
+Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r0 webpage:
+ca-certificates-20191127-r2 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r0 installed size:
-741376
+ca-certificates-20191127-r2 installed size:
+737280
 
-ca-certificates-20191127-r0 license:
+ca-certificates-20191127-r2 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -211,16 +211,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r5 description:
+musl-1.1.20-r6 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r5 webpage:
+musl-1.1.20-r6 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r5 installed size:
+musl-1.1.20-r6 installed size:
 602112
 
-musl-1.1.20-r5 license:
+musl-1.1.20-r6 license:
 MIT
 
 ```
@@ -228,16 +228,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r5 description:
+musl-utils-1.1.20-r6 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r5 webpage:
+musl-utils-1.1.20-r6 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r5 installed size:
+musl-utils-1.1.20-r6 installed size:
 139264
 
-musl-utils-1.1.20-r5 license:
+musl-utils-1.1.20-r6 license:
 MIT BSD GPL2+
 
 ```
