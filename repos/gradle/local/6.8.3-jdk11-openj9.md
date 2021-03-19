@@ -1772,14 +1772,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.2p1-4ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.1.dsc' openssh_8.2p1-4ubuntu0.1.dsc 3098 SHA512:0e51e026137b7e93d36167da66b8135e722f90cfc7d3a648336dab728f71e74988d1605bb73c788f1cf01161ceed7120a21a07c49e540c8ea16db853e496c51f
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1.orig.tar.gz' openssh_8.2p1.orig.tar.gz 1701197 SHA512:c4db64e52a3a4c410de9de49f9cb104dd493b10250af3599b92457dd986277b3fd99a6f51cec94892fd1be5bd0369c5757262ea7805f0de464b245c3d34c120a
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.1.debian.tar.xz' openssh_8.2p1-4ubuntu0.1.debian.tar.xz 174784 SHA512:cca56b046669198489802c00d495b507f5a47b2f92b80f8e073eeae199bf2f5948078feefd2aaa9eeaec6ec93a8bebc7a68db6c0bc43bcb5325e43a9b4bc8ebe
-```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.1`
 
@@ -2062,14 +2057,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.18-1~20.04
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-1~20.04.dsc' python2.7_2.7.18-1~20.04.dsc 2944 SHA512:c08b2386c342aa65899f7a0e3d14812fbca79ebd81306492741d8eb26d070dadbd162a48e7a0c09f1d1175902116f635f1874a3896871f1c2331bdba79b4ace7
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18.orig.tar.gz' python2.7_2.7.18.orig.tar.gz 17539408 SHA512:9a81cea8f8853b183364b399a238604075b00d18badb0cde118b20fe4428135de5d75a3feca0d56a3d8d40d557e3933de573671072d9da6f76f84435d23bf1ba
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-1~20.04.diff.gz' python2.7_2.7.18-1~20.04.diff.gz 287081 SHA512:282392b04d2d92143d1d0f764e66fb50bd09c6223680e0cdc6c25c7db5c16ae4b96f1a2756d3fe7b2c05fef4cdb062d2b7ea5cb084169b648749a2c51ff5ab70
-```
 
 ### `dpkg` source package: `python3-defaults=3.8.2-0ubuntu2`
 
@@ -2333,14 +2323,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.4
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.4.dsc' systemd_245.4-4ubuntu3.4.dsc 5291 SHA512:79f337d379c644068dc78941404d02da45cfbec7b2c02a1ca1c85d84f9e3f8c5fb757e6b50fd37492f0a17ca5880ee589b6212a32379787e28898d1ed7bc3b90
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.4.debian.tar.xz' systemd_245.4-4ubuntu3.4.debian.tar.xz 231188 SHA512:74c689a0e180aed1eca344399f49dcb0a83bef93451db4d911a768106dd791cb33c9bfd9a269b2dc5312fca9915a3bd4890bf23051997d1701154798840c2175
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
