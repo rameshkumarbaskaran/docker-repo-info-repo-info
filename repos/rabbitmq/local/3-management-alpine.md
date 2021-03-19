@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:68ab95035ab3174eac3fed77a3ed8a2dcb806aa7634377c9897c5940871c6298`
-- Created: `2021-03-06T02:04:00.559683082Z`
-- Virtual Size: ~ 144.26 Mb  
+- Image ID: `sha256:19b14650a4dcf0db628fbedbb61918cdee2ab041fb5320ce22ff56a61141f09a`
+- Created: `2021-03-18T19:42:04.902729738Z`
+- Virtual Size: ~ 144.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -388,16 +388,16 @@ GPL-2.0 LGPL-2.1+
 ### `apk` package: `python3`
 
 ```console
-python3-3.8.7-r1 description:
+python3-3.8.8-r0 description:
 A high-level scripting language
 
-python3-3.8.7-r1 webpage:
+python3-3.8.8-r0 webpage:
 https://www.python.org/
 
-python3-3.8.7-r1 installed size:
-47058944
+python3-3.8.8-r0 installed size:
+47063040
 
-python3-3.8.7-r1 license:
+python3-3.8.8-r0 license:
 PSF-2.0
 
 ```
