@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:30f4559b6bf85c7415a74607caac6124dc334cd321689b9a487cc8ce5f86b629`
-- Created: `2021-02-24T20:23:33.03634484Z`
-- Virtual Size: ~ 162.55 Mb  
+- Image ID: `sha256:3279de7243f7292ca2a9ebd4fabbf53720ae84442f28b4d9bd25fa3b29ed685f`
+- Created: `2021-03-17T18:23:25.274233252Z`
+- Virtual Size: ~ 162.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -157,16 +157,16 @@ GPL-3.0-or-later
 ### `apk` package: `glib`
 
 ```console
-glib-2.66.7-r0 description:
+glib-2.66.7-r1 description:
 Common C routines used by Gtk+ and other libs
 
-glib-2.66.7-r0 webpage:
+glib-2.66.7-r1 webpage:
 https://developer.gnome.org/glib/
 
-glib-2.66.7-r0 installed size:
+glib-2.66.7-r1 installed size:
 3403776
 
-glib-2.66.7-r0 license:
+glib-2.66.7-r1 license:
 LGPL-2.1-or-later
 
 ```
@@ -208,16 +208,16 @@ GPL-3.0-or-later
 ### `apk` package: `gnutls`
 
 ```console
-gnutls-3.7.0-r0 description:
+gnutls-3.7.1-r0 description:
 TLS protocol implementation
 
-gnutls-3.7.0-r0 webpage:
+gnutls-3.7.1-r0 webpage:
 https://www.gnutls.org/
 
-gnutls-3.7.0-r0 installed size:
-1912832
+gnutls-3.7.1-r0 installed size:
+1892352
 
-gnutls-3.7.0-r0 license:
+gnutls-3.7.1-r0 license:
 LGPL-2.1-or-later
 
 ```
