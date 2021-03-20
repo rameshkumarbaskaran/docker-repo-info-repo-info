@@ -1,10 +1,10 @@
-# `amazoncorretto:15-alpine`
+# `amazoncorretto:16-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5d987e512ca1046e02b2589a41277f2f3a87aeb4cd72ee81910b67791c74f469`
-- Created: `2021-03-18T01:21:17.445805073Z`
-- Virtual Size: ~ 357.76 Mb  
+- Image ID: `sha256:60afaebd1c1a68299d3d2208c6f554743225f186b8e5f326c265e2d779472e9e`
+- Created: `2021-03-18T01:21:54.914234103Z`
+- Virtual Size: ~ 367.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -49,19 +49,19 @@ MIT
 
 ```
 
-### `apk` package: `amazon-corretto-15`
+### `apk` package: `amazon-corretto-16`
 
 ```console
-amazon-corretto-15-15.0.2.7.1-r0 description:
-Corretto15
+amazon-corretto-16-16.0.0.36.1-r0 description:
+Corretto16
 
-amazon-corretto-15-15.0.2.7.1-r0 webpage:
+amazon-corretto-16-16.0.0.36.1-r0 webpage:
 https://github.com/corretto/corretto-jdk
 
-amazon-corretto-15-15.0.2.7.1-r0 installed size:
-351608832
+amazon-corretto-16-16.0.0.36.1-r0 installed size:
+363069440
 
-amazon-corretto-15-15.0.2.7.1-r0 license:
+amazon-corretto-16-16.0.0.36.1-r0 license:
 https://github.com/corretto/corretto-jdk/blob/develop/LICENSE
 
 ```
@@ -168,23 +168,6 @@ OpenSSL
 
 ```
 
-### `apk` package: `libgcc`
-
-```console
-libgcc-9.3.0-r2 description:
-GNU C compiler runtime libraries
-
-libgcc-9.3.0-r2 webpage:
-https://gcc.gnu.org
-
-libgcc-9.3.0-r2 installed size:
-90112
-
-libgcc-9.3.0-r2 license:
-GPL-2.0-or-later LGPL-2.1-or-later
-
-```
-
 ### `apk` package: `libssl1.1`
 
 ```console
@@ -199,23 +182,6 @@ libssl1.1-1.1.1j-r0 installed size:
 
 libssl1.1-1.1.1j-r0 license:
 OpenSSL
-
-```
-
-### `apk` package: `libstdc++`
-
-```console
-libstdc++-9.3.0-r2 description:
-GNU C++ standard runtime library
-
-libstdc++-9.3.0-r2 webpage:
-https://gcc.gnu.org
-
-libstdc++-9.3.0-r2 installed size:
-1671168
-
-libstdc++-9.3.0-r2 license:
-GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 

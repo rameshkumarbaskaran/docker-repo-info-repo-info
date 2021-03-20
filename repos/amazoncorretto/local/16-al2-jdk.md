@@ -1,17 +1,17 @@
-# `amazoncorretto:15`
+# `amazoncorretto:16`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1f2bbfd00d28caa0da08996df4230c98e98d462ea00c0b3d87ef844ae775e2bf`
-- Created: `2021-03-18T01:21:04.731256256Z`
-- Virtual Size: ~ 470.37 Mb  
+- Image ID: `sha256:574534f6ee837df7df893438e0813be532c93273c3cc96d874b09e37b7cd8e44`
+- Created: `2021-03-18T01:21:38.5943492Z`
+- Virtual Size: ~ 480.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/lib/jvm/java-15-amazon-corretto`
+  - `JAVA_HOME=/usr/lib/jvm/java-16-amazon-corretto`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -423,7 +423,7 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/89583b50d935fb41fcf49d7acd0a5445c5d6f15e3e8f7da7f7e80d50163690cc//../../../../../blobstore/968c079ef8a8a2efee76ff59cd99e06dd242b8813960171d0f5c23f4a6eb0bb2/texinfo-5.1-5.amzn2.src.rpm
 ```
 
-### `rpm` package: `java-15-amazon-corretto-devel-15.0.2.7-1.x86_64`
+### `rpm` package: `java-16-amazon-corretto-devel-16.0.0.36-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 1.1 and ASL 2.0 and BSD and BSD with advertising and GPL+ and GPLv2 and GPLv2 with exceptions and IJG and LGPLv2+ and MIT and MPLv2.0 and Public Domain and W3C and zlib and ISC and FTL and RSA.
 
