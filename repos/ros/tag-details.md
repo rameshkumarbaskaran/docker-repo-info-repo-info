@@ -18156,7 +18156,7 @@ CMD ["bash"]
 ## `ros:rolling-ros1-bridge`
 
 ```console
-$ docker pull ros@sha256:b2eaa30a8e8d9df217217fdb74c5e9796587246239d406fe97c63c414d3603c7
+$ docker pull ros@sha256:edb93c29a7234e729224608b4fc1788223ca83c538977d21ef4db2760014b380
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18167,14 +18167,14 @@ $ docker pull ros@sha256:b2eaa30a8e8d9df217217fdb74c5e9796587246239d406fe97c63c4
 ### `ros:rolling-ros1-bridge` - linux; amd64
 
 ```console
-$ docker pull ros@sha256:eaff9aab6096206d5602d1a8eae36d1534b53299c172e347c251bf51dba63877
+$ docker pull ros@sha256:b4223cc545692ccb74b234ff653b926d6a1700793470bd2b391052f1f070e55e
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **340.2 MB (340187876 bytes)**  
+-	Total Size: **340.2 MB (340189337 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cf92241175ae4197bb4cbcb99b62d8e89327e97e85e1e85d9b3b12d4e249e9f6`
+-	Image ID: `sha256:f8652da72d531ad23420d821b2ca6402c4a389b97bb79d908c1b375ec402a074`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -18229,9 +18229,9 @@ ENV ROS1_DISTRO=noetic
 ENV ROS2_DISTRO=rolling
 # Fri, 12 Mar 2021 14:57:13 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.9-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 12 Mar 2021 14:57:23 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-1*     ros-rolling-demo-nodes-py=0.12.0-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 12 Mar 2021 14:57:23 GMT
+# Mon, 22 Mar 2021 19:33:06 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-3*     ros-rolling-demo-nodes-py=0.12.0-3*     && rm -rf /var/lib/apt/lists/*
+# Mon, 22 Mar 2021 19:33:06 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
@@ -18300,26 +18300,26 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 		Last Modified: Fri, 12 Mar 2021 15:24:56 GMT  
 		Size: 76.1 MB (76145811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7f7f3a9b3a4ebb47f9460cb449ad4c000b5e0ec76d3fe6829d49511f4d0dc4e`  
-		Last Modified: Fri, 12 Mar 2021 15:24:39 GMT  
-		Size: 15.2 MB (15247017 bytes)  
+	-	`sha256:11b6555e476af2d89b149f640036f88df87132c84c3f40df6cc6f15e6f9b92ca`  
+		Last Modified: Mon, 22 Mar 2021 19:34:46 GMT  
+		Size: 15.2 MB (15248477 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69023392d756a84c0c3ffe09f678f9585395dc1704ecfae117e01d8da18570e8`  
-		Last Modified: Fri, 12 Mar 2021 15:24:34 GMT  
-		Size: 243.0 B  
+	-	`sha256:1dd9e7aae3383d5c3dda05d0babc1271792fd7b0695e821f126c63089b819666`  
+		Last Modified: Mon, 22 Mar 2021 19:34:42 GMT  
+		Size: 244.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:rolling-ros1-bridge` - linux; arm64 variant v8
 
 ```console
-$ docker pull ros@sha256:0e67285c443e71a29a3eafe8473d73bec43e50ba4189e420c79327a19351e73b
+$ docker pull ros@sha256:10f9ada13174e4cd5102ba7664709df50409fbab449514c3b54790f8f8257fe5
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **312.9 MB (312882575 bytes)**  
+-	Total Size: **312.9 MB (312883185 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8f7c699dee829d0028a3e3a74893e2fb6a8f595b1cd939fcb4034a073f8a827d`
+-	Image ID: `sha256:1228f59c7149cd691cd2934ec59b4c1db6ba7bc66a3dcbfa85dea4f37dcd1cd7`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -18374,9 +18374,9 @@ ENV ROS1_DISTRO=noetic
 ENV ROS2_DISTRO=rolling
 # Thu, 04 Mar 2021 03:58:49 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.9-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Thu, 04 Mar 2021 03:59:10 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-1*     ros-rolling-demo-nodes-py=0.12.0-1*     && rm -rf /var/lib/apt/lists/*
-# Thu, 04 Mar 2021 03:59:12 GMT
+# Mon, 22 Mar 2021 19:50:14 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-3*     ros-rolling-demo-nodes-py=0.12.0-3*     && rm -rf /var/lib/apt/lists/*
+# Mon, 22 Mar 2021 19:50:16 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
@@ -18445,19 +18445,19 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 		Last Modified: Thu, 04 Mar 2021 04:14:51 GMT  
 		Size: 76.2 MB (76184068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b790f10c894dcf2b364700c64c0e13321676235cfc60ad0a988234294bc2d357`  
-		Last Modified: Thu, 04 Mar 2021 04:14:28 GMT  
-		Size: 12.6 MB (12555458 bytes)  
+	-	`sha256:462397384c7a3d0f60e7c9797f659608aaad14ee7cef04858fd15c3baf8f1814`  
+		Last Modified: Mon, 22 Mar 2021 19:52:06 GMT  
+		Size: 12.6 MB (12556066 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a905b131bf2a0421172ff500666f9b217a1841d1044e19becae5d132d7fadf42`  
-		Last Modified: Thu, 04 Mar 2021 04:14:24 GMT  
-		Size: 244.0 B  
+	-	`sha256:7b44f39e61a97b28f193e2ddfa51097600b94be9b420125e3fc86b64d3218f27`  
+		Last Modified: Mon, 22 Mar 2021 19:52:07 GMT  
+		Size: 246.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `ros:rolling-ros1-bridge-focal`
 
 ```console
-$ docker pull ros@sha256:b2eaa30a8e8d9df217217fdb74c5e9796587246239d406fe97c63c414d3603c7
+$ docker pull ros@sha256:edb93c29a7234e729224608b4fc1788223ca83c538977d21ef4db2760014b380
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18468,14 +18468,14 @@ $ docker pull ros@sha256:b2eaa30a8e8d9df217217fdb74c5e9796587246239d406fe97c63c4
 ### `ros:rolling-ros1-bridge-focal` - linux; amd64
 
 ```console
-$ docker pull ros@sha256:eaff9aab6096206d5602d1a8eae36d1534b53299c172e347c251bf51dba63877
+$ docker pull ros@sha256:b4223cc545692ccb74b234ff653b926d6a1700793470bd2b391052f1f070e55e
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **340.2 MB (340187876 bytes)**  
+-	Total Size: **340.2 MB (340189337 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cf92241175ae4197bb4cbcb99b62d8e89327e97e85e1e85d9b3b12d4e249e9f6`
+-	Image ID: `sha256:f8652da72d531ad23420d821b2ca6402c4a389b97bb79d908c1b375ec402a074`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -18530,9 +18530,9 @@ ENV ROS1_DISTRO=noetic
 ENV ROS2_DISTRO=rolling
 # Fri, 12 Mar 2021 14:57:13 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.9-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 12 Mar 2021 14:57:23 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-1*     ros-rolling-demo-nodes-py=0.12.0-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 12 Mar 2021 14:57:23 GMT
+# Mon, 22 Mar 2021 19:33:06 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-3*     ros-rolling-demo-nodes-py=0.12.0-3*     && rm -rf /var/lib/apt/lists/*
+# Mon, 22 Mar 2021 19:33:06 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
@@ -18601,26 +18601,26 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 		Last Modified: Fri, 12 Mar 2021 15:24:56 GMT  
 		Size: 76.1 MB (76145811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7f7f3a9b3a4ebb47f9460cb449ad4c000b5e0ec76d3fe6829d49511f4d0dc4e`  
-		Last Modified: Fri, 12 Mar 2021 15:24:39 GMT  
-		Size: 15.2 MB (15247017 bytes)  
+	-	`sha256:11b6555e476af2d89b149f640036f88df87132c84c3f40df6cc6f15e6f9b92ca`  
+		Last Modified: Mon, 22 Mar 2021 19:34:46 GMT  
+		Size: 15.2 MB (15248477 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69023392d756a84c0c3ffe09f678f9585395dc1704ecfae117e01d8da18570e8`  
-		Last Modified: Fri, 12 Mar 2021 15:24:34 GMT  
-		Size: 243.0 B  
+	-	`sha256:1dd9e7aae3383d5c3dda05d0babc1271792fd7b0695e821f126c63089b819666`  
+		Last Modified: Mon, 22 Mar 2021 19:34:42 GMT  
+		Size: 244.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:rolling-ros1-bridge-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull ros@sha256:0e67285c443e71a29a3eafe8473d73bec43e50ba4189e420c79327a19351e73b
+$ docker pull ros@sha256:10f9ada13174e4cd5102ba7664709df50409fbab449514c3b54790f8f8257fe5
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **312.9 MB (312882575 bytes)**  
+-	Total Size: **312.9 MB (312883185 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8f7c699dee829d0028a3e3a74893e2fb6a8f595b1cd939fcb4034a073f8a827d`
+-	Image ID: `sha256:1228f59c7149cd691cd2934ec59b4c1db6ba7bc66a3dcbfa85dea4f37dcd1cd7`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -18675,9 +18675,9 @@ ENV ROS1_DISTRO=noetic
 ENV ROS2_DISTRO=rolling
 # Thu, 04 Mar 2021 03:58:49 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.9-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Thu, 04 Mar 2021 03:59:10 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-1*     ros-rolling-demo-nodes-py=0.12.0-1*     && rm -rf /var/lib/apt/lists/*
-# Thu, 04 Mar 2021 03:59:12 GMT
+# Mon, 22 Mar 2021 19:50:14 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros1-bridge=0.10.1-1*     ros-rolling-demo-nodes-cpp=0.12.0-3*     ros-rolling-demo-nodes-py=0.12.0-3*     && rm -rf /var/lib/apt/lists/*
+# Mon, 22 Mar 2021 19:50:16 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
@@ -18746,11 +18746,11 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 		Last Modified: Thu, 04 Mar 2021 04:14:51 GMT  
 		Size: 76.2 MB (76184068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b790f10c894dcf2b364700c64c0e13321676235cfc60ad0a988234294bc2d357`  
-		Last Modified: Thu, 04 Mar 2021 04:14:28 GMT  
-		Size: 12.6 MB (12555458 bytes)  
+	-	`sha256:462397384c7a3d0f60e7c9797f659608aaad14ee7cef04858fd15c3baf8f1814`  
+		Last Modified: Mon, 22 Mar 2021 19:52:06 GMT  
+		Size: 12.6 MB (12556066 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a905b131bf2a0421172ff500666f9b217a1841d1044e19becae5d132d7fadf42`  
-		Last Modified: Thu, 04 Mar 2021 04:14:24 GMT  
-		Size: 244.0 B  
+	-	`sha256:7b44f39e61a97b28f193e2ddfa51097600b94be9b420125e3fc86b64d3218f27`  
+		Last Modified: Mon, 22 Mar 2021 19:52:07 GMT  
+		Size: 246.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
