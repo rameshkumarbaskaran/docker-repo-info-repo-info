@@ -1,10 +1,10 @@
-# `monica:2.19.1-fpm-alpine`
+# `monica:2.20.0-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:66e7c2b4c9eaae5cf1c1969638a0b16a0375967c5ae154a61be76658c1f3b80f`
-- Created: `2021-03-06T10:04:08.842335682Z`
-- Virtual Size: ~ 357.38 Mb  
+- Image ID: `sha256:78577ab5400394601ebc801e0512151787a94b132cc091a53b7be3548cb9982b`
+- Created: `2021-03-20T01:31:56.638504537Z`
+- Virtual Size: ~ 368.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/entrypoint.sh"]`
@@ -17,25 +17,25 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.27`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.27.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.27.tar.xz.asc`
-  - `PHP_SHA256=65f616e2d5b6faacedf62830fa047951b0136d5da34ae59e6744cbaf5dca148d`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.16`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.16.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.16.tar.xz.asc`
+  - `PHP_SHA256=1c16cefaf88ded4c92eed6a8a41eb682bb2ef42429deb55f1c4ba159053fb98b`
   - `PHP_OPCACHE_VALIDATE_TIMESTAMPS=0`
   - `PHP_OPCACHE_MAX_ACCELERATED_FILES=20000`
   - `PHP_OPCACHE_MEMORY_CONSUMPTION=192`
   - `PHP_OPCACHE_MAX_WASTED_PERCENTAGE=10`
-  - `MONICA_VERSION=v2.19.1`
+  - `MONICA_VERSION=v2.20.0`
 - Labels:
   - `org.opencontainers.image.authors=Alexis Saettler <alexis@saettler.org>`
   - `org.opencontainers.image.description=This is MonicaHQ, your personal memory! MonicaHQ is like a CRM but for the friends, family, and acquaintances around you.`
-  - `org.opencontainers.image.revision=6d809fda1d59048521c6d5c7e8c3306039b18d4c`
+  - `org.opencontainers.image.revision=6952f414171b4352d39f316484f02e3ee9adf4bc`
   - `org.opencontainers.image.source=https://github.com/monicahq/docker`
   - `org.opencontainers.image.title=MonicaHQ, the Personal Relationship Manager`
   - `org.opencontainers.image.url=https://monicahq.com`
   - `org.opencontainers.image.vendor=Monica`
-  - `org.opencontainers.image.version=v2.19.1`
+  - `org.opencontainers.image.version=v2.20.0`
 
 ## `apk` (`.apk`-based packages)
 
@@ -685,6 +685,23 @@ GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
 
+### `apk` package: `libwebp`
+
+```console
+libwebp-1.1.0-r0 description:
+Libraries for working with WebP images
+
+libwebp-1.1.0-r0 webpage:
+https://developers.google.com/speed/webp
+
+libwebp-1.1.0-r0 installed size:
+589824
+
+libwebp-1.1.0-r0 license:
+BSD-3-Clause
+
+```
+
 ### `apk` package: `libx11`
 
 ```console
@@ -886,6 +903,23 @@ nghttp2-libs-1.42.0-r1 installed size:
 
 nghttp2-libs-1.42.0-r1 license:
 MIT
+
+```
+
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.6-r0 description:
+a regular expressions library
+
+oniguruma-6.9.6-r0 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.6-r0 installed size:
+569344
+
+oniguruma-6.9.6-r0 license:
+BSD-2-Clause
 
 ```
 
