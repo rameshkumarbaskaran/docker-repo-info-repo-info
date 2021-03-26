@@ -2,36 +2,36 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7c10516504de55fc030409a047293ce73c1bc77f158d6847a0d6a1ad55d2a2c6`
-- Created: `2021-03-04T07:03:22.75470227Z`
-- Virtual Size: ~ 649.44 Mb  
+- Image ID: `sha256:72166d3997241134bec436266fb8e72785a5fe70499c73b695732fe6de5028fa`
+- Created: `2021-03-20T02:23:00.636775909Z`
+- Virtual Size: ~ 653.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
 - Command: `["/opt/ibm/wlp/bin/server","run","defaultServer"]`
 - Environment:
   - `PATH=/opt/ibm/wlp/bin:/opt/ibm/helpers/build:/opt/ibm/java/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_VERSION=1.8.0_sr6fp25`
+  - `JAVA_VERSION=1.8.0_sr6fp26`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ -XX:+UseContainerSupport`
-  - `LIBERTY_VERSION=21.0.0_02`
+  - `LIBERTY_VERSION=21.0.0_03`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ibm/wlp/output`
   - `OPENJ9_SCC=true`
   - `RANDFILE=/tmp/.rnd`
 - Labels:
-  - `BuildLabel=cl210220210209-1100`
+  - `BuildLabel=cl210320210309-1101`
   - `ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd`
   - `ProductName=WebSphere Application Server Liberty`
-  - `ProductVersion=21.0.0.2`
+  - `ProductVersion=21.0.0.3`
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter`
   - `org.opencontainers.image.description=This image contains the WebSphere Liberty runtime with IBM's Java and Ubuntu as the base OS.  For more information on this image please see https://github.com/WASdev/ci.docker#building-an-application-image`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
-  - `org.opencontainers.image.revision=cl210220210209-1100`
+  - `org.opencontainers.image.revision=cl210320210309-1101`
   - `org.opencontainers.image.title=IBM WebSphere Liberty`
   - `org.opencontainers.image.url=http://wasdev.net`
   - `org.opencontainers.image.vendor=IBM`
-  - `org.opencontainers.image.version=21.0.0.2`
+  - `org.opencontainers.image.version=21.0.0.3`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1019,15 +1019,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.8
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.8.dsc' openssl_1.1.1-1ubuntu2.1~18.04.8.dsc 2754 SHA512:55539bdf23d2911987a93eb03694bcde90ddae804919f4d2040172855678dbc9427f998b5b2d0c833c533705893c38ac16bba3113e6a7a72887254dab32df816
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA512:c0284a4fe84bdf765ca5bc5148da4441ffc36392cfecaf9d372af00cf93b6de5681cab1248b6f8246474532155dc205da5ad49549ad7c61c07c917145e7c9c71
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz.asc' openssl_1.1.1.orig.tar.gz.asc 488 SHA512:cc69ad07a2edc17b579018bac4683f7d48deb8cde4a0f53eb777d2546eec9be6d13a610299705f3b87a7e4e8492432260cd7efc89d124c7fe1def309bbee461f
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.8.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.8.debian.tar.xz 111332 SHA512:335a2837a05e5a1ca6456ad523a328d469c202713effb16959c579f3e3186aa7d220c47a184f4247ee132755e098ca9610d8ea2b27a5748fc5cdf79a41822009
-```
 
 ### `dpkg` source package: `p11-kit=0.23.9-2ubuntu0.1`
 
@@ -1243,14 +1237,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.44
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.44.dsc' systemd_237-3ubuntu10.44.dsc 5220 SHA512:37eaf84e1c83462aaceb4b32a0d28bcf983beab30d293ef92f5ee74bf8ebdfdd7eb954be377bdfd931b9f941f9cee11a421617d356dc9c45dfc8cdb0b9bc5ac3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA512:15ef4b92815a6dd9a6c51672dbc00fd7cd0f08068ef0cbeaca574f68d330b28bc67ba1946f24f75ef3d9e7b63843a73eea700db54688061dbf5c9f8470394c3b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.44.debian.tar.xz' systemd_237-3ubuntu10.44.debian.tar.xz 283916 SHA512:02e65b13363a07aa835bbc70c326faf3cd48e8e0b71f6b738faf9041cea1852cf208b491b59ac7d3e38d0c9e0429f4def5a6362cfc0dd08f531350301a2eb991
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
