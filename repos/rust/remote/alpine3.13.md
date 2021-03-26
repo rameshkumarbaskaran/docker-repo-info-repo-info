@@ -1,7 +1,7 @@
 ## `rust:alpine3.13`
 
 ```console
-$ docker pull rust@sha256:873fd4c800cc941596f990695d18686f07bfc39531ca384e502bf66dc0ad140d
+$ docker pull rust@sha256:abdc45fab929afffd86fb418c0da0591324bfe8bd8263a73e341fdf5d65a250f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -52,39 +52,39 @@ RUN set -eux;     apkArch="$(apk --print-arch)";     case "$apkArch" in         
 ### `rust:alpine3.13` - linux; arm64 variant v8
 
 ```console
-$ docker pull rust@sha256:b55902ea5f0dbede9207cdfe8c8121cee9183f29e7dff788d8a4643c6511e4f4
+$ docker pull rust@sha256:937493440939566429ddc37b275cda59bc8af9bb2b81fdbaa5b61cec0ea12a78
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **223.9 MB (223902582 bytes)**  
+-	Total Size: **225.9 MB (225858676 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c1bf15f368ddec10a307bdc833227660114602f8d43090afb339b4b71e69897a`
+-	Image ID: `sha256:2358f1cc264258f5980ac642cdf54862a1a00c73f228a49e4fdd5406cd0e9103`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
-# Wed, 17 Feb 2021 20:39:29 GMT
-ADD file:3bf1497bd250cf7c73c12231dc4ebe3a3a67f2cd99e35bce47ef6674683aeb1d in / 
-# Wed, 17 Feb 2021 20:39:30 GMT
+# Thu, 25 Mar 2021 22:40:10 GMT
+ADD file:8d7431f7e3e42b162a1626e7abf4ef7605146671dccc753d490de6b7fe429261 in / 
+# Thu, 25 Mar 2021 22:40:23 GMT
 CMD ["/bin/sh"]
-# Thu, 18 Feb 2021 01:25:27 GMT
+# Fri, 26 Mar 2021 12:36:19 GMT
 RUN apk add --no-cache         ca-certificates         gcc
-# Thu, 18 Feb 2021 01:25:28 GMT
-ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.50.0
-# Thu, 18 Feb 2021 01:25:56 GMT
+# Fri, 26 Mar 2021 12:36:21 GMT
+ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.51.0
+# Fri, 26 Mar 2021 12:36:45 GMT
 RUN set -eux;     apkArch="$(apk --print-arch)";     case "$apkArch" in         x86_64) rustArch='x86_64-unknown-linux-musl'; rustupSha256='05c5c05ec76671d73645aac3afbccf2187352fce7e46fc85be859f52a42797f6' ;;         aarch64) rustArch='aarch64-unknown-linux-musl'; rustupSha256='6a8a480d8d9e7f8c6979d7f8b12bc59da13db67970f7b13161ff409f0a771213' ;;         *) echo >&2 "unsupported architecture: $apkArch"; exit 1 ;;     esac;     url="https://static.rust-lang.org/rustup/archive/1.23.1/${rustArch}/rustup-init";     wget "$url";     echo "${rustupSha256} *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host ${rustArch};     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;
 ```
 
 -	Layers:
-	-	`sha256:069a56d6d07f6b186fbb82e4486616b9be9a37ce32a63013af6cddcb65898182`  
-		Last Modified: Wed, 17 Feb 2021 20:40:04 GMT  
-		Size: 2.7 MB (2711572 bytes)  
+	-	`sha256:5ceb5101e3b0d54efb5f18318982508a04b181b4d5ae52b096dd35dea3a006cc`  
+		Last Modified: Thu, 25 Mar 2021 22:44:41 GMT  
+		Size: 2.7 MB (2711898 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee793ae8b7999b4d1b06d5afd26bdc775d4dfbbbe2dd9df4c518cbeb486e896f`  
-		Last Modified: Thu, 18 Feb 2021 01:26:54 GMT  
-		Size: 35.9 MB (35928154 bytes)  
+	-	`sha256:768ff369d6cc66fee4e568e49b1d213fa5bae95aeaa5ba4dd8eed82631b9947d`  
+		Last Modified: Fri, 26 Mar 2021 12:40:52 GMT  
+		Size: 35.9 MB (35928290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d81c6a1143abd7a94fc52b6e71936054a8a8afa5f52aae4d62e5c2899bd7a04b`  
-		Last Modified: Thu, 18 Feb 2021 01:27:34 GMT  
-		Size: 185.3 MB (185262856 bytes)  
+	-	`sha256:6d60217153171bb96c82c460654828c725b24fce858bec6343fe0a9d17e39f55`  
+		Last Modified: Fri, 26 Mar 2021 12:41:32 GMT  
+		Size: 187.2 MB (187218488 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
