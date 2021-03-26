@@ -1,7 +1,7 @@
 ## `alpine:edge`
 
 ```console
-$ docker pull alpine@sha256:6cd7d4f4ceb36bfd8f8ec2cac21cec30eab270d7c1bdbfe42cc9776f288cd870
+$ docker pull alpine@sha256:fa3bd1cb8b0d2d6a4de1ea7e52dffee36896bc2b1566e9a89c16637051467225
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -121,20 +121,20 @@ CMD ["/bin/sh"]
 ### `alpine:edge` - linux; 386
 
 ```console
-$ docker pull alpine@sha256:43b2ca3deebaebd4325c910e3ffcfb9d7dc8bdd04faa09f223dacc192375833f
+$ docker pull alpine@sha256:cff146e1cca55f74d7afc76639c15805ba86907134bfae9cc7f28de91c65bb4f
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **2.8 MB (2819151 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:90c017946920457470549ea5e703b70391d138d1cf5e68522da8c68d689ea93a`
+-	Image ID: `sha256:0e3aed4af5136bcf38c88ef9effd0d57df871d3bfdbf79d242fba139e28aa9eb`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
-# Fri, 12 Feb 2021 20:38:30 GMT
+# Thu, 25 Mar 2021 22:38:19 GMT
 ADD file:b17c84feb0ba5021ade0b664c6e0edf7af4b0dfb140e3875407b7e4e85611b1e in / 
-# Fri, 12 Feb 2021 20:38:30 GMT
+# Thu, 25 Mar 2021 22:38:19 GMT
 CMD ["/bin/sh"]
 ```
 
