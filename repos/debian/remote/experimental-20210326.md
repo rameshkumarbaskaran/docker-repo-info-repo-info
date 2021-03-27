@@ -1,15 +1,51 @@
 ## `debian:experimental-20210326`
 
 ```console
-$ docker pull debian@sha256:2bc9d6717bb3972127de77956ff8c7522f4d51b3eb956843ecc8353cfaccd057
+$ docker pull debian@sha256:7268a6e2fa426ee10250dde3d993d3c0d4aabe5219db3d68af7453a059b47273
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
+	-	linux; arm64 variant v8
+	-	linux; 386
 	-	linux; mips64le
+	-	linux; ppc64le
 	-	linux; s390x
+
+### `debian:experimental-20210326` - linux; amd64
+
+```console
+$ docker pull debian@sha256:34995eaf705607851efddaef93e865492658b3bd53480ba85aa56687917e3c04
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **54.9 MB (54868394 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9e70b2d362969f4827158a910933dfdacf806179bec392253e89a36e4ac0b433`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Fri, 26 Mar 2021 15:24:09 GMT
+ADD file:0e5e388b45fcf11e249e8872c207386a244657c52eb31b8a071558a030f7445c in / 
+# Fri, 26 Mar 2021 15:24:10 GMT
+CMD ["bash"]
+# Fri, 26 Mar 2021 15:24:32 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:35be82d9f1bb585df090c8b1ece3f6fa8bd3c6a8b09656b19b64d7a29fcf23b4`  
+		Last Modified: Fri, 26 Mar 2021 15:34:09 GMT  
+		Size: 54.9 MB (54868171 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:88c14edf6366b8a9f46ec73c30dcaf02a61688feb572d78dff271601f107be4a`  
+		Last Modified: Fri, 26 Mar 2021 15:34:41 GMT  
+		Size: 223.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:experimental-20210326` - linux; arm variant v5
 
@@ -75,6 +111,70 @@ RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `debian:experimental-20210326` - linux; arm64 variant v8
+
+```console
+$ docker pull debian@sha256:50185f99a2d612b9f093c459494a1bd23dd9e57a0b1886ec2db3ad67e8e3c7d9
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **53.6 MB (53556195 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:19780dc253df51bc321651039357ed874a84ba96d9e56eb236b97a21c54b38aa`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Fri, 26 Mar 2021 15:45:47 GMT
+ADD file:13a3dda32dcf7677f42adb383c0309e1a68b93cb2af6d2b2e5742d400ba95cdc in / 
+# Fri, 26 Mar 2021 15:45:50 GMT
+CMD ["bash"]
+# Fri, 26 Mar 2021 15:46:18 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:4ee953709f00c4d1ec53e4fe1a5289fc0e2e5a72f2f048d89ae7c7c40f949e36`  
+		Last Modified: Fri, 26 Mar 2021 15:52:27 GMT  
+		Size: 53.6 MB (53555972 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fbeaabb40bd8cbe4c6f966981d59ec296afb914172547cfb2fba75b09e12a20a`  
+		Last Modified: Fri, 26 Mar 2021 15:52:54 GMT  
+		Size: 223.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:experimental-20210326` - linux; 386
+
+```console
+$ docker pull debian@sha256:005571f0b8436ae12f3170d00c99d3e72b27bdf5bd0edb2f1dd47ad4c045d217
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **55.9 MB (55881964 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:22e18cc5bd3b39fd21c62dc18de176008d0fe3c49054d1002e4235d3783bf68f`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Fri, 26 Mar 2021 13:57:04 GMT
+ADD file:3190a0fb27e5ad69c27ae37ac99c2d5e2ef3f4ba26ba0ac19bcfc13efe794dc3 in / 
+# Fri, 26 Mar 2021 13:57:05 GMT
+CMD ["bash"]
+# Fri, 26 Mar 2021 13:57:23 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:a2e7e9c1cd5c1ba0aee50a3a39bb6804a94aef0c896d71f0366c47ea069e1685`  
+		Last Modified: Fri, 26 Mar 2021 14:08:27 GMT  
+		Size: 55.9 MB (55881743 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3e614388bf741b241e81072d1f412a89db1c55171f258e6ff34c0c7a0b899053`  
+		Last Modified: Fri, 26 Mar 2021 14:08:59 GMT  
+		Size: 221.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ### `debian:experimental-20210326` - linux; mips64le
 
 ```console
@@ -105,6 +205,38 @@ RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources
 	-	`sha256:6ee942771ebd98062575efc7cc7107c8dc519eee1e1d12981ade8d08be4bc8a5`  
 		Last Modified: Fri, 26 Mar 2021 08:22:01 GMT  
 		Size: 222.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:experimental-20210326` - linux; ppc64le
+
+```console
+$ docker pull debian@sha256:2a3d2559d1f6cbc7f836fa46acf61c21676c6b318cae670c8d091018c1778e3c
+```
+
+-	Docker Version: 19.03.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **58.8 MB (58782957 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:5595f1f92f36c9feb38868dad22fb67e1d9c4cba8670a2901e86c78f3329adae`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Fri, 26 Mar 2021 15:18:01 GMT
+ADD file:be5abfe9e637b00dcaab25c23dd05982cdd5411a56ada380779fe45812c768c6 in / 
+# Fri, 26 Mar 2021 15:18:13 GMT
+CMD ["bash"]
+# Fri, 26 Mar 2021 15:18:56 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:f7a13c2346e072d25dcd65c1eb0a0f045d45c24fde8c9eb9a03d1f6c9795c957`  
+		Last Modified: Fri, 26 Mar 2021 15:25:07 GMT  
+		Size: 58.8 MB (58782734 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:21795ad61e64a4ef6261eae3151856a49f2a03b278245925fe28db26f7d8bcee`  
+		Last Modified: Fri, 26 Mar 2021 15:25:49 GMT  
+		Size: 223.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:experimental-20210326` - linux; s390x
