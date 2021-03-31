@@ -17,7 +17,7 @@
 ## `fsharp:10`
 
 ```console
-$ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b19fb90a84745
+$ docker pull fsharp@sha256:87923c80489bcb2c2d5a1d0707038ef8c25f7b634f143916a5dbdd8bff66129f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -28,41 +28,41 @@ $ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b
 ### `fsharp:10` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:74ef454e2387fb4915cb4178b12a77a1197652e61595bc04949dffb5904d2575
+$ docker pull fsharp@sha256:533f61b5d6d69026f81921072b637abaa50262b86d118b49dba9027c66553b5d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.6 MB (187647383 bytes)**  
+-	Total Size: **187.7 MB (187685517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d1ef3af30ec1a3ad2092f9d5b58b185759c7e7ee58f542929186b5f3991b87e0`
+-	Image ID: `sha256:6b70eed2bfa4cee1aa25e344afff8da7afe680cf39e8ebf7db2cd32d5100d991`
 -	Default Command: `["fsharpi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fsharp:10` - linux; arm64 variant v8
@@ -108,7 +108,7 @@ CMD ["fsharpi"]
 ## `fsharp:10-netcore`
 
 ```console
-$ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfed81d40757ecd
+$ docker pull fsharp@sha256:0cc2dad7812bda63bcc94f2f1374ae8ec62fb8a45cbe4950e134efb92a5e2a9a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -118,75 +118,75 @@ $ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfe
 ### `fsharp:10-netcore` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:6e521bd33d8478824e6c76b8ecc4e7a6f86a71d1c7d5d193529dbe31d1797a16
+$ docker pull fsharp@sha256:8d1afb8475600cd96eab4a03df22f39a35905f855ad941a0ebffa615069dcfb3
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **333.0 MB (332975869 bytes)**  
+-	Total Size: **333.0 MB (333014057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3e0aba88696c8a0687aee7616672b92c188e8a113133d2397762e4f9f42014ea`
+-	Image ID: `sha256:c2980856e134082483444ce42eeb124f671e4a51b0587699a474d61d49102a43`
 -	Default Command: `["dotnet","fsi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 ENV FrameworkPathOverride=/usr/lib/mono/4.8-api/
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:42 GMT
 ENV NUGET_XMLDOC_MODE=skip DOTNET_RUNNING_IN_CONTAINER=true DOTNET_USE_POLLING_FILE_WATCHER=true
-# Sat, 27 Mar 2021 04:46:22 GMT
+# Wed, 31 Mar 2021 03:49:53 GMT
 RUN apt-get update &&     apt-get --no-install-recommends install -y     curl     libunwind8     gettext     apt-transport-https     libc6     libcurl4     libgcc1     libgssapi-krb5-2     libicu63     liblttng-ust0     libssl1.1     libstdc++6     libunwind8     libuuid1     zlib1g &&     rm -rf /var/lib/apt/lists/*
-# Sat, 27 Mar 2021 04:46:36 GMT
+# Wed, 31 Mar 2021 03:50:09 GMT
 RUN DOTNET_SDK_VERSION=3.1.403 &&     DOTNET_SDK_DOWNLOAD_URL=https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-x64.tar.gz &&     DOTNET_SDK_DOWNLOAD_SHA=0a0319ee8e9042bf04b6e83211c2d6e44e40e604bff0a133ba0d246d08bff76ebd88918ab5e10e6f7f0d2b504ddeb65c0108c6539bc4fbc4f09e4af3937e88ea &&     curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz &&     echo "$DOTNET_SDK_DOWNLOAD_SHA dotnet.tar.gz" | sha512sum -c - &&     mkdir -p /usr/share/dotnet &&     tar -zxf dotnet.tar.gz -C /usr/share/dotnet &&     rm dotnet.tar.gz &&     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
-# Sat, 27 Mar 2021 04:46:39 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 RUN mkdir warmup &&     cd warmup &&     dotnet new &&     cd - &&     rm -rf warmup /tmp/NuGetScratch
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 CMD ["dotnet" "fsi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6704b6aa45cd35a847d689fab0fb7f379e005b1a66d680c2c26ba303b8c37be6`  
-		Last Modified: Sat, 27 Mar 2021 04:48:59 GMT  
-		Size: 17.2 MB (17206439 bytes)  
+	-	`sha256:e2149a328ca09619cc1e07b9289812b88355e19d497c1c34c897c0bfb4f4a2ad`  
+		Last Modified: Wed, 31 Mar 2021 03:51:33 GMT  
+		Size: 17.2 MB (17206438 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c2104e34256ceb308355b343d621e07e01b9bf59c8e88c8e6401c0a1c3726d3`  
-		Last Modified: Sat, 27 Mar 2021 04:49:21 GMT  
-		Size: 123.8 MB (123846221 bytes)  
+	-	`sha256:63504763c533354c922791839363ed6c8eeb243f8b6868b15a053bb1ee58b4e2`  
+		Last Modified: Wed, 31 Mar 2021 03:51:49 GMT  
+		Size: 123.8 MB (123846264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cdd54662a385bd79ef6529be6923e25052bc5204ee712053cb6f52feeb0d7c83`  
-		Last Modified: Sat, 27 Mar 2021 04:48:54 GMT  
-		Size: 4.3 MB (4275826 bytes)  
+	-	`sha256:0ae9cfdc204a4ac5b15b698476b6cac4b8f655531aa58d3ca4ef5325b3d75878`  
+		Last Modified: Wed, 31 Mar 2021 03:51:32 GMT  
+		Size: 4.3 MB (4275838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `fsharp:10.10`
 
 ```console
-$ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b19fb90a84745
+$ docker pull fsharp@sha256:87923c80489bcb2c2d5a1d0707038ef8c25f7b634f143916a5dbdd8bff66129f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -197,41 +197,41 @@ $ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b
 ### `fsharp:10.10` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:74ef454e2387fb4915cb4178b12a77a1197652e61595bc04949dffb5904d2575
+$ docker pull fsharp@sha256:533f61b5d6d69026f81921072b637abaa50262b86d118b49dba9027c66553b5d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.6 MB (187647383 bytes)**  
+-	Total Size: **187.7 MB (187685517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d1ef3af30ec1a3ad2092f9d5b58b185759c7e7ee58f542929186b5f3991b87e0`
+-	Image ID: `sha256:6b70eed2bfa4cee1aa25e344afff8da7afe680cf39e8ebf7db2cd32d5100d991`
 -	Default Command: `["fsharpi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fsharp:10.10` - linux; arm64 variant v8
@@ -277,7 +277,7 @@ CMD ["fsharpi"]
 ## `fsharp:10.10-netcore`
 
 ```console
-$ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfed81d40757ecd
+$ docker pull fsharp@sha256:0cc2dad7812bda63bcc94f2f1374ae8ec62fb8a45cbe4950e134efb92a5e2a9a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -287,75 +287,75 @@ $ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfe
 ### `fsharp:10.10-netcore` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:6e521bd33d8478824e6c76b8ecc4e7a6f86a71d1c7d5d193529dbe31d1797a16
+$ docker pull fsharp@sha256:8d1afb8475600cd96eab4a03df22f39a35905f855ad941a0ebffa615069dcfb3
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **333.0 MB (332975869 bytes)**  
+-	Total Size: **333.0 MB (333014057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3e0aba88696c8a0687aee7616672b92c188e8a113133d2397762e4f9f42014ea`
+-	Image ID: `sha256:c2980856e134082483444ce42eeb124f671e4a51b0587699a474d61d49102a43`
 -	Default Command: `["dotnet","fsi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 ENV FrameworkPathOverride=/usr/lib/mono/4.8-api/
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:42 GMT
 ENV NUGET_XMLDOC_MODE=skip DOTNET_RUNNING_IN_CONTAINER=true DOTNET_USE_POLLING_FILE_WATCHER=true
-# Sat, 27 Mar 2021 04:46:22 GMT
+# Wed, 31 Mar 2021 03:49:53 GMT
 RUN apt-get update &&     apt-get --no-install-recommends install -y     curl     libunwind8     gettext     apt-transport-https     libc6     libcurl4     libgcc1     libgssapi-krb5-2     libicu63     liblttng-ust0     libssl1.1     libstdc++6     libunwind8     libuuid1     zlib1g &&     rm -rf /var/lib/apt/lists/*
-# Sat, 27 Mar 2021 04:46:36 GMT
+# Wed, 31 Mar 2021 03:50:09 GMT
 RUN DOTNET_SDK_VERSION=3.1.403 &&     DOTNET_SDK_DOWNLOAD_URL=https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-x64.tar.gz &&     DOTNET_SDK_DOWNLOAD_SHA=0a0319ee8e9042bf04b6e83211c2d6e44e40e604bff0a133ba0d246d08bff76ebd88918ab5e10e6f7f0d2b504ddeb65c0108c6539bc4fbc4f09e4af3937e88ea &&     curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz &&     echo "$DOTNET_SDK_DOWNLOAD_SHA dotnet.tar.gz" | sha512sum -c - &&     mkdir -p /usr/share/dotnet &&     tar -zxf dotnet.tar.gz -C /usr/share/dotnet &&     rm dotnet.tar.gz &&     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
-# Sat, 27 Mar 2021 04:46:39 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 RUN mkdir warmup &&     cd warmup &&     dotnet new &&     cd - &&     rm -rf warmup /tmp/NuGetScratch
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 CMD ["dotnet" "fsi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6704b6aa45cd35a847d689fab0fb7f379e005b1a66d680c2c26ba303b8c37be6`  
-		Last Modified: Sat, 27 Mar 2021 04:48:59 GMT  
-		Size: 17.2 MB (17206439 bytes)  
+	-	`sha256:e2149a328ca09619cc1e07b9289812b88355e19d497c1c34c897c0bfb4f4a2ad`  
+		Last Modified: Wed, 31 Mar 2021 03:51:33 GMT  
+		Size: 17.2 MB (17206438 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c2104e34256ceb308355b343d621e07e01b9bf59c8e88c8e6401c0a1c3726d3`  
-		Last Modified: Sat, 27 Mar 2021 04:49:21 GMT  
-		Size: 123.8 MB (123846221 bytes)  
+	-	`sha256:63504763c533354c922791839363ed6c8eeb243f8b6868b15a053bb1ee58b4e2`  
+		Last Modified: Wed, 31 Mar 2021 03:51:49 GMT  
+		Size: 123.8 MB (123846264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cdd54662a385bd79ef6529be6923e25052bc5204ee712053cb6f52feeb0d7c83`  
-		Last Modified: Sat, 27 Mar 2021 04:48:54 GMT  
-		Size: 4.3 MB (4275826 bytes)  
+	-	`sha256:0ae9cfdc204a4ac5b15b698476b6cac4b8f655531aa58d3ca4ef5325b3d75878`  
+		Last Modified: Wed, 31 Mar 2021 03:51:32 GMT  
+		Size: 4.3 MB (4275838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `fsharp:10.10.0`
 
 ```console
-$ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b19fb90a84745
+$ docker pull fsharp@sha256:87923c80489bcb2c2d5a1d0707038ef8c25f7b634f143916a5dbdd8bff66129f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -366,41 +366,41 @@ $ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b
 ### `fsharp:10.10.0` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:74ef454e2387fb4915cb4178b12a77a1197652e61595bc04949dffb5904d2575
+$ docker pull fsharp@sha256:533f61b5d6d69026f81921072b637abaa50262b86d118b49dba9027c66553b5d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.6 MB (187647383 bytes)**  
+-	Total Size: **187.7 MB (187685517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d1ef3af30ec1a3ad2092f9d5b58b185759c7e7ee58f542929186b5f3991b87e0`
+-	Image ID: `sha256:6b70eed2bfa4cee1aa25e344afff8da7afe680cf39e8ebf7db2cd32d5100d991`
 -	Default Command: `["fsharpi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fsharp:10.10.0` - linux; arm64 variant v8
@@ -446,7 +446,7 @@ CMD ["fsharpi"]
 ## `fsharp:10.10.0-netcore`
 
 ```console
-$ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfed81d40757ecd
+$ docker pull fsharp@sha256:0cc2dad7812bda63bcc94f2f1374ae8ec62fb8a45cbe4950e134efb92a5e2a9a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -456,69 +456,69 @@ $ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfe
 ### `fsharp:10.10.0-netcore` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:6e521bd33d8478824e6c76b8ecc4e7a6f86a71d1c7d5d193529dbe31d1797a16
+$ docker pull fsharp@sha256:8d1afb8475600cd96eab4a03df22f39a35905f855ad941a0ebffa615069dcfb3
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **333.0 MB (332975869 bytes)**  
+-	Total Size: **333.0 MB (333014057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3e0aba88696c8a0687aee7616672b92c188e8a113133d2397762e4f9f42014ea`
+-	Image ID: `sha256:c2980856e134082483444ce42eeb124f671e4a51b0587699a474d61d49102a43`
 -	Default Command: `["dotnet","fsi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 ENV FrameworkPathOverride=/usr/lib/mono/4.8-api/
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:42 GMT
 ENV NUGET_XMLDOC_MODE=skip DOTNET_RUNNING_IN_CONTAINER=true DOTNET_USE_POLLING_FILE_WATCHER=true
-# Sat, 27 Mar 2021 04:46:22 GMT
+# Wed, 31 Mar 2021 03:49:53 GMT
 RUN apt-get update &&     apt-get --no-install-recommends install -y     curl     libunwind8     gettext     apt-transport-https     libc6     libcurl4     libgcc1     libgssapi-krb5-2     libicu63     liblttng-ust0     libssl1.1     libstdc++6     libunwind8     libuuid1     zlib1g &&     rm -rf /var/lib/apt/lists/*
-# Sat, 27 Mar 2021 04:46:36 GMT
+# Wed, 31 Mar 2021 03:50:09 GMT
 RUN DOTNET_SDK_VERSION=3.1.403 &&     DOTNET_SDK_DOWNLOAD_URL=https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-x64.tar.gz &&     DOTNET_SDK_DOWNLOAD_SHA=0a0319ee8e9042bf04b6e83211c2d6e44e40e604bff0a133ba0d246d08bff76ebd88918ab5e10e6f7f0d2b504ddeb65c0108c6539bc4fbc4f09e4af3937e88ea &&     curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz &&     echo "$DOTNET_SDK_DOWNLOAD_SHA dotnet.tar.gz" | sha512sum -c - &&     mkdir -p /usr/share/dotnet &&     tar -zxf dotnet.tar.gz -C /usr/share/dotnet &&     rm dotnet.tar.gz &&     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
-# Sat, 27 Mar 2021 04:46:39 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 RUN mkdir warmup &&     cd warmup &&     dotnet new &&     cd - &&     rm -rf warmup /tmp/NuGetScratch
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 CMD ["dotnet" "fsi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6704b6aa45cd35a847d689fab0fb7f379e005b1a66d680c2c26ba303b8c37be6`  
-		Last Modified: Sat, 27 Mar 2021 04:48:59 GMT  
-		Size: 17.2 MB (17206439 bytes)  
+	-	`sha256:e2149a328ca09619cc1e07b9289812b88355e19d497c1c34c897c0bfb4f4a2ad`  
+		Last Modified: Wed, 31 Mar 2021 03:51:33 GMT  
+		Size: 17.2 MB (17206438 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c2104e34256ceb308355b343d621e07e01b9bf59c8e88c8e6401c0a1c3726d3`  
-		Last Modified: Sat, 27 Mar 2021 04:49:21 GMT  
-		Size: 123.8 MB (123846221 bytes)  
+	-	`sha256:63504763c533354c922791839363ed6c8eeb243f8b6868b15a053bb1ee58b4e2`  
+		Last Modified: Wed, 31 Mar 2021 03:51:49 GMT  
+		Size: 123.8 MB (123846264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cdd54662a385bd79ef6529be6923e25052bc5204ee712053cb6f52feeb0d7c83`  
-		Last Modified: Sat, 27 Mar 2021 04:48:54 GMT  
-		Size: 4.3 MB (4275826 bytes)  
+	-	`sha256:0ae9cfdc204a4ac5b15b698476b6cac4b8f655531aa58d3ca4ef5325b3d75878`  
+		Last Modified: Wed, 31 Mar 2021 03:51:32 GMT  
+		Size: 4.3 MB (4275838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `fsharp:4`
@@ -674,7 +674,7 @@ CMD ["fsharpi"]
 ## `fsharp:latest`
 
 ```console
-$ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b19fb90a84745
+$ docker pull fsharp@sha256:87923c80489bcb2c2d5a1d0707038ef8c25f7b634f143916a5dbdd8bff66129f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -685,41 +685,41 @@ $ docker pull fsharp@sha256:38144a42db9e85b0afaf4aa0dbedd3d4639e88c13c9070aa1c2b
 ### `fsharp:latest` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:74ef454e2387fb4915cb4178b12a77a1197652e61595bc04949dffb5904d2575
+$ docker pull fsharp@sha256:533f61b5d6d69026f81921072b637abaa50262b86d118b49dba9027c66553b5d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **187.6 MB (187647383 bytes)**  
+-	Total Size: **187.7 MB (187685517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d1ef3af30ec1a3ad2092f9d5b58b185759c7e7ee58f542929186b5f3991b87e0`
+-	Image ID: `sha256:6b70eed2bfa4cee1aa25e344afff8da7afe680cf39e8ebf7db2cd32d5100d991`
 -	Default Command: `["fsharpi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fsharp:latest` - linux; arm64 variant v8
@@ -765,7 +765,7 @@ CMD ["fsharpi"]
 ## `fsharp:netcore`
 
 ```console
-$ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfed81d40757ecd
+$ docker pull fsharp@sha256:0cc2dad7812bda63bcc94f2f1374ae8ec62fb8a45cbe4950e134efb92a5e2a9a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -775,67 +775,67 @@ $ docker pull fsharp@sha256:64f157dfb9414b76bc8fff52384e3b635e250534fea81c58ccfe
 ### `fsharp:netcore` - linux; amd64
 
 ```console
-$ docker pull fsharp@sha256:6e521bd33d8478824e6c76b8ecc4e7a6f86a71d1c7d5d193529dbe31d1797a16
+$ docker pull fsharp@sha256:8d1afb8475600cd96eab4a03df22f39a35905f855ad941a0ebffa615069dcfb3
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **333.0 MB (332975869 bytes)**  
+-	Total Size: **333.0 MB (333014057 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3e0aba88696c8a0687aee7616672b92c188e8a113133d2397762e4f9f42014ea`
+-	Image ID: `sha256:c2980856e134082483444ce42eeb124f671e4a51b0587699a474d61d49102a43`
 -	Default Command: `["dotnet","fsi"]`
 
 ```dockerfile
-# Fri, 26 Mar 2021 15:20:59 GMT
-ADD file:b2085f4b0a7cb0e5754874c712254e5cd941062b27b8d7ed2080520196b91597 in / 
-# Fri, 26 Mar 2021 15:20:59 GMT
+# Tue, 30 Mar 2021 21:49:29 GMT
+ADD file:b797b4d60ad7954e98ad71574c4fc90ad3da9a5c250112373e92e2af3056e581 in / 
+# Tue, 30 Mar 2021 21:49:30 GMT
 CMD ["bash"]
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:53 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:21:52 GMT
+# Wed, 31 Mar 2021 03:39:54 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Sat, 27 Mar 2021 04:31:47 GMT
+# Wed, 31 Mar 2021 03:49:18 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Sat, 27 Mar 2021 04:31:49 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:31:50 GMT
+# Wed, 31 Mar 2021 03:49:20 GMT
 CMD ["fsharpi"]
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:41 GMT
 ENV FrameworkPathOverride=/usr/lib/mono/4.8-api/
-# Sat, 27 Mar 2021 04:46:09 GMT
+# Wed, 31 Mar 2021 03:49:42 GMT
 ENV NUGET_XMLDOC_MODE=skip DOTNET_RUNNING_IN_CONTAINER=true DOTNET_USE_POLLING_FILE_WATCHER=true
-# Sat, 27 Mar 2021 04:46:22 GMT
+# Wed, 31 Mar 2021 03:49:53 GMT
 RUN apt-get update &&     apt-get --no-install-recommends install -y     curl     libunwind8     gettext     apt-transport-https     libc6     libcurl4     libgcc1     libgssapi-krb5-2     libicu63     liblttng-ust0     libssl1.1     libstdc++6     libunwind8     libuuid1     zlib1g &&     rm -rf /var/lib/apt/lists/*
-# Sat, 27 Mar 2021 04:46:36 GMT
+# Wed, 31 Mar 2021 03:50:09 GMT
 RUN DOTNET_SDK_VERSION=3.1.403 &&     DOTNET_SDK_DOWNLOAD_URL=https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-x64.tar.gz &&     DOTNET_SDK_DOWNLOAD_SHA=0a0319ee8e9042bf04b6e83211c2d6e44e40e604bff0a133ba0d246d08bff76ebd88918ab5e10e6f7f0d2b504ddeb65c0108c6539bc4fbc4f09e4af3937e88ea &&     curl -SL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz &&     echo "$DOTNET_SDK_DOWNLOAD_SHA dotnet.tar.gz" | sha512sum -c - &&     mkdir -p /usr/share/dotnet &&     tar -zxf dotnet.tar.gz -C /usr/share/dotnet &&     rm dotnet.tar.gz &&     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
-# Sat, 27 Mar 2021 04:46:39 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 RUN mkdir warmup &&     cd warmup &&     dotnet new &&     cd - &&     rm -rf warmup /tmp/NuGetScratch
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 WORKDIR /root
-# Sat, 27 Mar 2021 04:46:40 GMT
+# Wed, 31 Mar 2021 03:50:13 GMT
 CMD ["dotnet" "fsi"]
 ```
 
 -	Layers:
-	-	`sha256:ac2522cc72690febc428fb46fb39a4efc5e0a721c3ad15d9992b01515f2fad1a`  
-		Last Modified: Fri, 26 Mar 2021 15:27:47 GMT  
-		Size: 27.1 MB (27100996 bytes)  
+	-	`sha256:75646c2fb4101d306585c9b106be1dfa7d82720baabe1c75b64d759ea8adf341`  
+		Last Modified: Tue, 30 Mar 2021 21:54:15 GMT  
+		Size: 27.1 MB (27139293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ff9045cd2a440012203f65772e15ff69920052ba37bbd35a3fbd29dc06ef3ff`  
-		Last Modified: Sat, 27 Mar 2021 04:47:45 GMT  
-		Size: 160.5 MB (160546387 bytes)  
+	-	`sha256:c401e5d5b51438e3c6bfba71b7bbf793aca7244a88acd0807e293f946f77e4cc`  
+		Last Modified: Wed, 31 Mar 2021 03:51:13 GMT  
+		Size: 160.5 MB (160546224 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6704b6aa45cd35a847d689fab0fb7f379e005b1a66d680c2c26ba303b8c37be6`  
-		Last Modified: Sat, 27 Mar 2021 04:48:59 GMT  
-		Size: 17.2 MB (17206439 bytes)  
+	-	`sha256:e2149a328ca09619cc1e07b9289812b88355e19d497c1c34c897c0bfb4f4a2ad`  
+		Last Modified: Wed, 31 Mar 2021 03:51:33 GMT  
+		Size: 17.2 MB (17206438 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c2104e34256ceb308355b343d621e07e01b9bf59c8e88c8e6401c0a1c3726d3`  
-		Last Modified: Sat, 27 Mar 2021 04:49:21 GMT  
-		Size: 123.8 MB (123846221 bytes)  
+	-	`sha256:63504763c533354c922791839363ed6c8eeb243f8b6868b15a053bb1ee58b4e2`  
+		Last Modified: Wed, 31 Mar 2021 03:51:49 GMT  
+		Size: 123.8 MB (123846264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cdd54662a385bd79ef6529be6923e25052bc5204ee712053cb6f52feeb0d7c83`  
-		Last Modified: Sat, 27 Mar 2021 04:48:54 GMT  
-		Size: 4.3 MB (4275826 bytes)  
+	-	`sha256:0ae9cfdc204a4ac5b15b698476b6cac4b8f655531aa58d3ca4ef5325b3d75878`  
+		Last Modified: Wed, 31 Mar 2021 03:51:32 GMT  
+		Size: 4.3 MB (4275838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
