@@ -1,7 +1,7 @@
 ## `haskell:latest`
 
 ```console
-$ docker pull haskell@sha256:4ea2d7f793ce42a3419788f89197a8977def3777b59a8512c6f873cea1124247
+$ docker pull haskell@sha256:5ad5c100290da2567b7168fed52ef30bd2f7bde32f4a39e1fce9cfbc2effd9a2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull haskell@sha256:4ea2d7f793ce42a3419788f89197a8977def3777b59a8512c6f
 ### `haskell:latest` - linux; amd64
 
 ```console
-$ docker pull haskell@sha256:990f4ee34d3e1f39d008db97b4a811819ca21aca562b888fef40eee9f9c067fb
+$ docker pull haskell@sha256:3dd67b12bd278328f99281b3c2b10640864fdd36c1a6bad74848b40836ef16d8
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **357.3 MB (357251085 bytes)**  
+-	Total Size: **355.6 MB (355566338 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2933bb0406994b54343a8ff9a15b4092895dd2d591f12218e76d6ce9586dbd1d`
+-	Image ID: `sha256:2d565300917ceb1a36b23e8fba8a4250bc45113b1d3be124a4c720c0b2595d10`
 -	Default Command: `["ghci"]`
 
 ```dockerfile
@@ -30,27 +30,27 @@ CMD ["bash"]
 ENV LANG=C.UTF-8
 # Wed, 31 Mar 2021 04:03:05 GMT
 RUN apt-get update &&     apt-get install -y --no-install-recommends gnupg ca-certificates dirmngr &&     rm -rf /var/lib/apt/lists/*
-# Wed, 31 Mar 2021 04:03:05 GMT
-ARG GHC=8.10.2
-# Wed, 31 Mar 2021 04:03:06 GMT
+# Thu, 01 Apr 2021 02:18:52 GMT
+ARG GHC=9.0.1
+# Thu, 01 Apr 2021 02:18:53 GMT
 ARG DEBIAN_KEY=427CB69AAC9D00F2A43CAF1CBA3CBA3FFE22B574
-# Wed, 31 Mar 2021 04:03:06 GMT
-ARG CABAL_INSTALL=3.2
-# Wed, 31 Mar 2021 04:03:06 GMT
+# Thu, 01 Apr 2021 02:18:53 GMT
+ARG CABAL_INSTALL=3.4
+# Thu, 01 Apr 2021 02:18:53 GMT
 ARG STACK=2.5.1
-# Wed, 31 Mar 2021 04:03:06 GMT
+# Thu, 01 Apr 2021 02:18:54 GMT
 ARG STACK_KEY=C5705533DA4F78D8664B5DC0575159689BEFB442
-# Wed, 31 Mar 2021 04:03:06 GMT
+# Thu, 01 Apr 2021 02:18:54 GMT
 ARG STACK_RELEASE_KEY=2C6A674E85EE3FB896AFC9B965101FF31C5C154D
-# Wed, 31 Mar 2021 04:03:59 GMT
-# ARGS: CABAL_INSTALL=3.2 DEBIAN_KEY=427CB69AAC9D00F2A43CAF1CBA3CBA3FFE22B574 GHC=8.10.2 STACK=2.5.1 STACK_KEY=C5705533DA4F78D8664B5DC0575159689BEFB442 STACK_RELEASE_KEY=2C6A674E85EE3FB896AFC9B965101FF31C5C154D
+# Thu, 01 Apr 2021 02:19:54 GMT
+# ARGS: CABAL_INSTALL=3.4 DEBIAN_KEY=427CB69AAC9D00F2A43CAF1CBA3CBA3FFE22B574 GHC=9.0.1 STACK=2.5.1 STACK_KEY=C5705533DA4F78D8664B5DC0575159689BEFB442 STACK_RELEASE_KEY=2C6A674E85EE3FB896AFC9B965101FF31C5C154D
 RUN export GNUPGHOME="$(mktemp -d)" &&     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys ${DEBIAN_KEY} &&     gpg --batch --armor --export ${DEBIAN_KEY} > /etc/apt/trusted.gpg.d/haskell.org.gpg.asc &&     gpgconf --kill all &&     echo 'deb http://downloads.haskell.org/debian buster main' > /etc/apt/sources.list.d/ghc.list &&     apt-get update &&     apt-get install -y --no-install-recommends         cabal-install-${CABAL_INSTALL}         curl         g++         ghc-${GHC}         git         libsqlite3-dev         libtinfo-dev         make         netbase         openssh-client         xz-utils         zlib1g-dev &&     rm -rf "$GNUPGHOME" /var/lib/apt/lists/*
-# Wed, 31 Mar 2021 04:04:08 GMT
-# ARGS: CABAL_INSTALL=3.2 DEBIAN_KEY=427CB69AAC9D00F2A43CAF1CBA3CBA3FFE22B574 GHC=8.10.2 STACK=2.5.1 STACK_KEY=C5705533DA4F78D8664B5DC0575159689BEFB442 STACK_RELEASE_KEY=2C6A674E85EE3FB896AFC9B965101FF31C5C154D
+# Thu, 01 Apr 2021 02:20:03 GMT
+# ARGS: CABAL_INSTALL=3.4 DEBIAN_KEY=427CB69AAC9D00F2A43CAF1CBA3CBA3FFE22B574 GHC=9.0.1 STACK=2.5.1 STACK_KEY=C5705533DA4F78D8664B5DC0575159689BEFB442 STACK_RELEASE_KEY=2C6A674E85EE3FB896AFC9B965101FF31C5C154D
 RUN export GNUPGHOME="$(mktemp -d)" &&     gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys ${STACK_KEY} &&     gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys ${STACK_RELEASE_KEY} &&     curl -fSL https://github.com/commercialhaskell/stack/releases/download/v${STACK}/stack-${STACK}-linux-x86_64.tar.gz -o stack.tar.gz &&     curl -fSL https://github.com/commercialhaskell/stack/releases/download/v${STACK}/stack-${STACK}-linux-x86_64.tar.gz.asc -o stack.tar.gz.asc &&     gpg --batch --trusted-key 0x575159689BEFB442 --verify stack.tar.gz.asc stack.tar.gz &&     tar -xf stack.tar.gz -C /usr/local/bin --strip-components=1 &&     /usr/local/bin/stack config set system-ghc --global true &&     /usr/local/bin/stack config set install-ghc --global false &&     rm -rf "$GNUPGHOME" /var/lib/apt/lists/* /stack.tar.gz.asc /stack.tar.gz
-# Wed, 31 Mar 2021 04:04:09 GMT
-ENV PATH=/root/.cabal/bin:/root/.local/bin:/opt/cabal/3.2/bin:/opt/ghc/8.10.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Mar 2021 04:04:09 GMT
+# Thu, 01 Apr 2021 02:20:03 GMT
+ENV PATH=/root/.cabal/bin:/root/.local/bin:/opt/cabal/3.4/bin:/opt/ghc/9.0.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Thu, 01 Apr 2021 02:20:03 GMT
 CMD ["ghci"]
 ```
 
@@ -63,11 +63,11 @@ CMD ["ghci"]
 		Last Modified: Wed, 31 Mar 2021 04:09:11 GMT  
 		Size: 13.9 MB (13853246 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86ef45fba480843a1ed254014ee7fb353193271422c2d7030e83693a642f09b1`  
-		Last Modified: Wed, 31 Mar 2021 04:10:14 GMT  
-		Size: 278.4 MB (278402349 bytes)  
+	-	`sha256:f2f53b369fde7f285157711ec259978e6ea16dcedf6708f849297302c361d9e9`  
+		Last Modified: Thu, 01 Apr 2021 02:31:40 GMT  
+		Size: 276.7 MB (276717608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:41ec6fab7c010afa50630de5942f3661f94764dca1c31583315237105fc5c6fc`  
-		Last Modified: Wed, 31 Mar 2021 04:09:14 GMT  
-		Size: 14.6 MB (14562648 bytes)  
+	-	`sha256:dc14cea54670950feca5418b3c7d9452b4e4444b8ccb784e70c536a92844fcd4`  
+		Last Modified: Thu, 01 Apr 2021 02:30:25 GMT  
+		Size: 14.6 MB (14562642 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
