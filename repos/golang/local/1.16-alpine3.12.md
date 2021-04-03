@@ -1,16 +1,16 @@
-# `golang:1.16.2-alpine3.12`
+# `golang:1.16.3-alpine3.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7352b1cc5adbfd2878d91c0618249d10f58d551f235fae3f2271feaaa44e54cd`
-- Created: `2021-03-26T04:53:19.279720555Z`
-- Virtual Size: ~ 301.07 Mb  
+- Image ID: `sha256:cd369b9f81827a5cee4e4bf7d93f52670f42f6671074eb58e515eb63998ee7a4`
+- Created: `2021-04-02T00:24:13.138898715Z`
+- Virtual Size: ~ 301.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
 - Environment:
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOLANG_VERSION=1.16.2`
+  - `GOLANG_VERSION=1.16.3`
   - `GOPATH=/go`
 
 ## `apk` (`.apk`-based packages)
@@ -69,16 +69,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.31.1-r19 description:
+busybox-1.31.1-r20 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.31.1-r19 webpage:
+busybox-1.31.1-r20 webpage:
 https://busybox.net/
 
-busybox-1.31.1-r19 installed size:
+busybox-1.31.1-r20 installed size:
 962560
 
-busybox-1.31.1-r19 license:
+busybox-1.31.1-r20 license:
 GPL-2.0-only
 
 ```
@@ -239,16 +239,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.31.1-r19 description:
+ssl_client-1.31.1-r20 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.31.1-r19 webpage:
+ssl_client-1.31.1-r20 webpage:
 https://busybox.net/
 
-ssl_client-1.31.1-r19 installed size:
+ssl_client-1.31.1-r20 installed size:
 28672
 
-ssl_client-1.31.1-r19 license:
+ssl_client-1.31.1-r20 license:
 GPL-2.0-only
 
 ```
