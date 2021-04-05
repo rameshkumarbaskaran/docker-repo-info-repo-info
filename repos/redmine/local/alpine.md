@@ -1,10 +1,10 @@
-# `redmine:4.1.2-alpine`
+# `redmine:4.2.0-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d2d8c81f053475c784a6386488546d0783b218cee4d9699315fbfac6fe2a0488`
-- Created: `2021-04-01T11:23:24.597381199Z`
-- Virtual Size: ~ 365.01 Mb  
+- Image ID: `sha256:d5aa389f0b143c0ea7e350e485f5936594d02e5f31ee239353156b2609330376`
+- Created: `2021-04-05T20:47:15.301693887Z`
+- Virtual Size: ~ 372.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,16 +12,16 @@
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `RUBY_MAJOR=2.6`
-  - `RUBY_VERSION=2.6.6`
-  - `RUBY_DOWNLOAD_SHA256=5db187882b7ac34016cd48d7032e197f07e4968f406b0690e20193b9b424841f`
+  - `RUBY_MAJOR=2.7`
+  - `RUBY_VERSION=2.7.3`
+  - `RUBY_DOWNLOAD_SHA256=5e91d1650857d43cd6852e05ac54683351e9c301811ee0bef43a67c4605e7db1`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
   - `HOME=/home/redmine`
-  - `REDMINE_VERSION=4.1.2`
-  - `REDMINE_DOWNLOAD_SHA256=7e22397351c53fe8fe4444c01c4e0640d9cefb17b9ac765b846df27627cd228e`
+  - `REDMINE_VERSION=4.2.0`
+  - `REDMINE_DOWNLOAD_SHA256=295864c580afa2a926e7a17f2ad10693f9b7a6d9f1ef523edb96b2368e7f07e5`
   - `BUNDLE_FORCE_RUBY_PLATFORM=1`
 
 ## `apk` (`.apk`-based packages)
