@@ -1,9 +1,9 @@
-# `aerospike:5.5.0.3`
+# `aerospike:5.5.0.7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2bb568631e0cf1fd686930b4f82a3a2699e5c1c358978f8c81ef577639aa3e16`
-- Created: `2021-03-12T03:35:34.334849979Z`
+- Image ID: `sha256:d0dc2c5e2848459108ce93d7d155ea1a4bee4ac89f9600c26c1361087701c0b0`
+- Created: `2021-04-01T21:09:26.329278493Z`
 - Virtual Size: ~ 194.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=5.5.0.3`
-  - `AEROSPIKE_SHA256=5649c59750042c8926af6ea2120a9ce6de008e9e4fede1329735b32a82f6dec2`
+  - `AEROSPIKE_VERSION=5.5.0.7`
+  - `AEROSPIKE_SHA256=43cc7c0b135fa8a0186a8ce9b5f923660e59e3ef8ec32a742a5b533c1d3caaa3`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -66,11 +66,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.115/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.115/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-community=5.5.0.3-1`
+### `dpkg` source package: `aerospike-server-community=5.5.0.7-1`
 
 Binary Packages:
 
-- `aerospike-server-community=5.5.0.3-1`
+- `aerospike-server-community=5.5.0.7-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2256,20 +2256,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.5=3.5.3-1+deb9u3
-'http://security.debian.org/debian-security/pool/updates/main/p/python3.5/python3.5_3.5.3-1+deb9u3.dsc' python3.5_3.5.3-1+deb9u3.dsc 3370 SHA256:5239b3f3e272d68fcb834dc59a34677988037817a45acbf88e3cace53e6af41d
-'http://security.debian.org/debian-security/pool/updates/main/p/python3.5/python3.5_3.5.3.orig.tar.xz' python3.5_3.5.3.orig.tar.xz 15213396 SHA256:eefe2ad6575855423ab630f5b51a8ef6e5556f774584c06beab4926f930ddbb0
-'http://security.debian.org/debian-security/pool/updates/main/p/python3.5/python3.5_3.5.3-1+deb9u3.debian.tar.xz' python3.5_3.5.3-1+deb9u3.debian.tar.xz 250516 SHA256:112d70ba85641fa036753555c82a205403f18bfbeb6d48acee66a3f987d72552
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.5/3.5.3-1+deb9u3/
 
-- https://sources.debian.net/src/python3.5/3.5.3-1+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/python3.5/3.5.3-1+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.5/3.5.3-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=7.0-3`
 
@@ -2373,12 +2366,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sensible-utils/0.0.9+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sensible-utils/0.0.9+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `shadow=1:4.4-4.1`
+### `dpkg` source package: `shadow=1:4.4-4.1+deb9u1`
 
 Binary Packages:
 
-- `login=1:4.4-4.1`
-- `passwd=1:4.4-4.1`
+- `login=1:4.4-4.1+deb9u1`
+- `passwd=1:4.4-4.1+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd/copyright`)
 
@@ -2387,17 +2380,17 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 Source:
 
 ```console
-$ apt-get source -qq --print-uris shadow=1:4.4-4.1
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.4-4.1.dsc' shadow_4.4-4.1.dsc 2453 SHA256:6760f8ee90562ed02cb3902b81167e6153923a979c61dc06671426321e575f74
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.4.orig.tar.gz' shadow_4.4.orig.tar.gz 3003036 SHA256:1323e7e932836e03dbfa441f7eeb349ede2c92d62b788ade0732411fd516be3d
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.4-4.1.debian.tar.xz' shadow_4.4-4.1.debian.tar.xz 600560 SHA256:42610e666c762b88b9e60ea878b522b0639240dc9a74fe627b1ac497dd3d7424
+$ apt-get source -qq --print-uris shadow=1:4.4-4.1+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/s/shadow/shadow_4.4-4.1+deb9u1.dsc' shadow_4.4-4.1+deb9u1.dsc 2326 SHA256:b26ba339cc5a60a15173eb6fa3d4f700aece86c6f34e89e04f9d8e11a589e8f7
+'http://security.debian.org/debian-security/pool/updates/main/s/shadow/shadow_4.4.orig.tar.gz' shadow_4.4.orig.tar.gz 3003036 SHA256:1323e7e932836e03dbfa441f7eeb349ede2c92d62b788ade0732411fd516be3d
+'http://security.debian.org/debian-security/pool/updates/main/s/shadow/shadow_4.4-4.1+deb9u1.debian.tar.xz' shadow_4.4-4.1+deb9u1.debian.tar.xz 601380 SHA256:d9cb3b85cac743cc2b16e07601d1a6ccc261981117948694058e557d7baeec08
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/shadow/1:4.4-4.1/ (for browsing the source)
-- https://sources.debian.net/src/shadow/1:4.4-4.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/shadow/1:4.4-4.1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/shadow/1:4.4-4.1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/shadow/1:4.4-4.1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/shadow/1:4.4-4.1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sqlite3=3.16.2-5+deb9u3`
 
