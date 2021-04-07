@@ -1,10 +1,10 @@
-# `maven:3.6.3-ibmjava-8`
+# `maven:3.8.1-ibmjava-8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ad8f5e6bed8748d2cd78f41c2cac72a479bad1a8f884858b9b35e3f4de4948a6`
-- Created: `2021-03-26T19:00:23.767109143Z`
-- Virtual Size: ~ 368.23 Mb  
+- Image ID: `sha256:f4c0cb7f42067456a17a99f0246283fe14d9eaabff8c8bf9c3dd33e94baad2b9`
+- Created: `2021-04-05T17:53:38.783633026Z`
+- Virtual Size: ~ 368.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -253,12 +253,12 @@ $ apt-get source -qq --print-uris coreutils=8.28-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.28-1ubuntu1.debian.tar.xz' coreutils_8.28-1ubuntu1.debian.tar.xz 37940 SHA256:71ba2e83edc675a79e1e0556aff326ab2ae812332692e3db29615e8ed1b427f4
 ```
 
-### `dpkg` source package: `curl=7.58.0-2ubuntu3.12`
+### `dpkg` source package: `curl=7.58.0-2ubuntu3.13`
 
 Binary Packages:
 
-- `curl=7.58.0-2ubuntu3.12`
-- `libcurl4:amd64=7.58.0-2ubuntu3.12`
+- `curl=7.58.0-2ubuntu3.13`
+- `libcurl4:amd64=7.58.0-2ubuntu3.13`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -269,9 +269,14 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.13
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.13.dsc' curl_7.58.0-2ubuntu3.13.dsc 2781 SHA512:ab0ef97922435e5be9f8d3ea678ca68d3e4ad18c01b0065458cc71f5fc29e2ba337309686028a67aef3b335905f6b47cb5f4defabab15c8b1f719edbcb24be91
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0.orig.tar.gz' curl_7.58.0.orig.tar.gz 3879728 SHA512:7b12b79107558bb266672d6e128615fe5a8149c37f4ae540197e3298f5d312beb2d78fbb23e3ea84ea7afc41549898a1e5cd38509f0388b11707b48d5efb8ca3
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.13.debian.tar.xz' curl_7.58.0-2ubuntu3.13.debian.tar.xz 58620 SHA512:91f19e1a10a8b4585b4c8dd235305476b4300555b9055855cfe04a043e3f2e04d468d9c64311875da61668420156b15bb571539e247c114046b2c069f28f2c35
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2.3`
 
