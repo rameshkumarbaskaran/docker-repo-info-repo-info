@@ -610,20 +610,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.74.0-1.1
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0-1.1.dsc' curl_7.74.0-1.1.dsc 2667 SHA256:38a98f50c870a7be3891ef15c06eb5d8be48dacfbfc2d96765081de07ef4dd36
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0.orig.tar.gz' curl_7.74.0.orig.tar.gz 4043409 SHA256:e56b3921eeb7a2951959c02db0912b5fcd5fdba5aca071da819e1accf338bbd7
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0-1.1.debian.tar.xz' curl_7.74.0-1.1.debian.tar.xz 31456 SHA256:7cbb5cff7442e71598997e83059221df6550276af35899775445218d020f9de6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.74.0-1.1/
 
-- https://sources.debian.net/src/curl/7.74.0-1.1/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.74.0-1.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.74.0-1.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2.1`
 
