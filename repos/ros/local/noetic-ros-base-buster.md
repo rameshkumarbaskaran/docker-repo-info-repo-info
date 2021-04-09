@@ -4769,14 +4769,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg-modules=1.2.10-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.10-1.debian.tar.xz' python3-rospkg-modules_1.2.10-1.debian.tar.xz 1172 SHA512:65cee4d28b0320fc3931a7a546e463bb6f8f5b18235076442cbf47502bb62aa08282f4fa12135ac5ef20e6d6ffe49c61eec427efdcbbc3816e59ff556587f628
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.10-1.dsc' python3-rospkg-modules_1.2.10-1.dsc 947 SHA512:a35e6b66570813b6d8d0318b0149fd46709e209461a9290f34d1d82a35585bc18e1eab35ab29e2d9d2384e9772b9d3bbf1742033a946efcaf2b34b8e32d70e1d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.10.orig.tar.gz' python3-rospkg-modules_1.2.10.orig.tar.gz 41498 SHA512:dfce6e9a545cf1a1c166ff4b4f05b94a4302ca554b71932f2800d8c7a42b2db856b78b1e6c48ed17fde70e158b5a6c689973038cbdbec6c4684fb232c27e3d55
-```
 
 ### `dpkg` source package: `python3-rospkg=1.2.10-100`
 
@@ -4788,14 +4783,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg=1.2.10-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.2.10-100.debian.tar.xz' python3-rospkg_1.2.10-100.debian.tar.xz 1128 SHA512:96c10b94a7528580ff6ec39df453898a9f77dade42c3fb9b1ab530cc36b6d09eda73bb0609bd4d9bbe74e6ee1cec3ce5aeb665ca7049c5f48bbe732d057d5c5c
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.2.10-100.dsc' python3-rospkg_1.2.10-100.dsc 883 SHA512:519f2bdc00b1814fb04aa0aefacdd0d297adfb0506a8f50e741f236a964c5b8b9e1ceb5028591c809a1ac09eafd9f77e11668225c7cbebb56d4331b8b3afc557
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.2.10.orig.tar.gz' python3-rospkg_1.2.10.orig.tar.gz 17970 SHA512:9a2aade01a161aa43bda133ade339c34b45d6747e03274a65e63df8e23a9466b0aecbb3755299166adddf9bc08ff5749c60a963a601cf7e39a4622861f679e28
-```
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.7.3-1`
 

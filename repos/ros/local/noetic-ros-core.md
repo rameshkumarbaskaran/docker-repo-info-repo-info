@@ -111,13 +111,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.0.4
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.4.dsc' apt_2.0.4.dsc 2843 SHA512:bbc466f979809c15d3396e26da37afc78688b3d454a900dcb95d727748946c8be91b13791031e057622c8fc94c875fa00e528829cbdb54a0991134321c514baf
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.4.tar.xz' apt_2.0.4.tar.xz 2171696 SHA512:4272fccb590599372a5dac2db1ce0af777bdffbb8b7ff12b2ef07363dd3f7ff93977f50b49d7454b6ec03f3814dd432803c0d98b723c08a63bafb5c42dfa66ad
-```
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -2826,14 +2822,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg-modules=1.2.10-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.10-1.debian.tar.xz' python3-rospkg-modules_1.2.10-1.debian.tar.xz 1172 SHA512:65cee4d28b0320fc3931a7a546e463bb6f8f5b18235076442cbf47502bb62aa08282f4fa12135ac5ef20e6d6ffe49c61eec427efdcbbc3816e59ff556587f628
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.10-1.dsc' python3-rospkg-modules_1.2.10-1.dsc 947 SHA512:a35e6b66570813b6d8d0318b0149fd46709e209461a9290f34d1d82a35585bc18e1eab35ab29e2d9d2384e9772b9d3bbf1742033a946efcaf2b34b8e32d70e1d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.2.10.orig.tar.gz' python3-rospkg-modules_1.2.10.orig.tar.gz 41498 SHA512:dfce6e9a545cf1a1c166ff4b4f05b94a4302ca554b71932f2800d8c7a42b2db856b78b1e6c48ed17fde70e158b5a6c689973038cbdbec6c4684fb232c27e3d55
-```
 
 ### `dpkg` source package: `python3-rospkg=1.2.10-100`
 
@@ -2845,14 +2836,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg=1.2.10-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.2.10-100.debian.tar.xz' python3-rospkg_1.2.10-100.debian.tar.xz 1128 SHA512:96c10b94a7528580ff6ec39df453898a9f77dade42c3fb9b1ab530cc36b6d09eda73bb0609bd4d9bbe74e6ee1cec3ce5aeb665ca7049c5f48bbe732d057d5c5c
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.2.10-100.dsc' python3-rospkg_1.2.10-100.dsc 883 SHA512:519f2bdc00b1814fb04aa0aefacdd0d297adfb0506a8f50e741f236a964c5b8b9e1ceb5028591c809a1ac09eafd9f77e11668225c7cbebb56d4331b8b3afc557
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.2.10.orig.tar.gz' python3-rospkg_1.2.10.orig.tar.gz 17970 SHA512:9a2aade01a161aa43bda133ade339c34b45d6747e03274a65e63df8e23a9466b0aecbb3755299166adddf9bc08ff5749c60a963a601cf7e39a4622861f679e28
-```
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.8.5-1~20.04.1`
 
@@ -4152,14 +4138,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.5
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.5.dsc' systemd_245.4-4ubuntu3.5.dsc 5258 SHA512:ec38a58e62f2db26e84559b3b6aca597a529ad972016ad877cdac74bab4a4b309e436d2f0c8fc3d39ce3954f24d780a5daddb3399fe87b623a63f3db8b399ee5
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.5.debian.tar.xz' systemd_245.4-4ubuntu3.5.debian.tar.xz 235044 SHA512:d8634d5f7007db4692105249aee9727afbbaadfd0cf5b308f039c90da0c383c970f359d2aa10a002f5c164b7696e42c404949cdfda998f5b2ebcc44e567f2436
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
