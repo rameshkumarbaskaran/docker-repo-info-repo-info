@@ -1,10 +1,10 @@
-# `traefik:v1.7.29`
+# `traefik:v1.7.30`
 
 ## Docker Metadata
 
-- Image ID: `sha256:906db490f80d11b8292995bafb68f446c473a489529213f82847242ae262b9d0`
-- Created: `2021-03-29T20:21:40.234908851Z`
-- Virtual Size: ~ 62.19 Mb  
+- Image ID: `sha256:2a2126389e0b0dbd13da033d79636b0f0626d73f1a6da0935ce6ce9eccae112a`
+- Created: `2021-04-08T20:07:40.054893377Z`
+- Virtual Size: ~ 62.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/traefik"]`
@@ -16,4 +16,4 @@
   - `org.opencontainers.image.title=Traefik`
   - `org.opencontainers.image.url=https://traefik.io`
   - `org.opencontainers.image.vendor=Traefik Labs`
-  - `org.opencontainers.image.version=v1.7.29`
+  - `org.opencontainers.image.version=v1.7.30`
