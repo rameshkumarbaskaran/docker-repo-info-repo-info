@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6763bc849b3616fc568c8ba36a94ee3d774acfdf642db2dc831783a75950f9f2`
-- Created: `2021-03-30T23:20:30.935457915Z`
+- Image ID: `sha256:11118587d01694dc8e39517d699e4d912012aaf7877b18016351008e2a5e3d72`
+- Created: `2021-04-10T01:49:47.945440693Z`
 - Virtual Size: ~ 189.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -353,12 +353,12 @@ Licenses: (parsed from: `/usr/share/doc/couchdb/copyright`)
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `curl=7.64.0-4+deb10u1`
+### `dpkg` source package: `curl=7.64.0-4+deb10u2`
 
 Binary Packages:
 
-- `curl=7.64.0-4+deb10u1`
-- `libcurl4:amd64=7.64.0-4+deb10u1`
+- `curl=7.64.0-4+deb10u2`
+- `libcurl4:amd64=7.64.0-4+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -372,17 +372,17 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 Source:
 
 ```console
-$ apt-get source -qq --print-uris curl=7.64.0-4+deb10u1
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0-4+deb10u1.dsc' curl_7.64.0-4+deb10u1.dsc 2719 SHA256:bdbc61f9785516009ae74bb3775e21bed7ab8fdd7bfef4a1a4f471d5218adf3e
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0.orig.tar.gz' curl_7.64.0.orig.tar.gz 4032645 SHA256:cb90d2eb74d4e358c1ed1489f8e3af96b50ea4374ad71f143fa4595e998d81b5
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0-4+deb10u1.debian.tar.xz' curl_7.64.0-4+deb10u1.debian.tar.xz 34156 SHA256:911407ad8d73d0592db7f1a015656089563bb7dab279ec33bff855adf56bcf1b
+$ apt-get source -qq --print-uris curl=7.64.0-4+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.64.0-4+deb10u2.dsc' curl_7.64.0-4+deb10u2.dsc 2719 SHA256:3cc585f4c22c0c001527f5f26f5a6154a86d1df9752aa118bf7d8e892ec4fac2
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.64.0.orig.tar.gz' curl_7.64.0.orig.tar.gz 4032645 SHA256:cb90d2eb74d4e358c1ed1489f8e3af96b50ea4374ad71f143fa4595e998d81b5
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.64.0-4+deb10u2.debian.tar.xz' curl_7.64.0-4+deb10u2.debian.tar.xz 43572 SHA256:6b7f793e0cd41e2ccb49301ad4e58c83282f46be7c9415c9280164834efd0e52
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/curl/7.64.0-4+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.64.0-4+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.64.0-4+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/curl/7.64.0-4+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.64.0-4+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.64.0-4+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1+deb10u1`
 
