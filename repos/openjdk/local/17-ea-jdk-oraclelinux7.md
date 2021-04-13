@@ -1,10 +1,10 @@
-# `openjdk:17-ea-16-jdk-oraclelinux7`
+# `openjdk:17-ea-17-jdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:bd5165a7b4bbf6228f5461a7a0aaab13b666c874158ddb347ec9efa9b0e146c4`
-- Created: `2021-04-02T18:26:07.846514827Z`
-- Virtual Size: ~ 491.64 Mb  
+- Image ID: `sha256:69d5b3be6ec4842890f657a29e44a7c6fbd3711dd00bc72349ce137aa73309a3`
+- Created: `2021-04-09T18:55:32.107476902Z`
+- Virtual Size: ~ 492.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/java/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/java/openjdk-17`
   - `LANG=en_US.UTF-8`
-  - `JAVA_VERSION=17-ea+16`
+  - `JAVA_VERSION=17-ea+17`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -389,12 +389,7 @@ https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/texi
 
 Licenses (from `rpm --query`): GPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls kernel-container-3.10.0-0.0.0.2.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/kernel-transition-3.10.0-0.0.0.2.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `keyutils-libs-1.5.8-3.el7.x86_64`
 
