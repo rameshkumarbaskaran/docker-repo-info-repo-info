@@ -1,16 +1,16 @@
-# `docker:20.10.5-dind`
+# `docker:20.10.6-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0a9822c8848df3eb0a1562e553fdd54215939ef0a528434ee026c64ff645148c`
-- Created: `2021-04-01T14:00:23.389160724Z`
-- Virtual Size: ~ 258.01 Mb  
+- Image ID: `sha256:4f379b3b223739edc4e2f2862eb275d31da275cbc4232496a1321369299543e7`
+- Created: `2021-04-14T20:17:18.986226834Z`
+- Virtual Size: ~ 262.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=20.10.5`
+  - `DOCKER_VERSION=20.10.6`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=ed89041433a031cafc0a0f19cfe573c31688d377`
 
@@ -53,16 +53,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.12.4-r0 description:
+apk-tools-2.12.5-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.12.4-r0 webpage:
+apk-tools-2.12.5-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.12.4-r0 installed size:
+apk-tools-2.12.5-r0 installed size:
 311296
 
-apk-tools-2.12.4-r0 license:
+apk-tools-2.12.5-r0 license:
 GPL-2.0-only
 
 ```
@@ -87,16 +87,16 @@ GPL-2.0-or-later LGPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.32.1-r5 description:
+busybox-1.32.1-r6 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.32.1-r5 webpage:
+busybox-1.32.1-r6 webpage:
 https://busybox.net/
 
-busybox-1.32.1-r5 installed size:
+busybox-1.32.1-r6 installed size:
 946176
 
-busybox-1.32.1-r5 license:
+busybox-1.32.1-r6 license:
 GPL-2.0-only
 
 ```
@@ -733,16 +733,16 @@ BSD-3-Clause
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.32.1-r5 description:
+ssl_client-1.32.1-r6 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.32.1-r5 webpage:
+ssl_client-1.32.1-r6 webpage:
 https://busybox.net/
 
-ssl_client-1.32.1-r5 installed size:
+ssl_client-1.32.1-r6 installed size:
 28672
 
-ssl_client-1.32.1-r5 license:
+ssl_client-1.32.1-r6 license:
 GPL-2.0-only
 
 ```

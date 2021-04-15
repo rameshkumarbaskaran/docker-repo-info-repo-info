@@ -1,16 +1,16 @@
-# `docker:20.10.5-dind-rootless`
+# `docker:20.10.6-dind-rootless`
 
 ## Docker Metadata
 
-- Image ID: `sha256:195378697290a5abbceac60a3d19ec0e7e201c1b23b869e3920c1e29bcab94e8`
-- Created: `2021-04-01T14:00:33.744057351Z`
-- Virtual Size: ~ 314.80 Mb  
+- Image ID: `sha256:b788168804a1b18eac931fd1dfee1b07fb54905ef7d8fef4da88c408004b7b49`
+- Created: `2021-04-14T20:17:29.50646454Z`
+- Virtual Size: ~ 319.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=20.10.5`
+  - `DOCKER_VERSION=20.10.6`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=ed89041433a031cafc0a0f19cfe573c31688d377`
 
@@ -53,16 +53,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.12.4-r0 description:
+apk-tools-2.12.5-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.12.4-r0 webpage:
+apk-tools-2.12.5-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.12.4-r0 installed size:
+apk-tools-2.12.5-r0 installed size:
 311296
 
-apk-tools-2.12.4-r0 license:
+apk-tools-2.12.5-r0 license:
 GPL-2.0-only
 
 ```
@@ -87,16 +87,16 @@ GPL-2.0-or-later LGPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.32.1-r5 description:
+busybox-1.32.1-r6 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.32.1-r5 webpage:
+busybox-1.32.1-r6 webpage:
 https://busybox.net/
 
-busybox-1.32.1-r5 installed size:
+busybox-1.32.1-r6 installed size:
 946176
 
-busybox-1.32.1-r5 license:
+busybox-1.32.1-r6 license:
 GPL-2.0-only
 
 ```
@@ -852,16 +852,16 @@ BSD-3-Clause
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.32.1-r5 description:
+ssl_client-1.32.1-r6 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.32.1-r5 webpage:
+ssl_client-1.32.1-r6 webpage:
 https://busybox.net/
 
-ssl_client-1.32.1-r5 installed size:
+ssl_client-1.32.1-r6 installed size:
 28672
 
-ssl_client-1.32.1-r5 license:
+ssl_client-1.32.1-r6 license:
 GPL-2.0-only
 
 ```
