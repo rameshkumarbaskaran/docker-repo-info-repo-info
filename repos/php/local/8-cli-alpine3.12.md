@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6acc149e80f17bceec455caff1eeebabec24646d92b2a4c7262c7368f794e4e4`
-- Created: `2021-04-01T15:40:38.475669905Z`
-- Virtual Size: ~ 82.93 Mb  
+- Image ID: `sha256:8198ed0dc8fae7429ba154e16cfdf195bfeb86cb52d082da4be879c1c756bcb8`
+- Created: `2021-04-15T00:30:19.222259538Z`
+- Virtual Size: ~ 82.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -61,16 +61,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.5-r1 description:
+apk-tools-2.10.6-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.5-r1 webpage:
+apk-tools-2.10.6-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.10.5-r1 installed size:
-262144
+apk-tools-2.10.6-r0 installed size:
+266240
 
-apk-tools-2.10.5-r1 license:
+apk-tools-2.10.6-r0 license:
 GPL-2.0-only
 
 ```
@@ -146,16 +146,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.69.1-r3 description:
+curl-7.76.1-r0 description:
 URL retrival utility and library
 
-curl-7.69.1-r3 webpage:
-https://curl.haxx.se/
+curl-7.76.1-r0 webpage:
+https://curl.se/
 
-curl-7.69.1-r3 installed size:
-229376
+curl-7.76.1-r0 installed size:
+249856
 
-curl-7.69.1-r3 license:
+curl-7.76.1-r0 license:
 MIT
 
 ```
@@ -214,16 +214,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r3 description:
+libcurl-7.76.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r3 webpage:
-https://curl.haxx.se/
+libcurl-7.76.1-r0 webpage:
+https://curl.se/
 
-libcurl-7.69.1-r3 installed size:
-458752
+libcurl-7.76.1-r0 installed size:
+499712
 
-libcurl-7.69.1-r3 license:
+libcurl-7.76.1-r0 license:
 MIT
 
 ```
@@ -486,16 +486,16 @@ GPL-2.0-only
 ### `apk` package: `tar`
 
 ```console
-tar-1.32-r1 description:
+tar-1.32-r2 description:
 Utility used to store, backup, and transport files
 
-tar-1.32-r1 webpage:
+tar-1.32-r2 webpage:
 https://www.gnu.org/software/tar/
 
-tar-1.32-r1 installed size:
+tar-1.32-r2 installed size:
 499712
 
-tar-1.32-r1 license:
+tar-1.32-r2 license:
 GPL-3.0-or-later
 
 ```
