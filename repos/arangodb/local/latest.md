@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ae27c54e722b70ab19e8f09c575731f8d64e7d080773041e893479cb2e01b45a`
-- Created: `2021-04-01T13:20:35.549768124Z`
-- Virtual Size: ~ 343.96 Mb  
+- Image ID: `sha256:1130753b4a5e75111406446cb6b646b35cf0830e589e86d443ffd0d2a1ad71e4`
+- Created: `2021-04-14T19:45:44.13732258Z`
+- Virtual Size: ~ 344.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -57,16 +57,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.5-r0 description:
+apk-tools-2.10.6-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.5-r0 webpage:
-https://git.alpinelinux.org/cgit/apk-tools/
+apk-tools-2.10.6-r0 webpage:
+https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.10.5-r0 installed size:
-262144
+apk-tools-2.10.6-r0 installed size:
+266240
 
-apk-tools-2.10.5-r0 license:
+apk-tools-2.10.6-r0 license:
 GPL2
 
 ```
@@ -312,16 +312,16 @@ MIT
 ### `apk` package: `nodejs`
 
 ```console
-nodejs-12.21.0-r0 description:
+nodejs-12.22.1-r0 description:
 JavaScript runtime built on V8 engine - LTS version
 
-nodejs-12.21.0-r0 webpage:
+nodejs-12.22.1-r0 webpage:
 https://nodejs.org/
 
-nodejs-12.21.0-r0 installed size:
-30670848
+nodejs-12.22.1-r0 installed size:
+30683136
 
-nodejs-12.21.0-r0 license:
+nodejs-12.22.1-r0 license:
 MIT
 
 ```
