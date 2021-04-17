@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ff3beacf73641c6a75664385023c3a0eafe3008167f8a856f8827ce966e0869e`
-- Created: `2021-04-05T17:53:52.377976362Z`
-- Virtual Size: ~ 275.24 Mb  
+- Image ID: `sha256:ed2401255bae8af144aa60c6678ced46d535b9fabd298499a65b667e05766274`
+- Created: `2021-04-15T08:55:59.061882338Z`
+- Virtual Size: ~ 275.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -56,16 +56,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.5-r1 description:
+apk-tools-2.10.6-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.5-r1 webpage:
+apk-tools-2.10.6-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.10.5-r1 installed size:
-262144
+apk-tools-2.10.6-r0 installed size:
+266240
 
-apk-tools-2.10.5-r1 license:
+apk-tools-2.10.6-r0 license:
 GPL-2.0-only
 
 ```
@@ -141,16 +141,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.69.1-r3 description:
+curl-7.76.1-r0 description:
 URL retrival utility and library
 
-curl-7.69.1-r3 webpage:
-https://curl.haxx.se/
+curl-7.76.1-r0 webpage:
+https://curl.se/
 
-curl-7.69.1-r3 installed size:
-229376
+curl-7.76.1-r0 installed size:
+249856
 
-curl-7.69.1-r3 license:
+curl-7.76.1-r0 license:
 MIT
 
 ```
@@ -226,16 +226,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.69.1-r3 description:
+libcurl-7.76.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.69.1-r3 webpage:
-https://curl.haxx.se/
+libcurl-7.76.1-r0 webpage:
+https://curl.se/
 
-libcurl-7.69.1-r3 installed size:
-458752
+libcurl-7.76.1-r0 installed size:
+499712
 
-libcurl-7.69.1-r3 license:
+libcurl-7.76.1-r0 license:
 MIT
 
 ```
@@ -481,16 +481,16 @@ GPL-2.0-only
 ### `apk` package: `tar`
 
 ```console
-tar-1.32-r1 description:
+tar-1.32-r2 description:
 Utility used to store, backup, and transport files
 
-tar-1.32-r1 webpage:
+tar-1.32-r2 webpage:
 https://www.gnu.org/software/tar/
 
-tar-1.32-r1 installed size:
+tar-1.32-r2 installed size:
 499712
 
-tar-1.32-r1 license:
+tar-1.32-r2 license:
 GPL-3.0-or-later
 
 ```
