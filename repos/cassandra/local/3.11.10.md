@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b6495438dfcec69f8fb59f324cd0dbeab7500a3030d4b88638782ce6e8a4df1b`
-- Created: `2021-04-06T21:22:57.693965633Z`
-- Virtual Size: ~ 402.45 Mb  
+- Image ID: `sha256:96ecda0a7f63bdf2ec26dbaf51e1d824e211b7be89f69b0464adb07c73021a48`
+- Created: `2021-04-19T19:07:08.345505681Z`
+- Virtual Size: ~ 403.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -1750,9 +1750,8 @@ $ apt-get source -qq --print-uris perl=5.30.0-9ubuntu0.2
 Binary Packages:
 
 - `libprocps8:amd64=2:3.3.16-1ubuntu2`
-- `procps=2:3.3.16-1ubuntu2`
 
-Licenses: (parsed from: `/usr/share/doc/libprocps8/copyright`, `/usr/share/doc/procps/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libprocps8/copyright`)
 
 - `GPL-2`
 - `GPL-2.0+`
@@ -1768,6 +1767,30 @@ $ apt-get source -qq --print-uris procps=2:3.3.16-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16-1ubuntu2.dsc' procps_3.3.16-1ubuntu2.dsc 2248 SHA256:1cd439a6bd527ab1d676fb6d0119cc825d4f7990b8b0f1daeaaad566925ab830
 'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16.orig.tar.xz' procps_3.3.16.orig.tar.xz 621892 SHA256:2919299e579d29be3501a802dfe77e6f23be228149d0396d83d0ffbe8fa7efbf
 'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16-1ubuntu2.debian.tar.xz' procps_3.3.16-1ubuntu2.debian.tar.xz 32916 SHA256:eb4d6806dbcf8ab69c4913c50d04f9d99e95f02dab82bda80140abd85d27d5b7
+```
+
+### `dpkg` source package: `procps=2:3.3.16-1ubuntu2.1`
+
+Binary Packages:
+
+- `procps=2:3.3.16-1ubuntu2.1`
+
+Licenses: (parsed from: `/usr/share/doc/procps/copyright`)
+
+- `GPL-2`
+- `GPL-2.0+`
+- `LGPL-2`
+- `LGPL-2.0+`
+- `LGPL-2.1`
+- `LGPL-2.1+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris procps=2:3.3.16-1ubuntu2.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16-1ubuntu2.1.dsc' procps_3.3.16-1ubuntu2.1.dsc 2242 SHA512:2e1deabf2341a2df75571712153dcea1d3c8fd676ff78714be3878e6aec5acd538624b66f68678a7b9018d15f763a8612b1d3ea7aeeeb26971fe109db2a0eb5e
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16.orig.tar.xz' procps_3.3.16.orig.tar.xz 621892 SHA512:38db4f72fe40c2f027b23b18bbc8c29cfcdf6bcdb029199fe4bebede153943aa884157f56e792c399f9a4949cc514687500bb99a75a5e7ad7b9e878f52090304
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16-1ubuntu2.1.debian.tar.xz' procps_3.3.16-1ubuntu2.1.debian.tar.xz 33700 SHA512:cc2c5a5278571784ec66f72948b88f06983ec3a53f7d7314492023ef166ff4c31c914faea849dfdb8a0786c65027773ec538eec06018ae750b7039876bdf9e9a
 ```
 
 ### `dpkg` source package: `python-defaults=2.7.17-2ubuntu4`
