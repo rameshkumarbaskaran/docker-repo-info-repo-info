@@ -3801,20 +3801,13 @@ Licenses: (parsed from: `/usr/share/doc/make/copyright`)
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris make-dfsg=4.3-4
-'http://deb.debian.org/debian/pool/main/m/make-dfsg/make-dfsg_4.3-4.dsc' make-dfsg_4.3-4.dsc 1657 SHA256:f647a112fa53ecb8707247741cb3aab4a0a6899fb466bdb4bbd44d30604168da
-'http://deb.debian.org/debian/pool/main/m/make-dfsg/make-dfsg_4.3.orig.tar.gz' make-dfsg_4.3.orig.tar.gz 1845906 SHA256:be4c17542578824e745f83bcd2a9ba264206187247cb6a5f5df99b0a9d1f9047
-'http://deb.debian.org/debian/pool/main/m/make-dfsg/make-dfsg_4.3-4.diff.gz' make-dfsg_4.3-4.diff.gz 50880 SHA256:6f4196d2d8fe593e61a58cc885b6ea8ecf9b19d6a4e64bc9a32bb966f7d9a699
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/make-dfsg/4.3-4/
 
-- https://sources.debian.net/src/make-dfsg/4.3-4/ (for browsing the source)
-- https://sources.debian.net/src/make-dfsg/4.3-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/make-dfsg/4.3-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mariadb-10.5=1:10.5.9-1`
 
@@ -4092,19 +4085,13 @@ Licenses: (parsed from: `/usr/share/doc/netbase/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris netbase=6.2
-'http://deb.debian.org/debian/pool/main/n/netbase/netbase_6.2.dsc' netbase_6.2.dsc 875 SHA256:97433d7f9cf4dbb0ac079d0e02bca7b6e9e48037cab92aef2441954fb13ab20a
-'http://deb.debian.org/debian/pool/main/n/netbase/netbase_6.2.tar.xz' netbase_6.2.tar.xz 31908 SHA256:309a24146a06347d654b261e9e07a82fab844b173674a42e223803dd8258541e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/netbase/6.2/
 
-- https://sources.debian.net/src/netbase/6.2/ (for browsing the source)
-- https://sources.debian.net/src/netbase/6.2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/netbase/6.2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nettle=3.7-2.1`
 
