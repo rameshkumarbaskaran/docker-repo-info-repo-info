@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:148fad57b2a04e2a3c81f1e9c86d691b6f78ae173441a5cea89c1014ccf3f2fb`
-- Created: `2021-04-11T07:06:55.556845157Z`
-- Virtual Size: ~ 922.79 Mb  
+- Image ID: `sha256:8e42cbf66806f6906eea7fa8cf03b658c7e6404a48866e59dec520123bc77b79`
+- Created: `2021-04-22T23:46:25.0741998Z`
+- Virtual Size: ~ 922.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=8u282`
+  - `JAVA_VERSION=8u292`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
