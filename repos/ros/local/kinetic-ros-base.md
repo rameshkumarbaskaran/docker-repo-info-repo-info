@@ -878,13 +878,9 @@ Licenses: (parsed from: `/usr/share/doc/distro-info-data/copyright`)
 
 - `ISC`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris distro-info-data=0.28ubuntu0.16
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.28ubuntu0.16.dsc' distro-info-data_0.28ubuntu0.16.dsc 1761 SHA512:b6ee6596b784398f8ab63529b01fddeb6a9614b359cd734c205d6e5bd5dd269437032259d22dccc57fa044e3a093cb94dd4a6e4818bc80896e8c59dcd1f53839
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.28ubuntu0.16.tar.xz' distro-info-data_0.28ubuntu0.16.tar.xz 7320 SHA512:942a1e1418446485f74480ec83799c3bbcec3c4d3c6bd04a0418c045d16c66f3baaa51b102b37ec19f423d483ad32bd35d6edf7ba769824dc6077710c1fcf585
-```
 
 ### `dpkg` source package: `dpkg=1.18.4ubuntu1.6`
 
