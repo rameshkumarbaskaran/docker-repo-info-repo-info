@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:933727314e3e260884f24b5d17911ac961c376bef3f82103e52e2fd0e0a4e27a`
-- Created: `2021-04-11T04:03:31.702479442Z`
-- Virtual Size: ~ 210.48 Mb  
+- Image ID: `sha256:4fece6b17b9ed935e37a0371de6918ff8140cbe7436dfaf6b23a86bb87b58d8f`
+- Created: `2021-04-22T00:20:08.26273742Z`
+- Virtual Size: ~ 210.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/entrypoint.sh"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=8u282`
+  - `JAVA_VERSION=8u292`
   - `GPG_KEY=E306FEF548C686C23DC00242B9B08D8F616EF49C`
   - `RAPIDOID_JAR=/opt/rapidoid.jar`
   - `RAPIDOID_TMP=/tmp/rapidoid`
