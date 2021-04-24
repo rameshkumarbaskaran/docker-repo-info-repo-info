@@ -1,7 +1,7 @@
 ## `swift:bionic`
 
 ```console
-$ docker pull swift@sha256:2310c09fbe318698e9a99edcdfebc76eb743061c9fdfdae817a38db17fbe2b99
+$ docker pull swift@sha256:52ef8355c7ef6bce27c65f904ce04771d358238f181dd6930c821d78a901afd1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,69 +11,69 @@ $ docker pull swift@sha256:2310c09fbe318698e9a99edcdfebc76eb743061c9fdfdae817a38
 ### `swift:bionic` - linux; amd64
 
 ```console
-$ docker pull swift@sha256:fe1738408ffb75401377ade89258ef813da0e09619160f4a8ee26cbe16aefd34
+$ docker pull swift@sha256:29a9984be6a6c809901f602e8f4f781f05f04c24d0ea11afdb5933eececaa996
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **573.3 MB (573287031 bytes)**  
+-	Total Size: **573.3 MB (573278275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9ca75bbbbcbe17c598304e898c136b1171cfc240e25a2a08f0c431af3a8d7ffd`
+-	Image ID: `sha256:d724acf10eb5848331a6a60158922d0541dae7575826784efc8c089abd00608c`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 25 Mar 2021 22:32:58 GMT
-ADD file:e80ae8d359b484dac5346f98c549abc694e1d0c87e1d9753d495aed4d9c8b2b3 in / 
-# Thu, 25 Mar 2021 22:32:59 GMT
+# Fri, 23 Apr 2021 22:21:22 GMT
+ADD file:d7fa3c26651f9204a5629287a1a9a6e7dc6a0bc6eb499e82c433c0c8f67ff46b in / 
+# Fri, 23 Apr 2021 22:21:23 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Thu, 25 Mar 2021 22:33:00 GMT
+# Fri, 23 Apr 2021 22:21:24 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Thu, 25 Mar 2021 22:33:01 GMT
+# Fri, 23 Apr 2021 22:21:25 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Thu, 25 Mar 2021 22:33:02 GMT
+# Fri, 23 Apr 2021 22:21:25 GMT
 CMD ["/bin/bash"]
-# Fri, 26 Mar 2021 13:48:28 GMT
+# Sat, 24 Apr 2021 02:57:27 GMT
 LABEL maintainer=Swift Infrastructure <swift-infrastructure@swift.org>
-# Fri, 26 Mar 2021 13:48:28 GMT
+# Sat, 24 Apr 2021 02:57:27 GMT
 LABEL Description=Docker Container for the Swift programming language
-# Fri, 26 Mar 2021 13:49:34 GMT
+# Sat, 24 Apr 2021 02:58:36 GMT
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && apt-get -q update &&     apt-get -q install -y     libatomic1     libcurl4     libxml2     libedit2     libsqlite3-0     libc6-dev     binutils     libgcc-5-dev     libstdc++-5-dev     zlib1g-dev     libpython2.7     tzdata     git     pkg-config     && rm -r /var/lib/apt/lists/*
-# Fri, 26 Mar 2021 13:49:35 GMT
+# Sat, 24 Apr 2021 02:58:37 GMT
 ARG SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561
-# Fri, 26 Mar 2021 13:49:35 GMT
+# Sat, 24 Apr 2021 02:58:37 GMT
 ARG SWIFT_PLATFORM=ubuntu18.04
-# Fri, 26 Mar 2021 13:49:36 GMT
+# Sat, 24 Apr 2021 02:58:37 GMT
 ARG SWIFT_BRANCH=swift-5.3.3-release
-# Fri, 26 Mar 2021 13:49:36 GMT
+# Sat, 24 Apr 2021 02:58:37 GMT
 ARG SWIFT_VERSION=swift-5.3.3-RELEASE
-# Fri, 26 Mar 2021 13:49:36 GMT
+# Sat, 24 Apr 2021 02:58:38 GMT
 ARG SWIFT_WEBROOT=https://swift.org/builds/
-# Fri, 26 Mar 2021 13:49:36 GMT
+# Sat, 24 Apr 2021 02:58:38 GMT
 ENV SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561 SWIFT_PLATFORM=ubuntu18.04 SWIFT_BRANCH=swift-5.3.3-release SWIFT_VERSION=swift-5.3.3-RELEASE SWIFT_WEBROOT=https://swift.org/builds/
-# Fri, 26 Mar 2021 13:50:51 GMT
+# Sat, 24 Apr 2021 02:59:50 GMT
 RUN set -e;     SWIFT_WEBDIR="$SWIFT_WEBROOT/$SWIFT_BRANCH/$(echo $SWIFT_PLATFORM | tr -d .)/"     && SWIFT_BIN_URL="$SWIFT_WEBDIR/$SWIFT_VERSION/$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz"     && SWIFT_SIG_URL="$SWIFT_BIN_URL.sig"     && export DEBIAN_FRONTEND=noninteractive     && apt-get -q update && apt-get -q install -y curl && rm -rf /var/lib/apt/lists/*     && export GNUPGHOME="$(mktemp -d)"     && curl -fsSL "$SWIFT_BIN_URL" -o swift.tar.gz "$SWIFT_SIG_URL" -o swift.tar.gz.sig     && gpg --batch --quiet --keyserver ha.pool.sks-keyservers.net --recv-keys "$SWIFT_SIGNING_KEY"     && gpg --batch --verify swift.tar.gz.sig swift.tar.gz     && tar -xzf swift.tar.gz --directory / --strip-components=1     && chmod -R o+r /usr/lib/swift     && rm -rf "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz     && apt-get purge --auto-remove -y curl
-# Fri, 26 Mar 2021 13:50:57 GMT
+# Sat, 24 Apr 2021 02:59:55 GMT
 RUN swift --version
 ```
 
 -	Layers:
-	-	`sha256:6e0aa5e7af40303f56126b1469d1f37525b3a55a788836a6c9b773f6ce8bc446`  
-		Last Modified: Thu, 25 Mar 2021 22:34:24 GMT  
-		Size: 26.7 MB (26710781 bytes)  
+	-	`sha256:01bf7da0a88c9e37ae418d17c0aeed0621524848d80ccb9e38c67e7ab8e11928`  
+		Last Modified: Fri, 16 Apr 2021 15:20:23 GMT  
+		Size: 26.7 MB (26697009 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d47239a868b3375462d644f2ffb1b20114623fac03109d2950bdf0d57ab487d2`  
-		Last Modified: Thu, 25 Mar 2021 22:34:20 GMT  
-		Size: 850.0 B  
+	-	`sha256:f3b4a5f15c7a0722b4f22e61b5387317eaf2602c27ffb2bceac9a25f19fbd156`  
+		Last Modified: Fri, 23 Apr 2021 22:22:45 GMT  
+		Size: 852.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49cbb10cca8504e3dbd65eb5db3c1dd0cd27070154386f819c5936de321c14b1`  
-		Last Modified: Thu, 25 Mar 2021 22:34:20 GMT  
-		Size: 189.0 B  
+	-	`sha256:57ffbe87baa135002dddb7a7460082c5d6a352186e1be9464c5f31db81378824`  
+		Last Modified: Fri, 23 Apr 2021 22:22:45 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4972101f9361fd919c4a3a8704081c87a329654d3adbc310a50f6609e7c18509`  
-		Last Modified: Fri, 26 Mar 2021 14:47:35 GMT  
-		Size: 124.1 MB (124074310 bytes)  
+	-	`sha256:6dd1e87beb0d93de4287ecce97ea38fe6a3a0aa9c3e523cd72106a55db2c1007`  
+		Last Modified: Sat, 24 Apr 2021 03:38:27 GMT  
+		Size: 124.1 MB (124077793 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bac4377d67b752c796247de79ad9526969c9d73f10e8b7676da587e1bed01315`  
-		Last Modified: Fri, 26 Mar 2021 14:48:19 GMT  
-		Size: 422.5 MB (422500901 bytes)  
+	-	`sha256:1779f766489f03eb46e84f5f473d9748eaa4a24dc732dcd183266d95f85aa848`  
+		Last Modified: Sat, 24 Apr 2021 03:39:13 GMT  
+		Size: 422.5 MB (422502433 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
