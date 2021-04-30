@@ -2331,14 +2331,9 @@ Licenses: (parsed from: `/usr/share/doc/libgstreamer-plugins-base1.0-0/copyright
 - `LGPL-2+`
 - `MIT/X11 (BSD like) LGPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gst-plugins-base1.0=1.14.5-0ubuntu1~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.1.dsc' gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.1.dsc 4444 SHA512:d11c52150adf30b38849b53ee3b89bfa2d3ee3e778f2ece4ad0efef7fc7b5d7038879dbf9882d4b4c28e5b642645d5eb05864846d464b65081f0befd6cf7b824
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5.orig.tar.xz' gst-plugins-base1.0_1.14.5.orig.tar.xz 3717076 SHA512:4e81c44a5ea3b910f96d3e9251ba38a79feacead4f96adb92eab5a650695ca8d5313e3ec1df78fec04376cf3152d2eefd4d39f6c11dadc98a11e55bbf8c8ccdc
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.1.debian.tar.xz' gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.1.debian.tar.xz 45600 SHA512:39965114cc67b782820a77bc3981c38d6b6d417446feeed534c5744a0f1f1885ccde90745076218314e3232ffc9e39eda31f02f96eb04a88b54c6c9c37a0b028
-```
 
 ### `dpkg` source package: `gstreamer1.0=1.14.5-0ubuntu1~18.04.1`
 
@@ -2354,14 +2349,9 @@ Licenses: (parsed from: `/usr/share/doc/libgstreamer1.0-0/copyright`)
 - `LGPL-2+`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gstreamer1.0=1.14.5-0ubuntu1~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5-0ubuntu1~18.04.1.dsc' gstreamer1.0_1.14.5-0ubuntu1~18.04.1.dsc 3052 SHA512:7bbbb065d0704d9fb101ff278a869acc2f10cbe5e83705e5bf7e9b1694d57d833fb4f5130e91f402489354eb7b434540a295a4f2df9493c470a5e68822550f05
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5.orig.tar.xz' gstreamer1.0_1.14.5.orig.tar.xz 3268756 SHA512:1a97ae17f8fff041db5e24d712d33c7116e408be1fabc2abd7b652b067b6ebe6c0943845a33a21335a5b4fa0a1ba178873158659f761f1e3aab04a969029c5d8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5-0ubuntu1~18.04.1.debian.tar.xz' gstreamer1.0_1.14.5-0ubuntu1~18.04.1.debian.tar.xz 44584 SHA512:166409aa8b89d35ce695aa7c01ce43824680882cc9d16c74d0468d13e6fffdc279400cbcec7e850034053d2d848a60f32ce3c88ddd9c1d85dc7949a9179b94c1
-```
 
 ### `dpkg` source package: `gtk+2.0=2.24.32-1ubuntu1`
 
