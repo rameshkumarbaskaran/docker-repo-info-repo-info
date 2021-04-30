@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9ed49572fa77bbb24786672817a73a865a0c7b7f301d2af10df691c6c73720cf`
-- Created: `2021-04-15T11:08:35.075214761Z`
-- Virtual Size: ~ 129.68 Mb  
+- Image ID: `sha256:a13c38e048e7a88f67e3b84435c334bf9255904518c86021931e9f5894afc785`
+- Created: `2021-04-29T22:08:25.362047121Z`
+- Virtual Size: ~ 129.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.27`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.27.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.27.tar.xz.asc`
-  - `PHP_SHA256=65f616e2d5b6faacedf62830fa047951b0136d5da34ae59e6744cbaf5dca148d`
+  - `PHP_VERSION=7.3.28`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.28.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.28.tar.xz.asc`
+  - `PHP_SHA256=a2a84dbec8c1eee3f46c5f249eaaa2ecb3f9e7a6f5d0604d2df44ff8d4904dbe`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.4.0`
   - `WORDPRESS_CLI_SHA512=4049c7e45e14276a70a41c3b0864be7a6a8cfa8ea65ebac8b184a4f503a91baa1a0d29260d03248bc74aef70729824330fb6b396336172a624332e16f64e37ef`
@@ -438,16 +438,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.6-r0 description:
+libjpeg-turbo-2.1.0-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.6-r0 webpage:
+libjpeg-turbo-2.1.0-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.6-r0 installed size:
-1056768
+libjpeg-turbo-2.1.0-r0 installed size:
+1101824
 
-libjpeg-turbo-2.0.6-r0 license:
+libjpeg-turbo-2.1.0-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -693,16 +693,16 @@ BSD-3-Clause
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.5.8-r0 description:
+mariadb-client-10.5.9-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.5.8-r0 webpage:
+mariadb-client-10.5.9-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.5.8-r0 installed size:
-29741056
+mariadb-client-10.5.9-r0 installed size:
+29749248
 
-mariadb-client-10.5.8-r0 license:
+mariadb-client-10.5.9-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -710,16 +710,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.5.8-r0 description:
+mariadb-common-10.5.9-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.5.8-r0 webpage:
+mariadb-common-10.5.9-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.5.8-r0 installed size:
+mariadb-common-10.5.9-r0 installed size:
 2293760
 
-mariadb-common-10.5.8-r0 license:
+mariadb-common-10.5.9-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -761,16 +761,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.5.8-r0 description:
+mysql-client-10.5.9-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.5.8-r0 webpage:
+mysql-client-10.5.9-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.5.8-r0 installed size:
+mysql-client-10.5.9-r0 installed size:
 4096
 
-mysql-client-10.5.8-r0 license:
+mysql-client-10.5.9-r0 license:
 GPL-2.0-or-later
 
 ```

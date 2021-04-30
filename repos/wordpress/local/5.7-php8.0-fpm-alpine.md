@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6b5f99037a83c0d9b6abfe84effe98990fff628d9c6a896d9a81290f37b7d8de`
-- Created: `2021-04-15T20:22:18.028965589Z`
-- Virtual Size: ~ 199.21 Mb  
+- Image ID: `sha256:1977137522874f3fa825532cdd05ac9bd492906704b45b4a6ea3266bc0f6c28b`
+- Created: `2021-04-29T22:07:18.88839773Z`
+- Virtual Size: ~ 199.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.3`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.3.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.3.tar.xz.asc`
-  - `PHP_SHA256=c9816aa9745a9695672951eaff3a35ca5eddcb9cacf87a4f04b9fb1169010251`
+  - `PHP_VERSION=8.0.5`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.5.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.5.tar.xz.asc`
+  - `PHP_SHA256=5dd358b35ecd5890a4f09fb68035a72fe6b45d3ead6999ea95981a107fd1f2ab`
 
 ## `apk` (`.apk`-based packages)
 
@@ -521,16 +521,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.6-r0 description:
+libjpeg-turbo-2.1.0-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.6-r0 webpage:
+libjpeg-turbo-2.1.0-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.6-r0 installed size:
-1056768
+libjpeg-turbo-2.1.0-r0 installed size:
+1101824
 
-libjpeg-turbo-2.0.6-r0 license:
+libjpeg-turbo-2.1.0-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -759,16 +759,16 @@ MIT
 ### `apk` package: `nettle`
 
 ```console
-nettle-3.7-r0 description:
+nettle-3.7.2-r0 description:
 A low-level cryptographic library
 
-nettle-3.7-r0 webpage:
+nettle-3.7.2-r0 webpage:
 https://www.lysator.liu.se/~nisse/nettle/
 
-nettle-3.7-r0 installed size:
-573440
+nettle-3.7.2-r0 installed size:
+577536
 
-nettle-3.7-r0 license:
+nettle-3.7.2-r0 license:
 LGPL-2.0-or-later
 
 ```
