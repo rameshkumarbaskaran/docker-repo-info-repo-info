@@ -98,8 +98,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris apt=1.2.32ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.32ubuntu0.2.dsc' apt_1.2.32ubuntu0.2.dsc 2526 SHA512:c91eba6c9405512c3e53dc1808c9ea17627a077354d2bd571ee37f4ae6ded08a4ee4f28ea75d2e64d76d84197f5479f4fd9522f98e61774679e904d144c9b429
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.32ubuntu0.2.tar.xz' apt_1.2.32ubuntu0.2.tar.xz 2099548 SHA512:7145c708f5c42b09b06d208ef352f157040548cfc4228d22148078d55beac06556198fede666ef6753feea1c6fa6a21ebf960510f4773900ba95edcfa83f62e6
+'http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.32ubuntu0.2.dsc' apt_1.2.32ubuntu0.2.dsc 2526 SHA512:c91eba6c9405512c3e53dc1808c9ea17627a077354d2bd571ee37f4ae6ded08a4ee4f28ea75d2e64d76d84197f5479f4fd9522f98e61774679e904d144c9b429
+'http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.32ubuntu0.2.tar.xz' apt_1.2.32ubuntu0.2.tar.xz 2099548 SHA512:7145c708f5c42b09b06d208ef352f157040548cfc4228d22148078d55beac06556198fede666ef6753feea1c6fa6a21ebf960510f4773900ba95edcfa83f62e6
 ```
 
 ### `dpkg` source package: `attr=1:2.4.47-2`
@@ -210,14 +210,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bind9=1:9.10.3.dfsg.P4-8ubuntu1.18
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bind9/bind9_9.10.3.dfsg.P4-8ubuntu1.18.dsc' bind9_9.10.3.dfsg.P4-8ubuntu1.18.dsc 3873 SHA512:2397e38e7942e94a36cc76c10826746215aa68ad2856c671097f49aca255283437f3ee0f31f7943f8210330895c28be46d93b856106fe7e322d2babb7164b07b
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bind9/bind9_9.10.3.dfsg.P4.orig.tar.gz' bind9_9.10.3.dfsg.P4.orig.tar.gz 8641072 SHA512:7cd0f7dff9020b352907cffb8fd90a336b4d0188f5267147417dc9b01f7b7d5e4439fc3674767f012a5ded3fe8bffe54c3226de5d9573f83011c73e5d0eb4ff8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bind9/bind9_9.10.3.dfsg.P4-8ubuntu1.18.debian.tar.xz' bind9_9.10.3.dfsg.P4-8ubuntu1.18.debian.tar.xz 106116 SHA512:10e99b43a07d8fb237a3319f5067bd4f2eca0e6d02dba9c9556f7930b2267e0a67cabe189fe42659a401653d3235190bee06fb04f77b00814e2605528c3de14c
-```
 
 ### `dpkg` source package: `binutils=2.26.1-1ubuntu1~16.04.8`
 
