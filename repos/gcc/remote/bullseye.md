@@ -1,7 +1,7 @@
 ## `gcc:bullseye`
 
 ```console
-$ docker pull gcc@sha256:3bec2fb4205822e440522ef3278978a367d34549757b34283cb95f6dff081765
+$ docker pull gcc@sha256:1f6cc87820500ec200a3620bf91fba4c0428097814f06203d532adc4c8e779ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -98,14 +98,14 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:bullseye` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:85b75a6c3eea18d8d81c05b84742a56543c0a93633cb6a8b5df0a6c8c3920fe7
+$ docker pull gcc@sha256:7c1fffaf57650369e69a6297f07093b476d3f637b426ae953d98f3793f1ceff1
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **405.8 MB (405846772 bytes)**  
+-	Total Size: **405.8 MB (405846831 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:22d11c876b31323fae4270868e3923f84c68f358ac287ca7a872766745621e59`
+-	Image ID: `sha256:1cf3cedf8b3cfc4f38f336ef5049212f6113e397d1f310a0981cc4c11df28f88`
 -	Default Command: `["bash"]`
 
 ```dockerfile
@@ -133,9 +133,9 @@ ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://mirrors.kernel.org/gnu/g
 ENV GCC_VERSION=11.1.0
 # Fri, 30 Apr 2021 22:58:00 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig'; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Fri, 30 Apr 2021 22:58:33 GMT
-RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Fri, 30 Apr 2021 22:58:50 GMT
+# Tue, 04 May 2021 19:08:51 GMT
+RUN set -ex; 	{ echo '/usr/local/lib64'; echo '/usr/local/lib'; } > /etc/ld.so.conf.d/000-local-lib.conf; 	ldconfig -v
+# Tue, 04 May 2021 19:08:54 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
@@ -168,13 +168,13 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 		Last Modified: Sat, 01 May 2021 01:39:35 GMT  
 		Size: 110.9 MB (110884714 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7160f5379e090eab41f7043ca8892055a9cc860d3bcccc5636233d9d542bce0f`  
-		Last Modified: Sat, 01 May 2021 01:38:55 GMT  
-		Size: 9.8 KB (9775 bytes)  
+	-	`sha256:8dfeba8c4b170e0de89b0963813582adc9cb4bac0e96e471f56bf2e8b59ac8b7`  
+		Last Modified: Tue, 04 May 2021 19:10:01 GMT  
+		Size: 9.8 KB (9833 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:393740f22b9b81a6b87286d4e6bc62f58b55d8251dc745a42dcba65488010f6c`  
-		Last Modified: Sat, 01 May 2021 01:39:07 GMT  
-		Size: 1.9 KB (1917 bytes)  
+	-	`sha256:086d9c25fda979b2887716bcfaa5f5d06bc568343fb1cfd91800db1946e542ed`  
+		Last Modified: Tue, 04 May 2021 19:10:01 GMT  
+		Size: 1.9 KB (1918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:bullseye` - linux; arm variant v7
