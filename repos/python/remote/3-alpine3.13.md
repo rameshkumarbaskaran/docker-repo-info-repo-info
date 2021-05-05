@@ -1,7 +1,7 @@
 ## `python:3-alpine3.13`
 
 ```console
-$ docker pull python@sha256:fb222d3a04532a5d5256c982c6340d37876aa2658b2d58810d4642cf95c65848
+$ docker pull python@sha256:f189f7366b0d381bf6186b2a2c3d37f143c587e0da2e8dcc21a732bddf4e6f7b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -347,14 +347,14 @@ CMD ["python3"]
 ### `python:3-alpine3.13` - linux; ppc64le
 
 ```console
-$ docker pull python@sha256:a0464eb0d180495d7a23e461b90e017168aa7b8bf115f64cac8b8368dfd31c0d
+$ docker pull python@sha256:c4bc9d57a3b236765d038402f5b4a3910c24605ea70947db385feee316d85a0d
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **17.5 MB (17506544 bytes)**  
+-	Total Size: **17.5 MB (17538068 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6cbb94f1c407446216244f7f25c447239e483605cc84828144fc40d513acc728`
+-	Image ID: `sha256:93d6d4b2a95b19070dc73c22c639d79fc94de55374ab5d93a8e09d5d70886c36`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -370,21 +370,21 @@ ENV LANG=C.UTF-8
 RUN set -eux; 	apk add --no-cache 		ca-certificates 		tzdata 	;
 # Thu, 15 Apr 2021 05:31:53 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Thu, 15 Apr 2021 05:31:55 GMT
-ENV PYTHON_VERSION=3.9.4
-# Thu, 15 Apr 2021 05:40:33 GMT
+# Tue, 04 May 2021 20:05:05 GMT
+ENV PYTHON_VERSION=3.9.5
+# Tue, 04 May 2021 20:14:09 GMT
 RUN set -ex 	&& apk add --no-cache --virtual .fetch-deps 		gnupg 		tar 		xz 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& apk add --no-cache --virtual .build-deps  		bluez-dev 		bzip2-dev 		coreutils 		dpkg-dev dpkg 		expat-dev 		findutils 		gcc 		gdbm-dev 		libc-dev 		libffi-dev 		libnsl-dev 		libtirpc-dev 		linux-headers 		make 		ncurses-dev 		openssl-dev 		pax-utils 		readline-dev 		sqlite-dev 		tcl-dev 		tk 		tk-dev 		util-linux-dev 		xz-dev 		zlib-dev 	&& apk del --no-network .fetch-deps 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 		EXTRA_CFLAGS="-DTHREAD_STACK_SIZE=0x100000" 		LDFLAGS="-Wl,--strip-all" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';' 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		| xargs -rt apk add --no-cache --virtual .python-rundeps 	&& apk del --no-network .build-deps 		&& python3 --version
-# Thu, 15 Apr 2021 05:40:42 GMT
+# Tue, 04 May 2021 20:14:26 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Mon, 03 May 2021 22:52:51 GMT
+# Tue, 04 May 2021 20:14:30 GMT
 ENV PYTHON_PIP_VERSION=21.1.1
-# Mon, 03 May 2021 22:53:10 GMT
+# Tue, 04 May 2021 20:14:35 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/1954f15b3f102ace496a34a013ea76b061535bd2/public/get-pip.py
-# Mon, 03 May 2021 22:53:18 GMT
+# Tue, 04 May 2021 20:14:38 GMT
 ENV PYTHON_GET_PIP_SHA256=f499d76e0149a673fb8246d88e116db589afbd291739bd84f2cd9a7bca7b6993
-# Mon, 03 May 2021 22:54:01 GMT
+# Tue, 04 May 2021 20:15:05 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Mon, 03 May 2021 22:54:07 GMT
+# Tue, 04 May 2021 20:15:11 GMT
 CMD ["python3"]
 ```
 
@@ -397,17 +397,17 @@ CMD ["python3"]
 		Last Modified: Thu, 15 Apr 2021 06:58:48 GMT  
 		Size: 664.7 KB (664745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:535f735fcad75e1853606f489735942c2398b8f6e36b80b88b0fd196bd0c1752`  
-		Last Modified: Thu, 15 Apr 2021 06:59:29 GMT  
-		Size: 11.7 MB (11716511 bytes)  
+	-	`sha256:cd7b45924335b171e631bb9dbd21d41128b544f63b14bbbefa0f7394f22c8f55`  
+		Last Modified: Tue, 04 May 2021 21:20:26 GMT  
+		Size: 11.7 MB (11747867 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b5bfd3a01ed1e9d310fab72e23adc3439b94f9acab9a18f918adf42f6318c3c`  
-		Last Modified: Thu, 15 Apr 2021 06:59:26 GMT  
-		Size: 231.0 B  
+	-	`sha256:2f3a0f07602dda8d7634aa503c061b2c8a1989386351d866571617d52a46b640`  
+		Last Modified: Tue, 04 May 2021 21:20:23 GMT  
+		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e352b2553e6c0ad9e5e66af717768aa11be0c92978a593b4cac02e75938d2426`  
-		Last Modified: Mon, 03 May 2021 23:18:32 GMT  
-		Size: 2.3 MB (2311916 bytes)  
+	-	`sha256:85db8c39df8056c0a6f2c65f041f36310b1ce92ee640a9654603d04d9597e47b`  
+		Last Modified: Tue, 04 May 2021 21:20:24 GMT  
+		Size: 2.3 MB (2312083 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:3-alpine3.13` - linux; s390x
