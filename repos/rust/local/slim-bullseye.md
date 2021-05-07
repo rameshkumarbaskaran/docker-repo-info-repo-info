@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d072f30da9040a19208bfadf8c7ab6c400a197945d383f0d7f8c6739195f7073`
-- Created: `2021-04-10T17:44:51.768226567Z`
-- Virtual Size: ~ 682.27 Mb  
+- Image ID: `sha256:bb2a82a32cd0021b1b11d8799b867eb39ee04cb261101276ab474476825c3ba7`
+- Created: `2021-05-07T01:59:42.796140153Z`
+- Virtual Size: ~ 670.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUSTUP_HOME=/usr/local/rustup`
   - `CARGO_HOME=/usr/local/cargo`
-  - `RUST_VERSION=1.51.0`
+  - `RUST_VERSION=1.52.0`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -806,21 +806,13 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.7.1-1
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.1-1.dsc' gnutls28_3.7.1-1.dsc 3480 SHA256:58738c9d3e1b884e953cd29f79356c00447a1d4508b527ea898d688b42528721
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.1.orig.tar.xz' gnutls28_3.7.1.orig.tar.xz 6038388 SHA256:3777d7963eca5e06eb315686163b7b3f5045e2baac5e54e038ace9835e5cac6f
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.1.orig.tar.xz.asc' gnutls28_3.7.1.orig.tar.xz.asc 854 SHA256:13a683b12602c169a7ad7827ab0e3f35c8fa1f98675d0073cf7d54a8cd635582
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.1-1.debian.tar.xz' gnutls28_3.7.1-1.debian.tar.xz 64680 SHA256:b8a8862b806fa8b237f707fb82d27ece1cfaa2c0200b8cf3a82501c97efd71fe
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnutls28/3.7.1-1/
 
-- https://sources.debian.net/src/gnutls28/3.7.1-1/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.7.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.7.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `grep=3.6-1`
 
@@ -1389,24 +1381,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libunistring/0.9.10-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libunistring/0.9.10-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxcrypt=1:4.4.17-1`
+### `dpkg` source package: `libxcrypt=1:4.4.18-2`
 
 Binary Packages:
 
-- `libcrypt-dev:amd64=1:4.4.17-1`
-- `libcrypt1:amd64=1:4.4.17-1`
+- `libcrypt-dev:amd64=1:4.4.18-2`
+- `libcrypt1:amd64=1:4.4.18-2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxcrypt=1:4.4.18-2
+'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.18-2.dsc' libxcrypt_4.4.18-2.dsc 1463 SHA256:52fc0204433da9c0a53034db0e70f0418cb671cd6e2e50518cac702ddb7af0de
+'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.18.orig.tar.xz' libxcrypt_4.4.18.orig.tar.xz 397776 SHA256:4cd2a06e98519d57a5572ee8885b6cc23c70a559d234c161d3f22c487edaa3fa
+'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.18-2.debian.tar.xz' libxcrypt_4.4.18-2.debian.tar.xz 7184 SHA256:1c6c4bd9e14c5022c8897a922391caa2c8b1a34dff1cd59d3bd2f229166c7247
+```
 
-- http://snapshot.debian.org/package/libxcrypt/1:4.4.17-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxcrypt/1:4.4.18-2/ (for browsing the source)
+- https://sources.debian.net/src/libxcrypt/1:4.4.18-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxcrypt/1:4.4.18-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libzstd=1.4.8+dfsg-2.1`
 
@@ -1436,11 +1435,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.4.8+dfsg-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.4.8+dfsg-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=5.10.26-1`
+### `dpkg` source package: `linux=5.10.28-1`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.10.26-1`
+- `linux-libc-dev:amd64=5.10.28-1`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1453,13 +1452,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=5.10.28-1
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.28-1.dsc' linux_5.10.28-1.dsc 195000 SHA256:a0224873e39e4f2afc04e33b499d59ee55f10994f966a7c0f7d712fcdf47deea
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.28.orig.tar.xz' linux_5.10.28.orig.tar.xz 121507128 SHA256:4f3e9c9c1b2399f5c292ccc59edaa3ab14508efe56a33cc51639fe0e2975a0dc
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.28-1.debian.tar.xz' linux_5.10.28-1.debian.tar.xz 1366692 SHA256:1367a40724054a540c4d9c92f0ea6f73e9e50b2a99e46b59a987be15bdc4c4b7
+```
 
-- http://snapshot.debian.org/package/linux/5.10.26-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/5.10.28-1/ (for browsing the source)
+- https://sources.debian.net/src/linux/5.10.28-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/5.10.28-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=11.1.0`
 
@@ -1820,21 +1826,13 @@ Licenses: (parsed from: `/usr/share/doc/perl-base/copyright`)
 - `Unicode`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris perl=5.32.1-3
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1-3.dsc' perl_5.32.1-3.dsc 2886 SHA256:1e4a48b1ad467a853b14f43c44ff7b969d5e590c01cea2d0b2d6374cedaaf50f
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1.orig-regen-configure.tar.gz' perl_5.32.1.orig-regen-configure.tar.gz 871331 SHA256:1d179b41283f12ad83f9758430f6ddc49bdf20db5c396aeae7e51ebb4e4afd29
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1.orig.tar.xz' perl_5.32.1.orig.tar.xz 12610988 SHA256:57cc47c735c8300a8ce2fa0643507b44c4ae59012bfdad0121313db639e02309
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1-3.debian.tar.xz' perl_5.32.1-3.debian.tar.xz 164680 SHA256:1e6f590e5d438f9e5fea962bdb9be7ba1206c32f3c56c88ed19385a7f252fb8d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/perl/5.32.1-3/
 
-- https://sources.debian.net/src/perl/5.32.1-3/ (for browsing the source)
-- https://sources.debian.net/src/perl/5.32.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/perl/5.32.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sed=4.7-1`
 
