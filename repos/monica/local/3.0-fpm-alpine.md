@@ -1,10 +1,10 @@
-# `monica:3.0.0-fpm-alpine`
+# `monica:3.0.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8dcce439fd51e19ac17c413c14c2c4ffb17b2d719894e820277c1836c9c81995`
-- Created: `2021-05-03T22:04:57.202831581Z`
-- Virtual Size: ~ 356.04 Mb  
+- Image ID: `sha256:56df8a35459c90ee450cd9992efaaa14946b23f86dc4a80be519ca22561e4641`
+- Created: `2021-05-05T20:53:38.785749054Z`
+- Virtual Size: ~ 347.17 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/entrypoint.sh"]`
@@ -17,25 +17,25 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.18`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.18.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.18.tar.xz.asc`
-  - `PHP_SHA256=ab97f22b128d21dcbc009b50a37aaea0051b2721cbcd122d9e00e6ffc3c4b7e1`
+  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
+  - `PHP_VERSION=8.0.5`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.5.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.5.tar.xz.asc`
+  - `PHP_SHA256=5dd358b35ecd5890a4f09fb68035a72fe6b45d3ead6999ea95981a107fd1f2ab`
   - `PHP_OPCACHE_VALIDATE_TIMESTAMPS=0`
   - `PHP_OPCACHE_MAX_ACCELERATED_FILES=20000`
   - `PHP_OPCACHE_MEMORY_CONSUMPTION=192`
   - `PHP_OPCACHE_MAX_WASTED_PERCENTAGE=10`
-  - `MONICA_VERSION=v3.0.0`
+  - `MONICA_VERSION=v3.0.1`
 - Labels:
   - `org.opencontainers.image.authors=Alexis Saettler <alexis@saettler.org>`
   - `org.opencontainers.image.description=This is MonicaHQ, your personal memory! MonicaHQ is like a CRM but for the friends, family, and acquaintances around you.`
-  - `org.opencontainers.image.revision=02ba3694929154ecdafbe95fa34ad6920680b6b7`
+  - `org.opencontainers.image.revision=fbac24891a9ace9f9c88fd4d23b8612243af283a`
   - `org.opencontainers.image.source=https://github.com/monicahq/docker`
   - `org.opencontainers.image.title=MonicaHQ, the Personal Relationship Manager`
   - `org.opencontainers.image.url=https://monicahq.com`
   - `org.opencontainers.image.vendor=Monica`
-  - `org.opencontainers.image.version=v3.0.0`
+  - `org.opencontainers.image.version=v3.0.1`
 
 ## `apk` (`.apk`-based packages)
 
@@ -226,40 +226,6 @@ MIT
 
 ```
 
-### `apk` package: `expat`
-
-```console
-expat-2.2.10-r1 description:
-XML Parser library written in C
-
-expat-2.2.10-r1 webpage:
-http://www.libexpat.org/
-
-expat-2.2.10-r1 installed size:
-188416
-
-expat-2.2.10-r1 license:
-MIT
-
-```
-
-### `apk` package: `fontconfig`
-
-```console
-fontconfig-2.13.1-r3 description:
-Library for configuring and customizing font access
-
-fontconfig-2.13.1-r3 webpage:
-https://www.freedesktop.org/wiki/Software/fontconfig
-
-fontconfig-2.13.1-r3 installed size:
-647168
-
-fontconfig-2.13.1-r3 license:
-MIT
-
-```
-
 ### `apk` package: `freetype`
 
 ```console
@@ -328,40 +294,6 @@ MIT ICU Unicode-TOU
 
 ```
 
-### `apk` package: `imagemagick-libs`
-
-```console
-imagemagick-libs-7.0.10.57-r0 description:
-Collection of tools and libraries for many image formats (libraries)
-
-imagemagick-libs-7.0.10.57-r0 webpage:
-https://www.imagemagick.org/
-
-imagemagick-libs-7.0.10.57-r0 installed size:
-3321856
-
-imagemagick-libs-7.0.10.57-r0 license:
-ImageMagick
-
-```
-
-### `apk` package: `lcms2`
-
-```console
-lcms2-2.11-r0 description:
-Color Management Engine
-
-lcms2-2.11-r0 webpage:
-http://www.littlecms.com
-
-lcms2-2.11-r0 installed size:
-339968
-
-lcms2-2.11-r0 license:
-MIT GPL-3.0-only
-
-```
-
 ### `apk` package: `libacl`
 
 ```console
@@ -393,23 +325,6 @@ libattr-2.4.48-r0 installed size:
 
 libattr-2.4.48-r0 license:
 LGPL-2.1-or-later
-
-```
-
-### `apk` package: `libbsd`
-
-```console
-libbsd-0.10.0-r0 description:
-commonly-used BSD functions not implemented by all libcs
-
-libbsd-0.10.0-r0 webpage:
-https://libbsd.freedesktop.org/
-
-libbsd-0.10.0-r0 installed size:
-94208
-
-libbsd-0.10.0-r0 license:
-BSD
 
 ```
 
@@ -532,23 +447,6 @@ BSD-3-Clause IJG Zlib
 
 ```
 
-### `apk` package: `libltdl`
-
-```console
-libltdl-2.4.6-r7 description:
-Runtime libraries for GNU Libtool Dynamic Module Loader
-
-libltdl-2.4.6-r7 webpage:
-https://www.gnu.org/software/libtool
-
-libltdl-2.4.6-r7 installed size:
-53248
-
-libltdl-2.4.6-r7 license:
-LGPL-2.0+
-
-```
-
 ### `apk` package: `libmemcached-libs`
 
 ```console
@@ -668,23 +566,6 @@ ISC
 
 ```
 
-### `apk` package: `libuuid`
-
-```console
-libuuid-2.36.1-r1 description:
-DCE compatible Universally Unique Identifier library
-
-libuuid-2.36.1-r1 webpage:
-https://git.kernel.org/cgit/utils/util-linux/util-linux.git
-
-libuuid-2.36.1-r1 installed size:
-40960
-
-libuuid-2.36.1-r1 license:
-GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
-
-```
-
 ### `apk` package: `libwebp`
 
 ```console
@@ -699,91 +580,6 @@ libwebp-1.1.0-r0 installed size:
 
 libwebp-1.1.0-r0 license:
 BSD-3-Clause
-
-```
-
-### `apk` package: `libx11`
-
-```console
-libx11-1.7.0-r0 description:
-X11 client-side library
-
-libx11-1.7.0-r0 webpage:
-http://xorg.freedesktop.org/
-
-libx11-1.7.0-r0 installed size:
-3317760
-
-libx11-1.7.0-r0 license:
-custom:XFREE86
-
-```
-
-### `apk` package: `libxau`
-
-```console
-libxau-1.0.9-r0 description:
-X11 authorisation library
-
-libxau-1.0.9-r0 webpage:
-http://xorg.freedesktop.org/
-
-libxau-1.0.9-r0 installed size:
-28672
-
-libxau-1.0.9-r0 license:
-MIT
-
-```
-
-### `apk` package: `libxcb`
-
-```console
-libxcb-1.14-r1 description:
-X11 client-side library
-
-libxcb-1.14-r1 webpage:
-https://xcb.freedesktop.org
-
-libxcb-1.14-r1 installed size:
-1019904
-
-libxcb-1.14-r1 license:
-MIT
-
-```
-
-### `apk` package: `libxdmcp`
-
-```console
-libxdmcp-1.1.3-r0 description:
-X11 Display Manager Control Protocol library
-
-libxdmcp-1.1.3-r0 webpage:
-http://xorg.freedesktop.org/
-
-libxdmcp-1.1.3-r0 installed size:
-40960
-
-libxdmcp-1.1.3-r0 license:
-MIT
-
-```
-
-### `apk` package: `libxext`
-
-```console
-libxext-1.3.4-r0 description:
-X11 miscellaneous extensions library
-
-libxext-1.3.4-r0 webpage:
-http://xorg.freedesktop.org/
-
-libxext-1.3.4-r0 installed size:
-86016
-
-libxext-1.3.4-r0 license:
-MIT
 
 ```
 
