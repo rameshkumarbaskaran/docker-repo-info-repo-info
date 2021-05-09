@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:995ccc33e58fa7ed7fd6048cca6148a9352c325ac46ae0395d5b8ea0adefc234`
-- Created: `2021-04-24T00:42:21.190055366Z`
-- Virtual Size: ~ 448.93 Mb  
+- Image ID: `sha256:4616ab87e79ca4a4475211cf3f69eb40267c3b041f45b5bcecade8191fe2d97e`
+- Created: `2021-05-06T23:35:27.888653371Z`
+- Virtual Size: ~ 448.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -1707,14 +1707,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.46
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.46.dsc' systemd_237-3ubuntu10.46.dsc 5220 SHA512:b9d8b4443e01c99accd98b1bb10a0999eb3ae6cc90c3d3ee9888115c8f8592997c6f2310581dd7a8b283de0d56c5262ebbaf6abee9fe44abaadf18bd960f7637
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA512:15ef4b92815a6dd9a6c51672dbc00fd7cd0f08068ef0cbeaca574f68d330b28bc67ba1946f24f75ef3d9e7b63843a73eea700db54688061dbf5c9f8470394c3b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.46.debian.tar.xz' systemd_237-3ubuntu10.46.debian.tar.xz 290944 SHA512:e452a765928c5296c8328f86b46b2a393934c51bc4d0c9740d1caf38312406cd966e2f4de830067bfba515fed342961ccfac38102013d75ece6c948e7535c31f
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
