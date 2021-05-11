@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:803114ea6d22e5c6ffc641c1afe74f0a4ad48e91084a0462e5b282998abc0e4b`
-- Created: `2021-04-10T06:44:46.832012366Z`
-- Virtual Size: ~ 1.46 Gb  
+- Image ID: `sha256:1f4093d925af0fd7b4dc4de5797d701e8f9b6ed45ba7106feefe8e7bcecde7c7`
+- Created: `2021-05-10T22:23:25.106024428Z`
+- Virtual Size: ~ 1.48 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["ghci"]`
