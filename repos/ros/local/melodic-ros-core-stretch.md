@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:01ce3724f9b38e9a5dec77794632a7e0760415a23429065d2399c9bad44be501`
-- Created: `2021-04-10T17:24:53.75948977Z`
-- Virtual Size: ~ 932.58 Mb  
+- Image ID: `sha256:12ad8ccaad1925d06a6124d04d7fa20e463f3fa7b995a81fc8597ccb328a4ea5`
+- Created: `2021-05-12T17:10:50.742143284Z`
+- Virtual Size: ~ 932.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/ros_entrypoint.sh"]`
@@ -2406,23 +2406,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libuv1/1.9.1-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libuv1/1.9.1-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u3`
+### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u4`
 
 Binary Packages:
 
-- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u3`
+- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-2.2+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u4.dsc' libxml2_2.9.4+dfsg1-2.2+deb9u4.dsc 2894 SHA256:081d2dc34ef0be57c03825173ec701ce843af1d05b2f783f89ace00a61cf04d9
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u4.debian.tar.xz' libxml2_2.9.4+dfsg1-2.2+deb9u4.debian.tar.xz 37940 SHA256:90c78f4ffe6e45281b6300fc1c449736ab245a630c77896f9ce1fce4d2bae916
+```
 
-- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libyaml=0.1.7-2`
 
@@ -2561,12 +2568,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/lsb/9.20161125/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/lsb/9.20161125/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `lz4=0.0~r131-2`
+### `dpkg` source package: `lz4=0.0~r131-2+deb9u1`
 
 Binary Packages:
 
-- `liblz4-1:amd64=0.0~r131-2+b1`
-- `liblz4-dev:amd64=0.0~r131-2+b1`
+- `liblz4-1:amd64=0.0~r131-2+deb9u1`
+- `liblz4-dev:amd64=0.0~r131-2+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`, `/usr/share/doc/liblz4-dev/copyright`)
 
@@ -2577,17 +2584,17 @@ Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`, `/usr/share/doc/lib
 Source:
 
 ```console
-$ apt-get source -qq --print-uris lz4=0.0~r131-2
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_0.0~r131-2.dsc' lz4_0.0~r131-2.dsc 1973 SHA256:304cf9dddee387377929adf3f2cef0ae19fb2e56b6cc9eab05798845b58bd9b6
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_0.0~r131.orig.tar.gz' lz4_0.0~r131.orig.tar.gz 133784 SHA256:9d4d00614d6b9dec3114b33d1224b6262b99ace24434c53487a0c8fd0b18cfed
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_0.0~r131-2.debian.tar.xz' lz4_0.0~r131-2.debian.tar.xz 4936 SHA256:966df055dd8fa7f292c283452b43a5d2d2047d542fe49e97025006e69525e224
+$ apt-get source -qq --print-uris lz4=0.0~r131-2+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/l/lz4/lz4_0.0~r131-2+deb9u1.dsc' lz4_0.0~r131-2+deb9u1.dsc 2015 SHA256:dd0fe6a29303b74f3269c0c41bbc18df745f039c57c589e9fb7b1b22b6a694bc
+'http://security.debian.org/debian-security/pool/updates/main/l/lz4/lz4_0.0~r131.orig.tar.gz' lz4_0.0~r131.orig.tar.gz 133784 SHA256:9d4d00614d6b9dec3114b33d1224b6262b99ace24434c53487a0c8fd0b18cfed
+'http://security.debian.org/debian-security/pool/updates/main/l/lz4/lz4_0.0~r131-2+deb9u1.debian.tar.xz' lz4_0.0~r131-2+deb9u1.debian.tar.xz 5316 SHA256:cd17d69b2aacc8c7ace3364b8ad1f0e36f7238e9486a60f49f75d8b66e87c006
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/lz4/0.0~r131-2/ (for browsing the source)
-- https://sources.debian.net/src/lz4/0.0~r131-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lz4/0.0~r131-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/lz4/0.0~r131-2+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/lz4/0.0~r131-2+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/lz4/0.0~r131-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lzo2=2.08-1.2`
 
@@ -3804,19 +3811,24 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python-roman/2.0.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python-roman/2.0.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python-rosdep-modules=0.20.0-1`
+### `dpkg` source package: `python-rosdep-modules=0.20.1-1`
 
 Binary Packages:
 
-- `python-rosdep-modules=0.20.0-1`
+- `python-rosdep-modules=0.20.1-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-rosdep-modules=0.20.1-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1-1.debian.tar.xz' python-rosdep-modules_0.20.1-1.debian.tar.xz 1988 SHA512:1b0cca160d63bf8df63de9c83b833a1628591b1368f5ad653a161fee2e06a44929976a172c03fea5c33921f1b904e1294b2aa68a0a7198eed9c14c839896497d
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1-1.dsc' python-rosdep-modules_0.20.1-1.dsc 973 SHA512:e425d6e1ea6781e10f044f7e7ac40056203c35114d0082d7717f341f1c3b4395b783d11767b633c316fde71cb82d270ff18b0e6661a5435264e1267256a1450a
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1.orig.tar.gz' python-rosdep-modules_0.20.1.orig.tar.gz 88902 SHA512:b9d51fbf49739142da46bbbab8298484879b8d0ff50dd2b0bafa43db7b96a4e921c23110cb09b7094621ed9903c7d96ecb0c40164df4877e70996ca6ca784396
+```
 
 ### `dpkg` source package: `python-rosdistro-modules=0.8.3-1`
 
@@ -3920,17 +3932,17 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python-setuptools/33.1.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python-setuptools/33.1.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python2.7=2.7.13-2+deb9u4`
+### `dpkg` source package: `python2.7=2.7.13-2+deb9u5`
 
 Binary Packages:
 
-- `libpython2.7:amd64=2.7.13-2+deb9u4`
-- `libpython2.7-dev:amd64=2.7.13-2+deb9u4`
-- `libpython2.7-minimal:amd64=2.7.13-2+deb9u4`
-- `libpython2.7-stdlib:amd64=2.7.13-2+deb9u4`
-- `python2.7=2.7.13-2+deb9u4`
-- `python2.7-dev=2.7.13-2+deb9u4`
-- `python2.7-minimal=2.7.13-2+deb9u4`
+- `libpython2.7:amd64=2.7.13-2+deb9u5`
+- `libpython2.7-dev:amd64=2.7.13-2+deb9u5`
+- `libpython2.7-minimal:amd64=2.7.13-2+deb9u5`
+- `libpython2.7-stdlib:amd64=2.7.13-2+deb9u5`
+- `python2.7=2.7.13-2+deb9u5`
+- `python2.7-dev=2.7.13-2+deb9u5`
+- `python2.7-minimal=2.7.13-2+deb9u5`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc/libpython2.7-dev/copyright`, `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-dev/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
 
@@ -3951,13 +3963,20 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris python2.7=2.7.13-2+deb9u5
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.13-2+deb9u5.dsc' python2.7_2.7.13-2+deb9u5.dsc 3354 SHA256:5f2545960641218514c1613d930345b240cee7e09b2a24d4f3afac15cf216488
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.13.orig.tar.gz' python2.7_2.7.13.orig.tar.gz 17076672 SHA256:a4f05a0720ce0fd92626f0278b6b433eee9a6173ddf2bced7957dfb599a5ece1
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.13-2+deb9u5.diff.gz' python2.7_2.7.13-2+deb9u5.diff.gz 304643 SHA256:31ce7558f655511278b89a6db05f8c5f7025e7173edf3f1792bdd5acf006a65b
+```
 
-- http://snapshot.debian.org/package/python2.7/2.7.13-2+deb9u4/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/python2.7/2.7.13-2+deb9u5/ (for browsing the source)
+- https://sources.debian.net/src/python2.7/2.7.13-2+deb9u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python2.7/2.7.13-2+deb9u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.5.3-1`
 

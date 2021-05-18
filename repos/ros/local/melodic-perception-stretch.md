@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b5ace2e752941c9652ee98295845307922e56549d8179f301c1b8de524a6a29f`
-- Created: `2021-04-10T17:28:17.084527386Z`
+- Image ID: `sha256:76da559adbfdcabc8fa56c54180dc823ecdbe658b27f555e294bed911400064a`
+- Created: `2021-05-12T17:14:12.448980796Z`
 - Virtual Size: ~ 2.48 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1115,20 +1115,13 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/lib
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.52.1-5+deb9u13
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u13.dsc' curl_7.52.1-5+deb9u13.dsc 2797 SHA256:394b35eceaaf3c3545b3fcc673ef43c4d81f0f26f27392333e7c593e63c2d24e
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1.orig.tar.gz' curl_7.52.1.orig.tar.gz 3504621 SHA256:a8984e8b20880b621f61a62d95ff3c0763a3152093a9f9ce4287cfd614add6ae
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u13.debian.tar.xz' curl_7.52.1-5+deb9u13.debian.tar.xz 48744 SHA256:685ebde74e62c02bb6c0c55b0430be76ee85fe038f468b47330c23c18f74647f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u13/
 
-- https://sources.debian.net/src/curl/7.52.1-5+deb9u13/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.52.1-5+deb9u13/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u13/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3+deb9u1`
 
@@ -2769,11 +2762,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gsettings-desktop-schemas/3.22.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gsettings-desktop-schemas/3.22.0-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gst-plugins-base1.0=1.10.4-1+deb9u1`
+### `dpkg` source package: `gst-plugins-base1.0=1.10.4-1+deb9u2`
 
 Binary Packages:
 
-- `libgstreamer-plugins-base1.0-0:amd64=1.10.4-1+deb9u1`
+- `libgstreamer-plugins-base1.0-0:amd64=1.10.4-1+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/libgstreamer-plugins-base1.0-0/copyright`)
 
@@ -2787,17 +2780,17 @@ Licenses: (parsed from: `/usr/share/doc/libgstreamer-plugins-base1.0-0/copyright
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gst-plugins-base1.0=1.10.4-1+deb9u1
-'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.10.4-1+deb9u1.dsc' gst-plugins-base1.0_1.10.4-1+deb9u1.dsc 3809 SHA256:90b434da8135e2cb4275e0095c383de2e01f1263e79d61708a200142a9876ed9
-'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.10.4.orig.tar.xz' gst-plugins-base1.0_1.10.4.orig.tar.xz 3059368 SHA256:f6d245b6b3d4cb733f81ebb021074c525ece83db0c10e932794b339b8d935eb7
-'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.10.4-1+deb9u1.debian.tar.xz' gst-plugins-base1.0_1.10.4-1+deb9u1.debian.tar.xz 41944 SHA256:43951ef55643a21a5ff99e9ff5e3829f70839659769e772de069761f0e7a21a3
+$ apt-get source -qq --print-uris gst-plugins-base1.0=1.10.4-1+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.10.4-1+deb9u2.dsc' gst-plugins-base1.0_1.10.4-1+deb9u2.dsc 3809 SHA256:22b459a7f1bed07e2e92af9ca98ae1f42796c852f86453804c39e0bb6e5e0b97
+'http://security.debian.org/debian-security/pool/updates/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.10.4.orig.tar.xz' gst-plugins-base1.0_1.10.4.orig.tar.xz 3059368 SHA256:f6d245b6b3d4cb733f81ebb021074c525ece83db0c10e932794b339b8d935eb7
+'http://security.debian.org/debian-security/pool/updates/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.10.4-1+deb9u2.debian.tar.xz' gst-plugins-base1.0_1.10.4-1+deb9u2.debian.tar.xz 42504 SHA256:14184f984509d53e77db72bcefdbe571bb4bb10c3505609c70c50c42dc19316a
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/gst-plugins-base1.0/1.10.4-1+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/gst-plugins-base1.0/1.10.4-1+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gst-plugins-base1.0/1.10.4-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/gst-plugins-base1.0/1.10.4-1+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/gst-plugins-base1.0/1.10.4-1+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gst-plugins-base1.0/1.10.4-1+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gstreamer1.0=1.10.4-1`
 
@@ -6042,25 +6035,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxkbcommon/0.7.1-2~deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxkbcommon/0.7.1-2~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u3`
+### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u4`
 
 Binary Packages:
 
-- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u3`
-- `libxml2-dev:amd64=2.9.4+dfsg1-2.2+deb9u3`
-- `libxml2-utils=2.9.4+dfsg1-2.2+deb9u3`
+- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u4`
+- `libxml2-dev:amd64=2.9.4+dfsg1-2.2+deb9u4`
+- `libxml2-utils=2.9.4+dfsg1-2.2+deb9u4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-2.2+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u4.dsc' libxml2_2.9.4+dfsg1-2.2+deb9u4.dsc 2894 SHA256:081d2dc34ef0be57c03825173ec701ce843af1d05b2f783f89ace00a61cf04d9
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u4.debian.tar.xz' libxml2_2.9.4+dfsg1-2.2+deb9u4.debian.tar.xz 37940 SHA256:90c78f4ffe6e45281b6300fc1c449736ab245a630c77896f9ce1fce4d2bae916
+```
 
-- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxmu=2:1.1.2-2`
 
@@ -6430,12 +6430,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/lsb/9.20161125/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/lsb/9.20161125/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `lz4=0.0~r131-2`
+### `dpkg` source package: `lz4=0.0~r131-2+deb9u1`
 
 Binary Packages:
 
-- `liblz4-1:amd64=0.0~r131-2+b1`
-- `liblz4-dev:amd64=0.0~r131-2+b1`
+- `liblz4-1:amd64=0.0~r131-2+deb9u1`
+- `liblz4-dev:amd64=0.0~r131-2+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`, `/usr/share/doc/liblz4-dev/copyright`)
 
@@ -6446,17 +6446,17 @@ Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`, `/usr/share/doc/lib
 Source:
 
 ```console
-$ apt-get source -qq --print-uris lz4=0.0~r131-2
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_0.0~r131-2.dsc' lz4_0.0~r131-2.dsc 1973 SHA256:304cf9dddee387377929adf3f2cef0ae19fb2e56b6cc9eab05798845b58bd9b6
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_0.0~r131.orig.tar.gz' lz4_0.0~r131.orig.tar.gz 133784 SHA256:9d4d00614d6b9dec3114b33d1224b6262b99ace24434c53487a0c8fd0b18cfed
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_0.0~r131-2.debian.tar.xz' lz4_0.0~r131-2.debian.tar.xz 4936 SHA256:966df055dd8fa7f292c283452b43a5d2d2047d542fe49e97025006e69525e224
+$ apt-get source -qq --print-uris lz4=0.0~r131-2+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/l/lz4/lz4_0.0~r131-2+deb9u1.dsc' lz4_0.0~r131-2+deb9u1.dsc 2015 SHA256:dd0fe6a29303b74f3269c0c41bbc18df745f039c57c589e9fb7b1b22b6a694bc
+'http://security.debian.org/debian-security/pool/updates/main/l/lz4/lz4_0.0~r131.orig.tar.gz' lz4_0.0~r131.orig.tar.gz 133784 SHA256:9d4d00614d6b9dec3114b33d1224b6262b99ace24434c53487a0c8fd0b18cfed
+'http://security.debian.org/debian-security/pool/updates/main/l/lz4/lz4_0.0~r131-2+deb9u1.debian.tar.xz' lz4_0.0~r131-2+deb9u1.debian.tar.xz 5316 SHA256:cd17d69b2aacc8c7ace3364b8ad1f0e36f7238e9486a60f49f75d8b66e87c006
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/lz4/0.0~r131-2/ (for browsing the source)
-- https://sources.debian.net/src/lz4/0.0~r131-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lz4/0.0~r131-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/lz4/0.0~r131-2+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/lz4/0.0~r131-2+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/lz4/0.0~r131-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lzo2=2.08-1.2`
 
@@ -8172,20 +8172,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-9.6=9.6.20-0+deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.20-0+deb9u1.dsc' postgresql-9.6_9.6.20-0+deb9u1.dsc 3701 SHA256:587f13783bf63e7d02d7753014f2fed9107e6027c49dfa82bcb9f9b56353455a
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.20.orig.tar.bz2' postgresql-9.6_9.6.20.orig.tar.bz2 18944478 SHA256:3d08cba409d45ab62d42b24431a0d55e7537bcd1db2d979f5f2eefe34d487bb6
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.20-0+deb9u1.debian.tar.xz' postgresql-9.6_9.6.20-0+deb9u1.debian.tar.xz 177896 SHA256:e2284c1def58fc13f2a4fde2d105beec80c4d71dc94aee262b99d858a04b5d32
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-9.6/9.6.20-0+deb9u1/
 
-- https://sources.debian.net/src/postgresql-9.6/9.6.20-0+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-9.6/9.6.20-0+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-9.6/9.6.20-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.12-3+deb9u1`
 
@@ -8895,33 +8888,43 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python-roman/2.0.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python-roman/2.0.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python-rosdep-modules=0.20.0-1`
+### `dpkg` source package: `python-rosdep-modules=0.20.1-1`
 
 Binary Packages:
 
-- `python-rosdep-modules=0.20.0-1`
+- `python-rosdep-modules=0.20.1-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-rosdep-modules=0.20.1-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1-1.debian.tar.xz' python-rosdep-modules_0.20.1-1.debian.tar.xz 1988 SHA512:1b0cca160d63bf8df63de9c83b833a1628591b1368f5ad653a161fee2e06a44929976a172c03fea5c33921f1b904e1294b2aa68a0a7198eed9c14c839896497d
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1-1.dsc' python-rosdep-modules_0.20.1-1.dsc 973 SHA512:e425d6e1ea6781e10f044f7e7ac40056203c35114d0082d7717f341f1c3b4395b783d11767b633c316fde71cb82d270ff18b0e6661a5435264e1267256a1450a
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1.orig.tar.gz' python-rosdep-modules_0.20.1.orig.tar.gz 88902 SHA512:b9d51fbf49739142da46bbbab8298484879b8d0ff50dd2b0bafa43db7b96a4e921c23110cb09b7094621ed9903c7d96ecb0c40164df4877e70996ca6ca784396
+```
 
-### `dpkg` source package: `python-rosdep=0.20.0-1`
+### `dpkg` source package: `python-rosdep=0.20.1-1`
 
 Binary Packages:
 
-- `python-rosdep=0.20.0-1`
+- `python-rosdep=0.20.1-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-rosdep=0.20.1-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.20.1-1.debian.tar.xz' python-rosdep_0.20.1-1.debian.tar.xz 1932 SHA512:8a7fac44962ec3de28ef56b62dc4b5f94c3a043620e0a4bd616634adbe8d2aba5dc8bfe3d60d01c95dd1df1a7ed700016fd8eaa15bd0763e056a8bf974726d0a
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.20.1-1.dsc' python-rosdep_0.20.1-1.dsc 905 SHA512:6df6cc7ba236bb13e10c96266b3e7bcb8c05de3588e449de9b3c980413be61a604f92bf338ad81eda64c560029fee725dd838187b0481da89d311b07fb460b44
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.20.1.orig.tar.gz' python-rosdep_0.20.1.orig.tar.gz 31809 SHA512:6ae6f808667a9f63d0b5c758300911cec109d177d3b8f5a700a1a9e7e008fbe91fed719e17a8f1c358db98f08aee28c9936b237a7954f74e136ee42a875cf263
+```
 
 ### `dpkg` source package: `python-rosdistro-modules=0.8.3-1`
 
@@ -9183,17 +9186,17 @@ $ apt-get source -qq --print-uris python-wstool=0.1.17-1
 'http://packages.ros.org/ros/ubuntu/pool/main/p/python-wstool/python-wstool_0.1.17.orig.tar.gz' python-wstool_0.1.17.orig.tar.gz 53327 SHA512:e2512ac47376c409e49c3b2ad88f696335509f2b7d8b934d6e730208bf6a47f821f5ce65e153dea50b8fe3554af228e356df5ee54e90a708f8eda5f5b5fee9c1
 ```
 
-### `dpkg` source package: `python2.7=2.7.13-2+deb9u4`
+### `dpkg` source package: `python2.7=2.7.13-2+deb9u5`
 
 Binary Packages:
 
-- `libpython2.7:amd64=2.7.13-2+deb9u4`
-- `libpython2.7-dev:amd64=2.7.13-2+deb9u4`
-- `libpython2.7-minimal:amd64=2.7.13-2+deb9u4`
-- `libpython2.7-stdlib:amd64=2.7.13-2+deb9u4`
-- `python2.7=2.7.13-2+deb9u4`
-- `python2.7-dev=2.7.13-2+deb9u4`
-- `python2.7-minimal=2.7.13-2+deb9u4`
+- `libpython2.7:amd64=2.7.13-2+deb9u5`
+- `libpython2.7-dev:amd64=2.7.13-2+deb9u5`
+- `libpython2.7-minimal:amd64=2.7.13-2+deb9u5`
+- `libpython2.7-stdlib:amd64=2.7.13-2+deb9u5`
+- `python2.7=2.7.13-2+deb9u5`
+- `python2.7-dev=2.7.13-2+deb9u5`
+- `python2.7-minimal=2.7.13-2+deb9u5`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc/libpython2.7-dev/copyright`, `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-dev/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
 
@@ -9214,13 +9217,20 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris python2.7=2.7.13-2+deb9u5
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.13-2+deb9u5.dsc' python2.7_2.7.13-2+deb9u5.dsc 3354 SHA256:5f2545960641218514c1613d930345b240cee7e09b2a24d4f3afac15cf216488
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.13.orig.tar.gz' python2.7_2.7.13.orig.tar.gz 17076672 SHA256:a4f05a0720ce0fd92626f0278b6b433eee9a6173ddf2bced7957dfb599a5ece1
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.13-2+deb9u5.diff.gz' python2.7_2.7.13-2+deb9u5.diff.gz 304643 SHA256:31ce7558f655511278b89a6db05f8c5f7025e7173edf3f1792bdd5acf006a65b
+```
 
-- http://snapshot.debian.org/package/python2.7/2.7.13-2+deb9u4/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/python2.7/2.7.13-2+deb9u5/ (for browsing the source)
+- https://sources.debian.net/src/python2.7/2.7.13-2+deb9u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python2.7/2.7.13-2+deb9u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.5.3-1`
 
@@ -11723,12 +11733,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sqlite3/3.16.2-5+deb9u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sqlite3/3.16.2-5+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `subversion=1.9.5-1+deb9u5`
+### `dpkg` source package: `subversion=1.9.5-1+deb9u6`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.9.5-1+deb9u5`
-- `subversion=1.9.5-1+deb9u5`
+- `libsvn1:amd64=1.9.5-1+deb9u6`
+- `subversion=1.9.5-1+deb9u6`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -11739,17 +11749,17 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 Source:
 
 ```console
-$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u5
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u5.dsc' subversion_1.9.5-1+deb9u5.dsc 2947 SHA256:8f2758d5a5b1f8611612c0ce7af6de09b3c125c7dafba772c0a8a09acb916c35
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u5.diff.gz' subversion_1.9.5-1+deb9u5.diff.gz 2548586 SHA256:3cc8c1e90d4367825b23ddce27b7c3a80a60e1e1bf99cd70bb995255eef1ace1
+$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u6
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u6.dsc' subversion_1.9.5-1+deb9u6.dsc 2947 SHA256:995e59afce053279d2cada9d3fe1eff5a341f1f28da1c9503ea72d1737a64c16
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u6.diff.gz' subversion_1.9.5-1+deb9u6.diff.gz 2537458 SHA256:b84c3c5bb0f48bacf5227e144b955c73c35b4242e9cb0b81602384c4ba7dd142
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u5/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u6/ (for browsing the source)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sudo=1.8.19p1-2.1+deb9u3`
 
