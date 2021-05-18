@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a8f2adc0eec4ff1544fb8a771b60c3c5d4f92d78b92fae74017b05105e7ac15b`
-- Created: `2021-04-10T05:33:33.659426191Z`
+- Image ID: `sha256:0533866420d0577162938d8d78a7578a6aefe4695d798df3ccc4479ef8d52f57`
+- Created: `2021-05-12T06:14:50.169936857Z`
 - Virtual Size: ~ 514.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2465,23 +2465,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxinerama/2:1.1.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxinerama/2:1.1.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u3`
+### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u4`
 
 Binary Packages:
 
-- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u3`
+- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-2.2+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u4.dsc' libxml2_2.9.4+dfsg1-2.2+deb9u4.dsc 2894 SHA256:081d2dc34ef0be57c03825173ec701ce843af1d05b2f783f89ace00a61cf04d9
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4+dfsg1-2.2+deb9u4.debian.tar.xz' libxml2_2.9.4+dfsg1-2.2+deb9u4.debian.tar.xz 37940 SHA256:90c78f4ffe6e45281b6300fc1c449736ab245a630c77896f9ce1fce4d2bae916
+```
 
-- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxrandr=2:1.5.1-1`
 
