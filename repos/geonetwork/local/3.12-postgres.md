@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cb259547583e95a11f39e1af2788df6971fe2eb9cd3e653280366f21c917cb4e`
-- Created: `2021-05-10T23:56:34.813469826Z`
-- Virtual Size: ~ 990.37 Mb  
+- Image ID: `sha256:8d7ed92fc9e5d47de4e4040449630c2325ae3bea3b2e84b5d50c83e52992fcb2`
+- Created: `2021-05-13T19:43:13.874870676Z`
+- Virtual Size: ~ 990.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -19,8 +19,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.65`
-  - `TOMCAT_SHA512=eb5a77d75a46496f7de39c1cba5f4fc4991ec7da7717e7b37ad48b4ca2ea334aeabfd094f64977477b4b2352637b56e30e5d9acfcdf7ccd5f4269a824829dd39`
+  - `TOMCAT_VERSION=8.5.66`
+  - `TOMCAT_SHA512=f273430bf5d56153990f364097c66028ea872e07ecf781677328a34f81ed59520d045d9b542e5e51d489ccdc89dbede76cb9d94676a29ff4fc07982b13f0cad6`
   - `GN_FILE=geonetwork.war`
   - `DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data`
   - `JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC`
@@ -134,12 +134,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/apr/1.6.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/apr/1.6.5-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `apt=1.8.2.2`
+### `dpkg` source package: `apt=1.8.2.3`
 
 Binary Packages:
 
-- `apt=1.8.2.2`
-- `libapt-pkg5.0:amd64=1.8.2.2`
+- `apt=1.8.2.3`
+- `libapt-pkg5.0:amd64=1.8.2.3`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg5.0/copyright`)
 
@@ -149,16 +149,16 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apt=1.8.2.2
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.2.dsc' apt_1.8.2.2.dsc 2774 SHA256:fb213748b5b829f68b7f6c8d83ad72a21990d0f194b6e6f950509b6b05346f58
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.2.tar.xz' apt_1.8.2.2.tar.xz 2191728 SHA256:f5030de22a5cc80db6fe0d42373b5df25d7dc56e94d9155f2eaa80dbd65e82fa
+$ apt-get source -qq --print-uris apt=1.8.2.3
+'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.3.dsc' apt_1.8.2.3.dsc 2774 SHA256:03ed672edefe4badbb2c7b32332293403bb03feb2ea0777c0846939a2fcb8bba
+'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.3.tar.xz' apt_1.8.2.3.tar.xz 2191868 SHA256:c21c9b18c4a26bc183432cb49b919af073862954f1ae8a204096b0a68c946d3b
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/apt/1.8.2.2/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.8.2.2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.8.2.2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/apt/1.8.2.3/ (for browsing the source)
+- https://sources.debian.net/src/apt/1.8.2.3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apt/1.8.2.3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -2561,12 +2561,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.1.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.1.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-11=11.11-0+deb10u1`
+### `dpkg` source package: `postgresql-11=11.12-0+deb10u1`
 
 Binary Packages:
 
-- `libpq5:amd64=11.11-0+deb10u1`
-- `postgresql-client-11=11.11-0+deb10u1`
+- `libpq5:amd64=11.12-0+deb10u1`
+- `postgresql-client-11=11.12-0+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-client-11/copyright`)
 
@@ -2589,17 +2589,17 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-11=11.11-0+deb10u1
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.11-0+deb10u1.dsc' postgresql-11_11.11-0+deb10u1.dsc 3745 SHA256:e55aba15bb0d824d8a2c6c0cb1f36601861a3a09b7108b521b362e8a56b207ea
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.11.orig.tar.bz2' postgresql-11_11.11.orig.tar.bz2 20054359 SHA256:40607b7fa15b7d63f5075a7277daf7b3412486aa5db3aedffdb7768b9298186c
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.11-0+deb10u1.debian.tar.xz' postgresql-11_11.11-0+deb10u1.debian.tar.xz 26720 SHA256:9888c3cffd65baad6886715855f34180d7be933d3fc79171c91ccc45db3001f5
+$ apt-get source -qq --print-uris postgresql-11=11.12-0+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.12-0+deb10u1.dsc' postgresql-11_11.12-0+deb10u1.dsc 3745 SHA256:7c33b4631e3724ba947ae15bd63c995c12fc401fdd05645a33c4cd46bccb2c41
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.12.orig.tar.bz2' postgresql-11_11.12.orig.tar.bz2 20075485 SHA256:87f9d8b16b2b8ef71586f2ec76beac844819f64734b07fa33986755c2f53cb04
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.12-0+deb10u1.debian.tar.xz' postgresql-11_11.12-0+deb10u1.debian.tar.xz 27380 SHA256:14b775753a19adae79bf383b7feb06f0cb1e844ebbea295287f33e4d881b478d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/postgresql-11/11.11-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-11/11.11-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-11/11.11-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/postgresql-11/11.12-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/postgresql-11/11.12-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/postgresql-11/11.12-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `postgresql-common=200+deb10u4`
 
