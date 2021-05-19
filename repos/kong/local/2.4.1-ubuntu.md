@@ -1,10 +1,10 @@
-# `kong:2.4.0-ubuntu`
+# `kong:2.4.1-ubuntu`
 
 ## Docker Metadata
 
-- Image ID: `sha256:21a554e2490fbda5e238fb8cf3ce7da615af70888ecd6316b97b8eb4def200cf`
-- Created: `2021-04-23T23:41:25.649821973Z`
-- Virtual Size: ~ 342.93 Mb  
+- Image ID: `sha256:2e5f31016318d8cde158c55c941abee91ad42195dc61fd08b74a90662d75d985`
+- Created: `2021-05-11T22:31:04.6308241Z`
+- Virtual Size: ~ 342.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.4.0`
+  - `KONG_VERSION=2.4.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -633,14 +633,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.23-0ubuntu11.2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.2.dsc' glibc_2.23-0ubuntu11.2.dsc 8547 SHA512:ffec943c7f38c6f9dbec447b1bacbb9470207d09fbc3ba65b577a9f1135a5e099029bf54eb8e645ad6f25a9e92543f2ead8d3bd6454a359456c305dec85abffc
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23.orig.tar.xz' glibc_2.23.orig.tar.xz 13849968 SHA512:f2c3460d04226cbb5ff54755efb6f337356d9c063d71f736d8e5f631aaa85bfa89c4e2da1cd29f93383310994a18b21327512efd145d4c8dffd6c1412a002191
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.23-0ubuntu11.2.debian.tar.xz' glibc_2.23-0ubuntu11.2.debian.tar.xz 1357888 SHA512:65e33ec8c2b9f4f94ec39cc6f330e14d651dc3aba5237d54a3a825b3e9c92afdf489c83d9115ec1324c8e1d602ad7fd43baa120dd03775f1aa47220514c45b02
-```
 
 ### `dpkg` source package: `gmp=2:6.1.0+dfsg-2`
 
@@ -880,11 +875,11 @@ $ apt-get source -qq --print-uris kmod=22-1ubuntu5.2
 'http://archive.ubuntu.com/ubuntu/pool/main/k/kmod/kmod_22-1ubuntu5.2.debian.tar.xz' kmod_22-1ubuntu5.2.debian.tar.xz 14524 SHA512:184d70264a6cf50b8df6e8bf19950c295c8c404633c2a782f75188e1c9fec639e6c673f594995f398e85c82613ffb4565131b62b7b8062dbae3de079c8778565
 ```
 
-### `dpkg` source package: `kong=2.4.0`
+### `dpkg` source package: `kong=2.4.1`
 
 Binary Packages:
 
-- `kong=2.4.0`
+- `kong=2.4.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
