@@ -1,19 +1,19 @@
-# `clojure:openjdk-16-tools-deps-buster`
+# `clojure:openjdk-11-tools-deps`
 
 ## Docker Metadata
 
-- Image ID: `sha256:41c6aa89bb64782b0447a6f837d5276c453d24faf00050d3c681a3a40b349056`
-- Created: `2021-04-21T00:27:26.389886172Z`
-- Virtual Size: ~ 696.55 Mb  
+- Image ID: `sha256:4722ac20edb3ca51f48df22986787c34afa7e54d24464ade58404cb872f25188`
+- Created: `2021-05-17T23:31:44.9609814Z`
+- Virtual Size: ~ 693.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-16/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_HOME=/usr/local/openjdk-16`
+  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `JAVA_HOME=/usr/local/openjdk-11`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=16.0.1`
-  - `CLOJURE_VERSION=1.10.3.822`
+  - `JAVA_VERSION=11.0.11+9`
+  - `CLOJURE_VERSION=1.10.3.839`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -122,12 +122,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/apr/1.6.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/apr/1.6.5-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `apt=1.8.2.2`
+### `dpkg` source package: `apt=1.8.2.3`
 
 Binary Packages:
 
-- `apt=1.8.2.2`
-- `libapt-pkg5.0:amd64=1.8.2.2`
+- `apt=1.8.2.3`
+- `libapt-pkg5.0:amd64=1.8.2.3`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg5.0/copyright`)
 
@@ -137,16 +137,16 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apt=1.8.2.2
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.2.dsc' apt_1.8.2.2.dsc 2774 SHA256:fb213748b5b829f68b7f6c8d83ad72a21990d0f194b6e6f950509b6b05346f58
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.2.tar.xz' apt_1.8.2.2.tar.xz 2191728 SHA256:f5030de22a5cc80db6fe0d42373b5df25d7dc56e94d9155f2eaa80dbd65e82fa
+$ apt-get source -qq --print-uris apt=1.8.2.3
+'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.3.dsc' apt_1.8.2.3.dsc 2774 SHA256:03ed672edefe4badbb2c7b32332293403bb03feb2ea0777c0846939a2fcb8bba
+'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.2.3.tar.xz' apt_1.8.2.3.tar.xz 2191868 SHA256:c21c9b18c4a26bc183432cb49b919af073862954f1ae8a204096b0a68c946d3b
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/apt/1.8.2.2/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.8.2.2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.8.2.2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/apt/1.8.2.3/ (for browsing the source)
+- https://sources.debian.net/src/apt/1.8.2.3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apt/1.8.2.3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -278,36 +278,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/5.0-4/ (for browsing the source)
 - https://sources.debian.net/src/bash/5.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/5.0-4/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `binutils=2.31.1-16`
-
-Binary Packages:
-
-- `binutils=2.31.1-16`
-- `binutils-common:amd64=2.31.1-16`
-- `binutils-x86-64-linux-gnu=2.31.1-16`
-- `libbinutils:amd64=2.31.1-16`
-
-Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/binutils-common/copyright`, `/usr/share/doc/binutils-x86-64-linux-gnu/copyright`, `/usr/share/doc/libbinutils/copyright`)
-
-- `GFDL`
-- `GPL`
-- `LGPL`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris binutils=2.31.1-16
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.31.1-16.dsc' binutils_2.31.1-16.dsc 11421 SHA256:ec76c13684d922a3619d7ec982db191714927bde6de6a3ff89e95d1ce7a61f33
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.31.1.orig.tar.xz' binutils_2.31.1.orig.tar.xz 21649228 SHA256:e398a2d579faa0f2b5a988add5f7481af8e21a21f63b6ea5702e6f517960c5eb
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.31.1-16.debian.tar.xz' binutils_2.31.1-16.debian.tar.xz 127464 SHA256:15fc82a7c682da6bcbf56caf57da8f059655369cbfeb58b8312040e53e4fa11d
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/binutils/2.31.1-16/ (for browsing the source)
-- https://sources.debian.net/src/binutils/2.31.1-16/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/binutils/2.31.1-16/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bzip2=1.0.6-9.2~deb10u1`
 

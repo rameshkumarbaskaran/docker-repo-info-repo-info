@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:36f309d11d881786de5cf9d7e445884e55c65177b2523322b5800e335344e6a2`
-- Created: `2021-04-15T10:07:39.421804137Z`
+- Image ID: `sha256:c50858cdae548f880e6d86e04b5cb606dbf5bfc5f421a6398e4880ce24b95448`
+- Created: `2021-05-17T23:34:02.688987547Z`
 - Virtual Size: ~ 347.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,7 +12,7 @@
   - `PATH=/opt/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/openjdk-17`
   - `JAVA_VERSION=17-ea+14`
-  - `CLOJURE_VERSION=1.10.3.822`
+  - `CLOJURE_VERSION=1.10.3.839`
 
 ## `apk` (`.apk`-based packages)
 
@@ -26,7 +26,7 @@ alpine-baselayout-3.2.0-r8 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
 alpine-baselayout-3.2.0-r8 installed size:
-409600
+400 KiB
 
 alpine-baselayout-3.2.0-r8 license:
 GPL-2.0-only
@@ -43,7 +43,7 @@ alpine-keys-2.2-r0 webpage:
 https://alpinelinux.org
 
 alpine-keys-2.2-r0 installed size:
-106496
+104 KiB
 
 alpine-keys-2.2-r0 license:
 MIT
@@ -60,7 +60,7 @@ apk-tools-2.12.5-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
 apk-tools-2.12.5-r0 installed size:
-311296
+304 KiB
 
 apk-tools-2.12.5-r0 license:
 GPL-2.0-only
@@ -77,7 +77,7 @@ bash-5.1.0-r0 webpage:
 https://www.gnu.org/software/bash/bash.html
 
 bash-5.1.0-r0 installed size:
-1327104
+1296 KiB
 
 bash-5.1.0-r0 license:
 GPL-3.0-or-later
@@ -94,7 +94,7 @@ busybox-1.32.1-r6 webpage:
 https://busybox.net/
 
 busybox-1.32.1-r6 installed size:
-946176
+924 KiB
 
 busybox-1.32.1-r6 license:
 GPL-2.0-only
@@ -111,7 +111,7 @@ ca-certificates-20191127-r5 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
 ca-certificates-20191127-r5 installed size:
-688128
+672 KiB
 
 ca-certificates-20191127-r5 license:
 MPL-2.0 AND MIT
@@ -128,7 +128,7 @@ ca-certificates-bundle-20191127-r5 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
 ca-certificates-bundle-20191127-r5 installed size:
-233472
+228 KiB
 
 ca-certificates-bundle-20191127-r5 license:
 MPL-2.0 AND MIT
@@ -145,7 +145,7 @@ java-cacerts-1.0-r1 webpage:
 https://git.alpinelinux.org/aports/tree/community/java-cacerts
 
 java-cacerts-1.0-r1 installed size:
-32768
+32 KiB
 
 java-cacerts-1.0-r1 license:
 MIT
@@ -162,7 +162,7 @@ libc-utils-0.7.2-r3 webpage:
 https://alpinelinux.org
 
 libc-utils-0.7.2-r3 installed size:
-4096
+4096 B
 
 libc-utils-0.7.2-r3 license:
 BSD-2-Clause AND BSD-3-Clause
@@ -179,7 +179,7 @@ libcrypto1.1-1.1.1k-r0 webpage:
 https://www.openssl.org/
 
 libcrypto1.1-1.1.1k-r0 installed size:
-2768896
+2704 KiB
 
 libcrypto1.1-1.1.1k-r0 license:
 OpenSSL
@@ -196,7 +196,7 @@ libffi-3.3-r2 webpage:
 https://sourceware.org/libffi
 
 libffi-3.3-r2 installed size:
-53248
+52 KiB
 
 libffi-3.3-r2 license:
 MIT
@@ -213,7 +213,7 @@ libssl1.1-1.1.1k-r0 webpage:
 https://www.openssl.org/
 
 libssl1.1-1.1.1k-r0 installed size:
-540672
+528 KiB
 
 libssl1.1-1.1.1k-r0 license:
 OpenSSL
@@ -230,7 +230,7 @@ libtasn1-4.16.0-r1 webpage:
 https://www.gnu.org/software/gnutls/
 
 libtasn1-4.16.0-r1 installed size:
-90112
+88 KiB
 
 libtasn1-4.16.0-r1 license:
 LGPL-2.1-or-later
@@ -247,7 +247,7 @@ libtls-standalone-2.9.1-r1 webpage:
 https://www.libressl.org/
 
 libtls-standalone-2.9.1-r1 installed size:
-110592
+108 KiB
 
 libtls-standalone-2.9.1-r1 license:
 ISC
@@ -264,7 +264,7 @@ make-4.3-r0 webpage:
 https://www.gnu.org/software/make
 
 make-4.3-r0 installed size:
-237568
+232 KiB
 
 make-4.3-r0 license:
 GPL-3.0-or-later
@@ -281,7 +281,7 @@ musl-1.2.2-r0 webpage:
 https://musl.libc.org/
 
 musl-1.2.2-r0 installed size:
-622592
+608 KiB
 
 musl-1.2.2-r0 license:
 MIT
@@ -298,7 +298,7 @@ musl-utils-1.2.2-r0 webpage:
 https://musl.libc.org/
 
 musl-utils-1.2.2-r0 installed size:
-143360
+140 KiB
 
 musl-utils-1.2.2-r0 license:
 MIT BSD GPL2+
@@ -315,7 +315,7 @@ ncurses-libs-6.2_p20210109-r0 webpage:
 https://invisible-island.net/ncurses/
 
 ncurses-libs-6.2_p20210109-r0 installed size:
-507904
+496 KiB
 
 ncurses-libs-6.2_p20210109-r0 license:
 MIT
@@ -332,7 +332,7 @@ ncurses-terminfo-base-6.2_p20210109-r0 webpage:
 https://invisible-island.net/ncurses/
 
 ncurses-terminfo-base-6.2_p20210109-r0 installed size:
-221184
+216 KiB
 
 ncurses-terminfo-base-6.2_p20210109-r0 license:
 MIT
@@ -349,7 +349,7 @@ p11-kit-0.23.22-r0 webpage:
 https://p11-glue.freedesktop.org/
 
 p11-kit-0.23.22-r0 installed size:
-1228800
+1200 KiB
 
 p11-kit-0.23.22-r0 license:
 BSD-3-Clause
@@ -366,7 +366,7 @@ p11-kit-trust-0.23.22-r0 webpage:
 https://p11-glue.freedesktop.org/
 
 p11-kit-trust-0.23.22-r0 installed size:
-462848
+452 KiB
 
 p11-kit-trust-0.23.22-r0 license:
 BSD-3-Clause
@@ -383,7 +383,7 @@ readline-8.1.0-r0 webpage:
 https://tiswww.cwru.edu/php/chet/readline/rltop.html
 
 readline-8.1.0-r0 installed size:
-315392
+308 KiB
 
 readline-8.1.0-r0 license:
 GPL-2.0-or-later
@@ -400,7 +400,7 @@ scanelf-1.2.8-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
 scanelf-1.2.8-r0 installed size:
-94208
+92 KiB
 
 scanelf-1.2.8-r0 license:
 GPL-2.0-only
@@ -417,7 +417,7 @@ ssl_client-1.32.1-r6 webpage:
 https://busybox.net/
 
 ssl_client-1.32.1-r6 installed size:
-28672
+28 KiB
 
 ssl_client-1.32.1-r6 license:
 GPL-2.0-only
@@ -434,7 +434,7 @@ zlib-1.2.11-r3 webpage:
 https://zlib.net/
 
 zlib-1.2.11-r3 installed size:
-110592
+108 KiB
 
 zlib-1.2.11-r3 license:
 Zlib
