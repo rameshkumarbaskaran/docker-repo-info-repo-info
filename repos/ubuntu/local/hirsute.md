@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:01244e8938d1679c6ec6dc85c8a590029459222a73d2e94e35e6460e01629191`
-- Created: `2021-04-23T22:22:00.442410135Z`
-- Virtual Size: ~ 74.09 Mb  
+- Image ID: `sha256:274cadba4412e0da41432a07a7a248667123e08e70faec614efc63cf4c989645`
+- Created: `2021-05-19T19:45:01.800805472Z`
+- Virtual Size: ~ 74.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -402,13 +402,13 @@ $ apt-get source -qq --print-uris findutils=4.8.0-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.8.0-1ubuntu1.debian.tar.xz' findutils_4.8.0-1ubuntu1.debian.tar.xz 27588 SHA512:5a30569ce48d1bdb5215c765b15d5cca96f026db2841c883e2275a9429d21be909d1ed7da8a104de5db6b9555b8acd8d82d64e85cb17d76090fa3409240a20f0
 ```
 
-### `dpkg` source package: `gcc-11=11-20210417-1ubuntu1`
+### `dpkg` source package: `gcc-11=11.1.0-1ubuntu1~21.04`
 
 Binary Packages:
 
-- `gcc-11-base:amd64=11-20210417-1ubuntu1`
-- `libgcc-s1:amd64=11-20210417-1ubuntu1`
-- `libstdc++6:amd64=11-20210417-1ubuntu1`
+- `gcc-11-base:amd64=11.1.0-1ubuntu1~21.04`
+- `libgcc-s1:amd64=11.1.0-1ubuntu1~21.04`
+- `libstdc++6:amd64=11.1.0-1ubuntu1~21.04`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-11-base/copyright`, `/usr/share/doc/libgcc-s1/copyright`, `/usr/share/doc/libstdc++6/copyright`)
 
@@ -422,10 +422,10 @@ Licenses: (parsed from: `/usr/share/doc/gcc-11-base/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gcc-11=11-20210417-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11-20210417-1ubuntu1.dsc' gcc-11_11-20210417-1ubuntu1.dsc 30391 SHA512:c720e6194b5b8239c97b8c96fb4422aafb17b245323e8b56ed3d82d1176bafcc427fe4316b48023ecaf04c73a7d32fde63c20c694fd62a1a44d47ec25af7f554
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11-20210417.orig.tar.gz' gcc-11_11-20210417.orig.tar.gz 81542412 SHA512:73c72bd8d99de51a7296ed322b8539155a7aa6dfaaa7c2ed79baba3e0ac798f0f708dd9d28478c4a52887801dce34b77c5e33076b576c5f2b8a5e82068e57261
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11-20210417-1ubuntu1.debian.tar.xz' gcc-11_11-20210417-1ubuntu1.debian.tar.xz 541876 SHA512:20683761fd0dc139efe2c196b06322ab7cfc41ae2aed06c7485825db9c714aa15af3ebb93dcf8f4443399ee2aa9eab34a747a9ac890ba03c93697dced29905ef
+$ apt-get source -qq --print-uris gcc-11=11.1.0-1ubuntu1~21.04
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11.1.0-1ubuntu1~21.04.dsc' gcc-11_11.1.0-1ubuntu1~21.04.dsc 30338 SHA512:5386c2c4098ea9e78c64eaaf41eb97691310f7b4998d7448c5ac7eaa32c8671f45835747bf71cc8c8026ebc2a949bc0c58f3b296b59f1d62c7e8eef5d840f2ba
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11.1.0.orig.tar.gz' gcc-11_11.1.0.orig.tar.gz 85847016 SHA512:1335086a43f8ff09d7ec8868b43743e1219627d87527cca14aa186f63cd8a88057e782b370d282e363dbf30da995ef3a33677d4e02313bee87c658ee4fdbe755
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11.1.0-1ubuntu1~21.04.debian.tar.xz' gcc-11_11.1.0-1ubuntu1~21.04.debian.tar.xz 545836 SHA512:a39c8e0029b02334f32dbe715343c15edb3932b2733a53fae9cdf6cee4254992d337968b994fca66c948f0c801a0d787a28acefa6a3d8d2da1911be0c7d3f4f6
 ```
 
 ### `dpkg` source package: `glibc=2.33-0ubuntu5`
