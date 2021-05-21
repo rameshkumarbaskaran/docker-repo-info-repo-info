@@ -1,21 +1,21 @@
-# `elixir:1.11.4-alpine`
+# `elixir:1.12.0-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:08ddfeaaca54ac4dfd5f27ba43d74fa185524edaa15b41d1666b81536b646523`
-- Created: `2021-05-11T01:00:39.029694945Z`
-- Virtual Size: ~ 85.12 Mb  
+- Image ID: `sha256:ceede3e4821764ba9af6ac4128ab3f9db90b819bb1b09c89979d916bfc42d508`
+- Created: `2021-05-20T20:16:01.206909738Z`
+- Virtual Size: ~ 86.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=23.3.4`
+  - `OTP_VERSION=24.0.1`
   - `REBAR3_VERSION=3.15.1`
-  - `ELIXIR_VERSION=v1.11.4`
+  - `ELIXIR_VERSION=v1.12.0`
   - `LANG=C.UTF-8`
 - Labels:
-  - `org.opencontainers.image.version=23.3.4`
+  - `org.opencontainers.image.version=24.0.1`
 
 ## `apk` (`.apk`-based packages)
 
@@ -155,6 +155,23 @@ OpenSSL
 
 ```
 
+### `apk` package: `libgcc`
+
+```console
+libgcc-10.2.1_pre1-r3 description:
+GNU C compiler runtime libraries
+
+libgcc-10.2.1_pre1-r3 webpage:
+https://gcc.gnu.org
+
+libgcc-10.2.1_pre1-r3 installed size:
+112 KiB
+
+libgcc-10.2.1_pre1-r3 license:
+GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
 ### `apk` package: `liblksctp`
 
 ```console
@@ -186,6 +203,23 @@ libssl1.1-1.1.1k-r0 installed size:
 
 libssl1.1-1.1.1k-r0 license:
 OpenSSL
+
+```
+
+### `apk` package: `libstdc++`
+
+```console
+libstdc++-10.2.1_pre1-r3 description:
+GNU C++ standard runtime library
+
+libstdc++-10.2.1_pre1-r3 webpage:
+https://gcc.gnu.org
+
+libstdc++-10.2.1_pre1-r3 installed size:
+1668 KiB
+
+libstdc++-10.2.1_pre1-r3 license:
+GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
