@@ -1,18 +1,18 @@
-# `aerospike:ee-5.4.0.11`
+# `aerospike:ce-5.6.0.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1d3beabf17fb9124a5facc145a39f6fcb18cccdc02c31cab69faec704aa6ff2e`
-- Created: `2021-05-12T01:48:34.506460418Z`
-- Virtual Size: ~ 199.30 Mb  
+- Image ID: `sha256:b88181a7c26eb467aade456250355317921f5a0ea2c9db7f3ab1d3d4fe418de5`
+- Created: `2021-05-20T18:20:11.574235334Z`
+- Virtual Size: ~ 199.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/bin/dumb-init","--","/entrypoint.sh"]`
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=5.4.0.11`
-  - `AEROSPIKE_SHA256=a23c586ae4fdd31f916b2dda5b7c9f86a4a529cc32b110f13fda6fa393e5be93`
+  - `AEROSPIKE_VERSION=5.6.0.3`
+  - `AEROSPIKE_SHA256=75ba3e57bf3ada2aefbfe8a4e43523d87b933fea6b67e2b8c2ba542d5bfe8727`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -66,11 +66,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.115/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.115/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-enterprise=5.4.0.11-1`
+### `dpkg` source package: `aerospike-server-community=5.6.0.3-1`
 
 Binary Packages:
 
-- `aerospike-server-enterprise=5.4.0.11-1`
+- `aerospike-server-community=5.6.0.3-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -80,11 +80,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `aerospike-tools=4.0.4`
+### `dpkg` source package: `aerospike-tools=5.2.0`
 
 Binary Packages:
 
-- `aerospike-tools=4.0.4`
+- `aerospike-tools=5.2.0`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -323,12 +323,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/coreutils/8.26-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/coreutils/8.26-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `curl=7.52.1-5+deb9u13`
+### `dpkg` source package: `curl=7.52.1-5+deb9u14`
 
 Binary Packages:
 
-- `libcurl3:amd64=7.52.1-5+deb9u13`
-- `libcurl4-openssl-dev:amd64=7.52.1-5+deb9u13`
+- `libcurl3:amd64=7.52.1-5+deb9u14`
+- `libcurl4-openssl-dev:amd64=7.52.1-5+deb9u14`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/libcurl4-openssl-dev/copyright`)
 
@@ -339,13 +339,20 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/lib
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris curl=7.52.1-5+deb9u14
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u14.dsc' curl_7.52.1-5+deb9u14.dsc 2797 SHA256:eeddbe48282f5ce93ad24d3dd5a431ee294617e104d35ea274b38a0f09c2f568
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1.orig.tar.gz' curl_7.52.1.orig.tar.gz 3504621 SHA256:a8984e8b20880b621f61a62d95ff3c0763a3152093a9f9ce4287cfd614add6ae
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u14.debian.tar.xz' curl_7.52.1-5+deb9u14.debian.tar.xz 62860 SHA256:1294a6c5f5411b05d4972b97b51b3a72cdc06f250f5d0ccdcf418c5cf3fab615
+```
 
-- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u13/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u14/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u14/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u14/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3+deb9u1`
 
@@ -1828,7 +1835,6 @@ Binary Packages:
 
 - `libldap-2.4-2:amd64=2.4.44+dfsg-5+deb9u8`
 - `libldap-common=2.4.44+dfsg-5+deb9u8`
-- `libldap2-dev:amd64=2.4.44+dfsg-5+deb9u8`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
