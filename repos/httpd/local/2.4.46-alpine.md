@@ -1,18 +1,18 @@
-# `httpd:2.4.47-alpine`
+# `httpd:2.4.46-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:eea4c3af0d6dc525ce8e0ba2f668f502a267cdb6b9a0a8c6f2b8f3972b7d8066`
-- Created: `2021-05-03T23:48:36.57023135Z`
-- Virtual Size: ~ 54.72 Mb  
+- Image ID: `sha256:f6b40f9f8ad719ab4235779e360f401b33733f8c297740886b82aec2c466465e`
+- Created: `2021-05-11T00:09:29.719400529Z`
+- Virtual Size: ~ 54.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["httpd-foreground"]`
 - Environment:
   - `PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `HTTPD_PREFIX=/usr/local/apache2`
-  - `HTTPD_VERSION=2.4.47`
-  - `HTTPD_SHA256=23d006dbc8e578116a1138fa457eea824048458e89c84087219f0372880c03ca`
+  - `HTTPD_VERSION=2.4.46`
+  - `HTTPD_SHA256=740eddf6e1c641992b22359cabc66e6325868c3c5e2e3f98faf349b61ecf41ea`
   - `HTTPD_PATCHES=`
 
 ## `apk` (`.apk`-based packages)
@@ -27,7 +27,7 @@ alpine-baselayout-3.2.0-r8 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
 alpine-baselayout-3.2.0-r8 installed size:
-409600
+400 KiB
 
 alpine-baselayout-3.2.0-r8 license:
 GPL-2.0-only
@@ -44,7 +44,7 @@ alpine-keys-2.2-r0 webpage:
 https://alpinelinux.org
 
 alpine-keys-2.2-r0 installed size:
-106496
+104 KiB
 
 alpine-keys-2.2-r0 license:
 MIT
@@ -61,7 +61,7 @@ apk-tools-2.12.5-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
 apk-tools-2.12.5-r0 installed size:
-311296
+304 KiB
 
 apk-tools-2.12.5-r0 license:
 GPL-2.0-only
@@ -78,7 +78,7 @@ apr-1.7.0-r0 webpage:
 http://apr.apache.org/
 
 apr-1.7.0-r0 installed size:
-225280
+220 KiB
 
 apr-1.7.0-r0 license:
 Apache-2.0
@@ -95,7 +95,7 @@ apr-util-1.6.1-r7 webpage:
 http://apr.apache.org/
 
 apr-util-1.6.1-r7 installed size:
-204800
+200 KiB
 
 apr-util-1.6.1-r7 license:
 Apache-2.0
@@ -112,7 +112,7 @@ apr-util-ldap-1.6.1-r7 webpage:
 http://apr.apache.org/
 
 apr-util-ldap-1.6.1-r7 installed size:
-32768
+32 KiB
 
 apr-util-ldap-1.6.1-r7 license:
 Apache-2.0
@@ -129,7 +129,7 @@ brotli-libs-1.0.9-r3 webpage:
 https://github.com/google/brotli
 
 brotli-libs-1.0.9-r3 installed size:
-737280
+720 KiB
 
 brotli-libs-1.0.9-r3 license:
 MIT
@@ -146,7 +146,7 @@ busybox-1.32.1-r6 webpage:
 https://busybox.net/
 
 busybox-1.32.1-r6 installed size:
-946176
+924 KiB
 
 busybox-1.32.1-r6 license:
 GPL-2.0-only
@@ -163,7 +163,7 @@ ca-certificates-20191127-r5 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
 ca-certificates-20191127-r5 installed size:
-688128
+672 KiB
 
 ca-certificates-20191127-r5 license:
 MPL-2.0 AND MIT
@@ -180,7 +180,7 @@ ca-certificates-bundle-20191127-r5 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
 ca-certificates-bundle-20191127-r5 installed size:
-233472
+228 KiB
 
 ca-certificates-bundle-20191127-r5 license:
 MPL-2.0 AND MIT
@@ -197,7 +197,7 @@ expat-2.2.10-r1 webpage:
 http://www.libexpat.org/
 
 expat-2.2.10-r1 installed size:
-188416
+184 KiB
 
 expat-2.2.10-r1 license:
 MIT
@@ -214,7 +214,7 @@ gdbm-1.19-r0 webpage:
 https://www.gnu.org/software/gdbm/
 
 gdbm-1.19-r0 installed size:
-229376
+224 KiB
 
 gdbm-1.19-r0 license:
 GPL-3.0-or-later
@@ -231,7 +231,7 @@ jansson-2.13.1-r0 webpage:
 http://www.digip.org/jansson/
 
 jansson-2.13.1-r0 installed size:
-65536
+64 KiB
 
 jansson-2.13.1-r0 license:
 MIT
@@ -248,7 +248,7 @@ libbz2-1.0.8-r1 webpage:
 http://sources.redhat.com/bzip2
 
 libbz2-1.0.8-r1 installed size:
-73728
+72 KiB
 
 libbz2-1.0.8-r1 license:
 bzip2-1.0.6
@@ -265,7 +265,7 @@ libc-utils-0.7.2-r3 webpage:
 https://alpinelinux.org
 
 libc-utils-0.7.2-r3 installed size:
-4096
+4096 B
 
 libc-utils-0.7.2-r3 license:
 BSD-2-Clause AND BSD-3-Clause
@@ -282,7 +282,7 @@ libcrypto1.1-1.1.1k-r0 webpage:
 https://www.openssl.org/
 
 libcrypto1.1-1.1.1k-r0 installed size:
-2768896
+2704 KiB
 
 libcrypto1.1-1.1.1k-r0 license:
 OpenSSL
@@ -299,7 +299,7 @@ libcurl-7.76.1-r0 webpage:
 https://curl.se/
 
 libcurl-7.76.1-r0 installed size:
-499712
+488 KiB
 
 libcurl-7.76.1-r0 license:
 MIT
@@ -316,7 +316,7 @@ libldap-2.4.57-r1 webpage:
 https://www.openldap.org/
 
 libldap-2.4.57-r1 installed size:
-630784
+616 KiB
 
 libldap-2.4.57-r1 license:
 custom
@@ -333,7 +333,7 @@ libsasl-2.1.27-r10 webpage:
 https://www.cyrusimap.org/sasl/
 
 libsasl-2.1.27-r10 installed size:
-196608
+192 KiB
 
 libsasl-2.1.27-r10 license:
 custom
@@ -350,7 +350,7 @@ libssl1.1-1.1.1k-r0 webpage:
 https://www.openssl.org/
 
 libssl1.1-1.1.1k-r0 installed size:
-540672
+528 KiB
 
 libssl1.1-1.1.1k-r0 license:
 OpenSSL
@@ -367,7 +367,7 @@ libtls-standalone-2.9.1-r1 webpage:
 https://www.libressl.org/
 
 libtls-standalone-2.9.1-r1 installed size:
-110592
+108 KiB
 
 libtls-standalone-2.9.1-r1 license:
 ISC
@@ -384,7 +384,7 @@ libuuid-2.36.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
 libuuid-2.36.1-r1 installed size:
-40960
+40 KiB
 
 libuuid-2.36.1-r1 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
@@ -401,7 +401,7 @@ libxml2-2.9.10-r6 webpage:
 http://www.xmlsoft.org/
 
 libxml2-2.9.10-r6 installed size:
-1224704
+1196 KiB
 
 libxml2-2.9.10-r6 license:
 MIT
@@ -418,7 +418,7 @@ lua5.1-libs-5.1.5-r7 webpage:
 https://www.lua.org/
 
 lua5.1-libs-5.1.5-r7 installed size:
-180224
+176 KiB
 
 lua5.1-libs-5.1.5-r7 license:
 MIT
@@ -435,7 +435,7 @@ musl-1.2.2-r0 webpage:
 https://musl.libc.org/
 
 musl-1.2.2-r0 installed size:
-622592
+608 KiB
 
 musl-1.2.2-r0 license:
 MIT
@@ -452,7 +452,7 @@ musl-utils-1.2.2-r0 webpage:
 https://musl.libc.org/
 
 musl-utils-1.2.2-r0 installed size:
-143360
+140 KiB
 
 musl-utils-1.2.2-r0 license:
 MIT BSD GPL2+
@@ -469,7 +469,7 @@ nghttp2-libs-1.42.0-r1 webpage:
 https://nghttp2.org
 
 nghttp2-libs-1.42.0-r1 installed size:
-172032
+168 KiB
 
 nghttp2-libs-1.42.0-r1 license:
 MIT
@@ -486,7 +486,7 @@ pcre-8.44-r0 webpage:
 http://pcre.sourceforge.net
 
 pcre-8.44-r0 installed size:
-401408
+392 KiB
 
 pcre-8.44-r0 license:
 BSD-3-Clause
@@ -503,7 +503,7 @@ perl-5.32.0-r0 webpage:
 https://www.perl.org/
 
 perl-5.32.0-r0 installed size:
-39071744
+37 MiB
 
 perl-5.32.0-r0 license:
 Artistic-Perl OR GPL-1.0-or-later
@@ -520,7 +520,7 @@ scanelf-1.2.8-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
 scanelf-1.2.8-r0 installed size:
-94208
+92 KiB
 
 scanelf-1.2.8-r0 license:
 GPL-2.0-only
@@ -537,7 +537,7 @@ ssl_client-1.32.1-r6 webpage:
 https://busybox.net/
 
 ssl_client-1.32.1-r6 installed size:
-28672
+28 KiB
 
 ssl_client-1.32.1-r6 license:
 GPL-2.0-only
@@ -554,7 +554,7 @@ xz-libs-5.2.5-r0 webpage:
 https://tukaani.org/xz
 
 xz-libs-5.2.5-r0 installed size:
-151552
+148 KiB
 
 xz-libs-5.2.5-r0 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
@@ -571,7 +571,7 @@ zlib-1.2.11-r3 webpage:
 https://zlib.net/
 
 zlib-1.2.11-r3 installed size:
-110592
+108 KiB
 
 zlib-1.2.11-r3 license:
 Zlib
