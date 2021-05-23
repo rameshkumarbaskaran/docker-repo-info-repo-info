@@ -26,7 +26,7 @@ alpine-baselayout-3.2.0-r8 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
 alpine-baselayout-3.2.0-r8 installed size:
-409600
+400 KiB
 
 alpine-baselayout-3.2.0-r8 license:
 GPL-2.0-only
@@ -43,7 +43,7 @@ alpine-keys-2.2-r0 webpage:
 https://alpinelinux.org
 
 alpine-keys-2.2-r0 installed size:
-106496
+104 KiB
 
 alpine-keys-2.2-r0 license:
 MIT
@@ -60,7 +60,7 @@ apk-tools-2.12.5-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
 apk-tools-2.12.5-r0 installed size:
-311296
+304 KiB
 
 apk-tools-2.12.5-r0 license:
 GPL-2.0-only
@@ -77,7 +77,7 @@ busybox-1.32.1-r6 webpage:
 https://busybox.net/
 
 busybox-1.32.1-r6 installed size:
-946176
+924 KiB
 
 busybox-1.32.1-r6 license:
 GPL-2.0-only
@@ -94,7 +94,7 @@ ca-certificates-20191127-r5 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
 ca-certificates-20191127-r5 installed size:
-688128
+672 KiB
 
 ca-certificates-20191127-r5 license:
 MPL-2.0 AND MIT
@@ -111,7 +111,7 @@ ca-certificates-bundle-20191127-r5 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
 ca-certificates-bundle-20191127-r5 installed size:
-233472
+228 KiB
 
 ca-certificates-bundle-20191127-r5 license:
 MPL-2.0 AND MIT
@@ -128,7 +128,7 @@ glib-2.66.7-r1 webpage:
 https://developer.gnome.org/glib/
 
 glib-2.66.7-r1 installed size:
-3403776
+3324 KiB
 
 glib-2.66.7-r1 license:
 LGPL-2.1-or-later
@@ -145,7 +145,7 @@ libblkid-2.36.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
 libblkid-2.36.1-r1 installed size:
-299008
+292 KiB
 
 libblkid-2.36.1-r1 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
@@ -162,7 +162,7 @@ libbz2-1.0.8-r1 webpage:
 http://sources.redhat.com/bzip2
 
 libbz2-1.0.8-r1 installed size:
-73728
+72 KiB
 
 libbz2-1.0.8-r1 license:
 bzip2-1.0.6
@@ -179,7 +179,7 @@ libc-utils-0.7.2-r3 webpage:
 https://alpinelinux.org
 
 libc-utils-0.7.2-r3 installed size:
-4096
+4096 B
 
 libc-utils-0.7.2-r3 license:
 BSD-2-Clause AND BSD-3-Clause
@@ -196,7 +196,7 @@ libcrypto1.1-1.1.1k-r0 webpage:
 https://www.openssl.org/
 
 libcrypto1.1-1.1.1k-r0 installed size:
-2768896
+2704 KiB
 
 libcrypto1.1-1.1.1k-r0 license:
 OpenSSL
@@ -213,7 +213,7 @@ libffi-3.3-r2 webpage:
 https://sourceware.org/libffi
 
 libffi-3.3-r2 installed size:
-53248
+52 KiB
 
 libffi-3.3-r2 license:
 MIT
@@ -230,7 +230,7 @@ libintl-0.20.2-r2 webpage:
 https://www.gnu.org/software/gettext/gettext.html
 
 libintl-0.20.2-r2 installed size:
-57344
+56 KiB
 
 libintl-0.20.2-r2 license:
 LGPL-2.1-or-later
@@ -247,7 +247,7 @@ libmount-2.36.1-r1 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
 libmount-2.36.1-r1 installed size:
-335872
+328 KiB
 
 libmount-2.36.1-r1 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
@@ -264,7 +264,7 @@ libssl1.1-1.1.1k-r0 webpage:
 https://www.openssl.org/
 
 libssl1.1-1.1.1k-r0 installed size:
-540672
+528 KiB
 
 libssl1.1-1.1.1k-r0 license:
 OpenSSL
@@ -281,7 +281,7 @@ libtls-standalone-2.9.1-r1 webpage:
 https://www.libressl.org/
 
 libtls-standalone-2.9.1-r1 installed size:
-110592
+108 KiB
 
 libtls-standalone-2.9.1-r1 license:
 ISC
@@ -298,7 +298,7 @@ musl-1.2.2-r0 webpage:
 https://musl.libc.org/
 
 musl-1.2.2-r0 installed size:
-622592
+608 KiB
 
 musl-1.2.2-r0 license:
 MIT
@@ -315,7 +315,7 @@ musl-utils-1.2.2-r0 webpage:
 https://musl.libc.org/
 
 musl-utils-1.2.2-r0 installed size:
-143360
+140 KiB
 
 musl-utils-1.2.2-r0 license:
 MIT BSD GPL2+
@@ -332,7 +332,7 @@ ncurses-libs-6.2_p20210109-r0 webpage:
 https://invisible-island.net/ncurses/
 
 ncurses-libs-6.2_p20210109-r0 installed size:
-507904
+496 KiB
 
 ncurses-libs-6.2_p20210109-r0 license:
 MIT
@@ -349,7 +349,7 @@ ncurses-terminfo-base-6.2_p20210109-r0 webpage:
 https://invisible-island.net/ncurses/
 
 ncurses-terminfo-base-6.2_p20210109-r0 installed size:
-221184
+216 KiB
 
 ncurses-terminfo-base-6.2_p20210109-r0 license:
 MIT
@@ -366,7 +366,7 @@ pcre-8.44-r0 webpage:
 http://pcre.sourceforge.net
 
 pcre-8.44-r0 installed size:
-401408
+392 KiB
 
 pcre-8.44-r0 license:
 BSD-3-Clause
@@ -383,7 +383,7 @@ perl-5.32.0-r0 webpage:
 https://www.perl.org/
 
 perl-5.32.0-r0 installed size:
-39071744
+37 MiB
 
 perl-5.32.0-r0 license:
 Artistic-Perl OR GPL-1.0-or-later
@@ -400,7 +400,7 @@ perl-capture-tiny-0.48-r2 webpage:
 https://metacpan.org/release/Capture-Tiny/
 
 perl-capture-tiny-0.48-r2 installed size:
-86016
+84 KiB
 
 perl-capture-tiny-0.48-r2 license:
 Apache-2.0
@@ -417,7 +417,7 @@ perl-devel-symdump-2.18-r2 webpage:
 https://metacpan.org/release/Devel-Symdump/
 
 perl-devel-symdump-2.18-r2 installed size:
-77824
+76 KiB
 
 perl-devel-symdump-2.18-r2 license:
 GPL PerlArtistic
@@ -434,7 +434,7 @@ perl-encode-locale-1.05-r3 webpage:
 http://search.cpan.org/~gaas
 
 perl-encode-locale-1.05-r3 installed size:
-73728
+72 KiB
 
 perl-encode-locale-1.05-r3 license:
 GPL PerlArtistic
@@ -451,7 +451,7 @@ perl-file-listing-6.14-r0 webpage:
 https://metacpan.org/release/File-Listing/
 
 perl-file-listing-6.14-r0 installed size:
-69632
+68 KiB
 
 perl-file-listing-6.14-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -468,7 +468,7 @@ perl-html-parser-3.75-r1 webpage:
 https://metacpan.org/release/HTML-Parser/
 
 perl-html-parser-3.75-r1 installed size:
-188416
+184 KiB
 
 perl-html-parser-3.75-r1 license:
 Artistic-1.0-Perl or GPL-1.0-or-later
@@ -485,7 +485,7 @@ perl-html-tagset-3.20-r3 webpage:
 https://metacpan.org/release/HTML-Tagset/
 
 perl-html-tagset-3.20-r3 installed size:
-69632
+68 KiB
 
 perl-html-tagset-3.20-r3 license:
 GPL PerlArtistic
@@ -502,7 +502,7 @@ perl-http-cookies-6.10-r0 webpage:
 https://metacpan.org/release/HTTP-Cookies
 
 perl-http-cookies-6.10-r0 installed size:
-98304
+96 KiB
 
 perl-http-cookies-6.10-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -519,7 +519,7 @@ perl-http-daemon-6.12-r1 webpage:
 https://metacpan.org/release/HTTP-Daemon
 
 perl-http-daemon-6.12-r1 installed size:
-86016
+84 KiB
 
 perl-http-daemon-6.12-r1 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -536,7 +536,7 @@ perl-http-date-6.05-r1 webpage:
 https://metacpan.org/pod/HTTP::Date
 
 perl-http-date-6.05-r1 installed size:
-65536
+64 KiB
 
 perl-http-date-6.05-r1 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -553,7 +553,7 @@ perl-http-message-6.27-r0 webpage:
 https://metacpan.org/release/HTTP-Message
 
 perl-http-message-6.27-r0 installed size:
-217088
+212 KiB
 
 perl-http-message-6.27-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -570,7 +570,7 @@ perl-http-negotiate-6.01-r3 webpage:
 https://metacpan.org/release/HTTP-Negotiate/
 
 perl-http-negotiate-6.01-r3 installed size:
-69632
+68 KiB
 
 perl-http-negotiate-6.01-r3 license:
 GPL-2.0 or Artistic
@@ -587,7 +587,7 @@ perl-io-html-1.004-r0 webpage:
 https://metacpan.org/release/IO-HTML/
 
 perl-io-html-1.004-r0 installed size:
-73728
+72 KiB
 
 perl-io-html-1.004-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -604,7 +604,7 @@ perl-libwww-6.52-r0 webpage:
 https://metacpan.org/author/MSCHILLI
 
 perl-libwww-6.52-r0 installed size:
-405504
+396 KiB
 
 perl-libwww-6.52-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -621,7 +621,7 @@ perl-lwp-mediatypes-6.04-r1 webpage:
 http://search.cpan.org/~gaas
 
 perl-lwp-mediatypes-6.04-r1 installed size:
-114688
+112 KiB
 
 perl-lwp-mediatypes-6.04-r1 license:
 GPL PerlArtistic
@@ -638,7 +638,7 @@ perl-net-http-6.20-r0 webpage:
 https://metacpan.org/release/Net-HTTP/
 
 perl-net-http-6.20-r0 installed size:
-98304
+96 KiB
 
 perl-net-http-6.20-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -655,7 +655,7 @@ perl-pod-coverage-0.23-r2 webpage:
 http://search.cpan.org/~rclamp/Pod-Coverage-0.23
 
 perl-pod-coverage-0.23-r2 installed size:
-131072
+128 KiB
 
 perl-pod-coverage-0.23-r2 license:
 Artistic-1.0-Perl or GPL-1.0-or-later
@@ -672,7 +672,7 @@ perl-pod-parser-1.63-r0 webpage:
 https://metacpan.org/release/Pod-Parser/
 
 perl-pod-parser-1.63-r0 installed size:
-253952
+248 KiB
 
 perl-pod-parser-1.63-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -689,7 +689,7 @@ perl-test-pod-1.52-r2 webpage:
 https://metacpan.org/release/Test-Pod/
 
 perl-test-pod-1.52-r2 installed size:
-61440
+60 KiB
 
 perl-test-pod-1.52-r2 license:
 GPL PerlArtistic
@@ -706,7 +706,7 @@ perl-try-tiny-0.30-r2 webpage:
 https://search.cpan.org/dist/Try-Tiny/
 
 perl-try-tiny-0.30-r2 installed size:
-77824
+76 KiB
 
 perl-try-tiny-0.30-r2 license:
 MIT
@@ -723,7 +723,7 @@ perl-uri-5.05-r0 webpage:
 https://metacpan.org/release/URI/
 
 perl-uri-5.05-r0 installed size:
-339968
+332 KiB
 
 perl-uri-5.05-r0 license:
 GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -740,7 +740,7 @@ perl-www-robotrules-6.02-r3 webpage:
 https://metacpan.org/release/WWW-RobotRules/
 
 perl-www-robotrules-6.02-r3 installed size:
-73728
+72 KiB
 
 perl-www-robotrules-6.02-r3 license:
 GPL-2.0 or Artistic
@@ -757,7 +757,7 @@ scanelf-1.2.8-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
 scanelf-1.2.8-r0 installed size:
-94208
+92 KiB
 
 scanelf-1.2.8-r0 license:
 GPL-2.0-only
@@ -774,7 +774,7 @@ ssl_client-1.32.1-r6 webpage:
 https://busybox.net/
 
 ssl_client-1.32.1-r6 installed size:
-28672
+28 KiB
 
 ssl_client-1.32.1-r6 license:
 GPL-2.0-only
@@ -791,7 +791,7 @@ zlib-1.2.11-r3 webpage:
 https://zlib.net/
 
 zlib-1.2.11-r3 installed size:
-110592
+108 KiB
 
 zlib-1.2.11-r3 license:
 Zlib
