@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:339aa79e05905082daa90d0f51c39450bd7183b745de76cbc2a680608ca47565`
-- Created: `2021-05-13T08:12:07.776573904Z`
-- Virtual Size: ~ 754.75 Mb  
+- Image ID: `sha256:a9dca997680d01f8d6b021d2626013e4d7ae4e9712d69c83ca931dd30e7540ae`
+- Created: `2021-05-24T20:16:53.674421941Z`
+- Virtual Size: ~ 754.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -14,9 +14,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D`
   - `PYTHON_VERSION=3.7.10`
-  - `PYTHON_PIP_VERSION=21.1.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/1954f15b3f102ace496a34a013ea76b061535bd2/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=f499d76e0149a673fb8246d88e116db589afbd291739bd84f2cd9a7bca7b6993`
+  - `PYTHON_PIP_VERSION=21.1.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/936e08ce004d0b2fae8952c50f7ccce1bc578ce5/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=8890955d56a8262348470a76dc432825f61a84a54e2985a86cd520f656a6e220`
   - `PIP=21.0.1`
   - `ZC_BUILDOUT=2.13.4`
   - `SETUPTOOLS=51.3.3`
@@ -1941,12 +1941,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libwmf/0.2.8.4-14/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libwmf/0.2.8.4-14/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libx11=2:1.6.7-1+deb10u1`
+### `dpkg` source package: `libx11=2:1.6.7-1+deb10u2`
 
 Binary Packages:
 
-- `libx11-6:amd64=2:1.6.7-1+deb10u1`
-- `libx11-data=2:1.6.7-1+deb10u1`
+- `libx11-6:amd64=2:1.6.7-1+deb10u2`
+- `libx11-data=2:1.6.7-1+deb10u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1955,18 +1955,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u1
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u1.dsc' libx11_1.6.7-1+deb10u1.dsc 2651 SHA256:32165ead57fed813168f87bd43d5dd387c2a27bba4c77bd8e8075cee90f90fce
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u1.diff.gz' libx11_1.6.7-1+deb10u1.diff.gz 52461 SHA256:ea3a943ea781136b3d5320010039e42039b0e58d5aeeca2d2b7a0593f9ce04ef
+$ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7-1+deb10u2.dsc' libx11_1.6.7-1+deb10u2.dsc 2680 SHA256:49e4b4ea6c4f4c4d6dcb31e09450dd285a9dc6f232ee5aa727b8a5b7fc4f42c1
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7-1+deb10u2.diff.gz' libx11_1.6.7-1+deb10u2.diff.gz 53354 SHA256:a2ba03e672aab422b356352406c827eaeecd3e3ffbdf39022556a6a459d08b16
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 
@@ -2916,11 +2916,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/popt/1.16-12/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/popt/1.16-12/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-11=11.11-0+deb10u1`
+### `dpkg` source package: `postgresql-11=11.12-0+deb10u1`
 
 Binary Packages:
 
-- `libpq5:amd64=11.11-0+deb10u1`
+- `libpq5:amd64=11.12-0+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 
@@ -2943,17 +2943,17 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-11=11.11-0+deb10u1
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.11-0+deb10u1.dsc' postgresql-11_11.11-0+deb10u1.dsc 3745 SHA256:e55aba15bb0d824d8a2c6c0cb1f36601861a3a09b7108b521b362e8a56b207ea
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.11.orig.tar.bz2' postgresql-11_11.11.orig.tar.bz2 20054359 SHA256:40607b7fa15b7d63f5075a7277daf7b3412486aa5db3aedffdb7768b9298186c
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.11-0+deb10u1.debian.tar.xz' postgresql-11_11.11-0+deb10u1.debian.tar.xz 26720 SHA256:9888c3cffd65baad6886715855f34180d7be933d3fc79171c91ccc45db3001f5
+$ apt-get source -qq --print-uris postgresql-11=11.12-0+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.12-0+deb10u1.dsc' postgresql-11_11.12-0+deb10u1.dsc 3745 SHA256:7c33b4631e3724ba947ae15bd63c995c12fc401fdd05645a33c4cd46bccb2c41
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.12.orig.tar.bz2' postgresql-11_11.12.orig.tar.bz2 20075485 SHA256:87f9d8b16b2b8ef71586f2ec76beac844819f64734b07fa33986755c2f53cb04
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.12-0+deb10u1.debian.tar.xz' postgresql-11_11.12-0+deb10u1.debian.tar.xz 27380 SHA256:14b775753a19adae79bf383b7feb06f0cb1e844ebbea295287f33e4d881b478d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/postgresql-11/11.11-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-11/11.11-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-11/11.11-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/postgresql-11/11.12-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/postgresql-11/11.12-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/postgresql-11/11.12-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=7.0-5`
 

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0f92c0421e2ce596d5076793b8b955172b598f18ea6a493b918930ece24bd7d5`
-- Created: `2021-05-04T20:17:56.204936657Z`
-- Virtual Size: ~ 497.53 Mb  
+- Image ID: `sha256:3f6c7ee1b319b6a5c98712b40ebff5d351093c01c089ad9e29234308e0c95f39`
+- Created: `2021-05-24T20:40:46.735311721Z`
+- Virtual Size: ~ 497.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -14,9 +14,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
   - `PYTHON_VERSION=3.8.10`
-  - `PYTHON_PIP_VERSION=21.1.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/1954f15b3f102ace496a34a013ea76b061535bd2/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=f499d76e0149a673fb8246d88e116db589afbd291739bd84f2cd9a7bca7b6993`
+  - `PYTHON_PIP_VERSION=21.1.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/936e08ce004d0b2fae8952c50f7ccce1bc578ce5/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=8890955d56a8262348470a76dc432825f61a84a54e2985a86cd520f656a6e220`
   - `PIP=21.0.1`
   - `ZC_BUILDOUT=2.13.4`
   - `SETUPTOOLS=51.3.3`
@@ -507,16 +507,16 @@ LGPL-2.0-or-later
 ### `apk` package: `libpq`
 
 ```console
-libpq-13.2-r0 description:
+libpq-13.3-r0 description:
 PostgreSQL libraries
 
-libpq-13.2-r0 webpage:
+libpq-13.3-r0 webpage:
 https://www.postgresql.org/
 
-libpq-13.2-r0 installed size:
+libpq-13.3-r0 installed size:
 328 KiB
 
-libpq-13.2-r0 license:
+libpq-13.3-r0 license:
 PostgreSQL
 
 ```
@@ -813,16 +813,16 @@ MIT
 ### `apk` package: `postgresql-client`
 
 ```console
-postgresql-client-13.2-r0 description:
+postgresql-client-13.3-r0 description:
 PostgreSQL client
 
-postgresql-client-13.2-r0 webpage:
+postgresql-client-13.3-r0 webpage:
 https://www.postgresql.org/
 
-postgresql-client-13.2-r0 installed size:
+postgresql-client-13.3-r0 installed size:
 2228 KiB
 
-postgresql-client-13.2-r0 license:
+postgresql-client-13.3-r0 license:
 PostgreSQL
 
 ```
