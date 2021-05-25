@@ -1,7 +1,7 @@
 ## `plone:python37`
 
 ```console
-$ docker pull plone@sha256:87db3f53c4d5f3d3b5e57ee2ced175f7b4d0d9e0cc234fe47e9b89b681ea1410
+$ docker pull plone@sha256:a0c1066dce456d8b1cc13e1389ce3192da0c1b5f5d263d9156c0b03898404ca9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17,14 +17,14 @@ $ docker pull plone@sha256:87db3f53c4d5f3d3b5e57ee2ced175f7b4d0d9e0cc234fe47e9b8
 ### `plone:python37` - linux; amd64
 
 ```console
-$ docker pull plone@sha256:7638945f063e1aba5dd88d715eb3cebbdcf2802f03d4e6b1c7a07599e1c8c70f
+$ docker pull plone@sha256:d458c17d69eff61f705b9e5222ee89199b6601569399bb6e643765398cbb2d51
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.5 MB (240538199 bytes)**  
+-	Total Size: **240.6 MB (240575793 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:339aa79e05905082daa90d0f51c39450bd7183b745de76cbc2a680608ca47565`
+-	Image ID: `sha256:a9dca997680d01f8d6b021d2626013e4d7ae4e9712d69c83ca931dd30e7540ae`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["start"]`
 
@@ -47,37 +47,37 @@ ENV PYTHON_VERSION=3.7.10
 RUN set -ex 		&& savedAptMark="$(apt-mark showmanual)" 	&& apt-get update && apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libbluetooth-dev 		libbz2-dev 		libc6-dev 		libexpat1-dev 		libffi-dev 		libgdbm-dev 		liblzma-dev 		libncursesw5-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		make 		tk-dev 		uuid-dev 		wget 		xz-utils 		zlib1g-dev 		$(command -v gpg > /dev/null || echo 'gnupg dirmngr') 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 		LDFLAGS="-Wl,--strip-all" 		PROFILE_TASK='-m test.regrtest --pgo 			test_array 			test_base64 			test_binascii 			test_binhex 			test_binop 			test_bytes 			test_c_locale_coercion 			test_class 			test_cmath 			test_codecs 			test_compile 			test_complex 			test_csv 			test_decimal 			test_dict 			test_float 			test_fstring 			test_hashlib 			test_io 			test_iter 			test_json 			test_long 			test_math 			test_memoryview 			test_pickle 			test_re 			test_set 			test_slice 			test_struct 			test_threading 			test_time 			test_traceback 			test_unicode 		' 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 			-o \( -type f -a -name 'wininst-*.exe' \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& apt-mark auto '.*' > /dev/null 	&& apt-mark manual $savedAptMark 	&& find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false 	&& rm -rf /var/lib/apt/lists/* 		&& python3 --version
 # Wed, 12 May 2021 16:17:12 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Wed, 12 May 2021 16:17:12 GMT
-ENV PYTHON_PIP_VERSION=21.1.1
-# Wed, 12 May 2021 16:17:12 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/1954f15b3f102ace496a34a013ea76b061535bd2/public/get-pip.py
-# Wed, 12 May 2021 16:17:13 GMT
-ENV PYTHON_GET_PIP_SHA256=f499d76e0149a673fb8246d88e116db589afbd291739bd84f2cd9a7bca7b6993
-# Wed, 12 May 2021 16:17:28 GMT
+# Mon, 24 May 2021 19:34:57 GMT
+ENV PYTHON_PIP_VERSION=21.1.2
+# Mon, 24 May 2021 19:34:57 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/936e08ce004d0b2fae8952c50f7ccce1bc578ce5/public/get-pip.py
+# Mon, 24 May 2021 19:34:58 GMT
+ENV PYTHON_GET_PIP_SHA256=8890955d56a8262348470a76dc432825f61a84a54e2985a86cd520f656a6e220
+# Mon, 24 May 2021 19:35:09 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Wed, 12 May 2021 16:17:29 GMT
+# Mon, 24 May 2021 19:35:09 GMT
 CMD ["python3"]
-# Thu, 13 May 2021 08:08:12 GMT
+# Mon, 24 May 2021 20:12:33 GMT
 ENV PIP=21.0.1 ZC_BUILDOUT=2.13.4 SETUPTOOLS=51.3.3 WHEEL=0.36.2 PLONE_MAJOR=5.2 PLONE_VERSION=5.2.4 PLONE_VERSION_RELEASE=Plone-5.2.4-UnifiedInstaller-1.0 PLONE_MD5=b682cdf2384e692c033077f448b68afd
-# Thu, 13 May 2021 08:08:13 GMT
+# Mon, 24 May 2021 20:12:34 GMT
 RUN useradd --system -m -d /plone -U -u 500 plone  && mkdir -p /plone/instance/ /data/filestorage /data/blobstorage
-# Thu, 13 May 2021 08:08:13 GMT
+# Mon, 24 May 2021 20:12:35 GMT
 COPY file:3ef405a950854449713102e91399f13c5d85d531f4bb6247863ee4357e81ed1c in /plone/instance/ 
-# Thu, 13 May 2021 08:12:03 GMT
+# Mon, 24 May 2021 20:16:49 GMT
 RUN buildDeps="default-libmysqlclient-dev dpkg-dev gcc libbz2-dev libc6-dev libffi-dev libjpeg62-turbo-dev libldap2-dev libopenjp2-7-dev libpcre3-dev libpq-dev libsasl2-dev libssl-dev libtiff5-dev libxml2-dev libxslt1-dev wget zlib1g-dev"  && runDeps="default-libmysqlclient-dev git gosu libjpeg62 libopenjp2-7 libpq5 libtiff5 libxml2 libxslt1.1 lynx netcat poppler-utils rsync wv"  && apt-get update  && apt-get install -y --no-install-recommends $buildDeps  && wget -O Plone.tgz https://launchpad.net/plone/$PLONE_MAJOR/$PLONE_VERSION/+download/$PLONE_VERSION_RELEASE.tgz  && echo "$PLONE_MD5 Plone.tgz" | md5sum -c -  && tar -xzf Plone.tgz  && cp -rv ./$PLONE_VERSION_RELEASE/base_skeleton/* /plone/instance/  && cp -v ./$PLONE_VERSION_RELEASE/buildout_templates/buildout.cfg /plone/instance/buildout-base.cfg  && pip install pip==$PIP setuptools==$SETUPTOOLS zc.buildout==$ZC_BUILDOUT wheel==$WHEEL  && cd /plone/instance  && buildout  && ln -s /data/filestorage/ /plone/instance/var/filestorage  && ln -s /data/blobstorage /plone/instance/var/blobstorage  && find /data  -not -user plone -exec chown plone:plone {} \+  && find /plone -not -user plone -exec chown plone:plone {} \+  && rm -rf /Plone*  && apt-get purge -y --auto-remove $buildDeps  && apt-get install -y --no-install-recommends $runDeps  && rm -rf /var/lib/apt/lists/*  && rm -rf /plone/buildout-cache/downloads/*
-# Thu, 13 May 2021 08:12:06 GMT
+# Mon, 24 May 2021 20:16:52 GMT
 VOLUME [/data]
-# Thu, 13 May 2021 08:12:06 GMT
+# Mon, 24 May 2021 20:16:52 GMT
 COPY multi:19a6297a0bc6dbecef560103cddfc7bf3fa00ac13a0f93f69cbf985448df12ec in / 
-# Thu, 13 May 2021 08:12:06 GMT
+# Mon, 24 May 2021 20:16:52 GMT
 EXPOSE 8080
-# Thu, 13 May 2021 08:12:07 GMT
+# Mon, 24 May 2021 20:16:53 GMT
 WORKDIR /plone/instance
-# Thu, 13 May 2021 08:12:07 GMT
+# Mon, 24 May 2021 20:16:53 GMT
 HEALTHCHECK &{["CMD-SHELL" "nc -z -w5 127.0.0.1 8080 || exit 1"] "1m0s" "5s" "1m0s" '\x00'}
-# Thu, 13 May 2021 08:12:07 GMT
+# Mon, 24 May 2021 20:16:53 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 13 May 2021 08:12:07 GMT
+# Mon, 24 May 2021 20:16:53 GMT
 CMD ["start"]
 ```
 
@@ -98,25 +98,25 @@ CMD ["start"]
 		Last Modified: Wed, 12 May 2021 17:05:37 GMT  
 		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04b68c1294e59c52e47734fda65959e3bbde76af79345a5fdf0e44d9f0b920e`  
-		Last Modified: Wed, 12 May 2021 17:05:38 GMT  
-		Size: 2.6 MB (2600329 bytes)  
+	-	`sha256:c23c10f79e7789354490a1fc27ed2b0f1b876ce39086ddc10b202d28c23b8216`  
+		Last Modified: Mon, 24 May 2021 19:42:18 GMT  
+		Size: 2.6 MB (2635682 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1ef19673065b4228ff750b336f3bee59804bf5ba52d67aa3c4bf9566cf1bc1`  
-		Last Modified: Thu, 13 May 2021 08:17:58 GMT  
-		Size: 3.9 KB (3945 bytes)  
+	-	`sha256:10600025310c571d39d5457cf8516bb831e0e0a0d56d092fb3c440694a9baf65`  
+		Last Modified: Mon, 24 May 2021 20:42:20 GMT  
+		Size: 4.0 KB (3952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f6b84845d59e5aa736d4dc4bf7fa4c786fbb14314e6129df15a71f40fb6c4348`  
-		Last Modified: Thu, 13 May 2021 08:17:58 GMT  
-		Size: 1.2 KB (1155 bytes)  
+	-	`sha256:62835435e8561886d72dec5067494cc9d21500e4bdc784d110fc67e2e6362d41`  
+		Last Modified: Mon, 24 May 2021 20:42:19 GMT  
+		Size: 1.2 KB (1156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5782c69dc1fad11073fc3851c35a6e51c2f418a150505cc109ad83889c95828`  
-		Last Modified: Thu, 13 May 2021 08:18:28 GMT  
-		Size: 197.9 MB (197947488 bytes)  
+	-	`sha256:bccac9991f2cdd7c22cf3e41518d9a2126d722f9997a7b7333217573106a6edd`  
+		Last Modified: Mon, 24 May 2021 20:42:50 GMT  
+		Size: 197.9 MB (197949722 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f2f6aa679a490110f66665b2faedf1197301dbfa27a45f0b4f1568890a5a263c`  
-		Last Modified: Thu, 13 May 2021 08:17:58 GMT  
-		Size: 3.9 KB (3884 bytes)  
+	-	`sha256:8946f64cecc5663d9cb575aabe771bca72c1b507eee07f9f860a95ba95cd3242`  
+		Last Modified: Mon, 24 May 2021 20:42:19 GMT  
+		Size: 3.9 KB (3883 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `plone:python37` - linux; arm variant v5
