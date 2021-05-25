@@ -1,4 +1,4 @@
-# `perl:slim-threaded-stretch`
+# `perl:5.32.1-slim-threaded-stretch`
 
 ## Docker Metadata
 
