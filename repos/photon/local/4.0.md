@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:efe302ef660dc9d74b383db396141b3915a5a847fd2577444a7b6dde1cd5d536`
-- Created: `2021-05-08T01:23:21.926532308Z`
+- Image ID: `sha256:3aae0ac8c87a4310e7c56f4286e7ddeee0d623db7ace3ec0f7761f3a1102dd0f`
+- Created: `2021-05-24T17:21:44.401010401Z`
 - Virtual Size: ~ 36.26 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20210507`
+  - `build-date=20210521`
   - `name=Photon OS x86_64/4.0 Base Image`
   - `vendor=VMware`
 
@@ -203,7 +203,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `rpm-libs-4.16.1.2-3.ph4.x86_64`
+### `rpm` package: `rpm-libs-4.16.1.2-4.ph4.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
