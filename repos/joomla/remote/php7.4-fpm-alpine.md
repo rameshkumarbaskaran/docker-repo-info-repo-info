@@ -1,7 +1,7 @@
 ## `joomla:php7.4-fpm-alpine`
 
 ```console
-$ docker pull joomla@sha256:dd776675552b915410926b939b78a79e2094d1fed5ef936f704ab4295c5c7ddc
+$ docker pull joomla@sha256:4582333e3fd1e49159226e0602eb78ae995f2f50963afe968a95019019939c19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -327,14 +327,14 @@ CMD ["php-fpm"]
 ### `joomla:php7.4-fpm-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull joomla@sha256:562368d8a9204d325cdf72b9b2aba5d42eb384eaa619c3966161e0c2748e8e46
+$ docker pull joomla@sha256:6cf9aa0ffff684d9499ebb965dd862052b040819008a6cbb6c47de5c6f30f110
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **42.7 MB (42685993 bytes)**  
+-	Total Size: **42.7 MB (42680237 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3be2b28fe1227082e61c70d4520f2b35052bf8343987db629dfa37076ac43b21`
+-	Image ID: `sha256:76fc61c8b0b550187555fd3d47107fddb3cf52288fcda3d4b4e015e4664ce6f8`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -391,29 +391,29 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Thu, 06 May 2021 20:57:46 GMT
 CMD ["php-fpm"]
-# Thu, 06 May 2021 23:59:02 GMT
+# Thu, 27 May 2021 06:23:37 GMT
 LABEL maintainer=Harald Leithner <harald.leithner@community.joomla.org> (@HLeithner)
-# Thu, 06 May 2021 23:59:02 GMT
+# Thu, 27 May 2021 06:23:38 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Thu, 06 May 2021 23:59:05 GMT
+# Thu, 27 May 2021 06:23:40 GMT
 RUN apk add --no-cache 	bash
-# Fri, 07 May 2021 00:02:05 GMT
+# Thu, 27 May 2021 06:26:57 GMT
 RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		bzip2-dev 		gmp-dev 		libjpeg-turbo-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		postgresql-dev 	; 		docker-php-ext-configure gd --with-jpeg; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		gmp 		ldap 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.20; 	pecl install mcrypt-1.0.4; 	pecl install memcached-3.1.5; 	pecl install redis-5.3.4; 		docker-php-ext-enable 		apcu 		mcrypt 		memcached 		redis 	; 	rm -r /tmp/pear; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		)"; 	apk add --virtual .joomla-phpext-rundeps $runDeps; 	apk del .build-deps
-# Fri, 07 May 2021 00:02:06 GMT
+# Thu, 27 May 2021 06:26:58 GMT
 VOLUME [/var/www/html]
-# Fri, 07 May 2021 00:02:07 GMT
-ENV JOOMLA_VERSION=3.9.26
-# Fri, 07 May 2021 00:02:08 GMT
-ENV JOOMLA_SHA512=2fd83450cb45c7cdf349e57d4933b78bf6d445775141b364f9f76a501877f3c16b794a9499e5b992f2aea74492103ffbe2d4bcc9b4f568ad79af6997a01ca842
-# Fri, 07 May 2021 00:02:23 GMT
+# Thu, 27 May 2021 06:26:58 GMT
+ENV JOOMLA_VERSION=3.9.27
+# Thu, 27 May 2021 06:26:59 GMT
+ENV JOOMLA_SHA512=fe3310cdf4a94ebad1ead72eed5fdab481a0f8f80c89ee002a045ffec25d1a4de8afc26199003cee3ffbda7d42086132a70e9650a5415a0cf15444156acda18c
+# Thu, 27 May 2021 06:27:07 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 07 May 2021 00:02:25 GMT
+# Thu, 27 May 2021 06:27:08 GMT
 COPY file:f6b7a1c96cc89593a2b9ce4c68af350ae02f2e0c654cd5e842ff6c03641d470e in /entrypoint.sh 
-# Fri, 07 May 2021 00:02:26 GMT
+# Thu, 27 May 2021 06:27:08 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 07 May 2021 00:02:29 GMT
+# Thu, 27 May 2021 06:27:09 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 07 May 2021 00:02:32 GMT
+# Thu, 27 May 2021 06:27:09 GMT
 CMD ["php-fpm"]
 ```
 
@@ -458,25 +458,25 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 06 May 2021 21:18:06 GMT  
 		Size: 8.4 KB (8444 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e950530eecaaa3c3104c91c00a032c25cdee88873bb557fd9eaca77c47bd4099`  
-		Last Modified: Fri, 07 May 2021 00:04:14 GMT  
-		Size: 519.5 KB (519451 bytes)  
+	-	`sha256:23b93e60a35e4d358cd2b8ba4346e2339ecbc3006057817b405de30886f16925`  
+		Last Modified: Thu, 27 May 2021 06:34:37 GMT  
+		Size: 519.5 KB (519452 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ea775dc7b8fa582258ccae23b0d095f3dcda7265ebd17d7bf9a8068225d7480`  
-		Last Modified: Fri, 07 May 2021 00:04:15 GMT  
-		Size: 5.6 MB (5586839 bytes)  
+	-	`sha256:5cdbac91bf5e3033eb4ba1e9aa68140c1d11ba42ead60b115e56da307b3af04b`  
+		Last Modified: Thu, 27 May 2021 06:34:39 GMT  
+		Size: 5.6 MB (5586693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:670721f717d9cea17b2d49911bbf1b68d518cf34550faf003ab910dc09dcec0c`  
-		Last Modified: Fri, 07 May 2021 00:04:19 GMT  
-		Size: 9.7 MB (9730167 bytes)  
+	-	`sha256:465a94ceaa6406f0e1f84c772826a2e09e506448994d3b7ab14ab31fa9a3d467`  
+		Last Modified: Thu, 27 May 2021 06:34:42 GMT  
+		Size: 9.7 MB (9724555 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94c700609ab8cb1bd11d0e659a5568ad87c80b259d660035753c354880bc185d`  
-		Last Modified: Fri, 07 May 2021 00:04:13 GMT  
+	-	`sha256:d158fca2f39b501e4fd5f6e85b656da9c96c007585871d6f2779b816fbcadbb8`  
+		Last Modified: Thu, 27 May 2021 06:34:37 GMT  
 		Size: 1.2 KB (1201 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62127d86d93752c30778d06a6642d6a524325287530671f0eceb7bc0a9a8babb`  
-		Last Modified: Fri, 07 May 2021 00:04:14 GMT  
-		Size: 614.0 B  
+	-	`sha256:94968e40d7af8391767555a8951f9325e8ae8a41dea6b4f91182a3104ba66fc6`  
+		Last Modified: Thu, 27 May 2021 06:34:37 GMT  
+		Size: 615.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:php7.4-fpm-alpine` - linux; arm64 variant v8
