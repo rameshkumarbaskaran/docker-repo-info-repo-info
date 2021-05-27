@@ -1,7 +1,7 @@
 ## `rapidoid:latest`
 
 ```console
-$ docker pull rapidoid@sha256:6bd0d379a7f04f80f86b0af321a079d4247df15439cb102ff747d0fb8d8cec12
+$ docker pull rapidoid@sha256:d28c0457da1691d7daefd8242c2fc20df3d56043abcbd429f150ac4810d74a38
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -96,14 +96,14 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ### `rapidoid:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull rapidoid@sha256:8d9b1edf60e2d01a1e68b454674cef7ef4ca5cdf56ab36920ca77d136dc9ce18
+$ docker pull rapidoid@sha256:3dacdd27f0ef86c22385aa408174cbcc33d29d9ed8cd6b13ffea6775272567a6
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **85.4 MB (85420092 bytes)**  
+-	Total Size: **85.4 MB (85419776 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:990c9d2ccf512592f43083f02f0e03d462279c76d6151a6cf7c34b86ba92f642`
+-	Image ID: `sha256:572c9a93629ec7d9158513d68d80c2c248e1f4bab4e6d41272db5658fdf34cdb`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
@@ -111,43 +111,43 @@ $ docker pull rapidoid@sha256:8d9b1edf60e2d01a1e68b454674cef7ef4ca5cdf56ab36920c
 ADD file:91ba1791cab3ad29a1469d1e78f21f4c0b5d3d30598683b7104980604c318854 in / 
 # Wed, 12 May 2021 00:52:34 GMT
 CMD ["bash"]
-# Wed, 12 May 2021 06:16:09 GMT
+# Thu, 27 May 2021 08:38:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 12 May 2021 06:22:25 GMT
+# Thu, 27 May 2021 08:45:10 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 12 May 2021 06:22:27 GMT
+# Thu, 27 May 2021 08:45:11 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 12 May 2021 06:22:28 GMT
+# Thu, 27 May 2021 08:45:11 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 12 May 2021 06:22:29 GMT
+# Thu, 27 May 2021 08:45:11 GMT
 ENV LANG=C.UTF-8
-# Wed, 12 May 2021 06:22:30 GMT
+# Thu, 27 May 2021 08:45:11 GMT
 ENV JAVA_VERSION=8u292
-# Wed, 12 May 2021 06:23:53 GMT
+# Thu, 27 May 2021 08:45:56 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jre_x64_linux_8u292b10.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jre_aarch64_linux_8u292b10.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Thu, 13 May 2021 03:51:55 GMT
+# Thu, 27 May 2021 19:00:54 GMT
 MAINTAINER Nikolche Mihajlovski
-# Thu, 13 May 2021 03:51:56 GMT
+# Thu, 27 May 2021 19:00:54 GMT
 ENV GPG_KEY=E306FEF548C686C23DC00242B9B08D8F616EF49C
-# Thu, 13 May 2021 03:51:57 GMT
+# Thu, 27 May 2021 19:00:54 GMT
 ENV RAPIDOID_JAR=/opt/rapidoid.jar
-# Thu, 13 May 2021 03:51:58 GMT
+# Thu, 27 May 2021 19:00:54 GMT
 ENV RAPIDOID_TMP=/tmp/rapidoid
-# Thu, 13 May 2021 03:51:59 GMT
+# Thu, 27 May 2021 19:00:55 GMT
 WORKDIR /opt
-# Thu, 13 May 2021 03:52:00 GMT
+# Thu, 27 May 2021 19:00:55 GMT
 EXPOSE 8888
-# Thu, 13 May 2021 03:52:01 GMT
+# Thu, 27 May 2021 19:00:55 GMT
 VOLUME [/data]
-# Thu, 13 May 2021 03:52:02 GMT
+# Thu, 27 May 2021 19:00:55 GMT
 ENV RAPIDOID_VERSION=5.4.6
-# Thu, 13 May 2021 03:52:03 GMT
+# Thu, 27 May 2021 19:00:55 GMT
 ENV RAPIDOID_URL=https://repo1.maven.org/maven2/org/rapidoid/rapidoid-platform/5.4.6/rapidoid-platform-5.4.6.jar
-# Thu, 13 May 2021 03:52:04 GMT
+# Thu, 27 May 2021 19:00:55 GMT
 COPY file:54eb4a0f21aca6721ebea0745a2cbfeb12c799c7a0902f588f490fc0afa8e8ea in /opt/ 
-# Thu, 13 May 2021 03:52:19 GMT
+# Thu, 27 May 2021 19:01:03 GMT
 RUN set -xe     && apt-get update     && apt-get install -y --no-install-recommends         ca-certificates curl dirmngr gnupg     && mkdir /platform     && mkdir -p "$RAPIDOID_TMP" 	&& curl -SL "$RAPIDOID_URL" -o $RAPIDOID_JAR 	&& curl -SL "$RAPIDOID_URL.asc" -o $RAPIDOID_JAR.asc 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys $GPG_KEY 	&& gpg --batch --verify $RAPIDOID_JAR.asc $RAPIDOID_JAR 	&& rm -rf "$GNUPGHOME" 	&& rm "$RAPIDOID_JAR.asc" 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 13 May 2021 03:52:20 GMT
+# Thu, 27 May 2021 19:01:03 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
@@ -156,23 +156,23 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 		Last Modified: Wed, 12 May 2021 01:02:02 GMT  
 		Size: 25.9 MB (25911250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49feb8163b50086a917c966dbaff372d7e4189ec1a1a504bb2b3b5258a09d616`  
-		Last Modified: Wed, 12 May 2021 06:26:49 GMT  
-		Size: 3.1 MB (3118874 bytes)  
+	-	`sha256:ebb067f13654098b66e57229fcd818a7d0f0c73bd34d158e3bedc28ee2a7b821`  
+		Last Modified: Thu, 27 May 2021 08:54:42 GMT  
+		Size: 3.1 MB (3118848 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83e07647cadb0b6f77bd4188a8341219161deb0df8395af96fe372eb482ad3d5`  
-		Last Modified: Wed, 12 May 2021 06:32:54 GMT  
+	-	`sha256:6e4cabf868a8050533c74356c4d1eaaf44cd1e5f39b7bca126168f3df99bb96c`  
+		Last Modified: Thu, 27 May 2021 09:06:45 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e46cea3df8649e9c9c5e9831b67b6de7b2542cb3446846118515647de76ec5e`  
-		Last Modified: Wed, 12 May 2021 06:34:00 GMT  
-		Size: 40.9 MB (40896345 bytes)  
+	-	`sha256:add31cbf374b11cf7c2b277ac17ec26a5e8f5bcc64463cbf146564111045a46c`  
+		Last Modified: Thu, 27 May 2021 09:07:52 GMT  
+		Size: 40.9 MB (40896240 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:175aaff825c0d5aedf79c10500967f8b61c7d80b075a5be461a06b539e507f18`  
-		Last Modified: Thu, 13 May 2021 03:52:32 GMT  
-		Size: 368.0 B  
+	-	`sha256:afe63e7b88a5e7ead6a941b71d9c976d146910ff56e4c5a699796fe70cbe52ae`  
+		Last Modified: Thu, 27 May 2021 19:01:22 GMT  
+		Size: 367.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:888cf8850cdd3569ea27923bb8d98869ddfc2bd903ad38448104a05a2c725359`  
-		Last Modified: Thu, 13 May 2021 03:52:37 GMT  
-		Size: 15.5 MB (15493044 bytes)  
+	-	`sha256:d9195e1b03c3d2a653571f4fbc8c681bad063d8fe9bce6ab95529862885aee9a`  
+		Last Modified: Thu, 27 May 2021 19:01:24 GMT  
+		Size: 15.5 MB (15492860 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
