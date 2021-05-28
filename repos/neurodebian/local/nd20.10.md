@@ -1386,9 +1386,15 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu4.4
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu4.4.dsc' openssl_1.1.1f-1ubuntu4.4.dsc 2713 SHA512:75534d189c8aca282fb87374543e71517f7f9538cef77bf9e32e0da1f425240b3ee36a001ea916142df76a8d72245aa4b44eb4349c3c3ba25b74c644d601b3cc
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz.asc' openssl_1.1.1f.orig.tar.gz.asc 488 SHA512:63b01ffc23b2fec2cfc147d382b486a136e5610e181be94aa333022803a442ded37e8276fefb62b3176b571b94a1d2243c05b86b52ad7784fe0068d1ad948562
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu4.4.debian.tar.xz' openssl_1.1.1f-1ubuntu4.4.debian.tar.xz 162164 SHA512:2ea3c248adc8bfa659fa3d0d6df790a642c892de4d695f47a8d8d9dabfaf26c7db8016e9768d2fbf3359ca0a5559e83ffa9c3d0d2cd8466778d3e9162de0c500
+```
 
 ### `dpkg` source package: `p11-kit=0.23.21-2ubuntu0.1`
 
@@ -1427,9 +1433,14 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu6.20.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu6.20.10.1.dsc' pam_1.3.1-5ubuntu6.20.10.1.dsc 2731 SHA512:31e6b5c28a2d32fa2690fcc4b062eeed5dfe2d013f34c774140f6e06e8afe14f07ac72b3c426a5901baaa2ef6c0907100537107c5f2c972a9eff8c1b3908619c
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1.orig.tar.xz' pam_1.3.1.orig.tar.xz 912332 SHA512:6bc8e2a5b64686f0a23846221c5228c88418ba485b17c53b3a12f91262b5bb73566d6b6a5daa1f63bbae54310aee918b987e44a72ce809b4e7c668f0fadfe08e
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu6.20.10.1.debian.tar.xz' pam_1.3.1-5ubuntu6.20.10.1.debian.tar.xz 172912 SHA512:1f1562469ab02a6c4666d3d984edb350fff23907ca41c906f6dab996a4c1f08ea0d8c25dc65d3f6940d1c9f57ea1e06898e569b321bfefa8774771361954788e
+```
 
 ### `dpkg` source package: `pcre2=10.34-7`
 
