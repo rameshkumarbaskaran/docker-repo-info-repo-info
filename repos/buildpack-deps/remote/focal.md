@@ -1,7 +1,7 @@
 ## `buildpack-deps:focal`
 
 ```console
-$ docker pull buildpack-deps@sha256:258e71c112f1e2ba3fa71e10b23f1c22b3fc3babca271ba0039c7050c78b2ad1
+$ docker pull buildpack-deps@sha256:5574f9e21302d72e73120f07f5ce6a0ee0631cf6579a81f98d308b8b81e529fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -143,34 +143,34 @@ RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		auto
 ### `buildpack-deps:focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull buildpack-deps@sha256:7239c6296eb0b4e564b7bc51d6137543f52283420229e04cad03cc05dfeca8c6
+$ docker pull buildpack-deps@sha256:ac501a8776397760440b083fa542b4a95802a598d663e8ebb36198f7cb01b05e
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.6 MB (227592704 bytes)**  
+-	Total Size: **227.6 MB (227618437 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fe389aeefc78954349d4bece1291a303f4efb00f60552c9c7154a96ef107af73`
+-	Image ID: `sha256:776cde7eeb9ac82a6ce189c2c52f09954d915e63572928b3ccf34405ddd3ca4c`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Fri, 23 Apr 2021 22:47:51 GMT
+# Thu, 27 May 2021 12:29:57 GMT
 ADD file:57e6f432b1329c286e596ded8065bebdfc70a87fae91dd79bd805363ef008e5d in / 
-# Fri, 23 Apr 2021 22:47:54 GMT
+# Thu, 27 May 2021 12:29:58 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Fri, 23 Apr 2021 22:47:57 GMT
+# Thu, 27 May 2021 12:29:59 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Fri, 23 Apr 2021 22:47:59 GMT
+# Thu, 27 May 2021 12:30:00 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Fri, 23 Apr 2021 22:47:59 GMT
+# Thu, 27 May 2021 12:30:00 GMT
 CMD ["/bin/bash"]
-# Fri, 23 Apr 2021 23:51:52 GMT
+# Thu, 27 May 2021 20:57:26 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 		tzdata 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 23 Apr 2021 23:52:17 GMT
+# Thu, 27 May 2021 20:57:33 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Fri, 23 Apr 2021 23:53:09 GMT
+# Thu, 27 May 2021 20:57:57 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Fri, 23 Apr 2021 23:55:23 GMT
+# Thu, 27 May 2021 20:58:39 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
 ```
 
@@ -179,29 +179,29 @@ RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		auto
 		Last Modified: Fri, 16 Apr 2021 08:25:26 GMT  
 		Size: 27.1 MB (27144417 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bf18fab4cfbf479fa9f8409ad47e2702c63241304c2cdd4c33f2a1633c5f85e`  
-		Last Modified: Fri, 23 Apr 2021 22:50:04 GMT  
-		Size: 850.0 B  
+	-	`sha256:c937c19c2d76950fb80c27261cfc3ba1515cd1d701bf7c5b570ce4d14a7b9688`  
+		Last Modified: Thu, 27 May 2021 12:31:57 GMT  
+		Size: 851.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5979309c983a2adeff352538937475cf961d49c34194fa2aab142effe19ed9c1`  
-		Last Modified: Fri, 23 Apr 2021 22:50:04 GMT  
-		Size: 189.0 B  
+	-	`sha256:ba4ad27543765699a5feb74058f25dff93de058fe2ccca9bd8f3f419d4c3d0bd`  
+		Last Modified: Thu, 27 May 2021 12:31:57 GMT  
+		Size: 188.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:704d9c2407404b9f17a0cac9b983f05004a05207b438cc508fb81654e074e681`  
-		Last Modified: Sat, 24 Apr 2021 00:07:28 GMT  
-		Size: 7.6 MB (7634598 bytes)  
+	-	`sha256:4a5b2cd5c409e73bd277a41352fde09d82b087f7df63a2f16dc07c54e4e04d79`  
+		Last Modified: Thu, 27 May 2021 21:10:21 GMT  
+		Size: 7.6 MB (7634154 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3f8fa68b0df6615544a97557a535e8b62b6b0586ab7a81b8eb0b446fa29e0e4`  
-		Last Modified: Sat, 24 Apr 2021 00:07:23 GMT  
-		Size: 3.6 MB (3600303 bytes)  
+	-	`sha256:a4116df2dc88f33603f278ed0408a7bd3a49fcb8638475d26c4d8081536d7bff`  
+		Last Modified: Thu, 27 May 2021 21:10:20 GMT  
+		Size: 3.6 MB (3600208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:854d60f21ee3a8c23a8aa1075a9d4e582a69f88687c430a280d5258564dc5d5c`  
-		Last Modified: Sat, 24 Apr 2021 00:08:03 GMT  
-		Size: 60.7 MB (60743752 bytes)  
+	-	`sha256:82a4a0a2d0ffc9b34d1db56ca01dcf759618da3113ac100368e022cd15c633de`  
+		Last Modified: Thu, 27 May 2021 21:10:45 GMT  
+		Size: 60.7 MB (60743264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec1e9f49e9a2ec6b681d33d1ed849e807177b02ed6cf83ae8d795eccf0af2438`  
-		Last Modified: Sat, 24 Apr 2021 00:08:56 GMT  
-		Size: 128.5 MB (128468595 bytes)  
+	-	`sha256:c0bec3a54991e69c7756e205b651abd45b21f5c20a4f4a1376abf8dd91784bd9`  
+		Last Modified: Thu, 27 May 2021 21:11:24 GMT  
+		Size: 128.5 MB (128495355 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `buildpack-deps:focal` - linux; ppc64le
