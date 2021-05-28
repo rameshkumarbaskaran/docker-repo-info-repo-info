@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d5b3fa4ffbe14b732522b638df227dc564e757923b80a5c56281a09d595b968b`
-- Created: `2021-05-22T05:21:13.30256225Z`
+- Image ID: `sha256:068cc1844767b5dbf79fea17bab6570585624868b27f69bf3290003c9b31beb2`
+- Created: `2021-05-27T00:37:48.484012133Z`
 - Virtual Size: ~ 1.26 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `OTP_VERSION=24.0.1`
-  - `REBAR3_VERSION=3.16.0`
+  - `REBAR3_VERSION=3.16.1`
   - `REBAR_VERSION=2.6.4`
   - `ELIXIR_VERSION=v1.12.0`
   - `LANG=C.UTF-8`
@@ -4025,8 +4025,6 @@ Binary Packages:
 - `libx11-6:amd64=2:1.6.7-1+deb10u1`
 - `libx11-data=2:1.6.7-1+deb10u1`
 - `libx11-dev:amd64=2:1.6.7-1+deb10u1`
-- `libx11-xcb-dev:amd64=2:1.6.7-1+deb10u1`
-- `libx11-xcb1:amd64=2:1.6.7-1+deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4047,6 +4045,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/ (for browsing the source)
 - https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libx11=2:1.6.7-1+deb10u2`
+
+Binary Packages:
+
+- `libx11-xcb-dev:amd64=2:1.6.7-1+deb10u2`
+- `libx11-xcb1:amd64=2:1.6.7-1+deb10u2`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7-1+deb10u2.dsc' libx11_1.6.7-1+deb10u2.dsc 2680 SHA256:49e4b4ea6c4f4c4d6dcb31e09450dd285a9dc6f232ee5aa727b8a5b7fc4f42c1
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
+'http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.6.7-1+deb10u2.diff.gz' libx11_1.6.7-1+deb10u2.diff.gz 53354 SHA256:a2ba03e672aab422b356352406c827eaeecd3e3ffbdf39022556a6a459d08b16
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/libx11/2:1.6.7-1+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libx11/2:1.6.7-1+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxau=1:1.0.8-1`
 
