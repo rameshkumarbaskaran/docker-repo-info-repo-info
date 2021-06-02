@@ -1,7 +1,7 @@
 ## `nats-streaming:scratch`
 
 ```console
-$ docker pull nats-streaming@sha256:2bf298093b69248cb6e82aa7c64d50c1a45480ad23a8ced79a5ddf588ee69102
+$ docker pull nats-streaming@sha256:5ad1f44e70e6f05e59fd56a97429de6b7b8e93d3e199d3e782e1686de1619e19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -45,32 +45,32 @@ CMD ["-m" "8222"]
 ### `nats-streaming:scratch` - linux; arm variant v6
 
 ```console
-$ docker pull nats-streaming@sha256:9dc93ca8dad040be30fe0949d19f04a6b1775750838d70d2fb12f3aa9f40b4f8
+$ docker pull nats-streaming@sha256:1bef88847972d6206955fdc84742cb2505dcdf9ec86c2ef8bd6b5629c88ef2f3
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.3 MB (5253054 bytes)**  
+-	Total Size: **6.3 MB (6269700 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ba356cbd8fdcd90e529d00104791d07c50c101937487a0b8647b06226bfdef9a`
+-	Image ID: `sha256:258e5207bc79452baf170c0dc0a5c955f71c72fadc9fff82bffecc06eb3e1e81`
 -	Entrypoint: `["\/nats-streaming-server"]`
 -	Default Command: `["-m","8222"]`
 
 ```dockerfile
-# Fri, 16 Apr 2021 21:02:53 GMT
-COPY file:c58b6e2180eb9d24d595f35c2205c2d9b4f80315beb0f166e20a7340cf3f2536 in /nats-streaming-server 
-# Fri, 16 Apr 2021 21:03:00 GMT
+# Tue, 01 Jun 2021 23:54:46 GMT
+COPY file:a4f69de3d07c6870dde4796b4de69a931a699d7e5b6ec30b2f25f6a23d66cb33 in /nats-streaming-server 
+# Tue, 01 Jun 2021 23:54:47 GMT
 EXPOSE 4222 8222
-# Fri, 16 Apr 2021 21:03:04 GMT
+# Tue, 01 Jun 2021 23:54:47 GMT
 ENTRYPOINT ["/nats-streaming-server"]
-# Fri, 16 Apr 2021 21:03:07 GMT
+# Tue, 01 Jun 2021 23:54:47 GMT
 CMD ["-m" "8222"]
 ```
 
 -	Layers:
-	-	`sha256:3542c02ee947256ff50165b76289b4dd90e7c82bfb7b0b983b4d66d4b1128e9a`  
-		Last Modified: Fri, 16 Apr 2021 21:03:44 GMT  
-		Size: 5.3 MB (5253054 bytes)  
+	-	`sha256:8ab135edb380ca588ed7d11dbea1418006a6708ae7ae5effad8d86bcef90198e`  
+		Last Modified: Tue, 01 Jun 2021 23:56:26 GMT  
+		Size: 6.3 MB (6269700 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nats-streaming:scratch` - linux; arm variant v7
