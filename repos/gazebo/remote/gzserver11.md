@@ -1,7 +1,7 @@
 ## `gazebo:gzserver11`
 
 ```console
-$ docker pull gazebo@sha256:a88348012ee79d7a266771a8054e7c52cd0dc6d6bd71e191cf9c498d292b6ba6
+$ docker pull gazebo@sha256:5d139c973efea45c597d36c13e53220ef284fe47be8b1e41b732d194da1bcfc5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull gazebo@sha256:a88348012ee79d7a266771a8054e7c52cd0dc6d6bd71e191cf9c
 ### `gazebo:gzserver11` - linux; amd64
 
 ```console
-$ docker pull gazebo@sha256:17217e15fbb50a0873f3745d4902ca47a4bba8cdb13d5db0764efa89717dbde5
+$ docker pull gazebo@sha256:cdc381e015c2c268ed8984b444ad31d4897784ba8456df93c1965bc9bce4bbc7
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **318.3 MB (318254000 bytes)**  
+-	Total Size: **318.3 MB (318317454 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2d4ebc9b8cc646a267b606a9085691cc7ece1005d2bcba8b8e33837c7e0f37d0`
+-	Image ID: `sha256:fd1ef46813d87b5af0db8334564ae6f60c3aaff172b807e832d85509893e2c08`
 -	Entrypoint: `["\/gzserver_entrypoint.sh"]`
 -	Default Command: `["gzserver"]`
 
@@ -41,15 +41,15 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends     dirmngr 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 # Sat, 24 Apr 2021 00:06:03 GMT
 RUN . /etc/os-release     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
-# Sat, 24 Apr 2021 00:09:40 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     gazebo11=11.5.0-1*     && rm -rf /var/lib/apt/lists/*
-# Sat, 24 Apr 2021 00:09:43 GMT
+# Wed, 02 Jun 2021 03:42:05 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     gazebo11=11.5.1-1*     && rm -rf /var/lib/apt/lists/*
+# Wed, 02 Jun 2021 03:42:07 GMT
 EXPOSE 11345
-# Sat, 24 Apr 2021 00:09:43 GMT
+# Wed, 02 Jun 2021 03:42:08 GMT
 COPY file:b79966dec12c55a0a5c9e673326cc3faf9cbbeee0ea5f172e863df237eb8a601 in / 
-# Sat, 24 Apr 2021 00:09:43 GMT
+# Wed, 02 Jun 2021 03:42:08 GMT
 ENTRYPOINT ["/gzserver_entrypoint.sh"]
-# Sat, 24 Apr 2021 00:09:43 GMT
+# Wed, 02 Jun 2021 03:42:08 GMT
 CMD ["gzserver"]
 ```
 
@@ -82,11 +82,11 @@ CMD ["gzserver"]
 		Last Modified: Sat, 24 Apr 2021 00:20:33 GMT  
 		Size: 5.5 KB (5501 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f8ad6644768422c5ad05afb901373b192e8b3b226361adb1d3b00e49afe5901`  
-		Last Modified: Sat, 24 Apr 2021 00:21:10 GMT  
-		Size: 272.4 MB (272372428 bytes)  
+	-	`sha256:862af88f60114853b21369eb60489237c7acee3b1bbac4fd52c65be64a59f0f2`  
+		Last Modified: Wed, 02 Jun 2021 03:53:20 GMT  
+		Size: 272.4 MB (272435880 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0d9815765b2ed56b325178f5b8015e18283270d5cce085d15a2ba4146a5df73c`  
-		Last Modified: Sat, 24 Apr 2021 00:20:36 GMT  
-		Size: 187.0 B  
+	-	`sha256:3187c9e33b29bc809f48e1b2834a3c2ce6c55d73c919341a4b0370b9b5ac83e8`  
+		Last Modified: Wed, 02 Jun 2021 03:52:45 GMT  
+		Size: 189.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
