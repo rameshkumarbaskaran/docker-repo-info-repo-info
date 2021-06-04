@@ -1,7 +1,7 @@
 ## `rakudo-star:latest`
 
 ```console
-$ docker pull rakudo-star@sha256:9c666d0de9a43d7267ddfd1588c61d3c3fab66624587029af17d73ba2ed0fea9
+$ docker pull rakudo-star@sha256:240858f69f5f0a61cb3802b251d93b6e02f9c2d1848036ea4fe5362d9fd2b701
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -78,14 +78,14 @@ CMD ["raku"]
 ### `rakudo-star:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull rakudo-star@sha256:ec68eb21308f01e43b0de21bf3be9ecd8c2f49741be6f48829b490c54894b46a
+$ docker pull rakudo-star@sha256:bc3ac3373616cbb446e1af365e7709a043116c8ce5ec389e43bd8d00d1403089
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.7 MB (158654721 bytes)**  
+-	Total Size: **160.6 MB (160616732 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7a01245cf51ec53e9e05251b8f36e3e5f620ac24dea986b3c807884fae777626`
+-	Image ID: `sha256:a077ccf3f67d77eacbfa25dcb28249efaf60474d3b9b0fe4618d3e02e41526ca`
 -	Default Command: `["raku"]`
 
 ```dockerfile
@@ -101,17 +101,17 @@ RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get 
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
 # Fri, 28 May 2021 11:03:29 GMT
 MAINTAINER Rob Hoelz
-# Fri, 28 May 2021 11:03:30 GMT
-RUN groupadd -r raku && useradd -r -g raku raku
-# Fri, 28 May 2021 11:03:30 GMT
-ARG rakudo_version=2020.10
-# Fri, 28 May 2021 11:03:30 GMT
-ENV rakudo_version=2020.10
-# Fri, 28 May 2021 11:13:30 GMT
+# Fri, 04 Jun 2021 03:36:25 GMT
+RUN groupadd -r raku && useradd -m -r -g raku raku
+# Fri, 04 Jun 2021 03:36:25 GMT
+ARG rakudo_version=2021.04
+# Fri, 04 Jun 2021 03:36:25 GMT
+ENV rakudo_version=2021.04
+# Fri, 04 Jun 2021 03:46:31 GMT
 RUN buildDeps='         gcc         libc6-dev         make     '         url="https://rakudo.org/dl/star/rakudo-star-${rakudo_version}.tar.gz"     keyserver='ha.pool.sks-keyservers.net'     keyfp='B6F697742EFCAF5F23CE51D5031D65902E840821'     tmpdir="$(mktemp -d)"     && set -eux     && export GNUPGHOME="$tmpdir"     && apt-get update     && apt-get install -y --no-install-recommends $buildDeps     && rm -rf /var/lib/apt/lists/*     && mkdir ${tmpdir}/rakudo         && curl -fsSL ${url}.asc -o ${tmpdir}/rakudo.tar.gz.asc     && curl -fsSL $url -o ${tmpdir}/rakudo.tar.gz     && gpg --batch --keyserver $keyserver --recv-keys $keyfp     && gpg --batch --verify ${tmpdir}/rakudo.tar.gz.asc ${tmpdir}/rakudo.tar.gz         && tar xzf ${tmpdir}/rakudo.tar.gz --strip-components=1 -C ${tmpdir}/rakudo     && (         cd ${tmpdir}/rakudo         && bash bin/rstar install -p /usr     )     && rm -rf $tmpdir     && apt-get purge -y --auto-remove $buildDeps
-# Fri, 28 May 2021 11:13:31 GMT
+# Fri, 04 Jun 2021 03:46:31 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/share/perl6/core/bin:/usr/share/perl6/site/bin:/usr/share/perl6/vendor/bin
-# Fri, 28 May 2021 11:13:31 GMT
+# Fri, 04 Jun 2021 03:46:31 GMT
 CMD ["raku"]
 ```
 
@@ -132,11 +132,11 @@ CMD ["raku"]
 		Last Modified: Thu, 27 May 2021 21:05:39 GMT  
 		Size: 52.2 MB (52167766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469b8eb6db50d3ba5e2e6a829d14850b3faf01b4985716151bee9e602289e349`  
-		Last Modified: Fri, 28 May 2021 11:25:29 GMT  
-		Size: 1.8 KB (1760 bytes)  
+	-	`sha256:c25d4cf2af7c3a377cf3979214c35e9009b3a73fd03fdb3bb75794f988b52a0c`  
+		Last Modified: Fri, 04 Jun 2021 03:58:38 GMT  
+		Size: 4.1 KB (4145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3059df112e7a6db3e8dbdadda76de4f6cf251c66e14333968c540caabd8913f8`  
-		Last Modified: Fri, 28 May 2021 11:25:38 GMT  
-		Size: 39.6 MB (39580613 bytes)  
+	-	`sha256:5fae32da9eec65b1377ce38ccfa10458a70327f79ff96e91b07c4b8673400119`  
+		Last Modified: Fri, 04 Jun 2021 03:58:47 GMT  
+		Size: 41.5 MB (41540239 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
