@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b9a82afcffa1329f386f94a1623d0a994724b506fdad8912ba1a2c22c468ed39`
-- Created: `2021-05-26T23:39:19.152659168Z`
+- Image ID: `sha256:984c363b61a956db7fe3a4af4e97eeeb2fcbf985a549659c94d24019ad3d4d02`
+- Created: `2021-06-04T00:30:12.767059388Z`
 - Virtual Size: ~ 472.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -21,10 +21,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.19`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.19.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.19.tar.xz.asc`
-  - `PHP_SHA256=6c17172c4a411ccb694d9752de899bb63c72a0a3ebe5089116bc13658a1467b2`
+  - `PHP_VERSION=7.4.20`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.20.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.20.tar.xz.asc`
+  - `PHP_SHA256=1fa46ca6790d780bf2cb48961df65f0ca3640c4533f0bca743cd61b71cb66335`
   - `MATOMO_VERSION=4.3.1`
 - Labels:
   - `maintainer=pierre@piwik.org`
