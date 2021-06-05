@@ -1,10 +1,10 @@
-# `phpmyadmin:5.1.0-fpm-alpine`
+# `phpmyadmin:5.1.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e07a779ef23a5f4f6864293dd78f3b99ad9dc97940c984cbd65eeb4e37ffb641`
-- Created: `2021-05-07T01:40:51.877033748Z`
-- Virtual Size: ~ 149.41 Mb  
+- Image ID: `sha256:95f25baf9fef144f18093d94c7f159b87fe4838a859d90e9ef41ea9a705e2eb1`
+- Created: `2021-06-04T17:21:58.63142188Z`
+- Virtual Size: ~ 146.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -18,16 +18,16 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.19`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.19.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.19.tar.xz.asc`
-  - `PHP_SHA256=6c17172c4a411ccb694d9752de899bb63c72a0a3ebe5089116bc13658a1467b2`
+  - `PHP_VERSION=7.4.20`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.20.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.20.tar.xz.asc`
+  - `PHP_SHA256=1fa46ca6790d780bf2cb48961df65f0ca3640c4533f0bca743cd61b71cb66335`
   - `MAX_EXECUTION_TIME=600`
   - `MEMORY_LIMIT=512M`
   - `UPLOAD_LIMIT=2048K`
-  - `VERSION=5.1.0`
-  - `SHA256=aa8ccf357f672012384df34e1c2bc70147476761c8458a0dad6233497e142c68`
-  - `URL=https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.tar.xz`
+  - `VERSION=5.1.1`
+  - `SHA256=1964d7190223c11e89fa1b7970c618e3a3bae2e859f5f60383f64c3848ef6921`
+  - `URL=https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.tar.xz`
 - Labels:
   - `org.opencontainers.image.authors=The phpMyAdmin Team <developers@phpmyadmin.net>`
   - `org.opencontainers.image.description=Run phpMyAdmin with Alpine, Apache and PHP FPM.`
@@ -37,7 +37,7 @@
   - `org.opencontainers.image.title=Official phpMyAdmin Docker image`
   - `org.opencontainers.image.url=https://github.com/phpmyadmin/docker#readme`
   - `org.opencontainers.image.vendor=phpMyAdmin`
-  - `org.opencontainers.image.version=5.1.0`
+  - `org.opencontainers.image.version=5.1.1`
 
 ## `apk` (`.apk`-based packages)
 
@@ -316,16 +316,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.76.1-r0 description:
+libcurl-7.77.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.76.1-r0 webpage:
+libcurl-7.77.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.76.1-r0 installed size:
-488 KiB
+libcurl-7.77.0-r0 installed size:
+500 KiB
 
-libcurl-7.76.1-r0 license:
+libcurl-7.77.0-r0 license:
 MIT
 
 ```
@@ -503,16 +503,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.7.0-r0 description:
+libx11-1.7.1-r0 description:
 X11 client-side library
 
-libx11-1.7.0-r0 webpage:
+libx11-1.7.1-r0 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.7.0-r0 installed size:
+libx11-1.7.1-r0 installed size:
 3240 KiB
 
-libx11-1.7.0-r0 license:
+libx11-1.7.1-r0 license:
 custom:XFREE86
 
 ```
