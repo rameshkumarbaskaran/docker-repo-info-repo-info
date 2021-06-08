@@ -1,10 +1,10 @@
-# `python:3.10.0b1-alpine3.13`
+# `python:3.10.0b2-alpine3.13`
 
 ## Docker Metadata
 
-- Image ID: `sha256:601f2e53be8884d310102afcf03c91598e79a551c622b01827ca2ec53745bd52`
-- Created: `2021-05-24T19:32:58.117507888Z`
-- Virtual Size: ~ 45.34 Mb  
+- Image ID: `sha256:4d31e44d669fb64204fe4f997ef3f871681189cc28093fb100a3098991c773e8`
+- Created: `2021-06-07T20:50:29.47530225Z`
+- Virtual Size: ~ 45.97 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D`
-  - `PYTHON_VERSION=3.10.0b1`
+  - `PYTHON_VERSION=3.10.0b2`
   - `PYTHON_PIP_VERSION=21.1.2`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/936e08ce004d0b2fae8952c50f7ccce1bc578ce5/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=8890955d56a8262348470a76dc432825f61a84a54e2985a86cd520f656a6e220`
@@ -430,16 +430,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.2-r0 description:
+musl-1.2.2-r1 description:
 the musl c library (libc) implementation
 
-musl-1.2.2-r0 webpage:
+musl-1.2.2-r1 webpage:
 https://musl.libc.org/
 
-musl-1.2.2-r0 installed size:
+musl-1.2.2-r1 installed size:
 608 KiB
 
-musl-1.2.2-r0 license:
+musl-1.2.2-r1 license:
 MIT
 
 ```

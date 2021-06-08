@@ -1,10 +1,10 @@
-# `python:3.10.0b1-alpine3.12`
+# `python:3.10.0b2-alpine3.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:995a52f0860149aebfa1567c1cd132b72a15768c387adc126582e51a6be84ec6`
-- Created: `2021-05-24T19:33:08.816290057Z`
-- Virtual Size: ~ 45.65 Mb  
+- Image ID: `sha256:f341c367ee8dcf0a242f2cfa86c01c929200e0cefac00e3d41dfefb84a3075ed`
+- Created: `2021-06-07T20:58:04.243819192Z`
+- Virtual Size: ~ 45.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D`
-  - `PYTHON_VERSION=3.10.0b1`
+  - `PYTHON_VERSION=3.10.0b2`
   - `PYTHON_PIP_VERSION=21.1.2`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/936e08ce004d0b2fae8952c50f7ccce1bc578ce5/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=8890955d56a8262348470a76dc432825f61a84a54e2985a86cd520f656a6e220`
@@ -532,16 +532,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.32.1-r0 description:
+sqlite-libs-3.32.1-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.32.1-r0 webpage:
+sqlite-libs-3.32.1-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.32.1-r0 installed size:
+sqlite-libs-3.32.1-r1 installed size:
 940 KiB
 
-sqlite-libs-3.32.1-r0 license:
+sqlite-libs-3.32.1-r1 license:
 Public-Domain
 
 ```
