@@ -1,10 +1,10 @@
-# `php:8.0.6-cli-alpine3.12`
+# `php:8.0.7-cli-alpine3.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:76269870183f26f9285962128ad05ed0c3b5227c8ad7876c343b1171b9b266cd`
-- Created: `2021-05-07T21:03:04.555481873Z`
-- Virtual Size: ~ 83.00 Mb  
+- Image ID: `sha256:dbd9d3aac71ef738a0f28ebc0c5fb4e99c5d2b183ef1fb0dd4368287ee5bdc7f`
+- Created: `2021-06-04T19:23:04.548293011Z`
+- Virtual Size: ~ 83.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.6`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.6.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.6.tar.xz.asc`
-  - `PHP_SHA256=e9871d3b6c391fe9e89f86f6334852dcc10eeaaa8d5565beb8436e7f0cf30e20`
+  - `PHP_VERSION=8.0.7`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.7.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.7.tar.xz.asc`
+  - `PHP_SHA256=d5fc2e4fc780a32404d88c360e3e0009bc725d936459668e9c2ac992f2d83654`
 
 ## `apk` (`.apk`-based packages)
 
@@ -214,16 +214,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.76.1-r0 description:
+libcurl-7.77.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.76.1-r0 webpage:
+libcurl-7.77.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.76.1-r0 installed size:
-488 KiB
+libcurl-7.77.0-r0 installed size:
+500 KiB
 
-libcurl-7.76.1-r0 license:
+libcurl-7.77.0-r0 license:
 MIT
 
 ```
@@ -299,16 +299,16 @@ ISC
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.10-r5 description:
+libxml2-2.9.10-r6 description:
 XML parsing library, version 2
 
-libxml2-2.9.10-r5 webpage:
+libxml2-2.9.10-r6 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.10-r5 installed size:
+libxml2-2.9.10-r6 installed size:
 1192 KiB
 
-libxml2-2.9.10-r5 license:
+libxml2-2.9.10-r6 license:
 MIT
 
 ```
@@ -452,16 +452,16 @@ GPL-2.0-only
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.32.1-r0 description:
+sqlite-libs-3.32.1-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.32.1-r0 webpage:
+sqlite-libs-3.32.1-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.32.1-r0 installed size:
+sqlite-libs-3.32.1-r1 installed size:
 940 KiB
 
-sqlite-libs-3.32.1-r0 license:
+sqlite-libs-3.32.1-r1 license:
 Public-Domain
 
 ```
