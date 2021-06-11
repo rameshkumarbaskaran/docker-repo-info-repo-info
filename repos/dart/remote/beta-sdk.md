@@ -1,7 +1,7 @@
 ## `dart:beta-sdk`
 
 ```console
-$ docker pull dart@sha256:76d0bf1a79e33bd6e104275aba3d8a1e8479705323ec0e8b00ced40616024c7b
+$ docker pull dart@sha256:05841a6126deebb4d2466455eca730c43672f4dfdab7647d0349e7187eabe9df
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull dart@sha256:76d0bf1a79e33bd6e104275aba3d8a1e8479705323ec0e8b00ced4
 ### `dart:beta-sdk` - linux; amd64
 
 ```console
-$ docker pull dart@sha256:6fcb56b6a0d0e4cb4a0ac42a471e1b05811c2be8275a2be86e4fb18c817e3509
+$ docker pull dart@sha256:5288e989f5a2d30c92de875ca4f06cae2954cb5f46f0a7e6de705dfda1fdae61
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **249.0 MB (248985544 bytes)**  
+-	Total Size: **274.8 MB (274789419 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1d4d5235c6c4252be8f4b80f9aef334ecd0e2a9ecd43348dbb0fb3223daddb93`
+-	Image ID: `sha256:350ad2a269716022bd723090b1857ea77119f38c3e0f8d3d9abe60427e1cf0f3`
 -	Default Command: `["bash"]`
 
 ```dockerfile
@@ -26,18 +26,18 @@ $ docker pull dart@sha256:6fcb56b6a0d0e4cb4a0ac42a471e1b05811c2be8275a2be86e4fb1
 ADD file:7362e0e50f30ff45463ea38bb265cb8f6b7cd422eb2d09de7384efa0b59614be in / 
 # Wed, 12 May 2021 01:21:22 GMT
 CMD ["bash"]
-# Mon, 17 May 2021 20:18:54 GMT
-RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         ca-certificates         curl         openssh-client         unzip         dnsutils     ;     rm -rf /var/lib/apt/lists/*
-# Mon, 17 May 2021 20:18:55 GMT
+# Thu, 10 Jun 2021 18:21:29 GMT
+RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         ca-certificates         curl         dnsutils         git         openssh-client         unzip     ;     rm -rf /var/lib/apt/lists/*
+# Thu, 10 Jun 2021 18:21:31 GMT
 RUN set -eux;     for f in         /etc/nsswitch.conf         /etc/ssl/certs         /lib/x86_64-linux-gnu/libc.so.6         /lib/x86_64-linux-gnu/libdl.so.2         /lib/x86_64-linux-gnu/libm.so.6         /lib/x86_64-linux-gnu/libnss_dns.so.2         /lib/x86_64-linux-gnu/libpthread.so.0         /lib/x86_64-linux-gnu/libresolv.so.2         /lib/x86_64-linux-gnu/librt.so.1         /lib64/ld-linux-x86-64.so.2         /usr/share/ca-certificates     ; do         dir="$(dirname "$f")";         mkdir -p "/runtime$dir";         cp --archive --link --dereference --no-target-directory "$f" "/runtime$f";     done
-# Mon, 17 May 2021 20:18:55 GMT
+# Thu, 10 Jun 2021 18:21:31 GMT
 ENV DART_SDK=/usr/lib/dart
-# Mon, 17 May 2021 20:18:55 GMT
+# Thu, 10 Jun 2021 18:21:32 GMT
 ENV PATH=/usr/lib/dart/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 17 May 2021 20:18:56 GMT
+# Thu, 10 Jun 2021 18:21:32 GMT
 WORKDIR /root
-# Tue, 25 May 2021 21:19:43 GMT
-RUN set -eux;     ARCH=$(case "$(dpkg --print-architecture)" in amd64) echo "x64";; esac;);     SDK="dartsdk-linux-$ARCH-release.zip";     BASEURL="https://storage.googleapis.com/dart-archive/channels";     URL="$BASEURL/stable/release/2.13.1/sdk/$SDK";     echo "SDK: $URL" >> dart_setup.log ;     curl -fLO "$URL";     echo "384b936b2033f9d57b94b2fae86202ba362bc5df811b5d98e401f0ec9fe5087f *$SDK"     | sha256sum --check --status --strict -;     unzip "$SDK" && mv dart-sdk "$DART_SDK" && rm "$SDK";
+# Thu, 10 Jun 2021 18:21:44 GMT
+RUN set -eux;     ARCH=$(case "$(dpkg --print-architecture)" in amd64) echo "x64";; esac;);     SDK="dartsdk-linux-$ARCH-release.zip";     BASEURL="https://storage.googleapis.com/dart-archive/channels";     URL="$BASEURL/stable/release/2.13.3/sdk/$SDK";     echo "SDK: $URL" >> dart_setup.log ;     curl -fLO "$URL";     echo "b33ef6cc021e88345acd06333ddbbb5771130f4d23fdb6eb79dce7c31b78071c *$SDK"     | sha256sum --check --status --strict -;     unzip "$SDK" && mv dart-sdk "$DART_SDK" && rm "$SDK";
 ```
 
 -	Layers:
@@ -45,15 +45,15 @@ RUN set -eux;     ARCH=$(case "$(dpkg --print-architecture)" in amd64) echo "x64
 		Last Modified: Wed, 12 May 2021 01:27:20 GMT  
 		Size: 27.1 MB (27145915 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ef6b6cb7d8e58573bab3165075efc383447aaf34b4eff54c220f0ee5b55206f`  
-		Last Modified: Mon, 17 May 2021 20:19:57 GMT  
-		Size: 23.7 MB (23682897 bytes)  
+	-	`sha256:659f65799b4f9a55a6ab63d14c0a8e07ed9663ccd04cd900e633473030146a10`  
+		Last Modified: Thu, 10 Jun 2021 18:22:15 GMT  
+		Size: 49.6 MB (49580179 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb4bafd8baa9cbcae1f326916610f19c163a88d49af4205c08859fd4631e9a75`  
-		Last Modified: Mon, 17 May 2021 20:19:53 GMT  
-		Size: 2.4 MB (2359133 bytes)  
+	-	`sha256:b5f02b7fed81642e9e345e6271782e691d4cf743ff496200c5a814118976884b`  
+		Last Modified: Thu, 10 Jun 2021 18:22:07 GMT  
+		Size: 2.4 MB (2359151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:61b8754f37255b981ad8d8588b832eeeadf33da3c4ee9785bd20b8f216143528`  
-		Last Modified: Tue, 25 May 2021 21:20:30 GMT  
-		Size: 195.8 MB (195797599 bytes)  
+	-	`sha256:e10ee2e07d8b436e8ffc129c5ca82e31fd904f6e1f652ccdbad684f588efe5e4`  
+		Last Modified: Thu, 10 Jun 2021 18:22:36 GMT  
+		Size: 195.7 MB (195704174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
