@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3ca364490397b85dcd461adfff06f1418bc04138455137edca59a3f81a0bddd4`
-- Created: `2021-05-14T22:21:45.558457167Z`
-- Virtual Size: ~ 591.14 Mb  
+- Image ID: `sha256:c4dc76743ce2913e17f2f3614253a9bd515168806fbeef2a5fa9dfc394b107e2`
+- Created: `2021-06-11T19:23:04.878432915Z`
+- Virtual Size: ~ 592.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -26,12 +26,12 @@
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter, Leo Christy Jesuraj`
   - `org.opencontainers.image.description=This image contains the Open Liberty beta runtime with AdoptOpenJDK 11 with OpenJ9 and Ubuntu as the base OS.  For more information on this image please see https://github.com/OpenLiberty/ci.docker#building-an-application-image`
-  - `org.opencontainers.image.revision=cl210520210510-1231`
+  - `org.opencontainers.image.revision=cl210620210527-1900`
   - `org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker`
   - `org.opencontainers.image.title=Open Liberty Beta`
   - `org.opencontainers.image.url=https://openliberty.io/`
   - `org.opencontainers.image.vendor=Open Liberty`
-  - `org.opencontainers.image.version=21.0.0.6-beta`
+  - `org.opencontainers.image.version=21.0.0.7-beta`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1407,7 +1407,6 @@ $ apt-get source -qq --print-uris openldap=2.4.49+dfsg-2ubuntu1.7
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.1f-1ubuntu2.3`
-- `openssl=1.1.1f-1ubuntu2.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1421,6 +1420,26 @@ $ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.3
 'http://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
 'http://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz.asc' openssl_1.1.1f.orig.tar.gz.asc 488 SHA512:63b01ffc23b2fec2cfc147d382b486a136e5610e181be94aa333022803a442ded37e8276fefb62b3176b571b94a1d2243c05b86b52ad7784fe0068d1ad948562
 'http://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.3.debian.tar.xz' openssl_1.1.1f-1ubuntu2.3.debian.tar.xz 151740 SHA512:7613fdfc982aac8efa7504a5d02abbe68659170a42f8d74f18560166eeb98b694b72998863669db3f5a173b44875a03acff5a20791a85d7077d4610b22d6bf0b
+```
+
+### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.4`
+
+Binary Packages:
+
+- `openssl=1.1.1f-1ubuntu2.4`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.4
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.4.dsc' openssl_1.1.1f-1ubuntu2.4.dsc 2713 SHA512:850f1f2fa01d3176558752eb98ec0feaf7d30bf3e477ca59eee0de650717e18abfc68b343966b419f534af5af25330aa4976d054eeca3511aebd04603282b2bd
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz.asc' openssl_1.1.1f.orig.tar.gz.asc 488 SHA512:63b01ffc23b2fec2cfc147d382b486a136e5610e181be94aa333022803a442ded37e8276fefb62b3176b571b94a1d2243c05b86b52ad7784fe0068d1ad948562
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.4.debian.tar.xz' openssl_1.1.1f-1ubuntu2.4.debian.tar.xz 154416 SHA512:39c5d4670990fd06de63eaabeea6f4ca3526487961c75b2cab02d0e0675fb71674b156997cb4841e9c5bb0a5f5304d9b5b03b04457d78f21cb664e25cac36291
 ```
 
 ### `dpkg` source package: `p11-kit=0.23.20-1ubuntu0.1`
