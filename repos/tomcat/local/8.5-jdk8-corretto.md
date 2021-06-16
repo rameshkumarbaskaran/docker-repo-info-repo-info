@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:27a153113bf0a5b626db6c3c0d4c31ad2ba67e9f05c010c0812c04a55e8b6cec`
-- Created: `2021-06-08T00:41:02.774879292Z`
-- Virtual Size: ~ 395.42 Mb  
+- Image ID: `sha256:9557381cc71415e7d743c44e168016bfc2c6ff724d0e3611fb64c003c390293d`
+- Created: `2021-06-14T23:16:32.818749883Z`
+- Virtual Size: ~ 374.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -952,16 +952,16 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/864623e5554b50d500a04ec29e8b8abf01dbb020f05dabd610e090b514a0f058//../../../../../blobstore/96021989815159d56c7af8b960c653a6087105ef7de288ce60ff2d6c4b7558e4/nss-util-3.53.1-1.amzn2.src.rpm
 ```
 
-### `rpm` package: `openldap-2.4.44-22.amzn2.x86_64`
+### `rpm` package: `openldap-2.4.44-23.amzn2.x86_64`
 
 Licenses (from `rpm --query`): OpenLDAP
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls openldap-2.4.44-22.amzn2
+$ yumdownloader --quiet --source --urls openldap-2.4.44-23.amzn2
 Enabling amzn2-core-source repository
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/864623e5554b50d500a04ec29e8b8abf01dbb020f05dabd610e090b514a0f058//../../../../../blobstore/abeceab2f72b1f9dfdc2d4448e8349699bd8999aaa163998cc11e1be7c7b7753/openldap-2.4.44-22.amzn2.src.rpm
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/864623e5554b50d500a04ec29e8b8abf01dbb020f05dabd610e090b514a0f058//../../../../../blobstore/a237631b273d78f45c22f9a8c079ef8e4b8164710a20639182d8ebf3c1428a57/openldap-2.4.44-23.amzn2.src.rpm
 ```
 
 ### `rpm` package: `openssl-libs-1.0.2k-19.amzn2.0.6.x86_64`
