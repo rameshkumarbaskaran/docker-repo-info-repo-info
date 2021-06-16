@@ -1,7 +1,7 @@
 ## `registry:latest`
 
 ```console
-$ docker pull registry@sha256:bac2d7050dc4826516650267fe7dc6627e9e11ad653daca0641437abdf18df27
+$ docker pull registry@sha256:2d142dac007a94f12835d7811430fa88f63bfb99870d378f4f0a35d9f8b22de2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -131,37 +131,37 @@ CMD ["/etc/docker/registry/config.yml"]
 ### `registry:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull registry@sha256:bf92e913ceacee3c34efdb3c86d926db44bb558cc06c3bc935d940a6c54e3aeb
+$ docker pull registry@sha256:935363aadc68281184d6487c9d3666107cc3719cd919388fd3fd0e57159bf36a
 ```
 
 -	Docker Version: 19.03.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **9.3 MB (9267822 bytes)**  
+-	Total Size: **9.3 MB (9267817 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d3d02d23aa781c1127d6c9720b5a7020777f0fc75e7817bb86f260d067cecedf`
+-	Image ID: `sha256:fd496832003654a9530ca2d51270706b6ec759d49adadce38fa0223d0048a28c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["\/etc\/docker\/registry\/config.yml"]`
 
 ```dockerfile
-# Wed, 14 Apr 2021 18:43:05 GMT
+# Tue, 15 Jun 2021 21:45:15 GMT
 ADD file:62109d08b751b6f41eb8dc5dcb3ea6b553619ef0a58a40685faa749a20c3b051 in / 
-# Wed, 14 Apr 2021 18:43:06 GMT
+# Tue, 15 Jun 2021 21:45:15 GMT
 CMD ["/bin/sh"]
-# Thu, 15 Apr 2021 07:13:13 GMT
+# Tue, 15 Jun 2021 23:28:49 GMT
 RUN set -ex     && apk add --no-cache ca-certificates
-# Thu, 15 Apr 2021 07:13:15 GMT
+# Tue, 15 Jun 2021 23:28:49 GMT
 COPY file:51a441e6eceff49ef32609e7070b64e8d5690648e4f915cc825274e6fe37aed2 in /bin/registry 
-# Thu, 15 Apr 2021 07:13:17 GMT
+# Tue, 15 Jun 2021 23:28:49 GMT
 COPY file:4544cc1555469403b322faecc1cf1ca584667c43a6a60b17300f97840c04196e in /etc/docker/registry/config.yml 
-# Thu, 15 Apr 2021 07:13:19 GMT
+# Tue, 15 Jun 2021 23:28:49 GMT
 VOLUME [/var/lib/registry]
-# Thu, 15 Apr 2021 07:13:20 GMT
+# Tue, 15 Jun 2021 23:28:50 GMT
 EXPOSE 5000
-# Thu, 15 Apr 2021 07:13:21 GMT
+# Tue, 15 Jun 2021 23:28:50 GMT
 COPY file:507caa54f88c1f3862e5876e09a108b2083630ba24c57ad124e356a2de861d62 in /entrypoint.sh 
-# Thu, 15 Apr 2021 07:13:22 GMT
+# Tue, 15 Jun 2021 23:28:50 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 15 Apr 2021 07:13:24 GMT
+# Tue, 15 Jun 2021 23:28:50 GMT
 CMD ["/etc/docker/registry/config.yml"]
 ```
 
@@ -170,19 +170,19 @@ CMD ["/etc/docker/registry/config.yml"]
 		Last Modified: Wed, 14 Apr 2021 18:44:02 GMT  
 		Size: 2.7 MB (2726928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a310014606af76f041e71d14d83b24fd653159e728910d91f5a0ef95521ab14f`  
-		Last Modified: Thu, 15 Apr 2021 07:13:39 GMT  
-		Size: 300.1 KB (300074 bytes)  
+	-	`sha256:62c380fbd12c37ef0d56bcd4bb34a9772101d8ea1442ccef2e06923bf5601571`  
+		Last Modified: Tue, 15 Jun 2021 23:29:09 GMT  
+		Size: 300.1 KB (300076 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e4c26b3b8b3708a322aa322f3b79f2aa671ede6adb4bd27a56fdb336b8d0069`  
-		Last Modified: Thu, 15 Apr 2021 07:13:43 GMT  
-		Size: 6.2 MB (6240208 bytes)  
+	-	`sha256:d9a41b99998248128fcb19b45aadecb7f58890d5597f3a7148edc25e588f6028`  
+		Last Modified: Tue, 15 Jun 2021 23:29:10 GMT  
+		Size: 6.2 MB (6240200 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d84b9c893ea5d7decca6857c58666c6da026bc90649b2860a8ef41453637c763`  
-		Last Modified: Thu, 15 Apr 2021 07:13:39 GMT  
+	-	`sha256:f33bbb913f0b02f9292b9597dd51f78307418b272f2aa8e01a1788ae498ad9c6`  
+		Last Modified: Tue, 15 Jun 2021 23:29:08 GMT  
 		Size: 399.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b8f747c49a774fe195033528d08fb74efe7ee0118af63a95c17e6657eb94adf`  
-		Last Modified: Thu, 15 Apr 2021 07:13:39 GMT  
-		Size: 213.0 B  
+	-	`sha256:21f36ebc5571795a53bfc8c1312a97ba16512ec4cf314c93350638f61a089b41`  
+		Last Modified: Tue, 15 Jun 2021 23:29:09 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
