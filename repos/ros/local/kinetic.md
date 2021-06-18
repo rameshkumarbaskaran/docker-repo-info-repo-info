@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e08734ff5f4d40add65870ac48853c507987305227a71897aed131c6d4513146`
-- Created: `2021-06-02T18:39:51.875055242Z`
-- Virtual Size: ~ 1.14 Gb  
+- Image ID: `sha256:de84e9adf03c169a1f98474a23d53f64488f9850d25b565fa8ea5ebf62e62ec3`
+- Created: `2021-06-18T01:39:13.664924331Z`
+- Virtual Size: ~ 1.13 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/ros_entrypoint.sh"]`
@@ -118,12 +118,12 @@ $ apt-get source -qq --print-uris apr=1.5.2-3
 'http://archive.ubuntu.com/ubuntu/pool/main/a/apr/apr_1.5.2-3.debian.tar.xz' apr_1.5.2-3.debian.tar.xz 18572 SHA256:442ffb9a7225cf405fe7a2b4a4624543fcb93e6f14cccf22acd57916cfa8348d
 ```
 
-### `dpkg` source package: `apt=1.2.32ubuntu0.2`
+### `dpkg` source package: `apt=1.2.35`
 
 Binary Packages:
 
-- `apt=1.2.32ubuntu0.2`
-- `libapt-pkg5.0:amd64=1.2.32ubuntu0.2`
+- `apt=1.2.35`
+- `libapt-pkg5.0:amd64=1.2.35`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg5.0/copyright`)
 
@@ -133,9 +133,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apt=1.2.32ubuntu0.2
-'http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.32ubuntu0.2.dsc' apt_1.2.32ubuntu0.2.dsc 2526 SHA512:c91eba6c9405512c3e53dc1808c9ea17627a077354d2bd571ee37f4ae6ded08a4ee4f28ea75d2e64d76d84197f5479f4fd9522f98e61774679e904d144c9b429
-'http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.32ubuntu0.2.tar.xz' apt_1.2.32ubuntu0.2.tar.xz 2099548 SHA512:7145c708f5c42b09b06d208ef352f157040548cfc4228d22148078d55beac06556198fede666ef6753feea1c6fa6a21ebf960510f4773900ba95edcfa83f62e6
+$ apt-get source -qq --print-uris apt=1.2.35
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.35.dsc' apt_1.2.35.dsc 2548 SHA512:e7e220d4b7017c8772021583731296bb9a2c5a84f911b94e9c8195b84e6e36d0d5571b120e298838845c44911ced5fa93ab7eeb1e4c16fdac8754cb515ce9492
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.2.35.tar.xz' apt_1.2.35.tar.xz 2095904 SHA512:4d34d4f386eadcdc6bb16befbd752d18c0a8e62b69f3e49659ee051eb58579477b2c708df2507f917294e650384b63a37ac6432b82d93205ce0f26f6b772c32f
 ```
 
 ### `dpkg` source package: `atk1.0=2.18.0-1`
@@ -1312,31 +1312,17 @@ $ apt-get source -qq --print-uris glib2.0=2.48.2-0ubuntu4.8
 'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.8.debian.tar.xz' glib2.0_2.48.2-0ubuntu4.8.debian.tar.xz 95588 SHA512:c74afa24a478ee21c4a2325878b925119f116556991d79705b70a6d266ed87d3aeb908554bc6337433a42d44715da8bece89b3f70eb3384074c031739b4c23c5
 ```
 
-### `dpkg` source package: `glibc=2.23-0ubuntu11.2`
-
-Binary Packages:
-
-- `libc-bin=2.23-0ubuntu11.2`
-- `multiarch-support=2.23-0ubuntu11.2`
-
-Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/multiarch-support/copyright`)
-
-- `GPL-2`
-- `LGPL-2.1`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-
 ### `dpkg` source package: `glibc=2.23-0ubuntu11.3`
 
 Binary Packages:
 
+- `libc-bin=2.23-0ubuntu11.3`
 - `libc-dev-bin=2.23-0ubuntu11.3`
 - `libc6:amd64=2.23-0ubuntu11.3`
 - `libc6-dev:amd64=2.23-0ubuntu11.3`
+- `multiarch-support=2.23-0ubuntu11.3`
 
-Licenses: (parsed from: `/usr/share/doc/libc-dev-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/libc6-dev/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/libc-dev-bin/copyright`, `/usr/share/doc/libc6/copyright`, `/usr/share/doc/libc6-dev/copyright`, `/usr/share/doc/multiarch-support/copyright`)
 
 - `GPL-2`
 - `LGPL-2.1`
