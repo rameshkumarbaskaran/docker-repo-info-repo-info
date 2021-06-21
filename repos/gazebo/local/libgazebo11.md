@@ -2378,14 +2378,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`, `/us
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.3.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.3.0-1~focal.dsc' ignition-fuel-tools4_4.3.0-1~focal.dsc 1406 SHA256:b51219d69772a25f34ec9ed31b8dac5969906cc2536a33a823a67504f4174baa
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.3.0.orig.tar.bz2' ignition-fuel-tools4_4.3.0.orig.tar.bz2 360656 SHA256:9a54bc749a6dc92909107c2a2c382d9e8cfd32ce005165047c3e9e4445d22d01
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.3.0-1~focal.debian.tar.xz' ignition-fuel-tools4_4.3.0-1~focal.debian.tar.xz 1700 SHA256:a3ec20272a316edd1faf960afc883cc15ea90b22e16062c52ee8badb78f1b913
-```
 
 ### `dpkg` source package: `ignition-math6=6.8.0-1~focal`
 
@@ -2466,14 +2461,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-transport8/copyright`, `/usr
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-transport8=8.2.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.2.0-1~focal.dsc' ignition-transport8_8.2.0-1~focal.dsc 1769 SHA256:ef7e103991dffae21b34129c57666b8c59cd43fad4fd313282d770faaa2afeaa
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.2.0.orig.tar.bz2' ignition-transport8_8.2.0.orig.tar.bz2 561895 SHA256:cff732a797ea08fdb4834331bea14ae50d1cbdd63efae613a475bc42f32e29b3
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-transport8/ignition-transport8_8.2.0-1~focal.debian.tar.xz' ignition-transport8_8.2.0-1~focal.debian.tar.xz 3052 SHA256:a61e74f22fcc2ccdc86b9c7212cc15ef5e92ad1834d365571de08331c525983a
-```
 
 ### `dpkg` source package: `ilmbase=2.3.0-6build1`
 
@@ -5720,15 +5710,9 @@ Licenses: (parsed from: `/usr/share/doc/libhogweed5/copyright`, `/usr/share/doc/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nettle=3.5.1+really3.5.1-2ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.5.1+really3.5.1-2ubuntu0.1.dsc' nettle_3.5.1+really3.5.1-2ubuntu0.1.dsc 2490 SHA512:0b14d05186f6ebf151823a29d85b57a2defc5379b6bd0531750fc67babb3e09e8bcffc3f76aff215d9cfe9e2cdb43db75d1eb26f1ab9ad8f6860014dfdb7202a
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.5.1+really3.5.1.orig.tar.gz' nettle_3.5.1+really3.5.1.orig.tar.gz 1989593 SHA512:f738121b9091cbe79435fb5d46b45cf6f10912320c233829356908127bab1cac6946ca56e022a832380c44f2c10f21d2feef64cb0f4f41e3da4a681dc0131784
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.5.1+really3.5.1.orig.tar.gz.asc' nettle_3.5.1+really3.5.1.orig.tar.gz.asc 573 SHA512:d8921622f2165fb4a05e7e75f75d82c0eabb816f265bae3f3267def20d81386b1da1a29ebfc52bbe26875b94b2050dd5493119d0efcb5143bc21e2f69b8449dd
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.5.1+really3.5.1-2ubuntu0.1.debian.tar.xz' nettle_3.5.1+really3.5.1-2ubuntu0.1.debian.tar.xz 24048 SHA512:6cf14c87f41916f1d0f6c85fde808dfe4c55c8f89f98e01b905149592c65f7d5d632a61991f2eb685e30e4d3301c6a22f7cb7f436687d92e2cfe4ff38a7889e2
-```
 
 ### `dpkg` source package: `nghttp2=1.40.0-1build1`
 
@@ -6525,14 +6509,9 @@ Licenses: (parsed from: `/usr/share/doc/libprocps8/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:3.3.16-1ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16-1ubuntu2.1.dsc' procps_3.3.16-1ubuntu2.1.dsc 2242 SHA512:2e1deabf2341a2df75571712153dcea1d3c8fd676ff78714be3878e6aec5acd538624b66f68678a7b9018d15f763a8612b1d3ea7aeeeb26971fe109db2a0eb5e
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16.orig.tar.xz' procps_3.3.16.orig.tar.xz 621892 SHA512:38db4f72fe40c2f027b23b18bbc8c29cfcdf6bcdb029199fe4bebede153943aa884157f56e792c399f9a4949cc514687500bb99a75a5e7ad7b9e878f52090304
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16-1ubuntu2.1.debian.tar.xz' procps_3.3.16-1ubuntu2.1.debian.tar.xz 33700 SHA512:cc2c5a5278571784ec66f72948b88f06983ec3a53f7d7314492023ef166ff4c31c914faea849dfdb8a0786c65027773ec538eec06018ae750b7039876bdf9e9a
-```
 
 ### `dpkg` source package: `proj=6.3.1-1`
 
@@ -6610,14 +6589,9 @@ Licenses: (parsed from: `/usr/share/doc/libpulse0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pulseaudio=1:13.99.1-1ubuntu3.10
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.10.dsc' pulseaudio_13.99.1-1ubuntu3.10.dsc 3863 SHA512:823aa4d5e225aa0069e06cf4ada1af4ba3e02c3c03d317c6674da77fde590384cc39ae7fb834401ca59e9f2a2ab1e40a2786287b6173c42356a5e1a38a216182
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1.orig.tar.xz' pulseaudio_13.99.1.orig.tar.xz 1955840 SHA512:426530b6b9dd94dcc848067376857faae42e86878a82784c5bafa615a68dcc7e22702e0cb5835f91160f19fc9934fe3d53b7d387e3f42b6595fa934b172fe2aa
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.10.debian.tar.xz' pulseaudio_13.99.1-1ubuntu3.10.debian.tar.xz 152856 SHA512:124b21cfe52be02867a9d3b9673b92cda53ca3bc11f4502cb92e8750ee0d6d58b5d40bf69c5033a7b3c56fa5b7a0eedac6dd2185bd57e045c535b01a4db8ceca
-```
 
 ### `dpkg` source package: `python3-defaults=3.8.2-0ubuntu2`
 
@@ -7567,14 +7541,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.6
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.6.dsc' systemd_245.4-4ubuntu3.6.dsc 5291 SHA512:4a864ad8f850ecf4384322a184447d6e0ee52f35202f12b2166156061c48e196bf2aa9203473bfab5d22200ae3bfb3c95b600c6ef8604ca9202a51bce950471d
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.6.debian.tar.xz' systemd_245.4-4ubuntu3.6.debian.tar.xz 238468 SHA512:73b87319e61f1c598e47feebf8cdfc58f112982f3d6e574c36ba0c67c31e00138266567083bfd97e8020c536d378623c9345529a1936cbf5deafafbc73f7bf7c
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 

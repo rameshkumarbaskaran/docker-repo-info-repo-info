@@ -1699,14 +1699,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-fuel-tools4/copyright`)
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-fuel-tools4=4.3.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.3.0-1~bionic.dsc' ignition-fuel-tools4_4.3.0-1~bionic.dsc 1410 SHA256:e208afbc13690b7114ae0bec12edb60356196b6bb59ef81569f5f967f6040c28
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.3.0.orig.tar.bz2' ignition-fuel-tools4_4.3.0.orig.tar.bz2 360656 SHA256:9a54bc749a6dc92909107c2a2c382d9e8cfd32ce005165047c3e9e4445d22d01
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-fuel-tools4/ignition-fuel-tools4_4.3.0-1~bionic.debian.tar.xz' ignition-fuel-tools4_4.3.0-1~bionic.debian.tar.xz 1724 SHA256:5ca78f04c84db996dfbbabec41c3898b571c7809e4b8cc716cb73b5b5d32f024
-```
 
 ### `dpkg` source package: `ignition-math6=6.8.0-1~bionic`
 
@@ -3921,14 +3916,9 @@ Licenses: (parsed from: `/usr/share/doc/libxml2/copyright`)
 - `ISC`
 - `MIT-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-6.1ubuntu1.3
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-6.1ubuntu1.3.dsc' libxml2_2.9.4+dfsg1-6.1ubuntu1.3.dsc 3151 SHA512:77290cb3d711257c73e68521ded224dab4d1343a39474b6ebc849cfb90890d549a7ef475b2e3b2f6a8c46f8142b3bd3ed6aff69a13bca174f9310f6f643744a5
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA512:c921697db38b530b1a088636cb31226bbe9df8c9e9c83316ce53770f9bd2faeef360d5f526f34e00cd778150c408e8d91b99a67a5f5030a8b279961ff9299ae5
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-6.1ubuntu1.3.debian.tar.xz' libxml2_2.9.4+dfsg1-6.1ubuntu1.3.debian.tar.xz 39680 SHA512:532f5357a6ec1e2b31634166dd9ba42f6d7337a2daa743b657e2e61d325306b1857503d3e877a28417388746ecf70c4e17e9515c7709d2ccae4e1221bfa87a87
-```
 
 ### `dpkg` source package: `libxmu=2:1.1.2-2`
 
@@ -4524,15 +4514,9 @@ Licenses: (parsed from: `/usr/share/doc/libhogweed4/copyright`, `/usr/share/doc/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nettle=3.4-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.4-1ubuntu0.1.dsc' nettle_3.4-1ubuntu0.1.dsc 2353 SHA512:b005f3128cf0d678148e4e4586d8656368ce600c98734b08ea41b450bd549a6666f9fb619699d594f36889903c595a45a15c25a119375de6be36a7c29225b61c
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.4.orig.tar.gz' nettle_3.4.orig.tar.gz 1935069 SHA512:3bea3aabd2c99cc42d084a94fd6b0b5dbdb24cd6c7020271a6ee87a81a904b21b21756f590cb1afdf2e85fd1cb59e5c3651c5c4032e30204e7ea6f8801d1ea3b
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.4.orig.tar.gz.asc' nettle_3.4.orig.tar.gz.asc 1238 SHA512:0c3f4d1732bbd07447496ed1de66b33d0ea7e1b3ece9725a67bf9d2fa2ad5ce53eb3894bdc5366b184dd03fb9aafb401e38c140d44e7af1f6aeabcfa98be8b83
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.4-1ubuntu0.1.debian.tar.xz' nettle_3.4-1ubuntu0.1.debian.tar.xz 23832 SHA512:69ebe5af89b53a1f12c638f9b87ceac4bf5b4a617f1da16780dbc2b907e06e2d188509126e566faf89c4359f7e6198208b83ba0dd0a5fb234252133df40cd23b
-```
 
 ### `dpkg` source package: `nghttp2=1.30.0-1ubuntu1`
 
@@ -5785,14 +5769,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.47
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.47.dsc' systemd_237-3ubuntu10.47.dsc 5216 SHA512:7bd3c633c969fb024b1169f36f4588e9850155a651c3478abbaf93b102aa5ced9b597ecaa36ea9f754a0743cb15594934af3dc99e653ad582942b46396e746ad
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA512:15ef4b92815a6dd9a6c51672dbc00fd7cd0f08068ef0cbeaca574f68d330b28bc67ba1946f24f75ef3d9e7b63843a73eea700db54688061dbf5c9f8470394c3b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.47.debian.tar.xz' systemd_237-3ubuntu10.47.debian.tar.xz 291420 SHA512:3db203d14c3fcb9d076c2b40690c9fff9b2268d8a31d51d14f803f1021c8b926cfd6f1dda1b7a87e9698a82bf97cbf1e7b0b0ac404a4bb086a702df1f9cbbe8a
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
