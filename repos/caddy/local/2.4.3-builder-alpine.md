@@ -1,9 +1,9 @@
-# `caddy:2.4.2-builder-alpine`
+# `caddy:2.4.3-builder-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1ffebf5332b98b4bdc27235006915ab05f1240f9b09de5851ba09e8e2ef9bc57`
-- Created: `2021-06-16T23:57:12.907552738Z`
+- Image ID: `sha256:7fad83f8ee0f3154c5bad03f261d70336a93553d888826d442e1699239d7afbc`
+- Created: `2021-06-24T19:19:40.498065631Z`
 - Virtual Size: ~ 317.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,7 +13,7 @@
   - `GOLANG_VERSION=1.16.5`
   - `GOPATH=/go`
   - `XCADDY_VERSION=v0.1.9`
-  - `CADDY_VERSION=v2.4.2`
+  - `CADDY_VERSION=v2.4.3`
   - `XCADDY_SKIP_CLEANUP=1`
 
 ## `apk` (`.apk`-based packages)
@@ -208,16 +208,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.77.0-r1 description:
+libcurl-7.77.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.77.0-r1 webpage:
+libcurl-7.77.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.77.0-r1 installed size:
+libcurl-7.77.0-r0 installed size:
 500 KiB
 
-libcurl-7.77.0-r1 license:
+libcurl-7.77.0-r0 license:
 MIT
 
 ```
