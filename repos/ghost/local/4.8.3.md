@@ -1,9 +1,9 @@
-# `ghost:4.8.0`
+# `ghost:4.8.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6c82a196db2f44ac9b6c67dc64bf1207c7169face1086f8c4377b77c299632b5`
-- Created: `2021-06-24T02:27:53.527532298Z`
+- Image ID: `sha256:85cc1e7aa05a148ec3f7ed85c8c10843bbea242ddd320bae8fa3140ee58de685`
+- Created: `2021-06-24T19:49:32.524654764Z`
 - Virtual Size: ~ 459.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -18,7 +18,7 @@
   - `GHOST_CLI_VERSION=1.17.3`
   - `GHOST_INSTALL=/var/lib/ghost`
   - `GHOST_CONTENT=/var/lib/ghost/content`
-  - `GHOST_VERSION=4.8.0`
+  - `GHOST_VERSION=4.8.3`
 
 ## `dpkg` (`.deb`-based packages)
 
