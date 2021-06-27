@@ -1,7 +1,7 @@
 ## `hylang:latest`
 
 ```console
-$ docker pull hylang@sha256:2cd969a23b0d9b04190f496703dada8b1dbb2f982ff85528acae0d6f63819f0c
+$ docker pull hylang@sha256:5864fb683169d3aa23f359c7b560297bc2a16e3f90c0a58b2e9dc65b324808ab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -552,14 +552,14 @@ CMD ["hy"]
 ### `hylang:latest` - linux; s390x
 
 ```console
-$ docker pull hylang@sha256:78a790cc472e70220cb82465c75bf3efdd0671523985f5e80c331a5305beda40
+$ docker pull hylang@sha256:b0e13dbab6caec0f4facd6aeb7ec600af2fb7fbf8c36d98acb8dc035381d6236
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.8 MB (44772246 bytes)**  
+-	Total Size: **44.8 MB (44772536 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2a296e15b10139587ac32b9381ceceb5c8bb9dfa9f442e500597127a64aadd8d`
+-	Image ID: `sha256:648eaca4c1d0f0a0bba91d11d0923843aadaab39213f45a2dabaa22be6175638`
 -	Default Command: `["hy"]`
 
 ```dockerfile
@@ -591,11 +591,11 @@ ENV PYTHON_GET_PIP_SHA256=8890955d56a8262348470a76dc432825f61a84a54e2985a86cd520
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends wget; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
 # Wed, 23 Jun 2021 05:43:32 GMT
 CMD ["python3"]
-# Wed, 23 Jun 2021 14:29:21 GMT
+# Sun, 27 Jun 2021 15:39:46 GMT
 ENV HY_VERSION=1.0a1
-# Wed, 23 Jun 2021 14:29:25 GMT
+# Sun, 27 Jun 2021 15:39:54 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION"
-# Wed, 23 Jun 2021 14:29:26 GMT
+# Sun, 27 Jun 2021 15:39:55 GMT
 CMD ["hy"]
 ```
 
@@ -620,9 +620,9 @@ CMD ["hy"]
 		Last Modified: Wed, 23 Jun 2021 06:19:08 GMT  
 		Size: 2.6 MB (2635044 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db837e2bb81b625146ccb4991fd5ecfd9947fbeadcb67add84df9ffc9520bc98`  
-		Last Modified: Wed, 23 Jun 2021 14:31:50 GMT  
-		Size: 3.1 MB (3129179 bytes)  
+	-	`sha256:620c232e37d4c5cabb670362a673f9f958cec5987aa2fe47dce628efef56040f`  
+		Last Modified: Sun, 27 Jun 2021 15:47:08 GMT  
+		Size: 3.1 MB (3129469 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hylang:latest` - windows version 10.0.17763.1999; amd64
