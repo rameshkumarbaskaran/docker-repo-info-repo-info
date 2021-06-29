@@ -3174,14 +3174,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rosdep-modules=0.20.1-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1-1.debian.tar.xz' python-rosdep-modules_0.20.1-1.debian.tar.xz 1988 SHA512:1b0cca160d63bf8df63de9c83b833a1628591b1368f5ad653a161fee2e06a44929976a172c03fea5c33921f1b904e1294b2aa68a0a7198eed9c14c839896497d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1-1.dsc' python-rosdep-modules_0.20.1-1.dsc 973 SHA512:e425d6e1ea6781e10f044f7e7ac40056203c35114d0082d7717f341f1c3b4395b783d11767b633c316fde71cb82d270ff18b0e6661a5435264e1267256a1450a
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep-modules/python-rosdep-modules_0.20.1.orig.tar.gz' python-rosdep-modules_0.20.1.orig.tar.gz 88902 SHA512:b9d51fbf49739142da46bbbab8298484879b8d0ff50dd2b0bafa43db7b96a4e921c23110cb09b7094621ed9903c7d96ecb0c40164df4877e70996ca6ca784396
-```
 
 ### `dpkg` source package: `python-rosdistro-modules=0.8.3-1`
 
