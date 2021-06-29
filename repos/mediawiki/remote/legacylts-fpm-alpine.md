@@ -1,7 +1,7 @@
 ## `mediawiki:legacylts-fpm-alpine`
 
 ```console
-$ docker pull mediawiki@sha256:a47d1209024fd3ed561d19e7acc85286f8a9f33e87eaf4ca4499587d6c8a029c
+$ docker pull mediawiki@sha256:19c6196f681e5fba4a31aa81759bbc584d63df729e95118d118e2635ba2cf298
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -751,14 +751,14 @@ CMD ["php-fpm"]
 ### `mediawiki:legacylts-fpm-alpine` - linux; ppc64le
 
 ```console
-$ docker pull mediawiki@sha256:26c2b90186da1c076963c3ab0ff6e5bd470f096554ba449158c9bd6249a26c26
+$ docker pull mediawiki@sha256:34ede08a018acce2f7d1be3e9629e6503a732e7baedd8fa53d28b6d762641e25
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **140.4 MB (140400856 bytes)**  
+-	Total Size: **140.9 MB (140856028 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:36679dba5c93e32cca23b1c6cc0bc45c370ff22e390cac2ed55a486e7fdafd8f`
+-	Image ID: `sha256:c5393ff1864e29bd5404fa784438baea56ff1ef5baa4b76b4408fba896e7c3ae`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -815,21 +815,21 @@ STOPSIGNAL SIGQUIT
 EXPOSE 9000
 # Thu, 29 Apr 2021 19:50:57 GMT
 CMD ["php-fpm"]
-# Fri, 30 Apr 2021 00:17:55 GMT
+# Tue, 29 Jun 2021 17:26:04 GMT
 RUN set -eux; 		apk add --no-cache 		git 		imagemagick 		python3 	;
-# Tue, 01 Jun 2021 21:28:16 GMT
+# Tue, 29 Jun 2021 17:27:47 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		icu-dev 		oniguruma-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install APCu-5.1.20; 	docker-php-ext-enable 		apcu 	; 	rm -r /tmp/pear; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .mediawiki-phpext-rundeps $runDeps; 	apk del .build-deps
-# Tue, 01 Jun 2021 21:28:25 GMT
+# Tue, 29 Jun 2021 17:28:05 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Tue, 01 Jun 2021 21:28:37 GMT
+# Tue, 29 Jun 2021 17:28:16 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Tue, 01 Jun 2021 21:28:45 GMT
+# Tue, 29 Jun 2021 17:28:22 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.31
-# Tue, 01 Jun 2021 21:28:53 GMT
-ENV MEDIAWIKI_VERSION=1.31.14
-# Tue, 01 Jun 2021 21:29:29 GMT
-RUN set -eux; 	apk add --no-cache --virtual .fetch-deps 		bzip2 		gnupg 	; 		curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz.sig" -o mediawiki.tar.gz.sig; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 		D7D6767D135A514BEB86E9BA75682B08E8A3FEC4 		441276E9CCD15F44F6D97D18C119E1A64D70938E 		F7F780D82EBFB8A56556E7EE82403E59F9F8CD79 		1D98867E82982C8FE0ABC25F9B69B3109D3BB7B0 	; 	gpg --batch --verify mediawiki.tar.gz.sig mediawiki.tar.gz; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" mediawiki.tar.gz.sig mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images; 		apk del .fetch-deps
-# Tue, 01 Jun 2021 21:29:41 GMT
+# Tue, 29 Jun 2021 17:28:29 GMT
+ENV MEDIAWIKI_VERSION=1.31.15
+# Tue, 29 Jun 2021 17:29:07 GMT
+RUN set -eux; 	apk add --no-cache --virtual .fetch-deps 		bzip2 		gnupg 	; 		curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz.sig" -o mediawiki.tar.gz.sig; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 		D7D6767D135A514BEB86E9BA75682B08E8A3FEC4 		441276E9CCD15F44F6D97D18C119E1A64D70938E 		F7F780D82EBFB8A56556E7EE82403E59F9F8CD79 		1D98867E82982C8FE0ABC25F9B69B3109D3BB7B0 	; 	gpg --batch --verify mediawiki.tar.gz.sig mediawiki.tar.gz; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	gpgconf --kill all; 	rm -r "$GNUPGHOME" mediawiki.tar.gz.sig mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images; 		apk del .fetch-deps
+# Tue, 29 Jun 2021 17:29:23 GMT
 CMD ["php-fpm"]
 ```
 
@@ -874,23 +874,23 @@ CMD ["php-fpm"]
 		Last Modified: Thu, 29 Apr 2021 20:27:36 GMT  
 		Size: 8.4 KB (8415 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a81d6281945f829604da4358bfd6669c04693c2b6044a945bac4c8bd105c2700`  
-		Last Modified: Fri, 30 Apr 2021 00:58:31 GMT  
-		Size: 54.2 MB (54213624 bytes)  
+	-	`sha256:126c06aee38e6863adf769af765455cff5507e37338eab2663066322d759dbf0`  
+		Last Modified: Tue, 29 Jun 2021 17:56:40 GMT  
+		Size: 54.3 MB (54271420 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3cc2dbb89273312c6afb660e27481991af2d05877ddef751520e11395f4db4e2`  
-		Last Modified: Tue, 01 Jun 2021 21:48:36 GMT  
-		Size: 18.0 MB (17956544 bytes)  
+	-	`sha256:0cedf844ffe628f85c21d024bea633ad9eff87ee737d5cab780ca09a0e80a54a`  
+		Last Modified: Tue, 29 Jun 2021 17:55:59 GMT  
+		Size: 18.4 MB (18354216 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1efc86ad25e5e0542dd0074f96560b8c48afafc9d6b1f371c000e5bfde4fca3e`  
-		Last Modified: Tue, 01 Jun 2021 21:48:27 GMT  
-		Size: 328.0 B  
+	-	`sha256:bea5ef99ea31fde294ae2ba588f43a6d87bac4c8bdab77213b8d4797203bf280`  
+		Last Modified: Tue, 29 Jun 2021 17:55:47 GMT  
+		Size: 329.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69b26e75ab83e5ca8a6972feb1a2b63ec47e1e6f66e1ebf06282e7471b7a2208`  
-		Last Modified: Tue, 01 Jun 2021 21:48:27 GMT  
-		Size: 168.0 B  
+	-	`sha256:4e32e9bbdf6cf952ed5c7fcd54b993d4592b477d4b19dcfa38fc948151edc2da`  
+		Last Modified: Tue, 29 Jun 2021 17:55:47 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7841b7bc4bb4aca27d8a6a77d51d48ebd4bb0fcb214cbde9ba4114f700db3a56`  
-		Last Modified: Tue, 01 Jun 2021 21:49:32 GMT  
-		Size: 35.9 MB (35884049 bytes)  
+	-	`sha256:848c0b781d1524b0efeae8b53a3ab23b5878bed841052527de6c9e4fb4fe5bdf`  
+		Last Modified: Tue, 29 Jun 2021 17:57:32 GMT  
+		Size: 35.9 MB (35883751 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
