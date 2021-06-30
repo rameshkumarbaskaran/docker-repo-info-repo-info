@@ -1,7 +1,7 @@
 ## `python:buster`
 
 ```console
-$ docker pull python@sha256:bb738a13e61033430204bc70344a87f4db911c024bb5374d71dd94646ac46d67
+$ docker pull python@sha256:4f9cf25b51a7720535a070f9e952a19524f70a5be50e5074ce8f4f5358aedd8e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18,14 +18,14 @@ $ docker pull python@sha256:bb738a13e61033430204bc70344a87f4db911c024bb5374d71dd
 ### `python:buster` - linux; amd64
 
 ```console
-$ docker pull python@sha256:5397e0aa0677c214bdbd6efecc9c8ec407e6a0f60715a7db1326e6b8c2b3fd37
+$ docker pull python@sha256:11f3ccfbb8e809246f5993be99693966ffc99e1c7b632251fde27c0ce45b35f2
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **340.2 MB (340181321 bytes)**  
+-	Total Size: **340.2 MB (340183989 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9b0d330dfd02b60939072b19a42eedf31064bc32ae642d4fca7468778421c787`
+-	Image ID: `sha256:d92f72c38f7e1d5bde109af360d3c2695b957598a4e7576f1cd42a1638976b29`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -49,21 +49,21 @@ ENV LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends 		libbluetooth-dev 		tk-dev 		uuid-dev 	&& rm -rf /var/lib/apt/lists/*
 # Wed, 23 Jun 2021 14:54:00 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Wed, 23 Jun 2021 14:54:00 GMT
-ENV PYTHON_VERSION=3.9.5
-# Wed, 23 Jun 2021 15:02:40 GMT
+# Tue, 29 Jun 2021 19:11:52 GMT
+ENV PYTHON_VERSION=3.9.6
+# Tue, 29 Jun 2021 19:19:46 GMT
 RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& python3 --version
-# Wed, 23 Jun 2021 15:02:42 GMT
+# Tue, 29 Jun 2021 19:19:48 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Tue, 29 Jun 2021 01:30:20 GMT
+# Tue, 29 Jun 2021 19:19:48 GMT
 ENV PYTHON_PIP_VERSION=21.1.3
-# Tue, 29 Jun 2021 01:30:20 GMT
+# Tue, 29 Jun 2021 19:19:48 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a1675ab6c2bd898ed82b1f58c486097f763c74a9/public/get-pip.py
-# Tue, 29 Jun 2021 01:30:20 GMT
+# Tue, 29 Jun 2021 19:19:48 GMT
 ENV PYTHON_GET_PIP_SHA256=6665659241292b2147b58922b9ffe11dda66b39d52d8a6f3aa310bc1d60ea6f7
-# Tue, 29 Jun 2021 01:30:26 GMT
+# Tue, 29 Jun 2021 19:19:55 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 29 Jun 2021 01:30:27 GMT
+# Tue, 29 Jun 2021 19:19:55 GMT
 CMD ["python3"]
 ```
 
@@ -92,30 +92,30 @@ CMD ["python3"]
 		Last Modified: Wed, 23 Jun 2021 16:30:01 GMT  
 		Size: 6.1 MB (6146063 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4cfcef19326dc8417726fb6627b63c648260288847e76ffd34ca10e74a606fb`  
-		Last Modified: Wed, 23 Jun 2021 16:30:49 GMT  
-		Size: 19.2 MB (19185312 bytes)  
+	-	`sha256:be0100d8234184959ad69b5e1d72a6da4e3763e5c661aed9e302998bf87b1555`  
+		Last Modified: Tue, 29 Jun 2021 22:01:28 GMT  
+		Size: 19.2 MB (19188016 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b51fbcb03c35e668c16ec4ebba99347e209525c623b21ac91d441bc82311f139`  
-		Last Modified: Wed, 23 Jun 2021 16:30:45 GMT  
-		Size: 233.0 B  
+	-	`sha256:055b01fdac49683d011ba30734436c4fc94fb29c985096d5953596db3273b4d5`  
+		Last Modified: Tue, 29 Jun 2021 22:01:24 GMT  
+		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6ea5759bfca9cc167aad37696c82809632ace9c390d4424c919b8e6a71e9021`  
-		Last Modified: Tue, 29 Jun 2021 02:09:45 GMT  
-		Size: 2.3 MB (2348563 bytes)  
+	-	`sha256:7e4fe414911b78dc32c784e01a83de53d10b2f4a80da3080743a636a8732b24e`  
+		Last Modified: Tue, 29 Jun 2021 22:01:25 GMT  
+		Size: 2.3 MB (2348526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:buster` - linux; arm variant v5
 
 ```console
-$ docker pull python@sha256:f7f8f709e7f75192e3a238197393a5037dd8c5644c3bc72bec177de1c2b36140
+$ docker pull python@sha256:355ca123de9cfac949f6a00186ec048c9029122257c5b20641b83b19c972093a
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **312.6 MB (312602185 bytes)**  
+-	Total Size: **312.6 MB (312612275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2b023e91b7a06e352ee2207c4a3a96a0373353c7d6ce39f8962f5915fbb80623`
+-	Image ID: `sha256:27497d689c78d188c61e19c9089658ce4c681c62e761b91b9cffe9ed2ae21dff`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -139,21 +139,21 @@ ENV LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends 		libbluetooth-dev 		tk-dev 		uuid-dev 	&& rm -rf /var/lib/apt/lists/*
 # Wed, 23 Jun 2021 20:20:59 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Wed, 23 Jun 2021 20:20:59 GMT
-ENV PYTHON_VERSION=3.9.5
-# Wed, 23 Jun 2021 20:35:03 GMT
+# Tue, 29 Jun 2021 20:17:21 GMT
+ENV PYTHON_VERSION=3.9.6
+# Tue, 29 Jun 2021 20:31:56 GMT
 RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& python3 --version
-# Wed, 23 Jun 2021 20:35:05 GMT
+# Tue, 29 Jun 2021 20:31:58 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Mon, 28 Jun 2021 21:44:49 GMT
+# Tue, 29 Jun 2021 20:31:58 GMT
 ENV PYTHON_PIP_VERSION=21.1.3
-# Mon, 28 Jun 2021 21:44:50 GMT
+# Tue, 29 Jun 2021 20:31:59 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a1675ab6c2bd898ed82b1f58c486097f763c74a9/public/get-pip.py
-# Mon, 28 Jun 2021 21:44:50 GMT
+# Tue, 29 Jun 2021 20:31:59 GMT
 ENV PYTHON_GET_PIP_SHA256=6665659241292b2147b58922b9ffe11dda66b39d52d8a6f3aa310bc1d60ea6f7
-# Mon, 28 Jun 2021 21:45:07 GMT
+# Tue, 29 Jun 2021 20:32:14 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Mon, 28 Jun 2021 21:45:07 GMT
+# Tue, 29 Jun 2021 20:32:15 GMT
 CMD ["python3"]
 ```
 
@@ -182,17 +182,17 @@ CMD ["python3"]
 		Last Modified: Wed, 23 Jun 2021 21:43:15 GMT  
 		Size: 5.8 MB (5840412 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ceac4ce3713613c91e7cea5fafd4cff4783baa18db1459390efe40849cb25e2b`  
-		Last Modified: Wed, 23 Jun 2021 21:44:02 GMT  
-		Size: 18.3 MB (18292730 bytes)  
+	-	`sha256:0e5421df314fb964bf94484f1c94fdfbf136de0b65287a76739f5030f9776ba1`  
+		Last Modified: Tue, 29 Jun 2021 23:06:06 GMT  
+		Size: 18.3 MB (18302886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6e35a199be715462dce7e2a0f74a73b1c3eee3be896da6a4ef09595cb46d0b1`  
-		Last Modified: Wed, 23 Jun 2021 21:43:49 GMT  
-		Size: 233.0 B  
+	-	`sha256:fcff05ef31b88db287af9dd556571f1580e0d556d22c1a9470a4e028e87c64ef`  
+		Last Modified: Tue, 29 Jun 2021 23:05:53 GMT  
+		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abae08d832b20d469d07d5cc1b14b0bd3109c64f6b0120f3c31f110bc8d2ff4e`  
-		Last Modified: Mon, 28 Jun 2021 21:57:49 GMT  
-		Size: 2.3 MB (2348680 bytes)  
+	-	`sha256:1863edc230ee8015a3e76f3abc3221385531369b2d0532a372a99e2919a5fcd6`  
+		Last Modified: Tue, 29 Jun 2021 23:05:55 GMT  
+		Size: 2.3 MB (2348613 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:buster` - linux; arm variant v7
@@ -288,14 +288,14 @@ CMD ["python3"]
 ### `python:buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull python@sha256:1a81b6b90134ecd0cb1bfdc528d13befa3e745e921de312399723748702b62c5
+$ docker pull python@sha256:64fdc5a0ab7ab35ca8ef8c092c9c73470bccc4e7d9f035d81e04a7da4ca8a48a
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **330.3 MB (330309404 bytes)**  
+-	Total Size: **330.3 MB (330338228 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ac4bcbee7fdbc6dad8e1ca90c7bc1fb0925c97ba535bfbdd0aa271a96575be10`
+-	Image ID: `sha256:846e04d95eb47b5ace9928c8820abe59cbce0f4179a2746a0496aa9f78d8ec55`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -319,21 +319,21 @@ ENV LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends 		libbluetooth-dev 		tk-dev 		uuid-dev 	&& rm -rf /var/lib/apt/lists/*
 # Wed, 23 Jun 2021 11:01:56 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Wed, 23 Jun 2021 11:01:56 GMT
-ENV PYTHON_VERSION=3.9.5
-# Wed, 23 Jun 2021 11:08:19 GMT
+# Tue, 29 Jun 2021 19:21:56 GMT
+ENV PYTHON_VERSION=3.9.6
+# Tue, 29 Jun 2021 19:28:05 GMT
 RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& python3 --version
-# Wed, 23 Jun 2021 11:08:19 GMT
+# Tue, 29 Jun 2021 19:28:05 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Mon, 28 Jun 2021 23:40:41 GMT
+# Tue, 29 Jun 2021 19:28:06 GMT
 ENV PYTHON_PIP_VERSION=21.1.3
-# Mon, 28 Jun 2021 23:40:42 GMT
+# Tue, 29 Jun 2021 19:28:06 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a1675ab6c2bd898ed82b1f58c486097f763c74a9/public/get-pip.py
-# Mon, 28 Jun 2021 23:40:42 GMT
+# Tue, 29 Jun 2021 19:28:06 GMT
 ENV PYTHON_GET_PIP_SHA256=6665659241292b2147b58922b9ffe11dda66b39d52d8a6f3aa310bc1d60ea6f7
-# Mon, 28 Jun 2021 23:40:54 GMT
+# Tue, 29 Jun 2021 19:28:13 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Mon, 28 Jun 2021 23:40:54 GMT
+# Tue, 29 Jun 2021 19:28:13 GMT
 CMD ["python3"]
 ```
 
@@ -362,30 +362,30 @@ CMD ["python3"]
 		Last Modified: Wed, 23 Jun 2021 12:25:41 GMT  
 		Size: 6.3 MB (6259293 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e38e8763e367ccf872c646ef1d47207ad21b79adf8ce8782859325e4e260b7c1`  
-		Last Modified: Wed, 23 Jun 2021 12:26:41 GMT  
-		Size: 18.7 MB (18660535 bytes)  
+	-	`sha256:6589fa8fc69fc4d7229107e57269beb612ef811f6e5b97a35c7b4964506b786b`  
+		Last Modified: Tue, 29 Jun 2021 21:43:00 GMT  
+		Size: 18.7 MB (18689415 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fe68246aea2d696375019890585197c48b7037c2997dc0a37daa104776d617f`  
-		Last Modified: Wed, 23 Jun 2021 12:26:36 GMT  
+	-	`sha256:e09c8ba34ba8ec5ce45ec8fa6f9d4a02f92dd55bfc846869f319466c1cec3902`  
+		Last Modified: Tue, 29 Jun 2021 21:42:56 GMT  
 		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c850cb7ddbe3455e599f22750ea918a515186cd362547a67f4929b89806e21d9`  
-		Last Modified: Tue, 29 Jun 2021 00:19:19 GMT  
-		Size: 2.3 MB (2348590 bytes)  
+	-	`sha256:8940c1a2c5b40a6a7a0bc84e9ac95d44d2cebdfaea63c38bba7cc51c367832cc`  
+		Last Modified: Tue, 29 Jun 2021 21:42:57 GMT  
+		Size: 2.3 MB (2348534 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:buster` - linux; 386
 
 ```console
-$ docker pull python@sha256:255d160bc1d086995666aa15b6d4ab007d124ea56f1604cf8c8e0535934c28ef
+$ docker pull python@sha256:2badbd11339c877f5e0a78e68721e99b71fc45b15784b4028cf0b40e0c307faf
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **349.2 MB (349242803 bytes)**  
+-	Total Size: **349.3 MB (349254327 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:25e33da4244ca4ae414aa5ce35e33c56623313fece10b57687d4b048e9f58f02`
+-	Image ID: `sha256:fc132ab8e6f5d935c7d440dfa6cfc9ee846db4966eeda2afa85b7acbb4e677ed`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -409,21 +409,21 @@ ENV LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends 		libbluetooth-dev 		tk-dev 		uuid-dev 	&& rm -rf /var/lib/apt/lists/*
 # Wed, 23 Jun 2021 14:43:46 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Wed, 23 Jun 2021 14:43:46 GMT
-ENV PYTHON_VERSION=3.9.5
-# Wed, 23 Jun 2021 14:55:33 GMT
+# Tue, 29 Jun 2021 19:28:08 GMT
+ENV PYTHON_VERSION=3.9.6
+# Tue, 29 Jun 2021 19:42:06 GMT
 RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& python3 --version
-# Wed, 23 Jun 2021 14:55:35 GMT
+# Tue, 29 Jun 2021 19:42:08 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Tue, 29 Jun 2021 02:27:24 GMT
+# Tue, 29 Jun 2021 19:42:08 GMT
 ENV PYTHON_PIP_VERSION=21.1.3
-# Tue, 29 Jun 2021 02:27:24 GMT
+# Tue, 29 Jun 2021 19:42:08 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a1675ab6c2bd898ed82b1f58c486097f763c74a9/public/get-pip.py
-# Tue, 29 Jun 2021 02:27:24 GMT
+# Tue, 29 Jun 2021 19:42:08 GMT
 ENV PYTHON_GET_PIP_SHA256=6665659241292b2147b58922b9ffe11dda66b39d52d8a6f3aa310bc1d60ea6f7
-# Tue, 29 Jun 2021 02:27:35 GMT
+# Tue, 29 Jun 2021 19:42:16 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 29 Jun 2021 02:27:36 GMT
+# Tue, 29 Jun 2021 19:42:16 GMT
 CMD ["python3"]
 ```
 
@@ -452,30 +452,30 @@ CMD ["python3"]
 		Last Modified: Wed, 23 Jun 2021 16:51:30 GMT  
 		Size: 6.5 MB (6490170 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ad858678370af686335e27debb0ecf89a5f763314fd785b7e9016ad5d6addfe`  
-		Last Modified: Wed, 23 Jun 2021 16:52:29 GMT  
-		Size: 18.5 MB (18488375 bytes)  
+	-	`sha256:d898b2c14b7188b65c6138cabc218ca37755fbfe41f4c8f314ee0cc88f1ad6ba`  
+		Last Modified: Tue, 29 Jun 2021 22:56:45 GMT  
+		Size: 18.5 MB (18499977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab9093bf2c090a05ad2335f8e3149825706ab3686df5ac16aa7c934f2c26274c`  
-		Last Modified: Wed, 23 Jun 2021 16:52:25 GMT  
-		Size: 234.0 B  
+	-	`sha256:117577069fdceb88d1ad23c083981d81f5ada84604182c8f3fde54cacea8f3db`  
+		Last Modified: Tue, 29 Jun 2021 22:56:39 GMT  
+		Size: 233.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44bd5e36ea15465acc0360a82ed592a3d9cc9cb7a09c65e2bcb514018098d8a7`  
-		Last Modified: Tue, 29 Jun 2021 03:12:10 GMT  
-		Size: 2.3 MB (2348645 bytes)  
+	-	`sha256:c752f7785a47b76ef531c3ac4d3a2d0ddb2eddffac9f677344d5bbfb95f1e53b`  
+		Last Modified: Tue, 29 Jun 2021 22:56:42 GMT  
+		Size: 2.3 MB (2348568 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:buster` - linux; mips64le
 
 ```console
-$ docker pull python@sha256:c35516a36a570b34f53fd0bf73b86de8fcd1be96ed5b11fab53ebb183c7594ba
+$ docker pull python@sha256:416aa687150a968f04239a3447fdfd28f6a08edd1629f5dd20ec57b0b1d9bafa
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **324.7 MB (324721864 bytes)**  
+-	Total Size: **324.7 MB (324718923 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8e65c748ca8063473e962958a0b9d29e16c760b49acac63c034286b3d03dc5ce`
+-	Image ID: `sha256:677e6b49cc1dc86dba8b506e71d51a6260b8e5481cbfc32aa2d6fe6a062a9614`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -499,21 +499,21 @@ ENV LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends 		libbluetooth-dev 		tk-dev 		uuid-dev 	&& rm -rf /var/lib/apt/lists/*
 # Wed, 23 Jun 2021 11:24:07 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Wed, 23 Jun 2021 11:24:07 GMT
-ENV PYTHON_VERSION=3.9.5
-# Wed, 23 Jun 2021 12:05:11 GMT
+# Tue, 29 Jun 2021 19:48:40 GMT
+ENV PYTHON_VERSION=3.9.6
+# Tue, 29 Jun 2021 20:29:58 GMT
 RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& python3 --version
-# Wed, 23 Jun 2021 12:05:13 GMT
+# Tue, 29 Jun 2021 20:30:00 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Tue, 29 Jun 2021 00:01:42 GMT
+# Tue, 29 Jun 2021 20:30:01 GMT
 ENV PYTHON_PIP_VERSION=21.1.3
-# Tue, 29 Jun 2021 00:01:43 GMT
+# Tue, 29 Jun 2021 20:30:01 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a1675ab6c2bd898ed82b1f58c486097f763c74a9/public/get-pip.py
-# Tue, 29 Jun 2021 00:01:43 GMT
+# Tue, 29 Jun 2021 20:30:01 GMT
 ENV PYTHON_GET_PIP_SHA256=6665659241292b2147b58922b9ffe11dda66b39d52d8a6f3aa310bc1d60ea6f7
-# Tue, 29 Jun 2021 00:02:07 GMT
+# Tue, 29 Jun 2021 20:30:25 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 29 Jun 2021 00:02:07 GMT
+# Tue, 29 Jun 2021 20:30:25 GMT
 CMD ["python3"]
 ```
 
@@ -542,30 +542,30 @@ CMD ["python3"]
 		Last Modified: Wed, 23 Jun 2021 16:30:21 GMT  
 		Size: 6.5 MB (6455277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad6325988c24231638f4e62ead15b2b0f65f21e9f41c21e71f7457bc16b15e2d`  
-		Last Modified: Wed, 23 Jun 2021 16:31:29 GMT  
-		Size: 18.8 MB (18813854 bytes)  
+	-	`sha256:50493effd2d3b591419819686f8937aa7cf7d2aa460a62f6449eff64e3bb40f9`  
+		Last Modified: Wed, 30 Jun 2021 00:55:16 GMT  
+		Size: 18.8 MB (18810910 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e9d3d52cdf650abfe3d4adb3a95ab3f4d31b68a36d59d312e7d07ce4ddc361f`  
-		Last Modified: Wed, 23 Jun 2021 16:31:15 GMT  
-		Size: 233.0 B  
+	-	`sha256:0e800673d474eee6541f8c3bf21b01729665e267222eba0a0c65f96e0ae6128f`  
+		Last Modified: Wed, 30 Jun 2021 00:55:00 GMT  
+		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e464d98258c8d7e437707df0e795b90ac45ee246c73494227185027f9c8d6415`  
-		Last Modified: Tue, 29 Jun 2021 00:08:26 GMT  
-		Size: 2.3 MB (2348454 bytes)  
+	-	`sha256:e284c67a02d13309409a55a97438556397c12eb62d8dc8afd6302fbdb8f81cfa`  
+		Last Modified: Wed, 30 Jun 2021 00:55:02 GMT  
+		Size: 2.3 MB (2348456 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:buster` - linux; ppc64le
 
 ```console
-$ docker pull python@sha256:b918612a06c8eb82579e72f4946c8e390bb8d947a6dde0182e29c4dda066408a
+$ docker pull python@sha256:27c218276a999911d6ee8bc8122d66152bf697a651ec64330ceefcbee6694ae6
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **362.9 MB (362866875 bytes)**  
+-	Total Size: **362.9 MB (362888038 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3fcfc237e3b8d98d747d4bc00fd984ab01fc57eb412626362d1206bc771ec671`
+-	Image ID: `sha256:8e3ec9db99614085ba53cf58ab0ccbe185145bd354136d51f52250e8ed949119`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -589,21 +589,21 @@ ENV LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends 		libbluetooth-dev 		tk-dev 		uuid-dev 	&& rm -rf /var/lib/apt/lists/*
 # Sun, 27 Jun 2021 05:29:30 GMT
 ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
-# Sun, 27 Jun 2021 05:29:33 GMT
-ENV PYTHON_VERSION=3.9.5
-# Sun, 27 Jun 2021 05:38:56 GMT
+# Tue, 29 Jun 2021 18:18:49 GMT
+ENV PYTHON_VERSION=3.9.6
+# Tue, 29 Jun 2021 18:29:27 GMT
 RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& python3 --version
-# Sun, 27 Jun 2021 05:39:07 GMT
+# Tue, 29 Jun 2021 18:29:45 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Tue, 29 Jun 2021 01:19:55 GMT
+# Tue, 29 Jun 2021 18:29:53 GMT
 ENV PYTHON_PIP_VERSION=21.1.3
-# Tue, 29 Jun 2021 01:19:59 GMT
+# Tue, 29 Jun 2021 18:29:59 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a1675ab6c2bd898ed82b1f58c486097f763c74a9/public/get-pip.py
-# Tue, 29 Jun 2021 01:20:05 GMT
+# Tue, 29 Jun 2021 18:30:03 GMT
 ENV PYTHON_GET_PIP_SHA256=6665659241292b2147b58922b9ffe11dda66b39d52d8a6f3aa310bc1d60ea6f7
-# Tue, 29 Jun 2021 01:20:42 GMT
+# Tue, 29 Jun 2021 18:30:32 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Tue, 29 Jun 2021 01:20:48 GMT
+# Tue, 29 Jun 2021 18:30:35 GMT
 CMD ["python3"]
 ```
 
@@ -632,17 +632,17 @@ CMD ["python3"]
 		Last Modified: Sun, 27 Jun 2021 09:00:53 GMT  
 		Size: 6.9 MB (6894061 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c1c6fcf8f3bca11842329e39372bcb34f5eefc25cc8ff8c564c002db4fa779d`  
-		Last Modified: Sun, 27 Jun 2021 09:02:28 GMT  
-		Size: 19.7 MB (19701017 bytes)  
+	-	`sha256:8c5805254166e3335a68a5dc7caa983ebf3304a95bcfb81f247035460fcc2cc9`  
+		Last Modified: Tue, 29 Jun 2021 22:08:00 GMT  
+		Size: 19.7 MB (19722096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afa89e9703cd1d6162a96d523c5148ab70140bea85c5165aa09e917c30f2b02a`  
-		Last Modified: Sun, 27 Jun 2021 09:02:23 GMT  
-		Size: 233.0 B  
+	-	`sha256:7cf5d7243eadc3daaa37de216c6860b8d5990e3d3425128285e72339e5f36884`  
+		Last Modified: Tue, 29 Jun 2021 22:07:56 GMT  
+		Size: 232.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3393c1aa27a223428e1bc29727930782ae9a66bc02709ba98ac5e22c652f482a`  
-		Last Modified: Tue, 29 Jun 2021 01:55:46 GMT  
-		Size: 2.3 MB (2348626 bytes)  
+	-	`sha256:e3c5c63b2d8d9372edf39cc901c1cb2885b2ef5f1c3680b892d8b624b10a741f`  
+		Last Modified: Tue, 29 Jun 2021 22:07:56 GMT  
+		Size: 2.3 MB (2348711 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:buster` - linux; s390x
