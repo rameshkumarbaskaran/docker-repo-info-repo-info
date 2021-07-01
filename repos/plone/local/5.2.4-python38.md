@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c3f4c0bb52eb1d3e56ccb268a5a1bc768a279b2cf5629987d4bcd40825abb72b`
-- Created: `2021-06-24T08:01:39.391750187Z`
-- Virtual Size: ~ 757.56 Mb  
+- Image ID: `sha256:d5c9a5ad9745e859c5b2c605244edec7efd45eafba433c50038f4fda36931250`
+- Created: `2021-06-29T23:30:54.15510134Z`
+- Virtual Size: ~ 757.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -13,10 +13,10 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.10`
-  - `PYTHON_PIP_VERSION=21.1.2`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/936e08ce004d0b2fae8952c50f7ccce1bc578ce5/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=8890955d56a8262348470a76dc432825f61a84a54e2985a86cd520f656a6e220`
+  - `PYTHON_VERSION=3.8.11`
+  - `PYTHON_PIP_VERSION=21.1.3`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/a1675ab6c2bd898ed82b1f58c486097f763c74a9/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=6665659241292b2147b58922b9ffe11dda66b39d52d8a6f3aa310bc1d60ea6f7`
   - `PIP=21.0.1`
   - `ZC_BUILDOUT=2.13.4`
   - `SETUPTOOLS=51.3.3`
