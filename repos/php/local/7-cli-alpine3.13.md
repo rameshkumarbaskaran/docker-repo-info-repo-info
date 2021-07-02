@@ -1,10 +1,10 @@
-# `php:7.4.20-cli-alpine3.13`
+# `php:7.4.21-cli-alpine3.13`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d5b8f943bf0b66d9ca82bf000810f6bbb5d1169dcd55675a59bb2948559e8763`
-- Created: `2021-06-28T22:32:14.577687312Z`
-- Virtual Size: ~ 83.38 Mb  
+- Image ID: `sha256:714551685bf88e627526233f343d020ce0ad20a7fd8f1dcf468784bd0da33f51`
+- Created: `2021-07-01T20:04:13.29773666Z`
+- Virtual Size: ~ 83.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.20`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.20.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.20.tar.xz.asc`
-  - `PHP_SHA256=1fa46ca6790d780bf2cb48961df65f0ca3640c4533f0bca743cd61b71cb66335`
+  - `PHP_VERSION=7.4.21`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.21.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.21.tar.xz.asc`
+  - `PHP_SHA256=cf43384a7806241bc2ff22022619baa4abb9710f12ec1656d0173de992e32a90`
 
 ## `apk` (`.apk`-based packages)
 
