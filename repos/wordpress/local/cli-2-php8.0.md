@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:06d1be307ef4cc5c6f61ab5f4a428faec8761e4fd5a78cf36afb40ee7df687ad`
-- Created: `2021-06-29T05:17:25.594152832Z`
-- Virtual Size: ~ 128.61 Mb  
+- Image ID: `sha256:a0afbbe88d52535772f3811e22b8994e17ce04b1f5797bbb6fb1e0b0473c320e`
+- Created: `2021-07-02T02:19:39.300848228Z`
+- Virtual Size: ~ 139.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.7`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.7.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.7.tar.xz.asc`
-  - `PHP_SHA256=d5fc2e4fc780a32404d88c360e3e0009bc725d936459668e9c2ac992f2d83654`
+  - `PHP_VERSION=8.0.8`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.8.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.8.tar.xz.asc`
+  - `PHP_SHA256=dc1668d324232dec1d05175ec752dade92d29bb3004275118bc3f7fc7cbfbb1c`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.5.0`
   - `WORDPRESS_CLI_SHA512=08dd9035fda1d529807380d5b757839e2809e289eb1a698fe33e7e21a1431d3f77c551c2b2db5adc55083d5075ea4137407994111890f765e790a97e6d9ca7af`
@@ -197,6 +197,40 @@ MIT
 
 ```
 
+### `apk` package: `expat`
+
+```console
+expat-2.4.1-r0 description:
+XML Parser library written in C
+
+expat-2.4.1-r0 webpage:
+http://www.libexpat.org/
+
+expat-2.4.1-r0 installed size:
+188 KiB
+
+expat-2.4.1-r0 license:
+MIT
+
+```
+
+### `apk` package: `fontconfig`
+
+```console
+fontconfig-2.13.1-r4 description:
+Library for configuring and customizing font access
+
+fontconfig-2.13.1-r4 webpage:
+https://www.freedesktop.org/wiki/Software/fontconfig
+
+fontconfig-2.13.1-r4 installed size:
+632 KiB
+
+fontconfig-2.13.1-r4 license:
+MIT
+
+```
+
 ### `apk` package: `freetype`
 
 ```console
@@ -211,6 +245,40 @@ freetype-2.10.4-r1 installed size:
 
 freetype-2.10.4-r1 license:
 FTL GPL-2.0-or-later
+
+```
+
+### `apk` package: `imagemagick-libs`
+
+```console
+imagemagick-libs-7.0.11.13-r0 description:
+Collection of tools and libraries for many image formats (libraries)
+
+imagemagick-libs-7.0.11.13-r0 webpage:
+https://imagemagick.org/
+
+imagemagick-libs-7.0.11.13-r0 installed size:
+3252 KiB
+
+imagemagick-libs-7.0.11.13-r0 license:
+ImageMagick
+
+```
+
+### `apk` package: `lcms2`
+
+```console
+lcms2-2.12-r1 description:
+Color Management Engine
+
+lcms2-2.12-r1 webpage:
+http://www.littlecms.com
+
+lcms2-2.12-r1 installed size:
+344 KiB
+
+lcms2-2.12-r1 license:
+MIT GPL-3.0-only
 
 ```
 
@@ -245,6 +313,23 @@ libacl-2.2.53-r0 installed size:
 
 libacl-2.2.53-r0 license:
 LGPL-2.1-or-later AND GPL-2.0-or-later
+
+```
+
+### `apk` package: `libbsd`
+
+```console
+libbsd-0.11.3-r0 description:
+commonly-used BSD functions not implemented by all libcs
+
+libbsd-0.11.3-r0 webpage:
+https://libbsd.freedesktop.org/
+
+libbsd-0.11.3-r0 installed size:
+80 KiB
+
+libbsd-0.11.3-r0 license:
+BSD
 
 ```
 
@@ -350,6 +435,23 @@ GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
+### `apk` package: `libgomp`
+
+```console
+libgomp-10.3.1_git20210424-r2 description:
+GCC shared-memory parallel programming API library
+
+libgomp-10.3.1_git20210424-r2 webpage:
+https://gcc.gnu.org
+
+libgomp-10.3.1_git20210424-r2 installed size:
+264 KiB
+
+libgomp-10.3.1_git20210424-r2 license:
+GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
 ### `apk` package: `libjpeg-turbo`
 
 ```console
@@ -364,6 +466,40 @@ libjpeg-turbo-2.1.0-r0 installed size:
 
 libjpeg-turbo-2.1.0-r0 license:
 BSD-3-Clause IJG Zlib
+
+```
+
+### `apk` package: `libltdl`
+
+```console
+libltdl-2.4.6-r7 description:
+Runtime libraries for GNU Libtool Dynamic Module Loader
+
+libltdl-2.4.6-r7 webpage:
+https://www.gnu.org/software/libtool
+
+libltdl-2.4.6-r7 installed size:
+52 KiB
+
+libltdl-2.4.6-r7 license:
+LGPL-2.0+
+
+```
+
+### `apk` package: `libmd`
+
+```console
+libmd-1.0.3-r0 description:
+Message Digest functions from BSD systems
+
+libmd-1.0.3-r0 webpage:
+https://www.hadrons.org/software/libmd/
+
+libmd-1.0.3-r0 installed size:
+56 KiB
+
+libmd-1.0.3-r0 license:
+Public Domain
 
 ```
 
@@ -449,6 +585,108 @@ libstdc++-10.3.1_git20210424-r2 installed size:
 
 libstdc++-10.3.1_git20210424-r2 license:
 GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
+### `apk` package: `libuuid`
+
+```console
+libuuid-2.37-r0 description:
+DCE compatible Universally Unique Identifier library
+
+libuuid-2.37-r0 webpage:
+https://git.kernel.org/cgit/utils/util-linux/util-linux.git
+
+libuuid-2.37-r0 installed size:
+40 KiB
+
+libuuid-2.37-r0 license:
+GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
+
+```
+
+### `apk` package: `libx11`
+
+```console
+libx11-1.7.2-r0 description:
+X11 client-side library
+
+libx11-1.7.2-r0 webpage:
+http://xorg.freedesktop.org/
+
+libx11-1.7.2-r0 installed size:
+3240 KiB
+
+libx11-1.7.2-r0 license:
+custom:XFREE86
+
+```
+
+### `apk` package: `libxau`
+
+```console
+libxau-1.0.9-r0 description:
+X11 authorisation library
+
+libxau-1.0.9-r0 webpage:
+http://xorg.freedesktop.org/
+
+libxau-1.0.9-r0 installed size:
+28 KiB
+
+libxau-1.0.9-r0 license:
+MIT
+
+```
+
+### `apk` package: `libxcb`
+
+```console
+libxcb-1.14-r2 description:
+X11 client-side library
+
+libxcb-1.14-r2 webpage:
+https://xcb.freedesktop.org
+
+libxcb-1.14-r2 installed size:
+996 KiB
+
+libxcb-1.14-r2 license:
+MIT
+
+```
+
+### `apk` package: `libxdmcp`
+
+```console
+libxdmcp-1.1.3-r0 description:
+X11 Display Manager Control Protocol library
+
+libxdmcp-1.1.3-r0 webpage:
+http://xorg.freedesktop.org/
+
+libxdmcp-1.1.3-r0 installed size:
+40 KiB
+
+libxdmcp-1.1.3-r0 license:
+MIT
+
+```
+
+### `apk` package: `libxext`
+
+```console
+libxext-1.3.4-r0 description:
+X11 miscellaneous extensions library
+
+libxext-1.3.4-r0 webpage:
+http://xorg.freedesktop.org/
+
+libxext-1.3.4-r0 installed size:
+84 KiB
+
+libxext-1.3.4-r0 license:
+MIT
 
 ```
 

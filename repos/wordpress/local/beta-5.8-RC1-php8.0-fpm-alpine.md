@@ -1,10 +1,10 @@
-# `wordpress:beta-5.8-beta4-fpm-alpine`
+# `wordpress:beta-5.8-RC1-php8.0-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f1f980212401e37d9cc3a5f2bc3d3c87371b90d102b4e2b006cc251300830668`
-- Created: `2021-06-29T05:18:00.211377133Z`
-- Virtual Size: ~ 259.52 Mb  
+- Image ID: `sha256:408a1874a3a203af808a1959d6a2e7fb8f431d614f0f4ad3033c4595afd49ca0`
+- Created: `2021-07-02T02:21:02.708410961Z`
+- Virtual Size: ~ 261.13 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,11 +17,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.20`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.20.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.20.tar.xz.asc`
-  - `PHP_SHA256=1fa46ca6790d780bf2cb48961df65f0ca3640c4533f0bca743cd61b71cb66335`
+  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
+  - `PHP_VERSION=8.0.8`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.8.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.8.tar.xz.asc`
+  - `PHP_SHA256=dc1668d324232dec1d05175ec752dade92d29bb3004275118bc3f7fc7cbfbb1c`
 
 ## `apk` (`.apk`-based packages)
 
@@ -739,6 +739,23 @@ GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
+### `apk` package: `libgomp`
+
+```console
+libgomp-10.3.1_git20210424-r2 description:
+GCC shared-memory parallel programming API library
+
+libgomp-10.3.1_git20210424-r2 webpage:
+https://gcc.gnu.org
+
+libgomp-10.3.1_git20210424-r2 installed size:
+264 KiB
+
+libgomp-10.3.1_git20210424-r2 license:
+GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
 ### `apk` package: `libheif`
 
 ```console
@@ -1416,23 +1433,6 @@ scanelf-1.3.2-r0 installed size:
 
 scanelf-1.3.2-r0 license:
 GPL-2.0-only
-
-```
-
-### `apk` package: `sed`
-
-```console
-sed-4.8-r0 description:
-GNU stream editor
-
-sed-4.8-r0 webpage:
-https://www.gnu.org/software/sed
-
-sed-4.8-r0 installed size:
-160 KiB
-
-sed-4.8-r0 license:
-GPL-3.0-or-later
 
 ```
 

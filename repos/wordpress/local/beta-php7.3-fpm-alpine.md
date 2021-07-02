@@ -1,10 +1,10 @@
-# `wordpress:beta-5.8-beta4-php7.3-fpm-alpine`
+# `wordpress:beta-5.8-RC1-php7.3-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:68d81329f0408e887b1ae7dec002afa0b9ad3eb5d2df4898f3b6113b556d56fb`
-- Created: `2021-06-29T05:18:27.997836486Z`
-- Virtual Size: ~ 252.73 Mb  
+- Image ID: `sha256:8ab971a167c54b79dbfb7b6f7ef7dd4be639b22c9c2853587cd636db9413d265`
+- Created: `2021-07-02T02:20:36.459689962Z`
+- Virtual Size: ~ 252.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.28`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.28.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.28.tar.xz.asc`
-  - `PHP_SHA256=a2a84dbec8c1eee3f46c5f249eaaa2ecb3f9e7a6f5d0604d2df44ff8d4904dbe`
+  - `PHP_VERSION=7.3.29`
+  - `PHP_URL=https://www.php.net/distributions/php-7.3.29.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.29.tar.xz.asc`
+  - `PHP_SHA256=7db2834511f3d86272dca3daee3f395a5a4afce359b8342aa6edad80e12eb4d0`
 
 ## `apk` (`.apk`-based packages)
 
@@ -739,6 +739,23 @@ GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
+### `apk` package: `libgomp`
+
+```console
+libgomp-10.3.1_git20210424-r2 description:
+GCC shared-memory parallel programming API library
+
+libgomp-10.3.1_git20210424-r2 webpage:
+https://gcc.gnu.org
+
+libgomp-10.3.1_git20210424-r2 installed size:
+264 KiB
+
+libgomp-10.3.1_git20210424-r2 license:
+GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
 ### `apk` package: `libheif`
 
 ```console
@@ -1399,23 +1416,6 @@ scanelf-1.3.2-r0 installed size:
 
 scanelf-1.3.2-r0 license:
 GPL-2.0-only
-
-```
-
-### `apk` package: `sed`
-
-```console
-sed-4.8-r0 description:
-GNU stream editor
-
-sed-4.8-r0 webpage:
-https://www.gnu.org/software/sed
-
-sed-4.8-r0 installed size:
-160 KiB
-
-sed-4.8-r0 license:
-GPL-3.0-or-later
 
 ```
 

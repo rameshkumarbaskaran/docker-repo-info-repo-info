@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e3f53e058d7ada20127c4d32078a9664e9f7656db260d3b31b7816a6924e8a7e`
-- Created: `2021-06-29T05:15:12.360052273Z`
-- Virtual Size: ~ 137.25 Mb  
+- Image ID: `sha256:f9144616a6d0a6c27cfe0384fd34a35fd7a5c2104897ad890518136b9236dff1`
+- Created: `2021-07-02T02:17:15.350278429Z`
+- Virtual Size: ~ 137.56 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.20`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.20.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.20.tar.xz.asc`
-  - `PHP_SHA256=1fa46ca6790d780bf2cb48961df65f0ca3640c4533f0bca743cd61b71cb66335`
+  - `PHP_VERSION=7.4.21`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.21.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.21.tar.xz.asc`
+  - `PHP_SHA256=cf43384a7806241bc2ff22022619baa4abb9710f12ec1656d0173de992e32a90`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.5.0`
   - `WORDPRESS_CLI_SHA512=08dd9035fda1d529807380d5b757839e2809e289eb1a698fe33e7e21a1431d3f77c551c2b2db5adc55083d5075ea4137407994111890f765e790a97e6d9ca7af`
@@ -431,6 +431,23 @@ libgcc-10.3.1_git20210424-r2 installed size:
 112 KiB
 
 libgcc-10.3.1_git20210424-r2 license:
+GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
+### `apk` package: `libgomp`
+
+```console
+libgomp-10.3.1_git20210424-r2 description:
+GCC shared-memory parallel programming API library
+
+libgomp-10.3.1_git20210424-r2 webpage:
+https://gcc.gnu.org
+
+libgomp-10.3.1_git20210424-r2 installed size:
+264 KiB
+
+libgomp-10.3.1_git20210424-r2 license:
 GPL-2.0-or-later LGPL-2.1-or-later
 
 ```

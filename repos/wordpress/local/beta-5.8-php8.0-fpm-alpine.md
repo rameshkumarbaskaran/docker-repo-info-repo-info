@@ -1,10 +1,10 @@
-# `wordpress:beta-5.8-beta4-php8.0-fpm-alpine`
+# `wordpress:beta-5.8-RC1-php8.0-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a782e9deb6940609847a6adc294c986850c83f900b730151fa3926f74498bac7`
-- Created: `2021-06-29T05:18:58.030732578Z`
-- Virtual Size: ~ 213.24 Mb  
+- Image ID: `sha256:408a1874a3a203af808a1959d6a2e7fb8f431d614f0f4ad3033c4595afd49ca0`
+- Created: `2021-07-02T02:21:02.708410961Z`
+- Virtual Size: ~ 261.13 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.7`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.7.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.7.tar.xz.asc`
-  - `PHP_SHA256=d5fc2e4fc780a32404d88c360e3e0009bc725d936459668e9c2ac992f2d83654`
+  - `PHP_VERSION=8.0.8`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.8.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.8.tar.xz.asc`
+  - `PHP_SHA256=dc1668d324232dec1d05175ec752dade92d29bb3004275118bc3f7fc7cbfbb1c`
 
 ## `apk` (`.apk`-based packages)
 
@@ -56,6 +56,23 @@ alpine-keys-2.3-r1 installed size:
 
 alpine-keys-2.3-r1 license:
 MIT
+
+```
+
+### `apk` package: `aom-libs`
+
+```console
+aom-libs-1.0.0-r3 description:
+Alliance for Open Media (AOM) AV1 codec SDK (libraries)
+
+aom-libs-1.0.0-r3 webpage:
+https://aomedia.org/
+
+aom-libs-1.0.0-r3 installed size:
+3992 KiB
+
+aom-libs-1.0.0-r3 license:
+custom
 
 ```
 
@@ -195,6 +212,40 @@ MPL-2.0 AND MIT
 
 ```
 
+### `apk` package: `cairo`
+
+```console
+cairo-1.16.0-r3 description:
+A vector graphics library
+
+cairo-1.16.0-r3 webpage:
+https://cairographics.org/
+
+cairo-1.16.0-r3 installed size:
+1136 KiB
+
+cairo-1.16.0-r3 license:
+LGPL-2.0-or-later MPL-1.1
+
+```
+
+### `apk` package: `cairo-gobject`
+
+```console
+cairo-gobject-1.16.0-r3 description:
+A vector graphics library (gobject bindings)
+
+cairo-gobject-1.16.0-r3 webpage:
+https://cairographics.org/
+
+cairo-gobject-1.16.0-r3 installed size:
+84 KiB
+
+cairo-gobject-1.16.0-r3 license:
+LGPL-2.0-or-later MPL-1.1
+
+```
+
 ### `apk` package: `cups-libs`
 
 ```console
@@ -297,6 +348,40 @@ FTL GPL-2.0-or-later
 
 ```
 
+### `apk` package: `fribidi`
+
+```console
+fribidi-1.0.10-r0 description:
+Free Implementation of the Unicode Bidirectional Algorithm
+
+fribidi-1.0.10-r0 webpage:
+https://github.com/fribidi/fribidi
+
+fribidi-1.0.10-r0 installed size:
+156 KiB
+
+fribidi-1.0.10-r0 license:
+LGPL-2.0-or-later
+
+```
+
+### `apk` package: `gdk-pixbuf`
+
+```console
+gdk-pixbuf-2.42.6-r0 description:
+GTK+ image loading library
+
+gdk-pixbuf-2.42.6-r0 webpage:
+https://wiki.gnome.org/Projects/GdkPixbuf
+
+gdk-pixbuf-2.42.6-r0 installed size:
+528 KiB
+
+gdk-pixbuf-2.42.6-r0 license:
+LGPL-2.0-or-later
+
+```
+
 ### `apk` package: `ghostscript`
 
 ```console
@@ -311,6 +396,23 @@ ghostscript-9.54.0-r0 installed size:
 
 ghostscript-9.54.0-r0 license:
 AGPL-3.0-or-later
+
+```
+
+### `apk` package: `glib`
+
+```console
+glib-2.68.2-r0 description:
+Common C routines used by Gtk+ and other libs
+
+glib-2.68.2-r0 webpage:
+https://developer.gnome.org/glib/
+
+glib-2.68.2-r0 installed size:
+3352 KiB
+
+glib-2.68.2-r0 license:
+LGPL-2.1-or-later
 
 ```
 
@@ -345,6 +447,74 @@ gnutls-3.7.1-r0 installed size:
 
 gnutls-3.7.1-r0 license:
 LGPL-2.1-or-later
+
+```
+
+### `apk` package: `graphite2`
+
+```console
+graphite2-1.3.14-r0 description:
+reimplementation of the SIL Graphite text processing engine
+
+graphite2-1.3.14-r0 webpage:
+https://graphite.sil.org/
+
+graphite2-1.3.14-r0 installed size:
+132 KiB
+
+graphite2-1.3.14-r0 license:
+LGPL-2.1-or-later OR MPL-1.1
+
+```
+
+### `apk` package: `harfbuzz`
+
+```console
+harfbuzz-2.8.1-r0 description:
+Text shaping library
+
+harfbuzz-2.8.1-r0 webpage:
+https://freedesktop.org/wiki/Software/HarfBuzz
+
+harfbuzz-2.8.1-r0 installed size:
+1352 KiB
+
+harfbuzz-2.8.1-r0 license:
+MIT
+
+```
+
+### `apk` package: `imagemagick`
+
+```console
+imagemagick-7.0.11.13-r0 description:
+Collection of tools and libraries for many image formats
+
+imagemagick-7.0.11.13-r0 webpage:
+https://imagemagick.org/
+
+imagemagick-7.0.11.13-r0 installed size:
+4560 KiB
+
+imagemagick-7.0.11.13-r0 license:
+ImageMagick
+
+```
+
+### `apk` package: `imagemagick-libs`
+
+```console
+imagemagick-libs-7.0.11.13-r0 description:
+Collection of tools and libraries for many image formats (libraries)
+
+imagemagick-libs-7.0.11.13-r0 webpage:
+https://imagemagick.org/
+
+imagemagick-libs-7.0.11.13-r0 installed size:
+3252 KiB
+
+imagemagick-libs-7.0.11.13-r0 license:
+ImageMagick
 
 ```
 
@@ -396,6 +566,40 @@ libacl-2.2.53-r0 installed size:
 
 libacl-2.2.53-r0 license:
 LGPL-2.1-or-later AND GPL-2.0-or-later
+
+```
+
+### `apk` package: `libblkid`
+
+```console
+libblkid-2.37-r0 description:
+Block device identification library from util-linux
+
+libblkid-2.37-r0 webpage:
+https://git.kernel.org/cgit/utils/util-linux/util-linux.git
+
+libblkid-2.37-r0 installed size:
+300 KiB
+
+libblkid-2.37-r0 license:
+GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
+
+```
+
+### `apk` package: `libbsd`
+
+```console
+libbsd-0.11.3-r0 description:
+commonly-used BSD functions not implemented by all libcs
+
+libbsd-0.11.3-r0 webpage:
+https://libbsd.freedesktop.org/
+
+libbsd-0.11.3-r0 installed size:
+80 KiB
+
+libbsd-0.11.3-r0 license:
+BSD
 
 ```
 
@@ -467,6 +671,23 @@ MIT
 
 ```
 
+### `apk` package: `libde265`
+
+```console
+libde265-1.0.8-r1 description:
+Open h.265 video codec implementation
+
+libde265-1.0.8-r1 webpage:
+https://github.com/strukturag/libde265
+
+libde265-1.0.8-r1 installed size:
+788 KiB
+
+libde265-1.0.8-r1 license:
+LGPL-3.0-or-later
+
+```
+
 ### `apk` package: `libedit`
 
 ```console
@@ -518,6 +739,40 @@ GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
+### `apk` package: `libgomp`
+
+```console
+libgomp-10.3.1_git20210424-r2 description:
+GCC shared-memory parallel programming API library
+
+libgomp-10.3.1_git20210424-r2 webpage:
+https://gcc.gnu.org
+
+libgomp-10.3.1_git20210424-r2 installed size:
+264 KiB
+
+libgomp-10.3.1_git20210424-r2 license:
+GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
+### `apk` package: `libheif`
+
+```console
+libheif-1.12.0-r0 description:
+ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+
+libheif-1.12.0-r0 webpage:
+https://www.libde265.org/
+
+libheif-1.12.0-r0 installed size:
+592 KiB
+
+libheif-1.12.0-r0 license:
+LGPL-3.0-or-later
+
+```
+
 ### `apk` package: `libintl`
 
 ```console
@@ -552,6 +807,57 @@ BSD-3-Clause IJG Zlib
 
 ```
 
+### `apk` package: `libltdl`
+
+```console
+libltdl-2.4.6-r7 description:
+Runtime libraries for GNU Libtool Dynamic Module Loader
+
+libltdl-2.4.6-r7 webpage:
+https://www.gnu.org/software/libtool
+
+libltdl-2.4.6-r7 installed size:
+52 KiB
+
+libltdl-2.4.6-r7 license:
+LGPL-2.0+
+
+```
+
+### `apk` package: `libmd`
+
+```console
+libmd-1.0.3-r0 description:
+Message Digest functions from BSD systems
+
+libmd-1.0.3-r0 webpage:
+https://www.hadrons.org/software/libmd/
+
+libmd-1.0.3-r0 installed size:
+56 KiB
+
+libmd-1.0.3-r0 license:
+Public Domain
+
+```
+
+### `apk` package: `libmount`
+
+```console
+libmount-2.37-r0 description:
+Block device identification library from util-linux
+
+libmount-2.37-r0 webpage:
+https://git.kernel.org/cgit/utils/util-linux/util-linux.git
+
+libmount-2.37-r0 installed size:
+336 KiB
+
+libmount-2.37-r0 license:
+GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
+
+```
+
 ### `apk` package: `libpng`
 
 ```console
@@ -583,6 +889,23 @@ libretls-3.3.3-r0 installed size:
 
 libretls-3.3.3-r0 license:
 ISC AND (BSD-3-Clause OR MIT)
+
+```
+
+### `apk` package: `librsvg`
+
+```console
+librsvg-2.50.4-r0 description:
+SAX-based renderer for SVG files into a GdkPixbuf
+
+librsvg-2.50.4-r0 webpage:
+https://wiki.gnome.org/Projects/LibRsvg
+
+librsvg-2.50.4-r0 installed size:
+10 MiB
+
+librsvg-2.50.4-r0 license:
+LGPL-2.1-or-later
 
 ```
 
@@ -705,6 +1028,108 @@ BSD-3-Clause
 
 ```
 
+### `apk` package: `libx11`
+
+```console
+libx11-1.7.2-r0 description:
+X11 client-side library
+
+libx11-1.7.2-r0 webpage:
+http://xorg.freedesktop.org/
+
+libx11-1.7.2-r0 installed size:
+3240 KiB
+
+libx11-1.7.2-r0 license:
+custom:XFREE86
+
+```
+
+### `apk` package: `libxau`
+
+```console
+libxau-1.0.9-r0 description:
+X11 authorisation library
+
+libxau-1.0.9-r0 webpage:
+http://xorg.freedesktop.org/
+
+libxau-1.0.9-r0 installed size:
+28 KiB
+
+libxau-1.0.9-r0 license:
+MIT
+
+```
+
+### `apk` package: `libxcb`
+
+```console
+libxcb-1.14-r2 description:
+X11 client-side library
+
+libxcb-1.14-r2 webpage:
+https://xcb.freedesktop.org
+
+libxcb-1.14-r2 installed size:
+996 KiB
+
+libxcb-1.14-r2 license:
+MIT
+
+```
+
+### `apk` package: `libxdmcp`
+
+```console
+libxdmcp-1.1.3-r0 description:
+X11 Display Manager Control Protocol library
+
+libxdmcp-1.1.3-r0 webpage:
+http://xorg.freedesktop.org/
+
+libxdmcp-1.1.3-r0 installed size:
+40 KiB
+
+libxdmcp-1.1.3-r0 license:
+MIT
+
+```
+
+### `apk` package: `libxext`
+
+```console
+libxext-1.3.4-r0 description:
+X11 miscellaneous extensions library
+
+libxext-1.3.4-r0 webpage:
+http://xorg.freedesktop.org/
+
+libxext-1.3.4-r0 installed size:
+84 KiB
+
+libxext-1.3.4-r0 license:
+MIT
+
+```
+
+### `apk` package: `libxft`
+
+```console
+libxft-2.3.3-r0 description:
+FreeType-based font drawing library for X
+
+libxft-2.3.3-r0 webpage:
+http://xorg.freedesktop.org/
+
+libxft-2.3.3-r0 installed size:
+92 KiB
+
+libxft-2.3.3-r0 license:
+MIT
+
+```
+
 ### `apk` package: `libxml2`
 
 ```console
@@ -719,6 +1144,23 @@ libxml2-2.9.12-r1 installed size:
 
 libxml2-2.9.12-r1 license:
 MIT
+
+```
+
+### `apk` package: `libxrender`
+
+```console
+libxrender-0.9.10-r3 description:
+X Rendering Extension client library
+
+libxrender-0.9.10-r3 webpage:
+http://xorg.freedesktop.org/
+
+libxrender-0.9.10-r3 installed size:
+56 KiB
+
+libxrender-0.9.10-r3 license:
+custom
 
 ```
 
@@ -892,6 +1334,74 @@ BSD-3-Clause
 
 ```
 
+### `apk` package: `pango`
+
+```console
+pango-1.48.5-r0 description:
+library for layout and rendering of text
+
+pango-1.48.5-r0 webpage:
+https://www.pango.org/
+
+pango-1.48.5-r0 installed size:
+584 KiB
+
+pango-1.48.5-r0 license:
+LGPL-2.1-or-later
+
+```
+
+### `apk` package: `pcre`
+
+```console
+pcre-8.44-r0 description:
+Perl-compatible regular expression library
+
+pcre-8.44-r0 webpage:
+http://pcre.sourceforge.net
+
+pcre-8.44-r0 installed size:
+392 KiB
+
+pcre-8.44-r0 license:
+BSD-3-Clause
+
+```
+
+### `apk` package: `pixman`
+
+```console
+pixman-0.40.0-r2 description:
+Low-level pixel manipulation library
+
+pixman-0.40.0-r2 webpage:
+https://gitlab.freedesktop.org/pixman
+
+pixman-0.40.0-r2 installed size:
+608 KiB
+
+pixman-0.40.0-r2 license:
+MIT
+
+```
+
+### `apk` package: `pkgconf`
+
+```console
+pkgconf-1.7.4-r0 description:
+development framework configuration tools
+
+pkgconf-1.7.4-r0 webpage:
+https://git.sr.ht/~kaniini/pkgconf
+
+pkgconf-1.7.4-r0 installed size:
+140 KiB
+
+pkgconf-1.7.4-r0 license:
+ISC
+
+```
+
 ### `apk` package: `readline`
 
 ```console
@@ -926,20 +1436,20 @@ GPL-2.0-only
 
 ```
 
-### `apk` package: `sed`
+### `apk` package: `shared-mime-info`
 
 ```console
-sed-4.8-r0 description:
-GNU stream editor
+shared-mime-info-2.1-r0 description:
+Freedesktop.org Shared MIME Info
 
-sed-4.8-r0 webpage:
-https://www.gnu.org/software/sed
+shared-mime-info-2.1-r0 webpage:
+http://freedesktop.org/Software/shared-mime-info
 
-sed-4.8-r0 installed size:
-160 KiB
+shared-mime-info-2.1-r0 installed size:
+2424 KiB
 
-sed-4.8-r0 license:
-GPL-3.0-or-later
+shared-mime-info-2.1-r0 license:
+GPL-2.0-or-later
 
 ```
 
@@ -1008,6 +1518,23 @@ tiff-4.2.0-r1 installed size:
 
 tiff-4.2.0-r1 license:
 libtiff
+
+```
+
+### `apk` package: `x265-libs`
+
+```console
+x265-libs-3.4-r0 description:
+Open Source H265/HEVC video encoder (libraries)
+
+x265-libs-3.4-r0 webpage:
+http://x265.org
+
+x265-libs-3.4-r0 installed size:
+4520 KiB
+
+x265-libs-3.4-r0 license:
+GPL-2.0-or-later
 
 ```
 

@@ -1,10 +1,10 @@
-# `wordpress:beta-5.8-beta4-php7.3-fpm-alpine`
+# `wordpress:beta-5.8-RC1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:68d81329f0408e887b1ae7dec002afa0b9ad3eb5d2df4898f3b6113b556d56fb`
-- Created: `2021-06-29T05:18:27.997836486Z`
-- Virtual Size: ~ 252.73 Mb  
+- Image ID: `sha256:6cb8b29d896e842ca3da4123a3840d1cdd75d4ab4909a5ab0fd632b39d8dba0d`
+- Created: `2021-07-02T02:20:08.094189401Z`
+- Virtual Size: ~ 259.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,11 +17,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.28`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.28.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.28.tar.xz.asc`
-  - `PHP_SHA256=a2a84dbec8c1eee3f46c5f249eaaa2ecb3f9e7a6f5d0604d2df44ff8d4904dbe`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.21`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.21.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.21.tar.xz.asc`
+  - `PHP_SHA256=cf43384a7806241bc2ff22022619baa4abb9710f12ec1656d0173de992e32a90`
 
 ## `apk` (`.apk`-based packages)
 
@@ -739,6 +739,23 @@ GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
+### `apk` package: `libgomp`
+
+```console
+libgomp-10.3.1_git20210424-r2 description:
+GCC shared-memory parallel programming API library
+
+libgomp-10.3.1_git20210424-r2 webpage:
+https://gcc.gnu.org
+
+libgomp-10.3.1_git20210424-r2 installed size:
+264 KiB
+
+libgomp-10.3.1_git20210424-r2 license:
+GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
 ### `apk` package: `libheif`
 
 ```console
@@ -1266,6 +1283,23 @@ MIT
 
 ```
 
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.7.1-r0 description:
+a regular expressions library
+
+oniguruma-6.9.7.1-r0 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.7.1-r0 installed size:
+560 KiB
+
+oniguruma-6.9.7.1-r0 license:
+BSD-2-Clause
+
+```
+
 ### `apk` package: `openssl`
 
 ```console
@@ -1399,23 +1433,6 @@ scanelf-1.3.2-r0 installed size:
 
 scanelf-1.3.2-r0 license:
 GPL-2.0-only
-
-```
-
-### `apk` package: `sed`
-
-```console
-sed-4.8-r0 description:
-GNU stream editor
-
-sed-4.8-r0 webpage:
-https://www.gnu.org/software/sed
-
-sed-4.8-r0 installed size:
-160 KiB
-
-sed-4.8-r0 license:
-GPL-3.0-or-later
 
 ```
 
