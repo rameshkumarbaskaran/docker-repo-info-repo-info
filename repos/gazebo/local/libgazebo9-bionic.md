@@ -210,14 +210,9 @@ Licenses: (parsed from: `/usr/share/doc/libavahi-client3/copyright`, `/usr/share
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris avahi=0.7-3.1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-3.1ubuntu1.2.dsc' avahi_0.7-3.1ubuntu1.2.dsc 4186 SHA512:d0877f351d2c9c7d908fce9479ebc5255169d4deb8ccdd5de76e1b381bf7fb886b96bd6fa7cfaff0be4abd5b99c328bd13b53c7c61bd36e9a4ec87207f915570
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7.orig.tar.gz' avahi_0.7.orig.tar.gz 1333400 SHA512:bae5a1e9204aca90b90e7fd223d19e809e3514d03ba5fa2da1e55bf1d72d3d3b98567f357900c36393613dc17dc98e15ff3ebf0f226f2f6b9766e592452a6ce7
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-3.1ubuntu1.2.debian.tar.xz' avahi_0.7-3.1ubuntu1.2.debian.tar.xz 35124 SHA512:372e2334c7dfa73f16ea76abddd8b26dbe1b66eeb8ee01970cb8f426cc8d61fe093914825efa93a7d000b84b92727398b5fd5692092a1cd6e9150843612f78d7
-```
 
 ### `dpkg` source package: `base-files=10.1ubuntu2.10`
 
@@ -5974,14 +5969,9 @@ Licenses: (parsed from: `/usr/share/doc/libsdformat6/copyright`, `/usr/share/doc
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sdformat6=6.3.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/s/sdformat6/sdformat6_6.3.0-1~bionic.dsc' sdformat6_6.3.0-1~bionic.dsc 1398 SHA256:a2187069b453612ddd33b77cc0047b828abc0532d401f5772f9967a6fabe51f9
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/s/sdformat6/sdformat6_6.3.0.orig.tar.bz2' sdformat6_6.3.0.orig.tar.bz2 472052 SHA256:108c687d5c3a21b5ab8154f41f99d799d7b2e7632b4cc1914eda8c902581ee7f
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/s/sdformat6/sdformat6_6.3.0-1~bionic.debian.tar.xz' sdformat6_6.3.0-1~bionic.debian.tar.xz 3336 SHA256:d5b98804a28507537911aa29e062a64fa24566bd375650c199978b38bb14093a
-```
 
 ### `dpkg` source package: `sed=4.4-2`
 

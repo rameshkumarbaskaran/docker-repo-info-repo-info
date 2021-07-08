@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:91ca42383088717681e6c9499c63fca7823d0beb212ec5d2e4a7efe566efa61d`
-- Created: `2021-06-24T19:38:03.11321876Z`
+- Image ID: `sha256:69581e33cc6a3ccc1aa0f6e60bee0db6e11c1bc2f8bfa5cf622c972ae6ce6e41`
+- Created: `2021-07-06T17:44:47.413760009Z`
 - Virtual Size: ~ 800.97 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1249,13 +1249,13 @@ $ apt-get source -qq --print-uris game-music-emu=0.6.2-1build1
 'http://archive.ubuntu.com/ubuntu/pool/universe/g/game-music-emu/game-music-emu_0.6.2-1build1.debian.tar.xz' game-music-emu_0.6.2-1build1.debian.tar.xz 4496 SHA256:e338369a1656f0ade5b014f714fd5bac196489ac937cf8c5276a005953b92aa8
 ```
 
-### `dpkg` source package: `gazebo11=11.6.0-1~focal`
+### `dpkg` source package: `gazebo11=11.7.0-1~focal`
 
 Binary Packages:
 
-- `gazebo11=11.6.0-1~focal`
-- `gazebo11-common=11.6.0-1~focal`
-- `libgazebo11:amd64=11.6.0-1~focal`
+- `gazebo11=11.7.0-1~focal`
+- `gazebo11-common=11.7.0-1~focal`
+- `libgazebo11:amd64=11.7.0-1~focal`
 
 Licenses: (parsed from: `/usr/share/doc/gazebo11/copyright`, `/usr/share/doc/gazebo11-common/copyright`, `/usr/share/doc/libgazebo11/copyright`)
 
@@ -1271,9 +1271,14 @@ Licenses: (parsed from: `/usr/share/doc/gazebo11/copyright`, `/usr/share/doc/gaz
 - `LGPL-3+`
 - `ZLIB`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gazebo11=11.7.0-1~focal
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0-1~focal.dsc' gazebo11_11.7.0-1~focal.dsc 2664 SHA256:c807a5cd7ed786dfffe29ca4f56045f8f6d78eb91ff543e76e551f22724e83e2
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0.orig.tar.bz2' gazebo11_11.7.0.orig.tar.bz2 56394312 SHA256:c3ede937e6a2130c191329df0e4080452070575b232a2d45291f429e0462a407
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0-1~focal.debian.tar.xz' gazebo11_11.7.0-1~focal.debian.tar.xz 6812 SHA256:b55b78d8e06d210a461fe6e9013eb183de70384e7d8a0df7381394c107c66f3c
+```
 
 ### `dpkg` source package: `gcc-10=10.3.0-1ubuntu1~20.04`
 

@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:619d0de594bcd38c1c1d7561195683dea4e12d9eceb285a2ad79ce46467d7756`
-- Created: `2021-06-24T19:33:30.004049312Z`
+- Image ID: `sha256:9c5145dd5b9ad2cb4786b54951dc3b65e3a64cde81db4886e8e11035a7927281`
+- Created: `2021-07-06T17:40:52.605120654Z`
 - Virtual Size: ~ 1.56 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -239,14 +239,9 @@ Licenses: (parsed from: `/usr/share/doc/libavahi-client3/copyright`, `/usr/share
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris avahi=0.7-3.1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-3.1ubuntu1.2.dsc' avahi_0.7-3.1ubuntu1.2.dsc 4186 SHA512:d0877f351d2c9c7d908fce9479ebc5255169d4deb8ccdd5de76e1b381bf7fb886b96bd6fa7cfaff0be4abd5b99c328bd13b53c7c61bd36e9a4ec87207f915570
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7.orig.tar.gz' avahi_0.7.orig.tar.gz 1333400 SHA512:bae5a1e9204aca90b90e7fd223d19e809e3514d03ba5fa2da1e55bf1d72d3d3b98567f357900c36393613dc17dc98e15ff3ebf0f226f2f6b9766e592452a6ce7
-'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-3.1ubuntu1.2.debian.tar.xz' avahi_0.7-3.1ubuntu1.2.debian.tar.xz 35124 SHA512:372e2334c7dfa73f16ea76abddd8b26dbe1b66eeb8ee01970cb8f426cc8d61fe093914825efa93a7d000b84b92727398b5fd5692092a1cd6e9150843612f78d7
-```
 
 ### `dpkg` source package: `base-files=10.1ubuntu2.10`
 
@@ -1464,15 +1459,15 @@ $ apt-get source -qq --print-uris game-music-emu=0.6.2-1
 'http://archive.ubuntu.com/ubuntu/pool/universe/g/game-music-emu/game-music-emu_0.6.2-1.debian.tar.xz' game-music-emu_0.6.2-1.debian.tar.xz 4412 SHA256:8ea69035bd72261ec85e5f0486707d448f7491733ae055040a9995cebb0ea820
 ```
 
-### `dpkg` source package: `gazebo11=11.6.0-1~bionic`
+### `dpkg` source package: `gazebo11=11.7.0-1~bionic`
 
 Binary Packages:
 
-- `gazebo11=11.6.0-1~bionic`
-- `gazebo11-common=11.6.0-1~bionic`
-- `gazebo11-plugin-base=11.6.0-1~bionic`
-- `libgazebo11:amd64=11.6.0-1~bionic`
-- `libgazebo11-dev:amd64=11.6.0-1~bionic`
+- `gazebo11=11.7.0-1~bionic`
+- `gazebo11-common=11.7.0-1~bionic`
+- `gazebo11-plugin-base=11.7.0-1~bionic`
+- `libgazebo11:amd64=11.7.0-1~bionic`
+- `libgazebo11-dev:amd64=11.7.0-1~bionic`
 
 Licenses: (parsed from: `/usr/share/doc/gazebo11/copyright`, `/usr/share/doc/gazebo11-common/copyright`, `/usr/share/doc/gazebo11-plugin-base/copyright`, `/usr/share/doc/libgazebo11/copyright`, `/usr/share/doc/libgazebo11-dev/copyright`)
 
@@ -1488,9 +1483,14 @@ Licenses: (parsed from: `/usr/share/doc/gazebo11/copyright`, `/usr/share/doc/gaz
 - `LGPL-3+`
 - `ZLIB`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gazebo11=11.7.0-1~bionic
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0-1~bionic.dsc' gazebo11_11.7.0-1~bionic.dsc 2354 SHA256:a1eaae65194120f1986b3f150b42446bf2884c4102388e1f30d4282fdb41facb
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0.orig.tar.bz2' gazebo11_11.7.0.orig.tar.bz2 56394312 SHA256:c3ede937e6a2130c191329df0e4080452070575b232a2d45291f429e0462a407
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0-1~bionic.debian.tar.xz' gazebo11_11.7.0-1~bionic.debian.tar.xz 6740 SHA256:8aa5d20d711c5945fc89c22d931573d36b26f01e793738218a48ec50f0b0ef69
+```
 
 ### `dpkg` source package: `gcc-6=6.5.0-2ubuntu1~18.04`
 

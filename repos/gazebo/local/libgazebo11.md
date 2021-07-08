@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1fc76b704d31e344dd2e74d83129aa506c60b8542cb8531f6a8e049c78be2ee9`
-- Created: `2021-06-24T19:43:19.526558876Z`
-- Virtual Size: ~ 1.93 Gb  
+- Image ID: `sha256:9278b21e74ef19f4756bfd6128ce67773ed19f7553e535887d25be39d248f12f`
+- Created: `2021-07-06T17:50:10.930437753Z`
+- Virtual Size: ~ 1.95 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/gzserver_entrypoint.sh"]`
@@ -1656,15 +1656,15 @@ $ apt-get source -qq --print-uris game-music-emu=0.6.2-1build1
 'http://archive.ubuntu.com/ubuntu/pool/universe/g/game-music-emu/game-music-emu_0.6.2-1build1.debian.tar.xz' game-music-emu_0.6.2-1build1.debian.tar.xz 4496 SHA256:e338369a1656f0ade5b014f714fd5bac196489ac937cf8c5276a005953b92aa8
 ```
 
-### `dpkg` source package: `gazebo11=11.6.0-1~focal`
+### `dpkg` source package: `gazebo11=11.7.0-1~focal`
 
 Binary Packages:
 
-- `gazebo11=11.6.0-1~focal`
-- `gazebo11-common=11.6.0-1~focal`
-- `gazebo11-plugin-base=11.6.0-1~focal`
-- `libgazebo11:amd64=11.6.0-1~focal`
-- `libgazebo11-dev:amd64=11.6.0-1~focal`
+- `gazebo11=11.7.0-1~focal`
+- `gazebo11-common=11.7.0-1~focal`
+- `gazebo11-plugin-base=11.7.0-1~focal`
+- `libgazebo11:amd64=11.7.0-1~focal`
+- `libgazebo11-dev:amd64=11.7.0-1~focal`
 
 Licenses: (parsed from: `/usr/share/doc/gazebo11/copyright`, `/usr/share/doc/gazebo11-common/copyright`, `/usr/share/doc/gazebo11-plugin-base/copyright`, `/usr/share/doc/libgazebo11/copyright`, `/usr/share/doc/libgazebo11-dev/copyright`)
 
@@ -1680,9 +1680,14 @@ Licenses: (parsed from: `/usr/share/doc/gazebo11/copyright`, `/usr/share/doc/gaz
 - `LGPL-3+`
 - `ZLIB`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gazebo11=11.7.0-1~focal
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0-1~focal.dsc' gazebo11_11.7.0-1~focal.dsc 2664 SHA256:c807a5cd7ed786dfffe29ca4f56045f8f6d78eb91ff543e76e551f22724e83e2
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0.orig.tar.bz2' gazebo11_11.7.0.orig.tar.bz2 56394312 SHA256:c3ede937e6a2130c191329df0e4080452070575b232a2d45291f429e0462a407
+'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/g/gazebo11/gazebo11_11.7.0-1~focal.debian.tar.xz' gazebo11_11.7.0-1~focal.debian.tar.xz 6812 SHA256:b55b78d8e06d210a461fe6e9013eb183de70384e7d8a0df7381394c107c66f3c
+```
 
 ### `dpkg` source package: `gcc-10=10.3.0-1ubuntu1~20.04`
 
@@ -4551,14 +4556,9 @@ Licenses: (parsed from: `/usr/share/doc/libuv1/copyright`)
 - `GPL-3+`
 - `ISC`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libuv1=1.34.2-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libu/libuv1/libuv1_1.34.2-1ubuntu1.1.dsc' libuv1_1.34.2-1ubuntu1.1.dsc 2128 SHA512:f64f5aafbccc710da77337b04df05aa0b13ccd10035b752b2e5d1783ff00a64c42daac1cf71130d4d21f49d2fe6d05ace1a0bcbcf47131314b609e14185807a9
-'http://archive.ubuntu.com/ubuntu/pool/main/libu/libuv1/libuv1_1.34.2.orig.tar.gz' libuv1_1.34.2.orig.tar.gz 1245417 SHA512:c549be16d10c1935150a395126b07b45e93ccb6edfe4a03f24bf4de39476f1e0339f22c3960022ae6170c5bb0667c77b16eb0b434aae280a53145fe5369de033
-'http://archive.ubuntu.com/ubuntu/pool/main/libu/libuv1/libuv1_1.34.2-1ubuntu1.1.debian.tar.xz' libuv1_1.34.2-1ubuntu1.1.debian.tar.xz 22588 SHA512:4343f2c0fa21c3e23620a1fa357157d620d2617c819142ee341fc94008740b9727255a19afb4a5d43738fa099f64dda36fba20946ae83af108ad3f7b0ff93206
-```
 
 ### `dpkg` source package: `libva=2.7.0-2`
 
@@ -6665,17 +6665,17 @@ $ apt-get source -qq --print-uris python3-stdlib-extensions=3.8.10-0ubuntu1~20.0
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.8.10-0ubuntu1~20.04.debian.tar.xz' python3-stdlib-extensions_3.8.10-0ubuntu1~20.04.debian.tar.xz 24508 SHA512:ca4894ddf04e5f89c46183271e65978c4dadd90faac196e13600797b9b451356cea2a0ee2c1d25e82a11b4e192fc11c2125b533035cf75e8e28ff7fdc792c695
 ```
 
-### `dpkg` source package: `python3.8=3.8.5-1~20.04.3`
+### `dpkg` source package: `python3.8=3.8.10-0ubuntu1~20.04`
 
 Binary Packages:
 
-- `libpython3.8:amd64=3.8.5-1~20.04.3`
-- `libpython3.8-dev:amd64=3.8.5-1~20.04.3`
-- `libpython3.8-minimal:amd64=3.8.5-1~20.04.3`
-- `libpython3.8-stdlib:amd64=3.8.5-1~20.04.3`
-- `python3.8=3.8.5-1~20.04.3`
-- `python3.8-dev=3.8.5-1~20.04.3`
-- `python3.8-minimal=3.8.5-1~20.04.3`
+- `libpython3.8:amd64=3.8.10-0ubuntu1~20.04`
+- `libpython3.8-dev:amd64=3.8.10-0ubuntu1~20.04`
+- `libpython3.8-minimal:amd64=3.8.10-0ubuntu1~20.04`
+- `libpython3.8-stdlib:amd64=3.8.10-0ubuntu1~20.04`
+- `python3.8=3.8.10-0ubuntu1~20.04`
+- `python3.8-dev=3.8.10-0ubuntu1~20.04`
+- `python3.8-minimal=3.8.10-0ubuntu1~20.04`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.8/copyright`, `/usr/share/doc/libpython3.8-dev/copyright`, `/usr/share/doc/libpython3.8-minimal/copyright`, `/usr/share/doc/libpython3.8-stdlib/copyright`, `/usr/share/doc/python3.8/copyright`, `/usr/share/doc/python3.8-dev/copyright`, `/usr/share/doc/python3.8-minimal/copyright`)
 
@@ -6697,9 +6697,14 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8/copyright`, `/usr/share/doc
 - `use in source`
 - `without`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3.8=3.8.10-0ubuntu1~20.04
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1~20.04.dsc' python3.8_3.8.10-0ubuntu1~20.04.dsc 3521 SHA512:be8d21d6cc9b8d5fe8a8df85370cebcc013b2e2deca5c867e6294bcecf3570d8c4aea7b56af6943156423e1e1a44595fd5be54a5a62ac9062b74234db30c430b
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10.orig.tar.xz' python3.8_3.8.10.orig.tar.xz 18433456 SHA512:0be69705483ff9692e12048a96180e586f9d84c8d53066629f7fb2389585eb75c0f3506bb8182936e322508f58b71f4d8c6dfebbab9049b31b49da11d3b98e80
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1~20.04.debian.tar.xz' python3.8_3.8.10-0ubuntu1~20.04.debian.tar.xz 210676 SHA512:2bdb7e1b32badd550abdd3ff1d6728fedf0772f01dface4e0f5da2a9e3456957b7ace47682ed4992cf97d17dc6861d91b7c0e2a5b4eedd90bf31330cd8a1dbe7
+```
 
 ### `dpkg` source package: `qhull=2015.2-4`
 
