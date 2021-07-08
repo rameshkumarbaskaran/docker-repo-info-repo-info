@@ -1,7 +1,7 @@
 ## `wordpress:fpm`
 
 ```console
-$ docker pull wordpress@sha256:a647cbee4377a69298b7a2345ab839541361da224cdbf7a72059796e749b7330
+$ docker pull wordpress@sha256:8279a454a7cfc7cd35790dafb43371e3b8416267760ac5ecedd6a94270ceeccf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -972,14 +972,14 @@ CMD ["php-fpm"]
 ### `wordpress:fpm` - linux; ppc64le
 
 ```console
-$ docker pull wordpress@sha256:04905812c49e3da0e60a36293a90850cde91fef868062fad9c84ce755d8af8f9
+$ docker pull wordpress@sha256:a7f32977ae93ab9216a90f732f077a518faadde22df5ff9b50b154b4606d80be
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.9 MB (195880667 bytes)**  
+-	Total Size: **195.9 MB (195893836 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2454a322d908c6b7155a73f4cf3f27c8bc165c2ca233110abcd979082e5d4e71`
+-	Image ID: `sha256:211da29d54b03b686962b3f804ce0083ed0f1b1b209da175ffd2114b9bf6e3a8`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -1038,23 +1038,23 @@ EXPOSE 9000
 CMD ["php-fpm"]
 # Tue, 29 Jun 2021 12:52:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ghostscript 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Jun 2021 13:11:13 GMT
-RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libmagickwand-dev 		libpng-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg 	; 	docker-php-ext-install -j "$(nproc)" 		bcmath 		exif 		gd 		mysqli 		zip 	; 	pecl install imagick-3.4.4; 	docker-php-ext-enable imagick; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Jun 2021 13:11:36 GMT
+# Thu, 08 Jul 2021 10:28:24 GMT
+RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libmagickwand-dev 		libpng-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg 	; 	docker-php-ext-install -j "$(nproc)" 		bcmath 		exif 		gd 		mysqli 		zip 	; 	pecl install imagick-3.5.0; 	docker-php-ext-enable imagick; 	rm -r /tmp/pear; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Thu, 08 Jul 2021 10:28:52 GMT
 RUN set -eux; 	docker-php-ext-enable opcache; 	{ 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Tue, 29 Jun 2021 13:11:44 GMT
+# Thu, 08 Jul 2021 10:29:08 GMT
 RUN { 		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; 		echo 'display_errors = Off'; 		echo 'display_startup_errors = Off'; 		echo 'log_errors = On'; 		echo 'error_log = /dev/stderr'; 		echo 'log_errors_max_len = 1024'; 		echo 'ignore_repeated_errors = On'; 		echo 'ignore_repeated_source = Off'; 		echo 'html_errors = Off'; 	} > /usr/local/etc/php/conf.d/error-logging.ini
-# Tue, 29 Jun 2021 13:11:57 GMT
+# Thu, 08 Jul 2021 10:29:28 GMT
 RUN set -eux; 	version='5.7.2'; 	sha1='c97c037d942e974eb8524213a505268033aff6c8'; 		curl -o wordpress.tar.gz -fL "https://wordpress.org/wordpress-$version.tar.gz"; 	echo "$sha1 *wordpress.tar.gz" | sha1sum -c -; 		tar -xzf wordpress.tar.gz -C /usr/src/; 	rm wordpress.tar.gz; 		[ ! -e /usr/src/wordpress/.htaccess ]; 	{ 		echo '# BEGIN WordPress'; 		echo ''; 		echo 'RewriteEngine On'; 		echo 'RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]'; 		echo 'RewriteBase /'; 		echo 'RewriteRule ^index\.php$ - [L]'; 		echo 'RewriteCond %{REQUEST_FILENAME} !-f'; 		echo 'RewriteCond %{REQUEST_FILENAME} !-d'; 		echo 'RewriteRule . /index.php [L]'; 		echo ''; 		echo '# END WordPress'; 	} > /usr/src/wordpress/.htaccess; 		chown -R www-data:www-data /usr/src/wordpress; 	mkdir wp-content; 	for dir in /usr/src/wordpress/wp-content/*/ cache; do 		dir="$(basename "${dir%/}")"; 		mkdir "wp-content/$dir"; 	done; 	chown -R www-data:www-data wp-content; 	chmod -R 777 wp-content
-# Tue, 29 Jun 2021 13:12:07 GMT
+# Thu, 08 Jul 2021 10:29:40 GMT
 VOLUME [/var/www/html]
-# Tue, 29 Jun 2021 13:12:09 GMT
+# Thu, 08 Jul 2021 10:29:44 GMT
 COPY --chown=www-data:www-datafile:2708a2c2ddd7102be41b667427e2ff8a8f87e2fe99f16c5d6508102164a04563 in /usr/src/wordpress/ 
-# Tue, 29 Jun 2021 13:12:11 GMT
+# Thu, 08 Jul 2021 10:29:49 GMT
 COPY file:5be6bcc31206cb827f037769d89fd092037ed61a1e10d6cae7939a37055beb4c in /usr/local/bin/ 
-# Tue, 29 Jun 2021 13:12:18 GMT
+# Thu, 08 Jul 2021 10:29:55 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 29 Jun 2021 13:12:32 GMT
+# Thu, 08 Jul 2021 10:30:03 GMT
 CMD ["php-fpm"]
 ```
 
@@ -1103,29 +1103,29 @@ CMD ["php-fpm"]
 		Last Modified: Tue, 29 Jun 2021 15:17:37 GMT  
 		Size: 17.7 MB (17670392 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19a5b237f224507ee533329d10352b8c04b4320e713d8b0a6f0f47609b61f6bd`  
-		Last Modified: Tue, 29 Jun 2021 15:17:35 GMT  
-		Size: 8.8 MB (8832209 bytes)  
+	-	`sha256:9cec7e89256b10981d7ee27d7698bcf9d392068245939a5e8f47ed5e8777e098`  
+		Last Modified: Thu, 08 Jul 2021 12:11:55 GMT  
+		Size: 8.8 MB (8845366 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6f7bdce7561dec83edd3d8db234c1de57ffeba8ae5a5c68097b38533696870f`  
-		Last Modified: Tue, 29 Jun 2021 15:17:28 GMT  
-		Size: 375.0 B  
+	-	`sha256:9792f1175168bdb181b718d484b02e27b1fd2020f6397db77aa13547a4c8effc`  
+		Last Modified: Thu, 08 Jul 2021 12:11:50 GMT  
+		Size: 377.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6833c60ea65f3bf451236e2305d1cf13ff5e68ca78ede4e4635b483806231bfd`  
-		Last Modified: Tue, 29 Jun 2021 15:17:28 GMT  
+	-	`sha256:156fee7f383ce692e2a073a83f94ac888b56860cd42769ddcc619e9da7a4d5a5`  
+		Last Modified: Thu, 08 Jul 2021 12:11:50 GMT  
 		Size: 392.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab58b46509a30e5c991547e3d2a0a07ec6fd88505343b843e6736a4f52968c93`  
-		Last Modified: Tue, 29 Jun 2021 15:17:31 GMT  
-		Size: 15.6 MB (15587071 bytes)  
+	-	`sha256:153da8e20451084ea05d362bbcbebc302d18f171b4a82448e2958851486fdf5e`  
+		Last Modified: Thu, 08 Jul 2021 12:11:53 GMT  
+		Size: 15.6 MB (15587072 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:390a0274240339af0e85258ac870f8b65d8009b44ff3521efc82bf4ff1ff225f`  
-		Last Modified: Tue, 29 Jun 2021 15:17:28 GMT  
-		Size: 2.4 KB (2355 bytes)  
+	-	`sha256:dbdbddec228f5e8f385cf0e22a2d0a1429ba6441872b67088ba00f5bc08b5235`  
+		Last Modified: Thu, 08 Jul 2021 12:11:50 GMT  
+		Size: 2.4 KB (2360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca0c9f6a335cb4e2e3727651324f3d89fa8ed9590bc2cbe837c97a4c60009862`  
-		Last Modified: Tue, 29 Jun 2021 15:17:28 GMT  
-		Size: 1.7 KB (1732 bytes)  
+	-	`sha256:b69e4e8b263e55479afe2d4cbe41d327194309dc38b31fe58afe592316c674bb`  
+		Last Modified: Thu, 08 Jul 2021 12:11:50 GMT  
+		Size: 1.7 KB (1736 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `wordpress:fpm` - linux; s390x
