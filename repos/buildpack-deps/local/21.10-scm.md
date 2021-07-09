@@ -1788,15 +1788,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.4p1-5ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1-5ubuntu1.dsc' openssh_8.4p1-5ubuntu1.dsc 3370 SHA512:849944bbbbb5d11a7893468bfcdd54ea201f8b759afba8a2dbdd5999e2d1668b6f3c79b620b5bfdcd493fb7d742bd909d1bc8613317e6504550b7a294c3cecdf
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz' openssh_8.4p1.orig.tar.gz 1742201 SHA512:d65275b082c46c5efe7cf3264fa6794d6e99a36d4a54b50554fc56979d6c0837381587fd5399195e1db680d2a5ad1ef0b99a180eac2b4de5637906cb7a89e9ce
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz.asc' openssh_8.4p1.orig.tar.gz.asc 683 SHA512:3d9a026db27729a5a56785db3824230ccf2a3beca4bb48ef465e44d869b944dbc5d443152a1b1be21bc9c213c465d3d7ca1f876a387d0a6b9682a0cfec3e6e32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1-5ubuntu1.debian.tar.xz' openssh_8.4p1-5ubuntu1.debian.tar.xz 180032 SHA512:faec209ecd6598baa573b27bb5b5096fb82e748541033c0afc6bd47efe58887c0a54afa83e9cec0f6f89d825963e796b447a48744389194b569c92e5e7113015
-```
 
 ### `dpkg` source package: `openssl=1.1.1j-1ubuntu4`
 
@@ -2253,14 +2247,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=248.3-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu1.dsc' systemd_248.3-1ubuntu1.dsc 5366 SHA512:7c1a30831ee3023a13303af5be2e1c91ec8be696fb57baf9c541129de80b09a3c0cc25191c528ad43933a7eee0c61725c2cb99ddcd2a43da7573b7467530a446
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3.orig.tar.gz' systemd_248.3.orig.tar.gz 10320940 SHA512:8e7ff0d5e63cc933e4dc23f7e0bef9707fde90396605eb8822d34de90d7abe8fd37e5739e33b657868218aa7281147cc944c096c007324c3e6fb54d833a83485
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu1.debian.tar.xz' systemd_248.3-1ubuntu1.debian.tar.xz 198572 SHA512:9404ea5a700630d4da370c1c4c29201f64d7cf0516691777afd14908db86ba2f300fdf5074af17bcb106f06ffc38045802c09cfafcd764b0f5e77e4bf9540a01
-```
 
 ### `dpkg` source package: `sysvinit=2.96-7ubuntu1`
 

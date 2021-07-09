@@ -3534,15 +3534,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.4p1-5ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1-5ubuntu1.dsc' openssh_8.4p1-5ubuntu1.dsc 3370 SHA512:849944bbbbb5d11a7893468bfcdd54ea201f8b759afba8a2dbdd5999e2d1668b6f3c79b620b5bfdcd493fb7d742bd909d1bc8613317e6504550b7a294c3cecdf
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz' openssh_8.4p1.orig.tar.gz 1742201 SHA512:d65275b082c46c5efe7cf3264fa6794d6e99a36d4a54b50554fc56979d6c0837381587fd5399195e1db680d2a5ad1ef0b99a180eac2b4de5637906cb7a89e9ce
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1.orig.tar.gz.asc' openssh_8.4p1.orig.tar.gz.asc 683 SHA512:3d9a026db27729a5a56785db3824230ccf2a3beca4bb48ef465e44d869b944dbc5d443152a1b1be21bc9c213c465d3d7ca1f876a387d0a6b9682a0cfec3e6e32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.4p1-5ubuntu1.debian.tar.xz' openssh_8.4p1-5ubuntu1.debian.tar.xz 180032 SHA512:faec209ecd6598baa573b27bb5b5096fb82e748541033c0afc6bd47efe58887c0a54afa83e9cec0f6f89d825963e796b447a48744389194b569c92e5e7113015
-```
 
 ### `dpkg` source package: `openssl=1.1.1j-1ubuntu4`
 
@@ -4197,14 +4191,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=248.3-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu1.dsc' systemd_248.3-1ubuntu1.dsc 5366 SHA512:7c1a30831ee3023a13303af5be2e1c91ec8be696fb57baf9c541129de80b09a3c0cc25191c528ad43933a7eee0c61725c2cb99ddcd2a43da7573b7467530a446
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3.orig.tar.gz' systemd_248.3.orig.tar.gz 10320940 SHA512:8e7ff0d5e63cc933e4dc23f7e0bef9707fde90396605eb8822d34de90d7abe8fd37e5739e33b657868218aa7281147cc944c096c007324c3e6fb54d833a83485
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu1.debian.tar.xz' systemd_248.3-1ubuntu1.debian.tar.xz 198572 SHA512:9404ea5a700630d4da370c1c4c29201f64d7cf0516691777afd14908db86ba2f300fdf5074af17bcb106f06ffc38045802c09cfafcd764b0f5e77e4bf9540a01
-```
 
 ### `dpkg` source package: `sysvinit=2.96-7ubuntu1`
 
@@ -4259,15 +4248,9 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.2.0-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.2.0-1build1.dsc' tiff_4.2.0-1build1.dsc 2478 SHA512:f21c5627c20ca8733774804688f0db42ab3d9d909fbf8e199447599c814cff92f8104057939a92099f5c6453fadd92c5d18669ccc52d0181552ad48404a87167
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.2.0.orig.tar.gz' tiff_4.2.0.orig.tar.gz 2809373 SHA512:d7d42e6e6dbda9604c638f28e6cfa4705191a4e8ea276d18031d50dbab0931ac91141e57a2cf294124487f1a2e6dfcb9be62431c1b69de5acf4d0e632f3322e5
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.2.0.orig.tar.gz.asc' tiff_4.2.0.orig.tar.gz.asc 228 SHA512:ad5ec36f9ccd852e713a9672bd3d8075749fa03b7749d50086c1a4816cf75c33f3d077a8eab74134ed70639e78cd80eac05efc654409266b68199955a06f0e79
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.2.0-1build1.debian.tar.xz' tiff_4.2.0-1build1.debian.tar.xz 19600 SHA512:07052ac775967759d11db4871c2065e227dc0b1e2af49b2fb7f77fd6f0ff701a5ed109e1d980d166a12a735db7f214db38d1636d2b4c4438e0bb427a52015c36
-```
 
 ### `dpkg` source package: `tzdata=2021a-1ubuntu1`
 
