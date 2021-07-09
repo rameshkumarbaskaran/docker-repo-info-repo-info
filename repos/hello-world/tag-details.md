@@ -10,7 +10,7 @@
 ## `hello-world:latest`
 
 ```console
-$ docker pull hello-world@sha256:11d090029c2e644b346d8f544d2339d8f39c3372588bfbd31052fd95e2a98551
+$ docker pull hello-world@sha256:e86134b19508866f9a94095ebed0cc4322d1340f1855f52057a748ca06880720
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22,6 +22,7 @@ $ docker pull hello-world@sha256:11d090029c2e644b346d8f544d2339d8f39c3372588bfbd
 	-	linux; 386
 	-	linux; mips64le
 	-	linux; ppc64le
+	-	linux; riscv64
 	-	linux; s390x
 	-	windows version 10.0.17763.1999; amd64
 
@@ -80,26 +81,26 @@ CMD ["/hello"]
 ### `hello-world:latest` - linux; arm variant v7
 
 ```console
-$ docker pull hello-world@sha256:50b8560ad574c779908da71f7ce370c0a2471c098d44d1c8f6b513c5a55eeeb1
+$ docker pull hello-world@sha256:94b700b6ae5759e539e06fa6d483f5f0174067945f180cc1362cfda71c5fd722
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **3.1 KB (3087 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:851163c78e4ad68e6fe5391f0894aafd164d40c4d4d0a56b4291f0dc2c75cc2c`
+-	Image ID: `sha256:1a30b4397839e8a15132f79eb6419964ebf3f7885b70f35dfa9f550fe8ebdc89`
 -	Default Command: `["\/hello"]`
 
 ```dockerfile
-# Fri, 03 Jan 2020 01:02:39 GMT
+# Fri, 09 Jul 2021 00:54:41 GMT
 COPY file:59f375a62f05907db9c2320bca0de197d3ae1ec48c90b5e3425bcd088d811d43 in / 
-# Fri, 03 Jan 2020 01:02:41 GMT
+# Fri, 09 Jul 2021 00:54:42 GMT
 CMD ["/hello"]
 ```
 
 -	Layers:
-	-	`sha256:4ee5c797bcd78105083ec883d8e6e8bc58124c65b30444d0110073d603e61190`  
-		Last Modified: Fri, 03 Jan 2020 01:02:50 GMT  
+	-	`sha256:2c7ed585684a41c1ab84f089693b2d661f36d22fd00f20fc9c180375135d1322`  
+		Last Modified: Fri, 09 Jul 2021 00:55:02 GMT  
 		Size: 3.1 KB (3087 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -207,6 +208,32 @@ CMD ["/hello"]
 		Size: 3.9 KB (3947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+### `hello-world:latest` - linux; riscv64
+
+```console
+$ docker pull hello-world@sha256:b89e28f1d57f44064e96c4525e514f6f0498a433b83413538f79f82566d72114
+```
+
+-	Docker Version: 20.10.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **3.0 KB (3031 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:eb97237ebba1b2897bac7142164396c97e32c802923f9ce291e50b6d7d2591ea`
+-	Default Command: `["\/hello"]`
+
+```dockerfile
+# Thu, 08 Jul 2021 23:51:23 GMT
+COPY file:1c4393ed10b0dd686ca7ba6c18f0a53bbadabbd30c655383c2ab277a48b9bd41 in / 
+# Thu, 08 Jul 2021 23:51:23 GMT
+CMD ["/hello"]
+```
+
+-	Layers:
+	-	`sha256:5282ee01520dee94fabbb4aa8c9daa98ff9da087b83cf3d1781a748a980b58d4`  
+		Last Modified: Thu, 08 Jul 2021 23:54:28 GMT  
+		Size: 3.0 KB (3031 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
 ### `hello-world:latest` - linux; s390x
 
 ```console
@@ -271,7 +298,7 @@ RUN cmd /S /C #(nop)  CMD ["cmd" "/C" "type C:\\hello.txt"]
 ## `hello-world:linux`
 
 ```console
-$ docker pull hello-world@sha256:0979a9fc729fc65b9a5511f2a5a2ead1aae985237e8ffed7d452d93502b05056
+$ docker pull hello-world@sha256:d7b1b0ecf8219da6849c385008e44c6adff1b43a69857af84afae25017f8aa1c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -283,6 +310,7 @@ $ docker pull hello-world@sha256:0979a9fc729fc65b9a5511f2a5a2ead1aae985237e8ffed
 	-	linux; 386
 	-	linux; mips64le
 	-	linux; ppc64le
+	-	linux; riscv64
 	-	linux; s390x
 
 ### `hello-world:linux` - linux; amd64
@@ -340,26 +368,26 @@ CMD ["/hello"]
 ### `hello-world:linux` - linux; arm variant v7
 
 ```console
-$ docker pull hello-world@sha256:50b8560ad574c779908da71f7ce370c0a2471c098d44d1c8f6b513c5a55eeeb1
+$ docker pull hello-world@sha256:94b700b6ae5759e539e06fa6d483f5f0174067945f180cc1362cfda71c5fd722
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **3.1 KB (3087 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:851163c78e4ad68e6fe5391f0894aafd164d40c4d4d0a56b4291f0dc2c75cc2c`
+-	Image ID: `sha256:1a30b4397839e8a15132f79eb6419964ebf3f7885b70f35dfa9f550fe8ebdc89`
 -	Default Command: `["\/hello"]`
 
 ```dockerfile
-# Fri, 03 Jan 2020 01:02:39 GMT
+# Fri, 09 Jul 2021 00:54:41 GMT
 COPY file:59f375a62f05907db9c2320bca0de197d3ae1ec48c90b5e3425bcd088d811d43 in / 
-# Fri, 03 Jan 2020 01:02:41 GMT
+# Fri, 09 Jul 2021 00:54:42 GMT
 CMD ["/hello"]
 ```
 
 -	Layers:
-	-	`sha256:4ee5c797bcd78105083ec883d8e6e8bc58124c65b30444d0110073d603e61190`  
-		Last Modified: Fri, 03 Jan 2020 01:02:50 GMT  
+	-	`sha256:2c7ed585684a41c1ab84f089693b2d661f36d22fd00f20fc9c180375135d1322`  
+		Last Modified: Fri, 09 Jul 2021 00:55:02 GMT  
 		Size: 3.1 KB (3087 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -465,6 +493,32 @@ CMD ["/hello"]
 	-	`sha256:63dd454aec9474aad8ede662032cf03e5bd94a6c0df83d2a44f87fa256308baf`  
 		Last Modified: Fri, 03 Jan 2020 01:22:03 GMT  
 		Size: 3.9 KB (3947 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `hello-world:linux` - linux; riscv64
+
+```console
+$ docker pull hello-world@sha256:b89e28f1d57f44064e96c4525e514f6f0498a433b83413538f79f82566d72114
+```
+
+-	Docker Version: 20.10.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **3.0 KB (3031 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:eb97237ebba1b2897bac7142164396c97e32c802923f9ce291e50b6d7d2591ea`
+-	Default Command: `["\/hello"]`
+
+```dockerfile
+# Thu, 08 Jul 2021 23:51:23 GMT
+COPY file:1c4393ed10b0dd686ca7ba6c18f0a53bbadabbd30c655383c2ab277a48b9bd41 in / 
+# Thu, 08 Jul 2021 23:51:23 GMT
+CMD ["/hello"]
+```
+
+-	Layers:
+	-	`sha256:5282ee01520dee94fabbb4aa8c9daa98ff9da087b83cf3d1781a748a980b58d4`  
+		Last Modified: Thu, 08 Jul 2021 23:54:28 GMT  
+		Size: 3.0 KB (3031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hello-world:linux` - linux; s390x
