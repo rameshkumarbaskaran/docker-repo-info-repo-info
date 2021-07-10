@@ -1,7 +1,7 @@
 ## `debian:buster`
 
 ```console
-$ docker pull debian@sha256:bd937dbe9aba256821659d81b49f70c58da0b2e042d72a8860a0f72c17b5a84b
+$ docker pull debian@sha256:dcb20da8d9d73c9dab5059668852555c171d40cdec297da845da9c929b70e0b1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -174,20 +174,20 @@ CMD ["bash"]
 ### `debian:buster` - linux; ppc64le
 
 ```console
-$ docker pull debian@sha256:1ac80dc3a9e87dcde822caf97c1d27d070de5ddda2d66b7a3c69372e3860fe25
+$ docker pull debian@sha256:338a48e90e0aa9aa3b15ef01be2a05170c5bb1f9bb6bdbfc061ec56d2057999c
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **54.2 MB (54182463 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c72a47033a33ed59ee21c1b563e46100127c63a757f26a298777641f749e5a40`
+-	Image ID: `sha256:e28fc4f39b1ac335dddb858a4d59ac416b3551773224fe2295df3b4cc24fa90b`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 23 Jun 2021 00:30:05 GMT
+# Fri, 09 Jul 2021 15:57:37 GMT
 ADD file:b73f8d66b8be6103349949991124c7d82e38589b2db6212e920cb3b6d5ceefef in / 
-# Wed, 23 Jun 2021 00:30:13 GMT
+# Fri, 09 Jul 2021 15:57:40 GMT
 CMD ["bash"]
 ```
 

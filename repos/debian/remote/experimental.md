@@ -1,7 +1,7 @@
 ## `debian:experimental`
 
 ```console
-$ docker pull debian@sha256:b7f93024be2919438764a919348668d691d998ff01ed7f2dfaf2071223c29e12
+$ docker pull debian@sha256:b8f81d7e6c37414739f3964896f6e9a4004de513828e4d020804efdeb7ff0d78
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -211,22 +211,22 @@ RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources
 ### `debian:experimental` - linux; ppc64le
 
 ```console
-$ docker pull debian@sha256:7afb718a4930c30b16071cb7eded244efc4364f2019aa3cb1ce6846a7af16ed4
+$ docker pull debian@sha256:17d69c6df961afc693fd32a120232815141e913b3ccf1beb3c08a9b5c31f550f
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **58.8 MB (58813078 bytes)**  
+-	Total Size: **58.8 MB (58813079 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6558213b04d1a8c9cc07614b7c8c9a901ed2caf97f42d3d0e974b6926ac02f07`
+-	Image ID: `sha256:d78965bd89e6e25ddc811cf5ee3aeb54e63c794f033401473a7fd9656648b2d1`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 23 Jun 2021 00:33:50 GMT
+# Fri, 09 Jul 2021 16:01:52 GMT
 ADD file:84cec57951ba2d65e741a0ca5ba1e21c83a2d63c914204c312710ad13c2af038 in / 
-# Wed, 23 Jun 2021 00:33:58 GMT
+# Fri, 09 Jul 2021 16:02:03 GMT
 CMD ["bash"]
-# Wed, 23 Jun 2021 00:34:36 GMT
+# Fri, 09 Jul 2021 16:02:56 GMT
 RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
 ```
 
@@ -235,9 +235,9 @@ RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources
 		Last Modified: Wed, 23 Jun 2021 00:39:45 GMT  
 		Size: 58.8 MB (58812854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ed9f9195f47dfd3e86b07366a754f99be6a102025a5fe9f9f4967c21db1830e`  
-		Last Modified: Wed, 23 Jun 2021 00:40:16 GMT  
-		Size: 224.0 B  
+	-	`sha256:17296cd64d762c056f53023ef222c19864abe866d8be5873d15f19ede9b3834b`  
+		Last Modified: Fri, 09 Jul 2021 16:09:09 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:experimental` - linux; riscv64
