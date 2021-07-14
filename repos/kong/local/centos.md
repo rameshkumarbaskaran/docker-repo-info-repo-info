@@ -1,10 +1,10 @@
-# `kong:2.4.1-centos`
+# `kong:2.5.0-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c24b1346db87f019dfe4a9929b3e4cde9a8d943f5b7976063dd21e6b3124787a`
-- Created: `2021-05-11T22:31:53.385103891Z`
-- Virtual Size: ~ 365.66 Mb  
+- Image ID: `sha256:b7994889dce8690c91360f21c5404b0c5f69d6ddbacd17f8d396a62b95b3e3e7`
+- Created: `2021-07-13T21:22:07.839083801Z`
+- Virtual Size: ~ 365.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.4.1`
+  - `KONG_VERSION=2.5.0`
 - Labels:
   - `maintainer=Kong <support@konghq.com>`
   - `org.label-schema.build-date=20201113`
@@ -831,7 +831,7 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/kmod-20-28.el7.src.rpm
 ```
 
-### `rpm` package: `kong-2.4.1-1.x86_64`
+### `rpm` package: `kong-2.5.0-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 2.0
 
@@ -2503,18 +2503,18 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/updates/Source//SPackages/tzdata-2020d-2.el7.src.rpm
 ```
 
-### `rpm` package: `unzip-6.0-21.el7.x86_64`
+### `rpm` package: `unzip-6.0-22.el7_9.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls unzip-6.0-21.el7
+$ yumdownloader --quiet --source --urls unzip-6.0-22.el7_9
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/unzip-6.0-21.el7.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/unzip-6.0-22.el7_9.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
