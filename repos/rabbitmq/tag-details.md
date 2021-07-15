@@ -34,7 +34,7 @@ $ docker pull rabbitmq@sha256:ca4d12956a60ac8eeebbe1729be45a0f2d740d4f681816f18f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -588,7 +588,7 @@ $ docker pull rabbitmq@sha256:4eeced79b0306d1dbce99e87df08052ee77f853b1de10ea459
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -1360,7 +1360,7 @@ $ docker pull rabbitmq@sha256:7f0fe23cf3a859298adacebec85c23a1127c1a0515220ed126
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2002,7 +2002,7 @@ $ docker pull rabbitmq@sha256:e7fc2093280d561ffeb11d25e515e21b11c77c23867378dfb6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -2902,7 +2902,7 @@ $ docker pull rabbitmq@sha256:ca4d12956a60ac8eeebbe1729be45a0f2d740d4f681816f18f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -3456,7 +3456,7 @@ $ docker pull rabbitmq@sha256:4eeced79b0306d1dbce99e87df08052ee77f853b1de10ea459
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -4228,7 +4228,7 @@ $ docker pull rabbitmq@sha256:7f0fe23cf3a859298adacebec85c23a1127c1a0515220ed126
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4870,7 +4870,7 @@ $ docker pull rabbitmq@sha256:e7fc2093280d561ffeb11d25e515e21b11c77c23867378dfb6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -5770,7 +5770,7 @@ $ docker pull rabbitmq@sha256:8ab8da1c463bafd02d14a081f8f7634f2de27744fd45c5be31
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.8.19` - linux; amd64
@@ -5888,7 +5888,7 @@ $ docker pull rabbitmq@sha256:eb07fc37c4ba3f3bcc104950809a8b2ed25377cfb8b358c3e0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.8.19-alpine` - linux; amd64
@@ -6006,7 +6006,7 @@ $ docker pull rabbitmq@sha256:b68ecf33e2ce96f81825b43c7b695894ec32c7c0927ad0992a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.8.19-management` - linux; amd64
@@ -6132,7 +6132,7 @@ $ docker pull rabbitmq@sha256:f7ef14fd13e9ad7a18070eefbd4b250e869d4c979831f7cce4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.8.19-management-alpine` - linux; amd64
@@ -6258,7 +6258,7 @@ $ docker pull rabbitmq@sha256:65f4765044c97e6799f7ac4e889756ce45354722a708a2ec57
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9-rc` - linux; amd64
@@ -6376,7 +6376,7 @@ $ docker pull rabbitmq@sha256:5a22b94a01e254a0e11ffb87546ce2fedf613392fb8832f5cd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9-rc-alpine` - linux; amd64
@@ -6494,7 +6494,7 @@ $ docker pull rabbitmq@sha256:dc1973117a0ada6206fe316f8caf128f75c45b4c583cbf7e5d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9-rc-management` - linux; amd64
@@ -6620,7 +6620,7 @@ $ docker pull rabbitmq@sha256:a59875c829ba5b98e78e0ee99ac6eeda78af6d602868b01e22
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9-rc-management-alpine` - linux; amd64
@@ -6746,7 +6746,7 @@ $ docker pull rabbitmq@sha256:65f4765044c97e6799f7ac4e889756ce45354722a708a2ec57
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9.0-rc.1` - linux; amd64
@@ -6864,7 +6864,7 @@ $ docker pull rabbitmq@sha256:5a22b94a01e254a0e11ffb87546ce2fedf613392fb8832f5cd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9.0-rc.1-alpine` - linux; amd64
@@ -6982,7 +6982,7 @@ $ docker pull rabbitmq@sha256:dc1973117a0ada6206fe316f8caf128f75c45b4c583cbf7e5d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9.0-rc.1-management` - linux; amd64
@@ -7108,7 +7108,7 @@ $ docker pull rabbitmq@sha256:a59875c829ba5b98e78e0ee99ac6eeda78af6d602868b01e22
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rabbitmq:3.9.0-rc.1-management-alpine` - linux; amd64
@@ -7234,7 +7234,7 @@ $ docker pull rabbitmq@sha256:4eeced79b0306d1dbce99e87df08052ee77f853b1de10ea459
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -8006,7 +8006,7 @@ $ docker pull rabbitmq@sha256:ca4d12956a60ac8eeebbe1729be45a0f2d740d4f681816f18f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -8560,7 +8560,7 @@ $ docker pull rabbitmq@sha256:7f0fe23cf3a859298adacebec85c23a1127c1a0515220ed126
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -9202,7 +9202,7 @@ $ docker pull rabbitmq@sha256:e7fc2093280d561ffeb11d25e515e21b11c77c23867378dfb6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7

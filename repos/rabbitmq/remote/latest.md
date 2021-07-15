@@ -5,7 +5,7 @@ $ docker pull rabbitmq@sha256:ca4d12956a60ac8eeebbe1729be45a0f2d740d4f681816f18f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
