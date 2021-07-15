@@ -5,7 +5,7 @@ $ docker pull consul@sha256:c58e1f8d4f13eb4e2155a2830d55380ab3f66d8588e21bb135a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm64 variant v8
