@@ -19,7 +19,7 @@ $ docker pull oraclelinux@sha256:f4f7375d3a220de1158f57719eb1df7a7438cad9e33c3a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `oraclelinux:6` - linux; amd64
@@ -55,7 +55,7 @@ $ docker pull oraclelinux@sha256:dbae3e4779d5b412d13d8b06e5ed8bf2a6a9a5a82414646
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `oraclelinux:6-slim` - linux; amd64
@@ -91,7 +91,7 @@ $ docker pull oraclelinux@sha256:f4f7375d3a220de1158f57719eb1df7a7438cad9e33c3a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `oraclelinux:6.10` - linux; amd64
@@ -127,7 +127,7 @@ $ docker pull oraclelinux@sha256:516acec86602f59fc60d21eb425a6fe08c3dc2aeb68eb0d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -190,7 +190,7 @@ $ docker pull oraclelinux@sha256:9941f4f558d0e6892901263cd2670f6c95978c2699c1947
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -253,7 +253,7 @@ $ docker pull oraclelinux@sha256:516acec86602f59fc60d21eb425a6fe08c3dc2aeb68eb0d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -316,7 +316,7 @@ $ docker pull oraclelinux@sha256:d9d9039c7b33c3c7a163486733665065463a4371b71bcf7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -379,7 +379,7 @@ $ docker pull oraclelinux@sha256:2c2b8a09e152516dc9c1fef1d437eafe8ac8faeb03a90aa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -442,7 +442,7 @@ $ docker pull oraclelinux@sha256:d9d9039c7b33c3c7a163486733665065463a4371b71bcf7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 

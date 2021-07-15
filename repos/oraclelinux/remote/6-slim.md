@@ -5,7 +5,7 @@ $ docker pull oraclelinux@sha256:dbae3e4779d5b412d13d8b06e5ed8bf2a6a9a5a82414646
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `oraclelinux:6-slim` - linux; amd64
