@@ -5,7 +5,7 @@ $ docker pull teamspeak@sha256:eda4b5b846ba2b4ef253dd2bab52d1ecc8caeb903f6996847
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `teamspeak:latest` - linux; amd64
