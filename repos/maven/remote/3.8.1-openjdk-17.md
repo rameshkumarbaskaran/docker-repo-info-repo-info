@@ -5,7 +5,7 @@ $ docker pull maven@sha256:de205f1c70fdb276cd8fe9bc1c33229ae91854f04b42514e3c426
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
