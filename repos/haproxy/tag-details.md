@@ -42,7 +42,7 @@ $ docker pull haproxy@sha256:3e8735995c3192cccb6439d92868017cfaf18d4c6083ae1a985
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -563,7 +563,7 @@ $ docker pull haproxy@sha256:f8946d8c90ff0e2f7c56e1f8d5afe87356b7864db3713a4558c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -1020,7 +1020,7 @@ $ docker pull haproxy@sha256:3e8735995c3192cccb6439d92868017cfaf18d4c6083ae1a985
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -1541,7 +1541,7 @@ $ docker pull haproxy@sha256:f8946d8c90ff0e2f7c56e1f8d5afe87356b7864db3713a4558c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -1998,7 +1998,7 @@ $ docker pull haproxy@sha256:bdcaeebdc110d7dafcf6e03a9146cef75a8bece51ad5cb073da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -2519,7 +2519,7 @@ $ docker pull haproxy@sha256:d32fdb5efedd57640da95710646eed5be4e87b0f6bc43b4739c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -2976,7 +2976,7 @@ $ docker pull haproxy@sha256:bdcaeebdc110d7dafcf6e03a9146cef75a8bece51ad5cb073da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -3497,7 +3497,7 @@ $ docker pull haproxy@sha256:d32fdb5efedd57640da95710646eed5be4e87b0f6bc43b4739c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -3954,7 +3954,7 @@ $ docker pull haproxy@sha256:91ae0f7ed208d13d014ce1451db25c02d4e18832a2dc1593639
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -4475,7 +4475,7 @@ $ docker pull haproxy@sha256:18655c89701f614cf2a17a3a306005351380b4365d1442213d0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -4932,7 +4932,7 @@ $ docker pull haproxy@sha256:91ae0f7ed208d13d014ce1451db25c02d4e18832a2dc1593639
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -5453,7 +5453,7 @@ $ docker pull haproxy@sha256:18655c89701f614cf2a17a3a306005351380b4365d1442213d0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -5910,7 +5910,7 @@ $ docker pull haproxy@sha256:10e093618420c45a3f155d081f35b25f130ae6d1064dbf93e83
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -6431,7 +6431,7 @@ $ docker pull haproxy@sha256:7a3e5d773b3e6ccba2a13009631abb409a2bfc4ea929725494c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -6888,7 +6888,7 @@ $ docker pull haproxy@sha256:10e093618420c45a3f155d081f35b25f130ae6d1064dbf93e83
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -7409,7 +7409,7 @@ $ docker pull haproxy@sha256:7a3e5d773b3e6ccba2a13009631abb409a2bfc4ea929725494c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -7866,7 +7866,7 @@ $ docker pull haproxy@sha256:eb1992e92a1ad65c5d09b5943db3d8f0f4c8355c93b369c4900
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -8387,7 +8387,7 @@ $ docker pull haproxy@sha256:51c29b552818f03577c59f2fcb480bf79abe66edb0bad36978b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -8844,7 +8844,7 @@ $ docker pull haproxy@sha256:eb1992e92a1ad65c5d09b5943db3d8f0f4c8355c93b369c4900
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -9365,7 +9365,7 @@ $ docker pull haproxy@sha256:4fcf463ad01b9315f3bcafd6c4d5c3f3d8f4e7387441ac4245e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -9694,7 +9694,7 @@ $ docker pull haproxy@sha256:fd67fa154267f3a9a23930538d91eedea1d9157c8a076260066
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -10183,7 +10183,7 @@ $ docker pull haproxy@sha256:f70650aa595d7dd9fc64428fb3723cfd1508ea6aa420d489eff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -10612,7 +10612,7 @@ $ docker pull haproxy@sha256:fd67fa154267f3a9a23930538d91eedea1d9157c8a076260066
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -11101,7 +11101,7 @@ $ docker pull haproxy@sha256:9bcd3699db9bf62d9e836cfe4af6088e931c589ae2d9a122522
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -11410,7 +11410,7 @@ $ docker pull haproxy@sha256:7073c373ec4d7a482f9bf2275e2b07bf019fd102bedd965dfe0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -11899,7 +11899,7 @@ $ docker pull haproxy@sha256:89f6ce348de1412e3fe889374fd145b76bc6c9f271aa57bafbe
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -12328,7 +12328,7 @@ $ docker pull haproxy@sha256:7073c373ec4d7a482f9bf2275e2b07bf019fd102bedd965dfe0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -12817,7 +12817,7 @@ $ docker pull haproxy@sha256:3096459c279219b1ac4800273da09ad949cfc61d3a49201ad43
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -13126,7 +13126,7 @@ $ docker pull haproxy@sha256:f70650aa595d7dd9fc64428fb3723cfd1508ea6aa420d489eff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -13555,7 +13555,7 @@ $ docker pull haproxy@sha256:fd67fa154267f3a9a23930538d91eedea1d9157c8a076260066
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -14044,7 +14044,7 @@ $ docker pull haproxy@sha256:fd67fa154267f3a9a23930538d91eedea1d9157c8a076260066
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -14533,7 +14533,7 @@ $ docker pull haproxy@sha256:f70650aa595d7dd9fc64428fb3723cfd1508ea6aa420d489eff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7

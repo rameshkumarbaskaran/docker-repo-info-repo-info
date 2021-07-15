@@ -5,7 +5,7 @@ $ docker pull haproxy@sha256:fd67fa154267f3a9a23930538d91eedea1d9157c8a076260066
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
