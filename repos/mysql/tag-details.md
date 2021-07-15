@@ -19,7 +19,7 @@ $ docker pull mysql@sha256:1a2f9cd257e75cc80e9118b303d1648366bc2049101449bf2c8d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:5` - linux; amd64
@@ -130,7 +130,7 @@ $ docker pull mysql@sha256:879efe96447702f18945f10607e736b844ebe9cfef6f29c7a47f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:5.6` - linux; amd64
@@ -241,7 +241,7 @@ $ docker pull mysql@sha256:879efe96447702f18945f10607e736b844ebe9cfef6f29c7a47f6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:5.6.51` - linux; amd64
@@ -352,7 +352,7 @@ $ docker pull mysql@sha256:1a2f9cd257e75cc80e9118b303d1648366bc2049101449bf2c8d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:5.7` - linux; amd64
@@ -463,7 +463,7 @@ $ docker pull mysql@sha256:1a2f9cd257e75cc80e9118b303d1648366bc2049101449bf2c8d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:5.7.34` - linux; amd64
@@ -574,7 +574,7 @@ $ docker pull mysql@sha256:52b8406e4c32b8cf0557f1b74517e14c5393aff5cf0384eff62d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:8` - linux; amd64
@@ -691,7 +691,7 @@ $ docker pull mysql@sha256:52b8406e4c32b8cf0557f1b74517e14c5393aff5cf0384eff62d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:8.0` - linux; amd64
@@ -808,7 +808,7 @@ $ docker pull mysql@sha256:52b8406e4c32b8cf0557f1b74517e14c5393aff5cf0384eff62d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:8.0.25` - linux; amd64
@@ -925,7 +925,7 @@ $ docker pull mysql@sha256:52b8406e4c32b8cf0557f1b74517e14c5393aff5cf0384eff62d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `mysql:latest` - linux; amd64
