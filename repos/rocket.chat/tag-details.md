@@ -21,7 +21,7 @@ $ docker pull rocket.chat@sha256:93471dccd56ef4f684a600c9dcd0c345250c786766855f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:2` - linux; amd64
@@ -95,7 +95,7 @@ $ docker pull rocket.chat@sha256:93471dccd56ef4f684a600c9dcd0c345250c786766855f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:2.4` - linux; amd64
@@ -169,7 +169,7 @@ $ docker pull rocket.chat@sha256:93471dccd56ef4f684a600c9dcd0c345250c786766855f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:2.4.14` - linux; amd64
@@ -243,7 +243,7 @@ $ docker pull rocket.chat@sha256:0f2c4803cd14a4f3aa9b039c245bdd34a6ec163336fe326
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:3` - linux; amd64
@@ -317,7 +317,7 @@ $ docker pull rocket.chat@sha256:558bb9a4e5616726b3ec55934959ebd5253dca1bb9d8ae9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:3.14` - linux; amd64
@@ -391,7 +391,7 @@ $ docker pull rocket.chat@sha256:558bb9a4e5616726b3ec55934959ebd5253dca1bb9d8ae9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:3.14.5` - linux; amd64
@@ -465,7 +465,7 @@ $ docker pull rocket.chat@sha256:28fd241c0ab04f598f39933edfda1e248ea64f2da2201ef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:3.15` - linux; amd64
@@ -539,7 +539,7 @@ $ docker pull rocket.chat@sha256:28fd241c0ab04f598f39933edfda1e248ea64f2da2201ef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:3.15.3` - linux; amd64
@@ -613,7 +613,7 @@ $ docker pull rocket.chat@sha256:0f2c4803cd14a4f3aa9b039c245bdd34a6ec163336fe326
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:3.16` - linux; amd64
@@ -687,7 +687,7 @@ $ docker pull rocket.chat@sha256:0f2c4803cd14a4f3aa9b039c245bdd34a6ec163336fe326
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:3.16.2` - linux; amd64
@@ -761,7 +761,7 @@ $ docker pull rocket.chat@sha256:0f2c4803cd14a4f3aa9b039c245bdd34a6ec163336fe326
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `rocket.chat:latest` - linux; amd64
