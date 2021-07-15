@@ -5,7 +5,7 @@ $ docker pull php@sha256:4ef3a619d10b9c56997e7b98dd3129c2b86fd6a106e927d0e456ef6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
