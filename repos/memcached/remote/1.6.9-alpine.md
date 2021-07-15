@@ -5,7 +5,7 @@ $ docker pull memcached@sha256:6103643bca5bb3a6dd0601a5a346923296ab5b0c6b42eb5ba
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7

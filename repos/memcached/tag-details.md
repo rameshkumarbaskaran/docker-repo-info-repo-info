@@ -30,7 +30,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -599,7 +599,7 @@ $ docker pull memcached@sha256:6103643bca5bb3a6dd0601a5a346923296ab5b0c6b42eb5ba
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -1098,7 +1098,7 @@ $ docker pull memcached@sha256:c3e83faa6cafa443fe8e10e9773a25daf7127ccc325962d8c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -1457,7 +1457,7 @@ $ docker pull memcached@sha256:dcf76afaf4ccfed301311bf0bef9edc537fe01dc2cb9d2cb1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 3
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -1676,7 +1676,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -2245,7 +2245,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -2814,7 +2814,7 @@ $ docker pull memcached@sha256:6103643bca5bb3a6dd0601a5a346923296ab5b0c6b42eb5ba
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -3313,7 +3313,7 @@ $ docker pull memcached@sha256:c3e83faa6cafa443fe8e10e9773a25daf7127ccc325962d8c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -3672,7 +3672,7 @@ $ docker pull memcached@sha256:dcf76afaf4ccfed301311bf0bef9edc537fe01dc2cb9d2cb1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 3
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -3891,7 +3891,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -4460,7 +4460,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -5029,7 +5029,7 @@ $ docker pull memcached@sha256:6103643bca5bb3a6dd0601a5a346923296ab5b0c6b42eb5ba
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -5528,7 +5528,7 @@ $ docker pull memcached@sha256:c3e83faa6cafa443fe8e10e9773a25daf7127ccc325962d8c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -5887,7 +5887,7 @@ $ docker pull memcached@sha256:dcf76afaf4ccfed301311bf0bef9edc537fe01dc2cb9d2cb1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 3
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -6106,7 +6106,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -6675,7 +6675,7 @@ $ docker pull memcached@sha256:6103643bca5bb3a6dd0601a5a346923296ab5b0c6b42eb5ba
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -7174,7 +7174,7 @@ $ docker pull memcached@sha256:c3e83faa6cafa443fe8e10e9773a25daf7127ccc325962d8c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -7533,7 +7533,7 @@ $ docker pull memcached@sha256:dcf76afaf4ccfed301311bf0bef9edc537fe01dc2cb9d2cb1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 3
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -7752,7 +7752,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -8321,7 +8321,7 @@ $ docker pull memcached@sha256:7c5d8faef4c0613e164ad8c14c9c2c59e511e47e741b29d99
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
