@@ -5,7 +5,7 @@ $ docker pull ghost@sha256:acc3cc03836f403050c8fff8dbfdcd96c123021d50c7f2dac4c56
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
