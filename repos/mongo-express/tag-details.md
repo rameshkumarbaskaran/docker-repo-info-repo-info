@@ -15,7 +15,7 @@ $ docker pull mongo-express@sha256:f8ea7bad54a7535ad2a7b42ea3372a520787e4ceefaeb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -204,7 +204,7 @@ $ docker pull mongo-express@sha256:f8ea7bad54a7535ad2a7b42ea3372a520787e4ceefaeb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -393,7 +393,7 @@ $ docker pull mongo-express@sha256:83314d59ee5c7ad2499357b24736f80066e80373267de
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -582,7 +582,7 @@ $ docker pull mongo-express@sha256:83314d59ee5c7ad2499357b24736f80066e80373267de
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -771,7 +771,7 @@ $ docker pull mongo-express@sha256:83314d59ee5c7ad2499357b24736f80066e80373267de
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
