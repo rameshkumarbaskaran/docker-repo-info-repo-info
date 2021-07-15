@@ -5,7 +5,7 @@ $ docker pull aerospike@sha256:43476762c5bb049299cb4706c8bcf8ffd59c9bb4160668639
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `aerospike:ce-5.6.0.7` - linux; amd64
