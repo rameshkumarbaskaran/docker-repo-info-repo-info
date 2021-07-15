@@ -17,7 +17,7 @@ $ docker pull odoo@sha256:1e677e3e00bf367acf835cf2f319c894e32fbfd7227629207604ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:12` - linux; amd64
@@ -135,7 +135,7 @@ $ docker pull odoo@sha256:1e677e3e00bf367acf835cf2f319c894e32fbfd7227629207604ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:12.0` - linux; amd64
@@ -253,7 +253,7 @@ $ docker pull odoo@sha256:6b4a659c7da3444525ad7ecaef31807bbbf6c53e59cebb730ba379
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:13` - linux; amd64
@@ -365,7 +365,7 @@ $ docker pull odoo@sha256:6b4a659c7da3444525ad7ecaef31807bbbf6c53e59cebb730ba379
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:13.0` - linux; amd64
@@ -477,7 +477,7 @@ $ docker pull odoo@sha256:529d4665292b56e4a92897d1b587ab2c3d19d5ab047dc38dc4f45a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:14` - linux; amd64
@@ -589,7 +589,7 @@ $ docker pull odoo@sha256:529d4665292b56e4a92897d1b587ab2c3d19d5ab047dc38dc4f45a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:14.0` - linux; amd64
@@ -701,7 +701,7 @@ $ docker pull odoo@sha256:529d4665292b56e4a92897d1b587ab2c3d19d5ab047dc38dc4f45a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:latest` - linux; amd64

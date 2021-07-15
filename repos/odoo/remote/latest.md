@@ -5,7 +5,7 @@ $ docker pull odoo@sha256:529d4665292b56e4a92897d1b587ab2c3d19d5ab047dc38dc4f45a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `odoo:latest` - linux; amd64
