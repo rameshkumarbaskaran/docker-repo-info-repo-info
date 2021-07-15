@@ -5,7 +5,7 @@ $ docker pull caddy@sha256:7c0a0f83cc1e4833f90efa9204984fb0acc34f2d6fa6d32f549c0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7

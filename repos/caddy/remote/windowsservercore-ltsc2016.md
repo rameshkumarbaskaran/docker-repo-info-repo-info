@@ -5,7 +5,7 @@ $ docker pull caddy@sha256:ea60a37d4cd836ad64d2085c4951355657b0593ae72734ed4fae6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.14393.4530; amd64
 
 ### `caddy:windowsservercore-ltsc2016` - windows version 10.0.14393.4530; amd64
