@@ -14,7 +14,7 @@ $ docker pull silverpeas@sha256:f969484de3c9739d5145664ee2265f3c00cdf6b72e507237
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `silverpeas:6.0.2` - linux; amd64
@@ -171,7 +171,7 @@ $ docker pull silverpeas@sha256:138bfc98343cd8d0efc65ce8a1b851cb923b6c160481a478
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `silverpeas:6.1.3` - linux; amd64
@@ -310,7 +310,7 @@ $ docker pull silverpeas@sha256:9477b1b7959d46e0a5d34cffdd0557a5b2a4cce68c1918a9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `silverpeas:6.2.1` - linux; amd64
@@ -455,7 +455,7 @@ $ docker pull silverpeas@sha256:9477b1b7959d46e0a5d34cffdd0557a5b2a4cce68c1918a9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `silverpeas:latest` - linux; amd64

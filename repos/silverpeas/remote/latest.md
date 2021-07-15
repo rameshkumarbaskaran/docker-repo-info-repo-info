@@ -5,7 +5,7 @@ $ docker pull silverpeas@sha256:9477b1b7959d46e0a5d34cffdd0557a5b2a4cce68c1918a9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `silverpeas:latest` - linux; amd64
