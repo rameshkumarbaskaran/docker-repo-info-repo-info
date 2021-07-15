@@ -15,7 +15,7 @@ $ docker pull fluentd@sha256:6c30754e8ed25a6326bbeb80b5293efba00992e23fdfe8ca623
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm64 variant v8
@@ -432,7 +432,7 @@ $ docker pull fluentd@sha256:6c30754e8ed25a6326bbeb80b5293efba00992e23fdfe8ca623
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm64 variant v8
@@ -849,7 +849,7 @@ $ docker pull fluentd@sha256:9961a88df9e2672432a325670e75dae567b0b845a1a9d014408
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -1628,7 +1628,7 @@ $ docker pull fluentd@sha256:6c30754e8ed25a6326bbeb80b5293efba00992e23fdfe8ca623
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm64 variant v8
@@ -2045,7 +2045,7 @@ $ docker pull fluentd@sha256:9961a88df9e2672432a325670e75dae567b0b845a1a9d014408
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
