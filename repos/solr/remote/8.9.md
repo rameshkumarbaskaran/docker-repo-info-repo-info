@@ -5,7 +5,7 @@ $ docker pull solr@sha256:2a28072c49f908151a1f3f927388c1f97ea6eab5fae8f3a7064659
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 

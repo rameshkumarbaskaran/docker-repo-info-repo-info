@@ -72,7 +72,7 @@ $ docker pull solr@sha256:d6705a4797ef0b4ba76bac348b0614f9c69f29173b279fe1eccfce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:5` - linux; amd64
@@ -207,7 +207,7 @@ $ docker pull solr@sha256:2ca7c5de184dc8c0fb5d413e1ae6de3b9a13a9a9ae0e0b87f12224
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:5-slim` - linux; amd64
@@ -330,7 +330,7 @@ $ docker pull solr@sha256:d6705a4797ef0b4ba76bac348b0614f9c69f29173b279fe1eccfce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:5.5` - linux; amd64
@@ -465,7 +465,7 @@ $ docker pull solr@sha256:2ca7c5de184dc8c0fb5d413e1ae6de3b9a13a9a9ae0e0b87f12224
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:5.5-slim` - linux; amd64
@@ -588,7 +588,7 @@ $ docker pull solr@sha256:d6705a4797ef0b4ba76bac348b0614f9c69f29173b279fe1eccfce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:5.5.5` - linux; amd64
@@ -723,7 +723,7 @@ $ docker pull solr@sha256:2ca7c5de184dc8c0fb5d413e1ae6de3b9a13a9a9ae0e0b87f12224
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:5.5.5-slim` - linux; amd64
@@ -846,7 +846,7 @@ $ docker pull solr@sha256:4fdf2a7e43e86b83f266f3dc950e9b1ef0fcd04fc8c1c706fb3e96
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:6` - linux; amd64
@@ -981,7 +981,7 @@ $ docker pull solr@sha256:e9f30a68e1d877de19c47b55ef5a7ef861aa8b6992aa51fbed1d8b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:6-slim` - linux; amd64
@@ -1104,7 +1104,7 @@ $ docker pull solr@sha256:4fdf2a7e43e86b83f266f3dc950e9b1ef0fcd04fc8c1c706fb3e96
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:6.6` - linux; amd64
@@ -1239,7 +1239,7 @@ $ docker pull solr@sha256:e9f30a68e1d877de19c47b55ef5a7ef861aa8b6992aa51fbed1d8b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:6.6-slim` - linux; amd64
@@ -1362,7 +1362,7 @@ $ docker pull solr@sha256:4fdf2a7e43e86b83f266f3dc950e9b1ef0fcd04fc8c1c706fb3e96
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:6.6.6` - linux; amd64
@@ -1497,7 +1497,7 @@ $ docker pull solr@sha256:e9f30a68e1d877de19c47b55ef5a7ef861aa8b6992aa51fbed1d8b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `solr:6.6.6-slim` - linux; amd64
@@ -1620,7 +1620,7 @@ $ docker pull solr@sha256:6c893948717b3d63447a2b7031d7fb444cfa0841afe53c183ec652
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -1881,7 +1881,7 @@ $ docker pull solr@sha256:1e0a3e06c0821421140259b147ee2e2671c58c5553a4714ec3fbc3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -2118,7 +2118,7 @@ $ docker pull solr@sha256:6c893948717b3d63447a2b7031d7fb444cfa0841afe53c183ec652
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -2379,7 +2379,7 @@ $ docker pull solr@sha256:1e0a3e06c0821421140259b147ee2e2671c58c5553a4714ec3fbc3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -2616,7 +2616,7 @@ $ docker pull solr@sha256:6c893948717b3d63447a2b7031d7fb444cfa0841afe53c183ec652
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -2877,7 +2877,7 @@ $ docker pull solr@sha256:1e0a3e06c0821421140259b147ee2e2671c58c5553a4714ec3fbc3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -3114,7 +3114,7 @@ $ docker pull solr@sha256:2a28072c49f908151a1f3f927388c1f97ea6eab5fae8f3a7064659
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -3379,7 +3379,7 @@ $ docker pull solr@sha256:cafd6834bf8b204aabac7d30dc2cead4fa6576f1cfc8e20115a694
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -3620,7 +3620,7 @@ $ docker pull solr@sha256:687b18a3e842f9f36e1ef8701207476754834df2d23c8543782fef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -3885,7 +3885,7 @@ $ docker pull solr@sha256:4bcad65faf81b8ac55738d80d256ae9d855020f868a6579119df92
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -4126,7 +4126,7 @@ $ docker pull solr@sha256:687b18a3e842f9f36e1ef8701207476754834df2d23c8543782fef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -4391,7 +4391,7 @@ $ docker pull solr@sha256:4bcad65faf81b8ac55738d80d256ae9d855020f868a6579119df92
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -4632,7 +4632,7 @@ $ docker pull solr@sha256:8bc43c1a07a083f6adf56b4a9ae5bbef80cb2e9e943f1f19ce30a1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -4897,7 +4897,7 @@ $ docker pull solr@sha256:fd45f56689864ae2c57c13904db4c12b74120712d444194fa1ea0e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -5138,7 +5138,7 @@ $ docker pull solr@sha256:8bc43c1a07a083f6adf56b4a9ae5bbef80cb2e9e943f1f19ce30a1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -5403,7 +5403,7 @@ $ docker pull solr@sha256:fd45f56689864ae2c57c13904db4c12b74120712d444194fa1ea0e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -5644,7 +5644,7 @@ $ docker pull solr@sha256:a2b7eeaf1bd9bf1e16a4ef8983fbab8b74e9c794c4de4f8860edc5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -5909,7 +5909,7 @@ $ docker pull solr@sha256:3fdb2a4be6abae6e8a769378fb0158f403b3c505f5d4eb8dd23b54
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -6150,7 +6150,7 @@ $ docker pull solr@sha256:a2b7eeaf1bd9bf1e16a4ef8983fbab8b74e9c794c4de4f8860edc5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -6415,7 +6415,7 @@ $ docker pull solr@sha256:3fdb2a4be6abae6e8a769378fb0158f403b3c505f5d4eb8dd23b54
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -6656,7 +6656,7 @@ $ docker pull solr@sha256:c3b4c410b8d20209035ebf58704ede5d643fd31e187620958b2bd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -6921,7 +6921,7 @@ $ docker pull solr@sha256:82d075c912064441830f11767a4b85dcf4f0ae891e4bc45f171454
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -7162,7 +7162,7 @@ $ docker pull solr@sha256:c3b4c410b8d20209035ebf58704ede5d643fd31e187620958b2bd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -7427,7 +7427,7 @@ $ docker pull solr@sha256:82d075c912064441830f11767a4b85dcf4f0ae891e4bc45f171454
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -7668,7 +7668,7 @@ $ docker pull solr@sha256:48e4889cd077cc0d91a22e926dd6a2d25fa02645702d3098b9d635
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -7933,7 +7933,7 @@ $ docker pull solr@sha256:8e0a2ddc45b874bca8c7ed3a5ccce336e5d252fada115748ca0e0f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -8174,7 +8174,7 @@ $ docker pull solr@sha256:48e4889cd077cc0d91a22e926dd6a2d25fa02645702d3098b9d635
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -8439,7 +8439,7 @@ $ docker pull solr@sha256:8e0a2ddc45b874bca8c7ed3a5ccce336e5d252fada115748ca0e0f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -8680,7 +8680,7 @@ $ docker pull solr@sha256:f0e6add5c3554e323e5a006a7fbdf58e1176d43ecc9265fff95a49
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -8945,7 +8945,7 @@ $ docker pull solr@sha256:de96e0927a177ca2c5b1cd742675cdb57736cee7765495279d4819
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -9186,7 +9186,7 @@ $ docker pull solr@sha256:f0e6add5c3554e323e5a006a7fbdf58e1176d43ecc9265fff95a49
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -9451,7 +9451,7 @@ $ docker pull solr@sha256:de96e0927a177ca2c5b1cd742675cdb57736cee7765495279d4819
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -9692,7 +9692,7 @@ $ docker pull solr@sha256:b1d0747575a334834c76c782289ecf5474783abcfa3d1ed92192db
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -9957,7 +9957,7 @@ $ docker pull solr@sha256:375c2b34981a4434f1f88cfef509939d09f38db76bb03b032acbc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -10198,7 +10198,7 @@ $ docker pull solr@sha256:b1d0747575a334834c76c782289ecf5474783abcfa3d1ed92192db
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -10463,7 +10463,7 @@ $ docker pull solr@sha256:375c2b34981a4434f1f88cfef509939d09f38db76bb03b032acbc6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -10704,7 +10704,7 @@ $ docker pull solr@sha256:64b35deccbe8e4e577489bac7f75ba9fa6e4116010fda5c632637b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -10969,7 +10969,7 @@ $ docker pull solr@sha256:fc5da55a1e8f6b0b81a3f768b438f338387f50306863dbaa277a24
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -11210,7 +11210,7 @@ $ docker pull solr@sha256:64b35deccbe8e4e577489bac7f75ba9fa6e4116010fda5c632637b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -11475,7 +11475,7 @@ $ docker pull solr@sha256:fc5da55a1e8f6b0b81a3f768b438f338387f50306863dbaa277a24
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -11716,7 +11716,7 @@ $ docker pull solr@sha256:484c8918fa373df741ec620629960c94935bf627d94e96e7f5650d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -11981,7 +11981,7 @@ $ docker pull solr@sha256:32eb6f1f64a3e29e23c9a799bef9ed71b6ecfd1b9ab1139f0d4974
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -12222,7 +12222,7 @@ $ docker pull solr@sha256:484c8918fa373df741ec620629960c94935bf627d94e96e7f5650d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -12487,7 +12487,7 @@ $ docker pull solr@sha256:32eb6f1f64a3e29e23c9a799bef9ed71b6ecfd1b9ab1139f0d4974
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -12728,7 +12728,7 @@ $ docker pull solr@sha256:2a28072c49f908151a1f3f927388c1f97ea6eab5fae8f3a7064659
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -12993,7 +12993,7 @@ $ docker pull solr@sha256:cafd6834bf8b204aabac7d30dc2cead4fa6576f1cfc8e20115a694
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -13234,7 +13234,7 @@ $ docker pull solr@sha256:2a28072c49f908151a1f3f927388c1f97ea6eab5fae8f3a7064659
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -13499,7 +13499,7 @@ $ docker pull solr@sha256:cafd6834bf8b204aabac7d30dc2cead4fa6576f1cfc8e20115a694
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -13740,7 +13740,7 @@ $ docker pull solr@sha256:2a28072c49f908151a1f3f927388c1f97ea6eab5fae8f3a7064659
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -14005,7 +14005,7 @@ $ docker pull solr@sha256:cafd6834bf8b204aabac7d30dc2cead4fa6576f1cfc8e20115a694
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
