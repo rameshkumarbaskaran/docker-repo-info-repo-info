@@ -5,7 +5,7 @@ $ docker pull convertigo@sha256:0034ec2e43254cc9838b841f94e62b020f332ab26bad5715
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `convertigo:latest` - linux; amd64
