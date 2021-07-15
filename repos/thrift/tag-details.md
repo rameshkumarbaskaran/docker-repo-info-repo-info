@@ -19,7 +19,7 @@ $ docker pull thrift@sha256:d64f9113aa9e9f2aef76d549706a7225582fb67d5135011291ee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.10` - linux; amd64
@@ -67,7 +67,7 @@ $ docker pull thrift@sha256:d64f9113aa9e9f2aef76d549706a7225582fb67d5135011291ee
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.10.0` - linux; amd64
@@ -115,7 +115,7 @@ $ docker pull thrift@sha256:91f11a3b96b5dff6777206e851b12ec22493cf3d1ecc395817da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.11` - linux; amd64
@@ -163,7 +163,7 @@ $ docker pull thrift@sha256:91f11a3b96b5dff6777206e851b12ec22493cf3d1ecc395817da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.11.0` - linux; amd64
@@ -211,7 +211,7 @@ $ docker pull thrift@sha256:7cb2f20b73e2459e4ddb29261d2ac7d4919b57ce7af6bc907039
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.12` - linux; amd64
@@ -257,7 +257,7 @@ $ docker pull thrift@sha256:7cb2f20b73e2459e4ddb29261d2ac7d4919b57ce7af6bc907039
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.12.0` - linux; amd64
@@ -303,7 +303,7 @@ $ docker pull thrift@sha256:965273845365074a76e03c28b6864dae3095db3d5391ec6165f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.9` - linux; amd64
@@ -351,7 +351,7 @@ $ docker pull thrift@sha256:965273845365074a76e03c28b6864dae3095db3d5391ec6165f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:0.9.3` - linux; amd64
@@ -399,7 +399,7 @@ $ docker pull thrift@sha256:7cb2f20b73e2459e4ddb29261d2ac7d4919b57ce7af6bc907039
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `thrift:latest` - linux; amd64
