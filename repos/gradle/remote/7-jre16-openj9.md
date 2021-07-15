@@ -5,7 +5,7 @@ $ docker pull gradle@sha256:df712e2e11a59d84180a3d620a52e8c6c79c451f9cb7ae3d54fd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; ppc64le
