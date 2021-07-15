@@ -46,7 +46,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -291,7 +291,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -382,7 +382,7 @@ $ docker pull rust@sha256:231c0b422310e971886ff2b125dd69e3160453740a6e1d8a14b398
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -473,7 +473,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -564,7 +564,7 @@ $ docker pull rust@sha256:e61aa6ac314bc8aa13e6781310eca0367e40e34907b4017eacead6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -809,7 +809,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -1054,7 +1054,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -1203,7 +1203,7 @@ $ docker pull rust@sha256:3c7a88b3969f1711b45377202c6a4181dec47e018a6869b7c0b75c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -1352,7 +1352,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -1501,7 +1501,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -1746,7 +1746,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -1837,7 +1837,7 @@ $ docker pull rust@sha256:231c0b422310e971886ff2b125dd69e3160453740a6e1d8a14b398
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -1928,7 +1928,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -2019,7 +2019,7 @@ $ docker pull rust@sha256:e61aa6ac314bc8aa13e6781310eca0367e40e34907b4017eacead6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2264,7 +2264,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2509,7 +2509,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2658,7 +2658,7 @@ $ docker pull rust@sha256:3c7a88b3969f1711b45377202c6a4181dec47e018a6869b7c0b75c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2807,7 +2807,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2956,7 +2956,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -3201,7 +3201,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -3292,7 +3292,7 @@ $ docker pull rust@sha256:231c0b422310e971886ff2b125dd69e3160453740a6e1d8a14b398
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -3383,7 +3383,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -3474,7 +3474,7 @@ $ docker pull rust@sha256:e61aa6ac314bc8aa13e6781310eca0367e40e34907b4017eacead6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -3719,7 +3719,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -3964,7 +3964,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4113,7 +4113,7 @@ $ docker pull rust@sha256:3c7a88b3969f1711b45377202c6a4181dec47e018a6869b7c0b75c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4262,7 +4262,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4411,7 +4411,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -4502,7 +4502,7 @@ $ docker pull rust@sha256:231c0b422310e971886ff2b125dd69e3160453740a6e1d8a14b398
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -4593,7 +4593,7 @@ $ docker pull rust@sha256:e763e2da6c35dc8d2a53137cab641d0c4155cbddd8e0228fe5b562
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -4684,7 +4684,7 @@ $ docker pull rust@sha256:e61aa6ac314bc8aa13e6781310eca0367e40e34907b4017eacead6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4929,7 +4929,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -5174,7 +5174,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -5419,7 +5419,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -5568,7 +5568,7 @@ $ docker pull rust@sha256:3c7a88b3969f1711b45377202c6a4181dec47e018a6869b7c0b75c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -5717,7 +5717,7 @@ $ docker pull rust@sha256:dc1b6f724fa9a904830b3dceb3734bc437dbf969962f6795aa8c67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8

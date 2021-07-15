@@ -5,7 +5,7 @@ $ docker pull rust@sha256:6ab4e79e374047846637c0266a9147bcac4a575b68bcbcaaad2f2e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
