@@ -52,7 +52,7 @@ $ docker pull sonarqube@sha256:0fc6c71c4228bc1d63f8ea05c8f093d52a5b99279cdbe8f28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8-community` - linux; amd64
@@ -130,7 +130,7 @@ $ docker pull sonarqube@sha256:c8def08c07d4a49bca9c2aa953f8ec16b65025f440b3d4904
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8-datacenter-app` - linux; amd64
@@ -208,7 +208,7 @@ $ docker pull sonarqube@sha256:0c1281b14ee047a5bdeb36d8dc36e8686bc97d95ec3432ff7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8-datacenter-search` - linux; amd64
@@ -286,7 +286,7 @@ $ docker pull sonarqube@sha256:6a151f3584c78430ec34b2d9ade3b7a50742a02a09fd93663
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8-developer` - linux; amd64
@@ -364,7 +364,7 @@ $ docker pull sonarqube@sha256:994d814de2a937b0f64220ee2ee06f59d80d319a3beae76d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8-enterprise` - linux; amd64
@@ -442,7 +442,7 @@ $ docker pull sonarqube@sha256:0fc6c71c4228bc1d63f8ea05c8f093d52a5b99279cdbe8f28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9-community` - linux; amd64
@@ -520,7 +520,7 @@ $ docker pull sonarqube@sha256:c8def08c07d4a49bca9c2aa953f8ec16b65025f440b3d4904
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9-datacenter-app` - linux; amd64
@@ -598,7 +598,7 @@ $ docker pull sonarqube@sha256:0c1281b14ee047a5bdeb36d8dc36e8686bc97d95ec3432ff7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9-datacenter-search` - linux; amd64
@@ -676,7 +676,7 @@ $ docker pull sonarqube@sha256:6a151f3584c78430ec34b2d9ade3b7a50742a02a09fd93663
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9-developer` - linux; amd64
@@ -754,7 +754,7 @@ $ docker pull sonarqube@sha256:994d814de2a937b0f64220ee2ee06f59d80d319a3beae76d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9-enterprise` - linux; amd64
@@ -832,7 +832,7 @@ $ docker pull sonarqube@sha256:0fc6c71c4228bc1d63f8ea05c8f093d52a5b99279cdbe8f28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9.1-community` - linux; amd64
@@ -910,7 +910,7 @@ $ docker pull sonarqube@sha256:c8def08c07d4a49bca9c2aa953f8ec16b65025f440b3d4904
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9.1-datacenter-app` - linux; amd64
@@ -988,7 +988,7 @@ $ docker pull sonarqube@sha256:0c1281b14ee047a5bdeb36d8dc36e8686bc97d95ec3432ff7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9.1-datacenter-search` - linux; amd64
@@ -1066,7 +1066,7 @@ $ docker pull sonarqube@sha256:6a151f3584c78430ec34b2d9ade3b7a50742a02a09fd93663
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9.1-developer` - linux; amd64
@@ -1144,7 +1144,7 @@ $ docker pull sonarqube@sha256:994d814de2a937b0f64220ee2ee06f59d80d319a3beae76d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:8.9.1-enterprise` - linux; amd64
@@ -1222,7 +1222,7 @@ $ docker pull sonarqube@sha256:d1f18c804d8bdcea0a90d13d93f6ec9af9012d48747fcb63d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9-community` - linux; amd64
@@ -1300,7 +1300,7 @@ $ docker pull sonarqube@sha256:889ce2c370b12fd0fa01a13dc712f08880fe9f46f1d4466df
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9-datacenter-app` - linux; amd64
@@ -1378,7 +1378,7 @@ $ docker pull sonarqube@sha256:11a6acd882b982ba0ba97d76a4ef67a99da283f15d9a08d0c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9-datacenter-search` - linux; amd64
@@ -1456,7 +1456,7 @@ $ docker pull sonarqube@sha256:4ac98bf51b9622d8d11d9c8fa71a0c400d448ebbd6a55a8d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9-developer` - linux; amd64
@@ -1534,7 +1534,7 @@ $ docker pull sonarqube@sha256:3a5b88f4b16f601828ae91af9bedadfe68007543b49cf6612
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9-enterprise` - linux; amd64
@@ -1612,7 +1612,7 @@ $ docker pull sonarqube@sha256:d1f18c804d8bdcea0a90d13d93f6ec9af9012d48747fcb63d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0-community` - linux; amd64
@@ -1690,7 +1690,7 @@ $ docker pull sonarqube@sha256:889ce2c370b12fd0fa01a13dc712f08880fe9f46f1d4466df
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0-datacenter-app` - linux; amd64
@@ -1768,7 +1768,7 @@ $ docker pull sonarqube@sha256:11a6acd882b982ba0ba97d76a4ef67a99da283f15d9a08d0c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0-datacenter-search` - linux; amd64
@@ -1846,7 +1846,7 @@ $ docker pull sonarqube@sha256:4ac98bf51b9622d8d11d9c8fa71a0c400d448ebbd6a55a8d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0-developer` - linux; amd64
@@ -1924,7 +1924,7 @@ $ docker pull sonarqube@sha256:3a5b88f4b16f601828ae91af9bedadfe68007543b49cf6612
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0-enterprise` - linux; amd64
@@ -2002,7 +2002,7 @@ $ docker pull sonarqube@sha256:d1f18c804d8bdcea0a90d13d93f6ec9af9012d48747fcb63d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0.0-community` - linux; amd64
@@ -2080,7 +2080,7 @@ $ docker pull sonarqube@sha256:889ce2c370b12fd0fa01a13dc712f08880fe9f46f1d4466df
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0.0-datacenter-app` - linux; amd64
@@ -2158,7 +2158,7 @@ $ docker pull sonarqube@sha256:11a6acd882b982ba0ba97d76a4ef67a99da283f15d9a08d0c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0.0-datacenter-search` - linux; amd64
@@ -2236,7 +2236,7 @@ $ docker pull sonarqube@sha256:4ac98bf51b9622d8d11d9c8fa71a0c400d448ebbd6a55a8d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0.0-developer` - linux; amd64
@@ -2314,7 +2314,7 @@ $ docker pull sonarqube@sha256:3a5b88f4b16f601828ae91af9bedadfe68007543b49cf6612
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:9.0.0-enterprise` - linux; amd64
@@ -2392,7 +2392,7 @@ $ docker pull sonarqube@sha256:d1f18c804d8bdcea0a90d13d93f6ec9af9012d48747fcb63d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:community` - linux; amd64
@@ -2470,7 +2470,7 @@ $ docker pull sonarqube@sha256:889ce2c370b12fd0fa01a13dc712f08880fe9f46f1d4466df
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:datacenter-app` - linux; amd64
@@ -2548,7 +2548,7 @@ $ docker pull sonarqube@sha256:11a6acd882b982ba0ba97d76a4ef67a99da283f15d9a08d0c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:datacenter-search` - linux; amd64
@@ -2626,7 +2626,7 @@ $ docker pull sonarqube@sha256:4ac98bf51b9622d8d11d9c8fa71a0c400d448ebbd6a55a8d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:developer` - linux; amd64
@@ -2704,7 +2704,7 @@ $ docker pull sonarqube@sha256:3a5b88f4b16f601828ae91af9bedadfe68007543b49cf6612
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:enterprise` - linux; amd64
@@ -2782,7 +2782,7 @@ $ docker pull sonarqube@sha256:d1f18c804d8bdcea0a90d13d93f6ec9af9012d48747fcb63d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:latest` - linux; amd64
@@ -2860,7 +2860,7 @@ $ docker pull sonarqube@sha256:0fc6c71c4228bc1d63f8ea05c8f093d52a5b99279cdbe8f28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:lts` - linux; amd64
@@ -2938,7 +2938,7 @@ $ docker pull sonarqube@sha256:0fc6c71c4228bc1d63f8ea05c8f093d52a5b99279cdbe8f28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:lts-community` - linux; amd64
@@ -3016,7 +3016,7 @@ $ docker pull sonarqube@sha256:c8def08c07d4a49bca9c2aa953f8ec16b65025f440b3d4904
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:lts-datacenter-app` - linux; amd64
@@ -3094,7 +3094,7 @@ $ docker pull sonarqube@sha256:0c1281b14ee047a5bdeb36d8dc36e8686bc97d95ec3432ff7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:lts-datacenter-search` - linux; amd64
@@ -3172,7 +3172,7 @@ $ docker pull sonarqube@sha256:6a151f3584c78430ec34b2d9ade3b7a50742a02a09fd93663
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:lts-developer` - linux; amd64
@@ -3250,7 +3250,7 @@ $ docker pull sonarqube@sha256:994d814de2a937b0f64220ee2ee06f59d80d319a3beae76d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:lts-enterprise` - linux; amd64

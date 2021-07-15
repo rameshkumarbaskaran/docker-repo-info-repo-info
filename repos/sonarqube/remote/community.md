@@ -5,7 +5,7 @@ $ docker pull sonarqube@sha256:d1f18c804d8bdcea0a90d13d93f6ec9af9012d48747fcb63d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `sonarqube:community` - linux; amd64
