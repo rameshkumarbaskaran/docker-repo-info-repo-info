@@ -31,7 +31,7 @@ $ docker pull haskell@sha256:5eabc853272db92dcd3b0f0a9eb93436e77d9af7ef59d4d57b3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8` - linux; amd64
@@ -105,7 +105,7 @@ $ docker pull haskell@sha256:5eabc853272db92dcd3b0f0a9eb93436e77d9af7ef59d4d57b3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8-buster` - linux; amd64
@@ -179,7 +179,7 @@ $ docker pull haskell@sha256:ea8f772830e2411e612784c7a08a4de072ab6227ac64613aac5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8-stretch` - linux; amd64
@@ -253,7 +253,7 @@ $ docker pull haskell@sha256:5eabc853272db92dcd3b0f0a9eb93436e77d9af7ef59d4d57b3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8.10` - linux; amd64
@@ -327,7 +327,7 @@ $ docker pull haskell@sha256:5eabc853272db92dcd3b0f0a9eb93436e77d9af7ef59d4d57b3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8.10-buster` - linux; amd64
@@ -401,7 +401,7 @@ $ docker pull haskell@sha256:ea8f772830e2411e612784c7a08a4de072ab6227ac64613aac5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8.10-stretch` - linux; amd64
@@ -475,7 +475,7 @@ $ docker pull haskell@sha256:5eabc853272db92dcd3b0f0a9eb93436e77d9af7ef59d4d57b3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8.10.4` - linux; amd64
@@ -549,7 +549,7 @@ $ docker pull haskell@sha256:5eabc853272db92dcd3b0f0a9eb93436e77d9af7ef59d4d57b3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8.10.4-buster` - linux; amd64
@@ -623,7 +623,7 @@ $ docker pull haskell@sha256:ea8f772830e2411e612784c7a08a4de072ab6227ac64613aac5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8.10.4-stretch` - linux; amd64
@@ -697,7 +697,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9` - linux; amd64
@@ -771,7 +771,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9-buster` - linux; amd64
@@ -845,7 +845,7 @@ $ docker pull haskell@sha256:a36be9ed65a9bbf2668bd66b6b8e8581f13bba537076692d413
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9-stretch` - linux; amd64
@@ -919,7 +919,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9.0` - linux; amd64
@@ -993,7 +993,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9.0-buster` - linux; amd64
@@ -1067,7 +1067,7 @@ $ docker pull haskell@sha256:a36be9ed65a9bbf2668bd66b6b8e8581f13bba537076692d413
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9.0-stretch` - linux; amd64
@@ -1141,7 +1141,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9.0.1` - linux; amd64
@@ -1215,7 +1215,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9.0.1-buster` - linux; amd64
@@ -1289,7 +1289,7 @@ $ docker pull haskell@sha256:a36be9ed65a9bbf2668bd66b6b8e8581f13bba537076692d413
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:9.0.1-stretch` - linux; amd64
@@ -1363,7 +1363,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:buster` - linux; amd64
@@ -1437,7 +1437,7 @@ $ docker pull haskell@sha256:6f4ff6858ac90fc73f7f6e39239df1eef1bcfa4cba240531674
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:latest` - linux; amd64
@@ -1511,7 +1511,7 @@ $ docker pull haskell@sha256:a36be9ed65a9bbf2668bd66b6b8e8581f13bba537076692d413
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:stretch` - linux; amd64

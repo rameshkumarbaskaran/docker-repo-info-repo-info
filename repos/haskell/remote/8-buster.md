@@ -5,7 +5,7 @@ $ docker pull haskell@sha256:5eabc853272db92dcd3b0f0a9eb93436e77d9af7ef59d4d57b3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:8-buster` - linux; amd64

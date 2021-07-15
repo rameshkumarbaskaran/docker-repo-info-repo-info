@@ -5,7 +5,7 @@ $ docker pull haskell@sha256:a36be9ed65a9bbf2668bd66b6b8e8581f13bba537076692d413
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `haskell:stretch` - linux; amd64
