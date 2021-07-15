@@ -5,7 +5,7 @@ $ docker pull plone@sha256:c85d9934b35f1e64af80a425b963a04fa052e616ab6474bceab8e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm64 variant v8
