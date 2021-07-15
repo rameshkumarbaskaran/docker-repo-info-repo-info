@@ -5,7 +5,7 @@ $ docker pull python@sha256:54db92a2b7423988c664c171ac5a94ab72a27905354d8553be50
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	windows version 10.0.17763.2061; amd64
 	-	windows version 10.0.14393.4530; amd64
 
