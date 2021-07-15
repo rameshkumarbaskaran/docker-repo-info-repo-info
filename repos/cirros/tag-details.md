@@ -14,7 +14,7 @@ $ docker pull cirros@sha256:1e695eb2772a2b511ccab70091962d1efb9501fdca804eb1d52d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm64 variant v8
@@ -218,7 +218,7 @@ $ docker pull cirros@sha256:1e695eb2772a2b511ccab70091962d1efb9501fdca804eb1d52d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm64 variant v8
@@ -422,7 +422,7 @@ $ docker pull cirros@sha256:1e695eb2772a2b511ccab70091962d1efb9501fdca804eb1d52d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm64 variant v8
@@ -626,7 +626,7 @@ $ docker pull cirros@sha256:1e695eb2772a2b511ccab70091962d1efb9501fdca804eb1d52d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm64 variant v8
