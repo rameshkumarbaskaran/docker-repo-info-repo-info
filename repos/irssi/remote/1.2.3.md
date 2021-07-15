@@ -5,7 +5,7 @@ $ docker pull irssi@sha256:4b1d044d035863c881aebdbb2f80aea68a1b4519efa24eb6d942a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
