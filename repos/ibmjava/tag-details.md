@@ -26,7 +26,7 @@ $ docker pull ibmjava@sha256:3c15b400cb018901969b56dd2efc39c7fd7807c246bd45f9870
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 3
 	-	linux; amd64
 	-	linux; ppc64le
 	-	linux; s390x
@@ -170,7 +170,7 @@ $ docker pull ibmjava@sha256:3c15b400cb018901969b56dd2efc39c7fd7807c246bd45f9870
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 3
 	-	linux; amd64
 	-	linux; ppc64le
 	-	linux; s390x
@@ -314,7 +314,7 @@ $ docker pull ibmjava@sha256:6031b65f580331de808d3cfa9b28e5b17fea5fe8c2fcdd6a3b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -503,7 +503,7 @@ $ docker pull ibmjava@sha256:6031b65f580331de808d3cfa9b28e5b17fea5fe8c2fcdd6a3b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -692,7 +692,7 @@ $ docker pull ibmjava@sha256:f1752a725461929b425728e7413aef10e927ff3383e3a1cfe31
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `ibmjava:8-jre-alpine` - linux; amd64
@@ -752,7 +752,7 @@ $ docker pull ibmjava@sha256:35b300068b472e9b508d7d0039297b3c74d5bea7a323801f275
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -941,7 +941,7 @@ $ docker pull ibmjava@sha256:1fe4106ffc54495c215ee6a3c8bac11a7ad34e82b2f9950d834
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `ibmjava:8-sdk-alpine` - linux; amd64
@@ -1001,7 +1001,7 @@ $ docker pull ibmjava@sha256:0b980a6275e78178189f035cc25358bba8550e07c6cd5dfdb17
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -1190,7 +1190,7 @@ $ docker pull ibmjava@sha256:262e9812cc0f11c41e15218cc64a4ab9a9cadb899c8112659b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `ibmjava:8-sfj-alpine` - linux; amd64
@@ -1250,7 +1250,7 @@ $ docker pull ibmjava@sha256:6031b65f580331de808d3cfa9b28e5b17fea5fe8c2fcdd6a3b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -1439,7 +1439,7 @@ $ docker pull ibmjava@sha256:f1752a725461929b425728e7413aef10e927ff3383e3a1cfe31
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `ibmjava:jre-alpine` - linux; amd64
@@ -1499,7 +1499,7 @@ $ docker pull ibmjava@sha256:6031b65f580331de808d3cfa9b28e5b17fea5fe8c2fcdd6a3b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -1688,7 +1688,7 @@ $ docker pull ibmjava@sha256:35b300068b472e9b508d7d0039297b3c74d5bea7a323801f275
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -1877,7 +1877,7 @@ $ docker pull ibmjava@sha256:1fe4106ffc54495c215ee6a3c8bac11a7ad34e82b2f9950d834
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `ibmjava:sdk-alpine` - linux; amd64
@@ -1937,7 +1937,7 @@ $ docker pull ibmjava@sha256:0b980a6275e78178189f035cc25358bba8550e07c6cd5dfdb17
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; 386
 	-	linux; ppc64le
@@ -2126,7 +2126,7 @@ $ docker pull ibmjava@sha256:262e9812cc0f11c41e15218cc64a4ab9a9cadb899c8112659b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `ibmjava:sfj-alpine` - linux; amd64

@@ -5,7 +5,7 @@ $ docker pull ibmjava@sha256:1fe4106ffc54495c215ee6a3c8bac11a7ad34e82b2f9950d834
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `ibmjava:sdk-alpine` - linux; amd64
