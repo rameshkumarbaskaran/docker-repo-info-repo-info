@@ -5,7 +5,7 @@ $ docker pull nats-streaming@sha256:edf770c6014121e4ea3aac9d7493a33db0256a2e4424
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
