@@ -15,7 +15,7 @@ $ docker pull euleros@sha256:9a661654cb6daec287d9782575688e268927b4b3fea866ad420
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `euleros:2.2` - linux; amd64
@@ -53,7 +53,7 @@ $ docker pull euleros@sha256:c184bfa74fc5f1178ff5f6aacb010a95a72c1bd4ad409c3823b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -120,7 +120,7 @@ $ docker pull euleros@sha256:d90877d14a437a27a12b4d745e67b2b0fb7f9ce254b9502e827
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -187,7 +187,7 @@ $ docker pull euleros@sha256:49d8884e21486bb58c586976f6169e806dd087c0e60aee0a924
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
@@ -254,7 +254,7 @@ $ docker pull euleros@sha256:49d8884e21486bb58c586976f6169e806dd087c0e60aee0a924
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 

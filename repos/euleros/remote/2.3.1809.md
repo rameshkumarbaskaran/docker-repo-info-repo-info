@@ -5,7 +5,7 @@ $ docker pull euleros@sha256:49d8884e21486bb58c586976f6169e806dd087c0e60aee0a924
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 2
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
