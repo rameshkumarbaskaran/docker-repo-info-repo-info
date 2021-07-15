@@ -63,7 +63,7 @@ $ docker pull elixir@sha256:bfa128ac9f1ae159c4c856064495dab70f8f38022782aff84623
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -594,7 +594,7 @@ $ docker pull elixir@sha256:e2f03388b2318d36b7a22f152fd5b9b8927cd2831e6231487f1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -897,7 +897,7 @@ $ docker pull elixir@sha256:f814063111a7ede1a8ab616d9aae717b93ed0490d8ebb428b766
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -1200,7 +1200,7 @@ $ docker pull elixir@sha256:bfa128ac9f1ae159c4c856064495dab70f8f38022782aff84623
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -1731,7 +1731,7 @@ $ docker pull elixir@sha256:e2f03388b2318d36b7a22f152fd5b9b8927cd2831e6231487f1b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2034,7 +2034,7 @@ $ docker pull elixir@sha256:f814063111a7ede1a8ab616d9aae717b93ed0490d8ebb428b766
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2337,7 +2337,7 @@ $ docker pull elixir@sha256:522d277a8a1cab1a1c030f483b4c3550df8b154179b30a7253ca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -2868,7 +2868,7 @@ $ docker pull elixir@sha256:b451e7dd89b047c2b2c1646100278b6a732b7071d9567b448d7e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -3171,7 +3171,7 @@ $ docker pull elixir@sha256:9e60f1abecf76e8e14f34b33f05e95507f635ca0b723576690f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -3474,7 +3474,7 @@ $ docker pull elixir@sha256:522d277a8a1cab1a1c030f483b4c3550df8b154179b30a7253ca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4005,7 +4005,7 @@ $ docker pull elixir@sha256:b451e7dd89b047c2b2c1646100278b6a732b7071d9567b448d7e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4308,7 +4308,7 @@ $ docker pull elixir@sha256:9e60f1abecf76e8e14f34b33f05e95507f635ca0b723576690f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -4611,7 +4611,7 @@ $ docker pull elixir@sha256:e114dcae36f09351ec0a2c5e333cb728b1bd08cb5bad13bdab07
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -5142,7 +5142,7 @@ $ docker pull elixir@sha256:5eab7329ac54a4c5902727d358ff276e99071d2adbc9abc53fcb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -5445,7 +5445,7 @@ $ docker pull elixir@sha256:8e258cf8f90cf131a74f98546ec73517b35f6ed24e94c87b852c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -5748,7 +5748,7 @@ $ docker pull elixir@sha256:e114dcae36f09351ec0a2c5e333cb728b1bd08cb5bad13bdab07
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -6279,7 +6279,7 @@ $ docker pull elixir@sha256:5eab7329ac54a4c5902727d358ff276e99071d2adbc9abc53fcb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -6582,7 +6582,7 @@ $ docker pull elixir@sha256:8e258cf8f90cf131a74f98546ec73517b35f6ed24e94c87b852c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -6885,7 +6885,7 @@ $ docker pull elixir@sha256:1dda439a3b17ea858987ce4b39f447cd2c9d63f705ab33cc13c2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -7242,7 +7242,7 @@ $ docker pull elixir@sha256:4fd093e6f1502e15e44fb61e8996936fe2305ca754e70f306043
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -7439,7 +7439,7 @@ $ docker pull elixir@sha256:5f978706b0de0f54f6ee7e624875cb852c47887c07ed04f6c7fa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -7796,7 +7796,7 @@ $ docker pull elixir@sha256:68ab0625a097cb33be6b2c4f7fd2be008cc5e638fe2e63c380a5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -8001,7 +8001,7 @@ $ docker pull elixir@sha256:1e4ae7d8e6ca99dd325caeae8fc85665e17c24c0e8cb884739c3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -8198,7 +8198,7 @@ $ docker pull elixir@sha256:1dda439a3b17ea858987ce4b39f447cd2c9d63f705ab33cc13c2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -8555,7 +8555,7 @@ $ docker pull elixir@sha256:4fd093e6f1502e15e44fb61e8996936fe2305ca754e70f306043
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -8752,7 +8752,7 @@ $ docker pull elixir@sha256:5f978706b0de0f54f6ee7e624875cb852c47887c07ed04f6c7fa
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -9109,7 +9109,7 @@ $ docker pull elixir@sha256:68ab0625a097cb33be6b2c4f7fd2be008cc5e638fe2e63c380a5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -9314,7 +9314,7 @@ $ docker pull elixir@sha256:1e4ae7d8e6ca99dd325caeae8fc85665e17c24c0e8cb884739c3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -9511,7 +9511,7 @@ $ docker pull elixir@sha256:aec77a23b16c61895ff3444e1553fbe46df99771cab2194f0b4b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -9868,7 +9868,7 @@ $ docker pull elixir@sha256:60294aa5cf0d80fb43e72e8956bb7ef094f7f0f685dac3a60209
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -10073,7 +10073,7 @@ $ docker pull elixir@sha256:201abff6011f8fa19de0c507bc01b7e84fec189a75816746113e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -10278,7 +10278,7 @@ $ docker pull elixir@sha256:aec77a23b16c61895ff3444e1553fbe46df99771cab2194f0b4b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -10635,7 +10635,7 @@ $ docker pull elixir@sha256:60294aa5cf0d80fb43e72e8956bb7ef094f7f0f685dac3a60209
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -10840,7 +10840,7 @@ $ docker pull elixir@sha256:201abff6011f8fa19de0c507bc01b7e84fec189a75816746113e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -11045,7 +11045,7 @@ $ docker pull elixir@sha256:00c668df20a66c3861acbcb625e48aa501479ed2e81105fc532f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -11402,7 +11402,7 @@ $ docker pull elixir@sha256:b062997a122d0ef322b8b23c0f9e390ce77c7a91cd8e324e9001
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -11607,7 +11607,7 @@ $ docker pull elixir@sha256:5b8a33083f9aa37e02ec05d84b8278b21932c9aa449f3975faea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -11964,7 +11964,7 @@ $ docker pull elixir@sha256:b68813a2e5da35fc8387bf66a8e29a0de895645c125a0c14d741
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -12169,7 +12169,7 @@ $ docker pull elixir@sha256:00479dec31ce7a74a446ab283e5619696be8e9a87896f8cb6dd1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -12374,7 +12374,7 @@ $ docker pull elixir@sha256:00c668df20a66c3861acbcb625e48aa501479ed2e81105fc532f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -12731,7 +12731,7 @@ $ docker pull elixir@sha256:b062997a122d0ef322b8b23c0f9e390ce77c7a91cd8e324e9001
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -12936,7 +12936,7 @@ $ docker pull elixir@sha256:5b8a33083f9aa37e02ec05d84b8278b21932c9aa449f3975faea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -13293,7 +13293,7 @@ $ docker pull elixir@sha256:b68813a2e5da35fc8387bf66a8e29a0de895645c125a0c14d741
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -13498,7 +13498,7 @@ $ docker pull elixir@sha256:00479dec31ce7a74a446ab283e5619696be8e9a87896f8cb6dd1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -13703,7 +13703,7 @@ $ docker pull elixir@sha256:6812b27c4201d26a5591ad2db3717b980f04276168fde3dfa7fb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -14234,7 +14234,7 @@ $ docker pull elixir@sha256:5aa7d8de7ca4a1dae513708abee6e7386f88f7cfa1f3b078932e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -14537,7 +14537,7 @@ $ docker pull elixir@sha256:da7fb9cfbd9e1ef33ceb0fe9aea8e1add188a580b2579f2f1f5b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -14840,7 +14840,7 @@ $ docker pull elixir@sha256:6812b27c4201d26a5591ad2db3717b980f04276168fde3dfa7fb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -15371,7 +15371,7 @@ $ docker pull elixir@sha256:5aa7d8de7ca4a1dae513708abee6e7386f88f7cfa1f3b078932e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -15674,7 +15674,7 @@ $ docker pull elixir@sha256:da7fb9cfbd9e1ef33ceb0fe9aea8e1add188a580b2579f2f1f5b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -15977,7 +15977,7 @@ $ docker pull elixir@sha256:5eab7329ac54a4c5902727d358ff276e99071d2adbc9abc53fcb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -16280,7 +16280,7 @@ $ docker pull elixir@sha256:e114dcae36f09351ec0a2c5e333cb728b1bd08cb5bad13bdab07
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
@@ -16811,7 +16811,7 @@ $ docker pull elixir@sha256:8e258cf8f90cf131a74f98546ec73517b35f6ed24e94c87b852c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8

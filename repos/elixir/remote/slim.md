@@ -5,7 +5,7 @@ $ docker pull elixir@sha256:8e258cf8f90cf131a74f98546ec73517b35f6ed24e94c87b852c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 6
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
