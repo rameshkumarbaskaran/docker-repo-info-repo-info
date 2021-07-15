@@ -30,7 +30,7 @@ $ docker pull orientdb@sha256:690bebd5e88c627e41a074ffeeb2d000dbdf72b7b805aa6d74
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:2.0` - linux; amd64
@@ -136,7 +136,7 @@ $ docker pull orientdb@sha256:690bebd5e88c627e41a074ffeeb2d000dbdf72b7b805aa6d74
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:2.0.18` - linux; amd64
@@ -242,7 +242,7 @@ $ docker pull orientdb@sha256:b717bc4254b7167b5aab21544582bd10decc598f27deac25d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:2.1` - linux; amd64
@@ -336,7 +336,7 @@ $ docker pull orientdb@sha256:b717bc4254b7167b5aab21544582bd10decc598f27deac25d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:2.1.25` - linux; amd64
@@ -430,7 +430,7 @@ $ docker pull orientdb@sha256:250a9d0a098d6b1bcdc4fba57969c47d3ddb480f6e7be91fdc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:2.2` - linux; amd64
@@ -528,7 +528,7 @@ $ docker pull orientdb@sha256:250a9d0a098d6b1bcdc4fba57969c47d3ddb480f6e7be91fdc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:2.2.37` - linux; amd64
@@ -626,7 +626,7 @@ $ docker pull orientdb@sha256:0a79305fdba079c02d70703157b3d1b46e7fedbae00e5bd977
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:2.2.37-spatial` - linux; amd64
@@ -736,7 +736,7 @@ $ docker pull orientdb@sha256:e0d6395dc28e4054dca31a667de891ac9cb945099d6cae124c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.0` - linux; amd64
@@ -834,7 +834,7 @@ $ docker pull orientdb@sha256:2ba57d7fb143dd6fb4e4c7de627613b49ef4d7c2b584edc832
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.0-tp3` - linux; amd64
@@ -940,7 +940,7 @@ $ docker pull orientdb@sha256:e0d6395dc28e4054dca31a667de891ac9cb945099d6cae124c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.0.38` - linux; amd64
@@ -1038,7 +1038,7 @@ $ docker pull orientdb@sha256:2ba57d7fb143dd6fb4e4c7de627613b49ef4d7c2b584edc832
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.0.38-tp3` - linux; amd64
@@ -1144,7 +1144,7 @@ $ docker pull orientdb@sha256:cf3202bf54e0bd6de9f6ce0b4d9b10c80309adadeb0ff9b610
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.1` - linux; amd64
@@ -1242,7 +1242,7 @@ $ docker pull orientdb@sha256:6ac7ea4fbf5d3589705c892d88eb59853bac5e40b0a2f00e80
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.1-tp3` - linux; amd64
@@ -1348,7 +1348,7 @@ $ docker pull orientdb@sha256:cf3202bf54e0bd6de9f6ce0b4d9b10c80309adadeb0ff9b610
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.1.12` - linux; amd64
@@ -1446,7 +1446,7 @@ $ docker pull orientdb@sha256:6ac7ea4fbf5d3589705c892d88eb59853bac5e40b0a2f00e80
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.1.12-tp3` - linux; amd64
@@ -1552,7 +1552,7 @@ $ docker pull orientdb@sha256:495f798c73847eefbe7257a449021129902c1fea833ae88056
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.2` - linux; amd64
@@ -1650,7 +1650,7 @@ $ docker pull orientdb@sha256:fbda4f06b769e458d0480b9858a58f4ab3a88c89f7c36b8d95
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.2-tp3` - linux; amd64
@@ -1756,7 +1756,7 @@ $ docker pull orientdb@sha256:495f798c73847eefbe7257a449021129902c1fea833ae88056
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.2.0` - linux; amd64
@@ -1854,7 +1854,7 @@ $ docker pull orientdb@sha256:fbda4f06b769e458d0480b9858a58f4ab3a88c89f7c36b8d95
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:3.2.0-tp3` - linux; amd64
@@ -1960,7 +1960,7 @@ $ docker pull orientdb@sha256:495f798c73847eefbe7257a449021129902c1fea833ae88056
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:latest` - linux; amd64

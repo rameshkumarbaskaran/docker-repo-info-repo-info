@@ -5,7 +5,7 @@ $ docker pull orientdb@sha256:495f798c73847eefbe7257a449021129902c1fea833ae88056
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	linux; amd64
 
 ### `orientdb:latest` - linux; amd64
