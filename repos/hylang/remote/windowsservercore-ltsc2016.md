@@ -5,7 +5,7 @@ $ docker pull hylang@sha256:50838d9c99f9391cadb568c06c45b56a012d85c7ae7619045a43
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.14393.4530; amd64
 
 ### `hylang:windowsservercore-ltsc2016` - windows version 10.0.14393.4530; amd64

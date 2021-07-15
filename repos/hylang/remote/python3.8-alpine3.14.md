@@ -5,7 +5,7 @@ $ docker pull hylang@sha256:50a9065d1d6607b2c17a7a7f1721e22fef71ce37c25847b3c468
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7

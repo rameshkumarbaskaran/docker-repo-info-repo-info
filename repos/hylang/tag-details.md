@@ -94,7 +94,7 @@ $ docker pull hylang@sha256:be0188c7d2d85f19fc04e0ca79d9fee3df40642b660a35ec86dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 10
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -936,7 +936,7 @@ $ docker pull hylang@sha256:3c0ffd283f9aa13fa44f59f898981d268d42f1729c3542adb241
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -1330,7 +1330,7 @@ $ docker pull hylang@sha256:d90b3f0d2963b73ac43e43f96cecad41cb871d578a22697c47f4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -1878,7 +1878,7 @@ $ docker pull hylang@sha256:3c0ffd283f9aa13fa44f59f898981d268d42f1729c3542adb241
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -2272,7 +2272,7 @@ $ docker pull hylang@sha256:388505b599484b335d7f7039c6ec3f085a982872d34addba0d19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -2897,7 +2897,7 @@ $ docker pull hylang@sha256:4274bb7ffb782dea8fd01c94176c44548c714ff5a7cc5a932a08
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -3290,7 +3290,7 @@ $ docker pull hylang@sha256:787b930872a7d370a92dd9aba7d92c78777c03b6253bec9b4aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -3575,7 +3575,7 @@ $ docker pull hylang@sha256:b85560971c881412f93a5c136981f48964f38e374aaeed2fa512
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.1999; amd64
 
 ### `hylang:1.0a3-pypy-windowsservercore-1809` - windows version 10.0.17763.1999; amd64
@@ -3692,7 +3692,7 @@ $ docker pull hylang@sha256:4274bb7ffb782dea8fd01c94176c44548c714ff5a7cc5a932a08
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -4085,7 +4085,7 @@ $ docker pull hylang@sha256:787b930872a7d370a92dd9aba7d92c78777c03b6253bec9b4aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -4370,7 +4370,7 @@ $ docker pull hylang@sha256:b85560971c881412f93a5c136981f48964f38e374aaeed2fa512
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.1999; amd64
 
 ### `hylang:1.0a3-pypy3.7-windowsservercore-1809` - windows version 10.0.17763.1999; amd64
@@ -4487,7 +4487,7 @@ $ docker pull hylang@sha256:72764e86d26d82b66cc6b44a8c362bedc7556bf4648a1ab3d4e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -5112,7 +5112,7 @@ $ docker pull hylang@sha256:aaab665168e3c7fc7d456e7db606c25c8e97ba22bc864aff46ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -5506,7 +5506,7 @@ $ docker pull hylang@sha256:c13e58b758378ac5d6fa44e08b3adafda4dd0d9f4fae568598b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -6054,7 +6054,7 @@ $ docker pull hylang@sha256:aaab665168e3c7fc7d456e7db606c25c8e97ba22bc864aff46ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -6448,7 +6448,7 @@ $ docker pull hylang@sha256:72764e86d26d82b66cc6b44a8c362bedc7556bf4648a1ab3d4e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -7073,7 +7073,7 @@ $ docker pull hylang@sha256:14c4d24c8849f39f972fc8e5e9ccb9158ff9b51dd642739ed605
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -7698,7 +7698,7 @@ $ docker pull hylang@sha256:d425907a9550d6814a05074fd86b293ea9bbcad27a5e0d1475b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -8092,7 +8092,7 @@ $ docker pull hylang@sha256:90bbfd6eab4bbfce0d78568983a92c9d005930ae87a336dd2903
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -8640,7 +8640,7 @@ $ docker pull hylang@sha256:d425907a9550d6814a05074fd86b293ea9bbcad27a5e0d1475b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -9034,7 +9034,7 @@ $ docker pull hylang@sha256:14c4d24c8849f39f972fc8e5e9ccb9158ff9b51dd642739ed605
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -9659,7 +9659,7 @@ $ docker pull hylang@sha256:48f2520c66134be37f3680369f3056b6a18dd9938cc622232309
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -10053,7 +10053,7 @@ $ docker pull hylang@sha256:b047c87b9f3d7499154c1d3bb548235d3a137cb3f96c80b0e09d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -10678,7 +10678,7 @@ $ docker pull hylang@sha256:9f843e37c90ae631ae5f3be5dc62cb914e28b159c59c645b8727
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -11072,7 +11072,7 @@ $ docker pull hylang@sha256:9c3d6c0d17495f3ca3fc9b9a50637cbb4b2e6727fb301b3cb4b4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -11620,7 +11620,7 @@ $ docker pull hylang@sha256:9f843e37c90ae631ae5f3be5dc62cb914e28b159c59c645b8727
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -12014,7 +12014,7 @@ $ docker pull hylang@sha256:b047c87b9f3d7499154c1d3bb548235d3a137cb3f96c80b0e09d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -12639,7 +12639,7 @@ $ docker pull hylang@sha256:6a0e4f53099f34c29242e83f783db8ffbe56e5c35f9d080d161c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -13033,7 +13033,7 @@ $ docker pull hylang@sha256:726e8ad883108f960f242d8da6982bc73a8c528d1968c0c1c4ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -13658,7 +13658,7 @@ $ docker pull hylang@sha256:50a9065d1d6607b2c17a7a7f1721e22fef71ce37c25847b3c468
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -14052,7 +14052,7 @@ $ docker pull hylang@sha256:5bb76f78e01da81cc982fcafef4dcd9dec5aa5e665e0861e87b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -14600,7 +14600,7 @@ $ docker pull hylang@sha256:50a9065d1d6607b2c17a7a7f1721e22fef71ce37c25847b3c468
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -14994,7 +14994,7 @@ $ docker pull hylang@sha256:726e8ad883108f960f242d8da6982bc73a8c528d1968c0c1c4ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -15619,7 +15619,7 @@ $ docker pull hylang@sha256:be0188c7d2d85f19fc04e0ca79d9fee3df40642b660a35ec86dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 10
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -16461,7 +16461,7 @@ $ docker pull hylang@sha256:3c0ffd283f9aa13fa44f59f898981d268d42f1729c3542adb241
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -16855,7 +16855,7 @@ $ docker pull hylang@sha256:d90b3f0d2963b73ac43e43f96cecad41cb871d578a22697c47f4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -17403,7 +17403,7 @@ $ docker pull hylang@sha256:3c0ffd283f9aa13fa44f59f898981d268d42f1729c3542adb241
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -17797,7 +17797,7 @@ $ docker pull hylang@sha256:388505b599484b335d7f7039c6ec3f085a982872d34addba0d19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -18422,7 +18422,7 @@ $ docker pull hylang@sha256:c4b61e41468be0e361297f469999d0d8056475b2c598f5904cf8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.2061; amd64
 
 ### `hylang:1.0a3-python3.9-windowsservercore-1809` - windows version 10.0.17763.2061; amd64
@@ -18539,7 +18539,7 @@ $ docker pull hylang@sha256:50838d9c99f9391cadb568c06c45b56a012d85c7ae7619045a43
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.14393.4530; amd64
 
 ### `hylang:1.0a3-python3.9-windowsservercore-ltsc2016` - windows version 10.0.14393.4530; amd64
@@ -18657,7 +18657,7 @@ $ docker pull hylang@sha256:c4b61e41468be0e361297f469999d0d8056475b2c598f5904cf8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.2061; amd64
 
 ### `hylang:1.0a3-windowsservercore-1809` - windows version 10.0.17763.2061; amd64
@@ -18774,7 +18774,7 @@ $ docker pull hylang@sha256:50838d9c99f9391cadb568c06c45b56a012d85c7ae7619045a43
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.14393.4530; amd64
 
 ### `hylang:1.0a3-windowsservercore-ltsc2016` - windows version 10.0.14393.4530; amd64
@@ -18892,7 +18892,7 @@ $ docker pull hylang@sha256:f65b96b45e5b18a16bf2f37dbd8254435d5224909d8ef682e529
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -19440,7 +19440,7 @@ $ docker pull hylang@sha256:d90b3f0d2963b73ac43e43f96cecad41cb871d578a22697c47f4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -19988,7 +19988,7 @@ $ docker pull hylang@sha256:3c0ffd283f9aa13fa44f59f898981d268d42f1729c3542adb241
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -20382,7 +20382,7 @@ $ docker pull hylang@sha256:388505b599484b335d7f7039c6ec3f085a982872d34addba0d19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -21007,7 +21007,7 @@ $ docker pull hylang@sha256:be0188c7d2d85f19fc04e0ca79d9fee3df40642b660a35ec86dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 10
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -21849,7 +21849,7 @@ $ docker pull hylang@sha256:4274bb7ffb782dea8fd01c94176c44548c714ff5a7cc5a932a08
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -22242,7 +22242,7 @@ $ docker pull hylang@sha256:787b930872a7d370a92dd9aba7d92c78777c03b6253bec9b4aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -22527,7 +22527,7 @@ $ docker pull hylang@sha256:b85560971c881412f93a5c136981f48964f38e374aaeed2fa512
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.1999; amd64
 
 ### `hylang:pypy-windowsservercore-1809` - windows version 10.0.17763.1999; amd64
@@ -22644,7 +22644,7 @@ $ docker pull hylang@sha256:4274bb7ffb782dea8fd01c94176c44548c714ff5a7cc5a932a08
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -23037,7 +23037,7 @@ $ docker pull hylang@sha256:787b930872a7d370a92dd9aba7d92c78777c03b6253bec9b4aca
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 4
 	-	linux; amd64
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -23322,7 +23322,7 @@ $ docker pull hylang@sha256:b85560971c881412f93a5c136981f48964f38e374aaeed2fa512
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.1999; amd64
 
 ### `hylang:pypy3.7-windowsservercore-1809` - windows version 10.0.17763.1999; amd64
@@ -23439,7 +23439,7 @@ $ docker pull hylang@sha256:72764e86d26d82b66cc6b44a8c362bedc7556bf4648a1ab3d4e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -24064,7 +24064,7 @@ $ docker pull hylang@sha256:663cea5f6b517b6b2a0c7db7e839f358bdedca45239e9fe8e3e7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -24612,7 +24612,7 @@ $ docker pull hylang@sha256:c13e58b758378ac5d6fa44e08b3adafda4dd0d9f4fae568598b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -25160,7 +25160,7 @@ $ docker pull hylang@sha256:aaab665168e3c7fc7d456e7db606c25c8e97ba22bc864aff46ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -25554,7 +25554,7 @@ $ docker pull hylang@sha256:72764e86d26d82b66cc6b44a8c362bedc7556bf4648a1ab3d4e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -26179,7 +26179,7 @@ $ docker pull hylang@sha256:14c4d24c8849f39f972fc8e5e9ccb9158ff9b51dd642739ed605
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -26804,7 +26804,7 @@ $ docker pull hylang@sha256:6d84950dac7ce65809daab553bf4ac4dfcf3a3b457df05674058
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -27352,7 +27352,7 @@ $ docker pull hylang@sha256:90bbfd6eab4bbfce0d78568983a92c9d005930ae87a336dd2903
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -27900,7 +27900,7 @@ $ docker pull hylang@sha256:d425907a9550d6814a05074fd86b293ea9bbcad27a5e0d1475b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -28294,7 +28294,7 @@ $ docker pull hylang@sha256:14c4d24c8849f39f972fc8e5e9ccb9158ff9b51dd642739ed605
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -28919,7 +28919,7 @@ $ docker pull hylang@sha256:48f2520c66134be37f3680369f3056b6a18dd9938cc622232309
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -29313,7 +29313,7 @@ $ docker pull hylang@sha256:b047c87b9f3d7499154c1d3bb548235d3a137cb3f96c80b0e09d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -29938,7 +29938,7 @@ $ docker pull hylang@sha256:de2b8cceb2c544b076af0725251434f78eb0c5d6ea6227bcb827
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -30486,7 +30486,7 @@ $ docker pull hylang@sha256:9c3d6c0d17495f3ca3fc9b9a50637cbb4b2e6727fb301b3cb4b4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -31034,7 +31034,7 @@ $ docker pull hylang@sha256:9f843e37c90ae631ae5f3be5dc62cb914e28b159c59c645b8727
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -31428,7 +31428,7 @@ $ docker pull hylang@sha256:b047c87b9f3d7499154c1d3bb548235d3a137cb3f96c80b0e09d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -32053,7 +32053,7 @@ $ docker pull hylang@sha256:6a0e4f53099f34c29242e83f783db8ffbe56e5c35f9d080d161c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -32447,7 +32447,7 @@ $ docker pull hylang@sha256:726e8ad883108f960f242d8da6982bc73a8c528d1968c0c1c4ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -33072,7 +33072,7 @@ $ docker pull hylang@sha256:7e9a2c8e62d948befa895ea2047a69ca573b22e7ef74444ae947
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -33620,7 +33620,7 @@ $ docker pull hylang@sha256:5bb76f78e01da81cc982fcafef4dcd9dec5aa5e665e0861e87b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -34168,7 +34168,7 @@ $ docker pull hylang@sha256:50a9065d1d6607b2c17a7a7f1721e22fef71ce37c25847b3c468
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -34562,7 +34562,7 @@ $ docker pull hylang@sha256:726e8ad883108f960f242d8da6982bc73a8c528d1968c0c1c4ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -35187,7 +35187,7 @@ $ docker pull hylang@sha256:be0188c7d2d85f19fc04e0ca79d9fee3df40642b660a35ec86dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 10
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -36029,7 +36029,7 @@ $ docker pull hylang@sha256:f65b96b45e5b18a16bf2f37dbd8254435d5224909d8ef682e529
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -36577,7 +36577,7 @@ $ docker pull hylang@sha256:d90b3f0d2963b73ac43e43f96cecad41cb871d578a22697c47f4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 7
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -37125,7 +37125,7 @@ $ docker pull hylang@sha256:3c0ffd283f9aa13fa44f59f898981d268d42f1729c3542adb241
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 5
 	-	linux; amd64
 	-	linux; arm variant v6
 	-	linux; arm variant v7
@@ -37519,7 +37519,7 @@ $ docker pull hylang@sha256:388505b599484b335d7f7039c6ec3f085a982872d34addba0d19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
@@ -38144,7 +38144,7 @@ $ docker pull hylang@sha256:c4b61e41468be0e361297f469999d0d8056475b2c598f5904cf8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.2061; amd64
 
 ### `hylang:python3.9-windowsservercore-1809` - windows version 10.0.17763.2061; amd64
@@ -38261,7 +38261,7 @@ $ docker pull hylang@sha256:50838d9c99f9391cadb568c06c45b56a012d85c7ae7619045a43
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.14393.4530; amd64
 
 ### `hylang:python3.9-windowsservercore-ltsc2016` - windows version 10.0.14393.4530; amd64
@@ -38379,7 +38379,7 @@ $ docker pull hylang@sha256:c4b61e41468be0e361297f469999d0d8056475b2c598f5904cf8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.17763.2061; amd64
 
 ### `hylang:windowsservercore-1809` - windows version 10.0.17763.2061; amd64
@@ -38496,7 +38496,7 @@ $ docker pull hylang@sha256:50838d9c99f9391cadb568c06c45b56a012d85c7ae7619045a43
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
+-	Platforms: 1
 	-	windows version 10.0.14393.4530; amd64
 
 ### `hylang:windowsservercore-ltsc2016` - windows version 10.0.14393.4530; amd64
