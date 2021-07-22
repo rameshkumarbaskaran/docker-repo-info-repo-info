@@ -1,7 +1,7 @@
 ## `fsharp:latest`
 
 ```console
-$ docker pull fsharp@sha256:c3d6055588a433bbe29600ac213b183ff92d469f7d907dd613b8c189d0aea0cf
+$ docker pull fsharp@sha256:0694cc46bf494c62e5d6247a22e57dfa4aadfcbb1e7779730355b43f41fa143b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -52,39 +52,39 @@ CMD ["fsharpi"]
 ### `fsharp:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull fsharp@sha256:c5853a661aeb1a9348f10fbc5eaaaffc3f09ae35297c535ab8cb3cea1912c3cc
+$ docker pull fsharp@sha256:974d4ac4045903a1cbcad4aab5525b46728419319da1c5a4601177902bda7ec3
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **184.8 MB (184762115 bytes)**  
+-	Total Size: **184.8 MB (184762321 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7218ec1756a3d1a25f432ce2f2548cb4c0540eaeada276c0435fa4a64f85cdc0`
+-	Image ID: `sha256:b2b7f06b646a30f04c1ce363568fbbeb7e77d13df15d7b2a84d5e34efce29177`
 -	Default Command: `["fsharpi"]`
 
 ```dockerfile
-# Tue, 22 Jun 2021 23:49:40 GMT
-ADD file:beee00b59da720f68e12e2ba2a8134207c80c777ddb4ceb03c71e3e4c3f51c93 in / 
-# Tue, 22 Jun 2021 23:49:40 GMT
+# Thu, 22 Jul 2021 00:40:14 GMT
+ADD file:074ffc2065bab83c9a5c596576656b04d271dd78406aadad160b68e38f38269f in / 
+# Thu, 22 Jul 2021 00:40:14 GMT
 CMD ["bash"]
-# Wed, 23 Jun 2021 02:32:21 GMT
+# Thu, 22 Jul 2021 01:29:30 GMT
 LABEL maintainer=Dave Curylo <dave@curylo.org>, Steve Desmond <steve@stevedesmond.ca>
-# Wed, 23 Jun 2021 02:32:21 GMT
+# Thu, 22 Jul 2021 01:29:30 GMT
 ENV MONO_THREADS_PER_CPU=50
-# Wed, 23 Jun 2021 02:41:34 GMT
+# Thu, 22 Jul 2021 01:39:01 GMT
 RUN MONO_VERSION=6.10.0.104 &&     FSHARP_VERSION=10.2.3 &&     FSHARP_BASENAME=fsharp-$FSHARP_VERSION &&     FSHARP_ARCHIVE=$FSHARP_VERSION.tar.gz &&     FSHARP_ARCHIVE_URL=https://github.com/fsharp/fsharp/archive/$FSHARP_VERSION.tar.gz &&     export GNUPGHOME="$(mktemp -d)" &&     apt-get update && apt-get --no-install-recommends install -y gnupg dirmngr ca-certificates apt-transport-https &&     apt-key adv --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&     echo "deb https://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" | tee /etc/apt/sources.list.d/mono-official-stable.list &&     apt-get update -y &&     apt-get --no-install-recommends install -y pkg-config make nuget mono-devel msbuild ca-certificates-mono locales &&     rm -rf /var/lib/apt/lists/* &&     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && /usr/sbin/locale-gen &&     mkdir -p /tmp/src &&     cd /tmp/src &&     printf "namespace a { class b { public static void Main(string[] args) { new System.Net.WebClient().DownloadFile(\"%s\", \"%s\");}}}" $FSHARP_ARCHIVE_URL $FSHARP_ARCHIVE > download-fsharp.cs &&     mcs download-fsharp.cs && mono download-fsharp.exe && rm download-fsharp.exe download-fsharp.cs &&     tar xf $FSHARP_ARCHIVE &&     cd $FSHARP_BASENAME &&     make &&     make install &&     cd ~ &&     rm -rf /tmp/src /tmp/NuGetScratch ~/.nuget ~/.config ~/.local "$GNUPGHOME" &&     apt-get purge -y make gnupg dirmngr &&     apt-get clean
-# Wed, 23 Jun 2021 02:41:35 GMT
+# Thu, 22 Jul 2021 01:39:02 GMT
 WORKDIR /root
-# Wed, 23 Jun 2021 02:41:36 GMT
+# Thu, 22 Jul 2021 01:39:03 GMT
 CMD ["fsharpi"]
 ```
 
 -	Layers:
-	-	`sha256:448f6bf000e31217a7c202c659b03b7f8ac8d3ae6b03ef7a2f8339be2f00ff4a`  
-		Last Modified: Tue, 22 Jun 2021 23:55:25 GMT  
-		Size: 25.9 MB (25914993 bytes)  
+	-	`sha256:513c6babab2b9079da61a69300c0e26d1037ca98910376098e9ae87baeb112c0`  
+		Last Modified: Thu, 22 Jul 2021 00:45:53 GMT  
+		Size: 25.9 MB (25914794 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35a58d5cd0674eed512479cdd26215fc41d070e7345b038fc54e52ce24dea68a`  
-		Last Modified: Wed, 23 Jun 2021 02:42:34 GMT  
-		Size: 158.8 MB (158847122 bytes)  
+	-	`sha256:83b53cda4c81272df5644b177bd17c22ce7a93024b3fc52bc9f3a87e3d05ce07`  
+		Last Modified: Thu, 22 Jul 2021 01:39:56 GMT  
+		Size: 158.8 MB (158847527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
