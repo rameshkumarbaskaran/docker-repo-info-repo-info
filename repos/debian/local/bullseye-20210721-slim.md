@@ -1,9 +1,9 @@
-# `debian:unstable-slim`
+# `debian:bullseye-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fc49496f76da754a9803f90dcade6bcee603d8b3006d08f5a2c54a027aeec5c7`
-- Created: `2021-06-23T00:23:01.08471252Z`
+- Image ID: `sha256:99a8ac0037bb635a896718d0559cb5cbf86093b90cfcf768b38371997710ed6e`
+- Created: `2021-07-22T00:45:19.892089006Z`
 - Virtual Size: ~ 80.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -173,30 +173,36 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/base-files/11.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/base-files/11.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-passwd=3.5.50`
+### `dpkg` source package: `base-passwd=3.5.51`
 
 Binary Packages:
 
-- `base-passwd=3.5.50`
+- `base-passwd=3.5.51`
 
 Licenses: (parsed from: `/usr/share/doc/base-passwd/copyright`)
 
 - `GPL-2`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-passwd=3.5.51
+'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.5.51.dsc' base-passwd_3.5.51.dsc 1757 SHA256:5752e4c2e3b9b4d45502f6aa5ce8dfd0136ea60f1b4fbd4524385e4bbd6a1571
+'http://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.5.51.tar.xz' base-passwd_3.5.51.tar.xz 53980 SHA256:66c75ce1877759148dbdd2704b138c4a02adab89d7d7591b6ab184f8f614efba
+```
 
-- http://snapshot.debian.org/package/base-passwd/3.5.50/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-passwd/3.5.51/ (for browsing the source)
+- https://sources.debian.net/src/base-passwd/3.5.51/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-passwd/3.5.51/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bash=5.1-3`
+### `dpkg` source package: `bash=5.1-2`
 
 Binary Packages:
 
-- `bash=5.1-3`
+- `bash=5.1-2+b2`
 
 Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
@@ -205,17 +211,17 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bash=5.1-3
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-3.dsc' bash_5.1-3.dsc 2296 SHA256:bf92eeca4955f1e9432ca10db63cbff699172cea4ab7bdd6e378f7e2b904f3e0
+$ apt-get source -qq --print-uris bash=5.1-2
+'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-2.dsc' bash_5.1-2.dsc 2296 SHA256:1129f1397ec8e673bb8fc6acf53b371b9ed4132a7076e59bc0bf0f8e8d134e32
 'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1.orig.tar.xz' bash_5.1.orig.tar.xz 5802740 SHA256:d5eeee4f953c09826409d572e2e8996a2140d67eb8f382ce1f3a9d23883ad696
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-3.debian.tar.xz' bash_5.1-3.debian.tar.xz 92188 SHA256:9a2fba0e8391759bb432b6632adbd70b577da2bc5437961c291e13e5ba610b5b
+'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-2.debian.tar.xz' bash_5.1-2.debian.tar.xz 90660 SHA256:b41f4a62e613ccffbef6032eee4d671bf82cdb00472c452fcb0c510a1503710c
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/bash/5.1-3/ (for browsing the source)
-- https://sources.debian.net/src/bash/5.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bash/5.1-3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/bash/5.1-2/ (for browsing the source)
+- https://sources.debian.net/src/bash/5.1-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bash/5.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bzip2=1.0.8-4`
 
@@ -293,11 +299,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/coreutils/8.32-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/coreutils/8.32-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `dash=0.5.11+git20210120+802ebd4-1`
+### `dpkg` source package: `dash=0.5.11+git20200708+dd9ef66-5`
 
 Binary Packages:
 
-- `dash=0.5.11+git20210120+802ebd4-1`
+- `dash=0.5.11+git20200708+dd9ef66-5`
 
 Licenses: (parsed from: `/usr/share/doc/dash/copyright`)
 
@@ -313,17 +319,17 @@ Licenses: (parsed from: `/usr/share/doc/dash/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris dash=0.5.11+git20210120+802ebd4-1
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20210120+802ebd4-1.dsc' dash_0.5.11+git20210120+802ebd4-1.dsc 1646 SHA256:2d08964cf9ad4f59c7ea11f65248b6b95f25265be41214b14464f89b55d4609e
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20210120+802ebd4.orig.tar.xz' dash_0.5.11+git20210120+802ebd4.orig.tar.xz 133332 SHA256:eb30fbd87ea01f0f8b55e34f8fa68745c1134cd756b6bbeba3d3938563912431
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20210120+802ebd4-1.debian.tar.xz' dash_0.5.11+git20210120+802ebd4-1.debian.tar.xz 42504 SHA256:8f5551046677b8ef24aa92d19f6b7ff59f241ec3f6515593307bb69138cb514a
+$ apt-get source -qq --print-uris dash=0.5.11+git20200708+dd9ef66-5
+'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-5.dsc' dash_0.5.11+git20200708+dd9ef66-5.dsc 1906 SHA256:b0568c34647dc2aa0b8e2656c5e7449d9a1feb4b89d6857f507173b1f9a42ee7
+'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66.orig.tar.gz' dash_0.5.11+git20200708+dd9ef66.orig.tar.gz 167776 SHA256:ab70b1f165bfedadd1282da546f1c917f1b7ccb2c5c2f898310a963e2ab5520c
+'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-5.debian.tar.xz' dash_0.5.11+git20200708+dd9ef66-5.debian.tar.xz 43120 SHA256:5da6039e043c953ff91a31c767ed703699870682ff356a1642f4798ce04a2926
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/dash/0.5.11+git20210120+802ebd4-1/ (for browsing the source)
-- https://sources.debian.net/src/dash/0.5.11+git20210120+802ebd4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/dash/0.5.11+git20210120+802ebd4-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/dash/0.5.11+git20200708+dd9ef66-5/ (for browsing the source)
+- https://sources.debian.net/src/dash/0.5.11+git20200708+dd9ef66-5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/dash/0.5.11+git20200708+dd9ef66-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `db5.3=5.3.28+dfsg1-0.8`
 
@@ -567,11 +573,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gcc-10/10.2.1-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gcc-10/10.2.1-6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gcc-9=9.4.0-1`
+### `dpkg` source package: `gcc-9=9.3.0-22`
 
 Binary Packages:
 
-- `gcc-9-base:amd64=9.4.0-1`
+- `gcc-9-base:amd64=9.3.0-22`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-9-base/copyright`)
 
@@ -586,17 +592,17 @@ Licenses: (parsed from: `/usr/share/doc/gcc-9-base/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gcc-9=9.4.0-1
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.4.0-1.dsc' gcc-9_9.4.0-1.dsc 21922 SHA256:fdb0de0d22dfa97c413f76d09bbefe25591cc6a0b8fda5feb40a8a3a81fe067f
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.4.0.orig.tar.gz' gcc-9_9.4.0.orig.tar.gz 88736226 SHA256:7ef28e618cecddbb538359d03998a61648edb10b570b995aa4f4016c4a0d823e
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.4.0-1.debian.tar.xz' gcc-9_9.4.0-1.debian.tar.xz 575940 SHA256:fa18e883fb91217fb9267fe71ca214a4f9e487fd3995294667c1b45911593cd3
+$ apt-get source -qq --print-uris gcc-9=9.3.0-22
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0-22.dsc' gcc-9_9.3.0-22.dsc 21926 SHA256:14a0ea03cee0eb5450cc630a3bdf47da157062b3e7622ac45f6ae14a321eae96
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 88686943 SHA256:824044ffa96eb337bb1c1d4cf6a82691d0290d6f42e1d13362eea855458de060
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0-22.debian.tar.xz' gcc-9_9.3.0-22.debian.tar.xz 904252 SHA256:68d55260456847880c71831b69c19cb81e9d1abf09274ab77ab6c081e177d94d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/gcc-9/9.4.0-1/ (for browsing the source)
-- https://sources.debian.net/src/gcc-9/9.4.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-9/9.4.0-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/gcc-9/9.3.0-22/ (for browsing the source)
+- https://sources.debian.net/src/gcc-9/9.3.0-22/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-9/9.3.0-22/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.31-12`
 
@@ -1525,26 +1531,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/p11-kit/0.23.22-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/p11-kit/0.23.22-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `pam=1.4.0-7`
+### `dpkg` source package: `pam=1.4.0-9`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.4.0-7`
-- `libpam-modules-bin=1.4.0-7`
-- `libpam-runtime=1.4.0-7`
-- `libpam0g:amd64=1.4.0-7`
+- `libpam-modules:amd64=1.4.0-9`
+- `libpam-modules-bin=1.4.0-9`
+- `libpam-runtime=1.4.0-9`
+- `libpam0g:amd64=1.4.0-9`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris pam=1.4.0-9
+'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9.dsc' pam_1.4.0-9.dsc 1909 SHA256:61b50132e7e1eb8d447884c86cbfaa386ddca28f44e181f5fe6706a2880c7bbd
+'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0.orig.tar.xz' pam_1.4.0.orig.tar.xz 988908 SHA256:cd6d928c51e64139be3bdb38692c68183a509b83d4f2c221024ccd4bcddfd034
+'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9.debian.tar.xz' pam_1.4.0-9.debian.tar.xz 120168 SHA256:bc05be20526cd4c84cda4818d16f2045fa62bff8a6148fc790f6e828b448fee8
+```
 
-- http://snapshot.debian.org/package/pam/1.4.0-7/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/pam/1.4.0-9/ (for browsing the source)
+- https://sources.debian.net/src/pam/1.4.0-9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/pam/1.4.0-9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcre2=10.36-2`
 
