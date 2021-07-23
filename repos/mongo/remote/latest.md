@@ -1,7 +1,7 @@
 ## `mongo:latest`
 
 ```console
-$ docker pull mongo@sha256:6d5569b88cc6649ab62e21d6869a9e0821b1d42358910668fd3434b4f43386fe
+$ docker pull mongo@sha256:8fcada817a57b2a2efc82055b06c3d359141f70b1137aff37957fdfddc2b8225
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14,14 +14,14 @@ $ docker pull mongo@sha256:6d5569b88cc6649ab62e21d6869a9e0821b1d42358910668fd343
 ### `mongo:latest` - linux; amd64
 
 ```console
-$ docker pull mongo@sha256:a9d3b8f4110063af6a00f30af9f543275f4a9b0b0edeb50e2c5ce9b99057e893
+$ docker pull mongo@sha256:10434939578e20ee5f1ef83707708befbcdca6ae936374ca443c46b867e5fcf4
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **244.6 MB (244580365 bytes)**  
+-	Total Size: **248.3 MB (248325291 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2d38962b1e5e53c2d00efc0f2d45f7508034895b14586363307f4181a42360d4`
+-	Image ID: `sha256:0c1d254ad187e6e53f69f81101de5abc9e817e1bcd1edd108e5043901de377b0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mongod"]`
 
@@ -54,21 +54,21 @@ ENV MONGO_PACKAGE=mongodb-org MONGO_REPO=repo.mongodb.org
 ENV MONGO_MAJOR=5.0
 # Mon, 19 Jul 2021 16:48:55 GMT
 RUN echo "deb http://$MONGO_REPO/apt/ubuntu focal/${MONGO_PACKAGE%-unstable}/$MONGO_MAJOR multiverse" | tee "/etc/apt/sources.list.d/${MONGO_PACKAGE%-unstable}.list"
-# Mon, 19 Jul 2021 16:48:55 GMT
-ENV MONGO_VERSION=5.0.0
-# Mon, 19 Jul 2021 16:49:21 GMT
+# Fri, 23 Jul 2021 12:23:19 GMT
+ENV MONGO_VERSION=5.0.1
+# Fri, 23 Jul 2021 12:23:50 GMT
 RUN set -x 	&& export DEBIAN_FRONTEND=noninteractive 	&& apt-get update 	&& ln -s /bin/true /usr/local/bin/systemctl 	&& apt-get install -y 		${MONGO_PACKAGE}=$MONGO_VERSION 		${MONGO_PACKAGE}-server=$MONGO_VERSION 		${MONGO_PACKAGE}-shell=$MONGO_VERSION 		${MONGO_PACKAGE}-mongos=$MONGO_VERSION 		${MONGO_PACKAGE}-tools=$MONGO_VERSION 	&& rm -f /usr/local/bin/systemctl 	&& rm -rf /var/lib/apt/lists/* 	&& rm -rf /var/lib/mongodb 	&& mv /etc/mongod.conf /etc/mongod.conf.orig
-# Mon, 19 Jul 2021 16:49:24 GMT
+# Fri, 23 Jul 2021 12:23:52 GMT
 RUN mkdir -p /data/db /data/configdb 	&& chown -R mongodb:mongodb /data/db /data/configdb
-# Mon, 19 Jul 2021 16:49:24 GMT
+# Fri, 23 Jul 2021 12:23:52 GMT
 VOLUME [/data/db /data/configdb]
-# Mon, 19 Jul 2021 16:49:24 GMT
+# Fri, 23 Jul 2021 12:23:52 GMT
 COPY file:1dd28550b0c6cd4baae08342a3beff8f6014f7551c63d060630b98bd44e1f706 in /usr/local/bin/ 
-# Mon, 19 Jul 2021 16:49:24 GMT
+# Fri, 23 Jul 2021 12:23:52 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 19 Jul 2021 16:49:24 GMT
+# Fri, 23 Jul 2021 12:23:52 GMT
 EXPOSE 27017
-# Mon, 19 Jul 2021 16:49:25 GMT
+# Fri, 23 Jul 2021 12:23:53 GMT
 CMD ["mongod"]
 ```
 
@@ -101,17 +101,17 @@ CMD ["mongod"]
 		Last Modified: Mon, 19 Jul 2021 16:51:20 GMT  
 		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3e9a7cca861413aa40b73d76f24047efb91b4046194999e1b5c92d2d28bc71d4`  
-		Last Modified: Mon, 19 Jul 2021 16:51:49 GMT  
-		Size: 206.4 MB (206436832 bytes)  
+	-	`sha256:443f225a4bf5a0a2c164fdf7e65b951fdce3e4dbddd40f4fae255a463f60f1de`  
+		Last Modified: Fri, 23 Jul 2021 12:25:10 GMT  
+		Size: 210.2 MB (210181755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3924ddfa6129dea5d96686c061885d3593eb6022844f602ec1621af457f8eb0c`  
-		Last Modified: Mon, 19 Jul 2021 16:51:20 GMT  
-		Size: 170.0 B  
+	-	`sha256:33856076358e103a2efc5d5c162fc3309182fac4575a6efffd603ef085aaee8a`  
+		Last Modified: Fri, 23 Jul 2021 12:24:43 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:deab31eec3dc9a672849fd78e63349c1e4b9b50e3cf36489467e205391be6c1e`  
-		Last Modified: Mon, 19 Jul 2021 16:51:20 GMT  
-		Size: 4.5 KB (4476 bytes)  
+	-	`sha256:2010753ce12b2e6ecf9ed0178e7006fcfc195169ef80026b7ae30d572370be4d`  
+		Last Modified: Fri, 23 Jul 2021 12:24:43 GMT  
+		Size: 4.5 KB (4478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mongo:latest` - linux; arm64 variant v8
