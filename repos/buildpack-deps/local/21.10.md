@@ -3581,14 +3581,9 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.48.2-1build2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.48.2-1build2.dsc' pango1.0_1.48.2-1build2.dsc 3693 SHA512:d5d16c38592d85912bfc470d27fc814a988f53bba1b2d1cd937cd3041be5eb209aeffdffba57ffdf3f035bb52a275e317e8b6fde31462a66b00af54a402453e3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.48.2.orig.tar.xz' pango1.0_1.48.2.orig.tar.xz 537588 SHA512:0332d09a14548bd730c27b31ba22b535fb032519abf31f53522b04f84ccfd14872a751076de595d093e2f9d37886649e538eeaa0ee35a933925d8e0411bb7614
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.48.2-1build2.debian.tar.xz' pango1.0_1.48.2-1build2.debian.tar.xz 36892 SHA512:f57d2b6164db6ad2a02f4e766c476edeb6a3a021e609f941973f1b32d8b6fdf855a57d02cfff7d422d5471d71aa71c01acfbfa692c257c16c915c02ab01147b2
-```
 
 ### `dpkg` source package: `patch=2.7.6-7`
 

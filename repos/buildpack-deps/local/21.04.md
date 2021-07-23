@@ -3005,14 +3005,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.11.0-22.23
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.11.0-22.23.dsc' linux_5.11.0-22.23.dsc 8497 SHA512:8995da19ca3c7f02aee9990f0d7f97cb03f645be426948ba33a61f0d5acc8685d6e3db0bed781c0c1c118f185092ae5ab981cb0ad0354910c2dfa7b51b07823c
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.11.0.orig.tar.gz' linux_5.11.0.orig.tar.gz 186354621 SHA512:ac33b4298fad179962b6b3017d442b9f180c7c1363320393edd7d7a68a9303aa0eeae9ad106d00290f688abdbd78421e4e4f8566399a6da550096e913688771d
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.11.0-22.23.diff.gz' linux_5.11.0-22.23.diff.gz 5223550 SHA512:20f1080532bcdc1f19b53c882547eb98c7e9070cf6b246a835cc7c99e4a455e86a2f998ce5c55bf46b4f9115a0ee7eb7d1aef712b08918c85baa3e31490d2bdf
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
@@ -4199,14 +4194,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=247.3-3ubuntu3.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_247.3-3ubuntu3.1.dsc' systemd_247.3-3ubuntu3.1.dsc 5382 SHA512:b5ff88102941947984fe02f22621f9e5a453d76f7c5b1e7f3641f4ddeed8eeabdd3e0095299976fa1246536675760fac46418e43d687f1679f92e3184353c6f6
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_247.3.orig.tar.gz' systemd_247.3.orig.tar.gz 9895385 SHA512:0b12f6b9b02d86ee2f4198dd5f96a6267652fdc4867517e10a214a59b63c996fd14aeb2f47a97806718cdda52d1705a3b2359e4ae5e5d8d52d61ad05e7941d1e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_247.3-3ubuntu3.1.debian.tar.xz' systemd_247.3-3ubuntu3.1.debian.tar.xz 218992 SHA512:5820872b769bdeabb1afeff3663878153d6dbc7687e837805f94df2ba443ba3bad54595b299db9f6cd5576f611b1a6a438a5fcb33a7e2a9c9ab086388eaeee72
-```
 
 ### `dpkg` source package: `sysvinit=2.96-6ubuntu1`
 
