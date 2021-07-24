@@ -1,7 +1,7 @@
 ## `fedora:latest`
 
 ```console
-$ docker pull fedora@sha256:e9b80e6dfacc655e936509ccaf17dfc5de85658d802e525951642e90d1a42ca7
+$ docker pull fedora@sha256:d18bc88f640bc3e88bbfacaff698c3e1e83cae649019657a3880881f2549a1d0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -105,31 +105,31 @@ CMD ["/bin/bash"]
 ### `fedora:latest` - linux; ppc64le
 
 ```console
-$ docker pull fedora@sha256:f9accb359b1cbb461b908c66b63e9f86d622b17759d4f4b733b3e0c1f24b6460
+$ docker pull fedora@sha256:adcf0689bc6403e69aded731af6822b4e14189f88107c544672dd46f95e06424
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **70.7 MB (70685915 bytes)**  
+-	Total Size: **70.8 MB (70754182 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd3b2004b4b49af07096ea30129744f1c887a1db9e7901f2c39a9629855b8303`
+-	Image ID: `sha256:440c7f233ae6acf434201b3ac4ca1461cbbadd72fc7f129c597b2a4d3ac34b5c`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Wed, 05 Jun 2019 23:19:06 GMT
+# Fri, 23 Jul 2021 23:32:50 GMT
 LABEL maintainer=Clement Verna <cverna@fedoraproject.org>
-# Thu, 01 Apr 2021 18:18:48 GMT
+# Fri, 23 Jul 2021 23:34:39 GMT
 ENV DISTTAG=f34container FGC=f34 FBR=f34
-# Fri, 14 May 2021 17:38:59 GMT
-ADD file:80539c5ef570057462dec224a4770a5414b47c917aa2508f90384789b443e9da in / 
-# Fri, 14 May 2021 17:39:06 GMT
+# Fri, 23 Jul 2021 23:34:49 GMT
+ADD file:6472b37d42e912954b06a62f055cf1257e171a5ceacc51a4b1233934908daab7 in / 
+# Fri, 23 Jul 2021 23:35:04 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:1e4253e57b8478d2f7787e62a0807b5b04c748fba64de84d75812fddda71b5b6`  
-		Last Modified: Fri, 14 May 2021 17:40:45 GMT  
-		Size: 70.7 MB (70685915 bytes)  
+	-	`sha256:10cb0eecbe24b9437d48a6f70218700ad08d2facf246f40b748fe57b8f743b57`  
+		Last Modified: Fri, 23 Jul 2021 23:36:32 GMT  
+		Size: 70.8 MB (70754182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fedora:latest` - linux; s390x
