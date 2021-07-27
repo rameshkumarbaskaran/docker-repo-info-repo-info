@@ -1,7 +1,7 @@
 ## `adoptopenjdk:latest`
 
 ```console
-$ docker pull adoptopenjdk@sha256:f0ceefe35b0cb594b1ec4b1493bd4cce9941bd20dce6236c1c68de19b7012d8b
+$ docker pull adoptopenjdk@sha256:7f85a7bea7bdab253d8b4e9cd5906a03a21ed199bf30c828fed3d8a5c0bbfd0d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -63,47 +63,47 @@ CMD ["jshell"]
 ### `adoptopenjdk:latest` - linux; arm variant v7
 
 ```console
-$ docker pull adoptopenjdk@sha256:e09da021c423ea3588ad1398a4c80a5b3577f373617a25d0d3b555c74b27a915
+$ docker pull adoptopenjdk@sha256:73712f1a07f74bc1a3ac88862f446aec4539cef791f76e7936e516c96c6b0988
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **227.7 MB (227692236 bytes)**  
+-	Total Size: **227.7 MB (227695056 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8b58871d25f65b0076fcdd864abd567272837d956daceaca122bf18ccabc4cb4`
+-	Image ID: `sha256:93929d0db591ab70e9ab922b0f504bdc2d2ff6b308e353c9b62e80e2775afe10`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
-# Tue, 13 Jul 2021 23:21:08 GMT
-ADD file:1ec1791cf8b61620293d0fdf83d76f3c07482a327aefef699a43e82e7c3aa0f0 in / 
-# Tue, 13 Jul 2021 23:21:08 GMT
+# Mon, 26 Jul 2021 22:51:51 GMT
+ADD file:dec1b30555f66d79050762dc2b6c8e55dc130245f3bd1af94d77f1e1e6aa3ccb in / 
+# Mon, 26 Jul 2021 22:51:52 GMT
 CMD ["bash"]
-# Wed, 14 Jul 2021 01:28:22 GMT
+# Tue, 27 Jul 2021 00:55:40 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Wed, 14 Jul 2021 01:29:02 GMT
+# Tue, 27 Jul 2021 00:56:20 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Wed, 14 Jul 2021 01:32:13 GMT
+# Tue, 27 Jul 2021 00:59:36 GMT
 ENV JAVA_VERSION=jdk-16.0.1+9
-# Wed, 14 Jul 2021 01:32:33 GMT
+# Tue, 27 Jul 2021 00:59:58 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='3447ec27a6dbd4f3a6180a0d4371bb09aa428c16eea9983e515a7400cc9f5c85';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16.0.1%2B9/OpenJDK16U-jdk_aarch64_linux_hotspot_16.0.1_9.tar.gz';          ;;        armhf|armv7l)          ESUM='20fc395d8ea2659e6407cd4ec233dc4399f61b7610f3a16495deb23c1e3b81df';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16.0.1%2B9/OpenJDK16U-jdk_arm_linux_hotspot_16.0.1_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='8d8e35ca5a7e24f16384bf32b110562921c19b4cfe65969980937bf879462bc6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16.0.1%2B9/OpenJDK16U-jdk_ppc64le_linux_hotspot_16.0.1_9.tar.gz';          ;;        s390x)          ESUM='421cd44661cdbf0c2da79ab3104c81a1fa171b974038e55b1b3d4a042865588f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16.0.1%2B9/OpenJDK16U-jdk_s390x_linux_hotspot_16.0.1_9.tar.gz';          ;;        amd64|x86_64)          ESUM='7fdda042207efcedd30cd76d6295ed56b9c2e248cb3682c50898a560d4aa1c6f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16.0.1%2B9/OpenJDK16U-jdk_x64_linux_hotspot_16.0.1_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Wed, 14 Jul 2021 01:32:34 GMT
+# Tue, 27 Jul 2021 00:59:59 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Jul 2021 01:32:35 GMT
+# Tue, 27 Jul 2021 01:00:00 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:5c5378967b4ed259bac71be5e1a9ea052469b5fe62bed34b19deb57d53dc63c0`  
-		Last Modified: Tue, 13 Jul 2021 23:26:18 GMT  
-		Size: 24.1 MB (24062066 bytes)  
+	-	`sha256:84f015b4bc25868153a5ad10fafccf4b87d5e230c6346262a972324d9846c3cb`  
+		Last Modified: Mon, 26 Jul 2021 22:56:13 GMT  
+		Size: 24.1 MB (24064238 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3374ff0390670de6a897592ab5ae9d7b16efe9170df99397d09cef4f6c91dab4`  
-		Last Modified: Wed, 14 Jul 2021 01:36:42 GMT  
-		Size: 14.9 MB (14899010 bytes)  
+	-	`sha256:a741e6b2cb64f592747e760e01a83197f634029375592beacb339c48fa08a78f`  
+		Last Modified: Tue, 27 Jul 2021 01:04:07 GMT  
+		Size: 14.9 MB (14899627 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:140ca2d7d5953ef6b47dcf2848c24df8b103579890da3889d11f044030042282`  
-		Last Modified: Wed, 14 Jul 2021 01:43:55 GMT  
-		Size: 188.7 MB (188731160 bytes)  
+	-	`sha256:b5b7e79bf12b485ad75356e7219295964f4db74e0289da9935beff667a87986d`  
+		Last Modified: Tue, 27 Jul 2021 01:10:22 GMT  
+		Size: 188.7 MB (188731191 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `adoptopenjdk:latest` - linux; arm64 variant v8
