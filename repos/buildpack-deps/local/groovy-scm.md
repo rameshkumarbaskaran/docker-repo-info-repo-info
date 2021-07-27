@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:99b43365edd2e72fd33c666112ac758c6ce72234e04e30e41069863743617920`
-- Created: `2021-07-13T23:32:42.849022329Z`
+- Image ID: `sha256:2659a59a7c999902424b9360dbfdde2d86ba21ab2b274e003af76f18011c3975`
+- Created: `2021-07-26T21:51:33.075326596Z`
 - Virtual Size: ~ 261.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -2408,12 +2408,12 @@ $ apt-get source -qq --print-uris subversion=1.14.0-2
 'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.14.0-2.debian.tar.xz' subversion_1.14.0-2.debian.tar.xz 427376 SHA512:13d9285f4a49aa1a23caf3ae3742d27e901f2d61fe385833cbdd25d92a7e6fac94bb347b7980d62a33c70745755f83a9f46202780645c4702acca1e2b409aff7
 ```
 
-### `dpkg` source package: `systemd=246.6-1ubuntu1.4`
+### `dpkg` source package: `systemd=246.6-1ubuntu1.7`
 
 Binary Packages:
 
-- `libsystemd0:amd64=246.6-1ubuntu1.4`
-- `libudev1:amd64=246.6-1ubuntu1.4`
+- `libsystemd0:amd64=246.6-1ubuntu1.7`
+- `libudev1:amd64=246.6-1ubuntu1.7`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2426,9 +2426,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=246.6-1ubuntu1.7
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_246.6-1ubuntu1.7.dsc' systemd_246.6-1ubuntu1.7.dsc 5331 SHA512:d0b0cb47fb857444d58c63be5260db88c1deec05a4b8a3aa4811e934ec87df8a08111da0cdde1a3f7b00a963b104d53a9712eb5aed63f95661cdb626d7663f43
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_246.6.orig.tar.gz' systemd_246.6.orig.tar.gz 9545237 SHA512:1936b291d9831cf61f800fe718a4c2c2fe9b2a11fd817fe32bd48da2087a675dfc91013209a3478ea52e8ada593300ed906e248b8081dcf9141bf1cc17483ea9
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_246.6-1ubuntu1.7.debian.tar.xz' systemd_246.6-1ubuntu1.7.debian.tar.xz 221792 SHA512:36c68840045c4acf771ceabfe7e6563f84847736db79ebd520a409ea5e2dc89eac1cb36ef3469df4d94dae29760fbc56f02d92ed64b8d466cb713ae18221a66a
+```
 
 ### `dpkg` source package: `sysvinit=2.96-3ubuntu1`
 

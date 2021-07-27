@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f79a412760d307af1b089bfecb571daee4de63a8f38c4f1d68188fd42d10fa30`
-- Created: `2021-07-13T23:35:18.753402172Z`
-- Virtual Size: ~ 723.39 Mb  
+- Image ID: `sha256:4d003709c3f8eb24161b2f00d63d8afecbfad9968a0e8c598bd085893cd03f4f`
+- Created: `2021-07-26T21:54:16.752751917Z`
+- Virtual Size: ~ 723.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -2938,19 +2938,24 @@ $ apt-get source -qq --print-uris libzstd=1.4.5+dfsg-4ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.5+dfsg-4ubuntu0.1.debian.tar.xz' libzstd_1.4.5+dfsg-4ubuntu0.1.debian.tar.xz 14076 SHA512:3fc84e309a3d66858c22f5b46b72471caf38393beba99bc55b183f718f83c569843b22ee3d99de8484730d24690d10bd8a6329800c937115c712b584ec2560dd
 ```
 
-### `dpkg` source package: `linux=5.8.0-59.66`
+### `dpkg` source package: `linux=5.8.0-63.71`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.8.0-59.66`
+- `linux-libc-dev:amd64=5.8.0-63.71`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=5.8.0-63.71
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.8.0-63.71.dsc' linux_5.8.0-63.71.dsc 8216 SHA512:25fcd68c4e549822b03841057e2c1642885f4af9cb48d60ada870f42c970bbf253dfcb464e11d1e2246114c6d55518d90df6ee39e2b7fbbef7e7b7c8790d4daf
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.8.0.orig.tar.gz' linux_5.8.0.orig.tar.gz 178322327 SHA512:24b71be99aa6b599b237f26c891ed6ed5d255f81adf73cdc65d72d1497edd9303001fb4c4ee1bfd30be821f6883321cb17400493547c0023f4e9137d60ea4e97
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.8.0-63.71.diff.gz' linux_5.8.0-63.71.diff.gz 6697237 SHA512:f3e903319cdcb968dea980bc12fbd4020689e3be2928b8a9b851e69e1acd9109fcba03abb6ba19803e4f88f49e4f0358324d1064a844a91d904347cdd128afca
+```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
@@ -4154,12 +4159,12 @@ $ apt-get source -qq --print-uris subversion=1.14.0-2
 'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.14.0-2.debian.tar.xz' subversion_1.14.0-2.debian.tar.xz 427376 SHA512:13d9285f4a49aa1a23caf3ae3742d27e901f2d61fe385833cbdd25d92a7e6fac94bb347b7980d62a33c70745755f83a9f46202780645c4702acca1e2b409aff7
 ```
 
-### `dpkg` source package: `systemd=246.6-1ubuntu1.4`
+### `dpkg` source package: `systemd=246.6-1ubuntu1.7`
 
 Binary Packages:
 
-- `libsystemd0:amd64=246.6-1ubuntu1.4`
-- `libudev1:amd64=246.6-1ubuntu1.4`
+- `libsystemd0:amd64=246.6-1ubuntu1.7`
+- `libudev1:amd64=246.6-1ubuntu1.7`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -4172,9 +4177,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=246.6-1ubuntu1.7
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_246.6-1ubuntu1.7.dsc' systemd_246.6-1ubuntu1.7.dsc 5331 SHA512:d0b0cb47fb857444d58c63be5260db88c1deec05a4b8a3aa4811e934ec87df8a08111da0cdde1a3f7b00a963b104d53a9712eb5aed63f95661cdb626d7663f43
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_246.6.orig.tar.gz' systemd_246.6.orig.tar.gz 9545237 SHA512:1936b291d9831cf61f800fe718a4c2c2fe9b2a11fd817fe32bd48da2087a675dfc91013209a3478ea52e8ada593300ed906e248b8081dcf9141bf1cc17483ea9
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_246.6-1ubuntu1.7.debian.tar.xz' systemd_246.6-1ubuntu1.7.debian.tar.xz 221792 SHA512:36c68840045c4acf771ceabfe7e6563f84847736db79ebd520a409ea5e2dc89eac1cb36ef3469df4d94dae29760fbc56f02d92ed64b8d466cb713ae18221a66a
+```
 
 ### `dpkg` source package: `sysvinit=2.96-3ubuntu1`
 

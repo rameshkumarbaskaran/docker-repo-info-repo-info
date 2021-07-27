@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5b1a7dad1899e0bc50c801997cfa4e432dac17d2060b3e2895d5c813d4def8fd`
-- Created: `2021-07-13T23:36:10.029518911Z`
-- Virtual Size: ~ 102.57 Mb  
+- Image ID: `sha256:0edd837b914a819d7989e4d055fee59b4f440b93324d3251e9e278f6af6ae9a1`
+- Created: `2021-07-26T21:55:06.250713437Z`
+- Virtual Size: ~ 102.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -137,11 +137,11 @@ $ apt-get source -qq --print-uris base-files=11ubuntu19
 'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu19.tar.xz' base-files_11ubuntu19.tar.xz 81020 SHA512:08a5d49d130bb5a05d7b2aa6083cc21de0171bfb9f51a0675b973eaef9b7e3e182e1ee917a6dac0aec3e32dd3e03ce02266151bc163542455b7a19b2c3d47663
 ```
 
-### `dpkg` source package: `base-passwd=3.5.49`
+### `dpkg` source package: `base-passwd=3.5.49ubuntu1`
 
 Binary Packages:
 
-- `base-passwd=3.5.49`
+- `base-passwd=3.5.49ubuntu1`
 
 Licenses: (parsed from: `/usr/share/doc/base-passwd/copyright`)
 
@@ -151,9 +151,9 @@ Licenses: (parsed from: `/usr/share/doc/base-passwd/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris base-passwd=3.5.49
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.49.dsc' base-passwd_3.5.49.dsc 1757 SHA512:5127de1a68e2a7b78953e7311651b7c6b7d5936f1d98c92e58ba5ac9cd645a7663933a5368413d1deb96757eb0a3cf4199c33558028692d9b7c18315c9cf23a0
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.49.tar.xz' base-passwd_3.5.49.tar.xz 53152 SHA512:38401f96313eef79fa828ff7256edaf7cee897919c47269729b698d6897a1c71af1d7dbf5a70efcee28a06e52e65685a8a5373b544ddb03059d2ac5f41dfddd7
+$ apt-get source -qq --print-uris base-passwd=3.5.49ubuntu1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.49ubuntu1.dsc' base-passwd_3.5.49ubuntu1.dsc 1748 SHA512:3e8a5888a4b88355612424cd77857ec4dc4590854e8221bb9f7445d3eeb2163c054aebc8372aade1a0215e7334e0089930858403a7553baf410d00b1bd876815
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.49ubuntu1.tar.xz' base-passwd_3.5.49ubuntu1.tar.xz 53276 SHA512:2752b53d75222b8b733c813e7b97ca68e8421665a2539d898c7240dfb418897b55f09b52312cbc5e9f1350a94cc5adb11f9df39e5cc273f140e704da5c5137e4
 ```
 
 ### `dpkg` source package: `bash=5.1-2ubuntu1`
@@ -272,12 +272,12 @@ $ apt-get source -qq --print-uris coreutils=8.32-4ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4ubuntu2.debian.tar.xz' coreutils_8.32-4ubuntu2.debian.tar.xz 40876 SHA512:261a5c2dbb677dcb69b7ad38a0311613549733b330c9266b90328b0f99ac6127be73d45c981e40bf7ca21dcc3aecc6872df041c118315c75fdccea65dd97fc15
 ```
 
-### `dpkg` source package: `curl=7.74.0-1ubuntu2`
+### `dpkg` source package: `curl=7.74.0-1ubuntu2.1`
 
 Binary Packages:
 
-- `curl=7.74.0-1ubuntu2`
-- `libcurl4:amd64=7.74.0-1ubuntu2`
+- `curl=7.74.0-1ubuntu2.1`
+- `libcurl4:amd64=7.74.0-1ubuntu2.1`
 
 Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -291,10 +291,10 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 Source:
 
 ```console
-$ apt-get source -qq --print-uris curl=7.74.0-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.74.0-1ubuntu2.dsc' curl_7.74.0-1ubuntu2.dsc 2765 SHA512:ca3ae4fcdcd68dcc71018a8a1d996d794fcb8950f98dc34cd8992e47dfe6d0348894b0141bd8d1e2da4b81a9c906cf1627d57a0dd453a7f0bbefe64ee85b0d31
+$ apt-get source -qq --print-uris curl=7.74.0-1ubuntu2.1
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.74.0-1ubuntu2.1.dsc' curl_7.74.0-1ubuntu2.1.dsc 2773 SHA512:3d8e3fac693654c103cb861df9c0d9a3a78068adf8c55ce06c385202dfe3fe9fc0a4370343b3d5419eb87b19ab5a086aea80dc9908cf1c792a3c5b1f4806891f
 'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.74.0.orig.tar.gz' curl_7.74.0.orig.tar.gz 4043409 SHA512:4b61a23463315dce5529aa5f1dc7d21d7876347912c68855c9cfcb01e06492af1510975fafb213c67ac7b9764287767da69043a79376a4be366aa23ace09f163
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.74.0-1ubuntu2.debian.tar.xz' curl_7.74.0-1ubuntu2.debian.tar.xz 36676 SHA512:c038f690b5ce7e944ee52996769915b5268ac97eedd27618539203b8c6e9056ff38351fafb3c35b30a2d8a87f4cf6e9966f1401f8d90d422698121243be801cb
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.74.0-1ubuntu2.1.debian.tar.xz' curl_7.74.0-1ubuntu2.1.debian.tar.xz 39740 SHA512:86d6c3006c4b51840ea95cf7275b7d80cf0726cc57a50e4b01db0cae2f638f254569ffd8ffc4d5bdc73a62649d39e22245fc4615d4c7890a661f8ee1ab9c4a28
 ```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu1`
@@ -1774,12 +1774,12 @@ $ apt-get source -qq --print-uris sqlite3=3.34.1-3
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.34.1-3.debian.tar.xz' sqlite3_3.34.1-3.debian.tar.xz 22828 SHA512:63677f418a303943103684020f4b746da85f7d4d708b7bb303a74c108086138a4aaea0802b066ac38919a4dcf71d77a5b6724753e6a3fa3a1e45fb948e3a8b3f
 ```
 
-### `dpkg` source package: `systemd=247.3-3ubuntu3.1`
+### `dpkg` source package: `systemd=247.3-3ubuntu3.4`
 
 Binary Packages:
 
-- `libsystemd0:amd64=247.3-3ubuntu3.1`
-- `libudev1:amd64=247.3-3ubuntu3.1`
+- `libsystemd0:amd64=247.3-3ubuntu3.4`
+- `libudev1:amd64=247.3-3ubuntu3.4`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1792,9 +1792,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=247.3-3ubuntu3.4
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_247.3-3ubuntu3.4.dsc' systemd_247.3-3ubuntu3.4.dsc 5349 SHA512:8d7746f387d65865c360ffadf798dcd9f141555ec0cf73f6baf8fda4d76e91a0446448079cde6fb5ce86d75e5029108cb529ccd5f1a063be7e3a4c3c45cc631c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_247.3.orig.tar.gz' systemd_247.3.orig.tar.gz 9895385 SHA512:0b12f6b9b02d86ee2f4198dd5f96a6267652fdc4867517e10a214a59b63c996fd14aeb2f47a97806718cdda52d1705a3b2359e4ae5e5d8d52d61ad05e7941d1e
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_247.3-3ubuntu3.4.debian.tar.xz' systemd_247.3-3ubuntu3.4.debian.tar.xz 237984 SHA512:2e1631bc1f11bc7e6e22c1a4b5d2de49c60123c56e0276eef4acd800991afefc93ceae604eb89db177f790cf042004806d11739feac482cc0b527c50dec93e59
+```
 
 ### `dpkg` source package: `sysvinit=2.96-6ubuntu1`
 
