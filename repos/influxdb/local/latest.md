@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f738183ce88e43d1210174fecc8d956272014ea7aeb28543a6a017aa72ff4947`
-- Created: `2021-07-23T02:12:07.858706921Z`
+- Image ID: `sha256:d636ad7ee210123228a7815b07cac9bfa682fba8e2baa59ceefbcf36cae7a0b7`
+- Created: `2021-07-26T18:38:19.839501715Z`
 - Virtual Size: ~ 351.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,6 +16,7 @@
   - `INFLUX_CONFIGS_PATH=/etc/influxdb2/influx-configs`
   - `INFLUXD_INIT_PORT=9999`
   - `INFLUXD_INIT_PING_ATTEMPTS=600`
+  - `DOCKER_INFLUXDB_INIT_CLI_CONFIG_NAME=default`
 
 ## `dpkg` (`.deb`-based packages)
 
