@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:00cc1f1af822aeda54b4e7859f621aaab1b8ac5a0eb0a97e0e89fdbdd7a005b1`
-- Created: `2021-07-13T23:56:38.714420048Z`
-- Virtual Size: ~ 1.15 Gb  
+- Image ID: `sha256:9022428339d4615af519685439630f4532bb43a64f4c82f29c299271e16d0e56`
+- Created: `2021-07-27T19:21:01.815440741Z`
+- Virtual Size: ~ 1.39 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -275,11 +275,11 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.debian.tar.xz' coreutils_8.30-3ubuntu2.debian.tar.xz 39636 SHA256:98204ef9d94e5c567880cd0245fdb7940eaf7592d6c6830c300ad117628b351f
 ```
 
-### `dpkg` source package: `couchbase-server=6.6.2-9600-1`
+### `dpkg` source package: `couchbase-server=7.0.0-5302-1`
 
 Binary Packages:
 
-- `couchbase-server=6.6.2-9600-1`
+- `couchbase-server=7.0.0-5302-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1588,12 +1588,12 @@ $ apt-get source -qq --print-uris sysstat=12.2.0-2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sysstat/sysstat_12.2.0-2.debian.tar.xz' sysstat_12.2.0-2.debian.tar.xz 34096 SHA256:c85d827b8d2c6d28c3580f4ea6b9f86479988f3e666c3296f7e92ad183ea1d58
 ```
 
-### `dpkg` source package: `systemd=245.4-4ubuntu3.7`
+### `dpkg` source package: `systemd=245.4-4ubuntu3.11`
 
 Binary Packages:
 
-- `libsystemd0:amd64=245.4-4ubuntu3.7`
-- `libudev1:amd64=245.4-4ubuntu3.7`
+- `libsystemd0:amd64=245.4-4ubuntu3.11`
+- `libudev1:amd64=245.4-4ubuntu3.11`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1606,9 +1606,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.11
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.11.dsc' systemd_245.4-4ubuntu3.11.dsc 5262 SHA512:cae9d78907b01a82fe35d1dac11bef450b5f8321940a6e84bd9137ad2d1409e572a6f94befb36b165101fbaa33abe1fa8f58c636f1d063a05037cd8db66dfcf1
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.11.debian.tar.xz' systemd_245.4-4ubuntu3.11.debian.tar.xz 259092 SHA512:e28761e8436cea11682aaccb7cb5a7a1172a3d344abde4febf244de44de9b55201902ee737d8f9b2994bb6d6cae0bbfd13a7cb795d87d5a0aa49588d26af3d96
+```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
