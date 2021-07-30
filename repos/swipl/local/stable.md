@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:0834c1c6d03017d70aad2ee742b34bdb62c07f5d47de46176e67179c5f659612`
 - Created: `2021-07-22T18:35:17.495845549Z`
-- Virtual Size: ~ 147.31 Mb  
+- Virtual Size: ~ 147.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["swipl"]`
