@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:09112261a150b58dcde08ca4b1b9c9903ec3d35ac6ec7578443847dd4a61a851`
 - Created: `2021-07-02T17:21:40.908727705Z`
-- Virtual Size: ~ 22.85 Mb  
+- Virtual Size: ~ 22.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/home/eggdrop/eggdrop/entrypoint.sh"]`
