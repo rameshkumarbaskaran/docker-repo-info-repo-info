@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:462613f0736aba96a63a035fe461901d8c4e9658fa9f610f8551ddcd7b40df87`
-- Created: `2021-07-22T17:46:19.112799973Z`
-- Virtual Size: ~ 1.28 Gb  
+- Image ID: `sha256:41085fe3e46c785529904389928f3a73c943b12953865b5d625be150102c444b`
+- Created: `2021-07-30T00:13:52.315898409Z`
+- Virtual Size: ~ 1.25 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUSTUP_HOME=/usr/local/rustup`
   - `CARGO_HOME=/usr/local/cargo`
-  - `RUST_VERSION=1.53.0`
+  - `RUST_VERSION=1.54.0`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2045,21 +2045,13 @@ Licenses: (parsed from: `/usr/share/doc/krb5-multidev/copyright`, `/usr/share/do
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.18.3-5
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-5.dsc' krb5_1.18.3-5.dsc 3177 SHA256:a81757da908e023bcde9ee0f595dcd78e8ae0e57724d02727f159d3342e2a9ef
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3.orig.tar.gz' krb5_1.18.3.orig.tar.gz 8715312 SHA256:e61783c292b5efd9afb45c555a80dd267ac67eebabca42185362bee6c4fbd719
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3.orig.tar.gz.asc' krb5_1.18.3.orig.tar.gz.asc 833 SHA256:ded19808ba7320ad0bb3ddfb5202845b2ff36a50613af7832f78dd3cb4437419
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-5.debian.tar.xz' krb5_1.18.3-5.debian.tar.xz 103684 SHA256:3f9294caba96221753f203d3c791b95a2b75ea0336cbc58a1e63d03f43f1cebd
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/krb5/1.18.3-5/
 
-- https://sources.debian.net/src/krb5/1.18.3-5/ (for browsing the source)
-- https://sources.debian.net/src/krb5/1.18.3-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/krb5/1.18.3-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lcms2=2.12~rc1-2`
 
