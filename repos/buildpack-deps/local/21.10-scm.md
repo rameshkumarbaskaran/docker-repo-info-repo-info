@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:b99660b61d6e2e864495950c7bade0adea9062dd182f11d88cc8c4554a8e4c3e`
 - Created: `2021-07-26T22:00:33.608760163Z`
-- Virtual Size: ~ 216.03 Mb  
+- Virtual Size: ~ 216.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -648,15 +648,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.33-0ubuntu7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33-0ubuntu7.dsc' glibc_2.33-0ubuntu7.dsc 8982 SHA512:4c197b97a9998afb4747e2b6fe97c0711965a66e56a8b5c8e1737759c8450204526841d88b23aded6ff6c6edfae82ac134b39e9b9e8a7da39a0bb36ba8ac943e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33.orig.tar.xz' glibc_2.33.orig.tar.xz 17031280 SHA512:4cb5777b68b22b746cc51669e0e9282b43c83f6944e42656e6db7195ebb68f2f9260f130fdeb4e3cfc64efae4f58d96c43d388f52be1eb024ca448084684abdb
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33.orig.tar.xz.asc' glibc_2.33.orig.tar.xz.asc 833 SHA512:a1cf64161aa5b97f04c89ff3f94a8de9b01f1115ca36905416c5018b212dfde85fa8751026d0743fbefb554880bae19fe551bbde4c8fe1d50e69db3cf5c014c1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33-0ubuntu7.debian.tar.xz' glibc_2.33-0ubuntu7.debian.tar.xz 893396 SHA512:3317a4431db081ab61a383c30eec089c29069ac47fc25cf8ec571bad923cca7540e0f9bcd20bbd645e75280c26a97b3d3755338c223e1aca109ba7e3624b8abc
-```
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg-1ubuntu2`
 
@@ -1787,15 +1781,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1j-1ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j-1ubuntu4.dsc' openssl_1.1.1j-1ubuntu4.dsc 2737 SHA512:f641ee7d7e53808b59f0271bf3f6ad4d8c34c9ae675c173d94b9941f4756593f52b0f7d3cd4aa2500651c975aecd305a840739b208931615b35bfd9ac5533516
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j.orig.tar.gz' openssl_1.1.1j.orig.tar.gz 9823161 SHA512:51e44995663b5258b0018bdc1e2b0e7e8e0cce111138ca1f80514456af920fce4e409a411ce117c0f3eb9190ac3e47c53a43f39b06acd35b7494e2bec4a607d5
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j.orig.tar.gz.asc' openssl_1.1.1j.orig.tar.gz.asc 488 SHA512:0a387ddd5dea88e5d62b4bd05320993ed6750c0d88d6712dd97c76c9f2bd3d9235a2b8e90a36bfc0834101d3e49e79523b3eb4ed9913bddc6e470de242bfffee
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j-1ubuntu4.debian.tar.xz' openssl_1.1.1j-1ubuntu4.debian.tar.xz 149188 SHA512:7ac27bcfb676da35c10c489f83f8e932a9070cde5f3c3824eb962dfabd676e5ddeb18f1670c5b8b973f831758f188a8bd65ab17c32f85232945c3654e808f8ca
-```
 
 ### `dpkg` source package: `p11-kit=0.23.22-1`
 
@@ -2232,14 +2220,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=248.3-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu2.dsc' systemd_248.3-1ubuntu2.dsc 5399 SHA512:0ab7dae4a4a7ee365ba7251a316650ad73e5c5b7b9cb137508b4577810a5697cf755d61cfbb191b44511721bea3494c6271e3c9f49779b473ce911b9209bfda2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3.orig.tar.gz' systemd_248.3.orig.tar.gz 10320940 SHA512:8e7ff0d5e63cc933e4dc23f7e0bef9707fde90396605eb8822d34de90d7abe8fd37e5739e33b657868218aa7281147cc944c096c007324c3e6fb54d833a83485
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu2.debian.tar.xz' systemd_248.3-1ubuntu2.debian.tar.xz 203016 SHA512:1aa46d05cef910461a735559e8e69bc5913143f085383d10e3638e1a4e28db90758281273efd018f2056ceba44d1441c4345031380701e1e46242351d64f0c96
-```
 
 ### `dpkg` source package: `sysvinit=2.96-7ubuntu1`
 

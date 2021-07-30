@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:29c1f84f1b4abbb17e66779835d3e04817d65d23dac76136a79263e383606b5e`
 - Created: `2021-07-26T22:02:50.618310505Z`
-- Virtual Size: ~ 695.21 Mb  
+- Virtual Size: ~ 695.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -1161,15 +1161,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.33-0ubuntu7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33-0ubuntu7.dsc' glibc_2.33-0ubuntu7.dsc 8982 SHA512:4c197b97a9998afb4747e2b6fe97c0711965a66e56a8b5c8e1737759c8450204526841d88b23aded6ff6c6edfae82ac134b39e9b9e8a7da39a0bb36ba8ac943e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33.orig.tar.xz' glibc_2.33.orig.tar.xz 17031280 SHA512:4cb5777b68b22b746cc51669e0e9282b43c83f6944e42656e6db7195ebb68f2f9260f130fdeb4e3cfc64efae4f58d96c43d388f52be1eb024ca448084684abdb
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33.orig.tar.xz.asc' glibc_2.33.orig.tar.xz.asc 833 SHA512:a1cf64161aa5b97f04c89ff3f94a8de9b01f1115ca36905416c5018b212dfde85fa8751026d0743fbefb554880bae19fe551bbde4c8fe1d50e69db3cf5c014c1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.33-0ubuntu7.debian.tar.xz' glibc_2.33-0ubuntu7.debian.tar.xz 893396 SHA512:3317a4431db081ab61a383c30eec089c29069ac47fc25cf8ec571bad923cca7540e0f9bcd20bbd645e75280c26a97b3d3755338c223e1aca109ba7e3624b8abc
-```
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg-1ubuntu2`
 
@@ -2734,14 +2728,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libx11=2:1.7.1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.1-1.dsc' libx11_1.7.1-1.dsc 2294 SHA512:3b2f5833f08d12b0ed8551cc43a7b8fa8a0bab7259696836099ca83e6759d93b9059334ab5914974f537a91aa8d26af37d5f96096b2af8895d2503ed74091076
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.1.orig.tar.gz' libx11_1.7.1.orig.tar.gz 3169116 SHA512:24f6f4f4b43c118f03180034a30362fe8c25db8241ed1c967d06f3e865afd7db611c8e5052a435c15ff0f08e90b3f49a6887aa78afafcffb5b13e8498a427fd2
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libx11/libx11_1.7.1-1.diff.gz' libx11_1.7.1-1.diff.gz 75515 SHA512:513ad45aec565aa3971908817224366e8ec06d27513cc155313139cfe1dc4a7bcdd66e7dd74c4177665a58c053cc5d90f9690b27f32bdaed97456192a233c7ff
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libx11/2:1.7.1-1/
+
 
 ### `dpkg` source package: `libxau=1:1.0.9-1build3`
 
@@ -3257,14 +3250,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-8.0=8.0.25-0ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.25-0ubuntu3.dsc' mysql-8.0_8.0.25-0ubuntu3.dsc 3485 SHA512:acbf5713cc26ec7c44b1105248ee7b5494b8b8d642f5e3952273c827039f8d73e832e3ed61b0a128478f0def24d1ed8d14bbd62147e7bebb4ac77bd31853c8e2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.25.orig.tar.gz' mysql-8.0_8.0.25.orig.tar.gz 290265324 SHA512:af653ccff66a9d87221b46ad4f7bcc629700549f758998b9a7fb22e4573b9495a28624e031f016f9ad8fe0dfcf481b82f1ffe224aa48c2d45531570026b26081
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.25-0ubuntu3.debian.tar.xz' mysql-8.0_8.0.25-0ubuntu3.debian.tar.xz 158964 SHA512:7415170be23b472a403a970cbda228f1d480e1e126a6dc3b64995aeb5c37eb7b9dabfb904b7dc9a3abc209ab2fe18aaa30a7e27139504fee75b42e8c93418fe0
-```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5ubuntu2`
 
@@ -3536,15 +3524,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1j-1ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j-1ubuntu4.dsc' openssl_1.1.1j-1ubuntu4.dsc 2737 SHA512:f641ee7d7e53808b59f0271bf3f6ad4d8c34c9ae675c173d94b9941f4756593f52b0f7d3cd4aa2500651c975aecd305a840739b208931615b35bfd9ac5533516
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j.orig.tar.gz' openssl_1.1.1j.orig.tar.gz 9823161 SHA512:51e44995663b5258b0018bdc1e2b0e7e8e0cce111138ca1f80514456af920fce4e409a411ce117c0f3eb9190ac3e47c53a43f39b06acd35b7494e2bec4a607d5
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j.orig.tar.gz.asc' openssl_1.1.1j.orig.tar.gz.asc 488 SHA512:0a387ddd5dea88e5d62b4bd05320993ed6750c0d88d6712dd97c76c9f2bd3d9235a2b8e90a36bfc0834101d3e49e79523b3eb4ed9913bddc6e470de242bfffee
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1j-1ubuntu4.debian.tar.xz' openssl_1.1.1j-1ubuntu4.debian.tar.xz 149188 SHA512:7ac27bcfb676da35c10c489f83f8e932a9070cde5f3c3824eb962dfabd676e5ddeb18f1670c5b8b973f831758f188a8bd65ab17c32f85232945c3654e808f8ca
-```
 
 ### `dpkg` source package: `p11-kit=0.23.22-1`
 
@@ -4185,14 +4167,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=248.3-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu2.dsc' systemd_248.3-1ubuntu2.dsc 5399 SHA512:0ab7dae4a4a7ee365ba7251a316650ad73e5c5b7b9cb137508b4577810a5697cf755d61cfbb191b44511721bea3494c6271e3c9f49779b473ce911b9209bfda2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3.orig.tar.gz' systemd_248.3.orig.tar.gz 10320940 SHA512:8e7ff0d5e63cc933e4dc23f7e0bef9707fde90396605eb8822d34de90d7abe8fd37e5739e33b657868218aa7281147cc944c096c007324c3e6fb54d833a83485
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu2.debian.tar.xz' systemd_248.3-1ubuntu2.debian.tar.xz 203016 SHA512:1aa46d05cef910461a735559e8e69bc5913143f085383d10e3638e1a4e28db90758281273efd018f2056ceba44d1441c4345031380701e1e46242351d64f0c96
-```
 
 ### `dpkg` source package: `sysvinit=2.96-7ubuntu1`
 
