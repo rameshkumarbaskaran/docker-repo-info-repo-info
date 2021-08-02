@@ -1,7 +1,7 @@
 ## `kapacitor:alpine`
 
 ```console
-$ docker pull kapacitor@sha256:6af30b7c71b361325dd37e32405ffe260a7622e252ff781cf8750274fd7cafc2
+$ docker pull kapacitor@sha256:f17e0db5660f63f3446dc74c8c809851bc596a914f8fde21146ab42bed4d9031
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull kapacitor@sha256:6af30b7c71b361325dd37e32405ffe260a7622e252ff781cf
 ### `kapacitor:alpine` - linux; amd64
 
 ```console
-$ docker pull kapacitor@sha256:c0ce756dce7e277da60e4820cf9202224333a458faef03a5244417b437597b3f
+$ docker pull kapacitor@sha256:c747c3309b95ca8f989738fa859ed28a80e4fd8379fc8545b2862abb43794a78
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **22.6 MB (22624130 bytes)**  
+-	Total Size: **62.3 MB (62281683 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2299dfad2371a47bc586d62a1a0e658fb221bd1e503455e166c2a3420004c432`
+-	Image ID: `sha256:1c69dcdbf8b229cee2ca8a5925a542d20c10dfbed63ba270e61c0c6521928fcd`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
@@ -31,21 +31,21 @@ CMD ["/bin/sh"]
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 # Wed, 14 Apr 2021 20:12:40 GMT
 RUN apk add --no-cache ca-certificates &&     update-ca-certificates
-# Wed, 14 Apr 2021 23:05:40 GMT
-ENV KAPACITOR_VERSION=1.5.9
-# Wed, 14 Apr 2021 23:05:44 GMT
-RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor-${KAPACITOR_VERSION}-static_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor-${KAPACITOR_VERSION}-static_linux_amd64.tar.gz &&     gpg --batch --verify kapacitor-${KAPACITOR_VERSION}-static_linux_amd64.tar.gz.asc kapacitor-${KAPACITOR_VERSION}-static_linux_amd64.tar.gz &&     mkdir -p /usr/src &&     tar -C /usr/src -xzf kapacitor-${KAPACITOR_VERSION}-static_linux_amd64.tar.gz &&     rm -f /usr/src/kapacitor-*/kapacitor.conf &&     chmod +x /usr/src/kapacitor-*/* &&     cp -a /usr/src/kapacitor-*/* /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps
-# Wed, 14 Apr 2021 23:05:45 GMT
+# Mon, 02 Aug 2021 19:24:21 GMT
+ENV KAPACITOR_VERSION=1.6.1
+# Mon, 02 Aug 2021 19:24:27 GMT
+RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz &&     gpg --batch --verify kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz.asc kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz &&     mkdir -p /usr/src &&     tar -C /usr/src -xzf kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz &&     rm -f /usr/src/kapacitor-*/kapacitor.conf &&     chmod +x /usr/src/kapacitor-*/* &&     cp -a /usr/src/kapacitor-*/* /usr/bin/ &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps
+# Mon, 02 Aug 2021 19:24:28 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Wed, 14 Apr 2021 23:05:45 GMT
+# Mon, 02 Aug 2021 19:24:28 GMT
 EXPOSE 9092
-# Wed, 14 Apr 2021 23:05:45 GMT
+# Mon, 02 Aug 2021 19:24:28 GMT
 VOLUME [/var/lib/kapacitor]
-# Wed, 14 Apr 2021 23:05:45 GMT
+# Mon, 02 Aug 2021 19:24:28 GMT
 COPY file:a64543022a380a96e18ddc4e841e034238df340064743d570fa109d5086b123a in /entrypoint.sh 
-# Wed, 14 Apr 2021 23:05:45 GMT
+# Mon, 02 Aug 2021 19:24:29 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Apr 2021 23:05:45 GMT
+# Mon, 02 Aug 2021 19:24:29 GMT
 CMD ["kapacitord"]
 ```
 
@@ -62,15 +62,15 @@ CMD ["kapacitord"]
 		Last Modified: Wed, 14 Apr 2021 20:13:33 GMT  
 		Size: 280.9 KB (280875 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27a1f5be947bda46483241414ba5ca37c67b9d35756739e5d95a3691b0dc19b8`  
-		Last Modified: Wed, 14 Apr 2021 23:06:23 GMT  
-		Size: 19.5 MB (19542054 bytes)  
+	-	`sha256:b6cf4b08eddd0084d298e116e9355530da47f17fdfe7c8cc7f753169d8466a2a`  
+		Last Modified: Mon, 02 Aug 2021 19:25:44 GMT  
+		Size: 59.2 MB (59199609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8641ef767335ca62f3d100628e194d12b66b4ce8eb4c47f14990bc30097a2ac0`  
-		Last Modified: Wed, 14 Apr 2021 23:06:20 GMT  
-		Size: 251.0 B  
+	-	`sha256:86d9ac724e6a6c56ea83b28de104134c31749e4bf41606568eec6380a3f05917`  
+		Last Modified: Mon, 02 Aug 2021 19:25:36 GMT  
+		Size: 250.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:caa60130307537cadab811f1a558e43af4c684353ca1acdc997f2705491d950a`  
-		Last Modified: Wed, 14 Apr 2021 23:06:20 GMT  
-		Size: 229.0 B  
+	-	`sha256:fe12fa3366972ee0c0110a9f9a075ff4299cb66c775ad820dc0e81c1ae12c42f`  
+		Last Modified: Mon, 02 Aug 2021 19:25:36 GMT  
+		Size: 228.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
