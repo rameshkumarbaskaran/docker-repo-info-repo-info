@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:552e0b2bc3fc4a7d235c26314ee94882adec0c6209ce3c50508ddc5db839acee`
 - Created: `2021-07-26T23:46:01.212203794Z`
-- Virtual Size: ~ 681.05 Mb  
+- Virtual Size: ~ 681.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/gzserver_entrypoint.sh"]`
