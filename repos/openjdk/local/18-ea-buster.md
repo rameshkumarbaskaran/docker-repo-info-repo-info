@@ -1,10 +1,10 @@
-# `openjdk:18-ea-7-jdk-buster`
+# `openjdk:18-ea-8-jdk-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e9ee937b3ea14f172a34eab32a321260871fb3c2c6bddebed485d47d6bc8e38f`
-- Created: `2021-07-23T21:21:14.925245314Z`
-- Virtual Size: ~ 653.86 Mb  
+- Image ID: `sha256:0ab0b28ff88dd923545f0d7a1c58fc1c844eb4311f45e13791c2e4c5a40cce04`
+- Created: `2021-07-30T18:49:46.967932114Z`
+- Virtual Size: ~ 653.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-18`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=18-ea+7`
+  - `JAVA_VERSION=18-ea+8`
 
 ## `dpkg` (`.deb`-based packages)
 
