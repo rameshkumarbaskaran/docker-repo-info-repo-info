@@ -1,17 +1,17 @@
-# `kapacitor:1.5-alpine`
+# `kapacitor:1.6-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2299dfad2371a47bc586d62a1a0e658fb221bd1e503455e166c2a3420004c432`
-- Created: `2021-04-14T23:05:45.943328541Z`
-- Virtual Size: ~ 71.44 Mb  
+- Image ID: `sha256:1c69dcdbf8b229cee2ca8a5925a542d20c10dfbed63ba270e61c0c6521928fcd`
+- Created: `2021-08-02T19:24:29.349783389Z`
+- Virtual Size: ~ 191.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["kapacitord"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `KAPACITOR_VERSION=1.5.9`
+  - `KAPACITOR_VERSION=1.6.1`
 
 ## `apk` (`.apk`-based packages)
 
