@@ -1,12 +1,13 @@
 ## `alt:latest`
 
 ```console
-$ docker pull alt@sha256:42a3ec377f362c6b95f1116a1feaf217e276d6500cc84826169a72c103f7c636
+$ docker pull alt@sha256:c4eb4ad40440b7c3297c14c91048aa07cbe2534f9e629f4bc9b0d113ca57821f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 4
+-	Platforms: 5
 	-	linux; amd64
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; ppc64le
@@ -43,6 +44,40 @@ CMD ["/bin/bash"]
 	-	`sha256:006b17da32569f0052679e8978e069f7759038ff9f8783935110d33569d92f46`  
 		Last Modified: Wed, 04 Aug 2021 22:29:28 GMT  
 		Size: 187.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `alt:latest` - linux; arm variant v7
+
+```console
+$ docker pull alt@sha256:44e5e059bb978698974e28308bf3c418a1d4bb4e05772ba3608fc767f36d48cd
+```
+
+-	Docker Version: 20.10.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **38.3 MB (38286844 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:ad719e52f0136b4bb8aeea2e9385a86c2f015c0888813c4c943476668fbc0252`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Thu, 05 Aug 2021 01:09:27 GMT
+MAINTAINER [Alexey Shabalin <shaba@altlinux.org>] [Mikhail Gordeev <obirvalger@altlinux.org]
+# Thu, 05 Aug 2021 01:09:38 GMT
+ADD file:60ae57cf5437fd8825004ab0bb326db4524bdbd06320c56ff9e386045cdfd47f in / 
+# Thu, 05 Aug 2021 01:09:40 GMT
+RUN true > /etc/security/limits.d/50-defaults.conf
+# Thu, 05 Aug 2021 01:09:40 GMT
+CMD ["/bin/bash"]
+```
+
+-	Layers:
+	-	`sha256:3b4b7cf260715942c5ded0ea00276068310de498d77fd664c4858ce357368e67`  
+		Last Modified: Thu, 05 Aug 2021 01:11:28 GMT  
+		Size: 38.3 MB (38286652 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3cd8b308e9578b6d78633b7eeca89aa54d1845a5771a74942cd04931656d081f`  
+		Last Modified: Thu, 05 Aug 2021 01:11:04 GMT  
+		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `alt:latest` - linux; arm64 variant v8

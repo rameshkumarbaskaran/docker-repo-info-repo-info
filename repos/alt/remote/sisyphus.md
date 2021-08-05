@@ -1,12 +1,13 @@
 ## `alt:sisyphus`
 
 ```console
-$ docker pull alt@sha256:06d17f3dc6a4f02ff0434d9a20fe6af05bb79ee4a0db524785a5301072bf77f3
+$ docker pull alt@sha256:6cd64835564179e0fe727b29f478592bf0cf3f006f9b6cef760988962cb09a68
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 4
+-	Platforms: 5
 	-	linux; amd64
+	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; ppc64le
@@ -42,6 +43,40 @@ CMD ["/bin/bash"]
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:63666ae67179f89a62f1aae34ff62b8a139bcd02791341fdafea25421aa56dec`  
 		Last Modified: Wed, 04 Aug 2021 22:30:11 GMT  
+		Size: 192.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `alt:sisyphus` - linux; arm variant v7
+
+```console
+$ docker pull alt@sha256:ef79a676bec8c17fdfde0d95bda4df798f928e1203971bac6abbbab368f5b1f2
+```
+
+-	Docker Version: 20.10.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **38.3 MB (38278827 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:4a8b629c9fa2b8cbcd6bd0b8334d7a47cf6d5349a6c32fd7a8cb56506b28c641`
+-	Default Command: `["\/bin\/bash"]`
+
+```dockerfile
+# Thu, 05 Aug 2021 01:09:27 GMT
+MAINTAINER [Alexey Shabalin <shaba@altlinux.org>] [Mikhail Gordeev <obirvalger@altlinux.org]
+# Thu, 05 Aug 2021 01:10:30 GMT
+ADD file:2de251dea06b59cacbf8f685a9a022848ecb8e636a356b3678fd06fc53e3deee in / 
+# Thu, 05 Aug 2021 01:10:32 GMT
+RUN true > /etc/security/limits.d/50-defaults.conf
+# Thu, 05 Aug 2021 01:10:33 GMT
+CMD ["/bin/bash"]
+```
+
+-	Layers:
+	-	`sha256:cf95bf0fa08a5c084e49f19a26bb9269dc04842133f493d5f7ce3fc13af191f0`  
+		Last Modified: Thu, 05 Aug 2021 01:12:37 GMT  
+		Size: 38.3 MB (38278635 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fc1f3b2dfbeffbfb20933e1815d5c494112c1bed5c132ac7ba536239957169ca`  
+		Last Modified: Thu, 05 Aug 2021 01:12:14 GMT  
 		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
