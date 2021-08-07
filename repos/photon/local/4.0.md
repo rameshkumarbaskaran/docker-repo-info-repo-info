@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:abb82cabdfb9980f84998b28fd95200438c2d1d9c396a4a7ebc03dc8fc9fda5a`
-- Created: `2021-07-17T01:20:52.765242614Z`
+- Image ID: `sha256:742b7f52abd976cd32c27b17b8d5ab161ed47dcc2c43bd9aee5c5b75b4aa8f1b`
+- Created: `2021-08-07T01:26:20.078664894Z`
 - Virtual Size: ~ 36.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20210716`
+  - `build-date=20210806`
   - `name=Photon OS x86_64/4.0 Base Image`
   - `vendor=VMware`
 
@@ -41,13 +41,13 @@ Licenses (from `rpm --query`): Custom
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `curl-7.77.0-1.ph4.x86_64`
+### `rpm` package: `curl-7.77.0-2.ph4.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `curl-libs-7.77.0-1.ph4.x86_64`
+### `rpm` package: `curl-libs-7.77.0-2.ph4.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -137,7 +137,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `libsolv-0.6.35-8.ph4.x86_64`
+### `rpm` package: `libsolv-0.7.19-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -203,7 +203,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `rpm-libs-4.16.1.2-5.ph4.x86_64`
+### `rpm` package: `rpm-libs-4.16.1.2-6.ph4.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
@@ -215,13 +215,13 @@ Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `tdnf-3.1.0-1.ph4.x86_64`
+### `rpm` package: `tdnf-3.1.2-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `tdnf-cli-libs-3.1.0-1.ph4.x86_64`
+### `rpm` package: `tdnf-cli-libs-3.1.2-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
