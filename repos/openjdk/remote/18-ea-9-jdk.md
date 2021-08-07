@@ -1,12 +1,13 @@
 ## `openjdk:18-ea-9-jdk`
 
 ```console
-$ docker pull openjdk@sha256:b93f49c3cc225653f6ec6a68c34c2261463267b907a476487e8c496fe6b10165
+$ docker pull openjdk@sha256:52a305dd7a0e6f8ceeee61f9c96c3bbb75fb690997adec4c8a671b5f86d1f5ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 3
+-	Platforms: 4
 	-	linux; amd64
+	-	linux; arm64 variant v8
 	-	windows version 10.0.17763.2061; amd64
 	-	windows version 10.0.14393.4530; amd64
 
@@ -56,6 +57,54 @@ CMD ["jshell"]
 	-	`sha256:c44cfd9ec47ac0661d1568721d544165063deecc013021b4ac226d21c2c37d07`  
 		Last Modified: Fri, 06 Aug 2021 22:41:05 GMT  
 		Size: 187.5 MB (187525968 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `openjdk:18-ea-9-jdk` - linux; arm64 variant v8
+
+```console
+$ docker pull openjdk@sha256:3d33a9bf5c179b8b797365fb2ed1fb871360f278e9eefa9d04ae52cd0a2ade07
+```
+
+-	Docker Version: 20.10.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **242.5 MB (242486891 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:8513dab3762b8e40c32fdf937ce56be5b55d637a62be5cf1bf15b4dfd2ca8fae`
+-	Default Command: `["jshell"]`
+
+```dockerfile
+# Fri, 23 Jul 2021 00:50:01 GMT
+ADD file:2b2b9653730f3bb9d3a6327d4b9a6b425279decd90b84755c033b95536ebe027 in / 
+# Fri, 23 Jul 2021 00:50:02 GMT
+CMD ["/bin/bash"]
+# Fri, 23 Jul 2021 04:34:01 GMT
+RUN set -eux; 	microdnf install 		gzip 		tar 				binutils 		freetype fontconfig 	; 	microdnf clean all
+# Fri, 23 Jul 2021 04:34:02 GMT
+ENV JAVA_HOME=/usr/java/openjdk-18
+# Fri, 23 Jul 2021 04:34:02 GMT
+ENV PATH=/usr/java/openjdk-18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Fri, 23 Jul 2021 04:34:02 GMT
+ENV LANG=C.UTF-8
+# Sat, 07 Aug 2021 01:22:50 GMT
+ENV JAVA_VERSION=18-ea+9
+# Sat, 07 Aug 2021 01:23:16 GMT
+RUN set -eux; 		arch="$(objdump="$(command -v objdump)" && objdump --file-headers "$objdump" | awk -F '[:,]+[[:space:]]+' '$1 == "architecture" { print $2 }')"; 	case "$arch" in 		'i386:x86-64') 			downloadUrl='https://download.java.net/java/early_access/jdk18/9/GPL/openjdk-18-ea+9_linux-x64_bin.tar.gz'; 			downloadSha256='892cb159ff07b80db4ac5b1e3343d740c5113d323aa2485aa2d931203e15af61'; 			;; 		'aarch64') 			downloadUrl='https://download.java.net/java/early_access/jdk18/9/GPL/openjdk-18-ea+9_linux-aarch64_bin.tar.gz'; 			downloadSha256='35862c7271eec4456da50f777dafb216bcd8e9034e0b77ba8ca9cca9b317b3b8'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		curl -fL -o openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		rm -rf "$JAVA_HOME/lib/security/cacerts"; 	ln -sT /etc/pki/ca-trust/extracted/java/cacerts "$JAVA_HOME/lib/security/cacerts"; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
+# Sat, 07 Aug 2021 01:23:16 GMT
+CMD ["jshell"]
+```
+
+-	Layers:
+	-	`sha256:a21bf021f71862240d392ffdd7f376294fa46f2729f1771f269c1a888d0aab25`  
+		Last Modified: Fri, 23 Jul 2021 00:51:19 GMT  
+		Size: 42.0 MB (42040756 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f20d17a0583d5448fece8a45dc16fcd83266885f5eabbeaa44c9bcc8738ed0fa`  
+		Last Modified: Fri, 23 Jul 2021 04:45:32 GMT  
+		Size: 14.2 MB (14170914 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8cb3de4fb4cfba26656b2dd6572253e9288e67ae64eccb163340970d116280c5`  
+		Last Modified: Sat, 07 Aug 2021 01:34:48 GMT  
+		Size: 186.3 MB (186275221 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:18-ea-9-jdk` - windows version 10.0.17763.2061; amd64
