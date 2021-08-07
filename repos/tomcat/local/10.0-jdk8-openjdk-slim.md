@@ -1,10 +1,10 @@
-# `tomcat:10.0.8-jdk8-openjdk-slim-buster`
+# `tomcat:10.0.10-jdk8-openjdk-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4c835ccbab6f25b408dc596b0eadf1063feb3bb9f211a9bfe43204931b54d296`
-- Created: `2021-07-23T09:44:19.916784454Z`
-- Virtual Size: ~ 308.51 Mb  
+- Image ID: `sha256:df4368836822f456ebede87177e2c64effb1ff24f280d79cf0f5068393a1ba7c`
+- Created: `2021-08-05T23:03:30.516731211Z`
+- Virtual Size: ~ 308.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -18,8 +18,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7`
   - `TOMCAT_MAJOR=10`
-  - `TOMCAT_VERSION=10.0.8`
-  - `TOMCAT_SHA512=188fb84f86ae5f5b88ddbe6f38c8dec6ec733a5ef166c5875e1c6728701e49f9d01f494a419186fd8da80ab21576e0a056382d59f7fe17695c4ec63aaf543897`
+  - `TOMCAT_VERSION=10.0.10`
+  - `TOMCAT_SHA512=3f6d5d292ab67348b3134c1013044c948caf5a4bf142b4e856b5ee63693a6e80994b0b4dbb3404d0fd3542fd6f7f52b4cbe404fc5a0f716ac98d68db879b7112`
 
 ## `dpkg` (`.deb`-based packages)
 
