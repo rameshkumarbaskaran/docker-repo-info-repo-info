@@ -1,33 +1,33 @@
-# `nats:2.3.3-alpine3.14`
+# `nats:2.3.4-alpine3.14`
 
 ## Docker Metadata
 
-- Image ID: `sha256:37a8e948168fcd8c0825a0cd425eb489bd313da994d65e73b5072d6ff6c8225a`
-- Created: `2021-08-02T21:22:45.20292678Z`
-- Virtual Size: ~ 18.01 Mb  
+- Image ID: `sha256:163732450f029c457fb0826ccdbb6d69696f0d8af625ed2bef5291b807563c38`
+- Created: `2021-08-07T00:12:59.870433514Z`
+- Virtual Size: ~ 18.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["nats-server","--config","/etc/nats/nats-server.conf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NATS_SERVER=2.3.3`
+  - `NATS_SERVER=2.3.4`
 
 ## `apk` (`.apk`-based packages)
 
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.2.0-r15 description:
+alpine-baselayout-3.2.0-r16 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.2.0-r15 webpage:
+alpine-baselayout-3.2.0-r16 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.2.0-r15 installed size:
+alpine-baselayout-3.2.0-r16 installed size:
 404 KiB
 
-alpine-baselayout-3.2.0-r15 license:
+alpine-baselayout-3.2.0-r16 license:
 GPL-2.0-only
 
 ```
@@ -52,16 +52,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.12.5-r1 description:
+apk-tools-2.12.7-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.12.5-r1 webpage:
+apk-tools-2.12.7-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.12.5-r1 installed size:
+apk-tools-2.12.7-r0 installed size:
 304 KiB
 
-apk-tools-2.12.5-r1 license:
+apk-tools-2.12.7-r0 license:
 GPL-2.0-only
 
 ```
@@ -69,16 +69,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.33.1-r2 description:
+busybox-1.33.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.33.1-r2 webpage:
+busybox-1.33.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.33.1-r2 installed size:
+busybox-1.33.1-r3 installed size:
 928 KiB
 
-busybox-1.33.1-r2 license:
+busybox-1.33.1-r3 license:
 GPL-2.0-only
 
 ```
@@ -154,16 +154,16 @@ OpenSSL
 ### `apk` package: `libretls`
 
 ```console
-libretls-3.3.3-r0 description:
+libretls-3.3.3p1-r2 description:
 port of libtls from libressl to openssl
 
-libretls-3.3.3-r0 webpage:
+libretls-3.3.3p1-r2 webpage:
 https://git.causal.agency/libretls/
 
-libretls-3.3.3-r0 installed size:
+libretls-3.3.3p1-r2 installed size:
 84 KiB
 
-libretls-3.3.3-r0 license:
+libretls-3.3.3p1-r2 license:
 ISC AND (BSD-3-Clause OR MIT)
 
 ```
@@ -239,16 +239,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.33.1-r2 description:
+ssl_client-1.33.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.33.1-r2 webpage:
+ssl_client-1.33.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.33.1-r2 installed size:
+ssl_client-1.33.1-r3 installed size:
 28 KiB
 
-ssl_client-1.33.1-r2 license:
+ssl_client-1.33.1-r3 license:
 GPL-2.0-only
 
 ```
