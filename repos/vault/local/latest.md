@@ -1,9 +1,9 @@
-# `vault:1.8.0`
+# `vault:1.8.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e2dd7a0251c2fc1283466f894f4c684cef7db165383aa8a9d1f73ccb1a55ae5c`
-- Created: `2021-07-29T00:26:34.158524369Z`
+- Image ID: `sha256:b5e03ae6c19e95a5101c148544ca077b273dbfb14309d2bf3dd85366a9321e8c`
+- Created: `2021-08-05T23:47:39.30671448Z`
 - Virtual Size: ~ 180.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
