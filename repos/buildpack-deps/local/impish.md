@@ -1828,14 +1828,9 @@ Licenses: (parsed from: `/usr/share/doc/libdeflate-dev/copyright`, `/usr/share/d
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libdeflate=1.7-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdeflate/libdeflate_1.7-1ubuntu1.dsc' libdeflate_1.7-1ubuntu1.dsc 1551 SHA512:7869095adbfc6c10f2400a97078c9a1f98c91ae061cd96b33f96e26cf80be4c20648c081bf4b319f611a9741e3170d72cb8e56f6ad0eaf3130210c8e73421ff1
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdeflate/libdeflate_1.7.orig.tar.gz' libdeflate_1.7.orig.tar.gz 144143 SHA512:82b297af2d3128a244e561893cce1d3664de410469ba6745c3f68fc3a1962c62467c427f3857bb679578e0f704cd0eba1a64b13c30505addd310ff9af1883068
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdeflate/libdeflate_1.7-1ubuntu1.debian.tar.xz' libdeflate_1.7-1ubuntu1.debian.tar.xz 4272 SHA512:f07e826795babbc41da75a329963317b99f114038f732c7bc9e0c6c1bb9dfeb4b95401d8a9fff8d32477309a110a10a105803db21bffd5a97508b72d527a88c5
-```
 
 ### `dpkg` source package: `libedit=3.1-20191231-2`
 
