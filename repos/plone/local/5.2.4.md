@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0339f871322701e63de337d8b6610fbfde739f7d57513162af97d6ef3ddbfef6`
-- Created: `2021-08-07T02:00:32.878288113Z`
+- Image ID: `sha256:b00db2abcfba257fac3dc27dd66b8f1e202ac616f2c592c0310180c929c014d9`
+- Created: `2021-08-12T22:12:05.778497293Z`
 - Virtual Size: ~ 757.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -14,7 +14,7 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
   - `PYTHON_VERSION=3.8.11`
-  - `PYTHON_PIP_VERSION=21.2.3`
+  - `PYTHON_PIP_VERSION=21.2.4`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/c20b0cfd643cd4a19246ccf204e2997af70f6b21/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=fa6f3fb93cce234cd4e8dd2beb54a51ab9c247653b52855a48dd44e6b21ff28b`
   - `PIP=21.0.1`
@@ -2232,12 +2232,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/lsb/10.2019051400/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/lsb/10.2019051400/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `lynx=2.8.9rel.1-3`
+### `dpkg` source package: `lynx=2.8.9rel.1-3+deb10u1`
 
 Binary Packages:
 
-- `lynx=2.8.9rel.1-3`
-- `lynx-common=2.8.9rel.1-3`
+- `lynx=2.8.9rel.1-3+deb10u1`
+- `lynx-common=2.8.9rel.1-3+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/lynx/copyright`, `/usr/share/doc/lynx-common/copyright`)
 
@@ -2246,18 +2246,18 @@ Licenses: (parsed from: `/usr/share/doc/lynx/copyright`, `/usr/share/doc/lynx-co
 Source:
 
 ```console
-$ apt-get source -qq --print-uris lynx=2.8.9rel.1-3
-'http://deb.debian.org/debian/pool/main/l/lynx/lynx_2.8.9rel.1-3.dsc' lynx_2.8.9rel.1-3.dsc 2528 SHA256:d1b0b3338c0f3e03c137eb24b3c9a69a49c10ea119fbbf97579733170ac4f024
-'http://deb.debian.org/debian/pool/main/l/lynx/lynx_2.8.9rel.1.orig.tar.bz2' lynx_2.8.9rel.1.orig.tar.bz2 2689171 SHA256:387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595
-'http://deb.debian.org/debian/pool/main/l/lynx/lynx_2.8.9rel.1.orig.tar.bz2.asc' lynx_2.8.9rel.1.orig.tar.bz2.asc 251 SHA256:2cb6cf09763d58ec6951bc0bf4cf2836983756fb168f486d30f0a3921304408b
-'http://deb.debian.org/debian/pool/main/l/lynx/lynx_2.8.9rel.1-3.debian.tar.xz' lynx_2.8.9rel.1-3.debian.tar.xz 28716 SHA256:72c1bfc8ec489fac0994cac4eb7c0a4620c1ea316b378dcf6e365e8dcabafea2
+$ apt-get source -qq --print-uris lynx=2.8.9rel.1-3+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/l/lynx/lynx_2.8.9rel.1-3+deb10u1.dsc' lynx_2.8.9rel.1-3+deb10u1.dsc 2560 SHA256:bbab09e6482a4f433fc6063cc34f0353882b9fb4dfc10c8987959e58db00b312
+'http://security.debian.org/debian-security/pool/updates/main/l/lynx/lynx_2.8.9rel.1.orig.tar.bz2' lynx_2.8.9rel.1.orig.tar.bz2 2689171 SHA256:387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595
+'http://security.debian.org/debian-security/pool/updates/main/l/lynx/lynx_2.8.9rel.1.orig.tar.bz2.asc' lynx_2.8.9rel.1.orig.tar.bz2.asc 251 SHA256:2cb6cf09763d58ec6951bc0bf4cf2836983756fb168f486d30f0a3921304408b
+'http://security.debian.org/debian-security/pool/updates/main/l/lynx/lynx_2.8.9rel.1-3+deb10u1.debian.tar.xz' lynx_2.8.9rel.1-3+deb10u1.debian.tar.xz 29404 SHA256:0578691571d26b702748845e0acf2436e04b9c75b9e7d643465c23a1170bb8f4
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/lynx/2.8.9rel.1-3/ (for browsing the source)
-- https://sources.debian.net/src/lynx/2.8.9rel.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lynx/2.8.9rel.1-3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/lynx/2.8.9rel.1-3+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/lynx/2.8.9rel.1-3+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/lynx/2.8.9rel.1-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.8.3-1+deb10u1`
 
