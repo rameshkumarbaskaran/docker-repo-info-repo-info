@@ -1,7 +1,7 @@
 ## `python:rc`
 
 ```console
-$ docker pull python@sha256:523d6ada393682ee13471b5f86b89f5beb7214e4e6386d4a018bce9db3c10468
+$ docker pull python@sha256:b760d9783046d417c403c5314a34000a0db56bdb26b3be7b0a5ab4c53a9a9d9a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -200,14 +200,14 @@ CMD ["python3"]
 ### `python:rc` - linux; arm variant v7
 
 ```console
-$ docker pull python@sha256:cc8041b7042ce99fff74d4231b43b969bb3a095a4b8b1ebb1d3093c796046c40
+$ docker pull python@sha256:fd29e4f7f94b2115b20415a3cab5f7aedf95e3303450e7c4358cf8ff8fc9d4d7
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **305.2 MB (305219703 bytes)**  
+-	Total Size: **305.2 MB (305213240 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:88fa121c5d9ee70c4db7a7745cc4ea40de69870b020e5c6acfab2f50fd59e57f`
+-	Image ID: `sha256:0712fea3b0a5c170da9351fc5a3f6a3a2e3e4ff1d89abd0456d2ca01cdca02ac`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -237,15 +237,15 @@ ENV PYTHON_VERSION=3.10.0rc1
 RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-option-checking=fatal 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& rm -rf /usr/src/python 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \) \) 		\) -exec rm -rf '{}' + 		&& ldconfig 		&& python3 --version
 # Tue, 03 Aug 2021 23:28:12 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Fri, 06 Aug 2021 23:37:53 GMT
-ENV PYTHON_PIP_VERSION=21.2.3
-# Fri, 06 Aug 2021 23:37:54 GMT
+# Fri, 13 Aug 2021 06:31:50 GMT
+ENV PYTHON_PIP_VERSION=21.2.4
+# Fri, 13 Aug 2021 06:31:50 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/c20b0cfd643cd4a19246ccf204e2997af70f6b21/public/get-pip.py
-# Fri, 06 Aug 2021 23:37:55 GMT
+# Fri, 13 Aug 2021 06:31:50 GMT
 ENV PYTHON_GET_PIP_SHA256=fa6f3fb93cce234cd4e8dd2beb54a51ab9c247653b52855a48dd44e6b21ff28b
-# Fri, 06 Aug 2021 23:38:11 GMT
+# Fri, 13 Aug 2021 06:32:05 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Fri, 06 Aug 2021 23:38:11 GMT
+# Fri, 13 Aug 2021 06:32:06 GMT
 CMD ["python3"]
 ```
 
@@ -282,9 +282,9 @@ CMD ["python3"]
 		Last Modified: Wed, 04 Aug 2021 00:23:37 GMT  
 		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d78f7616c7cc8b4a0af783a6e2017023b81ab08575602b8dc10044e38f62647a`  
-		Last Modified: Sat, 07 Aug 2021 00:58:30 GMT  
-		Size: 2.4 MB (2355465 bytes)  
+	-	`sha256:67fa88b07e59a1ce6d7787c0fbacc33e9fd8daa71ccbc2b6278a1922cf8caf8e`  
+		Last Modified: Fri, 13 Aug 2021 06:51:59 GMT  
+		Size: 2.3 MB (2349002 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:rc` - linux; arm64 variant v8
