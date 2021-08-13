@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6a68c7293052d05860050a2a8bd63178921f04818424448926ec7df6c0b4f0a0`
-- Created: `2021-07-30T19:55:54.542138863Z`
+- Image ID: `sha256:1f2426ad395150500fe12d51193a97ed4b642dee673a0c6e9a9812e6df574652`
+- Created: `2021-08-12T19:01:07.773940353Z`
 - Virtual Size: ~ 129.49 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Command: `["node","-e","require('express-gateway')().run();"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=12.22.4`
+  - `NODE_VERSION=12.22.5`
   - `YARN_VERSION=1.22.5`
   - `NODE_ENV=production`
   - `NODE_PATH=/usr/local/share/.config/yarn/global/node_modules/`
