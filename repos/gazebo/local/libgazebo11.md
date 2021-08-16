@@ -5270,9 +5270,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.4.0-80.90
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-80.90.dsc' linux_5.4.0-80.90.dsc 6907 SHA512:8dd21d73ba12d7cb7c86577bc8ada100466e8a1a4c9b3817becdcc2f8f8269769e2ea2bf4628c9c8d56b004a04ec9c55bce6f16b986b96cb08594694b6f664ce
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-80.90.diff.gz' linux_5.4.0-80.90.diff.gz 8151912 SHA512:1b2fbdc9e25527589a7393de9b76ff0822e3d5a51fd8eeafee6c6012a7d11853cf9715da33378577a1827315e9f3073047a5339570df6ed36552bfc1cc27fafb
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-80.90.dsc' linux_5.4.0-80.90.dsc 6907 SHA512:8dd21d73ba12d7cb7c86577bc8ada100466e8a1a4c9b3817becdcc2f8f8269769e2ea2bf4628c9c8d56b004a04ec9c55bce6f16b986b96cb08594694b6f664ce
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-80.90.diff.gz' linux_5.4.0-80.90.diff.gz 8151912 SHA512:1b2fbdc9e25527589a7393de9b76ff0822e3d5a51fd8eeafee6c6012a7d11853cf9715da33378577a1827315e9f3073047a5339570df6ed36552bfc1cc27fafb
 ```
 
 ### `dpkg` source package: `llvm-toolchain-11=1:11.0.0-2~ubuntu20.04.1`
@@ -6496,14 +6496,9 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-12=12.7-0ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.7-0ubuntu0.20.04.1.dsc' postgresql-12_12.7-0ubuntu0.20.04.1.dsc 3760 SHA512:961493cfc1f301d6ab4f573e595adda21566be03cc547e797ec56aea82409327381b165114613023e6fe7c50eeccc9d2a0d14ca78f89b49b755e7169599ac6c5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.7.orig.tar.bz2' postgresql-12_12.7.orig.tar.bz2 20819005 SHA512:47ca347df63a441e52e52442074e85d0ebd3a89f7eb037022c4690cbe88b21a6a959092a812b79bb30db47b5975a5d7908318c73b2685683d48b4789d4ae6a44
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.7-0ubuntu0.20.04.1.debian.tar.xz' postgresql-12_12.7-0ubuntu0.20.04.1.debian.tar.xz 25820 SHA512:b8932a6b7f89daffafd3dfad8ad5798f3ba494bbb05296489304bbdbe0ceb7dba9185d173a9251c1be11a733ad72f3f1f32248b937d00a8b2dc9decb2a8fa166
-```
 
 ### `dpkg` source package: `procps=2:3.3.16-1ubuntu2.2`
 
