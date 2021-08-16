@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6afc6b340b000f6b8e45b1ba5be9410338e004ce571d85d977f48fd8821adff7`
-- Created: `2021-07-26T23:25:10.953476022Z`
-- Virtual Size: ~ 311.34 Mb  
+- Image ID: `sha256:aa64c9487f9cff3528366e982ae443cf28bc65cb5b5704428a4e401b287cf054`
+- Created: `2021-08-13T17:23:02.027628027Z`
+- Virtual Size: ~ 310.13 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/opt/ibm/java/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_VERSION=1.8.0_sr6fp31`
+  - `JAVA_VERSION=8.0.6.35`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-XX:+UseContainerSupport`
 
@@ -1252,9 +1252,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris systemd=237-3ubuntu10.50
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.50.dsc' systemd_237-3ubuntu10.50.dsc 5187 SHA512:79be5b7150d97f5ab5e8cde9fc40917da27e20e478ff8675fe2dd2f2cf925f3a4c5ada3d52faef23142c698b4e46615c726c21d12c5d8d68a1a6f7d98f80fd89
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA512:15ef4b92815a6dd9a6c51672dbc00fd7cd0f08068ef0cbeaca574f68d330b28bc67ba1946f24f75ef3d9e7b63843a73eea700db54688061dbf5c9f8470394c3b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.50.debian.tar.xz' systemd_237-3ubuntu10.50.debian.tar.xz 295228 SHA512:6d3c1e595c36dc035c54a623a7a7a505cc6a678490cc038c8c16fbde7b63c557c77a12e788030308527717b83b548391e769f3b0d3ba207d2c6b7259367332f7
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.50.dsc' systemd_237-3ubuntu10.50.dsc 5187 SHA512:79be5b7150d97f5ab5e8cde9fc40917da27e20e478ff8675fe2dd2f2cf925f3a4c5ada3d52faef23142c698b4e46615c726c21d12c5d8d68a1a6f7d98f80fd89
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA512:15ef4b92815a6dd9a6c51672dbc00fd7cd0f08068ef0cbeaca574f68d330b28bc67ba1946f24f75ef3d9e7b63843a73eea700db54688061dbf5c9f8470394c3b
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.50.debian.tar.xz' systemd_237-3ubuntu10.50.debian.tar.xz 295228 SHA512:6d3c1e595c36dc035c54a623a7a7a505cc6a678490cc038c8c16fbde7b63c557c77a12e788030308527717b83b548391e769f3b0d3ba207d2c6b7259367332f7
 ```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
