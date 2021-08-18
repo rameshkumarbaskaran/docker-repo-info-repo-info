@@ -1,7 +1,7 @@
 ## `gradle:6-jdk11-hotspot`
 
 ```console
-$ docker pull gradle@sha256:c96b3c5e50cfcd13d49056f126c6b80c3d599d8fa559105828af93f7079f9436
+$ docker pull gradle@sha256:c29a5e832a6713d4e4ce95d19598b52c831359ae459d658401d686861f989642
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -323,76 +323,76 @@ RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-
 ### `gradle:6-jdk11-hotspot` - linux; s390x
 
 ```console
-$ docker pull gradle@sha256:775fc5d331a125ab43eeb158ca43e59e82c4e92e64b2b61dbcf90f704708be91
+$ docker pull gradle@sha256:a731918771fb8f1be3c0e761b37f73269be8949ef0459891880baee53e9903ad
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **384.5 MB (384458142 bytes)**  
+-	Total Size: **384.5 MB (384467602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cea1bd8359e6134021e3de3162dbb1eb3ab0ae241a1037db8a9e015cef2dbb9d`
+-	Image ID: `sha256:4d804af9eb685742b36e728e3b7f367ab1b09453d92b4457e5014e4ff551cc14`
 -	Default Command: `["gradle"]`
 
 ```dockerfile
-# Thu, 17 Jun 2021 23:44:00 GMT
-ADD file:737a08bab262cc2abc326912fdb8c8038222b272a5967b25ec6c761539c9d456 in / 
-# Thu, 17 Jun 2021 23:44:02 GMT
+# Mon, 26 Jul 2021 20:55:12 GMT
+ADD file:b8731edfdacfade2ec96757342f216962f3971b24077a9144da3f80003e6893e in / 
+# Mon, 26 Jul 2021 20:55:14 GMT
 CMD ["bash"]
-# Fri, 18 Jun 2021 00:09:25 GMT
+# Mon, 26 Jul 2021 21:19:34 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 18 Jun 2021 00:09:40 GMT
+# Mon, 26 Jul 2021 21:19:45 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends tzdata curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Fri, 18 Jun 2021 00:10:20 GMT
+# Mon, 26 Jul 2021 21:20:19 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9
-# Fri, 18 Jun 2021 00:10:32 GMT
+# Mon, 26 Jul 2021 21:20:29 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='4966b0df9406b7041e14316e04c9579806832fafa02c5d3bd1842163b7f2353a';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='2d7aba0b9ea287145ad437d4b3035fc84f7508e78c6fec99be4ff59fe1b6fc0d';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jdk_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='945b114bd0a617d742653ac1ae89d35384bf89389046a44681109cf8e4f4af91';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='5d81979d27d9d8b3ed5bca1a91fc899cbbfb3d907f445ee7329628105e92f52c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='e99b98f851541202ab64401594901e583b764e368814320eba442095251e78cb';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 18 Jun 2021 00:10:37 GMT
+# Mon, 26 Jul 2021 21:20:32 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Jun 2021 00:10:37 GMT
+# Mon, 26 Jul 2021 21:20:33 GMT
 CMD ["jshell"]
-# Fri, 02 Jul 2021 18:09:49 GMT
+# Wed, 18 Aug 2021 14:45:48 GMT
 CMD ["gradle"]
-# Fri, 02 Jul 2021 18:09:49 GMT
+# Wed, 18 Aug 2021 14:45:48 GMT
 ENV GRADLE_HOME=/opt/gradle
-# Fri, 02 Jul 2021 18:09:51 GMT
+# Wed, 18 Aug 2021 14:45:49 GMT
 RUN set -o errexit -o nounset     && echo "Adding gradle user and group"     && groupadd --system --gid 1000 gradle     && useradd --system --gid gradle --uid 1000 --shell /bin/bash --create-home gradle     && mkdir /home/gradle/.gradle     && chown --recursive gradle:gradle /home/gradle         && echo "Symlinking root Gradle cache to gradle Gradle cache"     && ln -s /home/gradle/.gradle /root/.gradle
-# Fri, 02 Jul 2021 18:09:51 GMT
+# Wed, 18 Aug 2021 14:45:50 GMT
 VOLUME [/home/gradle/.gradle]
-# Fri, 02 Jul 2021 18:09:52 GMT
+# Wed, 18 Aug 2021 14:45:50 GMT
 WORKDIR /home/gradle
-# Fri, 02 Jul 2021 18:10:44 GMT
+# Wed, 18 Aug 2021 14:46:21 GMT
 RUN apt-get update     && apt-get install --yes --no-install-recommends         fontconfig         unzip         wget                 bzr         git         git-lfs         mercurial         openssh-client         subversion     && rm -rf /var/lib/apt/lists/*
-# Fri, 02 Jul 2021 18:27:31 GMT
+# Wed, 18 Aug 2021 14:58:16 GMT
 ENV GRADLE_VERSION=6.9
-# Fri, 02 Jul 2021 18:27:31 GMT
+# Wed, 18 Aug 2021 14:58:16 GMT
 ARG GRADLE_DOWNLOAD_SHA256=765442b8069c6bee2ea70713861c027587591c6b1df2c857a23361512560894e
-# Fri, 02 Jul 2021 18:27:41 GMT
+# Wed, 18 Aug 2021 14:58:22 GMT
 # ARGS: GRADLE_DOWNLOAD_SHA256=765442b8069c6bee2ea70713861c027587591c6b1df2c857a23361512560894e
 RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"         && echo "Checking download hash"     && echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum --check -         && echo "Installing Gradle"     && unzip gradle.zip     && rm gradle.zip     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/"     && ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle         && echo "Testing Gradle installation"     && gradle --version
 ```
 
 -	Layers:
-	-	`sha256:be436b7e641e3737311249dadcc71ad61ba7bc9597248f426c58c8548cff8af0`  
-		Last Modified: Thu, 17 Jun 2021 23:45:32 GMT  
-		Size: 27.1 MB (27140902 bytes)  
+	-	`sha256:38800a0044dea146ca3c3a08bc2c9c956396ad3241a3c343010775650298c379`  
+		Last Modified: Mon, 26 Jul 2021 20:57:03 GMT  
+		Size: 27.1 MB (27149898 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e92cd82b21097d2899d125e539a498d2f79c992bd6ebee596f4d3a3fc26dd7b6`  
-		Last Modified: Fri, 18 Jun 2021 00:20:59 GMT  
-		Size: 15.7 MB (15741691 bytes)  
+	-	`sha256:c2859ea56dafeb61512cbd72a03b7e2b1e762e9a60e7ca4d0bda5d8d7433dc6e`  
+		Last Modified: Mon, 26 Jul 2021 21:32:13 GMT  
+		Size: 15.7 MB (15741671 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93a841c82a4862e46acaa2da700add15e92478e4558f3bae416536e683208df5`  
-		Last Modified: Fri, 18 Jun 2021 00:21:35 GMT  
-		Size: 168.6 MB (168588999 bytes)  
+	-	`sha256:c21cfd530a3f2fc040d4636671914d8b73161b7ef92c8bafd9c8351e0ebaaae7`  
+		Last Modified: Mon, 26 Jul 2021 21:32:52 GMT  
+		Size: 168.6 MB (168589007 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8139516f0159d9bbe0c9f8e1b696a698de44d820741f0f8457c6676f7bb356c7`  
-		Last Modified: Fri, 02 Jul 2021 19:00:21 GMT  
-		Size: 4.4 KB (4361 bytes)  
+	-	`sha256:0794e4c0bdc1396553938fa2ddcc7ec22f817b85adb2cba2c04b4c0ed9fd8c10`  
+		Last Modified: Wed, 18 Aug 2021 15:08:20 GMT  
+		Size: 4.4 KB (4367 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92fb09c95a51b50886d28cc6d9015560050c3576d9f07413feca5e59f8cf9680`  
-		Last Modified: Fri, 02 Jul 2021 19:00:31 GMT  
-		Size: 64.8 MB (64833005 bytes)  
+	-	`sha256:f66bfa4bb6666aebf5d5e437944a4fe976b9b21cb60dd1c9f6898eb1eaaa3d50`  
+		Last Modified: Wed, 18 Aug 2021 15:08:30 GMT  
+		Size: 64.8 MB (64833449 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:993e2c98ec4d09ded85792beb203f2c4eff1a19d78c397ab526d125833d32e48`  
-		Last Modified: Fri, 02 Jul 2021 19:28:29 GMT  
-		Size: 108.1 MB (108149184 bytes)  
+	-	`sha256:207096c9a55d0e410e25f2950d1f531c3d541a0b371026a1a040cabac6a5b70d`  
+		Last Modified: Wed, 18 Aug 2021 15:15:18 GMT  
+		Size: 108.1 MB (108149210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
