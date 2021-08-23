@@ -3,30 +3,56 @@
 # Tags of `bash`
 
 -	[`bash:3`](#bash3)
+-	[`bash:3-alpine3.12`](#bash3-alpine312)
 -	[`bash:3.0`](#bash30)
+-	[`bash:3.0-alpine3.12`](#bash30-alpine312)
 -	[`bash:3.0.22`](#bash3022)
+-	[`bash:3.0.22-alpine3.12`](#bash3022-alpine312)
 -	[`bash:3.1`](#bash31)
+-	[`bash:3.1-alpine3.12`](#bash31-alpine312)
 -	[`bash:3.1.23`](#bash3123)
+-	[`bash:3.1.23-alpine3.12`](#bash3123-alpine312)
 -	[`bash:3.2`](#bash32)
+-	[`bash:3.2-alpine3.12`](#bash32-alpine312)
 -	[`bash:3.2.57`](#bash3257)
+-	[`bash:3.2.57-alpine3.12`](#bash3257-alpine312)
 -	[`bash:4`](#bash4)
+-	[`bash:4-alpine3.12`](#bash4-alpine312)
 -	[`bash:4.0`](#bash40)
+-	[`bash:4.0-alpine3.12`](#bash40-alpine312)
 -	[`bash:4.0.44`](#bash4044)
+-	[`bash:4.0.44-alpine3.12`](#bash4044-alpine312)
 -	[`bash:4.1`](#bash41)
+-	[`bash:4.1-alpine3.12`](#bash41-alpine312)
 -	[`bash:4.1.17`](#bash4117)
+-	[`bash:4.1.17-alpine3.12`](#bash4117-alpine312)
 -	[`bash:4.2`](#bash42)
+-	[`bash:4.2-alpine3.12`](#bash42-alpine312)
 -	[`bash:4.2.53`](#bash4253)
+-	[`bash:4.2.53-alpine3.12`](#bash4253-alpine312)
 -	[`bash:4.3`](#bash43)
+-	[`bash:4.3-alpine3.12`](#bash43-alpine312)
 -	[`bash:4.3.48`](#bash4348)
+-	[`bash:4.3.48-alpine3.12`](#bash4348-alpine312)
 -	[`bash:4.4`](#bash44)
+-	[`bash:4.4-alpine3.12`](#bash44-alpine312)
 -	[`bash:4.4.23`](#bash4423)
+-	[`bash:4.4.23-alpine3.12`](#bash4423-alpine312)
 -	[`bash:5`](#bash5)
+-	[`bash:5-alpine3.12`](#bash5-alpine312)
 -	[`bash:5.0`](#bash50)
+-	[`bash:5.0-alpine3.12`](#bash50-alpine312)
 -	[`bash:5.0.18`](#bash5018)
+-	[`bash:5.0.18-alpine3.12`](#bash5018-alpine312)
 -	[`bash:5.1`](#bash51)
+-	[`bash:5.1-alpine3.12`](#bash51-alpine312)
 -	[`bash:5.1.8`](#bash518)
+-	[`bash:5.1.8-alpine3.12`](#bash518-alpine312)
+-	[`bash:alpine3.12`](#bashalpine312)
 -	[`bash:devel`](#bashdevel)
 -	[`bash:devel-20210813`](#bashdevel-20210813)
+-	[`bash:devel-20210813-alpine3.12`](#bashdevel-20210813-alpine312)
+-	[`bash:devel-alpine3.12`](#bashdevel-alpine312)
 -	[`bash:latest`](#bashlatest)
 
 ## `bash:3`
@@ -402,6 +428,10 @@ CMD ["bash"]
 		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:3-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:3.0`
 
 ```console
@@ -774,6 +804,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:30:05 GMT  
 		Size: 335.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:3.0-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:3.0.22`
 
@@ -1148,6 +1182,10 @@ CMD ["bash"]
 		Size: 335.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:3.0.22-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:3.1`
 
 ```console
@@ -1507,6 +1545,10 @@ CMD ["bash"]
 		Size: 341.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:3.1-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:3.1.23`
 
 ```console
@@ -1865,6 +1907,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:58 GMT  
 		Size: 341.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:3.1.23-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:3.2`
 
@@ -2239,6 +2285,10 @@ CMD ["bash"]
 		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:3.2-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:3.2.57`
 
 ```console
@@ -2611,6 +2661,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:49 GMT  
 		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:3.2.57-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:4`
 
@@ -2985,6 +3039,10 @@ CMD ["bash"]
 		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:4-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:4.0`
 
 ```console
@@ -3343,6 +3401,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:41 GMT  
 		Size: 346.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:4.0-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:4.0.44`
 
@@ -3703,6 +3765,10 @@ CMD ["bash"]
 		Size: 346.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:4.0.44-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:4.1`
 
 ```console
@@ -4062,6 +4128,10 @@ CMD ["bash"]
 		Size: 346.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:4.1-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:4.1.17`
 
 ```console
@@ -4420,6 +4490,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:34 GMT  
 		Size: 346.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:4.1.17-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:4.2`
 
@@ -4794,6 +4868,10 @@ CMD ["bash"]
 		Size: 348.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:4.2-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:4.2.53`
 
 ```console
@@ -5166,6 +5244,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:26 GMT  
 		Size: 348.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:4.2.53-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:4.3`
 
@@ -5540,6 +5622,10 @@ CMD ["bash"]
 		Size: 347.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:4.3-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:4.3.48`
 
 ```console
@@ -5912,6 +5998,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:19 GMT  
 		Size: 347.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:4.3.48-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:4.4`
 
@@ -6286,6 +6376,10 @@ CMD ["bash"]
 		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:4.4-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:4.4.23`
 
 ```console
@@ -6658,6 +6752,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:10 GMT  
 		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:4.4.23-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:5`
 
@@ -7032,6 +7130,10 @@ CMD ["bash"]
 		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:5-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:5.0`
 
 ```console
@@ -7391,6 +7493,10 @@ CMD ["bash"]
 		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:5.0-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:5.0.18`
 
 ```console
@@ -7749,6 +7855,10 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:29:02 GMT  
 		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:5.0.18-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:5.1`
 
@@ -8123,6 +8233,10 @@ CMD ["bash"]
 		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `bash:5.1-alpine3.12`
+
+**does not exist** (yet?)
+
 ## `bash:5.1.8`
 
 ```console
@@ -8495,6 +8609,14 @@ CMD ["bash"]
 		Last Modified: Fri, 30 Jul 2021 23:28:50 GMT  
 		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:5.1.8-alpine3.12`
+
+**does not exist** (yet?)
+
+## `bash:alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:devel`
 
@@ -9185,6 +9307,14 @@ CMD ["bash"]
 		Last Modified: Tue, 17 Aug 2021 23:51:06 GMT  
 		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `bash:devel-20210813-alpine3.12`
+
+**does not exist** (yet?)
+
+## `bash:devel-alpine3.12`
+
+**does not exist** (yet?)
 
 ## `bash:latest`
 
