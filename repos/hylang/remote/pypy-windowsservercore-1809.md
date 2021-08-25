@@ -1,7 +1,7 @@
 ## `hylang:pypy-windowsservercore-1809`
 
 ```console
-$ docker pull hylang@sha256:0babd776ee3a531e5d55634ebcece32cb66e301b38e70df45adce50b42546823
+$ docker pull hylang@sha256:72242b20cc8f1173a3fc3fc6c2ecd294ac537490dc8dbb255f82ef0a1d3ce302
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull hylang@sha256:0babd776ee3a531e5d55634ebcece32cb66e301b38e70df45adc
 ### `hylang:pypy-windowsservercore-1809` - windows version 10.0.17763.2114; amd64
 
 ```console
-$ docker pull hylang@sha256:bf8c37362fb8e8509e73d7c303dee0fc5e50b5392ab69108bd9ef8132798d811
+$ docker pull hylang@sha256:50631f5b0409328c8caf3053fc62f8164f9a8499a6e60e80b9b70b80b1a45a43
 ```
 
--	Docker Version: 20.10.7
+-	Docker Version: 20.10.8
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2735940365 bytes)**  
+-	Total Size: **2.7 GB (2735986706 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a88dd6425859ad81786ce263e14c43bb49f3fc35e232e001a880883a92ab6654`
+-	Image ID: `sha256:4744597ef0ed61d9380a6e054f4c98dabe06171e08c1a2b489cdfafd26adeed5`
 -	Default Command: `["hy"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
@@ -47,11 +47,11 @@ ENV PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d
 RUN Write-Host ('Downloading get-pip.py ({0}) ...' -f $env:PYTHON_GET_PIP_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $env:PYTHON_GET_PIP_URL -OutFile 'get-pip.py'; 	Write-Host ('Verifying sha256 ({0}) ...' -f $env:PYTHON_GET_PIP_SHA256); 	if ((Get-FileHash 'get-pip.py' -Algorithm sha256).Hash -ne $env:PYTHON_GET_PIP_SHA256) { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host ('Installing "pip == {0}" ...' -f $env:PYTHON_PIP_VERSION); 	pypy3 get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		('pip == {0}' -f $env:PYTHON_PIP_VERSION) 	; 	Remove-Item get-pip.py -Force; 		Write-Host 'Verifying pip install ...'; 	pip --version; 		Write-Host 'Cleanup install ...'; 	Get-ChildItem 		-Path C:\pypy 		-Include @( 'test', 'tests' ) 		-Directory 		-Recurse 		| Remove-Item -Force -Recurse; 	Get-ChildItem 		-Path C:\pypy 		-Include @( '*.pyc', '*.pyo' ) 		-File 		-Recurse 		| Remove-Item -Force; 		Write-Host 'Complete.'
 # Wed, 11 Aug 2021 12:22:56 GMT
 CMD ["pypy3"]
-# Wed, 11 Aug 2021 22:50:32 GMT
+# Wed, 25 Aug 2021 12:26:26 GMT
 ENV HY_VERSION=1.0a3
-# Wed, 11 Aug 2021 22:52:07 GMT
+# Wed, 25 Aug 2021 12:28:58 GMT
 RUN pip install --no-cache-dir ('hy == {0}' -f $env:HY_VERSION)
-# Wed, 11 Aug 2021 22:52:09 GMT
+# Wed, 25 Aug 2021 12:28:59 GMT
 CMD ["hy"]
 ```
 
@@ -102,15 +102,15 @@ CMD ["hy"]
 		Last Modified: Wed, 11 Aug 2021 22:31:28 GMT  
 		Size: 1.4 KB (1366 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba2507296fbd0ea2b3145dfb18672131ef42a0af08be9144595ad8f41bbab7a5`  
-		Last Modified: Wed, 11 Aug 2021 22:52:53 GMT  
-		Size: 1.4 KB (1417 bytes)  
+	-	`sha256:ab4427f65d2d768a04cb8f0108b5686aa1739ee38e70c3c09229824314bb15c3`  
+		Last Modified: Wed, 25 Aug 2021 12:29:44 GMT  
+		Size: 1.4 KB (1378 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6be9a347505407b5461d03e89217ff062d5eea5c383da5d1b957d3c738b6b2ff`  
-		Last Modified: Wed, 11 Aug 2021 22:52:54 GMT  
-		Size: 4.1 MB (4143954 bytes)  
+	-	`sha256:519993c346fbdfcbdadcd1157ec443a6c14b56090498bab3761c9cb8d1b2bd08`  
+		Last Modified: Wed, 25 Aug 2021 12:29:46 GMT  
+		Size: 4.2 MB (4190360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1c4b2125050c4b78ef1acc1208f90631e389d323ed331e0aa9e0d945c5620152`  
-		Last Modified: Wed, 11 Aug 2021 22:52:53 GMT  
-		Size: 1.4 KB (1423 bytes)  
+	-	`sha256:ec611f8a5688c59849744dcf6eee1651116d6cba31edcdacc33014001249e2fd`  
+		Last Modified: Wed, 25 Aug 2021 12:29:44 GMT  
+		Size: 1.4 KB (1397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
