@@ -1218,7 +1218,7 @@ CMD ["bin/sonar.sh"]
 ## `sonarqube:9-community`
 
 ```console
-$ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73dd50656930e016d0
+$ docker pull sonarqube@sha256:2de810f3e47b33b6ba4a8ae25251cb7a9820884ab0c50910609eec9deee4582a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1228,75 +1228,75 @@ $ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73d
 ### `sonarqube:9-community` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:033266c5945df23419546f3f9695cd972b58648d2e132062b5c396da0659b88d
+$ docker pull sonarqube@sha256:03aa10991cf77db09907a3a105d2c00c6432763c2f7f100210cc0c8d1e42f1e1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **355.5 MB (355527535 bytes)**  
+-	Total Size: **355.5 MB (355528930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c12f16fa54088a91b79a1b05857adb85712f01b202d242135e9393affb7d43f9`
+-	Image ID: `sha256:6ffb4fd569602fc43459e4f3580276ede13a1624892da70c67e72b33b1a21f17`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:00:25 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:01:07 GMT
+# Sat, 28 Aug 2021 00:58:38 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b12eac0bdeb705622cac7169784ba95c0ef66fce810c60407e95e77146472ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:07:21 GMT  
-		Size: 302.1 MB (302066080 bytes)  
+	-	`sha256:287e43b3c7732c29896151482d3d615dac405376632863a1241dcfe7b2c7f254`  
+		Last Modified: Sat, 28 Aug 2021 01:05:49 GMT  
+		Size: 302.1 MB (302066085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0f4031590e8421e3e7c010d620e99e07e2ea242bd865667b096fdcdc0519976`  
-		Last Modified: Fri, 06 Aug 2021 21:07:03 GMT  
-		Size: 1.1 KB (1097 bytes)  
+	-	`sha256:f95772135b779ca123f41027a8d97ade5bbb3bc0d831dfb374c814dbe085eac8`  
+		Last Modified: Sat, 28 Aug 2021 01:05:29 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9-datacenter-app`
 
 ```console
-$ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46fb749a08583666c
+$ docker pull sonarqube@sha256:77d78117943a2d5884262cf808819192b6e7b41822529522d4c7fa9e9f453595
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1306,75 +1306,75 @@ $ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46
 ### `sonarqube:9-datacenter-app` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:91be2d17ed315de0f6d2da9e9f8b4f8655d7e7d6dd194dc2b58a53e5bef07562
+$ docker pull sonarqube@sha256:12eab5a9cbfaaf73f963c89059f41820448ed7c03562cbb831c0f694ea1378b7
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586254 bytes)**  
+-	Total Size: **462.6 MB (462587707 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a805e42fcb80a383a4491ac87b733b2a6f6a64e45b49e01f3e8be424ed6fc37a`
+-	Image ID: `sha256:6d5f6f2fa8660a3ea280112ad3b43a25d9defbfb94d3ef5e00c9c7097405fcbb`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=application SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:04:46 GMT
+# Sat, 28 Aug 2021 01:03:17 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 COPY --chown=sonarqube:sonarqubemulti:51df763f101eec590ff619b8aadba3476acd9a155be2557d6807f6fb4f272767 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:20 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da7a5a4365b2f19d4859608a555496905377302a0f42f1446e530d752c8f3a01`  
-		Last Modified: Fri, 06 Aug 2021 21:09:24 GMT  
-		Size: 409.1 MB (409124503 bytes)  
+	-	`sha256:8b6d3e3762f87cd67cdec375c240a51bf1f0b0b7a316b991931e161f047f3b0a`  
+		Last Modified: Sat, 28 Aug 2021 01:07:46 GMT  
+		Size: 409.1 MB (409124567 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e343f6700e1196438f9c3a946f3d35d7b36d278cd9a55a4773fc7df295f0578`  
-		Last Modified: Fri, 06 Aug 2021 21:08:56 GMT  
-		Size: 1.4 KB (1393 bytes)  
+	-	`sha256:4dce4a5ee6647d3027c65828f2e27d358be962991b6f4390ca47c9dd93bef0b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:23 GMT  
+		Size: 1.4 KB (1394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9-datacenter-search`
 
 ```console
-$ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e40bc00338d0e051b
+$ docker pull sonarqube@sha256:6de4f16f44722ce3408a471abeb52c90798dbd42d621c7b3e0e84c782df08b62
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1384,75 +1384,75 @@ $ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e4
 ### `sonarqube:9-datacenter-search` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:d740c61b51406398a95bb9de12972c8cea9dd74cf33890afe31204f769d6ffef
+$ docker pull sonarqube@sha256:9ea075fc42d4b614c17fd530835cf39813ef51f83ce611decf2f88d652592737
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586348 bytes)**  
+-	Total Size: **462.6 MB (462587588 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1f2cf2269fcdeb3a3ecb9160ece684b32881029f038443193fa37c94ff62e211`
+-	Image ID: `sha256:efd9b4ccfb4f579674e6c3d49a242129c1b0a399341206da8de095dfdd0e6e61`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:04:54 GMT
+# Sat, 28 Aug 2021 01:03:26 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=search SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:05:56 GMT
+# Sat, 28 Aug 2021 01:04:25 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:05:57 GMT
+# Sat, 28 Aug 2021 01:04:26 GMT
 COPY --chown=sonarqube:sonarqubemulti:270da8217279c47ae0242cde83fc983aadec2b66d86bcd0a13541b65a67704f9 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:05:59 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1e179a347ec3bf60c21f44ea5dfc71d934a6144ad8d0fba32efb2bc2daa2bbe`  
-		Last Modified: Fri, 06 Aug 2021 21:10:07 GMT  
-		Size: 409.1 MB (409124580 bytes)  
+	-	`sha256:034fde4110451e04a930b43fec85fb99670e9cbaa36e39450d6add8ad47a4624`  
+		Last Modified: Sat, 28 Aug 2021 01:08:22 GMT  
+		Size: 409.1 MB (409124435 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a0fc722bd7c4120e3158815830f8fdc23cf918ab2b5b91e3de8342dfb14ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:09:40 GMT  
-		Size: 1.4 KB (1410 bytes)  
+	-	`sha256:ba78fae25711fefd1da5aaaf58809168caef93c2e5536786af8778d97c4ef985`  
+		Last Modified: Sat, 28 Aug 2021 01:08:02 GMT  
+		Size: 1.4 KB (1407 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9-developer`
 
 ```console
-$ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16d4a39f38d7e80ca
+$ docker pull sonarqube@sha256:bd41bb73cdb30e82ffe2b7e98b860425527629d15fe7f1d38ae1285498284fc3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1462,75 +1462,75 @@ $ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16
 ### `sonarqube:9-developer` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:202d8ee45abb82913f2d52d40de004467b3c7c308dc413c9210d14ccc484768b
+$ docker pull sonarqube@sha256:515fc698a02ce58220bc6aad5618f63872748674a88c3338253087f7cfe058ec
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **420.3 MB (420338469 bytes)**  
+-	Total Size: **420.3 MB (420339716 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4ecd8f7609cae835b2748a99cabc458a448d9e4426e428854071f729b5cba9ef`
+-	Image ID: `sha256:c1d2468da4f532e8e2a41259120a5e1babec730508a6b7ebdd178d7fc8286e02`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:01:16 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:01:17 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:02:16 GMT
+# Sat, 28 Aug 2021 00:59:50 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dc9cfbec58f5fbd551b30a04b3d85114b1816b2a3e9168060d82b24c52462ff`  
-		Last Modified: Fri, 06 Aug 2021 21:07:59 GMT  
-		Size: 366.9 MB (366877011 bytes)  
+	-	`sha256:0fdd7dfa448cec3f1b59135ac38df86a643dc72b84d0461921595b8ae54abfb1`  
+		Last Modified: Sat, 28 Aug 2021 01:06:28 GMT  
+		Size: 366.9 MB (366876871 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6cb5b8975acabfb9985850eccabe5fc7fd71e57860b0789ff40658c8af94053`  
-		Last Modified: Fri, 06 Aug 2021 21:07:40 GMT  
-		Size: 1.1 KB (1100 bytes)  
+	-	`sha256:fc7906621b09d2485b822c3bada9e909e6cf62871a95baa8f6253877f1b8caec`  
+		Last Modified: Sat, 28 Aug 2021 01:06:09 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9-enterprise`
 
 ```console
-$ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb93188353fc73e12
+$ docker pull sonarqube@sha256:43fa560cb10a1b1804f509847ad6cc22e42ade395f5eb46f8c320a76dd9b39a4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1540,75 +1540,75 @@ $ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb
 ### `sonarqube:9-enterprise` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:1e3376b18615d32d333af88b9b4fdb302e34cad64a5589d8909e03c91fcb6b66
+$ docker pull sonarqube@sha256:c57531828e2d2e9dcfab976bec918f4ec10ffa74fc5cb42eee729c4e93f40038
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.0 MB (441012937 bytes)**  
+-	Total Size: **441.0 MB (441014214 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc371075063717da80ad35d67155b285bcfbd798f5a41caeabf62726e057a44b`
+-	Image ID: `sha256:b01668cbee498b65966eda5e7b842eb1a5b3f18edf9280f3a0516b527ce73acd`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:02:29 GMT
+# Sat, 28 Aug 2021 01:00:04 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:02:30 GMT
+# Sat, 28 Aug 2021 01:00:05 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:03:27 GMT
+# Sat, 28 Aug 2021 01:01:22 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:23 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3abf9be02650d74cb6531a357345e61074e6b7cdc74cdddcd406de4e18ef56c6`  
-		Last Modified: Fri, 06 Aug 2021 21:08:38 GMT  
-		Size: 387.6 MB (387551479 bytes)  
+	-	`sha256:da19d5ee7c28c0ce2ffce107c578fb94571a9b7bf45e89aa32f8c6299fcc48b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:07 GMT  
+		Size: 387.6 MB (387551368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8912bab8c0259f75036afc6cf84094642d850067a5f4aca142807c72b8baa65`  
-		Last Modified: Fri, 06 Aug 2021 21:08:14 GMT  
+	-	`sha256:10148377ca8808f34f34b1bdc83351f4ffd4c432d4865a7f174f5d8a82a16a64`  
+		Last Modified: Sat, 28 Aug 2021 01:06:44 GMT  
 		Size: 1.1 KB (1100 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0-community`
 
 ```console
-$ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73dd50656930e016d0
+$ docker pull sonarqube@sha256:2de810f3e47b33b6ba4a8ae25251cb7a9820884ab0c50910609eec9deee4582a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1618,75 +1618,75 @@ $ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73d
 ### `sonarqube:9.0-community` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:033266c5945df23419546f3f9695cd972b58648d2e132062b5c396da0659b88d
+$ docker pull sonarqube@sha256:03aa10991cf77db09907a3a105d2c00c6432763c2f7f100210cc0c8d1e42f1e1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **355.5 MB (355527535 bytes)**  
+-	Total Size: **355.5 MB (355528930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c12f16fa54088a91b79a1b05857adb85712f01b202d242135e9393affb7d43f9`
+-	Image ID: `sha256:6ffb4fd569602fc43459e4f3580276ede13a1624892da70c67e72b33b1a21f17`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:00:25 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:01:07 GMT
+# Sat, 28 Aug 2021 00:58:38 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b12eac0bdeb705622cac7169784ba95c0ef66fce810c60407e95e77146472ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:07:21 GMT  
-		Size: 302.1 MB (302066080 bytes)  
+	-	`sha256:287e43b3c7732c29896151482d3d615dac405376632863a1241dcfe7b2c7f254`  
+		Last Modified: Sat, 28 Aug 2021 01:05:49 GMT  
+		Size: 302.1 MB (302066085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0f4031590e8421e3e7c010d620e99e07e2ea242bd865667b096fdcdc0519976`  
-		Last Modified: Fri, 06 Aug 2021 21:07:03 GMT  
-		Size: 1.1 KB (1097 bytes)  
+	-	`sha256:f95772135b779ca123f41027a8d97ade5bbb3bc0d831dfb374c814dbe085eac8`  
+		Last Modified: Sat, 28 Aug 2021 01:05:29 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0-datacenter-app`
 
 ```console
-$ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46fb749a08583666c
+$ docker pull sonarqube@sha256:77d78117943a2d5884262cf808819192b6e7b41822529522d4c7fa9e9f453595
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1696,75 +1696,75 @@ $ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46
 ### `sonarqube:9.0-datacenter-app` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:91be2d17ed315de0f6d2da9e9f8b4f8655d7e7d6dd194dc2b58a53e5bef07562
+$ docker pull sonarqube@sha256:12eab5a9cbfaaf73f963c89059f41820448ed7c03562cbb831c0f694ea1378b7
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586254 bytes)**  
+-	Total Size: **462.6 MB (462587707 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a805e42fcb80a383a4491ac87b733b2a6f6a64e45b49e01f3e8be424ed6fc37a`
+-	Image ID: `sha256:6d5f6f2fa8660a3ea280112ad3b43a25d9defbfb94d3ef5e00c9c7097405fcbb`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=application SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:04:46 GMT
+# Sat, 28 Aug 2021 01:03:17 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 COPY --chown=sonarqube:sonarqubemulti:51df763f101eec590ff619b8aadba3476acd9a155be2557d6807f6fb4f272767 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:20 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da7a5a4365b2f19d4859608a555496905377302a0f42f1446e530d752c8f3a01`  
-		Last Modified: Fri, 06 Aug 2021 21:09:24 GMT  
-		Size: 409.1 MB (409124503 bytes)  
+	-	`sha256:8b6d3e3762f87cd67cdec375c240a51bf1f0b0b7a316b991931e161f047f3b0a`  
+		Last Modified: Sat, 28 Aug 2021 01:07:46 GMT  
+		Size: 409.1 MB (409124567 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e343f6700e1196438f9c3a946f3d35d7b36d278cd9a55a4773fc7df295f0578`  
-		Last Modified: Fri, 06 Aug 2021 21:08:56 GMT  
-		Size: 1.4 KB (1393 bytes)  
+	-	`sha256:4dce4a5ee6647d3027c65828f2e27d358be962991b6f4390ca47c9dd93bef0b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:23 GMT  
+		Size: 1.4 KB (1394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0-datacenter-search`
 
 ```console
-$ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e40bc00338d0e051b
+$ docker pull sonarqube@sha256:6de4f16f44722ce3408a471abeb52c90798dbd42d621c7b3e0e84c782df08b62
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1774,75 +1774,75 @@ $ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e4
 ### `sonarqube:9.0-datacenter-search` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:d740c61b51406398a95bb9de12972c8cea9dd74cf33890afe31204f769d6ffef
+$ docker pull sonarqube@sha256:9ea075fc42d4b614c17fd530835cf39813ef51f83ce611decf2f88d652592737
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586348 bytes)**  
+-	Total Size: **462.6 MB (462587588 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1f2cf2269fcdeb3a3ecb9160ece684b32881029f038443193fa37c94ff62e211`
+-	Image ID: `sha256:efd9b4ccfb4f579674e6c3d49a242129c1b0a399341206da8de095dfdd0e6e61`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:04:54 GMT
+# Sat, 28 Aug 2021 01:03:26 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=search SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:05:56 GMT
+# Sat, 28 Aug 2021 01:04:25 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:05:57 GMT
+# Sat, 28 Aug 2021 01:04:26 GMT
 COPY --chown=sonarqube:sonarqubemulti:270da8217279c47ae0242cde83fc983aadec2b66d86bcd0a13541b65a67704f9 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:05:59 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1e179a347ec3bf60c21f44ea5dfc71d934a6144ad8d0fba32efb2bc2daa2bbe`  
-		Last Modified: Fri, 06 Aug 2021 21:10:07 GMT  
-		Size: 409.1 MB (409124580 bytes)  
+	-	`sha256:034fde4110451e04a930b43fec85fb99670e9cbaa36e39450d6add8ad47a4624`  
+		Last Modified: Sat, 28 Aug 2021 01:08:22 GMT  
+		Size: 409.1 MB (409124435 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a0fc722bd7c4120e3158815830f8fdc23cf918ab2b5b91e3de8342dfb14ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:09:40 GMT  
-		Size: 1.4 KB (1410 bytes)  
+	-	`sha256:ba78fae25711fefd1da5aaaf58809168caef93c2e5536786af8778d97c4ef985`  
+		Last Modified: Sat, 28 Aug 2021 01:08:02 GMT  
+		Size: 1.4 KB (1407 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0-developer`
 
 ```console
-$ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16d4a39f38d7e80ca
+$ docker pull sonarqube@sha256:bd41bb73cdb30e82ffe2b7e98b860425527629d15fe7f1d38ae1285498284fc3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1852,75 +1852,75 @@ $ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16
 ### `sonarqube:9.0-developer` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:202d8ee45abb82913f2d52d40de004467b3c7c308dc413c9210d14ccc484768b
+$ docker pull sonarqube@sha256:515fc698a02ce58220bc6aad5618f63872748674a88c3338253087f7cfe058ec
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **420.3 MB (420338469 bytes)**  
+-	Total Size: **420.3 MB (420339716 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4ecd8f7609cae835b2748a99cabc458a448d9e4426e428854071f729b5cba9ef`
+-	Image ID: `sha256:c1d2468da4f532e8e2a41259120a5e1babec730508a6b7ebdd178d7fc8286e02`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:01:16 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:01:17 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:02:16 GMT
+# Sat, 28 Aug 2021 00:59:50 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dc9cfbec58f5fbd551b30a04b3d85114b1816b2a3e9168060d82b24c52462ff`  
-		Last Modified: Fri, 06 Aug 2021 21:07:59 GMT  
-		Size: 366.9 MB (366877011 bytes)  
+	-	`sha256:0fdd7dfa448cec3f1b59135ac38df86a643dc72b84d0461921595b8ae54abfb1`  
+		Last Modified: Sat, 28 Aug 2021 01:06:28 GMT  
+		Size: 366.9 MB (366876871 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6cb5b8975acabfb9985850eccabe5fc7fd71e57860b0789ff40658c8af94053`  
-		Last Modified: Fri, 06 Aug 2021 21:07:40 GMT  
-		Size: 1.1 KB (1100 bytes)  
+	-	`sha256:fc7906621b09d2485b822c3bada9e909e6cf62871a95baa8f6253877f1b8caec`  
+		Last Modified: Sat, 28 Aug 2021 01:06:09 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0-enterprise`
 
 ```console
-$ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb93188353fc73e12
+$ docker pull sonarqube@sha256:43fa560cb10a1b1804f509847ad6cc22e42ade395f5eb46f8c320a76dd9b39a4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1930,75 +1930,75 @@ $ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb
 ### `sonarqube:9.0-enterprise` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:1e3376b18615d32d333af88b9b4fdb302e34cad64a5589d8909e03c91fcb6b66
+$ docker pull sonarqube@sha256:c57531828e2d2e9dcfab976bec918f4ec10ffa74fc5cb42eee729c4e93f40038
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.0 MB (441012937 bytes)**  
+-	Total Size: **441.0 MB (441014214 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc371075063717da80ad35d67155b285bcfbd798f5a41caeabf62726e057a44b`
+-	Image ID: `sha256:b01668cbee498b65966eda5e7b842eb1a5b3f18edf9280f3a0516b527ce73acd`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:02:29 GMT
+# Sat, 28 Aug 2021 01:00:04 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:02:30 GMT
+# Sat, 28 Aug 2021 01:00:05 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:03:27 GMT
+# Sat, 28 Aug 2021 01:01:22 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:23 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3abf9be02650d74cb6531a357345e61074e6b7cdc74cdddcd406de4e18ef56c6`  
-		Last Modified: Fri, 06 Aug 2021 21:08:38 GMT  
-		Size: 387.6 MB (387551479 bytes)  
+	-	`sha256:da19d5ee7c28c0ce2ffce107c578fb94571a9b7bf45e89aa32f8c6299fcc48b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:07 GMT  
+		Size: 387.6 MB (387551368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8912bab8c0259f75036afc6cf84094642d850067a5f4aca142807c72b8baa65`  
-		Last Modified: Fri, 06 Aug 2021 21:08:14 GMT  
+	-	`sha256:10148377ca8808f34f34b1bdc83351f4ffd4c432d4865a7f174f5d8a82a16a64`  
+		Last Modified: Sat, 28 Aug 2021 01:06:44 GMT  
 		Size: 1.1 KB (1100 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0.1-community`
 
 ```console
-$ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73dd50656930e016d0
+$ docker pull sonarqube@sha256:2de810f3e47b33b6ba4a8ae25251cb7a9820884ab0c50910609eec9deee4582a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2008,75 +2008,75 @@ $ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73d
 ### `sonarqube:9.0.1-community` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:033266c5945df23419546f3f9695cd972b58648d2e132062b5c396da0659b88d
+$ docker pull sonarqube@sha256:03aa10991cf77db09907a3a105d2c00c6432763c2f7f100210cc0c8d1e42f1e1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **355.5 MB (355527535 bytes)**  
+-	Total Size: **355.5 MB (355528930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c12f16fa54088a91b79a1b05857adb85712f01b202d242135e9393affb7d43f9`
+-	Image ID: `sha256:6ffb4fd569602fc43459e4f3580276ede13a1624892da70c67e72b33b1a21f17`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:00:25 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:01:07 GMT
+# Sat, 28 Aug 2021 00:58:38 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b12eac0bdeb705622cac7169784ba95c0ef66fce810c60407e95e77146472ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:07:21 GMT  
-		Size: 302.1 MB (302066080 bytes)  
+	-	`sha256:287e43b3c7732c29896151482d3d615dac405376632863a1241dcfe7b2c7f254`  
+		Last Modified: Sat, 28 Aug 2021 01:05:49 GMT  
+		Size: 302.1 MB (302066085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0f4031590e8421e3e7c010d620e99e07e2ea242bd865667b096fdcdc0519976`  
-		Last Modified: Fri, 06 Aug 2021 21:07:03 GMT  
-		Size: 1.1 KB (1097 bytes)  
+	-	`sha256:f95772135b779ca123f41027a8d97ade5bbb3bc0d831dfb374c814dbe085eac8`  
+		Last Modified: Sat, 28 Aug 2021 01:05:29 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0.1-datacenter-app`
 
 ```console
-$ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46fb749a08583666c
+$ docker pull sonarqube@sha256:77d78117943a2d5884262cf808819192b6e7b41822529522d4c7fa9e9f453595
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2086,75 +2086,75 @@ $ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46
 ### `sonarqube:9.0.1-datacenter-app` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:91be2d17ed315de0f6d2da9e9f8b4f8655d7e7d6dd194dc2b58a53e5bef07562
+$ docker pull sonarqube@sha256:12eab5a9cbfaaf73f963c89059f41820448ed7c03562cbb831c0f694ea1378b7
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586254 bytes)**  
+-	Total Size: **462.6 MB (462587707 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a805e42fcb80a383a4491ac87b733b2a6f6a64e45b49e01f3e8be424ed6fc37a`
+-	Image ID: `sha256:6d5f6f2fa8660a3ea280112ad3b43a25d9defbfb94d3ef5e00c9c7097405fcbb`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=application SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:04:46 GMT
+# Sat, 28 Aug 2021 01:03:17 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 COPY --chown=sonarqube:sonarqubemulti:51df763f101eec590ff619b8aadba3476acd9a155be2557d6807f6fb4f272767 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:20 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da7a5a4365b2f19d4859608a555496905377302a0f42f1446e530d752c8f3a01`  
-		Last Modified: Fri, 06 Aug 2021 21:09:24 GMT  
-		Size: 409.1 MB (409124503 bytes)  
+	-	`sha256:8b6d3e3762f87cd67cdec375c240a51bf1f0b0b7a316b991931e161f047f3b0a`  
+		Last Modified: Sat, 28 Aug 2021 01:07:46 GMT  
+		Size: 409.1 MB (409124567 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e343f6700e1196438f9c3a946f3d35d7b36d278cd9a55a4773fc7df295f0578`  
-		Last Modified: Fri, 06 Aug 2021 21:08:56 GMT  
-		Size: 1.4 KB (1393 bytes)  
+	-	`sha256:4dce4a5ee6647d3027c65828f2e27d358be962991b6f4390ca47c9dd93bef0b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:23 GMT  
+		Size: 1.4 KB (1394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0.1-datacenter-search`
 
 ```console
-$ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e40bc00338d0e051b
+$ docker pull sonarqube@sha256:6de4f16f44722ce3408a471abeb52c90798dbd42d621c7b3e0e84c782df08b62
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2164,75 +2164,75 @@ $ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e4
 ### `sonarqube:9.0.1-datacenter-search` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:d740c61b51406398a95bb9de12972c8cea9dd74cf33890afe31204f769d6ffef
+$ docker pull sonarqube@sha256:9ea075fc42d4b614c17fd530835cf39813ef51f83ce611decf2f88d652592737
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586348 bytes)**  
+-	Total Size: **462.6 MB (462587588 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1f2cf2269fcdeb3a3ecb9160ece684b32881029f038443193fa37c94ff62e211`
+-	Image ID: `sha256:efd9b4ccfb4f579674e6c3d49a242129c1b0a399341206da8de095dfdd0e6e61`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:04:54 GMT
+# Sat, 28 Aug 2021 01:03:26 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=search SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:05:56 GMT
+# Sat, 28 Aug 2021 01:04:25 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:05:57 GMT
+# Sat, 28 Aug 2021 01:04:26 GMT
 COPY --chown=sonarqube:sonarqubemulti:270da8217279c47ae0242cde83fc983aadec2b66d86bcd0a13541b65a67704f9 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:05:59 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1e179a347ec3bf60c21f44ea5dfc71d934a6144ad8d0fba32efb2bc2daa2bbe`  
-		Last Modified: Fri, 06 Aug 2021 21:10:07 GMT  
-		Size: 409.1 MB (409124580 bytes)  
+	-	`sha256:034fde4110451e04a930b43fec85fb99670e9cbaa36e39450d6add8ad47a4624`  
+		Last Modified: Sat, 28 Aug 2021 01:08:22 GMT  
+		Size: 409.1 MB (409124435 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a0fc722bd7c4120e3158815830f8fdc23cf918ab2b5b91e3de8342dfb14ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:09:40 GMT  
-		Size: 1.4 KB (1410 bytes)  
+	-	`sha256:ba78fae25711fefd1da5aaaf58809168caef93c2e5536786af8778d97c4ef985`  
+		Last Modified: Sat, 28 Aug 2021 01:08:02 GMT  
+		Size: 1.4 KB (1407 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0.1-developer`
 
 ```console
-$ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16d4a39f38d7e80ca
+$ docker pull sonarqube@sha256:bd41bb73cdb30e82ffe2b7e98b860425527629d15fe7f1d38ae1285498284fc3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2242,75 +2242,75 @@ $ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16
 ### `sonarqube:9.0.1-developer` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:202d8ee45abb82913f2d52d40de004467b3c7c308dc413c9210d14ccc484768b
+$ docker pull sonarqube@sha256:515fc698a02ce58220bc6aad5618f63872748674a88c3338253087f7cfe058ec
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **420.3 MB (420338469 bytes)**  
+-	Total Size: **420.3 MB (420339716 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4ecd8f7609cae835b2748a99cabc458a448d9e4426e428854071f729b5cba9ef`
+-	Image ID: `sha256:c1d2468da4f532e8e2a41259120a5e1babec730508a6b7ebdd178d7fc8286e02`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:01:16 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:01:17 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:02:16 GMT
+# Sat, 28 Aug 2021 00:59:50 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dc9cfbec58f5fbd551b30a04b3d85114b1816b2a3e9168060d82b24c52462ff`  
-		Last Modified: Fri, 06 Aug 2021 21:07:59 GMT  
-		Size: 366.9 MB (366877011 bytes)  
+	-	`sha256:0fdd7dfa448cec3f1b59135ac38df86a643dc72b84d0461921595b8ae54abfb1`  
+		Last Modified: Sat, 28 Aug 2021 01:06:28 GMT  
+		Size: 366.9 MB (366876871 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6cb5b8975acabfb9985850eccabe5fc7fd71e57860b0789ff40658c8af94053`  
-		Last Modified: Fri, 06 Aug 2021 21:07:40 GMT  
-		Size: 1.1 KB (1100 bytes)  
+	-	`sha256:fc7906621b09d2485b822c3bada9e909e6cf62871a95baa8f6253877f1b8caec`  
+		Last Modified: Sat, 28 Aug 2021 01:06:09 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:9.0.1-enterprise`
 
 ```console
-$ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb93188353fc73e12
+$ docker pull sonarqube@sha256:43fa560cb10a1b1804f509847ad6cc22e42ade395f5eb46f8c320a76dd9b39a4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2320,75 +2320,75 @@ $ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb
 ### `sonarqube:9.0.1-enterprise` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:1e3376b18615d32d333af88b9b4fdb302e34cad64a5589d8909e03c91fcb6b66
+$ docker pull sonarqube@sha256:c57531828e2d2e9dcfab976bec918f4ec10ffa74fc5cb42eee729c4e93f40038
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.0 MB (441012937 bytes)**  
+-	Total Size: **441.0 MB (441014214 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc371075063717da80ad35d67155b285bcfbd798f5a41caeabf62726e057a44b`
+-	Image ID: `sha256:b01668cbee498b65966eda5e7b842eb1a5b3f18edf9280f3a0516b527ce73acd`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:02:29 GMT
+# Sat, 28 Aug 2021 01:00:04 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:02:30 GMT
+# Sat, 28 Aug 2021 01:00:05 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:03:27 GMT
+# Sat, 28 Aug 2021 01:01:22 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:23 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3abf9be02650d74cb6531a357345e61074e6b7cdc74cdddcd406de4e18ef56c6`  
-		Last Modified: Fri, 06 Aug 2021 21:08:38 GMT  
-		Size: 387.6 MB (387551479 bytes)  
+	-	`sha256:da19d5ee7c28c0ce2ffce107c578fb94571a9b7bf45e89aa32f8c6299fcc48b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:07 GMT  
+		Size: 387.6 MB (387551368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8912bab8c0259f75036afc6cf84094642d850067a5f4aca142807c72b8baa65`  
-		Last Modified: Fri, 06 Aug 2021 21:08:14 GMT  
+	-	`sha256:10148377ca8808f34f34b1bdc83351f4ffd4c432d4865a7f174f5d8a82a16a64`  
+		Last Modified: Sat, 28 Aug 2021 01:06:44 GMT  
 		Size: 1.1 KB (1100 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:community`
 
 ```console
-$ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73dd50656930e016d0
+$ docker pull sonarqube@sha256:2de810f3e47b33b6ba4a8ae25251cb7a9820884ab0c50910609eec9deee4582a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2398,75 +2398,75 @@ $ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73d
 ### `sonarqube:community` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:033266c5945df23419546f3f9695cd972b58648d2e132062b5c396da0659b88d
+$ docker pull sonarqube@sha256:03aa10991cf77db09907a3a105d2c00c6432763c2f7f100210cc0c8d1e42f1e1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **355.5 MB (355527535 bytes)**  
+-	Total Size: **355.5 MB (355528930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c12f16fa54088a91b79a1b05857adb85712f01b202d242135e9393affb7d43f9`
+-	Image ID: `sha256:6ffb4fd569602fc43459e4f3580276ede13a1624892da70c67e72b33b1a21f17`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:00:25 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:01:07 GMT
+# Sat, 28 Aug 2021 00:58:38 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b12eac0bdeb705622cac7169784ba95c0ef66fce810c60407e95e77146472ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:07:21 GMT  
-		Size: 302.1 MB (302066080 bytes)  
+	-	`sha256:287e43b3c7732c29896151482d3d615dac405376632863a1241dcfe7b2c7f254`  
+		Last Modified: Sat, 28 Aug 2021 01:05:49 GMT  
+		Size: 302.1 MB (302066085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0f4031590e8421e3e7c010d620e99e07e2ea242bd865667b096fdcdc0519976`  
-		Last Modified: Fri, 06 Aug 2021 21:07:03 GMT  
-		Size: 1.1 KB (1097 bytes)  
+	-	`sha256:f95772135b779ca123f41027a8d97ade5bbb3bc0d831dfb374c814dbe085eac8`  
+		Last Modified: Sat, 28 Aug 2021 01:05:29 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:datacenter-app`
 
 ```console
-$ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46fb749a08583666c
+$ docker pull sonarqube@sha256:77d78117943a2d5884262cf808819192b6e7b41822529522d4c7fa9e9f453595
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2476,75 +2476,75 @@ $ docker pull sonarqube@sha256:fafaa4cbbad34844da4b2bac3504525ce0059f787c4ec2c46
 ### `sonarqube:datacenter-app` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:91be2d17ed315de0f6d2da9e9f8b4f8655d7e7d6dd194dc2b58a53e5bef07562
+$ docker pull sonarqube@sha256:12eab5a9cbfaaf73f963c89059f41820448ed7c03562cbb831c0f694ea1378b7
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586254 bytes)**  
+-	Total Size: **462.6 MB (462587707 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a805e42fcb80a383a4491ac87b733b2a6f6a64e45b49e01f3e8be424ed6fc37a`
+-	Image ID: `sha256:6d5f6f2fa8660a3ea280112ad3b43a25d9defbfb94d3ef5e00c9c7097405fcbb`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=application SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:04:46 GMT
+# Sat, 28 Aug 2021 01:03:17 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 COPY --chown=sonarqube:sonarqubemulti:51df763f101eec590ff619b8aadba3476acd9a155be2557d6807f6fb4f272767 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:04:48 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:19 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:04:49 GMT
+# Sat, 28 Aug 2021 01:03:20 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da7a5a4365b2f19d4859608a555496905377302a0f42f1446e530d752c8f3a01`  
-		Last Modified: Fri, 06 Aug 2021 21:09:24 GMT  
-		Size: 409.1 MB (409124503 bytes)  
+	-	`sha256:8b6d3e3762f87cd67cdec375c240a51bf1f0b0b7a316b991931e161f047f3b0a`  
+		Last Modified: Sat, 28 Aug 2021 01:07:46 GMT  
+		Size: 409.1 MB (409124567 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e343f6700e1196438f9c3a946f3d35d7b36d278cd9a55a4773fc7df295f0578`  
-		Last Modified: Fri, 06 Aug 2021 21:08:56 GMT  
-		Size: 1.4 KB (1393 bytes)  
+	-	`sha256:4dce4a5ee6647d3027c65828f2e27d358be962991b6f4390ca47c9dd93bef0b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:23 GMT  
+		Size: 1.4 KB (1394 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:datacenter-search`
 
 ```console
-$ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e40bc00338d0e051b
+$ docker pull sonarqube@sha256:6de4f16f44722ce3408a471abeb52c90798dbd42d621c7b3e0e84c782df08b62
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2554,75 +2554,75 @@ $ docker pull sonarqube@sha256:44f2721a598fd2ab69f1c5a7ddded0137f489db5c930de5e4
 ### `sonarqube:datacenter-search` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:d740c61b51406398a95bb9de12972c8cea9dd74cf33890afe31204f769d6ffef
+$ docker pull sonarqube@sha256:9ea075fc42d4b614c17fd530835cf39813ef51f83ce611decf2f88d652592737
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.6 MB (462586348 bytes)**  
+-	Total Size: **462.6 MB (462587588 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1f2cf2269fcdeb3a3ecb9160ece684b32881029f038443193fa37c94ff62e211`
+-	Image ID: `sha256:efd9b4ccfb4f579674e6c3d49a242129c1b0a399341206da8de095dfdd0e6e61`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:03:42 GMT
+# Sat, 28 Aug 2021 01:01:30 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:04:54 GMT
+# Sat, 28 Aug 2021 01:03:26 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp SONAR_CLUSTER_NODE_TYPE=search SONAR_CLUSTER_ENABLED=true
-# Fri, 06 Aug 2021 21:05:56 GMT
+# Sat, 28 Aug 2021 01:04:25 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-datacenter/sonarqube-datacenter-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt ;    cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:05:57 GMT
+# Sat, 28 Aug 2021 01:04:26 GMT
 COPY --chown=sonarqube:sonarqubemulti:270da8217279c47ae0242cde83fc983aadec2b66d86bcd0a13541b65a67704f9 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:05:58 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:05:59 GMT
+# Sat, 28 Aug 2021 01:04:27 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1e179a347ec3bf60c21f44ea5dfc71d934a6144ad8d0fba32efb2bc2daa2bbe`  
-		Last Modified: Fri, 06 Aug 2021 21:10:07 GMT  
-		Size: 409.1 MB (409124580 bytes)  
+	-	`sha256:034fde4110451e04a930b43fec85fb99670e9cbaa36e39450d6add8ad47a4624`  
+		Last Modified: Sat, 28 Aug 2021 01:08:22 GMT  
+		Size: 409.1 MB (409124435 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a0fc722bd7c4120e3158815830f8fdc23cf918ab2b5b91e3de8342dfb14ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:09:40 GMT  
-		Size: 1.4 KB (1410 bytes)  
+	-	`sha256:ba78fae25711fefd1da5aaaf58809168caef93c2e5536786af8778d97c4ef985`  
+		Last Modified: Sat, 28 Aug 2021 01:08:02 GMT  
+		Size: 1.4 KB (1407 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:developer`
 
 ```console
-$ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16d4a39f38d7e80ca
+$ docker pull sonarqube@sha256:bd41bb73cdb30e82ffe2b7e98b860425527629d15fe7f1d38ae1285498284fc3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2632,75 +2632,75 @@ $ docker pull sonarqube@sha256:5b9d53eec8fbf366977ef704ed1337a2333b9ffcb14f31b16
 ### `sonarqube:developer` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:202d8ee45abb82913f2d52d40de004467b3c7c308dc413c9210d14ccc484768b
+$ docker pull sonarqube@sha256:515fc698a02ce58220bc6aad5618f63872748674a88c3338253087f7cfe058ec
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **420.3 MB (420338469 bytes)**  
+-	Total Size: **420.3 MB (420339716 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4ecd8f7609cae835b2748a99cabc458a448d9e4426e428854071f729b5cba9ef`
+-	Image ID: `sha256:c1d2468da4f532e8e2a41259120a5e1babec730508a6b7ebdd178d7fc8286e02`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:01:16 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:01:17 GMT
+# Sat, 28 Aug 2021 00:58:53 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:02:16 GMT
+# Sat, 28 Aug 2021 00:59:50 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME} ;     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" ;     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:02:18 GMT
+# Sat, 28 Aug 2021 00:59:51 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:02:19 GMT
+# Sat, 28 Aug 2021 00:59:52 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dc9cfbec58f5fbd551b30a04b3d85114b1816b2a3e9168060d82b24c52462ff`  
-		Last Modified: Fri, 06 Aug 2021 21:07:59 GMT  
-		Size: 366.9 MB (366877011 bytes)  
+	-	`sha256:0fdd7dfa448cec3f1b59135ac38df86a643dc72b84d0461921595b8ae54abfb1`  
+		Last Modified: Sat, 28 Aug 2021 01:06:28 GMT  
+		Size: 366.9 MB (366876871 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6cb5b8975acabfb9985850eccabe5fc7fd71e57860b0789ff40658c8af94053`  
-		Last Modified: Fri, 06 Aug 2021 21:07:40 GMT  
-		Size: 1.1 KB (1100 bytes)  
+	-	`sha256:fc7906621b09d2485b822c3bada9e909e6cf62871a95baa8f6253877f1b8caec`  
+		Last Modified: Sat, 28 Aug 2021 01:06:09 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:enterprise`
 
 ```console
-$ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb93188353fc73e12
+$ docker pull sonarqube@sha256:43fa560cb10a1b1804f509847ad6cc22e42ade395f5eb46f8c320a76dd9b39a4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2710,75 +2710,75 @@ $ docker pull sonarqube@sha256:97a0ba3e921f1c713858e919f209b759b1e572102e2d733eb
 ### `sonarqube:enterprise` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:1e3376b18615d32d333af88b9b4fdb302e34cad64a5589d8909e03c91fcb6b66
+$ docker pull sonarqube@sha256:c57531828e2d2e9dcfab976bec918f4ec10ffa74fc5cb42eee729c4e93f40038
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.0 MB (441012937 bytes)**  
+-	Total Size: **441.0 MB (441014214 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc371075063717da80ad35d67155b285bcfbd798f5a41caeabf62726e057a44b`
+-	Image ID: `sha256:b01668cbee498b65966eda5e7b842eb1a5b3f18edf9280f3a0516b527ce73acd`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:02:29 GMT
+# Sat, 28 Aug 2021 01:00:04 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:02:30 GMT
+# Sat, 28 Aug 2021 01:00:05 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:03:27 GMT
+# Sat, 28 Aug 2021 01:01:22 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/sonarqube-enterprise-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:23 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:03:29 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:03:30 GMT
+# Sat, 28 Aug 2021 01:01:24 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3abf9be02650d74cb6531a357345e61074e6b7cdc74cdddcd406de4e18ef56c6`  
-		Last Modified: Fri, 06 Aug 2021 21:08:38 GMT  
-		Size: 387.6 MB (387551479 bytes)  
+	-	`sha256:da19d5ee7c28c0ce2ffce107c578fb94571a9b7bf45e89aa32f8c6299fcc48b3`  
+		Last Modified: Sat, 28 Aug 2021 01:07:07 GMT  
+		Size: 387.6 MB (387551368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8912bab8c0259f75036afc6cf84094642d850067a5f4aca142807c72b8baa65`  
-		Last Modified: Fri, 06 Aug 2021 21:08:14 GMT  
+	-	`sha256:10148377ca8808f34f34b1bdc83351f4ffd4c432d4865a7f174f5d8a82a16a64`  
+		Last Modified: Sat, 28 Aug 2021 01:06:44 GMT  
 		Size: 1.1 KB (1100 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:latest`
 
 ```console
-$ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73dd50656930e016d0
+$ docker pull sonarqube@sha256:2de810f3e47b33b6ba4a8ae25251cb7a9820884ab0c50910609eec9deee4582a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2788,69 +2788,69 @@ $ docker pull sonarqube@sha256:507e282c0a66fbe1b0e9012be81f833bc8619f6fa97f3d73d
 ### `sonarqube:latest` - linux; amd64
 
 ```console
-$ docker pull sonarqube@sha256:033266c5945df23419546f3f9695cd972b58648d2e132062b5c396da0659b88d
+$ docker pull sonarqube@sha256:03aa10991cf77db09907a3a105d2c00c6432763c2f7f100210cc0c8d1e42f1e1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **355.5 MB (355527535 bytes)**  
+-	Total Size: **355.5 MB (355528930 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c12f16fa54088a91b79a1b05857adb85712f01b202d242135e9393affb7d43f9`
+-	Image ID: `sha256:6ffb4fd569602fc43459e4f3580276ede13a1624892da70c67e72b33b1a21f17`
 -	Entrypoint: `["bin\/run.sh"]`
 -	Default Command: `["bin\/sonar.sh"]`
 
 ```dockerfile
-# Fri, 06 Aug 2021 17:19:45 GMT
-ADD file:34eb5c40aa00028921a224d1764ae1b1f3ef710d191e4dfc7df55e0594aa7217 in / 
-# Fri, 06 Aug 2021 17:19:45 GMT
+# Fri, 27 Aug 2021 17:19:45 GMT
+ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / 
+# Fri, 27 Aug 2021 17:19:45 GMT
 CMD ["/bin/sh"]
-# Fri, 06 Aug 2021 21:00:05 GMT
+# Sat, 28 Aug 2021 00:57:27 GMT
 ENV JAVA_VERSION=jdk-11.0.11+9 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 06 Aug 2021 21:00:19 GMT
+# Sat, 28 Aug 2021 00:57:41 GMT
 RUN set -eux;     apk add --no-cache tzdata --virtual .build-deps curl binutils zstd;     GLIBC_VER="2.33-r0";     ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download";     GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-10.2.0-6-x86_64.pkg.tar.zst";     GCC_LIBS_SHA256="e33b45e4a10ef26259d6acf8e7b5dd6dc63800641e41eb67fa6588d061f79c1c";     ZLIB_URL="https://archive.archlinux.org/packages/z/zlib/zlib-1%3A1.2.11-4-x86_64.pkg.tar.xz";     ZLIB_SHA256=43a17987d348e0b395cb6e28d2ece65fb3b5a0fe433714762780d18c0451c149;     curl -LfsS https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub;     SGERRAND_RSA_SHA256="823b54589c93b02497f1ba4dc622eaef9c813e6b0f0ebbb2f771e32adf9f4ef2";     echo "${SGERRAND_RSA_SHA256} */etc/apk/keys/sgerrand.rsa.pub" | sha256sum -c - ;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-${GLIBC_VER}.apk > /tmp/glibc-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-${GLIBC_VER}.apk;     curl -LfsS ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk > /tmp/glibc-bin-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-bin-${GLIBC_VER}.apk;     curl -Ls ${ALPINE_GLIBC_REPO}/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk > /tmp/glibc-i18n-${GLIBC_VER}.apk;     apk add --no-cache /tmp/glibc-i18n-${GLIBC_VER}.apk;     /usr/glibc-compat/bin/localedef --inputfile en_US --charmap UTF-8 "$LANG" || true ;    echo "export LANG=$LANG" > /etc/profile.d/locale.sh;     curl -LfsS ${GCC_LIBS_URL} -o /tmp/gcc-libs.tar.zst;     echo "${GCC_LIBS_SHA256} */tmp/gcc-libs.tar.zst" | sha256sum -c - ;     mkdir /tmp/gcc;     zstd -d /tmp/gcc-libs.tar.zst --output-dir-flat /tmp;     tar -xf /tmp/gcc-libs.tar -C /tmp/gcc;     mv /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* /usr/glibc-compat/lib;     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so*;     curl -LfsS ${ZLIB_URL} -o /tmp/libz.tar.xz;     echo "${ZLIB_SHA256} */tmp/libz.tar.xz" | sha256sum -c - ;    mkdir /tmp/libz;     tar -xf /tmp/libz.tar.xz -C /tmp/libz;     mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib;     apk del --purge .build-deps glibc-i18n;     rm -rf /tmp/*.apk /tmp/gcc /tmp/gcc-libs.tar* /tmp/libz /tmp/libz.tar.xz /var/cache/apk/*;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:45 GMT
 RUN set -eux;     apk add --no-cache --virtual .fetch-deps curl;     ARCH="$(apk --print-arch)";     case "${ARCH}" in        aarch64|arm64)          ESUM='fde6b29df23b6e7ed6e16a237a0f44273fb9e267fdfbd0b3de5add98e55649f6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz';          ;;        armhf|armv7l)          ESUM='ad02656f800fd64c2b090b23ad24a099d9cd1054948ecb0e9851bc39c51c8be8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_arm_linux_hotspot_11.0.11_9.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='37c19c7c2d1cea627b854a475ef1a765d30357d765d20cf3f96590037e79d0f3';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.11_9.tar.gz';          ;;        s390x)          ESUM='f18101fc50aad795a41b4d3bbc591308c83664fd2390bf2bc007fd9b3d531e6c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_s390x_linux_hotspot_11.0.11_9.tar.gz';          ;;        amd64|x86_64)          ESUM='144f2c6bcf64faa32016f2474b6c01031be75d25325e9c3097aed6589bc5d548';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_x64_linux_hotspot_11.0.11_9.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     apk del --purge .fetch-deps;     rm -rf /var/cache/apk/*;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_VERSION=9.0.1.46107
-# Fri, 06 Aug 2021 21:00:24 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
-# Fri, 06 Aug 2021 21:00:25 GMT
+# Sat, 28 Aug 2021 00:57:46 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SONARQUBE_HOME=/opt/sonarqube SONAR_VERSION=9.0.1.46107 SQ_DATA_DIR=/opt/sonarqube/data SQ_EXTENSIONS_DIR=/opt/sonarqube/extensions SQ_LOGS_DIR=/opt/sonarqube/logs SQ_TEMP_DIR=/opt/sonarqube/temp
-# Fri, 06 Aug 2021 21:01:07 GMT
+# Sat, 28 Aug 2021 00:58:38 GMT
 # ARGS: SONARQUBE_VERSION=9.0.1.46107 SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
 RUN set -eux;     addgroup -S -g 1000 sonarqube;     adduser -S -D -u 1000 -G sonarqube sonarqube;     apk add --no-cache --virtual build-dependencies gnupg unzip curl;     apk add --no-cache bash su-exec ttf-dejavu;     echo "networkaddress.cache.ttl=5" >> "${JAVA_HOME}/conf/security/java.security";     sed --in-place --expression="s?securerandom.source=file:/dev/random?securerandom.source=file:/dev/urandom?g" "${JAVA_HOME}/conf/security/java.security";     for server in $(shuf -e ha.pool.sks-keyservers.net                             hkp://p80.pool.sks-keyservers.net:80                             keyserver.ubuntu.com                             hkp://keyserver.ubuntu.com:80                             pgp.mit.edu) ; do         gpg --batch --keyserver "${server}" --recv-keys 679F1EE92B19609DE816FDE81DB198F93525EC1A && break || : ;     done;     mkdir --parents /opt;     cd /opt;     curl --fail --location --output sonarqube.zip --silent --show-error "${SONARQUBE_ZIP_URL}";     curl --fail --location --output sonarqube.zip.asc --silent --show-error "${SONARQUBE_ZIP_URL}.asc";     gpg --batch --verify sonarqube.zip.asc sonarqube.zip;     unzip -q sonarqube.zip;     mv "sonarqube-${SONARQUBE_VERSION}" sonarqube;     rm sonarqube.zip*;     rm -rf ${SONARQUBE_HOME}/bin/*;     chown -R sonarqube:sonarqube ${SONARQUBE_HOME};     chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}";     apk del --purge build-dependencies;
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 COPY --chown=sonarqube:sonarqubemulti:aed345498324cc768d63aba16bd3b3de027a0213cb3a62a9a3b27799dbf88552 in /opt/sonarqube/bin/ 
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 WORKDIR /opt/sonarqube
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:39 GMT
 EXPOSE 9000
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 ENTRYPOINT ["bin/run.sh"]
-# Fri, 06 Aug 2021 21:01:08 GMT
+# Sat, 28 Aug 2021 00:58:40 GMT
 CMD ["bin/sonar.sh"]
 ```
 
 -	Layers:
-	-	`sha256:29291e31a76a7e560b9b7ad3cada56e8c18d50a96cca8a2573e4f4689d7aca77`  
-		Last Modified: Thu, 05 Aug 2021 15:56:25 GMT  
-		Size: 2.8 MB (2813006 bytes)  
+	-	`sha256:a0d0a0d46f8b52473982a3c466318f479767577551a53ffc9074c9fa7035982e`  
+		Last Modified: Fri, 27 Aug 2021 17:20:13 GMT  
+		Size: 2.8 MB (2814446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b090d1ada32d1d8704f038381d4ef66083a366545066110d8ec0e8b69e2e95e`  
-		Last Modified: Fri, 06 Aug 2021 21:07:04 GMT  
-		Size: 7.3 MB (7348223 bytes)  
+	-	`sha256:88f757b4c1cd6899ab6e32cd66207261d83fcda25c5c74a17f3a8b0ea73e082e`  
+		Last Modified: Sat, 28 Aug 2021 01:05:31 GMT  
+		Size: 7.3 MB (7348193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:346893427c7107fca36fd0640a68b2bc7b1e5a1e053d42eba0e97c80fd39a987`  
-		Last Modified: Fri, 06 Aug 2021 21:07:10 GMT  
-		Size: 43.3 MB (43299129 bytes)  
+	-	`sha256:34ead4808b168e4237aedbe736a4db43b5ea5eec470dcd3ad61a35e782503e85`  
+		Last Modified: Sat, 28 Aug 2021 01:05:37 GMT  
+		Size: 43.3 MB (43299107 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b12eac0bdeb705622cac7169784ba95c0ef66fce810c60407e95e77146472ea4`  
-		Last Modified: Fri, 06 Aug 2021 21:07:21 GMT  
-		Size: 302.1 MB (302066080 bytes)  
+	-	`sha256:287e43b3c7732c29896151482d3d615dac405376632863a1241dcfe7b2c7f254`  
+		Last Modified: Sat, 28 Aug 2021 01:05:49 GMT  
+		Size: 302.1 MB (302066085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d0f4031590e8421e3e7c010d620e99e07e2ea242bd865667b096fdcdc0519976`  
-		Last Modified: Fri, 06 Aug 2021 21:07:03 GMT  
-		Size: 1.1 KB (1097 bytes)  
+	-	`sha256:f95772135b779ca123f41027a8d97ade5bbb3bc0d831dfb374c814dbe085eac8`  
+		Last Modified: Sat, 28 Aug 2021 01:05:29 GMT  
+		Size: 1.1 KB (1099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `sonarqube:lts`
