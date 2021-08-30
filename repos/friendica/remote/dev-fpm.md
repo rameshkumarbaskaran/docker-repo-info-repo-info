@@ -1,7 +1,7 @@
 ## `friendica:dev-fpm`
 
 ```console
-$ docker pull friendica@sha256:c50eb35472093e04500d9a837e665df1b05593e8dcf9515fb3ff2a476ff9c17e
+$ docker pull friendica@sha256:fa334e6ecb4c1405834537f213624b0d540f6a38b892d44621e8b3c327d4431d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1008,14 +1008,14 @@ CMD ["php-fpm"]
 ### `friendica:dev-fpm` - linux; ppc64le
 
 ```console
-$ docker pull friendica@sha256:c7a81d3985bcbe668bfabb008e82516136bd27da5c5dae21572697171228ab7a
+$ docker pull friendica@sha256:ad506cfdb3fe3c6de11915a27f274d5b0178aab3ff41cc2b6246557dab6271fc
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.8 MB (197779295 bytes)**  
+-	Total Size: **197.8 MB (197778539 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:926094a92ddc409a7231d66f267bab1677b64a2be755cdc90987f0a106e8ffe6`
+-	Image ID: `sha256:67898e4faddc29476ec1f2f40d6f468e4ec2857a25369d278b71cb599061ce4a`
 -	Entrypoint: `["\/entrypoint-dev.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -1080,23 +1080,23 @@ RUN set -ex;         apt-get update;     apt-get install -y --no-install-recomme
 ENV TINI_VERSION=v0.19.0
 # Fri, 27 Aug 2021 11:50:06 GMT
 RUN export BUILD_ARCH=$(dpkg-architecture --query DEB_BUILD_ARCH)  && mkdir ~/.gnupg  && echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf  && curl -L -o /sbin/tini https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${BUILD_ARCH}  && curl -L -o /tini.asc https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${BUILD_ARCH}.asc  && gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7  && gpg --batch --verify /tini.asc /sbin/tini  && chmod +x /sbin/tini
-# Fri, 27 Aug 2021 12:06:04 GMT
-RUN set -ex;         savedAptMark="$(apt-mark showmanual)";         apt-get update;     apt-get install -y --no-install-recommends         mariadb-client         bash         libpng-dev         libjpeg62-turbo-dev         libtool         libmagick++-dev         libmemcached-dev         libgraphicsmagick1-dev         libfreetype6-dev         librsvg2-2         libzip-dev         libldap2-dev     ;             debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)";         docker-php-ext-configure gd         --with-gd         --with-freetype-dir=/usr/include/         --with-png-dir=/usr/include/         --with-jpeg-dir=/usr/include/     ;     docker-php-ext-configure ldap         --with-libdir=lib/$debMultiarch/     ;    docker-php-ext-install -j "$(nproc)"         pdo_mysql         gd         zip         opcache         ctype         pcntl         ldap     ;         pecl install apcu-5.1.20;     pecl install memcached-3.1.5;     pecl install redis-5.3.4;     pecl install imagick-3.5.0;         docker-php-ext-enable         apcu         memcached         redis         imagick     ;         apt-mark auto '.*' > /dev/null;     apt-mark manual $savedAptMark;     ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so         | awk '/=>/ { print $3 }'         | sort -u         | xargs -r dpkg-query -S         | cut -d: -f1         | sort -u         | xargs -rt apt-mark manual;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false;     rm -rf /var/lib/apt/lists/*
-# Fri, 27 Aug 2021 12:06:21 GMT
+# Mon, 30 Aug 2021 21:03:19 GMT
+RUN set -ex;         savedAptMark="$(apt-mark showmanual)";         apt-get update;     apt-get install -y --no-install-recommends         mariadb-client         bash         libpng-dev         libjpeg62-turbo-dev         libtool         libmagick++-dev         libmemcached-dev         libgraphicsmagick1-dev         libfreetype6-dev         librsvg2-2         libzip-dev         libldap2-dev     ;             debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)";         docker-php-ext-configure gd         --with-gd         --with-freetype-dir=/usr/include/         --with-png-dir=/usr/include/         --with-jpeg-dir=/usr/include/     ;     docker-php-ext-configure ldap         --with-libdir=lib/$debMultiarch/     ;    docker-php-ext-install -j "$(nproc)"         pdo_mysql         gd         zip         opcache         ctype         pcntl         ldap     ;         pecl install apcu-5.1.20;     pecl install memcached-3.1.5;     pecl install redis-5.3.4;     pecl install imagick-3.5.1;         docker-php-ext-enable         apcu         memcached         redis         imagick     ;         apt-mark auto '.*' > /dev/null;     apt-mark manual $savedAptMark;     ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so         | awk '/=>/ { print $3 }'         | sort -u         | xargs -r dpkg-query -S         | cut -d: -f1         | sort -u         | xargs -rt apt-mark manual;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false;     rm -rf /var/lib/apt/lists/*
+# Mon, 30 Aug 2021 21:03:35 GMT
 RUN set -ex;     {         echo 'opcache.enable=1' ;         echo 'opcache.interned_strings_buffer=8';         echo 'opcache.max_accelerated_files=10000';         echo 'opcache.memory_consumption=128';         echo 'opcache.save_comments=1';         echo 'opcache.revalidte_freq=1';     } > /usr/local/etc/php/conf.d/opcache-recommended.ini;         {         echo sendmail_path = "/usr/bin/msmtp -t";     } > /usr/local/etc/php/conf.d/sendmail.ini;         echo 'apc.enable_cli=1' >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini;         echo 'memory_limit=512M' > /usr/local/etc/php/conf.d/memory-limit.ini;         mkdir /var/www/data;     chown -R www-data:root /var/www;     chmod -R g=u /var/www
-# Fri, 27 Aug 2021 12:06:28 GMT
+# Mon, 30 Aug 2021 21:03:40 GMT
 VOLUME [/var/www/html]
-# Fri, 27 Aug 2021 12:31:48 GMT
+# Mon, 30 Aug 2021 21:19:10 GMT
 ENV FRIENDICA_VERSION=2021.09-dev
-# Fri, 27 Aug 2021 12:31:55 GMT
+# Mon, 30 Aug 2021 21:19:19 GMT
 ENV FRIENDICA_ADDONS=2021.09-dev
-# Fri, 27 Aug 2021 12:32:00 GMT
+# Mon, 30 Aug 2021 21:19:24 GMT
 COPY multi:800da4d631eb7a69c2421a45923378af7f03b3dff2c0d5706fb55181b79cb134 in / 
-# Fri, 27 Aug 2021 12:32:03 GMT
+# Mon, 30 Aug 2021 21:19:31 GMT
 COPY multi:33c6df8ca48b360ac89b7ca8e8b370fe30a626687aacfad3b3c3d5c1924a5777 in /usr/src/friendica/config/ 
-# Fri, 27 Aug 2021 12:32:12 GMT
+# Mon, 30 Aug 2021 21:19:36 GMT
 ENTRYPOINT ["/entrypoint-dev.sh"]
-# Fri, 27 Aug 2021 12:32:18 GMT
+# Mon, 30 Aug 2021 21:19:43 GMT
 CMD ["php-fpm"]
 ```
 
@@ -1153,21 +1153,21 @@ CMD ["php-fpm"]
 		Last Modified: Fri, 27 Aug 2021 12:35:28 GMT  
 		Size: 16.3 KB (16336 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c60951811bedfcc051d77f2f0fc47ef775884c4c05ccb928eab790a5f8f5b340`  
-		Last Modified: Fri, 27 Aug 2021 12:35:44 GMT  
-		Size: 15.6 MB (15559406 bytes)  
+	-	`sha256:bd41b97a7ab3029761e63ce97b06ca1fa5863ad23731cbcd35dfb1ae3cfa8772`  
+		Last Modified: Mon, 30 Aug 2021 21:29:08 GMT  
+		Size: 15.6 MB (15558643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86326fbc2ad7fb0c90ede49f36069762397921023eab4afe49888a69f56f177e`  
-		Last Modified: Fri, 27 Aug 2021 12:35:26 GMT  
-		Size: 577.0 B  
+	-	`sha256:27ae9a62ad95e5d4a3e7ceb417392eec71809d9da7fa3201f878e750e6dbc093`  
+		Last Modified: Mon, 30 Aug 2021 21:28:02 GMT  
+		Size: 583.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fca34ac2c5bb5eea31ea155e9f2ea78f4680cac770251a06761e4619993b4f80`  
-		Last Modified: Fri, 27 Aug 2021 12:55:31 GMT  
+	-	`sha256:fcfbdcb6da809a27df32010b750ed406efd19b75409bf52a089ee64d045f7e6e`  
+		Last Modified: Mon, 30 Aug 2021 21:37:48 GMT  
 		Size: 3.3 KB (3281 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a53daf9dde6fa090be2474ba803b1fca3bdd4c58c985fda6f3c7178ef5603d3b`  
-		Last Modified: Fri, 27 Aug 2021 12:55:31 GMT  
-		Size: 1.2 KB (1157 bytes)  
+	-	`sha256:fbe4250309f86933da59fdb254bde7ea91da49ad907d6cf99eae14ebe1d298f4`  
+		Last Modified: Mon, 30 Aug 2021 21:37:48 GMT  
+		Size: 1.2 KB (1158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `friendica:dev-fpm` - linux; s390x
