@@ -13,6 +13,9 @@
 -	[`eclipse-temurin:11-jdk-windowsservercore`](#eclipse-temurin11-jdk-windowsservercore)
 -	[`eclipse-temurin:11-jdk-windowsservercore-1809`](#eclipse-temurin11-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:11-jdk-windowsservercore-ltsc2016`](#eclipse-temurin11-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:11-jre`](#eclipse-temurin11-jre)
+-	[`eclipse-temurin:11-jre-centos7`](#eclipse-temurin11-jre-centos7)
+-	[`eclipse-temurin:11-jre-focal`](#eclipse-temurin11-jre-focal)
 -	[`eclipse-temurin:11-nanoserver`](#eclipse-temurin11-nanoserver)
 -	[`eclipse-temurin:11-nanoserver-1809`](#eclipse-temurin11-nanoserver-1809)
 -	[`eclipse-temurin:11-windowsservercore`](#eclipse-temurin11-windowsservercore)
@@ -26,6 +29,9 @@
 -	[`eclipse-temurin:11.0.12_7-jdk-windowsservercore`](#eclipse-temurin11012_7-jdk-windowsservercore)
 -	[`eclipse-temurin:11.0.12_7-jdk-windowsservercore-1809`](#eclipse-temurin11012_7-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:11.0.12_7-jdk-windowsservercore-ltsc2016`](#eclipse-temurin11012_7-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:11.0.12_7-jre`](#eclipse-temurin11012_7-jre)
+-	[`eclipse-temurin:11.0.12_7-jre-centos7`](#eclipse-temurin11012_7-jre-centos7)
+-	[`eclipse-temurin:11.0.12_7-jre-focal`](#eclipse-temurin11012_7-jre-focal)
 -	[`eclipse-temurin:16`](#eclipse-temurin16)
 -	[`eclipse-temurin:16-centos7`](#eclipse-temurin16-centos7)
 -	[`eclipse-temurin:16-focal`](#eclipse-temurin16-focal)
@@ -2007,6 +2013,18 @@ CMD ["jshell"]
 		Size: 1.4 KB (1371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:11-jre`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:11-jre-centos7`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:11-jre-focal`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:11-nanoserver`
 
 ```console
@@ -3628,6 +3646,18 @@ CMD ["jshell"]
 		Last Modified: Wed, 25 Aug 2021 23:31:43 GMT  
 		Size: 1.4 KB (1371 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:11.0.12_7-jre`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:11.0.12_7-jre-centos7`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:11.0.12_7-jre-focal`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:16`
 
