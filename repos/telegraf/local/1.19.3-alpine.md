@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:47d5db184d82326d77a46c955b240cb8eb2275df2f7a6b997df2f4b3e17976e7`
-- Created: `2021-07-30T00:21:29.867323012Z`
-- Virtual Size: ~ 141.99 Mb  
+- Image ID: `sha256:7cc6bafb0c23c315b28cb0031bd7193ecdbc4ccf1a51784ab3f9a4bfcbc376df`
+- Created: `2021-09-01T06:13:46.701969831Z`
+- Virtual Size: ~ 142.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["telegraf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `TELEGRAF_VERSION=1.19.2`
+  - `TELEGRAF_VERSION=1.19.3`
 
 ## `apk` (`.apk`-based packages)
 
@@ -52,16 +52,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.6-r0 description:
+apk-tools-2.10.8-r0 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.6-r0 webpage:
+apk-tools-2.10.8-r0 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.10.6-r0 installed size:
+apk-tools-2.10.8-r0 installed size:
 260 KiB
 
-apk-tools-2.10.6-r0 license:
+apk-tools-2.10.8-r0 license:
 GPL-2.0-only
 
 ```
@@ -188,16 +188,16 @@ BSD-3-Clause OR GPL-2.0-only
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1k-r0 description:
+libcrypto1.1-1.1.1l-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1k-r0 webpage:
+libcrypto1.1-1.1.1l-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1k-r0 installed size:
+libcrypto1.1-1.1.1l-r0 installed size:
 2700 KiB
 
-libcrypto1.1-1.1.1k-r0 license:
+libcrypto1.1-1.1.1l-r0 license:
 OpenSSL
 
 ```
@@ -239,16 +239,16 @@ GPL-2.0 LGPL-2.1+
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1k-r0 description:
+libssl1.1-1.1.1l-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1k-r0 webpage:
+libssl1.1-1.1.1l-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1k-r0 installed size:
+libssl1.1-1.1.1l-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1k-r0 license:
+libssl1.1-1.1.1l-r0 license:
 OpenSSL
 
 ```
