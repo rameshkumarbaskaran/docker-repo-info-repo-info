@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:38a391c1c5208016575a29ec314cb4ad64b744940de5082e57f89fa05a0fd2d9`
-- Created: `2021-07-26T23:34:51.843821933Z`
+- Image ID: `sha256:70cc393fc1e276c6e776cbbc1c1118b3066766f09e43d1f9e8337528ea440516`
+- Created: `2021-08-31T06:34:53.367206074Z`
 - Virtual Size: ~ 664.34 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -659,23 +659,19 @@ $ apt-get source -qq --print-uris diffutils=1:3.3-3
 'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.3-3.debian.tar.xz' diffutils_3.3-3.debian.tar.xz 18356 SHA256:a0d1946979196f793a8ca55b21ab7891227de08f15bac2578ed84f4911e8b755
 ```
 
-### `dpkg` source package: `distro-info-data=0.28ubuntu0.17`
+### `dpkg` source package: `distro-info-data=0.28ubuntu0.18`
 
 Binary Packages:
 
-- `distro-info-data=0.28ubuntu0.17`
+- `distro-info-data=0.28ubuntu0.18`
 
 Licenses: (parsed from: `/usr/share/doc/distro-info-data/copyright`)
 
 - `ISC`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris distro-info-data=0.28ubuntu0.17
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.28ubuntu0.17.dsc' distro-info-data_0.28ubuntu0.17.dsc 1416 SHA512:4dbfe11307db2f7dea97b024d7c642bd2f9046ba22dc654322dbc88edaf6b90fbecb3bfabe8ec77da6436eb151bb2bcb4fa003ceb767f9324893a0adf0118bef
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.28ubuntu0.17.tar.xz' distro-info-data_0.28ubuntu0.17.tar.xz 7368 SHA512:c656c2ce3c416a2fc97ec1428632fd3659af4ada0ffd294ce6f924a0b8842ebee8b1d2dd0dd7f79b0a9cb37158fcaa050e5551c1efb595bae8efd6f9f63d0c1e
-```
 
 ### `dpkg` source package: `dpkg=1.18.4ubuntu1.7`
 
@@ -4319,24 +4315,19 @@ $ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.13
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.13.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.13.debian.tar.xz 186584 SHA512:9f14c8c34082d1ed9689aa610fffcbdad1396dcacbd763f61d3091ad67170de5fa6f72abde7332336e49d3a0925c475e19f8d7763ca7d66dc5be105abb3ce976
 ```
 
-### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.19`
+### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.20`
 
 Binary Packages:
 
-- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.19`
+- `libssl1.0.0:amd64=1.0.2g-1ubuntu4.20`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.0.2g-1ubuntu4.19
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.19.dsc' openssl_1.0.2g-1ubuntu4.19.dsc 2453 SHA512:7c0d74264a6d1f43f865f1b240fc7d7231bf403fb4364c55188bd858474b97ffd68f731e006fa1f54271f2c1daf859d53e55cd138e56073fddaa0f32ae277b78
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g.orig.tar.gz' openssl_1.0.2g.orig.tar.gz 5266102 SHA512:4d96b6c8a232203483d6e8bee81da01ba10977bfbac92f25304a36dec9ea584b7ef917bc45e097cc7dbe681d71a4570d649c22244c178393ae91fab48323f735
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.19.debian.tar.xz' openssl_1.0.2g-1ubuntu4.19.debian.tar.xz 142620 SHA512:fc0f262ad17581ddcc8758747d874d884c8c7f11dea221ba70b1cb317e3168a00c25f905d4d7a4be3c019df2d717f2595af7cd8fe94f5d3e521f5544e2ec6a88
-```
 
 ### `dpkg` source package: `opus=1.1.2-1ubuntu1`
 
