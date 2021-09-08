@@ -1,7 +1,7 @@
 ## `hylang:python3.8-alpine3.13`
 
 ```console
-$ docker pull hylang@sha256:62e515e0ce4805b0aa1a356b2a2213b0bd0b5378716a77dc77bcc0876f973931
+$ docker pull hylang@sha256:5c5d7fed35320e07e475f5ed1e72517a818174ff7f54490f5ed94c0fe614f567
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -405,14 +405,14 @@ CMD ["hy"]
 ### `hylang:python3.8-alpine3.13` - linux; ppc64le
 
 ```console
-$ docker pull hylang@sha256:08efb9d1d0660dc37ab27887a35d86ff4f4c49bd5f717eff8be394a331b5c695
+$ docker pull hylang@sha256:e95fa0e53b46a23fd6af9e7b55e2649bfc1ddeb67db1d2e0fd18d7b558b4f128
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **20.1 MB (20090714 bytes)**  
+-	Total Size: **20.1 MB (20091723 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8c82487593d7e9b76df68ff313ebc1c4ccd5420ccd363e1651976f3cb85900e3`
+-	Image ID: `sha256:7001968b7e4993c64aa06bd7f6b33294731f516155dfab49200a6fe2d24bca36`
 -	Default Command: `["hy"]`
 
 ```dockerfile
@@ -436,19 +436,21 @@ RUN set -ex 	&& apk add --no-cache --virtual .fetch-deps 		gnupg 		tar 		xz 		&&
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
 # Wed, 01 Sep 2021 03:15:42 GMT
 ENV PYTHON_PIP_VERSION=21.2.4
-# Wed, 01 Sep 2021 03:15:49 GMT
+# Wed, 08 Sep 2021 02:56:18 GMT
+ENV PYTHON_SETUPTOOLS_VERSION=57.5.0
+# Wed, 08 Sep 2021 02:56:19 GMT
 ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/c20b0cfd643cd4a19246ccf204e2997af70f6b21/public/get-pip.py
-# Wed, 01 Sep 2021 03:15:54 GMT
+# Wed, 08 Sep 2021 02:56:21 GMT
 ENV PYTHON_GET_PIP_SHA256=fa6f3fb93cce234cd4e8dd2beb54a51ab9c247653b52855a48dd44e6b21ff28b
-# Wed, 01 Sep 2021 03:16:27 GMT
-RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Wed, 01 Sep 2021 03:16:34 GMT
+# Wed, 08 Sep 2021 02:56:46 GMT
+RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 		"setuptools==$PYTHON_SETUPTOOLS_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests -o -name idle_test \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
+# Wed, 08 Sep 2021 02:56:54 GMT
 CMD ["python3"]
-# Wed, 01 Sep 2021 03:52:31 GMT
+# Wed, 08 Sep 2021 06:20:00 GMT
 ENV HY_VERSION=1.0a3
-# Wed, 01 Sep 2021 03:52:49 GMT
+# Wed, 08 Sep 2021 06:20:26 GMT
 RUN pip install --no-cache-dir "hy == $HY_VERSION"
-# Wed, 01 Sep 2021 03:52:51 GMT
+# Wed, 08 Sep 2021 06:20:30 GMT
 CMD ["hy"]
 ```
 
@@ -469,13 +471,13 @@ CMD ["hy"]
 		Last Modified: Wed, 01 Sep 2021 03:45:02 GMT  
 		Size: 230.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57271aa538c281dc2f5269f2e5fefc2d3d87562024d5043b04fb3e61d3c54f98`  
-		Last Modified: Wed, 01 Sep 2021 03:45:03 GMT  
-		Size: 2.3 MB (2348905 bytes)  
+	-	`sha256:ff1ccbc544b6988bdc7048c337a9d6b3210145d979f93502d07475dcfaae9ba1`  
+		Last Modified: Wed, 08 Sep 2021 05:54:02 GMT  
+		Size: 2.3 MB (2348991 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:845f561a5bce3eaeba140559623c84093da1db4ce925cc8eda059b82232aac3f`  
-		Last Modified: Wed, 01 Sep 2021 03:59:52 GMT  
-		Size: 3.1 MB (3118074 bytes)  
+	-	`sha256:5ae9de79a86ffcb12644e493e0a5c5d0de863ecd02b891cc32784680be77e1cb`  
+		Last Modified: Wed, 08 Sep 2021 06:32:12 GMT  
+		Size: 3.1 MB (3118997 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hylang:python3.8-alpine3.13` - linux; s390x
