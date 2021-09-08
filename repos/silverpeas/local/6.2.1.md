@@ -148,14 +148,9 @@ Licenses: (parsed from: `/usr/share/doc/alsa-ucm-conf/copyright`)
 
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris alsa-ucm-conf=1.2.2-1ubuntu0.9
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-ucm-conf/alsa-ucm-conf_1.2.2-1ubuntu0.9.dsc' alsa-ucm-conf_1.2.2-1ubuntu0.9.dsc 1427 SHA512:8304edfe0e209648869ce446745fc2e11d8164af80dd183f65e6b04d55cf484390798b58a8de5e2865f4fee7ef46128f67f42214afb544b07d9c5f2eda129a24
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-ucm-conf/alsa-ucm-conf_1.2.2.orig.tar.bz2' alsa-ucm-conf_1.2.2.orig.tar.bz2 14608 SHA512:25e3f341c110772c7cffc8c7745b320f2ddd12fe6460380c088939b5dc67b99ae4ad92e69375179574e0e1c40d14ff49961e86494e223fde009e51590f00ca8f
-'http://archive.ubuntu.com/ubuntu/pool/main/a/alsa-ucm-conf/alsa-ucm-conf_1.2.2-1ubuntu0.9.debian.tar.xz' alsa-ucm-conf_1.2.2-1ubuntu0.9.debian.tar.xz 17360 SHA512:5022cb093c790982ad66386e2f6497128b6570896f7873e26cbb0a9c5fca04c5b8fee756f8dcb507ddba08e674ea429f68f6985c0a8359840ed8ff84928e1404
-```
 
 ### `dpkg` source package: `aom=1.0.0.errata1-3build1`
 
