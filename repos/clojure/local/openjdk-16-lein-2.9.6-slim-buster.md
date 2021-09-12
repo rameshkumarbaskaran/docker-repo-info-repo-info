@@ -1,4 +1,4 @@
-# `clojure:openjdk-16`
+# `clojure:openjdk-16-slim-buster`
 
 ## Docker Metadata
 
