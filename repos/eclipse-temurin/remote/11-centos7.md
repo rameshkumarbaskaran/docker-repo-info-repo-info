@@ -1,7 +1,7 @@
 ## `eclipse-temurin:11-centos7`
 
 ```console
-$ docker pull eclipse-temurin@sha256:7a2c60cbe62b9a7bddbf60432c9c0ed1e4f4969d52094e8316aa7ee2b7faa6f1
+$ docker pull eclipse-temurin@sha256:cac7bce092b31aa43c204d8907bda849babf0aa673ef77d030d3602d3918133b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -67,14 +67,14 @@ CMD ["jshell"]
 ### `eclipse-temurin:11-centos7` - linux; arm64 variant v8
 
 ```console
-$ docker pull eclipse-temurin@sha256:f684d2bc3634364e2f9e86ad08f830a2e94f2310d952c3852dd654a519bad0b0
+$ docker pull eclipse-temurin@sha256:3640dda3cf9158502a6de8ebe254e9f412578d75af88f942b0c18177a64a9832
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **311.1 MB (311140394 bytes)**  
+-	Total Size: **311.1 MB (311134436 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:26ac0eae4cf299956ee2da2886548a223f474242ce5ef42b978d4bbd696e4760`
+-	Image ID: `sha256:9d54859d718f1e2a71895ef1961d709b075f0a2054e0576c4cdf6dc44d89a3ca`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -86,17 +86,17 @@ LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Imag
 CMD ["/bin/bash"]
 # Fri, 13 Aug 2021 21:31:50 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Fri, 13 Aug 2021 21:32:06 GMT
-RUN yum install -y tzdata openssl curl binutils ca-certificates fontconfig gzip tar     && yum clean all
-# Fri, 13 Aug 2021 21:32:39 GMT
+# Wed, 25 Aug 2021 23:40:28 GMT
+RUN yum install -y tzdata openssl curl ca-certificates fontconfig gzip tar     && yum clean all
+# Mon, 13 Sep 2021 17:40:47 GMT
 ENV JAVA_VERSION=jdk-11.0.12+7
-# Fri, 13 Aug 2021 21:32:53 GMT
+# Mon, 13 Sep 2021 17:41:01 GMT
 RUN set -eux;     ARCH="$(uname -m)";     case "${ARCH}" in        aarch64|arm64)          ESUM='105bdc12fcd54c551e8e8ac96bc82412467244c32063689c41cee29ceb7452a2';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12%2B7/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.12_7.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='234a9bafe029ea6cab5d46f9617b5d016a29faa187a42081d0e066f23647b7e5';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12%2B7/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.12_7.tar.gz';          ;;        amd64|x86_64)          ESUM='8770f600fc3b89bf331213c7aa21f8eedd9ca5d96036d1cd48cb2748a3dbefd2';          BINARY_URL='https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.12_7.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Fri, 13 Aug 2021 21:32:54 GMT
+# Mon, 13 Sep 2021 17:41:01 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 13 Aug 2021 21:32:54 GMT
-RUN echo Verifying install ...     && echo   javac --version && javac --version     && echo   java --version && java --version     && echo Complete.
-# Fri, 13 Aug 2021 21:32:55 GMT
+# Mon, 13 Sep 2021 17:41:02 GMT
+RUN echo Verifying install ...     && echo javac --version && javac --version     && echo java --version && java --version     && echo Complete.
+# Mon, 13 Sep 2021 17:41:03 GMT
 CMD ["jshell"]
 ```
 
@@ -105,17 +105,17 @@ CMD ["jshell"]
 		Last Modified: Sat, 14 Nov 2020 00:41:36 GMT  
 		Size: 108.4 MB (108374945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a1f30f64b2dba124507bf31c8ca19668559c7863dd22ef9c7e0269feadc0e379`  
-		Last Modified: Fri, 13 Aug 2021 21:35:26 GMT  
-		Size: 12.3 MB (12262266 bytes)  
+	-	`sha256:5f6a4b1c6710817ea0dfbb49d265b49a90b45758039acc20c924053c928ccf43`  
+		Last Modified: Wed, 25 Aug 2021 23:42:29 GMT  
+		Size: 12.3 MB (12256221 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad1784abae5f59fe9cbab860d21073f9583da21b8f78761123e52a6c3a39ac6a`  
-		Last Modified: Fri, 13 Aug 2021 21:36:37 GMT  
-		Size: 190.5 MB (190503023 bytes)  
+	-	`sha256:c4f17472beb84f521fe02a6c80b296939fb4970a9bab0ae95e6385f17ebcd4af`  
+		Last Modified: Mon, 13 Sep 2021 17:45:39 GMT  
+		Size: 190.5 MB (190503111 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac62b46e0ccbd12d10df9366641381ece03e17daa78bad0161dedb49c3efc1b5`  
-		Last Modified: Fri, 13 Aug 2021 21:36:20 GMT  
-		Size: 160.0 B  
+	-	`sha256:6542bbf37cb7814e572d684660a51804fb6b176b1822eae9f1725de6f8e410c3`  
+		Last Modified: Mon, 13 Sep 2021 17:45:22 GMT  
+		Size: 159.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `eclipse-temurin:11-centos7` - linux; ppc64le
