@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:d723c24dfd4ce9466eb5f0b6ecb506bd773ce1791fb69f1a28e10110f17e154c`
 - Created: `2021-09-03T01:20:38.650525416Z`
-- Virtual Size: ~ 124.77 Mb  
+- Virtual Size: ~ 124.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -613,20 +613,13 @@ Licenses: (parsed from: `/usr/share/doc/gcc-9-base/copyright`)
 - `LGPL`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-9=9.4.0-2
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.4.0-2.dsc' gcc-9_9.4.0-2.dsc 21922 SHA256:a90ec7c6087d66431b1491e92754968d3da57f22c6452807078c1eaf9478d5cc
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.4.0.orig.tar.gz' gcc-9_9.4.0.orig.tar.gz 88736226 SHA256:7ef28e618cecddbb538359d03998a61648edb10b570b995aa4f4016c4a0d823e
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.4.0-2.debian.tar.xz' gcc-9_9.4.0-2.debian.tar.xz 602880 SHA256:e5ba7d673657b76ac4b9697b80518284476be7179ab54d447a5c3e27a5355472
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gcc-9/9.4.0-2/
 
-- https://sources.debian.net/src/gcc-9/9.4.0-2/ (for browsing the source)
-- https://sources.debian.net/src/gcc-9/9.4.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-9/9.4.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.31-17`
 
