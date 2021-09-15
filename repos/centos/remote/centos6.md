@@ -1,7 +1,7 @@
 ## `centos:centos6`
 
 ```console
-$ docker pull centos@sha256:f1121f50a287e3743101d8498bdb09046f91b5d3a3fd5297e40e4b88ad834c3d
+$ docker pull centos@sha256:a93df2e96e07f56ea48f215425c6f1673ab922927894595bb5c0ee4c5a955133
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,24 +12,24 @@ $ docker pull centos@sha256:f1121f50a287e3743101d8498bdb09046f91b5d3a3fd5297e40e
 ### `centos:centos6` - linux; amd64
 
 ```console
-$ docker pull centos@sha256:9aae95c8043f4e401178d68006756dc68982ae6d0693b71a714754227ce0abc6
+$ docker pull centos@sha256:3688aa867eb84332460e172b9250c9c198fdfd8d987605fd53f246f498c60bcf
 ```
 
--	Docker Version: 18.06.1-ce
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **69.8 MB (69835815 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d0957ffdf8a2ea8c8925903862b65a1b6850dbb019f88d45e927d3d5a3fa0c31`
+-	Image ID: `sha256:5bf9684f472089d6d5cb636041d3d6dc748dbde39f1aefc374bbd367bd2aabbf`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Tue, 09 Oct 2018 18:20:03 GMT
+# Wed, 15 Sep 2021 18:20:32 GMT
 MAINTAINER https://github.com/CentOS/sig-cloud-instance-images
-# Thu, 14 Mar 2019 21:20:10 GMT
+# Wed, 15 Sep 2021 18:20:38 GMT
 ADD file:0065316a41144e95bcb133567cc86816b8368a823cc067d741e06ded59849fd8 in / 
-# Thu, 14 Mar 2019 21:20:11 GMT
+# Wed, 15 Sep 2021 18:20:38 GMT
 LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20181006
-# Thu, 14 Mar 2019 21:20:11 GMT
+# Wed, 15 Sep 2021 18:20:39 GMT
 CMD ["/bin/bash"]
 ```
 
