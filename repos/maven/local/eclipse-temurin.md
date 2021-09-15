@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ab0eb70922547a263fe1b589634be52d828c6352d4abaac2bbd137996984b471`
-- Created: `2021-08-31T08:00:17.459081138Z`
+- Image ID: `sha256:a0d52e5f8c5447af25d3a9f569aa48a130058b0731d5f4e5bb85867d8635d968`
+- Created: `2021-09-13T19:18:38.810291257Z`
 - Virtual Size: ~ 583.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -667,12 +667,12 @@ $ apt-get source -qq --print-uris gdbm=1.18.1-5
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.18.1-5.debian.tar.xz' gdbm_1.18.1-5.debian.tar.xz 16348 SHA256:3c1a0e05b40a97ee51ce77c736c72c37738ba31b2720111d3bc99175a2c3a3ed
 ```
 
-### `dpkg` source package: `git=1:2.25.1-1ubuntu3.1`
+### `dpkg` source package: `git=1:2.25.1-1ubuntu3.2`
 
 Binary Packages:
 
-- `git=1:2.25.1-1ubuntu3.1`
-- `git-man=1:2.25.1-1ubuntu3.1`
+- `git=1:2.25.1-1ubuntu3.2`
+- `git-man=1:2.25.1-1ubuntu3.2`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -698,10 +698,10 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.1.dsc' git_2.25.1-1ubuntu3.1.dsc 2962 SHA512:edb02508cc111889d584bb3050b0eeee11bbbbb276f7d4a8001c490814006940440f5473eba8a674c2f94c73fa3688af0a9d1007936762a8f15fe8e039aa890d
+$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.2
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.2.dsc' git_2.25.1-1ubuntu3.2.dsc 3003 SHA512:5bfedb3d3db62d5f69d5a5ba912e174eb7034be23cb77e85f92cc56937c206b94bcbb4ba3cd0662e131553b5e643e1fd0ecca2654ca14ca18c130e148f40baa2
 'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1.orig.tar.xz' git_2.25.1.orig.tar.xz 5875548 SHA512:15241143acfd8542d85d2709ac3c80dbd6e8d5234438f70c4f33cc71a2bdec3e32938df7f6351e2746d570b021d3bd0b70474ea4beec0c51d1fc45f9c287b344
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.1.debian.tar.xz' git_2.25.1-1ubuntu3.1.debian.tar.xz 653244 SHA512:30db2c9e910dff8f144c6a1ab0d78afd2a51ebe52f115be8b817e5891fd1d1ac1fda8799a574a97cb3bc4d810495349477334cb04ffe347e6b26725eb6a46d52
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.2.debian.tar.xz' git_2.25.1-1ubuntu3.2.debian.tar.xz 654548 SHA512:9f4ebe2015218184dfb5c2b2e4c345cddb9d89ebd9f096706f10497ae7e2a44a9b75feee3bc0c2466bebade43d2ee4057fd807fd718f123b0e724622d03604e2
 ```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.2`
