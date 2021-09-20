@@ -1,16 +1,16 @@
-# `sapmachine:16`
+# `sapmachine:17`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f03379223f92ac5e060891ddf640a4db439f93367461efd241d62a47a7ef2e7d`
-- Created: `2021-08-31T05:10:20.959232686Z`
-- Virtual Size: ~ 459.77 Mb  
+- Image ID: `sha256:fcc16856577406f0955caa4f7621f0403e0d8070b91006a6ba3fe0215f5d19f8`
+- Created: `2021-09-17T21:40:13.843736592Z`
+- Virtual Size: ~ 432.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_HOME=/usr/lib/jvm/sapmachine-16`
+  - `JAVA_HOME=/usr/lib/jvm/sapmachine-17`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1796,11 +1796,11 @@ $ apt-get source -qq --print-uris readline=8.0-4
 'http://archive.ubuntu.com/ubuntu/pool/main/r/readline/readline_8.0-4.debian.tar.xz' readline_8.0-4.debian.tar.xz 30408 SHA256:60ed18dab6d6b7fc998a263d917f06d9cce6e1ccd19cd8bf4a9d33c5350cf8d6
 ```
 
-### `dpkg` source package: `sapmachine-16-jdk=16.0.2`
+### `dpkg` source package: `sapmachine-17-jdk=17`
 
 Binary Packages:
 
-- `sapmachine-16-jdk=16.0.2`
+- `sapmachine-17-jdk=17`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
