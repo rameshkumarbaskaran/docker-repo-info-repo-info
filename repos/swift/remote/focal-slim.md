@@ -1,7 +1,7 @@
 ## `swift:focal-slim`
 
 ```console
-$ docker pull swift@sha256:fd2d7affaede2d5e2b7e841e3ef02cc2854c16ecb56caeb405c8faf95cd706c7
+$ docker pull swift@sha256:510bf4d6f91d90c102c3a1fd7938c7b5bcbdfd26ccf1351c3cfec4d13fd95327
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull swift@sha256:fd2d7affaede2d5e2b7e841e3ef02cc2854c16ecb56caeb405c8f
 ### `swift:focal-slim` - linux; amd64
 
 ```console
-$ docker pull swift@sha256:f31661cbb1311e3e9b283b4f220dcf203abbe7e33ac5e01c4d4a7143a9ea0440
+$ docker pull swift@sha256:7fef9c1b27f0ea966dd2e50332a579fc335c2a0518b0474c8fb2341602177d0e
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **90.4 MB (90361634 bytes)**  
+-	Total Size: **143.3 MB (143265794 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:51d9f6ff6a192932b79512c9e1a70058ae81bcd97a21394d431a13ff75580aad`
+-	Image ID: `sha256:f751f20f9f334703fd35224c3040cc127f433e75f7f866ae1ae614158c37cd48`
 -	Default Command: `["bash"]`
 
 ```dockerfile
@@ -36,15 +36,15 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && ap
 ARG SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561
 # Tue, 31 Aug 2021 05:23:52 GMT
 ARG SWIFT_PLATFORM=ubuntu20.04
-# Mon, 13 Sep 2021 18:40:07 GMT
-ARG SWIFT_BRANCH=swift-5.4.3-release
-# Mon, 13 Sep 2021 18:40:08 GMT
-ARG SWIFT_VERSION=swift-5.4.3-RELEASE
-# Mon, 13 Sep 2021 18:40:08 GMT
+# Tue, 21 Sep 2021 19:35:49 GMT
+ARG SWIFT_BRANCH=swift-5.5-release
+# Tue, 21 Sep 2021 19:35:49 GMT
+ARG SWIFT_VERSION=swift-5.5-RELEASE
+# Tue, 21 Sep 2021 19:35:49 GMT
 ARG SWIFT_WEBROOT=https://swift.org/builds/
-# Mon, 13 Sep 2021 18:40:08 GMT
-ENV SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561 SWIFT_PLATFORM=ubuntu20.04 SWIFT_BRANCH=swift-5.4.3-release SWIFT_VERSION=swift-5.4.3-RELEASE SWIFT_WEBROOT=https://swift.org/builds/
-# Mon, 13 Sep 2021 18:41:52 GMT
+# Tue, 21 Sep 2021 19:35:49 GMT
+ENV SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561 SWIFT_PLATFORM=ubuntu20.04 SWIFT_BRANCH=swift-5.5-release SWIFT_VERSION=swift-5.5-RELEASE SWIFT_WEBROOT=https://swift.org/builds/
+# Tue, 21 Sep 2021 19:37:42 GMT
 RUN set -e;     SWIFT_WEBDIR="$SWIFT_WEBROOT/$SWIFT_BRANCH/$(echo $SWIFT_PLATFORM | tr -d .)/"     && SWIFT_BIN_URL="$SWIFT_WEBDIR/$SWIFT_VERSION/$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz"     && SWIFT_SIG_URL="$SWIFT_BIN_URL.sig"     && export DEBIAN_FRONTEND=noninteractive     && apt-get -q update && apt-get -q install -y curl gnupg && rm -rf /var/lib/apt/lists/*     && export GNUPGHOME="$(mktemp -d)"     && curl -fsSL "$SWIFT_BIN_URL" -o swift.tar.gz "$SWIFT_SIG_URL" -o swift.tar.gz.sig     && gpg --batch --quiet --keyserver keyserver.ubuntu.com --recv-keys "$SWIFT_SIGNING_KEY"     && gpg --batch --verify swift.tar.gz.sig swift.tar.gz     && tar -xzf swift.tar.gz --directory / --strip-components=1 $SWIFT_VERSION-$SWIFT_PLATFORM/usr/lib/swift/linux     && chmod -R o+r /usr/lib/swift     && rm -rf "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz     && apt-get purge --auto-remove -y curl gnupg
 ```
 
@@ -57,7 +57,7 @@ RUN set -e;     SWIFT_WEBDIR="$SWIFT_WEBROOT/$SWIFT_BRANCH/$(echo $SWIFT_PLATFOR
 		Last Modified: Tue, 31 Aug 2021 06:13:29 GMT  
 		Size: 22.3 MB (22252794 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39e7234767c6ec8a9746da4cd4bdafb96d4c85e1465bd6b1d7008654c3f1f936`  
-		Last Modified: Mon, 13 Sep 2021 19:07:08 GMT  
-		Size: 39.5 MB (39538766 bytes)  
+	-	`sha256:3f935b0338cb06f322d9360c361ebf2e66f675b93cc7307e4dbef8dcb3b65219`  
+		Last Modified: Tue, 21 Sep 2021 20:05:48 GMT  
+		Size: 92.4 MB (92442926 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
