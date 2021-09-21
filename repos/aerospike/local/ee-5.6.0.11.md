@@ -1,9 +1,9 @@
-# `aerospike:ee-5.6.0.10`
+# `aerospike:ee-5.6.0.11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8861338182282af08755430ffc85d17bb5d129397f0e3f7b5717d6882b62ab3f`
-- Created: `2021-09-16T19:19:44.967236088Z`
+- Image ID: `sha256:0fda4ff480791ffdf171661f5ea475971fe4d4bad8ffbf416454bfcbe14e7ded`
+- Created: `2021-09-17T19:19:40.011647792Z`
 - Virtual Size: ~ 218.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=5.6.0.10`
-  - `AEROSPIKE_SHA256=b667ff95e03b82f6aab6e965c4a315f856b56c7d60a42139423446f95b56c5e7`
+  - `AEROSPIKE_VERSION=5.6.0.11`
+  - `AEROSPIKE_SHA256=17c73dea4213a587d4d2335f78c2094c0f77369d2311473d6d13ecc07df31aa9`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -69,11 +69,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.118/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.118/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-enterprise=5.6.0.10-1`
+### `dpkg` source package: `aerospike-server-enterprise=5.6.0.11-1`
 
 Binary Packages:
 
-- `aerospike-server-enterprise=5.6.0.10-1`
+- `aerospike-server-enterprise=5.6.0.11-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
