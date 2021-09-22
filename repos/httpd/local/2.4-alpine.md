@@ -1,18 +1,18 @@
-# `httpd:2.4.48-alpine`
+# `httpd:2.4.49-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5a4f32436238a9f73829b6eaa6426002a4e0842a7894b7a8ba1ce7750acc93cc`
-- Created: `2021-08-27T20:31:14.007091745Z`
-- Virtual Size: ~ 54.82 Mb  
+- Image ID: `sha256:877451a44b20c515d8cc35343164c2be60e8d29d8fe729411eb63b0bf5ac0a15`
+- Created: `2021-09-21T20:24:04.759386798Z`
+- Virtual Size: ~ 54.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["httpd-foreground"]`
 - Environment:
   - `PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `HTTPD_PREFIX=/usr/local/apache2`
-  - `HTTPD_VERSION=2.4.48`
-  - `HTTPD_SHA256=1bc826e7b2e88108c7e4bf43c026636f77a41d849cfb667aa7b5c0b86dbf966c`
+  - `HTTPD_VERSION=2.4.49`
+  - `HTTPD_SHA256=65b965d6890ea90d9706595e4b7b9365b5060bec8ea723449480b4769974133b`
   - `HTTPD_PATCHES=`
 
 ## `apk` (`.apk`-based packages)
@@ -292,16 +292,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.78.0-r0 description:
+libcurl-7.79.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.78.0-r0 webpage:
+libcurl-7.79.0-r0 webpage:
 https://curl.se/
 
-libcurl-7.78.0-r0 installed size:
+libcurl-7.79.0-r0 installed size:
 500 KiB
 
-libcurl-7.78.0-r0 license:
+libcurl-7.79.0-r0 license:
 MIT
 
 ```
