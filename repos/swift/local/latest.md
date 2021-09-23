@@ -1,10 +1,10 @@
-# `swift:5.4.3`
+# `swift:5.5.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a9b4f52e1fed2df75e2fe6d3ec709487ff1bae44ceeaffa4406bbffc71373579`
-- Created: `2021-09-13T18:34:40.554558148Z`
-- Virtual Size: ~ 2.10 Gb  
+- Image ID: `sha256:76c734f44b8b4fbb1137d8c27c9bef908c9c57422fd350f029b956ff4b3ca441`
+- Created: `2021-09-21T19:29:54.067564285Z`
+- Virtual Size: ~ 2.31 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.4.3-release`
-  - `SWIFT_VERSION=swift-5.4.3-RELEASE`
+  - `SWIFT_BRANCH=swift-5.5-release`
+  - `SWIFT_VERSION=swift-5.5-RELEASE`
   - `SWIFT_WEBROOT=https://swift.org/builds/`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
@@ -298,9 +298,27 @@ $ apt-get source -qq --print-uris coreutils=8.28-1ubuntu1
 Binary Packages:
 
 - `libcurl3-gnutls:amd64=7.58.0-2ubuntu3.14`
-- `libcurl4:amd64=7.58.0-2ubuntu3.14`
 
-Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
+
+- `BSD-3-Clause`
+- `BSD-4-Clause`
+- `ISC`
+- `curl`
+- `other`
+- `public-domain`
+
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
+
+
+### `dpkg` source package: `curl=7.58.0-2ubuntu3.15`
+
+Binary Packages:
+
+- `libcurl4:amd64=7.58.0-2ubuntu3.15`
+
+Licenses: (parsed from: `/usr/share/doc/libcurl4/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`

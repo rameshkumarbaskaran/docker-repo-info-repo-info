@@ -1,10 +1,10 @@
-# `swift:5.4.3-xenial`
+# `swift:5.5.0-xenial`
 
 ## Docker Metadata
 
-- Image ID: `sha256:75a3b57f37aedb2a315b0325467446748a4a4a805ea089793f767e2a90c02301`
-- Created: `2021-09-13T18:36:41.211888999Z`
-- Virtual Size: ~ 2.11 Gb  
+- Image ID: `sha256:ffec1032fe78d5d59d173b2a034c6c660ef85ad58717fd72986ef324cb08c14b`
+- Created: `2021-09-21T19:32:04.384131419Z`
+- Virtual Size: ~ 2.31 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu16.04`
-  - `SWIFT_BRANCH=swift-5.4.3-release`
-  - `SWIFT_VERSION=swift-5.4.3-RELEASE`
+  - `SWIFT_BRANCH=swift-5.5-release`
+  - `SWIFT_VERSION=swift-5.5-RELEASE`
   - `SWIFT_WEBROOT=https://swift.org/builds/`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
@@ -878,14 +878,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The main library is licensed under GNU Lesser`
 - `nonstandard, see below`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.4.10-4ubuntu1.8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.8.dsc' gnutls28_3.4.10-4ubuntu1.8.dsc 2439 SHA512:03544c1f1f795de1604bbcba4750ee5e6e5ca3f9a75f9dd9d0c623c3510e55912ae578abb2287727870fbf079c4c3df9bde8c63251f884adcddd1d35a4dd8579
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10.orig.tar.xz' gnutls28_3.4.10.orig.tar.xz 6645892 SHA512:e5cd60240ebbcac9d8f7c28fdbf023a499e3c58a352a43c24d075b248a0a903161b1745641bf263519293c0014424cc23dbb67274c8934aaf273a523ad0a2925
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.4.10-4ubuntu1.8.debian.tar.xz' gnutls28_3.4.10-4ubuntu1.8.debian.tar.xz 113000 SHA512:5ac07e360614f7ad60c917c2c373c00b6dc1dad07f34b1b761d8c6e9a8154f0e6f714b4542d22e4b4d7c31b8d4111b59e086fb0503064131bf8207002457fe0f
-```
 
 ### `dpkg` source package: `grep=2.25-1~16.04.1`
 
