@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5a38e52b30bf23ccbf13c2ac867ad13c28aeb6c0138efd31463f9ede62c7382e`
-- Created: `2021-09-10T19:21:03.428675574Z`
+- Image ID: `sha256:15ce81941cbf56e2dc328f35d3ab5d8b4caae736452db16326bcc3f5615e4900`
+- Created: `2021-09-24T04:33:37.474801369Z`
 - Virtual Size: ~ 617.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -21,10 +21,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.23`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.23.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.23.tar.xz.asc`
-  - `PHP_SHA256=cea52313fcffe56343bcd3c66dbb23cd5507dc559cc2e3547cf8f5452e88a05d`
+  - `PHP_VERSION=7.4.24`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.24.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.24.tar.xz.asc`
+  - `PHP_SHA256=ff7658ee2f6d8af05b48c21146af5f502e121def4e76e862df5ec9fa06e98734`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1332,13 +1332,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gdbm/1.19-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gdbm/1.19-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `ghostscript=9.53.3~dfsg-7`
+### `dpkg` source package: `ghostscript=9.53.3~dfsg-7+deb11u1`
 
 Binary Packages:
 
-- `ghostscript=9.53.3~dfsg-7`
-- `libgs9:amd64=9.53.3~dfsg-7`
-- `libgs9-common=9.53.3~dfsg-7`
+- `ghostscript=9.53.3~dfsg-7+deb11u1`
+- `libgs9:amd64=9.53.3~dfsg-7+deb11u1`
+- `libgs9-common=9.53.3~dfsg-7+deb11u1`
 
 Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/libgs9/copyright`, `/usr/share/doc/libgs9-common/copyright`)
 
@@ -1374,17 +1374,17 @@ Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris ghostscript=9.53.3~dfsg-7
-'http://deb.debian.org/debian/pool/main/g/ghostscript/ghostscript_9.53.3~dfsg-7.dsc' ghostscript_9.53.3~dfsg-7.dsc 2677 SHA256:32c7e3eb366251fa0ced20b6deaeac9f01ab1914a4dc090c9decbef9052bde72
-'http://deb.debian.org/debian/pool/main/g/ghostscript/ghostscript_9.53.3~dfsg.orig.tar.xz' ghostscript_9.53.3~dfsg.orig.tar.xz 23948068 SHA256:678f99fc6cca9a224f49891b8db5d9a325b8b3fbbffa9f29d44bac9f54603f3d
-'http://deb.debian.org/debian/pool/main/g/ghostscript/ghostscript_9.53.3~dfsg-7.debian.tar.xz' ghostscript_9.53.3~dfsg-7.debian.tar.xz 118732 SHA256:5f06ce2b30f8e6b9194b5e84d85e73024d70ace35c5048e20aae1e23ae286807
+$ apt-get source -qq --print-uris ghostscript=9.53.3~dfsg-7+deb11u1
+'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.53.3~dfsg-7+deb11u1.dsc' ghostscript_9.53.3~dfsg-7+deb11u1.dsc 2864 SHA256:701551ac2ffaa9763f4e90d2f0d58719fd59708604f1204506ed258149da09ff
+'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.53.3~dfsg.orig.tar.xz' ghostscript_9.53.3~dfsg.orig.tar.xz 23948068 SHA256:678f99fc6cca9a224f49891b8db5d9a325b8b3fbbffa9f29d44bac9f54603f3d
+'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.53.3~dfsg-7+deb11u1.debian.tar.xz' ghostscript_9.53.3~dfsg-7+deb11u1.debian.tar.xz 120292 SHA256:b08c4a40ee3731b0d94cf21bcb1bc49bd76818b71ee63c91cab9d34f0b03a021
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/ghostscript/9.53.3~dfsg-7/ (for browsing the source)
-- https://sources.debian.net/src/ghostscript/9.53.3~dfsg-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ghostscript/9.53.3~dfsg-7/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/ghostscript/9.53.3~dfsg-7+deb11u1/ (for browsing the source)
+- https://sources.debian.net/src/ghostscript/9.53.3~dfsg-7+deb11u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/ghostscript/9.53.3~dfsg-7+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.66.8-1`
 
