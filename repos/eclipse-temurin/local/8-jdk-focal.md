@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6052c6418e3d7450e65522fc0e2eafd71719f4b9eb20a173b7b3a4f997bfe48a`
-- Created: `2021-09-22T19:55:59.224063811Z`
+- Image ID: `sha256:ba7732523371837f0be5df8974cd0b58e418d0542415008ae802c730ceaefa0b`
+- Created: `2021-09-24T19:19:51.143009855Z`
 - Virtual Size: ~ 320.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -232,13 +232,9 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ca-certificates=20210119~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119~20.04.1.dsc' ca-certificates_20210119~20.04.1.dsc 1917 SHA512:51e73e623563dc6023abd1502bc476be7558c1cb6dba8a03549f8f3a91cc960e02d47caa67aa7102fae9c72a14b7da3a0fcb7544c637f14ce5fe29fffc3ccc62
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119~20.04.1.tar.xz' ca-certificates_20210119~20.04.1.tar.xz 232772 SHA512:d1edd53ff9a6731703cc93a0281fdb4055cb39b90f53b79a784887d9e0c5db04311a726788bfcc66a556453c7481ea5873f1689b5c46080e23b6aa466e5b8a1b
-```
 
 ### `dpkg` source package: `cdebconf=0.251ubuntu1`
 
