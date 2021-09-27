@@ -1,20 +1,20 @@
-# `postgres:13.4`
+# `postgres:10.18-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5861c038d674e4db6377d9f3880e66e028d276c9a32c9688fb1afd9b497ba78b`
-- Created: `2021-09-23T23:56:34.104220961Z`
-- Virtual Size: ~ 371.26 Mb  
+- Image ID: `sha256:e50ae2a57a6259d362269d7c8e31f92969869b49640045b33548c32851225fdf`
+- Created: `2021-09-23T23:58:26.84423979Z`
+- Virtual Size: ~ 239.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["postgres"]`
 - Environment:
-  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/13/bin`
+  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/10/bin`
   - `GOSU_VERSION=1.12`
   - `LANG=en_US.utf8`
-  - `PG_MAJOR=13`
-  - `PG_VERSION=13.4-1.pgdg110+1`
+  - `PG_MAJOR=10`
+  - `PG_VERSION=10.18-1.pgdg110+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -1677,37 +1677,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.4.8+dfsg-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.4.8+dfsg-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `llvm-toolchain-11=1:11.0.1-2`
-
-Binary Packages:
-
-- `libllvm11:amd64=1:11.0.1-2`
-
-Licenses: (parsed from: `/usr/share/doc/libllvm11/copyright`)
-
-- `APACHE-2-LLVM-EXCEPTIONS`
-- `Apache-2.0`
-- `BSD-3-Clause`
-- `BSD-3-clause`
-- `MIT`
-- `Python`
-- `solar-public-domain`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris llvm-toolchain-11=1:11.0.1-2
-'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-11/llvm-toolchain-11_11.0.1-2.dsc' llvm-toolchain-11_11.0.1-2.dsc 5975 SHA256:93023002a4fec43a81b8d7fcd53253c29222db367d166fb8c3827a5e0e109c72
-'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-11/llvm-toolchain-11_11.0.1.orig.tar.xz' llvm-toolchain-11_11.0.1.orig.tar.xz 78748920 SHA256:39ed2924a4bc0e4db79dfdd97f97bca64a26ff398b9128934c3fc7b3186e4c45
-'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-11/llvm-toolchain-11_11.0.1-2.debian.tar.xz' llvm-toolchain-11_11.0.1-2.debian.tar.xz 129556 SHA256:a13c22514f2218b7167bc3e63e9ed212ffd5a212cbe33839502c95d770e98619
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/llvm-toolchain-11/1:11.0.1-2/ (for browsing the source)
-- https://sources.debian.net/src/llvm-toolchain-11/1:11.0.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/llvm-toolchain-11/1:11.0.1-2/ (for access to the source package after it no longer exists in the archive)
-
 ### `dpkg` source package: `lsb=11.1.0`
 
 Binary Packages:
@@ -2191,15 +2160,47 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.1.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.1.0-4/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `postgresql-10=10.18-1.pgdg110+1`
+
+Binary Packages:
+
+- `postgresql-10=10.18-1.pgdg110+1`
+- `postgresql-client-10=10.18-1.pgdg110+1`
+
+Licenses: (parsed from: `/usr/share/doc/postgresql-10/copyright`, `/usr/share/doc/postgresql-client-10/copyright`)
+
+- `Artistic`
+- `BSD-2-clause`
+- `BSD-3-clause`
+- `Custom-Unicode`
+- `Custom-pg_dump`
+- `Custom-regex`
+- `GPL-1`
+- `PostgreSQL`
+- `Snowball`
+- `Tcl`
+- `blf`
+- `double-metaphone`
+- `imath`
+- `nagaysau-ishii`
+- `rijndael`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris postgresql-10=10.18-1.pgdg110+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-10/postgresql-10_10.18-1.pgdg110+1.dsc' postgresql-10_10.18-1.pgdg110+1.dsc 2584 SHA256:a02189746492f1d1786982441d87590e752d7be03451fc469dd028ca0c3e4453
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-10/postgresql-10_10.18.orig.tar.bz2' postgresql-10_10.18.orig.tar.bz2 19197042 SHA256:57477c2edc82c3f86a74747707b3babc1f301f389315ae14e819e025c0ba3801
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-10/postgresql-10_10.18-1.pgdg110+1.debian.tar.xz' postgresql-10_10.18-1.pgdg110+1.debian.tar.xz 33960 SHA256:a64deea247db0194ac9dcdcd386d1cab954b624831cf1d9698545f719f505d69
+```
+
 ### `dpkg` source package: `postgresql-13=13.4-1.pgdg110+1`
 
 Binary Packages:
 
 - `libpq5:amd64=13.4-1.pgdg110+1`
-- `postgresql-13=13.4-1.pgdg110+1`
-- `postgresql-client-13=13.4-1.pgdg110+1`
 
-Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-13/copyright`, `/usr/share/doc/postgresql-client-13/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 
 - `Artistic`
 - `BSD-2-clause`
@@ -2652,33 +2653,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/xz-utils/5.2.5-2/ (for browsing the source)
 - https://sources.debian.net/src/xz-utils/5.2.5-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/xz-utils/5.2.5-2/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `z3=4.8.10-1`
-
-Binary Packages:
-
-- `libz3-4:amd64=4.8.10-1`
-
-Licenses: (parsed from: `/usr/share/doc/libz3-4/copyright`)
-
-- `Expat`
-- `GPL-2`
-- `GPL-2+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris z3=4.8.10-1
-'http://deb.debian.org/debian/pool/main/z/z3/z3_4.8.10-1.dsc' z3_4.8.10-1.dsc 2645 SHA256:79154abf69a30e25007dcbc708cc669a9acfadc9c0b6e48c5f5b0c2ee383dc31
-'http://deb.debian.org/debian/pool/main/z/z3/z3_4.8.10.orig.tar.gz' z3_4.8.10.orig.tar.gz 4731869 SHA256:12cce6392b613d3133909ce7f93985d2470f0d00138837de06cf7eb2992886b4
-'http://deb.debian.org/debian/pool/main/z/z3/z3_4.8.10-1.debian.tar.xz' z3_4.8.10-1.debian.tar.xz 10112 SHA256:1276e44bdc3d3c873b27487aea0ca9882bf010bcf94a7c1cd1a9cd76eb89f234
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/z3/4.8.10-1/ (for browsing the source)
-- https://sources.debian.net/src/z3/4.8.10-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/z3/4.8.10-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `zlib=1:1.2.11.dfsg-2`
 

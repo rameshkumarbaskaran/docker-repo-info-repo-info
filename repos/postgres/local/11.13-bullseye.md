@@ -1,20 +1,20 @@
-# `postgres:13.4`
+# `postgres:11.13-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5861c038d674e4db6377d9f3880e66e028d276c9a32c9688fb1afd9b497ba78b`
-- Created: `2021-09-23T23:56:34.104220961Z`
-- Virtual Size: ~ 371.26 Mb  
+- Image ID: `sha256:ed8d98c555e3cddccbc58e3f573bf5e3fa8a5be34543ca92f06c44e7337210e1`
+- Created: `2021-09-23T23:57:50.1163115Z`
+- Virtual Size: ~ 369.28 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["postgres"]`
 - Environment:
-  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/13/bin`
+  - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/11/bin`
   - `GOSU_VERSION=1.12`
   - `LANG=en_US.utf8`
-  - `PG_MAJOR=13`
-  - `PG_VERSION=13.4-1.pgdg110+1`
+  - `PG_MAJOR=11`
+  - `PG_VERSION=11.13-1.pgdg110+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -2191,15 +2191,47 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.1.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.1.0-4/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `postgresql-11=11.13-1.pgdg110+1`
+
+Binary Packages:
+
+- `postgresql-11=11.13-1.pgdg110+1`
+- `postgresql-client-11=11.13-1.pgdg110+1`
+
+Licenses: (parsed from: `/usr/share/doc/postgresql-11/copyright`, `/usr/share/doc/postgresql-client-11/copyright`)
+
+- `Artistic`
+- `BSD-2-clause`
+- `BSD-3-clause`
+- `Custom-Unicode`
+- `Custom-pg_dump`
+- `Custom-regex`
+- `GPL-1`
+- `PostgreSQL`
+- `Snowball`
+- `Tcl`
+- `blf`
+- `double-metaphone`
+- `imath`
+- `nagaysau-ishii`
+- `rijndael`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris postgresql-11=11.13-1.pgdg110+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.13-1.pgdg110+1.dsc' postgresql-11_11.13-1.pgdg110+1.dsc 2802 SHA256:1579873d47c6d65acd4e8e112cf50c9af086b0da6c20d692e7c81f9501b19221
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.13.orig.tar.bz2' postgresql-11_11.13.orig.tar.bz2 20123787 SHA256:a0c3689ff7f565288002cbc138779d5121d74831a5e8341aea7aa86e99b6bc48
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.13-1.pgdg110+1.debian.tar.xz' postgresql-11_11.13-1.pgdg110+1.debian.tar.xz 30980 SHA256:1cb3c8676a2a1f926a2369fb8876524d4992bc70d8281622eba63f02fed94aba
+```
+
 ### `dpkg` source package: `postgresql-13=13.4-1.pgdg110+1`
 
 Binary Packages:
 
 - `libpq5:amd64=13.4-1.pgdg110+1`
-- `postgresql-13=13.4-1.pgdg110+1`
-- `postgresql-client-13=13.4-1.pgdg110+1`
 
-Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-13/copyright`, `/usr/share/doc/postgresql-client-13/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 
 - `Artistic`
 - `BSD-2-clause`

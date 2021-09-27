@@ -1,9 +1,9 @@
-# `postgres:14beta3-alpine`
+# `postgres:14rc1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:429af77d04e230cbcd57f75651cbf3ede7b8a4dd25efbc73006822a55d96ce55`
-- Created: `2021-08-27T22:54:45.314813623Z`
+- Image ID: `sha256:db69b5fbfccfee090f7af8132d507d14d1e1468f7a694ad39115e8c1269f0a3f`
+- Created: `2021-09-23T23:56:03.636459732Z`
 - Virtual Size: ~ 195.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=14`
-  - `PG_VERSION=14beta3`
-  - `PG_SHA256=2ea265980193db70106576201a2fee5b2d72bf9890d3911ddd374d4830624bfa`
+  - `PG_VERSION=14rc1`
+  - `PG_SHA256=586a816cb7811985f474eda0d4926fabd2378f0f6d5659d12fba421d38a07616`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -226,16 +226,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.9.3-r0 description:
+libgcrypt-1.9.4-r0 description:
 General purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.9.3-r0 webpage:
+libgcrypt-1.9.4-r0 webpage:
 https://www.gnupg.org/
 
-libgcrypt-1.9.3-r0 installed size:
+libgcrypt-1.9.4-r0 installed size:
 1220 KiB
 
-libgcrypt-1.9.3-r0 license:
+libgcrypt-1.9.4-r0 license:
 LGPL-2.1-or-later
 
 ```
