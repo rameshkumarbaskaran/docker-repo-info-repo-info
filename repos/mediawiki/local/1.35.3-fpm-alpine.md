@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ecb91c3c1fe4112cb8c55dc18714b46a9fd1ba8ae500bb936396d14b090f2244`
-- Created: `2021-08-28T02:48:49.15347818Z`
-- Virtual Size: ~ 490.78 Mb  
+- Image ID: `sha256:4baac80f65fe8844428c4da5569dc26502203bd02816fa0586454461458889e2`
+- Created: `2021-09-24T03:33:25.242409517Z`
+- Virtual Size: ~ 491.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.23`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.23.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.23.tar.xz.asc`
-  - `PHP_SHA256=cea52313fcffe56343bcd3c66dbb23cd5507dc559cc2e3547cf8f5452e88a05d`
+  - `PHP_VERSION=7.4.24`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.24.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.24.tar.xz.asc`
+  - `PHP_SHA256=ff7658ee2f6d8af05b48c21146af5f502e121def4e76e862df5ec9fa06e98734`
   - `MEDIAWIKI_MAJOR_VERSION=1.35`
   - `MEDIAWIKI_VERSION=1.35.3`
 
@@ -387,16 +387,16 @@ LGPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-9.54.0-r0 description:
+ghostscript-9.54.0-r1 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-9.54.0-r0 webpage:
+ghostscript-9.54.0-r1 webpage:
 https://ghostscript.com/
 
-ghostscript-9.54.0-r0 installed size:
+ghostscript-9.54.0-r1 installed size:
 57 MiB
 
-ghostscript-9.54.0-r0 license:
+ghostscript-9.54.0-r1 license:
 AGPL-3.0-or-later
 
 ```
@@ -693,16 +693,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.78.0-r0 description:
+libcurl-7.79.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.78.0-r0 webpage:
+libcurl-7.79.1-r0 webpage:
 https://curl.se/
 
-libcurl-7.78.0-r0 installed size:
+libcurl-7.79.1-r0 installed size:
 500 KiB
 
-libcurl-7.78.0-r0 license:
+libcurl-7.79.1-r0 license:
 MIT
 
 ```
@@ -1254,16 +1254,16 @@ MIT
 ### `apk` package: `nettle`
 
 ```console
-nettle-3.7.2-r0 description:
+nettle-3.7.3-r0 description:
 A low-level cryptographic library
 
-nettle-3.7.2-r0 webpage:
+nettle-3.7.3-r0 webpage:
 https://www.lysator.liu.se/~nisse/nettle/
 
-nettle-3.7.2-r0 installed size:
+nettle-3.7.3-r0 installed size:
 564 KiB
 
-nettle-3.7.2-r0 license:
+nettle-3.7.3-r0 license:
 LGPL-2.0-or-later
 
 ```
