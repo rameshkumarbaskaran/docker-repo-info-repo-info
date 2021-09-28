@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8701ac7aec56c7a3280e62606bd30d78443a6db30c26f135fcf3d7f4ca2d5ec7`
-- Created: `2021-09-03T01:23:33.978375977Z`
-- Virtual Size: ~ 100.66 Mb  
+- Image ID: `sha256:d74a4ce6ed8bc50ccb843faf17a87cdbb1ef7739878a054d270e5504ad477250`
+- Created: `2021-09-28T01:25:15.962704808Z`
+- Virtual Size: ~ 100.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -1148,11 +1148,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ncurses/6.0+20161126-1+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ncurses/6.0+20161126-1+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nettle=3.3-1`
+### `dpkg` source package: `nettle=3.3-1+deb9u1`
 
 Binary Packages:
 
-- `libnettle6:amd64=3.3-1+b2`
+- `libnettle6:amd64=3.3-1+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libnettle6/copyright`)
 
@@ -1171,17 +1171,17 @@ Licenses: (parsed from: `/usr/share/doc/libnettle6/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris nettle=3.3-1
-'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.3-1.dsc' nettle_3.3-1.dsc 2043 SHA256:3336bc6e8e5b1acad66afa97a05f934e4d758c614fd468d5650b5a38049f1161
-'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.3.orig.tar.gz' nettle_3.3.orig.tar.gz 1887927 SHA256:46942627d5d0ca11720fec18d81fc38f7ef837ea4197c1f630e71ce0d470b11e
-'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.3-1.debian.tar.xz' nettle_3.3-1.debian.tar.xz 19428 SHA256:42fef549318af6cfdf76336eb348501d09454a1d873a84f66440b9a791a0ff1b
+$ apt-get source -qq --print-uris nettle=3.3-1+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/n/nettle/nettle_3.3-1+deb9u1.dsc' nettle_3.3-1+deb9u1.dsc 2254 SHA256:9c261941a40543298849fb053aa8090a88127716b49f4977a0b6a4dbca64840f
+'http://security.debian.org/debian-security/pool/updates/main/n/nettle/nettle_3.3.orig.tar.gz' nettle_3.3.orig.tar.gz 1887927 SHA256:46942627d5d0ca11720fec18d81fc38f7ef837ea4197c1f630e71ce0d470b11e
+'http://security.debian.org/debian-security/pool/updates/main/n/nettle/nettle_3.3-1+deb9u1.debian.tar.xz' nettle_3.3-1+deb9u1.debian.tar.xz 22800 SHA256:0db3cb4a3b0a525f6048158672ed1a72a9c85a05ccad37eb3a7f3b8b113f06d4
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/nettle/3.3-1/ (for browsing the source)
-- https://sources.debian.net/src/nettle/3.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nettle/3.3-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/nettle/3.3-1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/nettle/3.3-1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/nettle/3.3-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.1.8-3.6`
 
