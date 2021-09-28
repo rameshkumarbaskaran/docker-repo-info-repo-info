@@ -1,7 +1,7 @@
 ## `ruby:3-slim-buster`
 
 ```console
-$ docker pull ruby@sha256:58a7f3df59e9f9cece0cd11de23bc850a2597db8b17d23fb4a81b6769a9fd202
+$ docker pull ruby@sha256:8e961aa978aed573df2f68a560e55edd794ab118cc2a76b70aa66c70ec699910
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -84,67 +84,67 @@ CMD ["irb"]
 ### `ruby:3-slim-buster` - linux; arm variant v5
 
 ```console
-$ docker pull ruby@sha256:abcf81d8d3c9b6c7245e38e69ebe418a034a5500da1ede869c735b852eac3527
+$ docker pull ruby@sha256:c2de53ca7569787841695c6231fab3cbbf64ede63e5d2400671dc02981a09a10
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.7 MB (62734310 bytes)**  
+-	Total Size: **62.7 MB (62734329 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1a4f27cad82c4de19b11aea05410e2a6d138b3f344eb3dfa5c0fbc16119ba453`
+-	Image ID: `sha256:2d15c47e6db443214ed15e32b2b568a732f2be86f5d3dca4ef061f7094b5e327`
 -	Default Command: `["irb"]`
 
 ```dockerfile
-# Fri, 03 Sep 2021 00:51:26 GMT
-ADD file:350748a564076da397b991745cd42e0688d15c72b9fd5c81f8ea0bb8938a2b3d in / 
-# Fri, 03 Sep 2021 00:51:27 GMT
+# Tue, 28 Sep 2021 01:51:42 GMT
+ADD file:6524935705c59a0eda67f61fe1005a28b4b388258e2d5636dd5b831333200dc8 in / 
+# Tue, 28 Sep 2021 01:51:43 GMT
 CMD ["bash"]
-# Fri, 03 Sep 2021 17:13:21 GMT
+# Tue, 28 Sep 2021 18:48:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		ca-certificates 		libffi-dev 		libgmp-dev 		libssl-dev 		libyaml-dev 		procps 		zlib1g-dev 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 03 Sep 2021 17:13:22 GMT
+# Tue, 28 Sep 2021 18:48:32 GMT
 RUN set -eux; 	mkdir -p /usr/local/etc; 	{ 		echo 'install: --no-document'; 		echo 'update: --no-document'; 	} >> /usr/local/etc/gemrc
-# Fri, 03 Sep 2021 17:13:23 GMT
+# Tue, 28 Sep 2021 18:48:33 GMT
 ENV LANG=C.UTF-8
-# Fri, 03 Sep 2021 17:13:23 GMT
+# Tue, 28 Sep 2021 18:48:33 GMT
 ENV RUBY_MAJOR=3.0
-# Fri, 03 Sep 2021 17:13:24 GMT
+# Tue, 28 Sep 2021 18:48:33 GMT
 ENV RUBY_VERSION=3.0.2
-# Fri, 03 Sep 2021 17:13:24 GMT
+# Tue, 28 Sep 2021 18:48:34 GMT
 ENV RUBY_DOWNLOAD_SHA256=570e7773100f625599575f363831166d91d49a1ab97d3ab6495af44774155c40
-# Fri, 03 Sep 2021 17:18:24 GMT
+# Tue, 28 Sep 2021 18:53:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bison 		dpkg-dev 		libgdbm-dev 		ruby 		autoconf 		g++ 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -vE '^/usr/local/lib/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	if dpkg -l | grep -i ruby; then exit 1; fi; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
-# Fri, 03 Sep 2021 17:18:24 GMT
+# Tue, 28 Sep 2021 18:53:29 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Fri, 03 Sep 2021 17:18:25 GMT
+# Tue, 28 Sep 2021 18:53:29 GMT
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Fri, 03 Sep 2021 17:18:25 GMT
+# Tue, 28 Sep 2021 18:53:30 GMT
 ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 03 Sep 2021 17:18:27 GMT
+# Tue, 28 Sep 2021 18:53:31 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Fri, 03 Sep 2021 17:18:27 GMT
+# Tue, 28 Sep 2021 18:53:32 GMT
 CMD ["irb"]
 ```
 
 -	Layers:
-	-	`sha256:b019db4b5197128481d48d92ecacd6bb356c027a3d08393f6567a6fa183ba769`  
-		Last Modified: Fri, 03 Sep 2021 01:07:12 GMT  
-		Size: 24.9 MB (24879114 bytes)  
+	-	`sha256:85d14771cf32dc23d1c8e99a9aad844b3db9d67f4781455c81749ffe43b05513`  
+		Last Modified: Tue, 28 Sep 2021 02:08:05 GMT  
+		Size: 24.9 MB (24879067 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3e8f8df1e487d27a05b0b6946a50c5bc5d13c6f0d6c7d0ce2e648c463894acb6`  
-		Last Modified: Fri, 03 Sep 2021 17:59:54 GMT  
-		Size: 10.3 MB (10348838 bytes)  
+	-	`sha256:e67219e91075b17466704e8b77ae390b755ce0be763738dadf133450a8ff33b7`  
+		Last Modified: Tue, 28 Sep 2021 19:34:50 GMT  
+		Size: 10.3 MB (10348969 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:863ca6c4a66e09b6ea6dc6d707ea0bc32957f79282e4dafdf6c02743317f2dbc`  
-		Last Modified: Fri, 03 Sep 2021 17:59:45 GMT  
-		Size: 199.0 B  
+	-	`sha256:bd11b3d5ad959051b468e4d6e1b98b58b9884dede42b4b9057de720132ba0628`  
+		Last Modified: Tue, 28 Sep 2021 19:34:42 GMT  
+		Size: 196.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f34869eb745a2f1bb1491ef7915fde3af386e0d88494010619959392cc9ffd27`  
-		Last Modified: Fri, 03 Sep 2021 17:59:56 GMT  
-		Size: 27.5 MB (27505986 bytes)  
+	-	`sha256:f95857403c853fd4ced45a34cfc5a41f5781146140d9bb8fb8beab8a6cf83719`  
+		Last Modified: Tue, 28 Sep 2021 19:34:54 GMT  
+		Size: 27.5 MB (27505921 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c85f5e691daaff43b8333d8fec0d343d1cc6e293a705afa755f81d19fd69a483`  
-		Last Modified: Fri, 03 Sep 2021 17:59:45 GMT  
-		Size: 173.0 B  
+	-	`sha256:c8fcde97b1be72c129f6319607491646e312973250bd0f454a74c219fe1704fa`  
+		Last Modified: Tue, 28 Sep 2021 19:34:42 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ruby:3-slim-buster` - linux; arm variant v7
@@ -282,67 +282,67 @@ CMD ["irb"]
 ### `ruby:3-slim-buster` - linux; 386
 
 ```console
-$ docker pull ruby@sha256:1e1dc2b9c0d64a3a7b356a9f4dc18d34ed83cfb2509ced8458aed01437a8dd88
+$ docker pull ruby@sha256:26deae4b6d1b4482b54a3d2b9432fa59b32280496581ca106c517def3546c20a
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **72.7 MB (72736577 bytes)**  
+-	Total Size: **72.7 MB (72736601 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a0cb271b9b5614b20aae724d99366a0a885c7e7b8d3d5e113f0815a4a6fe41e2`
+-	Image ID: `sha256:4d274447c3c4035f01ef6a387ccde0d10ec0af17d932beeca7c21db5ea63be0c`
 -	Default Command: `["irb"]`
 
 ```dockerfile
-# Fri, 03 Sep 2021 00:40:24 GMT
-ADD file:6bf4b6f4aa28306610ef10c68f422a7210ff2fbd5345cec07bc5f76d54a4c8bc in / 
-# Fri, 03 Sep 2021 00:40:24 GMT
+# Tue, 28 Sep 2021 01:40:49 GMT
+ADD file:c090abbb3afcfebf797e06e2ac4b778acb4e97d5dca79c29d1927f43cf14b23e in / 
+# Tue, 28 Sep 2021 01:40:49 GMT
 CMD ["bash"]
-# Fri, 03 Sep 2021 11:21:07 GMT
+# Tue, 28 Sep 2021 19:31:48 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		ca-certificates 		libffi-dev 		libgmp-dev 		libssl-dev 		libyaml-dev 		procps 		zlib1g-dev 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 03 Sep 2021 11:21:09 GMT
+# Tue, 28 Sep 2021 19:31:49 GMT
 RUN set -eux; 	mkdir -p /usr/local/etc; 	{ 		echo 'install: --no-document'; 		echo 'update: --no-document'; 	} >> /usr/local/etc/gemrc
-# Fri, 03 Sep 2021 11:21:09 GMT
+# Tue, 28 Sep 2021 19:31:49 GMT
 ENV LANG=C.UTF-8
-# Fri, 03 Sep 2021 11:21:09 GMT
+# Tue, 28 Sep 2021 19:31:50 GMT
 ENV RUBY_MAJOR=3.0
-# Fri, 03 Sep 2021 11:21:10 GMT
+# Tue, 28 Sep 2021 19:31:50 GMT
 ENV RUBY_VERSION=3.0.2
-# Fri, 03 Sep 2021 11:21:10 GMT
+# Tue, 28 Sep 2021 19:31:50 GMT
 ENV RUBY_DOWNLOAD_SHA256=570e7773100f625599575f363831166d91d49a1ab97d3ab6495af44774155c40
-# Fri, 03 Sep 2021 11:26:57 GMT
+# Tue, 28 Sep 2021 19:36:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bison 		dpkg-dev 		libgdbm-dev 		ruby 		autoconf 		g++ 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -vE '^/usr/local/lib/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	if dpkg -l | grep -i ruby; then exit 1; fi; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
-# Fri, 03 Sep 2021 11:26:58 GMT
+# Tue, 28 Sep 2021 19:36:21 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Fri, 03 Sep 2021 11:26:58 GMT
+# Tue, 28 Sep 2021 19:36:22 GMT
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Fri, 03 Sep 2021 11:26:58 GMT
+# Tue, 28 Sep 2021 19:36:22 GMT
 ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 03 Sep 2021 11:26:59 GMT
+# Tue, 28 Sep 2021 19:36:23 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Fri, 03 Sep 2021 11:26:59 GMT
+# Tue, 28 Sep 2021 19:36:23 GMT
 CMD ["irb"]
 ```
 
 -	Layers:
-	-	`sha256:7e87f600658a0c0d3bd8b82b9c645b5ec2763492ec627c1c1c1183c2ad3c45d5`  
-		Last Modified: Fri, 03 Sep 2021 00:49:06 GMT  
-		Size: 27.8 MB (27797513 bytes)  
+	-	`sha256:82f7c8b98609aee82696182c03cb09ae62ceab1b17f8eec1e233a68180876d41`  
+		Last Modified: Tue, 28 Sep 2021 01:50:06 GMT  
+		Size: 27.8 MB (27797629 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d3423e5cbd2a0657c56efff2a92252eba56c2ea1dcf18251bc253f0c5b45d80`  
-		Last Modified: Fri, 03 Sep 2021 12:08:35 GMT  
-		Size: 17.2 MB (17226971 bytes)  
+	-	`sha256:afd6ebe81fc32debaaf3e9bb15488927bad3277f8beccdc792bd3b6288995ee2`  
+		Last Modified: Tue, 28 Sep 2021 20:09:31 GMT  
+		Size: 17.2 MB (17226895 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1b80f06d576699b2289ef93783544e8963f3280b94908fa6cd4f0826d5a5023`  
-		Last Modified: Fri, 03 Sep 2021 12:08:26 GMT  
-		Size: 198.0 B  
+	-	`sha256:67e1d8264f8156ea49a18e394b6b9eb180f17ac714622e30c2851d1572106784`  
+		Last Modified: Tue, 28 Sep 2021 20:09:26 GMT  
+		Size: 196.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0370d22021ccf99dc48999da91a477545cb3f51cf3d2eb309bf11031898c527c`  
-		Last Modified: Fri, 03 Sep 2021 12:08:34 GMT  
-		Size: 27.7 MB (27711722 bytes)  
+	-	`sha256:af16696bd5c1e6b4f7ba1c913efc35b6552672c260e870de98314c0513426284`  
+		Last Modified: Tue, 28 Sep 2021 20:09:31 GMT  
+		Size: 27.7 MB (27711706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68bc0c36d037db50d70df2bd46a1388d8727cdbd194cb13ff774a036cf991176`  
-		Last Modified: Fri, 03 Sep 2021 12:08:26 GMT  
-		Size: 173.0 B  
+	-	`sha256:9cee08f7a5652458ff0f86e4e4ae24ec822e991e64dfec76c7a3fb70981d5ae7`  
+		Last Modified: Tue, 28 Sep 2021 20:09:26 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ruby:3-slim-buster` - linux; mips64le
