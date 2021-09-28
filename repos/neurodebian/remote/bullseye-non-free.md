@@ -1,7 +1,7 @@
 ## `neurodebian:bullseye-non-free`
 
 ```console
-$ docker pull neurodebian@sha256:f159ad337a83b20a883b3247a803eaaaaab3610438057043759a7de8c16fac5f
+$ docker pull neurodebian@sha256:e8438a5f58872cddcf8cdf796a51d85a2922b2b4bd91fbf05083c1d923ec92a2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,55 +11,55 @@ $ docker pull neurodebian@sha256:f159ad337a83b20a883b3247a803eaaaaab361043805704
 ### `neurodebian:bullseye-non-free` - linux; amd64
 
 ```console
-$ docker pull neurodebian@sha256:da71cf9be42f2798bc93383e60c8f98a2dd53c7996ca7c250fc0056eed13afe8
+$ docker pull neurodebian@sha256:35228b70c9e01b6a1bcbbf4cdba9c284425691bed446e5a297f516c65b9f69c2
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **66.5 MB (66549834 bytes)**  
+-	Total Size: **66.6 MB (66550675 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:62c986044479ee19f7f24a5fc22df8aa80eca3c726ade272b258ffc1d5004354`
+-	Image ID: `sha256:cfa33da3a1d4edbf8142248649fbc317ff995739ebaaa95e7d8d5176a354418a`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Fri, 03 Sep 2021 01:21:07 GMT
-ADD file:1fedf68870782f1b44cd50691444aab4061cc0c70f24e5fabe9c562cc46eb9af in / 
-# Fri, 03 Sep 2021 01:21:08 GMT
+# Tue, 28 Sep 2021 01:22:25 GMT
+ADD file:d05a14b1e57f9cc8eeb316a843403bbb35176d6222d60d6ddbb34faba977e316 in / 
+# Tue, 28 Sep 2021 01:22:25 GMT
 CMD ["bash"]
-# Fri, 03 Sep 2021 07:30:43 GMT
+# Tue, 28 Sep 2021 08:22:27 GMT
 RUN set -x 	&& apt-get update 	&& { 		which gpg 		|| apt-get install -y --no-install-recommends gnupg 	; } 	&& { 		gpg --version | grep -q '^gpg (GnuPG) 1\.' 		|| apt-get install -y --no-install-recommends dirmngr 	; } 	&& rm -rf /var/lib/apt/lists/*
-# Fri, 03 Sep 2021 07:30:48 GMT
+# Tue, 28 Sep 2021 08:22:31 GMT
 RUN set -x 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys DD95CC430502E37EF840ACEEA5D32F012649A5A9 	&& gpg --batch --export DD95CC430502E37EF840ACEEA5D32F012649A5A9 > /etc/apt/trusted.gpg.d/neurodebian.gpg 	&& rm -rf "$GNUPGHOME" 	&& apt-key list | grep neurodebian
-# Fri, 03 Sep 2021 07:30:49 GMT
+# Tue, 28 Sep 2021 08:22:32 GMT
 RUN { 	echo 'deb http://neuro.debian.net/debian bullseye main'; 	echo 'deb http://neuro.debian.net/debian data main'; 	echo '#deb-src http://neuro.debian.net/debian-devel bullseye main'; } > /etc/apt/sources.list.d/neurodebian.sources.list
-# Fri, 03 Sep 2021 07:30:55 GMT
+# Tue, 28 Sep 2021 08:22:36 GMT
 RUN set -x 	&& apt-get update 	&& apt-get install -y --no-install-recommends neurodebian-freeze eatmydata 	&& ln -s /usr/bin/eatmydata /usr/local/bin/apt-get 	&& rm -rf /var/lib/apt/lists/*
-# Fri, 03 Sep 2021 07:31:02 GMT
+# Tue, 28 Sep 2021 08:22:42 GMT
 RUN sed -i -e 's,main *$,main contrib non-free,g' /etc/apt/sources.list.d/neurodebian.sources.list /etc/apt/sources.list
 ```
 
 -	Layers:
-	-	`sha256:955615a668ce169f8a1443fc6b6e6215f43fe0babfb4790712a2d3171f34d366`  
-		Last Modified: Fri, 03 Sep 2021 01:26:55 GMT  
-		Size: 54.9 MB (54926871 bytes)  
+	-	`sha256:df5590a8898bedd76f02205dc8caa5cc9863267dbcd8aac038bcd212688c1cc7`  
+		Last Modified: Tue, 28 Sep 2021 01:28:33 GMT  
+		Size: 54.9 MB (54927682 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc5e45b89f6c262e826a1b76897f04b65d5946616c565d8756f5797f4f7d2311`  
-		Last Modified: Fri, 03 Sep 2021 07:33:01 GMT  
-		Size: 11.3 MB (11309406 bytes)  
+	-	`sha256:67aeb24bb1a1628ca7195bcc91c3d61aa9dd181d30373e3a92ff9a7d37315185`  
+		Last Modified: Tue, 28 Sep 2021 08:24:47 GMT  
+		Size: 11.3 MB (11309442 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:52d0a745aa96a8b84972bf49ad0ea015ebec6cccad96472dfc4190e836f23ca2`  
-		Last Modified: Fri, 03 Sep 2021 07:32:59 GMT  
-		Size: 1.8 KB (1763 bytes)  
+	-	`sha256:d5d325387ff7db9a3948a649aab5bfee497b4ee576f0adcbb896c09d61d8bded`  
+		Last Modified: Tue, 28 Sep 2021 08:24:45 GMT  
+		Size: 1.8 KB (1765 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74ae362da72dd2e6e13c6005c24a189f68010ac28e53c261a4b6f5a6e6d4f093`  
-		Last Modified: Fri, 03 Sep 2021 07:32:59 GMT  
+	-	`sha256:b9e7c539cddc81a0171b282b15156376ff6d388bef237aae96e9d9108e779f21`  
+		Last Modified: Tue, 28 Sep 2021 08:24:45 GMT  
 		Size: 245.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a62bdab8fa9020a58b0af2a77a81a6dd7e3824561f59e33e7aebccdd34e594e`  
-		Last Modified: Fri, 03 Sep 2021 07:33:00 GMT  
-		Size: 311.2 KB (311182 bytes)  
+	-	`sha256:03a3c441961e9c90ec2498d3f3ed870f5b04db1d32862600b6ef2d2192e01c04`  
+		Last Modified: Tue, 28 Sep 2021 08:24:46 GMT  
+		Size: 311.2 KB (311178 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7184fe5cd02881544148efb20d4923fe9b59242a305dac69e341a4dc64a9d6f7`  
-		Last Modified: Fri, 03 Sep 2021 07:33:11 GMT  
-		Size: 367.0 B  
+	-	`sha256:05b5510d862c0626ab068236e6c8fe82d8e188b0be177be9e40fe2db08d24d61`  
+		Last Modified: Tue, 28 Sep 2021 08:24:57 GMT  
+		Size: 363.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
