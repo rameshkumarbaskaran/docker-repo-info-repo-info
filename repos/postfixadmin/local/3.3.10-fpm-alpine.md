@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:598215c6405d0b8ffd11ee3781d79e964301c9bd7a636f79faa1fbe539b94c25`
-- Created: `2021-08-30T21:05:55.751877109Z`
-- Virtual Size: ~ 95.12 Mb  
+- Image ID: `sha256:ffaa9e63c349eb2547a083286daf5bde444c23fa93a52f78fe97cedfbac7c7eb`
+- Created: `2021-09-24T04:30:16.783907926Z`
+- Virtual Size: ~ 95.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.23`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.23.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.23.tar.xz.asc`
-  - `PHP_SHA256=cea52313fcffe56343bcd3c66dbb23cd5507dc559cc2e3547cf8f5452e88a05d`
+  - `PHP_VERSION=7.4.24`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.24.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.24.tar.xz.asc`
+  - `PHP_SHA256=ff7658ee2f6d8af05b48c21146af5f502e121def4e76e862df5ec9fa06e98734`
   - `POSTFIXADMIN_VERSION=3.3.10`
   - `POSTFIXADMIN_SHA512=e00fc9ea343a928976d191adfa01020ee0c6ddbe80a39e01ca2ee414a18247958f033970f378fe4a9974636172a5e094e57117ee9ac7b930c592f433097a7aca`
 - Labels:
@@ -287,16 +287,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.78.0-r0 description:
+libcurl-7.79.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.78.0-r0 webpage:
+libcurl-7.79.1-r0 webpage:
 https://curl.se/
 
-libcurl-7.78.0-r0 installed size:
+libcurl-7.79.1-r0 installed size:
 500 KiB
 
-libcurl-7.78.0-r0 license:
+libcurl-7.79.1-r0 license:
 MIT
 
 ```
