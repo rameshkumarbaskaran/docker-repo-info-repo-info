@@ -3759,14 +3759,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libdrm=2.4.105-3~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.105-3~20.04.1.dsc' libdrm_2.4.105-3~20.04.1.dsc 3116 SHA512:ffc4c9b674c9df22ddc2ce2ee5ec8f2e0d266e83b61953d0a7607feb6ba5e18f0a54794da3babdff291f9b464676f78124509b63e111adac9140d546e8867d3a
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.105.orig.tar.xz' libdrm_2.4.105.orig.tar.xz 420376 SHA512:083a04af7208e58be21b89c6ebdbe2db3ba00cd29f0d271bd38bfe97dfca741edafddaaf9b5b95c20fac2c9b700434ea5b21397de26f7073169ad6f5b090f715
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.105-3~20.04.1.debian.tar.xz' libdrm_2.4.105-3~20.04.1.debian.tar.xz 59180 SHA512:a0d7b1727b4ef3505bec854f470298143bb2c74b17c1543e105a9238e303a66ec27d51bf6bad513b4a323cbc430a427e6dbeadf21afe70a4143eaaa7da31dc12
-```
 
 ### `dpkg` source package: `libe-book=0.1.3-1build3`
 
@@ -7002,14 +6997,9 @@ Licenses: (parsed from: `/usr/share/doc/libegl-mesa0/copyright`, `/usr/share/doc
 - `MLAA`
 - `SGI`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mesa=21.0.3-0ubuntu0.3~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_21.0.3-0ubuntu0.3~20.04.1.dsc' mesa_21.0.3-0ubuntu0.3~20.04.1.dsc 5523 SHA512:275da10b03e0f6c1f4a9ed6abf1abda2c4023d7197b6387369b669aa632be88400c17421539087c3bd114bebb561e0a9986ded670d01c2b20e36e2430ae946b2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_21.0.3.orig.tar.gz' mesa_21.0.3.orig.tar.gz 22634551 SHA512:bcd4cfdc624f2e8adedaaa71b0bbc506ef96e7b9122dbc4ef94bdd544ca13de5b02d2497ad9a646f46d5b290f689b927eb87272d36327f1a1f336c0bd67bb5af
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_21.0.3-0ubuntu0.3~20.04.1.diff.gz' mesa_21.0.3-0ubuntu0.3~20.04.1.diff.gz 115202 SHA512:7e69f698bc481678a0ee3c4b1ef6bbc9e99825958725a8a4130342d63f945b7175a539ada51356e8afde18757cfcecd2718c6f01b892c1a421409999f3678e1e
-```
 
 ### `dpkg` source package: `mhash=0.9.9.9-8`
 
@@ -7154,9 +7144,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mysql-8.0=8.0.26-0ubuntu0.20.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc' mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc 3434 SHA512:ca5cc825ea65d116990dcdfb1e22f86d911c59b8b6013a27a5782087b1a5135446b9f6bf5117d666b73bc868c8b20bad55f957ae986d2c611a1bc5207cf870d0
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26.orig.tar.gz' mysql-8.0_8.0.26.orig.tar.gz 291285918 SHA512:63d47cb52407a816dc9f4330b99924624dfee46e57e7fdce19eff32909dd9e23251e2439d1807b002a1661b547173222c77465a3ca4dbb312414a84927809cfc
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz' mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz 160848 SHA512:7b8ea8ec6bcee9a694c50b24e90319f4d424e281a62a235cca88a097349289506842c4b8559eda21af1379cc39cbf4413581869655544e26360278b8d10f302f
+'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc' mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc 3434 SHA512:ca5cc825ea65d116990dcdfb1e22f86d911c59b8b6013a27a5782087b1a5135446b9f6bf5117d666b73bc868c8b20bad55f957ae986d2c611a1bc5207cf870d0
+'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26.orig.tar.gz' mysql-8.0_8.0.26.orig.tar.gz 291285918 SHA512:63d47cb52407a816dc9f4330b99924624dfee46e57e7fdce19eff32909dd9e23251e2439d1807b002a1661b547173222c77465a3ca4dbb312414a84927809cfc
+'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz' mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz 160848 SHA512:7b8ea8ec6bcee9a694c50b24e90319f4d424e281a62a235cca88a097349289506842c4b8559eda21af1379cc39cbf4413581869655544e26360278b8d10f302f
 ```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5ubuntu2`
