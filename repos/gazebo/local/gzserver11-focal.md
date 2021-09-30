@@ -1808,14 +1808,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-math6/copyright`)
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-math6=6.8.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0-1~focal.dsc' ignition-math6_6.8.0-1~focal.dsc 1379 SHA256:f9473ba3d7ee95fd2be9a1e1dd2f0725034218ec320b8c1f6c91b14ce5e2615e
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0.orig.tar.bz2' ignition-math6_6.8.0.orig.tar.bz2 447823 SHA256:b4d9721d9eaada23d9f787241f1519d086946ebe195be373bdfb021ee625494f
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0-1~focal.debian.tar.xz' ignition-math6_6.8.0-1~focal.debian.tar.xz 3576 SHA256:723616a1cc0309f8c4bd635897b21cf3724636ebe2d57f0a51781650e8ab890c
-```
 
 ### `dpkg` source package: `ignition-msgs5=5.8.0-1~focal`
 
@@ -2485,14 +2480,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libdrm=2.4.105-3~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.105-3~20.04.1.dsc' libdrm_2.4.105-3~20.04.1.dsc 3116 SHA512:ffc4c9b674c9df22ddc2ce2ee5ec8f2e0d266e83b61953d0a7607feb6ba5e18f0a54794da3babdff291f9b464676f78124509b63e111adac9140d546e8867d3a
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.105.orig.tar.xz' libdrm_2.4.105.orig.tar.xz 420376 SHA512:083a04af7208e58be21b89c6ebdbe2db3ba00cd29f0d271bd38bfe97dfca741edafddaaf9b5b95c20fac2c9b700434ea5b21397de26f7073169ad6f5b090f715
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.105-3~20.04.1.debian.tar.xz' libdrm_2.4.105-3~20.04.1.debian.tar.xz 59180 SHA512:a0d7b1727b4ef3505bec854f470298143bb2c74b17c1543e105a9238e303a66ec27d51bf6bad513b4a323cbc430a427e6dbeadf21afe70a4143eaaa7da31dc12
-```
 
 ### `dpkg` source package: `libedit=3.1-20191231-1`
 
@@ -4407,14 +4397,9 @@ Licenses: (parsed from: `/usr/share/doc/libegl-mesa0/copyright`, `/usr/share/doc
 - `MLAA`
 - `SGI`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mesa=21.0.3-0ubuntu0.3~20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_21.0.3-0ubuntu0.3~20.04.1.dsc' mesa_21.0.3-0ubuntu0.3~20.04.1.dsc 5523 SHA512:275da10b03e0f6c1f4a9ed6abf1abda2c4023d7197b6387369b669aa632be88400c17421539087c3bd114bebb561e0a9986ded670d01c2b20e36e2430ae946b2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_21.0.3.orig.tar.gz' mesa_21.0.3.orig.tar.gz 22634551 SHA512:bcd4cfdc624f2e8adedaaa71b0bbc506ef96e7b9122dbc4ef94bdd544ca13de5b02d2497ad9a646f46d5b290f689b927eb87272d36327f1a1f336c0bd67bb5af
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_21.0.3-0ubuntu0.3~20.04.1.diff.gz' mesa_21.0.3-0ubuntu0.3~20.04.1.diff.gz 115202 SHA512:7e69f698bc481678a0ee3c4b1ef6bbc9e99825958725a8a4130342d63f945b7175a539ada51356e8afde18757cfcecd2718c6f01b892c1a421409999f3678e1e
-```
 
 ### `dpkg` source package: `mime-support=3.64ubuntu1`
 

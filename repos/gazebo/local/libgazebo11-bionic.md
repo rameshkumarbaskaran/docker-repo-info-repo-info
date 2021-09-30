@@ -2201,14 +2201,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-math6/copyright`, `/usr/shar
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-math6=6.8.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0-1~bionic.dsc' ignition-math6_6.8.0-1~bionic.dsc 1383 SHA256:4b70c30ffbdf3a2c9ceb059cac81731ba2c4e018262a1d51cc16f30c5e0da33b
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0.orig.tar.bz2' ignition-math6_6.8.0.orig.tar.bz2 447823 SHA256:b4d9721d9eaada23d9f787241f1519d086946ebe195be373bdfb021ee625494f
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0-1~bionic.debian.tar.xz' ignition-math6_6.8.0-1~bionic.debian.tar.xz 3728 SHA256:cc37d42cdfadf0632a7e936a934af1bfe799075dce962e98053e513b890ca210
-```
 
 ### `dpkg` source package: `ignition-msgs5=5.8.0-1~bionic`
 
@@ -2243,13 +2238,9 @@ Licenses: (parsed from: `/usr/share/doc/ignition-tools/copyright`, `/usr/share/d
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-tools=1.2.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-tools/ignition-tools_1.2.0-1~bionic.dsc' ignition-tools_1.2.0-1~bionic.dsc 894 SHA256:f821613f85760d6a3d0f8359e069efcfab3310b77447d70f4ce96b561be4bfa7
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-tools/ignition-tools_1.2.0-1~bionic.tar.xz' ignition-tools_1.2.0-1~bionic.tar.xz 212624 SHA256:80807e37f4759924f46e234e664043c69685892b8af9f5ad6ed855511a6374f4
-```
 
 ### `dpkg` source package: `ignition-transport8=8.2.0-1~bionic`
 

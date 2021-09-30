@@ -2395,14 +2395,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-math6/copyright`, `/usr/shar
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-math6=6.8.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0-1~focal.dsc' ignition-math6_6.8.0-1~focal.dsc 1379 SHA256:f9473ba3d7ee95fd2be9a1e1dd2f0725034218ec320b8c1f6c91b14ce5e2615e
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0.orig.tar.bz2' ignition-math6_6.8.0.orig.tar.bz2 447823 SHA256:b4d9721d9eaada23d9f787241f1519d086946ebe195be373bdfb021ee625494f
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.8.0-1~focal.debian.tar.xz' ignition-math6_6.8.0-1~focal.debian.tar.xz 3576 SHA256:723616a1cc0309f8c4bd635897b21cf3724636ebe2d57f0a51781650e8ab890c
-```
 
 ### `dpkg` source package: `ignition-msgs5=5.8.0-1~focal`
 
@@ -2437,13 +2432,9 @@ Licenses: (parsed from: `/usr/share/doc/ignition-tools/copyright`, `/usr/share/d
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-tools=1.2.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-tools/ignition-tools_1.2.0-1~focal.dsc' ignition-tools_1.2.0-1~focal.dsc 890 SHA256:a954fd28c08309d154d5cf9565cb7b72132ef98cc6a4fc46bd5ae33865a43368
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-tools/ignition-tools_1.2.0-1~focal.tar.xz' ignition-tools_1.2.0-1~focal.tar.xz 212412 SHA256:a7195ee354f1560c6604700f8fd8778feb34dbe8ca35e9d76d793514c7627e3e
-```
 
 ### `dpkg` source package: `ignition-transport8=8.2.0-2~focal`
 
@@ -5581,9 +5572,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mysql-8.0=8.0.26-0ubuntu0.20.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc' mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc 3434 SHA512:ca5cc825ea65d116990dcdfb1e22f86d911c59b8b6013a27a5782087b1a5135446b9f6bf5117d666b73bc868c8b20bad55f957ae986d2c611a1bc5207cf870d0
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26.orig.tar.gz' mysql-8.0_8.0.26.orig.tar.gz 291285918 SHA512:63d47cb52407a816dc9f4330b99924624dfee46e57e7fdce19eff32909dd9e23251e2439d1807b002a1661b547173222c77465a3ca4dbb312414a84927809cfc
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz' mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz 160848 SHA512:7b8ea8ec6bcee9a694c50b24e90319f4d424e281a62a235cca88a097349289506842c4b8559eda21af1379cc39cbf4413581869655544e26360278b8d10f302f
+'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc' mysql-8.0_8.0.26-0ubuntu0.20.04.2.dsc 3434 SHA512:ca5cc825ea65d116990dcdfb1e22f86d911c59b8b6013a27a5782087b1a5135446b9f6bf5117d666b73bc868c8b20bad55f957ae986d2c611a1bc5207cf870d0
+'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26.orig.tar.gz' mysql-8.0_8.0.26.orig.tar.gz 291285918 SHA512:63d47cb52407a816dc9f4330b99924624dfee46e57e7fdce19eff32909dd9e23251e2439d1807b002a1661b547173222c77465a3ca4dbb312414a84927809cfc
+'http://security.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz' mysql-8.0_8.0.26-0ubuntu0.20.04.2.debian.tar.xz 160848 SHA512:7b8ea8ec6bcee9a694c50b24e90319f4d424e281a62a235cca88a097349289506842c4b8559eda21af1379cc39cbf4413581869655544e26360278b8d10f302f
 ```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5ubuntu2`
@@ -5843,9 +5834,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nvidia-settings=470.57.01-0ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01-0ubuntu0.20.04.1.dsc' nvidia-settings_470.57.01-0ubuntu0.20.04.1.dsc 2502 SHA512:e933745a3900853d561807b119e35a9989bb73d71e15d81fa935b69965d2b67c26cc9cd7ed07da67a6b876895b0fd1c7cf9d2b3e0a067a9e7c597d29d21c969c
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01.orig.tar.bz2' nvidia-settings_470.57.01.orig.tar.bz2 1062269 SHA512:8c6c7b69e4c435318e409f274602f85ba746c90cf06ed261473e2de8b3a6da56e323b813546da31856075ef9dfa056d1f42cdb823a65d171b6500ee7d4cf5a56
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01-0ubuntu0.20.04.1.debian.tar.xz' nvidia-settings_470.57.01-0ubuntu0.20.04.1.debian.tar.xz 24528 SHA512:4079ee6f4faba178914f0433f949ce6d266120e5b95ced5950d8c4cac3ea948cbda0058f740d4ef58c64bc18276bab0413458579f527b18ee110bb63a5817ae4
+'http://security.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01-0ubuntu0.20.04.1.dsc' nvidia-settings_470.57.01-0ubuntu0.20.04.1.dsc 2502 SHA512:e933745a3900853d561807b119e35a9989bb73d71e15d81fa935b69965d2b67c26cc9cd7ed07da67a6b876895b0fd1c7cf9d2b3e0a067a9e7c597d29d21c969c
+'http://security.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01.orig.tar.bz2' nvidia-settings_470.57.01.orig.tar.bz2 1062269 SHA512:8c6c7b69e4c435318e409f274602f85ba746c90cf06ed261473e2de8b3a6da56e323b813546da31856075ef9dfa056d1f42cdb823a65d171b6500ee7d4cf5a56
+'http://security.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01-0ubuntu0.20.04.1.debian.tar.xz' nvidia-settings_470.57.01-0ubuntu0.20.04.1.debian.tar.xz 24528 SHA512:4079ee6f4faba178914f0433f949ce6d266120e5b95ced5950d8c4cac3ea948cbda0058f740d4ef58c64bc18276bab0413458579f527b18ee110bb63a5817ae4
 ```
 
 ### `dpkg` source package: `ocl-icd=2.2.11-1ubuntu1`
