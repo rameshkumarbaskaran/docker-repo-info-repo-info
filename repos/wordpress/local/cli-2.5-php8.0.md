@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1134fd08fb3b86d182245fe464363a9b19eb5a7dd6bf578b87d6865430773090`
-- Created: `2021-09-24T04:50:16.360621569Z`
-- Virtual Size: ~ 139.47 Mb  
+- Image ID: `sha256:a0d1ce1f4a3c2a2bd866b421aa1e8139a8d7309c02ce0983f9512650c717c609`
+- Created: `2021-10-01T01:10:46.479506174Z`
+- Virtual Size: ~ 140.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -585,6 +585,23 @@ libuuid-2.37-r0 installed size:
 
 libuuid-2.37-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
+
+```
+
+### `apk` package: `libwebp`
+
+```console
+libwebp-1.2.0-r2 description:
+Libraries for working with WebP images
+
+libwebp-1.2.0-r2 webpage:
+https://developers.google.com/speed/webp
+
+libwebp-1.2.0-r2 installed size:
+580 KiB
+
+libwebp-1.2.0-r2 license:
+BSD-3-Clause
 
 ```
 
