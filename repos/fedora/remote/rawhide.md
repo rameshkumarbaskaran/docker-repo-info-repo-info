@@ -1,7 +1,7 @@
 ## `fedora:rawhide`
 
 ```console
-$ docker pull fedora@sha256:54e784e97c35b0ca0b15d230f259df7720916e7b5e178f55fcfcd5270b107da0
+$ docker pull fedora@sha256:06b9bd9a2c8f4ebcffbc67c12d7c7c19f5824e676016bd0ac6443f023399dda8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -45,14 +45,14 @@ CMD ["/bin/bash"]
 ### `fedora:rawhide` - linux; arm variant v7
 
 ```console
-$ docker pull fedora@sha256:507370aea886052d775472239c94ec5ec94edfd6f45ffed03f04c02bf024f289
+$ docker pull fedora@sha256:63450b59abcc6b1b08ab1d38c8428d0db56e6b878a95b96d1265785be98a3f4c
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **62.2 MB (62181496 bytes)**  
+-	Total Size: **54.1 MB (54138322 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a9da0b58d5a841d2c661d8e8775c710177bda9751f9ba917d82882b1ba2c0754`
+-	Image ID: `sha256:130b21afbea8f95a746f5b3e72b110b2514641b4e1a7290743b72e9677fa9473`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
@@ -60,16 +60,16 @@ $ docker pull fedora@sha256:507370aea886052d775472239c94ec5ec94edfd6f45ffed03f04
 LABEL maintainer=Clement Verna <cverna@fedoraproject.org>
 # Fri, 23 Jul 2021 19:05:03 GMT
 ENV DISTTAG=fRawhidecontainer FGC=fRawhide FBR=fRawhide
-# Fri, 23 Jul 2021 19:05:20 GMT
-ADD file:03c922c247e780c5ec7b8ad76ae85101f73d53fc5962c213016ea1b346e08943 in / 
-# Fri, 23 Jul 2021 19:05:21 GMT
+# Sat, 02 Oct 2021 18:50:12 GMT
+ADD file:4ab115b4445fa29e9e0f5737fe7c7fe476c35aa2d78cbcb0daa40dd62803cff0 in / 
+# Sat, 02 Oct 2021 18:50:14 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:0cc98a41e61789633667eb6a62db9a061f0bad483f6c74b66ce31e0f5b5137e7`  
-		Last Modified: Fri, 23 Jul 2021 19:09:08 GMT  
-		Size: 62.2 MB (62181496 bytes)  
+	-	`sha256:9043e86b4c69f46f140bb2fdb903794f727c3d8e335fc2c2693f20e3cb8ef9d4`  
+		Last Modified: Sat, 02 Oct 2021 18:53:56 GMT  
+		Size: 54.1 MB (54138322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fedora:rawhide` - linux; arm64 variant v8
