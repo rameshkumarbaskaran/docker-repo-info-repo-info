@@ -1,7 +1,7 @@
 ## `fedora:rawhide`
 
 ```console
-$ docker pull fedora@sha256:06b9bd9a2c8f4ebcffbc67c12d7c7c19f5824e676016bd0ac6443f023399dda8
+$ docker pull fedora@sha256:a861144bb13f81da7b0e9930c3343565f568abba6ca72d8ce2e099e35a3c48e2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -105,31 +105,31 @@ CMD ["/bin/bash"]
 ### `fedora:rawhide` - linux; ppc64le
 
 ```console
-$ docker pull fedora@sha256:8e1c7a34e4a3e1f606e3e0ee3794ff4a8f2a53d549a9a5ca049ddc4e0f9a06de
+$ docker pull fedora@sha256:6e7d1d2cfe3b4f80cca502cba88ff3090c5225553c77894dd42a2f0b4d24b822
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **72.6 MB (72575604 bytes)**  
+-	Total Size: **63.2 MB (63154149 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1f84dac3f1b550a0a569a59ba9c13dc9c3cb3e41eceecfc71c25381ba748d92f`
+-	Image ID: `sha256:52c68f089f9dbffcd8e963ff6c93159860a1b761b4155ee72495dc8986ce3fac`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Wed, 05 Jun 2019 23:19:06 GMT
+# Fri, 23 Jul 2021 23:32:50 GMT
 LABEL maintainer=Clement Verna <cverna@fedoraproject.org>
-# Tue, 27 Apr 2021 21:28:25 GMT
+# Mon, 04 Oct 2021 19:40:57 GMT
 ENV DISTTAG=fRawhidecontainer FGC=fRawhide FBR=fRawhide
-# Tue, 27 Apr 2021 21:28:36 GMT
-ADD file:23d27bab5e0d22617d315811ee0be53762a59c8ae15b69dd5d6d60ff465aa036 in / 
-# Tue, 27 Apr 2021 21:28:52 GMT
+# Mon, 04 Oct 2021 19:41:06 GMT
+ADD file:e13755d3f7d03069ba475b871a56f81a4103aa7112e7800ea94503aa313627c6 in / 
+# Mon, 04 Oct 2021 19:41:15 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:aa0cf73e1f99c7d46f73e0fd5ca1f45a3a8aaf7b828f46de9976703dcd9b34c9`  
-		Last Modified: Tue, 27 Apr 2021 21:30:16 GMT  
-		Size: 72.6 MB (72575604 bytes)  
+	-	`sha256:e80a53b3ac3ce9e11936314ad5adb9836a6ac578515907889435610d87804435`  
+		Last Modified: Mon, 04 Oct 2021 19:43:10 GMT  
+		Size: 63.2 MB (63154149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `fedora:rawhide` - linux; s390x
