@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:025e0ab7df9f5081778a72140598d3eb84897c7bf764e1fe81b7a8c9185da540`
-- Created: `2021-09-01T06:23:06.157048179Z`
-- Virtual Size: ~ 425.91 Mb  
+- Image ID: `sha256:82de5c6341c02822af90820d98d694244ef1beb5d8ef9c6cf270a5d6cf003bd0`
+- Created: `2021-10-01T23:09:18.755398815Z`
+- Virtual Size: ~ 408.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -1106,16 +1106,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.78.0-r0 description:
+libcurl-7.79.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.78.0-r0 webpage:
+libcurl-7.79.1-r0 webpage:
 https://curl.se/
 
-libcurl-7.78.0-r0 installed size:
+libcurl-7.79.1-r0 installed size:
 500 KiB
 
-libcurl-7.78.0-r0 license:
+libcurl-7.79.1-r0 license:
 MIT
 
 ```
@@ -1202,91 +1202,6 @@ libmagic-5.39-r0 installed size:
 
 libmagic-5.39-r0 license:
 BSD-2-Clause
-
-```
-
-### `apk` package: `libressl`
-
-```console
-libressl-3.1.5-r0 description:
-Version of the TLS/crypto stack forked from OpenSSL
-
-libressl-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl-3.1.5-r0 installed size:
-520 KiB
-
-libressl-3.1.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl-dev`
-
-```console
-libressl-dev-3.1.5-r0 description:
-Version of the TLS/crypto stack forked from OpenSSL (development files)
-
-libressl-dev-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl-dev-3.1.5-r0 installed size:
-16 MiB
-
-libressl-dev-3.1.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl3.1-libcrypto`
-
-```console
-libressl3.1-libcrypto-3.1.5-r0 description:
-libressl libcrypto library
-
-libressl3.1-libcrypto-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl3.1-libcrypto-3.1.5-r0 installed size:
-1836 KiB
-
-libressl3.1-libcrypto-3.1.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl3.1-libssl`
-
-```console
-libressl3.1-libssl-3.1.5-r0 description:
-libressl libssl library
-
-libressl3.1-libssl-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl3.1-libssl-3.1.5-r0 installed size:
-364 KiB
-
-libressl3.1-libssl-3.1.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl3.1-libtls`
-
-```console
-libressl3.1-libtls-3.1.5-r0 description:
-libressl libtls library
-
-libressl3.1-libtls-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl3.1-libtls-3.1.5-r0 installed size:
-84 KiB
-
-libressl3.1-libtls-3.1.5-r0 license:
-custom
 
 ```
 
@@ -1545,6 +1460,40 @@ MIT
 
 ```
 
+### `apk` package: `openssl`
+
+```console
+openssl-1.1.1l-r0 description:
+Toolkit for Transport Layer Security (TLS)
+
+openssl-1.1.1l-r0 webpage:
+https://www.openssl.org/
+
+openssl-1.1.1l-r0 installed size:
+660 KiB
+
+openssl-1.1.1l-r0 license:
+OpenSSL
+
+```
+
+### `apk` package: `openssl-dev`
+
+```console
+openssl-dev-1.1.1l-r0 description:
+Toolkit for Transport Layer Security (TLS) (development files)
+
+openssl-dev-1.1.1l-r0 webpage:
+https://www.openssl.org/
+
+openssl-dev-1.1.1l-r0 installed size:
+1596 KiB
+
+openssl-dev-1.1.1l-r0 license:
+OpenSSL
+
+```
+
 ### `apk` package: `patch`
 
 ```console
@@ -1650,16 +1599,16 @@ rhash-libs-1.4.1-r0 license:
 ### `apk` package: `runtime-dependencies`
 
 ```console
-runtime-dependencies-20210901.061818 description:
+runtime-dependencies-20211001.230430 description:
 virtual meta package
 
-runtime-dependencies-20210901.061818 webpage:
+runtime-dependencies-20211001.230430 webpage:
 
 
-runtime-dependencies-20210901.061818 installed size:
+runtime-dependencies-20211001.230430 installed size:
 0 B
 
-runtime-dependencies-20210901.061818 license:
+runtime-dependencies-20211001.230430 license:
 
 
 ```
@@ -1752,16 +1701,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2021a-r0 description:
+tzdata-2021b-r0 description:
 Timezone data
 
-tzdata-2021a-r0 webpage:
+tzdata-2021b-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2021a-r0 installed size:
-3436 KiB
+tzdata-2021b-r0 installed size:
+3376 KiB
 
-tzdata-2021a-r0 license:
+tzdata-2021b-r0 license:
 Public-Domain
 
 ```

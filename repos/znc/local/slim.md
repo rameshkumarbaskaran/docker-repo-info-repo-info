@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:94df82dafd625afe7d182f32ffdf47bda5acee8d7f608600fc01aadcbc397323`
-- Created: `2021-09-01T06:22:43.710657558Z`
-- Virtual Size: ~ 135.96 Mb  
+- Image ID: `sha256:69b40d52e48014894c304f1b6add593df7fecdae270697fb87898b5e8c522bf0`
+- Created: `2021-10-01T23:08:56.707561662Z`
+- Virtual Size: ~ 133.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -882,74 +882,6 @@ GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
-### `apk` package: `libressl`
-
-```console
-libressl-3.1.5-r0 description:
-Version of the TLS/crypto stack forked from OpenSSL
-
-libressl-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl-3.1.5-r0 installed size:
-520 KiB
-
-libressl-3.1.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl3.1-libcrypto`
-
-```console
-libressl3.1-libcrypto-3.1.5-r0 description:
-libressl libcrypto library
-
-libressl3.1-libcrypto-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl3.1-libcrypto-3.1.5-r0 installed size:
-1836 KiB
-
-libressl3.1-libcrypto-3.1.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl3.1-libssl`
-
-```console
-libressl3.1-libssl-3.1.5-r0 description:
-libressl libssl library
-
-libressl3.1-libssl-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl3.1-libssl-3.1.5-r0 installed size:
-364 KiB
-
-libressl3.1-libssl-3.1.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl3.1-libtls`
-
-```console
-libressl3.1-libtls-3.1.5-r0 description:
-libressl libtls library
-
-libressl3.1-libtls-3.1.5-r0 webpage:
-https://www.libressl.org/
-
-libressl3.1-libtls-3.1.5-r0 installed size:
-84 KiB
-
-libressl3.1-libtls-3.1.5-r0 license:
-custom
-
-```
-
 ### `apk` package: `libsasl`
 
 ```console
@@ -1086,6 +1018,23 @@ MIT
 
 ```
 
+### `apk` package: `openssl`
+
+```console
+openssl-1.1.1l-r0 description:
+Toolkit for Transport Layer Security (TLS)
+
+openssl-1.1.1l-r0 webpage:
+https://www.openssl.org/
+
+openssl-1.1.1l-r0 installed size:
+660 KiB
+
+openssl-1.1.1l-r0 license:
+OpenSSL
+
+```
+
 ### `apk` package: `python3`
 
 ```console
@@ -1123,16 +1072,16 @@ GPL-2.0-or-later
 ### `apk` package: `runtime-dependencies`
 
 ```console
-runtime-dependencies-20210901.061818 description:
+runtime-dependencies-20211001.230430 description:
 virtual meta package
 
-runtime-dependencies-20210901.061818 webpage:
+runtime-dependencies-20211001.230430 webpage:
 
 
-runtime-dependencies-20210901.061818 installed size:
+runtime-dependencies-20211001.230430 installed size:
 0 B
 
-runtime-dependencies-20210901.061818 license:
+runtime-dependencies-20211001.230430 license:
 
 
 ```
@@ -1225,16 +1174,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2021a-r0 description:
+tzdata-2021b-r0 description:
 Timezone data
 
-tzdata-2021a-r0 webpage:
+tzdata-2021b-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2021a-r0 installed size:
-3436 KiB
+tzdata-2021b-r0 installed size:
+3376 KiB
 
-tzdata-2021a-r0 license:
+tzdata-2021b-r0 license:
 Public-Domain
 
 ```
