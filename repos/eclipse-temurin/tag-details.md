@@ -10,38 +10,48 @@
 -	[`eclipse-temurin:11-jdk-focal`](#eclipse-temurin11-jdk-focal)
 -	[`eclipse-temurin:11-jdk-nanoserver`](#eclipse-temurin11-jdk-nanoserver)
 -	[`eclipse-temurin:11-jdk-nanoserver-1809`](#eclipse-temurin11-jdk-nanoserver-1809)
+-	[`eclipse-temurin:11-jdk-nanoserver-ltsc2022`](#eclipse-temurin11-jdk-nanoserver-ltsc2022)
 -	[`eclipse-temurin:11-jdk-windowsservercore`](#eclipse-temurin11-jdk-windowsservercore)
 -	[`eclipse-temurin:11-jdk-windowsservercore-1809`](#eclipse-temurin11-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:11-jdk-windowsservercore-ltsc2016`](#eclipse-temurin11-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:11-jdk-windowsservercore-ltsc2022`](#eclipse-temurin11-jdk-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:11-jre`](#eclipse-temurin11-jre)
 -	[`eclipse-temurin:11-jre-centos7`](#eclipse-temurin11-jre-centos7)
 -	[`eclipse-temurin:11-jre-focal`](#eclipse-temurin11-jre-focal)
 -	[`eclipse-temurin:11-jre-nanoserver`](#eclipse-temurin11-jre-nanoserver)
 -	[`eclipse-temurin:11-jre-nanoserver-1809`](#eclipse-temurin11-jre-nanoserver-1809)
+-	[`eclipse-temurin:11-jre-nanoserver-ltsc2022`](#eclipse-temurin11-jre-nanoserver-ltsc2022)
 -	[`eclipse-temurin:11-jre-windowsservercore`](#eclipse-temurin11-jre-windowsservercore)
 -	[`eclipse-temurin:11-jre-windowsservercore-1809`](#eclipse-temurin11-jre-windowsservercore-1809)
 -	[`eclipse-temurin:11-jre-windowsservercore-ltsc2016`](#eclipse-temurin11-jre-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:11-jre-windowsservercore-ltsc2022`](#eclipse-temurin11-jre-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:11-nanoserver`](#eclipse-temurin11-nanoserver)
 -	[`eclipse-temurin:11-nanoserver-1809`](#eclipse-temurin11-nanoserver-1809)
+-	[`eclipse-temurin:11-nanoserver-ltsc2022`](#eclipse-temurin11-nanoserver-ltsc2022)
 -	[`eclipse-temurin:11-windowsservercore`](#eclipse-temurin11-windowsservercore)
 -	[`eclipse-temurin:11-windowsservercore-1809`](#eclipse-temurin11-windowsservercore-1809)
 -	[`eclipse-temurin:11-windowsservercore-ltsc2016`](#eclipse-temurin11-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:11-windowsservercore-ltsc2022`](#eclipse-temurin11-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:11.0.12_7-jdk`](#eclipse-temurin11012_7-jdk)
 -	[`eclipse-temurin:11.0.12_7-jdk-centos7`](#eclipse-temurin11012_7-jdk-centos7)
 -	[`eclipse-temurin:11.0.12_7-jdk-focal`](#eclipse-temurin11012_7-jdk-focal)
 -	[`eclipse-temurin:11.0.12_7-jdk-nanoserver`](#eclipse-temurin11012_7-jdk-nanoserver)
 -	[`eclipse-temurin:11.0.12_7-jdk-nanoserver-1809`](#eclipse-temurin11012_7-jdk-nanoserver-1809)
+-	[`eclipse-temurin:11.0.12_7-jdk-nanoserver-ltsc2022`](#eclipse-temurin11012_7-jdk-nanoserver-ltsc2022)
 -	[`eclipse-temurin:11.0.12_7-jdk-windowsservercore`](#eclipse-temurin11012_7-jdk-windowsservercore)
 -	[`eclipse-temurin:11.0.12_7-jdk-windowsservercore-1809`](#eclipse-temurin11012_7-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:11.0.12_7-jdk-windowsservercore-ltsc2016`](#eclipse-temurin11012_7-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:11.0.12_7-jdk-windowsservercore-ltsc2022`](#eclipse-temurin11012_7-jdk-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:11.0.12_7-jre`](#eclipse-temurin11012_7-jre)
 -	[`eclipse-temurin:11.0.12_7-jre-centos7`](#eclipse-temurin11012_7-jre-centos7)
 -	[`eclipse-temurin:11.0.12_7-jre-focal`](#eclipse-temurin11012_7-jre-focal)
 -	[`eclipse-temurin:11.0.12_7-jre-nanoserver`](#eclipse-temurin11012_7-jre-nanoserver)
 -	[`eclipse-temurin:11.0.12_7-jre-nanoserver-1809`](#eclipse-temurin11012_7-jre-nanoserver-1809)
+-	[`eclipse-temurin:11.0.12_7-jre-nanoserver-ltsc2022`](#eclipse-temurin11012_7-jre-nanoserver-ltsc2022)
 -	[`eclipse-temurin:11.0.12_7-jre-windowsservercore`](#eclipse-temurin11012_7-jre-windowsservercore)
 -	[`eclipse-temurin:11.0.12_7-jre-windowsservercore-1809`](#eclipse-temurin11012_7-jre-windowsservercore-1809)
 -	[`eclipse-temurin:11.0.12_7-jre-windowsservercore-ltsc2016`](#eclipse-temurin11012_7-jre-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:11.0.12_7-jre-windowsservercore-ltsc2022`](#eclipse-temurin11012_7-jre-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:16`](#eclipse-temurin16)
 -	[`eclipse-temurin:16-alpine`](#eclipse-temurin16-alpine)
 -	[`eclipse-temurin:16-centos7`](#eclipse-temurin16-centos7)
@@ -79,23 +89,29 @@
 -	[`eclipse-temurin:17-jdk-focal`](#eclipse-temurin17-jdk-focal)
 -	[`eclipse-temurin:17-jdk-nanoserver`](#eclipse-temurin17-jdk-nanoserver)
 -	[`eclipse-temurin:17-jdk-nanoserver-1809`](#eclipse-temurin17-jdk-nanoserver-1809)
+-	[`eclipse-temurin:17-jdk-nanoserver-ltsc2022`](#eclipse-temurin17-jdk-nanoserver-ltsc2022)
 -	[`eclipse-temurin:17-jdk-windowsservercore`](#eclipse-temurin17-jdk-windowsservercore)
 -	[`eclipse-temurin:17-jdk-windowsservercore-1809`](#eclipse-temurin17-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:17-jdk-windowsservercore-ltsc2016`](#eclipse-temurin17-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:17-jdk-windowsservercore-ltsc2022`](#eclipse-temurin17-jdk-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:17-nanoserver`](#eclipse-temurin17-nanoserver)
 -	[`eclipse-temurin:17-nanoserver-1809`](#eclipse-temurin17-nanoserver-1809)
+-	[`eclipse-temurin:17-nanoserver-ltsc2022`](#eclipse-temurin17-nanoserver-ltsc2022)
 -	[`eclipse-temurin:17-windowsservercore`](#eclipse-temurin17-windowsservercore)
 -	[`eclipse-temurin:17-windowsservercore-1809`](#eclipse-temurin17-windowsservercore-1809)
 -	[`eclipse-temurin:17-windowsservercore-ltsc2016`](#eclipse-temurin17-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:17-windowsservercore-ltsc2022`](#eclipse-temurin17-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:17_35-jdk`](#eclipse-temurin17_35-jdk)
 -	[`eclipse-temurin:17_35-jdk-alpine`](#eclipse-temurin17_35-jdk-alpine)
 -	[`eclipse-temurin:17_35-jdk-centos7`](#eclipse-temurin17_35-jdk-centos7)
 -	[`eclipse-temurin:17_35-jdk-focal`](#eclipse-temurin17_35-jdk-focal)
 -	[`eclipse-temurin:17_35-jdk-nanoserver`](#eclipse-temurin17_35-jdk-nanoserver)
 -	[`eclipse-temurin:17_35-jdk-nanoserver-1809`](#eclipse-temurin17_35-jdk-nanoserver-1809)
+-	[`eclipse-temurin:17_35-jdk-nanoserver-ltsc2022`](#eclipse-temurin17_35-jdk-nanoserver-ltsc2022)
 -	[`eclipse-temurin:17_35-jdk-windowsservercore`](#eclipse-temurin17_35-jdk-windowsservercore)
 -	[`eclipse-temurin:17_35-jdk-windowsservercore-1809`](#eclipse-temurin17_35-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:17_35-jdk-windowsservercore-ltsc2016`](#eclipse-temurin17_35-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:17_35-jdk-windowsservercore-ltsc2022`](#eclipse-temurin17_35-jdk-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:8`](#eclipse-temurin8)
 -	[`eclipse-temurin:8-centos7`](#eclipse-temurin8-centos7)
 -	[`eclipse-temurin:8-focal`](#eclipse-temurin8-focal)
@@ -104,38 +120,48 @@
 -	[`eclipse-temurin:8-jdk-focal`](#eclipse-temurin8-jdk-focal)
 -	[`eclipse-temurin:8-jdk-nanoserver`](#eclipse-temurin8-jdk-nanoserver)
 -	[`eclipse-temurin:8-jdk-nanoserver-1809`](#eclipse-temurin8-jdk-nanoserver-1809)
+-	[`eclipse-temurin:8-jdk-nanoserver-ltsc2022`](#eclipse-temurin8-jdk-nanoserver-ltsc2022)
 -	[`eclipse-temurin:8-jdk-windowsservercore`](#eclipse-temurin8-jdk-windowsservercore)
 -	[`eclipse-temurin:8-jdk-windowsservercore-1809`](#eclipse-temurin8-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:8-jdk-windowsservercore-ltsc2016`](#eclipse-temurin8-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:8-jdk-windowsservercore-ltsc2022`](#eclipse-temurin8-jdk-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:8-jre`](#eclipse-temurin8-jre)
 -	[`eclipse-temurin:8-jre-centos7`](#eclipse-temurin8-jre-centos7)
 -	[`eclipse-temurin:8-jre-focal`](#eclipse-temurin8-jre-focal)
 -	[`eclipse-temurin:8-jre-nanoserver`](#eclipse-temurin8-jre-nanoserver)
 -	[`eclipse-temurin:8-jre-nanoserver-1809`](#eclipse-temurin8-jre-nanoserver-1809)
+-	[`eclipse-temurin:8-jre-nanoserver-ltsc2022`](#eclipse-temurin8-jre-nanoserver-ltsc2022)
 -	[`eclipse-temurin:8-jre-windowsservercore`](#eclipse-temurin8-jre-windowsservercore)
 -	[`eclipse-temurin:8-jre-windowsservercore-1809`](#eclipse-temurin8-jre-windowsservercore-1809)
 -	[`eclipse-temurin:8-jre-windowsservercore-ltsc2016`](#eclipse-temurin8-jre-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:8-jre-windowsservercore-ltsc2022`](#eclipse-temurin8-jre-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:8-nanoserver`](#eclipse-temurin8-nanoserver)
 -	[`eclipse-temurin:8-nanoserver-1809`](#eclipse-temurin8-nanoserver-1809)
+-	[`eclipse-temurin:8-nanoserver-ltsc2022`](#eclipse-temurin8-nanoserver-ltsc2022)
 -	[`eclipse-temurin:8-windowsservercore`](#eclipse-temurin8-windowsservercore)
 -	[`eclipse-temurin:8-windowsservercore-1809`](#eclipse-temurin8-windowsservercore-1809)
 -	[`eclipse-temurin:8-windowsservercore-ltsc2016`](#eclipse-temurin8-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:8-windowsservercore-ltsc2022`](#eclipse-temurin8-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:8u302-b08-jdk`](#eclipse-temurin8u302-b08-jdk)
 -	[`eclipse-temurin:8u302-b08-jdk-centos7`](#eclipse-temurin8u302-b08-jdk-centos7)
 -	[`eclipse-temurin:8u302-b08-jdk-focal`](#eclipse-temurin8u302-b08-jdk-focal)
 -	[`eclipse-temurin:8u302-b08-jdk-nanoserver`](#eclipse-temurin8u302-b08-jdk-nanoserver)
 -	[`eclipse-temurin:8u302-b08-jdk-nanoserver-1809`](#eclipse-temurin8u302-b08-jdk-nanoserver-1809)
+-	[`eclipse-temurin:8u302-b08-jdk-nanoserver-ltsc2022`](#eclipse-temurin8u302-b08-jdk-nanoserver-ltsc2022)
 -	[`eclipse-temurin:8u302-b08-jdk-windowsservercore`](#eclipse-temurin8u302-b08-jdk-windowsservercore)
 -	[`eclipse-temurin:8u302-b08-jdk-windowsservercore-1809`](#eclipse-temurin8u302-b08-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:8u302-b08-jdk-windowsservercore-ltsc2016`](#eclipse-temurin8u302-b08-jdk-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:8u302-b08-jdk-windowsservercore-ltsc2022`](#eclipse-temurin8u302-b08-jdk-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:8u302-b08-jre`](#eclipse-temurin8u302-b08-jre)
 -	[`eclipse-temurin:8u302-b08-jre-centos7`](#eclipse-temurin8u302-b08-jre-centos7)
 -	[`eclipse-temurin:8u302-b08-jre-focal`](#eclipse-temurin8u302-b08-jre-focal)
 -	[`eclipse-temurin:8u302-b08-jre-nanoserver`](#eclipse-temurin8u302-b08-jre-nanoserver)
 -	[`eclipse-temurin:8u302-b08-jre-nanoserver-1809`](#eclipse-temurin8u302-b08-jre-nanoserver-1809)
+-	[`eclipse-temurin:8u302-b08-jre-nanoserver-ltsc2022`](#eclipse-temurin8u302-b08-jre-nanoserver-ltsc2022)
 -	[`eclipse-temurin:8u302-b08-jre-windowsservercore`](#eclipse-temurin8u302-b08-jre-windowsservercore)
 -	[`eclipse-temurin:8u302-b08-jre-windowsservercore-1809`](#eclipse-temurin8u302-b08-jre-windowsservercore-1809)
 -	[`eclipse-temurin:8u302-b08-jre-windowsservercore-ltsc2016`](#eclipse-temurin8u302-b08-jre-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:8u302-b08-jre-windowsservercore-ltsc2022`](#eclipse-temurin8u302-b08-jre-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:latest`](#eclipse-temurinlatest)
 
 ## `eclipse-temurin:11`
@@ -1998,6 +2024,10 @@ CMD ["jshell"]
 		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:11-jdk-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:11-jdk-windowsservercore`
 
 ```console
@@ -2264,6 +2294,10 @@ CMD ["jshell"]
 		Last Modified: Wed, 15 Sep 2021 16:51:09 GMT  
 		Size: 1.3 KB (1310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:11-jdk-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:11-jre`
 
@@ -3233,6 +3267,10 @@ RUN echo Verifying install ...     && echo java --version && java --version     
 		Size: 48.4 KB (48366 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:11-jre-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:11-jre-windowsservercore`
 
 ```console
@@ -3476,6 +3514,10 @@ RUN Write-Host 'Verifying install ...';     Write-Host 'java --version'; java --
 		Size: 304.9 KB (304887 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:11-jre-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:11-nanoserver`
 
 ```console
@@ -3651,6 +3693,10 @@ CMD ["jshell"]
 		Last Modified: Wed, 15 Sep 2021 16:51:49 GMT  
 		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:11-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:11-windowsservercore`
 
@@ -3918,6 +3964,10 @@ CMD ["jshell"]
 		Last Modified: Wed, 15 Sep 2021 16:51:09 GMT  
 		Size: 1.3 KB (1310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:11-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:11.0.12_7-jdk`
 
@@ -4937,6 +4987,10 @@ CMD ["jshell"]
 		Size: 1.1 KB (1135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:11.0.12_7-jdk-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:11.0.12_7-jdk-windowsservercore`
 
 ```console
@@ -5203,6 +5257,10 @@ CMD ["jshell"]
 		Last Modified: Wed, 15 Sep 2021 16:51:09 GMT  
 		Size: 1.3 KB (1310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:11.0.12_7-jdk-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:11.0.12_7-jre`
 
@@ -6172,6 +6230,10 @@ RUN echo Verifying install ...     && echo java --version && java --version     
 		Size: 48.4 KB (48366 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:11.0.12_7-jre-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:11.0.12_7-jre-windowsservercore`
 
 ```console
@@ -6414,6 +6476,10 @@ RUN Write-Host 'Verifying install ...';     Write-Host 'java --version'; java --
 		Last Modified: Thu, 16 Sep 2021 19:24:23 GMT  
 		Size: 304.9 KB (304887 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:11.0.12_7-jre-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:16`
 
@@ -12122,6 +12188,10 @@ CMD ["jshell"]
 		Size: 1.0 KB (1035 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:17-jdk-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:17-jdk-windowsservercore`
 
 ```console
@@ -12389,6 +12459,10 @@ CMD ["jshell"]
 		Size: 1.3 KB (1288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:17-jdk-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:17-nanoserver`
 
 ```console
@@ -12564,6 +12638,10 @@ CMD ["jshell"]
 		Last Modified: Wed, 22 Sep 2021 19:26:24 GMT  
 		Size: 1.0 KB (1035 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:17-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:17-windowsservercore`
 
@@ -12831,6 +12909,10 @@ CMD ["jshell"]
 		Last Modified: Wed, 22 Sep 2021 19:25:42 GMT  
 		Size: 1.3 KB (1288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:17-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:17_35-jdk`
 
@@ -13912,6 +13994,10 @@ CMD ["jshell"]
 		Size: 1.0 KB (1035 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:17_35-jdk-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:17_35-jdk-windowsservercore`
 
 ```console
@@ -14178,6 +14264,10 @@ CMD ["jshell"]
 		Last Modified: Wed, 22 Sep 2021 19:25:42 GMT  
 		Size: 1.3 KB (1288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:17_35-jdk-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:8`
 
@@ -15543,6 +15633,10 @@ RUN echo Verifying install ...     && echo javac -version && javac -version     
 		Size: 89.5 KB (89539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:8-jdk-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:8-jdk-windowsservercore`
 
 ```console
@@ -15785,6 +15879,10 @@ RUN Write-Host 'Verifying install ...';     Write-Host 'javac -version'; javac -
 		Last Modified: Wed, 15 Sep 2021 16:39:01 GMT  
 		Size: 340.6 KB (340624 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:8-jdk-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:8-jre`
 
@@ -16550,6 +16648,10 @@ RUN echo Verifying install ...     && echo java -version && java -version     &&
 		Size: 79.9 KB (79871 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:8-jre-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:8-jre-windowsservercore`
 
 ```console
@@ -16793,6 +16895,10 @@ RUN Write-Host 'Verifying install ...';     Write-Host 'java -version'; java -ve
 		Size: 340.4 KB (340413 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:8-jre-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:8-nanoserver`
 
 ```console
@@ -16956,6 +17062,10 @@ RUN echo Verifying install ...     && echo javac -version && javac -version     
 		Last Modified: Wed, 15 Sep 2021 16:39:32 GMT  
 		Size: 89.5 KB (89539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:8-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:8-windowsservercore`
 
@@ -17199,6 +17309,10 @@ RUN Write-Host 'Verifying install ...';     Write-Host 'javac -version'; javac -
 		Last Modified: Wed, 15 Sep 2021 16:39:01 GMT  
 		Size: 340.6 KB (340624 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:8-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:8u302-b08-jdk`
 
@@ -17964,6 +18078,10 @@ RUN echo Verifying install ...     && echo javac -version && javac -version     
 		Size: 89.5 KB (89539 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:8u302-b08-jdk-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:8u302-b08-jdk-windowsservercore`
 
 ```console
@@ -18206,6 +18324,10 @@ RUN Write-Host 'Verifying install ...';     Write-Host 'javac -version'; javac -
 		Last Modified: Wed, 15 Sep 2021 16:39:01 GMT  
 		Size: 340.6 KB (340624 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:8u302-b08-jdk-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:8u302-b08-jre`
 
@@ -18971,6 +19093,10 @@ RUN echo Verifying install ...     && echo java -version && java -version     &&
 		Size: 79.9 KB (79871 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:8u302-b08-jre-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:8u302-b08-jre-windowsservercore`
 
 ```console
@@ -19213,6 +19339,10 @@ RUN Write-Host 'Verifying install ...';     Write-Host 'java -version'; java -ve
 		Last Modified: Wed, 15 Sep 2021 16:42:55 GMT  
 		Size: 340.4 KB (340413 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:8u302-b08-jre-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:latest`
 
