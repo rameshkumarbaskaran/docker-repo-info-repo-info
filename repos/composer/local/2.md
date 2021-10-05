@@ -1,10 +1,10 @@
-# `composer:2.1.8`
+# `composer:2.1.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:04073726c0fbc3d5021b7dc38fa50ed8a62233c53c020e5ac52cfd00f528c632`
-- Created: `2021-09-24T02:49:48.890894649Z`
-- Virtual Size: ~ 181.25 Mb  
+- Image ID: `sha256:bedbe60757dabc2102b98a63c3dcb620335a6de163172d67783dd299bd955202`
+- Created: `2021-10-05T21:19:52.514631758Z`
+- Virtual Size: ~ 184.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_SHA256=e3e5f764ae57b31eb65244a45512f0b22d7bef05f2052b23989c053901552e16`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=2.1.8`
+  - `COMPOSER_VERSION=2.1.9`
 
 ## `apk` (`.apk`-based packages)
 
@@ -761,16 +761,16 @@ BSD-2-Clause
 ### `apk` package: `openssh-client-common`
 
 ```console
-openssh-client-common-8.6_p1-r2 description:
+openssh-client-common-8.6_p1-r3 description:
 OpenBSD's SSH client common files
 
-openssh-client-common-8.6_p1-r2 webpage:
+openssh-client-common-8.6_p1-r3 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-common-8.6_p1-r2 installed size:
+openssh-client-common-8.6_p1-r3 installed size:
 2312 KiB
 
-openssh-client-common-8.6_p1-r2 license:
+openssh-client-common-8.6_p1-r3 license:
 BSD
 
 ```
@@ -778,16 +778,16 @@ BSD
 ### `apk` package: `openssh-client-default`
 
 ```console
-openssh-client-default-8.6_p1-r2 description:
+openssh-client-default-8.6_p1-r3 description:
 OpenBSD's SSH client
 
-openssh-client-default-8.6_p1-r2 webpage:
+openssh-client-default-8.6_p1-r3 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-default-8.6_p1-r2 installed size:
+openssh-client-default-8.6_p1-r3 installed size:
 760 KiB
 
-openssh-client-default-8.6_p1-r2 license:
+openssh-client-default-8.6_p1-r3 license:
 BSD
 
 ```
@@ -795,16 +795,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-8.6_p1-r2 description:
+openssh-keygen-8.6_p1-r3 description:
 ssh helper program for generating keys
 
-openssh-keygen-8.6_p1-r2 webpage:
+openssh-keygen-8.6_p1-r3 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-8.6_p1-r2 installed size:
+openssh-keygen-8.6_p1-r3 installed size:
 460 KiB
 
-openssh-keygen-8.6_p1-r2 license:
+openssh-keygen-8.6_p1-r3 license:
 BSD
 
 ```
