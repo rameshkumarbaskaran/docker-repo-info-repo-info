@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e1312a8b1f6faa7f15f7f8d868239dcebb412296794e17f4b63d4312a5935b84`
-- Created: `2021-09-08T04:02:08.882789243Z`
-- Virtual Size: ~ 498.20 Mb  
+- Image ID: `sha256:63c3ba2afe28209f01f2313f5704e91226eb0b50abd7afbc7ca4622b420a7cc1`
+- Created: `2021-10-06T02:12:56.03983422Z`
+- Virtual Size: ~ 498.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -16,8 +16,8 @@
   - `PYTHON_VERSION=3.8.12`
   - `PYTHON_PIP_VERSION=21.2.4`
   - `PYTHON_SETUPTOOLS_VERSION=57.5.0`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/c20b0cfd643cd4a19246ccf204e2997af70f6b21/public/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=fa6f3fb93cce234cd4e8dd2beb54a51ab9c247653b52855a48dd44e6b21ff28b`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/d781367b97acf0ece7e9e304bf281e99b618bf10/public/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=01249aa3e58ffb3e1686b7141b4e9aac4d398ef4ac3012ed9dff8dd9f685ffe0`
   - `PIP=21.0.1`
   - `ZC_BUILDOUT=2.13.4`
   - `SETUPTOOLS=51.3.3`
@@ -355,16 +355,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.78.0-r0 description:
+libcurl-7.79.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.78.0-r0 webpage:
+libcurl-7.79.1-r0 webpage:
 https://curl.se/
 
-libcurl-7.78.0-r0 installed size:
+libcurl-7.79.1-r0 installed size:
 500 KiB
 
-libcurl-7.78.0-r0 license:
+libcurl-7.79.1-r0 license:
 MIT
 
 ```
