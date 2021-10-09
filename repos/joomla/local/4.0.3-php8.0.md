@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9f3a27dc3d44107f3361830a13f3d027d32947754338883397c8f60f748f1614`
-- Created: `2021-09-29T13:42:55.819262688Z`
-- Virtual Size: ~ 548.93 Mb  
+- Image ID: `sha256:c74d7dc13c55e9bc665752460158bf37357c7d793856021cb8a56db0206e8f07`
+- Created: `2021-10-07T19:38:55.556123901Z`
+- Virtual Size: ~ 548.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -113,21 +113,13 @@ Licenses: (parsed from: `/usr/share/doc/apache2/copyright`, `/usr/share/doc/apac
 - `PCRE`
 - `Zeus`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apache2=2.4.48-3.1+deb11u1
-'http://security.debian.org/debian-security/pool/updates/main/a/apache2/apache2_2.4.48-3.1+deb11u1.dsc' apache2_2.4.48-3.1+deb11u1.dsc 3547 SHA256:d23ad11b4b86f1c04a4ae4f07b0c354e44e7fa2da1759ab0ab222214cbe4fcb7
-'http://security.debian.org/debian-security/pool/updates/main/a/apache2/apache2_2.4.48.orig.tar.gz' apache2_2.4.48.orig.tar.gz 9418226 SHA256:315c0bc50206b866fb17c2cdc28c1973765a8d59ca168b80286e8cb077d0510e
-'http://security.debian.org/debian-security/pool/updates/main/a/apache2/apache2_2.4.48.orig.tar.gz.asc' apache2_2.4.48.orig.tar.gz.asc 874 SHA256:fd5b3e06eb7029c6e38bb891faa9dc6e17079cde191a07e605800258a9373f03
-'http://security.debian.org/debian-security/pool/updates/main/a/apache2/apache2_2.4.48-3.1+deb11u1.debian.tar.xz' apache2_2.4.48-3.1+deb11u1.debian.tar.xz 891392 SHA256:da0bf80963a603ca335f1d8bdd39f30798d05dc5a8949b01bb6458ea044a8fa8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apache2/2.4.48-3.1+deb11u1/
 
-- https://sources.debian.net/src/apache2/2.4.48-3.1+deb11u1/ (for browsing the source)
-- https://sources.debian.net/src/apache2/2.4.48-3.1+deb11u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apache2/2.4.48-3.1+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `apr-util=1.6.1-5`
 
