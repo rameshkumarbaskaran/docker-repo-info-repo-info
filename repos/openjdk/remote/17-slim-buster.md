@@ -1,7 +1,7 @@
 ## `openjdk:17-slim-buster`
 
 ```console
-$ docker pull openjdk@sha256:37d51f40e6c940bc62d65d2896f0a5bc990d55c246e69be2c0bdbed140cb11b9
+$ docker pull openjdk@sha256:65e9b87bd448698c8f588eaafca14d7440f1ba550094b407d8ea467fccac4f83
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,49 +12,49 @@ $ docker pull openjdk@sha256:37d51f40e6c940bc62d65d2896f0a5bc990d55c246e69be2c0b
 ### `openjdk:17-slim-buster` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:c60fa72c31613caee446d26b6949e2caac9951f2bb3d4b3b8b4697235ae2e977
+$ docker pull openjdk@sha256:57f91427cb587ad1d300c53795bf43ff1961020eb197c6f1012ba3ab771d3cd1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **217.9 MB (217938696 bytes)**  
+-	Total Size: **217.9 MB (217932276 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8f58c12b8c16165c313f63a60f191a952a81ce1ec4348609b9ae92d26006d704`
+-	Image ID: `sha256:676cdd83339cef5f7f2f4978975a78b29baea75d5c046dc5ec38796b15173a3b`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:23:09 GMT
-ADD file:99db7cfe7952a1c7a7959cc3457af37c1d6facdd43a946bd72313d8b5ede0029 in / 
-# Tue, 28 Sep 2021 01:23:10 GMT
+# Tue, 12 Oct 2021 01:21:05 GMT
+ADD file:910392427fdf089bc26b64d6dc450ff3d020c7c1a474d85b2f9298134d0007bd in / 
+# Tue, 12 Oct 2021 01:21:05 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 09:15:24 GMT
+# Tue, 12 Oct 2021 16:28:45 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 09:17:28 GMT
+# Tue, 12 Oct 2021 16:30:16 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 28 Sep 2021 09:17:28 GMT
+# Tue, 12 Oct 2021 16:30:17 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 28 Sep 2021 09:17:28 GMT
+# Tue, 12 Oct 2021 16:30:17 GMT
 ENV LANG=C.UTF-8
-# Tue, 28 Sep 2021 09:17:29 GMT
+# Tue, 12 Oct 2021 16:30:17 GMT
 ENV JAVA_VERSION=17
-# Tue, 28 Sep 2021 09:17:49 GMT
+# Tue, 12 Oct 2021 16:30:34 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz'; 			downloadSha256='aef49cc7aa606de2044302e757fa94c8e144818e93487081c4fd319ca858134b'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-aarch64_bin.tar.gz'; 			downloadSha256='b8108a6b6c2579bd585281937cf09d401a5a971c59b9624e18abcf596b9caa22'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 28 Sep 2021 09:17:50 GMT
+# Tue, 12 Oct 2021 16:30:35 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:07aded7c29c6011dfdf02fc98e087c941d3c2661c4e73d134c6491e25231d16c`  
-		Last Modified: Tue, 28 Sep 2021 01:29:45 GMT  
-		Size: 27.1 MB (27145994 bytes)  
+	-	`sha256:b380bbd43752f83945df8b5d1074fef8dd044820e7d3aef33b655a2483e030c7`  
+		Last Modified: Tue, 12 Oct 2021 01:26:51 GMT  
+		Size: 27.1 MB (27139510 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49190af1e362ddee7f9a92cbf321a9b1444ccbc631019b5ebcc582e4ef2ec3e9`  
-		Last Modified: Tue, 28 Sep 2021 09:35:40 GMT  
-		Size: 3.3 MB (3269563 bytes)  
+	-	`sha256:72345ef1bcc1976ef9d97f0fec94945f6957f67d796c64b3a1e92a610fe0ee10`  
+		Last Modified: Tue, 12 Oct 2021 16:44:29 GMT  
+		Size: 3.3 MB (3269598 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c74e6f6e847e3246ffc3f516657e63d8c25e4f14138692442df179dfd8ee782f`  
-		Last Modified: Tue, 28 Sep 2021 09:38:38 GMT  
-		Size: 187.5 MB (187523139 bytes)  
+	-	`sha256:10b205770b2965d8f291742cdf728c95095ceb4e79a17b204921888eb5dbca24`  
+		Last Modified: Tue, 12 Oct 2021 16:47:14 GMT  
+		Size: 187.5 MB (187523168 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:17-slim-buster` - linux; arm64 variant v8
