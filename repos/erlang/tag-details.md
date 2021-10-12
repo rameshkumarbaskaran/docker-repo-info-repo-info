@@ -85,7 +85,7 @@
 ## `erlang:18`
 
 ```console
-$ docker pull erlang@sha256:6527b7bcb0a5f3f325a5c8886c7b3ad07004245fef1fd91812247c637375b26f
+$ docker pull erlang@sha256:ad086232c1ad79d92986a9894020c029379fcf214f2c440531e3e06aea0f13e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -250,77 +250,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:18` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c363532e6b74a7a32b28367e40432afba1bafd10c8105ec59d572049a2c1f048
+$ docker pull erlang@sha256:4ce9eecec43995a51cf2c1a8bbd3e6aa13d412e9ad8a73c23ce585bc06ed8687
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **446.8 MB (446760631 bytes)**  
+-	Total Size: **446.8 MB (446761972 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:471ba63e7d427a3f21ca233928b5e2c65ab63ad82629badfbd4ecec6d64b75e8`
+-	Image ID: `sha256:c113359ba0297d9d8be8f8457ebca47ce775fb36659bafa542978391f04f7439`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:00:10 GMT
+# Tue, 12 Oct 2021 03:56:08 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:06:57 GMT
+# Tue, 12 Oct 2021 04:02:46 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 ENV REBAR3_VERSION=3.7.4
-# Tue, 28 Sep 2021 04:07:47 GMT
+# Tue, 12 Oct 2021 04:03:34 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="3747ef351999caec65304839ecd9324ac8eec8c38210fb43dc598e3caed0a2c0" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64a7f9dd75ba68112a62d36db0e8a9ff4b5931ea6859470dee8c51ff6b139a18`  
-		Last Modified: Tue, 28 Sep 2021 04:23:05 GMT  
-		Size: 138.6 MB (138622114 bytes)  
+	-	`sha256:c2d3dd54d3489ba29d2c12ed207a42104d36e80ba73146eed96d3bea1968cc70`  
+		Last Modified: Tue, 12 Oct 2021 04:18:47 GMT  
+		Size: 138.6 MB (138622233 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01cc756209f21cbf86408bf745efe6890e39401755f5c8a17c3c3f065c0b55a6`  
-		Last Modified: Tue, 28 Sep 2021 04:22:51 GMT  
-		Size: 200.4 KB (200378 bytes)  
+	-	`sha256:5c4bc8d6373528bfbe6a703f7df8a746dc59c19a545aa9c5af78e75986078960`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 200.3 KB (200345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5204931bd94a1f694e0dd0d61f76ceb679667a0c6d4e14cfb83f117880f5889f`  
-		Last Modified: Tue, 28 Sep 2021 04:22:52 GMT  
-		Size: 951.9 KB (951896 bytes)  
+	-	`sha256:37b881754406fbecde8c91076a2a006cf75d8932cc45221ae41b9caf853045e7`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 951.9 KB (951922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18` - linux; 386
@@ -402,7 +402,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:18-slim`
 
 ```console
-$ docker pull erlang@sha256:bc38c3c8546d908524fec726f926eb4b376a5878402ebc009b478a5b4563a2a2
+$ docker pull erlang@sha256:2b9fc318798b032086c8e3e91fdc9284721548a64a2607a9b50290d3ef12c0a3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -487,37 +487,37 @@ CMD ["erl"]
 ### `erlang:18-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f6c047b9f717d19754ecca5e974e9a979e583d60f54848f8166c838ee95e8b65
+$ docker pull erlang@sha256:e13e96d4d90ecca8fcc0809c91bf79c1783701b54f04cc2ba9e5d1b42fbb5e27
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.1 MB (108120382 bytes)**  
+-	Total Size: **108.1 MB (108119966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:098b2cee27e59503238ca9bc4aae6ced274755dd9f50547c3d0b07a152366dbf`
+-	Image ID: `sha256:088f4bc38c06d67904dfe9cc6b3437354f9c132e29b105c1b332f7cbb2d35cbb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 04:07:54 GMT
+# Tue, 12 Oct 2021 04:03:47 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" --enable-sctp 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf15ede225e9033102439b5a344bf0bbf6df78d4d2207e8797b6665d53a6e4c`  
-		Last Modified: Tue, 28 Sep 2021 04:23:32 GMT  
-		Size: 64.9 MB (64943522 bytes)  
+	-	`sha256:6010c6cd9c233ebd3a1823a698d70d32aed08a4852a68dbf18ac078d2923b0bd`  
+		Last Modified: Tue, 12 Oct 2021 04:19:15 GMT  
+		Size: 64.9 MB (64943269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18-slim` - linux; 386
@@ -559,7 +559,7 @@ CMD ["erl"]
 ## `erlang:18.3`
 
 ```console
-$ docker pull erlang@sha256:6527b7bcb0a5f3f325a5c8886c7b3ad07004245fef1fd91812247c637375b26f
+$ docker pull erlang@sha256:ad086232c1ad79d92986a9894020c029379fcf214f2c440531e3e06aea0f13e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -724,77 +724,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:18.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c363532e6b74a7a32b28367e40432afba1bafd10c8105ec59d572049a2c1f048
+$ docker pull erlang@sha256:4ce9eecec43995a51cf2c1a8bbd3e6aa13d412e9ad8a73c23ce585bc06ed8687
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **446.8 MB (446760631 bytes)**  
+-	Total Size: **446.8 MB (446761972 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:471ba63e7d427a3f21ca233928b5e2c65ab63ad82629badfbd4ecec6d64b75e8`
+-	Image ID: `sha256:c113359ba0297d9d8be8f8457ebca47ce775fb36659bafa542978391f04f7439`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:00:10 GMT
+# Tue, 12 Oct 2021 03:56:08 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:06:57 GMT
+# Tue, 12 Oct 2021 04:02:46 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 ENV REBAR3_VERSION=3.7.4
-# Tue, 28 Sep 2021 04:07:47 GMT
+# Tue, 12 Oct 2021 04:03:34 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="3747ef351999caec65304839ecd9324ac8eec8c38210fb43dc598e3caed0a2c0" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64a7f9dd75ba68112a62d36db0e8a9ff4b5931ea6859470dee8c51ff6b139a18`  
-		Last Modified: Tue, 28 Sep 2021 04:23:05 GMT  
-		Size: 138.6 MB (138622114 bytes)  
+	-	`sha256:c2d3dd54d3489ba29d2c12ed207a42104d36e80ba73146eed96d3bea1968cc70`  
+		Last Modified: Tue, 12 Oct 2021 04:18:47 GMT  
+		Size: 138.6 MB (138622233 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01cc756209f21cbf86408bf745efe6890e39401755f5c8a17c3c3f065c0b55a6`  
-		Last Modified: Tue, 28 Sep 2021 04:22:51 GMT  
-		Size: 200.4 KB (200378 bytes)  
+	-	`sha256:5c4bc8d6373528bfbe6a703f7df8a746dc59c19a545aa9c5af78e75986078960`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 200.3 KB (200345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5204931bd94a1f694e0dd0d61f76ceb679667a0c6d4e14cfb83f117880f5889f`  
-		Last Modified: Tue, 28 Sep 2021 04:22:52 GMT  
-		Size: 951.9 KB (951896 bytes)  
+	-	`sha256:37b881754406fbecde8c91076a2a006cf75d8932cc45221ae41b9caf853045e7`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 951.9 KB (951922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18.3` - linux; 386
@@ -876,7 +876,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:18.3-slim`
 
 ```console
-$ docker pull erlang@sha256:bc38c3c8546d908524fec726f926eb4b376a5878402ebc009b478a5b4563a2a2
+$ docker pull erlang@sha256:2b9fc318798b032086c8e3e91fdc9284721548a64a2607a9b50290d3ef12c0a3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -961,37 +961,37 @@ CMD ["erl"]
 ### `erlang:18.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f6c047b9f717d19754ecca5e974e9a979e583d60f54848f8166c838ee95e8b65
+$ docker pull erlang@sha256:e13e96d4d90ecca8fcc0809c91bf79c1783701b54f04cc2ba9e5d1b42fbb5e27
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.1 MB (108120382 bytes)**  
+-	Total Size: **108.1 MB (108119966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:098b2cee27e59503238ca9bc4aae6ced274755dd9f50547c3d0b07a152366dbf`
+-	Image ID: `sha256:088f4bc38c06d67904dfe9cc6b3437354f9c132e29b105c1b332f7cbb2d35cbb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 04:07:54 GMT
+# Tue, 12 Oct 2021 04:03:47 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" --enable-sctp 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf15ede225e9033102439b5a344bf0bbf6df78d4d2207e8797b6665d53a6e4c`  
-		Last Modified: Tue, 28 Sep 2021 04:23:32 GMT  
-		Size: 64.9 MB (64943522 bytes)  
+	-	`sha256:6010c6cd9c233ebd3a1823a698d70d32aed08a4852a68dbf18ac078d2923b0bd`  
+		Last Modified: Tue, 12 Oct 2021 04:19:15 GMT  
+		Size: 64.9 MB (64943269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18.3-slim` - linux; 386
@@ -1033,7 +1033,7 @@ CMD ["erl"]
 ## `erlang:18.3.4`
 
 ```console
-$ docker pull erlang@sha256:6527b7bcb0a5f3f325a5c8886c7b3ad07004245fef1fd91812247c637375b26f
+$ docker pull erlang@sha256:ad086232c1ad79d92986a9894020c029379fcf214f2c440531e3e06aea0f13e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1198,77 +1198,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:18.3.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c363532e6b74a7a32b28367e40432afba1bafd10c8105ec59d572049a2c1f048
+$ docker pull erlang@sha256:4ce9eecec43995a51cf2c1a8bbd3e6aa13d412e9ad8a73c23ce585bc06ed8687
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **446.8 MB (446760631 bytes)**  
+-	Total Size: **446.8 MB (446761972 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:471ba63e7d427a3f21ca233928b5e2c65ab63ad82629badfbd4ecec6d64b75e8`
+-	Image ID: `sha256:c113359ba0297d9d8be8f8457ebca47ce775fb36659bafa542978391f04f7439`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:00:10 GMT
+# Tue, 12 Oct 2021 03:56:08 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:06:57 GMT
+# Tue, 12 Oct 2021 04:02:46 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 ENV REBAR3_VERSION=3.7.4
-# Tue, 28 Sep 2021 04:07:47 GMT
+# Tue, 12 Oct 2021 04:03:34 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="3747ef351999caec65304839ecd9324ac8eec8c38210fb43dc598e3caed0a2c0" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64a7f9dd75ba68112a62d36db0e8a9ff4b5931ea6859470dee8c51ff6b139a18`  
-		Last Modified: Tue, 28 Sep 2021 04:23:05 GMT  
-		Size: 138.6 MB (138622114 bytes)  
+	-	`sha256:c2d3dd54d3489ba29d2c12ed207a42104d36e80ba73146eed96d3bea1968cc70`  
+		Last Modified: Tue, 12 Oct 2021 04:18:47 GMT  
+		Size: 138.6 MB (138622233 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01cc756209f21cbf86408bf745efe6890e39401755f5c8a17c3c3f065c0b55a6`  
-		Last Modified: Tue, 28 Sep 2021 04:22:51 GMT  
-		Size: 200.4 KB (200378 bytes)  
+	-	`sha256:5c4bc8d6373528bfbe6a703f7df8a746dc59c19a545aa9c5af78e75986078960`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 200.3 KB (200345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5204931bd94a1f694e0dd0d61f76ceb679667a0c6d4e14cfb83f117880f5889f`  
-		Last Modified: Tue, 28 Sep 2021 04:22:52 GMT  
-		Size: 951.9 KB (951896 bytes)  
+	-	`sha256:37b881754406fbecde8c91076a2a006cf75d8932cc45221ae41b9caf853045e7`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 951.9 KB (951922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18.3.4` - linux; 386
@@ -1350,7 +1350,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:18.3.4-slim`
 
 ```console
-$ docker pull erlang@sha256:bc38c3c8546d908524fec726f926eb4b376a5878402ebc009b478a5b4563a2a2
+$ docker pull erlang@sha256:2b9fc318798b032086c8e3e91fdc9284721548a64a2607a9b50290d3ef12c0a3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1435,37 +1435,37 @@ CMD ["erl"]
 ### `erlang:18.3.4-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f6c047b9f717d19754ecca5e974e9a979e583d60f54848f8166c838ee95e8b65
+$ docker pull erlang@sha256:e13e96d4d90ecca8fcc0809c91bf79c1783701b54f04cc2ba9e5d1b42fbb5e27
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.1 MB (108120382 bytes)**  
+-	Total Size: **108.1 MB (108119966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:098b2cee27e59503238ca9bc4aae6ced274755dd9f50547c3d0b07a152366dbf`
+-	Image ID: `sha256:088f4bc38c06d67904dfe9cc6b3437354f9c132e29b105c1b332f7cbb2d35cbb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 04:07:54 GMT
+# Tue, 12 Oct 2021 04:03:47 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" --enable-sctp 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf15ede225e9033102439b5a344bf0bbf6df78d4d2207e8797b6665d53a6e4c`  
-		Last Modified: Tue, 28 Sep 2021 04:23:32 GMT  
-		Size: 64.9 MB (64943522 bytes)  
+	-	`sha256:6010c6cd9c233ebd3a1823a698d70d32aed08a4852a68dbf18ac078d2923b0bd`  
+		Last Modified: Tue, 12 Oct 2021 04:19:15 GMT  
+		Size: 64.9 MB (64943269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18.3.4-slim` - linux; 386
@@ -1507,7 +1507,7 @@ CMD ["erl"]
 ## `erlang:18.3.4.11`
 
 ```console
-$ docker pull erlang@sha256:6527b7bcb0a5f3f325a5c8886c7b3ad07004245fef1fd91812247c637375b26f
+$ docker pull erlang@sha256:ad086232c1ad79d92986a9894020c029379fcf214f2c440531e3e06aea0f13e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1672,77 +1672,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:18.3.4.11` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c363532e6b74a7a32b28367e40432afba1bafd10c8105ec59d572049a2c1f048
+$ docker pull erlang@sha256:4ce9eecec43995a51cf2c1a8bbd3e6aa13d412e9ad8a73c23ce585bc06ed8687
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **446.8 MB (446760631 bytes)**  
+-	Total Size: **446.8 MB (446761972 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:471ba63e7d427a3f21ca233928b5e2c65ab63ad82629badfbd4ecec6d64b75e8`
+-	Image ID: `sha256:c113359ba0297d9d8be8f8457ebca47ce775fb36659bafa542978391f04f7439`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:00:10 GMT
+# Tue, 12 Oct 2021 03:56:08 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:06:57 GMT
+# Tue, 12 Oct 2021 04:02:46 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 04:06:58 GMT
+# Tue, 12 Oct 2021 04:02:47 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 04:07:02 GMT
+# Tue, 12 Oct 2021 04:02:50 GMT
 ENV REBAR3_VERSION=3.7.4
-# Tue, 28 Sep 2021 04:07:47 GMT
+# Tue, 12 Oct 2021 04:03:34 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="3747ef351999caec65304839ecd9324ac8eec8c38210fb43dc598e3caed0a2c0" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64a7f9dd75ba68112a62d36db0e8a9ff4b5931ea6859470dee8c51ff6b139a18`  
-		Last Modified: Tue, 28 Sep 2021 04:23:05 GMT  
-		Size: 138.6 MB (138622114 bytes)  
+	-	`sha256:c2d3dd54d3489ba29d2c12ed207a42104d36e80ba73146eed96d3bea1968cc70`  
+		Last Modified: Tue, 12 Oct 2021 04:18:47 GMT  
+		Size: 138.6 MB (138622233 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01cc756209f21cbf86408bf745efe6890e39401755f5c8a17c3c3f065c0b55a6`  
-		Last Modified: Tue, 28 Sep 2021 04:22:51 GMT  
-		Size: 200.4 KB (200378 bytes)  
+	-	`sha256:5c4bc8d6373528bfbe6a703f7df8a746dc59c19a545aa9c5af78e75986078960`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 200.3 KB (200345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5204931bd94a1f694e0dd0d61f76ceb679667a0c6d4e14cfb83f117880f5889f`  
-		Last Modified: Tue, 28 Sep 2021 04:22:52 GMT  
-		Size: 951.9 KB (951896 bytes)  
+	-	`sha256:37b881754406fbecde8c91076a2a006cf75d8932cc45221ae41b9caf853045e7`  
+		Last Modified: Tue, 12 Oct 2021 04:18:33 GMT  
+		Size: 951.9 KB (951922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18.3.4.11` - linux; 386
@@ -1824,7 +1824,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:18.3.4.11-slim`
 
 ```console
-$ docker pull erlang@sha256:bc38c3c8546d908524fec726f926eb4b376a5878402ebc009b478a5b4563a2a2
+$ docker pull erlang@sha256:2b9fc318798b032086c8e3e91fdc9284721548a64a2607a9b50290d3ef12c0a3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1909,37 +1909,37 @@ CMD ["erl"]
 ### `erlang:18.3.4.11-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f6c047b9f717d19754ecca5e974e9a979e583d60f54848f8166c838ee95e8b65
+$ docker pull erlang@sha256:e13e96d4d90ecca8fcc0809c91bf79c1783701b54f04cc2ba9e5d1b42fbb5e27
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.1 MB (108120382 bytes)**  
+-	Total Size: **108.1 MB (108119966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:098b2cee27e59503238ca9bc4aae6ced274755dd9f50547c3d0b07a152366dbf`
+-	Image ID: `sha256:088f4bc38c06d67904dfe9cc6b3437354f9c132e29b105c1b332f7cbb2d35cbb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 04:07:54 GMT
+# Tue, 12 Oct 2021 04:03:47 GMT
 ENV OTP_VERSION=18.3.4.11
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="94f84e8ca0db0dcadd3411fa7a05dd937142b6ae830255dc341c30b45261b01a" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" --enable-sctp 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 04:12:45 GMT
+# Tue, 12 Oct 2021 04:08:33 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf15ede225e9033102439b5a344bf0bbf6df78d4d2207e8797b6665d53a6e4c`  
-		Last Modified: Tue, 28 Sep 2021 04:23:32 GMT  
-		Size: 64.9 MB (64943522 bytes)  
+	-	`sha256:6010c6cd9c233ebd3a1823a698d70d32aed08a4852a68dbf18ac078d2923b0bd`  
+		Last Modified: Tue, 12 Oct 2021 04:19:15 GMT  
+		Size: 64.9 MB (64943269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:18.3.4.11-slim` - linux; 386
@@ -1981,7 +1981,7 @@ CMD ["erl"]
 ## `erlang:19`
 
 ```console
-$ docker pull erlang@sha256:d8192033c105a89ff5c40a961e7ae2ecc4318ede1e2c965b91e9975c8d3f135e
+$ docker pull erlang@sha256:1c1f28186f86c1b89d50b9755b7e6c26c57c2d0d81d1a9a821b068733f4f37b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2146,77 +2146,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:19` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ed56e275fdb54076b4f9581099799ea31aa17c7da2b8116b845b84bc4c3448e0
+$ docker pull erlang@sha256:7187082fb042d4ff3b9fd9372c23a16aec66da39c0f7ac7501f4f28f316b116a
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **447.4 MB (447361779 bytes)**  
+-	Total Size: **447.4 MB (447363011 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45ca888d8f9c05a9df1bff471b1708bbbfc5665abfd9981ec65ef9d1b38d11c2`
+-	Image ID: `sha256:33f61a7fc04151ee733fdeca11128abb68b648377995aaec87aec70aefa3435f`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:42:11 GMT
+# Tue, 12 Oct 2021 03:38:35 GMT
 ENV OTP_VERSION=19.3.6.13
-# Tue, 28 Sep 2021 03:50:21 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:39 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:50:41 GMT
+# Tue, 12 Oct 2021 03:46:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d7b8161502c61d11f21813207c7cf8480141ed88890366f121f501072ed15c5`  
-		Last Modified: Tue, 28 Sep 2021 04:21:35 GMT  
-		Size: 139.2 MB (139244632 bytes)  
+	-	`sha256:e481de1f924585e02b20bd1d79f0a218f3b4630ecf57f9cc76a1e4ce594ea111`  
+		Last Modified: Tue, 12 Oct 2021 04:17:15 GMT  
+		Size: 139.2 MB (139244634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e1be7874adaf17978eac70b24547fbfd30a68ca1891bcb6981639fb44f88dfd`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 199.2 KB (199218 bytes)  
+	-	`sha256:47affa187c166ea5c0acb594a096f2bfbefd73d10f50199c97a397b8492e9882`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 199.2 KB (199215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:127a1a0232b10561dd8f1bc6e8f2dd0253b6b8bbc2f7240ef68d25424af87ed6`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 931.7 KB (931686 bytes)  
+	-	`sha256:abf7c4f90dfaf2e570c90178d5c4d0628993cdc03e8ffc9815a7002ed098341c`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 931.7 KB (931690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19` - linux; 386
@@ -2298,7 +2298,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:19-slim`
 
 ```console
-$ docker pull erlang@sha256:0c50ce5e821cddfbcb82532923f42729e1c9b16b376a78dd99b284b74435208d
+$ docker pull erlang@sha256:bfc4ed1d78c51445793fc1566fbb8e0d95c0ce93f4dc24a6b713ef3883fc07ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2383,37 +2383,37 @@ CMD ["erl"]
 ### `erlang:19-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:7025b8d86207730522aebef2607d60d3b3b9d76c6b4db9db9440fd1cae1667d9
+$ docker pull erlang@sha256:781b3523d1fd8045449f8ba53873f3b0d5da97cda60b8fca306d35845231a42f
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **365.9 MB (365851352 bytes)**  
+-	Total Size: **365.8 MB (365849262 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0f3ca1bfd36ed4522b5e425f296cdbca4f4c1b72ec27aa2e37fec327ad04366d`
+-	Image ID: `sha256:c6d325dcbb510388f6c62aae3b9eb06afcfd661b252df352b23bbb6f22b51cef`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:50:55 GMT
+# Tue, 12 Oct 2021 03:47:14 GMT
 ENV OTP_VERSION=19.3.6.13 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:59:54 GMT
+# Tue, 12 Oct 2021 03:55:49 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 		libwxgtk3.0 	' 	&& buildDeps=' 		curl 		ca-certificates 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:59:57 GMT
+# Tue, 12 Oct 2021 03:55:52 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29701388dd24646ffc3f78e125bf47f05ec07ca63b81b4523a3a56c8b29e3bc8`  
-		Last Modified: Tue, 28 Sep 2021 04:22:34 GMT  
-		Size: 322.7 MB (322674492 bytes)  
+	-	`sha256:1699221a9bad0d437bf38c11a9992f7645a0634684e7fe4499a4502d90e7677a`  
+		Last Modified: Tue, 12 Oct 2021 04:18:14 GMT  
+		Size: 322.7 MB (322672565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19-slim` - linux; 386
@@ -2455,7 +2455,7 @@ CMD ["erl"]
 ## `erlang:19.3`
 
 ```console
-$ docker pull erlang@sha256:d8192033c105a89ff5c40a961e7ae2ecc4318ede1e2c965b91e9975c8d3f135e
+$ docker pull erlang@sha256:1c1f28186f86c1b89d50b9755b7e6c26c57c2d0d81d1a9a821b068733f4f37b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2620,77 +2620,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:19.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ed56e275fdb54076b4f9581099799ea31aa17c7da2b8116b845b84bc4c3448e0
+$ docker pull erlang@sha256:7187082fb042d4ff3b9fd9372c23a16aec66da39c0f7ac7501f4f28f316b116a
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **447.4 MB (447361779 bytes)**  
+-	Total Size: **447.4 MB (447363011 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45ca888d8f9c05a9df1bff471b1708bbbfc5665abfd9981ec65ef9d1b38d11c2`
+-	Image ID: `sha256:33f61a7fc04151ee733fdeca11128abb68b648377995aaec87aec70aefa3435f`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:42:11 GMT
+# Tue, 12 Oct 2021 03:38:35 GMT
 ENV OTP_VERSION=19.3.6.13
-# Tue, 28 Sep 2021 03:50:21 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:39 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:50:41 GMT
+# Tue, 12 Oct 2021 03:46:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d7b8161502c61d11f21813207c7cf8480141ed88890366f121f501072ed15c5`  
-		Last Modified: Tue, 28 Sep 2021 04:21:35 GMT  
-		Size: 139.2 MB (139244632 bytes)  
+	-	`sha256:e481de1f924585e02b20bd1d79f0a218f3b4630ecf57f9cc76a1e4ce594ea111`  
+		Last Modified: Tue, 12 Oct 2021 04:17:15 GMT  
+		Size: 139.2 MB (139244634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e1be7874adaf17978eac70b24547fbfd30a68ca1891bcb6981639fb44f88dfd`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 199.2 KB (199218 bytes)  
+	-	`sha256:47affa187c166ea5c0acb594a096f2bfbefd73d10f50199c97a397b8492e9882`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 199.2 KB (199215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:127a1a0232b10561dd8f1bc6e8f2dd0253b6b8bbc2f7240ef68d25424af87ed6`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 931.7 KB (931686 bytes)  
+	-	`sha256:abf7c4f90dfaf2e570c90178d5c4d0628993cdc03e8ffc9815a7002ed098341c`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 931.7 KB (931690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19.3` - linux; 386
@@ -2772,7 +2772,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:19.3-slim`
 
 ```console
-$ docker pull erlang@sha256:0c50ce5e821cddfbcb82532923f42729e1c9b16b376a78dd99b284b74435208d
+$ docker pull erlang@sha256:bfc4ed1d78c51445793fc1566fbb8e0d95c0ce93f4dc24a6b713ef3883fc07ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2857,37 +2857,37 @@ CMD ["erl"]
 ### `erlang:19.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:7025b8d86207730522aebef2607d60d3b3b9d76c6b4db9db9440fd1cae1667d9
+$ docker pull erlang@sha256:781b3523d1fd8045449f8ba53873f3b0d5da97cda60b8fca306d35845231a42f
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **365.9 MB (365851352 bytes)**  
+-	Total Size: **365.8 MB (365849262 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0f3ca1bfd36ed4522b5e425f296cdbca4f4c1b72ec27aa2e37fec327ad04366d`
+-	Image ID: `sha256:c6d325dcbb510388f6c62aae3b9eb06afcfd661b252df352b23bbb6f22b51cef`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:50:55 GMT
+# Tue, 12 Oct 2021 03:47:14 GMT
 ENV OTP_VERSION=19.3.6.13 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:59:54 GMT
+# Tue, 12 Oct 2021 03:55:49 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 		libwxgtk3.0 	' 	&& buildDeps=' 		curl 		ca-certificates 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:59:57 GMT
+# Tue, 12 Oct 2021 03:55:52 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29701388dd24646ffc3f78e125bf47f05ec07ca63b81b4523a3a56c8b29e3bc8`  
-		Last Modified: Tue, 28 Sep 2021 04:22:34 GMT  
-		Size: 322.7 MB (322674492 bytes)  
+	-	`sha256:1699221a9bad0d437bf38c11a9992f7645a0634684e7fe4499a4502d90e7677a`  
+		Last Modified: Tue, 12 Oct 2021 04:18:14 GMT  
+		Size: 322.7 MB (322672565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19.3-slim` - linux; 386
@@ -2929,7 +2929,7 @@ CMD ["erl"]
 ## `erlang:19.3.6`
 
 ```console
-$ docker pull erlang@sha256:d8192033c105a89ff5c40a961e7ae2ecc4318ede1e2c965b91e9975c8d3f135e
+$ docker pull erlang@sha256:1c1f28186f86c1b89d50b9755b7e6c26c57c2d0d81d1a9a821b068733f4f37b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3094,77 +3094,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:19.3.6` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ed56e275fdb54076b4f9581099799ea31aa17c7da2b8116b845b84bc4c3448e0
+$ docker pull erlang@sha256:7187082fb042d4ff3b9fd9372c23a16aec66da39c0f7ac7501f4f28f316b116a
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **447.4 MB (447361779 bytes)**  
+-	Total Size: **447.4 MB (447363011 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45ca888d8f9c05a9df1bff471b1708bbbfc5665abfd9981ec65ef9d1b38d11c2`
+-	Image ID: `sha256:33f61a7fc04151ee733fdeca11128abb68b648377995aaec87aec70aefa3435f`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:42:11 GMT
+# Tue, 12 Oct 2021 03:38:35 GMT
 ENV OTP_VERSION=19.3.6.13
-# Tue, 28 Sep 2021 03:50:21 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:39 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:50:41 GMT
+# Tue, 12 Oct 2021 03:46:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d7b8161502c61d11f21813207c7cf8480141ed88890366f121f501072ed15c5`  
-		Last Modified: Tue, 28 Sep 2021 04:21:35 GMT  
-		Size: 139.2 MB (139244632 bytes)  
+	-	`sha256:e481de1f924585e02b20bd1d79f0a218f3b4630ecf57f9cc76a1e4ce594ea111`  
+		Last Modified: Tue, 12 Oct 2021 04:17:15 GMT  
+		Size: 139.2 MB (139244634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e1be7874adaf17978eac70b24547fbfd30a68ca1891bcb6981639fb44f88dfd`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 199.2 KB (199218 bytes)  
+	-	`sha256:47affa187c166ea5c0acb594a096f2bfbefd73d10f50199c97a397b8492e9882`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 199.2 KB (199215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:127a1a0232b10561dd8f1bc6e8f2dd0253b6b8bbc2f7240ef68d25424af87ed6`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 931.7 KB (931686 bytes)  
+	-	`sha256:abf7c4f90dfaf2e570c90178d5c4d0628993cdc03e8ffc9815a7002ed098341c`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 931.7 KB (931690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19.3.6` - linux; 386
@@ -3246,7 +3246,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:19.3.6-slim`
 
 ```console
-$ docker pull erlang@sha256:0c50ce5e821cddfbcb82532923f42729e1c9b16b376a78dd99b284b74435208d
+$ docker pull erlang@sha256:bfc4ed1d78c51445793fc1566fbb8e0d95c0ce93f4dc24a6b713ef3883fc07ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3331,37 +3331,37 @@ CMD ["erl"]
 ### `erlang:19.3.6-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:7025b8d86207730522aebef2607d60d3b3b9d76c6b4db9db9440fd1cae1667d9
+$ docker pull erlang@sha256:781b3523d1fd8045449f8ba53873f3b0d5da97cda60b8fca306d35845231a42f
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **365.9 MB (365851352 bytes)**  
+-	Total Size: **365.8 MB (365849262 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0f3ca1bfd36ed4522b5e425f296cdbca4f4c1b72ec27aa2e37fec327ad04366d`
+-	Image ID: `sha256:c6d325dcbb510388f6c62aae3b9eb06afcfd661b252df352b23bbb6f22b51cef`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:50:55 GMT
+# Tue, 12 Oct 2021 03:47:14 GMT
 ENV OTP_VERSION=19.3.6.13 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:59:54 GMT
+# Tue, 12 Oct 2021 03:55:49 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 		libwxgtk3.0 	' 	&& buildDeps=' 		curl 		ca-certificates 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:59:57 GMT
+# Tue, 12 Oct 2021 03:55:52 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29701388dd24646ffc3f78e125bf47f05ec07ca63b81b4523a3a56c8b29e3bc8`  
-		Last Modified: Tue, 28 Sep 2021 04:22:34 GMT  
-		Size: 322.7 MB (322674492 bytes)  
+	-	`sha256:1699221a9bad0d437bf38c11a9992f7645a0634684e7fe4499a4502d90e7677a`  
+		Last Modified: Tue, 12 Oct 2021 04:18:14 GMT  
+		Size: 322.7 MB (322672565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19.3.6-slim` - linux; 386
@@ -3403,7 +3403,7 @@ CMD ["erl"]
 ## `erlang:19.3.6.13`
 
 ```console
-$ docker pull erlang@sha256:d8192033c105a89ff5c40a961e7ae2ecc4318ede1e2c965b91e9975c8d3f135e
+$ docker pull erlang@sha256:1c1f28186f86c1b89d50b9755b7e6c26c57c2d0d81d1a9a821b068733f4f37b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3568,77 +3568,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:19.3.6.13` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ed56e275fdb54076b4f9581099799ea31aa17c7da2b8116b845b84bc4c3448e0
+$ docker pull erlang@sha256:7187082fb042d4ff3b9fd9372c23a16aec66da39c0f7ac7501f4f28f316b116a
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **447.4 MB (447361779 bytes)**  
+-	Total Size: **447.4 MB (447363011 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45ca888d8f9c05a9df1bff471b1708bbbfc5665abfd9981ec65ef9d1b38d11c2`
+-	Image ID: `sha256:33f61a7fc04151ee733fdeca11128abb68b648377995aaec87aec70aefa3435f`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:42:11 GMT
+# Tue, 12 Oct 2021 03:38:35 GMT
 ENV OTP_VERSION=19.3.6.13
-# Tue, 28 Sep 2021 03:50:21 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:38 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:50:22 GMT
+# Tue, 12 Oct 2021 03:46:39 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:50:25 GMT
+# Tue, 12 Oct 2021 03:46:42 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:50:41 GMT
+# Tue, 12 Oct 2021 03:46:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d7b8161502c61d11f21813207c7cf8480141ed88890366f121f501072ed15c5`  
-		Last Modified: Tue, 28 Sep 2021 04:21:35 GMT  
-		Size: 139.2 MB (139244632 bytes)  
+	-	`sha256:e481de1f924585e02b20bd1d79f0a218f3b4630ecf57f9cc76a1e4ce594ea111`  
+		Last Modified: Tue, 12 Oct 2021 04:17:15 GMT  
+		Size: 139.2 MB (139244634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e1be7874adaf17978eac70b24547fbfd30a68ca1891bcb6981639fb44f88dfd`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 199.2 KB (199218 bytes)  
+	-	`sha256:47affa187c166ea5c0acb594a096f2bfbefd73d10f50199c97a397b8492e9882`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 199.2 KB (199215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:127a1a0232b10561dd8f1bc6e8f2dd0253b6b8bbc2f7240ef68d25424af87ed6`  
-		Last Modified: Tue, 28 Sep 2021 04:21:21 GMT  
-		Size: 931.7 KB (931686 bytes)  
+	-	`sha256:abf7c4f90dfaf2e570c90178d5c4d0628993cdc03e8ffc9815a7002ed098341c`  
+		Last Modified: Tue, 12 Oct 2021 04:17:00 GMT  
+		Size: 931.7 KB (931690 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19.3.6.13` - linux; 386
@@ -3720,7 +3720,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:19.3.6.13-slim`
 
 ```console
-$ docker pull erlang@sha256:0c50ce5e821cddfbcb82532923f42729e1c9b16b376a78dd99b284b74435208d
+$ docker pull erlang@sha256:bfc4ed1d78c51445793fc1566fbb8e0d95c0ce93f4dc24a6b713ef3883fc07ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3805,37 +3805,37 @@ CMD ["erl"]
 ### `erlang:19.3.6.13-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:7025b8d86207730522aebef2607d60d3b3b9d76c6b4db9db9440fd1cae1667d9
+$ docker pull erlang@sha256:781b3523d1fd8045449f8ba53873f3b0d5da97cda60b8fca306d35845231a42f
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **365.9 MB (365851352 bytes)**  
+-	Total Size: **365.8 MB (365849262 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0f3ca1bfd36ed4522b5e425f296cdbca4f4c1b72ec27aa2e37fec327ad04366d`
+-	Image ID: `sha256:c6d325dcbb510388f6c62aae3b9eb06afcfd661b252df352b23bbb6f22b51cef`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:50:55 GMT
+# Tue, 12 Oct 2021 03:47:14 GMT
 ENV OTP_VERSION=19.3.6.13 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:59:54 GMT
+# Tue, 12 Oct 2021 03:55:49 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 		libwxgtk3.0 	' 	&& buildDeps=' 		curl 		ca-certificates 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:59:57 GMT
+# Tue, 12 Oct 2021 03:55:52 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29701388dd24646ffc3f78e125bf47f05ec07ca63b81b4523a3a56c8b29e3bc8`  
-		Last Modified: Tue, 28 Sep 2021 04:22:34 GMT  
-		Size: 322.7 MB (322674492 bytes)  
+	-	`sha256:1699221a9bad0d437bf38c11a9992f7645a0634684e7fe4499a4502d90e7677a`  
+		Last Modified: Tue, 12 Oct 2021 04:18:14 GMT  
+		Size: 322.7 MB (322672565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:19.3.6.13-slim` - linux; 386
@@ -3877,7 +3877,7 @@ CMD ["erl"]
 ## `erlang:20`
 
 ```console
-$ docker pull erlang@sha256:99ff63a18d61413c6543f10ec8713bec5ae0be653e5bb136fbfcd889fdf4103b
+$ docker pull erlang@sha256:91508685932e91f8ec4c2e326b349248f0d8009aeebf8ac36a280fc85f4fdc81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4042,77 +4042,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:20` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c4758685ce031109013266701057a6028fb4866d2a5e76fc95fca3ed34ca4ab0
+$ docker pull erlang@sha256:809ecadebb1e2fa5c9d00bc4a885f6b2c9b6d7bd6033fb7c7eefe75d9e8883a9
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.5 MB (441486307 bytes)**  
+-	Total Size: **441.5 MB (441487280 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:adf25a042368032d3296a2fa0eb3c5935bddcddcde18a32ba7a49212fda16cca`
+-	Image ID: `sha256:42801ef7346ae1cf82f612c040e81f89c8efa4b11e5207182ca5146c1847cfca`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:38 GMT
+# Tue, 12 Oct 2021 03:24:10 GMT
 ENV OTP_VERSION=20.3.8.26
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:35:28 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:35:29 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:35:45 GMT
+# Tue, 12 Oct 2021 03:32:01 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e74ba0249427ea67b7b0b55c2334828b8573e9ebdc02b07399b59862ff581ab`  
-		Last Modified: Tue, 28 Sep 2021 04:20:32 GMT  
-		Size: 133.3 MB (133343693 bytes)  
+	-	`sha256:fe28fa7528f5b9ed592d6fbc1414c4b1f7b47526d053bc3d777419d2eb50caa9`  
+		Last Modified: Tue, 12 Oct 2021 04:16:13 GMT  
+		Size: 133.3 MB (133343429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7632e8aced30a3c6e5e5b72d671a0e6b6e0638df436a3dafe02df16df5e6e35f`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 202.0 KB (201975 bytes)  
+	-	`sha256:aace6bbe2feb22916e9c2ab5e7eeb507d41fc892a8be56f447ee6113a4795d9e`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 202.0 KB (201977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e26521a343eb625c0a72c03aa5a4e1f1c1db5057cfceb73be951fe7c574bf6c4`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 954.4 KB (954396 bytes)  
+	-	`sha256:0a41ce6e44ad811e1201493ec28d36d5e034ec771ff66a05070e4cff8fbc3633`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 954.4 KB (954402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20` - linux; 386
@@ -4351,7 +4351,7 @@ CMD ["erl"]
 ## `erlang:20-slim`
 
 ```console
-$ docker pull erlang@sha256:a91bfc4d011b14032a77091c55503327214a468f48a0dfece04f591263ecdf00
+$ docker pull erlang@sha256:deee61aa4418375b24938745ba448073774b2ba3d6d7d1ab7ab9ac2bc72398b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4436,37 +4436,37 @@ CMD ["erl"]
 ### `erlang:20-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:21b5357a4a29774c0c4931d443a5248e98f1165ea799c2b579c6d99d736e8598
+$ docker pull erlang@sha256:b87624f735f5324907d207a8100754511d573d03b123f9f00cd206c9c21de431
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **105.7 MB (105713441 bytes)**  
+-	Total Size: **105.7 MB (105712965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:78cc1ff3572e33d5736bb76f34703c95f0e158478f8f4ec439d84a8d31f96d29`
+-	Image ID: `sha256:7ca8771e81cda7abb7934d0d247b6cff5dbf7c6ddb0b2965ce58ce26e0b39cce`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:35:52 GMT
+# Tue, 12 Oct 2021 03:32:19 GMT
 ENV OTP_VERSION=20.3.8.26 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:41:58 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:41:59 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c83bef34c87003c3c30b067ab151e2cd4fdc1cb07dfb59b9fab6e66be94dc7e9`  
-		Last Modified: Tue, 28 Sep 2021 04:21:00 GMT  
-		Size: 62.5 MB (62536581 bytes)  
+	-	`sha256:67a93cf3ea9fd0856eec9fe6b333b4b82b9bf897e08abd3208875026c020c890`  
+		Last Modified: Tue, 12 Oct 2021 04:16:39 GMT  
+		Size: 62.5 MB (62536268 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20-slim` - linux; 386
@@ -4508,7 +4508,7 @@ CMD ["erl"]
 ## `erlang:20.3`
 
 ```console
-$ docker pull erlang@sha256:99ff63a18d61413c6543f10ec8713bec5ae0be653e5bb136fbfcd889fdf4103b
+$ docker pull erlang@sha256:91508685932e91f8ec4c2e326b349248f0d8009aeebf8ac36a280fc85f4fdc81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4673,77 +4673,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:20.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c4758685ce031109013266701057a6028fb4866d2a5e76fc95fca3ed34ca4ab0
+$ docker pull erlang@sha256:809ecadebb1e2fa5c9d00bc4a885f6b2c9b6d7bd6033fb7c7eefe75d9e8883a9
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.5 MB (441486307 bytes)**  
+-	Total Size: **441.5 MB (441487280 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:adf25a042368032d3296a2fa0eb3c5935bddcddcde18a32ba7a49212fda16cca`
+-	Image ID: `sha256:42801ef7346ae1cf82f612c040e81f89c8efa4b11e5207182ca5146c1847cfca`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:38 GMT
+# Tue, 12 Oct 2021 03:24:10 GMT
 ENV OTP_VERSION=20.3.8.26
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:35:28 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:35:29 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:35:45 GMT
+# Tue, 12 Oct 2021 03:32:01 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e74ba0249427ea67b7b0b55c2334828b8573e9ebdc02b07399b59862ff581ab`  
-		Last Modified: Tue, 28 Sep 2021 04:20:32 GMT  
-		Size: 133.3 MB (133343693 bytes)  
+	-	`sha256:fe28fa7528f5b9ed592d6fbc1414c4b1f7b47526d053bc3d777419d2eb50caa9`  
+		Last Modified: Tue, 12 Oct 2021 04:16:13 GMT  
+		Size: 133.3 MB (133343429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7632e8aced30a3c6e5e5b72d671a0e6b6e0638df436a3dafe02df16df5e6e35f`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 202.0 KB (201975 bytes)  
+	-	`sha256:aace6bbe2feb22916e9c2ab5e7eeb507d41fc892a8be56f447ee6113a4795d9e`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 202.0 KB (201977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e26521a343eb625c0a72c03aa5a4e1f1c1db5057cfceb73be951fe7c574bf6c4`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 954.4 KB (954396 bytes)  
+	-	`sha256:0a41ce6e44ad811e1201493ec28d36d5e034ec771ff66a05070e4cff8fbc3633`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 954.4 KB (954402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20.3` - linux; 386
@@ -4982,7 +4982,7 @@ CMD ["erl"]
 ## `erlang:20.3-slim`
 
 ```console
-$ docker pull erlang@sha256:a91bfc4d011b14032a77091c55503327214a468f48a0dfece04f591263ecdf00
+$ docker pull erlang@sha256:deee61aa4418375b24938745ba448073774b2ba3d6d7d1ab7ab9ac2bc72398b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5067,37 +5067,37 @@ CMD ["erl"]
 ### `erlang:20.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:21b5357a4a29774c0c4931d443a5248e98f1165ea799c2b579c6d99d736e8598
+$ docker pull erlang@sha256:b87624f735f5324907d207a8100754511d573d03b123f9f00cd206c9c21de431
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **105.7 MB (105713441 bytes)**  
+-	Total Size: **105.7 MB (105712965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:78cc1ff3572e33d5736bb76f34703c95f0e158478f8f4ec439d84a8d31f96d29`
+-	Image ID: `sha256:7ca8771e81cda7abb7934d0d247b6cff5dbf7c6ddb0b2965ce58ce26e0b39cce`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:35:52 GMT
+# Tue, 12 Oct 2021 03:32:19 GMT
 ENV OTP_VERSION=20.3.8.26 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:41:58 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:41:59 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c83bef34c87003c3c30b067ab151e2cd4fdc1cb07dfb59b9fab6e66be94dc7e9`  
-		Last Modified: Tue, 28 Sep 2021 04:21:00 GMT  
-		Size: 62.5 MB (62536581 bytes)  
+	-	`sha256:67a93cf3ea9fd0856eec9fe6b333b4b82b9bf897e08abd3208875026c020c890`  
+		Last Modified: Tue, 12 Oct 2021 04:16:39 GMT  
+		Size: 62.5 MB (62536268 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20.3-slim` - linux; 386
@@ -5139,7 +5139,7 @@ CMD ["erl"]
 ## `erlang:20.3.8`
 
 ```console
-$ docker pull erlang@sha256:99ff63a18d61413c6543f10ec8713bec5ae0be653e5bb136fbfcd889fdf4103b
+$ docker pull erlang@sha256:91508685932e91f8ec4c2e326b349248f0d8009aeebf8ac36a280fc85f4fdc81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5304,77 +5304,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:20.3.8` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c4758685ce031109013266701057a6028fb4866d2a5e76fc95fca3ed34ca4ab0
+$ docker pull erlang@sha256:809ecadebb1e2fa5c9d00bc4a885f6b2c9b6d7bd6033fb7c7eefe75d9e8883a9
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.5 MB (441486307 bytes)**  
+-	Total Size: **441.5 MB (441487280 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:adf25a042368032d3296a2fa0eb3c5935bddcddcde18a32ba7a49212fda16cca`
+-	Image ID: `sha256:42801ef7346ae1cf82f612c040e81f89c8efa4b11e5207182ca5146c1847cfca`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:38 GMT
+# Tue, 12 Oct 2021 03:24:10 GMT
 ENV OTP_VERSION=20.3.8.26
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:35:28 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:35:29 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:35:45 GMT
+# Tue, 12 Oct 2021 03:32:01 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e74ba0249427ea67b7b0b55c2334828b8573e9ebdc02b07399b59862ff581ab`  
-		Last Modified: Tue, 28 Sep 2021 04:20:32 GMT  
-		Size: 133.3 MB (133343693 bytes)  
+	-	`sha256:fe28fa7528f5b9ed592d6fbc1414c4b1f7b47526d053bc3d777419d2eb50caa9`  
+		Last Modified: Tue, 12 Oct 2021 04:16:13 GMT  
+		Size: 133.3 MB (133343429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7632e8aced30a3c6e5e5b72d671a0e6b6e0638df436a3dafe02df16df5e6e35f`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 202.0 KB (201975 bytes)  
+	-	`sha256:aace6bbe2feb22916e9c2ab5e7eeb507d41fc892a8be56f447ee6113a4795d9e`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 202.0 KB (201977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e26521a343eb625c0a72c03aa5a4e1f1c1db5057cfceb73be951fe7c574bf6c4`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 954.4 KB (954396 bytes)  
+	-	`sha256:0a41ce6e44ad811e1201493ec28d36d5e034ec771ff66a05070e4cff8fbc3633`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 954.4 KB (954402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20.3.8` - linux; 386
@@ -5613,7 +5613,7 @@ CMD ["erl"]
 ## `erlang:20.3.8-slim`
 
 ```console
-$ docker pull erlang@sha256:a91bfc4d011b14032a77091c55503327214a468f48a0dfece04f591263ecdf00
+$ docker pull erlang@sha256:deee61aa4418375b24938745ba448073774b2ba3d6d7d1ab7ab9ac2bc72398b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5698,37 +5698,37 @@ CMD ["erl"]
 ### `erlang:20.3.8-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:21b5357a4a29774c0c4931d443a5248e98f1165ea799c2b579c6d99d736e8598
+$ docker pull erlang@sha256:b87624f735f5324907d207a8100754511d573d03b123f9f00cd206c9c21de431
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **105.7 MB (105713441 bytes)**  
+-	Total Size: **105.7 MB (105712965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:78cc1ff3572e33d5736bb76f34703c95f0e158478f8f4ec439d84a8d31f96d29`
+-	Image ID: `sha256:7ca8771e81cda7abb7934d0d247b6cff5dbf7c6ddb0b2965ce58ce26e0b39cce`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:35:52 GMT
+# Tue, 12 Oct 2021 03:32:19 GMT
 ENV OTP_VERSION=20.3.8.26 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:41:58 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:41:59 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c83bef34c87003c3c30b067ab151e2cd4fdc1cb07dfb59b9fab6e66be94dc7e9`  
-		Last Modified: Tue, 28 Sep 2021 04:21:00 GMT  
-		Size: 62.5 MB (62536581 bytes)  
+	-	`sha256:67a93cf3ea9fd0856eec9fe6b333b4b82b9bf897e08abd3208875026c020c890`  
+		Last Modified: Tue, 12 Oct 2021 04:16:39 GMT  
+		Size: 62.5 MB (62536268 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20.3.8-slim` - linux; 386
@@ -5770,7 +5770,7 @@ CMD ["erl"]
 ## `erlang:20.3.8.26`
 
 ```console
-$ docker pull erlang@sha256:99ff63a18d61413c6543f10ec8713bec5ae0be653e5bb136fbfcd889fdf4103b
+$ docker pull erlang@sha256:91508685932e91f8ec4c2e326b349248f0d8009aeebf8ac36a280fc85f4fdc81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5935,77 +5935,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:20.3.8.26` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:c4758685ce031109013266701057a6028fb4866d2a5e76fc95fca3ed34ca4ab0
+$ docker pull erlang@sha256:809ecadebb1e2fa5c9d00bc4a885f6b2c9b6d7bd6033fb7c7eefe75d9e8883a9
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **441.5 MB (441486307 bytes)**  
+-	Total Size: **441.5 MB (441487280 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:adf25a042368032d3296a2fa0eb3c5935bddcddcde18a32ba7a49212fda16cca`
+-	Image ID: `sha256:42801ef7346ae1cf82f612c040e81f89c8efa4b11e5207182ca5146c1847cfca`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:38 GMT
+# Tue, 12 Oct 2021 03:24:10 GMT
 ENV OTP_VERSION=20.3.8.26
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:35:25 GMT
+# Tue, 12 Oct 2021 03:31:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:35:28 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:35:29 GMT
+# Tue, 12 Oct 2021 03:31:44 GMT
 ENV REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:35:45 GMT
+# Tue, 12 Oct 2021 03:32:01 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e74ba0249427ea67b7b0b55c2334828b8573e9ebdc02b07399b59862ff581ab`  
-		Last Modified: Tue, 28 Sep 2021 04:20:32 GMT  
-		Size: 133.3 MB (133343693 bytes)  
+	-	`sha256:fe28fa7528f5b9ed592d6fbc1414c4b1f7b47526d053bc3d777419d2eb50caa9`  
+		Last Modified: Tue, 12 Oct 2021 04:16:13 GMT  
+		Size: 133.3 MB (133343429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7632e8aced30a3c6e5e5b72d671a0e6b6e0638df436a3dafe02df16df5e6e35f`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 202.0 KB (201975 bytes)  
+	-	`sha256:aace6bbe2feb22916e9c2ab5e7eeb507d41fc892a8be56f447ee6113a4795d9e`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 202.0 KB (201977 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e26521a343eb625c0a72c03aa5a4e1f1c1db5057cfceb73be951fe7c574bf6c4`  
-		Last Modified: Tue, 28 Sep 2021 04:20:19 GMT  
-		Size: 954.4 KB (954396 bytes)  
+	-	`sha256:0a41ce6e44ad811e1201493ec28d36d5e034ec771ff66a05070e4cff8fbc3633`  
+		Last Modified: Tue, 12 Oct 2021 04:16:00 GMT  
+		Size: 954.4 KB (954402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20.3.8.26` - linux; 386
@@ -6244,7 +6244,7 @@ CMD ["erl"]
 ## `erlang:20.3.8.26-slim`
 
 ```console
-$ docker pull erlang@sha256:a91bfc4d011b14032a77091c55503327214a468f48a0dfece04f591263ecdf00
+$ docker pull erlang@sha256:deee61aa4418375b24938745ba448073774b2ba3d6d7d1ab7ab9ac2bc72398b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6329,37 +6329,37 @@ CMD ["erl"]
 ### `erlang:20.3.8.26-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:21b5357a4a29774c0c4931d443a5248e98f1165ea799c2b579c6d99d736e8598
+$ docker pull erlang@sha256:b87624f735f5324907d207a8100754511d573d03b123f9f00cd206c9c21de431
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **105.7 MB (105713441 bytes)**  
+-	Total Size: **105.7 MB (105712965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:78cc1ff3572e33d5736bb76f34703c95f0e158478f8f4ec439d84a8d31f96d29`
+-	Image ID: `sha256:7ca8771e81cda7abb7934d0d247b6cff5dbf7c6ddb0b2965ce58ce26e0b39cce`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:35:52 GMT
+# Tue, 12 Oct 2021 03:32:19 GMT
 ENV OTP_VERSION=20.3.8.26 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:41:58 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="dce78b60938a48b887317e5222cff946fd4af36666153ab2f0f022aa91755813" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:41:59 GMT
+# Tue, 12 Oct 2021 03:38:24 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c83bef34c87003c3c30b067ab151e2cd4fdc1cb07dfb59b9fab6e66be94dc7e9`  
-		Last Modified: Tue, 28 Sep 2021 04:21:00 GMT  
-		Size: 62.5 MB (62536581 bytes)  
+	-	`sha256:67a93cf3ea9fd0856eec9fe6b333b4b82b9bf897e08abd3208875026c020c890`  
+		Last Modified: Tue, 12 Oct 2021 04:16:39 GMT  
+		Size: 62.5 MB (62536268 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:20.3.8.26-slim` - linux; 386
@@ -6401,7 +6401,7 @@ CMD ["erl"]
 ## `erlang:21`
 
 ```console
-$ docker pull erlang@sha256:839d5876f7a3c15df2bc67913a2eb7ecf4cdb53dd2a0b54bcc6da36b54e8210a
+$ docker pull erlang@sha256:c040ac96860f980708a07c474b94c192d3726e928e6d5b3665d3f981e8a93199
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6566,77 +6566,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:21` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:937401e0235ccfb81d533743e2546124cc932f1977212058689fa42ef791a9f0
+$ docker pull erlang@sha256:9dc1ec9c8eaf0afdf9b4626adf23c239007492979ea146405b1ebd8a943033ca
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **438.4 MB (438355790 bytes)**  
+-	Total Size: **438.4 MB (438357353 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5be014be1e0e1dbe9088f450f5e5936afe7acf354c6f5cfba73a290edfb5dfe7`
+-	Image ID: `sha256:25eb86a53fcf089404994bea0e60fb09992d9aa3336d4a1b070e2ec8528d79a3`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:13:02 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:13:03 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:20:53 GMT
+# Tue, 12 Oct 2021 03:17:44 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:20:57 GMT
+# Tue, 12 Oct 2021 03:17:48 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:21:12 GMT
+# Tue, 12 Oct 2021 03:18:03 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05450a017fcf566bec41ea858ac4eaa01e846a43045f9f7b2ec4948ae0b26999`  
-		Last Modified: Tue, 28 Sep 2021 04:19:31 GMT  
-		Size: 130.2 MB (130217916 bytes)  
+	-	`sha256:cce6a461328bad268b35abb745e614e712b5cca6f9f3f1bf30810a0606b1aa14`  
+		Last Modified: Tue, 12 Oct 2021 04:15:12 GMT  
+		Size: 130.2 MB (130218264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17acbcc5e44e6d33cf2315c1b52eca3656b5971cd7010473f1ff02de88b5e839`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 201.5 KB (201465 bytes)  
+	-	`sha256:446d989ebb175b6770c5334f8fd0edf7b97cfb421dd9554cf8b7f09bc1a23545`  
+		Last Modified: Tue, 12 Oct 2021 04:14:59 GMT  
+		Size: 201.4 KB (201446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:684cabc70b6b7f4b25d0a09de845000b03302c29389dfe118f02a176e77d2ec6`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 950.2 KB (950166 bytes)  
+	-	`sha256:4ce0c1a2b2ed606fe8d527ed917e731f1157f639042271411d5e8d0aec4b2194`  
+		Last Modified: Tue, 12 Oct 2021 04:15:00 GMT  
+		Size: 950.2 KB (950171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21` - linux; 386
@@ -6883,7 +6883,7 @@ CMD ["erl"]
 ## `erlang:21-slim`
 
 ```console
-$ docker pull erlang@sha256:85017eed926b11ddf1b55e22a8a807a279c428bfba221f65396cf8693a09d0b8
+$ docker pull erlang@sha256:c4be31d851149628990db9c42f5f66bb720551b6b3d16b6a33922a5c7dc6e9b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6972,39 +6972,39 @@ CMD ["erl"]
 ### `erlang:21-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f973695fdd1838ad8d5720f1f1baa9b4807de37c38a1b2e29cb224bdd4780385
+$ docker pull erlang@sha256:f1f9df693a497664ca6e3e20a43d604d339702100b36bb65339302136f50d059
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.6 MB (102566386 bytes)**  
+-	Total Size: **102.6 MB (102565419 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fefdcf2ea2e181c543b47b9d83bbbd6ec42a933fb8a46cba83b425e870577f61`
+-	Image ID: `sha256:c6bc5b7b31c91ec9ef5b76c20f3caa8b9b51fefdb78335cec09b0c0b16f9810a`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:27:15 GMT
+# Tue, 12 Oct 2021 03:23:58 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:16 GMT
+# Tue, 12 Oct 2021 03:23:59 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e978c0b44b56da34e7135120f29c77b92221e1c4a8fa9c093582bfbb02c63bde`  
-		Last Modified: Tue, 28 Sep 2021 04:19:58 GMT  
-		Size: 59.4 MB (59389526 bytes)  
+	-	`sha256:932a3110d5466a37f3c500bdfc00a32f70d3fb85c62afca04e1f1f9b2786bdb3`  
+		Last Modified: Tue, 12 Oct 2021 04:15:39 GMT  
+		Size: 59.4 MB (59388722 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21-slim` - linux; 386
@@ -7048,7 +7048,7 @@ CMD ["erl"]
 ## `erlang:21.3`
 
 ```console
-$ docker pull erlang@sha256:839d5876f7a3c15df2bc67913a2eb7ecf4cdb53dd2a0b54bcc6da36b54e8210a
+$ docker pull erlang@sha256:c040ac96860f980708a07c474b94c192d3726e928e6d5b3665d3f981e8a93199
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7213,77 +7213,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:21.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:937401e0235ccfb81d533743e2546124cc932f1977212058689fa42ef791a9f0
+$ docker pull erlang@sha256:9dc1ec9c8eaf0afdf9b4626adf23c239007492979ea146405b1ebd8a943033ca
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **438.4 MB (438355790 bytes)**  
+-	Total Size: **438.4 MB (438357353 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5be014be1e0e1dbe9088f450f5e5936afe7acf354c6f5cfba73a290edfb5dfe7`
+-	Image ID: `sha256:25eb86a53fcf089404994bea0e60fb09992d9aa3336d4a1b070e2ec8528d79a3`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:13:02 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:13:03 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:20:53 GMT
+# Tue, 12 Oct 2021 03:17:44 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:20:57 GMT
+# Tue, 12 Oct 2021 03:17:48 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:21:12 GMT
+# Tue, 12 Oct 2021 03:18:03 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05450a017fcf566bec41ea858ac4eaa01e846a43045f9f7b2ec4948ae0b26999`  
-		Last Modified: Tue, 28 Sep 2021 04:19:31 GMT  
-		Size: 130.2 MB (130217916 bytes)  
+	-	`sha256:cce6a461328bad268b35abb745e614e712b5cca6f9f3f1bf30810a0606b1aa14`  
+		Last Modified: Tue, 12 Oct 2021 04:15:12 GMT  
+		Size: 130.2 MB (130218264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17acbcc5e44e6d33cf2315c1b52eca3656b5971cd7010473f1ff02de88b5e839`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 201.5 KB (201465 bytes)  
+	-	`sha256:446d989ebb175b6770c5334f8fd0edf7b97cfb421dd9554cf8b7f09bc1a23545`  
+		Last Modified: Tue, 12 Oct 2021 04:14:59 GMT  
+		Size: 201.4 KB (201446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:684cabc70b6b7f4b25d0a09de845000b03302c29389dfe118f02a176e77d2ec6`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 950.2 KB (950166 bytes)  
+	-	`sha256:4ce0c1a2b2ed606fe8d527ed917e731f1157f639042271411d5e8d0aec4b2194`  
+		Last Modified: Tue, 12 Oct 2021 04:15:00 GMT  
+		Size: 950.2 KB (950171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21.3` - linux; 386
@@ -7530,7 +7530,7 @@ CMD ["erl"]
 ## `erlang:21.3-slim`
 
 ```console
-$ docker pull erlang@sha256:85017eed926b11ddf1b55e22a8a807a279c428bfba221f65396cf8693a09d0b8
+$ docker pull erlang@sha256:c4be31d851149628990db9c42f5f66bb720551b6b3d16b6a33922a5c7dc6e9b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7619,39 +7619,39 @@ CMD ["erl"]
 ### `erlang:21.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f973695fdd1838ad8d5720f1f1baa9b4807de37c38a1b2e29cb224bdd4780385
+$ docker pull erlang@sha256:f1f9df693a497664ca6e3e20a43d604d339702100b36bb65339302136f50d059
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.6 MB (102566386 bytes)**  
+-	Total Size: **102.6 MB (102565419 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fefdcf2ea2e181c543b47b9d83bbbd6ec42a933fb8a46cba83b425e870577f61`
+-	Image ID: `sha256:c6bc5b7b31c91ec9ef5b76c20f3caa8b9b51fefdb78335cec09b0c0b16f9810a`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:27:15 GMT
+# Tue, 12 Oct 2021 03:23:58 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:16 GMT
+# Tue, 12 Oct 2021 03:23:59 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e978c0b44b56da34e7135120f29c77b92221e1c4a8fa9c093582bfbb02c63bde`  
-		Last Modified: Tue, 28 Sep 2021 04:19:58 GMT  
-		Size: 59.4 MB (59389526 bytes)  
+	-	`sha256:932a3110d5466a37f3c500bdfc00a32f70d3fb85c62afca04e1f1f9b2786bdb3`  
+		Last Modified: Tue, 12 Oct 2021 04:15:39 GMT  
+		Size: 59.4 MB (59388722 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21.3-slim` - linux; 386
@@ -7695,7 +7695,7 @@ CMD ["erl"]
 ## `erlang:21.3.8`
 
 ```console
-$ docker pull erlang@sha256:839d5876f7a3c15df2bc67913a2eb7ecf4cdb53dd2a0b54bcc6da36b54e8210a
+$ docker pull erlang@sha256:c040ac96860f980708a07c474b94c192d3726e928e6d5b3665d3f981e8a93199
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7860,77 +7860,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:21.3.8` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:937401e0235ccfb81d533743e2546124cc932f1977212058689fa42ef791a9f0
+$ docker pull erlang@sha256:9dc1ec9c8eaf0afdf9b4626adf23c239007492979ea146405b1ebd8a943033ca
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **438.4 MB (438355790 bytes)**  
+-	Total Size: **438.4 MB (438357353 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5be014be1e0e1dbe9088f450f5e5936afe7acf354c6f5cfba73a290edfb5dfe7`
+-	Image ID: `sha256:25eb86a53fcf089404994bea0e60fb09992d9aa3336d4a1b070e2ec8528d79a3`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:13:02 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:13:03 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:20:53 GMT
+# Tue, 12 Oct 2021 03:17:44 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:20:57 GMT
+# Tue, 12 Oct 2021 03:17:48 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:21:12 GMT
+# Tue, 12 Oct 2021 03:18:03 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05450a017fcf566bec41ea858ac4eaa01e846a43045f9f7b2ec4948ae0b26999`  
-		Last Modified: Tue, 28 Sep 2021 04:19:31 GMT  
-		Size: 130.2 MB (130217916 bytes)  
+	-	`sha256:cce6a461328bad268b35abb745e614e712b5cca6f9f3f1bf30810a0606b1aa14`  
+		Last Modified: Tue, 12 Oct 2021 04:15:12 GMT  
+		Size: 130.2 MB (130218264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17acbcc5e44e6d33cf2315c1b52eca3656b5971cd7010473f1ff02de88b5e839`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 201.5 KB (201465 bytes)  
+	-	`sha256:446d989ebb175b6770c5334f8fd0edf7b97cfb421dd9554cf8b7f09bc1a23545`  
+		Last Modified: Tue, 12 Oct 2021 04:14:59 GMT  
+		Size: 201.4 KB (201446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:684cabc70b6b7f4b25d0a09de845000b03302c29389dfe118f02a176e77d2ec6`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 950.2 KB (950166 bytes)  
+	-	`sha256:4ce0c1a2b2ed606fe8d527ed917e731f1157f639042271411d5e8d0aec4b2194`  
+		Last Modified: Tue, 12 Oct 2021 04:15:00 GMT  
+		Size: 950.2 KB (950171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21.3.8` - linux; 386
@@ -8177,7 +8177,7 @@ CMD ["erl"]
 ## `erlang:21.3.8-slim`
 
 ```console
-$ docker pull erlang@sha256:85017eed926b11ddf1b55e22a8a807a279c428bfba221f65396cf8693a09d0b8
+$ docker pull erlang@sha256:c4be31d851149628990db9c42f5f66bb720551b6b3d16b6a33922a5c7dc6e9b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8266,39 +8266,39 @@ CMD ["erl"]
 ### `erlang:21.3.8-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f973695fdd1838ad8d5720f1f1baa9b4807de37c38a1b2e29cb224bdd4780385
+$ docker pull erlang@sha256:f1f9df693a497664ca6e3e20a43d604d339702100b36bb65339302136f50d059
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.6 MB (102566386 bytes)**  
+-	Total Size: **102.6 MB (102565419 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fefdcf2ea2e181c543b47b9d83bbbd6ec42a933fb8a46cba83b425e870577f61`
+-	Image ID: `sha256:c6bc5b7b31c91ec9ef5b76c20f3caa8b9b51fefdb78335cec09b0c0b16f9810a`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:27:15 GMT
+# Tue, 12 Oct 2021 03:23:58 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:16 GMT
+# Tue, 12 Oct 2021 03:23:59 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e978c0b44b56da34e7135120f29c77b92221e1c4a8fa9c093582bfbb02c63bde`  
-		Last Modified: Tue, 28 Sep 2021 04:19:58 GMT  
-		Size: 59.4 MB (59389526 bytes)  
+	-	`sha256:932a3110d5466a37f3c500bdfc00a32f70d3fb85c62afca04e1f1f9b2786bdb3`  
+		Last Modified: Tue, 12 Oct 2021 04:15:39 GMT  
+		Size: 59.4 MB (59388722 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21.3.8-slim` - linux; 386
@@ -8342,7 +8342,7 @@ CMD ["erl"]
 ## `erlang:21.3.8.24`
 
 ```console
-$ docker pull erlang@sha256:839d5876f7a3c15df2bc67913a2eb7ecf4cdb53dd2a0b54bcc6da36b54e8210a
+$ docker pull erlang@sha256:c040ac96860f980708a07c474b94c192d3726e928e6d5b3665d3f981e8a93199
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8507,77 +8507,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:21.3.8.24` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:937401e0235ccfb81d533743e2546124cc932f1977212058689fa42ef791a9f0
+$ docker pull erlang@sha256:9dc1ec9c8eaf0afdf9b4626adf23c239007492979ea146405b1ebd8a943033ca
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **438.4 MB (438355790 bytes)**  
+-	Total Size: **438.4 MB (438357353 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5be014be1e0e1dbe9088f450f5e5936afe7acf354c6f5cfba73a290edfb5dfe7`
+-	Image ID: `sha256:25eb86a53fcf089404994bea0e60fb09992d9aa3336d4a1b070e2ec8528d79a3`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:20:08 GMT
+# Tue, 12 Oct 2021 02:14:30 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		apt-transport-https 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:20:13 GMT
+# Tue, 12 Oct 2021 02:14:34 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:20:33 GMT
+# Tue, 12 Oct 2021 02:14:53 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:21:23 GMT
+# Tue, 12 Oct 2021 02:15:44 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:13:02 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:13:03 GMT
+# Tue, 12 Oct 2021 03:10:02 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:20:53 GMT
+# Tue, 12 Oct 2021 03:17:44 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:20:54 GMT
+# Tue, 12 Oct 2021 03:17:45 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:20:57 GMT
+# Tue, 12 Oct 2021 03:17:48 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:21:12 GMT
+# Tue, 12 Oct 2021 03:18:03 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:056e66b20944d4cb1ecbb1744d2851e6e3f89c80e9db3afff03b3fc1c1291768`  
-		Last Modified: Tue, 28 Sep 2021 02:28:21 GMT  
-		Size: 10.2 MB (10216473 bytes)  
+	-	`sha256:6106ce195cfc2ea7282dab1677e8563168fee21f184a937b32a9370944ccc077`  
+		Last Modified: Tue, 12 Oct 2021 02:22:54 GMT  
+		Size: 10.2 MB (10217927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac70c4411ef34b85e9e038bdd0e1c5fb4b27ce5be304cdb9479fe829e2ab9886`  
-		Last Modified: Tue, 28 Sep 2021 02:28:19 GMT  
-		Size: 4.1 MB (4096542 bytes)  
+	-	`sha256:499bc8ad963810c8e2cef0d22542dfad2339032cf43a8210066a9a817fd6a869`  
+		Last Modified: Tue, 12 Oct 2021 02:22:53 GMT  
+		Size: 4.1 MB (4096622 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65cdaa18192aee6f9c254882a3a7f4e57f28681ee263e9fd155fefcd6d9a7e7f`  
-		Last Modified: Tue, 28 Sep 2021 02:28:40 GMT  
-		Size: 47.7 MB (47737758 bytes)  
+	-	`sha256:91449e92d9f0601eac3dbf717abf9680c96962909ab07b8ccdb946cd89230178`  
+		Last Modified: Tue, 12 Oct 2021 02:23:13 GMT  
+		Size: 47.7 MB (47737903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:445c016c41e0197a8c0587a7bdc804370e31412e49c9bd80ba6baa0b67074d1c`  
-		Last Modified: Tue, 28 Sep 2021 02:29:20 GMT  
-		Size: 201.8 MB (201758610 bytes)  
+	-	`sha256:3a7137ca7f660cc56661af3d405cd964ccf486fa3a249dcfcbfa40137b5b9756`  
+		Last Modified: Tue, 12 Oct 2021 02:23:52 GMT  
+		Size: 201.8 MB (201758323 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:05450a017fcf566bec41ea858ac4eaa01e846a43045f9f7b2ec4948ae0b26999`  
-		Last Modified: Tue, 28 Sep 2021 04:19:31 GMT  
-		Size: 130.2 MB (130217916 bytes)  
+	-	`sha256:cce6a461328bad268b35abb745e614e712b5cca6f9f3f1bf30810a0606b1aa14`  
+		Last Modified: Tue, 12 Oct 2021 04:15:12 GMT  
+		Size: 130.2 MB (130218264 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17acbcc5e44e6d33cf2315c1b52eca3656b5971cd7010473f1ff02de88b5e839`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 201.5 KB (201465 bytes)  
+	-	`sha256:446d989ebb175b6770c5334f8fd0edf7b97cfb421dd9554cf8b7f09bc1a23545`  
+		Last Modified: Tue, 12 Oct 2021 04:14:59 GMT  
+		Size: 201.4 KB (201446 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:684cabc70b6b7f4b25d0a09de845000b03302c29389dfe118f02a176e77d2ec6`  
-		Last Modified: Tue, 28 Sep 2021 04:19:18 GMT  
-		Size: 950.2 KB (950166 bytes)  
+	-	`sha256:4ce0c1a2b2ed606fe8d527ed917e731f1157f639042271411d5e8d0aec4b2194`  
+		Last Modified: Tue, 12 Oct 2021 04:15:00 GMT  
+		Size: 950.2 KB (950171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21.3.8.24` - linux; 386
@@ -8824,7 +8824,7 @@ CMD ["erl"]
 ## `erlang:21.3.8.24-slim`
 
 ```console
-$ docker pull erlang@sha256:85017eed926b11ddf1b55e22a8a807a279c428bfba221f65396cf8693a09d0b8
+$ docker pull erlang@sha256:c4be31d851149628990db9c42f5f66bb720551b6b3d16b6a33922a5c7dc6e9b2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8913,39 +8913,39 @@ CMD ["erl"]
 ### `erlang:21.3.8.24-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:f973695fdd1838ad8d5720f1f1baa9b4807de37c38a1b2e29cb224bdd4780385
+$ docker pull erlang@sha256:f1f9df693a497664ca6e3e20a43d604d339702100b36bb65339302136f50d059
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.6 MB (102566386 bytes)**  
+-	Total Size: **102.6 MB (102565419 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fefdcf2ea2e181c543b47b9d83bbbd6ec42a933fb8a46cba83b425e870577f61`
+-	Image ID: `sha256:c6bc5b7b31c91ec9ef5b76c20f3caa8b9b51fefdb78335cec09b0c0b16f9810a`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:43:10 GMT
-ADD file:d66cac067d9b02a4946e6816144b6c89b971f95947a48715a50600a63d153b56 in / 
-# Tue, 28 Sep 2021 01:43:10 GMT
+# Tue, 12 Oct 2021 01:43:16 GMT
+ADD file:33c2886dff8a69edd550eb69499bf01658d58e2eff405d4b5d4cd5d5be535faa in / 
+# Tue, 12 Oct 2021 01:43:16 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 ENV OTP_VERSION=21.3.8.24 REBAR3_VERSION=3.15.2
-# Tue, 28 Sep 2021 03:21:19 GMT
+# Tue, 12 Oct 2021 03:18:11 GMT
 LABEL org.opencontainers.image.version=21.3.8.24
-# Tue, 28 Sep 2021 03:27:15 GMT
+# Tue, 12 Oct 2021 03:23:58 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="90017fe0b844cf3ba7dc9faf7f6f690050f3138f3d3f7532a9343174f5f9febc" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="11b6bead835421a276e287562588580b63ac1c8dcb0e3c51f674887e4ab395cd" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:27:16 GMT
+# Tue, 12 Oct 2021 03:23:59 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:7b4ff8ad8c828f0855329495e1260f28de7fc1e828e3339b7dddc2d116d19742`  
-		Last Modified: Tue, 28 Sep 2021 01:52:24 GMT  
-		Size: 43.2 MB (43176860 bytes)  
+	-	`sha256:cd2a530f50c2591d61de58d0e9cf724f6c5a2e1112456f38562e289732464c0c`  
+		Last Modified: Tue, 12 Oct 2021 01:52:05 GMT  
+		Size: 43.2 MB (43176697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e978c0b44b56da34e7135120f29c77b92221e1c4a8fa9c093582bfbb02c63bde`  
-		Last Modified: Tue, 28 Sep 2021 04:19:58 GMT  
-		Size: 59.4 MB (59389526 bytes)  
+	-	`sha256:932a3110d5466a37f3c500bdfc00a32f70d3fb85c62afca04e1f1f9b2786bdb3`  
+		Last Modified: Tue, 12 Oct 2021 04:15:39 GMT  
+		Size: 59.4 MB (59388722 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:21.3.8.24-slim` - linux; 386
@@ -8989,7 +8989,7 @@ CMD ["erl"]
 ## `erlang:22`
 
 ```console
-$ docker pull erlang@sha256:9331d873ad78f26e90ff9371a3c3be04d83f509a945f009914ce3b8f82dadcf3
+$ docker pull erlang@sha256:2f70bac1d1a9f1c394bb330d644c631241e6102ddfa2a4b5b32f44ac77fbc406
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9156,77 +9156,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:22` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:2b2b97d7c7a28198f3157354948e259860b0f7233d6c6e0d2fa48e3e97385cf6
+$ docker pull erlang@sha256:65d6c0a08147eb9e28a2d87ed98db2ab7201866a47848baf2f45cf5742dfb0aa
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **455.3 MB (455268114 bytes)**  
+-	Total Size: **455.3 MB (455296864 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:50228a15608d3f9906e0ba6ea569e522586e5e5c1398a52be8ecdc3f8144b3c6`
+-	Image ID: `sha256:d7abddb9d31f7da2de6ca2c539066e226b04723848e57541df5ab1e81968dae9`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:05:40 GMT
+# Tue, 12 Oct 2021 03:02:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:05:45 GMT
+# Tue, 12 Oct 2021 03:02:45 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:06:02 GMT
+# Tue, 12 Oct 2021 03:03:02 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eca02ffe4ee2f2b6b0b773ef42d8032e68a471342490b288e615d527bd453232`  
-		Last Modified: Tue, 28 Sep 2021 04:18:28 GMT  
-		Size: 151.1 MB (151104717 bytes)  
+	-	`sha256:5b9871f4672ad1a3e9af22011eb31b8618b795c9598eca59bfd429b5d4b33378`  
+		Last Modified: Tue, 12 Oct 2021 04:14:13 GMT  
+		Size: 151.1 MB (151108768 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:41a82e06f1a03c9a74ec95922027d7ae8b901a28c2716b3c0e397dd4a8c4a621`  
-		Last Modified: Tue, 28 Sep 2021 04:18:07 GMT  
-		Size: 197.0 KB (197033 bytes)  
+	-	`sha256:72dfc944b3cd56ec1d0ac3112796fa133c886bce3c31e57f7dda968f40258a16`  
+		Last Modified: Tue, 12 Oct 2021 04:13:51 GMT  
+		Size: 197.0 KB (197010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f091098502a161d68d5ee8aaa26e44166c69607691d79552865dc81a572b6cf`  
-		Last Modified: Tue, 28 Sep 2021 04:18:08 GMT  
-		Size: 920.0 KB (919978 bytes)  
+	-	`sha256:f5f8e7a773bd88a4f86158b8a0feaa07ba2267359fa5c6bac083e31e351abe4a`  
+		Last Modified: Tue, 12 Oct 2021 04:13:52 GMT  
+		Size: 920.0 KB (919973 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22` - linux; 386
@@ -9703,7 +9703,7 @@ CMD ["erl"]
 ## `erlang:22-slim`
 
 ```console
-$ docker pull erlang@sha256:b0a8831c83cf8efff9d036528cbeaa03830598a04d889b4dc08a42287be0414f
+$ docker pull erlang@sha256:e9fb247aa62ad2b371f8ef44ccd357909044451316b9408e839f205bf9a5d803
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9794,39 +9794,39 @@ CMD ["erl"]
 ### `erlang:22-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:3273662e44be6a0413446ce5958d4a9a3bce1111e0c587c83fc231e45050c192
+$ docker pull erlang@sha256:4db86c61d4ec288753eafdb00e57b7dcfcdb8836810b7a3974c1801bfe071a12
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **106.7 MB (106651016 bytes)**  
+-	Total Size: **106.7 MB (106652571 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ff6a47b0108ef59cd4924f503a7062bf0a5d77e035d0b1db598ec56a2827706e`
+-	Image ID: `sha256:abfdea382a1d6262c276f9011b7669409e0391aac36c1aef2a07e3c55a9ffe41`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:06:13 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 03:06:14 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:12:39 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:12:40 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc49dc2b13c90b1072cf188a4ba1115a098d11f59b7e65417504729a181a31f2`  
-		Last Modified: Tue, 28 Sep 2021 04:18:56 GMT  
-		Size: 57.4 MB (57428635 bytes)  
+	-	`sha256:7046352f470edcd886f4e0dbe694ceaeaa784da2ba917d506c87ec4a9281826a`  
+		Last Modified: Tue, 12 Oct 2021 04:14:39 GMT  
+		Size: 57.4 MB (57429815 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22-slim` - linux; 386
@@ -9946,7 +9946,7 @@ CMD ["erl"]
 ## `erlang:22.3`
 
 ```console
-$ docker pull erlang@sha256:9331d873ad78f26e90ff9371a3c3be04d83f509a945f009914ce3b8f82dadcf3
+$ docker pull erlang@sha256:2f70bac1d1a9f1c394bb330d644c631241e6102ddfa2a4b5b32f44ac77fbc406
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10113,77 +10113,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:22.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:2b2b97d7c7a28198f3157354948e259860b0f7233d6c6e0d2fa48e3e97385cf6
+$ docker pull erlang@sha256:65d6c0a08147eb9e28a2d87ed98db2ab7201866a47848baf2f45cf5742dfb0aa
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **455.3 MB (455268114 bytes)**  
+-	Total Size: **455.3 MB (455296864 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:50228a15608d3f9906e0ba6ea569e522586e5e5c1398a52be8ecdc3f8144b3c6`
+-	Image ID: `sha256:d7abddb9d31f7da2de6ca2c539066e226b04723848e57541df5ab1e81968dae9`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:05:40 GMT
+# Tue, 12 Oct 2021 03:02:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:05:45 GMT
+# Tue, 12 Oct 2021 03:02:45 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:06:02 GMT
+# Tue, 12 Oct 2021 03:03:02 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eca02ffe4ee2f2b6b0b773ef42d8032e68a471342490b288e615d527bd453232`  
-		Last Modified: Tue, 28 Sep 2021 04:18:28 GMT  
-		Size: 151.1 MB (151104717 bytes)  
+	-	`sha256:5b9871f4672ad1a3e9af22011eb31b8618b795c9598eca59bfd429b5d4b33378`  
+		Last Modified: Tue, 12 Oct 2021 04:14:13 GMT  
+		Size: 151.1 MB (151108768 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:41a82e06f1a03c9a74ec95922027d7ae8b901a28c2716b3c0e397dd4a8c4a621`  
-		Last Modified: Tue, 28 Sep 2021 04:18:07 GMT  
-		Size: 197.0 KB (197033 bytes)  
+	-	`sha256:72dfc944b3cd56ec1d0ac3112796fa133c886bce3c31e57f7dda968f40258a16`  
+		Last Modified: Tue, 12 Oct 2021 04:13:51 GMT  
+		Size: 197.0 KB (197010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f091098502a161d68d5ee8aaa26e44166c69607691d79552865dc81a572b6cf`  
-		Last Modified: Tue, 28 Sep 2021 04:18:08 GMT  
-		Size: 920.0 KB (919978 bytes)  
+	-	`sha256:f5f8e7a773bd88a4f86158b8a0feaa07ba2267359fa5c6bac083e31e351abe4a`  
+		Last Modified: Tue, 12 Oct 2021 04:13:52 GMT  
+		Size: 920.0 KB (919973 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22.3` - linux; 386
@@ -10660,7 +10660,7 @@ CMD ["erl"]
 ## `erlang:22.3-slim`
 
 ```console
-$ docker pull erlang@sha256:b0a8831c83cf8efff9d036528cbeaa03830598a04d889b4dc08a42287be0414f
+$ docker pull erlang@sha256:e9fb247aa62ad2b371f8ef44ccd357909044451316b9408e839f205bf9a5d803
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10751,39 +10751,39 @@ CMD ["erl"]
 ### `erlang:22.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:3273662e44be6a0413446ce5958d4a9a3bce1111e0c587c83fc231e45050c192
+$ docker pull erlang@sha256:4db86c61d4ec288753eafdb00e57b7dcfcdb8836810b7a3974c1801bfe071a12
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **106.7 MB (106651016 bytes)**  
+-	Total Size: **106.7 MB (106652571 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ff6a47b0108ef59cd4924f503a7062bf0a5d77e035d0b1db598ec56a2827706e`
+-	Image ID: `sha256:abfdea382a1d6262c276f9011b7669409e0391aac36c1aef2a07e3c55a9ffe41`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:06:13 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 03:06:14 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:12:39 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:12:40 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc49dc2b13c90b1072cf188a4ba1115a098d11f59b7e65417504729a181a31f2`  
-		Last Modified: Tue, 28 Sep 2021 04:18:56 GMT  
-		Size: 57.4 MB (57428635 bytes)  
+	-	`sha256:7046352f470edcd886f4e0dbe694ceaeaa784da2ba917d506c87ec4a9281826a`  
+		Last Modified: Tue, 12 Oct 2021 04:14:39 GMT  
+		Size: 57.4 MB (57429815 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22.3-slim` - linux; 386
@@ -10903,7 +10903,7 @@ CMD ["erl"]
 ## `erlang:22.3.4`
 
 ```console
-$ docker pull erlang@sha256:9331d873ad78f26e90ff9371a3c3be04d83f509a945f009914ce3b8f82dadcf3
+$ docker pull erlang@sha256:2f70bac1d1a9f1c394bb330d644c631241e6102ddfa2a4b5b32f44ac77fbc406
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11070,77 +11070,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:22.3.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:2b2b97d7c7a28198f3157354948e259860b0f7233d6c6e0d2fa48e3e97385cf6
+$ docker pull erlang@sha256:65d6c0a08147eb9e28a2d87ed98db2ab7201866a47848baf2f45cf5742dfb0aa
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **455.3 MB (455268114 bytes)**  
+-	Total Size: **455.3 MB (455296864 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:50228a15608d3f9906e0ba6ea569e522586e5e5c1398a52be8ecdc3f8144b3c6`
+-	Image ID: `sha256:d7abddb9d31f7da2de6ca2c539066e226b04723848e57541df5ab1e81968dae9`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:05:40 GMT
+# Tue, 12 Oct 2021 03:02:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:05:45 GMT
+# Tue, 12 Oct 2021 03:02:45 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:06:02 GMT
+# Tue, 12 Oct 2021 03:03:02 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eca02ffe4ee2f2b6b0b773ef42d8032e68a471342490b288e615d527bd453232`  
-		Last Modified: Tue, 28 Sep 2021 04:18:28 GMT  
-		Size: 151.1 MB (151104717 bytes)  
+	-	`sha256:5b9871f4672ad1a3e9af22011eb31b8618b795c9598eca59bfd429b5d4b33378`  
+		Last Modified: Tue, 12 Oct 2021 04:14:13 GMT  
+		Size: 151.1 MB (151108768 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:41a82e06f1a03c9a74ec95922027d7ae8b901a28c2716b3c0e397dd4a8c4a621`  
-		Last Modified: Tue, 28 Sep 2021 04:18:07 GMT  
-		Size: 197.0 KB (197033 bytes)  
+	-	`sha256:72dfc944b3cd56ec1d0ac3112796fa133c886bce3c31e57f7dda968f40258a16`  
+		Last Modified: Tue, 12 Oct 2021 04:13:51 GMT  
+		Size: 197.0 KB (197010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f091098502a161d68d5ee8aaa26e44166c69607691d79552865dc81a572b6cf`  
-		Last Modified: Tue, 28 Sep 2021 04:18:08 GMT  
-		Size: 920.0 KB (919978 bytes)  
+	-	`sha256:f5f8e7a773bd88a4f86158b8a0feaa07ba2267359fa5c6bac083e31e351abe4a`  
+		Last Modified: Tue, 12 Oct 2021 04:13:52 GMT  
+		Size: 920.0 KB (919973 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22.3.4` - linux; 386
@@ -11617,7 +11617,7 @@ CMD ["erl"]
 ## `erlang:22.3.4-slim`
 
 ```console
-$ docker pull erlang@sha256:b0a8831c83cf8efff9d036528cbeaa03830598a04d889b4dc08a42287be0414f
+$ docker pull erlang@sha256:e9fb247aa62ad2b371f8ef44ccd357909044451316b9408e839f205bf9a5d803
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11708,39 +11708,39 @@ CMD ["erl"]
 ### `erlang:22.3.4-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:3273662e44be6a0413446ce5958d4a9a3bce1111e0c587c83fc231e45050c192
+$ docker pull erlang@sha256:4db86c61d4ec288753eafdb00e57b7dcfcdb8836810b7a3974c1801bfe071a12
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **106.7 MB (106651016 bytes)**  
+-	Total Size: **106.7 MB (106652571 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ff6a47b0108ef59cd4924f503a7062bf0a5d77e035d0b1db598ec56a2827706e`
+-	Image ID: `sha256:abfdea382a1d6262c276f9011b7669409e0391aac36c1aef2a07e3c55a9ffe41`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:06:13 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 03:06:14 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:12:39 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:12:40 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc49dc2b13c90b1072cf188a4ba1115a098d11f59b7e65417504729a181a31f2`  
-		Last Modified: Tue, 28 Sep 2021 04:18:56 GMT  
-		Size: 57.4 MB (57428635 bytes)  
+	-	`sha256:7046352f470edcd886f4e0dbe694ceaeaa784da2ba917d506c87ec4a9281826a`  
+		Last Modified: Tue, 12 Oct 2021 04:14:39 GMT  
+		Size: 57.4 MB (57429815 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22.3.4-slim` - linux; 386
@@ -11860,7 +11860,7 @@ CMD ["erl"]
 ## `erlang:22.3.4.21`
 
 ```console
-$ docker pull erlang@sha256:9331d873ad78f26e90ff9371a3c3be04d83f509a945f009914ce3b8f82dadcf3
+$ docker pull erlang@sha256:2f70bac1d1a9f1c394bb330d644c631241e6102ddfa2a4b5b32f44ac77fbc406
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12027,77 +12027,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:22.3.4.21` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:2b2b97d7c7a28198f3157354948e259860b0f7233d6c6e0d2fa48e3e97385cf6
+$ docker pull erlang@sha256:65d6c0a08147eb9e28a2d87ed98db2ab7201866a47848baf2f45cf5742dfb0aa
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **455.3 MB (455268114 bytes)**  
+-	Total Size: **455.3 MB (455296864 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:50228a15608d3f9906e0ba6ea569e522586e5e5c1398a52be8ecdc3f8144b3c6`
+-	Image ID: `sha256:d7abddb9d31f7da2de6ca2c539066e226b04723848e57541df5ab1e81968dae9`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:58:45 GMT
+# Tue, 12 Oct 2021 02:55:54 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:05:40 GMT
+# Tue, 12 Oct 2021 03:02:40 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 03:05:41 GMT
+# Tue, 12 Oct 2021 03:02:41 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 03:05:45 GMT
+# Tue, 12 Oct 2021 03:02:45 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 03:06:02 GMT
+# Tue, 12 Oct 2021 03:03:02 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eca02ffe4ee2f2b6b0b773ef42d8032e68a471342490b288e615d527bd453232`  
-		Last Modified: Tue, 28 Sep 2021 04:18:28 GMT  
-		Size: 151.1 MB (151104717 bytes)  
+	-	`sha256:5b9871f4672ad1a3e9af22011eb31b8618b795c9598eca59bfd429b5d4b33378`  
+		Last Modified: Tue, 12 Oct 2021 04:14:13 GMT  
+		Size: 151.1 MB (151108768 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:41a82e06f1a03c9a74ec95922027d7ae8b901a28c2716b3c0e397dd4a8c4a621`  
-		Last Modified: Tue, 28 Sep 2021 04:18:07 GMT  
-		Size: 197.0 KB (197033 bytes)  
+	-	`sha256:72dfc944b3cd56ec1d0ac3112796fa133c886bce3c31e57f7dda968f40258a16`  
+		Last Modified: Tue, 12 Oct 2021 04:13:51 GMT  
+		Size: 197.0 KB (197010 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f091098502a161d68d5ee8aaa26e44166c69607691d79552865dc81a572b6cf`  
-		Last Modified: Tue, 28 Sep 2021 04:18:08 GMT  
-		Size: 920.0 KB (919978 bytes)  
+	-	`sha256:f5f8e7a773bd88a4f86158b8a0feaa07ba2267359fa5c6bac083e31e351abe4a`  
+		Last Modified: Tue, 12 Oct 2021 04:13:52 GMT  
+		Size: 920.0 KB (919973 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22.3.4.21` - linux; 386
@@ -12574,7 +12574,7 @@ CMD ["erl"]
 ## `erlang:22.3.4.21-slim`
 
 ```console
-$ docker pull erlang@sha256:b0a8831c83cf8efff9d036528cbeaa03830598a04d889b4dc08a42287be0414f
+$ docker pull erlang@sha256:e9fb247aa62ad2b371f8ef44ccd357909044451316b9408e839f205bf9a5d803
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12665,39 +12665,39 @@ CMD ["erl"]
 ### `erlang:22.3.4.21-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:3273662e44be6a0413446ce5958d4a9a3bce1111e0c587c83fc231e45050c192
+$ docker pull erlang@sha256:4db86c61d4ec288753eafdb00e57b7dcfcdb8836810b7a3974c1801bfe071a12
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **106.7 MB (106651016 bytes)**  
+-	Total Size: **106.7 MB (106652571 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ff6a47b0108ef59cd4924f503a7062bf0a5d77e035d0b1db598ec56a2827706e`
+-	Image ID: `sha256:abfdea382a1d6262c276f9011b7669409e0391aac36c1aef2a07e3c55a9ffe41`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 03:06:13 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 ENV OTP_VERSION=22.3.4.21 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 03:06:14 GMT
+# Tue, 12 Oct 2021 03:03:18 GMT
 LABEL org.opencontainers.image.version=22.3.4.21
-# Tue, 28 Sep 2021 03:12:39 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="9ab9531e87c55e8af2ce4af3c00d2ec98642c7f4ccdd431ae3ad74e521e0d8f8" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 03:12:40 GMT
+# Tue, 12 Oct 2021 03:09:48 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc49dc2b13c90b1072cf188a4ba1115a098d11f59b7e65417504729a181a31f2`  
-		Last Modified: Tue, 28 Sep 2021 04:18:56 GMT  
-		Size: 57.4 MB (57428635 bytes)  
+	-	`sha256:7046352f470edcd886f4e0dbe694ceaeaa784da2ba917d506c87ec4a9281826a`  
+		Last Modified: Tue, 12 Oct 2021 04:14:39 GMT  
+		Size: 57.4 MB (57429815 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:22.3.4.21-slim` - linux; 386
@@ -12817,7 +12817,7 @@ CMD ["erl"]
 ## `erlang:23`
 
 ```console
-$ docker pull erlang@sha256:46695b34673bd4105ea96e50fc2e0d5571e4bbdadea7fcacdcd92c0c06d5a40d
+$ docker pull erlang@sha256:186e5f5ec6be620a76f9d66aaee51ec4e268f83111a89a7353d81cacb862a9ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12984,77 +12984,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:23` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ec1e46244bfb40334ab0dc79ea04d2c683f2afee5cd617963fe9f240951556af
+$ docker pull erlang@sha256:5527449a746c7c7c99910cfa40c3a99b4d0bece3ad38eb05f6f2b85f0bc5952c
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.4 MB (459362341 bytes)**  
+-	Total Size: **459.4 MB (459386634 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:13746397ec0ce525e2407c2ac4f7115de9c22e7d9482a7ba137d97fac3bd9c62`
+-	Image ID: `sha256:764253de810d2c151013c83296d2fe5b212878cb38feecb9a5180bef5231f5cc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:44:11 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:44:12 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:52:18 GMT
+# Tue, 12 Oct 2021 02:49:30 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 02:52:23 GMT
+# Tue, 12 Oct 2021 02:49:36 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 02:52:45 GMT
+# Tue, 12 Oct 2021 02:49:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:976afccb9c0d181502772a6ed4568aee22194e355c5154a596d098965a3a8a79`  
-		Last Modified: Tue, 28 Sep 2021 04:17:19 GMT  
-		Size: 155.2 MB (155203170 bytes)  
+	-	`sha256:77ab579c4f0c4fbcd97a9d1c87fdfb014c230671ca4c889a986629d6b3f6ba5b`  
+		Last Modified: Tue, 12 Oct 2021 04:13:05 GMT  
+		Size: 155.2 MB (155202663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab01798ddd26fcaa9a6e6d24b0c4f8b7e95d1b0e4338eeef6308772011b789e9`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 196.2 KB (196223 bytes)  
+	-	`sha256:bb49fb14a38000c848da570a07f3746d1eec54921fa77c004c2f9dccb7799f6d`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 196.2 KB (196229 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0947742f76a2e2010edeb6ca1762f5d917b690d80c7f13db7a33f5e35c6c4d7`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 916.6 KB (916562 bytes)  
+	-	`sha256:a0891bf04979a3e065f9137445f8093491d195750f80645f380bbe37c2691735`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 916.6 KB (916629 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23` - linux; 386
@@ -13531,7 +13531,7 @@ CMD ["erl"]
 ## `erlang:23-slim`
 
 ```console
-$ docker pull erlang@sha256:eb4905a3204a372faf62819171eea7e396cfdeba1c18343e5e06c722e0ad558a
+$ docker pull erlang@sha256:3538d3ca901cb3885779487f750ff61f3f4e22d7c3260ad5b7c9ffcc6163c726
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13622,39 +13622,39 @@ CMD ["erl"]
 ### `erlang:23-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:e614cfa40d4f817395de578984c869514ebef2604ed75c386e5d675fba5deee4
+$ docker pull erlang@sha256:7d4e859f725d3bced32b6d93db5aefa6a083c6bb99d3286393e4e60033283365
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.0 MB (108020069 bytes)**  
+-	Total Size: **108.0 MB (108021065 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5fc36c5a6ca32bad43fc358732475d10db8613068a8b383b3feab06db634669c`
+-	Image ID: `sha256:f3e76bf6c7f9edd503c58f3e60adbfb7f3cfe62eb4814590a0674af5a1f03b2d`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:10 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:11 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4bd9b137ddbf626743830ec2e932225163df231abf884302febc4a878f645d94`  
-		Last Modified: Tue, 28 Sep 2021 04:17:46 GMT  
-		Size: 58.8 MB (58797688 bytes)  
+	-	`sha256:cce3e8867c93fe73565030e2ee8a02cf3b8b0acbaf26def62bc966efe294e44c`  
+		Last Modified: Tue, 12 Oct 2021 04:13:31 GMT  
+		Size: 58.8 MB (58798309 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23-slim` - linux; 386
@@ -13774,7 +13774,7 @@ CMD ["erl"]
 ## `erlang:23.3`
 
 ```console
-$ docker pull erlang@sha256:46695b34673bd4105ea96e50fc2e0d5571e4bbdadea7fcacdcd92c0c06d5a40d
+$ docker pull erlang@sha256:186e5f5ec6be620a76f9d66aaee51ec4e268f83111a89a7353d81cacb862a9ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13941,77 +13941,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:23.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ec1e46244bfb40334ab0dc79ea04d2c683f2afee5cd617963fe9f240951556af
+$ docker pull erlang@sha256:5527449a746c7c7c99910cfa40c3a99b4d0bece3ad38eb05f6f2b85f0bc5952c
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.4 MB (459362341 bytes)**  
+-	Total Size: **459.4 MB (459386634 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:13746397ec0ce525e2407c2ac4f7115de9c22e7d9482a7ba137d97fac3bd9c62`
+-	Image ID: `sha256:764253de810d2c151013c83296d2fe5b212878cb38feecb9a5180bef5231f5cc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:44:11 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:44:12 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:52:18 GMT
+# Tue, 12 Oct 2021 02:49:30 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 02:52:23 GMT
+# Tue, 12 Oct 2021 02:49:36 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 02:52:45 GMT
+# Tue, 12 Oct 2021 02:49:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:976afccb9c0d181502772a6ed4568aee22194e355c5154a596d098965a3a8a79`  
-		Last Modified: Tue, 28 Sep 2021 04:17:19 GMT  
-		Size: 155.2 MB (155203170 bytes)  
+	-	`sha256:77ab579c4f0c4fbcd97a9d1c87fdfb014c230671ca4c889a986629d6b3f6ba5b`  
+		Last Modified: Tue, 12 Oct 2021 04:13:05 GMT  
+		Size: 155.2 MB (155202663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab01798ddd26fcaa9a6e6d24b0c4f8b7e95d1b0e4338eeef6308772011b789e9`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 196.2 KB (196223 bytes)  
+	-	`sha256:bb49fb14a38000c848da570a07f3746d1eec54921fa77c004c2f9dccb7799f6d`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 196.2 KB (196229 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0947742f76a2e2010edeb6ca1762f5d917b690d80c7f13db7a33f5e35c6c4d7`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 916.6 KB (916562 bytes)  
+	-	`sha256:a0891bf04979a3e065f9137445f8093491d195750f80645f380bbe37c2691735`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 916.6 KB (916629 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23.3` - linux; 386
@@ -14488,7 +14488,7 @@ CMD ["erl"]
 ## `erlang:23.3-slim`
 
 ```console
-$ docker pull erlang@sha256:eb4905a3204a372faf62819171eea7e396cfdeba1c18343e5e06c722e0ad558a
+$ docker pull erlang@sha256:3538d3ca901cb3885779487f750ff61f3f4e22d7c3260ad5b7c9ffcc6163c726
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14579,39 +14579,39 @@ CMD ["erl"]
 ### `erlang:23.3-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:e614cfa40d4f817395de578984c869514ebef2604ed75c386e5d675fba5deee4
+$ docker pull erlang@sha256:7d4e859f725d3bced32b6d93db5aefa6a083c6bb99d3286393e4e60033283365
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.0 MB (108020069 bytes)**  
+-	Total Size: **108.0 MB (108021065 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5fc36c5a6ca32bad43fc358732475d10db8613068a8b383b3feab06db634669c`
+-	Image ID: `sha256:f3e76bf6c7f9edd503c58f3e60adbfb7f3cfe62eb4814590a0674af5a1f03b2d`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:10 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:11 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4bd9b137ddbf626743830ec2e932225163df231abf884302febc4a878f645d94`  
-		Last Modified: Tue, 28 Sep 2021 04:17:46 GMT  
-		Size: 58.8 MB (58797688 bytes)  
+	-	`sha256:cce3e8867c93fe73565030e2ee8a02cf3b8b0acbaf26def62bc966efe294e44c`  
+		Last Modified: Tue, 12 Oct 2021 04:13:31 GMT  
+		Size: 58.8 MB (58798309 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23.3-slim` - linux; 386
@@ -14731,7 +14731,7 @@ CMD ["erl"]
 ## `erlang:23.3.4`
 
 ```console
-$ docker pull erlang@sha256:46695b34673bd4105ea96e50fc2e0d5571e4bbdadea7fcacdcd92c0c06d5a40d
+$ docker pull erlang@sha256:186e5f5ec6be620a76f9d66aaee51ec4e268f83111a89a7353d81cacb862a9ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14898,77 +14898,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:23.3.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ec1e46244bfb40334ab0dc79ea04d2c683f2afee5cd617963fe9f240951556af
+$ docker pull erlang@sha256:5527449a746c7c7c99910cfa40c3a99b4d0bece3ad38eb05f6f2b85f0bc5952c
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.4 MB (459362341 bytes)**  
+-	Total Size: **459.4 MB (459386634 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:13746397ec0ce525e2407c2ac4f7115de9c22e7d9482a7ba137d97fac3bd9c62`
+-	Image ID: `sha256:764253de810d2c151013c83296d2fe5b212878cb38feecb9a5180bef5231f5cc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:44:11 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:44:12 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:52:18 GMT
+# Tue, 12 Oct 2021 02:49:30 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 02:52:23 GMT
+# Tue, 12 Oct 2021 02:49:36 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 02:52:45 GMT
+# Tue, 12 Oct 2021 02:49:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:976afccb9c0d181502772a6ed4568aee22194e355c5154a596d098965a3a8a79`  
-		Last Modified: Tue, 28 Sep 2021 04:17:19 GMT  
-		Size: 155.2 MB (155203170 bytes)  
+	-	`sha256:77ab579c4f0c4fbcd97a9d1c87fdfb014c230671ca4c889a986629d6b3f6ba5b`  
+		Last Modified: Tue, 12 Oct 2021 04:13:05 GMT  
+		Size: 155.2 MB (155202663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab01798ddd26fcaa9a6e6d24b0c4f8b7e95d1b0e4338eeef6308772011b789e9`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 196.2 KB (196223 bytes)  
+	-	`sha256:bb49fb14a38000c848da570a07f3746d1eec54921fa77c004c2f9dccb7799f6d`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 196.2 KB (196229 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0947742f76a2e2010edeb6ca1762f5d917b690d80c7f13db7a33f5e35c6c4d7`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 916.6 KB (916562 bytes)  
+	-	`sha256:a0891bf04979a3e065f9137445f8093491d195750f80645f380bbe37c2691735`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 916.6 KB (916629 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23.3.4` - linux; 386
@@ -15445,7 +15445,7 @@ CMD ["erl"]
 ## `erlang:23.3.4-slim`
 
 ```console
-$ docker pull erlang@sha256:eb4905a3204a372faf62819171eea7e396cfdeba1c18343e5e06c722e0ad558a
+$ docker pull erlang@sha256:3538d3ca901cb3885779487f750ff61f3f4e22d7c3260ad5b7c9ffcc6163c726
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15536,39 +15536,39 @@ CMD ["erl"]
 ### `erlang:23.3.4-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:e614cfa40d4f817395de578984c869514ebef2604ed75c386e5d675fba5deee4
+$ docker pull erlang@sha256:7d4e859f725d3bced32b6d93db5aefa6a083c6bb99d3286393e4e60033283365
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.0 MB (108020069 bytes)**  
+-	Total Size: **108.0 MB (108021065 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5fc36c5a6ca32bad43fc358732475d10db8613068a8b383b3feab06db634669c`
+-	Image ID: `sha256:f3e76bf6c7f9edd503c58f3e60adbfb7f3cfe62eb4814590a0674af5a1f03b2d`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:10 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:11 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4bd9b137ddbf626743830ec2e932225163df231abf884302febc4a878f645d94`  
-		Last Modified: Tue, 28 Sep 2021 04:17:46 GMT  
-		Size: 58.8 MB (58797688 bytes)  
+	-	`sha256:cce3e8867c93fe73565030e2ee8a02cf3b8b0acbaf26def62bc966efe294e44c`  
+		Last Modified: Tue, 12 Oct 2021 04:13:31 GMT  
+		Size: 58.8 MB (58798309 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23.3.4-slim` - linux; 386
@@ -15688,7 +15688,7 @@ CMD ["erl"]
 ## `erlang:23.3.4.7`
 
 ```console
-$ docker pull erlang@sha256:46695b34673bd4105ea96e50fc2e0d5571e4bbdadea7fcacdcd92c0c06d5a40d
+$ docker pull erlang@sha256:186e5f5ec6be620a76f9d66aaee51ec4e268f83111a89a7353d81cacb862a9ff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15855,77 +15855,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:23.3.4.7` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:ec1e46244bfb40334ab0dc79ea04d2c683f2afee5cd617963fe9f240951556af
+$ docker pull erlang@sha256:5527449a746c7c7c99910cfa40c3a99b4d0bece3ad38eb05f6f2b85f0bc5952c
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.4 MB (459362341 bytes)**  
+-	Total Size: **459.4 MB (459386634 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:13746397ec0ce525e2407c2ac4f7115de9c22e7d9482a7ba137d97fac3bd9c62`
+-	Image ID: `sha256:764253de810d2c151013c83296d2fe5b212878cb38feecb9a5180bef5231f5cc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:44:11 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:44:12 GMT
+# Tue, 12 Oct 2021 02:41:31 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:52:18 GMT
+# Tue, 12 Oct 2021 02:49:30 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 CMD ["erl"]
-# Tue, 28 Sep 2021 02:52:19 GMT
+# Tue, 12 Oct 2021 02:49:31 GMT
 ENV REBAR_VERSION=2.6.4
-# Tue, 28 Sep 2021 02:52:23 GMT
+# Tue, 12 Oct 2021 02:49:36 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Tue, 28 Sep 2021 02:52:45 GMT
+# Tue, 12 Oct 2021 02:49:58 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:976afccb9c0d181502772a6ed4568aee22194e355c5154a596d098965a3a8a79`  
-		Last Modified: Tue, 28 Sep 2021 04:17:19 GMT  
-		Size: 155.2 MB (155203170 bytes)  
+	-	`sha256:77ab579c4f0c4fbcd97a9d1c87fdfb014c230671ca4c889a986629d6b3f6ba5b`  
+		Last Modified: Tue, 12 Oct 2021 04:13:05 GMT  
+		Size: 155.2 MB (155202663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab01798ddd26fcaa9a6e6d24b0c4f8b7e95d1b0e4338eeef6308772011b789e9`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 196.2 KB (196223 bytes)  
+	-	`sha256:bb49fb14a38000c848da570a07f3746d1eec54921fa77c004c2f9dccb7799f6d`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 196.2 KB (196229 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0947742f76a2e2010edeb6ca1762f5d917b690d80c7f13db7a33f5e35c6c4d7`  
-		Last Modified: Tue, 28 Sep 2021 04:16:57 GMT  
-		Size: 916.6 KB (916562 bytes)  
+	-	`sha256:a0891bf04979a3e065f9137445f8093491d195750f80645f380bbe37c2691735`  
+		Last Modified: Tue, 12 Oct 2021 04:12:43 GMT  
+		Size: 916.6 KB (916629 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23.3.4.7` - linux; 386
@@ -16402,7 +16402,7 @@ CMD ["erl"]
 ## `erlang:23.3.4.7-slim`
 
 ```console
-$ docker pull erlang@sha256:eb4905a3204a372faf62819171eea7e396cfdeba1c18343e5e06c722e0ad558a
+$ docker pull erlang@sha256:3538d3ca901cb3885779487f750ff61f3f4e22d7c3260ad5b7c9ffcc6163c726
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16493,39 +16493,39 @@ CMD ["erl"]
 ### `erlang:23.3.4.7-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:e614cfa40d4f817395de578984c869514ebef2604ed75c386e5d675fba5deee4
+$ docker pull erlang@sha256:7d4e859f725d3bced32b6d93db5aefa6a083c6bb99d3286393e4e60033283365
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **108.0 MB (108020069 bytes)**  
+-	Total Size: **108.0 MB (108021065 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5fc36c5a6ca32bad43fc358732475d10db8613068a8b383b3feab06db634669c`
+-	Image ID: `sha256:f3e76bf6c7f9edd503c58f3e60adbfb7f3cfe62eb4814590a0674af5a1f03b2d`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:10 GMT
 ENV OTP_VERSION=23.3.4.7 REBAR3_VERSION=3.16.1
-# Tue, 28 Sep 2021 02:52:56 GMT
+# Tue, 12 Oct 2021 02:50:11 GMT
 LABEL org.opencontainers.image.version=23.3.4.7
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="48fce4352228bf987b1458ed22d0cb218f39d699951a8822e65ab37f200dbbf6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a14711b09f6e1fc1b080b79d78c304afebcbb7fafed9d0972eb739f0ed89121b" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:58:32 GMT
+# Tue, 12 Oct 2021 02:55:39 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4bd9b137ddbf626743830ec2e932225163df231abf884302febc4a878f645d94`  
-		Last Modified: Tue, 28 Sep 2021 04:17:46 GMT  
-		Size: 58.8 MB (58797688 bytes)  
+	-	`sha256:cce3e8867c93fe73565030e2ee8a02cf3b8b0acbaf26def62bc966efe294e44c`  
+		Last Modified: Tue, 12 Oct 2021 04:13:31 GMT  
+		Size: 58.8 MB (58798309 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:23.3.4.7-slim` - linux; 386
@@ -16645,7 +16645,7 @@ CMD ["erl"]
 ## `erlang:24`
 
 ```console
-$ docker pull erlang@sha256:7c5f4d1dcfd15c234989fa11964a031109deb1249e074b0e4956e426112679c6
+$ docker pull erlang@sha256:ee143c69ad25ef843b6b617b7c4fcafb67818b951d5473360360f5d269191752
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16812,77 +16812,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:24` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:312beadc71a0d32e9220cd250182c4e74dbca567d2bd07c4f49cc3060469e864
+$ docker pull erlang@sha256:ac8f9ef7844de2f2cf3039bc248f1b18b2b259ee6040023ac9fc42957e840415
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.1 MB (464060641 bytes)**  
+-	Total Size: **464.1 MB (464084674 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a537d1c0e2992130117aa6558537df2e2d0a041f26ffcddb6e22a54623e1354`
+-	Image ID: `sha256:1049dab9c5f4fca5118e58f739bdec8ca6ff4acb4735dd7f97e807eeebe1cebb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:39:57 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:39:58 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:47:29 GMT
+# Tue, 12 Oct 2021 02:35:22 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 CMD ["erl"]
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 06 Oct 2021 17:47:35 GMT
+# Tue, 12 Oct 2021 02:35:28 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 06 Oct 2021 17:47:57 GMT
+# Tue, 12 Oct 2021 02:35:50 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc677775bdc259ba517693c5c7b3b7b5e1456a81c0e9fac5be265105fed24b7e`  
-		Last Modified: Wed, 06 Oct 2021 18:04:09 GMT  
-		Size: 159.9 MB (159859074 bytes)  
+	-	`sha256:498e831cad4455df8a8f0c64c81b9f76e10dc86e49ad7fe1c49abf93f04599a1`  
+		Last Modified: Tue, 12 Oct 2021 04:11:49 GMT  
+		Size: 159.9 MB (159858410 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:56846aafe7e598d53e70faebb7baf6e8051f60d0fe66c136e04c032872d9c842`  
-		Last Modified: Wed, 06 Oct 2021 18:03:47 GMT  
-		Size: 196.5 KB (196523 bytes)  
+	-	`sha256:91b6926c00793bea7b44d6c7ca81da6bda60eac856b956af5827c4cccab5199e`  
+		Last Modified: Tue, 12 Oct 2021 04:11:26 GMT  
+		Size: 196.5 KB (196491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eea4ffa59cebb4b0054967f679c86ef75eee8d3db042831ce39cf6ce0f68a363`  
-		Last Modified: Wed, 06 Oct 2021 18:03:48 GMT  
-		Size: 958.7 KB (958658 bytes)  
+	-	`sha256:f910bbffac5d42ef8877b7e0a22cbbe695f018ab414b6b22c115965ee8a1ff53`  
+		Last Modified: Tue, 12 Oct 2021 04:11:27 GMT  
+		Size: 958.7 KB (958660 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24` - linux; 386
@@ -17359,7 +17359,7 @@ CMD ["erl"]
 ## `erlang:24-slim`
 
 ```console
-$ docker pull erlang@sha256:fe7074339bd7dca241bae30b1c920c13ab1d9b8fae0e6525c9f7f12ac099bc29
+$ docker pull erlang@sha256:95b1f7d3f7b2ec8f98d0b8438747bad103f71b573bfbf29366c30df11d6bdfd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17450,39 +17450,39 @@ CMD ["erl"]
 ### `erlang:24-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:98261b94620b6d6454af0346a8c022a26f0ff9f15c017cb3aef81450119ae667
+$ docker pull erlang@sha256:068402dc949f6933eac6735750bae44ac6dae6a3f5439eda7ea0e1bb9e6a5084
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **109.3 MB (109265720 bytes)**  
+-	Total Size: **109.3 MB (109266471 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47a6c0ab88bccd557ff00a5e23e58de5ec296da55ac1bd4b9eb247af5afc97a4`
+-	Image ID: `sha256:fb772d7de76e8eab378bbacbadbc4ec09933ddaae8857e107127bf22cb5ac1dc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:53:28 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:53:29 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03df2b46045bb0ac35f2dcc37384480187e21421fdadc2329cf77357de5f2cd`  
-		Last Modified: Wed, 06 Oct 2021 18:04:40 GMT  
-		Size: 60.0 MB (60043339 bytes)  
+	-	`sha256:83f716aea6f4b6ff9cc19592f7f94b23545f12500367c90d083dbc8fe189a0ec`  
+		Last Modified: Tue, 12 Oct 2021 04:12:19 GMT  
+		Size: 60.0 MB (60043715 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24-slim` - linux; 386
@@ -17602,7 +17602,7 @@ CMD ["erl"]
 ## `erlang:24.1`
 
 ```console
-$ docker pull erlang@sha256:7c5f4d1dcfd15c234989fa11964a031109deb1249e074b0e4956e426112679c6
+$ docker pull erlang@sha256:ee143c69ad25ef843b6b617b7c4fcafb67818b951d5473360360f5d269191752
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17769,77 +17769,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:24.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:312beadc71a0d32e9220cd250182c4e74dbca567d2bd07c4f49cc3060469e864
+$ docker pull erlang@sha256:ac8f9ef7844de2f2cf3039bc248f1b18b2b259ee6040023ac9fc42957e840415
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.1 MB (464060641 bytes)**  
+-	Total Size: **464.1 MB (464084674 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a537d1c0e2992130117aa6558537df2e2d0a041f26ffcddb6e22a54623e1354`
+-	Image ID: `sha256:1049dab9c5f4fca5118e58f739bdec8ca6ff4acb4735dd7f97e807eeebe1cebb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:39:57 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:39:58 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:47:29 GMT
+# Tue, 12 Oct 2021 02:35:22 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 CMD ["erl"]
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 06 Oct 2021 17:47:35 GMT
+# Tue, 12 Oct 2021 02:35:28 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 06 Oct 2021 17:47:57 GMT
+# Tue, 12 Oct 2021 02:35:50 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc677775bdc259ba517693c5c7b3b7b5e1456a81c0e9fac5be265105fed24b7e`  
-		Last Modified: Wed, 06 Oct 2021 18:04:09 GMT  
-		Size: 159.9 MB (159859074 bytes)  
+	-	`sha256:498e831cad4455df8a8f0c64c81b9f76e10dc86e49ad7fe1c49abf93f04599a1`  
+		Last Modified: Tue, 12 Oct 2021 04:11:49 GMT  
+		Size: 159.9 MB (159858410 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:56846aafe7e598d53e70faebb7baf6e8051f60d0fe66c136e04c032872d9c842`  
-		Last Modified: Wed, 06 Oct 2021 18:03:47 GMT  
-		Size: 196.5 KB (196523 bytes)  
+	-	`sha256:91b6926c00793bea7b44d6c7ca81da6bda60eac856b956af5827c4cccab5199e`  
+		Last Modified: Tue, 12 Oct 2021 04:11:26 GMT  
+		Size: 196.5 KB (196491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eea4ffa59cebb4b0054967f679c86ef75eee8d3db042831ce39cf6ce0f68a363`  
-		Last Modified: Wed, 06 Oct 2021 18:03:48 GMT  
-		Size: 958.7 KB (958658 bytes)  
+	-	`sha256:f910bbffac5d42ef8877b7e0a22cbbe695f018ab414b6b22c115965ee8a1ff53`  
+		Last Modified: Tue, 12 Oct 2021 04:11:27 GMT  
+		Size: 958.7 KB (958660 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24.1` - linux; 386
@@ -18316,7 +18316,7 @@ CMD ["erl"]
 ## `erlang:24.1-slim`
 
 ```console
-$ docker pull erlang@sha256:fe7074339bd7dca241bae30b1c920c13ab1d9b8fae0e6525c9f7f12ac099bc29
+$ docker pull erlang@sha256:95b1f7d3f7b2ec8f98d0b8438747bad103f71b573bfbf29366c30df11d6bdfd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18407,39 +18407,39 @@ CMD ["erl"]
 ### `erlang:24.1-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:98261b94620b6d6454af0346a8c022a26f0ff9f15c017cb3aef81450119ae667
+$ docker pull erlang@sha256:068402dc949f6933eac6735750bae44ac6dae6a3f5439eda7ea0e1bb9e6a5084
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **109.3 MB (109265720 bytes)**  
+-	Total Size: **109.3 MB (109266471 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47a6c0ab88bccd557ff00a5e23e58de5ec296da55ac1bd4b9eb247af5afc97a4`
+-	Image ID: `sha256:fb772d7de76e8eab378bbacbadbc4ec09933ddaae8857e107127bf22cb5ac1dc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:53:28 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:53:29 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03df2b46045bb0ac35f2dcc37384480187e21421fdadc2329cf77357de5f2cd`  
-		Last Modified: Wed, 06 Oct 2021 18:04:40 GMT  
-		Size: 60.0 MB (60043339 bytes)  
+	-	`sha256:83f716aea6f4b6ff9cc19592f7f94b23545f12500367c90d083dbc8fe189a0ec`  
+		Last Modified: Tue, 12 Oct 2021 04:12:19 GMT  
+		Size: 60.0 MB (60043715 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24.1-slim` - linux; 386
@@ -18559,7 +18559,7 @@ CMD ["erl"]
 ## `erlang:24.1.2`
 
 ```console
-$ docker pull erlang@sha256:7c5f4d1dcfd15c234989fa11964a031109deb1249e074b0e4956e426112679c6
+$ docker pull erlang@sha256:ee143c69ad25ef843b6b617b7c4fcafb67818b951d5473360360f5d269191752
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18726,77 +18726,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:24.1.2` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:312beadc71a0d32e9220cd250182c4e74dbca567d2bd07c4f49cc3060469e864
+$ docker pull erlang@sha256:ac8f9ef7844de2f2cf3039bc248f1b18b2b259ee6040023ac9fc42957e840415
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.1 MB (464060641 bytes)**  
+-	Total Size: **464.1 MB (464084674 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a537d1c0e2992130117aa6558537df2e2d0a041f26ffcddb6e22a54623e1354`
+-	Image ID: `sha256:1049dab9c5f4fca5118e58f739bdec8ca6ff4acb4735dd7f97e807eeebe1cebb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:39:57 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:39:58 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:47:29 GMT
+# Tue, 12 Oct 2021 02:35:22 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 CMD ["erl"]
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 06 Oct 2021 17:47:35 GMT
+# Tue, 12 Oct 2021 02:35:28 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 06 Oct 2021 17:47:57 GMT
+# Tue, 12 Oct 2021 02:35:50 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc677775bdc259ba517693c5c7b3b7b5e1456a81c0e9fac5be265105fed24b7e`  
-		Last Modified: Wed, 06 Oct 2021 18:04:09 GMT  
-		Size: 159.9 MB (159859074 bytes)  
+	-	`sha256:498e831cad4455df8a8f0c64c81b9f76e10dc86e49ad7fe1c49abf93f04599a1`  
+		Last Modified: Tue, 12 Oct 2021 04:11:49 GMT  
+		Size: 159.9 MB (159858410 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:56846aafe7e598d53e70faebb7baf6e8051f60d0fe66c136e04c032872d9c842`  
-		Last Modified: Wed, 06 Oct 2021 18:03:47 GMT  
-		Size: 196.5 KB (196523 bytes)  
+	-	`sha256:91b6926c00793bea7b44d6c7ca81da6bda60eac856b956af5827c4cccab5199e`  
+		Last Modified: Tue, 12 Oct 2021 04:11:26 GMT  
+		Size: 196.5 KB (196491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eea4ffa59cebb4b0054967f679c86ef75eee8d3db042831ce39cf6ce0f68a363`  
-		Last Modified: Wed, 06 Oct 2021 18:03:48 GMT  
-		Size: 958.7 KB (958658 bytes)  
+	-	`sha256:f910bbffac5d42ef8877b7e0a22cbbe695f018ab414b6b22c115965ee8a1ff53`  
+		Last Modified: Tue, 12 Oct 2021 04:11:27 GMT  
+		Size: 958.7 KB (958660 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24.1.2` - linux; 386
@@ -19273,7 +19273,7 @@ CMD ["erl"]
 ## `erlang:24.1.2-slim`
 
 ```console
-$ docker pull erlang@sha256:fe7074339bd7dca241bae30b1c920c13ab1d9b8fae0e6525c9f7f12ac099bc29
+$ docker pull erlang@sha256:95b1f7d3f7b2ec8f98d0b8438747bad103f71b573bfbf29366c30df11d6bdfd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19364,39 +19364,39 @@ CMD ["erl"]
 ### `erlang:24.1.2-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:98261b94620b6d6454af0346a8c022a26f0ff9f15c017cb3aef81450119ae667
+$ docker pull erlang@sha256:068402dc949f6933eac6735750bae44ac6dae6a3f5439eda7ea0e1bb9e6a5084
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **109.3 MB (109265720 bytes)**  
+-	Total Size: **109.3 MB (109266471 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47a6c0ab88bccd557ff00a5e23e58de5ec296da55ac1bd4b9eb247af5afc97a4`
+-	Image ID: `sha256:fb772d7de76e8eab378bbacbadbc4ec09933ddaae8857e107127bf22cb5ac1dc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:53:28 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:53:29 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03df2b46045bb0ac35f2dcc37384480187e21421fdadc2329cf77357de5f2cd`  
-		Last Modified: Wed, 06 Oct 2021 18:04:40 GMT  
-		Size: 60.0 MB (60043339 bytes)  
+	-	`sha256:83f716aea6f4b6ff9cc19592f7f94b23545f12500367c90d083dbc8fe189a0ec`  
+		Last Modified: Tue, 12 Oct 2021 04:12:19 GMT  
+		Size: 60.0 MB (60043715 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24.1.2-slim` - linux; 386
@@ -19516,7 +19516,7 @@ CMD ["erl"]
 ## `erlang:24.1.2.0`
 
 ```console
-$ docker pull erlang@sha256:7c5f4d1dcfd15c234989fa11964a031109deb1249e074b0e4956e426112679c6
+$ docker pull erlang@sha256:ee143c69ad25ef843b6b617b7c4fcafb67818b951d5473360360f5d269191752
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19683,77 +19683,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:24.1.2.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:312beadc71a0d32e9220cd250182c4e74dbca567d2bd07c4f49cc3060469e864
+$ docker pull erlang@sha256:ac8f9ef7844de2f2cf3039bc248f1b18b2b259ee6040023ac9fc42957e840415
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.1 MB (464060641 bytes)**  
+-	Total Size: **464.1 MB (464084674 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a537d1c0e2992130117aa6558537df2e2d0a041f26ffcddb6e22a54623e1354`
+-	Image ID: `sha256:1049dab9c5f4fca5118e58f739bdec8ca6ff4acb4735dd7f97e807eeebe1cebb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:39:57 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:39:58 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:47:29 GMT
+# Tue, 12 Oct 2021 02:35:22 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 CMD ["erl"]
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 06 Oct 2021 17:47:35 GMT
+# Tue, 12 Oct 2021 02:35:28 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 06 Oct 2021 17:47:57 GMT
+# Tue, 12 Oct 2021 02:35:50 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc677775bdc259ba517693c5c7b3b7b5e1456a81c0e9fac5be265105fed24b7e`  
-		Last Modified: Wed, 06 Oct 2021 18:04:09 GMT  
-		Size: 159.9 MB (159859074 bytes)  
+	-	`sha256:498e831cad4455df8a8f0c64c81b9f76e10dc86e49ad7fe1c49abf93f04599a1`  
+		Last Modified: Tue, 12 Oct 2021 04:11:49 GMT  
+		Size: 159.9 MB (159858410 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:56846aafe7e598d53e70faebb7baf6e8051f60d0fe66c136e04c032872d9c842`  
-		Last Modified: Wed, 06 Oct 2021 18:03:47 GMT  
-		Size: 196.5 KB (196523 bytes)  
+	-	`sha256:91b6926c00793bea7b44d6c7ca81da6bda60eac856b956af5827c4cccab5199e`  
+		Last Modified: Tue, 12 Oct 2021 04:11:26 GMT  
+		Size: 196.5 KB (196491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eea4ffa59cebb4b0054967f679c86ef75eee8d3db042831ce39cf6ce0f68a363`  
-		Last Modified: Wed, 06 Oct 2021 18:03:48 GMT  
-		Size: 958.7 KB (958658 bytes)  
+	-	`sha256:f910bbffac5d42ef8877b7e0a22cbbe695f018ab414b6b22c115965ee8a1ff53`  
+		Last Modified: Tue, 12 Oct 2021 04:11:27 GMT  
+		Size: 958.7 KB (958660 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24.1.2.0` - linux; 386
@@ -20230,7 +20230,7 @@ CMD ["erl"]
 ## `erlang:24.1.2.0-slim`
 
 ```console
-$ docker pull erlang@sha256:fe7074339bd7dca241bae30b1c920c13ab1d9b8fae0e6525c9f7f12ac099bc29
+$ docker pull erlang@sha256:95b1f7d3f7b2ec8f98d0b8438747bad103f71b573bfbf29366c30df11d6bdfd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20321,39 +20321,39 @@ CMD ["erl"]
 ### `erlang:24.1.2.0-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:98261b94620b6d6454af0346a8c022a26f0ff9f15c017cb3aef81450119ae667
+$ docker pull erlang@sha256:068402dc949f6933eac6735750bae44ac6dae6a3f5439eda7ea0e1bb9e6a5084
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **109.3 MB (109265720 bytes)**  
+-	Total Size: **109.3 MB (109266471 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47a6c0ab88bccd557ff00a5e23e58de5ec296da55ac1bd4b9eb247af5afc97a4`
+-	Image ID: `sha256:fb772d7de76e8eab378bbacbadbc4ec09933ddaae8857e107127bf22cb5ac1dc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:53:28 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:53:29 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03df2b46045bb0ac35f2dcc37384480187e21421fdadc2329cf77357de5f2cd`  
-		Last Modified: Wed, 06 Oct 2021 18:04:40 GMT  
-		Size: 60.0 MB (60043339 bytes)  
+	-	`sha256:83f716aea6f4b6ff9cc19592f7f94b23545f12500367c90d083dbc8fe189a0ec`  
+		Last Modified: Tue, 12 Oct 2021 04:12:19 GMT  
+		Size: 60.0 MB (60043715 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:24.1.2.0-slim` - linux; 386
@@ -20716,7 +20716,7 @@ CMD ["erl"]
 ## `erlang:latest`
 
 ```console
-$ docker pull erlang@sha256:7c5f4d1dcfd15c234989fa11964a031109deb1249e074b0e4956e426112679c6
+$ docker pull erlang@sha256:ee143c69ad25ef843b6b617b7c4fcafb67818b951d5473360360f5d269191752
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20883,77 +20883,77 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ### `erlang:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:312beadc71a0d32e9220cd250182c4e74dbca567d2bd07c4f49cc3060469e864
+$ docker pull erlang@sha256:ac8f9ef7844de2f2cf3039bc248f1b18b2b259ee6040023ac9fc42957e840415
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **464.1 MB (464060641 bytes)**  
+-	Total Size: **464.1 MB (464084674 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a537d1c0e2992130117aa6558537df2e2d0a041f26ffcddb6e22a54623e1354`
+-	Image ID: `sha256:1049dab9c5f4fca5118e58f739bdec8ca6ff4acb4735dd7f97e807eeebe1cebb`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:18:28 GMT
+# Tue, 12 Oct 2021 02:12:43 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:39:57 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:39:58 GMT
+# Tue, 12 Oct 2021 02:27:53 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:47:29 GMT
+# Tue, 12 Oct 2021 02:35:22 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make -j$(nproc) docs DOC_TARGETS=chunks 	  && make install install-docs DOC_TARGETS=chunks ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 CMD ["erl"]
-# Wed, 06 Oct 2021 17:47:31 GMT
+# Tue, 12 Oct 2021 02:35:23 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 06 Oct 2021 17:47:35 GMT
+# Tue, 12 Oct 2021 02:35:28 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 06 Oct 2021 17:47:57 GMT
+# Tue, 12 Oct 2021 02:35:50 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2577d89b67b3c6b82eba3af07fcab6fb023276c144328ee678f9ef6cc14d174f`  
-		Last Modified: Tue, 28 Sep 2021 02:26:57 GMT  
-		Size: 184.0 MB (183975976 bytes)  
+	-	`sha256:72917bd01d440309458190f7a53adbf7f21ff5197c348a418cb994f4dfc8b22d`  
+		Last Modified: Tue, 12 Oct 2021 02:21:07 GMT  
+		Size: 184.0 MB (184002196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc677775bdc259ba517693c5c7b3b7b5e1456a81c0e9fac5be265105fed24b7e`  
-		Last Modified: Wed, 06 Oct 2021 18:04:09 GMT  
-		Size: 159.9 MB (159859074 bytes)  
+	-	`sha256:498e831cad4455df8a8f0c64c81b9f76e10dc86e49ad7fe1c49abf93f04599a1`  
+		Last Modified: Tue, 12 Oct 2021 04:11:49 GMT  
+		Size: 159.9 MB (159858410 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:56846aafe7e598d53e70faebb7baf6e8051f60d0fe66c136e04c032872d9c842`  
-		Last Modified: Wed, 06 Oct 2021 18:03:47 GMT  
-		Size: 196.5 KB (196523 bytes)  
+	-	`sha256:91b6926c00793bea7b44d6c7ca81da6bda60eac856b956af5827c4cccab5199e`  
+		Last Modified: Tue, 12 Oct 2021 04:11:26 GMT  
+		Size: 196.5 KB (196491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eea4ffa59cebb4b0054967f679c86ef75eee8d3db042831ce39cf6ce0f68a363`  
-		Last Modified: Wed, 06 Oct 2021 18:03:48 GMT  
-		Size: 958.7 KB (958658 bytes)  
+	-	`sha256:f910bbffac5d42ef8877b7e0a22cbbe695f018ab414b6b22c115965ee8a1ff53`  
+		Last Modified: Tue, 12 Oct 2021 04:11:27 GMT  
+		Size: 958.7 KB (958660 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:latest` - linux; 386
@@ -21187,7 +21187,7 @@ RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${
 ## `erlang:slim`
 
 ```console
-$ docker pull erlang@sha256:fe7074339bd7dca241bae30b1c920c13ab1d9b8fae0e6525c9f7f12ac099bc29
+$ docker pull erlang@sha256:95b1f7d3f7b2ec8f98d0b8438747bad103f71b573bfbf29366c30df11d6bdfd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21278,39 +21278,39 @@ CMD ["erl"]
 ### `erlang:slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull erlang@sha256:98261b94620b6d6454af0346a8c022a26f0ff9f15c017cb3aef81450119ae667
+$ docker pull erlang@sha256:068402dc949f6933eac6735750bae44ac6dae6a3f5439eda7ea0e1bb9e6a5084
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **109.3 MB (109265720 bytes)**  
+-	Total Size: **109.3 MB (109266471 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47a6c0ab88bccd557ff00a5e23e58de5ec296da55ac1bd4b9eb247af5afc97a4`
+-	Image ID: `sha256:fb772d7de76e8eab378bbacbadbc4ec09933ddaae8857e107127bf22cb5ac1dc`
 -	Default Command: `["erl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 ENV OTP_VERSION=24.1.2 REBAR3_VERSION=3.17.0
-# Wed, 06 Oct 2021 17:48:12 GMT
+# Tue, 12 Oct 2021 02:36:02 GMT
 LABEL org.opencontainers.image.version=24.1.2
-# Wed, 06 Oct 2021 17:53:28 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="c141a046bb7184a7bb5c3d6da2ed013e465d1fbe4ff5cd16e0fbb7a0e786a152" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_HOST_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="4c7f33a342bcab498f9bf53cc0ee5b698d9598b8fa9ef6a14bcdf44d21945c27" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 06 Oct 2021 17:53:29 GMT
+# Tue, 12 Oct 2021 02:41:08 GMT
 CMD ["erl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03df2b46045bb0ac35f2dcc37384480187e21421fdadc2329cf77357de5f2cd`  
-		Last Modified: Wed, 06 Oct 2021 18:04:40 GMT  
-		Size: 60.0 MB (60043339 bytes)  
+	-	`sha256:83f716aea6f4b6ff9cc19592f7f94b23545f12500367c90d083dbc8fe189a0ec`  
+		Last Modified: Tue, 12 Oct 2021 04:12:19 GMT  
+		Size: 60.0 MB (60043715 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `erlang:slim` - linux; 386
