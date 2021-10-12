@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:47e6d47a5af216fd1d255dc5c1d031a6a2e1c3923f20b59b4afe599de98b4d79`
 - Created: `2021-10-07T20:08:07.13860085Z`
-- Virtual Size: ~ 634.60 Mb  
+- Virtual Size: ~ 634.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gradle"]`
