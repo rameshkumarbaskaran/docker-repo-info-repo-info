@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7c7c682ce0a41d4051490960cda1d3512926f237d74c4c4985070e4009b6cafc`
-- Created: `2021-09-30T18:51:54.454373715Z`
+- Image ID: `sha256:a9e2b17cfc3b967a8d95a3da4accf4515d3667c910c9b9f9583eeffc851d6a63`
+- Created: `2021-10-12T15:07:49.537367122Z`
 - Virtual Size: ~ 148.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -320,11 +320,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/coreutils/8.26-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/coreutils/8.26-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `curl=7.52.1-5+deb9u15`
+### `dpkg` source package: `curl=7.52.1-5+deb9u16`
 
 Binary Packages:
 
-- `libcurl3-gnutls:amd64=7.52.1-5+deb9u15`
+- `libcurl3-gnutls:amd64=7.52.1-5+deb9u16`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
 
@@ -335,13 +335,20 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris curl=7.52.1-5+deb9u16
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u16.dsc' curl_7.52.1-5+deb9u16.dsc 2956 SHA256:983ffa16e37e057f0c15a3bfbc23598e2b8b436e61c4c2bc12efa71a9bdf31f8
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1.orig.tar.gz' curl_7.52.1.orig.tar.gz 3504621 SHA256:a8984e8b20880b621f61a62d95ff3c0763a3152093a9f9ce4287cfd614add6ae
+'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.52.1-5+deb9u16.debian.tar.xz' curl_7.52.1-5+deb9u16.debian.tar.xz 68076 SHA256:3b5a01e9b08e5e845a368c6f4c82cdd221a029afe264b5954aa646c8c30b6373
+```
 
-- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u15/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u16/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.52.1-5+deb9u16/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.52.1-5+deb9u16/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3+deb9u1`
 
@@ -920,11 +927,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/hostname/3.18/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/hostname/3.18/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `icu=57.1-6+deb9u4`
+### `dpkg` source package: `icu=57.1-6+deb9u5`
 
 Binary Packages:
 
-- `libicu57:amd64=57.1-6+deb9u4`
+- `libicu57:amd64=57.1-6+deb9u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -933,17 +940,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris icu=57.1-6+deb9u4
-'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1-6+deb9u4.dsc' icu_57.1-6+deb9u4.dsc 2133 SHA256:80b9e9f411f713e7ba475959f083ba600cead528ab2c097448564f3ad9c0ffb5
-'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1.orig.tar.gz' icu_57.1.orig.tar.gz 22360664 SHA256:ff8c67cb65949b1e7808f2359f2b80f722697048e90e7cfc382ec1fe229e9581
-'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1-6+deb9u4.debian.tar.xz' icu_57.1-6+deb9u4.debian.tar.xz 36404 SHA256:37674a98793c0048ad8f7f8dc21d9ab14fd01b182c5ea764da3bae111f8afd63
+$ apt-get source -qq --print-uris icu=57.1-6+deb9u5
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1-6+deb9u5.dsc' icu_57.1-6+deb9u5.dsc 2133 SHA256:1f609e87107e3ec941861b184de73603eebde90c36d59afddf4da4d7780de190
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1.orig.tar.gz' icu_57.1.orig.tar.gz 22360664 SHA256:ff8c67cb65949b1e7808f2359f2b80f722697048e90e7cfc382ec1fe229e9581
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1-6+deb9u5.debian.tar.xz' icu_57.1-6+deb9u5.debian.tar.xz 36984 SHA256:a1a17eed376629f2d36b00ffa47325a82d4ebd80792a3d2174eb19357743368d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/icu/57.1-6+deb9u4/ (for browsing the source)
-- https://sources.debian.net/src/icu/57.1-6+deb9u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/57.1-6+deb9u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/icu/57.1-6+deb9u5/ (for browsing the source)
+- https://sources.debian.net/src/icu/57.1-6+deb9u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/icu/57.1-6+deb9u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.48`
 
@@ -999,26 +1006,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/keyutils/1.5.9-9/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/keyutils/1.5.9-9/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `krb5=1.15-1+deb9u2`
+### `dpkg` source package: `krb5=1.15-1+deb9u3`
 
 Binary Packages:
 
-- `libgssapi-krb5-2:amd64=1.15-1+deb9u2`
-- `libk5crypto3:amd64=1.15-1+deb9u2`
-- `libkrb5-3:amd64=1.15-1+deb9u2`
-- `libkrb5support0:amd64=1.15-1+deb9u2`
+- `libgssapi-krb5-2:amd64=1.15-1+deb9u3`
+- `libk5crypto3:amd64=1.15-1+deb9u3`
+- `libkrb5-3:amd64=1.15-1+deb9u3`
+- `libkrb5support0:amd64=1.15-1+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris krb5=1.15-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.15-1+deb9u3.dsc' krb5_1.15-1+deb9u3.dsc 3456 SHA256:85a66bbb32f36fa4aa8a192b16c8106ed975dca87bcd4bd08bdd160d858309ef
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.15.orig.tar.gz' krb5_1.15.orig.tar.gz 9327157 SHA256:fd34752774c808ab4f6f864f935c49945f5a56b62240b1ad4ab1af7b4ded127c
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.15-1+deb9u3.debian.tar.xz' krb5_1.15-1+deb9u3.debian.tar.xz 150040 SHA256:7f36ff9d174926ce6b5ed0cc0370fc3d091d3170ffba6d5d9dfa6d6c0c239177
+```
 
-- http://snapshot.debian.org/package/krb5/1.15-1+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/krb5/1.15-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/krb5/1.15-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/krb5/1.15-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libarchive=3.2.2-2+deb9u2`
 
