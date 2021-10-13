@@ -1,7 +1,7 @@
 ## `clojure:openjdk-8-boot-buster`
 
 ```console
-$ docker pull clojure@sha256:ad7d6e49897b003a88cbf2b8eeb4229552fe3776bde6c2ec90a846d1008c9240
+$ docker pull clojure@sha256:9206febacc8e435cb46abfe00cd0675c6337955bfd3c03e8b9fa0f35973082c8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -106,93 +106,93 @@ CMD ["boot" "repl"]
 ### `clojure:openjdk-8-boot-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:50eec9b5c140b6630ead986ce71fccc40705d6f4771df1bd4ed37ed94c1f1754
+$ docker pull clojure@sha256:a3e7f746b5fc89b53667275586126a66945a2cbd53e8655791c98907e3881b42
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **288.2 MB (288185126 bytes)**  
+-	Total Size: **288.2 MB (288176980 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ea77376c201ee93889ac1006ded9c32400dfb37eb1b3bdbfd2797674e9ee0072`
+-	Image ID: `sha256:c6867e72e9df57569af933fa5f83112f2c4f89af0e9a88ae3af45819e65b4455`
 -	Default Command: `["boot","repl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:40:56 GMT
-ADD file:51975e5f400da759b2cd8f7eba13ad61dd4edbbee0d0fac09b697bfa039d1515 in / 
-# Tue, 28 Sep 2021 01:40:57 GMT
+# Tue, 12 Oct 2021 01:41:28 GMT
+ADD file:aed1709ccba6a81b9726b228fad7b81bcf4c16bafe723981ad37076322d78986 in / 
+# Tue, 12 Oct 2021 01:41:29 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 02:17:21 GMT
+# Tue, 12 Oct 2021 02:11:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 02:17:26 GMT
+# Tue, 12 Oct 2021 02:11:37 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 28 Sep 2021 02:17:43 GMT
+# Tue, 12 Oct 2021 02:11:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 05:49:03 GMT
+# Wed, 13 Oct 2021 06:10:18 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 05:53:04 GMT
+# Wed, 13 Oct 2021 06:14:26 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 28 Sep 2021 05:53:05 GMT
+# Wed, 13 Oct 2021 06:14:27 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 28 Sep 2021 05:53:05 GMT
+# Wed, 13 Oct 2021 06:14:28 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 28 Sep 2021 05:53:05 GMT
+# Wed, 13 Oct 2021 06:14:29 GMT
 ENV LANG=C.UTF-8
-# Tue, 28 Sep 2021 05:53:05 GMT
+# Wed, 13 Oct 2021 06:14:30 GMT
 ENV JAVA_VERSION=8u302
-# Tue, 28 Sep 2021 05:53:19 GMT
+# Wed, 13 Oct 2021 06:14:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_x64_linux_8u302b08.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_aarch64_linux_8u302b08.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/jre/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Sep 2021 02:11:05 GMT
+# Wed, 13 Oct 2021 06:50:33 GMT
 ENV BOOT_VERSION=2.8.3
-# Wed, 29 Sep 2021 02:11:05 GMT
+# Wed, 13 Oct 2021 06:50:34 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Wed, 29 Sep 2021 02:11:05 GMT
+# Wed, 13 Oct 2021 06:50:35 GMT
 WORKDIR /tmp
-# Wed, 29 Sep 2021 02:11:06 GMT
+# Wed, 13 Oct 2021 06:50:37 GMT
 RUN mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot
-# Wed, 29 Sep 2021 02:11:06 GMT
+# Wed, 13 Oct 2021 06:50:37 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Wed, 29 Sep 2021 02:11:06 GMT
+# Wed, 13 Oct 2021 06:50:38 GMT
 ENV BOOT_AS_ROOT=yes
-# Wed, 29 Sep 2021 02:11:29 GMT
+# Wed, 13 Oct 2021 06:50:51 GMT
 RUN boot
-# Wed, 29 Sep 2021 02:11:30 GMT
+# Wed, 13 Oct 2021 06:50:51 GMT
 CMD ["boot" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:70fe10514d0290bd1e8986c0fd63a67204813d37fc5863cf9bf8bf61b2031537`  
-		Last Modified: Tue, 28 Sep 2021 01:48:53 GMT  
-		Size: 49.2 MB (49222381 bytes)  
+	-	`sha256:2ff6d7a9e7d73e4a01b9417518d18c001728c45fa8109ed8f55aaa50e7981482`  
+		Last Modified: Tue, 12 Oct 2021 01:48:38 GMT  
+		Size: 49.2 MB (49222756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9679d540d5f2659fa72eaa9fa11dc318510dc1e7795eab1bc39295855a03d1d0`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 7.7 MB (7695855 bytes)  
+	-	`sha256:10bebdb41abf00ce2793427be3560666b324dbc582685d67cbd222fd9a96c780`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 7.7 MB (7696033 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:052683e57413fa9352045785beb2e5728edac5063c3b899145698f812b5fb903`  
-		Last Modified: Tue, 28 Sep 2021 02:26:00 GMT  
-		Size: 10.0 MB (9984315 bytes)  
+	-	`sha256:67efbd5f352709c5700a9d20834d4ba77810ddf79e37c3802037f213ffc2d375`  
+		Last Modified: Tue, 12 Oct 2021 02:20:12 GMT  
+		Size: 10.0 MB (9984354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d0551980848579ec373733f2fb35c7deddf13e6e56747ddf13dedc6ddbf6b`  
-		Last Modified: Tue, 28 Sep 2021 02:26:20 GMT  
-		Size: 52.2 MB (52167859 bytes)  
+	-	`sha256:599d6477f8aa708e13d4a2801c0ffe0d3f4ed2060acb2ebb516fb609f358cf3b`  
+		Last Modified: Tue, 12 Oct 2021 02:20:31 GMT  
+		Size: 52.2 MB (52165774 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35fe21140f0f683646c2614ecd23f7f6c98fc637a7fcd891cb22e57af260bde2`  
-		Last Modified: Tue, 28 Sep 2021 06:15:02 GMT  
-		Size: 5.3 MB (5277730 bytes)  
+	-	`sha256:abc244c4cc930093188ac80a6d100fcb9c25a4f226f5ec3dfb0e89d9ba100e93`  
+		Last Modified: Wed, 13 Oct 2021 06:39:40 GMT  
+		Size: 5.3 MB (5276664 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bf33a77085a184eb2cf52d954820c5b8adf08e1a11144feabbf237be5aafa70`  
-		Last Modified: Tue, 28 Sep 2021 06:19:36 GMT  
-		Size: 208.0 B  
+	-	`sha256:8cdf5680ee88fd91b635b1e6146727254c6f9de5903ace3bcdfa4ce4f94bc8d2`  
+		Last Modified: Wed, 13 Oct 2021 06:44:41 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b86c8ad9cd425860704e41039588de3c94e612f8966322724cc836194261a156`  
-		Last Modified: Tue, 28 Sep 2021 06:19:47 GMT  
-		Size: 105.0 MB (105009360 bytes)  
+	-	`sha256:acaf12fcbab0ec9e65e5aac33af4fe90763cd22be006abcc78d338640ce7d2be`  
+		Last Modified: Wed, 13 Oct 2021 06:44:51 GMT  
+		Size: 105.0 MB (105008851 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4026c7bb80de5b7d6008afe9b0b101a1881bb710f0074f254283887f5dd4b029`  
-		Last Modified: Wed, 29 Sep 2021 02:40:58 GMT  
-		Size: 6.9 KB (6934 bytes)  
+	-	`sha256:099ca63e19f32006a2b03fcc22e9d3a0aba8a57770f63305b8e77c749b8fa768`  
+		Last Modified: Wed, 13 Oct 2021 07:16:18 GMT  
+		Size: 6.9 KB (6905 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:370eb694202affdeb8641b7b062d33eba2f72e736520fc52e692a6b9fd215ef7`  
-		Last Modified: Wed, 29 Sep 2021 02:41:04 GMT  
-		Size: 58.8 MB (58820484 bytes)  
+	-	`sha256:ed488c2f74239ca54aa31d4087130befa1557b2db9769e5daccd47f7a72ca300`  
+		Last Modified: Wed, 13 Oct 2021 07:16:23 GMT  
+		Size: 58.8 MB (58815432 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
