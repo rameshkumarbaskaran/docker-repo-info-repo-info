@@ -1,7 +1,7 @@
 ## `rust:slim-buster`
 
 ```console
-$ docker pull rust@sha256:98aface1ef3a13337db30e5b02c95b5571eb777bfc89a3b8478beb50bcb40752
+$ docker pull rust@sha256:b8641d3a2411f34b52eb7d69488cd42fc2eebc33a085124b64c465847f457c61
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -82,14 +82,14 @@ RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends
 ### `rust:slim-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull rust@sha256:d78e9ce64ccf9fda3ea4c071e3334bd4b44118e764730d0492835204c7533c50
+$ docker pull rust@sha256:c281917d68135992a043d751e2b1f0ae0bf9d0ab507309c800f2ef79d0751f1e
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **293.8 MB (293824999 bytes)**  
+-	Total Size: **293.8 MB (293823441 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8e6f40d615a2079e4e20bf3f428f9fd6e8643cb48343a330e43449edc4d25173`
+-	Image ID: `sha256:e0701f5c98629be654bd3708ef5b6e168558867907b7781fd823ec18fa6e3aea`
 -	Default Command: `["bash"]`
 
 ```dockerfile
@@ -97,9 +97,9 @@ $ docker pull rust@sha256:d78e9ce64ccf9fda3ea4c071e3334bd4b44118e764730d04928352
 ADD file:f0d53027a7ba594477674127971aa477af3a2bc6bcddef6c0aa174953a5f2db0 in / 
 # Tue, 12 Oct 2021 01:41:42 GMT
 CMD ["bash"]
-# Tue, 12 Oct 2021 11:42:06 GMT
+# Wed, 13 Oct 2021 17:52:37 GMT
 ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.55.0
-# Tue, 12 Oct 2021 11:42:31 GMT
+# Wed, 13 Oct 2021 17:53:08 GMT
 RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         ca-certificates         gcc         libc6-dev         wget         ;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch##*-}" in         amd64) rustArch='x86_64-unknown-linux-gnu'; rustupSha256='3dc5ef50861ee18657f9db2eeb7392f9c2a6c95c90ab41e45ab4ca71476b4338' ;;         armhf) rustArch='armv7-unknown-linux-gnueabihf'; rustupSha256='67777ac3bc17277102f2ed73fd5f14c51f4ca5963adadf7f174adf4ebc38747b' ;;         arm64) rustArch='aarch64-unknown-linux-gnu'; rustupSha256='32a1532f7cef072a667bac53f1a5542c99666c4071af0c9549795bbdb2069ec1' ;;         i386) rustArch='i686-unknown-linux-gnu'; rustupSha256='e50d1deb99048bc5782a0200aa33e4eea70747d49dffdc9d06812fd22a372515' ;;         *) echo >&2 "unsupported architecture: ${dpkgArch}"; exit 1 ;;     esac;     url="https://static.rust-lang.org/rustup/archive/1.24.3/${rustArch}/rustup-init";     wget "$url";     echo "${rustupSha256} *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host ${rustArch};     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;     apt-get remove -y --auto-remove         wget         ;     rm -rf /var/lib/apt/lists/*;
 ```
 
@@ -108,9 +108,9 @@ RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends
 		Last Modified: Tue, 12 Oct 2021 01:49:07 GMT  
 		Size: 25.9 MB (25908479 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cce335a7002eaaca8e9f9873c006f54fc8947a15f235584e62843cdfb75a6ccb`  
-		Last Modified: Tue, 12 Oct 2021 11:46:42 GMT  
-		Size: 267.9 MB (267916520 bytes)  
+	-	`sha256:1f39e4c2aefb96cfd12df8e2adae7aec50aed2007c40580741706a27b99d41d5`  
+		Last Modified: Wed, 13 Oct 2021 17:57:54 GMT  
+		Size: 267.9 MB (267914962 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rust:slim-buster` - linux; 386
