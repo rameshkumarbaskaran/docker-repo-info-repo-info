@@ -271,19 +271,13 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11.1
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1.dsc' base-files_11.1.dsc 1078 SHA256:6e65ad20d7fa95f4c8bf893a52a25c23b2a7cbdaa1df4e5aa30fd5a2bac99cab
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1.tar.xz' base-files_11.1.tar.xz 65520 SHA256:755930509be07c26acbfd72e7ced565fc4fad88a31103253409304bd537b70c4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-files/11.1/
 
-- https://sources.debian.net/src/base-files/11.1/ (for browsing the source)
-- https://sources.debian.net/src/base-files/11.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-files/11.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.51`
 
@@ -1601,21 +1595,13 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.18.3-6
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-6.dsc' krb5_1.18.3-6.dsc 3636 SHA256:f56d9348388f1f8b55006bd657292939332025e94251feb18463218553d0b44f
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3.orig.tar.gz' krb5_1.18.3.orig.tar.gz 8715312 SHA256:e61783c292b5efd9afb45c555a80dd267ac67eebabca42185362bee6c4fbd719
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3.orig.tar.gz.asc' krb5_1.18.3.orig.tar.gz.asc 833 SHA256:ded19808ba7320ad0bb3ddfb5202845b2ff36a50613af7832f78dd3cb4437419
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-6.debian.tar.xz' krb5_1.18.3-6.debian.tar.xz 105116 SHA256:f5f85252688ccab0c5c333728911eaf69f9a9759033cba7687435d41f9d5e595
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/krb5/1.18.3-6/
 
-- https://sources.debian.net/src/krb5/1.18.3-6/ (for browsing the source)
-- https://sources.debian.net/src/krb5/1.18.3-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/krb5/1.18.3-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lcms2=2.12~rc1-2`
 
@@ -2761,9 +2747,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.10.46-5
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.46-5.dsc' linux_5.10.46-5.dsc 195000 SHA256:faddec22b3f6d13ec8b86f54449307c424252abe4b155672b28501dafb26474f
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.46.orig.tar.xz' linux_5.10.46.orig.tar.xz 121572512 SHA256:bcd8edcbc6ed21d93dc138a754b1ac08329452c2ea509ae2a4071cd521da38a3
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.46-5.debian.tar.xz' linux_5.10.46-5.debian.tar.xz 4390148 SHA256:89b2f8dae10a1b167b2579eab73ddef07b713bb3dd96ed566538031466bf5c81
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.46-5.dsc' linux_5.10.46-5.dsc 195000 SHA256:faddec22b3f6d13ec8b86f54449307c424252abe4b155672b28501dafb26474f
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.46.orig.tar.xz' linux_5.10.46.orig.tar.xz 121572512 SHA256:bcd8edcbc6ed21d93dc138a754b1ac08329452c2ea509ae2a4071cd521da38a3
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.10.46-5.debian.tar.xz' linux_5.10.46-5.debian.tar.xz 4390148 SHA256:89b2f8dae10a1b167b2579eab73ddef07b713bb3dd96ed566538031466bf5c81
 ```
 
 Other potentially useful URLs:
@@ -3150,10 +3136,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssl=1.1.1k-1+deb11u1
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1k-1+deb11u1.dsc' openssl_1.1.1k-1+deb11u1.dsc 2652 SHA256:6515a9f1250c42bd42d8439820dde65fbd6f4fbb4a9673bff58e37168a7d3228
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1k.orig.tar.gz' openssl_1.1.1k.orig.tar.gz 9823400 SHA256:892a0875b9872acd04a9fde79b1f943075d5ea162415de3047c327df33fbaee5
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1k.orig.tar.gz.asc' openssl_1.1.1k.orig.tar.gz.asc 488 SHA256:addeaa197444a62c6063d7f819512c2c22b42141dec9d8ec3bff7e4518e1d1c9
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1k-1+deb11u1.debian.tar.xz' openssl_1.1.1k-1+deb11u1.debian.tar.xz 94244 SHA256:68e00f47162ecea0273b4ba453503307b8430bb2d163f92cbbec6f51b11061fd
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k-1+deb11u1.dsc' openssl_1.1.1k-1+deb11u1.dsc 2652 SHA256:6515a9f1250c42bd42d8439820dde65fbd6f4fbb4a9673bff58e37168a7d3228
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k.orig.tar.gz' openssl_1.1.1k.orig.tar.gz 9823400 SHA256:892a0875b9872acd04a9fde79b1f943075d5ea162415de3047c327df33fbaee5
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k.orig.tar.gz.asc' openssl_1.1.1k.orig.tar.gz.asc 488 SHA256:addeaa197444a62c6063d7f819512c2c22b42141dec9d8ec3bff7e4518e1d1c9
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k-1+deb11u1.debian.tar.xz' openssl_1.1.1k-1+deb11u1.debian.tar.xz 94244 SHA256:68e00f47162ecea0273b4ba453503307b8430bb2d163f92cbbec6f51b11061fd
 ```
 
 Other potentially useful URLs:
@@ -3205,20 +3191,13 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pam=1.4.0-9
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9.dsc' pam_1.4.0-9.dsc 1909 SHA256:61b50132e7e1eb8d447884c86cbfaa386ddca28f44e181f5fe6706a2880c7bbd
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0.orig.tar.xz' pam_1.4.0.orig.tar.xz 988908 SHA256:cd6d928c51e64139be3bdb38692c68183a509b83d4f2c221024ccd4bcddfd034
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9.debian.tar.xz' pam_1.4.0-9.debian.tar.xz 120168 SHA256:bc05be20526cd4c84cda4818d16f2045fa62bff8a6148fc790f6e828b448fee8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pam/1.4.0-9/
 
-- https://sources.debian.net/src/pam/1.4.0-9/ (for browsing the source)
-- https://sources.debian.net/src/pam/1.4.0-9/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pam/1.4.0-9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `patch=2.7.6-7`
 
@@ -3426,20 +3405,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-13=13.3-1
-'http://deb.debian.org/debian/pool/main/p/postgresql-13/postgresql-13_13.3-1.dsc' postgresql-13_13.3-1.dsc 3655 SHA256:052d8c1b538bb4ddc17378a444e19640f1bcd488474bed233711db38f253b678
-'http://deb.debian.org/debian/pool/main/p/postgresql-13/postgresql-13_13.3.orig.tar.bz2' postgresql-13_13.3.orig.tar.bz2 21119109 SHA256:3cd9454fa8c7a6255b6743b767700925ead1b9ab0d7a0f9dcb1151010f8eb4a1
-'http://deb.debian.org/debian/pool/main/p/postgresql-13/postgresql-13_13.3-1.debian.tar.xz' postgresql-13_13.3-1.debian.tar.xz 28020 SHA256:07d04c37e345db84bb1b5f0681a6cb5a12544e4f9329c922c75a80580b2ee9f0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-13/13.3-1/
 
-- https://sources.debian.net/src/postgresql-13/13.3-1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-13/13.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-13/13.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `re2c=2.0.3-1`
 
@@ -3507,21 +3479,13 @@ Licenses: (parsed from: `/usr/share/doc/rsync/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris rsync=3.2.3-4
-'http://deb.debian.org/debian/pool/main/r/rsync/rsync_3.2.3-4.dsc' rsync_3.2.3-4.dsc 2231 SHA256:4aae30497a632bf662696b995921dd55acbe7accb69f8053d080af3747f37f3a
-'http://deb.debian.org/debian/pool/main/r/rsync/rsync_3.2.3.orig.tar.gz' rsync_3.2.3.orig.tar.gz 1069784 SHA256:becc3c504ceea499f4167a260040ccf4d9f2ef9499ad5683c179a697146ce50e
-'http://deb.debian.org/debian/pool/main/r/rsync/rsync_3.2.3.orig.tar.gz.asc' rsync_3.2.3.orig.tar.gz.asc 195 SHA256:2e363382a60e7faa6762f560756cc0f3b8116c313eea7fe5fbfc5fed5b2f4f74
-'http://deb.debian.org/debian/pool/main/r/rsync/rsync_3.2.3-4.debian.tar.xz' rsync_3.2.3-4.debian.tar.xz 24692 SHA256:4f3d02458c794e37036f96f43aa0966f0f0e68d75eed815a888c19c542d5380b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/rsync/3.2.3-4/
 
-- https://sources.debian.net/src/rsync/3.2.3-4/ (for browsing the source)
-- https://sources.debian.net/src/rsync/3.2.3-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/rsync/3.2.3-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rtmpdump=2.4+20151223.gitfa8646d.1-2`
 
@@ -3778,21 +3742,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2021a-1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1.dsc' tzdata_2021a-1.dsc 2237 SHA256:91419e04006db0b9024ed1d5339cd161df2535b57bad0b13b6eafe77804fe40a
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1.debian.tar.xz' tzdata_2021a-1.debian.tar.xz 105188 SHA256:8c27130ee8c22415f0839198e3b51f61148aff84c462723f2464c1faee908fcf
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2021a-1/
 
-- https://sources.debian.net/src/tzdata/2021a-1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021a-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021a-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0043`
 
