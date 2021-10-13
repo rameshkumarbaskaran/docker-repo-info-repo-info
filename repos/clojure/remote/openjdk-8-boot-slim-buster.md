@@ -1,7 +1,7 @@
 ## `clojure:openjdk-8-boot-slim-buster`
 
 ```console
-$ docker pull clojure@sha256:c29300b97271d2ce5bbab574735d4f55f532e8cea1249de6cd85070301585341
+$ docker pull clojure@sha256:b96f2f37d1d6e2f90271b6b58d1887e33e30405fe778193bf477c472883f2dc1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,77 +12,77 @@ $ docker pull clojure@sha256:c29300b97271d2ce5bbab574735d4f55f532e8cea1249de6cd8
 ### `clojure:openjdk-8-boot-slim-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:a185c2e1ead257bd0ed856e420e0265c45ca9da11a6e9a3ce22e7e05272b9d6e
+$ docker pull clojure@sha256:ef7fc4464c0f1a642ef33323e697d39e9d8bd29a44872f2785ee9f996e5b7c5d
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.8 MB (195787848 bytes)**  
+-	Total Size: **195.8 MB (195781804 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:93f39dfe06b76ba98ff7480704f6efdf3ba08d09e1b24f7d7c18db8986e2931d`
+-	Image ID: `sha256:ad52fa7ac43cda98509dfcf96a181fbd3cbc416f808118496d93ceb0811e4f7e`
 -	Default Command: `["boot","repl"]`
 
 ```dockerfile
-# Tue, 28 Sep 2021 01:23:09 GMT
-ADD file:99db7cfe7952a1c7a7959cc3457af37c1d6facdd43a946bd72313d8b5ede0029 in / 
-# Tue, 28 Sep 2021 01:23:10 GMT
+# Tue, 12 Oct 2021 01:21:05 GMT
+ADD file:910392427fdf089bc26b64d6dc450ff3d020c7c1a474d85b2f9298134d0007bd in / 
+# Tue, 12 Oct 2021 01:21:05 GMT
 CMD ["bash"]
-# Tue, 28 Sep 2021 09:15:24 GMT
+# Tue, 12 Oct 2021 16:28:45 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 28 Sep 2021 09:26:12 GMT
+# Tue, 12 Oct 2021 16:36:37 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 28 Sep 2021 09:26:14 GMT
+# Tue, 12 Oct 2021 16:36:38 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 28 Sep 2021 09:26:14 GMT
+# Tue, 12 Oct 2021 16:36:38 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 28 Sep 2021 09:26:14 GMT
+# Tue, 12 Oct 2021 16:36:38 GMT
 ENV LANG=C.UTF-8
-# Tue, 28 Sep 2021 09:26:14 GMT
+# Tue, 12 Oct 2021 16:36:38 GMT
 ENV JAVA_VERSION=8u302
-# Tue, 28 Sep 2021 09:26:42 GMT
+# Tue, 12 Oct 2021 16:36:53 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_x64_linux_8u302b08.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_aarch64_linux_8u302b08.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/jre/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 29 Sep 2021 08:01:39 GMT
+# Wed, 13 Oct 2021 13:03:01 GMT
 ENV BOOT_VERSION=2.8.3
-# Wed, 29 Sep 2021 08:01:39 GMT
+# Wed, 13 Oct 2021 13:03:01 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Wed, 29 Sep 2021 08:01:39 GMT
+# Wed, 13 Oct 2021 13:03:01 GMT
 WORKDIR /tmp
-# Wed, 29 Sep 2021 08:01:44 GMT
+# Wed, 13 Oct 2021 13:03:06 GMT
 RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apt-get purge -y --auto-remove wget
-# Wed, 29 Sep 2021 08:01:44 GMT
+# Wed, 13 Oct 2021 13:03:07 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Wed, 29 Sep 2021 08:01:44 GMT
+# Wed, 13 Oct 2021 13:03:07 GMT
 ENV BOOT_AS_ROOT=yes
-# Wed, 29 Sep 2021 08:02:04 GMT
+# Wed, 13 Oct 2021 13:03:27 GMT
 RUN boot
-# Wed, 29 Sep 2021 08:02:04 GMT
+# Wed, 13 Oct 2021 13:03:28 GMT
 CMD ["boot" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:07aded7c29c6011dfdf02fc98e087c941d3c2661c4e73d134c6491e25231d16c`  
-		Last Modified: Tue, 28 Sep 2021 01:29:45 GMT  
-		Size: 27.1 MB (27145994 bytes)  
+	-	`sha256:b380bbd43752f83945df8b5d1074fef8dd044820e7d3aef33b655a2483e030c7`  
+		Last Modified: Tue, 12 Oct 2021 01:26:51 GMT  
+		Size: 27.1 MB (27139510 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49190af1e362ddee7f9a92cbf321a9b1444ccbc631019b5ebcc582e4ef2ec3e9`  
-		Last Modified: Tue, 28 Sep 2021 09:35:40 GMT  
-		Size: 3.3 MB (3269563 bytes)  
+	-	`sha256:72345ef1bcc1976ef9d97f0fec94945f6957f67d796c64b3a1e92a610fe0ee10`  
+		Last Modified: Tue, 12 Oct 2021 16:44:29 GMT  
+		Size: 3.3 MB (3269598 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1caa64be9879d0d50af1a8f3a69f36761cecf8580fd759f8a7ec5462ad395f7b`  
-		Last Modified: Tue, 28 Sep 2021 09:48:12 GMT  
+	-	`sha256:0f50f9047c3e906fb8ecea166d467f1848df12a50675d080dbeec583f82defb3`  
+		Last Modified: Tue, 12 Oct 2021 16:55:54 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd64d750df8285018eec1a18a46d3e1d86668bbd827cde1ed09b93ab778daca1`  
-		Last Modified: Tue, 28 Sep 2021 09:48:24 GMT  
-		Size: 106.3 MB (106270536 bytes)  
+	-	`sha256:d3a814f407e43f5ad059fca01e007f07275ee4422522d18ac5e8b5833b50a912`  
+		Last Modified: Tue, 12 Oct 2021 16:56:03 GMT  
+		Size: 106.3 MB (106270559 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:32f50c50ad8b5f58b5713365da43eabb8a98e47d9847c0ef678c063f68eafd16`  
-		Last Modified: Wed, 29 Sep 2021 08:26:09 GMT  
-		Size: 281.3 KB (281322 bytes)  
+	-	`sha256:22db9a38cdd1a0281d757de284cc6fc4e348214c9918c3df34498da9e7002391`  
+		Last Modified: Wed, 13 Oct 2021 13:26:12 GMT  
+		Size: 281.4 KB (281354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13ee5532bd6dec7ea046542e39d3d74cdaf456dc207ebefee5b5c0abe2b4dd49`  
-		Last Modified: Wed, 29 Sep 2021 08:26:12 GMT  
-		Size: 58.8 MB (58820222 bytes)  
+	-	`sha256:6a944092fe809ed481034c5b53c6b32a8e5ba8f8462dbd833667417126d00f74`  
+		Last Modified: Wed, 13 Oct 2021 13:26:14 GMT  
+		Size: 58.8 MB (58820572 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-8-boot-slim-buster` - linux; arm64 variant v8
