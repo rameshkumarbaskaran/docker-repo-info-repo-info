@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0e7f8678caf9c735a8c2e96686d309430a4d83e6c3f77054da74b710241ac701`
-- Created: `2021-10-06T21:55:43.343695866Z`
-- Virtual Size: ~ 125.29 Mb  
+- Image ID: `sha256:d7786ab64a6f1c5907c565185e0b430647a0a729f1b43f7483e832f2d0f25ef3`
+- Created: `2021-10-12T17:40:07.580285591Z`
+- Virtual Size: ~ 123.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -157,23 +157,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=10.3+deb10u10`
+### `dpkg` source package: `base-files=10.3+deb10u11`
 
 Binary Packages:
 
-- `base-files=10.3+deb10u10`
+- `base-files=10.3+deb10u11`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=10.3+deb10u11
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u11.dsc' base-files_10.3+deb10u11.dsc 1107 SHA256:c330a188675075328a715fe1d3ace68ed366293dbd002ead99e17215debab4ee
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u11.tar.xz' base-files_10.3+deb10u11.tar.xz 65496 SHA256:8b3071976d9d896c0fa3b2481d81c69c7d627ab9f13eee848bddc8ed4f446794
+```
 
-- http://snapshot.debian.org/package/base-files/10.3+deb10u10/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/10.3+deb10u11/ (for browsing the source)
+- https://sources.debian.net/src/base-files/10.3+deb10u11/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/10.3+deb10u11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -376,23 +382,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/db5.3/5.3.28+dfsg1-0.5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/db5.3/5.3.28+dfsg1-0.5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `debconf=1.5.71`
+### `dpkg` source package: `debconf=1.5.71+deb10u1`
 
 Binary Packages:
 
-- `debconf=1.5.71`
+- `debconf=1.5.71+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/debconf/copyright`)
 
 - `BSD-2-clause`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris debconf=1.5.71+deb10u1
+'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.71+deb10u1.dsc' debconf_1.5.71+deb10u1.dsc 2199 SHA256:9bad49c9ec67cfe5b516813a8643e8c22d89434fee6947c16c27ab5cbb99c7d5
+'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.71+deb10u1.tar.xz' debconf_1.5.71+deb10u1.tar.xz 570832 SHA256:cfa00cb4ac50919b8a1e3a9190a06a248e83e3f0362fa70e49237a3a2686dc61
+```
 
-- http://snapshot.debian.org/package/debconf/1.5.71/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/debconf/1.5.71+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/debconf/1.5.71+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/debconf/1.5.71+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debian-archive-keyring=2019.1+deb10u1`
 
