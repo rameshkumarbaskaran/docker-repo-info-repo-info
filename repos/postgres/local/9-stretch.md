@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7b54ee5f7895012fe0fd1c87a152d80d60bde8ab60a8db7997d14a6fa28730aa`
-- Created: `2021-10-01T00:48:29.95522259Z`
-- Virtual Size: ~ 199.80 Mb  
+- Image ID: `sha256:e76a368c76959d64433e10a40544739c00e1119fac68abee88e36e380564c085`
+- Created: `2021-10-12T12:23:13.790244594Z`
+- Virtual Size: ~ 199.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -817,11 +817,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/hostname/3.18/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/hostname/3.18/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `icu=57.1-6+deb9u4`
+### `dpkg` source package: `icu=57.1-6+deb9u5`
 
 Binary Packages:
 
-- `libicu57:amd64=57.1-6+deb9u4`
+- `libicu57:amd64=57.1-6+deb9u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -830,17 +830,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris icu=57.1-6+deb9u4
-'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1-6+deb9u4.dsc' icu_57.1-6+deb9u4.dsc 2133 SHA256:80b9e9f411f713e7ba475959f083ba600cead528ab2c097448564f3ad9c0ffb5
-'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1.orig.tar.gz' icu_57.1.orig.tar.gz 22360664 SHA256:ff8c67cb65949b1e7808f2359f2b80f722697048e90e7cfc382ec1fe229e9581
-'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1-6+deb9u4.debian.tar.xz' icu_57.1-6+deb9u4.debian.tar.xz 36404 SHA256:37674a98793c0048ad8f7f8dc21d9ab14fd01b182c5ea764da3bae111f8afd63
+$ apt-get source -qq --print-uris icu=57.1-6+deb9u5
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1-6+deb9u5.dsc' icu_57.1-6+deb9u5.dsc 2133 SHA256:1f609e87107e3ec941861b184de73603eebde90c36d59afddf4da4d7780de190
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1.orig.tar.gz' icu_57.1.orig.tar.gz 22360664 SHA256:ff8c67cb65949b1e7808f2359f2b80f722697048e90e7cfc382ec1fe229e9581
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1-6+deb9u5.debian.tar.xz' icu_57.1-6+deb9u5.debian.tar.xz 36984 SHA256:a1a17eed376629f2d36b00ffa47325a82d4ebd80792a3d2174eb19357743368d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/icu/57.1-6+deb9u4/ (for browsing the source)
-- https://sources.debian.net/src/icu/57.1-6+deb9u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/57.1-6+deb9u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/icu/57.1-6+deb9u5/ (for browsing the source)
+- https://sources.debian.net/src/icu/57.1-6+deb9u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/icu/57.1-6+deb9u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.48`
 
@@ -896,26 +896,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/keyutils/1.5.9-9/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/keyutils/1.5.9-9/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `krb5=1.15-1+deb9u2`
+### `dpkg` source package: `krb5=1.15-1+deb9u3`
 
 Binary Packages:
 
-- `libgssapi-krb5-2:amd64=1.15-1+deb9u2`
-- `libk5crypto3:amd64=1.15-1+deb9u2`
-- `libkrb5-3:amd64=1.15-1+deb9u2`
-- `libkrb5support0:amd64=1.15-1+deb9u2`
+- `libgssapi-krb5-2:amd64=1.15-1+deb9u3`
+- `libk5crypto3:amd64=1.15-1+deb9u3`
+- `libkrb5-3:amd64=1.15-1+deb9u3`
+- `libkrb5support0:amd64=1.15-1+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share/doc/libk5crypto3/copyright`, `/usr/share/doc/libkrb5-3/copyright`, `/usr/share/doc/libkrb5support0/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris krb5=1.15-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.15-1+deb9u3.dsc' krb5_1.15-1+deb9u3.dsc 3456 SHA256:85a66bbb32f36fa4aa8a192b16c8106ed975dca87bcd4bd08bdd160d858309ef
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.15.orig.tar.gz' krb5_1.15.orig.tar.gz 9327157 SHA256:fd34752774c808ab4f6f864f935c49945f5a56b62240b1ad4ab1af7b4ded127c
+'http://security.debian.org/debian-security/pool/updates/main/k/krb5/krb5_1.15-1+deb9u3.debian.tar.xz' krb5_1.15-1+deb9u3.debian.tar.xz 150040 SHA256:7f36ff9d174926ce6b5ed0cc0370fc3d091d3170ffba6d5d9dfa6d6c0c239177
+```
 
-- http://snapshot.debian.org/package/krb5/1.15-1+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/krb5/1.15-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/krb5/1.15-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/krb5/1.15-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libassuan=2.4.3-2`
 
@@ -1824,11 +1831,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pinentry/1.0.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pinentry/1.0.0-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-13=13.4-1.pgdg90+1`
+### `dpkg` source package: `postgresql-14=14.0-1.pgdg90+1`
 
 Binary Packages:
 
-- `libpq5:amd64=13.4-1.pgdg90+1`
+- `libpq5:amd64=14.0-1.pgdg90+1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 
@@ -1848,9 +1855,14 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 - `nagaysau-ishii`
 - `rijndael`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris postgresql-14=14.0-1.pgdg90+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14/postgresql-14_14.0-1.pgdg90+1.dsc' postgresql-14_14.0-1.pgdg90+1.dsc 2647 SHA256:c2d08aefd34c6a344024ea97b1ce32a60dd4853f8e41b5986f4643af759e4ece
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14/postgresql-14_14.0.orig.tar.bz2' postgresql-14_14.0.orig.tar.bz2 21836842 SHA256:ee2ad79126a7375e9102c4db77c4acae6ae6ffe3e082403b88826d96d927a122
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14/postgresql-14_14.0-1.pgdg90+1.debian.tar.xz' postgresql-14_14.0-1.pgdg90+1.debian.tar.xz 25488 SHA256:93d6943a8d72085aff1381981278521164f4ccfa4725a7acab8657773893f236
+```
 
 ### `dpkg` source package: `postgresql-9.6=9.6.23-1.pgdg90+1`
 
@@ -1887,21 +1899,25 @@ $ apt-get source -qq --print-uris postgresql-9.6=9.6.23-1.pgdg90+1
 'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-9.6/postgresql-9.6_9.6.23-1.pgdg90+1.debian.tar.xz' postgresql-9.6_9.6.23-1.pgdg90+1.debian.tar.xz 33748 SHA256:e35264978dbd4dc22976019c93ee85fbe360d228adb3a67f8a262b24512a97dd
 ```
 
-### `dpkg` source package: `postgresql-common=226.pgdg90+1`
+### `dpkg` source package: `postgresql-common=231.pgdg90+1`
 
 Binary Packages:
 
-- `postgresql-client-common=226.pgdg90+1`
-- `postgresql-common=226.pgdg90+1`
+- `postgresql-client-common=231.pgdg90+1`
+- `postgresql-common=231.pgdg90+1`
 
 Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/usr/share/doc/postgresql-common/copyright`)
 
 - `GPL-2`
 - `GPL-2+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris postgresql-common=231.pgdg90+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_231.pgdg90+1.dsc' postgresql-common_231.pgdg90+1.dsc 1527 SHA256:454370853283f4eeef89da8c1b97063e3b3c8340a4d7918564b6442c3c70434b
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_231.pgdg90+1.tar.xz' postgresql-common_231.pgdg90+1.tar.xz 199040 SHA256:ffb079ed706db19fd64f02c9cd0c138c6d6c830a6c4ec0af75b184a66c6f97b1
+```
 
 ### `dpkg` source package: `readline=7.0-3`
 
