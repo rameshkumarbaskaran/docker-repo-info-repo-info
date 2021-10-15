@@ -1837,21 +1837,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2021c-1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021c-1.dsc' tzdata_2021c-1.dsc 2205 SHA256:1bfe4de3048f4acc66fa0e9ca97d59a9b24122a50765daf1279012d681561bc0
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021c.orig.tar.gz' tzdata_2021c.orig.tar.gz 421791 SHA256:b4f1d1c8cb11c3500276dac862d8c7e6f88c69b1e8ee4c5e9d1daad17fbe3542
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021c.orig.tar.gz.asc' tzdata_2021c.orig.tar.gz.asc 833 SHA256:1bcfa0f79ef685cdb5049d80eac6c7afd60768f6169a580ad2d48f6bd7838b7f
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021c-1.debian.tar.xz' tzdata_2021c-1.debian.tar.xz 105712 SHA256:f69c00f886852bf6bee7703277f51e7e98271da3837106fa6c0b55e920e8e468
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2021c-1/
 
-- https://sources.debian.net/src/tzdata/2021c-1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021c-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021c-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `util-linux=2.37.2-1`
 
