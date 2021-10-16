@@ -1,7 +1,7 @@
 ## `openjdk:17-jdk-bullseye`
 
 ```console
-$ docker pull openjdk@sha256:ee397b1f3a5190b99c8f43cc43377cf2ce05f6a02a6f1977f82c4c11323e8bcd
+$ docker pull openjdk@sha256:bfc8ea676f0bd3e5cf7298e9c4fb137288e38eef76c9ab34defd7fc0a1f5777d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -78,14 +78,14 @@ CMD ["jshell"]
 ### `openjdk:17-jdk-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:13ebbb8600f7266b52c082aca2136e8870584b8b81622580631f3a0680dcdf48
+$ docker pull openjdk@sha256:c8b86d0986b36b1185e3a4be31077b4a3e1378b19e8babd596573c4a060414d7
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **325.9 MB (325876491 bytes)**  
+-	Total Size: **325.7 MB (325659163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ed515a059f35513737f114df4c5fb347ff57756810ff358b3f7f7c338d5112e`
+-	Image ID: `sha256:527eb867ae0c7686d26f6f6cda447355cfc049add2a03e082daf83ec039a7ee8`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -93,25 +93,25 @@ $ docker pull openjdk@sha256:13ebbb8600f7266b52c082aca2136e8870584b8b81622580631
 ADD file:1529ae12e334fd992892d3fb97c103297cff7e0115b0475bec4c093939a2bff7 in / 
 # Tue, 12 Oct 2021 01:41:04 GMT
 CMD ["bash"]
-# Tue, 12 Oct 2021 02:10:07 GMT
+# Sat, 16 Oct 2021 02:58:23 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 12 Oct 2021 02:10:12 GMT
+# Sat, 16 Oct 2021 02:58:28 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 12 Oct 2021 02:10:30 GMT
+# Sat, 16 Oct 2021 02:58:48 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 13 Oct 2021 06:00:24 GMT
+# Sat, 16 Oct 2021 04:06:29 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 13 Oct 2021 06:03:25 GMT
+# Sat, 16 Oct 2021 04:07:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 13 Oct 2021 06:03:25 GMT
+# Sat, 16 Oct 2021 04:07:57 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 13 Oct 2021 06:03:26 GMT
+# Sat, 16 Oct 2021 04:07:58 GMT
 ENV LANG=C.UTF-8
-# Wed, 13 Oct 2021 06:03:27 GMT
+# Sat, 16 Oct 2021 04:07:59 GMT
 ENV JAVA_VERSION=17
-# Wed, 13 Oct 2021 06:03:40 GMT
+# Sat, 16 Oct 2021 04:08:09 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz'; 			downloadSha256='aef49cc7aa606de2044302e757fa94c8e144818e93487081c4fd319ca858134b'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-aarch64_bin.tar.gz'; 			downloadSha256='b8108a6b6c2579bd585281937cf09d401a5a971c59b9624e18abcf596b9caa22'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 13 Oct 2021 06:03:40 GMT
+# Sat, 16 Oct 2021 04:08:10 GMT
 CMD ["jshell"]
 ```
 
@@ -120,23 +120,23 @@ CMD ["jshell"]
 		Last Modified: Tue, 12 Oct 2021 01:47:41 GMT  
 		Size: 53.6 MB (53603015 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:580c36351f836fd83ee4aee909834823b15f90ce0ec580f869717dc3679a020b`  
-		Last Modified: Tue, 12 Oct 2021 02:18:53 GMT  
-		Size: 5.1 MB (5142731 bytes)  
+	-	`sha256:889b1f128be8ebd64f787c46418ffe34ce1096d1ccd6938924d7397713720758`  
+		Last Modified: Sat, 16 Oct 2021 03:14:21 GMT  
+		Size: 5.1 MB (5141861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b655be758028f8234aab1f828dc2f79ee5abf3ce0a85560430b5f7c806367d1`  
-		Last Modified: Tue, 12 Oct 2021 02:18:53 GMT  
-		Size: 10.9 MB (10872848 bytes)  
+	-	`sha256:c338d42ad921985fb8ebb6e2c48d381f6e03a91535eeffce7f08084b3dfbfdf4`  
+		Last Modified: Sat, 16 Oct 2021 03:14:21 GMT  
+		Size: 10.7 MB (10655847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:831021d515bc09a375e4761b088d68a71b5db76ecfcc814957479d29faa6bd38`  
-		Last Modified: Tue, 12 Oct 2021 02:19:16 GMT  
-		Size: 54.7 MB (54668919 bytes)  
+	-	`sha256:e27d3d9a061af78e3fcbefe5dbbe718db380687319e5ba8a7c9fd7ba55d16cc3`  
+		Last Modified: Sat, 16 Oct 2021 03:14:43 GMT  
+		Size: 54.7 MB (54669931 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:45dc2b4d8f164c1fe58711eaaff191652e3ba3bfb191e87c8022e38f4e5881ad`  
-		Last Modified: Wed, 13 Oct 2021 06:24:52 GMT  
-		Size: 15.5 MB (15525123 bytes)  
+	-	`sha256:6184c33cbbd3e136683d125fb9cef775eb12f0f0e3140a8edc23406be025a964`  
+		Last Modified: Sat, 16 Oct 2021 04:21:52 GMT  
+		Size: 15.5 MB (15524863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5eade6218d619036eb6c74d96dfe29046b0d22b120975e99a4fd76425d50772`  
-		Last Modified: Wed, 13 Oct 2021 06:29:28 GMT  
-		Size: 186.1 MB (186063855 bytes)  
+	-	`sha256:f03f1505d3379c7792724ac992753a3e0194766ab549d21c3ee9e0a1c4af81cd`  
+		Last Modified: Sat, 16 Oct 2021 04:23:50 GMT  
+		Size: 186.1 MB (186063646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
