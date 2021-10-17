@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:378d819a901edb8f9ebec9adb290499be7e24db5007726898384420818408b3e`
 - Created: `2021-10-13T13:08:10.926966289Z`
-- Virtual Size: ~ 535.73 Mb  
+- Virtual Size: ~ 535.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`

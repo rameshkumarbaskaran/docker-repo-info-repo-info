@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:8a217744563efa3f9e978b546fcf99d7644b3051b69743552fa14bffef75fd87`
 - Created: `2021-10-13T13:08:56.536017635Z`
-- Virtual Size: ~ 672.31 Mb  
+- Virtual Size: ~ 672.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`

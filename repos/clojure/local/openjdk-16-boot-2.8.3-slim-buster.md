@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:8b23a0fd20c5dda3b0c2b0f01b60e9f84a39709ab1f508ee44ea359e5321121c`
 - Created: `2021-10-13T13:07:25.148684498Z`
-- Virtual Size: ~ 460.28 Mb  
+- Virtual Size: ~ 460.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["boot","repl"]`
