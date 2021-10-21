@@ -5263,14 +5263,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-88.99
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-88.99.dsc' linux_5.4.0-88.99.dsc 7220 SHA512:1485cceede00cced5b8513d431207fd270f6fb07c53637f0dd341571a02e4313d7da9770952d1f3738742f84953b4a3d9fad0d0a91c3fb0689c59937c7cc6b09
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-88.99.diff.gz' linux_5.4.0-88.99.diff.gz 8534152 SHA512:748277085e0bb7b717829e6247931fe91bb89e1aebc8f1747476f1ecdb4ecfd2dfc294c29f71d75a4c605341bc3157a95b5e2c161f20dba9fb57d6ea3a666790
-```
 
 ### `dpkg` source package: `llvm-toolchain-12=1:12.0.0-3ubuntu1~20.04.4`
 
@@ -6613,14 +6608,9 @@ Licenses: (parsed from: `/usr/share/doc/libpulse0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pulseaudio=1:13.99.1-1ubuntu3.11
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.11.dsc' pulseaudio_13.99.1-1ubuntu3.11.dsc 3223 SHA512:88a201290ce486c3b24d7a7e33f6646740bfa58b5bd980fbb62f5498233f7910ebb6f99570e7833e1e4aede3bb562ebf0f229ee4d317894635651d2b925ac63f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1.orig.tar.xz' pulseaudio_13.99.1.orig.tar.xz 1955840 SHA512:426530b6b9dd94dcc848067376857faae42e86878a82784c5bafa615a68dcc7e22702e0cb5835f91160f19fc9934fe3d53b7d387e3f42b6595fa934b172fe2aa
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.11.debian.tar.xz' pulseaudio_13.99.1-1ubuntu3.11.debian.tar.xz 157332 SHA512:151f0d2d20e402865d8b9b1e9bf10315e54b42d95412f14425e4c23724d8e89e0e9e8dfd73ff03702221adce01a0b224e6a755b64d74e125bf960bc2886813f4
-```
 
 ### `dpkg` source package: `python3-defaults=3.8.2-0ubuntu2`
 

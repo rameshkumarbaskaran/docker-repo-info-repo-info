@@ -5403,14 +5403,9 @@ Licenses: (parsed from: `/usr/share/doc/libpulse0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pulseaudio=1:13.99.1-1ubuntu3.11
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.11.dsc' pulseaudio_13.99.1-1ubuntu3.11.dsc 3223 SHA512:88a201290ce486c3b24d7a7e33f6646740bfa58b5bd980fbb62f5498233f7910ebb6f99570e7833e1e4aede3bb562ebf0f229ee4d317894635651d2b925ac63f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1.orig.tar.xz' pulseaudio_13.99.1.orig.tar.xz 1955840 SHA512:426530b6b9dd94dcc848067376857faae42e86878a82784c5bafa615a68dcc7e22702e0cb5835f91160f19fc9934fe3d53b7d387e3f42b6595fa934b172fe2aa
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/pulseaudio_13.99.1-1ubuntu3.11.debian.tar.xz' pulseaudio_13.99.1-1ubuntu3.11.debian.tar.xz 157332 SHA512:151f0d2d20e402865d8b9b1e9bf10315e54b42d95412f14425e4c23724d8e89e0e9e8dfd73ff03702221adce01a0b224e6a755b64d74e125bf960bc2886813f4
-```
 
 ### `dpkg` source package: `python3-defaults=3.8.2-0ubuntu2`
 
