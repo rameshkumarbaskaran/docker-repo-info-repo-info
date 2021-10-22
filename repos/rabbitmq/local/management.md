@@ -1,10 +1,10 @@
-# `rabbitmq:3.9.7-management`
+# `rabbitmq:3.9.8-management`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6358b95a6e6c2ca8636469660dde8b0ba132dcefee2b5db7fe00aef5c40e0da8`
-- Created: `2021-10-06T01:05:26.531444088Z`
-- Virtual Size: ~ 252.87 Mb  
+- Image ID: `sha256:d5011653c255531180e2710a7e98f019c3409f4013ad43b8588d6fdde9e94a2b`
+- Created: `2021-10-19T23:03:27.596105766Z`
+- Virtual Size: ~ 252.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `OTP_VERSION=24.1.2`
   - `OTP_SOURCE_SHA256=afc227a258ac061474cdffb001b3b03e77d39d5b91c56d9f589f451b9f17a3c5`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
-  - `RABBITMQ_VERSION=3.9.7`
+  - `RABBITMQ_VERSION=3.9.8`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
   - `RABBITMQ_HOME=/opt/rabbitmq`
   - `RABBITMQ_LOGS=-`
@@ -1166,22 +1166,27 @@ $ apt-get source -qq --print-uris p11-kit=0.23.20-1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/p11-kit/p11-kit_0.23.20-1ubuntu0.1.debian.tar.xz' p11-kit_0.23.20-1ubuntu0.1.debian.tar.xz 24592 SHA512:b30c6640bb02f0651955447da65911942cd2e302bc5af0ab96787646e776486e317420682dd644079a47ac48d4e2732218545af56da7ec3d3af5fd0c7e55fb21
 ```
 
-### `dpkg` source package: `pam=1.3.1-5ubuntu4.2`
+### `dpkg` source package: `pam=1.3.1-5ubuntu4.3`
 
 Binary Packages:
 
-- `libpam-modules:amd64=1.3.1-5ubuntu4.2`
-- `libpam-modules-bin=1.3.1-5ubuntu4.2`
-- `libpam-runtime=1.3.1-5ubuntu4.2`
-- `libpam0g:amd64=1.3.1-5ubuntu4.2`
+- `libpam-modules:amd64=1.3.1-5ubuntu4.3`
+- `libpam-modules-bin=1.3.1-5ubuntu4.3`
+- `libpam-runtime=1.3.1-5ubuntu4.3`
+- `libpam0g:amd64=1.3.1-5ubuntu4.3`
 
 Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/doc/libpam-modules-bin/copyright`, `/usr/share/doc/libpam-runtime/copyright`, `/usr/share/doc/libpam0g/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris pam=1.3.1-5ubuntu4.3
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.3.dsc' pam_1.3.1-5ubuntu4.3.dsc 2761 SHA512:314394037f6006a11778f96aaac57c1a9997bc1b2b1c67224a46e670ea1707ae5d00e3c2d7ef42890e13f87d4edac16481050ae412b6092061e5fef27f6a80e4
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1.orig.tar.xz' pam_1.3.1.orig.tar.xz 912332 SHA512:6bc8e2a5b64686f0a23846221c5228c88418ba485b17c53b3a12f91262b5bb73566d6b6a5daa1f63bbae54310aee918b987e44a72ce809b4e7c668f0fadfe08e
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.3.1-5ubuntu4.3.debian.tar.xz' pam_1.3.1-5ubuntu4.3.debian.tar.xz 170884 SHA512:0d10c47ed3aa1a1ef040413a746543c833b9bef971e70586d053d59ac8de2ad480ca69a5ed1c56df5322e793675b2fd8f7e65ddde1b2ee8340bb05f77fea846e
+```
 
 ### `dpkg` source package: `pcre2=10.34-7`
 
