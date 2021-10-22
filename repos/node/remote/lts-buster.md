@@ -1,7 +1,7 @@
 ## `node:lts-buster`
 
 ```console
-$ docker pull node@sha256:e2a9861f76d878a2715aa6f889db5bd661180c2f8a746c11b7783f2e0c5afa3d
+$ docker pull node@sha256:0025db2e6390fbbf381a669c8fabad56bcd7871c4d28a6f871f7a99a0fe7288f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -264,14 +264,14 @@ CMD ["node"]
 ### `node:lts-buster` - linux; ppc64le
 
 ```console
-$ docker pull node@sha256:2a7eb506d764dbc4c0fe8d23fae6ed9841219f4b3c4a6b80c7fd7ad4bf7b234f
+$ docker pull node@sha256:482df3f5f8351409b7602d1f85592f710ec4aa00248f0de3b9318d636fbdec2e
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.2 MB (373208871 bytes)**  
+-	Total Size: **373.2 MB (373209043 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9d1dc87842fde3853ca00aed2f91e28b7f0c26ebc7f32a20666c87f2999316a0`
+-	Image ID: `sha256:3b7efd5dd4aa8bd9b2f6b43f211a382c9fba8b7445218f2f8da743a7ec3ff2c2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["node"]`
 
@@ -298,11 +298,11 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)"   && case "${dpkgArch##*-}"
 ENV YARN_VERSION=1.22.15
 # Wed, 13 Oct 2021 05:51:10 GMT
 RUN set -ex   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && yarn --version
-# Wed, 13 Oct 2021 05:51:12 GMT
-COPY file:238737301d47304174e4d24f4def935b29b3069c03c72ae8de97d94624382fce in /usr/local/bin/ 
-# Wed, 13 Oct 2021 05:51:17 GMT
+# Fri, 22 Oct 2021 21:52:04 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Fri, 22 Oct 2021 21:52:07 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 13 Oct 2021 05:51:21 GMT
+# Fri, 22 Oct 2021 21:52:10 GMT
 CMD ["node"]
 ```
 
@@ -339,9 +339,9 @@ CMD ["node"]
 		Last Modified: Wed, 13 Oct 2021 07:57:14 GMT  
 		Size: 2.3 MB (2284773 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee4ead9d6bd7ae5dc0aee6f6ab3d5983cade5ad6c82ee6cb989d96c9c9dd45b7`  
-		Last Modified: Wed, 13 Oct 2021 07:57:13 GMT  
-		Size: 283.0 B  
+	-	`sha256:ceb1430f38a6e4ae363d819d80f4c0f50670d269f0c806afd886b8a1827bba8e`  
+		Last Modified: Fri, 22 Oct 2021 22:06:35 GMT  
+		Size: 455.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `node:lts-buster` - linux; s390x
