@@ -1,7 +1,7 @@
 ## `clojure:openjdk-8-tools-deps-1.10.3.986-buster`
 
 ```console
-$ docker pull clojure@sha256:ae61dde795e5e3a59fa87ca2b49f05ff9530c85983d5234bfe70fd3de642c604
+$ docker pull clojure@sha256:864494e957d33049e56c3a707e27ff4ec2a3c5f72b44e98d88e837597b524b06
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -94,14 +94,14 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 ### `clojure:openjdk-8-tools-deps-1.10.3.986-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:8fcf84317c8dc7e7b0c3fbf31c8ee8e9b02349c0648aa093befa67fcc6d7a567
+$ docker pull clojure@sha256:203dc10edcd6dd8102f02512179747f0b6af04259a62f92588a45d201021ee25
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **256.4 MB (256406698 bytes)**  
+-	Total Size: **256.4 MB (256415715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c8d3d8bed277d8c27074e0b6934c3b52b0164c2085b10ff56524acecd106af41`
+-	Image ID: `sha256:aa2f527f6ef09e84e7de885b161f3809385217c46aceaf7efbbb5dbec3ff2102`
 -	Default Command: `["sh","-c","sleep 1 && exec clj"]`
 
 ```dockerfile
@@ -125,17 +125,17 @@ RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Sat, 16 Oct 2021 04:13:42 GMT
 ENV LANG=C.UTF-8
-# Sat, 16 Oct 2021 04:13:43 GMT
-ENV JAVA_VERSION=8u302
-# Sat, 16 Oct 2021 04:13:51 GMT
-RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_x64_linux_8u302b08.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_aarch64_linux_8u302b08.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/jre/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Tue, 19 Oct 2021 22:24:40 GMT
+# Fri, 22 Oct 2021 02:25:02 GMT
+ENV JAVA_VERSION=8u312
+# Fri, 22 Oct 2021 02:25:14 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jdk_x64_linux_8u312b07.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jdk_aarch64_linux_8u312b07.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/jre/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Fri, 22 Oct 2021 05:28:30 GMT
 ENV CLOJURE_VERSION=1.10.3.986
-# Tue, 19 Oct 2021 22:24:41 GMT
+# Fri, 22 Oct 2021 05:28:30 GMT
 WORKDIR /tmp
-# Tue, 19 Oct 2021 22:24:53 GMT
+# Fri, 22 Oct 2021 05:28:47 GMT
 RUN apt-get update && apt-get install -y make rlwrap && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "f2a271d6892fb04f7377148f6770185486ca194245721ab34a62ae03e8d1149f *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)"
-# Tue, 19 Oct 2021 22:24:54 GMT
+# Fri, 22 Oct 2021 05:28:48 GMT
 CMD ["sh" "-c" "sleep 1 && exec clj"]
 ```
 
@@ -164,11 +164,11 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 		Last Modified: Sat, 16 Oct 2021 04:30:37 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d385ece76b66063b593d41c1d85a93addcd941ec87793fd1d677c85ada62a1fd`  
-		Last Modified: Sat, 16 Oct 2021 04:30:47 GMT  
-		Size: 105.0 MB (105008839 bytes)  
+	-	`sha256:cdb721fc1b1505a49c2eda6298eac677fd212d9cc5ec4beb581b5fbae6b6b9e4`  
+		Last Modified: Fri, 22 Oct 2021 02:46:38 GMT  
+		Size: 105.0 MB (105017969 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86b9d213f0791055a4054ea27d563fa7c3fd162f41b11b1a7ca177a549b24f30`  
-		Last Modified: Tue, 19 Oct 2021 22:43:14 GMT  
-		Size: 27.3 MB (27268581 bytes)  
+	-	`sha256:91201b5a54a9e1b1459864bc37680ebf9d6f4454e82949a67c490dc326a2f14c`  
+		Last Modified: Fri, 22 Oct 2021 05:47:22 GMT  
+		Size: 27.3 MB (27268468 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
