@@ -1,7 +1,7 @@
 ## `node:fermium-alpine3.14`
 
 ```console
-$ docker pull node@sha256:1a47fa9ee50a73a0adeeebd5656f40a51126b8213f22106a5be2f7a1908128ce
+$ docker pull node@sha256:c346198378f78f8611254dce222e7e6635804e41e5203d1825321edd6c59dca1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -228,14 +228,14 @@ CMD ["node"]
 ### `node:fermium-alpine3.14` - linux; ppc64le
 
 ```console
-$ docker pull node@sha256:234dcddc70f9d40d5cb251147bc06bb95451de9602821e7926a45c4b032311f3
+$ docker pull node@sha256:d0339e4f77446486a505752966e79529e3e38d965b2520e337b4067957c1d5ba
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.0 MB (44029256 bytes)**  
+-	Total Size: **44.0 MB (44029428 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:113079c0c07f568fbee743d73a3fb137aacb8b7f0130131da75b54b8e0a7bfff`
+-	Image ID: `sha256:87921dd5c691e2d79a9b8695ea418ff1ae14c518039fb242ca17ea58968ff1ad`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["node"]`
 
@@ -252,11 +252,11 @@ RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     
 ENV YARN_VERSION=1.22.15
 # Wed, 13 Oct 2021 05:37:59 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Wed, 13 Oct 2021 05:38:02 GMT
-COPY file:238737301d47304174e4d24f4def935b29b3069c03c72ae8de97d94624382fce in /usr/local/bin/ 
-# Wed, 13 Oct 2021 05:38:04 GMT
+# Fri, 22 Oct 2021 21:51:26 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Fri, 22 Oct 2021 21:51:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 13 Oct 2021 05:38:09 GMT
+# Fri, 22 Oct 2021 21:51:30 GMT
 CMD ["node"]
 ```
 
@@ -273,9 +273,9 @@ CMD ["node"]
 		Last Modified: Wed, 13 Oct 2021 07:54:32 GMT  
 		Size: 2.4 MB (2426581 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:07966cc65a2f503454ff5a7d4954227f22798a579e9ea024133eb18561441772`  
-		Last Modified: Wed, 13 Oct 2021 07:54:31 GMT  
-		Size: 281.0 B  
+	-	`sha256:eb1ff819305d3d068f302135999b85586d855c69bcc51bd2a93e62fb3be569c6`  
+		Last Modified: Fri, 22 Oct 2021 22:05:38 GMT  
+		Size: 453.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `node:fermium-alpine3.14` - linux; s390x

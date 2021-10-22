@@ -1,7 +1,7 @@
 ## `node:erbium-alpine3.12`
 
 ```console
-$ docker pull node@sha256:4fa1b06fd93b545c4d5192473d95350448372931314ceed1b1761f5ba1161211
+$ docker pull node@sha256:a16428167074291c3284392c77cd0aa2eaa1bfc00499cb05f3dc10a1cfe2db8f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -228,14 +228,14 @@ CMD ["node"]
 ### `node:erbium-alpine3.12` - linux; ppc64le
 
 ```console
-$ docker pull node@sha256:a1194f809b5a436432acf3e23c86b98199f904944c60b737ddc19f4d9b5e5954
+$ docker pull node@sha256:d4e31b96dbf3591dfc8d803c755ac5306fcaf28221c5428df9cb4ca335cfbd9d
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **32.3 MB (32294445 bytes)**  
+-	Total Size: **32.3 MB (32294616 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bd864ab3b9314975f57e67c2a2acbfc7b78971dee33d438d6ff61f9d80734ec1`
+-	Image ID: `sha256:e7f916cd87ceb94a9e2ffd4589ee59d443f778e5f8c1d0114098b275e0da9425`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["node"]`
 
@@ -252,11 +252,11 @@ RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     
 ENV YARN_VERSION=1.22.15
 # Wed, 13 Oct 2021 06:37:38 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Wed, 13 Oct 2021 06:37:41 GMT
-COPY file:238737301d47304174e4d24f4def935b29b3069c03c72ae8de97d94624382fce in /usr/local/bin/ 
-# Wed, 13 Oct 2021 06:37:44 GMT
+# Fri, 22 Oct 2021 21:52:45 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Fri, 22 Oct 2021 21:52:48 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 13 Oct 2021 06:37:50 GMT
+# Fri, 22 Oct 2021 21:52:49 GMT
 CMD ["node"]
 ```
 
@@ -273,9 +273,9 @@ CMD ["node"]
 		Last Modified: Wed, 13 Oct 2021 07:59:55 GMT  
 		Size: 2.4 MB (2425266 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:337c0ac95b2f24056503bc671df2b5ddf5130615774b3b1dd0c3973e5c3ca875`  
-		Last Modified: Wed, 13 Oct 2021 07:59:53 GMT  
-		Size: 279.0 B  
+	-	`sha256:77f0eda5726e760b85bea4e2fc2ff5d44dd1cdb859a150ca135fdaf958cd3688`  
+		Last Modified: Fri, 22 Oct 2021 22:07:42 GMT  
+		Size: 450.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `node:erbium-alpine3.12` - linux; s390x

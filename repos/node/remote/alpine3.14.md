@@ -1,7 +1,7 @@
 ## `node:alpine3.14`
 
 ```console
-$ docker pull node@sha256:0417d9206f7902817a49031874d123fbc1537c62457077a8a959c35c87e6fb10
+$ docker pull node@sha256:1c00ed4786872d43c5d4519bffc9e9141b07effdd0573d204fd744af05fce1d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -228,14 +228,14 @@ CMD ["node"]
 ### `node:alpine3.14` - linux; ppc64le
 
 ```console
-$ docker pull node@sha256:a3d44522f251dda1fd3af91c0b0a3cc0ad2280eb4d0a8a4410e95188dbbd9b85
+$ docker pull node@sha256:9f237b6f177f6844bc7b1d932ffaae37d45e36e602e784cd39fec99be20ac630
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **42.5 MB (42479888 bytes)**  
+-	Total Size: **42.5 MB (42480059 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a55046f6b8ae906e3c4307bc363e1dde10445f0ec8cd6a76b2a2022b11be82bd`
+-	Image ID: `sha256:7654c8ae4a2ab367ba1a78550e92d2a1749d6e367a291e658d41e526b471defd`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["node"]`
 
@@ -252,11 +252,11 @@ RUN addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     
 ENV YARN_VERSION=1.22.15
 # Fri, 22 Oct 2021 08:03:06 GMT
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version
-# Fri, 22 Oct 2021 08:03:09 GMT
-COPY file:238737301d47304174e4d24f4def935b29b3069c03c72ae8de97d94624382fce in /usr/local/bin/ 
-# Fri, 22 Oct 2021 08:03:14 GMT
+# Fri, 22 Oct 2021 21:49:24 GMT
+COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/ 
+# Fri, 22 Oct 2021 21:49:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 22 Oct 2021 08:03:18 GMT
+# Fri, 22 Oct 2021 21:49:30 GMT
 CMD ["node"]
 ```
 
@@ -273,9 +273,9 @@ CMD ["node"]
 		Last Modified: Fri, 22 Oct 2021 08:33:29 GMT  
 		Size: 2.4 MB (2409852 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2c32155d7efcd39dccc69f72974fd522ee175c024a7e81c7bffdfc2e0cea71d`  
-		Last Modified: Fri, 22 Oct 2021 08:33:28 GMT  
-		Size: 280.0 B  
+	-	`sha256:402c9c871c85053d36bb395dc2cd80ed866de844f7a5d9bd13a81ee1173d264d`  
+		Last Modified: Fri, 22 Oct 2021 22:02:19 GMT  
+		Size: 451.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `node:alpine3.14` - linux; s390x
