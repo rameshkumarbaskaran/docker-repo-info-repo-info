@@ -3021,14 +3021,9 @@ Licenses: (parsed from: `/usr/share/doc/libcaca0/copyright`)
 
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libcaca=0.99.beta19-2.1ubuntu1.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcaca/libcaca_0.99.beta19-2.1ubuntu1.20.04.1.dsc' libcaca_0.99.beta19-2.1ubuntu1.20.04.1.dsc 2363 SHA512:027984b062cf432b3cf71d7bd28bb1a447439b43ca3a3bb3d5328c1761f815e9a8c0ecf921109bf88f44ba9a6cccc1d4959136b4381920fd87e250abf5969efe
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcaca/libcaca_0.99.beta19.orig.tar.gz' libcaca_0.99.beta19.orig.tar.gz 1203495 SHA512:780fc7684d40207cc10df3f87d6d8f1d47ddfffa0e76e41a5ce671b82d5c7f090facb054c3d49ca7c4ea1a619625bb9085ce52f837f50792b4a2d776a4c68e15
-'http://archive.ubuntu.com/ubuntu/pool/main/libc/libcaca/libcaca_0.99.beta19-2.1ubuntu1.20.04.1.debian.tar.xz' libcaca_0.99.beta19-2.1ubuntu1.20.04.1.debian.tar.xz 15176 SHA512:0a9e3b8d20142af3c6ca0eefda9ba983387c3fbae6d4864b94e4f9e73864feb30b563b248cae6d223a644aaa630d8c2a6ac7a8e60febfe72f842cec7b1b8af30
-```
 
 ### `dpkg` source package: `libcap-ng=0.7.9-2.1build1`
 
