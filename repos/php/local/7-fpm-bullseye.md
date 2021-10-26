@@ -1,9 +1,9 @@
-# `php:7.4.24-fpm-bullseye`
+# `php:7.4.25-fpm-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d0d0dd7103f78845b6a47bfa077a3cb22b7f0b76cb93f68c4faf1b230f1a73a4`
-- Created: `2021-10-14T23:18:21.989054555Z`
+- Image ID: `sha256:80bfd1c2ffed59adec4635b7626469f9534e35505752c5668aaa6ca008aa00d4`
+- Created: `2021-10-22T17:31:28.238716562Z`
 - Virtual Size: ~ 459.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.24`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.24.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.24.tar.xz.asc`
-  - `PHP_SHA256=ff7658ee2f6d8af05b48c21146af5f502e121def4e76e862df5ec9fa06e98734`
+  - `PHP_VERSION=7.4.25`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.25.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.25.tar.xz.asc`
+  - `PHP_SHA256=12a758f1d7fee544387a28d3cf73226f47e3a52fb3049f07fcc37d156d393c0a`
 
 ## `dpkg` (`.deb`-based packages)
 
