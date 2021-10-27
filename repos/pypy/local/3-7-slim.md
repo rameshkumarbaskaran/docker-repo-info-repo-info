@@ -1,17 +1,17 @@
-# `pypy:3.7-7.3.6-slim`
+# `pypy:3.7-7.3.7-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:364c3c6b55a2372bf9e224b5cc3248cc98da17c3ac8afbc589e559fa7cec686f`
-- Created: `2021-10-18T21:39:07.897278618Z`
-- Virtual Size: ~ 228.41 Mb  
+- Image ID: `sha256:af2f44c7c02210d49b0b9b0b2092269bd93538ce21e7c57c8176555720dd2231`
+- Created: `2021-10-27T00:08:01.201784208Z`
+- Virtual Size: ~ 228.47 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy3"]`
 - Environment:
   - `PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `PYPY_VERSION=7.3.6`
+  - `PYPY_VERSION=7.3.7`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218`
 
@@ -633,6 +633,36 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gcc-9/9.3.0-22/ (for browsing the source)
 - https://sources.debian.net/src/gcc-9/9.3.0-22/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gcc-9/9.3.0-22/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `gdbm=1.19-2`
+
+Binary Packages:
+
+- `libgdbm6:amd64=1.19-2`
+
+Licenses: (parsed from: `/usr/share/doc/libgdbm6/copyright`)
+
+- `GFDL-NIV-1.3+`
+- `GPL-2`
+- `GPL-2+`
+- `GPL-3`
+- `GPL-3+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris gdbm=1.19-2
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.19-2.dsc' gdbm_1.19-2.dsc 2603 SHA256:1f05cd17a44cdf05eb97df79147a77a57fba3346b48f00909abe8ad963bf6220
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.19.orig.tar.gz' gdbm_1.19.orig.tar.gz 967861 SHA256:37ed12214122b972e18a0d94995039e57748191939ef74115b1d41d8811364bc
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.19.orig.tar.gz.asc' gdbm_1.19.orig.tar.gz.asc 181 SHA256:8f4e0502073a7a22972f1edc84c70151033257d879402ac85176d3ebc984b2b8
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.19-2.debian.tar.xz' gdbm_1.19-2.debian.tar.xz 16228 SHA256:c49d2faaa340acc8e94277dab0e0bf4ac10d49d9c374d6841883ac868edb5014
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gdbm/1.19-2/ (for browsing the source)
+- https://sources.debian.net/src/gdbm/1.19-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gdbm/1.19-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.31-13+deb11u2`
 

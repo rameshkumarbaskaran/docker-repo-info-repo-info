@@ -1,17 +1,17 @@
-# `pypy:3.7-7.3.6-slim-buster`
+# `pypy:3.7-7.3.7-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4070dfeaf4ecebe8df015d7b8d95d104ea48e5f42d36a494ce5d7e7efbb52227`
-- Created: `2021-10-18T21:40:53.448296599Z`
-- Virtual Size: ~ 224.09 Mb  
+- Image ID: `sha256:b892ec43305d598235d09211a7ca627586a2dd9fac69466f03143e69ed3882e1`
+- Created: `2021-10-27T00:09:24.147401807Z`
+- Virtual Size: ~ 224.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy3"]`
 - Environment:
   - `PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `PYPY_VERSION=7.3.6`
+  - `PYPY_VERSION=7.3.7`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218`
 
@@ -591,6 +591,36 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gcc-8/8.3.0-6/ (for browsing the source)
 - https://sources.debian.net/src/gcc-8/8.3.0-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gcc-8/8.3.0-6/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `gdbm=1.18.1-4`
+
+Binary Packages:
+
+- `libgdbm6:amd64=1.18.1-4`
+
+Licenses: (parsed from: `/usr/share/doc/libgdbm6/copyright`)
+
+- `GFDL-NIV-1.3+`
+- `GPL-2`
+- `GPL-2+`
+- `GPL-3`
+- `GPL-3+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris gdbm=1.18.1-4
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1-4.dsc' gdbm_1.18.1-4.dsc 2635 SHA256:14f2a1741041f3ee8ebe1db9985ec12855c856a4c545ace6140b1222030ae64a
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1.orig.tar.gz' gdbm_1.18.1.orig.tar.gz 941863 SHA256:86e613527e5dba544e73208f42b78b7c022d4fa5a6d5498bf18c8d6f745b91dc
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1.orig.tar.gz.asc' gdbm_1.18.1.orig.tar.gz.asc 412 SHA256:3254738e7689e44ac65e78a766806828b8282e6bb1c0e5bb6156a99e567889a5
+'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1-4.debian.tar.xz' gdbm_1.18.1-4.debian.tar.xz 16460 SHA256:1a7771cf18cacf86b8415cbdeafa4e54dd2dadee59f0c29833aba476726594c5
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gdbm/1.18.1-4/ (for browsing the source)
+- https://sources.debian.net/src/gdbm/1.18.1-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gdbm/1.18.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.28-10`
 

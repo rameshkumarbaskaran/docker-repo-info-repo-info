@@ -1,17 +1,17 @@
-# `pypy:3.7-7.3.6-buster`
+# `pypy:3.7-7.3.7-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:74d9e36e296cf8f4db858301ef48ffa95d622e295cebf28d13cb1f5bcd3a4e78`
-- Created: `2021-10-18T21:39:57.56802435Z`
-- Virtual Size: ~ 936.93 Mb  
+- Image ID: `sha256:d4de99b9b6d23145ebacb8990e294c5643a0307340e46253f0ad00875ca1c0a8`
+- Created: `2021-10-27T00:08:36.499146496Z`
+- Virtual Size: ~ 936.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy3"]`
 - Environment:
   - `PATH=/opt/pypy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `PYPY_VERSION=7.3.6`
+  - `PYPY_VERSION=7.3.7`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/3843bff3a0a61da5b63ea0b7d34794c5c51a2f11/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=95c5ee602b2f3cc50ae053d716c3c89bea62c58568f64d7d25924d399b2d5218`
 
