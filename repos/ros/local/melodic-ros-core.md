@@ -249,14 +249,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.30-21ubuntu1~18.04.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1~18.04.5.dsc' binutils_2.30-21ubuntu1~18.04.5.dsc 11670 SHA512:8c2ee7c75f4463383378c0aad0227be26ca2639086c45a93e8f029f66b57c40ee40c8a77a3f9d0900525c490b669f8c2c9c2356efaa6022a42f912d6ad7e5adb
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30.orig.tar.xz' binutils_2.30.orig.tar.xz 20286700 SHA512:e747ea20d8d79fcd21b9d9f6695059caa7189d60f19256da398e34b789fea9a133c32b192e9693b5828d27683739b0198431bf8b3e39fb3b04884cf89d9aa839
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1~18.04.5.debian.tar.xz' binutils_2.30-21ubuntu1~18.04.5.debian.tar.xz 623680 SHA512:52ae502ffd7a8353b3bb7d547a43d74648f1c9b3f0fa460418f246b7bebd50f7ca40cebc59335dfa02233fbb7cf648ed1e9e145fc4976aec495cdc00979ab29b
-```
 
 ### `dpkg` source package: `boost-defaults=1.65.1.0ubuntu1`
 
@@ -2315,14 +2310,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-5.7=5.7.35-0ubuntu0.18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.35-0ubuntu0.18.04.2.dsc' mysql-5.7_5.7.35-0ubuntu0.18.04.2.dsc 3446 SHA512:95b2d13ca04bc276da01312a8b5bede5733fda267fbf4ff7c07f1a03ea455b23903b8dc33405ec11305c09f8c9d5c6828ae65d388e6b0b7f471bdb26592bbe30
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.35.orig.tar.gz' mysql-5.7_5.7.35.orig.tar.gz 52959014 SHA512:2469c8e13a236aee327bc0828804ba189e3abf78b6e0b3ef65b2343210f9c0cd5313d18b57ae3b76ca1487dc1d70854c8a12e6da61a6fffbce95854dcc792482
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.35-0ubuntu0.18.04.2.debian.tar.xz' mysql-5.7_5.7.35-0ubuntu0.18.04.2.debian.tar.xz 156764 SHA512:e6cdcd7748e48b64c133d10273acba793c5dbdbe3cad88fb6c3662e357d6a8b1707429594d1693dde9422657b829794a1a5809907d53a7743846f94bd5ba9ac1
-```
 
 ### `dpkg` source package: `mysql-defaults=1.0.4`
 
@@ -2928,14 +2918,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.23-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.23-1.debian.tar.xz' python-catkin-pkg-modules_0.4.23-1.debian.tar.xz 2016 SHA512:aaddb3ac5bffab5190298937c525721ccd3d015948b7234b742ad423fba590e4fbd60bacb815ea937be94e96907c4883137d63ff1a4aab449eeab0e0adfe6791
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.23-1.dsc' python-catkin-pkg-modules_0.4.23-1.dsc 998 SHA512:ffe458fa73fb5e21ca05121e66d8a4e6164a381ab0d3ad6e2ae96ecc46ec13e51e33127346cf540c4c38c4a962d6b49694fc70191b6171471c7b6c54a91a6bf6
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.23.orig.tar.gz' python-catkin-pkg-modules_0.4.23.orig.tar.gz 61550 SHA512:0f232c2bbbf67d5ba7a92754be0d66ecb2cd1c3b9a4b9e72a7bdb29f98ff7b32e0bb4a80da9a65fb8479ad1eeca6fa5bf783f7d1a499a9a6b6fe82ce5e2cdb17
-```
 
 ### `dpkg` source package: `python-catkin-pkg=0.4.23-100`
 
@@ -2947,14 +2932,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg=0.4.23-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.23-100.debian.tar.xz' python-catkin-pkg_0.4.23-100.debian.tar.xz 1996 SHA512:ebe0c237f49fc58f7767036cfc3bac6e9b20d4eea5604b0eb80d8b009a700d06c44f1a8bca0724f53bd4094c0631abc5acfaf96891a68c11202621f4219c87d4
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.23-100.dsc' python-catkin-pkg_0.4.23-100.dsc 938 SHA512:fc6f826b8cccef16e9cf20323b5bed77a879559097eadc1dd896222177bd1dcf538215b8caff6e2a5b13040d4bef99064ecb52e765f7fee33589215fdfb98a72
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.23.orig.tar.gz' python-catkin-pkg_0.4.23.orig.tar.gz 13790 SHA512:f5dd2a27d545597701a96fc62f3bc19efbb5e27c3ad1f2b4d6884df5996f25842e7cab3c1d441497c830ea0f4b80b5bce0a6ae4e5cd0d10152f7bdd49f101512
-```
 
 ### `dpkg` source package: `python-cffi=1.11.5-1`
 

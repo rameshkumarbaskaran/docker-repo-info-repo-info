@@ -4627,14 +4627,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-catkin-pkg-modules=0.4.23-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg-modules/python3-catkin-pkg-modules_0.4.23-1.debian.tar.xz' python3-catkin-pkg-modules_0.4.23-1.debian.tar.xz 2008 SHA512:a1473c0b99f27ed55cad44447acbc2ac1071ba91ca734c3a518d4d8846079d074e87d24613ebd5e890630f990d7d0924fc926784a800d03917a998ff4c609c4d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg-modules/python3-catkin-pkg-modules_0.4.23-1.dsc' python3-catkin-pkg-modules_0.4.23-1.dsc 985 SHA512:108f1475e682267dc408cd36d0d594dec0312a6fae7652fc3cafc50f8877230fbb16442aaa5a52dbbf5f1d0b14ea03457fde657b09633e9fb60ec82ad9075c83
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg-modules/python3-catkin-pkg-modules_0.4.23.orig.tar.gz' python3-catkin-pkg-modules_0.4.23.orig.tar.gz 62941 SHA512:0119778a0cd025dd118b347555368a26db3eaa172fc73ba606f3cd3efd7a6b543e46770e84c31c93ecb1f1cd2a9af547f3527b55ceb5608749861da5f2589d49
-```
 
 ### `dpkg` source package: `python3-catkin-pkg=0.4.23-100`
 
@@ -4646,14 +4641,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-catkin-pkg=0.4.23-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg/python3-catkin-pkg_0.4.23-100.debian.tar.xz' python3-catkin-pkg_0.4.23-100.debian.tar.xz 1992 SHA512:1384afa3ac02b95be6ee0fc74f1bb67479259d165cfc2794948cd9507a17276f9a2472147cde0ca1fb9b9d7bba4229ebb5672423bda1b2edb297438864973cbf
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg/python3-catkin-pkg_0.4.23-100.dsc' python3-catkin-pkg_0.4.23-100.dsc 925 SHA512:b159c1f673dbddf19fa814d47874685f3b7a8fb5eb8c61a14e571b6cc0899492ecd926a27b47b3920f1a67d3f5284ac66584aaa73b2d6ed7f50fd23f4359f07a
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-catkin-pkg/python3-catkin-pkg_0.4.23.orig.tar.gz' python3-catkin-pkg_0.4.23.orig.tar.gz 13926 SHA512:aa079e50076cf963c98d6b89dc55695440779b3164df96ec9b82531f903b2955a3137d2c27c8140e0770ed420421b6daae658d0967bd22020e8b7b6899e4f004
-```
 
 ### `dpkg` source package: `python3-defaults=3.7.3-1`
 
