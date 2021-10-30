@@ -1,10 +1,10 @@
-# `ibm-semeru-runtimes:open-11.0.12_7-jdk-centos7`
+# `ibm-semeru-runtimes:open-11.0.13_8-jdk-centos7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:887237e64ebc4dfdaf5f71cfdea6b6b3aac69c7afcbe75893cec52b3e5a5938a`
-- Created: `2021-10-21T01:24:43.8392713Z`
-- Virtual Size: ~ 597.46 Mb  
+- Image ID: `sha256:b483b2bbb7b55946a6c36455da0f6f77cb99c427e7f3610bf10e679ccf3ecdcc`
+- Created: `2021-10-28T00:32:56.803280783Z`
+- Virtual Size: ~ 597.49 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.12+7_openj9-0.27.0`
+  - `JAVA_VERSION=jdk-11.0.13+8_openj9-0.29.0`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
 - Labels:
@@ -33,29 +33,13 @@
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls acl-2.2.51-15.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/acl-2.2.51-15.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `audit-libs-2.8.5-4.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls audit-libs-2.8.5-4.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/audit-2.8.5-4.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `basesystem-10.0-7.el7.centos.noarch`
 
