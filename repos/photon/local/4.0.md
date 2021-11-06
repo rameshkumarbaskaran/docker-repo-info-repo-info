@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a1297f6546accd6725f4501b8ec101b0c615cb51e7be8ec9bf140da9f050c205`
-- Created: `2021-11-01T19:01:42.143540206Z`
-- Virtual Size: ~ 36.58 Mb  
+- Image ID: `sha256:a8b67089cb9bae2d46ea03a2d70447d6829360095cb4e712900462e42db7d9d8`
+- Created: `2021-11-06T01:20:11.198340088Z`
+- Virtual Size: ~ 36.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20211029`
+  - `build-date=20211105`
   - `name=Photon OS x86_64/4.0 Base Image`
   - `vendor=VMware`
 
@@ -119,7 +119,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `libgcrypt-1.9.3-1.ph4.x86_64`
+### `rpm` package: `libgcrypt-1.9.4-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+
 
