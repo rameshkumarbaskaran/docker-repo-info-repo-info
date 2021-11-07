@@ -1,19 +1,19 @@
-# `eclipse-temurin:17_35-jdk-focal`
+# `eclipse-temurin:8u312-b07-jdk-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:20dbda718db0a6fa833c47d1e90de7f42354fe7a2ffffa4c30acaa6c79c1112f`
-- Created: `2021-10-16T02:46:18.84313303Z`
-- Virtual Size: ~ 458.93 Mb  
+- Image ID: `sha256:c25727149fb4a756d1d0ec351050c40a72532133d63231e4fcfce1987c765a4d`
+- Created: `2021-11-05T19:19:38.286784678Z`
+- Virtual Size: ~ 320.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["jshell"]`
+- Command: `["bash"]`
 - Environment:
   - `PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17+35`
+  - `JAVA_VERSION=jdk8u312-b07`
   - `JAVA_HOME=/opt/java/openjdk`
 
 ## `dpkg` (`.deb`-based packages)
@@ -179,27 +179,6 @@ $ apt-get source -qq --print-uris bash=5.0-6ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA512:f3a719997a8515bae7e84701afafc9b2cdd23c95d29533adb678000b08eba968450b93d5576c3cffbeccbdcd95b713db830e8efeda689258dcfe6f15f0c5dec4
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.1.debian.tar.xz' bash_5.0-6ubuntu1.1.debian.tar.xz 74356 SHA512:450eacea5316075107da9951356021091dfc96889057769590ae8505fa851a99d2f48ce300281b8a448c87e9573cfa2f68a04369ee97955be204e73fa2fd6385
 ```
-
-### `dpkg` source package: `binutils=2.34-6ubuntu1.1`
-
-Binary Packages:
-
-- `binutils=2.34-6ubuntu1.1`
-- `binutils-common:amd64=2.34-6ubuntu1.1`
-- `binutils-x86-64-linux-gnu=2.34-6ubuntu1.1`
-- `libbinutils:amd64=2.34-6ubuntu1.1`
-- `libctf-nobfd0:amd64=2.34-6ubuntu1.1`
-- `libctf0:amd64=2.34-6ubuntu1.1`
-
-Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/binutils-common/copyright`, `/usr/share/doc/binutils-x86-64-linux-gnu/copyright`, `/usr/share/doc/libbinutils/copyright`, `/usr/share/doc/libctf-nobfd0/copyright`, `/usr/share/doc/libctf0/copyright`)
-
-- `GFDL`
-- `GPL`
-- `LGPL`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
 
 ### `dpkg` source package: `brotli=1.0.7-6ubuntu0.1`
 
