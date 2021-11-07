@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9d2cacdb691184d8858669084e111fad422f6bad8d678624a6cae80e4ae8567c`
-- Created: `2021-10-16T04:38:09.172432476Z`
-- Virtual Size: ~ 340.90 Mb  
+- Image ID: `sha256:b082d7bbd1656596e4d84fca9cdf3183f206683688c2099c7478b090e602e279`
+- Created: `2021-11-05T19:57:30.919121552Z`
+- Virtual Size: ~ 340.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.12+7`
+  - `JAVA_VERSION=jdk-11.0.13+8`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GOSU_VERSION=1.12`
   - `CASSANDRA_HOME=/opt/cassandra`
