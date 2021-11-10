@@ -1,44 +1,44 @@
 ## `hello-world:nanoserver-1809`
 
 ```console
-$ docker pull hello-world@sha256:a65b71e50a922c23f3a2a941dad06f2a199b52bf8b81d534af1c493991add684
+$ docker pull hello-world@sha256:e566292a0d9b42be8e46afc80c1ea6f66b134f819ba4b16c69ca78090e6693d2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms: 1
-	-	windows version 10.0.17763.2237; amd64
+	-	windows version 10.0.17763.2300; amd64
 
-### `hello-world:nanoserver-1809` - windows version 10.0.17763.2237; amd64
+### `hello-world:nanoserver-1809` - windows version 10.0.17763.2300; amd64
 
 ```console
-$ docker pull hello-world@sha256:563c31a6b24347d3f367df5dc33890ab1aec20e9470e5d998f3b6a8fc6eb5763
+$ docker pull hello-world@sha256:96ebeec770e1af26469c98913277e1c3b40933202ca398cefc16177c3f26cc75
 ```
 
 -	Docker Version: 20.10.8
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **102.7 MB (102664370 bytes)**  
+-	Total Size: **102.8 MB (102785986 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7acc395cb5190d3f6eca8330eadfa3d2666becbb9960a2dfa7bbbef1f72d21a`
+-	Image ID: `sha256:559c787b45777474057560283a07759e384a6be9fd76896b888f5b2341a00d9c`
 -	Default Command: `["cmd","\/C","type C:\\hello.txt"]`
 
 ```dockerfile
-# Thu, 07 Oct 2021 08:01:14 GMT
+# Thu, 04 Nov 2021 00:06:50 GMT
 RUN Apply image 1809-amd64
-# Wed, 13 Oct 2021 12:20:43 GMT
+# Wed, 10 Nov 2021 13:21:30 GMT
 RUN cmd /S /C #(nop) COPY file:dbb4e437ca342a79d5980fcb71c065abfe00353f696b1b54084e7c09d32ec085 in C: 
-# Wed, 13 Oct 2021 12:20:44 GMT
+# Wed, 10 Nov 2021 13:21:31 GMT
 RUN cmd /S /C #(nop)  CMD ["cmd" "/C" "type C:\\hello.txt"]
 ```
 
 -	Layers:
-	-	`sha256:934e212983f208dc2bebc5de38259a6a62f1761868aacfee2cb3585a13b1e24b`  
-		Size: 102.7 MB (102661372 bytes)  
+	-	`sha256:b9dc943b4e8df8f472d444248152fa0920172ec630a60ada316e1603600dd1c7`  
+		Size: 102.8 MB (102782944 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:105a5ce4ce14779701660c1c93917420b43117535c32a71b22690f4c27a53204`  
-		Last Modified: Wed, 13 Oct 2021 12:21:08 GMT  
-		Size: 1.9 KB (1865 bytes)  
+	-	`sha256:e0a19534517e2b98f305ad88e8bf97a76afe29339ae9c8a978ab76f2a86689a0`  
+		Last Modified: Wed, 10 Nov 2021 13:21:56 GMT  
+		Size: 1.9 KB (1882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6512b9624c09c870e109a0bac0e917a666ce1ce895f30b5c0c21c8d7e8e11d6e`  
-		Last Modified: Wed, 13 Oct 2021 12:21:08 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:8d9d578c352f95aa2d7e4e55db3341028eaddb67f8e1e21ad5e1706c16283892`  
+		Last Modified: Wed, 10 Nov 2021 13:21:56 GMT  
+		Size: 1.2 KB (1160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
