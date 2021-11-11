@@ -1,19 +1,19 @@
-# `clojure:openjdk-17-tools-deps`
+# `clojure:openjdk-8-tools-deps-slim-bullseye`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2ee746658f7dd9b543772f4dd7e849149b017cdcec7e6ddadabfe03cd68b8d31`
-- Created: `2021-11-01T22:26:12.139045402Z`
-- Virtual Size: ~ 539.21 Mb  
+- Image ID: `sha256:4d3172e9efb5fd3f05620fcecb0700649de61c6722c80b451fe574ab484b55c6`
+- Created: `2021-11-10T19:26:34.006869495Z`
+- Virtual Size: ~ 427.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_HOME=/usr/local/openjdk-17`
+  - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=17.0.1`
-  - `CLOJURE_VERSION=1.10.3.998`
+  - `JAVA_VERSION=8u312`
+  - `CLOJURE_VERSION=1.10.3.1020`
 
 ## `dpkg` (`.deb`-based packages)
 
