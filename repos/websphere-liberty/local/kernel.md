@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:333e4a5e92a1e3e0601cebe2cb6d40eab384517ca9f3a497db31afde565b25d9`
-- Created: `2021-10-25T22:39:59.483996234Z`
-- Virtual Size: ~ 310.92 Mb  
+- Image ID: `sha256:5d6120a06b56945de87b68941edb00a68ea2f825a6605011405a08ce207e2ccb`
+- Created: `2021-11-10T03:49:35.26242191Z`
+- Virtual Size: ~ 309.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
@@ -14,24 +14,24 @@
   - `JAVA_VERSION=8.0.6.36`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,readonly,nonfatal,cacheDir=/output/.classCache/ -Dosgi.checkConfiguration=false -XX:+UseContainerSupport`
-  - `LIBERTY_VERSION=21.0.0_10`
+  - `LIBERTY_VERSION=21.0.0_11`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ibm/wlp/output`
   - `OPENJ9_SCC=true`
   - `RANDFILE=/tmp/.rnd`
 - Labels:
-  - `BuildLabel=cl211020210920-1900`
+  - `BuildLabel=cl21.0.0.11920-1900`
   - `ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd`
   - `ProductName=WebSphere Application Server Liberty`
-  - `ProductVersion=21.0.0.10`
+  - `ProductVersion=21.0.0.11`
   - `org.opencontainers.image.authors=Leo Christy Jesuraj, Arthur De Magalhaes, Chris Potter`
   - `org.opencontainers.image.description=This image contains the WebSphere Liberty runtime with IBM's Java and Ubuntu as the base OS.  For more information on this image please see https://github.com/WASdev/ci.docker#building-an-application-image`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
-  - `org.opencontainers.image.revision=cl211020210920-1900`
+  - `org.opencontainers.image.revision=cl21.0.0.11920-1900`
   - `org.opencontainers.image.title=IBM WebSphere Liberty`
   - `org.opencontainers.image.url=http://wasdev.net`
   - `org.opencontainers.image.vendor=IBM`
-  - `org.opencontainers.image.version=21.0.0.10`
+  - `org.opencontainers.image.version=21.0.0.11`
 
 ## `dpkg` (`.deb`-based packages)
 
