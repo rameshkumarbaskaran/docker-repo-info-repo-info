@@ -1,7 +1,7 @@
 ## `memcached:alpine`
 
 ```console
-$ docker pull memcached@sha256:5750898f1653b44a425b8e32bba68223717f9d6e1659ddbca14b2aa3d58891c5
+$ docker pull memcached@sha256:4549287b7a598ee7f688a47549388a756a461d46780703beff83c22f8d6a293c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -361,68 +361,68 @@ CMD ["memcached"]
 ### `memcached:alpine` - linux; s390x
 
 ```console
-$ docker pull memcached@sha256:42d7bf765cd584e56cee05351ed71997cf55fcdc6fbfc14bc314ba735d0d550c
+$ docker pull memcached@sha256:1b2bd7c7c893d4619f67803179a8e276ffc71a43d9285193a16a699b98b8f9fe
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **3.7 MB (3704522 bytes)**  
+-	Total Size: **3.7 MB (3711542 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d464cb8baa90cf7c370a4027c84deb086fc2117f21026ea7fa7e63eda5590c35`
+-	Image ID: `sha256:214865d6870bcf452c58e069ff79305ba4b2d0670fc99c62dfde711f2fe1f1b2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["memcached"]`
 
 ```dockerfile
-# Fri, 27 Aug 2021 17:41:29 GMT
-ADD file:9b40ee281e8797067fb2ae207c406084cb81593090338a8b7cb09ade52168daa in / 
-# Fri, 27 Aug 2021 17:41:30 GMT
+# Fri, 12 Nov 2021 16:41:35 GMT
+ADD file:7e0cf02b3f015b1a0f867c03b2902b85f2140be1cee7af63c23f367a487e4577 in / 
+# Fri, 12 Nov 2021 16:41:36 GMT
 CMD ["/bin/sh"]
-# Fri, 27 Aug 2021 19:13:56 GMT
+# Fri, 12 Nov 2021 19:45:38 GMT
 RUN addgroup -g 11211 memcache && adduser -D -u 11211 -G memcache memcache
-# Fri, 27 Aug 2021 19:13:58 GMT
+# Fri, 12 Nov 2021 19:45:39 GMT
 RUN apk add --no-cache libsasl
-# Thu, 07 Oct 2021 19:19:33 GMT
+# Fri, 12 Nov 2021 19:45:39 GMT
 ENV MEMCACHED_VERSION=1.6.12
-# Thu, 07 Oct 2021 19:19:33 GMT
+# Fri, 12 Nov 2021 19:45:39 GMT
 ENV MEMCACHED_SHA1=40d43e98f149e13e6c81eee813e6734f23413a01
-# Thu, 07 Oct 2021 19:22:59 GMT
+# Fri, 12 Nov 2021 19:49:10 GMT
 RUN set -x 		&& apk add --no-cache --virtual .build-deps 		ca-certificates 		coreutils 		cyrus-sasl-dev 		gcc 		libc-dev 		libevent-dev 		linux-headers 		make 		openssl 		openssl-dev 		patch 		perl 		perl-io-socket-ssl 		perl-utils 		&& wget -O memcached.tar.gz "https://memcached.org/files/memcached-$MEMCACHED_VERSION.tar.gz" 	&& echo "$MEMCACHED_SHA1  memcached.tar.gz" | sha1sum -c - 	&& mkdir -p /usr/src/memcached 	&& tar -xzf memcached.tar.gz -C /usr/src/memcached --strip-components=1 	&& rm memcached.tar.gz 		&& cd /usr/src/memcached 		&& wget -O cdefs.patch 'https://github.com/memcached/memcached/commit/7e570c789f4473354461e6eeb8bb7a283df613bf.patch' 	&& patch -p1 --input=cdefs.patch 	&& rm cdefs.patch 		&& ./configure 		--build="$gnuArch" 		--enable-extstore 		--enable-sasl 		--enable-sasl-pwdb 		--enable-tls 	&& nproc="$(nproc)" 	&& make -j "$nproc" 		&& make test PARALLEL="$nproc" 		&& make install 		&& cd / && rm -rf /usr/src/memcached 		&& runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)" 	&& apk add --no-network --virtual .memcached-rundeps $runDeps 	&& apk del --no-network .build-deps 		&& memcached -V
-# Thu, 07 Oct 2021 19:22:59 GMT
+# Fri, 12 Nov 2021 19:49:10 GMT
 COPY file:bf641b13ea5b37f5830b299ebe9d72f194ee5d897db14faf8b133dc7a66a48ad in /usr/local/bin/ 
-# Thu, 07 Oct 2021 19:23:00 GMT
+# Fri, 12 Nov 2021 19:49:11 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Thu, 07 Oct 2021 19:23:00 GMT
+# Fri, 12 Nov 2021 19:49:11 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 07 Oct 2021 19:23:00 GMT
+# Fri, 12 Nov 2021 19:49:11 GMT
 USER memcache
-# Thu, 07 Oct 2021 19:23:00 GMT
+# Fri, 12 Nov 2021 19:49:11 GMT
 EXPOSE 11211
-# Thu, 07 Oct 2021 19:23:00 GMT
+# Fri, 12 Nov 2021 19:49:11 GMT
 CMD ["memcached"]
 ```
 
 -	Layers:
-	-	`sha256:da14cb6b6dc946dbb2d84386bcaca84e2d46f650767cd11bdb3331ec9d623988`  
-		Last Modified: Fri, 27 Aug 2021 17:42:25 GMT  
-		Size: 2.6 MB (2603464 bytes)  
+	-	`sha256:817a13b0e05928f7491adbf1d2cf261ec35079112247bd03469bbe31156aca7c`  
+		Last Modified: Fri, 12 Nov 2021 16:42:44 GMT  
+		Size: 2.6 MB (2609278 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5c3123815589d4cfc45a071f344bd0f3ca08ee63a471c2c114af2dece4699a0`  
-		Last Modified: Fri, 27 Aug 2021 19:23:06 GMT  
-		Size: 1.3 KB (1267 bytes)  
+	-	`sha256:ccf7f30b9422719880461a2bf0c11b791cd2c39cd96549ae94e24f47f2b53f6b`  
+		Last Modified: Fri, 12 Nov 2021 19:50:07 GMT  
+		Size: 1.3 KB (1268 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d25c400e2d4eb8dee97bc754e9e52585af4304ec8cf3121b619bd5756796fb52`  
-		Last Modified: Fri, 27 Aug 2021 19:23:06 GMT  
-		Size: 161.5 KB (161520 bytes)  
+	-	`sha256:52d94d5bde813a42df71eb6fb8e8918d316b33a2334291130ef9963b2876273c`  
+		Last Modified: Fri, 12 Nov 2021 19:50:07 GMT  
+		Size: 162.1 KB (162130 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7ad2ae59bfc1ccb01c7d5c10f89285c7bb956ee092d3181e137580653fb05a9`  
-		Last Modified: Thu, 07 Oct 2021 19:24:06 GMT  
-		Size: 937.9 KB (937866 bytes)  
+	-	`sha256:37d54547e9c754f3f174681baf1cb250677e458b30cd6c8abfe92efb86462ca6`  
+		Last Modified: Fri, 12 Nov 2021 19:50:07 GMT  
+		Size: 938.5 KB (938461 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6768cf5e6e39eef8e6e2a2b47fe80f74ecc0742d840ce1d7b7ff566aed2b8691`  
-		Last Modified: Thu, 07 Oct 2021 19:24:06 GMT  
+	-	`sha256:961c331695dd80b776e321b05cdd1f3b5dd15742277d5977046aa9045aa2fc74`  
+		Last Modified: Fri, 12 Nov 2021 19:50:07 GMT  
 		Size: 284.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f20af94be214575fb684bef0a32aa672394ec3c9a2135d5a33185ced3e9ef7ba`  
-		Last Modified: Thu, 07 Oct 2021 19:24:06 GMT  
+	-	`sha256:684bcc0de6b294726cfdd60525d7a30745807a0efed2e899f985009dbfdce8e9`  
+		Last Modified: Fri, 12 Nov 2021 19:50:07 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
