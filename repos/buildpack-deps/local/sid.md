@@ -2628,21 +2628,13 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg-dev/copyright`, `/usr/share/doc/
 - `NTP`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libjpeg-turbo=1:2.0.6-4
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.0.6-4.dsc' libjpeg-turbo_2.0.6-4.dsc 2580 SHA256:fd357f8d1469236ad1f630c185a8af0f76f68c99cd082360148597a479148866
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.0.6.orig.tar.gz' libjpeg-turbo_2.0.6.orig.tar.gz 2192315 SHA256:d74b92ac33b0e3657123ddcf6728788c90dc84dcb6a52013d758af3c4af481bb
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.0.6.orig.tar.gz.asc' libjpeg-turbo_2.0.6.orig.tar.gz.asc 793 SHA256:ab2d95f62c2f25b39823c2b0ee3d72979786f5c310c19943a74eed8c2abc7b4b
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.0.6-4.debian.tar.xz' libjpeg-turbo_2.0.6-4.debian.tar.xz 100860 SHA256:31765ab6f069c8e1f11c0e43fd984dd903506b8eef8b810c06c3f80c796a144c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libjpeg-turbo/1:2.0.6-4/
 
-- https://sources.debian.net/src/libjpeg-turbo/1:2.0.6-4/ (for browsing the source)
-- https://sources.debian.net/src/libjpeg-turbo/1:2.0.6-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libjpeg-turbo/1:2.0.6-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libksba=1.6.0-2`
 
@@ -3427,20 +3419,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxcrypt=1:4.4.25-2
-'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.25-2.dsc' libxcrypt_4.4.25-2.dsc 1525 SHA256:8160446ad08ca293986c62d8c06bc1515787ef3fb25d7a4344d2c3cf224110b9
-'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.25.orig.tar.xz' libxcrypt_4.4.25.orig.tar.xz 390024 SHA256:82af8b3b39c30ff81ef59cbe9f515b7ad1a9a34997c6c66ac8aa9c48deebff59
-'http://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.25-2.debian.tar.xz' libxcrypt_4.4.25-2.debian.tar.xz 7728 SHA256:8c9306712fc7d4f368487685c8cba3e3fd9fab89d5515e0e006d480abc72c740
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxcrypt/1:4.4.25-2/
 
-- https://sources.debian.net/src/libxcrypt/1:4.4.25-2/ (for browsing the source)
-- https://sources.debian.net/src/libxcrypt/1:4.4.25-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxcrypt/1:4.4.25-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxdmcp=1:1.1.2-3`
 
@@ -4699,20 +4684,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-14=14.0-1
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.0-1.dsc' postgresql-14_14.0-1.dsc 3684 SHA256:5e436a14e6dcc6d7914bfe894acd023fabaa15e772cf492f2adae8427e0697bf
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.0.orig.tar.bz2' postgresql-14_14.0.orig.tar.bz2 21836842 SHA256:ee2ad79126a7375e9102c4db77c4acae6ae6ffe3e082403b88826d96d927a122
-'http://deb.debian.org/debian/pool/main/p/postgresql-14/postgresql-14_14.0-1.debian.tar.xz' postgresql-14_14.0-1.debian.tar.xz 25468 SHA256:65c606bcc1629751923b712830745232cb99f1f6340bc4c7b4b56b198817ffb9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-14/14.0-1/
 
-- https://sources.debian.net/src/postgresql-14/14.0-1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-14/14.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-14/14.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.17-5`
 
@@ -4776,20 +4754,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.9.7-1
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.7-1.dsc' python3-stdlib-extensions_3.9.7-1.dsc 2577 SHA256:d8190b17ca7d69d96ce55ffa2f53154d08cdcc7e6e6299e17e014152b1ccdd9f
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.7.orig.tar.xz' python3-stdlib-extensions_3.9.7.orig.tar.xz 1101088 SHA256:e954884320d713b889ab7c2af66702717509207538fe44225e407650905d425f
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.7-1.debian.tar.xz' python3-stdlib-extensions_3.9.7-1.debian.tar.xz 24500 SHA256:a83705db75fd95046538ff1b0ba310e6d1fa13c8be900d584b03efbefaaaf82b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.9.7-1/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.9.7-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.9.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.9.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.9=3.9.7-4`
 
