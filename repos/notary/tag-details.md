@@ -10,7 +10,7 @@
 ## `notary:server`
 
 ```console
-$ docker pull notary@sha256:1392cddbc77401c8b4eb9de8f8dd8cb4c223ab4ab408584f388df15217cf952d
+$ docker pull notary@sha256:be479e77594ebe5241d45c44d9912dd1219d29fe66498dfa2da23499e650af07
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -390,80 +390,80 @@ CMD ["notary-server" "--help"]
 ### `notary:server` - linux; s390x
 
 ```console
-$ docker pull notary@sha256:8c3e710fadf95871b54efbda2a525594f902f2761e44d45faa2d4f4fac7d1923
+$ docker pull notary@sha256:6c43379addb89d560e7cab01d84855b22bd2c82e5cc2e36801f14838c700c279
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **7.8 MB (7817866 bytes)**  
+-	Total Size: **7.8 MB (7825095 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fdd236dc6d79c3ee380f99c454fe34faae08c0ff72cb57d100911ee244f047e`
+-	Image ID: `sha256:2b18dc5db474643b19fdf62273306c35c1c45ff86f4b82d08c468f41e646f5f6`
 -	Entrypoint: `["entrypoint.sh"]`
 -	Default Command: `["notary-server","--help"]`
 
 ```dockerfile
-# Wed, 01 Sep 2021 01:15:21 GMT
-ADD file:def74c9e73d87d3c8b94cc0200f2723aea3a7462f8d2e0852db9da25c19855ac in / 
-# Wed, 01 Sep 2021 01:15:22 GMT
+# Fri, 12 Nov 2021 16:41:44 GMT
+ADD file:637f327c9b07758709ef7dbc42eb472c888d221acde89b1c3775553864334d5c in / 
+# Fri, 12 Nov 2021 16:41:44 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV TAG=v0.6.1
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV NOTARYPKG=github.com/theupdateframework/notary
-# Wed, 01 Sep 2021 13:35:21 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV INSTALLDIR=/notary/server
-# Wed, 01 Sep 2021 13:35:21 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 EXPOSE 4443
-# Wed, 01 Sep 2021 13:35:21 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 WORKDIR /notary/server
-# Wed, 01 Sep 2021 13:35:47 GMT
+# Fri, 12 Nov 2021 19:28:17 GMT
 RUN set -eux;     apk add --no-cache --virtual build-deps git go make musl-dev;     export GOPATH=/go GOCACHE=/go/cache;     mkdir -p ${GOPATH}/src/${NOTARYPKG};     git clone -b ${TAG} --depth 1 https://${NOTARYPKG} ${GOPATH}/src/${NOTARYPKG};     make -C ${GOPATH}/src/${NOTARYPKG} SKIPENVCHECK=1 PREFIX=. ./bin/static/notary-server;     cp -vL ${GOPATH}/src/${NOTARYPKG}/bin/static/notary-server ./;     apk del --no-network build-deps;     rm -rf ${GOPATH};     ./notary-server --help
-# Wed, 01 Sep 2021 13:35:48 GMT
+# Fri, 12 Nov 2021 19:28:17 GMT
 COPY file:33643ab6368f7007610a81abd5ef291ec43cbd47a0d1581b29490690dc44f709 in . 
-# Wed, 01 Sep 2021 13:35:48 GMT
+# Fri, 12 Nov 2021 19:28:17 GMT
 COPY file:ad1ab25ac8ceb29f1cdc7363c26c083887d76bdbd37db998baad09873ef0811e in . 
-# Wed, 01 Sep 2021 13:35:49 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 RUN adduser -D -H -g "" notary
-# Wed, 01 Sep 2021 13:35:49 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 USER notary
-# Wed, 01 Sep 2021 13:35:50 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
-# Wed, 01 Sep 2021 13:35:50 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 ENTRYPOINT ["entrypoint.sh"]
-# Wed, 01 Sep 2021 13:35:50 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 CMD ["notary-server" "--help"]
 ```
 
 -	Layers:
-	-	`sha256:c1d78e8a87395f597d24b8eb78423ccdcfd404846906154e15aea8be9541c3ae`  
-		Last Modified: Wed, 01 Sep 2021 01:16:19 GMT  
-		Size: 2.6 MB (2604390 bytes)  
+	-	`sha256:b872f056719bde6e6722091afb2a3376d720c69c142b91ac352050080dd79615`  
+		Last Modified: Fri, 12 Nov 2021 16:42:54 GMT  
+		Size: 2.6 MB (2611155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0265f7605a5251f991700eb29f7c5c23ca60c153bb0ec56fb6fb53dc061969e4`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 151.0 B  
+	-	`sha256:a4f678c2054f7f61ec9de39904e129a2cdf5fc3d5426a7baabba2759476f19e7`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1a914bdfdec4913cf76c5b34aa1568af3997dcd8dd8410c7f84918c612fee29`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 5.2 MB (5211357 bytes)  
+	-	`sha256:e56fdd4ef13b2fa79ee53546c4ea6f6818eb1734907894e05ea859c2dbfb980a`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 5.2 MB (5211824 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03ec6d9de5838eab0659760de9c20399dba5c288c545e6b28fbdfc8b34e04b91`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
+	-	`sha256:1b738a8c0c4be5e7dfd345c86d78a0d2d197ca1b75fce8c9c2f0f1d33a38b4e8`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
 		Size: 417.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af28781818d61260fe38b02b477be7497908cb5721e6b89f1b44ad8ecd7a6dae`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 379.0 B  
+	-	`sha256:71170955a75304f163bcc48c4dbe43164ee6f1a17c33a38f711459b475b96a1b`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 378.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4fe3cd9f14fb12388498301af8895915f549b248d0d21a318c1459e571eb0cc9`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 1.2 KB (1172 bytes)  
+	-	`sha256:c8145397afd5cfbb2a1082fddeaf7f0f58ed97c7017183595e5391fe76c7c55e`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 1.2 KB (1173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `notary:server-0.6.1-2`
 
 ```console
-$ docker pull notary@sha256:1392cddbc77401c8b4eb9de8f8dd8cb4c223ab4ab408584f388df15217cf952d
+$ docker pull notary@sha256:be479e77594ebe5241d45c44d9912dd1219d29fe66498dfa2da23499e650af07
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -843,80 +843,80 @@ CMD ["notary-server" "--help"]
 ### `notary:server-0.6.1-2` - linux; s390x
 
 ```console
-$ docker pull notary@sha256:8c3e710fadf95871b54efbda2a525594f902f2761e44d45faa2d4f4fac7d1923
+$ docker pull notary@sha256:6c43379addb89d560e7cab01d84855b22bd2c82e5cc2e36801f14838c700c279
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **7.8 MB (7817866 bytes)**  
+-	Total Size: **7.8 MB (7825095 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fdd236dc6d79c3ee380f99c454fe34faae08c0ff72cb57d100911ee244f047e`
+-	Image ID: `sha256:2b18dc5db474643b19fdf62273306c35c1c45ff86f4b82d08c468f41e646f5f6`
 -	Entrypoint: `["entrypoint.sh"]`
 -	Default Command: `["notary-server","--help"]`
 
 ```dockerfile
-# Wed, 01 Sep 2021 01:15:21 GMT
-ADD file:def74c9e73d87d3c8b94cc0200f2723aea3a7462f8d2e0852db9da25c19855ac in / 
-# Wed, 01 Sep 2021 01:15:22 GMT
+# Fri, 12 Nov 2021 16:41:44 GMT
+ADD file:637f327c9b07758709ef7dbc42eb472c888d221acde89b1c3775553864334d5c in / 
+# Fri, 12 Nov 2021 16:41:44 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV TAG=v0.6.1
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV NOTARYPKG=github.com/theupdateframework/notary
-# Wed, 01 Sep 2021 13:35:21 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV INSTALLDIR=/notary/server
-# Wed, 01 Sep 2021 13:35:21 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 EXPOSE 4443
-# Wed, 01 Sep 2021 13:35:21 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 WORKDIR /notary/server
-# Wed, 01 Sep 2021 13:35:47 GMT
+# Fri, 12 Nov 2021 19:28:17 GMT
 RUN set -eux;     apk add --no-cache --virtual build-deps git go make musl-dev;     export GOPATH=/go GOCACHE=/go/cache;     mkdir -p ${GOPATH}/src/${NOTARYPKG};     git clone -b ${TAG} --depth 1 https://${NOTARYPKG} ${GOPATH}/src/${NOTARYPKG};     make -C ${GOPATH}/src/${NOTARYPKG} SKIPENVCHECK=1 PREFIX=. ./bin/static/notary-server;     cp -vL ${GOPATH}/src/${NOTARYPKG}/bin/static/notary-server ./;     apk del --no-network build-deps;     rm -rf ${GOPATH};     ./notary-server --help
-# Wed, 01 Sep 2021 13:35:48 GMT
+# Fri, 12 Nov 2021 19:28:17 GMT
 COPY file:33643ab6368f7007610a81abd5ef291ec43cbd47a0d1581b29490690dc44f709 in . 
-# Wed, 01 Sep 2021 13:35:48 GMT
+# Fri, 12 Nov 2021 19:28:17 GMT
 COPY file:ad1ab25ac8ceb29f1cdc7363c26c083887d76bdbd37db998baad09873ef0811e in . 
-# Wed, 01 Sep 2021 13:35:49 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 RUN adduser -D -H -g "" notary
-# Wed, 01 Sep 2021 13:35:49 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 USER notary
-# Wed, 01 Sep 2021 13:35:50 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/server
-# Wed, 01 Sep 2021 13:35:50 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 ENTRYPOINT ["entrypoint.sh"]
-# Wed, 01 Sep 2021 13:35:50 GMT
+# Fri, 12 Nov 2021 19:28:18 GMT
 CMD ["notary-server" "--help"]
 ```
 
 -	Layers:
-	-	`sha256:c1d78e8a87395f597d24b8eb78423ccdcfd404846906154e15aea8be9541c3ae`  
-		Last Modified: Wed, 01 Sep 2021 01:16:19 GMT  
-		Size: 2.6 MB (2604390 bytes)  
+	-	`sha256:b872f056719bde6e6722091afb2a3376d720c69c142b91ac352050080dd79615`  
+		Last Modified: Fri, 12 Nov 2021 16:42:54 GMT  
+		Size: 2.6 MB (2611155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0265f7605a5251f991700eb29f7c5c23ca60c153bb0ec56fb6fb53dc061969e4`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 151.0 B  
+	-	`sha256:a4f678c2054f7f61ec9de39904e129a2cdf5fc3d5426a7baabba2759476f19e7`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1a914bdfdec4913cf76c5b34aa1568af3997dcd8dd8410c7f84918c612fee29`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 5.2 MB (5211357 bytes)  
+	-	`sha256:e56fdd4ef13b2fa79ee53546c4ea6f6818eb1734907894e05ea859c2dbfb980a`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 5.2 MB (5211824 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03ec6d9de5838eab0659760de9c20399dba5c288c545e6b28fbdfc8b34e04b91`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
+	-	`sha256:1b738a8c0c4be5e7dfd345c86d78a0d2d197ca1b75fce8c9c2f0f1d33a38b4e8`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
 		Size: 417.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af28781818d61260fe38b02b477be7497908cb5721e6b89f1b44ad8ecd7a6dae`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 379.0 B  
+	-	`sha256:71170955a75304f163bcc48c4dbe43164ee6f1a17c33a38f711459b475b96a1b`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 378.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4fe3cd9f14fb12388498301af8895915f549b248d0d21a318c1459e571eb0cc9`  
-		Last Modified: Wed, 01 Sep 2021 13:36:37 GMT  
-		Size: 1.2 KB (1172 bytes)  
+	-	`sha256:c8145397afd5cfbb2a1082fddeaf7f0f58ed97c7017183595e5391fe76c7c55e`  
+		Last Modified: Fri, 12 Nov 2021 19:28:55 GMT  
+		Size: 1.2 KB (1173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `notary:signer`
 
 ```console
-$ docker pull notary@sha256:758f9afe17a364540290cc6c0199469cd314fe84e2fe642c5cc1cc53f57fe4e1
+$ docker pull notary@sha256:998c85d8af5a72cdb538a1f3949a0b48cfe915b9c88f34e152691bf57437d761
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1306,82 +1306,82 @@ CMD ["notary-signer" "--help"]
 ### `notary:signer` - linux; s390x
 
 ```console
-$ docker pull notary@sha256:9cd276ae0e3588f236d22894ce69e6ceccfbc962b0750703e943dca1748a4323
+$ docker pull notary@sha256:e6f6947d924b122dcb51690332d26424ceda05418e10f3b803a30a275d9b197f
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **7.3 MB (7319621 bytes)**  
+-	Total Size: **7.3 MB (7327235 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e955703f6b7232fb67908b577b13716c8281a6160955a18805977ffb25a4351d`
+-	Image ID: `sha256:3761e07526b52455b9cffc179fcf7106a641d7c1384b87cf09ee1c53f329119b`
 -	Entrypoint: `["entrypoint.sh"]`
 -	Default Command: `["notary-signer","--help"]`
 
 ```dockerfile
-# Wed, 01 Sep 2021 01:15:21 GMT
-ADD file:def74c9e73d87d3c8b94cc0200f2723aea3a7462f8d2e0852db9da25c19855ac in / 
-# Wed, 01 Sep 2021 01:15:22 GMT
+# Fri, 12 Nov 2021 16:41:44 GMT
+ADD file:637f327c9b07758709ef7dbc42eb472c888d221acde89b1c3775553864334d5c in / 
+# Fri, 12 Nov 2021 16:41:44 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV TAG=v0.6.1
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV NOTARYPKG=github.com/theupdateframework/notary
-# Wed, 01 Sep 2021 13:35:57 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 ENV INSTALLDIR=/notary/signer
-# Wed, 01 Sep 2021 13:35:57 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 EXPOSE 4444
-# Wed, 01 Sep 2021 13:35:58 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 EXPOSE 7899
-# Wed, 01 Sep 2021 13:35:58 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 WORKDIR /notary/signer
-# Wed, 01 Sep 2021 13:36:14 GMT
+# Fri, 12 Nov 2021 19:28:35 GMT
 RUN set -eux;     apk add --no-cache --virtual build-deps git go make musl-dev;     export GOPATH=/go GOCACHE=/go/cache;     mkdir -p ${GOPATH}/src/${NOTARYPKG};     git clone -b ${TAG} --depth 1 https://${NOTARYPKG} ${GOPATH}/src/${NOTARYPKG};     make -C ${GOPATH}/src/${NOTARYPKG} SKIPENVCHECK=1 PREFIX=. ./bin/static/notary-signer;     cp -vL ${GOPATH}/src/${NOTARYPKG}/bin/static/notary-signer ./;     apk del --no-network build-deps;     rm -rf ${GOPATH};     ./notary-signer --help
-# Wed, 01 Sep 2021 13:36:15 GMT
+# Fri, 12 Nov 2021 19:28:35 GMT
 COPY file:180643db1fd4154262e619c42c1255057d49a4c6cd56be3f475942fd0a35a236 in . 
-# Wed, 01 Sep 2021 13:36:15 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 COPY file:849eab43398bc401ed08e75cbad3ea52969452506337a4135a0ef8144dff93ad in . 
-# Wed, 01 Sep 2021 13:36:16 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 RUN adduser -D -H -g "" notary
-# Wed, 01 Sep 2021 13:36:17 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 USER notary
-# Wed, 01 Sep 2021 13:36:17 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
-# Wed, 01 Sep 2021 13:36:18 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 ENTRYPOINT ["entrypoint.sh"]
-# Wed, 01 Sep 2021 13:36:18 GMT
+# Fri, 12 Nov 2021 19:28:37 GMT
 CMD ["notary-signer" "--help"]
 ```
 
 -	Layers:
-	-	`sha256:c1d78e8a87395f597d24b8eb78423ccdcfd404846906154e15aea8be9541c3ae`  
-		Last Modified: Wed, 01 Sep 2021 01:16:19 GMT  
-		Size: 2.6 MB (2604390 bytes)  
+	-	`sha256:b872f056719bde6e6722091afb2a3376d720c69c142b91ac352050080dd79615`  
+		Last Modified: Fri, 12 Nov 2021 16:42:54 GMT  
+		Size: 2.6 MB (2611155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb43008fee62b5e3e3ec5c53808af01d83b36eca3389e51b59fd8b8dd7b3062`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
+	-	`sha256:79567eeea74d41a59f001d5d151c4d04e765141889993d03e61de5e279c4c28c`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
 		Size: 151.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:310856cfdf753cbc9e3d836e7649c47f1384e28310c7e40fde761adea4922de0`  
-		Last Modified: Wed, 01 Sep 2021 13:36:46 GMT  
-		Size: 4.7 MB (4713171 bytes)  
+	-	`sha256:a9dec31adf090e3e1c49c2282770f8703464975f40a2f69c7bcb72afc984f794`  
+		Last Modified: Fri, 12 Nov 2021 19:29:03 GMT  
+		Size: 4.7 MB (4714020 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a98aa310a457c135c24463592cb9a4faaf72feaf1d5f7e09b2b1f0d6e48fd4df`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
-		Size: 355.0 B  
+	-	`sha256:8c9421ea8709971dd61a13b97364009d352ea9cd2e8152f451f7d89650e3a1cf`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
+		Size: 354.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b77b283a7995fc60d37fe27da24a1f6fa2995915704557dacfd75bcedc2b820`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
-		Size: 382.0 B  
+	-	`sha256:75ae6189c031409f5ebd4c08d9285eeced61c89b885d30ce723fa22c3a32d5f0`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
+		Size: 381.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b404d1871da6d1dc6f0bbb47907b6667ce2058ae7bf86c0acb083e63c5cbde3`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
-		Size: 1.2 KB (1172 bytes)  
+	-	`sha256:c83bcf41fcfe8e0486ace913fa3b816037305b13958b02a0a83f1149e3bb7795`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
+		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `notary:signer-0.6.1-2`
 
 ```console
-$ docker pull notary@sha256:758f9afe17a364540290cc6c0199469cd314fe84e2fe642c5cc1cc53f57fe4e1
+$ docker pull notary@sha256:998c85d8af5a72cdb538a1f3949a0b48cfe915b9c88f34e152691bf57437d761
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1771,74 +1771,74 @@ CMD ["notary-signer" "--help"]
 ### `notary:signer-0.6.1-2` - linux; s390x
 
 ```console
-$ docker pull notary@sha256:9cd276ae0e3588f236d22894ce69e6ceccfbc962b0750703e943dca1748a4323
+$ docker pull notary@sha256:e6f6947d924b122dcb51690332d26424ceda05418e10f3b803a30a275d9b197f
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **7.3 MB (7319621 bytes)**  
+-	Total Size: **7.3 MB (7327235 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e955703f6b7232fb67908b577b13716c8281a6160955a18805977ffb25a4351d`
+-	Image ID: `sha256:3761e07526b52455b9cffc179fcf7106a641d7c1384b87cf09ee1c53f329119b`
 -	Entrypoint: `["entrypoint.sh"]`
 -	Default Command: `["notary-signer","--help"]`
 
 ```dockerfile
-# Wed, 01 Sep 2021 01:15:21 GMT
-ADD file:def74c9e73d87d3c8b94cc0200f2723aea3a7462f8d2e0852db9da25c19855ac in / 
-# Wed, 01 Sep 2021 01:15:22 GMT
+# Fri, 12 Nov 2021 16:41:44 GMT
+ADD file:637f327c9b07758709ef7dbc42eb472c888d221acde89b1c3775553864334d5c in / 
+# Fri, 12 Nov 2021 16:41:44 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV TAG=v0.6.1
-# Wed, 01 Sep 2021 13:35:20 GMT
+# Fri, 12 Nov 2021 19:28:05 GMT
 ENV NOTARYPKG=github.com/theupdateframework/notary
-# Wed, 01 Sep 2021 13:35:57 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 ENV INSTALLDIR=/notary/signer
-# Wed, 01 Sep 2021 13:35:57 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 EXPOSE 4444
-# Wed, 01 Sep 2021 13:35:58 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 EXPOSE 7899
-# Wed, 01 Sep 2021 13:35:58 GMT
+# Fri, 12 Nov 2021 19:28:25 GMT
 WORKDIR /notary/signer
-# Wed, 01 Sep 2021 13:36:14 GMT
+# Fri, 12 Nov 2021 19:28:35 GMT
 RUN set -eux;     apk add --no-cache --virtual build-deps git go make musl-dev;     export GOPATH=/go GOCACHE=/go/cache;     mkdir -p ${GOPATH}/src/${NOTARYPKG};     git clone -b ${TAG} --depth 1 https://${NOTARYPKG} ${GOPATH}/src/${NOTARYPKG};     make -C ${GOPATH}/src/${NOTARYPKG} SKIPENVCHECK=1 PREFIX=. ./bin/static/notary-signer;     cp -vL ${GOPATH}/src/${NOTARYPKG}/bin/static/notary-signer ./;     apk del --no-network build-deps;     rm -rf ${GOPATH};     ./notary-signer --help
-# Wed, 01 Sep 2021 13:36:15 GMT
+# Fri, 12 Nov 2021 19:28:35 GMT
 COPY file:180643db1fd4154262e619c42c1255057d49a4c6cd56be3f475942fd0a35a236 in . 
-# Wed, 01 Sep 2021 13:36:15 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 COPY file:849eab43398bc401ed08e75cbad3ea52969452506337a4135a0ef8144dff93ad in . 
-# Wed, 01 Sep 2021 13:36:16 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 RUN adduser -D -H -g "" notary
-# Wed, 01 Sep 2021 13:36:17 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 USER notary
-# Wed, 01 Sep 2021 13:36:17 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/notary/signer
-# Wed, 01 Sep 2021 13:36:18 GMT
+# Fri, 12 Nov 2021 19:28:36 GMT
 ENTRYPOINT ["entrypoint.sh"]
-# Wed, 01 Sep 2021 13:36:18 GMT
+# Fri, 12 Nov 2021 19:28:37 GMT
 CMD ["notary-signer" "--help"]
 ```
 
 -	Layers:
-	-	`sha256:c1d78e8a87395f597d24b8eb78423ccdcfd404846906154e15aea8be9541c3ae`  
-		Last Modified: Wed, 01 Sep 2021 01:16:19 GMT  
-		Size: 2.6 MB (2604390 bytes)  
+	-	`sha256:b872f056719bde6e6722091afb2a3376d720c69c142b91ac352050080dd79615`  
+		Last Modified: Fri, 12 Nov 2021 16:42:54 GMT  
+		Size: 2.6 MB (2611155 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb43008fee62b5e3e3ec5c53808af01d83b36eca3389e51b59fd8b8dd7b3062`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
+	-	`sha256:79567eeea74d41a59f001d5d151c4d04e765141889993d03e61de5e279c4c28c`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
 		Size: 151.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:310856cfdf753cbc9e3d836e7649c47f1384e28310c7e40fde761adea4922de0`  
-		Last Modified: Wed, 01 Sep 2021 13:36:46 GMT  
-		Size: 4.7 MB (4713171 bytes)  
+	-	`sha256:a9dec31adf090e3e1c49c2282770f8703464975f40a2f69c7bcb72afc984f794`  
+		Last Modified: Fri, 12 Nov 2021 19:29:03 GMT  
+		Size: 4.7 MB (4714020 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a98aa310a457c135c24463592cb9a4faaf72feaf1d5f7e09b2b1f0d6e48fd4df`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
-		Size: 355.0 B  
+	-	`sha256:8c9421ea8709971dd61a13b97364009d352ea9cd2e8152f451f7d89650e3a1cf`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
+		Size: 354.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b77b283a7995fc60d37fe27da24a1f6fa2995915704557dacfd75bcedc2b820`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
-		Size: 382.0 B  
+	-	`sha256:75ae6189c031409f5ebd4c08d9285eeced61c89b885d30ce723fa22c3a32d5f0`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
+		Size: 381.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b404d1871da6d1dc6f0bbb47907b6667ce2058ae7bf86c0acb083e63c5cbde3`  
-		Last Modified: Wed, 01 Sep 2021 13:36:45 GMT  
-		Size: 1.2 KB (1172 bytes)  
+	-	`sha256:c83bcf41fcfe8e0486ace913fa3b816037305b13958b02a0a83f1149e3bb7795`  
+		Last Modified: Fri, 12 Nov 2021 19:29:02 GMT  
+		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
