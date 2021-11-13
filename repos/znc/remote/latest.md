@@ -1,7 +1,7 @@
 ## `znc:latest`
 
 ```console
-$ docker pull znc@sha256:35a5cd90f00926e424261485f9a4293792b688b3c3cc7135b762828ec49fbc29
+$ docker pull znc@sha256:748828c75198614a25f7549646be8804ac501ec181e92b0311816d0df4efd7df
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,69 +13,69 @@ $ docker pull znc@sha256:35a5cd90f00926e424261485f9a4293792b688b3c3cc7135b762828
 ### `znc:latest` - linux; amd64
 
 ```console
-$ docker pull znc@sha256:9666a4cc083c3a69ba589d9d3d281ff1e289029f5f78cf0cb8226fa98a4ddc4e
+$ docker pull znc@sha256:d329c4065eaf249484dcb710b0ceb82231295abe805bad1eb9e4ba63195c4fa9
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **138.5 MB (138547570 bytes)**  
+-	Total Size: **138.6 MB (138552631 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:82de5c6341c02822af90820d98d694244ef1beb5d8ef9c6cf270a5d6cf003bd0`
+-	Image ID: `sha256:bd2fd191f934bb0bb0cbb9b1249b65b79555f855a211cf22b690969800203faa`
 -	Entrypoint: `["\/entrypoint.sh"]`
 
 ```dockerfile
-# Tue, 31 Aug 2021 23:18:16 GMT
-ADD file:ecdfb91a737d6c292265c1b77ffd3d82ba810dd43ea4ef79714b66b1da74a5aa in / 
-# Tue, 31 Aug 2021 23:18:16 GMT
+# Fri, 12 Nov 2021 17:19:58 GMT
+ADD file:5a707b9d6cb5fff532e4c2141bc35707593f21da5528c9e71ae2ddb6ba4a4eb6 in / 
+# Fri, 12 Nov 2021 17:19:58 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Sep 2021 06:18:17 GMT
+# Sat, 13 Nov 2021 11:21:22 GMT
 ENV GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E
-# Wed, 01 Sep 2021 06:18:17 GMT
+# Sat, 13 Nov 2021 11:21:22 GMT
 ARG CMAKEFLAGS=-DCMAKE_INSTALL_PREFIX=/opt/znc -DWANT_CYRUS=YES -DWANT_PERL=YES -DWANT_PYTHON=YES
-# Wed, 01 Sep 2021 06:18:17 GMT
+# Sat, 13 Nov 2021 11:21:23 GMT
 ARG MAKEFLAGS=
-# Wed, 01 Sep 2021 06:18:17 GMT
+# Sat, 13 Nov 2021 11:21:23 GMT
 ENV ZNC_VERSION=1.8.2
-# Fri, 01 Oct 2021 23:08:55 GMT
+# Sat, 13 Nov 2021 11:26:21 GMT
 # ARGS: CMAKEFLAGS=-DCMAKE_INSTALL_PREFIX=/opt/znc -DWANT_CYRUS=YES -DWANT_PERL=YES -DWANT_PYTHON=YES MAKEFLAGS=
 RUN set -x     && adduser -S znc     && addgroup -S znc     && apk add --no-cache --virtual runtime-dependencies         boost         ca-certificates         cyrus-sasl         icu         openssl         su-exec         tini         tzdata     && apk add --no-cache --virtual build-dependencies         boost-dev         build-base         cmake         curl         cyrus-sasl-dev         gettext         gnupg         icu-dev         openssl-dev         perl-dev         python3-dev     && mkdir /znc-src && cd /znc-src     && curl -fsSL "https://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz" -o znc.tgz     && curl -fsSL "https://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz.sig" -o znc.tgz.sig     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${GPG_KEY}"     && gpg --batch --verify znc.tgz.sig znc.tgz     && rm -rf "$GNUPGHOME"     && tar -zxf znc.tgz --strip-components=1     && mkdir build && cd build     && cmake .. ${CMAKEFLAGS}     && make $MAKEFLAGS     && make install     && apk del build-dependencies     && cd / && rm -rf /znc-src
-# Fri, 01 Oct 2021 23:08:56 GMT
+# Sat, 13 Nov 2021 11:26:21 GMT
 COPY file:15e47c9cc6835e0818d6896aa6537a8adda40ff814c287685183c73fa9df4713 in / 
-# Fri, 01 Oct 2021 23:08:56 GMT
+# Sat, 13 Nov 2021 11:26:21 GMT
 COPY dir:4684da7bbf1d77862fa1a1b074543f975eb608cc0b6b1951ff5c5b58959d0faa in /startup-sequence/ 
-# Fri, 01 Oct 2021 23:08:56 GMT
+# Sat, 13 Nov 2021 11:26:22 GMT
 VOLUME [/znc-data]
-# Fri, 01 Oct 2021 23:08:56 GMT
+# Sat, 13 Nov 2021 11:26:22 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 01 Oct 2021 23:09:17 GMT
+# Sat, 13 Nov 2021 11:26:37 GMT
 RUN set -x     && apk add --no-cache         build-base         cmake         icu-dev         openssl-dev         perl         python3
-# Fri, 01 Oct 2021 23:09:18 GMT
+# Sat, 13 Nov 2021 11:26:38 GMT
 COPY file:765473e154cb7674cba99ed8ee42b51feda01581be870e3d1e7e4930b82a0f37 in /startup-sequence/ 
 ```
 
 -	Layers:
-	-	`sha256:4e9f2cdf438714c2c4533e28c6c41a89cc6c1b46cf77e54c488db30ca4f5b6f3`  
-		Last Modified: Tue, 31 Aug 2021 23:18:55 GMT  
-		Size: 2.8 MB (2814079 bytes)  
+	-	`sha256:5758d4e389a3f662e94a85fb76143dbe338b64f8d2a65f45536a9663b05305ad`  
+		Last Modified: Fri, 12 Nov 2021 17:21:00 GMT  
+		Size: 2.8 MB (2822425 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01a73afbe56e6d9a30ec82d815877acf0aed072948e9bc3a36b0ad9c094ddb53`  
-		Last Modified: Fri, 01 Oct 2021 23:09:41 GMT  
-		Size: 43.4 MB (43381636 bytes)  
+	-	`sha256:7ab4e57989b6c4d61dffc87d051267901e07d8a983de494fcd5ade2f5578ec7c`  
+		Last Modified: Sat, 13 Nov 2021 11:26:58 GMT  
+		Size: 43.4 MB (43375573 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c63a2c0b7d6f98c822c562fff7958533862ac4067eb74b73631483e0dd56f233`  
-		Last Modified: Fri, 01 Oct 2021 23:09:32 GMT  
-		Size: 171.0 B  
+	-	`sha256:87d9294dbd52fefed53f5fcc9cf3f7063859c39521a6403d903d72b726b1692f`  
+		Last Modified: Sat, 13 Nov 2021 11:26:50 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d95be7798fda8e3c01dc73ad2cb976f3ed92a657c8628e45388365f95d49269e`  
-		Last Modified: Fri, 01 Oct 2021 23:09:32 GMT  
-		Size: 780.0 B  
+	-	`sha256:3f6946f6620b4e6125f0f47b8f14780928f21d0e52679c8e0ad11f856408fa2e`  
+		Last Modified: Sat, 13 Nov 2021 11:26:50 GMT  
+		Size: 782.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4e8fb0fdd0ded9e7c89855fecdc8f411eabf480cbc4a437f64e1a94cbc176bb`  
-		Last Modified: Fri, 01 Oct 2021 23:10:07 GMT  
-		Size: 92.4 MB (92350573 bytes)  
+	-	`sha256:cb328a098f4bfbd47eb532c9ba11c64a4e67620efc59a1bf6b08df2fc4d53720`  
+		Last Modified: Sat, 13 Nov 2021 11:27:25 GMT  
+		Size: 92.4 MB (92353348 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64d9ab4cb345e80038df0ecb07e296c8452b70ce1e6d4bab4deb06b7f0ee6bbe`  
-		Last Modified: Fri, 01 Oct 2021 23:09:53 GMT  
+	-	`sha256:cbf87b4a3a411fa2c26353e70c29d02939a778b8ad90f27dfb2b8e5e598ed29d`  
+		Last Modified: Sat, 13 Nov 2021 11:27:09 GMT  
 		Size: 331.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -151,68 +151,68 @@ COPY file:765473e154cb7674cba99ed8ee42b51feda01581be870e3d1e7e4930b82a0f37 in /s
 ### `znc:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull znc@sha256:b322a403e9ac017c9cc7d6014132a2721ebf8e67638ff35041d243c2cd047dbd
+$ docker pull znc@sha256:32a15a53851d57b0b0d6d968e70e9e9b4055786c7af4bb29a68812b7d8f1bc33
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **129.8 MB (129831813 bytes)**  
+-	Total Size: **129.9 MB (129850503 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:01cb753070d0ef97b8a7d96a93b53aa832ecd804b3fa37a527abfec8f2cd87ea`
+-	Image ID: `sha256:ece3927015dcde712ac15dd58016c2c09c6807761ff7bdefea6ba9d6d3b4de26`
 -	Entrypoint: `["\/entrypoint.sh"]`
 
 ```dockerfile
-# Wed, 01 Sep 2021 02:50:45 GMT
-ADD file:924de68748d5d710724ceb45b3bff9d38eedcad50d5744be4ce74f8f731a791f in / 
-# Wed, 01 Sep 2021 02:50:45 GMT
+# Fri, 12 Nov 2021 16:40:05 GMT
+ADD file:ad85e8724ab9b90e37aadca9513807d07d557e7fc4287ca017f01f269aff3920 in / 
+# Fri, 12 Nov 2021 16:40:06 GMT
 CMD ["/bin/sh"]
-# Wed, 01 Sep 2021 11:30:01 GMT
+# Sat, 13 Nov 2021 11:20:33 GMT
 ENV GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E
-# Wed, 01 Sep 2021 11:30:01 GMT
+# Sat, 13 Nov 2021 11:20:34 GMT
 ARG CMAKEFLAGS=-DCMAKE_INSTALL_PREFIX=/opt/znc -DWANT_CYRUS=YES -DWANT_PERL=YES -DWANT_PYTHON=YES
-# Wed, 01 Sep 2021 11:30:01 GMT
+# Sat, 13 Nov 2021 11:20:35 GMT
 ARG MAKEFLAGS=
-# Wed, 01 Sep 2021 11:30:02 GMT
+# Sat, 13 Nov 2021 11:20:36 GMT
 ENV ZNC_VERSION=1.8.2
-# Fri, 01 Oct 2021 21:47:43 GMT
+# Sat, 13 Nov 2021 11:26:07 GMT
 # ARGS: CMAKEFLAGS=-DCMAKE_INSTALL_PREFIX=/opt/znc -DWANT_CYRUS=YES -DWANT_PERL=YES -DWANT_PYTHON=YES MAKEFLAGS=
 RUN set -x     && adduser -S znc     && addgroup -S znc     && apk add --no-cache --virtual runtime-dependencies         boost         ca-certificates         cyrus-sasl         icu         openssl         su-exec         tini         tzdata     && apk add --no-cache --virtual build-dependencies         boost-dev         build-base         cmake         curl         cyrus-sasl-dev         gettext         gnupg         icu-dev         openssl-dev         perl-dev         python3-dev     && mkdir /znc-src && cd /znc-src     && curl -fsSL "https://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz" -o znc.tgz     && curl -fsSL "https://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz.sig" -o znc.tgz.sig     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${GPG_KEY}"     && gpg --batch --verify znc.tgz.sig znc.tgz     && rm -rf "$GNUPGHOME"     && tar -zxf znc.tgz --strip-components=1     && mkdir build && cd build     && cmake .. ${CMAKEFLAGS}     && make $MAKEFLAGS     && make install     && apk del build-dependencies     && cd / && rm -rf /znc-src
-# Fri, 01 Oct 2021 21:47:44 GMT
+# Sat, 13 Nov 2021 11:26:08 GMT
 COPY file:15e47c9cc6835e0818d6896aa6537a8adda40ff814c287685183c73fa9df4713 in / 
-# Fri, 01 Oct 2021 21:47:44 GMT
+# Sat, 13 Nov 2021 11:26:09 GMT
 COPY dir:4684da7bbf1d77862fa1a1b074543f975eb608cc0b6b1951ff5c5b58959d0faa in /startup-sequence/ 
-# Fri, 01 Oct 2021 21:47:44 GMT
+# Sat, 13 Nov 2021 11:26:09 GMT
 VOLUME [/znc-data]
-# Fri, 01 Oct 2021 21:47:44 GMT
+# Sat, 13 Nov 2021 11:26:10 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 01 Oct 2021 21:48:03 GMT
+# Sat, 13 Nov 2021 11:26:24 GMT
 RUN set -x     && apk add --no-cache         build-base         cmake         icu-dev         openssl-dev         perl         python3
-# Fri, 01 Oct 2021 21:48:03 GMT
+# Sat, 13 Nov 2021 11:26:26 GMT
 COPY file:765473e154cb7674cba99ed8ee42b51feda01581be870e3d1e7e4930b82a0f37 in /startup-sequence/ 
 ```
 
 -	Layers:
-	-	`sha256:bbf911997326f5b56d515142e8dbdbe01d2f308276938ddbce3ab347584ed8ce`  
-		Last Modified: Wed, 01 Sep 2021 02:51:37 GMT  
-		Size: 2.7 MB (2713008 bytes)  
+	-	`sha256:06decbbdea2401b400024fb2feadd51ee381cd4b7b78a30306c3828ec9f6c760`  
+		Last Modified: Fri, 12 Nov 2021 16:41:15 GMT  
+		Size: 2.7 MB (2719640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a7483ab13bd967aa38dd59edd4d43509af1ee92998db0f60fe00acaa7bca7cab`  
-		Last Modified: Fri, 01 Oct 2021 21:48:33 GMT  
-		Size: 43.2 MB (43227495 bytes)  
+	-	`sha256:09574db40a9e23d0a81b63f498cd1e44a0c40cec504ce24ba172cb4424cce62f`  
+		Last Modified: Sat, 13 Nov 2021 11:26:54 GMT  
+		Size: 43.2 MB (43233668 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:846a634441e53d991dcfeb3e2e0040b60271e306e2e21c2f5a90b9950b91e9a5`  
-		Last Modified: Fri, 01 Oct 2021 21:48:25 GMT  
-		Size: 170.0 B  
+	-	`sha256:3a9f3d4948899894c8066ba4b17faec6208af85072c585b473eeb36abf79d1d6`  
+		Last Modified: Sat, 13 Nov 2021 11:26:47 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c97ce6959ea02c7cf78772bc2a7f9f451701a02fc59df2e2a4b900654b48bc1e`  
-		Last Modified: Fri, 01 Oct 2021 21:48:25 GMT  
-		Size: 777.0 B  
+	-	`sha256:4ad22210201ef7f686217beded36f480df74aea0b4df90ed0e4b9e03e2844fc2`  
+		Last Modified: Sat, 13 Nov 2021 11:26:47 GMT  
+		Size: 755.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06929df4d3659431dda0ce829b55d578aa3a756e2b9cfb8ea4b5b154cd9f7ceb`  
-		Last Modified: Fri, 01 Oct 2021 21:49:02 GMT  
-		Size: 83.9 MB (83890032 bytes)  
+	-	`sha256:88a97d875249f22d4e927b053298c481ebf86e3cad51919acebb5ee7d9348cfd`  
+		Last Modified: Sat, 13 Nov 2021 11:27:21 GMT  
+		Size: 83.9 MB (83895938 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:020eddac6c8ca78e6f77c3311501d51a83db997bd31e0ffe8bf744187f1f7cc3`  
-		Last Modified: Fri, 01 Oct 2021 21:48:47 GMT  
+	-	`sha256:8df79ad07a347600e6b54e6fe8b27e9d21fe0161a1fd0b0941a45e575de8cb7e`  
+		Last Modified: Sat, 13 Nov 2021 11:27:07 GMT  
 		Size: 331.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
