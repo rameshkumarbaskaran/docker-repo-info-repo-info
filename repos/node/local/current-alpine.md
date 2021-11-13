@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c0fc1c9c473b67b23eeb0bf524a69db396b7fc6815a99c951e4b858b834e0f8d`
-- Created: `2021-10-22T18:53:12.081052173Z`
-- Virtual Size: ~ 168.97 Mb  
+- Image ID: `sha256:9e17f47b0a78bcf81e4401505587db539c53437c91854b3d4d931ee47fb89374`
+- Created: `2021-11-13T10:58:48.702448581Z`
+- Virtual Size: ~ 169.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=17.0.1`
+  - `NODE_VERSION=17.1.0`
   - `YARN_VERSION=1.22.15`
 
 ## `apk` (`.apk`-based packages)
@@ -36,16 +36,16 @@ GPL-2.0-only
 ### `apk` package: `alpine-keys`
 
 ```console
-alpine-keys-2.3-r1 description:
+alpine-keys-2.4-r0 description:
 Public keys for Alpine Linux packages
 
-alpine-keys-2.3-r1 webpage:
+alpine-keys-2.4-r0 webpage:
 https://alpinelinux.org
 
-alpine-keys-2.3-r1 installed size:
-116 KiB
+alpine-keys-2.4-r0 installed size:
+156 KiB
 
-alpine-keys-2.3-r1 license:
+alpine-keys-2.4-r0 license:
 MIT
 
 ```
@@ -70,16 +70,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.33.1-r3 description:
+busybox-1.33.1-r6 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.33.1-r3 webpage:
+busybox-1.33.1-r6 webpage:
 https://busybox.net/
 
-busybox-1.33.1-r3 installed size:
+busybox-1.33.1-r6 installed size:
 928 KiB
 
-busybox-1.33.1-r3 license:
+busybox-1.33.1-r6 license:
 GPL-2.0-only
 
 ```
@@ -257,16 +257,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.33.1-r3 description:
+ssl_client-1.33.1-r6 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.33.1-r3 webpage:
+ssl_client-1.33.1-r6 webpage:
 https://busybox.net/
 
-ssl_client-1.33.1-r3 installed size:
+ssl_client-1.33.1-r6 installed size:
 28 KiB
 
-ssl_client-1.33.1-r3 license:
+ssl_client-1.33.1-r6 license:
 GPL-2.0-only
 
 ```
