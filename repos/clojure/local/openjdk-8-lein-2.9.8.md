@@ -1,19 +1,19 @@
-# `clojure:openjdk-11`
+# `clojure:openjdk-8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:062045aa9bd666dadd740bd15a459571f68f34327a554d606bc7841d3c18c10a`
-- Created: `2021-11-10T19:26:50.289941618Z`
-- Virtual Size: ~ 678.25 Mb  
+- Image ID: `sha256:a8a15cbdd25cc3b7b6ee87c7505df66ed54b39bfc7736a038a1ebc33aea04dca`
+- Created: `2021-11-13T11:53:11.923385275Z`
+- Virtual Size: ~ 544.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
-  - `JAVA_HOME=/usr/local/openjdk-11`
+  - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
+  - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=11.0.13`
-  - `LEIN_VERSION=2.9.7`
+  - `JAVA_VERSION=8u312`
+  - `LEIN_VERSION=2.9.8`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`
 
