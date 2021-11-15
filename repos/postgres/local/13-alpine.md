@@ -1,10 +1,10 @@
-# `postgres:13.4-alpine`
+# `postgres:13.5-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:682810fa689e6fcb5ad773fd367833a7ae9e58b5a976cecbc662ae0492378338`
-- Created: `2021-10-26T23:25:07.677469449Z`
-- Virtual Size: ~ 191.51 Mb  
+- Image ID: `sha256:99c85c707edfa397a4aa8343fd8547075423cedfed4dc99d0948d9cc09719b48`
+- Created: `2021-11-13T05:18:39.917103598Z`
+- Virtual Size: ~ 191.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=13`
-  - `PG_VERSION=13.4`
-  - `PG_SHA256=ea93e10390245f1ce461a54eb5f99a48d8cabd3a08ce4d652ec2169a357bc0cd`
+  - `PG_VERSION=13.5`
+  - `PG_SHA256=9b81067a55edbaabc418aacef457dd8477642827499560b00615a6ea6c13f6b3`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -39,16 +39,16 @@ GPL-2.0-only
 ### `apk` package: `alpine-keys`
 
 ```console
-alpine-keys-2.3-r1 description:
+alpine-keys-2.4-r0 description:
 Public keys for Alpine Linux packages
 
-alpine-keys-2.3-r1 webpage:
+alpine-keys-2.4-r0 webpage:
 https://alpinelinux.org
 
-alpine-keys-2.3-r1 installed size:
-116 KiB
+alpine-keys-2.4-r0 installed size:
+156 KiB
 
-alpine-keys-2.3-r1 license:
+alpine-keys-2.4-r0 license:
 MIT
 
 ```
@@ -90,16 +90,16 @@ GPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.33.1-r3 description:
+busybox-1.33.1-r6 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.33.1-r3 webpage:
+busybox-1.33.1-r6 webpage:
 https://busybox.net/
 
-busybox-1.33.1-r3 installed size:
+busybox-1.33.1-r6 installed size:
 928 KiB
 
-busybox-1.33.1-r3 license:
+busybox-1.33.1-r6 license:
 GPL-2.0-only
 
 ```
@@ -226,16 +226,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.9.3-r0 description:
+libgcrypt-1.9.4-r0 description:
 General purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.9.3-r0 webpage:
+libgcrypt-1.9.4-r0 webpage:
 https://www.gnupg.org/
 
-libgcrypt-1.9.3-r0 installed size:
+libgcrypt-1.9.4-r0 installed size:
 1220 KiB
 
-libgcrypt-1.9.3-r0 license:
+libgcrypt-1.9.4-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -311,16 +311,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.37-r0 description:
+libuuid-2.37.2-r0 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.37-r0 webpage:
+libuuid-2.37.2-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.37-r0 installed size:
+libuuid-2.37.2-r0 installed size:
 40 KiB
 
-libuuid-2.37-r0 license:
+libuuid-2.37.2-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -481,16 +481,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.33.1-r3 description:
+ssl_client-1.33.1-r6 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.33.1-r3 webpage:
+ssl_client-1.33.1-r6 webpage:
 https://busybox.net/
 
-ssl_client-1.33.1-r3 installed size:
+ssl_client-1.33.1-r6 installed size:
 28 KiB
 
-ssl_client-1.33.1-r3 license:
+ssl_client-1.33.1-r6 license:
 GPL-2.0-only
 
 ```
@@ -515,16 +515,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2021a-r0 description:
+tzdata-2021e-r0 description:
 Timezone data
 
-tzdata-2021a-r0 webpage:
+tzdata-2021e-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2021a-r0 installed size:
-3436 KiB
+tzdata-2021e-r0 installed size:
+3376 KiB
 
-tzdata-2021a-r0 license:
+tzdata-2021e-r0 license:
 Public-Domain
 
 ```

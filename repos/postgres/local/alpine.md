@@ -1,10 +1,10 @@
-# `postgres:14.0-alpine`
+# `postgres:14.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:87440f4e7f9e60607dc11a4f0590a1c69b3a1c075211df478e22b0c27fb263e6`
-- Created: `2021-10-26T23:24:54.083261731Z`
-- Virtual Size: ~ 195.39 Mb  
+- Image ID: `sha256:d0938d4086be7b886a3613434cf8374f805db08186a5c0defd1b832f1f0a3552`
+- Created: `2021-11-13T05:11:49.283618517Z`
+- Virtual Size: ~ 195.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=14`
-  - `PG_VERSION=14.0`
-  - `PG_SHA256=ee2ad79126a7375e9102c4db77c4acae6ae6ffe3e082403b88826d96d927a122`
+  - `PG_VERSION=14.1`
+  - `PG_SHA256=4d3c101ea7ae38982f06bdc73758b53727fb6402ecd9382006fa5ecc7c2ca41f`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -39,16 +39,16 @@ GPL-2.0-only
 ### `apk` package: `alpine-keys`
 
 ```console
-alpine-keys-2.3-r1 description:
+alpine-keys-2.4-r0 description:
 Public keys for Alpine Linux packages
 
-alpine-keys-2.3-r1 webpage:
+alpine-keys-2.4-r0 webpage:
 https://alpinelinux.org
 
-alpine-keys-2.3-r1 installed size:
-116 KiB
+alpine-keys-2.4-r0 installed size:
+156 KiB
 
-alpine-keys-2.3-r1 license:
+alpine-keys-2.4-r0 license:
 MIT
 
 ```
@@ -90,16 +90,16 @@ GPL-3.0-or-later
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.33.1-r3 description:
+busybox-1.33.1-r6 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.33.1-r3 webpage:
+busybox-1.33.1-r6 webpage:
 https://busybox.net/
 
-busybox-1.33.1-r3 installed size:
+busybox-1.33.1-r6 installed size:
 928 KiB
 
-busybox-1.33.1-r3 license:
+busybox-1.33.1-r6 license:
 GPL-2.0-only
 
 ```
@@ -311,16 +311,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.37-r0 description:
+libuuid-2.37.2-r0 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.37-r0 webpage:
+libuuid-2.37.2-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.37-r0 installed size:
+libuuid-2.37.2-r0 installed size:
 40 KiB
 
-libuuid-2.37-r0 license:
+libuuid-2.37.2-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -498,16 +498,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.33.1-r3 description:
+ssl_client-1.33.1-r6 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.33.1-r3 webpage:
+ssl_client-1.33.1-r6 webpage:
 https://busybox.net/
 
-ssl_client-1.33.1-r3 installed size:
+ssl_client-1.33.1-r6 installed size:
 28 KiB
 
-ssl_client-1.33.1-r3 license:
+ssl_client-1.33.1-r6 license:
 GPL-2.0-only
 
 ```
@@ -532,16 +532,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2021b-r0 description:
+tzdata-2021e-r0 description:
 Timezone data
 
-tzdata-2021b-r0 webpage:
+tzdata-2021e-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2021b-r0 installed size:
+tzdata-2021e-r0 installed size:
 3376 KiB
 
-tzdata-2021b-r0 license:
+tzdata-2021e-r0 license:
 Public-Domain
 
 ```
