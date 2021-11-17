@@ -1,7 +1,7 @@
 ## `perl:5-slim-bullseye`
 
 ```console
-$ docker pull perl@sha256:6a4850e397f1da46c06f8a3f9f7c0c8a7ca8e09585ba32f2dbc6d6208ba6ec1e
+$ docker pull perl@sha256:44973289bbca95ec3e8f7a38306b81caa657ebc4eeccea408ff6397edd08e043
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -156,47 +156,47 @@ CMD ["perl5.34.0" "-de0"]
 ### `perl:5-slim-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull perl@sha256:461dd4135af9cac2a3b9f68dd5c0955396ecf4293edb8d521c09e732c19e13ed
+$ docker pull perl@sha256:d37ab7aaef00239a472e0943b9ee31aeb298f7ec5f4cbd04e519ab1840c01962
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.9 MB (44857021 bytes)**  
+-	Total Size: **44.9 MB (44869624 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cae4c756d1c251a66516e0c20ee034dda978aee8caaf3a5c4e1b2aff9cc609b3`
+-	Image ID: `sha256:6f3b6df41ae58ac60e7654b2fbab6d6e38fa8229059c290093fc488377fe5db4`
 -	Default Command: `["perl5.34.0","-de0"]`
 
 ```dockerfile
-# Tue, 12 Oct 2021 01:41:18 GMT
-ADD file:d84144ad575672cd6cc8a00c8e5a88ab0545348f040fc249ea5fcf8193b2bce6 in / 
-# Tue, 12 Oct 2021 01:41:18 GMT
+# Wed, 17 Nov 2021 02:40:15 GMT
+ADD file:4203242b2b09a65239092c4780b59181da7b861b3c0be40810b3588aa200f72c in / 
+# Wed, 17 Nov 2021 02:40:16 GMT
 CMD ["bash"]
-# Sat, 13 Nov 2021 13:03:06 GMT
+# Wed, 17 Nov 2021 05:10:47 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Sat, 13 Nov 2021 13:03:07 GMT
+# Wed, 17 Nov 2021 05:10:49 GMT
 COPY file:3744c5cc39cdbdcae10db09a1f0f399005a79f93c237b387a72ff5710cdd458c in /usr/src/perl/ 
-# Sat, 13 Nov 2021 13:03:07 GMT
+# Wed, 17 Nov 2021 05:10:49 GMT
 WORKDIR /usr/src/perl
-# Sat, 13 Nov 2021 13:07:48 GMT
+# Wed, 17 Nov 2021 05:15:29 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends        bzip2        ca-certificates        curl        dpkg-dev        gcc        libc6-dev        make        netbase        patch        xz-utils     && curl -SL https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz -o perl-5.34.0.tar.xz     && echo '82c2e5e5c71b0e10487a80d79140469ab1f8056349ca8545140a224dbbed7ded *perl-5.34.0.tar.xz' | sha256sum -c -     && tar --strip-components=1 -xaf perl-5.34.0.tar.xz -C /usr/src/perl     && rm perl-5.34.0.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Duseshrplib -Dvendorprefix=/usr/local  -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -LO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7044.tar.gz     && echo '9b60767fe40752ef7a9d3f13f19060a63389a5c23acc3e9827e19b75500f81f3 *App-cpanminus-1.7044.tar.gz' | sha256sum -c -     && tar -xzf App-cpanminus-1.7044.tar.gz && cd App-cpanminus-1.7044 && perl bin/cpanm . && cd /root     && savedPackages="make netbase"     && apt-mark auto '.*' > /dev/null     && apt-mark manual $savedPackages     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*     && rm -fr ./cpanm /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7044* /tmp/*
-# Sat, 13 Nov 2021 13:07:49 GMT
+# Wed, 17 Nov 2021 05:15:29 GMT
 WORKDIR /
-# Sat, 13 Nov 2021 13:07:49 GMT
+# Wed, 17 Nov 2021 05:15:30 GMT
 CMD ["perl5.34.0" "-de0"]
 ```
 
 -	Layers:
-	-	`sha256:a9eb63951c1c2ee8efcc12b696928fee3741a2d4eae76f2da3e161a5d90548bf`  
-		Last Modified: Tue, 12 Oct 2021 01:48:13 GMT  
-		Size: 30.0 MB (30043906 bytes)  
+	-	`sha256:eb9a2845ed124d072b117aba4f0508e00c1ecd0d147dc324d14b00d24092046c`  
+		Last Modified: Wed, 17 Nov 2021 02:47:17 GMT  
+		Size: 30.1 MB (30056521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88a528963968f4114c7ca06f96c32376b47c8d8124f968c7027d58d74f9e7c93`  
-		Last Modified: Sat, 13 Nov 2021 13:59:43 GMT  
-		Size: 181.0 B  
+	-	`sha256:d01219708c0968331386e45c214a2b97d25eefca249e026278020bd7f4d9fcc5`  
+		Last Modified: Wed, 17 Nov 2021 06:14:07 GMT  
+		Size: 180.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40705532f1079e31eed2b4f3f8164fdf3788a5ba466932b274b4051b14ff9eba`  
-		Last Modified: Sat, 13 Nov 2021 13:59:46 GMT  
-		Size: 14.8 MB (14812934 bytes)  
+	-	`sha256:8481159d0721628bf07ee0b6cf9da790089f878d82d1d9a69acaa9614c76ec7c`  
+		Last Modified: Wed, 17 Nov 2021 06:14:10 GMT  
+		Size: 14.8 MB (14812923 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `perl:5-slim-bullseye` - linux; 386
