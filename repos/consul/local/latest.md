@@ -1,10 +1,10 @@
-# `consul:1.10.3`
+# `consul:1.10.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d9814b25e52bae10d44d9953bad57d86e8577283652bc9443be9738031389c48`
-- Created: `2021-11-12T21:58:38.367746412Z`
-- Virtual Size: ~ 116.41 Mb  
+- Image ID: `sha256:60b5d5d7aa05804e07d8d6c740bc7418dd1f5ba1b85c6921362fcd4a43b97065`
+- Created: `2021-11-15T20:24:13.875973567Z`
+- Virtual Size: ~ 117.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,7 +20,7 @@
   - `org.opencontainers.image.title=consul`
   - `org.opencontainers.image.url=https://www.consul.io/`
   - `org.opencontainers.image.vendor=HashiCorp`
-  - `org.opencontainers.image.version=1.10.3`
+  - `org.opencontainers.image.version=1.10.4`
 
 ## `apk` (`.apk`-based packages)
 
@@ -497,6 +497,23 @@ su-exec-0.2-r1 installed size:
 
 su-exec-0.2-r1 license:
 MIT
+
+```
+
+### `apk` package: `tzdata`
+
+```console
+tzdata-2021e-r0 description:
+Timezone data
+
+tzdata-2021e-r0 webpage:
+https://www.iana.org/time-zones
+
+tzdata-2021e-r0 installed size:
+3376 KiB
+
+tzdata-2021e-r0 license:
+Public-Domain
 
 ```
 
