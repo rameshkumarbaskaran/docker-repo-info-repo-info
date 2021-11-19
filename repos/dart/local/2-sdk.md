@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:91437c5c4a3278fa297aef0ea82bc96c95aa1cd18aba10f2ffe3199eeb7d927c`
-- Created: `2021-10-20T19:19:39.018149091Z`
-- Virtual Size: ~ 779.21 Mb  
+- Image ID: `sha256:09a0f2042b77733dce1ec8b69af98166f5b3d39875c3afd70ca01a37ae88b67f`
+- Created: `2021-11-17T03:33:25.588324872Z`
+- Virtual Size: ~ 779.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -224,19 +224,19 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/5.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/5.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bind9=1:9.11.5.P4+dfsg-5.1+deb10u5`
+### `dpkg` source package: `bind9=1:9.11.5.P4+dfsg-5.1+deb10u6`
 
 Binary Packages:
 
-- `bind9-host=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `dnsutils=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `libbind9-161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `libdns1104:amd64=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `libirs161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `libisc1100:amd64=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `libisccc161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `libisccfg163:amd64=1:9.11.5.P4+dfsg-5.1+deb10u5`
-- `liblwres161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u5`
+- `bind9-host=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `dnsutils=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `libbind9-161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `libdns1104:amd64=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `libirs161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `libisc1100:amd64=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `libisccc161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `libisccfg163:amd64=1:9.11.5.P4+dfsg-5.1+deb10u6`
+- `liblwres161:amd64=1:9.11.5.P4+dfsg-5.1+deb10u6`
 
 Licenses: (parsed from: `/usr/share/doc/bind9-host/copyright`, `/usr/share/doc/dnsutils/copyright`, `/usr/share/doc/libbind9-161/copyright`, `/usr/share/doc/libdns1104/copyright`, `/usr/share/doc/libirs161/copyright`, `/usr/share/doc/libisc1100/copyright`, `/usr/share/doc/libisccc161/copyright`, `/usr/share/doc/libisccfg163/copyright`, `/usr/share/doc/liblwres161/copyright`)
 
@@ -249,17 +249,17 @@ Licenses: (parsed from: `/usr/share/doc/bind9-host/copyright`, `/usr/share/doc/d
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bind9=1:9.11.5.P4+dfsg-5.1+deb10u5
-'http://deb.debian.org/debian/pool/main/b/bind9/bind9_9.11.5.P4+dfsg-5.1+deb10u5.dsc' bind9_9.11.5.P4+dfsg-5.1+deb10u5.dsc 4096 SHA256:43b9cb0f37672cd98c8f4c1dcba9c12241b751585ccf4081995afce57accefd3
-'http://deb.debian.org/debian/pool/main/b/bind9/bind9_9.11.5.P4+dfsg.orig.tar.xz' bind9_9.11.5.P4+dfsg.orig.tar.xz 3956484 SHA256:34b20e4e17875d5c4280d52264bae08f527e38eb6bcfca431432b0cafcd03c6d
-'http://deb.debian.org/debian/pool/main/b/bind9/bind9_9.11.5.P4+dfsg-5.1+deb10u5.debian.tar.xz' bind9_9.11.5.P4+dfsg-5.1+deb10u5.debian.tar.xz 117984 SHA256:ef6884866b35afb5656a46e8e345b14a45b66926895f7c6c255df6c55242b01e
+$ apt-get source -qq --print-uris bind9=1:9.11.5.P4+dfsg-5.1+deb10u6
+'http://security.debian.org/debian-security/pool/updates/main/b/bind9/bind9_9.11.5.P4+dfsg-5.1+deb10u6.dsc' bind9_9.11.5.P4+dfsg-5.1+deb10u6.dsc 4096 SHA256:2818067fb0870ad6d75e42629994ccfb4ae61b76c11638e7d34f6c045245c9a7
+'http://security.debian.org/debian-security/pool/updates/main/b/bind9/bind9_9.11.5.P4+dfsg.orig.tar.xz' bind9_9.11.5.P4+dfsg.orig.tar.xz 3956484 SHA256:34b20e4e17875d5c4280d52264bae08f527e38eb6bcfca431432b0cafcd03c6d
+'http://security.debian.org/debian-security/pool/updates/main/b/bind9/bind9_9.11.5.P4+dfsg-5.1+deb10u6.debian.tar.xz' bind9_9.11.5.P4+dfsg-5.1+deb10u6.debian.tar.xz 119244 SHA256:8b25c976f7b2448ea0ed5f5dc761f7a6702ab8d77cf56f6bd47fc54484375b58
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/bind9/1:9.11.5.P4+dfsg-5.1+deb10u5/ (for browsing the source)
-- https://sources.debian.net/src/bind9/1:9.11.5.P4+dfsg-5.1+deb10u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bind9/1:9.11.5.P4+dfsg-5.1+deb10u5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/bind9/1:9.11.5.P4+dfsg-5.1+deb10u6/ (for browsing the source)
+- https://sources.debian.net/src/bind9/1:9.11.5.P4+dfsg-5.1+deb10u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bind9/1:9.11.5.P4+dfsg-5.1+deb10u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bzip2=1.0.6-9.2~deb10u1`
 
@@ -2324,11 +2324,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.30+dfsg-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.30+dfsg-6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2021a-0+deb10u2`
+### `dpkg` source package: `tzdata=2021a-0+deb10u3`
 
 Binary Packages:
 
-- `tzdata=2021a-0+deb10u2`
+- `tzdata=2021a-0+deb10u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2337,18 +2337,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tzdata=2021a-0+deb10u2
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u2.dsc' tzdata_2021a-0+deb10u2.dsc 2264 SHA256:75349115b974f0194f59dac2488f18edcc460abdeebe549051356a201e87bc58
+$ apt-get source -qq --print-uris tzdata=2021a-0+deb10u3
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u3.dsc' tzdata_2021a-0+deb10u3.dsc 2264 SHA256:1730f7a8a2ac3ac3c9db9dc7ddd3074343a7846988c515d55f046be527a00834
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u2.debian.tar.xz' tzdata_2021a-0+deb10u2.debian.tar.xz 107944 SHA256:721ed11128d69ce090ee1566e197a7c724b0ed4422321f50abf3b7538c360178
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u3.debian.tar.xz' tzdata_2021a-0+deb10u3.debian.tar.xz 109800 SHA256:aa09186f2ceb3d4b7ec9e7575ba51a3c1b4894e0669e1125c4cae1eafec73808
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tzdata/2021a-0+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021a-0+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tzdata/2021a-0+deb10u3/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2021a-0+deb10u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unzip=6.0-23+deb10u2`
 
