@@ -1,10 +1,10 @@
-# `drupal:8.9.19-php7.4-fpm-alpine3.13`
+# `drupal:8.9.20-php7.4-fpm-alpine3.13`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e0b1cd09b307c75f3955496ddc8c1826e4f6a5fb82b5761aea64417a44777319`
-- Created: `2021-11-13T15:38:52.270906509Z`
-- Virtual Size: ~ 171.79 Mb  
+- Image ID: `sha256:e7bd7a63c35fd1263257b4e2da3a1e15e93afdf2d464c13039384cf40ca53edc`
+- Created: `2021-11-19T01:13:38.524910767Z`
+- Virtual Size: ~ 171.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,11 +17,11 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.25`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.25.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.25.tar.xz.asc`
-  - `PHP_SHA256=12a758f1d7fee544387a28d3cf73226f47e3a52fb3049f07fcc37d156d393c0a`
-  - `DRUPAL_VERSION=8.9.19`
+  - `PHP_VERSION=7.4.26`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.26.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.26.tar.xz.asc`
+  - `PHP_SHA256=e305b3aafdc85fa73a81c53d3ce30578bc94d1633ec376add193a1e85e0f0ef8`
+  - `DRUPAL_VERSION=8.9.20`
 
 ## `apk` (`.apk`-based packages)
 
@@ -351,16 +351,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-13.4-r0 description:
+libpq-13.5-r0 description:
 PostgreSQL libraries
 
-libpq-13.4-r0 webpage:
+libpq-13.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-13.4-r0 installed size:
+libpq-13.5-r0 installed size:
 328 KiB
 
-libpq-13.4-r0 license:
+libpq-13.5-r0 license:
 PostgreSQL
 
 ```
