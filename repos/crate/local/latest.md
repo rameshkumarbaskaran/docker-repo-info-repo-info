@@ -1,10 +1,10 @@
-# `crate:4.6.4`
+# `crate:4.6.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:879339ea06ecc83e9df41ca6dcacea0086ff248c4ba77a657bad24570bdae843`
-- Created: `2021-10-05T22:22:31.306389842Z`
-- Virtual Size: ~ 694.94 Mb  
+- Image ID: `sha256:3a8fb4db28f0cb5b1b08b3becd777b660ce0b2727222c8f0327dd74aba49e53c`
+- Created: `2021-11-19T18:20:33.944164152Z`
+- Virtual Size: ~ 695.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -19,14 +19,14 @@
   - `org.label-schema.name=CentOS Base Image`
   - `org.label-schema.schema-version=1.0`
   - `org.label-schema.vendor=CentOS`
-  - `org.opencontainers.image.created=2021-09-30T17:09:13.685861`
+  - `org.opencontainers.image.created=2021-11-12T20:22:37.835383`
   - `org.opencontainers.image.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time.`
   - `org.opencontainers.image.licenses=GPL-2.0-only`
   - `org.opencontainers.image.source=https://github.com/crate/docker-crate`
   - `org.opencontainers.image.title=crate`
   - `org.opencontainers.image.url=https://crate.io/products/cratedb/`
   - `org.opencontainers.image.vendor=Crate.io`
-  - `org.opencontainers.image.version=4.6.4`
+  - `org.opencontainers.image.version=4.6.5`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -1450,32 +1450,32 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/openldap-2.4.44-22.el7.src.rpm
 ```
 
-### `rpm` package: `openssl-1.0.2k-21.el7_9.x86_64`
+### `rpm` package: `openssl-1.0.2k-22.el7_9.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls openssl-1.0.2k-21.el7_9
+$ yumdownloader --quiet --source --urls openssl-1.0.2k-22.el7_9
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/openssl-1.0.2k-21.el7_9.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/openssl-1.0.2k-22.el7_9.src.rpm
 ```
 
-### `rpm` package: `openssl-libs-1.0.2k-21.el7_9.x86_64`
+### `rpm` package: `openssl-libs-1.0.2k-22.el7_9.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-21.el7_9
+$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-22.el7_9
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/openssl-1.0.2k-21.el7_9.src.rpm
+http://vault.centos.org/centos/7/updates/Source//SPackages/openssl-1.0.2k-22.el7_9.src.rpm
 ```
 
 ### `rpm` package: `p11-kit-0.23.5-3.el7.x86_64`
