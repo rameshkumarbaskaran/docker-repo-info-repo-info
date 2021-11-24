@@ -1,9 +1,9 @@
-# `maven:3.8.3-openjdk-17-slim`
+# `maven:3.8.4-openjdk-17-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:98e2db9506ab2563363d9d57f0206ef55c7a538c54aa966fc9a531e4a15dbeca`
-- Created: `2021-11-18T11:14:54.027488324Z`
+- Image ID: `sha256:e1fbd66546cb15b1048f321d70519b360110975d98197f5bbe7149937b04f6e0`
+- Created: `2021-11-23T01:02:18.973172248Z`
 - Virtual Size: ~ 423.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`

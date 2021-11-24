@@ -1,9 +1,9 @@
-# `maven:3.8.3-jdk-11`
+# `maven:3.8.4-jdk-11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8d0ea100971c40390ebac920fce7259479919ff128c4d6381a6b01cd394e2ebd`
-- Created: `2021-11-18T11:13:56.731889002Z`
+- Image ID: `sha256:e2591b9337faf2f323ae582fa604179fc1b24c7dfe1ef76b2e9b8594cd35db25`
+- Created: `2021-11-23T00:59:49.864206451Z`
 - Virtual Size: ~ 670.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`

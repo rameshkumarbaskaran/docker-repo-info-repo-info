@@ -1,9 +1,9 @@
-# `maven:3.8.3-amazoncorretto-8`
+# `maven:3.8.4-amazoncorretto-8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9c8b91328d97d0cf6f9f4df11283df1b7acc5010aaf1f02329d08e6a5fd64c59`
-- Created: `2021-10-22T00:09:13.139799421Z`
+- Image ID: `sha256:ee33fcb1d90c9d10f3b44ef6dc5758cb33cd9f575c97d30880d8def9db9b2037`
+- Created: `2021-11-23T01:06:34.581450856Z`
 - Virtual Size: ~ 369.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
