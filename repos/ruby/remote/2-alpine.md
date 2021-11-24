@@ -1,7 +1,7 @@
 ## `ruby:2-alpine`
 
 ```console
-$ docker pull ruby@sha256:eea3094d6a262c90a962c9f6d171efb0dc25038c37cd5ce8cf7de93751d985c0
+$ docker pull ruby@sha256:4e7dd8ba5f9575f308d2da751881046117e83904b57cb8749b220941d9ed44e6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -281,14 +281,14 @@ CMD ["irb"]
 ### `ruby:2-alpine` - linux; 386
 
 ```console
-$ docker pull ruby@sha256:ad30edbfb0dfd5fcc125eb34e923571ac039b969508e8fbcbc2242c95c803486
+$ docker pull ruby@sha256:e898f8020fb89f8ba84ee53715692aa1e905cefaa46773a3fa8bca84040edd24
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **19.8 MB (19810023 bytes)**  
+-	Total Size: **19.8 MB (19845396 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4f57340feae6aedf70bc35a813264f002208b24d2528ae0647fe73f1bc52f276`
+-	Image ID: `sha256:16e5ae6d83a68704714dcf428c2ceb9aaa392d945db086ed695c36c057b59736`
 -	Default Command: `["irb"]`
 
 ```dockerfile
@@ -304,21 +304,21 @@ RUN set -eux; 	mkdir -p /usr/local/etc; 	{ 		echo 'install: --no-document'; 		ec
 ENV LANG=C.UTF-8
 # Fri, 12 Nov 2021 21:12:07 GMT
 ENV RUBY_MAJOR=2.7
-# Fri, 12 Nov 2021 21:12:07 GMT
-ENV RUBY_VERSION=2.7.4
-# Fri, 12 Nov 2021 21:12:08 GMT
-ENV RUBY_DOWNLOAD_SHA256=2a80824e0ad6100826b69b9890bf55cfc4cf2b61a1e1330fccbcb30c46cef8d7
-# Fri, 12 Nov 2021 21:15:26 GMT
+# Wed, 24 Nov 2021 20:13:35 GMT
+ENV RUBY_VERSION=2.7.5
+# Wed, 24 Nov 2021 20:13:35 GMT
+ENV RUBY_DOWNLOAD_SHA256=d216d95190eaacf3bf165303747b02ff13f10b6cfab67a9031b502a49512b516
+# Wed, 24 Nov 2021 20:16:26 GMT
 RUN set -eux; 		apk add --no-cache --virtual .ruby-builddeps 		autoconf 		bison 		bzip2 		bzip2-dev 		ca-certificates 		coreutils 		dpkg-dev dpkg 		g++ 		gcc 		gdbm-dev 		glib-dev 		libc-dev 		libffi-dev 		libxml2-dev 		libxslt-dev 		linux-headers 		make 		ncurses-dev 		openssl 		openssl-dev 		patch 		procps 		readline-dev 		ruby 		tar 		xz 		yaml-dev 		zlib-dev 	; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		wget -O 'thread-stack-fix.patch' 'https://bugs.ruby-lang.org/attachments/download/7081/0001-thread_pthread.c-make-get_main_stack-portable-on-lin.patch'; 	echo '3ab628a51d92fdf0d2b5835e93564857aea73e0c1de00313864a94a6255cb645 *thread-stack-fix.patch' | sha256sum --check --strict; 	patch -p1 -i thread-stack-fix.patch; 	rm thread-stack-fix.patch; 		export ac_cv_func_isnan=yes ac_cv_func_isinf=yes; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		s390x | armhf | armv7) 			apk add --no-cache libucontext-dev; 			export LIBS='-lucontext'; 			;; 	esac; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .ruby-rundeps $runDeps; 	apk del --no-network .ruby-builddeps; 		cd /; 	rm -r /usr/src/ruby; 	if 		apk --no-network list --installed 			| grep -v '^[.]ruby-rundeps' 			| grep -i ruby 	; then 		exit 1; 	fi; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
-# Fri, 12 Nov 2021 21:15:26 GMT
+# Wed, 24 Nov 2021 20:16:26 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Fri, 12 Nov 2021 21:15:26 GMT
+# Wed, 24 Nov 2021 20:16:26 GMT
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Fri, 12 Nov 2021 21:15:27 GMT
+# Wed, 24 Nov 2021 20:16:26 GMT
 ENV PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 12 Nov 2021 21:15:28 GMT
+# Wed, 24 Nov 2021 20:16:27 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Fri, 12 Nov 2021 21:15:28 GMT
+# Wed, 24 Nov 2021 20:16:28 GMT
 CMD ["irb"]
 ```
 
@@ -335,13 +335,13 @@ CMD ["irb"]
 		Last Modified: Fri, 12 Nov 2021 21:30:55 GMT  
 		Size: 223.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4094ca13416151615c89870e450c15d645c1a7a2a431496d3c786ce645bd0c1`  
-		Last Modified: Fri, 12 Nov 2021 21:33:16 GMT  
-		Size: 13.3 MB (13299432 bytes)  
+	-	`sha256:436b52808a15e03fc6ce617a995a20cf55c53e83a1f47a977bb3b2688ece7237`  
+		Last Modified: Wed, 24 Nov 2021 20:48:42 GMT  
+		Size: 13.3 MB (13334804 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3af6db65080dae98c42caae62bd82941f829449a14909dbbd1104cb9cad2830d`  
-		Last Modified: Fri, 12 Nov 2021 21:33:14 GMT  
-		Size: 171.0 B  
+	-	`sha256:a9f5a08b9a9bfc4b43a85395ae886401d4f3b2a8a9a97044364490bb530329dc`  
+		Last Modified: Wed, 24 Nov 2021 20:48:40 GMT  
+		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ruby:2-alpine` - linux; ppc64le
