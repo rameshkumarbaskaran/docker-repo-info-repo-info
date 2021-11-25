@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c48a04de41bf1795abeee36effc817551b3de5069209d3ec827816281c81211a`
-- Created: `2021-11-13T14:31:22.842805653Z`
-- Virtual Size: ~ 347.62 Mb  
+- Image ID: `sha256:84e7af942b2caf54989ab75508a372bd423318648100e29420f112ac0b80322e`
+- Created: `2021-11-24T23:21:41.045039508Z`
+- Virtual Size: ~ 347.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `RUBY_MAJOR=2.7`
-  - `RUBY_VERSION=2.7.4`
-  - `RUBY_DOWNLOAD_SHA256=2a80824e0ad6100826b69b9890bf55cfc4cf2b61a1e1330fccbcb30c46cef8d7`
+  - `RUBY_VERSION=2.7.5`
+  - `RUBY_DOWNLOAD_SHA256=d216d95190eaacf3bf165303747b02ff13f10b6cfab67a9031b502a49512b516`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -590,16 +590,16 @@ MIT
 ### `apk` package: `imagemagick`
 
 ```console
-imagemagick-7.0.11.13-r0 description:
+imagemagick-7.0.11.14-r0 description:
 Collection of tools and libraries for many image formats
 
-imagemagick-7.0.11.13-r0 webpage:
+imagemagick-7.0.11.14-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick-7.0.11.13-r0 installed size:
+imagemagick-7.0.11.14-r0 installed size:
 4560 KiB
 
-imagemagick-7.0.11.13-r0 license:
+imagemagick-7.0.11.14-r0 license:
 ImageMagick
 
 ```
@@ -607,16 +607,16 @@ ImageMagick
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.11.13-r0 description:
+imagemagick-libs-7.0.11.14-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.11.13-r0 webpage:
+imagemagick-libs-7.0.11.14-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.11.13-r0 installed size:
-3252 KiB
+imagemagick-libs-7.0.11.14-r0 installed size:
+3256 KiB
 
-imagemagick-libs-7.0.11.13-r0 license:
+imagemagick-libs-7.0.11.14-r0 license:
 ImageMagick
 
 ```
@@ -998,16 +998,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-13.4-r0 description:
+libpq-13.5-r0 description:
 PostgreSQL libraries
 
-libpq-13.4-r0 webpage:
+libpq-13.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-13.4-r0 installed size:
+libpq-13.5-r0 installed size:
 328 KiB
 
-libpq-13.4-r0 license:
+libpq-13.5-r0 license:
 PostgreSQL
 
 ```

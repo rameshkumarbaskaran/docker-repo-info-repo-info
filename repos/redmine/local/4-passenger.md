@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:27853838e5a87da41ee207d9032436259a01c1e6474419f2c9c796931a4c34eb`
-- Created: `2021-11-18T20:32:23.320784171Z`
-- Virtual Size: ~ 581.83 Mb  
+- Image ID: `sha256:15bb29839ab3a14a069bf81b4ded7088c91ece992a1bcc9547e1b8dda8e18df2`
+- Created: `2021-11-24T23:19:10.803857881Z`
+- Virtual Size: ~ 581.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `RUBY_MAJOR=2.7`
-  - `RUBY_VERSION=2.7.4`
-  - `RUBY_DOWNLOAD_SHA256=2a80824e0ad6100826b69b9890bf55cfc4cf2b61a1e1330fccbcb30c46cef8d7`
+  - `RUBY_VERSION=2.7.5`
+  - `RUBY_DOWNLOAD_SHA256=d216d95190eaacf3bf165303747b02ff13f10b6cfab67a9031b502a49512b516`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
