@@ -809,14 +809,9 @@ Licenses: (parsed from: `/usr/share/doc/libsemanage-common/copyright`, `/usr/sha
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsemanage=3.1-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_3.1-1ubuntu3.dsc' libsemanage_3.1-1ubuntu3.dsc 2713 SHA512:1eb29ac1acd1bada043cbab00dce6264f6caad1767a958a932cd08c6c8c0536a2667c00231f2c69bc5655702675e1658c2121aeaddbfe1da516e000ffc195056
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_3.1.orig.tar.gz' libsemanage_3.1.orig.tar.gz 179601 SHA512:8609ca7d13b5c603677740f2b14558fea3922624af182d20d618237ba11fcf2559fab82fc68d1efa6ff118f064d426f005138521652c761de92cd66150102197
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_3.1-1ubuntu3.debian.tar.xz' libsemanage_3.1-1ubuntu3.debian.tar.xz 17880 SHA512:24e8e9f7b7d8a402b2c7335e6937a0153d63b4981eebaa3f37f2402cc2131f395f1f017a7c60ec00b8309916828cc8dc6ae528695174ed8df2f3b900d2e17a11
-```
 
 ### `dpkg` source package: `libsepol=3.1-1ubuntu2`
 
@@ -829,14 +824,9 @@ Licenses: (parsed from: `/usr/share/doc/libsepol1/copyright`)
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsepol=3.1-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_3.1-1ubuntu2.dsc' libsepol_3.1-1ubuntu2.dsc 2150 SHA512:ef1d2e5c03dfaab2895570e0798894dac489ea0ccd6c05d38b0db1ed418a0b8090c5432cc6a81325c9bc1ae2f3ee97e957a098d9842129d69125c1e0b381d3a4
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_3.1.orig.tar.gz' libsepol_3.1.orig.tar.gz 473842 SHA512:4b5f4e82853ff3e9b4fac2dbdea5c2fc3bb7b508af912217ac4b75da6540fbcd77aa314ab95cd9dfa94fbc4a885000656a663c1a152f65b4cf6970ea0b6034ab
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_3.1-1ubuntu2.debian.tar.xz' libsepol_3.1-1ubuntu2.debian.tar.xz 14812 SHA512:b76a2dc19431d19295fb5841ad9ddf92ad42c8a851b23e7df932ad71d5e4a2dc4865d5e0bdd5438f5b88a127b9e3fc79a8134361fdb16d7360bbd1c095b22b5c
-```
 
 ### `dpkg` source package: `libtasn1-6=4.16.0-2build1`
 
@@ -1023,15 +1013,9 @@ Licenses: (parsed from: `/usr/share/doc/libncurses6/copyright`, `/usr/share/doc/
 - `MIT/X11`
 - `X11`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ncurses=6.2+20201114-2build2
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.2+20201114-2build2.dsc' ncurses_6.2+20201114-2build2.dsc 4155 SHA512:a5e7aa78bee5898f6acfd7335a8a447e5338432320fe3fdc1967dfc11fa246e28af367298180e4250ada8930fd604afc685f97678050cb2ad1db89511cddc86f
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.2+20201114.orig.tar.gz' ncurses_6.2+20201114.orig.tar.gz 3539796 SHA512:d163bc8f08f6b2406f8f562fecd9035e0e6f2db8b539cbcaeb4a80b15027b518026526eac1b2681da82b8d03dd1c924a85de1294e6ace2a5dbc03126512a3e2c
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.2+20201114.orig.tar.gz.asc' ncurses_6.2+20201114.orig.tar.gz.asc 265 SHA512:210035a4ec94cdb650ac4cf7990791dc482ea941b410dcf635525fa3282df28464a1b8c0e5a4721868ccbe2609bae2db3632ecd166d239ef84471c536ce81f9c
-'http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.2+20201114-2build2.debian.tar.xz' ncurses_6.2+20201114-2build2.debian.tar.xz 51900 SHA512:7c5cfd55e66aea1615d2977dce9eb4a51cf75f1bb223386b1884308c43767b2d75bb23e20a5f459d9a646fa85243e49959026a803421abf7fe196821ec49cd0c
-```
 
 ### `dpkg` source package: `nettle=3.7.3-1build1`
 
@@ -1280,14 +1264,9 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris shadow=1:4.8.1-1ubuntu9
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-1ubuntu9.dsc' shadow_4.8.1-1ubuntu9.dsc 2345 SHA512:8d69095b60dc2211e1a98c1a9229fdf57a6e9aa115a378b2440dd7eabf760548e0143685d2f8244290b75e3fe472900d907a263be30e37fa6a7dbb485186ec29
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1.orig.tar.xz' shadow_4.8.1.orig.tar.xz 1611196 SHA512:780a983483d847ed3c91c82064a0fa902b6f4185225978241bc3bc03fcc3aa143975b46aee43151c6ba43efcfdb1819516b76ba7ad3d1d3c34fcc38ea42e917b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-1ubuntu9.debian.tar.xz' shadow_4.8.1-1ubuntu9.debian.tar.xz 86872 SHA512:89d9d4c33598252e3df47b69e30424edea9743c6033fcf296a6a8ce2b450f9ea67008a3a79a5667a775eedf58320fd25fff83eb9e613e34ac9a88601c2c96930
-```
 
 ### `dpkg` source package: `systemd=248.3-1ubuntu8`
 
