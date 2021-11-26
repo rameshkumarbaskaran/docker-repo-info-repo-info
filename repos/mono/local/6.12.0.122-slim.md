@@ -1,16 +1,16 @@
-# `mono:6.12.0.107-slim`
+# `mono:6.12.0.122-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9d3e290f28648f6b7a41e555a1e5695a8b0d8d8f023357a3b055d7370ba256f1`
-- Created: `2021-10-12T04:02:54.456435297Z`
-- Virtual Size: ~ 268.52 Mb  
+- Image ID: `sha256:179c410963b2d950b30018aa2f7198d4bbf4750a44af79963bc2ec7eb619a78a`
+- Created: `2021-11-23T22:35:48.789263468Z`
+- Virtual Size: ~ 268.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `MONO_VERSION=6.12.0.107`
+  - `MONO_VERSION=6.12.0.122`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -371,8 +371,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris cli-common=0.10xamarin5+debian10b1
-'http://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.10xamarin5+debian10b1.dsc' cli-common_0.10xamarin5+debian10b1.dsc 1078 SHA256:b9d02ae0f0742d312514247c9826eef25755e4bad97f4aadb270b2196ab53f31
-'http://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.10xamarin5+debian10b1.tar.gz' cli-common_0.10xamarin5+debian10b1.tar.gz 285164 SHA256:2c6c672b7d59768b469880948dce228ba0055451f0d555586a4f8f8f5e381a1c
+'https://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.10xamarin5+debian10b1.dsc' cli-common_0.10xamarin5+debian10b1.dsc 1078 SHA256:b9d02ae0f0742d312514247c9826eef25755e4bad97f4aadb270b2196ab53f31
+'https://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.10xamarin5+debian10b1.tar.gz' cli-common_0.10xamarin5+debian10b1.tar.gz 285164 SHA256:2c6c672b7d59768b469880948dce228ba0055451f0d555586a4f8f8f5e381a1c
 ```
 
 ### `dpkg` source package: `coreutils=8.30-3`
@@ -1451,33 +1451,33 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mono-llvm=6.0+mono20190708165219-0xamarin2+debian10b1
-'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.dsc' mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.dsc 1317 SHA256:b954b9769186fc3ae107f76fc35e176636e48d3faa0e108040c741ae2e96948f
-'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20190708165219.orig.tar.gz' mono-llvm_6.0+mono20190708165219.orig.tar.gz 39075413 SHA256:8a71115ab848cdc8e52eebd1c514533f93f07828c35addfe54331c5784cce0aa
-'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.debian.tar.xz' mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.debian.tar.xz 6076 SHA256:547af3657e92984d434e8611830025b5a51533bc5a84d439719bb6fd7a597f9d
+'https://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.dsc' mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.dsc 1317 SHA256:b954b9769186fc3ae107f76fc35e176636e48d3faa0e108040c741ae2e96948f
+'https://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20190708165219.orig.tar.gz' mono-llvm_6.0+mono20190708165219.orig.tar.gz 39075413 SHA256:8a71115ab848cdc8e52eebd1c514533f93f07828c35addfe54331c5784cce0aa
+'https://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.debian.tar.xz' mono-llvm_6.0+mono20190708165219-0xamarin2+debian10b1.debian.tar.xz 6076 SHA256:547af3657e92984d434e8611830025b5a51533bc5a84d439719bb6fd7a597f9d
 ```
 
-### `dpkg` source package: `mono=6.12.0.107-0xamarin13+debian10b1`
+### `dpkg` source package: `mono=6.12.0.122-0xamarin1+debian10b1`
 
 Binary Packages:
 
-- `ca-certificates-mono=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-btls-interface4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-corlib4.5-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-i18n-west4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-i18n4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-security4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-system-configuration4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-system-core4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-system-numerics4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-system-security4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-system-xml4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `libmono-system4.0-cil=6.12.0.107-0xamarin13+debian10b1`
-- `mono-4.0-gac=6.12.0.107-0xamarin13+debian10b1`
-- `mono-gac=6.12.0.107-0xamarin13+debian10b1`
-- `mono-llvm-support=6.12.0.107-0xamarin13+debian10b1`
-- `mono-runtime=6.12.0.107-0xamarin13+debian10b1`
-- `mono-runtime-common=6.12.0.107-0xamarin13+debian10b1`
-- `mono-runtime-sgen=6.12.0.107-0xamarin13+debian10b1`
+- `ca-certificates-mono=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-btls-interface4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-corlib4.5-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-i18n-west4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-i18n4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-security4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-system-configuration4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-system-core4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-system-numerics4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-system-security4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-system-xml4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `libmono-system4.0-cil=6.12.0.122-0xamarin1+debian10b1`
+- `mono-4.0-gac=6.12.0.122-0xamarin1+debian10b1`
+- `mono-gac=6.12.0.122-0xamarin1+debian10b1`
+- `mono-llvm-support=6.12.0.122-0xamarin1+debian10b1`
+- `mono-runtime=6.12.0.122-0xamarin1+debian10b1`
+- `mono-runtime-common=6.12.0.122-0xamarin1+debian10b1`
+- `mono-runtime-sgen=6.12.0.122-0xamarin1+debian10b1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates-mono/copyright`, `/usr/share/doc/libmono-btls-interface4.0-cil/copyright`, `/usr/share/doc/libmono-corlib4.5-cil/copyright`, `/usr/share/doc/libmono-i18n-west4.0-cil/copyright`, `/usr/share/doc/libmono-i18n4.0-cil/copyright`, `/usr/share/doc/libmono-security4.0-cil/copyright`, `/usr/share/doc/libmono-system-configuration4.0-cil/copyright`, `/usr/share/doc/libmono-system-core4.0-cil/copyright`, `/usr/share/doc/libmono-system-numerics4.0-cil/copyright`, `/usr/share/doc/libmono-system-security4.0-cil/copyright`, `/usr/share/doc/libmono-system-xml4.0-cil/copyright`, `/usr/share/doc/libmono-system4.0-cil/copyright`, `/usr/share/doc/mono-4.0-gac/copyright`, `/usr/share/doc/mono-gac/copyright`, `/usr/share/doc/mono-llvm-support/copyright`, `/usr/share/doc/mono-runtime/copyright`, `/usr/share/doc/mono-runtime-common/copyright`, `/usr/share/doc/mono-runtime-sgen/copyright`)
 
@@ -1501,10 +1501,10 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates-mono/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mono=6.12.0.107-0xamarin13+debian10b1
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.12.0.107-0xamarin13+debian10b1.dsc' mono_6.12.0.107-0xamarin13+debian10b1.dsc 19005 SHA256:7be5ea8afc0d957afce3ebaabbc5ee32ba501907573cf9e8a24b509d455fb3e6
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.12.0.107.orig.tar.xz' mono_6.12.0.107.orig.tar.xz 291862192 SHA256:61f3cd629f8e99371c6b47c1f8d96b8ac46d9e851b5531eef20cdf9ab60d2a5f
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.12.0.107-0xamarin13+debian10b1.debian.tar.xz' mono_6.12.0.107-0xamarin13+debian10b1.debian.tar.xz 167364 SHA256:43edc2e09b43c4b01545c1fe4c1a58be3a42b0fa99eaab10f380fe0c86bb7f88
+$ apt-get source -qq --print-uris mono=6.12.0.122-0xamarin1+debian10b1
+'https://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.12.0.122-0xamarin1+debian10b1.dsc' mono_6.12.0.122-0xamarin1+debian10b1.dsc 19001 SHA256:94df39ff1977c60fc48b16a50941dbe0a3369fc43690de182a2c86c7cc2545f5
+'https://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.12.0.122.orig.tar.xz' mono_6.12.0.122.orig.tar.xz 292266176 SHA256:29c277660fc5e7513107aee1cbf8c5057c9370a4cdfeda2fc781be6986d89d23
+'https://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.12.0.122-0xamarin1+debian10b1.debian.tar.xz' mono_6.12.0.122-0xamarin1+debian10b1.debian.tar.xz 162000 SHA256:c3ea00707ee3b5197a1eefc2ad00f1ae3c40412c9ba15c7ec6620095eae7370c
 ```
 
 ### `dpkg` source package: `ncurses=6.1+20181013-2+deb10u2`
@@ -1899,11 +1899,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.30+dfsg-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.30+dfsg-6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2021a-0+deb10u2`
+### `dpkg` source package: `tzdata=2021a-0+deb10u3`
 
 Binary Packages:
 
-- `tzdata=2021a-0+deb10u2`
+- `tzdata=2021a-0+deb10u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1912,18 +1912,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tzdata=2021a-0+deb10u2
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u2.dsc' tzdata_2021a-0+deb10u2.dsc 2264 SHA256:75349115b974f0194f59dac2488f18edcc460abdeebe549051356a201e87bc58
+$ apt-get source -qq --print-uris tzdata=2021a-0+deb10u3
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u3.dsc' tzdata_2021a-0+deb10u3.dsc 2264 SHA256:1730f7a8a2ac3ac3c9db9dc7ddd3074343a7846988c515d55f046be527a00834
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u2.debian.tar.xz' tzdata_2021a-0+deb10u2.debian.tar.xz 107944 SHA256:721ed11128d69ce090ee1566e197a7c724b0ed4422321f50abf3b7538c360178
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u3.debian.tar.xz' tzdata_2021a-0+deb10u3.debian.tar.xz 109800 SHA256:aa09186f2ceb3d4b7ec9e7575ba51a3c1b4894e0669e1125c4cae1eafec73808
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tzdata/2021a-0+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2021a-0+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tzdata/2021a-0+deb10u3/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2021a-0+deb10u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `util-linux=2.33.1-0.1`
 
