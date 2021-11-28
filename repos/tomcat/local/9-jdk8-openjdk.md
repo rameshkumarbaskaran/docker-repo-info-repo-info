@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:b9358cb4da38ea0ecc6501314982600e7ebf8b8128d6c74a1ad24327e84a7552`
 - Created: `2021-11-18T15:02:13.428286922Z`
-- Virtual Size: ~ 546.20 Mb  
+- Virtual Size: ~ 546.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
