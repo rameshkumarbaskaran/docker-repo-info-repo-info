@@ -1,7 +1,7 @@
 ## `varnish:alpine`
 
 ```console
-$ docker pull varnish@sha256:bda6be620d71e5befa0453fcf20d255a2028507fc6dea40df394c977abf36f67
+$ docker pull varnish@sha256:992c4786eeaa7c7d153d473fa819d9eb665c94790fc4ab000cbe46f774c16a95
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull varnish@sha256:bda6be620d71e5befa0453fcf20d255a2028507fc6dea40df39
 ### `varnish:alpine` - linux; amd64
 
 ```console
-$ docker pull varnish@sha256:723a4deedeecd9664cbf1d173677ffb72c608fd482078c3553ac66971da9431f
+$ docker pull varnish@sha256:e6f6804aecc2fb6b091c54021c1773b77968d798293d41ab3ee46f5c00a58bb1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **58.4 MB (58371298 bytes)**  
+-	Total Size: **58.4 MB (58362658 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5f6b086bc52048c10d1af182c53eed3d8e70053d37649882ef1a2a747d3c1c93`
+-	Image ID: `sha256:8e7e9599575e47151d14b79975fd45baf80559233e36487f2ce8bbe0a941ce68`
 -	Entrypoint: `["\/usr\/local\/bin\/docker-varnish-entrypoint"]`
 -	Default Command: `[]`
 
@@ -34,17 +34,17 @@ ADD file:762c899ec0505d1a32930ee804c5b008825f41611161be104076cba33b7e5b2b in /
 CMD ["/bin/sh"]
 # Sat, 13 Nov 2021 07:25:45 GMT
 ENV VARNISH_SIZE=100M
-# Sat, 13 Nov 2021 07:27:09 GMT
-RUN set -e;    BASE_PKGS="tar alpine-sdk sudo git";     apk add --virtual varnish-build-deps -q --no-progress --update $BASE_PKGS;     git clone https://github.com/varnishcache/pkg-varnish-cache.git;     cd pkg-varnish-cache/alpine;     git checkout d3e6a3fad7d4c2ac781ada92dcc246e7eef9d129;     sed -i APKBUILD         -e "s/pkgver=@VERSION@/pkgver=7.0.0/" 	-e 's@^source=.*@source="http://varnish-cache.org/_downloads/varnish-$pkgver.tgz"@' 	-e "s/^sha512sums=.*/sha512sums=\"39c694db4ec7b35236d12fe2c03036260d6799395b1c8bb5a58e96fc88d67dcaa5eb8bc75643540d3aa0edc1a8924d7d839e88293b0521fadef4cd12f466fb4b  varnish-\$pkgver.tgz\"/";     adduser -D builder;     echo "builder ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers;     addgroup builder abuild;     su builder -c "abuild-keygen -nai";     chown builder -R .;     su builder -c "abuild -r";    apk add --allow-untrusted ~builder/packages/pkg-varnish-cache/*/*.apk;     echo -e 'vcl 4.1;\nbackend default none;' > /etc/varnish/default.vcl;     apk del --no-network varnish-build-deps;     rm -rf ~builder /pkg-varnish-cache;     sed -i '/^builder/d' /etc/sudoers;     deluser --remove-home builder
-# Sat, 13 Nov 2021 07:27:10 GMT
+# Mon, 29 Nov 2021 18:23:42 GMT
+RUN set -e;    BASE_PKGS="tar alpine-sdk sudo git";     apk add --virtual varnish-build-deps -q --no-progress --update $BASE_PKGS;     git clone https://github.com/varnishcache/pkg-varnish-cache.git;     cd pkg-varnish-cache/alpine;     git checkout d3e6a3fad7d4c2ac781ada92dcc246e7eef9d129;     sed -i APKBUILD         -e "s/pkgver=@VERSION@/pkgver=7.0.1/" 	-e 's@^source=.*@source="http://varnish-cache.org/_downloads/varnish-$pkgver.tgz"@' 	-e "s/^sha512sums=.*/sha512sums=\"7541d50b03a113f0a13660d459cc4c2eb45d57fb19380ab56a5413a4e5d702f9c0856585f09aeea6084a239ad8c69017af3805a864540b4697e0eac29f00b408  varnish-\$pkgver.tgz\"/";     adduser -D builder;     echo "builder ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers;     addgroup builder abuild;     su builder -c "abuild-keygen -nai";     chown builder -R .;     su builder -c "abuild -r";    apk add --allow-untrusted ~builder/packages/pkg-varnish-cache/*/*.apk;     echo -e 'vcl 4.1;\nbackend default none;' > /etc/varnish/default.vcl;     apk del --no-network varnish-build-deps;     rm -rf ~builder /pkg-varnish-cache;     sed -i '/^builder/d' /etc/sudoers;     deluser --remove-home builder;
+# Mon, 29 Nov 2021 18:23:42 GMT
 WORKDIR /etc/varnish
-# Sat, 13 Nov 2021 07:27:10 GMT
+# Mon, 29 Nov 2021 18:23:42 GMT
 COPY dir:846b8f8975487ee292d565d7ea945a1a79fb5f0e418fec900574091bb0a7cffc in /usr/local/bin/ 
-# Sat, 13 Nov 2021 07:27:10 GMT
+# Mon, 29 Nov 2021 18:23:42 GMT
 ENTRYPOINT ["/usr/local/bin/docker-varnish-entrypoint"]
-# Sat, 13 Nov 2021 07:27:10 GMT
+# Mon, 29 Nov 2021 18:23:43 GMT
 EXPOSE 80 8443
-# Sat, 13 Nov 2021 07:27:11 GMT
+# Mon, 29 Nov 2021 18:23:43 GMT
 CMD []
 ```
 
@@ -53,13 +53,13 @@ CMD []
 		Last Modified: Fri, 12 Nov 2021 17:20:39 GMT  
 		Size: 2.8 MB (2822981 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb27c5d20e1cb17f68e8ffecab21299b17f42ebbe87f731333618623045e29bb`  
-		Last Modified: Sat, 13 Nov 2021 07:29:47 GMT  
-		Size: 55.5 MB (55547839 bytes)  
+	-	`sha256:cf619492e89f6485a3ba5e7cb6807f6f35a59e5715d4bffcb692cfecddeefbd8`  
+		Last Modified: Mon, 29 Nov 2021 18:30:34 GMT  
+		Size: 55.5 MB (55539197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0cffd1b8aac64ece197387800da2bb5e2ceceb92d9a07e095e8f2a05dac41ebf`  
-		Last Modified: Sat, 13 Nov 2021 07:29:38 GMT  
-		Size: 478.0 B  
+	-	`sha256:9a667c3f673f5f288f2ff0a45cd4743280d929515d6979127e0cb9f843854d03`  
+		Last Modified: Mon, 29 Nov 2021 18:30:26 GMT  
+		Size: 480.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `varnish:alpine` - linux; arm variant v7
