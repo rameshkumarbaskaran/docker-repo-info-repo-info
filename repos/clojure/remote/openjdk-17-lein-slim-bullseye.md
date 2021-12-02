@@ -1,7 +1,7 @@
 ## `clojure:openjdk-17-lein-slim-bullseye`
 
 ```console
-$ docker pull clojure@sha256:8e6b8ba1c0f6b31a7bafc19b5ef46eafda7d39b265472a112b72497175b598e2
+$ docker pull clojure@sha256:625a78c68f27f929ed557b87cd074774024adfb38b32f86a2f93c927af9d4b67
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,15 +12,16 @@ $ docker pull clojure@sha256:8e6b8ba1c0f6b31a7bafc19b5ef46eafda7d39b265472a112b7
 ### `clojure:openjdk-17-lein-slim-bullseye` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:45538d8852b0a5705f8a20e1995663d0661189138d1d54a031a086b6463c5735
+$ docker pull clojure@sha256:614336d0b0740aaacdc9de7a93fbf1da171ad7c586b0d249c3a94a53416e08fb
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **236.6 MB (236569484 bytes)**  
+-	Total Size: **236.6 MB (236569889 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45cb3c813eb7bf836acf0385b069c075b0a778c9fb0377d1e0b040182cc347d4`
--	Default Command: `["lein","repl"]`
+-	Image ID: `sha256:ff8a8d1ed91f4a02fe57d9a67998aa1de9172ff0e752201e22f4122807613474`
+-	Entrypoint: `["entrypoint"]`
+-	Default Command: `["repl"]`
 
 ```dockerfile
 # Wed, 17 Nov 2021 02:20:41 GMT
@@ -55,8 +56,12 @@ ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 ENV LEIN_ROOT=1
 # Thu, 18 Nov 2021 13:08:37 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"]])' > project.clj   && lein deps && rm project.clj
-# Thu, 18 Nov 2021 13:08:37 GMT
-CMD ["lein" "repl"]
+# Thu, 02 Dec 2021 02:34:09 GMT
+COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
+# Thu, 02 Dec 2021 02:34:09 GMT
+ENTRYPOINT ["entrypoint"]
+# Thu, 02 Dec 2021 02:34:09 GMT
+CMD ["repl"]
 ```
 
 -	Layers:
@@ -79,6 +84,10 @@ CMD ["lein" "repl"]
 	-	`sha256:e607e3d61df44d87b51b224bc4e4ce2b24cce81f93e49922e7fb761caab283e9`  
 		Last Modified: Thu, 18 Nov 2021 13:25:48 GMT  
 		Size: 4.2 MB (4207195 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c565db69e3d13435fa2117446fcdb418a496a756f27fca2a22baae1d09eb1ba9`  
+		Last Modified: Thu, 02 Dec 2021 02:43:09 GMT  
+		Size: 405.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-17-lein-slim-bullseye` - linux; arm64 variant v8

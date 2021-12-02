@@ -1,7 +1,7 @@
 ## `clojure:openjdk-18-lein-2.9.8-slim-bullseye`
 
 ```console
-$ docker pull clojure@sha256:8f583e616dd090460d9fb296505bd01c15a33ee52f2ca904ae95b373d4483e34
+$ docker pull clojure@sha256:f4c76faabcfa8fd8db04277e4cbf419318a1d82e7936fe854acfe44b3c920a6a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,15 +12,16 @@ $ docker pull clojure@sha256:8f583e616dd090460d9fb296505bd01c15a33ee52f2ca904ae9
 ### `clojure:openjdk-18-lein-2.9.8-slim-bullseye` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:9d101c7a9c2e9ca51e2a3c8240fb94c80ae5da33821ea0cd494ad79dc5265dfd
+$ docker pull clojure@sha256:ef379c53c2d2e7fa017f23cff01267cbf23ba1c4d192609caa9b2fce56e12ae1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.0 MB (237954200 bytes)**  
+-	Total Size: **238.0 MB (237954605 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a25ad2a35839349c76c04d08ff1449bc7b64f5fbb5eecd01b6d0c766d4c58dc7`
--	Default Command: `["lein","repl"]`
+-	Image ID: `sha256:8767f2e15ead5541ebec85a662e4f48cca1f592fd784751f825b8265e6d3613d`
+-	Entrypoint: `["entrypoint"]`
+-	Default Command: `["repl"]`
 
 ```dockerfile
 # Wed, 17 Nov 2021 02:20:41 GMT
@@ -55,8 +56,12 @@ ENV PATH=/usr/local/openjdk-18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 ENV LEIN_ROOT=1
 # Tue, 30 Nov 2021 10:17:34 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"]])' > project.clj   && lein deps && rm project.clj
-# Tue, 30 Nov 2021 10:17:34 GMT
-CMD ["lein" "repl"]
+# Thu, 02 Dec 2021 02:34:31 GMT
+COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
+# Thu, 02 Dec 2021 02:34:31 GMT
+ENTRYPOINT ["entrypoint"]
+# Thu, 02 Dec 2021 02:34:31 GMT
+CMD ["repl"]
 ```
 
 -	Layers:
@@ -79,6 +84,10 @@ CMD ["lein" "repl"]
 	-	`sha256:3e8aa6eaa4d8b2d010129f9572dc635e97b66047560ad5096f71e15ec8d79f93`  
 		Last Modified: Tue, 30 Nov 2021 10:26:06 GMT  
 		Size: 4.2 MB (4207231 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c1e55839ea2c5d796bcbf4dbb1d30ffc481a3e1f5d918ba7ccc0eab6c7b3bcad`  
+		Last Modified: Thu, 02 Dec 2021 02:45:14 GMT  
+		Size: 405.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-18-lein-2.9.8-slim-bullseye` - linux; arm64 variant v8

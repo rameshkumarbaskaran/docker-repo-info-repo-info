@@ -1,7 +1,7 @@
 ## `clojure:openjdk-17-boot-2.8.3-buster`
 
 ```console
-$ docker pull clojure@sha256:df04567ea80569558d37d5bc3bf2f248109821afeee62064f3805f7987241585
+$ docker pull clojure@sha256:1b70af4ab6ebb5c9541feab9499a58b0d89bb72103d3a6129519fe658d6175da
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,15 +12,16 @@ $ docker pull clojure@sha256:df04567ea80569558d37d5bc3bf2f248109821afeee62064f38
 ### `clojure:openjdk-17-boot-2.8.3-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:bc7a6ae845170113fceb3625bf6585f45655fa6e31156db9e504f0b69b882040
+$ docker pull clojure@sha256:ed0b6f1ff6d6202177f42ec98556f75e7421e468776e55831ca434282edfb5f1
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **380.1 MB (380142529 bytes)**  
+-	Total Size: **380.1 MB (380142933 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:212c426cf8802d063106796b099d7fb3bc9aba195e11bf53177b73e17427528e`
--	Default Command: `["boot","repl"]`
+-	Image ID: `sha256:2d679f841b59e106b366e1bcf47fb4a26892e96c0348601da9b20cc8ad464527`
+-	Entrypoint: `["entrypoint"]`
+-	Default Command: `["repl"]`
 
 ```dockerfile
 # Wed, 17 Nov 2021 02:20:51 GMT
@@ -61,8 +62,12 @@ ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 ENV BOOT_AS_ROOT=yes
 # Thu, 18 Nov 2021 13:02:07 GMT
 RUN boot
-# Thu, 18 Nov 2021 13:02:08 GMT
-CMD ["boot" "repl"]
+# Thu, 02 Dec 2021 02:33:11 GMT
+COPY file:0282db266eb050a3ad3609149efe2188243cb9f95c0b3e48a312ddef6c6bea02 in /usr/local/bin/entrypoint 
+# Thu, 02 Dec 2021 02:33:11 GMT
+ENTRYPOINT ["entrypoint"]
+# Thu, 02 Dec 2021 02:33:11 GMT
+CMD ["repl"]
 ```
 
 -	Layers:
@@ -97,6 +102,10 @@ CMD ["boot" "repl"]
 	-	`sha256:c3d5a7d0d4040e77b6842d214cc03288e74e4d7e721721226993e41aa0bd4b44`  
 		Last Modified: Thu, 18 Nov 2021 13:19:24 GMT  
 		Size: 58.8 MB (58820565 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2ddc12ef21dc15ea2c946dc2147ae9f81ffd779158e101e7b52b8cab599703bd`  
+		Last Modified: Thu, 02 Dec 2021 02:39:33 GMT  
+		Size: 404.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-17-boot-2.8.3-buster` - linux; arm64 variant v8
