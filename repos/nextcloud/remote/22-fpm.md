@@ -1,7 +1,7 @@
 ## `nextcloud:22-fpm`
 
 ```console
-$ docker pull nextcloud@sha256:d36fa25a466bfbcdc9706abd0c33f87952d3b06cf4c0e54385927cfd83ec6ea5
+$ docker pull nextcloud@sha256:501e78fea17b19af973f9a972db7c41edfd69a1a8ba4382f86a64883e27ca350
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -960,14 +960,14 @@ CMD ["php-fpm"]
 ### `nextcloud:22-fpm` - linux; ppc64le
 
 ```console
-$ docker pull nextcloud@sha256:64246071e9ee989ff01cf6e9a7cd309ed53acb0da512f2f62031e53cbf5d73c2
+$ docker pull nextcloud@sha256:92b165bd335e6260f0098c2d2a4d55d33c551abb51662b8a9c44aa048ef0d1c2
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **325.7 MB (325712673 bytes)**  
+-	Total Size: **325.7 MB (325712765 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8bf7457939e742b281b8e5cfff1ff26a4ef61da9d0fbe00bbd3da2b209c20441`
+-	Image ID: `sha256:fc65747329d594b86d40dbd88e510c916f453c9ff927ff31efc844fff23af187`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -1040,11 +1040,11 @@ ENV NEXTCLOUD_VERSION=22.2.3
 RUN set -ex;     fetchDeps="         gnupg         dirmngr     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         curl -fsSL -o nextcloud.tar.bz2         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2";     curl -fsSL -o nextcloud.tar.bz2.asc         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf "$GNUPGHOME" /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
 # Tue, 30 Nov 2021 10:29:48 GMT
 COPY multi:5c7d3e21c40c6f3326b9c24bb148355014771883d3bc821f8ada4fed6795cbb4 in / 
-# Tue, 30 Nov 2021 10:29:51 GMT
-COPY multi:d1870de3d4b4de5680360a8bcad7129a7c7615ba76daad773ab1eee24d4a949f in /usr/src/nextcloud/config/ 
-# Tue, 30 Nov 2021 10:29:53 GMT
+# Thu, 02 Dec 2021 08:29:15 GMT
+COPY multi:7281097c8fd959eff64684726d7707d598f15dc22353d1f6f843624f642bdcd2 in /usr/src/nextcloud/config/ 
+# Thu, 02 Dec 2021 08:29:18 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 30 Nov 2021 10:29:55 GMT
+# Thu, 02 Dec 2021 08:29:20 GMT
 CMD ["php-fpm"]
 ```
 
@@ -1109,9 +1109,9 @@ CMD ["php-fpm"]
 		Last Modified: Tue, 30 Nov 2021 10:31:52 GMT  
 		Size: 2.6 KB (2631 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1156d47e70b3dcaac9be403d0d80417c2f826c42cd0682f90e7c34b64752d115`  
-		Last Modified: Tue, 30 Nov 2021 10:31:52 GMT  
-		Size: 2.1 KB (2052 bytes)  
+	-	`sha256:41438e612461e003f69bb9ef084a4894953fd295e0bfee1642f550fccf0a6b20`  
+		Last Modified: Thu, 02 Dec 2021 08:47:00 GMT  
+		Size: 2.1 KB (2144 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nextcloud:22-fpm` - linux; s390x
