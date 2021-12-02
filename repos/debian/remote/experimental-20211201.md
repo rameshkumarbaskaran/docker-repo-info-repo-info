@@ -1,13 +1,14 @@
 ## `debian:experimental-20211201`
 
 ```console
-$ docker pull debian@sha256:f6130574bd1226642d35549a8606fe966cdfe6cd0cfb6097dc0b5a7592292d56
+$ docker pull debian@sha256:888f4a119fee283eaaf162477053df45581a728d84140f5e03bd79e68f2a2661
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 7
+-	Platforms: 8
 	-	linux; amd64
 	-	linux; arm variant v5
+	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; mips64le
 	-	linux; ppc64le
@@ -76,6 +77,38 @@ RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources
 	-	`sha256:ba7b6603ce38ad48f444a48ff36047cc522b88cd118358bc2f38fdf976da5f23`  
 		Last Modified: Thu, 02 Dec 2021 03:18:21 GMT  
 		Size: 224.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:experimental-20211201` - linux; arm64 variant v8
+
+```console
+$ docker pull debian@sha256:d3dae45d808135b5324bba5b1f4a84a5ef628be2a238233e3d340026441470e3
+```
+
+-	Docker Version: 20.10.7
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **54.8 MB (54776690 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:193aa7d60cb933182406cfe4aacf2d6b7d73e3888e200b7572a61ff9781beec7`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Thu, 02 Dec 2021 08:10:57 GMT
+ADD file:b4b9ad29946e5860dfb873f34b46a9ef99de3cac749fa0cceb93fb8c494944ae in / 
+# Thu, 02 Dec 2021 08:10:58 GMT
+CMD ["bash"]
+# Thu, 02 Dec 2021 08:11:13 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:42966acb6f8af781fde74bec61889eaf1612c341b0ef216cd00d55b6da57f895`  
+		Last Modified: Thu, 02 Dec 2021 08:45:57 GMT  
+		Size: 54.8 MB (54776470 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f64e418c7b542920cd04b05c7e994fe8fd459e080874aeec2425a7e164a0f221`  
+		Last Modified: Thu, 02 Dec 2021 08:46:22 GMT  
+		Size: 220.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:experimental-20211201` - linux; 386
