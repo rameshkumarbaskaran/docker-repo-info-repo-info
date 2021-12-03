@@ -1,10 +1,10 @@
-# `php:8.0.13-fpm-alpine3.14`
+# `php:8.1.0-fpm-alpine3.14`
 
 ## Docker Metadata
 
-- Image ID: `sha256:57ddded4803419428c7f389c8205e87bd554b39266e71dae4d56d958acd0a74f`
-- Created: `2021-11-19T22:40:50.488724337Z`
-- Virtual Size: ~ 84.01 Mb  
+- Image ID: `sha256:cf58ae1371f07acf6963e79bbb751c1352d30b06f68137565e79e99589838a99`
+- Created: `2021-11-30T07:50:21.346813003Z`
+- Virtual Size: ~ 91.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -16,11 +16,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.13`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.13.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.13.tar.xz.asc`
-  - `PHP_SHA256=cd976805ec2e9198417651027dfe16854ba2c2c388151ab9d4d268513d52ed52`
+  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
+  - `PHP_VERSION=8.1.0`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.0.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.0.tar.xz.asc`
+  - `PHP_SHA256=a1317eff0723a2b3d3122bbfe107a1158570ea2822dc35a5fb360086db0f6bbc`
 
 ## `apk` (`.apk`-based packages)
 
@@ -242,6 +242,23 @@ libcurl-7.79.1-r0 installed size:
 
 libcurl-7.79.1-r0 license:
 MIT
+
+```
+
+### `apk` package: `libgcc`
+
+```console
+libgcc-10.3.1_git20210424-r2 description:
+GNU C compiler runtime libraries
+
+libgcc-10.3.1_git20210424-r2 webpage:
+https://gcc.gnu.org
+
+libgcc-10.3.1_git20210424-r2 installed size:
+112 KiB
+
+libgcc-10.3.1_git20210424-r2 license:
+GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 

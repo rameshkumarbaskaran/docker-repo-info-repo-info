@@ -1,10 +1,10 @@
-# `php:8.0.13-apache-buster`
+# `php:8.1.0-apache-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b44d93f9d5573ef11a82855c135131787ac7510cc8ca08100a4059ba161a2a9b`
-- Created: `2021-11-19T22:05:44.431621735Z`
-- Virtual Size: ~ 417.06 Mb  
+- Image ID: `sha256:af848e6df212ba3f6b5491c8c8e6d7df44e14eb77f6e6f0ac5fd87c82bcfaf68`
+- Created: `2021-12-02T12:57:37.097511362Z`
+- Virtual Size: ~ 422.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,11 +18,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.13`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.13.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.13.tar.xz.asc`
-  - `PHP_SHA256=cd976805ec2e9198417651027dfe16854ba2c2c388151ab9d4d268513d52ed52`
+  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
+  - `PHP_VERSION=8.1.0`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.0.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.0.tar.xz.asc`
+  - `PHP_SHA256=a1317eff0723a2b3d3122bbfe107a1158570ea2822dc35a5fb360086db0f6bbc`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1242,11 +1242,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/hostname/3.21/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/hostname/3.21/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `icu=63.1-6+deb10u1`
+### `dpkg` source package: `icu=63.1-6+deb10u2`
 
 Binary Packages:
 
-- `libicu63:amd64=63.1-6+deb10u1`
+- `libicu63:amd64=63.1-6+deb10u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1255,17 +1255,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris icu=63.1-6+deb10u1
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1-6+deb10u1.dsc' icu_63.1-6+deb10u1.dsc 1997 SHA256:c33329e44a83af47cdfd6ca2639611d960b163a5cce39e71945b0ed4b6971ec9
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1.orig.tar.xz' icu_63.1.orig.tar.xz 13638120 SHA256:347d0e6c39c3538b812c10c6c83815d4a089d578380387ae7d94c5b820948e82
-'http://deb.debian.org/debian/pool/main/i/icu/icu_63.1-6+deb10u1.debian.tar.xz' icu_63.1-6+deb10u1.debian.tar.xz 25004 SHA256:d65fde3a61d0ba935b493b46fd42addeb24e0398b8d778124cb489770ec50a6d
+$ apt-get source -qq --print-uris icu=63.1-6+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u2.dsc' icu_63.1-6+deb10u2.dsc 2152 SHA256:4d175ca81d9605af871f634b831d75394f0497d66b523af8eaaf15846550333c
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1.orig.tar.xz' icu_63.1.orig.tar.xz 13638120 SHA256:347d0e6c39c3538b812c10c6c83815d4a089d578380387ae7d94c5b820948e82
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u2.debian.tar.xz' icu_63.1-6+deb10u2.debian.tar.xz 25732 SHA256:1626f226cf3dad093bfc7874c5ebe9cc7a24e5fe8a1225a1de9fe576a4b9b463
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/icu/63.1-6+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/icu/63.1-6+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/63.1-6+deb10u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/icu/63.1-6+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/icu/63.1-6+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/icu/63.1-6+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.56+nmu1`
 
