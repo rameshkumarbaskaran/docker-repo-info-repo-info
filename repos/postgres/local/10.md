@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d9429f74d34aa5b27edf9601c2ec14d288231e4bd5cc1a8f876543cc2a95a869`
-- Created: `2021-11-30T05:35:35.419164797Z`
+- Image ID: `sha256:d9651ebc0e9d2fdfeda4fb9f07c589b2d561060fc95e97d6fdbd92914decadd7`
+- Created: `2021-12-02T23:30:31.385564799Z`
 - Virtual Size: ~ 199.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -642,11 +642,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/glibc/2.24-11+deb9u4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/glibc/2.24-11+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gmp=2:6.1.2+dfsg-1`
+### `dpkg` source package: `gmp=2:6.1.2+dfsg-1+deb9u1`
 
 Binary Packages:
 
-- `libgmp10:amd64=2:6.1.2+dfsg-1`
+- `libgmp10:amd64=2:6.1.2+dfsg-1+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libgmp10/copyright`)
 
@@ -658,17 +658,17 @@ Licenses: (parsed from: `/usr/share/doc/libgmp10/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gmp=2:6.1.2+dfsg-1
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2+dfsg-1.dsc' gmp_6.1.2+dfsg-1.dsc 2183 SHA256:3a53f6c74c9b2465c1c61446aa9bdc6182fdec8b04075849d4cbf224a73b6fbe
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2+dfsg.orig.tar.xz' gmp_6.1.2+dfsg.orig.tar.xz 1804424 SHA256:18016f718f621e7641ddd4e57f8e140391c5183252e5998263ffff59198a65b7
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2+dfsg-1.debian.tar.xz' gmp_6.1.2+dfsg-1.debian.tar.xz 20652 SHA256:79e73f74197e7628b2f0c02edf01b6eea3716c13152044ed8e0e0ee4178394df
+$ apt-get source -qq --print-uris gmp=2:6.1.2+dfsg-1+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/g/gmp/gmp_6.1.2+dfsg-1+deb9u1.dsc' gmp_6.1.2+dfsg-1+deb9u1.dsc 2211 SHA256:0ce57232e517fc70ead63b515f26d4a492acd9041cd373b09db62f42326a7055
+'http://security.debian.org/debian-security/pool/updates/main/g/gmp/gmp_6.1.2+dfsg.orig.tar.xz' gmp_6.1.2+dfsg.orig.tar.xz 1804424 SHA256:18016f718f621e7641ddd4e57f8e140391c5183252e5998263ffff59198a65b7
+'http://security.debian.org/debian-security/pool/updates/main/g/gmp/gmp_6.1.2+dfsg-1+deb9u1.debian.tar.xz' gmp_6.1.2+dfsg-1+deb9u1.debian.tar.xz 21268 SHA256:afc4192a4749edfc5effed23993d419d2e9b499c85b8fd5c9f47145caca1c056
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/gmp/2:6.1.2+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/gmp/2:6.1.2+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gmp/2:6.1.2+dfsg-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/gmp/2:6.1.2+dfsg-1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/gmp/2:6.1.2+dfsg-1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gmp/2:6.1.2+dfsg-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gnupg2=2.1.18-8~deb9u4`
 
@@ -2129,11 +2129,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sysvinit/2.88dsf-59.9/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sysvinit/2.88dsf-59.9/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tar=1.29b-1.1`
+### `dpkg` source package: `tar=1.29b-1.1+deb9u1`
 
 Binary Packages:
 
-- `tar=1.29b-1.1`
+- `tar=1.29b-1.1+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/tar/copyright`)
 
@@ -2143,17 +2143,17 @@ Licenses: (parsed from: `/usr/share/doc/tar/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tar=1.29b-1.1
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.29b-1.1.dsc' tar_1.29b-1.1.dsc 2057 SHA256:9474ed422017e23e8208785c071b9f7765d73d704b9bb19da22699c6581d73ef
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.29b.orig.tar.xz' tar_1.29b.orig.tar.xz 1822008 SHA256:6a59706ebee384a6cd2fb3ee1dbfbfc20c5c66c7efd7cedb28edc054fca8ba00
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.29b-1.1.debian.tar.xz' tar_1.29b-1.1.debian.tar.xz 28484 SHA256:380f80af0e87446796f05ba384c5d130ea2ad5978b8cfdcf315503966333ebb9
+$ apt-get source -qq --print-uris tar=1.29b-1.1+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/t/tar/tar_1.29b-1.1+deb9u1.dsc' tar_1.29b-1.1+deb9u1.dsc 1959 SHA256:0b4af49b6bc6dc09fba8fd887fb224eff2a8993f8d1f487687f2f1ab4b84cde7
+'http://security.debian.org/debian-security/pool/updates/main/t/tar/tar_1.29b.orig.tar.xz' tar_1.29b.orig.tar.xz 1822008 SHA256:6a59706ebee384a6cd2fb3ee1dbfbfc20c5c66c7efd7cedb28edc054fca8ba00
+'http://security.debian.org/debian-security/pool/updates/main/t/tar/tar_1.29b-1.1+deb9u1.debian.tar.xz' tar_1.29b-1.1+deb9u1.debian.tar.xz 31232 SHA256:013164d27bc076b1397ba2c3ae1e7174d4730615e5c9b83b6a4ece84ce5a308d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tar/1.29b-1.1/ (for browsing the source)
-- https://sources.debian.net/src/tar/1.29b-1.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tar/1.29b-1.1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tar/1.29b-1.1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/tar/1.29b-1.1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tar/1.29b-1.1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2021a-0+deb9u2`
 
