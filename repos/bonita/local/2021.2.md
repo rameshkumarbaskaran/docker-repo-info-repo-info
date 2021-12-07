@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:fc08f7f52f12153165ce8759404b4521aaec0b3785c8e7f3ae86611de8d453b8`
 - Created: `2021-10-07T18:20:59.884286162Z`
-- Virtual Size: ~ 456.09 Mb  
+- Virtual Size: ~ 456.13 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/opt/files/startup.sh"]`
