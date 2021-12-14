@@ -17,8 +17,128 @@ $ docker pull kibana@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c
 ## `kibana:7.16.1`
 
 ```console
-$ docker pull kibana@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull kibana@sha256:ea9eefa0b34ac529c372f72fa5995fcaad52fb2b11e14e8e69f674c5e7bcebeb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 0
+-	Platforms: 1
+	-	linux; arm64 variant v8
+
+### `kibana:7.16.1` - linux; arm64 variant v8
+
+```console
+$ docker pull kibana@sha256:e14f768a0a6d018b503ad4a4e627db2ea1e76467275c56548592372ab46ac856
+```
+
+-	Docker Version: 20.10.11
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **495.6 MB (495593001 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:56283a3fe13024b3d5886d07ce256ab3305136b41c09fd833f6a0ef8ae0b6eee`
+-	Entrypoint: `["\/bin\/tini","--"]`
+-	Default Command: `["\/usr\/local\/bin\/kibana-docker"]`
+
+```dockerfile
+# Wed, 15 Sep 2021 17:39:41 GMT
+ADD file:420712a90b0934202b326dc06b73638ab8e4603d12be2c23d67d834eb6cfc052 in / 
+# Wed, 15 Sep 2021 17:39:42 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20210915
+# Wed, 15 Sep 2021 17:39:42 GMT
+CMD ["/bin/bash"]
+# Sat, 11 Dec 2021 02:53:36 GMT
+EXPOSE 5601
+# Sat, 11 Dec 2021 02:54:34 GMT
+RUN for iter in {1..10}; do       yum update --setopt=tsflags=nodocs -y &&       yum install --setopt=tsflags=nodocs -y         fontconfig freetype shadow-utils nss  &&       yum clean all && exit_code=0 && break || exit_code=$? && echo "yum error: retry $iter in 10s" &&       sleep 10;     done;     (exit $exit_code)
+# Sat, 11 Dec 2021 02:54:38 GMT
+RUN set -e ;     TINI_BIN="" ;     case "$(arch)" in         aarch64)             TINI_BIN='tini-arm64' ;             ;;         x86_64)             TINI_BIN='tini-amd64' ;             ;;         *) echo >&2 "Unsupported architecture $(arch)" ; exit 1 ;;     esac ;   TINI_VERSION='v0.19.0' ;   curl --retry 8 -S -L -O "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/${TINI_BIN}" ;   curl --retry 8 -S -L -O "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/${TINI_BIN}.sha256sum" ;   sha256sum -c "${TINI_BIN}.sha256sum" ;   rm "${TINI_BIN}.sha256sum" ;   mv "${TINI_BIN}" /bin/tini ;   chmod +x /bin/tini
+# Sat, 11 Dec 2021 02:54:38 GMT
+RUN mkdir /usr/share/fonts/local
+# Sat, 11 Dec 2021 02:54:41 GMT
+RUN curl -L -o /usr/share/fonts/local/NotoSansCJK-Regular.ttc https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/NotoSansCJK-Regular.ttc
+# Sat, 11 Dec 2021 02:54:42 GMT
+RUN echo "5dcd1c336cc9344cb77c03a0cd8982ca8a7dc97d620fd6c9c434e02dcb1ceeb3  /usr/share/fonts/local/NotoSansCJK-Regular.ttc" | sha256sum -c -
+# Sat, 11 Dec 2021 02:54:42 GMT
+RUN fc-cache -v
+# Sat, 11 Dec 2021 02:55:15 GMT
+COPY --chown=1000:0dir:0da959b7e5a8a6706637b10542bdbb78942ccde431233b2146ce4932a23dbc50 in /usr/share/kibana 
+# Sat, 11 Dec 2021 02:55:18 GMT
+WORKDIR /usr/share/kibana
+# Sat, 11 Dec 2021 02:55:19 GMT
+RUN ln -s /usr/share/kibana /opt/kibana
+# Sat, 11 Dec 2021 02:55:19 GMT
+ENV ELASTIC_CONTAINER=true
+# Sat, 11 Dec 2021 02:55:19 GMT
+ENV PATH=/usr/share/kibana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Sat, 11 Dec 2021 02:55:19 GMT
+COPY --chown=1000:0file:6db5413736a28ead04731f52a5ef1acaa8f3ca1c1d2eaf6bb2b80d8f232794a2 in /usr/share/kibana/config/kibana.yml 
+# Sat, 11 Dec 2021 02:55:19 GMT
+COPY file:fcdc2bb0c18802a5d51b321eea907377f6a16003722e850077255f36068404fc in /usr/local/bin/ 
+# Sat, 11 Dec 2021 02:55:20 GMT
+RUN chmod g+ws /usr/share/kibana &&     find /usr/share/kibana -gid 0 -and -not -perm /g+w -exec chmod g+w {} \;
+# Sat, 11 Dec 2021 02:55:23 GMT
+RUN find / -xdev -perm -4000 -exec chmod u-s {} +
+# Sat, 11 Dec 2021 02:55:23 GMT
+RUN groupadd --gid 1000 kibana &&     useradd --uid 1000 --gid 1000 -G 0       --home-dir /usr/share/kibana --no-create-home       kibana
+# Sat, 11 Dec 2021 02:55:23 GMT
+LABEL org.label-schema.build-date=2021-12-11T02:50:20.427Z org.label-schema.license=Elastic License org.label-schema.name=Kibana org.label-schema.schema-version=1.0 org.label-schema.url=https://www.elastic.co/products/kibana org.label-schema.usage=https://www.elastic.co/guide/en/kibana/reference/index.html org.label-schema.vcs-ref=8751518b4a507d6659d93735b6f90d164514327a org.label-schema.vcs-url=https://github.com/elastic/kibana org.label-schema.vendor=Elastic org.label-schema.version=7.16.1 org.opencontainers.image.created=2021-12-11T02:50:20.427Z org.opencontainers.image.documentation=https://www.elastic.co/guide/en/kibana/reference/index.html org.opencontainers.image.licenses=Elastic License org.opencontainers.image.revision=8751518b4a507d6659d93735b6f90d164514327a org.opencontainers.image.source=https://github.com/elastic/kibana org.opencontainers.image.title=Kibana org.opencontainers.image.url=https://www.elastic.co/products/kibana org.opencontainers.image.vendor=Elastic org.opencontainers.image.version=7.16.1
+# Sat, 11 Dec 2021 02:55:23 GMT
+ENTRYPOINT ["/bin/tini" "--"]
+# Sat, 11 Dec 2021 02:55:24 GMT
+CMD ["/usr/local/bin/kibana-docker"]
+# Sat, 11 Dec 2021 02:55:24 GMT
+USER kibana
+```
+
+-	Layers:
+	-	`sha256:52f9ef134af7dd14738733e567402af86136287d9468978d044780a6435a1193`  
+		Last Modified: Wed, 15 Sep 2021 17:40:42 GMT  
+		Size: 83.9 MB (83941353 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3f9df8b7d69df6f41016edbe2d84fc46a262202846373d223ce2ad29e9d3ca70`  
+		Last Modified: Tue, 14 Dec 2021 00:41:58 GMT  
+		Size: 94.4 MB (94358947 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b7ecb7e6c943d75bd9e4da718ddebf48611fb40c6d437a23d0d92ffa7d22e172`  
+		Last Modified: Tue, 14 Dec 2021 00:41:43 GMT  
+		Size: 9.1 KB (9093 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:edf29815a7b971dbe6d06beba0fd540da82c8b881c512c918d23e1ee6aa94a61`  
+		Last Modified: Tue, 14 Dec 2021 00:41:41 GMT  
+		Size: 187.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f4e315dc9206b4cf3d9f30201d12222b3da81a16c185327e65a5c3ec163cf252`  
+		Last Modified: Tue, 14 Dec 2021 00:41:43 GMT  
+		Size: 16.5 MB (16460485 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a0d3bad6d70e3785d5df19035299ac2e36d19b966813f4b417ccc1248091c9a8`  
+		Last Modified: Tue, 14 Dec 2021 00:41:41 GMT  
+		Size: 8.3 KB (8257 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f783ef62b9beccd7f08f074b70c9d0a039ff7991d179a85029bb6e34be657936`  
+		Last Modified: Tue, 14 Dec 2021 00:42:22 GMT  
+		Size: 300.6 MB (300610155 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b00aca929024c792f5204a3518272082df05c2944e8d2f275536d49ab363649c`  
+		Last Modified: Tue, 14 Dec 2021 00:41:40 GMT  
+		Size: 132.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d60a5cb496eb36edc4c84777e675acc007d68f21d39f7bb4bbf6786fcae8337d`  
+		Last Modified: Tue, 14 Dec 2021 00:41:38 GMT  
+		Size: 390.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9401bc79460ecc0ab6748a1601de3cce05819b2746d340cbf2c01a9fe2fe628a`  
+		Last Modified: Tue, 14 Dec 2021 00:41:38 GMT  
+		Size: 4.5 KB (4478 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fe9923e90a5ff64eba836020bde6a287ce4eff2f4a3215233deb32d780beac51`  
+		Last Modified: Tue, 14 Dec 2021 00:41:38 GMT  
+		Size: 396.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f80cf6621fa57cf7122555f3cce7e25d6a8555728978cf5d3f230c4cf0d3e7c7`  
+		Last Modified: Tue, 14 Dec 2021 00:41:38 GMT  
+		Size: 197.2 KB (197249 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:239f43e8c9de12d8cea08d562e40cc0c7463c3babc702d7e27b08a0d41dc79b0`  
+		Last Modified: Tue, 14 Dec 2021 00:41:38 GMT  
+		Size: 1.9 KB (1879 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
