@@ -1,7 +1,7 @@
 ## `consul:latest`
 
 ```console
-$ docker pull consul@sha256:efa6b78c76d7d9eb5280b07a98677de6ed1a098ca6027e53aeb5e44a239e4aeb
+$ docker pull consul@sha256:e4be41d10951d8adfba93d2d1a92dba879a7c5668fa88ab16593d880e4574e57
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14,14 +14,14 @@ $ docker pull consul@sha256:efa6b78c76d7d9eb5280b07a98677de6ed1a098ca6027e53aeb5
 ### `consul:latest` - linux; amd64
 
 ```console
-$ docker pull consul@sha256:bd47456d9d5113ed9f1598711c4f09bbfddf6ba90834e656522a3d40c18f46b0
+$ docker pull consul@sha256:4475b8159e056762094fddccfc4ee04cb2fa27168ab1e2fe5602fc0321797573
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **43.7 MB (43680607 bytes)**  
+-	Total Size: **43.7 MB (43681368 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:60b5d5d7aa05804e07d8d6c740bc7418dd1f5ba1b85c6921362fcd4a43b97065`
+-	Image ID: `sha256:3539c821b8d51285cccc20d1146f06adcf4eb7462ac74f89c0e29e324cb3e7aa`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["agent","-dev","-client","0.0.0.0"]`
 
@@ -30,37 +30,37 @@ $ docker pull consul@sha256:bd47456d9d5113ed9f1598711c4f09bbfddf6ba90834e656522a
 ADD file:5a707b9d6cb5fff532e4c2141bc35707593f21da5528c9e71ae2ddb6ba4a4eb6 in / 
 # Fri, 12 Nov 2021 17:19:58 GMT
 CMD ["/bin/sh"]
-# Mon, 15 Nov 2021 20:23:55 GMT
-ARG CONSUL_VERSION=1.10.4
-# Mon, 15 Nov 2021 20:23:56 GMT
-LABEL org.opencontainers.image.authors=Consul Team <consul@hashicorp.com> org.opencontainers.image.url=https://www.consul.io/ org.opencontainers.image.documentation=https://www.consul.io/docs org.opencontainers.image.source=https://github.com/hashicorp/consul org.opencontainers.image.version=1.10.4 org.opencontainers.image.vendor=HashiCorp org.opencontainers.image.title=consul org.opencontainers.image.description=Consul is a datacenter runtime that provides service discovery, configuration, and orchestration.
-# Mon, 15 Nov 2021 20:23:56 GMT
+# Tue, 14 Dec 2021 20:20:45 GMT
+ARG CONSUL_VERSION=1.10.5
+# Tue, 14 Dec 2021 20:20:45 GMT
+LABEL org.opencontainers.image.authors=Consul Team <consul@hashicorp.com> org.opencontainers.image.url=https://www.consul.io/ org.opencontainers.image.documentation=https://www.consul.io/docs org.opencontainers.image.source=https://github.com/hashicorp/consul org.opencontainers.image.version=1.10.5 org.opencontainers.image.vendor=HashiCorp org.opencontainers.image.title=consul org.opencontainers.image.description=Consul is a datacenter runtime that provides service discovery, configuration, and orchestration.
+# Tue, 14 Dec 2021 20:20:45 GMT
 ENV HASHICORP_RELEASES=https://releases.hashicorp.com
-# Mon, 15 Nov 2021 20:23:57 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:20:46 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN addgroup consul &&     adduser -S -G consul consul
-# Mon, 15 Nov 2021 20:24:10 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:20:52 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN set -eux &&     apk add --no-cache ca-certificates curl dumb-init gnupg libcap openssl su-exec iputils jq libc6-compat iptables tzdata &&     gpg --keyserver keyserver.ubuntu.com --recv-keys C874011F0AB405110D02105534365D9472D7468F &&     mkdir -p /tmp/build &&     cd /tmp/build &&     apkArch="$(apk --print-arch)" &&     case "${apkArch}" in         aarch64) consulArch='arm64' ;;         armhf) consulArch='arm' ;;         x86) consulArch='386' ;;         x86_64) consulArch='amd64' ;;         *) echo >&2 "error: unsupported architecture: ${apkArch} (see ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/)" && exit 1 ;;     esac &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS.sig &&     gpg --batch --verify consul_${CONSUL_VERSION}_SHA256SUMS.sig consul_${CONSUL_VERSION}_SHA256SUMS &&     grep consul_${CONSUL_VERSION}_linux_${consulArch}.zip consul_${CONSUL_VERSION}_SHA256SUMS | sha256sum -c &&     unzip -d /tmp/build consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     cp /tmp/build/consul /bin/consul &&     if [ -f /tmp/build/EULA.txt ]; then mkdir -p /usr/share/doc/consul; mv /tmp/build/EULA.txt /usr/share/doc/consul/EULA.txt; fi &&     if [ -f /tmp/build/TermsOfEvaluation.txt ]; then mkdir -p /usr/share/doc/consul; mv /tmp/build/TermsOfEvaluation.txt /usr/share/doc/consul/TermsOfEvaluation.txt; fi &&     cd /tmp &&     rm -rf /tmp/build &&     gpgconf --kill all &&     apk del gnupg openssl &&     rm -rf /root/.gnupg &&     consul version
-# Mon, 15 Nov 2021 20:24:11 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:20:54 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN mkdir -p /consul/data &&     mkdir -p /consul/config &&     chown -R consul:consul /consul
-# Mon, 15 Nov 2021 20:24:12 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:20:54 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN test -e /etc/nsswitch.conf || echo 'hosts: files dns' > /etc/nsswitch.conf
-# Mon, 15 Nov 2021 20:24:12 GMT
+# Tue, 14 Dec 2021 20:20:55 GMT
 VOLUME [/consul/data]
-# Mon, 15 Nov 2021 20:24:12 GMT
+# Tue, 14 Dec 2021 20:20:55 GMT
 EXPOSE 8300
-# Mon, 15 Nov 2021 20:24:13 GMT
+# Tue, 14 Dec 2021 20:20:55 GMT
 EXPOSE 8301 8301/udp 8302 8302/udp
-# Mon, 15 Nov 2021 20:24:13 GMT
+# Tue, 14 Dec 2021 20:20:55 GMT
 EXPOSE 8500 8600 8600/udp
-# Mon, 15 Nov 2021 20:24:13 GMT
+# Tue, 14 Dec 2021 20:20:55 GMT
 COPY file:54fea1810b618dd421534c8fbe34fd9d05aa23929d2290f19c325d1c23d960c3 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 15 Nov 2021 20:24:13 GMT
+# Tue, 14 Dec 2021 20:20:56 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 15 Nov 2021 20:24:13 GMT
+# Tue, 14 Dec 2021 20:20:56 GMT
 CMD ["agent" "-dev" "-client" "0.0.0.0"]
 ```
 
@@ -69,25 +69,25 @@ CMD ["agent" "-dev" "-client" "0.0.0.0"]
 		Last Modified: Fri, 12 Nov 2021 17:21:00 GMT  
 		Size: 2.8 MB (2822425 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8346c4c2c7acddb91fe63704bf85338e56c691fe7e48caa8a9fba6e7e16df095`  
-		Last Modified: Mon, 15 Nov 2021 20:25:09 GMT  
-		Size: 1.3 KB (1257 bytes)  
+	-	`sha256:76a31878686a1a40acb3733831b5a7977a1dd15481c4fa1b284f0b2ec7c7d368`  
+		Last Modified: Tue, 14 Dec 2021 20:21:42 GMT  
+		Size: 1.3 KB (1259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50f79386c0f7a4808f3eec56a09d42ac405acc2fd96f076dc0f6678d8bbc0486`  
-		Last Modified: Mon, 15 Nov 2021 20:25:15 GMT  
-		Size: 40.9 MB (40854814 bytes)  
+	-	`sha256:1b8a9b91a9748569616113217fd3037a4404d3e6fed1b00b3fd776da6bf88430`  
+		Last Modified: Tue, 14 Dec 2021 20:21:48 GMT  
+		Size: 40.9 MB (40855570 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:716e8306345a5b03bffda8e3e9bcc2248e73e36693d31986f314fb6b34c7ac9d`  
-		Last Modified: Mon, 15 Nov 2021 20:25:09 GMT  
-		Size: 173.0 B  
+	-	`sha256:d44901b3a103ad21cb27e4943d04146ec890159259fd545231fc8edb6b4de44f`  
+		Last Modified: Tue, 14 Dec 2021 20:21:42 GMT  
+		Size: 174.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5abab715aa08f3bce73846825adb35731c130d5c8ea987b6900210146b200012`  
-		Last Modified: Mon, 15 Nov 2021 20:25:09 GMT  
+	-	`sha256:964fca1b89e646eeea82bd99676942a41d53336385078346d0d0cb55e52c8f7f`  
+		Last Modified: Tue, 14 Dec 2021 20:21:42 GMT  
 		Size: 154.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74ffcce388ca4a335635a00115c98cb98ad497ed565f9be669d7f3d96bc66ad9`  
-		Last Modified: Mon, 15 Nov 2021 20:25:10 GMT  
-		Size: 1.8 KB (1784 bytes)  
+	-	`sha256:06001403e520ac36329d871362a618fca50e6758455ef4788e34d656a3ab2db4`  
+		Last Modified: Tue, 14 Dec 2021 20:21:42 GMT  
+		Size: 1.8 KB (1786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `consul:latest` - linux; arm variant v6
@@ -172,14 +172,14 @@ CMD ["agent" "-dev" "-client" "0.0.0.0"]
 ### `consul:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull consul@sha256:53f6d5f8cb6cbd660622386aac46e18db66f839e4fabbc8b3af4556ce7013bd3
+$ docker pull consul@sha256:56ab516709703801f86014f2c8c01444507fd43032564c5f805d2cad08fe4747
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **41.7 MB (41693581 bytes)**  
+-	Total Size: **41.7 MB (41699391 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:919a111a440fad2646f22011543d55f9828d23143cbaa17883e2813994e810e0`
+-	Image ID: `sha256:50953a41d2fdcad5e29f0cd8a6a1a6a4f6e5ef655e077cf6adbf4ab0cff93221`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["agent","-dev","-client","0.0.0.0"]`
 
@@ -188,37 +188,37 @@ $ docker pull consul@sha256:53f6d5f8cb6cbd660622386aac46e18db66f839e4fabbc8b3af4
 ADD file:ad85e8724ab9b90e37aadca9513807d07d557e7fc4287ca017f01f269aff3920 in / 
 # Fri, 12 Nov 2021 16:40:06 GMT
 CMD ["/bin/sh"]
-# Mon, 15 Nov 2021 20:39:33 GMT
-ARG CONSUL_VERSION=1.10.4
-# Mon, 15 Nov 2021 20:39:34 GMT
-LABEL org.opencontainers.image.authors=Consul Team <consul@hashicorp.com> org.opencontainers.image.url=https://www.consul.io/ org.opencontainers.image.documentation=https://www.consul.io/docs org.opencontainers.image.source=https://github.com/hashicorp/consul org.opencontainers.image.version=1.10.4 org.opencontainers.image.vendor=HashiCorp org.opencontainers.image.title=consul org.opencontainers.image.description=Consul is a datacenter runtime that provides service discovery, configuration, and orchestration.
-# Mon, 15 Nov 2021 20:39:35 GMT
+# Tue, 14 Dec 2021 20:42:07 GMT
+ARG CONSUL_VERSION=1.10.5
+# Tue, 14 Dec 2021 20:42:08 GMT
+LABEL org.opencontainers.image.authors=Consul Team <consul@hashicorp.com> org.opencontainers.image.url=https://www.consul.io/ org.opencontainers.image.documentation=https://www.consul.io/docs org.opencontainers.image.source=https://github.com/hashicorp/consul org.opencontainers.image.version=1.10.5 org.opencontainers.image.vendor=HashiCorp org.opencontainers.image.title=consul org.opencontainers.image.description=Consul is a datacenter runtime that provides service discovery, configuration, and orchestration.
+# Tue, 14 Dec 2021 20:42:09 GMT
 ENV HASHICORP_RELEASES=https://releases.hashicorp.com
-# Mon, 15 Nov 2021 20:39:36 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:42:10 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN addgroup consul &&     adduser -S -G consul consul
-# Mon, 15 Nov 2021 20:39:49 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:42:21 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN set -eux &&     apk add --no-cache ca-certificates curl dumb-init gnupg libcap openssl su-exec iputils jq libc6-compat iptables tzdata &&     gpg --keyserver keyserver.ubuntu.com --recv-keys C874011F0AB405110D02105534365D9472D7468F &&     mkdir -p /tmp/build &&     cd /tmp/build &&     apkArch="$(apk --print-arch)" &&     case "${apkArch}" in         aarch64) consulArch='arm64' ;;         armhf) consulArch='arm' ;;         x86) consulArch='386' ;;         x86_64) consulArch='amd64' ;;         *) echo >&2 "error: unsupported architecture: ${apkArch} (see ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/)" && exit 1 ;;     esac &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS.sig &&     gpg --batch --verify consul_${CONSUL_VERSION}_SHA256SUMS.sig consul_${CONSUL_VERSION}_SHA256SUMS &&     grep consul_${CONSUL_VERSION}_linux_${consulArch}.zip consul_${CONSUL_VERSION}_SHA256SUMS | sha256sum -c &&     unzip -d /tmp/build consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     cp /tmp/build/consul /bin/consul &&     if [ -f /tmp/build/EULA.txt ]; then mkdir -p /usr/share/doc/consul; mv /tmp/build/EULA.txt /usr/share/doc/consul/EULA.txt; fi &&     if [ -f /tmp/build/TermsOfEvaluation.txt ]; then mkdir -p /usr/share/doc/consul; mv /tmp/build/TermsOfEvaluation.txt /usr/share/doc/consul/TermsOfEvaluation.txt; fi &&     cd /tmp &&     rm -rf /tmp/build &&     gpgconf --kill all &&     apk del gnupg openssl &&     rm -rf /root/.gnupg &&     consul version
-# Mon, 15 Nov 2021 20:39:50 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:42:22 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN mkdir -p /consul/data &&     mkdir -p /consul/config &&     chown -R consul:consul /consul
-# Mon, 15 Nov 2021 20:39:50 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:42:23 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN test -e /etc/nsswitch.conf || echo 'hosts: files dns' > /etc/nsswitch.conf
-# Mon, 15 Nov 2021 20:39:51 GMT
+# Tue, 14 Dec 2021 20:42:24 GMT
 VOLUME [/consul/data]
-# Mon, 15 Nov 2021 20:39:52 GMT
+# Tue, 14 Dec 2021 20:42:25 GMT
 EXPOSE 8300
-# Mon, 15 Nov 2021 20:39:53 GMT
+# Tue, 14 Dec 2021 20:42:26 GMT
 EXPOSE 8301 8301/udp 8302 8302/udp
-# Mon, 15 Nov 2021 20:39:54 GMT
+# Tue, 14 Dec 2021 20:42:27 GMT
 EXPOSE 8500 8600 8600/udp
-# Mon, 15 Nov 2021 20:39:56 GMT
+# Tue, 14 Dec 2021 20:42:29 GMT
 COPY file:54fea1810b618dd421534c8fbe34fd9d05aa23929d2290f19c325d1c23d960c3 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 15 Nov 2021 20:39:56 GMT
+# Tue, 14 Dec 2021 20:42:29 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 15 Nov 2021 20:39:57 GMT
+# Tue, 14 Dec 2021 20:42:30 GMT
 CMD ["agent" "-dev" "-client" "0.0.0.0"]
 ```
 
@@ -227,38 +227,38 @@ CMD ["agent" "-dev" "-client" "0.0.0.0"]
 		Last Modified: Fri, 12 Nov 2021 16:41:15 GMT  
 		Size: 2.7 MB (2719640 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86ec0dc3b53307c831eeab0ff2ca66c2ba920d35cdb7aef6797947eae6627b30`  
-		Last Modified: Mon, 15 Nov 2021 20:41:18 GMT  
-		Size: 1.2 KB (1231 bytes)  
+	-	`sha256:16a2c1bd6c357bc002e6a58e4dba209c567c829b5c3d67a98785cc945075c119`  
+		Last Modified: Tue, 14 Dec 2021 20:43:44 GMT  
+		Size: 1.2 KB (1233 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3111f504ed97ecd3b4a24a4fca9128145ed4f676141777803ea21951c925a66c`  
-		Last Modified: Mon, 15 Nov 2021 20:41:24 GMT  
-		Size: 39.0 MB (38970628 bytes)  
+	-	`sha256:eeffb4866022338f09341cba456bc786d9a24021b9def25d3c52dfc1b44fc06f`  
+		Last Modified: Tue, 14 Dec 2021 20:43:49 GMT  
+		Size: 39.0 MB (38976434 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9327a3a3328dacb9c1e1e9a671e69525c5b1a602ee29d0e396cac83f9f2a46ea`  
-		Last Modified: Mon, 15 Nov 2021 20:41:18 GMT  
+	-	`sha256:00761f25345de261175f4c5295c54ca88591886261a2d8b6df4349fc125c02ee`  
+		Last Modified: Tue, 14 Dec 2021 20:43:44 GMT  
 		Size: 142.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4d1ecde7662d3fd2578666467cbb5881fdf7501616f10a6e923036482dcbcbe`  
-		Last Modified: Mon, 15 Nov 2021 20:41:18 GMT  
-		Size: 153.0 B  
+	-	`sha256:4ef726733fba0795bb822948e4c778b0905a5817dece0dab82e9c748f348bd6a`  
+		Last Modified: Tue, 14 Dec 2021 20:43:44 GMT  
+		Size: 154.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e33656f5ca4619fb5de521818b485d007b57dbdbb06f289aad9e48942d11c822`  
-		Last Modified: Mon, 15 Nov 2021 20:41:18 GMT  
-		Size: 1.8 KB (1787 bytes)  
+	-	`sha256:e926b3c440264449b5bdd90f02c671539c8a02a514fb4c0b00b77b8ee8715c04`  
+		Last Modified: Tue, 14 Dec 2021 20:43:44 GMT  
+		Size: 1.8 KB (1788 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `consul:latest` - linux; 386
 
 ```console
-$ docker pull consul@sha256:197e09ba241dbb63bc41b59c9f57ec9d898bb3e7bfa7969f6cdf4f95719b0f68
+$ docker pull consul@sha256:4f528d2bec02d5a9bd173c1853d1977b0cbc62deba36c3a0c749a750d75208b6
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **43.1 MB (43065393 bytes)**  
+-	Total Size: **43.1 MB (43063020 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72354e9f46b4a02d3e3ff31febbc09b1eb7a4c3da2d6b1578c3e064ae204df31`
+-	Image ID: `sha256:07b8d0dfb97fd1d3e95de17901bec6860d509acc08a8df1e1f2d8b5533b27826`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["agent","-dev","-client","0.0.0.0"]`
 
@@ -267,37 +267,37 @@ $ docker pull consul@sha256:197e09ba241dbb63bc41b59c9f57ec9d898bb3e7bfa7969f6cdf
 ADD file:f6503c5a96198c02627cf7250b271ec6d49ffa83a87a588498eee61ba7f9c6fe in / 
 # Fri, 12 Nov 2021 16:38:50 GMT
 CMD ["/bin/sh"]
-# Mon, 15 Nov 2021 20:38:27 GMT
-ARG CONSUL_VERSION=1.10.4
-# Mon, 15 Nov 2021 20:38:28 GMT
-LABEL org.opencontainers.image.authors=Consul Team <consul@hashicorp.com> org.opencontainers.image.url=https://www.consul.io/ org.opencontainers.image.documentation=https://www.consul.io/docs org.opencontainers.image.source=https://github.com/hashicorp/consul org.opencontainers.image.version=1.10.4 org.opencontainers.image.vendor=HashiCorp org.opencontainers.image.title=consul org.opencontainers.image.description=Consul is a datacenter runtime that provides service discovery, configuration, and orchestration.
-# Mon, 15 Nov 2021 20:38:28 GMT
+# Tue, 14 Dec 2021 20:38:28 GMT
+ARG CONSUL_VERSION=1.10.5
+# Tue, 14 Dec 2021 20:38:28 GMT
+LABEL org.opencontainers.image.authors=Consul Team <consul@hashicorp.com> org.opencontainers.image.url=https://www.consul.io/ org.opencontainers.image.documentation=https://www.consul.io/docs org.opencontainers.image.source=https://github.com/hashicorp/consul org.opencontainers.image.version=1.10.5 org.opencontainers.image.vendor=HashiCorp org.opencontainers.image.title=consul org.opencontainers.image.description=Consul is a datacenter runtime that provides service discovery, configuration, and orchestration.
+# Tue, 14 Dec 2021 20:38:29 GMT
 ENV HASHICORP_RELEASES=https://releases.hashicorp.com
-# Mon, 15 Nov 2021 20:38:29 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:38:30 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN addgroup consul &&     adduser -S -G consul consul
-# Mon, 15 Nov 2021 20:38:41 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:38:38 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN set -eux &&     apk add --no-cache ca-certificates curl dumb-init gnupg libcap openssl su-exec iputils jq libc6-compat iptables tzdata &&     gpg --keyserver keyserver.ubuntu.com --recv-keys C874011F0AB405110D02105534365D9472D7468F &&     mkdir -p /tmp/build &&     cd /tmp/build &&     apkArch="$(apk --print-arch)" &&     case "${apkArch}" in         aarch64) consulArch='arm64' ;;         armhf) consulArch='arm' ;;         x86) consulArch='386' ;;         x86_64) consulArch='amd64' ;;         *) echo >&2 "error: unsupported architecture: ${apkArch} (see ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/)" && exit 1 ;;     esac &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS.sig &&     gpg --batch --verify consul_${CONSUL_VERSION}_SHA256SUMS.sig consul_${CONSUL_VERSION}_SHA256SUMS &&     grep consul_${CONSUL_VERSION}_linux_${consulArch}.zip consul_${CONSUL_VERSION}_SHA256SUMS | sha256sum -c &&     unzip -d /tmp/build consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     cp /tmp/build/consul /bin/consul &&     if [ -f /tmp/build/EULA.txt ]; then mkdir -p /usr/share/doc/consul; mv /tmp/build/EULA.txt /usr/share/doc/consul/EULA.txt; fi &&     if [ -f /tmp/build/TermsOfEvaluation.txt ]; then mkdir -p /usr/share/doc/consul; mv /tmp/build/TermsOfEvaluation.txt /usr/share/doc/consul/TermsOfEvaluation.txt; fi &&     cd /tmp &&     rm -rf /tmp/build &&     gpgconf --kill all &&     apk del gnupg openssl &&     rm -rf /root/.gnupg &&     consul version
-# Mon, 15 Nov 2021 20:38:42 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:38:39 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN mkdir -p /consul/data &&     mkdir -p /consul/config &&     chown -R consul:consul /consul
-# Mon, 15 Nov 2021 20:38:43 GMT
-# ARGS: CONSUL_VERSION=1.10.4
+# Tue, 14 Dec 2021 20:38:40 GMT
+# ARGS: CONSUL_VERSION=1.10.5
 RUN test -e /etc/nsswitch.conf || echo 'hosts: files dns' > /etc/nsswitch.conf
-# Mon, 15 Nov 2021 20:38:43 GMT
+# Tue, 14 Dec 2021 20:38:41 GMT
 VOLUME [/consul/data]
-# Mon, 15 Nov 2021 20:38:44 GMT
+# Tue, 14 Dec 2021 20:38:41 GMT
 EXPOSE 8300
-# Mon, 15 Nov 2021 20:38:44 GMT
+# Tue, 14 Dec 2021 20:38:41 GMT
 EXPOSE 8301 8301/udp 8302 8302/udp
-# Mon, 15 Nov 2021 20:38:44 GMT
+# Tue, 14 Dec 2021 20:38:41 GMT
 EXPOSE 8500 8600 8600/udp
-# Mon, 15 Nov 2021 20:38:44 GMT
+# Tue, 14 Dec 2021 20:38:42 GMT
 COPY file:54fea1810b618dd421534c8fbe34fd9d05aa23929d2290f19c325d1c23d960c3 in /usr/local/bin/docker-entrypoint.sh 
-# Mon, 15 Nov 2021 20:38:45 GMT
+# Tue, 14 Dec 2021 20:38:42 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 15 Nov 2021 20:38:45 GMT
+# Tue, 14 Dec 2021 20:38:42 GMT
 CMD ["agent" "-dev" "-client" "0.0.0.0"]
 ```
 
@@ -306,23 +306,23 @@ CMD ["agent" "-dev" "-client" "0.0.0.0"]
 		Last Modified: Fri, 12 Nov 2021 16:39:53 GMT  
 		Size: 2.8 MB (2828811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4536d099d46227da1d6bd8d679ef4f73244926c2e9a57f086fd4674c2e29b3b`  
-		Last Modified: Mon, 15 Nov 2021 20:39:56 GMT  
+	-	`sha256:75c775a942206ecfd17cfc4806f59ef3add5887dd9bd84253e7df754248313fb`  
+		Last Modified: Tue, 14 Dec 2021 20:39:46 GMT  
 		Size: 1.3 KB (1258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7ee00223e3240f6226f08e73dac4bf1da82986fc97b3d0ccf04074d6ca360163`  
-		Last Modified: Mon, 15 Nov 2021 20:40:04 GMT  
-		Size: 40.2 MB (40233212 bytes)  
+	-	`sha256:38feef64f936ed8a2a9497c4e414fb4bea21d20ce99b0fdaadfb333895526b8e`  
+		Last Modified: Tue, 14 Dec 2021 20:39:52 GMT  
+		Size: 40.2 MB (40230838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7910a1c818e60d30b4058f37ae0fab42090c4fad3f1ec35c0b8e55ddb611d954`  
-		Last Modified: Mon, 15 Nov 2021 20:39:56 GMT  
+	-	`sha256:a916f75ced95121585c99f1bdd61d718b2f36035c24eec0145be385d1b57bfa6`  
+		Last Modified: Tue, 14 Dec 2021 20:39:46 GMT  
 		Size: 174.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5367fa6ffd2e7e1ddf111b01561fc9ae792cd49696e586280fdbd77949ed93d6`  
-		Last Modified: Mon, 15 Nov 2021 20:39:56 GMT  
-		Size: 154.0 B  
+	-	`sha256:93f64d8c3662188233d828bfd67724f06d0e8c34fa06b283f0ade188c81f5d16`  
+		Last Modified: Tue, 14 Dec 2021 20:39:46 GMT  
+		Size: 153.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11a5348717f1dadeca6442f041c3c7b3b3d661ab36be2689d8e83c3de608ea92`  
-		Last Modified: Mon, 15 Nov 2021 20:39:56 GMT  
-		Size: 1.8 KB (1784 bytes)  
+	-	`sha256:1d01e24ff602a70f89473df922920c3b2f1f19e3eed68efe936ff140ce0a159c`  
+		Last Modified: Tue, 14 Dec 2021 20:39:46 GMT  
+		Size: 1.8 KB (1786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
