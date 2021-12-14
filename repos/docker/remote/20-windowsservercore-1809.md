@@ -1,7 +1,7 @@
 ## `docker:20-windowsservercore-1809`
 
 ```console
-$ docker pull docker@sha256:280e2bfd85a1840bc5220777f9d70a85a6bf7fb35a3d8a03275043b5bdd07fb0
+$ docker pull docker@sha256:aeae5d99fe3dc85006d347bcd0f0209b8350fbba00fff026ddd2927a9927bca3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull docker@sha256:280e2bfd85a1840bc5220777f9d70a85a6bf7fb35a3d8a032750
 ### `docker:20-windowsservercore-1809` - windows version 10.0.17763.2300; amd64
 
 ```console
-$ docker pull docker@sha256:f9935026e3d4f01f6ffe7c97d63ee7f286c77f52f80e2f1be8afe7de69ba531c
+$ docker pull docker@sha256:bddeba547b89b83f3504923c518755dcefbd6d6af21e3b880b342c9fd632a75d
 ```
 
 -	Docker Version: 20.10.8
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.8 GB (2757389706 bytes)**  
+-	Total Size: **2.8 GB (2759710145 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:feec87f6f82e9966337409c1601a519ee1ddc39fb68c10dbfbbb4cc6328de03d`
+-	Image ID: `sha256:30c7db75db2732a0bbca809e17a72de80fae5ff7722bdce5cbc4b7f34dfaeb01`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
@@ -31,11 +31,11 @@ RUN Install update 1809-amd64
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
 # Wed, 10 Nov 2021 19:07:02 GMT
 RUN $newPath = ('{0}\docker;{1}' -f $env:ProgramFiles, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Thu, 18 Nov 2021 04:13:52 GMT
-ENV DOCKER_VERSION=20.10.11
-# Thu, 18 Nov 2021 04:13:53 GMT
-ENV DOCKER_URL=https://download.docker.com/win/static/stable/x86_64/docker-20.10.11.zip
-# Thu, 18 Nov 2021 04:15:10 GMT
+# Tue, 14 Dec 2021 01:14:53 GMT
+ENV DOCKER_VERSION=20.10.12
+# Tue, 14 Dec 2021 01:14:54 GMT
+ENV DOCKER_URL=https://download.docker.com/win/static/stable/x86_64/docker-20.10.12.zip
+# Tue, 14 Dec 2021 01:16:12 GMT
 RUN Write-Host ('Downloading {0} ...' -f $env:DOCKER_URL); 	Invoke-WebRequest -Uri $env:DOCKER_URL -OutFile 'docker.zip'; 		Write-Host 'Expanding ...'; 	Expand-Archive docker.zip -DestinationPath $env:ProgramFiles; 		Write-Host 'Removing ...'; 	Remove-Item @( 			'docker.zip', 			('{0}\docker\dockerd.exe' -f $env:ProgramFiles) 		) -Force; 		Write-Host 'Verifying install ("docker --version") ...'; 	docker --version; 		Write-Host 'Complete.';
 ```
 
@@ -54,15 +54,15 @@ RUN Write-Host ('Downloading {0} ...' -f $env:DOCKER_URL); 	Invoke-WebRequest -U
 		Last Modified: Wed, 10 Nov 2021 19:08:27 GMT  
 		Size: 356.8 KB (356764 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:568ddc925a63c78da177f9676136448290dfbb54e31f140f98a3d4e0f3cfdc6d`  
-		Last Modified: Thu, 18 Nov 2021 04:15:36 GMT  
-		Size: 1.3 KB (1280 bytes)  
+	-	`sha256:e2dca1c227843d13b5eed8f547ee009f1c0a3f31cee57cd0478d6a5187c0565c`  
+		Last Modified: Tue, 14 Dec 2021 01:16:37 GMT  
+		Size: 1.3 KB (1303 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44a4753c3e1103c5a6292410a73e0d9eeeaa777557870a6d95dae8c80d822305`  
-		Last Modified: Thu, 18 Nov 2021 04:15:36 GMT  
-		Size: 1.3 KB (1311 bytes)  
+	-	`sha256:be433795619099d6fd71321a47a80e03c2c381ae57b9d90b92b45627ff7f6d96`  
+		Last Modified: Tue, 14 Dec 2021 01:16:37 GMT  
+		Size: 1.3 KB (1298 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc58abb4c9cd5805540f354d6ba7931a7afec3062b7f8ff918c78378ac5d876f`  
-		Last Modified: Thu, 18 Nov 2021 04:16:34 GMT  
-		Size: 50.9 MB (50907794 bytes)  
+	-	`sha256:f66d67f0ea287b8dd2ba1e3a70e2ce53cce0b193f44a01bdc569ed2688465f5a`  
+		Last Modified: Tue, 14 Dec 2021 01:16:48 GMT  
+		Size: 53.2 MB (53228223 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
