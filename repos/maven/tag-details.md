@@ -9,8 +9,11 @@
 -	[`maven:3-amazoncorretto-8`](#maven3-amazoncorretto-8)
 -	[`maven:3-eclipse-temurin`](#maven3-eclipse-temurin)
 -	[`maven:3-eclipse-temurin-11`](#maven3-eclipse-temurin-11)
+-	[`maven:3-eclipse-temurin-11-alpine`](#maven3-eclipse-temurin-11-alpine)
 -	[`maven:3-eclipse-temurin-16`](#maven3-eclipse-temurin-16)
+-	[`maven:3-eclipse-temurin-16-alpine`](#maven3-eclipse-temurin-16-alpine)
 -	[`maven:3-eclipse-temurin-17`](#maven3-eclipse-temurin-17)
+-	[`maven:3-eclipse-temurin-17-alpine`](#maven3-eclipse-temurin-17-alpine)
 -	[`maven:3-eclipse-temurin-8`](#maven3-eclipse-temurin-8)
 -	[`maven:3-ibmjava`](#maven3-ibmjava)
 -	[`maven:3-ibmjava-8`](#maven3-ibmjava-8)
@@ -33,8 +36,11 @@
 -	[`maven:3.8-amazoncorretto-8`](#maven38-amazoncorretto-8)
 -	[`maven:3.8-eclipse-temurin`](#maven38-eclipse-temurin)
 -	[`maven:3.8-eclipse-temurin-11`](#maven38-eclipse-temurin-11)
+-	[`maven:3.8-eclipse-temurin-11-alpine`](#maven38-eclipse-temurin-11-alpine)
 -	[`maven:3.8-eclipse-temurin-16`](#maven38-eclipse-temurin-16)
+-	[`maven:3.8-eclipse-temurin-16-alpine`](#maven38-eclipse-temurin-16-alpine)
 -	[`maven:3.8-eclipse-temurin-17`](#maven38-eclipse-temurin-17)
+-	[`maven:3.8-eclipse-temurin-17-alpine`](#maven38-eclipse-temurin-17-alpine)
 -	[`maven:3.8-eclipse-temurin-8`](#maven38-eclipse-temurin-8)
 -	[`maven:3.8-ibmjava`](#maven38-ibmjava)
 -	[`maven:3.8-ibmjava-8`](#maven38-ibmjava-8)
@@ -58,8 +64,11 @@
 -	[`maven:3.8.4-amazoncorretto-8`](#maven384-amazoncorretto-8)
 -	[`maven:3.8.4-eclipse-temurin`](#maven384-eclipse-temurin)
 -	[`maven:3.8.4-eclipse-temurin-11`](#maven384-eclipse-temurin-11)
+-	[`maven:3.8.4-eclipse-temurin-11-alpine`](#maven384-eclipse-temurin-11-alpine)
 -	[`maven:3.8.4-eclipse-temurin-16`](#maven384-eclipse-temurin-16)
+-	[`maven:3.8.4-eclipse-temurin-16-alpine`](#maven384-eclipse-temurin-16-alpine)
 -	[`maven:3.8.4-eclipse-temurin-17`](#maven384-eclipse-temurin-17)
+-	[`maven:3.8.4-eclipse-temurin-17-alpine`](#maven384-eclipse-temurin-17-alpine)
 -	[`maven:3.8.4-eclipse-temurin-8`](#maven384-eclipse-temurin-8)
 -	[`maven:3.8.4-ibmjava`](#maven384-ibmjava)
 -	[`maven:3.8.4-ibmjava-8`](#maven384-ibmjava-8)
@@ -1958,6 +1967,15 @@ CMD ["mvn"]
 		Size: 363.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-eclipse-temurin-11-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
 ## `maven:3-eclipse-temurin-16`
 
 ```console
@@ -2447,6 +2465,15 @@ CMD ["mvn"]
 		Size: 362.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3-eclipse-temurin-16-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
 ## `maven:3-eclipse-temurin-17`
 
 ```console
@@ -2935,6 +2962,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 29 Nov 2021 20:15:56 GMT  
 		Size: 362.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-eclipse-temurin-17-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
 
 ## `maven:3-eclipse-temurin-8`
 
@@ -8255,6 +8291,15 @@ CMD ["mvn"]
 		Size: 363.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.8-eclipse-temurin-11-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
 ## `maven:3.8-eclipse-temurin-16`
 
 ```console
@@ -8744,6 +8789,15 @@ CMD ["mvn"]
 		Size: 362.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.8-eclipse-temurin-16-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
 ## `maven:3.8-eclipse-temurin-17`
 
 ```console
@@ -9232,6 +9286,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 29 Nov 2021 20:15:56 GMT  
 		Size: 362.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.8-eclipse-temurin-17-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
 
 ## `maven:3.8-eclipse-temurin-8`
 
@@ -14654,6 +14717,15 @@ CMD ["mvn"]
 		Size: 363.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.8.4-eclipse-temurin-11-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
 ## `maven:3.8.4-eclipse-temurin-16`
 
 ```console
@@ -15143,6 +15215,15 @@ CMD ["mvn"]
 		Size: 362.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.8.4-eclipse-temurin-16-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
+
 ## `maven:3.8.4-eclipse-temurin-17`
 
 ```console
@@ -15631,6 +15712,15 @@ CMD ["mvn"]
 		Last Modified: Mon, 29 Nov 2021 20:15:56 GMT  
 		Size: 362.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3.8.4-eclipse-temurin-17-alpine`
+
+```console
+$ docker pull maven@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
 
 ## `maven:3.8.4-eclipse-temurin-8`
 
