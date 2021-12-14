@@ -1,7 +1,7 @@
 ## `drupal:7-php7.4-apache-buster`
 
 ```console
-$ docker pull drupal@sha256:6074c35736e6430cf9ab0957bd8f09cdb4ccd3c4c6e699e708d204db7a927505
+$ docker pull drupal@sha256:66d1709911464bcf2b6ead8d4bcb5a3392124061490817db7f6e453dbfd10f60
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -783,14 +783,14 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ### `drupal:7-php7.4-apache-buster` - linux; mips64le
 
 ```console
-$ docker pull drupal@sha256:a51c8114d67587a720fe5e53599261573a20affff4b63be9adbc49b4db95d8ad
+$ docker pull drupal@sha256:475eb8c8e091180ecf62d48a1ea82e3923b2f12db68115bd837eb281ca99a8ca
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **134.8 MB (134796347 bytes)**  
+-	Total Size: **134.8 MB (134796467 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ed00b5e93f0c6963ae0e01990d943b0b608117669e68b3d40155c6c7fa5bf0c4`
+-	Image ID: `sha256:8f677d509014b9f42712ba2192364fd2b6a17527beb64f214a313bdae9e0aa37`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -859,11 +859,11 @@ CMD ["apache2-foreground"]
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
 # Sat, 04 Dec 2021 01:01:53 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 04 Dec 2021 01:01:53 GMT
-ENV DRUPAL_VERSION=7.83
-# Sat, 04 Dec 2021 01:01:54 GMT
-ENV DRUPAL_MD5=c8833da8f1ef03a244b4130b71872e26
-# Sat, 04 Dec 2021 01:01:57 GMT
+# Tue, 14 Dec 2021 01:07:44 GMT
+ENV DRUPAL_VERSION=7.84
+# Tue, 14 Dec 2021 01:07:44 GMT
+ENV DRUPAL_MD5=1d270b00fbbb87a81776202eec1f848e
+# Tue, 14 Dec 2021 01:07:52 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -928,9 +928,9 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Sat, 04 Dec 2021 01:06:28 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f0f6f33173b96021c2c25c79705d4d952a2f4cbb17b06f91a1b26eb445fe7a25`  
-		Last Modified: Sat, 04 Dec 2021 01:06:31 GMT  
-		Size: 3.4 MB (3380054 bytes)  
+	-	`sha256:cf446933d4fea6a3d289f852f47adf2714067cbfa363f5829728da9b43c16bbd`  
+		Last Modified: Tue, 14 Dec 2021 01:09:55 GMT  
+		Size: 3.4 MB (3380174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-php7.4-apache-buster` - linux; ppc64le
