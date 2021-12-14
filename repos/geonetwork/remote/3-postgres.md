@@ -1,7 +1,7 @@
 ## `geonetwork:3-postgres`
 
 ```console
-$ docker pull geonetwork@sha256:c97c68c4ef3b329c061efe0338a4f91155c031f40c4f2fc26b86fbaafa462201
+$ docker pull geonetwork@sha256:069498f15b9b5cd4cf491dc76843120bbdaffdcb66d025f7c2216ce4516366b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull geonetwork@sha256:c97c68c4ef3b329c061efe0338a4f91155c031f40c4f2fc2
 ### `geonetwork:3-postgres` - linux; amd64
 
 ```console
-$ docker pull geonetwork@sha256:91cbe1ad8f550a5f8bd78700160e33dd14daca0c1932f98a0cf943302784cc43
+$ docker pull geonetwork@sha256:ca11ec36842c4867ca3b56cf26206c538429bd2b20a23c61be5e1a15e830b10f
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **556.1 MB (556072618 bytes)**  
+-	Total Size: **475.4 MB (475356707 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c4a455c210476fc935bbf77beca97dc19d3ec5f23293b7e6c3628df7e812446d`
+-	Image ID: `sha256:bd5506c00d48d322d83d70b559b2cfbf67daa80705b8657972613be10cdf48c2`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -82,31 +82,31 @@ ENV GN_FILE=geonetwork.war
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
 # Fri, 03 Dec 2021 22:25:49 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Fri, 03 Dec 2021 22:26:21 GMT
-ENV GN_VERSION=3.12.1
-# Fri, 03 Dec 2021 22:26:21 GMT
-ENV GN_DOWNLOAD_MD5=17f2dd60874c8efa4254d535bda98304
-# Fri, 03 Dec 2021 22:26:21 GMT
+# Tue, 14 Dec 2021 18:26:09 GMT
+ENV GN_VERSION=3.12.2
+# Tue, 14 Dec 2021 18:26:09 GMT
+ENV GN_DOWNLOAD_MD5=669e70d8d490d49811362889ec222192
+# Tue, 14 Dec 2021 18:26:09 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Fri, 03 Dec 2021 22:26:47 GMT
+# Tue, 14 Dec 2021 18:26:33 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "${GN_DOWNLOAD_MD5} *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Fri, 03 Dec 2021 22:26:48 GMT
+# Tue, 14 Dec 2021 18:26:34 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Fri, 03 Dec 2021 22:26:49 GMT
+# Tue, 14 Dec 2021 18:26:34 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 03 Dec 2021 22:26:49 GMT
+# Tue, 14 Dec 2021 18:26:35 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 03 Dec 2021 22:26:59 GMT
+# Tue, 14 Dec 2021 18:26:42 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client &&     rm -rf /var/lib/apt/lists/*
-# Fri, 03 Dec 2021 22:27:00 GMT
+# Tue, 14 Dec 2021 18:26:43 GMT
 RUN sed -i -e 's#<import resource="../config-db/${geonetwork.db.type:h2}.xml"/>#<!--<import resource="../config-db/${geonetwork.db.type:h2}.xml"/-->#g' "${CATALINA_HOME}/webapps/geonetwork/WEB-INF/config-node/srv.xml" && sed -i -e 's#<!--<import resource="../config-db/postgres.xml"/>-->#<import resource="../config-db/postgres.xml"/>#g' "${CATALINA_HOME}/webapps/geonetwork/WEB-INF/config-node/srv.xml"
-# Fri, 03 Dec 2021 22:27:00 GMT
+# Tue, 14 Dec 2021 18:26:43 GMT
 COPY file:83f69d2041e5fb378033b0db57e096c81ba0725102ab4da4f089685e748fcce3 in /usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties 
-# Fri, 03 Dec 2021 22:27:00 GMT
+# Tue, 14 Dec 2021 18:26:44 GMT
 COPY file:c88411abba7ad9b7bb75019f08755dbfa163d2fc7fdd80676bf9350c4c56a19c in /entrypoint.sh 
-# Fri, 03 Dec 2021 22:27:00 GMT
+# Tue, 14 Dec 2021 18:26:44 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 03 Dec 2021 22:27:00 GMT
+# Tue, 14 Dec 2021 18:26:44 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -151,42 +151,42 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Fri, 03 Dec 2021 15:18:21 GMT  
 		Size: 130.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c42ca25a2131ba4ef6c2348a8c3933e6ad3685f3ba6e79e52006c13221ce6f3`  
-		Last Modified: Fri, 03 Dec 2021 22:28:44 GMT  
-		Size: 304.1 MB (304093453 bytes)  
+	-	`sha256:d527278731904ed428f63b5e4bd165ea924c5c3b8dd24961a7fc1da21e988579`  
+		Last Modified: Tue, 14 Dec 2021 18:27:21 GMT  
+		Size: 223.4 MB (223377547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1388bd45d18aa36240eb5ed9afaaaf943ef4c0adda8b58874c163d306c2b0ca`  
-		Last Modified: Fri, 03 Dec 2021 22:28:27 GMT  
+	-	`sha256:c4c543f21aaf4bca53cc9a39da777ba780d12c53a6971e93ed1175c3ea996d21`  
+		Last Modified: Tue, 14 Dec 2021 18:27:07 GMT  
 		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2f93cbd16fe9cc5d3060b07d119166c019a5c9b8d6608137a0c733f54446328`  
-		Last Modified: Fri, 03 Dec 2021 22:28:59 GMT  
-		Size: 3.5 MB (3503890 bytes)  
+	-	`sha256:4270ba59ca522871517f65d288167673bd900177f1b082d3152d6085f381e8c8`  
+		Last Modified: Tue, 14 Dec 2021 18:27:35 GMT  
+		Size: 3.5 MB (3503888 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9a2a2255bb963823f883eb234c5f43ef014180dc2e90a7acd40ecd716e31ef7`  
-		Last Modified: Fri, 03 Dec 2021 22:28:59 GMT  
-		Size: 1.3 KB (1264 bytes)  
+	-	`sha256:2bdabc7aabc53627b68ffd345d5fbe775a909504f406b9b0b98c200317ddd7c1`  
+		Last Modified: Tue, 14 Dec 2021 18:27:34 GMT  
+		Size: 1.3 KB (1262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8746213bf848ac4d1baf2de938940ce03c0415ed27533cb4b21f15862600564d`  
-		Last Modified: Fri, 03 Dec 2021 22:28:58 GMT  
-		Size: 1.1 KB (1123 bytes)  
+	-	`sha256:2c0aee7f5919aedab34da5669cfd8b3481cd5f4e603aa9b8d3a92ca6680063db`  
+		Last Modified: Tue, 14 Dec 2021 18:27:34 GMT  
+		Size: 1.1 KB (1122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae7fe367857c886a5dd5d332b5e110ea00e72d74ec5a367b0d494e8339fe551f`  
-		Last Modified: Fri, 03 Dec 2021 22:28:58 GMT  
+	-	`sha256:13b7425ce757ff8595f4b5d9d0f9466c9b7a2ffa3d7d3690c9333a8fee524cb5`  
+		Last Modified: Tue, 14 Dec 2021 18:27:34 GMT  
 		Size: 973.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `geonetwork:3-postgres` - linux; arm64 variant v8
 
 ```console
-$ docker pull geonetwork@sha256:8ef9f507caeaa45e8683867eb4eb7f33da842b2b8dfce7495477c6a4de237e24
+$ docker pull geonetwork@sha256:e8b51b2663a3bdfc5378546e29db89af313ce77a4c49121e7586b14d595d1d86
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **553.0 MB (552962803 bytes)**  
+-	Total Size: **472.2 MB (472245860 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4772b51772ca7a94e8cc9e2f8aa2281f42aeb921b95c3ba57532b24ddae29f88`
+-	Image ID: `sha256:7324ebbb248ff8ff97606dfd0c2a620b5c8718b2f9672f057c60e6c84ec2adc2`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["catalina.sh","run"]`
 
@@ -249,31 +249,31 @@ ENV GN_FILE=geonetwork.war
 ENV DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data
 # Fri, 03 Dec 2021 17:56:49 GMT
 ENV JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC
-# Fri, 03 Dec 2021 17:58:46 GMT
-ENV GN_VERSION=3.12.1
-# Fri, 03 Dec 2021 17:58:46 GMT
-ENV GN_DOWNLOAD_MD5=17f2dd60874c8efa4254d535bda98304
-# Fri, 03 Dec 2021 17:58:47 GMT
+# Tue, 14 Dec 2021 18:39:50 GMT
+ENV GN_VERSION=3.12.2
+# Tue, 14 Dec 2021 18:39:50 GMT
+ENV GN_DOWNLOAD_MD5=669e70d8d490d49811362889ec222192
+# Tue, 14 Dec 2021 18:39:51 GMT
 WORKDIR /usr/local/tomcat/webapps
-# Fri, 03 Dec 2021 18:00:14 GMT
+# Tue, 14 Dec 2021 18:40:42 GMT
 RUN curl -fSL -o $GN_FILE      https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download &&      echo "${GN_DOWNLOAD_MD5} *${GN_FILE}" | md5sum -c &&      mkdir -p geonetwork &&      unzip -e $GN_FILE -d geonetwork &&      rm $GN_FILE
-# Fri, 03 Dec 2021 18:00:15 GMT
+# Tue, 14 Dec 2021 18:40:43 GMT
 COPY file:0804862fd42c05f06dfa65cb1e5dad9a956d8ac6a3ddd4d962847ba159f5cfe6 in /entrypoint.sh 
-# Fri, 03 Dec 2021 18:00:16 GMT
+# Tue, 14 Dec 2021 18:40:44 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 03 Dec 2021 18:00:17 GMT
+# Tue, 14 Dec 2021 18:40:45 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 03 Dec 2021 18:00:32 GMT
+# Tue, 14 Dec 2021 18:40:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client &&     rm -rf /var/lib/apt/lists/*
-# Fri, 03 Dec 2021 18:00:34 GMT
+# Tue, 14 Dec 2021 18:40:57 GMT
 RUN sed -i -e 's#<import resource="../config-db/${geonetwork.db.type:h2}.xml"/>#<!--<import resource="../config-db/${geonetwork.db.type:h2}.xml"/-->#g' "${CATALINA_HOME}/webapps/geonetwork/WEB-INF/config-node/srv.xml" && sed -i -e 's#<!--<import resource="../config-db/postgres.xml"/>-->#<import resource="../config-db/postgres.xml"/>#g' "${CATALINA_HOME}/webapps/geonetwork/WEB-INF/config-node/srv.xml"
-# Fri, 03 Dec 2021 18:00:35 GMT
+# Tue, 14 Dec 2021 18:40:58 GMT
 COPY file:83f69d2041e5fb378033b0db57e096c81ba0725102ab4da4f089685e748fcce3 in /usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties 
-# Fri, 03 Dec 2021 18:00:36 GMT
+# Tue, 14 Dec 2021 18:40:59 GMT
 COPY file:c88411abba7ad9b7bb75019f08755dbfa163d2fc7fdd80676bf9350c4c56a19c in /entrypoint.sh 
-# Fri, 03 Dec 2021 18:00:36 GMT
+# Tue, 14 Dec 2021 18:40:59 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 03 Dec 2021 18:00:37 GMT
+# Tue, 14 Dec 2021 18:41:00 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -314,27 +314,27 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Fri, 03 Dec 2021 12:01:14 GMT  
 		Size: 11.3 MB (11290185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4345ec3a9ea2ae2e5282da81943c52c1e4f52f8a29dcdbce6d9c36f1926453e8`  
-		Last Modified: Fri, 03 Dec 2021 20:12:53 GMT  
-		Size: 304.1 MB (304094266 bytes)  
+	-	`sha256:c5550092f6d3427b1cd905cb946fa3cbb0554a20d71dd8b5394af6596c87f366`  
+		Last Modified: Tue, 14 Dec 2021 18:41:57 GMT  
+		Size: 223.4 MB (223377365 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b16a861763ae8232b00efb54bf26eebb48f29a9da055faf0fe385487c5648eb`  
-		Last Modified: Fri, 03 Dec 2021 20:12:29 GMT  
+	-	`sha256:9dfcd02f759cdd90bfdc30c8f347dd8b34c954544ac19f75429a893ab8a05213`  
+		Last Modified: Tue, 14 Dec 2021 18:41:40 GMT  
 		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb9a11bd796d1cf61824903833922efc2213a126a6de3b431679a2d86284efb3`  
-		Last Modified: Fri, 03 Dec 2021 20:13:08 GMT  
-		Size: 3.3 MB (3260984 bytes)  
+	-	`sha256:89adde19ced8822d26b453bc77b5daf439c5f3f48a74efe163e87ba38133a96e`  
+		Last Modified: Tue, 14 Dec 2021 18:42:17 GMT  
+		Size: 3.3 MB (3260948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63c9fdd1a34caac3285ea95e27a8c6a71a0ce0de3983f9c70254736d5039499c`  
-		Last Modified: Fri, 03 Dec 2021 20:13:08 GMT  
-		Size: 1.3 KB (1270 bytes)  
+	-	`sha256:61cded9cff3748fa589b83befdee4c9e8ac953adb357375a806bb62f5d1ad131`  
+		Last Modified: Tue, 14 Dec 2021 18:42:17 GMT  
+		Size: 1.3 KB (1266 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eea757a8dff1f17e6179ffa91b6c61b97e44f10e5a11e49e1cef791306a1b81`  
-		Last Modified: Fri, 03 Dec 2021 20:13:08 GMT  
-		Size: 1.1 KB (1126 bytes)  
+	-	`sha256:b7e6f534b9800d2afd877ad06514d862477983db01a866b18c492e42162bda9f`  
+		Last Modified: Tue, 14 Dec 2021 18:42:17 GMT  
+		Size: 1.1 KB (1124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4956df611e15e685046101514a24b81fd3f6c9ec3a608ba1b26faca4786327a7`  
-		Last Modified: Fri, 03 Dec 2021 20:13:08 GMT  
+	-	`sha256:62e3e4d62a497efe5012bace371a9a29c84db1df5e5ccf0af6fc84a5e77fe4a5`  
+		Last Modified: Tue, 14 Dec 2021 18:42:17 GMT  
 		Size: 974.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
