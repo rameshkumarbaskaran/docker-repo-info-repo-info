@@ -1,7 +1,7 @@
 ## `backdrop:latest`
 
 ```console
-$ docker pull backdrop@sha256:e01fbd04e97274366f4bc2fc425d6ba6f230b4fdc477c9584fb4c4d123580359
+$ docker pull backdrop@sha256:dfcbe94af2efb90f35d4b2e76e4619e2a443a3cc59eebe0089309c43b2a3170e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -187,14 +187,14 @@ CMD ["apache2-foreground"]
 ### `backdrop:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull backdrop@sha256:e150e58e31fa01ef08155130710f35d9504efce62f21033458b8efbe313ebd80
+$ docker pull backdrop@sha256:db65f11807f5c8694760cfbb662f6c9f5cb16ef71b7039819c6dae52594e4f27
 ```
 
--	Docker Version: 19.03.12
+-	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **152.1 MB (152149808 bytes)**  
+-	Total Size: **151.9 MB (151936110 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4f55970aa09b1fc735e3036154acbf835cfa9d73c356437e7e833a2f03190518`
+-	Image ID: `sha256:b63024711735a2b2f606ed08588b6506f589b5e29e49ac6e2ddb5761ff85774f`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -265,23 +265,23 @@ WORKDIR /var/www/html
 EXPOSE 80
 # Fri, 11 Dec 2020 11:19:41 GMT
 CMD ["apache2-foreground"]
-# Sat, 12 Dec 2020 03:50:22 GMT
+# Wed, 15 Dec 2021 14:41:51 GMT
 RUN a2enmod rewrite
-# Sat, 12 Dec 2020 03:53:25 GMT
+# Wed, 15 Dec 2021 14:43:28 GMT
 RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libpq-dev 	&& rm -rf /var/lib/apt/lists/* 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr 	&& docker-php-ext-install gd mbstring pdo pdo_mysql pdo_pgsql zip
-# Sat, 12 Dec 2020 03:53:26 GMT
+# Wed, 15 Dec 2021 14:43:29 GMT
 WORKDIR /var/www/html
-# Sat, 12 Dec 2020 03:53:29 GMT
+# Wed, 15 Dec 2021 14:43:30 GMT
 ENV BACKDROP_VERSION=1.17.3
-# Sat, 12 Dec 2020 03:53:29 GMT
+# Wed, 15 Dec 2021 14:43:31 GMT
 ENV BACKDROP_MD5=907ae2978936d525626dd4c981afd0d2
-# Sat, 12 Dec 2020 03:53:35 GMT
+# Wed, 15 Dec 2021 14:43:37 GMT
 RUN curl -fSL "https://github.com/backdrop/backdrop/archive/${BACKDROP_VERSION}.tar.gz" -o backdrop.tar.gz   && echo "${BACKDROP_MD5} *backdrop.tar.gz" | md5sum -c -   && tar -xz --strip-components=1 -f backdrop.tar.gz   && rm backdrop.tar.gz   && chown -R www-data:www-data sites
-# Sat, 12 Dec 2020 03:53:36 GMT
+# Wed, 15 Dec 2021 14:43:39 GMT
 COPY file:dc282a331b642ab4cd043a874f505e04001cc1bdcf4f846fb117f413030d2835 in /entrypoint.sh 
-# Sat, 12 Dec 2020 03:53:37 GMT
+# Wed, 15 Dec 2021 14:43:39 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Sat, 12 Dec 2020 03:53:38 GMT
+# Wed, 15 Dec 2021 14:43:40 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -342,19 +342,19 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 11 Dec 2020 12:07:49 GMT  
 		Size: 895.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25883c6b9e5b7ed83790edeb0986e871c116378326ac917e29dc0752211a2aa8`  
-		Last Modified: Sat, 12 Dec 2020 03:57:29 GMT  
-		Size: 316.0 B  
+	-	`sha256:b7f369ffa0126799f15fff67ec43dcdbb3e8751194744afe22e6d29d1bf2c4a7`  
+		Last Modified: Wed, 15 Dec 2021 14:46:10 GMT  
+		Size: 319.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:262de683c47c5e92a1da532bb01110d28f682c781dae88c7941f761be63f9fb7`  
-		Last Modified: Sat, 12 Dec 2020 03:57:29 GMT  
-		Size: 2.6 MB (2590289 bytes)  
+	-	`sha256:92b81d5008e6e8a3bb3a44d2f4ff340887dfb933c6699ac13e6775b1d5ba0f54`  
+		Last Modified: Wed, 15 Dec 2021 14:46:11 GMT  
+		Size: 2.4 MB (2377297 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0dd03e2176cd160f8223f20da99b3859107c2399b1ea86f95e12bc767bdac22`  
-		Last Modified: Sat, 12 Dec 2020 03:57:32 GMT  
-		Size: 8.6 MB (8614186 bytes)  
+	-	`sha256:1ae8c3360a51fbfdf5f38686408e6739b3be46885381a728cf743cf92bcabe99`  
+		Last Modified: Wed, 15 Dec 2021 14:46:13 GMT  
+		Size: 8.6 MB (8613479 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2faf5a1f988f0343250812d03d9c942c6aeb627fe7efa3fb8d82cda1d7f90218`  
-		Last Modified: Sat, 12 Dec 2020 03:57:29 GMT  
-		Size: 950.0 B  
+	-	`sha256:00e245246041bef00bb7dde5d9050fdeeb32b0f2dc1d9828619463f1910114d3`  
+		Last Modified: Wed, 15 Dec 2021 14:46:10 GMT  
+		Size: 948.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
