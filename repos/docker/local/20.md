@@ -1,17 +1,17 @@
-# `docker:20.10.11`
+# `docker:20.10.12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0c655f708b2a86c4b241e80a784479ee098833dc55d9d3929e1e35e1cb0297c8`
-- Created: `2021-11-18T16:02:19.889909442Z`
-- Virtual Size: ~ 216.08 Mb  
+- Image ID: `sha256:15a9bc7c6340df2ac9d6c8196ca1d905180ddf2ca8b29a8d98f5422e2e5ccf85`
+- Created: `2021-12-15T20:19:35.284831101Z`
+- Virtual Size: ~ 216.18 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=20.10.11`
+  - `DOCKER_VERSION=20.10.12`
   - `DOCKER_TLS_CERTDIR=/certs`
 
 ## `apk` (`.apk`-based packages)
@@ -19,16 +19,16 @@
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.2.0-r16 description:
+alpine-baselayout-3.2.0-r18 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.2.0-r16 webpage:
+alpine-baselayout-3.2.0-r18 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.2.0-r16 installed size:
+alpine-baselayout-3.2.0-r18 installed size:
 404 KiB
 
-alpine-baselayout-3.2.0-r16 license:
+alpine-baselayout-3.2.0-r18 license:
 GPL-2.0-only
 
 ```
@@ -36,16 +36,16 @@ GPL-2.0-only
 ### `apk` package: `alpine-keys`
 
 ```console
-alpine-keys-2.4-r0 description:
+alpine-keys-2.4-r1 description:
 Public keys for Alpine Linux packages
 
-alpine-keys-2.4-r0 webpage:
+alpine-keys-2.4-r1 webpage:
 https://alpinelinux.org
 
-alpine-keys-2.4-r0 installed size:
+alpine-keys-2.4-r1 installed size:
 156 KiB
 
-alpine-keys-2.4-r0 license:
+alpine-keys-2.4-r1 license:
 MIT
 
 ```
@@ -53,16 +53,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.12.7-r0 description:
+apk-tools-2.12.7-r3 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.12.7-r0 webpage:
+apk-tools-2.12.7-r3 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.12.7-r0 installed size:
+apk-tools-2.12.7-r3 installed size:
 304 KiB
 
-apk-tools-2.12.7-r0 license:
+apk-tools-2.12.7-r3 license:
 GPL-2.0-only
 
 ```
@@ -70,16 +70,16 @@ GPL-2.0-only
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.33.1-r6 description:
+busybox-1.34.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.33.1-r6 webpage:
+busybox-1.34.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.33.1-r6 installed size:
-928 KiB
+busybox-1.34.1-r3 installed size:
+924 KiB
 
-busybox-1.33.1-r6 license:
+busybox-1.34.1-r3 license:
 GPL-2.0-only
 
 ```
@@ -87,16 +87,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r5 description:
+ca-certificates-20191127-r7 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r5 webpage:
+ca-certificates-20191127-r7 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r5 installed size:
-672 KiB
+ca-certificates-20191127-r7 installed size:
+676 KiB
 
-ca-certificates-20191127-r5 license:
+ca-certificates-20191127-r7 license:
 MPL-2.0 AND MIT
 
 ```
@@ -104,16 +104,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r5 description:
+ca-certificates-bundle-20191127-r7 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r5 webpage:
+ca-certificates-bundle-20191127-r7 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r5 installed size:
+ca-certificates-bundle-20191127-r7 installed size:
 228 KiB
 
-ca-certificates-bundle-20191127-r5 license:
+ca-certificates-bundle-20191127-r7 license:
 MPL-2.0 AND MIT
 
 ```
@@ -138,16 +138,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libc6-compat`
 
 ```console
-libc6-compat-1.2.2-r3 description:
+libc6-compat-1.2.2-r7 description:
 compatibility libraries for glibc
 
-libc6-compat-1.2.2-r3 webpage:
+libc6-compat-1.2.2-r7 webpage:
 https://musl.libc.org/
 
-libc6-compat-1.2.2-r3 installed size:
+libc6-compat-1.2.2-r7 installed size:
 12 KiB
 
-libc6-compat-1.2.2-r3 license:
+libc6-compat-1.2.2-r7 license:
 MIT
 
 ```
@@ -155,16 +155,16 @@ MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r0 description:
+libcrypto1.1-1.1.1l-r7 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r0 webpage:
+libcrypto1.1-1.1.1l-r7 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r0 installed size:
-2704 KiB
+libcrypto1.1-1.1.1l-r7 installed size:
+2676 KiB
 
-libcrypto1.1-1.1.1l-r0 license:
+libcrypto1.1-1.1.1l-r7 license:
 OpenSSL
 
 ```
@@ -172,16 +172,16 @@ OpenSSL
 ### `apk` package: `libedit`
 
 ```console
-libedit-20210216.3.1-r0 description:
+libedit-20210910.3.1-r0 description:
 BSD line editing library
 
-libedit-20210216.3.1-r0 webpage:
+libedit-20210910.3.1-r0 webpage:
 https://www.thrysoee.dk/editline
 
-libedit-20210216.3.1-r0 installed size:
-196 KiB
+libedit-20210910.3.1-r0 installed size:
+204 KiB
 
-libedit-20210216.3.1-r0 license:
+libedit-20210910.3.1-r0 license:
 BSD-3-Clause
 
 ```
@@ -189,16 +189,16 @@ BSD-3-Clause
 ### `apk` package: `libretls`
 
 ```console
-libretls-3.3.3p1-r2 description:
+libretls-3.3.4-r2 description:
 port of libtls from libressl to openssl
 
-libretls-3.3.3p1-r2 webpage:
+libretls-3.3.4-r2 webpage:
 https://git.causal.agency/libretls/
 
-libretls-3.3.3p1-r2 installed size:
+libretls-3.3.4-r2 installed size:
 84 KiB
 
-libretls-3.3.3p1-r2 license:
+libretls-3.3.4-r2 license:
 ISC AND (BSD-3-Clause OR MIT)
 
 ```
@@ -206,16 +206,16 @@ ISC AND (BSD-3-Clause OR MIT)
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r0 description:
+libssl1.1-1.1.1l-r7 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r0 webpage:
+libssl1.1-1.1.1l-r7 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r0 installed size:
+libssl1.1-1.1.1l-r7 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r0 license:
+libssl1.1-1.1.1l-r7 license:
 OpenSSL
 
 ```
@@ -223,16 +223,16 @@ OpenSSL
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.2-r3 description:
+musl-1.2.2-r7 description:
 the musl c library (libc) implementation
 
-musl-1.2.2-r3 webpage:
+musl-1.2.2-r7 webpage:
 https://musl.libc.org/
 
-musl-1.2.2-r3 installed size:
+musl-1.2.2-r7 installed size:
 608 KiB
 
-musl-1.2.2-r3 license:
+musl-1.2.2-r7 license:
 MIT
 
 ```
@@ -240,16 +240,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.2-r3 description:
+musl-utils-1.2.2-r7 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.2-r3 webpage:
+musl-utils-1.2.2-r7 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.2-r3 installed size:
-144 KiB
+musl-utils-1.2.2-r7 installed size:
+140 KiB
 
-musl-utils-1.2.2-r3 license:
+musl-utils-1.2.2-r7 license:
 MIT BSD GPL2+
 
 ```
@@ -257,16 +257,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.2_p20210612-r0 description:
+ncurses-libs-6.3_p20211120-r0 description:
 Ncurses libraries
 
-ncurses-libs-6.2_p20210612-r0 webpage:
+ncurses-libs-6.3_p20211120-r0 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-libs-6.2_p20210612-r0 installed size:
+ncurses-libs-6.3_p20211120-r0 installed size:
 500 KiB
 
-ncurses-libs-6.2_p20210612-r0 license:
+ncurses-libs-6.3_p20211120-r0 license:
 MIT
 
 ```
@@ -274,16 +274,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.2_p20210612-r0 description:
+ncurses-terminfo-base-6.3_p20211120-r0 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.2_p20210612-r0 webpage:
+ncurses-terminfo-base-6.3_p20211120-r0 webpage:
 https://invisible-island.net/ncurses/
 
-ncurses-terminfo-base-6.2_p20210612-r0 installed size:
+ncurses-terminfo-base-6.3_p20211120-r0 installed size:
 216 KiB
 
-ncurses-terminfo-base-6.2_p20210612-r0 license:
+ncurses-terminfo-base-6.3_p20211120-r0 license:
 MIT
 
 ```
@@ -291,16 +291,16 @@ MIT
 ### `apk` package: `openssh-client-common`
 
 ```console
-openssh-client-common-8.6_p1-r3 description:
+openssh-client-common-8.8_p1-r1 description:
 OpenBSD's SSH client common files
 
-openssh-client-common-8.6_p1-r3 webpage:
+openssh-client-common-8.8_p1-r1 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-common-8.6_p1-r3 installed size:
-2312 KiB
+openssh-client-common-8.8_p1-r1 installed size:
+2396 KiB
 
-openssh-client-common-8.6_p1-r3 license:
+openssh-client-common-8.8_p1-r1 license:
 BSD
 
 ```
@@ -308,16 +308,16 @@ BSD
 ### `apk` package: `openssh-client-default`
 
 ```console
-openssh-client-default-8.6_p1-r3 description:
+openssh-client-default-8.8_p1-r1 description:
 OpenBSD's SSH client
 
-openssh-client-default-8.6_p1-r3 webpage:
+openssh-client-default-8.8_p1-r1 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-default-8.6_p1-r3 installed size:
-760 KiB
+openssh-client-default-8.8_p1-r1 installed size:
+764 KiB
 
-openssh-client-default-8.6_p1-r3 license:
+openssh-client-default-8.8_p1-r1 license:
 BSD
 
 ```
@@ -325,16 +325,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-8.6_p1-r3 description:
+openssh-keygen-8.8_p1-r1 description:
 ssh helper program for generating keys
 
-openssh-keygen-8.6_p1-r3 webpage:
+openssh-keygen-8.8_p1-r1 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-8.6_p1-r3 installed size:
-460 KiB
+openssh-keygen-8.8_p1-r1 installed size:
+468 KiB
 
-openssh-keygen-8.6_p1-r3 license:
+openssh-keygen-8.8_p1-r1 license:
 BSD
 
 ```
@@ -342,16 +342,16 @@ BSD
 ### `apk` package: `scanelf`
 
 ```console
-scanelf-1.3.2-r0 description:
+scanelf-1.3.3-r0 description:
 Scan ELF binaries for stuff
 
-scanelf-1.3.2-r0 webpage:
+scanelf-1.3.3-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
-scanelf-1.3.2-r0 installed size:
+scanelf-1.3.3-r0 installed size:
 92 KiB
 
-scanelf-1.3.2-r0 license:
+scanelf-1.3.3-r0 license:
 GPL-2.0-only
 
 ```
@@ -359,16 +359,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.33.1-r6 description:
+ssl_client-1.34.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.33.1-r6 webpage:
+ssl_client-1.34.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.33.1-r6 installed size:
+ssl_client-1.34.1-r3 installed size:
 28 KiB
 
-ssl_client-1.33.1-r6 license:
+ssl_client-1.34.1-r3 license:
 GPL-2.0-only
 
 ```
