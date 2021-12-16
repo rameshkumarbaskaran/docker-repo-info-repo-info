@@ -1,10 +1,10 @@
-# `mediawiki:1.31.16-fpm`
+# `mediawiki:1.35.5-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:514b9a373430d2f332dd11d2710603a01c8eae75b9678f2aa3b6b00cda47ceca`
-- Created: `2021-12-03T18:33:33.48546138Z`
-- Virtual Size: ~ 715.15 Mb  
+- Image ID: `sha256:dce2d063f171c085176e77663b37c3f25679cbdbd98388ed9140f43c0b2d9186`
+- Created: `2021-12-15T19:56:35.660419956Z`
+- Virtual Size: ~ 782.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -16,13 +16,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.33`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.33.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.33.tar.xz.asc`
-  - `PHP_SHA256=166eaccde933381da9516a2b70ad0f447d7cec4b603d07b9a916032b215b90cc`
-  - `MEDIAWIKI_MAJOR_VERSION=1.31`
-  - `MEDIAWIKI_VERSION=1.31.16`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.26`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.26.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.26.tar.xz.asc`
+  - `PHP_SHA256=e305b3aafdc85fa73a81c53d3ce30578bc94d1633ec376add193a1e85e0f0ef8`
+  - `MEDIAWIKI_MAJOR_VERSION=1.35`
+  - `MEDIAWIKI_VERSION=1.35.5`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2286,6 +2286,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libnsl/1.3.0-2/ (for browsing the source)
 - https://sources.debian.net/src/libnsl/1.3.0-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libnsl/1.3.0-2/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libonig=6.9.6-1.1`
+
+Binary Packages:
+
+- `libonig5:amd64=6.9.6-1.1`
+
+Licenses: (parsed from: `/usr/share/doc/libonig5/copyright`)
+
+- `BSD-2-clause`
+- `GPL-2`
+- `GPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libonig=6.9.6-1.1
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.6-1.1.dsc' libonig_6.9.6-1.1.dsc 1868 SHA256:a5bb396616d170586fdf01dfb4191b59181dc0f4505b648a68fe801ea8a6f5fb
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.6.orig.tar.gz' libonig_6.9.6.orig.tar.gz 621239 SHA256:aec9f6902ad8b7bb53b2c55d04686ea75da89a06694836b0362cb206578dfe89
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.6-1.1.debian.tar.xz' libonig_6.9.6-1.1.debian.tar.xz 8680 SHA256:59d4dccdc85481947efeab3dbb79ba6208d7758df107ad2510adf101666a6d8f
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libonig/6.9.6-1.1/ (for browsing the source)
+- https://sources.debian.net/src/libonig/6.9.6-1.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libonig/6.9.6-1.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libpng1.6=1.6.37-3`
 

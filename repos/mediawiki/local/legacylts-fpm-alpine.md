@@ -1,10 +1,10 @@
-# `mediawiki:1.31.16-fpm-alpine`
+# `mediawiki:1.35.5-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:69828cd7506b05960b46c421f195e08492e12922c1fe4601addd9c394f8405f3`
-- Created: `2021-11-30T12:02:04.297102782Z`
-- Virtual Size: ~ 432.03 Mb  
+- Image ID: `sha256:ac151d667cf1ad73fad7bd4c1464c8c67e94e5cf0fde3c072aa7f59938019151`
+- Created: `2021-12-15T19:56:59.951992417Z`
+- Virtual Size: ~ 499.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -16,13 +16,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.33`
-  - `PHP_URL=https://www.php.net/distributions/php-7.3.33.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.3.33.tar.xz.asc`
-  - `PHP_SHA256=166eaccde933381da9516a2b70ad0f447d7cec4b603d07b9a916032b215b90cc`
-  - `MEDIAWIKI_MAJOR_VERSION=1.31`
-  - `MEDIAWIKI_VERSION=1.31.16`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.26`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.26.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.26.tar.xz.asc`
+  - `PHP_SHA256=e305b3aafdc85fa73a81c53d3ce30578bc94d1633ec376add193a1e85e0f0ef8`
+  - `MEDIAWIKI_MAJOR_VERSION=1.35`
+  - `MEDIAWIKI_VERSION=1.35.5`
 
 ## `apk` (`.apk`-based packages)
 
@@ -1281,6 +1281,23 @@ nghttp2-libs-1.46.0-r0 installed size:
 
 nghttp2-libs-1.46.0-r0 license:
 MIT
+
+```
+
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.7.1-r0 description:
+a regular expressions library
+
+oniguruma-6.9.7.1-r0 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.7.1-r0 installed size:
+560 KiB
+
+oniguruma-6.9.7.1-r0 license:
+BSD-2-Clause
 
 ```
 
