@@ -4193,14 +4193,9 @@ Licenses: (parsed from: `/usr/share/doc/libseccomp2/copyright`)
 - `LGPL-2`
 - `LGPL-2.0+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libseccomp=2.5.1-1ubuntu1~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1-1ubuntu1~18.04.1.dsc' libseccomp_2.5.1-1ubuntu1~18.04.1.dsc 2303 SHA512:3e5edd365f1601219d3a2a1b3f39cb6d44cb8c075096948f72db3584705378417f8072383d6ec2c2d8561b402774cc4344b636512a063038b88e0cbe3c4e368d
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1.orig.tar.gz' libseccomp_2.5.1.orig.tar.gz 638811 SHA512:2be80a6323f9282dbeae8791724e5778b32e2382b2a3d1b0f77366371ec4072ea28128204f675cce101c091c0420d12c497e1a9ccbb7dc5bcbf61bfd777160af
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1-1ubuntu1~18.04.1.debian.tar.xz' libseccomp_2.5.1-1ubuntu1~18.04.1.debian.tar.xz 18776 SHA512:ed947f86c5888e350a5ce641c20ca0803919247b2e17f170a0d3e2266ea3857c4891e6c9a2f20ad905ffbf3b8dbbb41f1f91a65bb4786e559256722882ea48a7
-```
 
 ### `dpkg` source package: `libselinux=2.7-2build2`
 
@@ -7598,14 +7593,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.6=3.6.9-1~18.04ubuntu1.4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1~18.04ubuntu1.4.dsc' python3.6_3.6.9-1~18.04ubuntu1.4.dsc 3470 SHA512:8ab848889b39f5de01e334a957883ea6cb0e67e380c7db28fe386dd3b7e3f5f2882de0147a89661d68c8a13c75220060d096bee8146d4971c2edd415cc205a5c
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9.orig.tar.xz' python3.6_3.6.9.orig.tar.xz 17212164 SHA512:05de9c6f44d96a52bfce10ede4312de892573edaf8bece65926d19973a3a800d65eed7a857af945f69efcfb25efa3788e7a54016b03d80b611eb51c3ea074819
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1~18.04ubuntu1.4.debian.tar.xz' python3.6_3.6.9-1~18.04ubuntu1.4.debian.tar.xz 222276 SHA512:f9e9b411953ab8bfb35f8f02a8c8474d4add3e3871a9bb2603f99f6bb085563465088e73e3964ffe98376df16072724ef698af3b76490be61047cb2b5dc76895
-```
 
 ### `dpkg` source package: `pyyaml=3.12-1build2`
 
