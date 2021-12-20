@@ -12,12 +12,18 @@
 -	[`traefik:2.5-windowsservercore-1809`](#traefik25-windowsservercore-1809)
 -	[`traefik:2.5.5`](#traefik255)
 -	[`traefik:2.5.5-windowsservercore-1809`](#traefik255-windowsservercore-1809)
+-	[`traefik:2.6`](#traefik26)
+-	[`traefik:2.6-windowsservercore-1809`](#traefik26-windowsservercore-1809)
+-	[`traefik:2.6.0-rc1`](#traefik260-rc1)
+-	[`traefik:2.6.0-rc1-windowsservercore-1809`](#traefik260-rc1-windowsservercore-1809)
 -	[`traefik:brie`](#traefikbrie)
 -	[`traefik:brie-windowsservercore-1809`](#traefikbrie-windowsservercore-1809)
 -	[`traefik:latest`](#traefiklatest)
 -	[`traefik:maroilles`](#traefikmaroilles)
 -	[`traefik:maroilles-alpine`](#traefikmaroilles-alpine)
 -	[`traefik:maroilles-windowsservercore-1809`](#traefikmaroilles-windowsservercore-1809)
+-	[`traefik:rocamadour`](#traefikrocamadour)
+-	[`traefik:rocamadour-windowsservercore-1809`](#traefikrocamadour-windowsservercore-1809)
 -	[`traefik:v1.7`](#traefikv17)
 -	[`traefik:v1.7-alpine`](#traefikv17-alpine)
 -	[`traefik:v1.7-windowsservercore-1809`](#traefikv17-windowsservercore-1809)
@@ -28,6 +34,10 @@
 -	[`traefik:v2.5-windowsservercore-1809`](#traefikv25-windowsservercore-1809)
 -	[`traefik:v2.5.5`](#traefikv255)
 -	[`traefik:v2.5.5-windowsservercore-1809`](#traefikv255-windowsservercore-1809)
+-	[`traefik:v2.6`](#traefikv26)
+-	[`traefik:v2.6-windowsservercore-1809`](#traefikv26-windowsservercore-1809)
+-	[`traefik:v2.6.0-rc1`](#traefikv260-rc1)
+-	[`traefik:v2.6.0-rc1-windowsservercore-1809`](#traefikv260-rc1-windowsservercore-1809)
 -	[`traefik:windowsservercore-1809`](#traefikwindowsservercore-1809)
 
 ## `traefik:1.7`
@@ -1278,6 +1288,22 @@ LABEL org.opencontainers.image.vendor=Traefik Labs org.opencontainers.image.url=
 		Size: 1.4 KB (1445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `traefik:2.6`
+
+**does not exist** (yet?)
+
+## `traefik:2.6-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:2.6.0-rc1`
+
+**does not exist** (yet?)
+
+## `traefik:2.6.0-rc1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
 ## `traefik:brie`
 
 ```console
@@ -2072,6 +2098,14 @@ LABEL org.opencontainers.image.vendor=Traefik Labs org.opencontainers.image.url=
 		Last Modified: Sat, 18 Dec 2021 10:33:17 GMT  
 		Size: 1.4 KB (1424 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:rocamadour`
+
+**does not exist** (yet?)
+
+## `traefik:rocamadour-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:v1.7`
 
@@ -3320,6 +3354,22 @@ LABEL org.opencontainers.image.vendor=Traefik Labs org.opencontainers.image.url=
 		Last Modified: Sat, 18 Dec 2021 10:32:31 GMT  
 		Size: 1.4 KB (1445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:v2.6`
+
+**does not exist** (yet?)
+
+## `traefik:v2.6-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:v2.6.0-rc1`
+
+**does not exist** (yet?)
+
+## `traefik:v2.6.0-rc1-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:windowsservercore-1809`
 
