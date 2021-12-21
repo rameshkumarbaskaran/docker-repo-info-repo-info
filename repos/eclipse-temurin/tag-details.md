@@ -99,6 +99,17 @@
 -	[`eclipse-temurin:17-jdk-windowsservercore-1809`](#eclipse-temurin17-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:17-jdk-windowsservercore-ltsc2016`](#eclipse-temurin17-jdk-windowsservercore-ltsc2016)
 -	[`eclipse-temurin:17-jdk-windowsservercore-ltsc2022`](#eclipse-temurin17-jdk-windowsservercore-ltsc2022)
+-	[`eclipse-temurin:17-jre`](#eclipse-temurin17-jre)
+-	[`eclipse-temurin:17-jre-alpine`](#eclipse-temurin17-jre-alpine)
+-	[`eclipse-temurin:17-jre-centos7`](#eclipse-temurin17-jre-centos7)
+-	[`eclipse-temurin:17-jre-focal`](#eclipse-temurin17-jre-focal)
+-	[`eclipse-temurin:17-jre-nanoserver`](#eclipse-temurin17-jre-nanoserver)
+-	[`eclipse-temurin:17-jre-nanoserver-1809`](#eclipse-temurin17-jre-nanoserver-1809)
+-	[`eclipse-temurin:17-jre-nanoserver-ltsc2022`](#eclipse-temurin17-jre-nanoserver-ltsc2022)
+-	[`eclipse-temurin:17-jre-windowsservercore`](#eclipse-temurin17-jre-windowsservercore)
+-	[`eclipse-temurin:17-jre-windowsservercore-1809`](#eclipse-temurin17-jre-windowsservercore-1809)
+-	[`eclipse-temurin:17-jre-windowsservercore-ltsc2016`](#eclipse-temurin17-jre-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:17-jre-windowsservercore-ltsc2022`](#eclipse-temurin17-jre-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:17-nanoserver`](#eclipse-temurin17-nanoserver)
 -	[`eclipse-temurin:17-nanoserver-1809`](#eclipse-temurin17-nanoserver-1809)
 -	[`eclipse-temurin:17-nanoserver-ltsc2022`](#eclipse-temurin17-nanoserver-ltsc2022)
@@ -117,6 +128,17 @@
 -	[`eclipse-temurin:17.0.1_12-jdk-windowsservercore-1809`](#eclipse-temurin1701_12-jdk-windowsservercore-1809)
 -	[`eclipse-temurin:17.0.1_12-jdk-windowsservercore-ltsc2016`](#eclipse-temurin1701_12-jdk-windowsservercore-ltsc2016)
 -	[`eclipse-temurin:17.0.1_12-jdk-windowsservercore-ltsc2022`](#eclipse-temurin1701_12-jdk-windowsservercore-ltsc2022)
+-	[`eclipse-temurin:17.0.1_12-jre`](#eclipse-temurin1701_12-jre)
+-	[`eclipse-temurin:17.0.1_12-jre-alpine`](#eclipse-temurin1701_12-jre-alpine)
+-	[`eclipse-temurin:17.0.1_12-jre-centos7`](#eclipse-temurin1701_12-jre-centos7)
+-	[`eclipse-temurin:17.0.1_12-jre-focal`](#eclipse-temurin1701_12-jre-focal)
+-	[`eclipse-temurin:17.0.1_12-jre-nanoserver`](#eclipse-temurin1701_12-jre-nanoserver)
+-	[`eclipse-temurin:17.0.1_12-jre-nanoserver-1809`](#eclipse-temurin1701_12-jre-nanoserver-1809)
+-	[`eclipse-temurin:17.0.1_12-jre-nanoserver-ltsc2022`](#eclipse-temurin1701_12-jre-nanoserver-ltsc2022)
+-	[`eclipse-temurin:17.0.1_12-jre-windowsservercore`](#eclipse-temurin1701_12-jre-windowsservercore)
+-	[`eclipse-temurin:17.0.1_12-jre-windowsservercore-1809`](#eclipse-temurin1701_12-jre-windowsservercore-1809)
+-	[`eclipse-temurin:17.0.1_12-jre-windowsservercore-ltsc2016`](#eclipse-temurin1701_12-jre-windowsservercore-ltsc2016)
+-	[`eclipse-temurin:17.0.1_12-jre-windowsservercore-ltsc2022`](#eclipse-temurin1701_12-jre-windowsservercore-ltsc2022)
 -	[`eclipse-temurin:8`](#eclipse-temurin8)
 -	[`eclipse-temurin:8-centos7`](#eclipse-temurin8-centos7)
 -	[`eclipse-temurin:8-focal`](#eclipse-temurin8-focal)
@@ -15180,6 +15202,50 @@ CMD ["jshell"]
 		Size: 1.4 KB (1419 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `eclipse-temurin:17-jre`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-alpine`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-centos7`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-focal`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-nanoserver`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-windowsservercore`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17-jre-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
+
 ## `eclipse-temurin:17-nanoserver`
 
 ```console
@@ -17621,6 +17687,50 @@ CMD ["jshell"]
 		Last Modified: Sat, 18 Dec 2021 06:32:47 GMT  
 		Size: 1.4 KB (1419 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `eclipse-temurin:17.0.1_12-jre`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-alpine`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-centos7`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-focal`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-nanoserver`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-nanoserver-1809`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-nanoserver-ltsc2022`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-windowsservercore`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
+## `eclipse-temurin:17.0.1_12-jre-windowsservercore-ltsc2022`
+
+**does not exist** (yet?)
 
 ## `eclipse-temurin:8`
 
