@@ -2149,14 +2149,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-cmake2-dev/copyright`)
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-cmake2=2.9.0-1~bionic
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-cmake2/ignition-cmake2_2.9.0-1~bionic.dsc' ignition-cmake2_2.9.0-1~bionic.dsc 1094 SHA256:0f2d91a405b9739a122eb39d6053627c92310fb407b1841e0102fe31c19a37b8
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-cmake2/ignition-cmake2_2.9.0.orig.tar.bz2' ignition-cmake2_2.9.0.orig.tar.bz2 197117 SHA256:ea06a2c246a7bda9e74ce6cce16d2609a6690b34e66dc44160517dff343d79a9
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-cmake2/ignition-cmake2_2.9.0-1~bionic.debian.tar.xz' ignition-cmake2_2.9.0-1~bionic.debian.tar.xz 1692 SHA256:0f53a74d24c2e1f7d59f586dcaeba956f8e97075b054fda34dae99ae1b5f2dd7
-```
 
 ### `dpkg` source package: `ignition-common3=3.14.0-1~bionic`
 

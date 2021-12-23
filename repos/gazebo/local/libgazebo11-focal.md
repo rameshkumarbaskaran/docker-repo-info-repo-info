@@ -2337,14 +2337,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-cmake2-dev/copyright`)
 - `Apache`
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-cmake2=2.9.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-cmake2/ignition-cmake2_2.9.0-1~focal.dsc' ignition-cmake2_2.9.0-1~focal.dsc 1090 SHA256:ac466500bfa70ae43500584908564679c4aa0da452b0672522bdf82e3391320e
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-cmake2/ignition-cmake2_2.9.0.orig.tar.bz2' ignition-cmake2_2.9.0.orig.tar.bz2 197117 SHA256:ea06a2c246a7bda9e74ce6cce16d2609a6690b34e66dc44160517dff343d79a9
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-cmake2/ignition-cmake2_2.9.0-1~focal.debian.tar.xz' ignition-cmake2_2.9.0-1~focal.debian.tar.xz 1480 SHA256:d38067d35b67f3412fd4f3dc8cb8ea709a2c71cac2307d3c99eecab4d4d55222
-```
 
 ### `dpkg` source package: `ignition-common3=3.14.0-1~focal`
 
