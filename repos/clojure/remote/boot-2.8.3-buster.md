@@ -1,7 +1,7 @@
 ## `clojure:boot-2.8.3-buster`
 
 ```console
-$ docker pull clojure@sha256:0501ef2c22c1830548291ca652bdb76d640597071f90430df5f2032efdf84067
+$ docker pull clojure@sha256:8c9ef1f50e1070b9bbaa5ea351cc60404acae280c1e93a61bdb5ef25eb4e34bd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull clojure@sha256:0501ef2c22c1830548291ca652bdb76d640597071f90430df5f
 ### `clojure:boot-2.8.3-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:b9b3ffada9011118935afe1ae068df6ecbfc2bc73c6fe76292320dd85cc10e45
+$ docker pull clojure@sha256:46a73d61cb68f3d684379f3392d49c6cf1ec55a59e2a6e95617e4712fcf91826
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **380.1 MB (380143921 bytes)**  
+-	Total Size: **381.0 MB (381040531 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:800f0b5c2d8005d62f70bd68f087bc694e3d1850099595ff12216b33666acc99`
+-	Image ID: `sha256:afdbe798b7f083af2d80e12c1b588243c7fdf46c950971fd0ed17f01a914d12b`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -54,19 +54,19 @@ ENV BOOT_VERSION=2.8.3
 ENV BOOT_INSTALL=/usr/local/bin/
 # Wed, 22 Dec 2021 13:38:56 GMT
 WORKDIR /tmp
-# Wed, 22 Dec 2021 13:38:57 GMT
-RUN mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot
-# Wed, 22 Dec 2021 13:38:57 GMT
+# Mon, 27 Dec 2021 18:27:25 GMT
+RUN apt-get update && apt-get install -y make && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot
+# Mon, 27 Dec 2021 18:27:26 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Wed, 22 Dec 2021 13:38:57 GMT
+# Mon, 27 Dec 2021 18:27:26 GMT
 ENV BOOT_AS_ROOT=yes
-# Wed, 22 Dec 2021 13:39:41 GMT
+# Mon, 27 Dec 2021 18:27:51 GMT
 RUN boot
-# Wed, 22 Dec 2021 13:39:41 GMT
+# Mon, 27 Dec 2021 18:27:51 GMT
 COPY file:0282db266eb050a3ad3609149efe2188243cb9f95c0b3e48a312ddef6c6bea02 in /usr/local/bin/entrypoint 
-# Wed, 22 Dec 2021 13:39:41 GMT
+# Mon, 27 Dec 2021 18:27:52 GMT
 ENTRYPOINT ["entrypoint"]
-# Wed, 22 Dec 2021 13:39:41 GMT
+# Mon, 27 Dec 2021 18:27:52 GMT
 CMD ["repl"]
 ```
 
@@ -95,30 +95,30 @@ CMD ["repl"]
 		Last Modified: Tue, 21 Dec 2021 23:21:49 GMT  
 		Size: 187.3 MB (187284873 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64b524c313c1e0116f0f84feb4f8c3f847df2bf48fad363d7cac914999c7ebb2`  
-		Last Modified: Wed, 22 Dec 2021 13:58:20 GMT  
-		Size: 6.9 KB (6895 bytes)  
+	-	`sha256:766f85003fe5f549219adb147e476644e529aceb94495bb53ca2a7369baf193e`  
+		Last Modified: Mon, 27 Dec 2021 18:37:15 GMT  
+		Size: 904.0 KB (903959 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee4d2f5c870a3c14fd176e955f058e4e1c1fc21152c583f23d0cd87dd46252d8`  
-		Last Modified: Wed, 22 Dec 2021 13:58:23 GMT  
-		Size: 58.8 MB (58821024 bytes)  
+	-	`sha256:006a1b4d58aaaf4f44a6d43b06ff3fb61a76bd830125932c1a247f0dd0357888`  
+		Last Modified: Mon, 27 Dec 2021 18:37:18 GMT  
+		Size: 58.8 MB (58820570 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68a70e5a31e54b7a88699831df4fe6a74453de802af596ba3ea961cb4ba5ac8e`  
-		Last Modified: Wed, 22 Dec 2021 13:58:20 GMT  
+	-	`sha256:0ec89bc70123f90aff2c913d5403bf51492920bdbae8ea064800c4e552a50cea`  
+		Last Modified: Mon, 27 Dec 2021 18:37:14 GMT  
 		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:boot-2.8.3-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:c6850cce1287c557270e4f605e1634ea45c84f7a4e72b02b0a7dff0f2bef8b7a
+$ docker pull clojure@sha256:706299ced7c490d1f096da9097c8b2d983c4efa9a939b4f2bb0d1914813ddad6
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **378.4 MB (378443473 bytes)**  
+-	Total Size: **379.1 MB (379100210 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:084c1f1ada29fcf59c9183de9118c2dd42a0acb05f7fad126c7af6c316026031`
+-	Image ID: `sha256:d55bdc3bd1841e8b0c0570274115dfc96fc53b3fbf4b65cf757f0c0653ac78f2`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -153,19 +153,19 @@ ENV BOOT_VERSION=2.8.3
 ENV BOOT_INSTALL=/usr/local/bin/
 # Tue, 21 Dec 2021 22:09:55 GMT
 WORKDIR /tmp
-# Tue, 21 Dec 2021 22:09:57 GMT
-RUN mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot
-# Tue, 21 Dec 2021 22:09:57 GMT
+# Mon, 27 Dec 2021 18:30:06 GMT
+RUN apt-get update && apt-get install -y make && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && sha256sum boot.sh && echo "0ccd697f2027e7e1cd3be3d62721057cbc841585740d0aaa9fbb485d7b1f17c3 *boot.sh" | sha256sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot
+# Mon, 27 Dec 2021 18:30:07 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Tue, 21 Dec 2021 22:09:58 GMT
+# Mon, 27 Dec 2021 18:30:07 GMT
 ENV BOOT_AS_ROOT=yes
-# Tue, 21 Dec 2021 22:10:12 GMT
+# Mon, 27 Dec 2021 18:30:21 GMT
 RUN boot
-# Tue, 21 Dec 2021 22:10:13 GMT
+# Mon, 27 Dec 2021 18:30:22 GMT
 COPY file:0282db266eb050a3ad3609149efe2188243cb9f95c0b3e48a312ddef6c6bea02 in /usr/local/bin/entrypoint 
-# Tue, 21 Dec 2021 22:10:13 GMT
+# Mon, 27 Dec 2021 18:30:22 GMT
 ENTRYPOINT ["entrypoint"]
-# Tue, 21 Dec 2021 22:10:14 GMT
+# Mon, 27 Dec 2021 18:30:23 GMT
 CMD ["repl"]
 ```
 
@@ -194,15 +194,15 @@ CMD ["repl"]
 		Last Modified: Tue, 21 Dec 2021 03:24:15 GMT  
 		Size: 186.1 MB (186095242 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:388ed3bf23296d69bd63bddccc922dc176e6837f83bdd387982ce395ac068cfd`  
-		Last Modified: Tue, 21 Dec 2021 22:33:10 GMT  
-		Size: 6.9 KB (6875 bytes)  
+	-	`sha256:57745730480fbcfbf5f936d9759b22d33a571ee9c56a2118a5a4a608fdf58093`  
+		Last Modified: Mon, 27 Dec 2021 18:45:56 GMT  
+		Size: 663.7 KB (663706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85eae03ce0b76e369f5f7bc0535b49cb18d7402215ddc58d035ad88622001c82`  
-		Last Modified: Tue, 21 Dec 2021 22:33:15 GMT  
-		Size: 58.8 MB (58815557 bytes)  
+	-	`sha256:caa12b3dcc9e38178abb8ee2d732ab3ebc247ac6211fba5d52e0424ac8234dbc`  
+		Last Modified: Mon, 27 Dec 2021 18:46:02 GMT  
+		Size: 58.8 MB (58815465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e63bcf2c66a32562484d30e68d5e8d3d9be97dfa15287935a3be6b4d4194e8a0`  
-		Last Modified: Tue, 21 Dec 2021 22:33:10 GMT  
-		Size: 409.0 B  
+	-	`sha256:82f9d8b55c33c5307a4febcc0bc5c69ea6e024109cd631c4f92a8912f0446496`  
+		Last Modified: Mon, 27 Dec 2021 18:45:55 GMT  
+		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip

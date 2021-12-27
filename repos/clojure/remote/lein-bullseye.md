@@ -1,7 +1,7 @@
 ## `clojure:lein-bullseye`
 
 ```console
-$ docker pull clojure@sha256:0d2c23a798b6db004b6e01c5bb878439762e7936f5638fb2fba255afece22342
+$ docker pull clojure@sha256:47fd644f1369e3eb2fb2fa2eba2a6ff7f35a1e0ae0a9bbba6262801368d720ab
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull clojure@sha256:0d2c23a798b6db004b6e01c5bb878439762e7936f5638fb2fba
 ### `clojure:lein-bullseye` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:d7f084eb2b77da9a78022521a24a6e644bfa2830863a22acccc7825aae06a8a5
+$ docker pull clojure@sha256:20ba247230af4f9b861f4aae39da86c5f8ba19bd3523c686e63a995a460d7a77
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **343.0 MB (343001035 bytes)**  
+-	Total Size: **343.7 MB (343662112 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:38498e5f66a41baa17e7bd020d8557978847010cf4b8d7e67938c1bab1ac5bec`
+-	Image ID: `sha256:cb2dd21f745b2515c236c93bf33ad53fec83ba16e72b8187a6231ca3e518a973`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -54,19 +54,19 @@ ENV LEIN_VERSION=2.9.8
 ENV LEIN_INSTALL=/usr/local/bin/
 # Wed, 22 Dec 2021 13:47:41 GMT
 WORKDIR /tmp
-# Wed, 22 Dec 2021 13:47:47 GMT
-RUN set -eux; apt-get update && apt-get install -y gnupg && rm -rf /var/lib/apt/lists/* && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "9952cba539cc6454c3b7385ebce57577087bf2b9001c3ab5c55d668d0aeff6e9 *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && if printf '%s\n%s\n' "2.9.7" "$LEIN_VERSION" | sort -cV; then               gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED;             else               gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 20242BACBBE95ADA22D0AFD7808A33D379C806C3;               FILENAME_EXT=zip;             fi && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apt-get purge -y --auto-remove gnupg
-# Wed, 22 Dec 2021 13:47:48 GMT
+# Mon, 27 Dec 2021 18:31:33 GMT
+RUN set -eux; apt-get update && apt-get install -y make gnupg && rm -rf /var/lib/apt/lists/* && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "9952cba539cc6454c3b7385ebce57577087bf2b9001c3ab5c55d668d0aeff6e9 *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && if printf '%s\n%s\n' "2.9.7" "$LEIN_VERSION" | sort -cV; then               gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED;             else               gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 20242BACBBE95ADA22D0AFD7808A33D379C806C3;               FILENAME_EXT=zip;             fi && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apt-get purge -y --auto-remove gnupg
+# Mon, 27 Dec 2021 18:31:33 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Wed, 22 Dec 2021 13:47:48 GMT
+# Mon, 27 Dec 2021 18:31:33 GMT
 ENV LEIN_ROOT=1
-# Wed, 22 Dec 2021 13:47:53 GMT
+# Mon, 27 Dec 2021 18:31:37 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"]])' > project.clj   && lein deps && rm project.clj
-# Wed, 22 Dec 2021 13:47:53 GMT
+# Mon, 27 Dec 2021 18:31:38 GMT
 COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
-# Wed, 22 Dec 2021 13:47:53 GMT
+# Mon, 27 Dec 2021 18:31:38 GMT
 ENTRYPOINT ["entrypoint"]
-# Wed, 22 Dec 2021 13:47:53 GMT
+# Mon, 27 Dec 2021 18:31:38 GMT
 CMD ["repl"]
 ```
 
@@ -95,30 +95,30 @@ CMD ["repl"]
 		Last Modified: Tue, 21 Dec 2021 23:20:02 GMT  
 		Size: 187.3 MB (187279035 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e32f33e1a8b0d62497abadd7931403453d0f3e57a9e9304df1e09cd03863b5c9`  
-		Last Modified: Wed, 22 Dec 2021 14:04:55 GMT  
-		Size: 11.9 MB (11932697 bytes)  
+	-	`sha256:03f09918ffa6aeb8340628e244d49c42358ce86c85ee003b3fa0f7911414ed4a`  
+		Last Modified: Mon, 27 Dec 2021 18:39:20 GMT  
+		Size: 12.6 MB (12593809 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd3820ec9166c9b7d7522c022ceea70f2fd92c4ca6bb61775c712be790b45849`  
-		Last Modified: Wed, 22 Dec 2021 14:04:54 GMT  
-		Size: 4.2 MB (4207249 bytes)  
+	-	`sha256:1ce5773181835abe4b4a633c0ce536e076530fae55f1e39b1d65dc61e91fc66e`  
+		Last Modified: Mon, 27 Dec 2021 18:39:19 GMT  
+		Size: 4.2 MB (4207213 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d35dea31c5f92db68b5ab9df9d35d40070e1f9bdcf78e0649487e24f18cbfa7`  
-		Last Modified: Wed, 22 Dec 2021 14:04:54 GMT  
-		Size: 406.0 B  
+	-	`sha256:94b820e5b4e57c03f4e3ff68f6889fe1c036963a006b1b402ff7c0dc63535841`  
+		Last Modified: Mon, 27 Dec 2021 18:39:18 GMT  
+		Size: 407.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:lein-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:03f732554faf3a274d4531dbeed18ee8cbceb7ca8cecf083954d9e3446c24347
+$ docker pull clojure@sha256:02ce7bd2d02613c4f773af40f1adb31ce194fbdaee129e680d069382dca021e5
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **341.6 MB (341581493 bytes)**  
+-	Total Size: **342.2 MB (342241794 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4f56f38fc1636a3cb3af44a6d400f0db4f003675fe8249b850618974d4fcf1b2`
+-	Image ID: `sha256:2665cc1a055ffd55bb0503218b3a72482bbf7810d5734796e95c73b110835187`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
@@ -153,19 +153,19 @@ ENV LEIN_VERSION=2.9.8
 ENV LEIN_INSTALL=/usr/local/bin/
 # Tue, 21 Dec 2021 22:19:15 GMT
 WORKDIR /tmp
-# Tue, 21 Dec 2021 22:19:21 GMT
-RUN set -eux; apt-get update && apt-get install -y gnupg && rm -rf /var/lib/apt/lists/* && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "9952cba539cc6454c3b7385ebce57577087bf2b9001c3ab5c55d668d0aeff6e9 *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && if printf '%s\n%s\n' "2.9.7" "$LEIN_VERSION" | sort -cV; then               gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED;             else               gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 20242BACBBE95ADA22D0AFD7808A33D379C806C3;               FILENAME_EXT=zip;             fi && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apt-get purge -y --auto-remove gnupg
-# Tue, 21 Dec 2021 22:19:22 GMT
+# Mon, 27 Dec 2021 18:35:55 GMT
+RUN set -eux; apt-get update && apt-get install -y make gnupg && rm -rf /var/lib/apt/lists/* && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "9952cba539cc6454c3b7385ebce57577087bf2b9001c3ab5c55d668d0aeff6e9 *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && if printf '%s\n%s\n' "2.9.7" "$LEIN_VERSION" | sort -cV; then               gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED;             else               gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 20242BACBBE95ADA22D0AFD7808A33D379C806C3;               FILENAME_EXT=zip;             fi && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apt-get purge -y --auto-remove gnupg
+# Mon, 27 Dec 2021 18:35:55 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Tue, 21 Dec 2021 22:19:23 GMT
+# Mon, 27 Dec 2021 18:35:56 GMT
 ENV LEIN_ROOT=1
-# Tue, 21 Dec 2021 22:19:27 GMT
+# Mon, 27 Dec 2021 18:36:00 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"]])' > project.clj   && lein deps && rm project.clj
-# Tue, 21 Dec 2021 22:19:29 GMT
+# Mon, 27 Dec 2021 18:36:02 GMT
 COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
-# Tue, 21 Dec 2021 22:19:29 GMT
+# Mon, 27 Dec 2021 18:36:02 GMT
 ENTRYPOINT ["entrypoint"]
-# Tue, 21 Dec 2021 22:19:30 GMT
+# Mon, 27 Dec 2021 18:36:03 GMT
 CMD ["repl"]
 ```
 
@@ -194,15 +194,15 @@ CMD ["repl"]
 		Last Modified: Tue, 21 Dec 2021 03:22:16 GMT  
 		Size: 186.1 MB (186085317 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24546c4c26c17e2e82b1c9e5d08cce1af45d79bca66ec287aedb0043c4779b41`  
-		Last Modified: Tue, 21 Dec 2021 22:40:52 GMT  
-		Size: 11.7 MB (11692671 bytes)  
+	-	`sha256:6528056f86f0c9e032f3018324746f1502d3a836104ac99e0e8942931f338486`  
+		Last Modified: Mon, 27 Dec 2021 18:49:26 GMT  
+		Size: 12.4 MB (12352961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f3aaa2152362da54fb6b6ffec114548992e40ecc9f682527944b0f4cf30a18c`  
-		Last Modified: Tue, 21 Dec 2021 22:40:52 GMT  
-		Size: 4.2 MB (4207069 bytes)  
+	-	`sha256:8c7bfb34e4580140b476a43f57111c7aed67f77946c6c5d039dfa7eb1de200aa`  
+		Last Modified: Mon, 27 Dec 2021 18:49:25 GMT  
+		Size: 4.2 MB (4207082 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac707aed7d3d7ea7903e0e056b2eb1ab17f97e509b29fe22e9baf9bbb5946b10`  
-		Last Modified: Tue, 21 Dec 2021 22:40:51 GMT  
-		Size: 408.0 B  
+	-	`sha256:6ad381799571e0a8e8c6b809645f300bd7b169fd28fe0c21c9dc85196f500f61`  
+		Last Modified: Mon, 27 Dec 2021 18:49:24 GMT  
+		Size: 406.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
