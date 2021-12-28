@@ -1,10 +1,10 @@
-# `openjdk:19-ea-2-jdk-buster`
+# `openjdk:19-ea-3-jdk-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:eaab0c4b36e3888374301a3c6abd825f4628603415bf4d6dc465f0982c6a62d5`
-- Created: `2021-12-21T22:58:24.905288438Z`
-- Virtual Size: ~ 657.48 Mb  
+- Image ID: `sha256:66c6cd40d20d678b1de0eccf582cff7f5bfb3ef19295fb31c40404b11a95247e`
+- Created: `2021-12-27T18:52:53.760132324Z`
+- Virtual Size: ~ 657.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/openjdk-19/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-19`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=19-ea+2`
+  - `JAVA_VERSION=19-ea+3`
 
 ## `dpkg` (`.deb`-based packages)
 
