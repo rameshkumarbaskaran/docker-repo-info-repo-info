@@ -1,19 +1,19 @@
-# `ruby:3.0.3-slim-buster`
+# `ruby:3.1.0-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f39bdbd192a4ff69ae53ac167178b58f04125198aa0fda80aba43bcb330965d5`
-- Created: `2021-12-22T00:42:19.473257302Z`
-- Virtual Size: ~ 158.29 Mb  
+- Image ID: `sha256:d456bccc29ae12d50505f893977cd48056670649f84717027cafd6ac95505922`
+- Created: `2021-12-27T20:32:59.669441182Z`
+- Virtual Size: ~ 166.80 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `RUBY_MAJOR=3.0`
-  - `RUBY_VERSION=3.0.3`
-  - `RUBY_DOWNLOAD_SHA256=88cc7f0f021f15c4cd62b1f922e3a401697f7943551fe45b1fdf4f2417a17a9c`
+  - `RUBY_MAJOR=3.1`
+  - `RUBY_VERSION=3.1.0`
+  - `RUBY_DOWNLOAD_SHA256=1a0e0b69b9b062b6299ff1f6c6d77b66aff3995f63d1d8b8771e7a113ec472e2`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -595,37 +595,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gcc-8/8.3.0-6/ (for browsing the source)
 - https://sources.debian.net/src/gcc-8/8.3.0-6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gcc-8/8.3.0-6/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `gdbm=1.18.1-4`
-
-Binary Packages:
-
-- `libgdbm-compat4:amd64=1.18.1-4`
-- `libgdbm6:amd64=1.18.1-4`
-
-Licenses: (parsed from: `/usr/share/doc/libgdbm-compat4/copyright`, `/usr/share/doc/libgdbm6/copyright`)
-
-- `GFDL-NIV-1.3+`
-- `GPL-2`
-- `GPL-2+`
-- `GPL-3`
-- `GPL-3+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris gdbm=1.18.1-4
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1-4.dsc' gdbm_1.18.1-4.dsc 2635 SHA256:14f2a1741041f3ee8ebe1db9985ec12855c856a4c545ace6140b1222030ae64a
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1.orig.tar.gz' gdbm_1.18.1.orig.tar.gz 941863 SHA256:86e613527e5dba544e73208f42b78b7c022d4fa5a6d5498bf18c8d6f745b91dc
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1.orig.tar.gz.asc' gdbm_1.18.1.orig.tar.gz.asc 412 SHA256:3254738e7689e44ac65e78a766806828b8282e6bb1c0e5bb6156a99e567889a5
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1-4.debian.tar.xz' gdbm_1.18.1-4.debian.tar.xz 16460 SHA256:1a7771cf18cacf86b8415cbdeafa4e54dd2dadee59f0c29833aba476726594c5
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/gdbm/1.18.1-4/ (for browsing the source)
-- https://sources.debian.net/src/gdbm/1.18.1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gdbm/1.18.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.28-10`
 

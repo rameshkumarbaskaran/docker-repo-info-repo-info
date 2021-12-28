@@ -1,19 +1,19 @@
-# `ruby:3.0.3-alpine3.15`
+# `ruby:3.1.0-alpine3.15`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8f8b052396a9a7d595d60490999f94f32d1e3bdbe5b2757b854d0b816eaabd44`
-- Created: `2021-11-30T09:28:22.948045843Z`
-- Virtual Size: ~ 61.16 Mb  
+- Image ID: `sha256:4d3623b2d344961bbca718e985b81bc5ddad455bb331748835318a965bf1dfa5`
+- Created: `2021-12-27T20:36:48.192603533Z`
+- Virtual Size: ~ 70.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `RUBY_MAJOR=3.0`
-  - `RUBY_VERSION=3.0.3`
-  - `RUBY_DOWNLOAD_SHA256=88cc7f0f021f15c4cd62b1f922e3a401697f7943551fe45b1fdf4f2417a17a9c`
+  - `RUBY_MAJOR=3.1`
+  - `RUBY_VERSION=3.1.0`
+  - `RUBY_DOWNLOAD_SHA256=1a0e0b69b9b062b6299ff1f6c6d77b66aff3995f63d1d8b8771e7a113ec472e2`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -139,23 +139,6 @@ MPL-2.0 AND MIT
 
 ```
 
-### `apk` package: `gdbm`
-
-```console
-gdbm-1.22-r0 description:
-GNU dbm is a set of database routines that use extensible hashing
-
-gdbm-1.22-r0 webpage:
-https://www.gnu.org/software/gdbm/
-
-gdbm-1.22-r0 installed size:
-88 KiB
-
-gdbm-1.22-r0 license:
-GPL-3.0-or-later
-
-```
-
 ### `apk` package: `gmp`
 
 ```console
@@ -210,16 +193,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r7 description:
+libcrypto1.1-1.1.1l-r8 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r7 webpage:
+libcrypto1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r7 installed size:
+libcrypto1.1-1.1.1l-r8 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1l-r7 license:
+libcrypto1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```
@@ -346,16 +329,16 @@ ISC AND (BSD-3-Clause OR MIT)
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r7 description:
+libssl1.1-1.1.1l-r8 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r7 webpage:
+libssl1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r7 installed size:
+libssl1.1-1.1.1l-r8 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r7 license:
+libssl1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```

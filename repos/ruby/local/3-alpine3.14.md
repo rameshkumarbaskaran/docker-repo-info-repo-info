@@ -1,19 +1,19 @@
-# `ruby:3.0.3-alpine3.14`
+# `ruby:3.1.0-alpine3.14`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3a173cfed8abb43a4ef7a53541a8d2feee0230b3f344e28b41216b9d3434eefd`
-- Created: `2021-11-24T21:19:38.907026762Z`
-- Virtual Size: ~ 61.19 Mb  
+- Image ID: `sha256:9fa852712d211fa5b17275e355d6ac3eb13affc98357a389aba809681c3c6ad9`
+- Created: `2021-12-27T20:41:27.850084378Z`
+- Virtual Size: ~ 66.79 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `RUBY_MAJOR=3.0`
-  - `RUBY_VERSION=3.0.3`
-  - `RUBY_DOWNLOAD_SHA256=88cc7f0f021f15c4cd62b1f922e3a401697f7943551fe45b1fdf4f2417a17a9c`
+  - `RUBY_MAJOR=3.1`
+  - `RUBY_VERSION=3.1.0`
+  - `RUBY_DOWNLOAD_SHA256=1a0e0b69b9b062b6299ff1f6c6d77b66aff3995f63d1d8b8771e7a113ec472e2`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
@@ -136,23 +136,6 @@ ca-certificates-bundle-20191127-r5 installed size:
 
 ca-certificates-bundle-20191127-r5 license:
 MPL-2.0 AND MIT
-
-```
-
-### `apk` package: `gdbm`
-
-```console
-gdbm-1.19-r0 description:
-GNU dbm is a set of database routines that use extensible hashing
-
-gdbm-1.19-r0 webpage:
-https://www.gnu.org/software/gdbm/
-
-gdbm-1.19-r0 installed size:
-224 KiB
-
-gdbm-1.19-r0 license:
-GPL-3.0-or-later
 
 ```
 
