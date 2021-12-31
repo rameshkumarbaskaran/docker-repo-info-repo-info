@@ -944,21 +944,13 @@ Licenses: (parsed from: `/usr/share/doc/comerr-dev/copyright`, `/usr/share/doc/e
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.46.4-1
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.4-1.dsc' e2fsprogs_1.46.4-1.dsc 2846 SHA256:d3ec9a1c778d5c1f71b76a6736eb0d396ff76543ceb9fc9c05fb706d5c4cbf65
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.4.orig.tar.gz' e2fsprogs_1.46.4.orig.tar.gz 9521023 SHA256:7524520b291e901431ce59ea085955b601126de371bf3cfc0f5e4fad78684265
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.4.orig.tar.gz.asc' e2fsprogs_1.46.4.orig.tar.gz.asc 488 SHA256:e544606bc7fe48134a16d95d79e19fb1ea5d284d3ef47a05ccc1051ccb01ae67
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.46.4-1.debian.tar.xz' e2fsprogs_1.46.4-1.debian.tar.xz 83128 SHA256:ce747152024765e5a6b33ef5fc63bd7ceba107152811e822c4d3fea54b4ecae9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/e2fsprogs/1.46.4-1/
 
-- https://sources.debian.net/src/e2fsprogs/1.46.4-1/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.46.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.46.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `elfutils=0.186-1`
 
@@ -1169,24 +1161,13 @@ Licenses: (parsed from: `/usr/share/doc/libfreetype-dev/copyright`, `/usr/share/
 - `Public-Domain`
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris freetype=2.11.0+dfsg-1
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg-1.dsc' freetype_2.11.0+dfsg-1.dsc 3730 SHA256:46187f314e2e561d3552d5a2cece1155546b0ada1f295ff2f1359ea5d3724a19
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2demos.tar.xz' freetype_2.11.0+dfsg.orig-ft2demos.tar.xz 257316 SHA256:eb0622296c6dfb38fc305c99ebbfb5c770db7e344b94f63042ec03f3db164550
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2demos.tar.xz.asc' freetype_2.11.0+dfsg.orig-ft2demos.tar.xz.asc 195 SHA256:7a365d04c6dc35f1e272eb6637c46355e9576b84c0014edc014375d89dac6659
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2docs.tar.xz' freetype_2.11.0+dfsg.orig-ft2docs.tar.xz 2070604 SHA256:5b0b5f504f3547ab6123049917b36cfe6944837eaa7baa86ae742a596b5c206c
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2docs.tar.xz.asc' freetype_2.11.0+dfsg.orig-ft2docs.tar.xz.asc 195 SHA256:6998b16c75c4968a36c17824db473d76c809f1db9996ccc9ff72f8c42921c428
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig.tar.xz' freetype_2.11.0+dfsg.orig.tar.xz 1974064 SHA256:4f61192f625a73151bfca252f7030e5739b00d49037ef407bc107236abe5ece7
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg-1.debian.tar.xz' freetype_2.11.0+dfsg-1.debian.tar.xz 114440 SHA256:8447a212decb2365ab2ad6a6b0818ba9c42aa4bd7f4d6e52cb4d924953b41867
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/freetype/2.11.0+dfsg-1/
 
-- https://sources.debian.net/src/freetype/2.11.0+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/freetype/2.11.0+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/freetype/2.11.0+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fribidi=1.0.8-2`
 
@@ -4417,21 +4398,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.7p1-2
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1-2.dsc' openssh_8.7p1-2.dsc 3382 SHA256:3fb75e98b98e1154c1d682c5b78e241a1ddd61a819913cc8fcf6a8be2e3bd1e7
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1.orig.tar.gz' openssh_8.7p1.orig.tar.gz 1814595 SHA256:7ca34b8bb24ae9e50f33792b7091b3841d7e1b440ff57bc9fabddf01e2ed1e24
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1.orig.tar.gz.asc' openssh_8.7p1.orig.tar.gz.asc 833 SHA256:bb18c454a3e5d3738cb26a1c89e17c467d7a59529ec92251b26461ae04771eba
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1-2.debian.tar.xz' openssh_8.7p1-2.debian.tar.xz 186492 SHA256:0c35841b4096b6d6bda6b37c9d30f777888e256e90c15fa43f481520280222e1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssh/1:8.7p1-2/
 
-- https://sources.debian.net/src/openssh/1:8.7p1-2/ (for browsing the source)
-- https://sources.debian.net/src/openssh/1:8.7p1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssh/1:8.7p1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1l-1`
 
