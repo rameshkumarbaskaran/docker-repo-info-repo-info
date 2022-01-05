@@ -1,7 +1,7 @@
 ## `lightstreamer:7-jdk8-openjdk`
 
 ```console
-$ docker pull lightstreamer@sha256:4ace4720552821e29a90a3af5edec787c5c7e454ce3671ed8620de4ae1187ce2
+$ docker pull lightstreamer@sha256:a422e623f41317e513ccb705bc06a39b1e2ef5e09673311a4e5fa5493ab995eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -108,14 +108,14 @@ CMD ["./LS.sh" "run"]
 ### `lightstreamer:7-jdk8-openjdk` - linux; arm64 variant v8
 
 ```console
-$ docker pull lightstreamer@sha256:07772c38f08b8e3d74bc3c5c61bd6bdff2cb79176f0538ec183933ebc5d7cfbb
+$ docker pull lightstreamer@sha256:69c8d134103eed4ce7ee81e0904adb2e76154132e64201874ddd136765ccf6c8
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **285.8 MB (285825222 bytes)**  
+-	Total Size: **284.4 MB (284355518 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:34770b40a660af280b66a48fb07ef4d4d2d925a1b1d108f4a4e87c8042097206`
+-	Image ID: `sha256:12d72554b1f60af5c502f5a0371dcb114fb949b561539f98a45836793007b6f4`
 -	Default Command: `[".\/LS.sh","run"]`
 
 ```dockerfile
@@ -147,19 +147,19 @@ RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64')
 LABEL maintainer=Lightstreamer Server Development Team <support@lightstreamer.com>
 # Tue, 21 Dec 2021 20:09:49 GMT
 RUN gpg --batch --keyserver hkp://keyserver.ubuntu.com --recv-keys 9B90BFD14309C7DA5EF58D7D4A8C08966F29B4D2
-# Tue, 21 Dec 2021 20:09:49 GMT
-ENV LIGHTSTREAMER_VERSION=7_2_0
-# Tue, 21 Dec 2021 20:09:50 GMT
-ENV LIGHTSTREAMER_URL_DOWNLOAD=https://www.lightstreamer.com/repo/distros/Lightstreamer_7_2_0.tar.gz
-# Tue, 21 Dec 2021 20:09:59 GMT
+# Wed, 05 Jan 2022 18:40:48 GMT
+ENV LIGHTSTREAMER_VERSION=7.2.2
+# Wed, 05 Jan 2022 18:40:49 GMT
+ENV LIGHTSTREAMER_URL_DOWNLOAD=https://lightstreamer.com/distr/ls-server/7.2.2/Lightstreamer-7.2.2.tar.gz
+# Wed, 05 Jan 2022 18:40:55 GMT
 RUN set -ex;         mkdir /lightstreamer && cd /lightstreamer         && curl -fSL -o Lightstreamer.tar.gz ${LIGHTSTREAMER_URL_DOWNLOAD}         && curl -fSL -o Lightstreamer.tar.gz.asc ${LIGHTSTREAMER_URL_DOWNLOAD}.asc         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz         && tar -xvf Lightstreamer.tar.gz --strip-components=1         && sed -i -e 's/<appender-ref ref="LSDailyRolling" \/>/<appender-ref ref="LSConsole" \/>/'                   -e '/<logger name="LightstreamerLogger.init/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerLogger.license/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   -e '/<logger name="LightstreamerProxyAdapters/,+2s/<appender-ref ref="LSConsole" \/>/<!-- <appender-ref ref="LSConsole" \/> -->/'                   conf/lightstreamer_log_conf.xml         && groupadd -r -g 10000 lightstreamer         && useradd --no-log-init -r -g lightstreamer -u 10000 lightstreamer         && chown -R lightstreamer:lightstreamer ../lightstreamer         && rm Lightstreamer.tar.gz Lightstreamer.tar.gz.asc
-# Tue, 21 Dec 2021 20:10:00 GMT
+# Wed, 05 Jan 2022 18:40:55 GMT
 USER lightstreamer
-# Tue, 21 Dec 2021 20:10:00 GMT
+# Wed, 05 Jan 2022 18:40:56 GMT
 EXPOSE 8080
-# Tue, 21 Dec 2021 20:10:01 GMT
+# Wed, 05 Jan 2022 18:40:57 GMT
 WORKDIR /lightstreamer/bin/unix-like
-# Tue, 21 Dec 2021 20:10:02 GMT
+# Wed, 05 Jan 2022 18:40:58 GMT
 CMD ["./LS.sh" "run"]
 ```
 
@@ -196,7 +196,7 @@ CMD ["./LS.sh" "run"]
 		Last Modified: Tue, 21 Dec 2021 20:12:33 GMT  
 		Size: 2.4 KB (2376 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f43c4bd6fb7c8f62d84a0a6180926e86b9f40a3f6a52dc2616918cbfed2db84`  
-		Last Modified: Tue, 21 Dec 2021 20:12:39 GMT  
-		Size: 51.3 MB (51320622 bytes)  
+	-	`sha256:510ffe599c2448a43e1a9d1621ceb30ca91fec79f5639a582118323ada2346e4`  
+		Last Modified: Wed, 05 Jan 2022 18:43:07 GMT  
+		Size: 49.9 MB (49850918 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
