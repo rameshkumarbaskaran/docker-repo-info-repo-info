@@ -532,20 +532,13 @@ Licenses: (parsed from: `/usr/share/doc/libcurl4/copyright`)
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.79.1-2
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.79.1-2.dsc' curl_7.79.1-2.dsc 2790 SHA256:6545e2688c86d11273fa71f406c38a325bc1607888f16e1f71c7240b20778a9d
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.79.1.orig.tar.gz' curl_7.79.1.orig.tar.gz 4144744 SHA256:370b11201349816287fb0ccc995e420277fbfcaf76206e309b3f60f0eda090c2
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.79.1-2.debian.tar.xz' curl_7.79.1-2.debian.tar.xz 36776 SHA256:e5979630c06c081e82d00c3142f5436d746d09a4a418028d2ffe534ce2800383
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.79.1-2/
 
-- https://sources.debian.net/src/curl/7.79.1-2/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.79.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.79.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg2-2`
 
@@ -960,24 +953,13 @@ Licenses: (parsed from: `/usr/share/doc/libfreetype6/copyright`)
 - `Public-Domain`
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris freetype=2.11.0+dfsg-1
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg-1.dsc' freetype_2.11.0+dfsg-1.dsc 3730 SHA256:46187f314e2e561d3552d5a2cece1155546b0ada1f295ff2f1359ea5d3724a19
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2demos.tar.xz' freetype_2.11.0+dfsg.orig-ft2demos.tar.xz 257316 SHA256:eb0622296c6dfb38fc305c99ebbfb5c770db7e344b94f63042ec03f3db164550
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2demos.tar.xz.asc' freetype_2.11.0+dfsg.orig-ft2demos.tar.xz.asc 195 SHA256:7a365d04c6dc35f1e272eb6637c46355e9576b84c0014edc014375d89dac6659
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2docs.tar.xz' freetype_2.11.0+dfsg.orig-ft2docs.tar.xz 2070604 SHA256:5b0b5f504f3547ab6123049917b36cfe6944837eaa7baa86ae742a596b5c206c
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig-ft2docs.tar.xz.asc' freetype_2.11.0+dfsg.orig-ft2docs.tar.xz.asc 195 SHA256:6998b16c75c4968a36c17824db473d76c809f1db9996ccc9ff72f8c42921c428
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg.orig.tar.xz' freetype_2.11.0+dfsg.orig.tar.xz 1974064 SHA256:4f61192f625a73151bfca252f7030e5739b00d49037ef407bc107236abe5ece7
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.11.0+dfsg-1.debian.tar.xz' freetype_2.11.0+dfsg-1.debian.tar.xz 114440 SHA256:8447a212decb2365ab2ad6a6b0818ba9c42aa4bd7f4d6e52cb4d924953b41867
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/freetype/2.11.0+dfsg-1/
 
-- https://sources.debian.net/src/freetype/2.11.0+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/freetype/2.11.0+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/freetype/2.11.0+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fribidi=1.0.8-2`
 
@@ -2780,10 +2762,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.15.5-1
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.15.5-1.dsc' linux_5.15.5-1.dsc 194397 SHA256:7dade7c49630b7c359ecba53e8960fdb9a12b60ed71c3060b12ff2c3d9111ca7
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.15.5.orig.tar.xz' linux_5.15.5.orig.tar.xz 127743680 SHA256:3b7f86b527b146f011563fdf4459e424b7a7ceda98576dcdbbcdc2a518ed87f5
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.15.5-1.debian.tar.xz' linux_5.15.5-1.debian.tar.xz 1288316 SHA256:997f202556bd781c18b3ce549c247c3365906adafdf6abb687fd180eeb87c93b
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.15.5-1.dsc' linux_5.15.5-1.dsc 194397 SHA256:7dade7c49630b7c359ecba53e8960fdb9a12b60ed71c3060b12ff2c3d9111ca7
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.15.5.orig.tar.xz' linux_5.15.5.orig.tar.xz 127743680 SHA256:3b7f86b527b146f011563fdf4459e424b7a7ceda98576dcdbbcdc2a518ed87f5
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.15.5-1.debian.tar.xz' linux_5.15.5-1.debian.tar.xz 1288316 SHA256:997f202556bd781c18b3ce549c247c3365906adafdf6abb687fd180eeb87c93b
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/linux/5.15.5-1/ (for browsing the source)
+- https://sources.debian.net/src/linux/5.15.5-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/5.15.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `littler=0.3.15-1`
 
