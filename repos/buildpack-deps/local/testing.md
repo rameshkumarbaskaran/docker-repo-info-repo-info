@@ -160,19 +160,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.3.13
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.3.13.dsc' apt_2.3.13.dsc 2801 SHA256:5f23eb09860647baeeb4f7fafe5267df24afe1fe277cbf5b125872ebb3436bda
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.3.13.tar.xz' apt_2.3.13.tar.xz 2212300 SHA256:e519e55f1015d656425e68f8c7c7bebd1908df3ac87836eb6e7b6b58ce3f965d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.3.13/
 
-- https://sources.debian.net/src/apt/2.3.13/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.3.13/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.3.13/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.5.1-1`
 
@@ -3952,21 +3946,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=5.9.3-1
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.9.3-1.dsc' mercurial_5.9.3-1.dsc 2764 SHA256:22ebb3a426e13886a4082905c72e7a138f72f6fc1467f9ecf41a7e5772b31cd4
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.9.3.orig.tar.gz' mercurial_5.9.3.orig.tar.gz 8126023 SHA256:3b43f68977ad0fa75aa7f1e5c8f0a83ba935621ab2396129abb498e56d1be08e
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.9.3.orig.tar.gz.asc' mercurial_5.9.3.orig.tar.gz.asc 833 SHA256:2a6aa63ecf7216f18819a86be13f085e3391b91c315f274f03610f82e5c2bbe8
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.9.3-1.debian.tar.xz' mercurial_5.9.3-1.debian.tar.xz 69492 SHA256:0746fe2c9ee8cf7fb439564b81a96d62228e52e1e7cbb4daada50f617710812d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/5.9.3-1/
 
-- https://sources.debian.net/src/mercurial/5.9.3-1/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/5.9.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/5.9.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mpclib3=1.2.1-1`
 
