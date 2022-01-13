@@ -1,14 +1,13 @@
 ## `openjdk:8u312-jdk-windowsservercore`
 
 ```console
-$ docker pull openjdk@sha256:d76dd14d6163be84bcc93efdb312acf443b7810c62aa6fb34a88775f5c98a176
+$ docker pull openjdk@sha256:42a598bc73f0ba4c26941510049de3cf541db324fa0bd59fb4ebbdc38b491fcf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 3
+-	Platforms: 2
 	-	windows version 10.0.20348.469; amd64
 	-	windows version 10.0.17763.2452; amd64
-	-	windows version 10.0.14393.4886; amd64
 
 ### `openjdk:8u312-jdk-windowsservercore` - windows version 10.0.20348.469; amd64
 
@@ -150,75 +149,4 @@ RUN Write-Host ('Downloading {0} ...' -f $env:JAVA_URL); 	[Net.ServicePointManag
 	-	`sha256:415dc75883ab00016701c263db08351e3c9c5433569e63d76b244558683c53b0`  
 		Last Modified: Wed, 12 Jan 2022 23:17:56 GMT  
 		Size: 101.4 MB (101394948 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-### `openjdk:8u312-jdk-windowsservercore` - windows version 10.0.14393.4886; amd64
-
-```console
-$ docker pull openjdk@sha256:460592c5022dbd9a0c3c4d2ba898828cf065420ddb8fbd1fd1c51218438f781d
-```
-
--	Docker Version: 20.10.8
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **6.4 GB (6380288343 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:be5fb168ce3dcfca0f83b266a66acc8cc6ec9d90adb2513e8346c99de987a9ff`
--	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
--	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
-
-```dockerfile
-# Sat, 19 Nov 2016 17:05:00 GMT
-RUN Apply image 1607-RTM-amd64
-# Thu, 06 Jan 2022 14:33:00 GMT
-RUN Install update ltsc2016-amd64
-# Tue, 11 Jan 2022 19:14:55 GMT
-SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Wed, 12 Jan 2022 05:16:55 GMT
-RUN Write-Host 'Enabling TLS 1.2 (https://githubengineering.com/crypto-removal-notice/) ...'; 	$tls12RegBase = 'HKLM:\\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2'; 	if (Test-Path $tls12RegBase) { throw ('"{0}" already exists!' -f $tls12RegBase) }; 	New-Item -Path ('{0}/Client' -f $tls12RegBase) -Force; 	New-Item -Path ('{0}/Server' -f $tls12RegBase) -Force; 	New-ItemProperty -Path ('{0}/Client' -f $tls12RegBase) -Name 'DisabledByDefault' -PropertyType DWORD -Value 0 -Force; 	New-ItemProperty -Path ('{0}/Client' -f $tls12RegBase) -Name 'Enabled' -PropertyType DWORD -Value 1 -Force; 	New-ItemProperty -Path ('{0}/Server' -f $tls12RegBase) -Name 'DisabledByDefault' -PropertyType DWORD -Value 0 -Force; 	New-ItemProperty -Path ('{0}/Server' -f $tls12RegBase) -Name 'Enabled' -PropertyType DWORD -Value 1 -Force; 	Write-Host 'Complete.'
-# Wed, 12 Jan 2022 05:55:48 GMT
-ENV JAVA_HOME=C:\openjdk-8
-# Wed, 12 Jan 2022 05:56:44 GMT
-RUN $newPath = ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	setx /M PATH $newPath; 	Write-Host 'Complete.'
-# Wed, 12 Jan 2022 05:56:45 GMT
-ENV JAVA_VERSION=8u312
-# Wed, 12 Jan 2022 05:57:00 GMT
-ENV JAVA_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jdk_x64_windows_8u312b07.zip
-# Wed, 12 Jan 2022 05:58:40 GMT
-RUN Write-Host ('Downloading {0} ...' -f $env:JAVA_URL); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $env:JAVA_URL -OutFile 'openjdk.zip'; 		Write-Host 'Expanding ...'; 	New-Item -ItemType Directory -Path C:\temp | Out-Null; 	Expand-Archive openjdk.zip -DestinationPath C:\temp; 	Move-Item -Path C:\temp\* -Destination $env:JAVA_HOME; 	Remove-Item C:\temp; 		Write-Host 'Removing ...'; 	Remove-Item openjdk.zip -Force; 		Write-Host 'Verifying install ...'; 	Write-Host '  javac -version'; javac -version; 	Write-Host '  java -version'; java -version; 		Write-Host 'Complete.'
-```
-
--	Layers:
-	-	`sha256:3889bb8d808bbae6fa5a33e07093e65c31371bcf9e4c38c21be6b9af52ad1548`  
-		Size: 4.1 GB (4069985900 bytes)  
-		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:8428508ffd63b4af1ba690ec41e82a116f10ec6c3fb70962348f5448d42e5835`  
-		Size: 2.2 GB (2208216859 bytes)  
-		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:9b5116c05ddf6ecb5a348f7628e3f3264afbb9909d86798316dbaff4a0e991a2`  
-		Last Modified: Tue, 11 Jan 2022 19:35:13 GMT  
-		Size: 1.4 KB (1410 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5a804249f990290da306f883f1e85db00728eaab29aa4bd99a9833b830cb158`  
-		Last Modified: Wed, 12 Jan 2022 22:57:37 GMT  
-		Size: 340.9 KB (340850 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14f9ac4346ee9246db826f774bdff69a6222cadb3e6c5f7aa98342836564cfd2`  
-		Last Modified: Wed, 12 Jan 2022 23:18:11 GMT  
-		Size: 1.4 KB (1437 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4eb36ce0bfce795b28d3aeabfc87ff7e00ded44bf658ade4bacdd0d3f579581c`  
-		Last Modified: Wed, 12 Jan 2022 23:18:12 GMT  
-		Size: 338.5 KB (338477 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad8fe04c17a995269574569d7bd9418f48347de1c6c432b84976af5e7a2f886c`  
-		Last Modified: Wed, 12 Jan 2022 23:18:11 GMT  
-		Size: 1.4 KB (1419 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:357ab85efd9fb9069482180ba01ade8fdf4e85c7def020fd9e8ce7d7b97cd31d`  
-		Last Modified: Wed, 12 Jan 2022 23:18:11 GMT  
-		Size: 1.4 KB (1433 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb1efbbcd1da23c37d720a24c0a6d3241c55e8dd1d268542f804b524de6b7c2`  
-		Last Modified: Wed, 12 Jan 2022 23:20:03 GMT  
-		Size: 101.4 MB (101400558 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
