@@ -1,10 +1,10 @@
-# `rust:1-alpine3.13`
+# `rust:1-alpine3.15`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e283646b975f2979ddfcacb64cb59dade0bb2c014627b67aa19f40648a70f0b8`
-- Created: `2021-12-03T20:20:01.134175733Z`
-- Virtual Size: ~ 807.77 Mb  
+- Image ID: `sha256:0c2f04a6ad52f21030e346680ad33ea5a55663a984bc072217965f3f7d6d8a82`
+- Created: `2022-01-13T20:26:25.400755998Z`
+- Virtual Size: ~ 842.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -12,23 +12,23 @@
   - `PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUSTUP_HOME=/usr/local/rustup`
   - `CARGO_HOME=/usr/local/cargo`
-  - `RUST_VERSION=1.57.0`
+  - `RUST_VERSION=1.58.0`
 
 ## `apk` (`.apk`-based packages)
 
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.2.0-r8 description:
+alpine-baselayout-3.2.0-r18 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.2.0-r8 webpage:
+alpine-baselayout-3.2.0-r18 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.2.0-r8 installed size:
-400 KiB
+alpine-baselayout-3.2.0-r18 installed size:
+404 KiB
 
-alpine-baselayout-3.2.0-r8 license:
+alpine-baselayout-3.2.0-r18 license:
 GPL-2.0-only
 
 ```
@@ -36,16 +36,16 @@ GPL-2.0-only
 ### `apk` package: `alpine-keys`
 
 ```console
-alpine-keys-2.4-r0 description:
+alpine-keys-2.4-r1 description:
 Public keys for Alpine Linux packages
 
-alpine-keys-2.4-r0 webpage:
+alpine-keys-2.4-r1 webpage:
 https://alpinelinux.org
 
-alpine-keys-2.4-r0 installed size:
+alpine-keys-2.4-r1 installed size:
 156 KiB
 
-alpine-keys-2.4-r0 license:
+alpine-keys-2.4-r1 license:
 MIT
 
 ```
@@ -53,16 +53,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.12.7-r0 description:
+apk-tools-2.12.7-r3 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.12.7-r0 webpage:
+apk-tools-2.12.7-r3 webpage:
 https://gitlab.alpinelinux.org/alpine/apk-tools
 
-apk-tools-2.12.7-r0 installed size:
+apk-tools-2.12.7-r3 installed size:
 304 KiB
 
-apk-tools-2.12.7-r0 license:
+apk-tools-2.12.7-r3 license:
 GPL-2.0-only
 
 ```
@@ -70,16 +70,16 @@ GPL-2.0-only
 ### `apk` package: `binutils`
 
 ```console
-binutils-2.35.2-r1 description:
+binutils-2.37-r3 description:
 Tools necessary to build programs
 
-binutils-2.35.2-r1 webpage:
+binutils-2.37-r3 webpage:
 https://www.gnu.org/software/binutils/
 
-binutils-2.35.2-r1 installed size:
-9596 KiB
+binutils-2.37-r3 installed size:
+9556 KiB
 
-binutils-2.35.2-r1 license:
+binutils-2.37-r3 license:
 GPL-2.0 GPL-3.0-or-later LGPL-2.0 BSD
 
 ```
@@ -87,16 +87,16 @@ GPL-2.0 GPL-3.0-or-later LGPL-2.0 BSD
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.32.1-r7 description:
+busybox-1.34.1-r3 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.32.1-r7 webpage:
+busybox-1.34.1-r3 webpage:
 https://busybox.net/
 
-busybox-1.32.1-r7 installed size:
+busybox-1.34.1-r3 installed size:
 924 KiB
 
-busybox-1.32.1-r7 license:
+busybox-1.34.1-r3 license:
 GPL-2.0-only
 
 ```
@@ -104,16 +104,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r5 description:
+ca-certificates-20191127-r7 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r5 webpage:
+ca-certificates-20191127-r7 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r5 installed size:
-672 KiB
+ca-certificates-20191127-r7 installed size:
+676 KiB
 
-ca-certificates-20191127-r5 license:
+ca-certificates-20191127-r7 license:
 MPL-2.0 AND MIT
 
 ```
@@ -121,16 +121,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r5 description:
+ca-certificates-bundle-20191127-r7 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r5 webpage:
+ca-certificates-bundle-20191127-r7 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r5 installed size:
+ca-certificates-bundle-20191127-r7 installed size:
 228 KiB
 
-ca-certificates-bundle-20191127-r5 license:
+ca-certificates-bundle-20191127-r7 license:
 MPL-2.0 AND MIT
 
 ```
@@ -138,16 +138,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `gcc`
 
 ```console
-gcc-10.2.1_pre1-r3 description:
+gcc-10.3.1_git20211027-r0 description:
 The GNU Compiler Collection
 
-gcc-10.2.1_pre1-r3 webpage:
+gcc-10.3.1_git20211027-r0 webpage:
 https://gcc.gnu.org
 
-gcc-10.2.1_pre1-r3 installed size:
+gcc-10.3.1_git20211027-r0 installed size:
 87 MiB
 
-gcc-10.2.1_pre1-r3 license:
+gcc-10.3.1_git20211027-r0 license:
 GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
@@ -162,7 +162,7 @@ gmp-6.2.1-r0 webpage:
 https://gmplib.org/
 
 gmp-6.2.1-r0 installed size:
-416 KiB
+420 KiB
 
 gmp-6.2.1-r0 license:
 LGPL-3.0-or-later OR GPL-2.0-or-later
@@ -189,16 +189,16 @@ MIT
 ### `apk` package: `libatomic`
 
 ```console
-libatomic-10.2.1_pre1-r3 description:
+libatomic-10.3.1_git20211027-r0 description:
 GCC Atomic library
 
-libatomic-10.2.1_pre1-r3 webpage:
+libatomic-10.3.1_git20211027-r0 webpage:
 https://gcc.gnu.org
 
-libatomic-10.2.1_pre1-r3 installed size:
+libatomic-10.3.1_git20211027-r0 installed size:
 40 KiB
 
-libatomic-10.2.1_pre1-r3 license:
+libatomic-10.3.1_git20211027-r0 license:
 GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
@@ -223,16 +223,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r0 description:
+libcrypto1.1-1.1.1l-r7 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r0 webpage:
+libcrypto1.1-1.1.1l-r7 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r0 installed size:
-2704 KiB
+libcrypto1.1-1.1.1l-r7 installed size:
+2676 KiB
 
-libcrypto1.1-1.1.1l-r0 license:
+libcrypto1.1-1.1.1l-r7 license:
 OpenSSL
 
 ```
@@ -240,16 +240,16 @@ OpenSSL
 ### `apk` package: `libgcc`
 
 ```console
-libgcc-10.2.1_pre1-r3 description:
+libgcc-10.3.1_git20211027-r0 description:
 GNU C compiler runtime libraries
 
-libgcc-10.2.1_pre1-r3 webpage:
+libgcc-10.3.1_git20211027-r0 webpage:
 https://gcc.gnu.org
 
-libgcc-10.2.1_pre1-r3 installed size:
+libgcc-10.3.1_git20211027-r0 installed size:
 112 KiB
 
-libgcc-10.2.1_pre1-r3 license:
+libgcc-10.3.1_git20211027-r0 license:
 GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
@@ -257,16 +257,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libgomp`
 
 ```console
-libgomp-10.2.1_pre1-r3 description:
+libgomp-10.3.1_git20211027-r0 description:
 GCC shared-memory parallel programming API library
 
-libgomp-10.2.1_pre1-r3 webpage:
+libgomp-10.3.1_git20211027-r0 webpage:
 https://gcc.gnu.org
 
-libgomp-10.2.1_pre1-r3 installed size:
+libgomp-10.3.1_git20211027-r0 installed size:
 264 KiB
 
-libgomp-10.2.1_pre1-r3 license:
+libgomp-10.3.1_git20211027-r0 license:
 GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
@@ -274,33 +274,50 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libgphobos`
 
 ```console
-libgphobos-10.2.1_pre1-r3 description:
+libgphobos-10.3.1_git20211027-r0 description:
 D programming language standard library for GCC
 
-libgphobos-10.2.1_pre1-r3 webpage:
+libgphobos-10.3.1_git20211027-r0 webpage:
 https://gcc.gnu.org
 
-libgphobos-10.2.1_pre1-r3 installed size:
-7104 KiB
+libgphobos-10.3.1_git20211027-r0 installed size:
+7084 KiB
 
-libgphobos-10.2.1_pre1-r3 license:
+libgphobos-10.3.1_git20211027-r0 license:
 GPL-2.0-or-later LGPL-2.1-or-later
+
+```
+
+### `apk` package: `libretls`
+
+```console
+libretls-3.3.4-r2 description:
+port of libtls from libressl to openssl
+
+libretls-3.3.4-r2 webpage:
+https://git.causal.agency/libretls/
+
+libretls-3.3.4-r2 installed size:
+84 KiB
+
+libretls-3.3.4-r2 license:
+ISC AND (BSD-3-Clause OR MIT)
 
 ```
 
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r0 description:
+libssl1.1-1.1.1l-r7 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r0 webpage:
+libssl1.1-1.1.1l-r7 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r0 installed size:
+libssl1.1-1.1.1l-r7 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r0 license:
+libssl1.1-1.1.1l-r7 license:
 OpenSSL
 
 ```
@@ -308,50 +325,33 @@ OpenSSL
 ### `apk` package: `libstdc++`
 
 ```console
-libstdc++-10.2.1_pre1-r3 description:
+libstdc++-10.3.1_git20211027-r0 description:
 GNU C++ standard runtime library
 
-libstdc++-10.2.1_pre1-r3 webpage:
+libstdc++-10.3.1_git20211027-r0 webpage:
 https://gcc.gnu.org
 
-libstdc++-10.2.1_pre1-r3 installed size:
-1668 KiB
+libstdc++-10.3.1_git20211027-r0 installed size:
+1664 KiB
 
-libstdc++-10.2.1_pre1-r3 license:
+libstdc++-10.3.1_git20211027-r0 license:
 GPL-2.0-or-later LGPL-2.1-or-later
-
-```
-
-### `apk` package: `libtls-standalone`
-
-```console
-libtls-standalone-2.9.1-r1 description:
-libtls extricated from libressl sources
-
-libtls-standalone-2.9.1-r1 webpage:
-https://www.libressl.org/
-
-libtls-standalone-2.9.1-r1 installed size:
-108 KiB
-
-libtls-standalone-2.9.1-r1 license:
-ISC
 
 ```
 
 ### `apk` package: `mpc1`
 
 ```console
-mpc1-1.2.0-r0 description:
+mpc1-1.2.1-r0 description:
 Multiprecision C library
 
-mpc1-1.2.0-r0 webpage:
+mpc1-1.2.1-r0 webpage:
 http://www.multiprecision.org/
 
-mpc1-1.2.0-r0 installed size:
+mpc1-1.2.1-r0 installed size:
 108 KiB
 
-mpc1-1.2.0-r0 license:
+mpc1-1.2.1-r0 license:
 LGPL-3.0-or-later
 
 ```
@@ -376,16 +376,16 @@ LGPL-3.0-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.2.2-r1 description:
+musl-1.2.2-r7 description:
 the musl c library (libc) implementation
 
-musl-1.2.2-r1 webpage:
+musl-1.2.2-r7 webpage:
 https://musl.libc.org/
 
-musl-1.2.2-r1 installed size:
+musl-1.2.2-r7 installed size:
 608 KiB
 
-musl-1.2.2-r1 license:
+musl-1.2.2-r7 license:
 MIT
 
 ```
@@ -393,16 +393,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.2.2-r1 description:
+musl-utils-1.2.2-r7 description:
 the musl c library (libc) implementation
 
-musl-utils-1.2.2-r1 webpage:
+musl-utils-1.2.2-r7 webpage:
 https://musl.libc.org/
 
-musl-utils-1.2.2-r1 installed size:
+musl-utils-1.2.2-r7 installed size:
 140 KiB
 
-musl-utils-1.2.2-r1 license:
+musl-utils-1.2.2-r7 license:
 MIT BSD GPL2+
 
 ```
@@ -410,16 +410,16 @@ MIT BSD GPL2+
 ### `apk` package: `scanelf`
 
 ```console
-scanelf-1.2.8-r0 description:
+scanelf-1.3.3-r0 description:
 Scan ELF binaries for stuff
 
-scanelf-1.2.8-r0 webpage:
+scanelf-1.3.3-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
-scanelf-1.2.8-r0 installed size:
+scanelf-1.3.3-r0 installed size:
 92 KiB
 
-scanelf-1.2.8-r0 license:
+scanelf-1.3.3-r0 license:
 GPL-2.0-only
 
 ```
@@ -427,16 +427,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.32.1-r7 description:
+ssl_client-1.34.1-r3 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.32.1-r7 webpage:
+ssl_client-1.34.1-r3 webpage:
 https://busybox.net/
 
-ssl_client-1.32.1-r7 installed size:
+ssl_client-1.34.1-r3 installed size:
 28 KiB
 
-ssl_client-1.32.1-r7 license:
+ssl_client-1.34.1-r3 license:
 GPL-2.0-only
 
 ```
