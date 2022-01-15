@@ -1,7 +1,7 @@
 ## `photon:latest`
 
 ```console
-$ docker pull photon@sha256:5c2857aadb8be1464b502e655c1b9c72ee375de020581a8e755c04f063d7ad96
+$ docker pull photon@sha256:52a05f619883392f5c63f1f2afb39a7fafe07df10f30376c9630414937ef3395
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,55 +12,55 @@ $ docker pull photon@sha256:5c2857aadb8be1464b502e655c1b9c72ee375de020581a8e755c
 ### `photon:latest` - linux; amd64
 
 ```console
-$ docker pull photon@sha256:9ec7b54b5b21bd1cf7c88d0108d508a4d16eebf1ca7a987e58de8f5c990b95b3
+$ docker pull photon@sha256:1fbd2e67398230f49fd92bdb4d925a0acddc22b276d90287e46dea76a08362f4
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **16.8 MB (16808791 bytes)**  
+-	Total Size: **17.5 MB (17533167 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:684eca7e619fe20790204b65063bcdb01237bbddd0265407173c183506b1047e`
+-	Image ID: `sha256:32d7cd763b3ddd1bd57b33395ecf0d7f657ff0a0f89476155fc56354cd3a993b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Sat, 08 Jan 2022 02:20:59 GMT
-ADD file:713ab0578effcf32095e0b421898496cad85a2033db52ddf2b33003f2c580a03 in / 
-# Sat, 08 Jan 2022 02:20:59 GMT
-LABEL name=Photon OS x86_64/4.0 Base Image vendor=VMware build-date=20220107
-# Sat, 08 Jan 2022 02:21:00 GMT
+# Sat, 15 Jan 2022 02:20:04 GMT
+ADD file:69cced27e5a291913a99f654496c11ee1005c65d26b23bd8aa360ded21cf658e in / 
+# Sat, 15 Jan 2022 02:20:04 GMT
+LABEL name=Photon OS x86_64/4.0 Base Image vendor=VMware build-date=20220114
+# Sat, 15 Jan 2022 02:20:04 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:e28db5caeae73c6f8c8434d5f56042f1e9c33e70ffa008bc47e01d04fd163602`  
-		Last Modified: Sat, 08 Jan 2022 02:21:45 GMT  
-		Size: 16.8 MB (16808791 bytes)  
+	-	`sha256:db3bd88ae7a547d9d850f257ecadb732b90b36dbb6241a8b32e7b0fe080414af`  
+		Last Modified: Sat, 15 Jan 2022 02:20:35 GMT  
+		Size: 17.5 MB (17533167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `photon:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull photon@sha256:9bf00bd3181f28354e873ed2e8ab63996129e2aabd94d537814fe6e597921bcc
+$ docker pull photon@sha256:e60f7883455707a66764cef9553a7ad9656685bcf3b15c3d23c5fc617dbca09d
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **15.8 MB (15815057 bytes)**  
+-	Total Size: **16.5 MB (16536001 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0986a49df4eade98404b1b651c4bedb9ed530a54b8dea37e0c486c29a0c6a450`
+-	Image ID: `sha256:0bd6b2b5037dac59c057747b6f3b8d21d493047851614d103ecb9b068a0545f1`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Sat, 08 Jan 2022 02:49:28 GMT
-ADD file:40aa333e6c6dc420ee4b85e9832f32735eeaab1f02e747c78cb18fb227ddcc73 in / 
-# Sat, 08 Jan 2022 02:49:28 GMT
-LABEL name=Photon OS aarch64/4.0 Base Image vendor=VMware build-date=20220107
-# Sat, 08 Jan 2022 02:49:29 GMT
+# Sat, 15 Jan 2022 02:40:25 GMT
+ADD file:b2e460256043bd6c29c845283503e3f54c95fd59ded070483bb951a80f305f0e in / 
+# Sat, 15 Jan 2022 02:40:25 GMT
+LABEL name=Photon OS aarch64/4.0 Base Image vendor=VMware build-date=20220114
+# Sat, 15 Jan 2022 02:40:26 GMT
 CMD ["/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:b71733efd441f1db107d778f12dab04b97070fc2ff6d8bf255200740743bd15c`  
-		Last Modified: Sat, 08 Jan 2022 02:49:57 GMT  
-		Size: 15.8 MB (15815057 bytes)  
+	-	`sha256:f861d3e89aaf739f19a57f58b4ae76151c4084f29760e4e128c74c51e61b3fd2`  
+		Last Modified: Sat, 15 Jan 2022 02:40:54 GMT  
+		Size: 16.5 MB (16536001 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
