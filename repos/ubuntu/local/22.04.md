@@ -345,13 +345,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.20.9ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.20.9ubuntu3.dsc' dpkg_1.20.9ubuntu3.dsc 2246 SHA512:e2dee2403e1da88d59e490c6a57ae5df0c07a609eb729563b0f2ddfe4cf12786aa22698312001a16cdfb8754c6bdab196a688869a0cbd218874cb25faa102108
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.20.9ubuntu3.tar.xz' dpkg_1.20.9ubuntu3.tar.xz 4984208 SHA512:4e093f3cbbf225163692673e3bcb266beae5e184fe60d60f88dcb86b9a32ce80500a6b8c409dce088b082916fe76ce8a9c272962819748a08e85443210b7f477
-```
 
 ### `dpkg` source package: `e2fsprogs=1.46.4-1ubuntu1`
 
@@ -410,14 +406,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-11-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-11=11.2.0-13ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11.2.0-13ubuntu1.dsc' gcc-11_11.2.0-13ubuntu1.dsc 27889 SHA512:e30e564baaf98407fac9785df6ec7ec8b28f67c5a4d49c65b1335a839c6a06c4aeafc2e5ce7a0f0b2d33799bbbec736cf678a7b3b33f171df7b79be4600700ca
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11.2.0.orig.tar.gz' gcc-11_11.2.0.orig.tar.gz 87861992 SHA512:64e4634769a62faa0adbfe99e5e590dd9efc1facac20a7dd71ab9f1d675e7df80678cbdc75c966e08ccf91dbc1e1a681d8e3227d0026ffcb5f46bdc96acaace8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-11/gcc-11_11.2.0-13ubuntu1.debian.tar.xz' gcc-11_11.2.0-13ubuntu1.debian.tar.xz 1985492 SHA512:0edae156f028bf3d1de7f3f002f725e28f89afe8383fc776305b9d8987eb247955b6efa17ba15f31d9da8fb2464420b246bea4b3c3184e76e362c4e8734524e5
-```
 
 ### `dpkg` source package: `glibc=2.34-0ubuntu3`
 
@@ -700,14 +691,9 @@ Licenses: (parsed from: `/usr/share/doc/libffi8/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libffi=3.4.2-1ubuntu5
-'http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi_3.4.2-1ubuntu5.dsc' libffi_3.4.2-1ubuntu5.dsc 2055 SHA512:e88c7949e957694e7a2df7ec588ade04e9b99606ca84b547a9f4d8c8344173a07979fb254bbed353a6bfa0a807f6652777fe45338354f0c8680dba2fd9454215
-'http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi_3.4.2.orig.tar.gz' libffi_3.4.2.orig.tar.gz 1351355 SHA512:31bad35251bf5c0adb998c88ff065085ca6105cf22071b9bd4b5d5d69db4fadf16cadeec9baca944c4bb97b619b035bb8279de8794b922531fddeb0779eb7fb1
-'http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi_3.4.2-1ubuntu5.debian.tar.xz' libffi_3.4.2-1ubuntu5.debian.tar.xz 8240 SHA512:a7a62d46d76ea0dd4689d40ff9c66fcb9d1f628279db664f678670006efc2eda84c40e2ad34bd8b01dc1bc1ec718f6344532e83ed9171bde60c55062ae21a4f8
-```
 
 ### `dpkg` source package: `libgcrypt20=1.9.4-3ubuntu2`
 
@@ -745,14 +731,13 @@ Licenses: (parsed from: `/usr/share/doc/libgpg-error0/copyright`)
 - `LGPL-2.1+`
 - `g10-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libgpg-error=1.43-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.43-1.dsc' libgpg-error_1.43-1.dsc 2616 SHA512:b0aeee49a73ba856bf12a4238f1f27474f20d6a569902e206a5caedee50f0395b395f6ea4ad9e05c7b39e144c7097fc76d8b10b4dc308d105fc0be94d6a84286
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.43.orig.tar.bz2' libgpg-error_1.43.orig.tar.bz2 999006 SHA512:36769a62d0b4b219a6d58195bed692e34d3b0313f628b1036055ca34b69332edbe6bcdace9855a60d06e7be5998dc13bf1305d0b2bb211a4d8f701e85040961c
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.43-1.debian.tar.xz' libgpg-error_1.43-1.debian.tar.xz 19016 SHA512:f73379955a139434f27616c5de68bbe479a13608a64d61c0ce80df2ee2e01ab938c417cdf20a42f59c447200007d772f6df7bb6826b7147010de09c41c323827
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libgpg-error/1.43-1/
+
 
 ### `dpkg` source package: `libidn2=2.3.2-2`
 
@@ -1519,14 +1504,9 @@ Licenses: (parsed from: `/usr/share/doc/libxxhash0/copyright`)
 - `BSD-2-clause`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xxhash=0.8.0-2build1
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xxhash/xxhash_0.8.0-2build1.dsc' xxhash_0.8.0-2build1.dsc 1995 SHA512:6370d766c660d3e932ce8c80c3b648e17122ed8014a1662a9fc763a87aec16f8d820ab9d62138bf61b0c0485089a34071a8159ef2c39bba368e78749878b7e66
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xxhash/xxhash_0.8.0.orig.tar.gz' xxhash_0.8.0.orig.tar.gz 145909 SHA512:c3973b3c98bad44e1d8687ab4f9461aecd1c071bb3d320537a4c50fb7301edd13e990bab48cc6e5ca30536a814c8fa8cac24ceb1803a7e8eca30ef73d449373e
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xxhash/xxhash_0.8.0-2build1.debian.tar.xz' xxhash_0.8.0-2build1.debian.tar.xz 4244 SHA512:ce631e18514cbc9607b5ec6f6ab5e4ca32452d7766d8f68dfbecfdd5c27597e040662650a4fe1ace750b27676d0a02259b351e4525f77575ec0ee98d074e578c
-```
 
 ### `dpkg` source package: `xz-utils=5.2.5-2build1`
 
