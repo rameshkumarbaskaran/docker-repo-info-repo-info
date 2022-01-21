@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:89596c3963645b8bfb490d3303f122736c4efdc9dd3954c3c365964fdb3a07d4`
-- Created: `2021-12-22T19:07:36.783647398Z`
-- Virtual Size: ~ 676.99 Mb  
+- Image ID: `sha256:591d3d6924189372c84af0cd08824eb67381178307209ca7d209bbf67abab31b`
+- Created: `2022-01-18T18:29:36.295823113Z`
+- Virtual Size: ~ 677.56 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/geonetwork-entrypoint.sh"]`
@@ -25,6 +25,8 @@
   - `GN_FILE=GeoNetwork-4.0.5-0.war`
   - `GN_VERSION=4.0.5`
   - `GN_DOWNLOAD_MD5=7dfcfdffc66b9a97f0d24b0769e9c3b7`
+  - `LOG4J_VERSION=2.17.1`
+  - `LOG4J_SHA512=b7e948df6c6f57d903d990de2cc0270c1537b711285e9b6b91280db6ace38418fced713785b2c20512dd9a4238c2d1d0ceb414d9936df2ca110ff14993ae04dc`
 
 ## `dpkg` (`.deb`-based packages)
 
