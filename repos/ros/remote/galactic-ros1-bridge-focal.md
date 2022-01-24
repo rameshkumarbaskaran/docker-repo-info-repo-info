@@ -1,7 +1,7 @@
 ## `ros:galactic-ros1-bridge-focal`
 
 ```console
-$ docker pull ros@sha256:6c2b6309d6412d7bae20b951bc096fdad5a54788d7ca4aa9ebcaacd97e26c0be
+$ docker pull ros@sha256:c65a3b687a783519de8d8e3a911cd0f6872ff7125850e08409c36dd4e55ddf76
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull ros@sha256:6c2b6309d6412d7bae20b951bc096fdad5a54788d7ca4aa9ebcaacd
 ### `ros:galactic-ros1-bridge-focal` - linux; amd64
 
 ```console
-$ docker pull ros@sha256:35f4fb4b4838f67a154329c18480a7937070fc6ad3346ad0c59e47bd34282271
+$ docker pull ros@sha256:f3f0e6317bbe74b9a8c4ac862b42090308aacd992466af0c8a6dbc6c4170b37b
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **327.1 MB (327104805 bytes)**  
+-	Total Size: **327.1 MB (327098631 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:eeae8b22e696461fd367f09d64ee825b5c39eef35c75271df5fcc15f0b7b4336`
+-	Image ID: `sha256:e836c552d83df196ee1273a50296503f0a3f5d162a0f650c3672621f03cfb1f2`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -66,11 +66,11 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6
 ENV ROS1_DISTRO=noetic
 # Fri, 07 Jan 2022 04:27:52 GMT
 ENV ROS2_DISTRO=galactic
-# Fri, 07 Jan 2022 04:28:18 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.13-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 07 Jan 2022 04:28:28 GMT
+# Mon, 24 Jan 2022 19:55:43 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.14-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
+# Mon, 24 Jan 2022 19:55:55 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-galactic-ros1-bridge=0.10.1-2*     ros-galactic-demo-nodes-cpp=0.14.3-1*     ros-galactic-demo-nodes-py=0.14.3-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 07 Jan 2022 04:28:28 GMT
+# Mon, 24 Jan 2022 19:55:55 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
@@ -127,30 +127,30 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 		Last Modified: Fri, 07 Jan 2022 04:40:00 GMT  
 		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83921436e5bb7403519836fd44d71f82c0c9ad00abe30bdea690883c0f98e852`  
-		Last Modified: Fri, 07 Jan 2022 04:40:14 GMT  
-		Size: 78.6 MB (78599293 bytes)  
+	-	`sha256:95e95fceab9e4912b17705a1f8a816a4e7bf235c343682349d1c1a7207237078`  
+		Last Modified: Mon, 24 Jan 2022 19:59:32 GMT  
+		Size: 78.6 MB (78593060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cda65ea16b0e8f85204de77f6931500fdbf24e95c8dd6d9cc639381f523a7caa`  
-		Last Modified: Fri, 07 Jan 2022 04:40:04 GMT  
-		Size: 16.4 MB (16370747 bytes)  
+	-	`sha256:03c55525cd5db9326521f64572a36e4aff757bb928f982c850716f841f2da7cc`  
+		Last Modified: Mon, 24 Jan 2022 19:59:19 GMT  
+		Size: 16.4 MB (16370804 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df1e3c7740791908d4e3a700d8a74a5a3c8440413df16849f1b8973bd48909e7`  
-		Last Modified: Fri, 07 Jan 2022 04:40:00 GMT  
-		Size: 244.0 B  
+	-	`sha256:d0ce02495efa50cab0b55008267b6caa56f5748eecf137740528f252c5549192`  
+		Last Modified: Mon, 24 Jan 2022 19:59:15 GMT  
+		Size: 246.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:galactic-ros1-bridge-focal` - linux; arm64 variant v8
 
 ```console
-$ docker pull ros@sha256:80037a84706b6861210392a4c9fc1944a6e9d47e7c8e6b2fa6ab07b8b4c3ade0
+$ docker pull ros@sha256:ae7e37d62db89fb08df1cf6c1896a7f93b44a2344144d377a7268cd25bbc7438
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **314.3 MB (314327375 bytes)**  
+-	Total Size: **314.3 MB (314329011 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6f0831008cfb1481e5c12563edb72b6282d87c1c51de07de5d50ad10f9994773`
+-	Image ID: `sha256:13d5dc4c139326e993d698dd5620269a9f553f75d20df50b38a20ae47f66d521`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -197,11 +197,11 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6
 ENV ROS1_DISTRO=noetic
 # Fri, 07 Jan 2022 03:27:17 GMT
 ENV ROS2_DISTRO=galactic
-# Fri, 07 Jan 2022 03:27:49 GMT
-RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.13-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 07 Jan 2022 03:28:03 GMT
+# Mon, 24 Jan 2022 19:44:04 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.14-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
+# Mon, 24 Jan 2022 19:44:26 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-galactic-ros1-bridge=0.10.1-2*     ros-galactic-demo-nodes-cpp=0.14.3-1*     ros-galactic-demo-nodes-py=0.14.3-1*     && rm -rf /var/lib/apt/lists/*
-# Fri, 07 Jan 2022 03:28:06 GMT
+# Mon, 24 Jan 2022 19:44:28 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
@@ -254,15 +254,15 @@ COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in /
 		Last Modified: Fri, 07 Jan 2022 03:40:32 GMT  
 		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:470f442178b5848ce27559a4974dd5103cce7f530c498dd910dca263978154dd`  
-		Last Modified: Fri, 07 Jan 2022 03:40:47 GMT  
-		Size: 78.3 MB (78322265 bytes)  
+	-	`sha256:79301ebea25cc17f02053c62454849ccd835c801212e266b390635073094d85c`  
+		Last Modified: Mon, 24 Jan 2022 19:48:20 GMT  
+		Size: 78.3 MB (78323954 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c373723cf37f3a06700ce0ade88ccba6f03d15925e08300fbd26092df24ef53`  
-		Last Modified: Fri, 07 Jan 2022 03:40:35 GMT  
-		Size: 15.7 MB (15670153 bytes)  
+	-	`sha256:45e962e8f42e697587df7382ee450914d9f7f399c1e0d6783c5f26233c6878e5`  
+		Last Modified: Mon, 24 Jan 2022 19:48:05 GMT  
+		Size: 15.7 MB (15670101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b705d46f9fdf0426a21b7bece8b166adbcafba2a66d6a0ebf216d9229afe36cd`  
-		Last Modified: Fri, 07 Jan 2022 03:40:32 GMT  
-		Size: 246.0 B  
+	-	`sha256:b45bfe0f18c94f41ae86b61b706d648da98955a9c07e4ee4a2dfc9dfc88e7311`  
+		Last Modified: Mon, 24 Jan 2022 19:48:02 GMT  
+		Size: 245.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
