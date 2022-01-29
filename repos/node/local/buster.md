@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0400a3120e974c1b2692719110c41c678a8b38e1d2391686fe449043bbc0a3dd`
-- Created: `2022-01-20T04:04:55.352934626Z`
-- Virtual Size: ~ 962.65 Mb  
+- Image ID: `sha256:876ddab03e6a5e16e8913df316ce5a9164f01a7d3173cb7cae4315ddf08ecb3b`
+- Created: `2022-01-27T01:25:59.05791691Z`
+- Virtual Size: ~ 962.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -769,13 +769,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/diffutils/1:3.7-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/diffutils/1:3.7-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `djvulibre=3.5.27.1-10`
+### `dpkg` source package: `djvulibre=3.5.27.1-10+deb10u1`
 
 Binary Packages:
 
-- `libdjvulibre-dev:amd64=3.5.27.1-10`
-- `libdjvulibre-text=3.5.27.1-10`
-- `libdjvulibre21:amd64=3.5.27.1-10`
+- `libdjvulibre-dev:amd64=3.5.27.1-10+deb10u1`
+- `libdjvulibre-text=3.5.27.1-10+deb10u1`
+- `libdjvulibre21:amd64=3.5.27.1-10+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share/doc/libdjvulibre-text/copyright`, `/usr/share/doc/libdjvulibre21/copyright`)
 
@@ -784,17 +784,17 @@ Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share
 Source:
 
 ```console
-$ apt-get source -qq --print-uris djvulibre=3.5.27.1-10
-'http://deb.debian.org/debian/pool/main/d/djvulibre/djvulibre_3.5.27.1-10.dsc' djvulibre_3.5.27.1-10.dsc 2379 SHA256:c5d6f998081392805d7214b769b71012ac35a488a9db3aced64c76efc2fe053f
-'http://deb.debian.org/debian/pool/main/d/djvulibre/djvulibre_3.5.27.1.orig.tar.gz' djvulibre_3.5.27.1.orig.tar.gz 3231662 SHA256:77f07de3f1039aa19eba2eb3170d9ce9a0918ba7b704a59cfaf08f42fcc52144
-'http://deb.debian.org/debian/pool/main/d/djvulibre/djvulibre_3.5.27.1-10.debian.tar.xz' djvulibre_3.5.27.1-10.debian.tar.xz 73340 SHA256:7d0a4cf992a426c989164ab3a45e3fec8e36f8ec02f0b79953a4472b395089fd
+$ apt-get source -qq --print-uris djvulibre=3.5.27.1-10+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.27.1-10+deb10u1.dsc' djvulibre_3.5.27.1-10+deb10u1.dsc 2066 SHA256:c4a09cb9a58f86474718e4f42d48c599d480af3cf77ead281587d13c4ddc9135
+'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.27.1.orig.tar.gz' djvulibre_3.5.27.1.orig.tar.gz 3231662 SHA256:77f07de3f1039aa19eba2eb3170d9ce9a0918ba7b704a59cfaf08f42fcc52144
+'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.27.1-10+deb10u1.debian.tar.xz' djvulibre_3.5.27.1-10+deb10u1.debian.tar.xz 76960 SHA256:cf92972f464246ff3237d50325dea93546473fcaef82b0a3c2821d37aaceea0a
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/djvulibre/3.5.27.1-10/ (for browsing the source)
-- https://sources.debian.net/src/djvulibre/3.5.27.1-10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/djvulibre/3.5.27.1-10/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/djvulibre/3.5.27.1-10+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/djvulibre/3.5.27.1-10+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/djvulibre/3.5.27.1-10+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dpkg=1.19.7`
 
