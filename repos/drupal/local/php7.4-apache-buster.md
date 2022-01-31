@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:42ca757d138f861b93953bc088fe70d7460e6da8b7f9b2060aa3db3664da97df`
-- Created: `2022-01-24T20:11:45.316341511Z`
+- Image ID: `sha256:3af6a582904b4029add8a28c5ad826136d9fd32dc98831a424ee855cb29a8fd3`
+- Created: `2022-01-27T20:10:34.33263959Z`
 - Virtual Size: ~ 499.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -80,14 +80,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.118/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.118/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `apache2=2.4.38-3+deb10u6`
+### `dpkg` source package: `apache2=2.4.38-3+deb10u7`
 
 Binary Packages:
 
-- `apache2=2.4.38-3+deb10u6`
-- `apache2-bin=2.4.38-3+deb10u6`
-- `apache2-data=2.4.38-3+deb10u6`
-- `apache2-utils=2.4.38-3+deb10u6`
+- `apache2=2.4.38-3+deb10u7`
+- `apache2-bin=2.4.38-3+deb10u7`
+- `apache2-data=2.4.38-3+deb10u7`
+- `apache2-utils=2.4.38-3+deb10u7`
 
 Licenses: (parsed from: `/usr/share/doc/apache2/copyright`, `/usr/share/doc/apache2-bin/copyright`, `/usr/share/doc/apache2-data/copyright`, `/usr/share/doc/apache2-utils/copyright`)
 
@@ -107,13 +107,20 @@ Licenses: (parsed from: `/usr/share/doc/apache2/copyright`, `/usr/share/doc/apac
 - `PCRE`
 - `Zeus`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris apache2=2.4.38-3+deb10u7
+'http://security.debian.org/debian-security/pool/updates/main/a/apache2/apache2_2.4.38-3+deb10u7.dsc' apache2_2.4.38-3+deb10u7.dsc 3263 SHA256:32f8e410e2ad1fd75c33d6899d92abc6c63fbabcb7948d855df603893c9ba040
+'http://security.debian.org/debian-security/pool/updates/main/a/apache2/apache2_2.4.38.orig.tar.gz' apache2_2.4.38.orig.tar.gz 9187294 SHA256:38d0b73aa313c28065bf58faf64cec12bf7c7d5196146107df2ad07541aa26a6
+'http://security.debian.org/debian-security/pool/updates/main/a/apache2/apache2_2.4.38-3+deb10u7.debian.tar.xz' apache2_2.4.38-3+deb10u7.debian.tar.xz 1080536 SHA256:23cba5d65a0ad5cc70dcb9d13ecea359c5cc4efe2d602ed01251245da3d7ef33
+```
 
-- http://snapshot.debian.org/package/apache2/2.4.38-3+deb10u6/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/apache2/2.4.38-3+deb10u7/ (for browsing the source)
+- https://sources.debian.net/src/apache2/2.4.38-3+deb10u7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/apache2/2.4.38-3+deb10u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `apr-util=1.6.1-4`
 
