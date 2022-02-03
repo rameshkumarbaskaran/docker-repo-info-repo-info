@@ -1,10 +1,10 @@
-# `eclipse-temurin:17.0.1_12-jre-centos7`
+# `eclipse-temurin:17.0.2_8-jre-centos7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:866f28160e49fbb32a4a979cf477408a2e90c6c6ff033b29206570fb653dec5f`
-- Created: `2021-12-22T10:05:35.435973326Z`
-- Virtual Size: ~ 382.29 Mb  
+- Image ID: `sha256:f37445b7aa6951f400ab54874df8706d1167e1a395ff2dad9f18072e3337e1cf`
+- Created: `2022-02-01T22:24:19.729618937Z`
+- Virtual Size: ~ 382.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.1+12`
+  - `JAVA_VERSION=jdk-17.0.2+8`
   - `JAVA_HOME=/opt/java/openjdk`
 - Labels:
   - `org.label-schema.build-date=20201113`
@@ -36,6 +36,8 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.51-15.el7
+http://mirrors.cmich.edu/centos/7.9.2009/os/x86_64/repodata/repomd.xml: [Errno 12] Timeout on http://mirrors.cmich.edu/centos/7.9.2009/os/x86_64/repodata/repomd.xml: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+Trying other mirror.
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
