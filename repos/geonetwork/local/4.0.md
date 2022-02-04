@@ -1,10 +1,10 @@
-# `geonetwork:4.0.5`
+# `geonetwork:4.0.6`
 
 ## Docker Metadata
 
-- Image ID: `sha256:05d7e16621792197d8c421b9038f423057507e29834e4be72827e20c1132c5b8`
-- Created: `2022-01-28T00:33:14.48723863Z`
-- Virtual Size: ~ 677.59 Mb  
+- Image ID: `sha256:063e4875691fef6e248d0280b6195aba2a52211467eda8882da1f16b69175305`
+- Created: `2022-02-04T04:47:19.348947272Z`
+- Virtual Size: ~ 754.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/geonetwork-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/jetty/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=8u312`
+  - `JAVA_VERSION=8u322`
   - `JETTY_VERSION=9.4.44.v20210927`
   - `JETTY_HOME=/usr/local/jetty`
   - `JETTY_BASE=/var/lib/jetty`
@@ -22,11 +22,9 @@
   - `JETTY_GPG_KEYS=AED5EE6C45D0FE8D5D1B164F27DED4BF6216DB8F 	2A684B57436A81FA8706B53C61C3351A438A3B7D 	5989BAF76217B843D66BE55B2D0E1FB8FE4B68B4 	B59B67FD7904984367F931800818D9D68FB67BAC 	BFBB21C246D7776836287A48A04E0C74ABB35FEA 	8B096546B1A8F02656B15D3B1677D141BCF3584D 	FBA2B18D238AB852DF95745C76157BDF03D0DCD6 	5C9579B3DB2E506429319AAEF33B071B29559E1E 	F254B35617DC255D9344BCFA873A8E86B4372146`
   - `DATA_DIR=/catalogue-data`
   - `JAVA_OPTS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF         -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true         -Xms512M -Xss512M -Xmx2G -XX:+UseConcMarkSweepGC         -Dgeonetwork.resources.dir=/catalogue-data/resources         -Dgeonetwork.data.dir=/catalogue-data         -Dgeonetwork.codeList.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/codelist         -Dgeonetwork.schema.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/schema_plugins`
-  - `GN_FILE=GeoNetwork-4.0.5-0.war`
-  - `GN_VERSION=4.0.5`
-  - `GN_DOWNLOAD_MD5=7dfcfdffc66b9a97f0d24b0769e9c3b7`
-  - `LOG4J_VERSION=2.17.1`
-  - `LOG4J_SHA512=b7e948df6c6f57d903d990de2cc0270c1537b711285e9b6b91280db6ace38418fced713785b2c20512dd9a4238c2d1d0ceb414d9936df2ca110ff14993ae04dc`
+  - `GN_FILE=geonetwork.war`
+  - `GN_VERSION=4.0.6`
+  - `GN_DOWNLOAD_MD5=793732cb9c723e73857a4da73b78451b`
 
 ## `dpkg` (`.deb`-based packages)
 
