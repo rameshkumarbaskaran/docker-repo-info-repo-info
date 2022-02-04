@@ -1,10 +1,10 @@
-# `xwiki:12`
+# `xwiki:14-postgres-tomcat`
 
 ## Docker Metadata
 
-- Image ID: `sha256:227f52d79a4824f8c245f919db7d13a2b142fe37280ddbd93cae1e16d25a32f4`
-- Created: `2022-01-28T00:42:29.774700522Z`
-- Virtual Size: ~ 1.55 Gb  
+- Image ID: `sha256:bfb0ad62f6ddaf9084f137477622d2dabae7322240ed6b157c1dc2aa0a462475`
+- Created: `2022-02-04T06:22:57.964601927Z`
+- Virtual Size: ~ 1.56 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/tomcat/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-11`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=11.0.13`
+  - `JAVA_VERSION=11.0.14`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
@@ -21,14 +21,9 @@
   - `TOMCAT_MAJOR=9`
   - `TOMCAT_VERSION=9.0.58`
   - `TOMCAT_SHA512=33c030a312a0a087deeb06fff921d13a23789e152d30620f33a368e7a2244c762fcf9acd55f3b90f08560704ba45bc2be820bccf2058b0cf5801a7b124f9056d`
-  - `XWIKI_VERSION=12.10.11`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/12.10.11`
-  - `XWIKI_DOWNLOAD_SHA256=5b57a516c4a680fe0f78176a09534663534bd7e5966cbce2015e0ab76ac34c6a`
-  - `MYSQL_JDBC_VERSION=8.0.22`
-  - `MYSQL_JDBC_SHA256=5019defbd12316295e97a6e88f2a9b07f118345a4e982710bba232e499b22f4f`
-  - `MYSQL_JDBC_PREFIX=https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.22`
-  - `MYSQL_JDBC_ARTIFACT=mysql-connector-java-8.0.22.jar`
-  - `MYSQL_JDBC_TARGET=/usr/local/tomcat/webapps/ROOT/WEB-INF/lib/mysql-connector-java-8.0.22.jar`
+  - `XWIKI_VERSION=14.0`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/14.0`
+  - `XWIKI_DOWNLOAD_SHA256=9acdc5f54267fd0270b227dcea0ed5351125757a390ca8530f71b0943f4404c5`
 - Labels:
   - `org.opencontainers.image.authors=XWiki Development Team <committers@xwiki.org>`
   - `org.opencontainers.image.documentation=https://hub.docker.com/_/xwiki`
@@ -3061,6 +3056,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libpagemaker/0.0.4-1/ (for browsing the source)
 - https://sources.debian.net/src/libpagemaker/0.0.4-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libpagemaker/0.0.4-1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libpgjava=42.2.15-1`
+
+Binary Packages:
+
+- `libpostgresql-jdbc-java=42.2.15-1`
+
+Licenses: (parsed from: `/usr/share/doc/libpostgresql-jdbc-java/copyright`)
+
+- `BSD-3-clause`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libpgjava=42.2.15-1
+'http://deb.debian.org/debian/pool/main/libp/libpgjava/libpgjava_42.2.15-1.dsc' libpgjava_42.2.15-1.dsc 2560 SHA256:cc4d1d8ef1018db755bbc9e37e78073040693eeb4eb8ecd073af2b723e8764fa
+'http://deb.debian.org/debian/pool/main/libp/libpgjava/libpgjava_42.2.15.orig.tar.gz' libpgjava_42.2.15.orig.tar.gz 903018 SHA256:fd34f1d133bf9df29fa853bea44029ba22b00a478984d7233fb6218b66d47a8f
+'http://deb.debian.org/debian/pool/main/libp/libpgjava/libpgjava_42.2.15-1.debian.tar.xz' libpgjava_42.2.15-1.debian.tar.xz 9728 SHA256:1534ebffd429fb777ccb9504502a9d364765d05c0b5000705e1d99a26d0a558e
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libpgjava/42.2.15-1/ (for browsing the source)
+- https://sources.debian.net/src/libpgjava/42.2.15-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libpgjava/42.2.15-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libpng1.6=1.6.37-3`
 
