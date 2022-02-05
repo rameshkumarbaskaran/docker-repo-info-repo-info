@@ -4,7 +4,7 @@
 
 - Image ID: `sha256:4b361dfebd4fbd65e91e96956dcb1954f79b587c6b2a781b2c2cb8cc27bf9eca`
 - Created: `2022-01-26T22:40:13.048249298Z`
-- Virtual Size: ~ 766.89 Mb  
+- Virtual Size: ~ 766.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["R"]`
@@ -86,19 +86,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.3.14
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.3.14.dsc' apt_2.3.14.dsc 2801 SHA256:03dca05b525687f506172db90c2d39d0f42084e8952dbba010ed91ad7cb5d7c2
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.3.14.tar.xz' apt_2.3.14.tar.xz 2213332 SHA256:b90a3ced152ecd389a55da1115e04565bfcbf5f58a808cdb71f6b52d4d2f0bdf
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.3.14/
 
-- https://sources.debian.net/src/apt/2.3.14/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.3.14/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.3.14/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.5.1-1`
 
@@ -3306,20 +3300,13 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.50.3+ds1-4
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.3+ds1-4.dsc' pango1.0_1.50.3+ds1-4.dsc 3669 SHA256:95daa8c6c6ed547eda28035100d3f7d3f2f03ed0a22c5962062b19b9c79ec343
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.3+ds1.orig.tar.xz' pango1.0_1.50.3+ds1.orig.tar.xz 2476492 SHA256:d88a24e3f075587070fa45f4b583323a4623ca5574fdf9722ddb1c1790851032
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.50.3+ds1-4.debian.tar.xz' pango1.0_1.50.3+ds1-4.debian.tar.xz 50268 SHA256:0d80755df427d50ae4a375df62f0ec2716481f44878f1f9f982e1c4d50c39754
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pango1.0/1.50.3+ds1-4/
 
-- https://sources.debian.net/src/pango1.0/1.50.3+ds1-4/ (for browsing the source)
-- https://sources.debian.net/src/pango1.0/1.50.3+ds1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pango1.0/1.50.3+ds1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `patch=2.7.6-7`
 
@@ -3846,20 +3833,13 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris shadow=1:4.8.1-2
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.8.1-2.dsc' shadow_4.8.1-2.dsc 2218 SHA256:6cca7aecb3faa89684333cc6ae01931a56fdf435f1181734613fb7bb2bab8ce6
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.8.1.orig.tar.xz' shadow_4.8.1.orig.tar.xz 1611196 SHA256:a3ad4630bdc41372f02a647278a8c3514844295d36eefe68ece6c3a641c1ae62
-'http://deb.debian.org/debian/pool/main/s/shadow/shadow_4.8.1-2.debian.tar.xz' shadow_4.8.1-2.debian.tar.xz 74476 SHA256:e230a5fe3945587140dcec2b42dbd0b6bd371bb5976f1b5fb99f5799a2ec4d89
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/shadow/1:4.8.1-2/
 
-- https://sources.debian.net/src/shadow/1:4.8.1-2/ (for browsing the source)
-- https://sources.debian.net/src/shadow/1:4.8.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/shadow/1:4.8.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `survival=3.2-13-1`
 
