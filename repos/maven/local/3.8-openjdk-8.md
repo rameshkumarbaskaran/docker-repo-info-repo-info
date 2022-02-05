@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:45eea6ef632d174ac722220e2472474be56d322f59dcbf8a4f423133eea3de57`
-- Created: `2022-01-27T16:51:09.159780974Z`
-- Virtual Size: ~ 536.60 Mb  
+- Image ID: `sha256:b869a709f3825d085fcbbbbf42c12c884098bacdb1d397177a467a6d26dc84fe`
+- Created: `2022-02-03T22:24:26.237380911Z`
+- Virtual Size: ~ 536.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=8u312`
+  - `JAVA_VERSION=8u322`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
 
