@@ -1,9 +1,9 @@
-# `monica:3.6.1-fpm`
+# `monica:3.7.0-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5ca0bcd9d65b5a9a14c4c28174d78c1c6458deac3222983d44566cca6e04501e`
-- Created: `2022-01-27T22:28:46.465304667Z`
+- Image ID: `sha256:9bc14bffe48279420d210c22e5f3d5e9a77b5bc3cd3b3faa6b9fa26b39675b2b`
+- Created: `2022-02-08T20:20:31.35997406Z`
 - Virtual Size: ~ 693.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -25,16 +25,16 @@
   - `PHP_OPCACHE_MAX_ACCELERATED_FILES=20000`
   - `PHP_OPCACHE_MEMORY_CONSUMPTION=192`
   - `PHP_OPCACHE_MAX_WASTED_PERCENTAGE=10`
-  - `MONICA_VERSION=v3.6.1`
+  - `MONICA_VERSION=v3.7.0`
 - Labels:
   - `org.opencontainers.image.authors=Alexis Saettler <alexis@saettler.org>`
   - `org.opencontainers.image.description=This is MonicaHQ, your personal memory! MonicaHQ is like a CRM but for the friends, family, and acquaintances around you.`
-  - `org.opencontainers.image.revision=832b425502ad9d6059cabb9a70dd5351eb47fa81`
+  - `org.opencontainers.image.revision=a07317f309f25772925436346b4ebb23b6e69b43`
   - `org.opencontainers.image.source=https://github.com/monicahq/docker`
   - `org.opencontainers.image.title=MonicaHQ, the Personal Relationship Manager`
   - `org.opencontainers.image.url=https://monicahq.com`
   - `org.opencontainers.image.vendor=Monica`
-  - `org.opencontainers.image.version=v3.6.1`
+  - `org.opencontainers.image.version=v3.7.0`
 
 ## `dpkg` (`.deb`-based packages)
 
