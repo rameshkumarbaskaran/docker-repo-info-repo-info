@@ -2934,14 +2934,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-97.110
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-97.110.dsc' linux_5.4.0-97.110.dsc 6932 SHA512:f400c10cd4131841c65115e68e66cc8e5db92b7d5dc834b895b78f01fc2cbe741c5d43854ce71025e47224b5e329e205a284410bec744f2fe152e4fc988a114a
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-97.110.diff.gz' linux_5.4.0-97.110.diff.gz 9014428 SHA512:e7cafc8498e5755b795be31274237525267b182367a20cbc1234bf5c31b94d6da2e2443ffefe6788dd4c9249448b07a9e6ad776f51067955c60bf92e6b789bfc
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.18+dfsg-1`
 
