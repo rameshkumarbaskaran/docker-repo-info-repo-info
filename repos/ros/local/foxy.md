@@ -3513,14 +3513,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-mixin=0.2.1-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-mixin/python3-colcon-mixin_0.2.1-1.debian.tar.xz' python3-colcon-mixin_0.2.1-1.debian.tar.xz 1124 SHA512:f174d3c0f9825da8dd8785f8e84972e9bd088cc9b65548adb96c0a7a3bee74a2871e46c5c3da27ac3aa246d9d73b733eaae77c9c0f3320dcfd97ee3b32eeca8e
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-mixin/python3-colcon-mixin_0.2.1-1.dsc' python3-colcon-mixin_0.2.1-1.dsc 918 SHA512:edc6bc4b1ee2ced43ebfda112e8ca763a6c2e1981ff412c34479077e313d72fda5389e164c5c06a1cf320b6fc953467f917fc8cabe6e5db9cc6266288bc7096b
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-mixin/python3-colcon-mixin_0.2.1.orig.tar.gz' python3-colcon-mixin_0.2.1.orig.tar.gz 11332 SHA512:1515f347b3f05826f99b9489784f3eef9464357b32a378f3be4ffea3a20f56893420affd6ea9809bbdd4375b7a1d27a9b72ff7c507ed1a81667658a04c9813c6
-```
 
 ### `dpkg` source package: `python3-colcon-notification=0.2.13-1`
 
@@ -6893,14 +6888,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.34-0.1ubuntu9.1
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.1.dsc' util-linux_2.34-0.1ubuntu9.1.dsc 4067 SHA512:cd98079e1a347852d84c0ebbfac643e7d7d66d7524a060a8bbb8df45153728dae957793b0cefacd4744fbbe4396efcd45e32beeaf8ab3afe347124373554ddbe
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34.orig.tar.xz' util-linux_2.34.orig.tar.xz 4974812 SHA512:2d0b76f63d32e7afb7acf61a83fabbfd58baa34ab78b3a331ce87f9c676a5fd71c56a493ded95039540d2c46b6048caaa38d7fb4491eb3d52d7b09dc54655cd7
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.1.debian.tar.xz' util-linux_2.34-0.1ubuntu9.1.debian.tar.xz 91620 SHA512:b0ed129f1e7febe6a7370ef2becaca376b7bea478af084769f61c0b78cf4d3f5a0b5d8fe7c75017e74a8c4c6d22a37a2a9d7221c60822677220fa719d7f3b609
-```
 
 ### `dpkg` source package: `wcwidth=0.1.8+dfsg1-3`
 
