@@ -1,9 +1,9 @@
-# `memcached:1.6.13-alpine`
+# `memcached:1.6.14-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:efe813961a6861b4b7a9ea7a113bc963417ffa1d218b3028aee164ce53c8900e`
-- Created: `2022-01-20T04:31:21.58144527Z`
+- Image ID: `sha256:31403aa3ac88632da679879fcb0a3a627c6f50ec7da0659ae032f63d289d9587`
+- Created: `2022-02-11T23:47:45.414009944Z`
 - Virtual Size: ~ 11.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Command: `["memcached"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `MEMCACHED_VERSION=1.6.13`
-  - `MEMCACHED_SHA1=b9da57ba63ba8de8a980fe0fe2fedc8d59e1dfe3`
+  - `MEMCACHED_VERSION=1.6.14`
+  - `MEMCACHED_SHA1=be64c11d34f04bd1855100b8b5ad9ae8b45e0ab0`
 
 ## `apk` (`.apk`-based packages)
 
