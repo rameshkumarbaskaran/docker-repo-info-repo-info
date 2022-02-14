@@ -1,10 +1,10 @@
-# `postgres:14.1-alpine`
+# `postgres:14.2-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1149d285a5f5c4340cefa2211869c3a6b1128ac78974545e0b4fe62d3d0e66a8`
-- Created: `2022-01-04T01:20:03.144397084Z`
-- Virtual Size: ~ 208.96 Mb  
+- Image ID: `sha256:02da44b1d4a6fcee21caffbd7790845c9ee9a2d077fd6938c85f14f2bf272b97`
+- Created: `2022-02-12T00:36:27.37276918Z`
+- Virtual Size: ~ 212.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=14`
-  - `PG_VERSION=14.1`
-  - `PG_SHA256=4d3c101ea7ae38982f06bdc73758b53727fb6402ecd9382006fa5ecc7c2ca41f`
+  - `PG_VERSION=14.2`
+  - `PG_SHA256=2cf78b2e468912f8101d695db5340cf313c2e9f68a612fb71427524e8c9a977a`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -243,16 +243,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r7 description:
+libcrypto1.1-1.1.1l-r8 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r7 webpage:
+libcrypto1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r7 installed size:
+libcrypto1.1-1.1.1l-r8 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1l-r7 license:
+libcrypto1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```
@@ -396,16 +396,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r7 description:
+libssl1.1-1.1.1l-r8 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r7 webpage:
+libssl1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r7 installed size:
+libssl1.1-1.1.1l-r8 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r7 license:
+libssl1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```
@@ -430,16 +430,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.37.2-r1 description:
+libuuid-2.37.3-r0 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.37.2-r1 webpage:
+libuuid-2.37.3-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.37.2-r1 installed size:
+libuuid-2.37.3-r0 installed size:
 40 KiB
 
-libuuid-2.37.2-r1 license:
+libuuid-2.37.3-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -515,16 +515,16 @@ Apache-2.0
 ### `apk` package: `lz4-libs`
 
 ```console
-lz4-libs-1.9.3-r0 description:
+lz4-libs-1.9.3-r1 description:
 LZ4 is lossless compression algorithm with fast decoder @ multiple GB/s per core. (libraries)
 
-lz4-libs-1.9.3-r0 webpage:
+lz4-libs-1.9.3-r1 webpage:
 https://github.com/lz4/lz4
 
-lz4-libs-1.9.3-r0 installed size:
+lz4-libs-1.9.3-r1 installed size:
 216 KiB
 
-lz4-libs-1.9.3-r0 license:
+lz4-libs-1.9.3-r1 license:
 BSD-2-Clause GPL-2.0-only
 
 ```

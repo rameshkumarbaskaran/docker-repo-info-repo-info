@@ -1,10 +1,10 @@
-# `postgres:11.14-alpine`
+# `postgres:11.15-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1b6006b3593c569163253075455d4a54db4a810ab05767fa2283cd51b0da7686`
-- Created: `2022-01-04T01:20:27.752424981Z`
-- Virtual Size: ~ 201.94 Mb  
+- Image ID: `sha256:4dd5acad0e598bbb3b6af5a02ddb90746c25b5e80c49b8c89598e5eccf35681c`
+- Created: `2022-02-12T00:58:25.511860785Z`
+- Virtual Size: ~ 205.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=11`
-  - `PG_VERSION=11.14`
-  - `PG_SHA256=965c7f4be96fb64f9581852c58c4f05c3812d4ad823c0f3e2bdfe777c162f999`
+  - `PG_VERSION=11.15`
+  - `PG_SHA256=c8f58e8ebd4f4567f4f9ba1032eb3e99e0251d87cbe3e564b485590e37a879e3`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -243,16 +243,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r7 description:
+libcrypto1.1-1.1.1l-r8 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r7 webpage:
+libcrypto1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r7 installed size:
+libcrypto1.1-1.1.1l-r8 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1l-r7 license:
+libcrypto1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```
@@ -396,16 +396,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r7 description:
+libssl1.1-1.1.1l-r8 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r7 webpage:
+libssl1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r7 installed size:
+libssl1.1-1.1.1l-r8 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r7 license:
+libssl1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```
@@ -430,16 +430,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.37.2-r1 description:
+libuuid-2.37.3-r0 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.37.2-r1 webpage:
+libuuid-2.37.3-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.37.2-r1 installed size:
+libuuid-2.37.3-r0 installed size:
 40 KiB
 
-libuuid-2.37.2-r1 license:
+libuuid-2.37.3-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
