@@ -334,14 +334,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.37.90.20220130-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.37.90.20220130-0ubuntu2.dsc' binutils_2.37.90.20220130-0ubuntu2.dsc 8883 SHA512:69bc930c35b6c9fa9a42ebcf38bbc563e4008402d57e2fe3c02b03d1b7e696af74047e47c60c137310b0b49fcb7fe15a2121c96623ef3d8c0e65f0620298f433
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.37.90.20220130.orig.tar.xz' binutils_2.37.90.20220130.orig.tar.xz 22564112 SHA512:26f149fafdee1ebca93777f789a3b37e5249de63acd37b5187427ed5e61f32cb667869e9de789ca727bf5e7b3452a34a61d4274c8c5cc65f65c9dafe9bf7b951
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.37.90.20220130-0ubuntu2.debian.tar.xz' binutils_2.37.90.20220130-0ubuntu2.debian.tar.xz 193732 SHA512:57afecb788c5b2cfaa86017f4c48e6dde0bf5156ef94628bb789c956b8864aa2989fc82c7d1e0fcdc2e56e17c205e4a51088352fa8a9e4412e442f92cf7f601c
-```
 
 ### `dpkg` source package: `brotli=1.0.9-2build4`
 
@@ -455,15 +450,9 @@ Licenses: (parsed from: `/usr/share/doc/coreutils/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris coreutils=8.32-4ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4ubuntu3.dsc' coreutils_8.32-4ubuntu3.dsc 2283 SHA512:1659ed55a593b20330b3bbccd9a4f1674ae8ccae09e12f2147c13c0870403d0a329d465d41bb4dd7b6a490bf067f983e381c1252ad209c8136f4775c5c6da196
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32.orig.tar.xz' coreutils_8.32.orig.tar.xz 5547836 SHA512:1c8f3584efd61b4b02e7ac5db8e103b63cfb2063432caaf1e64cb2dcc56d8c657d1133bbf10bd41468d6a1f31142e6caa81d16ae68fa3e6e84075c253613a145
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32.orig.tar.xz.asc' coreutils_8.32.orig.tar.xz.asc 833 SHA512:9c73b35c9e8f7c2b8eff317afcb5aa3234c5f41c80d1882f3c2342906f3fdc876ae45d1256dd1b8fd3cb58c50925f3c13f93de5018626634fdca3c72c14a9acb
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.32-4ubuntu3.debian.tar.xz' coreutils_8.32-4ubuntu3.debian.tar.xz 40904 SHA512:351131f25757c7e9e2323ab362992177fceb8e8cc95af26c1abb13f26ded1d0f7fb3d4af40db7a0ff8698401a5ae41fc401622aee1fad12a6e8cbaaae46ce02a
-```
 
 ### `dpkg` source package: `curl=7.81.0-1`
 
@@ -1142,15 +1131,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.34-0ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.34-0ubuntu3.dsc' glibc_2.34-0ubuntu3.dsc 8957 SHA512:c743d6fc4cce79bdbc8d45c86f5ca058d77eeec8c94b743a7c2d9e1344b0b60d9eb7f8c0bb01110603e3d5a8739d918e63f41a8d3dbfe328828f3683d2f0e921
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.34.orig.tar.xz' glibc_2.34.orig.tar.xz 17301232 SHA512:15252affd9ef4523a8001db16d497f4fdcb3ddf4cde7fe80e075df0bd3cc6524dc29fbe20229dbf5f97af580556e6b1fac0de321a5fe25322bc3e72f93beb624
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.34.orig.tar.xz.asc' glibc_2.34.orig.tar.xz.asc 833 SHA512:5b92e315d81a0a157f15b8ac29acddbf4669b51a72483bba4b1769db78986ec9814b23be3d7ac3779cefb0a38070af7ecb37dc1667e1cb3ede8c34cb1ca5d7f3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.34-0ubuntu3.debian.tar.xz' glibc_2.34-0ubuntu3.debian.tar.xz 883372 SHA512:4ca38eecd987f49ee36b5855528b92632125953b118fd39a9e8bb0b55bd77cedc1f2a17ee33fb60465714ff2f396a247cc27e954a1179805cb66bcdd9bc0ef0f
-```
 
 ### `dpkg` source package: `gmp=2:6.2.1+dfsg-3ubuntu1`
 
@@ -1416,15 +1399,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris icu=67.1-7ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_67.1-7ubuntu1.dsc' icu_67.1-7ubuntu1.dsc 2343 SHA512:e8b738ab57cb67b03c1399aedc008135025b11b4c7100a2f635b0986f4c540ffd9cc512412d1a289b84078c9f75a6e669f9911d04c4ad86be052719a9a0a449c
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_67.1.orig.tar.gz' icu_67.1.orig.tar.gz 24518055 SHA512:4779f1ce1ca7976f6fad6768853ea8c540da54d11509e3b6cfd864a04b5f2db1c3d4b546387f91ad02fb90804525bc37d2543173f0d705d6ca11dc6f2b7640a8
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_67.1.orig.tar.gz.asc' icu_67.1.orig.tar.gz.asc 833 SHA512:3d731cfbb200f150f6fda348a100226ad7a56dea428a46745bcaf5be3ad6a0bf3ef685acfdf759f51a53704d78b4a02ee90ecbf50f2e18d14fcef5050afd8f54
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu/icu_67.1-7ubuntu1.debian.tar.xz' icu_67.1-7ubuntu1.debian.tar.xz 30804 SHA512:12429339abc878f8376691eb964a4127bc65357b67f6336f992ecc524cfd392ddf3642398bfc49f791e0f101e79aa4ebe94dd92b6dc6f66eab43f3eee1510da3
-```
 
 ### `dpkg` source package: `ilmbase=2.5.7-2`
 
@@ -2897,15 +2874,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxt=1:1.2.0-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxt/libxt_1.2.0-1build1.dsc' libxt_1.2.0-1build1.dsc 2347 SHA512:013853d276cecc65f6fb462c6a38aaab9458d8b133b7f5542a7dc3ccf8cc716d41a7edc5ab96bdfe60c897f5012a05afe896ef3594e35aa7acd58fd952cc3443
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxt/libxt_1.2.0.orig.tar.gz' libxt_1.2.0.orig.tar.gz 1016961 SHA512:af8147becd98c956e9324b765151f46352cafa1f962c7d1517b18b5d27aa80d093cc3ceabd92c0f181485540987b7e46b18baf38ffe1eadf3f60ab66c3f66c52
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxt/libxt_1.2.0.orig.tar.gz.asc' libxt_1.2.0.orig.tar.gz.asc 195 SHA512:a105f63f0fdcdddea75024e869dbe271d4261703616d5d2a3393943bf20b72fc70e9c52382dcc0370d2460737fda6f4bcaac3fa7eb84e2f6e234aa358758a13a
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxt/libxt_1.2.0-1build1.diff.gz' libxt_1.2.0-1build1.diff.gz 31231 SHA512:b29ef8edfd5e05c1274760ff34be2a98a9145e8e44906c88bffc50a988851a023ca58b641a1e64ba154e2d264e4a1ac3ad980c7c0245b4fdffc860de86c95b32
-```
 
 ### `dpkg` source package: `libyaml=0.2.2-1build1`
 
@@ -3576,14 +3547,9 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pam=1.4.0-10ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.4.0-10ubuntu2.dsc' pam_1.4.0-10ubuntu2.dsc 2757 SHA512:8da17d75a47d4de2207cbf054dc5508a1e39f5de7a2e362d435221ebddfb2deb44785c520b72cfb6cc59f4b9a913b7ed377f51ba6f3a357f41c87b40df5d6a23
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.4.0.orig.tar.xz' pam_1.4.0.orig.tar.xz 988908 SHA512:26eda95c45598a500bc142da4d1abf93d03b3bbb0f2390fa87c72dcbffa208dbfa115c0b411095c31ee9955e36422ccf3e2df3bd486818fafffef8c4310798c4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pam/pam_1.4.0-10ubuntu2.debian.tar.xz' pam_1.4.0-10ubuntu2.debian.tar.xz 167324 SHA512:0325d0d2be2f1864260393183d19687a7c6b6aeb7956746c17a2051cb027b1074a2a9a9aed0d78cea38ca86251b01b42f3ee3a3f5966ed1e1bb72b1738c1fd9a
-```
 
 ### `dpkg` source package: `pango1.0=1.50.3+ds1-6`
 
@@ -4248,15 +4214,9 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.3.0-3build1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0-3build1.dsc' tiff_4.3.0-3build1.dsc 2441 SHA512:e3afc2d0adbe2a6520bb71dd12be54f26e8439787679d1142f06bba965db17eb6e2a9198fea93d41d76c3197612544b0d3de0fc148a078e9e08b97883194c901
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0.orig.tar.gz' tiff_4.3.0.orig.tar.gz 2808254 SHA512:e04a4a6c542e58a174c1e9516af3908acf1d3d3e1096648c5514f4963f73e7af27387a76b0fbabe43cf867a18874088f963796a7cd6e45deb998692e3e235493
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0.orig.tar.gz.asc' tiff_4.3.0.orig.tar.gz.asc 488 SHA512:115a4c5714b52d0fbea800c494d83c8a96b70b2c9ce84a8df03205d9afc517faa17963f5f9508c013d7d3e2be6675b84b594a771a829406473234c4bd85e469e
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.3.0-3build1.debian.tar.xz' tiff_4.3.0-3build1.debian.tar.xz 20300 SHA512:89c3f7fcc0ae16b21679ee93d75fd22232f8cd744d47bcbe678b8cdf334c2884e1515819ecf28fcef21eb39b4e22505fdd5cf13be9a22cce8d07c966d186c3b3
-```
 
 ### `dpkg` source package: `tzdata=2021e-1ubuntu1`
 
