@@ -803,14 +803,9 @@ Licenses: (parsed from: `/usr/share/doc/libcryptsetup12/copyright`)
 - `LGPL-2.1+ with OpenSSL exception`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cryptsetup=2:2.2.2-3ubuntu2.3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cryptsetup/cryptsetup_2.2.2-3ubuntu2.3.dsc' cryptsetup_2.2.2-3ubuntu2.3.dsc 2993 SHA512:18e16a5a094e56826580541a26a6f474878dd1a6d839961f772a78cccf79ff95b630d8874c2a254e4c9cbcb2bb183f69df487aa3e9a942bfadfa3186658e52f3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cryptsetup/cryptsetup_2.2.2.orig.tar.gz' cryptsetup_2.2.2.orig.tar.gz 10912347 SHA512:e7a19c12a0959fbaf75caf033d9737e3505a3f97da12a544959a435e10aa5c4499376b66309bd94db2b9acc13a9515ba6359145f950614487b8f35914819e9eb
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cryptsetup/cryptsetup_2.2.2-3ubuntu2.3.debian.tar.xz' cryptsetup_2.2.2-3ubuntu2.3.debian.tar.xz 125868 SHA512:ac9983c15d6fc273e6eb05f27f81725b5bc7ce2e010730a7c7497c9322dff5cdc6d69c2ae2878ca775e6002edf157ddd554eaecb6df936cfc393c605107024e0
-```
 
 ### `dpkg` source package: `cups=2.3.1-9ubuntu1.1`
 
