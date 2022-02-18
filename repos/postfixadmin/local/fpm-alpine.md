@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9fdf4287530a667c4d544b500da9b6d639620f7af88602c81db78ba7bca6d436`
-- Created: `2021-12-17T01:03:47.474162387Z`
-- Virtual Size: ~ 94.24 Mb  
+- Image ID: `sha256:72c27864fb5be9b6f74f5b478e0dbc30d1d633658dc2979aa5517904d19b7155`
+- Created: `2022-02-17T22:49:36.89997464Z`
+- Virtual Size: ~ 97.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.27`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.27.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.27.tar.xz.asc`
-  - `PHP_SHA256=3f8b937310f155822752229c2c2feb8cc2621e25a728e7b94d0d74c128c43d0c`
+  - `PHP_VERSION=7.4.28`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.28.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.28.tar.xz.asc`
+  - `PHP_SHA256=9cc3b6f6217b60582f78566b3814532c4b71d517876c25013ae51811e65d8fce`
   - `POSTFIXADMIN_VERSION=3.3.10`
   - `POSTFIXADMIN_SHA512=e00fc9ea343a928976d191adfa01020ee0c6ddbe80a39e01ca2ee414a18247958f033970f378fe4a9974636172a5e094e57117ee9ac7b930c592f433097a7aca`
 - Labels:
@@ -252,16 +252,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r7 description:
+libcrypto1.1-1.1.1l-r8 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r7 webpage:
+libcrypto1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r7 installed size:
+libcrypto1.1-1.1.1l-r8 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1l-r7 license:
+libcrypto1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```
@@ -286,16 +286,16 @@ MIT
 ### `apk` package: `libpq`
 
 ```console
-libpq-14.1-r4 description:
+libpq-14.2-r0 description:
 PostgreSQL client library
 
-libpq-14.1-r4 webpage:
+libpq-14.2-r0 webpage:
 https://www.postgresql.org/
 
-libpq-14.1-r4 installed size:
+libpq-14.2-r0 installed size:
 328 KiB
 
-libpq-14.1-r4 license:
+libpq-14.2-r0 license:
 PostgreSQL
 
 ```
@@ -337,16 +337,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r7 description:
+libssl1.1-1.1.1l-r8 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r7 webpage:
+libssl1.1-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r7 installed size:
+libssl1.1-1.1.1l-r8 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r7 license:
+libssl1.1-1.1.1l-r8 license:
 OpenSSL
 
 ```
