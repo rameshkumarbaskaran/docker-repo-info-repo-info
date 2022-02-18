@@ -1340,14 +1340,9 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.7.4-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.7.4-1ubuntu2.dsc' harfbuzz_2.7.4-1ubuntu2.dsc 2872 SHA512:ce9671743df87b66a3d38dd61bda38fc9af01d48751845627ff1b38d422f89ec73687d23cc0f8ca8b70c98ce82900ecc630e01e250e77dfdba5e7a635391b1da
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.7.4.orig.tar.xz' harfbuzz_2.7.4.orig.tar.xz 9532468 SHA512:d2af6a768c397c664f654cf36140e7b5696b3b983f637454604570c348247f7ffea135048d9b02cf6593cbde728567e31bf82a39df5ff38d680c78dff24d4cf0
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.7.4-1ubuntu2.debian.tar.xz' harfbuzz_2.7.4-1ubuntu2.debian.tar.xz 11056 SHA512:f5f42c2f9aa7a4ac3cf4e8c18fc439dc3b8ca963b7a3e8a22147684f4d4e23266282fd92dad35b62632f30ffb5fc93b0c1654dfc231febeacb57bc3170f2d38e
-```
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 
@@ -2650,14 +2645,13 @@ Licenses: (parsed from: `/usr/share/doc/libwebp-dev/copyright`, `/usr/share/doc/
 
 - `Apache-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libwebp=1.2.1-6
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwebp/libwebp_1.2.1-6.dsc' libwebp_1.2.1-6.dsc 2065 SHA512:a921aef38ecefd0fed7c815b0d2e5f78596c8195c21f9e243275c6a855ef51a95aa8b8c4c7a14166c43f0b621a9f5cb7d4c204160028d62822a88ea1022a43f5
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwebp/libwebp_1.2.1.orig.tar.gz' libwebp_1.2.1.orig.tar.gz 4100806 SHA512:5208ac9532c89ea9fec01122cb307afacdbf5c501ed1c6056e9ffc98e2a3386e637224e0301da88ae3a32aa0c210364e1e4eac79487e465ef9e54eb9b1af80aa
-'http://archive.ubuntu.com/ubuntu/pool/main/libw/libwebp/libwebp_1.2.1-6.debian.tar.xz' libwebp_1.2.1-6.debian.tar.xz 4952 SHA512:9333d8803d69d47779986a0365b148c204bd930980117cd5b2bc5a10ae917cda4dd91057c6d2e4357ee086c757d178611298bd0726849b31a7973feba45c5957
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libwebp/1.2.1-6/
+
 
 ### `dpkg` source package: `libwmf=0.2.8.4-17ubuntu2`
 

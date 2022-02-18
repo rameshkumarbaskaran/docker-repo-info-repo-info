@@ -1408,20 +1408,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.34.1-1
-'http://deb.debian.org/debian/pool/main/g/git/git_2.34.1-1.dsc' git_2.34.1-1.dsc 2825 SHA256:e4967e8136bd5965c114a9cff60f6a61b96d2fc7e50d18b9ab73369ef72ecc00
-'http://deb.debian.org/debian/pool/main/g/git/git_2.34.1.orig.tar.xz' git_2.34.1.orig.tar.xz 6623760 SHA256:3a0755dd1cfab71a24dd96df3498c29cd0acd13b04f3d08bf933e81286db802c
-'http://deb.debian.org/debian/pool/main/g/git/git_2.34.1-1.debian.tar.xz' git_2.34.1-1.debian.tar.xz 701248 SHA256:404fc4951fefa17406dcb263d345aa8e6262c1e2f206b0d9bb0c36ab6800a30c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.34.1-1/
 
-- https://sources.debian.net/src/git/1:2.34.1-1/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.34.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.34.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.70.2-1`
 
@@ -1942,19 +1935,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.61
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.61.dsc' init-system-helpers_1.61.dsc 1927 SHA256:77a7c04257951ad2e8295ede0b935d59e3ac62ea02489cc50e962cb79640df5e
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.61.tar.xz' init-system-helpers_1.61.tar.xz 41244 SHA256:9dc5e2f132f5e4efd1746c6492dcfd82d9c24b42980abeafd8089264578a43ae
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/init-system-helpers/1.61/
 
-- https://sources.debian.net/src/init-system-helpers/1.61/ (for browsing the source)
-- https://sources.debian.net/src/init-system-helpers/1.61/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/init-system-helpers/1.61/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `isl=0.24-2`
 
@@ -4361,21 +4348,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.7p1-4
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1-4.dsc' openssh_8.7p1-4.dsc 3347 SHA256:3793d616bd4d3168b20ddf60dc135d722b7ac1bd95f292c09db401ddcd2e9a0c
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1.orig.tar.gz' openssh_8.7p1.orig.tar.gz 1814595 SHA256:7ca34b8bb24ae9e50f33792b7091b3841d7e1b440ff57bc9fabddf01e2ed1e24
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1.orig.tar.gz.asc' openssh_8.7p1.orig.tar.gz.asc 833 SHA256:bb18c454a3e5d3738cb26a1c89e17c467d7a59529ec92251b26461ae04771eba
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.7p1-4.debian.tar.xz' openssh_8.7p1-4.debian.tar.xz 185728 SHA256:953ca645c6d13f61c0c3a5875aa88ab90f7b81d74518d2842a5b1b502e359c11
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssh/1:8.7p1-4/
 
-- https://sources.debian.net/src/openssh/1:8.7p1-4/ (for browsing the source)
-- https://sources.debian.net/src/openssh/1:8.7p1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssh/1:8.7p1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1m-1`
 
