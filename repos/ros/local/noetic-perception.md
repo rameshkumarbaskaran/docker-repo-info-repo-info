@@ -1075,14 +1075,9 @@ Licenses: (parsed from: `/usr/share/doc/libcryptsetup12/copyright`)
 - `LGPL-2.1+ with OpenSSL exception`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cryptsetup=2:2.2.2-3ubuntu2.3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cryptsetup/cryptsetup_2.2.2-3ubuntu2.3.dsc' cryptsetup_2.2.2-3ubuntu2.3.dsc 2993 SHA512:18e16a5a094e56826580541a26a6f474878dd1a6d839961f772a78cccf79ff95b630d8874c2a254e4c9cbcb2bb183f69df487aa3e9a942bfadfa3186658e52f3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cryptsetup/cryptsetup_2.2.2.orig.tar.gz' cryptsetup_2.2.2.orig.tar.gz 10912347 SHA512:e7a19c12a0959fbaf75caf033d9737e3505a3f97da12a544959a435e10aa5c4499376b66309bd94db2b9acc13a9515ba6359145f950614487b8f35914819e9eb
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cryptsetup/cryptsetup_2.2.2-3ubuntu2.3.debian.tar.xz' cryptsetup_2.2.2-3ubuntu2.3.debian.tar.xz 125868 SHA512:ac9983c15d6fc273e6eb05f27f81725b5bc7ce2e010730a7c7497c9322dff5cdc6d69c2ae2878ca775e6002edf157ddd554eaecb6df936cfc393c605107024e0
-```
 
 ### `dpkg` source package: `cups=2.3.1-9ubuntu1.1`
 
@@ -6245,14 +6240,9 @@ Licenses: (parsed from: `/usr/share/doc/libxnvctrl0/copyright`)
 - `other-Metrolink`
 - `other-XFree`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nvidia-settings=470.57.01-0ubuntu0.20.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01-0ubuntu0.20.04.2.dsc' nvidia-settings_470.57.01-0ubuntu0.20.04.2.dsc 2502 SHA512:5001032679d363fd0c939c6011665fa7eb14d1f3c20609d03d0c43460c3804be0aa11d6c873ba41a3ea3c8929c92f971c93ef1b32a1993fae3b20e51c311d981
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01.orig.tar.bz2' nvidia-settings_470.57.01.orig.tar.bz2 1062269 SHA512:8c6c7b69e4c435318e409f274602f85ba746c90cf06ed261473e2de8b3a6da56e323b813546da31856075ef9dfa056d1f42cdb823a65d171b6500ee7d4cf5a56
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nvidia-settings/nvidia-settings_470.57.01-0ubuntu0.20.04.2.debian.tar.xz' nvidia-settings_470.57.01-0ubuntu0.20.04.2.debian.tar.xz 24788 SHA512:c83303bc4dfcee6330fc7b504a9b314083c8dae0204b0a5a32b3d06722f7ea47c5aae63b568663d1cb94217b1660236e3655ecee541fee83e37f9417180d9c2c
-```
 
 ### `dpkg` source package: `ocl-icd=2.2.11-1ubuntu1`
 
