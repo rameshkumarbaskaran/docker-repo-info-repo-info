@@ -1567,7 +1567,7 @@ CMD ["apache2-foreground"]
 ## `yourls:1-apache`
 
 ```console
-$ docker pull yourls@sha256:7c42e7ff2f259d6a5c1a746b3c7d8dc22a2ca532cadc4bfe60fa2c0b7eb85c8a
+$ docker pull yourls@sha256:4698f7411ccc1cc859a8f6e7e451879eac5d2213e66fe3c49d22faf407611075
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2348,14 +2348,14 @@ CMD ["apache2-foreground"]
 ### `yourls:1-apache` - linux; 386
 
 ```console
-$ docker pull yourls@sha256:7e7e5615114ffc57be061213bd78c0b758c126a7ba78b421af3faff11bb762d9
+$ docker pull yourls@sha256:438f03a8defced47738f4008fffe7e0cc3940c1a1779171c92e204458d81fcfe
 ```
 
 -	Docker Version: 20.10.7
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **174.2 MB (174219730 bytes)**  
+-	Total Size: **174.2 MB (174219740 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:34d05ec1deea5584b01ed6759b99616aa46c86e657b812a3fdda35e562f49206`
+-	Image ID: `sha256:d14508dc0099c5cbcb7156d511a32f7afaec7bb4aa470712d2ce99807bc6c690`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -2442,15 +2442,15 @@ RUN {         echo 'opcache.memory_consumption=128';         echo 'opcache.inter
 RUN a2enmod rewrite expires
 # Sat, 19 Feb 2022 14:03:04 GMT
 RUN set -eux;     version="1.8.2";     sha256="6d818622e3ba1d5785c2dbcc088be6890f5675fd4f24a2e3111eda4523bbd7ae";     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${version}.tar.gz";     echo "$sha256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${version}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
-# Sat, 19 Feb 2022 14:03:04 GMT
-COPY --chown=www-data:www-datafile:0bcfdfe0566007e7477c55552a1341b82b958e95879a5314f411d2188da2429e in /usr/src/yourls/user/ 
-# Sat, 19 Feb 2022 14:03:05 GMT
-COPY file:a47a395071c52d8d08402c95253924b09809713039b46033d6f6f75603938896 in /usr/local/bin/ 
-# Sat, 19 Feb 2022 14:03:05 GMT
+# Mon, 21 Feb 2022 17:38:58 GMT
+COPY --chown=www-data:www-datafile:f5584b9849b80034920f4de5f1297cb1be461f765f3437b87ddf6c86daa6499d in /usr/src/yourls/user/ 
+# Mon, 21 Feb 2022 17:38:58 GMT
+COPY file:6b25ad92f8d7ceda57a7891b5b9f6f74a178e41b54c0d1e9644ce8ca0debdaab in /usr/local/bin/ 
+# Mon, 21 Feb 2022 17:38:58 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Sat, 19 Feb 2022 14:03:05 GMT
+# Mon, 21 Feb 2022 17:38:59 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 19 Feb 2022 14:03:05 GMT
+# Mon, 21 Feb 2022 17:38:59 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -2523,16 +2523,16 @@ CMD ["apache2-foreground"]
 		Last Modified: Sat, 19 Feb 2022 14:06:13 GMT  
 		Size: 2.6 MB (2574447 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853d713fb543aa1eb6b81ec382362c0e697a2915496c5740cfba49a50e1145a1`  
-		Last Modified: Sat, 19 Feb 2022 14:06:12 GMT  
-		Size: 2.0 KB (2046 bytes)  
+	-	`sha256:6f42be588ddb5a7d8f665877a2fd55b199facbbd674e688e7d6c742b0df8941e`  
+		Last Modified: Mon, 21 Feb 2022 17:39:56 GMT  
+		Size: 2.1 KB (2059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c91f01e8193d2804e3ce237d69da23e55fc0647d91d3f4fd3c5b31ade827e421`  
-		Last Modified: Sat, 19 Feb 2022 14:06:12 GMT  
-		Size: 1.6 KB (1550 bytes)  
+	-	`sha256:8e071fd888201d9c0d9b19c3991bac81bb3dceec7d277ba5c79173a1bf2cd067`  
+		Last Modified: Mon, 21 Feb 2022 17:39:56 GMT  
+		Size: 1.5 KB (1547 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2c87417032169a6f82247302bacc76a8885d343a752116f83f2a85814e9b8253`  
-		Last Modified: Sat, 19 Feb 2022 14:06:12 GMT  
+	-	`sha256:e9491ccc8e391a87113ff0528a2f7dd6ea5be8f6531966bc0c1d2c0b3543bbc5`  
+		Last Modified: Mon, 21 Feb 2022 17:39:56 GMT  
 		Size: 335.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
