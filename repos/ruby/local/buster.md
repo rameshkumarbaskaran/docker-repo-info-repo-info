@@ -1,10 +1,10 @@
-# `ruby:3.1.0-buster`
+# `ruby:3.1.1-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:275ecc992a5f706057434560b52c6b2a135312ab8232ce7a8b7963e3af7d8844`
-- Created: `2022-01-26T23:33:14.876735913Z`
-- Virtual Size: ~ 860.12 Mb  
+- Image ID: `sha256:c95649cd194d6a03bc7c5d28f113db1e34e8f98b555dbba8216a59ad19494930`
+- Created: `2022-02-19T00:09:22.44255083Z`
+- Virtual Size: ~ 861.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `RUBY_MAJOR=3.1`
-  - `RUBY_VERSION=3.1.0`
-  - `RUBY_DOWNLOAD_SHA256=1a0e0b69b9b062b6299ff1f6c6d77b66aff3995f63d1d8b8771e7a113ec472e2`
+  - `RUBY_VERSION=3.1.1`
+  - `RUBY_DOWNLOAD_SHA256=7aefaa6b78b076515d272ec59c4616707a54fc9f2391239737d5f10af7a16caa`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
