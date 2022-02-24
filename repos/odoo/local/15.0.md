@@ -87,9 +87,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ann=1.1.2+doc-7
-'http://deb.debian.org/debian/pool/main/a/ann/ann_1.1.2+doc-7.dsc' ann_1.1.2+doc-7.dsc 2115 SHA256:57aa9dc58345ec05897a7eb53cf6b4249261ef09465e8eb0458070c829e22027
-'http://deb.debian.org/debian/pool/main/a/ann/ann_1.1.2+doc.orig.tar.gz' ann_1.1.2+doc.orig.tar.gz 693957 SHA256:1a8053e4f1ee284430758a2d864e567d9b4b08c0f6562460c9913497fafc78c1
-'http://deb.debian.org/debian/pool/main/a/ann/ann_1.1.2+doc-7.debian.tar.xz' ann_1.1.2+doc-7.debian.tar.xz 172056 SHA256:a556b60a34bcae258268d9de6e5b19d0b273515dd928d40bcdbe7f4bfdc38652
+'http://deb.debian.org/debian/pool/main/a/ann/ann_1.1.2%2bdoc-7.dsc' ann_1.1.2+doc-7.dsc 2115 SHA256:57aa9dc58345ec05897a7eb53cf6b4249261ef09465e8eb0458070c829e22027
+'http://deb.debian.org/debian/pool/main/a/ann/ann_1.1.2%2bdoc.orig.tar.gz' ann_1.1.2+doc.orig.tar.gz 693957 SHA256:1a8053e4f1ee284430758a2d864e567d9b4b08c0f6562460c9913497fafc78c1
+'http://deb.debian.org/debian/pool/main/a/ann/ann_1.1.2%2bdoc-7.debian.tar.xz' ann_1.1.2+doc-7.debian.tar.xz 172056 SHA256:a556b60a34bcae258268d9de6e5b19d0b273515dd928d40bcdbe7f4bfdc38652
 ```
 
 Other potentially useful URLs:
@@ -220,8 +220,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris base-files=11.1+deb11u2
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1+deb11u2.dsc' base-files_11.1+deb11u2.dsc 1110 SHA256:5468729fe6f6971890303bacd8d8b6b32c12cfa1f8b00be6d06254e3e318246d
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1+deb11u2.tar.xz' base-files_11.1+deb11u2.tar.xz 65556 SHA256:a0338008933fcc8260c91e526dab8f0ae38811cc5a0b8f64057101b2f27aeb32
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1%2bdeb11u2.dsc' base-files_11.1+deb11u2.dsc 1110 SHA256:5468729fe6f6971890303bacd8d8b6b32c12cfa1f8b00be6d06254e3e318246d
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_11.1%2bdeb11u2.tar.xz' base-files_11.1+deb11u2.tar.xz 65556 SHA256:a0338008933fcc8260c91e526dab8f0ae38811cc5a0b8f64057101b2f27aeb32
 ```
 
 Other potentially useful URLs:
@@ -371,10 +371,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris c-ares=1.17.1-1+deb11u1
-'http://deb.debian.org/debian/pool/main/c/c-ares/c-ares_1.17.1-1+deb11u1.dsc' c-ares_1.17.1-1+deb11u1.dsc 2301 SHA256:067653ef0abc6767bea6ed02821536a1716d79a0f34aedb62a0b4cb389aa85a5
+'http://deb.debian.org/debian/pool/main/c/c-ares/c-ares_1.17.1-1%2bdeb11u1.dsc' c-ares_1.17.1-1+deb11u1.dsc 2301 SHA256:067653ef0abc6767bea6ed02821536a1716d79a0f34aedb62a0b4cb389aa85a5
 'http://deb.debian.org/debian/pool/main/c/c-ares/c-ares_1.17.1.orig.tar.gz' c-ares_1.17.1.orig.tar.gz 1518701 SHA256:d73dd0f6de824afd407ce10750ea081af47eba52b8a6cb307d220131ad93fc40
 'http://deb.debian.org/debian/pool/main/c/c-ares/c-ares_1.17.1.orig.tar.gz.asc' c-ares_1.17.1.orig.tar.gz.asc 488 SHA256:2dac298ea5c1add08bfcacc65bf879016c7f9e2ab54ca4f92f83c2b5681b4c60
-'http://deb.debian.org/debian/pool/main/c/c-ares/c-ares_1.17.1-1+deb11u1.debian.tar.xz' c-ares_1.17.1-1+deb11u1.debian.tar.xz 9960 SHA256:64a43590c385ecd2d6b4198978b8c4cf07de750319b015a44bcd7e090b8eeafe
+'http://deb.debian.org/debian/pool/main/c/c-ares/c-ares_1.17.1-1%2bdeb11u1.debian.tar.xz' c-ares_1.17.1-1+deb11u1.debian.tar.xz 9960 SHA256:64a43590c385ecd2d6b4198978b8c4cf07de750319b015a44bcd7e090b8eeafe
 ```
 
 Other potentially useful URLs:
@@ -580,9 +580,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris curl=7.74.0-1.3+deb11u1
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0-1.3+deb11u1.dsc' curl_7.74.0-1.3+deb11u1.dsc 2699 SHA256:7983845054585d56348bc262cee1f4fff96866fe23ca864db3c9d43e829139fc
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0-1.3%2bdeb11u1.dsc' curl_7.74.0-1.3+deb11u1.dsc 2699 SHA256:7983845054585d56348bc262cee1f4fff96866fe23ca864db3c9d43e829139fc
 'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0.orig.tar.gz' curl_7.74.0.orig.tar.gz 4043409 SHA256:e56b3921eeb7a2951959c02db0912b5fcd5fdba5aca071da819e1accf338bbd7
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0-1.3+deb11u1.debian.tar.xz' curl_7.74.0-1.3+deb11u1.debian.tar.xz 37024 SHA256:eac5deff2b2511443ba4995daa8afe8985aaa5f62a24d672e9715fcabe0069b2
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.74.0-1.3%2bdeb11u1.debian.tar.xz' curl_7.74.0-1.3+deb11u1.debian.tar.xz 37024 SHA256:eac5deff2b2511443ba4995daa8afe8985aaa5f62a24d672e9715fcabe0069b2
 ```
 
 Other potentially useful URLs:
@@ -608,9 +608,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris cyrus-sasl2=2.1.27+dfsg-2.1
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-2.1.dsc' cyrus-sasl2_2.1.27+dfsg-2.1.dsc 3433 SHA256:714b4f59fdf5e3c436b0f10d15535f0048f5164a9a40763f2537fadbd2175da8
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg.orig.tar.xz' cyrus-sasl2_2.1.27+dfsg.orig.tar.xz 2058596 SHA256:108b0c691c423837264f05abb559ea76c3dfdd91246555e8abe87c129a6e37cd
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-2.1.debian.tar.xz' cyrus-sasl2_2.1.27+dfsg-2.1.debian.tar.xz 101356 SHA256:0b2cf5e3118a8d99fc39a8133e5508de298b90507fb8c0846d4dae840bf4ec60
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27%2bdfsg-2.1.dsc' cyrus-sasl2_2.1.27+dfsg-2.1.dsc 3433 SHA256:714b4f59fdf5e3c436b0f10d15535f0048f5164a9a40763f2537fadbd2175da8
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27%2bdfsg.orig.tar.xz' cyrus-sasl2_2.1.27+dfsg.orig.tar.xz 2058596 SHA256:108b0c691c423837264f05abb559ea76c3dfdd91246555e8abe87c129a6e37cd
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27%2bdfsg-2.1.debian.tar.xz' cyrus-sasl2_2.1.27+dfsg-2.1.debian.tar.xz 101356 SHA256:0b2cf5e3118a8d99fc39a8133e5508de298b90507fb8c0846d4dae840bf4ec60
 ```
 
 Other potentially useful URLs:
@@ -640,9 +640,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris dash=0.5.11+git20200708+dd9ef66-5
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-5.dsc' dash_0.5.11+git20200708+dd9ef66-5.dsc 1906 SHA256:b0568c34647dc2aa0b8e2656c5e7449d9a1feb4b89d6857f507173b1f9a42ee7
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66.orig.tar.gz' dash_0.5.11+git20200708+dd9ef66.orig.tar.gz 167776 SHA256:ab70b1f165bfedadd1282da546f1c917f1b7ccb2c5c2f898310a963e2ab5520c
-'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11+git20200708+dd9ef66-5.debian.tar.xz' dash_0.5.11+git20200708+dd9ef66-5.debian.tar.xz 43120 SHA256:5da6039e043c953ff91a31c767ed703699870682ff356a1642f4798ce04a2926
+'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11%2bgit20200708%2bdd9ef66-5.dsc' dash_0.5.11+git20200708+dd9ef66-5.dsc 1906 SHA256:b0568c34647dc2aa0b8e2656c5e7449d9a1feb4b89d6857f507173b1f9a42ee7
+'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11%2bgit20200708%2bdd9ef66.orig.tar.gz' dash_0.5.11+git20200708+dd9ef66.orig.tar.gz 167776 SHA256:ab70b1f165bfedadd1282da546f1c917f1b7ccb2c5c2f898310a963e2ab5520c
+'http://deb.debian.org/debian/pool/main/d/dash/dash_0.5.11%2bgit20200708%2bdd9ef66-5.debian.tar.xz' dash_0.5.11+git20200708+dd9ef66-5.debian.tar.xz 43120 SHA256:5da6039e043c953ff91a31c767ed703699870682ff356a1642f4798ce04a2926
 ```
 
 Other potentially useful URLs:
@@ -665,9 +665,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris db5.3=5.3.28+dfsg1-0.8
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1-0.8.dsc' db5.3_5.3.28+dfsg1-0.8.dsc 3113 SHA256:5189bebd157e3b51c075804d1affebc87cdbfb782808c621e131660719c24374
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1.orig.tar.xz' db5.3_5.3.28+dfsg1.orig.tar.xz 19723860 SHA256:b19bf3dd8ce74b95a7b215be9a7c8489e8e8f18da60d64d6340a06e75f497749
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1-0.8.debian.tar.xz' db5.3_5.3.28+dfsg1-0.8.debian.tar.xz 30748 SHA256:073c0c87283bf5e606f3ce6d1814315b40b9685c943601ae3fd81e2da4e612d4
+'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28%2bdfsg1-0.8.dsc' db5.3_5.3.28+dfsg1-0.8.dsc 3113 SHA256:5189bebd157e3b51c075804d1affebc87cdbfb782808c621e131660719c24374
+'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28%2bdfsg1.orig.tar.xz' db5.3_5.3.28+dfsg1.orig.tar.xz 19723860 SHA256:b19bf3dd8ce74b95a7b215be9a7c8489e8e8f18da60d64d6340a06e75f497749
+'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28%2bdfsg1-0.8.debian.tar.xz' db5.3_5.3.28+dfsg1-0.8.debian.tar.xz 30748 SHA256:073c0c87283bf5e606f3ce6d1814315b40b9685c943601ae3fd81e2da4e612d4
 ```
 
 Other potentially useful URLs:
@@ -1008,9 +1008,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris fonts-font-awesome=5.0.10+really4.7.0~dfsg-4.1
-'http://deb.debian.org/debian/pool/main/f/fonts-font-awesome/fonts-font-awesome_5.0.10+really4.7.0~dfsg-4.1.dsc' fonts-font-awesome_5.0.10+really4.7.0~dfsg-4.1.dsc 2322 SHA256:50bcabfd5cb4ae4ff602ceabc358ae0253336bb50eec3a4414c668810457f489
-'http://deb.debian.org/debian/pool/main/f/fonts-font-awesome/fonts-font-awesome_5.0.10+really4.7.0~dfsg.orig.tar.gz' fonts-font-awesome_5.0.10+really4.7.0~dfsg.orig.tar.gz 675665 SHA256:9d25735ecb8984dae7b1bf04c6c343f8684ce88e0c81104e4b5f5495df3ded5d
-'http://deb.debian.org/debian/pool/main/f/fonts-font-awesome/fonts-font-awesome_5.0.10+really4.7.0~dfsg-4.1.debian.tar.xz' fonts-font-awesome_5.0.10+really4.7.0~dfsg-4.1.debian.tar.xz 11068 SHA256:671cb14ca943a2a7cc07df2dedb639edc95a83dd674bfc84a3df5568bc4b708b
+'http://deb.debian.org/debian/pool/main/f/fonts-font-awesome/fonts-font-awesome_5.0.10%2breally4.7.0%7edfsg-4.1.dsc' fonts-font-awesome_5.0.10+really4.7.0~dfsg-4.1.dsc 2322 SHA256:50bcabfd5cb4ae4ff602ceabc358ae0253336bb50eec3a4414c668810457f489
+'http://deb.debian.org/debian/pool/main/f/fonts-font-awesome/fonts-font-awesome_5.0.10%2breally4.7.0%7edfsg.orig.tar.gz' fonts-font-awesome_5.0.10+really4.7.0~dfsg.orig.tar.gz 675665 SHA256:9d25735ecb8984dae7b1bf04c6c343f8684ce88e0c81104e4b5f5495df3ded5d
+'http://deb.debian.org/debian/pool/main/f/fonts-font-awesome/fonts-font-awesome_5.0.10%2breally4.7.0%7edfsg-4.1.debian.tar.xz' fonts-font-awesome_5.0.10+really4.7.0~dfsg-4.1.debian.tar.xz 11068 SHA256:671cb14ca943a2a7cc07df2dedb639edc95a83dd674bfc84a3df5568bc4b708b
 ```
 
 Other potentially useful URLs:
@@ -1061,9 +1061,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris fonts-noto-cjk=1:20201206-cjk+repack1-1
-'http://deb.debian.org/debian/pool/main/f/fonts-noto-cjk/fonts-noto-cjk_20201206-cjk+repack1-1.dsc' fonts-noto-cjk_20201206-cjk+repack1-1.dsc 2163 SHA256:0fbfb471ec62a16821f21d59909c634ced4f72b66be28c67879a61b510497172
-'http://deb.debian.org/debian/pool/main/f/fonts-noto-cjk/fonts-noto-cjk_20201206-cjk+repack1.orig.tar.xz' fonts-noto-cjk_20201206-cjk+repack1.orig.tar.xz 182606672 SHA256:44100e91817be4a8e94b397579bf62c11e3c8d3d6316d1f9468057b1623d2387
-'http://deb.debian.org/debian/pool/main/f/fonts-noto-cjk/fonts-noto-cjk_20201206-cjk+repack1-1.debian.tar.xz' fonts-noto-cjk_20201206-cjk+repack1-1.debian.tar.xz 5712 SHA256:93b5e900e46ba2e962ac7be2cbbfefa912324ebe9c33e6d66c0776e2ad57d49b
+'http://deb.debian.org/debian/pool/main/f/fonts-noto-cjk/fonts-noto-cjk_20201206-cjk%2brepack1-1.dsc' fonts-noto-cjk_20201206-cjk+repack1-1.dsc 2163 SHA256:0fbfb471ec62a16821f21d59909c634ced4f72b66be28c67879a61b510497172
+'http://deb.debian.org/debian/pool/main/f/fonts-noto-cjk/fonts-noto-cjk_20201206-cjk%2brepack1.orig.tar.xz' fonts-noto-cjk_20201206-cjk+repack1.orig.tar.xz 182606672 SHA256:44100e91817be4a8e94b397579bf62c11e3c8d3d6316d1f9468057b1623d2387
+'http://deb.debian.org/debian/pool/main/f/fonts-noto-cjk/fonts-noto-cjk_20201206-cjk%2brepack1-1.debian.tar.xz' fonts-noto-cjk_20201206-cjk+repack1-1.debian.tar.xz 5712 SHA256:93b5e900e46ba2e962ac7be2cbbfefa912324ebe9c33e6d66c0776e2ad57d49b
 ```
 
 Other potentially useful URLs:
@@ -1090,9 +1090,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris fonts-roboto=2:0~20170802-3
-'http://deb.debian.org/debian/pool/main/f/fonts-roboto/fonts-roboto_0~20170802-3.dsc' fonts-roboto_0~20170802-3.dsc 2043 SHA256:86f6bda68337b337d6906bacdb8f0293db8d97c9f15a77e3c30f83c1b1104464
-'http://deb.debian.org/debian/pool/main/f/fonts-roboto/fonts-roboto_0~20170802.orig.tar.xz' fonts-roboto_0~20170802.orig.tar.xz 5960112 SHA256:28729751815fa424282f9e534ac21ce11313969b67bb4ab278268fdcb23967e1
-'http://deb.debian.org/debian/pool/main/f/fonts-roboto/fonts-roboto_0~20170802-3.debian.tar.xz' fonts-roboto_0~20170802-3.debian.tar.xz 20488 SHA256:33d09403f2e68773e97b40421dfe79d85ed596f7fa8d29aff0549894d2076750
+'http://deb.debian.org/debian/pool/main/f/fonts-roboto/fonts-roboto_0%7e20170802-3.dsc' fonts-roboto_0~20170802-3.dsc 2043 SHA256:86f6bda68337b337d6906bacdb8f0293db8d97c9f15a77e3c30f83c1b1104464
+'http://deb.debian.org/debian/pool/main/f/fonts-roboto/fonts-roboto_0%7e20170802.orig.tar.xz' fonts-roboto_0~20170802.orig.tar.xz 5960112 SHA256:28729751815fa424282f9e534ac21ce11313969b67bb4ab278268fdcb23967e1
+'http://deb.debian.org/debian/pool/main/f/fonts-roboto/fonts-roboto_0%7e20170802-3.debian.tar.xz' fonts-roboto_0~20170802-3.debian.tar.xz 20488 SHA256:33d09403f2e68773e97b40421dfe79d85ed596f7fa8d29aff0549894d2076750
 ```
 
 Other potentially useful URLs:
@@ -1158,13 +1158,13 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris freetype=2.10.4+dfsg-1
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4+dfsg-1.dsc' freetype_2.10.4+dfsg-1.dsc 3693 SHA256:e49fd5a3be9816e2c9caf287e945a3257e60b809a50db83fcea2aa8e4ffa2438
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4+dfsg.orig-ft2demos.tar.xz' freetype_2.10.4+dfsg.orig-ft2demos.tar.xz 236712 SHA256:3f873ebe4fb387da3859149459f9be95320ce1fd56b50f8fdb9d2a8492887083
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4+dfsg.orig-ft2demos.tar.xz.asc' freetype_2.10.4+dfsg.orig-ft2demos.tar.xz.asc 195 SHA256:38d5b9a5aa11ecf8c6d4c983ef48b3ce2288fdf93d44719df2598b9d415c8061
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4+dfsg.orig-ft2docs.tar.xz' freetype_2.10.4+dfsg.orig-ft2docs.tar.xz 2079084 SHA256:cca1c19d1efa911bb685d919b5b0fe1279b0699bf8eb6a3d3bf9f02784758212
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4+dfsg.orig-ft2docs.tar.xz.asc' freetype_2.10.4+dfsg.orig-ft2docs.tar.xz.asc 195 SHA256:29fca9ff0e1cdc57ad5707b17f629eeaa216eb334f6082f1b05fb0fe35e14ff3
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4+dfsg.orig.tar.xz' freetype_2.10.4+dfsg.orig.tar.xz 2259340 SHA256:db0c0938b3b75cf314775baa75198098e41583b3aaa4804b454f183ce45120a9
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4+dfsg-1.debian.tar.xz' freetype_2.10.4+dfsg-1.debian.tar.xz 116636 SHA256:96276d66eb56247545cd9e60ffae0bd5b5aee0490e4e7171337a6666bc51b125
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4%2bdfsg-1.dsc' freetype_2.10.4+dfsg-1.dsc 3693 SHA256:e49fd5a3be9816e2c9caf287e945a3257e60b809a50db83fcea2aa8e4ffa2438
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4%2bdfsg.orig-ft2demos.tar.xz' freetype_2.10.4+dfsg.orig-ft2demos.tar.xz 236712 SHA256:3f873ebe4fb387da3859149459f9be95320ce1fd56b50f8fdb9d2a8492887083
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4%2bdfsg.orig-ft2demos.tar.xz.asc' freetype_2.10.4+dfsg.orig-ft2demos.tar.xz.asc 195 SHA256:38d5b9a5aa11ecf8c6d4c983ef48b3ce2288fdf93d44719df2598b9d415c8061
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4%2bdfsg.orig-ft2docs.tar.xz' freetype_2.10.4+dfsg.orig-ft2docs.tar.xz 2079084 SHA256:cca1c19d1efa911bb685d919b5b0fe1279b0699bf8eb6a3d3bf9f02784758212
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4%2bdfsg.orig-ft2docs.tar.xz.asc' freetype_2.10.4+dfsg.orig-ft2docs.tar.xz.asc 195 SHA256:29fca9ff0e1cdc57ad5707b17f629eeaa216eb334f6082f1b05fb0fe35e14ff3
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4%2bdfsg.orig.tar.xz' freetype_2.10.4+dfsg.orig.tar.xz 2259340 SHA256:db0c0938b3b75cf314775baa75198098e41583b3aaa4804b454f183ce45120a9
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.4%2bdfsg-1.debian.tar.xz' freetype_2.10.4+dfsg-1.debian.tar.xz 116636 SHA256:96276d66eb56247545cd9e60ffae0bd5b5aee0490e4e7171337a6666bc51b125
 ```
 
 Other potentially useful URLs:
@@ -1361,9 +1361,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glibc=2.31-13+deb11u2
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-13+deb11u2.dsc' glibc_2.31-13+deb11u2.dsc 8347 SHA256:ba641c41004c07c52e0f936785c395d2654af6c4dd3c400f7a929c51a26afc5e
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-13%2bdeb11u2.dsc' glibc_2.31-13+deb11u2.dsc 8347 SHA256:ba641c41004c07c52e0f936785c395d2654af6c4dd3c400f7a929c51a26afc5e
 'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17254692 SHA256:3dc7704b6166839c37d7047626fd199f3d4c09aca0d90e48c51c31c967dce34e
-'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-13+deb11u2.debian.tar.xz' glibc_2.31-13+deb11u2.debian.tar.xz 911924 SHA256:d79509e8f8f91544bcf3dba5f4a17fc9c7d0692bcde8d9a9a32b431e80ce0a95
+'http://deb.debian.org/debian/pool/main/g/glibc/glibc_2.31-13%2bdeb11u2.debian.tar.xz' glibc_2.31-13+deb11u2.debian.tar.xz 911924 SHA256:d79509e8f8f91544bcf3dba5f4a17fc9c7d0692bcde8d9a9a32b431e80ce0a95
 ```
 
 Other potentially useful URLs:
@@ -1389,9 +1389,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gmp=2:6.2.1+dfsg-1+deb11u1
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.2.1+dfsg-1+deb11u1.dsc' gmp_6.2.1+dfsg-1+deb11u1.dsc 2181 SHA256:4c09eb0a1c333fc5e67184a18f050af0f46f7f0fdeb533557bebd89df07c137b
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.2.1+dfsg.orig.tar.xz' gmp_6.2.1+dfsg.orig.tar.xz 1853476 SHA256:c6ba08e3f079260ab90ff44ab8801eae134cd62cd78f4aa56317c0e70daa40cb
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.2.1+dfsg-1+deb11u1.debian.tar.xz' gmp_6.2.1+dfsg-1+deb11u1.debian.tar.xz 21920 SHA256:3cde187d542f5c095c6db8b76ec5252353e0413b492c57eb2e67ed3c43f40172
+'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.2.1%2bdfsg-1%2bdeb11u1.dsc' gmp_6.2.1+dfsg-1+deb11u1.dsc 2181 SHA256:4c09eb0a1c333fc5e67184a18f050af0f46f7f0fdeb533557bebd89df07c137b
+'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.2.1%2bdfsg.orig.tar.xz' gmp_6.2.1+dfsg.orig.tar.xz 1853476 SHA256:c6ba08e3f079260ab90ff44ab8801eae134cd62cd78f4aa56317c0e70daa40cb
+'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.2.1%2bdfsg-1%2bdeb11u1.debian.tar.xz' gmp_6.2.1+dfsg-1+deb11u1.debian.tar.xz 21920 SHA256:3cde187d542f5c095c6db8b76ec5252353e0413b492c57eb2e67ed3c43f40172
 ```
 
 Other potentially useful URLs:
@@ -1593,9 +1593,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gsfonts=1:8.11+urwcyr1.0.7~pre44-4.5
-'http://deb.debian.org/debian/pool/main/g/gsfonts/gsfonts_8.11+urwcyr1.0.7~pre44-4.5.dsc' gsfonts_8.11+urwcyr1.0.7~pre44-4.5.dsc 1986 SHA256:e61dd17d0bb41c71c2b9e385b43a2d27c57382a5cf60835eb970d65274556449
-'http://deb.debian.org/debian/pool/main/g/gsfonts/gsfonts_8.11+urwcyr1.0.7~pre44.orig.tar.gz' gsfonts_8.11+urwcyr1.0.7~pre44.orig.tar.gz 3390551 SHA256:9f2a598998bf05e023546ac981aa2a857aa1635d2e0e3020a3c3004ad564dc00
-'http://deb.debian.org/debian/pool/main/g/gsfonts/gsfonts_8.11+urwcyr1.0.7~pre44-4.5.diff.gz' gsfonts_8.11+urwcyr1.0.7~pre44-4.5.diff.gz 7023 SHA256:24ce5f0ce38d68a07cf950a85617b7b8093a5b70793c9120bd9f765e642213ba
+'http://deb.debian.org/debian/pool/main/g/gsfonts/gsfonts_8.11%2burwcyr1.0.7%7epre44-4.5.dsc' gsfonts_8.11+urwcyr1.0.7~pre44-4.5.dsc 1986 SHA256:e61dd17d0bb41c71c2b9e385b43a2d27c57382a5cf60835eb970d65274556449
+'http://deb.debian.org/debian/pool/main/g/gsfonts/gsfonts_8.11%2burwcyr1.0.7%7epre44.orig.tar.gz' gsfonts_8.11+urwcyr1.0.7~pre44.orig.tar.gz 3390551 SHA256:9f2a598998bf05e023546ac981aa2a857aa1635d2e0e3020a3c3004ad564dc00
+'http://deb.debian.org/debian/pool/main/g/gsfonts/gsfonts_8.11%2burwcyr1.0.7%7epre44-4.5.diff.gz' gsfonts_8.11+urwcyr1.0.7~pre44-4.5.diff.gz 7023 SHA256:24ce5f0ce38d68a07cf950a85617b7b8093a5b70793c9120bd9f765e642213ba
 ```
 
 Other potentially useful URLs:
@@ -1619,9 +1619,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gts=0.7.6+darcs121130-4
-'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6+darcs121130-4.dsc' gts_0.7.6+darcs121130-4.dsc 2170 SHA256:3d7dbf72a2194891a485d03f8a002e8d149dc59a915a7bbf36b42c53408ef733
-'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6+darcs121130.orig.tar.gz' gts_0.7.6+darcs121130.orig.tar.gz 880569 SHA256:c23f72ab74bbf65599f8c0b599d6336fabe1ec2a09c19b70544eeefdc069b73b
-'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6+darcs121130-4.debian.tar.bz2' gts_0.7.6+darcs121130-4.debian.tar.bz2 13837 SHA256:1fcf9c79ca0b4fc3662de645ba4e65564ea974566a3ecd730e9908f1adc425cd
+'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6%2bdarcs121130-4.dsc' gts_0.7.6+darcs121130-4.dsc 2170 SHA256:3d7dbf72a2194891a485d03f8a002e8d149dc59a915a7bbf36b42c53408ef733
+'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6%2bdarcs121130.orig.tar.gz' gts_0.7.6+darcs121130.orig.tar.gz 880569 SHA256:c23f72ab74bbf65599f8c0b599d6336fabe1ec2a09c19b70544eeefdc069b73b
+'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6%2bdarcs121130-4.debian.tar.bz2' gts_0.7.6+darcs121130-4.debian.tar.bz2 13837 SHA256:1fcf9c79ca0b4fc3662de645ba4e65564ea974566a3ecd730e9908f1adc425cd
 ```
 
 Other potentially useful URLs:
@@ -1644,9 +1644,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gyp=0.1+20200513gitcaa6002-2
-'http://deb.debian.org/debian/pool/main/g/gyp/gyp_0.1+20200513gitcaa6002-2.dsc' gyp_0.1+20200513gitcaa6002-2.dsc 2076 SHA256:342916fb598b48e4cfd33a2d511d8e04f64c1f008f6af9bb3471044c38a7bcc6
-'http://deb.debian.org/debian/pool/main/g/gyp/gyp_0.1+20200513gitcaa6002.orig.tar.gz' gyp_0.1+20200513gitcaa6002.orig.tar.gz 628268 SHA256:8d531bc7d3302461d76a32367453cec60ed08b455f27a53d8f313d81761713a8
-'http://deb.debian.org/debian/pool/main/g/gyp/gyp_0.1+20200513gitcaa6002-2.debian.tar.xz' gyp_0.1+20200513gitcaa6002-2.debian.tar.xz 9640 SHA256:6eb11fbc1450873c3c6778a3915ba398b220bb1230e5f59e1632817ebefb83b0
+'http://deb.debian.org/debian/pool/main/g/gyp/gyp_0.1%2b20200513gitcaa6002-2.dsc' gyp_0.1+20200513gitcaa6002-2.dsc 2076 SHA256:342916fb598b48e4cfd33a2d511d8e04f64c1f008f6af9bb3471044c38a7bcc6
+'http://deb.debian.org/debian/pool/main/g/gyp/gyp_0.1%2b20200513gitcaa6002.orig.tar.gz' gyp_0.1+20200513gitcaa6002.orig.tar.gz 628268 SHA256:8d531bc7d3302461d76a32367453cec60ed08b455f27a53d8f313d81761713a8
+'http://deb.debian.org/debian/pool/main/g/gyp/gyp_0.1%2b20200513gitcaa6002-2.debian.tar.xz' gyp_0.1+20200513gitcaa6002-2.debian.tar.xz 9640 SHA256:6eb11fbc1450873c3c6778a3915ba398b220bb1230e5f59e1632817ebefb83b0
 ```
 
 Other potentially useful URLs:
@@ -1906,9 +1906,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris krb5=1.18.3-6+deb11u1
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-6+deb11u1.dsc' krb5_1.18.3-6+deb11u1.dsc 2971 SHA256:db16b93a4beae887fe38dfbb19d1c220501c185bb4416924c4ff531312dba91e
+'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-6%2bdeb11u1.dsc' krb5_1.18.3-6+deb11u1.dsc 2971 SHA256:db16b93a4beae887fe38dfbb19d1c220501c185bb4416924c4ff531312dba91e
 'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3.orig.tar.gz' krb5_1.18.3.orig.tar.gz 8715312 SHA256:e61783c292b5efd9afb45c555a80dd267ac67eebabca42185362bee6c4fbd719
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-6+deb11u1.debian.tar.xz' krb5_1.18.3-6+deb11u1.debian.tar.xz 106192 SHA256:c68ecf8e8f4238f8950a7c409392c9a0661a6ad0d5efd88b6f8b0a39f7e8af21
+'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.18.3-6%2bdeb11u1.debian.tar.xz' krb5_1.18.3-6+deb11u1.debian.tar.xz 106192 SHA256:c68ecf8e8f4238f8950a7c409392c9a0661a6ad0d5efd88b6f8b0a39f7e8af21
 ```
 
 Other potentially useful URLs:
@@ -1935,9 +1935,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris lcms2=2.12~rc1-2
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12~rc1-2.dsc' lcms2_2.12~rc1-2.dsc 1988 SHA256:57b0b3cde709d8b7c43b195ba7f628d2d79323ee0db883050f253ee9f9acd48a
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12~rc1.orig.tar.gz' lcms2_2.12~rc1.orig.tar.gz 7417767 SHA256:3300ddd8c51d60ebcc206d20d185b1b19939c4cec1576d1f5b95297b0fbdfe19
-'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12~rc1-2.debian.tar.xz' lcms2_2.12~rc1-2.debian.tar.xz 10420 SHA256:dddb5b18a42fc7308e732f00643b29ac9f2638cf246569683cb50f13520c2cca
+'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12%7erc1-2.dsc' lcms2_2.12~rc1-2.dsc 1988 SHA256:57b0b3cde709d8b7c43b195ba7f628d2d79323ee0db883050f253ee9f9acd48a
+'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12%7erc1.orig.tar.gz' lcms2_2.12~rc1.orig.tar.gz 7417767 SHA256:3300ddd8c51d60ebcc206d20d185b1b19939c4cec1576d1f5b95297b0fbdfe19
+'http://deb.debian.org/debian/pool/main/l/lcms2/lcms2_2.12%7erc1-2.debian.tar.xz' lcms2_2.12~rc1-2.debian.tar.xz 10420 SHA256:dddb5b18a42fc7308e732f00643b29ac9f2638cf246569683cb50f13520c2cca
 ```
 
 Other potentially useful URLs:
@@ -1963,10 +1963,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris less.js=3.13.0+dfsg-5
-'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0+dfsg-5.dsc' less.js_3.13.0+dfsg-5.dsc 2688 SHA256:8260f0280fcc973235975aa76f30544736166bdbc4b801e04d8e55745af3519f
-'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0+dfsg.orig-image-size.tar.xz' less.js_3.13.0+dfsg.orig-image-size.tar.xz 6580 SHA256:8c060b422ac39b37003b629da43464065c81dd606e7603b8106fe220d4e1e3c3
-'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0+dfsg.orig.tar.xz' less.js_3.13.0+dfsg.orig.tar.xz 576576 SHA256:c7cd878006d5eb45602a4f10d2ca58f65ab3049dc4473d46e04d8be2aec0005d
-'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0+dfsg-5.debian.tar.xz' less.js_3.13.0+dfsg-5.debian.tar.xz 12120 SHA256:a44c2ae52a4c599714ab00a7efa94e92e31da125f49c9e1c0cde75541763302c
+'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0%2bdfsg-5.dsc' less.js_3.13.0+dfsg-5.dsc 2688 SHA256:8260f0280fcc973235975aa76f30544736166bdbc4b801e04d8e55745af3519f
+'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0%2bdfsg.orig-image-size.tar.xz' less.js_3.13.0+dfsg.orig-image-size.tar.xz 6580 SHA256:8c060b422ac39b37003b629da43464065c81dd606e7603b8106fe220d4e1e3c3
+'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0%2bdfsg.orig.tar.xz' less.js_3.13.0+dfsg.orig.tar.xz 576576 SHA256:c7cd878006d5eb45602a4f10d2ca58f65ab3049dc4473d46e04d8be2aec0005d
+'http://deb.debian.org/debian/pool/main/l/less.js/less.js_3.13.0%2bdfsg-5.debian.tar.xz' less.js_3.13.0+dfsg-5.debian.tar.xz 12120 SHA256:a44c2ae52a4c599714ab00a7efa94e92e31da125f49c9e1c0cde75541763302c
 ```
 
 Other potentially useful URLs:
@@ -2621,9 +2621,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libsass=3.6.4+20201122-1
-'http://deb.debian.org/debian/pool/main/libs/libsass/libsass_3.6.4+20201122-1.dsc' libsass_3.6.4+20201122-1.dsc 2111 SHA256:377cb79209f414d7a17f9a9462bb889ef44ef8493a39e267ef64dd17d18d491a
-'http://deb.debian.org/debian/pool/main/libs/libsass/libsass_3.6.4+20201122.orig.tar.xz' libsass_3.6.4+20201122.orig.tar.xz 264916 SHA256:4bf09fb9da6b5f28ebc8ceaa831c5d87dca69e168d53b14329dee4ce12b961a7
-'http://deb.debian.org/debian/pool/main/libs/libsass/libsass_3.6.4+20201122-1.debian.tar.xz' libsass_3.6.4+20201122-1.debian.tar.xz 43456 SHA256:6799b607ef83f2d1b8294fd5b4d42710d72aa40e55bb15d502cd3a403deb2ad8
+'http://deb.debian.org/debian/pool/main/libs/libsass/libsass_3.6.4%2b20201122-1.dsc' libsass_3.6.4+20201122-1.dsc 2111 SHA256:377cb79209f414d7a17f9a9462bb889ef44ef8493a39e267ef64dd17d18d491a
+'http://deb.debian.org/debian/pool/main/libs/libsass/libsass_3.6.4%2b20201122.orig.tar.xz' libsass_3.6.4+20201122.orig.tar.xz 264916 SHA256:4bf09fb9da6b5f28ebc8ceaa831c5d87dca69e168d53b14329dee4ce12b961a7
+'http://deb.debian.org/debian/pool/main/libs/libsass/libsass_3.6.4%2b20201122-1.debian.tar.xz' libsass_3.6.4+20201122-1.debian.tar.xz 43456 SHA256:6799b607ef83f2d1b8294fd5b4d42710d72aa40e55bb15d502cd3a403deb2ad8
 ```
 
 Other potentially useful URLs:
@@ -2646,10 +2646,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libseccomp=2.5.1-1+deb11u1
-'http://deb.debian.org/debian/pool/main/libs/libseccomp/libseccomp_2.5.1-1+deb11u1.dsc' libseccomp_2.5.1-1+deb11u1.dsc 2708 SHA256:6a2a00eb5f45e794a2203805348a3990d46f4ded63f8708d3382994ece729436
+'http://deb.debian.org/debian/pool/main/libs/libseccomp/libseccomp_2.5.1-1%2bdeb11u1.dsc' libseccomp_2.5.1-1+deb11u1.dsc 2708 SHA256:6a2a00eb5f45e794a2203805348a3990d46f4ded63f8708d3382994ece729436
 'http://deb.debian.org/debian/pool/main/libs/libseccomp/libseccomp_2.5.1.orig.tar.gz' libseccomp_2.5.1.orig.tar.gz 638811 SHA256:ee307e383c77aa7995abc5ada544d51c9723ae399768a97667d4cdb3c3a30d55
 'http://deb.debian.org/debian/pool/main/libs/libseccomp/libseccomp_2.5.1.orig.tar.gz.asc' libseccomp_2.5.1.orig.tar.gz.asc 833 SHA256:14d45c86e5ceed5ac5511c3ebf70a4dca128b7584b314dc8a551c779ea225d2e
-'http://deb.debian.org/debian/pool/main/libs/libseccomp/libseccomp_2.5.1-1+deb11u1.debian.tar.xz' libseccomp_2.5.1-1+deb11u1.debian.tar.xz 19524 SHA256:a09ef7c0b9b6464f426b78a7b978d8566da53667c1a234234ffd2cc600543200
+'http://deb.debian.org/debian/pool/main/libs/libseccomp/libseccomp_2.5.1-1%2bdeb11u1.debian.tar.xz' libseccomp_2.5.1-1+deb11u1.debian.tar.xz 19524 SHA256:a09ef7c0b9b6464f426b78a7b978d8566da53667c1a234234ffd2cc600543200
 ```
 
 Other potentially useful URLs:
@@ -3221,9 +3221,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxml2=2.9.10+dfsg-6.7
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.10+dfsg-6.7.dsc' libxml2_2.9.10+dfsg-6.7.dsc 2827 SHA256:0ef7db7f4b70a320c3410ab32e9070cecd3db8c47a78e8afea396101a9aa0c61
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.10+dfsg.orig.tar.xz' libxml2_2.9.10+dfsg.orig.tar.xz 2503560 SHA256:65ee7a2f5e100c64ddf7beb92297c9b2a30b994a76cd1fab67470cf22db6b7d0
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.10+dfsg-6.7.debian.tar.xz' libxml2_2.9.10+dfsg-6.7.debian.tar.xz 32424 SHA256:6d451dbca1b82a055efa616acaa023665e33dac22f5304a24b49ac48c302790b
+'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.10%2bdfsg-6.7.dsc' libxml2_2.9.10+dfsg-6.7.dsc 2827 SHA256:0ef7db7f4b70a320c3410ab32e9070cecd3db8c47a78e8afea396101a9aa0c61
+'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.10%2bdfsg.orig.tar.xz' libxml2_2.9.10+dfsg.orig.tar.xz 2503560 SHA256:65ee7a2f5e100c64ddf7beb92297c9b2a30b994a76cd1fab67470cf22db6b7d0
+'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.10%2bdfsg-6.7.debian.tar.xz' libxml2_2.9.10+dfsg-6.7.debian.tar.xz 32424 SHA256:6d451dbca1b82a055efa616acaa023665e33dac22f5304a24b49ac48c302790b
 ```
 
 Other potentially useful URLs:
@@ -3402,9 +3402,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libzstd=1.4.8+dfsg-2.1
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.8+dfsg-2.1.dsc' libzstd_1.4.8+dfsg-2.1.dsc 2274 SHA256:7c656b8cab7a560710358dddbd949b33b1ffcedd7cbef370132e4018b94e2e74
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.8+dfsg.orig.tar.xz' libzstd_1.4.8+dfsg.orig.tar.xz 1331996 SHA256:1e8ce5c4880a6d5bd8d3186e4186607dd19b64fc98a3877fc13aeefd566d67c5
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.8+dfsg-2.1.debian.tar.xz' libzstd_1.4.8+dfsg-2.1.debian.tar.xz 12224 SHA256:cba8544590e59303277e3af2bb260fed32723a1084c9f4928956deca2c80032c
+'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg-2.1.dsc' libzstd_1.4.8+dfsg-2.1.dsc 2274 SHA256:7c656b8cab7a560710358dddbd949b33b1ffcedd7cbef370132e4018b94e2e74
+'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg.orig.tar.xz' libzstd_1.4.8+dfsg.orig.tar.xz 1331996 SHA256:1e8ce5c4880a6d5bd8d3186e4186607dd19b64fc98a3877fc13aeefd566d67c5
+'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg-2.1.debian.tar.xz' libzstd_1.4.8+dfsg-2.1.debian.tar.xz 12224 SHA256:cba8544590e59303277e3af2bb260fed32723a1084c9f4928956deca2c80032c
 ```
 
 Other potentially useful URLs:
@@ -3454,9 +3454,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris lxml=4.6.3+dfsg-0.1+deb11u1
-'http://security.debian.org/debian-security/pool/updates/main/l/lxml/lxml_4.6.3+dfsg-0.1+deb11u1.dsc' lxml_4.6.3+dfsg-0.1+deb11u1.dsc 2254 SHA256:0d6d208b52a784c0c3a3dc7def582780ecd9cd1675bb586551336717727c3202
-'http://security.debian.org/debian-security/pool/updates/main/l/lxml/lxml_4.6.3+dfsg.orig.tar.gz' lxml_4.6.3+dfsg.orig.tar.gz 940222 SHA256:aa386ddf45ccc40975f33d29e285b6656273254ed797dd87d6283090f5d62036
-'http://security.debian.org/debian-security/pool/updates/main/l/lxml/lxml_4.6.3+dfsg-0.1+deb11u1.debian.tar.xz' lxml_4.6.3+dfsg-0.1+deb11u1.debian.tar.xz 9684 SHA256:ee470d49936d6e5079df87d098ba82d9a99dab2f74e3db0f480c874d12952e3d
+'http://security.debian.org/debian-security/pool/updates/main/l/lxml/lxml_4.6.3%2bdfsg-0.1%2bdeb11u1.dsc' lxml_4.6.3+dfsg-0.1+deb11u1.dsc 2254 SHA256:0d6d208b52a784c0c3a3dc7def582780ecd9cd1675bb586551336717727c3202
+'http://security.debian.org/debian-security/pool/updates/main/l/lxml/lxml_4.6.3%2bdfsg.orig.tar.gz' lxml_4.6.3+dfsg.orig.tar.gz 940222 SHA256:aa386ddf45ccc40975f33d29e285b6656273254ed797dd87d6283090f5d62036
+'http://security.debian.org/debian-security/pool/updates/main/l/lxml/lxml_4.6.3%2bdfsg-0.1%2bdeb11u1.debian.tar.xz' lxml_4.6.3+dfsg-0.1+deb11u1.debian.tar.xz 9684 SHA256:ee470d49936d6e5079df87d098ba82d9a99dab2f74e3db0f480c874d12952e3d
 ```
 
 Other potentially useful URLs:
@@ -3661,10 +3661,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ncurses=6.2+20201114-2
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20201114-2.dsc' ncurses_6.2+20201114-2.dsc 4106 SHA256:011ec8e3464be0d89d6611ab8fa0a84ac5514c0064e12dec9c52ec7b135408b1
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20201114.orig.tar.gz' ncurses_6.2+20201114.orig.tar.gz 3539796 SHA256:aa3f8cfaff2a2b78f184274ec43d9da910c864e4b4d80fc47b5b48cba9154cd2
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20201114.orig.tar.gz.asc' ncurses_6.2+20201114.orig.tar.gz.asc 265 SHA256:91615d9d5575f9e974e78c6aca55e1885f42d1b2600cebec407be4471bb7a27d
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2+20201114-2.debian.tar.xz' ncurses_6.2+20201114-2.debian.tar.xz 51812 SHA256:6ebba60b18cf2aceaa67098bfed1b1aa31c03f1a500f45c65ab098ec0a2401d2
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2%2b20201114-2.dsc' ncurses_6.2+20201114-2.dsc 4106 SHA256:011ec8e3464be0d89d6611ab8fa0a84ac5514c0064e12dec9c52ec7b135408b1
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2%2b20201114.orig.tar.gz' ncurses_6.2+20201114.orig.tar.gz 3539796 SHA256:aa3f8cfaff2a2b78f184274ec43d9da910c864e4b4d80fc47b5b48cba9154cd2
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2%2b20201114.orig.tar.gz.asc' ncurses_6.2+20201114.orig.tar.gz.asc 265 SHA256:91615d9d5575f9e974e78c6aca55e1885f42d1b2600cebec407be4471bb7a27d
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.2%2b20201114-2.debian.tar.xz' ncurses_6.2+20201114-2.debian.tar.xz 51812 SHA256:6ebba60b18cf2aceaa67098bfed1b1aa31c03f1a500f45c65ab098ec0a2401d2
 ```
 
 Other potentially useful URLs:
@@ -3857,9 +3857,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-ansi-regex=5.0.1-1~deb11u1
-'http://deb.debian.org/debian/pool/main/n/node-ansi-regex/node-ansi-regex_5.0.1-1~deb11u1.dsc' node-ansi-regex_5.0.1-1~deb11u1.dsc 2116 SHA256:39e54ad58a431a83311c017fea00f2e48c1075109d84563f5c8231cf59368d31
+'http://deb.debian.org/debian/pool/main/n/node-ansi-regex/node-ansi-regex_5.0.1-1%7edeb11u1.dsc' node-ansi-regex_5.0.1-1~deb11u1.dsc 2116 SHA256:39e54ad58a431a83311c017fea00f2e48c1075109d84563f5c8231cf59368d31
 'http://deb.debian.org/debian/pool/main/n/node-ansi-regex/node-ansi-regex_5.0.1.orig.tar.gz' node-ansi-regex_5.0.1.orig.tar.gz 7638 SHA256:da70013154c6b32f86cc9e875d3c94edc743c39a57f0339d61794b454306b327
-'http://deb.debian.org/debian/pool/main/n/node-ansi-regex/node-ansi-regex_5.0.1-1~deb11u1.debian.tar.xz' node-ansi-regex_5.0.1-1~deb11u1.debian.tar.xz 3768 SHA256:4e695fb27a8d5c3b780cea2cf523b24dc760bd7005872cdc6cb5bc0655e21611
+'http://deb.debian.org/debian/pool/main/n/node-ansi-regex/node-ansi-regex_5.0.1-1%7edeb11u1.debian.tar.xz' node-ansi-regex_5.0.1-1~deb11u1.debian.tar.xz 3768 SHA256:4e695fb27a8d5c3b780cea2cf523b24dc760bd7005872cdc6cb5bc0655e21611
 ```
 
 Other potentially useful URLs:
@@ -4285,17 +4285,17 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-cacache=15.0.5+~cs13.9.21-1
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21-1.dsc' node-cacache_15.0.5+~cs13.9.21-1.dsc 5347 SHA256:81ca7b53892566fc570a970b76b7e01f6d66df0ac78ce4f81d18af9603e2a63a
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-figgy-pudding.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-figgy-pudding.tar.gz 6414 SHA256:997de16d9f14d88a5dcd6e7b0216cb91af7152c771c4bad73819eba8aafee16c
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-fs-minipass.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-fs-minipass.tar.gz 35270 SHA256:83cf7dc113dacdbe3a2d05753edde01c37256cc97167ea5a8086ab85a78f2efd
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-infer-owner.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-infer-owner.tar.gz 24073 SHA256:c7baff0c5b4c3c7af772be0b33087f3c16cf8fcce3459cd82a8481133765c2c2
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-minipass-collect.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass-collect.tar.gz 2057 SHA256:a5af655aa0a27bd67ca376484abcfe80fe97fb45638fe521c91d70aba3c0a0d4
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-minipass-flush.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass-flush.tar.gz 30652 SHA256:90cc5b52e97813d2895847ae25734e4c1bdd0e071e7fd00c4d95b01a24e7d6dc
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-minipass-pipeline.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass-pipeline.tar.gz 3001 SHA256:0b64f23832fd6391b879182615c6d0363371b0df2fa37a7d63e30903b156078f
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-minipass.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass.tar.gz 50240 SHA256:496598d78b824ddb3116c4a4fe0123516b318eab820d0ee80cb892ef3ba0c4c9
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig-npmcli-move-file.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-npmcli-move-file.tar.gz 31436 SHA256:717d3315320139b1d968f890825cd28c220e2cb71138ccb2d9dbf8d0202bd018
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21.orig.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig.tar.gz 121287 SHA256:229dc41f0f2d2f8efa33368ad163b2c499775ee4efab157b31f945cd5ce72104
-'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5+~cs13.9.21-1.debian.tar.xz' node-cacache_15.0.5+~cs13.9.21-1.debian.tar.xz 4552 SHA256:fc23903cc57302202f49898d6d54d25a8eee94a4ab6d83710c0f735f874f3cc7
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21-1.dsc' node-cacache_15.0.5+~cs13.9.21-1.dsc 5347 SHA256:81ca7b53892566fc570a970b76b7e01f6d66df0ac78ce4f81d18af9603e2a63a
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-figgy-pudding.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-figgy-pudding.tar.gz 6414 SHA256:997de16d9f14d88a5dcd6e7b0216cb91af7152c771c4bad73819eba8aafee16c
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-fs-minipass.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-fs-minipass.tar.gz 35270 SHA256:83cf7dc113dacdbe3a2d05753edde01c37256cc97167ea5a8086ab85a78f2efd
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-infer-owner.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-infer-owner.tar.gz 24073 SHA256:c7baff0c5b4c3c7af772be0b33087f3c16cf8fcce3459cd82a8481133765c2c2
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-minipass-collect.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass-collect.tar.gz 2057 SHA256:a5af655aa0a27bd67ca376484abcfe80fe97fb45638fe521c91d70aba3c0a0d4
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-minipass-flush.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass-flush.tar.gz 30652 SHA256:90cc5b52e97813d2895847ae25734e4c1bdd0e071e7fd00c4d95b01a24e7d6dc
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-minipass-pipeline.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass-pipeline.tar.gz 3001 SHA256:0b64f23832fd6391b879182615c6d0363371b0df2fa37a7d63e30903b156078f
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-minipass.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-minipass.tar.gz 50240 SHA256:496598d78b824ddb3116c4a4fe0123516b318eab820d0ee80cb892ef3ba0c4c9
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig-npmcli-move-file.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig-npmcli-move-file.tar.gz 31436 SHA256:717d3315320139b1d968f890825cd28c220e2cb71138ccb2d9dbf8d0202bd018
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21.orig.tar.gz' node-cacache_15.0.5+~cs13.9.21.orig.tar.gz 121287 SHA256:229dc41f0f2d2f8efa33368ad163b2c499775ee4efab157b31f945cd5ce72104
+'http://deb.debian.org/debian/pool/main/n/node-cacache/node-cacache_15.0.5%2b%7ecs13.9.21-1.debian.tar.xz' node-cacache_15.0.5+~cs13.9.21-1.debian.tar.xz 4552 SHA256:fc23903cc57302202f49898d6d54d25a8eee94a4ab6d83710c0f735f874f3cc7
 ```
 
 Other potentially useful URLs:
@@ -4443,10 +4443,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-color-name=1.1.4+~1.1.1-1
-'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4+~1.1.1-1.dsc' node-color-name_1.1.4+~1.1.1-1.dsc 2425 SHA256:da88a5d56087fc7f06877432d89e56545b98e07e1ac0d5259e466a91038ffb0b
-'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4+~1.1.1.orig-types-color-name.tar.gz' node-color-name_1.1.4+~1.1.1.orig-types-color-name.tar.gz 2296 SHA256:e4354b0e6737e6154ae0910f39f4a7cbe6d13c52b74617da66ac116ef3acc161
-'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4+~1.1.1.orig.tar.gz' node-color-name_1.1.4+~1.1.1.orig.tar.gz 4137 SHA256:cddf05f67ddc8d112ae0e60f4b52fa7e049d288635324b5fa5e385b7ade94fc7
-'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4+~1.1.1-1.debian.tar.xz' node-color-name_1.1.4+~1.1.1-1.debian.tar.xz 2828 SHA256:2ae20f67f205efa74a75baa96f7c3ee5d5779eac83072dd5ffac38ccefe3d25b
+'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4%2b%7e1.1.1-1.dsc' node-color-name_1.1.4+~1.1.1-1.dsc 2425 SHA256:da88a5d56087fc7f06877432d89e56545b98e07e1ac0d5259e466a91038ffb0b
+'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4%2b%7e1.1.1.orig-types-color-name.tar.gz' node-color-name_1.1.4+~1.1.1.orig-types-color-name.tar.gz 2296 SHA256:e4354b0e6737e6154ae0910f39f4a7cbe6d13c52b74617da66ac116ef3acc161
+'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4%2b%7e1.1.1.orig.tar.gz' node-color-name_1.1.4+~1.1.1.orig.tar.gz 4137 SHA256:cddf05f67ddc8d112ae0e60f4b52fa7e049d288635324b5fa5e385b7ade94fc7
+'http://deb.debian.org/debian/pool/main/n/node-color-name/node-color-name_1.1.4%2b%7e1.1.1-1.debian.tar.xz' node-color-name_1.1.4+~1.1.1-1.debian.tar.xz 2828 SHA256:2ae20f67f205efa74a75baa96f7c3ee5d5779eac83072dd5ffac38ccefe3d25b
 ```
 
 Other potentially useful URLs:
@@ -4644,10 +4644,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-debug=4.3.1+~cs4.1.5-1
-'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1+~cs4.1.5-1.dsc' node-debug_4.3.1+~cs4.1.5-1.dsc 2550 SHA256:fbdbd8ce9ac4f1081bb6a8cb88c91f88f07884288f1211d464dc92aace2b5d79
-'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1+~cs4.1.5.orig-typesdebug.tar.gz' node-debug_4.3.1+~cs4.1.5.orig-typesdebug.tar.gz 1960 SHA256:0e297ffcbe469f1c1607545011deda79e1db4d394a6e77c33ea939d4e3d78d87
-'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1+~cs4.1.5.orig.tar.gz' node-debug_4.3.1+~cs4.1.5.orig.tar.gz 14984 SHA256:d65db17f99b855ce6e3a25f515ed7dd9f863f6c093fe050491e826257a0bdc43
-'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1+~cs4.1.5-1.debian.tar.xz' node-debug_4.3.1+~cs4.1.5-1.debian.tar.xz 4440 SHA256:b82eb44452c1dcab12774f39690739ab68ffd9196464fd7f994068869e49014f
+'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1%2b%7ecs4.1.5-1.dsc' node-debug_4.3.1+~cs4.1.5-1.dsc 2550 SHA256:fbdbd8ce9ac4f1081bb6a8cb88c91f88f07884288f1211d464dc92aace2b5d79
+'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1%2b%7ecs4.1.5.orig-typesdebug.tar.gz' node-debug_4.3.1+~cs4.1.5.orig-typesdebug.tar.gz 1960 SHA256:0e297ffcbe469f1c1607545011deda79e1db4d394a6e77c33ea939d4e3d78d87
+'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1%2b%7ecs4.1.5.orig.tar.gz' node-debug_4.3.1+~cs4.1.5.orig.tar.gz 14984 SHA256:d65db17f99b855ce6e3a25f515ed7dd9f863f6c093fe050491e826257a0bdc43
+'http://deb.debian.org/debian/pool/main/n/node-debug/node-debug_4.3.1%2b%7ecs4.1.5-1.debian.tar.xz' node-debug_4.3.1+~cs4.1.5-1.debian.tar.xz 4440 SHA256:b82eb44452c1dcab12774f39690739ab68ffd9196464fd7f994068869e49014f
 ```
 
 Other potentially useful URLs:
@@ -4821,9 +4821,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-err-code=2.0.3+dfsg-1
-'http://deb.debian.org/debian/pool/main/n/node-err-code/node-err-code_2.0.3+dfsg-1.dsc' node-err-code_2.0.3+dfsg-1.dsc 2128 SHA256:5b2b0fdfaabebaf73ec4ccd4deaf8e1dc378a07b416504c0b3adcc25d17b4d2f
-'http://deb.debian.org/debian/pool/main/n/node-err-code/node-err-code_2.0.3+dfsg.orig.tar.xz' node-err-code_2.0.3+dfsg.orig.tar.xz 31692 SHA256:5857fa74a97558fb279679a56583d91f431075bd06e4d99774f7581dd3b2598d
-'http://deb.debian.org/debian/pool/main/n/node-err-code/node-err-code_2.0.3+dfsg-1.debian.tar.xz' node-err-code_2.0.3+dfsg-1.debian.tar.xz 2556 SHA256:8565b3e40a7c397a035f00ebed253a2df2906b06518ed99a906848bcf08db557
+'http://deb.debian.org/debian/pool/main/n/node-err-code/node-err-code_2.0.3%2bdfsg-1.dsc' node-err-code_2.0.3+dfsg-1.dsc 2128 SHA256:5b2b0fdfaabebaf73ec4ccd4deaf8e1dc378a07b416504c0b3adcc25d17b4d2f
+'http://deb.debian.org/debian/pool/main/n/node-err-code/node-err-code_2.0.3%2bdfsg.orig.tar.xz' node-err-code_2.0.3+dfsg.orig.tar.xz 31692 SHA256:5857fa74a97558fb279679a56583d91f431075bd06e4d99774f7581dd3b2598d
+'http://deb.debian.org/debian/pool/main/n/node-err-code/node-err-code_2.0.3%2bdfsg-1.debian.tar.xz' node-err-code_2.0.3+dfsg-1.debian.tar.xz 2556 SHA256:8565b3e40a7c397a035f00ebed253a2df2906b06518ed99a906848bcf08db557
 ```
 
 Other potentially useful URLs:
@@ -5048,10 +5048,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-function-bind=1.1.1+repack-1
-'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1+repack-1.dsc' node-function-bind_1.1.1+repack-1.dsc 2482 SHA256:419bbae827981861f23a9e3b12f6a469a46b50790a897ae58191f8a1d9ac5f9c
-'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1+repack.orig-has.tar.gz' node-function-bind_1.1.1+repack.orig-has.tar.gz 1948 SHA256:05b239542a4d331d5f2cfa465990573bb028aa260f4151424ad9e2436ed042d0
-'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1+repack.orig.tar.gz' node-function-bind_1.1.1+repack.orig.tar.gz 6306 SHA256:6c1b05a39b5e75d8461d0f15e8678d2150435e76b1bcb60122a48a3f25157b6c
-'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1+repack-1.debian.tar.xz' node-function-bind_1.1.1+repack-1.debian.tar.xz 3052 SHA256:1dafdcd9fe9698e5916fe1cdd14ed6ca7d1a8087c6f320d2ff15eb11ed4f7988
+'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1%2brepack-1.dsc' node-function-bind_1.1.1+repack-1.dsc 2482 SHA256:419bbae827981861f23a9e3b12f6a469a46b50790a897ae58191f8a1d9ac5f9c
+'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1%2brepack.orig-has.tar.gz' node-function-bind_1.1.1+repack.orig-has.tar.gz 1948 SHA256:05b239542a4d331d5f2cfa465990573bb028aa260f4151424ad9e2436ed042d0
+'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1%2brepack.orig.tar.gz' node-function-bind_1.1.1+repack.orig.tar.gz 6306 SHA256:6c1b05a39b5e75d8461d0f15e8678d2150435e76b1bcb60122a48a3f25157b6c
+'http://deb.debian.org/debian/pool/main/n/node-function-bind/node-function-bind_1.1.1%2brepack-1.debian.tar.xz' node-function-bind_1.1.1+repack-1.debian.tar.xz 3052 SHA256:1dafdcd9fe9698e5916fe1cdd14ed6ca7d1a8087c6f320d2ff15eb11ed4f7988
 ```
 
 Other potentially useful URLs:
@@ -5129,10 +5129,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-glob=7.1.6+~7.1.3-1
-'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6+~7.1.3-1.dsc' node-glob_7.1.6+~7.1.3-1.dsc 2637 SHA256:a01fd242a8c58bc5e63d89e499de102fcad4c44aa7fa9eded3aa66fb909b7e3e
-'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6+~7.1.3.orig-types-glob.tar.gz' node-glob_7.1.6+~7.1.3.orig-types-glob.tar.gz 2312 SHA256:fb8041194273fde85c003c6318fdcfdd7f448d042e9c5af1452aa2fbe6353881
-'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6+~7.1.3.orig.tar.gz' node-glob_7.1.6+~7.1.3.orig.tar.gz 944970 SHA256:a02a3f300f8586e999a37c578fdf37be2750f8bd14532bd4d927cb107a839d40
-'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6+~7.1.3-1.debian.tar.xz' node-glob_7.1.6+~7.1.3-1.debian.tar.xz 10756 SHA256:fd0b5570345c5990f44d0df3e89bd550ceb438c2fd853bc1fe9dd9f7b8b66db1
+'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6%2b%7e7.1.3-1.dsc' node-glob_7.1.6+~7.1.3-1.dsc 2637 SHA256:a01fd242a8c58bc5e63d89e499de102fcad4c44aa7fa9eded3aa66fb909b7e3e
+'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6%2b%7e7.1.3.orig-types-glob.tar.gz' node-glob_7.1.6+~7.1.3.orig-types-glob.tar.gz 2312 SHA256:fb8041194273fde85c003c6318fdcfdd7f448d042e9c5af1452aa2fbe6353881
+'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6%2b%7e7.1.3.orig.tar.gz' node-glob_7.1.6+~7.1.3.orig.tar.gz 944970 SHA256:a02a3f300f8586e999a37c578fdf37be2750f8bd14532bd4d927cb107a839d40
+'http://deb.debian.org/debian/pool/main/n/node-glob/node-glob_7.1.6%2b%7e7.1.3-1.debian.tar.xz' node-glob_7.1.6+~7.1.3-1.debian.tar.xz 10756 SHA256:fd0b5570345c5990f44d0df3e89bd550ceb438c2fd853bc1fe9dd9f7b8b66db1
 ```
 
 Other potentially useful URLs:
@@ -5157,10 +5157,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-graceful-fs=4.2.4+repack-1
-'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4+repack-1.dsc' node-graceful-fs_4.2.4+repack-1.dsc 2505 SHA256:cf86800d7e9cec7281a7408c38bcb57fa40191b757f8cac47d2e99679ad84dbb
-'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4+repack.orig-types-graceful-fs.tar.gz' node-graceful-fs_4.2.4+repack.orig-types-graceful-fs.tar.gz 1832 SHA256:ebbb45a3819f0b6c7d200df882befa57c28574f29ff4a021f0c28a893668e5ca
-'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4+repack.orig.tar.gz' node-graceful-fs_4.2.4+repack.orig.tar.gz 35345 SHA256:0fa0855f75355935b66a5e5515b10871f6996bdcf517461e52b1eaa96b1876bb
-'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4+repack-1.debian.tar.xz' node-graceful-fs_4.2.4+repack-1.debian.tar.xz 4348 SHA256:7326099abdb39bd7bd71155c497e17148c1eb8051fb6a7d1e48954059b3ea922
+'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4%2brepack-1.dsc' node-graceful-fs_4.2.4+repack-1.dsc 2505 SHA256:cf86800d7e9cec7281a7408c38bcb57fa40191b757f8cac47d2e99679ad84dbb
+'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4%2brepack.orig-types-graceful-fs.tar.gz' node-graceful-fs_4.2.4+repack.orig-types-graceful-fs.tar.gz 1832 SHA256:ebbb45a3819f0b6c7d200df882befa57c28574f29ff4a021f0c28a893668e5ca
+'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4%2brepack.orig.tar.gz' node-graceful-fs_4.2.4+repack.orig.tar.gz 35345 SHA256:0fa0855f75355935b66a5e5515b10871f6996bdcf517461e52b1eaa96b1876bb
+'http://deb.debian.org/debian/pool/main/n/node-graceful-fs/node-graceful-fs_4.2.4%2brepack-1.debian.tar.xz' node-graceful-fs_4.2.4+repack-1.debian.tar.xz 4348 SHA256:7326099abdb39bd7bd71155c497e17148c1eb8051fb6a7d1e48954059b3ea922
 ```
 
 Other potentially useful URLs:
@@ -5688,9 +5688,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-isstream=0.1.2+dfsg-1.1
-'http://deb.debian.org/debian/pool/main/n/node-isstream/node-isstream_0.1.2+dfsg-1.1.dsc' node-isstream_0.1.2+dfsg-1.1.dsc 2063 SHA256:8504f7fda6a8ab16c9b42733b9f115428b727dc84ac252fff1beb1e664d0d6be
-'http://deb.debian.org/debian/pool/main/n/node-isstream/node-isstream_0.1.2+dfsg.orig.tar.gz' node-isstream_0.1.2+dfsg.orig.tar.gz 3753 SHA256:5111638802d630a7f3a97fb94873fa40cb62f217a7d22a87216b98a5c09cff62
-'http://deb.debian.org/debian/pool/main/n/node-isstream/node-isstream_0.1.2+dfsg-1.1.debian.tar.xz' node-isstream_0.1.2+dfsg-1.1.debian.tar.xz 2984 SHA256:247f0589ed02c7deb5654c5bd568f2fa02c5da3ac11b291c61bef8336b58cec3
+'http://deb.debian.org/debian/pool/main/n/node-isstream/node-isstream_0.1.2%2bdfsg-1.1.dsc' node-isstream_0.1.2+dfsg-1.1.dsc 2063 SHA256:8504f7fda6a8ab16c9b42733b9f115428b727dc84ac252fff1beb1e664d0d6be
+'http://deb.debian.org/debian/pool/main/n/node-isstream/node-isstream_0.1.2%2bdfsg.orig.tar.gz' node-isstream_0.1.2+dfsg.orig.tar.gz 3753 SHA256:5111638802d630a7f3a97fb94873fa40cb62f217a7d22a87216b98a5c09cff62
+'http://deb.debian.org/debian/pool/main/n/node-isstream/node-isstream_0.1.2%2bdfsg-1.1.debian.tar.xz' node-isstream_0.1.2+dfsg-1.1.debian.tar.xz 2984 SHA256:247f0589ed02c7deb5654c5bd568f2fa02c5da3ac11b291c61bef8336b58cec3
 ```
 
 Other potentially useful URLs:
@@ -5713,10 +5713,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-jquery=3.5.1+dfsg+~3.5.5-7
-'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1+dfsg+~3.5.5-7.dsc' node-jquery_3.5.1+dfsg+~3.5.5-7.dsc 2689 SHA256:22c458e319113812588ce546d186410d5bd3beb1b590dc358af7dfcd01d39b52
-'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1+dfsg+~3.5.5.orig-types-jquery.tar.xz' node-jquery_3.5.1+dfsg+~3.5.5.orig-types-jquery.tar.xz 84264 SHA256:f5c10141ac3cc265ac2880260b32e2cb2607111fa34f64ea687058ecc3b54711
-'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1+dfsg+~3.5.5.orig.tar.xz' node-jquery_3.5.1+dfsg+~3.5.5.orig.tar.xz 296824 SHA256:0c066150df631d21299aea17ab64ac55a83dccd60e5ae083b2074d4941c37e7a
-'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1+dfsg+~3.5.5-7.debian.tar.xz' node-jquery_3.5.1+dfsg+~3.5.5-7.debian.tar.xz 5828 SHA256:1842cd21f08e72eeb6153fe81cfbf6ac042507caffe70f9ebdf88ca4a5e9b43b
+'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1%2bdfsg%2b%7e3.5.5-7.dsc' node-jquery_3.5.1+dfsg+~3.5.5-7.dsc 2689 SHA256:22c458e319113812588ce546d186410d5bd3beb1b590dc358af7dfcd01d39b52
+'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1%2bdfsg%2b%7e3.5.5.orig-types-jquery.tar.xz' node-jquery_3.5.1+dfsg+~3.5.5.orig-types-jquery.tar.xz 84264 SHA256:f5c10141ac3cc265ac2880260b32e2cb2607111fa34f64ea687058ecc3b54711
+'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1%2bdfsg%2b%7e3.5.5.orig.tar.xz' node-jquery_3.5.1+dfsg+~3.5.5.orig.tar.xz 296824 SHA256:0c066150df631d21299aea17ab64ac55a83dccd60e5ae083b2074d4941c37e7a
+'http://deb.debian.org/debian/pool/main/n/node-jquery/node-jquery_3.5.1%2bdfsg%2b%7e3.5.5-7.debian.tar.xz' node-jquery_3.5.1+dfsg+~3.5.5-7.debian.tar.xz 5828 SHA256:1842cd21f08e72eeb6153fe81cfbf6ac042507caffe70f9ebdf88ca4a5e9b43b
 ```
 
 Other potentially useful URLs:
@@ -5764,10 +5764,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-json-parse-better-errors=1.0.2+~2.3.1-1
-'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2+~2.3.1-1.dsc' node-json-parse-better-errors_1.0.2+~2.3.1-1.dsc 2704 SHA256:0ae1c43a70db37103ae109d6bba1d0705173e0d7f824c0207b11b3881766b283
-'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2+~2.3.1.orig-json-parse-even-better-errors.tar.gz' node-json-parse-better-errors_1.0.2+~2.3.1.orig-json-parse-even-better-errors.tar.gz 34553 SHA256:71034e9af548723889a9b08d8a0cbbfe21a137671a2892b7afc80e87a289ac8a
-'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2+~2.3.1.orig.tar.gz' node-json-parse-better-errors_1.0.2+~2.3.1.orig.tar.gz 38360 SHA256:3d0ce38e922ccc98c87f75b0934b43b5e7da13fe31b5ae29fed98944ac9f9e0a
-'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2+~2.3.1-1.debian.tar.xz' node-json-parse-better-errors_1.0.2+~2.3.1-1.debian.tar.xz 2988 SHA256:55fa3152b540ec9476e5e7f02c0f0e7403a8c08ef26af41e7c54f87d3c849fe0
+'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2%2b%7e2.3.1-1.dsc' node-json-parse-better-errors_1.0.2+~2.3.1-1.dsc 2704 SHA256:0ae1c43a70db37103ae109d6bba1d0705173e0d7f824c0207b11b3881766b283
+'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2%2b%7e2.3.1.orig-json-parse-even-better-errors.tar.gz' node-json-parse-better-errors_1.0.2+~2.3.1.orig-json-parse-even-better-errors.tar.gz 34553 SHA256:71034e9af548723889a9b08d8a0cbbfe21a137671a2892b7afc80e87a289ac8a
+'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2%2b%7e2.3.1.orig.tar.gz' node-json-parse-better-errors_1.0.2+~2.3.1.orig.tar.gz 38360 SHA256:3d0ce38e922ccc98c87f75b0934b43b5e7da13fe31b5ae29fed98944ac9f9e0a
+'http://deb.debian.org/debian/pool/main/n/node-json-parse-better-errors/node-json-parse-better-errors_1.0.2%2b%7e2.3.1-1.debian.tar.xz' node-json-parse-better-errors_1.0.2+~2.3.1-1.debian.tar.xz 2988 SHA256:55fa3152b540ec9476e5e7f02c0f0e7403a8c08ef26af41e7c54f87d3c849fe0
 ```
 
 Other potentially useful URLs:
@@ -5818,10 +5818,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-json-schema=0.3.0+~7.0.6-1+deb11u1
-'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0+~7.0.6-1+deb11u1.dsc' node-json-schema_0.3.0+~7.0.6-1+deb11u1.dsc 2504 SHA256:7dde2adfd402d36834365d47426a6e733ad0cae1a7d7cb473185d9b937afa827
-'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0+~7.0.6.orig-Xtypes.tar.gz' node-json-schema_0.3.0+~7.0.6.orig-Xtypes.tar.gz 6121 SHA256:42752da08b762ed42f4969899777b9a440b67fbc300f0c5709268c71e346c6b7
-'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0+~7.0.6.orig.tar.gz' node-json-schema_0.3.0+~7.0.6.orig.tar.gz 37655 SHA256:fb496401c7e6fe75cbe22132a1a1624e2d8f257d8c5cb417296125ceef287ca9
-'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0+~7.0.6-1+deb11u1.debian.tar.xz' node-json-schema_0.3.0+~7.0.6-1+deb11u1.debian.tar.xz 6644 SHA256:5cb1aef4c8cdcb3bc59031158e8b8655afa5854cbbdb8bbe36bb6bdd6e8c1def
+'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0%2b%7e7.0.6-1%2bdeb11u1.dsc' node-json-schema_0.3.0+~7.0.6-1+deb11u1.dsc 2504 SHA256:7dde2adfd402d36834365d47426a6e733ad0cae1a7d7cb473185d9b937afa827
+'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0%2b%7e7.0.6.orig-Xtypes.tar.gz' node-json-schema_0.3.0+~7.0.6.orig-Xtypes.tar.gz 6121 SHA256:42752da08b762ed42f4969899777b9a440b67fbc300f0c5709268c71e346c6b7
+'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0%2b%7e7.0.6.orig.tar.gz' node-json-schema_0.3.0+~7.0.6.orig.tar.gz 37655 SHA256:fb496401c7e6fe75cbe22132a1a1624e2d8f257d8c5cb417296125ceef287ca9
+'http://deb.debian.org/debian/pool/main/n/node-json-schema/node-json-schema_0.3.0%2b%7e7.0.6-1%2bdeb11u1.debian.tar.xz' node-json-schema_0.3.0+~7.0.6-1+deb11u1.debian.tar.xz 6644 SHA256:5cb1aef4c8cdcb3bc59031158e8b8655afa5854cbbdb8bbe36bb6bdd6e8c1def
 ```
 
 Other potentially useful URLs:
@@ -5844,12 +5844,12 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-json-stable-stringify=1.0.1+~cs5.1.32-1
-'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1+~cs5.1.32-1.dsc' node-json-stable-stringify_1.0.1+~cs5.1.32-1.dsc 3570 SHA256:031dea8c51448ba728274f3755c05b02f7d878c5a61745a49ebb5def7e3a3564
-'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1+~cs5.1.32.orig-fast-json-stable-stringify.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig-fast-json-stable-stringify.tar.gz 6602 SHA256:d25251cadbe541a832b1bb942a36f5e243ac917e61ee3fa0b9d6bfd177d71051
-'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1+~cs5.1.32.orig-types-fast-json-stable-stringify.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig-types-fast-json-stable-stringify.tar.gz 1609 SHA256:f175e1794377af97711f0f3a2674bff80280e006092f98b0f32b07beab1a9adc
-'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1+~cs5.1.32.orig-types-json-stable-stringify.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig-types-json-stable-stringify.tar.gz 1619 SHA256:11bb8223e0bd5a40e3a1602230c1a08d957f5bb7a336d82ceba275d9834d0de9
-'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1+~cs5.1.32.orig.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig.tar.gz 4662 SHA256:2aa0aedd6dff0755d1c2025f82e4b3dd5bb91236b8665bd9633f28567b162d3e
-'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1+~cs5.1.32-1.debian.tar.xz' node-json-stable-stringify_1.0.1+~cs5.1.32-1.debian.tar.xz 3340 SHA256:5481d81d5d7eb1764ee582118a37f4bfa4a8541e205ed69fc25a2a30e087706e
+'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1%2b%7ecs5.1.32-1.dsc' node-json-stable-stringify_1.0.1+~cs5.1.32-1.dsc 3570 SHA256:031dea8c51448ba728274f3755c05b02f7d878c5a61745a49ebb5def7e3a3564
+'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1%2b%7ecs5.1.32.orig-fast-json-stable-stringify.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig-fast-json-stable-stringify.tar.gz 6602 SHA256:d25251cadbe541a832b1bb942a36f5e243ac917e61ee3fa0b9d6bfd177d71051
+'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1%2b%7ecs5.1.32.orig-types-fast-json-stable-stringify.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig-types-fast-json-stable-stringify.tar.gz 1609 SHA256:f175e1794377af97711f0f3a2674bff80280e006092f98b0f32b07beab1a9adc
+'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1%2b%7ecs5.1.32.orig-types-json-stable-stringify.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig-types-json-stable-stringify.tar.gz 1619 SHA256:11bb8223e0bd5a40e3a1602230c1a08d957f5bb7a336d82ceba275d9834d0de9
+'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1%2b%7ecs5.1.32.orig.tar.gz' node-json-stable-stringify_1.0.1+~cs5.1.32.orig.tar.gz 4662 SHA256:2aa0aedd6dff0755d1c2025f82e4b3dd5bb91236b8665bd9633f28567b162d3e
+'http://deb.debian.org/debian/pool/main/n/node-json-stable-stringify/node-json-stable-stringify_1.0.1%2b%7ecs5.1.32-1.debian.tar.xz' node-json-stable-stringify_1.0.1+~cs5.1.32-1.debian.tar.xz 3340 SHA256:5481d81d5d7eb1764ee582118a37f4bfa4a8541e205ed69fc25a2a30e087706e
 ```
 
 Other potentially useful URLs:
@@ -5874,13 +5874,13 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-json-stringify-safe=5.0.1+repack-3
-'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1+repack-3.dsc' node-json-stringify-safe_5.0.1+repack-3.dsc 3615 SHA256:ae9a3b897dd5d3f0dc92cb01788be247a3039fbb7d0807203e68fa6de88d8acd
-'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1+repack.orig-egal.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-egal.tar.gz 9048 SHA256:fb3830efef24d46c1c51e4f9a828ea1d611d19722f934201ed46afbfbd127035
-'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1+repack.orig-kindof.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-kindof.tar.gz 5717 SHA256:7dfd502aeb52da37c66b499d0e6af822501e5cc589d8e5d488be60ceef47444c
-'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1+repack.orig-must.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-must.tar.gz 42624 SHA256:dc47685d7d924d723ba24c96bcc4673ecf260a2754825c2811924f247948e11b
-'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1+repack.orig-oolong.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-oolong.tar.gz 16672 SHA256:86b6848c8109b1c3fb01fe0246c3659b91eb3e76b8a7053d5ec566d597751a36
-'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1+repack.orig.tar.gz' node-json-stringify-safe_5.0.1+repack.orig.tar.gz 4207 SHA256:8256d7654e42896ed2cec995250489d589dbec47c0f0ea4a851ff093b6a1a7eb
-'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1+repack-3.debian.tar.xz' node-json-stringify-safe_5.0.1+repack-3.debian.tar.xz 5424 SHA256:1ca7c896e0ae96c3eceac43c12a5a856a6254ea9eccdefced39219863efb5b41
+'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1%2brepack-3.dsc' node-json-stringify-safe_5.0.1+repack-3.dsc 3615 SHA256:ae9a3b897dd5d3f0dc92cb01788be247a3039fbb7d0807203e68fa6de88d8acd
+'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1%2brepack.orig-egal.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-egal.tar.gz 9048 SHA256:fb3830efef24d46c1c51e4f9a828ea1d611d19722f934201ed46afbfbd127035
+'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1%2brepack.orig-kindof.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-kindof.tar.gz 5717 SHA256:7dfd502aeb52da37c66b499d0e6af822501e5cc589d8e5d488be60ceef47444c
+'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1%2brepack.orig-must.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-must.tar.gz 42624 SHA256:dc47685d7d924d723ba24c96bcc4673ecf260a2754825c2811924f247948e11b
+'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1%2brepack.orig-oolong.tar.gz' node-json-stringify-safe_5.0.1+repack.orig-oolong.tar.gz 16672 SHA256:86b6848c8109b1c3fb01fe0246c3659b91eb3e76b8a7053d5ec566d597751a36
+'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1%2brepack.orig.tar.gz' node-json-stringify-safe_5.0.1+repack.orig.tar.gz 4207 SHA256:8256d7654e42896ed2cec995250489d589dbec47c0f0ea4a851ff093b6a1a7eb
+'http://deb.debian.org/debian/pool/main/n/node-json-stringify-safe/node-json-stringify-safe_5.0.1%2brepack-3.debian.tar.xz' node-json-stringify-safe_5.0.1+repack-3.debian.tar.xz 5424 SHA256:1ca7c896e0ae96c3eceac43c12a5a856a6254ea9eccdefced39219863efb5b41
 ```
 
 Other potentially useful URLs:
@@ -6004,10 +6004,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-leven=3.1.0+~cs1.1.1-1
-'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0+~cs1.1.1-1.dsc' node-leven_3.1.0+~cs1.1.1-1.dsc 2473 SHA256:381fdb4f79ae494caa5754f68278172fe0db0a13a5aca747371a5da143b8de7a
-'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0+~cs1.1.1.orig-levenary.tar.gz' node-leven_3.1.0+~cs1.1.1.orig-levenary.tar.gz 2394 SHA256:764662278dd98958b8242e521ae78e860d272db3cea04860278428f8d2290c9b
-'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0+~cs1.1.1.orig.tar.gz' node-leven_3.1.0+~cs1.1.1.orig.tar.gz 3906 SHA256:386685b6e04f9d0e4cddfc951ec8c30970e3b8ab36886a8e208e2f9b8f90ead4
-'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0+~cs1.1.1-1.debian.tar.xz' node-leven_3.1.0+~cs1.1.1-1.debian.tar.xz 3936 SHA256:5c1231307a0af3e31f83ed9534ae55b829ff163ac80dfe59b4ea9e001c0a457d
+'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0%2b%7ecs1.1.1-1.dsc' node-leven_3.1.0+~cs1.1.1-1.dsc 2473 SHA256:381fdb4f79ae494caa5754f68278172fe0db0a13a5aca747371a5da143b8de7a
+'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0%2b%7ecs1.1.1.orig-levenary.tar.gz' node-leven_3.1.0+~cs1.1.1.orig-levenary.tar.gz 2394 SHA256:764662278dd98958b8242e521ae78e860d272db3cea04860278428f8d2290c9b
+'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0%2b%7ecs1.1.1.orig.tar.gz' node-leven_3.1.0+~cs1.1.1.orig.tar.gz 3906 SHA256:386685b6e04f9d0e4cddfc951ec8c30970e3b8ab36886a8e208e2f9b8f90ead4
+'http://deb.debian.org/debian/pool/main/n/node-leven/node-leven_3.1.0%2b%7ecs1.1.1-1.debian.tar.xz' node-leven_3.1.0+~cs1.1.1-1.debian.tar.xz 3936 SHA256:5c1231307a0af3e31f83ed9534ae55b829ff163ac80dfe59b4ea9e001c0a457d
 ```
 
 Other potentially useful URLs:
@@ -6107,12 +6107,12 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-mime=2.5.0+dfsg+~cs3.90.0-1
-'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0+dfsg+~cs3.90.0-1.dsc' node-mime_2.5.0+dfsg+~cs3.90.0-1.dsc 3177 SHA256:5eb72169eb870a3ef7f2b73092b49aa311aa79a76f930b94b102efd6d5d24720
-'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0+dfsg+~cs3.90.0.orig-mime-db.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig-mime-db.tar.xz 59136 SHA256:e4b2d594c538a3a8650ca4f3508e20d8758c8dbc954734d53d189bceaa237bbb
-'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0+dfsg+~cs3.90.0.orig-mime-score.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig-mime-score.tar.xz 2352 SHA256:9fec797aca61310538b78f735d4b76fa0e1bb1fd6bbea92a6c5cc12914d82577
-'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0+dfsg+~cs3.90.0.orig-types-mime-db.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig-types-mime-db.tar.xz 1992 SHA256:8403f35c5dc93020c04258b3e2ff764e61722e76b77e46cd2954ca0e9330c35f
-'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0+dfsg+~cs3.90.0.orig.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig.tar.xz 43280 SHA256:365bdc209c24c24cb237de23a5426d77e6c6b09a225bf10e89b54ba0bff52aca
-'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0+dfsg+~cs3.90.0-1.debian.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0-1.debian.tar.xz 4600 SHA256:7e95135adac290253a808d68fdb8844a0775fac954d295a213d971b891be31bd
+'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0%2bdfsg%2b%7ecs3.90.0-1.dsc' node-mime_2.5.0+dfsg+~cs3.90.0-1.dsc 3177 SHA256:5eb72169eb870a3ef7f2b73092b49aa311aa79a76f930b94b102efd6d5d24720
+'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0%2bdfsg%2b%7ecs3.90.0.orig-mime-db.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig-mime-db.tar.xz 59136 SHA256:e4b2d594c538a3a8650ca4f3508e20d8758c8dbc954734d53d189bceaa237bbb
+'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0%2bdfsg%2b%7ecs3.90.0.orig-mime-score.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig-mime-score.tar.xz 2352 SHA256:9fec797aca61310538b78f735d4b76fa0e1bb1fd6bbea92a6c5cc12914d82577
+'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0%2bdfsg%2b%7ecs3.90.0.orig-types-mime-db.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig-types-mime-db.tar.xz 1992 SHA256:8403f35c5dc93020c04258b3e2ff764e61722e76b77e46cd2954ca0e9330c35f
+'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0%2bdfsg%2b%7ecs3.90.0.orig.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0.orig.tar.xz 43280 SHA256:365bdc209c24c24cb237de23a5426d77e6c6b09a225bf10e89b54ba0bff52aca
+'http://deb.debian.org/debian/pool/main/n/node-mime/node-mime_2.5.0%2bdfsg%2b%7ecs3.90.0-1.debian.tar.xz' node-mime_2.5.0+dfsg+~cs3.90.0-1.debian.tar.xz 4600 SHA256:7e95135adac290253a808d68fdb8844a0775fac954d295a213d971b891be31bd
 ```
 
 Other potentially useful URLs:
@@ -6136,10 +6136,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-minimatch=3.0.4+~3.0.3-1
-'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4+~3.0.3-1.dsc' node-minimatch_3.0.4+~3.0.3-1.dsc 2460 SHA256:677b82da55ef4a1714750971764f5094cff1d09e3c3c5aa312f9f3b891722aad
-'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4+~3.0.3.orig-types-minimatch.tar.gz' node-minimatch_3.0.4+~3.0.3.orig-types-minimatch.tar.gz 2918 SHA256:71d7512873c41dda650f0be23fba8fe000d8abe948d8937fe4b040c0e6c61677
-'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4+~3.0.3.orig.tar.gz' node-minimatch_3.0.4+~3.0.3.orig.tar.gz 17303 SHA256:4d2b5945d821a8c097232e899561f9fe26a45057eab9d04bb7a5549b171b8a72
-'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4+~3.0.3-1.debian.tar.xz' node-minimatch_3.0.4+~3.0.3-1.debian.tar.xz 3964 SHA256:2ee87aa3e7f532ddcaba1c8aca3cb6744d4ab889b5cada60321ed6c9e6b24676
+'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4%2b%7e3.0.3-1.dsc' node-minimatch_3.0.4+~3.0.3-1.dsc 2460 SHA256:677b82da55ef4a1714750971764f5094cff1d09e3c3c5aa312f9f3b891722aad
+'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4%2b%7e3.0.3.orig-types-minimatch.tar.gz' node-minimatch_3.0.4+~3.0.3.orig-types-minimatch.tar.gz 2918 SHA256:71d7512873c41dda650f0be23fba8fe000d8abe948d8937fe4b040c0e6c61677
+'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4%2b%7e3.0.3.orig.tar.gz' node-minimatch_3.0.4+~3.0.3.orig.tar.gz 17303 SHA256:4d2b5945d821a8c097232e899561f9fe26a45057eab9d04bb7a5549b171b8a72
+'http://deb.debian.org/debian/pool/main/n/node-minimatch/node-minimatch_3.0.4%2b%7e3.0.3-1.debian.tar.xz' node-minimatch_3.0.4+~3.0.3-1.debian.tar.xz 3964 SHA256:2ee87aa3e7f532ddcaba1c8aca3cb6744d4ab889b5cada60321ed6c9e6b24676
 ```
 
 Other potentially useful URLs:
@@ -6162,10 +6162,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-mkdirp=1.0.4+~1.0.1-1
-'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4+~1.0.1-1.dsc' node-mkdirp_1.0.4+~1.0.1-1.dsc 2453 SHA256:b528b59df485dc7185bbdf8a9b1be8b3f77ef3d02695c3dedaf237aa1dabb6aa
-'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4+~1.0.1.orig-types-mkdirp.tar.gz' node-mkdirp_1.0.4+~1.0.1.orig-types-mkdirp.tar.gz 2505 SHA256:6d0f8c158c20adf4260d9f5488ffde3f0c51ca1cb7f7fdf22f1572d003edfcb5
-'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4+~1.0.1.orig.tar.gz' node-mkdirp_1.0.4+~1.0.1.orig.tar.gz 38981 SHA256:89852401f7b604e6137aa5a5357fcd4dbb153389569ca9a62fd3062a2fc124bc
-'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4+~1.0.1-1.debian.tar.xz' node-mkdirp_1.0.4+~1.0.1-1.debian.tar.xz 4576 SHA256:2aa73c1837437d20b11eb10b4d285d97403e2d66edae6325d3d90fd4c2858bdb
+'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4%2b%7e1.0.1-1.dsc' node-mkdirp_1.0.4+~1.0.1-1.dsc 2453 SHA256:b528b59df485dc7185bbdf8a9b1be8b3f77ef3d02695c3dedaf237aa1dabb6aa
+'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4%2b%7e1.0.1.orig-types-mkdirp.tar.gz' node-mkdirp_1.0.4+~1.0.1.orig-types-mkdirp.tar.gz 2505 SHA256:6d0f8c158c20adf4260d9f5488ffde3f0c51ca1cb7f7fdf22f1572d003edfcb5
+'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4%2b%7e1.0.1.orig.tar.gz' node-mkdirp_1.0.4+~1.0.1.orig.tar.gz 38981 SHA256:89852401f7b604e6137aa5a5357fcd4dbb153389569ca9a62fd3062a2fc124bc
+'http://deb.debian.org/debian/pool/main/n/node-mkdirp/node-mkdirp_1.0.4%2b%7e1.0.1-1.debian.tar.xz' node-mkdirp_1.0.4+~1.0.1-1.debian.tar.xz 4576 SHA256:2aa73c1837437d20b11eb10b4d285d97403e2d66edae6325d3d90fd4c2858bdb
 ```
 
 Other potentially useful URLs:
@@ -6213,10 +6213,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-ms=2.1.3+~cs0.7.31-1
-'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3+~cs0.7.31-1.dsc' node-ms_2.1.3+~cs0.7.31-1.dsc 2378 SHA256:afaa1639d3b8a25552d9c02f3c3bb411c36b9105d88f8d4676fe3db3d062c820
-'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3+~cs0.7.31.orig-typesms.tar.gz' node-ms_2.1.3+~cs0.7.31.orig-typesms.tar.gz 1612 SHA256:43c1f797421d639562755b038e9d4a6da1bd6de0ced4df16fcd3b293626d5836
-'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3+~cs0.7.31.orig.tar.gz' node-ms_2.1.3+~cs0.7.31.orig.tar.gz 20310 SHA256:272d3244fbe595576551031a5bcbc3683729ba3b77f9679f9b5b5e4ccb23ae1c
-'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3+~cs0.7.31-1.debian.tar.xz' node-ms_2.1.3+~cs0.7.31-1.debian.tar.xz 2936 SHA256:bcc4a25d682fe280fd14032aac85889fb65dbe64a2e2bbe7df90f3d18a01e8b5
+'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3%2b%7ecs0.7.31-1.dsc' node-ms_2.1.3+~cs0.7.31-1.dsc 2378 SHA256:afaa1639d3b8a25552d9c02f3c3bb411c36b9105d88f8d4676fe3db3d062c820
+'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3%2b%7ecs0.7.31.orig-typesms.tar.gz' node-ms_2.1.3+~cs0.7.31.orig-typesms.tar.gz 1612 SHA256:43c1f797421d639562755b038e9d4a6da1bd6de0ced4df16fcd3b293626d5836
+'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3%2b%7ecs0.7.31.orig.tar.gz' node-ms_2.1.3+~cs0.7.31.orig.tar.gz 20310 SHA256:272d3244fbe595576551031a5bcbc3683729ba3b77f9679f9b5b5e4ccb23ae1c
+'http://deb.debian.org/debian/pool/main/n/node-ms/node-ms_2.1.3%2b%7ecs0.7.31-1.debian.tar.xz' node-ms_2.1.3+~cs0.7.31-1.debian.tar.xz 2936 SHA256:bcc4a25d682fe280fd14032aac85889fb65dbe64a2e2bbe7df90f3d18a01e8b5
 ```
 
 Other potentially useful URLs:
@@ -6292,10 +6292,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-normalize-package-data=3.0.0+~2.4.0-1
-'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0+~2.4.0-1.dsc' node-normalize-package-data_3.0.0+~2.4.0-1.dsc 2861 SHA256:9a992a958c153710cfa6ccd365d922cf5dd758579c127aa2c56c1ca1213b9876
-'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0+~2.4.0.orig-types-normalize-package-data.tar.gz' node-normalize-package-data_3.0.0+~2.4.0.orig-types-normalize-package-data.tar.gz 1786 SHA256:90a8066b88f7cf71e43fe79143bce45d8fd9245a9f11f3ca49ac494019a46a59
-'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0+~2.4.0.orig.tar.gz' node-normalize-package-data_3.0.0+~2.4.0.orig.tar.gz 90270 SHA256:3f87023d062f8840ed1a7c93eb519b0bfdafd5289bf206877844a74364757d6e
-'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0+~2.4.0-1.debian.tar.xz' node-normalize-package-data_3.0.0+~2.4.0-1.debian.tar.xz 3700 SHA256:58f8ad5542211095c47592f14764e29bab1bd17e3ac81571ff13791d404aee42
+'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0%2b%7e2.4.0-1.dsc' node-normalize-package-data_3.0.0+~2.4.0-1.dsc 2861 SHA256:9a992a958c153710cfa6ccd365d922cf5dd758579c127aa2c56c1ca1213b9876
+'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0%2b%7e2.4.0.orig-types-normalize-package-data.tar.gz' node-normalize-package-data_3.0.0+~2.4.0.orig-types-normalize-package-data.tar.gz 1786 SHA256:90a8066b88f7cf71e43fe79143bce45d8fd9245a9f11f3ca49ac494019a46a59
+'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0%2b%7e2.4.0.orig.tar.gz' node-normalize-package-data_3.0.0+~2.4.0.orig.tar.gz 90270 SHA256:3f87023d062f8840ed1a7c93eb519b0bfdafd5289bf206877844a74364757d6e
+'http://deb.debian.org/debian/pool/main/n/node-normalize-package-data/node-normalize-package-data_3.0.0%2b%7e2.4.0-1.debian.tar.xz' node-normalize-package-data_3.0.0+~2.4.0-1.debian.tar.xz 3700 SHA256:58f8ad5542211095c47592f14764e29bab1bd17e3ac81571ff13791d404aee42
 ```
 
 Other potentially useful URLs:
@@ -6598,9 +6598,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-performance-now=2.1.0+debian-1.1
-'http://deb.debian.org/debian/pool/main/n/node-performance-now/node-performance-now_2.1.0+debian-1.1.dsc' node-performance-now_2.1.0+debian-1.1.dsc 2188 SHA256:dc69c88c7d3c7b05b7c5cd96ae3461c19b50b311f1b379fd38cc7b47d9993536
-'http://deb.debian.org/debian/pool/main/n/node-performance-now/node-performance-now_2.1.0+debian.orig.tar.xz' node-performance-now_2.1.0+debian.orig.tar.xz 3804 SHA256:3e818ca59780dea131bbd5f1282387c162be1f7525dea527aaa4aee6ee7852da
-'http://deb.debian.org/debian/pool/main/n/node-performance-now/node-performance-now_2.1.0+debian-1.1.debian.tar.xz' node-performance-now_2.1.0+debian-1.1.debian.tar.xz 2528 SHA256:3b2fe0be8a45b3351feb5a9d8a3ea71ac57d260a9a78dab2cd11ecf9c0bb6e56
+'http://deb.debian.org/debian/pool/main/n/node-performance-now/node-performance-now_2.1.0%2bdebian-1.1.dsc' node-performance-now_2.1.0+debian-1.1.dsc 2188 SHA256:dc69c88c7d3c7b05b7c5cd96ae3461c19b50b311f1b379fd38cc7b47d9993536
+'http://deb.debian.org/debian/pool/main/n/node-performance-now/node-performance-now_2.1.0%2bdebian.orig.tar.xz' node-performance-now_2.1.0+debian.orig.tar.xz 3804 SHA256:3e818ca59780dea131bbd5f1282387c162be1f7525dea527aaa4aee6ee7852da
+'http://deb.debian.org/debian/pool/main/n/node-performance-now/node-performance-now_2.1.0%2bdebian-1.1.debian.tar.xz' node-performance-now_2.1.0+debian-1.1.debian.tar.xz 2528 SHA256:3b2fe0be8a45b3351feb5a9d8a3ea71ac57d260a9a78dab2cd11ecf9c0bb6e56
 ```
 
 Other potentially useful URLs:
@@ -6725,9 +6725,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-puka=1.0.1+dfsg-2
-'http://deb.debian.org/debian/pool/main/n/node-puka/node-puka_1.0.1+dfsg-2.dsc' node-puka_1.0.1+dfsg-2.dsc 2070 SHA256:db32fd0be2b221a38c8590cbc41db489b615291744153b1b7699fdd622c7ca1b
-'http://deb.debian.org/debian/pool/main/n/node-puka/node-puka_1.0.1+dfsg.orig.tar.xz' node-puka_1.0.1+dfsg.orig.tar.xz 155984 SHA256:451aa2ab3755400e9755d1481ef3d9ecbd1e241777e119860b0fca8717a58a36
-'http://deb.debian.org/debian/pool/main/n/node-puka/node-puka_1.0.1+dfsg-2.debian.tar.xz' node-puka_1.0.1+dfsg-2.debian.tar.xz 3652 SHA256:a4a0340be4ec5e4a8aab5b6223dede9dbaf8d13ed3043946172b95fe22f486e4
+'http://deb.debian.org/debian/pool/main/n/node-puka/node-puka_1.0.1%2bdfsg-2.dsc' node-puka_1.0.1+dfsg-2.dsc 2070 SHA256:db32fd0be2b221a38c8590cbc41db489b615291744153b1b7699fdd622c7ca1b
+'http://deb.debian.org/debian/pool/main/n/node-puka/node-puka_1.0.1%2bdfsg.orig.tar.xz' node-puka_1.0.1+dfsg.orig.tar.xz 155984 SHA256:451aa2ab3755400e9755d1481ef3d9ecbd1e241777e119860b0fca8717a58a36
+'http://deb.debian.org/debian/pool/main/n/node-puka/node-puka_1.0.1%2bdfsg-2.debian.tar.xz' node-puka_1.0.1+dfsg-2.debian.tar.xz 3652 SHA256:a4a0340be4ec5e4a8aab5b6223dede9dbaf8d13ed3043946172b95fe22f486e4
 ```
 
 Other potentially useful URLs:
@@ -6776,9 +6776,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-qs=6.9.4+ds-1
-'http://deb.debian.org/debian/pool/main/n/node-qs/node-qs_6.9.4+ds-1.dsc' node-qs_6.9.4+ds-1.dsc 2101 SHA256:a5f0f6fce01169a75885b161d516156319fe57fa4faa50938ab8b07079229acd
-'http://deb.debian.org/debian/pool/main/n/node-qs/node-qs_6.9.4+ds.orig.tar.xz' node-qs_6.9.4+ds.orig.tar.xz 27104 SHA256:176a4a2cbb996a9fc0aee8a02c7958c9c20c99ee7ad26ffd2a0a69b3355bb8ef
-'http://deb.debian.org/debian/pool/main/n/node-qs/node-qs_6.9.4+ds-1.debian.tar.xz' node-qs_6.9.4+ds-1.debian.tar.xz 8024 SHA256:af21aadb43b004121657e31aedbd62cbab1db3af3603c105e15d4f7425f79e45
+'http://deb.debian.org/debian/pool/main/n/node-qs/node-qs_6.9.4%2bds-1.dsc' node-qs_6.9.4+ds-1.dsc 2101 SHA256:a5f0f6fce01169a75885b161d516156319fe57fa4faa50938ab8b07079229acd
+'http://deb.debian.org/debian/pool/main/n/node-qs/node-qs_6.9.4%2bds.orig.tar.xz' node-qs_6.9.4+ds.orig.tar.xz 27104 SHA256:176a4a2cbb996a9fc0aee8a02c7958c9c20c99ee7ad26ffd2a0a69b3355bb8ef
+'http://deb.debian.org/debian/pool/main/n/node-qs/node-qs_6.9.4%2bds-1.debian.tar.xz' node-qs_6.9.4+ds-1.debian.tar.xz 8024 SHA256:af21aadb43b004121657e31aedbd62cbab1db3af3603c105e15d4f7425f79e45
 ```
 
 Other potentially useful URLs:
@@ -6879,12 +6879,12 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-resolve-from=5.0.0+~3.1.0+~3.3.0+~2.0.0-1
-'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0-1.dsc' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0-1.dsc 3371 SHA256:ae19102c58cd9630443b24b33cb782bbc278900c7eaf592869afe889832849df
-'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xcall.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xcall.tar.gz 3090 SHA256:1885d6a24977d854177b87568690f053831707c5fb07bb4cedfd6120c888bd5e
-'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xfresh.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xfresh.tar.gz 3943 SHA256:0777e30d8a575249e8a96f387074b7b48e7fb4b9746629df4dba23221580795f
-'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xparent.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xparent.tar.gz 3128 SHA256:1208e7b33c3467d439f32b2ba987d629679f3197b1e5e7168b2f445f52aea49d
-'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig.tar.gz 3444 SHA256:7863a3fcfc14e5187f3111aa0d2ebbb420241955dd9ac456f74bd37300c1cbfa
-'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0-1.debian.tar.xz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0-1.debian.tar.xz 5136 SHA256:b5ce042d947b5242906961d113dfd0d8faf3bd375e0e490b810e93bbe5040a95
+'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0%2b%7e3.1.0%2b%7e3.3.0%2b%7e2.0.0-1.dsc' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0-1.dsc 3371 SHA256:ae19102c58cd9630443b24b33cb782bbc278900c7eaf592869afe889832849df
+'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0%2b%7e3.1.0%2b%7e3.3.0%2b%7e2.0.0.orig-Xcall.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xcall.tar.gz 3090 SHA256:1885d6a24977d854177b87568690f053831707c5fb07bb4cedfd6120c888bd5e
+'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0%2b%7e3.1.0%2b%7e3.3.0%2b%7e2.0.0.orig-Xfresh.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xfresh.tar.gz 3943 SHA256:0777e30d8a575249e8a96f387074b7b48e7fb4b9746629df4dba23221580795f
+'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0%2b%7e3.1.0%2b%7e3.3.0%2b%7e2.0.0.orig-Xparent.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig-Xparent.tar.gz 3128 SHA256:1208e7b33c3467d439f32b2ba987d629679f3197b1e5e7168b2f445f52aea49d
+'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0%2b%7e3.1.0%2b%7e3.3.0%2b%7e2.0.0.orig.tar.gz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0.orig.tar.gz 3444 SHA256:7863a3fcfc14e5187f3111aa0d2ebbb420241955dd9ac456f74bd37300c1cbfa
+'http://deb.debian.org/debian/pool/main/n/node-resolve-from/node-resolve-from_5.0.0%2b%7e3.1.0%2b%7e3.3.0%2b%7e2.0.0-1.debian.tar.xz' node-resolve-from_5.0.0+~3.1.0+~3.3.0+~2.0.0-1.debian.tar.xz 5136 SHA256:b5ce042d947b5242906961d113dfd0d8faf3bd375e0e490b810e93bbe5040a95
 ```
 
 Other potentially useful URLs:
@@ -6907,13 +6907,13 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-resolve=1.19.0+~cs5.20.8-2
-'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0+~cs5.20.8-2.dsc' node-resolve_1.19.0+~cs5.20.8-2.dsc 3438 SHA256:f1fdb6b73924575b35f13181b67a02e643cb14b1a70b3f6deaf235b7db74ee3b
-'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0+~cs5.20.8.orig-is-core-module.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-is-core-module.tar.gz 7946 SHA256:5fede0930de9fbb715ae3bca51613f02312eb12256c72b267a71e4d057643a9e
-'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0+~cs5.20.8.orig-object-keys.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-object-keys.tar.gz 9968 SHA256:906cf19a85aaeff60b0319e59dd0fa1cb1a71749923f3792f2849418bf7e9945
-'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0+~cs5.20.8.orig-path-parse.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-path-parse.tar.gz 3231 SHA256:a4a932d61bf4bd3f7b7a8020434e71101195862a86d0ce1e147e7a92cfe6a11f
-'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0+~cs5.20.8.orig-types-resolve.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-types-resolve.tar.gz 2929 SHA256:51a8fc8770053b39898ee96d13a55d4724de1ed7275e6a1ae3c8bf367057a3f4
-'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0+~cs5.20.8.orig.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig.tar.gz 25669 SHA256:e75bd814f103f3903eb85b50bd1b64e86a2f457b1135edba1d6617a8df2a4357
-'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0+~cs5.20.8-2.debian.tar.xz' node-resolve_1.19.0+~cs5.20.8-2.debian.tar.xz 4672 SHA256:674a125f79861c73eb9d437b5b3fa401bf8a4ad98c92f70c6e099bf789f445f3
+'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0%2b%7ecs5.20.8-2.dsc' node-resolve_1.19.0+~cs5.20.8-2.dsc 3438 SHA256:f1fdb6b73924575b35f13181b67a02e643cb14b1a70b3f6deaf235b7db74ee3b
+'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0%2b%7ecs5.20.8.orig-is-core-module.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-is-core-module.tar.gz 7946 SHA256:5fede0930de9fbb715ae3bca51613f02312eb12256c72b267a71e4d057643a9e
+'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0%2b%7ecs5.20.8.orig-object-keys.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-object-keys.tar.gz 9968 SHA256:906cf19a85aaeff60b0319e59dd0fa1cb1a71749923f3792f2849418bf7e9945
+'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0%2b%7ecs5.20.8.orig-path-parse.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-path-parse.tar.gz 3231 SHA256:a4a932d61bf4bd3f7b7a8020434e71101195862a86d0ce1e147e7a92cfe6a11f
+'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0%2b%7ecs5.20.8.orig-types-resolve.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig-types-resolve.tar.gz 2929 SHA256:51a8fc8770053b39898ee96d13a55d4724de1ed7275e6a1ae3c8bf367057a3f4
+'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0%2b%7ecs5.20.8.orig.tar.gz' node-resolve_1.19.0+~cs5.20.8.orig.tar.gz 25669 SHA256:e75bd814f103f3903eb85b50bd1b64e86a2f457b1135edba1d6617a8df2a4357
+'http://deb.debian.org/debian/pool/main/n/node-resolve/node-resolve_1.19.0%2b%7ecs5.20.8-2.debian.tar.xz' node-resolve_1.19.0+~cs5.20.8-2.debian.tar.xz 4672 SHA256:674a125f79861c73eb9d437b5b3fa401bf8a4ad98c92f70c6e099bf789f445f3
 ```
 
 Other potentially useful URLs:
@@ -7015,10 +7015,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-safe-buffer=5.2.1+~cs2.1.2-1
-'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1+~cs2.1.2-1.dsc' node-safe-buffer_5.2.1+~cs2.1.2-1.dsc 2516 SHA256:56861ee4550378e84ebcd7fbb42b8e863635e4a8e5ec3f1a9ca7a761b5241028
-'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1+~cs2.1.2.orig-safer-buffer.tar.gz' node-safe-buffer_5.2.1+~cs2.1.2.orig-safer-buffer.tar.gz 12452 SHA256:b6ee19114b7a665572165b4b68fec98ecb09124c2869bb79b0a4a4e004e59e07
-'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1+~cs2.1.2.orig.tar.gz' node-safe-buffer_5.2.1+~cs2.1.2.orig.tar.gz 10701 SHA256:51bc669006b75bb99751a6cd4ff33c45d60f0573296f545abee5b8e379f0dc1d
-'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1+~cs2.1.2-1.debian.tar.xz' node-safe-buffer_5.2.1+~cs2.1.2-1.debian.tar.xz 3612 SHA256:21c3946ed91767a11c8f4e19accb477a4c832b0b916bd1c104ec03ee25a1111d
+'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1%2b%7ecs2.1.2-1.dsc' node-safe-buffer_5.2.1+~cs2.1.2-1.dsc 2516 SHA256:56861ee4550378e84ebcd7fbb42b8e863635e4a8e5ec3f1a9ca7a761b5241028
+'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1%2b%7ecs2.1.2.orig-safer-buffer.tar.gz' node-safe-buffer_5.2.1+~cs2.1.2.orig-safer-buffer.tar.gz 12452 SHA256:b6ee19114b7a665572165b4b68fec98ecb09124c2869bb79b0a4a4e004e59e07
+'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1%2b%7ecs2.1.2.orig.tar.gz' node-safe-buffer_5.2.1+~cs2.1.2.orig.tar.gz 10701 SHA256:51bc669006b75bb99751a6cd4ff33c45d60f0573296f545abee5b8e379f0dc1d
+'http://deb.debian.org/debian/pool/main/n/node-safe-buffer/node-safe-buffer_5.2.1%2b%7ecs2.1.2-1.debian.tar.xz' node-safe-buffer_5.2.1+~cs2.1.2-1.debian.tar.xz 3612 SHA256:21c3946ed91767a11c8f4e19accb477a4c832b0b916bd1c104ec03ee25a1111d
 ```
 
 Other potentially useful URLs:
@@ -7245,10 +7245,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-sshpk=1.16.1+dfsg-2
-'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1+dfsg-2.dsc' node-sshpk_1.16.1+dfsg-2.dsc 2678 SHA256:7e2145f95dcc8dd61b8a32afea4fd38edc6acdd24e7ab2fa00b8d99c7a3de6d3
-'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1+dfsg.orig-safer-buffer.tar.xz' node-sshpk_1.16.1+dfsg.orig-safer-buffer.tar.xz 11684 SHA256:581394f0cedd897d072566a121d37e4fca5c0c43582b19f69d830b56b4779cc2
-'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1+dfsg.orig.tar.xz' node-sshpk_1.16.1+dfsg.orig.tar.xz 104048 SHA256:5bfc8abb17699900379f1cffe7cbe30c58e92e14754711f40268f6f02ecad00f
-'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1+dfsg-2.debian.tar.xz' node-sshpk_1.16.1+dfsg-2.debian.tar.xz 4156 SHA256:d21bdea8ae5d30520a6af46dea8f34cbfbddca923fe1fdf7eb1f190949f0d9fc
+'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1%2bdfsg-2.dsc' node-sshpk_1.16.1+dfsg-2.dsc 2678 SHA256:7e2145f95dcc8dd61b8a32afea4fd38edc6acdd24e7ab2fa00b8d99c7a3de6d3
+'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1%2bdfsg.orig-safer-buffer.tar.xz' node-sshpk_1.16.1+dfsg.orig-safer-buffer.tar.xz 11684 SHA256:581394f0cedd897d072566a121d37e4fca5c0c43582b19f69d830b56b4779cc2
+'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1%2bdfsg.orig.tar.xz' node-sshpk_1.16.1+dfsg.orig.tar.xz 104048 SHA256:5bfc8abb17699900379f1cffe7cbe30c58e92e14754711f40268f6f02ecad00f
+'http://deb.debian.org/debian/pool/main/n/node-sshpk/node-sshpk_1.16.1%2bdfsg-2.debian.tar.xz' node-sshpk_1.16.1+dfsg-2.debian.tar.xz 4156 SHA256:d21bdea8ae5d30520a6af46dea8f34cbfbddca923fe1fdf7eb1f190949f0d9fc
 ```
 
 Other potentially useful URLs:
@@ -7379,10 +7379,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-supports-color=8.1.0+~7.2.0-1
-'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0+~7.2.0-1.dsc' node-supports-color_8.1.0+~7.2.0-1.dsc 2571 SHA256:5a0ca204f6db106230059d54a57db4a304e62a357ed363d4ea1df3bd1290cda2
-'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0+~7.2.0.orig-types-supports-color.tar.gz' node-supports-color_8.1.0+~7.2.0.orig-types-supports-color.tar.gz 1681 SHA256:d3bd83e7408cc3fc042700eca1f3b8eca0a3c0ee8fbfbadeaa33800b9136d916
-'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0+~7.2.0.orig.tar.gz' node-supports-color_8.1.0+~7.2.0.orig.tar.gz 6004 SHA256:af2facc869a27ba93e6dc504962c8b8e9e7b17f322df526c81f02891dfd5cfcf
-'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0+~7.2.0-1.debian.tar.xz' node-supports-color_8.1.0+~7.2.0-1.debian.tar.xz 3216 SHA256:661fdf1e886de22c231406260937ebc3a0ffa566ea3f239bc7943e82a2f21191
+'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0%2b%7e7.2.0-1.dsc' node-supports-color_8.1.0+~7.2.0-1.dsc 2571 SHA256:5a0ca204f6db106230059d54a57db4a304e62a357ed363d4ea1df3bd1290cda2
+'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0%2b%7e7.2.0.orig-types-supports-color.tar.gz' node-supports-color_8.1.0+~7.2.0.orig-types-supports-color.tar.gz 1681 SHA256:d3bd83e7408cc3fc042700eca1f3b8eca0a3c0ee8fbfbadeaa33800b9136d916
+'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0%2b%7e7.2.0.orig.tar.gz' node-supports-color_8.1.0+~7.2.0.orig.tar.gz 6004 SHA256:af2facc869a27ba93e6dc504962c8b8e9e7b17f322df526c81f02891dfd5cfcf
+'http://deb.debian.org/debian/pool/main/n/node-supports-color/node-supports-color_8.1.0%2b%7e7.2.0-1.debian.tar.xz' node-supports-color_8.1.0+~7.2.0-1.debian.tar.xz 3216 SHA256:661fdf1e886de22c231406260937ebc3a0ffa566ea3f239bc7943e82a2f21191
 ```
 
 Other potentially useful URLs:
@@ -7406,13 +7406,13 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-tar=6.0.5+ds1+~cs11.3.9-1+deb11u2
-'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5+ds1+~cs11.3.9-1+deb11u2.dsc' node-tar_6.0.5+ds1+~cs11.3.9-1+deb11u2.dsc 3602 SHA256:13a20e64cdabf864fba437341d13d05ffb51358c1a345a0053c34a7e6543634e
-'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5+ds1+~cs11.3.9.orig-fs-minipass.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-fs-minipass.tar.gz 35270 SHA256:83cf7dc113dacdbe3a2d05753edde01c37256cc97167ea5a8086ab85a78f2efd
-'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5+ds1+~cs11.3.9.orig-minipass.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-minipass.tar.gz 50240 SHA256:496598d78b824ddb3116c4a4fe0123516b318eab820d0ee80cb892ef3ba0c4c9
-'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5+ds1+~cs11.3.9.orig-minizlib.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-minizlib.tar.gz 186712 SHA256:296f5e559312e7a4dd871e1cdad27d50d9d0518a548ae870dffb678ff2ecae7e
-'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5+ds1+~cs11.3.9.orig-types-tar.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-types-tar.tar.gz 6436 SHA256:e59a412960136fd1b0a303a7284d849eec4de7658627083058c9caf1ebb28d03
-'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5+ds1+~cs11.3.9.orig.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig.tar.gz 190376 SHA256:042ca18da6d5dfc2c41aa0169abac8ae70497fb5b340c8fe5b71aa47705606d9
-'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5+ds1+~cs11.3.9-1+deb11u2.debian.tar.xz' node-tar_6.0.5+ds1+~cs11.3.9-1+deb11u2.debian.tar.xz 16412 SHA256:9c7f680ad11f0162426f28fd194d099da73afda2b5925aa8ca8fc37326811113
+'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5%2bds1%2b%7ecs11.3.9-1%2bdeb11u2.dsc' node-tar_6.0.5+ds1+~cs11.3.9-1+deb11u2.dsc 3602 SHA256:13a20e64cdabf864fba437341d13d05ffb51358c1a345a0053c34a7e6543634e
+'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5%2bds1%2b%7ecs11.3.9.orig-fs-minipass.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-fs-minipass.tar.gz 35270 SHA256:83cf7dc113dacdbe3a2d05753edde01c37256cc97167ea5a8086ab85a78f2efd
+'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5%2bds1%2b%7ecs11.3.9.orig-minipass.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-minipass.tar.gz 50240 SHA256:496598d78b824ddb3116c4a4fe0123516b318eab820d0ee80cb892ef3ba0c4c9
+'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5%2bds1%2b%7ecs11.3.9.orig-minizlib.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-minizlib.tar.gz 186712 SHA256:296f5e559312e7a4dd871e1cdad27d50d9d0518a548ae870dffb678ff2ecae7e
+'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5%2bds1%2b%7ecs11.3.9.orig-types-tar.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig-types-tar.tar.gz 6436 SHA256:e59a412960136fd1b0a303a7284d849eec4de7658627083058c9caf1ebb28d03
+'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5%2bds1%2b%7ecs11.3.9.orig.tar.gz' node-tar_6.0.5+ds1+~cs11.3.9.orig.tar.gz 190376 SHA256:042ca18da6d5dfc2c41aa0169abac8ae70497fb5b340c8fe5b71aa47705606d9
+'http://deb.debian.org/debian/pool/main/n/node-tar/node-tar_6.0.5%2bds1%2b%7ecs11.3.9-1%2bdeb11u2.debian.tar.xz' node-tar_6.0.5+ds1+~cs11.3.9-1+deb11u2.debian.tar.xz 16412 SHA256:9c7f680ad11f0162426f28fd194d099da73afda2b5925aa8ca8fc37326811113
 ```
 
 Other potentially useful URLs:
@@ -7460,10 +7460,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-through=2.3.8+~cs0.0.30-1
-'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8+~cs0.0.30-1.dsc' node-through_2.3.8+~cs0.0.30-1.dsc 2432 SHA256:a71de359573f8b7c6291719530565ecf2bca0ce2645ec6c60efc0775ff65853b
-'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8+~cs0.0.30.orig-types-through.tar.gz' node-through_2.3.8+~cs0.0.30.orig-types-through.tar.gz 1689 SHA256:6843b56aa1424faacb8b763d5e07474250b2ec7851111fb3afc34ca73fd3da58
-'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8+~cs0.0.30.orig.tar.gz' node-through_2.3.8+~cs0.0.30.orig.tar.gz 4468 SHA256:16b27a8c0fb13e5727356b328d72dbbc5f20bd909252f14d19da344e9354573e
-'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8+~cs0.0.30-1.debian.tar.xz' node-through_2.3.8+~cs0.0.30-1.debian.tar.xz 7988 SHA256:1782e12e3b1ab25b84730334c33e1a9129c0e2ade2db3664dc5d47f3afefaf03
+'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8%2b%7ecs0.0.30-1.dsc' node-through_2.3.8+~cs0.0.30-1.dsc 2432 SHA256:a71de359573f8b7c6291719530565ecf2bca0ce2645ec6c60efc0775ff65853b
+'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8%2b%7ecs0.0.30.orig-types-through.tar.gz' node-through_2.3.8+~cs0.0.30.orig-types-through.tar.gz 1689 SHA256:6843b56aa1424faacb8b763d5e07474250b2ec7851111fb3afc34ca73fd3da58
+'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8%2b%7ecs0.0.30.orig.tar.gz' node-through_2.3.8+~cs0.0.30.orig.tar.gz 4468 SHA256:16b27a8c0fb13e5727356b328d72dbbc5f20bd909252f14d19da344e9354573e
+'http://deb.debian.org/debian/pool/main/n/node-through/node-through_2.3.8%2b%7ecs0.0.30-1.debian.tar.xz' node-through_2.3.8+~cs0.0.30-1.debian.tar.xz 7988 SHA256:1782e12e3b1ab25b84730334c33e1a9129c0e2ade2db3664dc5d47f3afefaf03
 ```
 
 Other potentially useful URLs:
@@ -7538,9 +7538,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-tweetnacl=1.0.3+dfsg-1
-'http://deb.debian.org/debian/pool/main/n/node-tweetnacl/node-tweetnacl_1.0.3+dfsg-1.dsc' node-tweetnacl_1.0.3+dfsg-1.dsc 2137 SHA256:343f792aff84c98a949ab0cb676dfc33a4ab2ae4777514e2502f98cba394ff01
-'http://deb.debian.org/debian/pool/main/n/node-tweetnacl/node-tweetnacl_1.0.3+dfsg.orig.tar.xz' node-tweetnacl_1.0.3+dfsg.orig.tar.xz 2223148 SHA256:51afb89b86674d13d6f6460d760553ebb00f98025ad90974c6b0d6579b8fbc68
-'http://deb.debian.org/debian/pool/main/n/node-tweetnacl/node-tweetnacl_1.0.3+dfsg-1.debian.tar.xz' node-tweetnacl_1.0.3+dfsg-1.debian.tar.xz 5064 SHA256:ccf918950e7fe1343d827ca80b41e67abc87b1053b3d146c02a5d5e6898e5338
+'http://deb.debian.org/debian/pool/main/n/node-tweetnacl/node-tweetnacl_1.0.3%2bdfsg-1.dsc' node-tweetnacl_1.0.3+dfsg-1.dsc 2137 SHA256:343f792aff84c98a949ab0cb676dfc33a4ab2ae4777514e2502f98cba394ff01
+'http://deb.debian.org/debian/pool/main/n/node-tweetnacl/node-tweetnacl_1.0.3%2bdfsg.orig.tar.xz' node-tweetnacl_1.0.3+dfsg.orig.tar.xz 2223148 SHA256:51afb89b86674d13d6f6460d760553ebb00f98025ad90974c6b0d6579b8fbc68
+'http://deb.debian.org/debian/pool/main/n/node-tweetnacl/node-tweetnacl_1.0.3%2bdfsg-1.debian.tar.xz' node-tweetnacl_1.0.3+dfsg-1.debian.tar.xz 5064 SHA256:ccf918950e7fe1343d827ca80b41e67abc87b1053b3d146c02a5d5e6898e5338
 ```
 
 Other potentially useful URLs:
@@ -7589,10 +7589,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-unique-filename=1.1.1+ds-1
-'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1+ds-1.dsc' node-unique-filename_1.1.1+ds-1.dsc 2500 SHA256:f60330ad177eb8c70bd095268bfa5eab1aa4cc256d455082558be2f4841672ab
-'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1+ds.orig-unique-slug.tar.xz' node-unique-filename_1.1.1+ds.orig-unique-slug.tar.xz 30716 SHA256:85b3187e5dc6a2a30c13ac1b3c7a9be7eb76155b34c36ef635feb6b862d7a9d0
-'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1+ds.orig.tar.xz' node-unique-filename_1.1.1+ds.orig.tar.xz 2116 SHA256:2f7dcae5c652e6f1dd98e7c13dc4b7353227b43fcf85663ae3606112e9a1210f
-'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1+ds-1.debian.tar.xz' node-unique-filename_1.1.1+ds-1.debian.tar.xz 2428 SHA256:c467adbdf7dea6b8214514cbd251c05a20b5b0befcf162719ed5bbc1a19beba0
+'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1%2bds-1.dsc' node-unique-filename_1.1.1+ds-1.dsc 2500 SHA256:f60330ad177eb8c70bd095268bfa5eab1aa4cc256d455082558be2f4841672ab
+'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1%2bds.orig-unique-slug.tar.xz' node-unique-filename_1.1.1+ds.orig-unique-slug.tar.xz 30716 SHA256:85b3187e5dc6a2a30c13ac1b3c7a9be7eb76155b34c36ef635feb6b862d7a9d0
+'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1%2bds.orig.tar.xz' node-unique-filename_1.1.1+ds.orig.tar.xz 2116 SHA256:2f7dcae5c652e6f1dd98e7c13dc4b7353227b43fcf85663ae3606112e9a1210f
+'http://deb.debian.org/debian/pool/main/n/node-unique-filename/node-unique-filename_1.1.1%2bds-1.debian.tar.xz' node-unique-filename_1.1.1+ds-1.debian.tar.xz 2428 SHA256:c467adbdf7dea6b8214514cbd251c05a20b5b0befcf162719ed5bbc1a19beba0
 ```
 
 Other potentially useful URLs:
@@ -7618,9 +7618,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-uri-js=4.4.0+dfsg-5
-'http://deb.debian.org/debian/pool/main/n/node-uri-js/node-uri-js_4.4.0+dfsg-5.dsc' node-uri-js_4.4.0+dfsg-5.dsc 2300 SHA256:9c868c1f309f0f998be8673f1cfbfde79678f029ea16305634c2445cb1caa3ec
-'http://deb.debian.org/debian/pool/main/n/node-uri-js/node-uri-js_4.4.0+dfsg.orig.tar.xz' node-uri-js_4.4.0+dfsg.orig.tar.xz 42176 SHA256:21d427ab6507f6d0fc261d9958c9fab30f48b40ef3d8eab0cb52644fc6acf92a
-'http://deb.debian.org/debian/pool/main/n/node-uri-js/node-uri-js_4.4.0+dfsg-5.debian.tar.xz' node-uri-js_4.4.0+dfsg-5.debian.tar.xz 24268 SHA256:05f28ff9047d608d24412ffed697244ded468d951a249eba14c40374af19008f
+'http://deb.debian.org/debian/pool/main/n/node-uri-js/node-uri-js_4.4.0%2bdfsg-5.dsc' node-uri-js_4.4.0+dfsg-5.dsc 2300 SHA256:9c868c1f309f0f998be8673f1cfbfde79678f029ea16305634c2445cb1caa3ec
+'http://deb.debian.org/debian/pool/main/n/node-uri-js/node-uri-js_4.4.0%2bdfsg.orig.tar.xz' node-uri-js_4.4.0+dfsg.orig.tar.xz 42176 SHA256:21d427ab6507f6d0fc261d9958c9fab30f48b40ef3d8eab0cb52644fc6acf92a
+'http://deb.debian.org/debian/pool/main/n/node-uri-js/node-uri-js_4.4.0%2bdfsg-5.debian.tar.xz' node-uri-js_4.4.0+dfsg-5.debian.tar.xz 24268 SHA256:05f28ff9047d608d24412ffed697244ded468d951a249eba14c40374af19008f
 ```
 
 Other potentially useful URLs:
@@ -7671,10 +7671,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-uuid=8.3.2+~8.3.0-4
-'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2+~8.3.0-4.dsc' node-uuid_8.3.2+~8.3.0-4.dsc 2538 SHA256:46faf06c5f438e41e4cf87c1a619ada9a9eb38a0940f83451af50619b53206de
-'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2+~8.3.0.orig-Xtypes.tar.gz' node-uuid_8.3.2+~8.3.0.orig-Xtypes.tar.gz 2212 SHA256:4160631edd60db0db8c7cbe5ae904a1ffa1b621ba604c28cab00bdf320bc4f01
-'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2+~8.3.0.orig.tar.gz' node-uuid_8.3.2+~8.3.0.orig.tar.gz 208965 SHA256:a3f419bfca2f937935ef039cf62b01a28e96d99129038f7a1fa4a5427cdc372d
-'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2+~8.3.0-4.debian.tar.xz' node-uuid_8.3.2+~8.3.0-4.debian.tar.xz 14912 SHA256:8ef2b70bd3ca1298a77f4225a77b558d8f7f20d6d44d44b633b71f35150e4148
+'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2%2b%7e8.3.0-4.dsc' node-uuid_8.3.2+~8.3.0-4.dsc 2538 SHA256:46faf06c5f438e41e4cf87c1a619ada9a9eb38a0940f83451af50619b53206de
+'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2%2b%7e8.3.0.orig-Xtypes.tar.gz' node-uuid_8.3.2+~8.3.0.orig-Xtypes.tar.gz 2212 SHA256:4160631edd60db0db8c7cbe5ae904a1ffa1b621ba604c28cab00bdf320bc4f01
+'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2%2b%7e8.3.0.orig.tar.gz' node-uuid_8.3.2+~8.3.0.orig.tar.gz 208965 SHA256:a3f419bfca2f937935ef039cf62b01a28e96d99129038f7a1fa4a5427cdc372d
+'http://deb.debian.org/debian/pool/main/n/node-uuid/node-uuid_8.3.2%2b%7e8.3.0-4.debian.tar.xz' node-uuid_8.3.2+~8.3.0-4.debian.tar.xz 14912 SHA256:8ef2b70bd3ca1298a77f4225a77b558d8f7f20d6d44d44b633b71f35150e4148
 ```
 
 Other potentially useful URLs:
@@ -7798,10 +7798,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-which=2.0.2+~cs1.3.2-1
-'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2+~cs1.3.2-1.dsc' node-which_2.0.2+~cs1.3.2-1.dsc 2488 SHA256:17533d562eb30829b2a34bafa99365665ec0171ade92c6671fb2f178c7d5dc9f
-'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2+~cs1.3.2.orig-types-which.tar.gz' node-which_2.0.2+~cs1.3.2.orig-types-which.tar.gz 2099 SHA256:20c508a1956436e4c3564abdff7d62ec3d255c03a096ee589a66722b240ada75
-'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2+~cs1.3.2.orig.tar.gz' node-which_2.0.2+~cs1.3.2.orig.tar.gz 35404 SHA256:1481ccbca51ce09fa06451fd02986a3a0b028d100ffc48e5cc92201b1018abfe
-'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2+~cs1.3.2-1.debian.tar.xz' node-which_2.0.2+~cs1.3.2-1.debian.tar.xz 3716 SHA256:6cb058e483aa8e3b5fb25f406e6a510d599fd45e3f4f81f27f6f0f92df989615
+'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2%2b%7ecs1.3.2-1.dsc' node-which_2.0.2+~cs1.3.2-1.dsc 2488 SHA256:17533d562eb30829b2a34bafa99365665ec0171ade92c6671fb2f178c7d5dc9f
+'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2%2b%7ecs1.3.2.orig-types-which.tar.gz' node-which_2.0.2+~cs1.3.2.orig-types-which.tar.gz 2099 SHA256:20c508a1956436e4c3564abdff7d62ec3d255c03a096ee589a66722b240ada75
+'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2%2b%7ecs1.3.2.orig.tar.gz' node-which_2.0.2+~cs1.3.2.orig.tar.gz 35404 SHA256:1481ccbca51ce09fa06451fd02986a3a0b028d100ffc48e5cc92201b1018abfe
+'http://deb.debian.org/debian/pool/main/n/node-which/node-which_2.0.2%2b%7ecs1.3.2-1.debian.tar.xz' node-which_2.0.2+~cs1.3.2-1.debian.tar.xz 3716 SHA256:6cb058e483aa8e3b5fb25f406e6a510d599fd45e3f4f81f27f6f0f92df989615
 ```
 
 Other potentially useful URLs:
@@ -7875,10 +7875,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris node-write-file-atomic=3.0.3+~3.0.1-1
-'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3+~3.0.1-1.dsc' node-write-file-atomic_3.0.3+~3.0.1-1.dsc 2782 SHA256:e9b8ced955544f1c867d4060377f117eaf0b9c9ae262fbd0ba4d46f1842b1dda
-'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3+~3.0.1.orig-types-write-file-atomic.tar.gz' node-write-file-atomic_3.0.3+~3.0.1.orig-types-write-file-atomic.tar.gz 1854 SHA256:30e01aa472457248b5597eb51d192d5e2d8a5746a7e016c77f71ab686e23da27
-'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3+~3.0.1.orig.tar.gz' node-write-file-atomic_3.0.3+~3.0.1.orig.tar.gz 50641 SHA256:bc4cccda8dcceb606f32db5789371c2285b36722931c1f49696ad7ef8bd260cb
-'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3+~3.0.1-1.debian.tar.xz' node-write-file-atomic_3.0.3+~3.0.1-1.debian.tar.xz 3200 SHA256:8d8d0d69ccafe956ad3f7925957ece4db5f3acb026da860145588eef28b8255d
+'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3%2b%7e3.0.1-1.dsc' node-write-file-atomic_3.0.3+~3.0.1-1.dsc 2782 SHA256:e9b8ced955544f1c867d4060377f117eaf0b9c9ae262fbd0ba4d46f1842b1dda
+'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3%2b%7e3.0.1.orig-types-write-file-atomic.tar.gz' node-write-file-atomic_3.0.3+~3.0.1.orig-types-write-file-atomic.tar.gz 1854 SHA256:30e01aa472457248b5597eb51d192d5e2d8a5746a7e016c77f71ab686e23da27
+'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3%2b%7e3.0.1.orig.tar.gz' node-write-file-atomic_3.0.3+~3.0.1.orig.tar.gz 50641 SHA256:bc4cccda8dcceb606f32db5789371c2285b36722931c1f49696ad7ef8bd260cb
+'http://deb.debian.org/debian/pool/main/n/node-write-file-atomic/node-write-file-atomic_3.0.3%2b%7e3.0.1-1.debian.tar.xz' node-write-file-atomic_3.0.3+~3.0.1-1.debian.tar.xz 3200 SHA256:8d8d0d69ccafe956ad3f7925957ece4db5f3acb026da860145588eef28b8255d
 ```
 
 Other potentially useful URLs:
@@ -7957,10 +7957,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nodejs=12.22.5~dfsg-2~11u1
-'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5~dfsg-2~11u1.dsc' nodejs_12.22.5~dfsg-2~11u1.dsc 3475 SHA256:124ad375a7ba47f51d99038e58fe855fa4383ad39a33fda69b67553b28c5d33b
-'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5~dfsg.orig-types-node.tar.xz' nodejs_12.22.5~dfsg.orig-types-node.tar.xz 86828 SHA256:bdab39e82c40fac39343a912036797d827aec81bc34d4395d14f07e95ddb8e0a
-'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5~dfsg.orig.tar.xz' nodejs_12.22.5~dfsg.orig.tar.xz 18570676 SHA256:63a16a838883b323c90c149dc7dc950761edf87c17781318ada6f843b1296e2d
-'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5~dfsg-2~11u1.debian.tar.xz' nodejs_12.22.5~dfsg-2~11u1.debian.tar.xz 136520 SHA256:27abdf99e56cf3c337f1e320d5b2d740d103cbbd4136e695928d0791350c25cb
+'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5%7edfsg-2%7e11u1.dsc' nodejs_12.22.5~dfsg-2~11u1.dsc 3475 SHA256:124ad375a7ba47f51d99038e58fe855fa4383ad39a33fda69b67553b28c5d33b
+'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5%7edfsg.orig-types-node.tar.xz' nodejs_12.22.5~dfsg.orig-types-node.tar.xz 86828 SHA256:bdab39e82c40fac39343a912036797d827aec81bc34d4395d14f07e95ddb8e0a
+'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5%7edfsg.orig.tar.xz' nodejs_12.22.5~dfsg.orig.tar.xz 18570676 SHA256:63a16a838883b323c90c149dc7dc950761edf87c17781318ada6f843b1296e2d
+'http://deb.debian.org/debian/pool/main/n/nodejs/nodejs_12.22.5%7edfsg-2%7e11u1.debian.tar.xz' nodejs_12.22.5~dfsg-2~11u1.debian.tar.xz 136520 SHA256:27abdf99e56cf3c337f1e320d5b2d740d103cbbd4136e695928d0791350c25cb
 ```
 
 Other potentially useful URLs:
@@ -7987,9 +7987,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris npm=7.5.2+ds-2
-'http://deb.debian.org/debian/pool/main/n/npm/npm_7.5.2+ds-2.dsc' npm_7.5.2+ds-2.dsc 4817 SHA256:9993f7f88ba6ef1d88ced8bb7729f174a79b105ab4fedadfc47fbe51301202d0
-'http://deb.debian.org/debian/pool/main/n/npm/npm_7.5.2+ds.orig.tar.xz' npm_7.5.2+ds.orig.tar.xz 1055356 SHA256:a24843844e734b338ac7c14c38f33d1d45fa3bc21ec384f2a915112395d8ee85
-'http://deb.debian.org/debian/pool/main/n/npm/npm_7.5.2+ds-2.debian.tar.xz' npm_7.5.2+ds-2.debian.tar.xz 26048 SHA256:4f2dcb093f3db2edf22ba7fe72a6959aef75a549894ff45af7b8a6bccfd95da3
+'http://deb.debian.org/debian/pool/main/n/npm/npm_7.5.2%2bds-2.dsc' npm_7.5.2+ds-2.dsc 4817 SHA256:9993f7f88ba6ef1d88ced8bb7729f174a79b105ab4fedadfc47fbe51301202d0
+'http://deb.debian.org/debian/pool/main/n/npm/npm_7.5.2%2bds.orig.tar.xz' npm_7.5.2+ds.orig.tar.xz 1055356 SHA256:a24843844e734b338ac7c14c38f33d1d45fa3bc21ec384f2a915112395d8ee85
+'http://deb.debian.org/debian/pool/main/n/npm/npm_7.5.2%2bds-2.debian.tar.xz' npm_7.5.2+ds-2.debian.tar.xz 26048 SHA256:4f2dcb093f3db2edf22ba7fe72a6959aef75a549894ff45af7b8a6bccfd95da3
 ```
 
 Other potentially useful URLs:
@@ -8062,9 +8062,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openldap=2.4.57+dfsg-3
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.57+dfsg-3.dsc' openldap_2.4.57+dfsg-3.dsc 3061 SHA256:e51b6c564567aca61508b0bfc6dd53c39564f5b4284155ac51c436abb6ff7496
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.57+dfsg.orig.tar.gz' openldap_2.4.57+dfsg.orig.tar.gz 5054318 SHA256:009cc88733eaf41a21607e073a19bce53d7d6ed90a5c280e80880978c4e91db7
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.57+dfsg-3.debian.tar.xz' openldap_2.4.57+dfsg-3.debian.tar.xz 168536 SHA256:68e93e3c0a2167196f730d44fba31c5408930223c6900ca5a4e57e09bd5884c6
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.57%2bdfsg-3.dsc' openldap_2.4.57+dfsg-3.dsc 3061 SHA256:e51b6c564567aca61508b0bfc6dd53c39564f5b4284155ac51c436abb6ff7496
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.57%2bdfsg.orig.tar.gz' openldap_2.4.57+dfsg.orig.tar.gz 5054318 SHA256:009cc88733eaf41a21607e073a19bce53d7d6ed90a5c280e80880978c4e91db7
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.57%2bdfsg-3.debian.tar.xz' openldap_2.4.57+dfsg-3.debian.tar.xz 168536 SHA256:68e93e3c0a2167196f730d44fba31c5408930223c6900ca5a4e57e09bd5884c6
 ```
 
 Other potentially useful URLs:
@@ -8089,10 +8089,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssl=1.1.1k-1+deb11u1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k-1+deb11u1.dsc' openssl_1.1.1k-1+deb11u1.dsc 2652 SHA256:6515a9f1250c42bd42d8439820dde65fbd6f4fbb4a9673bff58e37168a7d3228
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k-1%2bdeb11u1.dsc' openssl_1.1.1k-1+deb11u1.dsc 2652 SHA256:6515a9f1250c42bd42d8439820dde65fbd6f4fbb4a9673bff58e37168a7d3228
 'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k.orig.tar.gz' openssl_1.1.1k.orig.tar.gz 9823400 SHA256:892a0875b9872acd04a9fde79b1f943075d5ea162415de3047c327df33fbaee5
 'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k.orig.tar.gz.asc' openssl_1.1.1k.orig.tar.gz.asc 488 SHA256:addeaa197444a62c6063d7f819512c2c22b42141dec9d8ec3bff7e4518e1d1c9
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k-1+deb11u1.debian.tar.xz' openssl_1.1.1k-1+deb11u1.debian.tar.xz 94244 SHA256:68e00f47162ecea0273b4ba453503307b8430bb2d163f92cbbec6f51b11061fd
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1k-1%2bdeb11u1.debian.tar.xz' openssl_1.1.1k-1+deb11u1.debian.tar.xz 94244 SHA256:68e00f47162ecea0273b4ba453503307b8430bb2d163f92cbbec6f51b11061fd
 ```
 
 Other potentially useful URLs:
@@ -8148,9 +8148,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pam=1.4.0-9+deb11u1
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9+deb11u1.dsc' pam_1.4.0-9+deb11u1.dsc 1941 SHA256:190b705cc9daeee1febb84e8ac6f31219065f08ff41c8d38fbbb424b545d5ca4
+'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9%2bdeb11u1.dsc' pam_1.4.0-9+deb11u1.dsc 1941 SHA256:190b705cc9daeee1febb84e8ac6f31219065f08ff41c8d38fbbb424b545d5ca4
 'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0.orig.tar.xz' pam_1.4.0.orig.tar.xz 988908 SHA256:cd6d928c51e64139be3bdb38692c68183a509b83d4f2c221024ccd4bcddfd034
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9+deb11u1.debian.tar.xz' pam_1.4.0-9+deb11u1.debian.tar.xz 120148 SHA256:bcaaad9423c3ab32c5c4f9e363595a84fe3c535aa9568e42e560028a4e33dfcf
+'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-9%2bdeb11u1.debian.tar.xz' pam_1.4.0-9+deb11u1.debian.tar.xz 120148 SHA256:bcaaad9423c3ab32c5c4f9e363595a84fe3c535aa9568e42e560028a4e33dfcf
 ```
 
 Other potentially useful URLs:
@@ -8314,10 +8314,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris perl=5.32.1-4+deb11u2
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1-4+deb11u2.dsc' perl_5.32.1-4+deb11u2.dsc 2918 SHA256:3c0c1961d7a5fe835cf7d1a9a97905ff7857db2cd1d113c9fc5250de3aaa4e6b
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1-4%2bdeb11u2.dsc' perl_5.32.1-4+deb11u2.dsc 2918 SHA256:3c0c1961d7a5fe835cf7d1a9a97905ff7857db2cd1d113c9fc5250de3aaa4e6b
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1.orig-regen-configure.tar.gz' perl_5.32.1.orig-regen-configure.tar.gz 871331 SHA256:1d179b41283f12ad83f9758430f6ddc49bdf20db5c396aeae7e51ebb4e4afd29
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1.orig.tar.xz' perl_5.32.1.orig.tar.xz 12610988 SHA256:57cc47c735c8300a8ce2fa0643507b44c4ae59012bfdad0121313db639e02309
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1-4+deb11u2.debian.tar.xz' perl_5.32.1-4+deb11u2.debian.tar.xz 165768 SHA256:36b96f84a81c8db85a99e701062457a99efdbcc98b1f1a8912d3919f4b8e0f5a
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.32.1-4%2bdeb11u2.debian.tar.xz' perl_5.32.1-4+deb11u2.debian.tar.xz 165768 SHA256:36b96f84a81c8db85a99e701062457a99efdbcc98b1f1a8912d3919f4b8e0f5a
 ```
 
 Other potentially useful URLs:
@@ -8354,9 +8354,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pillow=8.1.2+dfsg-0.3+deb11u1
-'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_8.1.2+dfsg-0.3+deb11u1.dsc' pillow_8.1.2+dfsg-0.3+deb11u1.dsc 2472 SHA256:24a70c1cec8dbd72be7e56a78577d4861bb07bb63e1866d20e0257cc33749bfb
-'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_8.1.2+dfsg.orig.tar.xz' pillow_8.1.2+dfsg.orig.tar.xz 37523796 SHA256:7fb9b5e9306bfc30990322314cd92b6befd8e6ab9af6ef5bbccca18f938e4e49
-'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_8.1.2+dfsg-0.3+deb11u1.debian.tar.xz' pillow_8.1.2+dfsg-0.3+deb11u1.debian.tar.xz 22708 SHA256:c33ebda9521eb740f7c8a82ff2d5a23171284ec49d52e2b3e5e1638576a43033
+'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_8.1.2%2bdfsg-0.3%2bdeb11u1.dsc' pillow_8.1.2+dfsg-0.3+deb11u1.dsc 2472 SHA256:24a70c1cec8dbd72be7e56a78577d4861bb07bb63e1866d20e0257cc33749bfb
+'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_8.1.2%2bdfsg.orig.tar.xz' pillow_8.1.2+dfsg.orig.tar.xz 37523796 SHA256:7fb9b5e9306bfc30990322314cd92b6befd8e6ab9af6ef5bbccca18f938e4e49
+'http://security.debian.org/debian-security/pool/updates/main/p/pillow/pillow_8.1.2%2bdfsg-0.3%2bdeb11u1.debian.tar.xz' pillow_8.1.2+dfsg-0.3+deb11u1.debian.tar.xz 22708 SHA256:c33ebda9521eb740f7c8a82ff2d5a23171284ec49d52e2b3e5e1638576a43033
 ```
 
 Other potentially useful URLs:
@@ -8507,9 +8507,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris psl.js=1.8.0+ds-4
-'http://deb.debian.org/debian/pool/main/p/psl.js/psl.js_1.8.0+ds-4.dsc' psl.js_1.8.0+ds-4.dsc 2370 SHA256:3d777946bb06bbe54dfba77917d10a75d063e75d198fbf1fe334f6097f1e525d
-'http://deb.debian.org/debian/pool/main/p/psl.js/psl.js_1.8.0+ds.orig.tar.xz' psl.js_1.8.0+ds.orig.tar.xz 88332 SHA256:4aee8038a9a853bd9520004364e0eb745718b8c3621e20063b1f7c80e76a0937
-'http://deb.debian.org/debian/pool/main/p/psl.js/psl.js_1.8.0+ds-4.debian.tar.xz' psl.js_1.8.0+ds-4.debian.tar.xz 4324 SHA256:a5e34249f5e5efee661dd749f25f41a827abc042a508a9bb07da8caaca2f51e8
+'http://deb.debian.org/debian/pool/main/p/psl.js/psl.js_1.8.0%2bds-4.dsc' psl.js_1.8.0+ds-4.dsc 2370 SHA256:3d777946bb06bbe54dfba77917d10a75d063e75d198fbf1fe334f6097f1e525d
+'http://deb.debian.org/debian/pool/main/p/psl.js/psl.js_1.8.0%2bds.orig.tar.xz' psl.js_1.8.0+ds.orig.tar.xz 88332 SHA256:4aee8038a9a853bd9520004364e0eb745718b8c3621e20063b1f7c80e76a0937
+'http://deb.debian.org/debian/pool/main/p/psl.js/psl.js_1.8.0%2bds-4.debian.tar.xz' psl.js_1.8.0+ds-4.debian.tar.xz 4324 SHA256:a5e34249f5e5efee661dd749f25f41a827abc042a508a9bb07da8caaca2f51e8
 ```
 
 Other potentially useful URLs:
@@ -8692,9 +8692,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pyserial=3.5~b0-1
-'http://deb.debian.org/debian/pool/main/p/pyserial/pyserial_3.5~b0-1.dsc' pyserial_3.5~b0-1.dsc 1810 SHA256:3018ec9ededd9af8a0befcabea87824cb81b62740eda2497714cc9ffde2063f7
-'http://deb.debian.org/debian/pool/main/p/pyserial/pyserial_3.5~b0.orig.tar.gz' pyserial_3.5~b0.orig.tar.gz 158549 SHA256:f7da4709c36b9ab5594216426d4c82a9f3d9629138120dbe7befbdd1a1dd1d44
-'http://deb.debian.org/debian/pool/main/p/pyserial/pyserial_3.5~b0-1.debian.tar.xz' pyserial_3.5~b0-1.debian.tar.xz 4004 SHA256:85150be69042b5182d4e526f7707e4fe79f562e58519f339c836a51e98581375
+'http://deb.debian.org/debian/pool/main/p/pyserial/pyserial_3.5%7eb0-1.dsc' pyserial_3.5~b0-1.dsc 1810 SHA256:3018ec9ededd9af8a0befcabea87824cb81b62740eda2497714cc9ffde2063f7
+'http://deb.debian.org/debian/pool/main/p/pyserial/pyserial_3.5%7eb0.orig.tar.gz' pyserial_3.5~b0.orig.tar.gz 158549 SHA256:f7da4709c36b9ab5594216426d4c82a9f3d9629138120dbe7befbdd1a1dd1d44
+'http://deb.debian.org/debian/pool/main/p/pyserial/pyserial_3.5%7eb0-1.debian.tar.xz' pyserial_3.5~b0-1.debian.tar.xz 4004 SHA256:85150be69042b5182d4e526f7707e4fe79f562e58519f339c836a51e98581375
 ```
 
 Other potentially useful URLs:
@@ -8772,9 +8772,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-babel=2.8.0+dfsg.1-7
-'http://deb.debian.org/debian/pool/main/p/python-babel/python-babel_2.8.0+dfsg.1-7.dsc' python-babel_2.8.0+dfsg.1-7.dsc 2343 SHA256:a88c1f9bee68819f2677f8e5864811d3aca558dc1edbf94a5f3308449f60bc16
-'http://deb.debian.org/debian/pool/main/p/python-babel/python-babel_2.8.0+dfsg.1.orig.tar.xz' python-babel_2.8.0+dfsg.1.orig.tar.xz 14029964 SHA256:099ee52ffe5d386321d0108b2de0f93aa8cd5a56149dbb55b7c77e3b9637e4e4
-'http://deb.debian.org/debian/pool/main/p/python-babel/python-babel_2.8.0+dfsg.1-7.debian.tar.xz' python-babel_2.8.0+dfsg.1-7.debian.tar.xz 13700 SHA256:5a429cf185cc77af648204459cd7e7a0f41f15189a6c639b35af1baece9e129b
+'http://deb.debian.org/debian/pool/main/p/python-babel/python-babel_2.8.0%2bdfsg.1-7.dsc' python-babel_2.8.0+dfsg.1-7.dsc 2343 SHA256:a88c1f9bee68819f2677f8e5864811d3aca558dc1edbf94a5f3308449f60bc16
+'http://deb.debian.org/debian/pool/main/p/python-babel/python-babel_2.8.0%2bdfsg.1.orig.tar.xz' python-babel_2.8.0+dfsg.1.orig.tar.xz 14029964 SHA256:099ee52ffe5d386321d0108b2de0f93aa8cd5a56149dbb55b7c77e3b9637e4e4
+'http://deb.debian.org/debian/pool/main/p/python-babel/python-babel_2.8.0%2bdfsg.1-7.debian.tar.xz' python-babel_2.8.0+dfsg.1-7.debian.tar.xz 13700 SHA256:5a429cf185cc77af648204459cd7e7a0f41f15189a6c639b35af1baece9e129b
 ```
 
 Other potentially useful URLs:
@@ -8934,9 +8934,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-docutils=0.16+dfsg-4
-'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.16+dfsg-4.dsc' python-docutils_0.16+dfsg-4.dsc 2385 SHA256:e5269fc695a0b4ab43d1997b15a5eee77dbfbcebcf234fd085ec8f1a2cf478f2
-'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.16+dfsg.orig.tar.xz' python-docutils_0.16+dfsg.orig.tar.xz 1347300 SHA256:eee46a039937dd648a03a534647cdbb2370b288076e12d9e330a3fe8ef66781e
-'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.16+dfsg-4.debian.tar.xz' python-docutils_0.16+dfsg-4.debian.tar.xz 31036 SHA256:9ce198ac913d41e7b8f2dc1b41a57b3213c42fa3e6b4e8265d5478e2406054d7
+'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.16%2bdfsg-4.dsc' python-docutils_0.16+dfsg-4.dsc 2385 SHA256:e5269fc695a0b4ab43d1997b15a5eee77dbfbcebcf234fd085ec8f1a2cf478f2
+'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.16%2bdfsg.orig.tar.xz' python-docutils_0.16+dfsg.orig.tar.xz 1347300 SHA256:eee46a039937dd648a03a534647cdbb2370b288076e12d9e330a3fe8ef66781e
+'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.16%2bdfsg-4.debian.tar.xz' python-docutils_0.16+dfsg-4.debian.tar.xz 31036 SHA256:9ce198ac913d41e7b8f2dc1b41a57b3213c42fa3e6b4e8265d5478e2406054d7
 ```
 
 Other potentially useful URLs:
@@ -9483,9 +9483,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-urllib3=1.26.5-1~exp1
-'http://deb.debian.org/debian/pool/main/p/python-urllib3/python-urllib3_1.26.5-1~exp1.dsc' python-urllib3_1.26.5-1~exp1.dsc 2243 SHA256:39abf0f987b0addc16146995dffde5073af9c878018f0cad23a43f0eb74a0671
+'http://deb.debian.org/debian/pool/main/p/python-urllib3/python-urllib3_1.26.5-1%7eexp1.dsc' python-urllib3_1.26.5-1~exp1.dsc 2243 SHA256:39abf0f987b0addc16146995dffde5073af9c878018f0cad23a43f0eb74a0671
 'http://deb.debian.org/debian/pool/main/p/python-urllib3/python-urllib3_1.26.5.orig.tar.gz' python-urllib3_1.26.5.orig.tar.gz 292865 SHA256:a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098
-'http://deb.debian.org/debian/pool/main/p/python-urllib3/python-urllib3_1.26.5-1~exp1.debian.tar.xz' python-urllib3_1.26.5-1~exp1.debian.tar.xz 12164 SHA256:b986919e426bc0a2266345aecd30eb7eb209a709abaff0fc21b27a0338aaf360
+'http://deb.debian.org/debian/pool/main/p/python-urllib3/python-urllib3_1.26.5-1%7eexp1.debian.tar.xz' python-urllib3_1.26.5-1~exp1.debian.tar.xz 12164 SHA256:b986919e426bc0a2266345aecd30eb7eb209a709abaff0fc21b27a0338aaf360
 ```
 
 Other potentially useful URLs:
@@ -9562,9 +9562,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-werkzeug=1.0.1+dfsg1-2
-'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_1.0.1+dfsg1-2.dsc' python-werkzeug_1.0.1+dfsg1-2.dsc 2442 SHA256:c95c92390fe0984c6d02b1b22252675c98102f82ac11b7f6f0849aab5e055586
-'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_1.0.1+dfsg1.orig.tar.xz' python-werkzeug_1.0.1+dfsg1.orig.tar.xz 730032 SHA256:12432f3bd8abf78aa8d8f144d3088acdf6612c6984ad8ae812b34c2391f9bffa
-'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_1.0.1+dfsg1-2.debian.tar.xz' python-werkzeug_1.0.1+dfsg1-2.debian.tar.xz 7396 SHA256:e60d4a68b483ce7cf039ff59fab0459834578b2e4669d53f822f51d534a654aa
+'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_1.0.1%2bdfsg1-2.dsc' python-werkzeug_1.0.1+dfsg1-2.dsc 2442 SHA256:c95c92390fe0984c6d02b1b22252675c98102f82ac11b7f6f0849aab5e055586
+'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_1.0.1%2bdfsg1.orig.tar.xz' python-werkzeug_1.0.1+dfsg1.orig.tar.xz 730032 SHA256:12432f3bd8abf78aa8d8f144d3088acdf6612c6984ad8ae812b34c2391f9bffa
+'http://deb.debian.org/debian/pool/main/p/python-werkzeug/python-werkzeug_1.0.1%2bdfsg1-2.debian.tar.xz' python-werkzeug_1.0.1+dfsg1-2.debian.tar.xz 7396 SHA256:e60d4a68b483ce7cf039ff59fab0459834578b2e4669d53f822f51d534a654aa
 ```
 
 Other potentially useful URLs:
@@ -9841,9 +9841,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris requests=2.25.1+dfsg-2
-'http://deb.debian.org/debian/pool/main/r/requests/requests_2.25.1+dfsg-2.dsc' requests_2.25.1+dfsg-2.dsc 2256 SHA256:79dae78aa9824bdbd54eca1109e660117b75142cda0f677a9f701e842bc60367
-'http://deb.debian.org/debian/pool/main/r/requests/requests_2.25.1+dfsg.orig.tar.xz' requests_2.25.1+dfsg.orig.tar.xz 127452 SHA256:73a9988731018065ba04524c71f49d4604ae1a61b90d93bf610315329938cc98
-'http://deb.debian.org/debian/pool/main/r/requests/requests_2.25.1+dfsg-2.debian.tar.xz' requests_2.25.1+dfsg-2.debian.tar.xz 10840 SHA256:1a467eb5a90f8acc25225f796bf022e2c0c6c0da4df3af3d82afed8a441aad39
+'http://deb.debian.org/debian/pool/main/r/requests/requests_2.25.1%2bdfsg-2.dsc' requests_2.25.1+dfsg-2.dsc 2256 SHA256:79dae78aa9824bdbd54eca1109e660117b75142cda0f677a9f701e842bc60367
+'http://deb.debian.org/debian/pool/main/r/requests/requests_2.25.1%2bdfsg.orig.tar.xz' requests_2.25.1+dfsg.orig.tar.xz 127452 SHA256:73a9988731018065ba04524c71f49d4604ae1a61b90d93bf610315329938cc98
+'http://deb.debian.org/debian/pool/main/r/requests/requests_2.25.1%2bdfsg-2.debian.tar.xz' requests_2.25.1+dfsg-2.debian.tar.xz 10840 SHA256:1a467eb5a90f8acc25225f796bf022e2c0c6c0da4df3af3d82afed8a441aad39
 ```
 
 Other potentially useful URLs:
@@ -9867,9 +9867,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris rtmpdump=2.4+20151223.gitfa8646d.1-2
-'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1-2.dsc' rtmpdump_2.4+20151223.gitfa8646d.1-2.dsc 2299 SHA256:a296819cd2ab5880b67ad963ef0867cb10e462f4403e52565aa863eb05bb1370
-'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz' rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz 142213 SHA256:5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5
-'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1-2.debian.tar.xz' rtmpdump_2.4+20151223.gitfa8646d.1-2.debian.tar.xz 8096 SHA256:26d47de07d16285e4ca55b0828cbbf1ba35e671f9b3500a87e301fe755d26882
+'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1-2.dsc' rtmpdump_2.4+20151223.gitfa8646d.1-2.dsc 2299 SHA256:a296819cd2ab5880b67ad963ef0867cb10e462f4403e52565aa863eb05bb1370
+'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1.orig.tar.gz' rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz 142213 SHA256:5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5
+'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1-2.debian.tar.xz' rtmpdump_2.4+20151223.gitfa8646d.1-2.debian.tar.xz 8096 SHA256:26d47de07d16285e4ca55b0828cbbf1ba35e671f9b3500a87e301fe755d26882
 ```
 
 Other potentially useful URLs:
@@ -10217,9 +10217,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tar=1.34+dfsg-1
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.34+dfsg-1.dsc' tar_1.34+dfsg-1.dsc 2015 SHA256:12d709cd77e38e5d1753325a9f266b340b5c095a426f438c677b42c031949d89
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.34+dfsg.orig.tar.xz' tar_1.34+dfsg.orig.tar.xz 1981736 SHA256:7d57029540cb928394defb3b377b3531237c947e795b51aa8acac0c5ba0e4844
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.34+dfsg-1.debian.tar.xz' tar_1.34+dfsg-1.debian.tar.xz 19192 SHA256:7228f5cbd36f937dfc1fec042dee8b3e02d92a06afdd44c586c2c8cfb1905538
+'http://deb.debian.org/debian/pool/main/t/tar/tar_1.34%2bdfsg-1.dsc' tar_1.34+dfsg-1.dsc 2015 SHA256:12d709cd77e38e5d1753325a9f266b340b5c095a426f438c677b42c031949d89
+'http://deb.debian.org/debian/pool/main/t/tar/tar_1.34%2bdfsg.orig.tar.xz' tar_1.34+dfsg.orig.tar.xz 1981736 SHA256:7d57029540cb928394defb3b377b3531237c947e795b51aa8acac0c5ba0e4844
+'http://deb.debian.org/debian/pool/main/t/tar/tar_1.34%2bdfsg-1.debian.tar.xz' tar_1.34+dfsg-1.debian.tar.xz 19192 SHA256:7228f5cbd36f937dfc1fec042dee8b3e02d92a06afdd44c586c2c8cfb1905538
 ```
 
 Other potentially useful URLs:
@@ -10268,10 +10268,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tzdata=2021a-1+deb11u2
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1+deb11u2.dsc' tzdata_2021a-1+deb11u2.dsc 2269 SHA256:2893ddffaf6cdad7b672c3c21449c32bd3febef0af53a944dcf6845af999f334
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u2.dsc' tzdata_2021a-1+deb11u2.dsc 2269 SHA256:2893ddffaf6cdad7b672c3c21449c32bd3febef0af53a944dcf6845af999f334
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1+deb11u2.debian.tar.xz' tzdata_2021a-1+deb11u2.debian.tar.xz 109132 SHA256:ede987eed945f744dea5866d77663f7d01589c3f97eb68a0dd484f24efbec9e2
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-1%2bdeb11u2.debian.tar.xz' tzdata_2021a-1+deb11u2.debian.tar.xz 109132 SHA256:ede987eed945f744dea5866d77663f7d01589c3f97eb68a0dd484f24efbec9e2
 ```
 
 Other potentially useful URLs:
@@ -10321,9 +10321,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris underscore=1.9.1~dfsg-3
-'http://deb.debian.org/debian/pool/main/u/underscore/underscore_1.9.1~dfsg-3.dsc' underscore_1.9.1~dfsg-3.dsc 2120 SHA256:9809d94a08a96822bf673691640ef4ddaf4164e8dd1a28b5320ff1a880d201bd
-'http://deb.debian.org/debian/pool/main/u/underscore/underscore_1.9.1~dfsg.orig.tar.xz' underscore_1.9.1~dfsg.orig.tar.xz 138080 SHA256:26832038e5282c0bde14d5cbe511a42053b5f440e1670f99ba67224a4fd45702
-'http://deb.debian.org/debian/pool/main/u/underscore/underscore_1.9.1~dfsg-3.debian.tar.xz' underscore_1.9.1~dfsg-3.debian.tar.xz 9272 SHA256:46c46607d26bab1fd4b4149e1ebbcc136924ad35e4eaf2c7cffedc43aed485bc
+'http://deb.debian.org/debian/pool/main/u/underscore/underscore_1.9.1%7edfsg-3.dsc' underscore_1.9.1~dfsg-3.dsc 2120 SHA256:9809d94a08a96822bf673691640ef4ddaf4164e8dd1a28b5320ff1a880d201bd
+'http://deb.debian.org/debian/pool/main/u/underscore/underscore_1.9.1%7edfsg.orig.tar.xz' underscore_1.9.1~dfsg.orig.tar.xz 138080 SHA256:26832038e5282c0bde14d5cbe511a42053b5f440e1670f99ba67224a4fd45702
+'http://deb.debian.org/debian/pool/main/u/underscore/underscore_1.9.1%7edfsg-3.debian.tar.xz' underscore_1.9.1~dfsg-3.debian.tar.xz 9272 SHA256:46c46607d26bab1fd4b4149e1ebbcc136924ad35e4eaf2c7cffedc43aed485bc
 ```
 
 Other potentially useful URLs:
@@ -10393,9 +10393,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris util-linux=2.36.1-8+deb11u1
-'http://security.debian.org/debian-security/pool/updates/main/u/util-linux/util-linux_2.36.1-8+deb11u1.dsc' util-linux_2.36.1-8+deb11u1.dsc 4461 SHA256:1f42a8e46c383b6fbfb57ea89dfe5adb5b7e6960bc5e8cdb9589109773be6cac
+'http://security.debian.org/debian-security/pool/updates/main/u/util-linux/util-linux_2.36.1-8%2bdeb11u1.dsc' util-linux_2.36.1-8+deb11u1.dsc 4461 SHA256:1f42a8e46c383b6fbfb57ea89dfe5adb5b7e6960bc5e8cdb9589109773be6cac
 'http://security.debian.org/debian-security/pool/updates/main/u/util-linux/util-linux_2.36.1.orig.tar.xz' util-linux_2.36.1.orig.tar.xz 5231880 SHA256:09fac242172cd8ec27f0739d8d192402c69417617091d8c6e974841568f37eed
-'http://security.debian.org/debian-security/pool/updates/main/u/util-linux/util-linux_2.36.1-8+deb11u1.debian.tar.xz' util-linux_2.36.1-8+deb11u1.debian.tar.xz 101448 SHA256:edda1d46e25a40e730c672aac2cd0e44f9eeb0fb64b27be957d6924ed5288a0a
+'http://security.debian.org/debian-security/pool/updates/main/u/util-linux/util-linux_2.36.1-8%2bdeb11u1.debian.tar.xz' util-linux_2.36.1-8+deb11u1.debian.tar.xz 101448 SHA256:edda1d46e25a40e730c672aac2cd0e44f9eeb0fb64b27be957d6924ed5288a0a
 ```
 
 Other potentially useful URLs:
@@ -10483,8 +10483,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xfonts-75dpi=1:1.0.4+nmu1.1
-'http://deb.debian.org/debian/pool/main/x/xfonts-75dpi/xfonts-75dpi_1.0.4+nmu1.1.dsc' xfonts-75dpi_1.0.4+nmu1.1.dsc 1712 SHA256:ea57317137fbb8782f7c5cecb348dd83c61713692595381bf44d210dac6cf6a9
-'http://deb.debian.org/debian/pool/main/x/xfonts-75dpi/xfonts-75dpi_1.0.4+nmu1.1.tar.gz' xfonts-75dpi_1.0.4+nmu1.1.tar.gz 2909174 SHA256:58a71262fe7e9847c771617c5f492b11edf3d954b28b856adf4f373239f20916
+'http://deb.debian.org/debian/pool/main/x/xfonts-75dpi/xfonts-75dpi_1.0.4%2bnmu1.1.dsc' xfonts-75dpi_1.0.4+nmu1.1.dsc 1712 SHA256:ea57317137fbb8782f7c5cecb348dd83c61713692595381bf44d210dac6cf6a9
+'http://deb.debian.org/debian/pool/main/x/xfonts-75dpi/xfonts-75dpi_1.0.4%2bnmu1.1.tar.gz' xfonts-75dpi_1.0.4+nmu1.1.tar.gz 2909174 SHA256:58a71262fe7e9847c771617c5f492b11edf3d954b28b856adf4f373239f20916
 ```
 
 Other potentially useful URLs:
@@ -10556,8 +10556,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xfonts-utils=1:7.7+6
-'http://deb.debian.org/debian/pool/main/x/xfonts-utils/xfonts-utils_7.7+6.dsc' xfonts-utils_7.7+6.dsc 1724 SHA256:dbd85878cb09fa49370f2ab3a556807ab634108af53609f9481989db0fd53f5e
-'http://deb.debian.org/debian/pool/main/x/xfonts-utils/xfonts-utils_7.7+6.tar.gz' xfonts-utils_7.7+6.tar.gz 834315 SHA256:b6f55f94091d5de37e4e2f36b54e230d414817815e58d31bdf02fdf04ef92d1c
+'http://deb.debian.org/debian/pool/main/x/xfonts-utils/xfonts-utils_7.7%2b6.dsc' xfonts-utils_7.7+6.dsc 1724 SHA256:dbd85878cb09fa49370f2ab3a556807ab634108af53609f9481989db0fd53f5e
+'http://deb.debian.org/debian/pool/main/x/xfonts-utils/xfonts-utils_7.7%2b6.tar.gz' xfonts-utils_7.7+6.tar.gz 834315 SHA256:b6f55f94091d5de37e4e2f36b54e230d414817815e58d31bdf02fdf04ef92d1c
 ```
 
 Other potentially useful URLs:
@@ -10634,8 +10634,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xml-core=0.18+nmu1
-'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18+nmu1.dsc' xml-core_0.18+nmu1.dsc 1632 SHA256:3b4bc034193f99750141611ae1c836c6b742c88ed0af1420051f3fcae30bf5ae
-'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18+nmu1.tar.xz' xml-core_0.18+nmu1.tar.xz 21312 SHA256:3e07592404b8ac38924fb650227cf5c9dcfc9933bd632eb4430635cd54898471
+'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18%2bnmu1.dsc' xml-core_0.18+nmu1.dsc 1632 SHA256:3b4bc034193f99750141611ae1c836c6b742c88ed0af1420051f3fcae30bf5ae
+'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18%2bnmu1.tar.xz' xml-core_0.18+nmu1.tar.xz 21312 SHA256:3e07592404b8ac38924fb650227cf5c9dcfc9933bd632eb4430635cd54898471
 ```
 
 Other potentially useful URLs:
@@ -10658,8 +10658,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xorg=1:7.7+22
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+22.dsc' xorg_7.7+22.dsc 1975 SHA256:5b273e9b4ece8f4525e73721cc1f14ea0772007035c24b5e35269bcdca45b69a
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+22.tar.gz' xorg_7.7+22.tar.gz 287402 SHA256:4e39d07914480826f02f8ba293dc07e5595a2789c53ee47d92cc5ee992ef2ed5
+'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7%2b22.dsc' xorg_7.7+22.dsc 1975 SHA256:5b273e9b4ece8f4525e73721cc1f14ea0772007035c24b5e35269bcdca45b69a
+'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7%2b22.tar.gz' xorg_7.7+22.tar.gz 287402 SHA256:4e39d07914480826f02f8ba293dc07e5595a2789c53ee47d92cc5ee992ef2ed5
 ```
 
 Other potentially useful URLs:
