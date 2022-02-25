@@ -101,9 +101,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ann=1.1.2+doc-6
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/ann/ann_1.1.2+doc-6.dsc' ann_1.1.2+doc-6.dsc 2133 SHA256:bf3185ac6f33aa6529eec795aeda4b2942c28045559020d4382ae43ac3261a82
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/ann/ann_1.1.2+doc.orig.tar.gz' ann_1.1.2+doc.orig.tar.gz 693957 SHA256:1a8053e4f1ee284430758a2d864e567d9b4b08c0f6562460c9913497fafc78c1
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/ann/ann_1.1.2+doc-6.debian.tar.xz' ann_1.1.2+doc-6.debian.tar.xz 171792 SHA256:a6e2f04a3e72011c62fcc4a5071a709920ac4b2317af2bb41e4bf4a0881b34fe
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/ann/ann_1.1.2%2bdoc-6.dsc' ann_1.1.2+doc-6.dsc 2133 SHA256:bf3185ac6f33aa6529eec795aeda4b2942c28045559020d4382ae43ac3261a82
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/ann/ann_1.1.2%2bdoc.orig.tar.gz' ann_1.1.2+doc.orig.tar.gz 693957 SHA256:1a8053e4f1ee284430758a2d864e567d9b4b08c0f6562460c9913497fafc78c1
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/ann/ann_1.1.2%2bdoc-6.debian.tar.xz' ann_1.1.2+doc-6.debian.tar.xz 171792 SHA256:a6e2f04a3e72011c62fcc4a5071a709920ac4b2317af2bb41e4bf4a0881b34fe
 ```
 
 ### `dpkg` source package: `apr-util=1.6.1-2`
@@ -185,9 +185,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris armadillo=1:8.400.0+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/armadillo/armadillo_8.400.0+dfsg-2.dsc' armadillo_8.400.0+dfsg-2.dsc 2191 SHA256:c2c5eed729005a9b2eac851b6f7f82960aa00db7807d90e1c962cfdc6fdbbcbe
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/armadillo/armadillo_8.400.0+dfsg.orig.tar.xz' armadillo_8.400.0+dfsg.orig.tar.xz 514320 SHA256:bce152015c141d9b7cc3325965d08567ba0bd166b9554f7e2ff5605755b643f7
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/armadillo/armadillo_8.400.0+dfsg-2.debian.tar.xz' armadillo_8.400.0+dfsg-2.debian.tar.xz 6484 SHA256:38c5b876f4a7ac2beb67002fd9e24d01f82fe690603326c9b35f5540993b044b
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/armadillo/armadillo_8.400.0%2bdfsg-2.dsc' armadillo_8.400.0+dfsg-2.dsc 2191 SHA256:c2c5eed729005a9b2eac851b6f7f82960aa00db7807d90e1c962cfdc6fdbbcbe
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/armadillo/armadillo_8.400.0%2bdfsg.orig.tar.xz' armadillo_8.400.0+dfsg.orig.tar.xz 514320 SHA256:bce152015c141d9b7cc3325965d08567ba0bd166b9554f7e2ff5605755b643f7
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/armadillo/armadillo_8.400.0%2bdfsg-2.debian.tar.xz' armadillo_8.400.0+dfsg-2.debian.tar.xz 6484 SHA256:38c5b876f4a7ac2beb67002fd9e24d01f82fe690603326c9b35f5540993b044b
 ```
 
 ### `dpkg` source package: `arpack=3.5.0+real-2`
@@ -205,9 +205,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris arpack=3.5.0+real-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/arpack/arpack_3.5.0+real-2.dsc' arpack_3.5.0+real-2.dsc 2207 SHA256:0229fa299321be762d5f31bde875ec960a246570d7879f3e8d0c503f8df3b816
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/arpack/arpack_3.5.0+real.orig.tar.gz' arpack_3.5.0+real.orig.tar.gz 949853 SHA256:50f7a3e3aec2e08e732a487919262238f8504c3ef927246ec3495617dde81239
-'http://archive.ubuntu.com/ubuntu/pool/universe/a/arpack/arpack_3.5.0+real-2.debian.tar.xz' arpack_3.5.0+real-2.debian.tar.xz 8504 SHA256:3e3ab16843bcbf9d1a2da90343190ac7cbf7c02581477068bd0747c3e62f1988
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/arpack/arpack_3.5.0%2breal-2.dsc' arpack_3.5.0+real-2.dsc 2207 SHA256:0229fa299321be762d5f31bde875ec960a246570d7879f3e8d0c503f8df3b816
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/arpack/arpack_3.5.0%2breal.orig.tar.gz' arpack_3.5.0+real.orig.tar.gz 949853 SHA256:50f7a3e3aec2e08e732a487919262238f8504c3ef927246ec3495617dde81239
+'http://archive.ubuntu.com/ubuntu/pool/universe/a/arpack/arpack_3.5.0%2breal-2.debian.tar.xz' arpack_3.5.0+real-2.debian.tar.xz 8504 SHA256:3e3ab16843bcbf9d1a2da90343190ac7cbf7c02581477068bd0747c3e62f1988
 ```
 
 ### `dpkg` source package: `asn1crypto=0.24.0-1`
@@ -459,9 +459,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris binutils=2.30-21ubuntu1~18.04.7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1~18.04.7.dsc' binutils_2.30-21ubuntu1~18.04.7.dsc 11670 SHA512:33866f71fa39e9d5b85fb0060f33325148616b2d3c7cd43de593178b72fe7df4818c3a27c2d064e66c2cbbca6a899da7ae8a09e46f9efc1244a07adf8cfe84f8
+'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1%7e18.04.7.dsc' binutils_2.30-21ubuntu1~18.04.7.dsc 11670 SHA512:33866f71fa39e9d5b85fb0060f33325148616b2d3c7cd43de593178b72fe7df4818c3a27c2d064e66c2cbbca6a899da7ae8a09e46f9efc1244a07adf8cfe84f8
 'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30.orig.tar.xz' binutils_2.30.orig.tar.xz 20286700 SHA512:e747ea20d8d79fcd21b9d9f6695059caa7189d60f19256da398e34b789fea9a133c32b192e9693b5828d27683739b0198431bf8b3e39fb3b04884cf89d9aa839
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1~18.04.7.debian.tar.xz' binutils_2.30-21ubuntu1~18.04.7.debian.tar.xz 624916 SHA512:b5cd722de3d57b566e8b29fa124516aa94a4c868a2e202bf2656e525f6aaba5f25d48a8a1c7bdc799f604aec9e7bb7dbf8d5b8183af546da0cbd0dd332f6c3d0
+'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.30-21ubuntu1%7e18.04.7.debian.tar.xz' binutils_2.30-21ubuntu1~18.04.7.debian.tar.xz 624916 SHA512:b5cd722de3d57b566e8b29fa124516aa94a4c868a2e202bf2656e525f6aaba5f25d48a8a1c7bdc799f604aec9e7bb7dbf8d5b8183af546da0cbd0dd332f6c3d0
 ```
 
 ### `dpkg` source package: `boost-defaults=1.65.1.0ubuntu1`
@@ -593,9 +593,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris boost1.65.1=1.65.1+dfsg-0ubuntu5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.65.1/boost1.65.1_1.65.1+dfsg-0ubuntu5.dsc' boost1.65.1_1.65.1+dfsg-0ubuntu5.dsc 7825 SHA256:e046822facd57a5810416328f6e440f5ae5a4017215d1ea3ca7bec59e090c598
-'http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.65.1/boost1.65.1_1.65.1+dfsg.orig.tar.bz2' boost1.65.1_1.65.1+dfsg.orig.tar.bz2 82120283 SHA256:c7709bf6b416e0609fac4bcc0c0093a890ccbeaeebbeabe45877cffc5d06f43c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.65.1/boost1.65.1_1.65.1+dfsg-0ubuntu5.debian.tar.xz' boost1.65.1_1.65.1+dfsg-0ubuntu5.debian.tar.xz 105524 SHA256:c238e8a63c232911402cef6f8ea7763bddf572f7062b5353147ee9ed9a79afdb
+'http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.65.1/boost1.65.1_1.65.1%2bdfsg-0ubuntu5.dsc' boost1.65.1_1.65.1+dfsg-0ubuntu5.dsc 7825 SHA256:e046822facd57a5810416328f6e440f5ae5a4017215d1ea3ca7bec59e090c598
+'http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.65.1/boost1.65.1_1.65.1%2bdfsg.orig.tar.bz2' boost1.65.1_1.65.1+dfsg.orig.tar.bz2 82120283 SHA256:c7709bf6b416e0609fac4bcc0c0093a890ccbeaeebbeabe45877cffc5d06f43c
+'http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.65.1/boost1.65.1_1.65.1%2bdfsg-0ubuntu5.debian.tar.xz' boost1.65.1_1.65.1+dfsg-0ubuntu5.debian.tar.xz 105524 SHA256:c238e8a63c232911402cef6f8ea7763bddf572f7062b5353147ee9ed9a79afdb
 ```
 
 ### `dpkg` source package: `brotli=1.0.3-1ubuntu1.3`
@@ -672,9 +672,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris bzr=2.7.0+bzr6622-10
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0+bzr6622-10.dsc' bzr_2.7.0+bzr6622-10.dsc 2521 SHA256:658f59aaaa101288369e96ab766f5344e31eaa835fa008ad56df2ed65d11903e
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0+bzr6622.orig.tar.gz' bzr_2.7.0+bzr6622.orig.tar.gz 10948360 SHA256:08bba3e76cba9beb6b686e71253045beeab9db94753ddbcafa0f8ed1cba377ff
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0+bzr6622-10.debian.tar.xz' bzr_2.7.0+bzr6622-10.debian.tar.xz 92572 SHA256:0e35de0eea3cb6910e3dfef330502afd01be60c4cd0b9ca3d5f77e9bb0f406aa
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0%2bbzr6622-10.dsc' bzr_2.7.0+bzr6622-10.dsc 2521 SHA256:658f59aaaa101288369e96ab766f5344e31eaa835fa008ad56df2ed65d11903e
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0%2bbzr6622.orig.tar.gz' bzr_2.7.0+bzr6622.orig.tar.gz 10948360 SHA256:08bba3e76cba9beb6b686e71253045beeab9db94753ddbcafa0f8ed1cba377ff
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzr/bzr_2.7.0%2bbzr6622-10.debian.tar.xz' bzr_2.7.0+bzr6622-10.debian.tar.xz 92572 SHA256:0e35de0eea3cb6910e3dfef330502afd01be60c4cd0b9ca3d5f77e9bb0f406aa
 ```
 
 ### `dpkg` source package: `ca-certificates=20210119~18.04.2`
@@ -693,8 +693,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ca-certificates=20210119~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119~18.04.2.dsc' ca-certificates_20210119~18.04.2.dsc 1909 SHA512:c4fe1735ecc1d76204f297fdd66533762b779eccf03b1e212b964f2f65c445b920da9cacceacc4cbff5e6441011183408f89ab9ffc6960344380b86537509fe5
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119~18.04.2.tar.xz' ca-certificates_20210119~18.04.2.tar.xz 232436 SHA512:e800f758d841d8aa6fec281715c1afb519b778a8137f94bf944cbb0ed62b9d136b8a89001d91a9406c18da31f84b21b0158a4cc46cb10a0125c7931bbb497520
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119%7e18.04.2.dsc' ca-certificates_20210119~18.04.2.dsc 1909 SHA512:c4fe1735ecc1d76204f297fdd66533762b779eccf03b1e212b964f2f65c445b920da9cacceacc4cbff5e6441011183408f89ab9ffc6960344380b86537509fe5
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119%7e18.04.2.tar.xz' ca-certificates_20210119~18.04.2.tar.xz 232436 SHA512:e800f758d841d8aa6fec281715c1afb519b778a8137f94bf944cbb0ed62b9d136b8a89001d91a9406c18da31f84b21b0158a4cc46cb10a0125c7931bbb497520
 ```
 
 ### `dpkg` source package: `cairo=1.15.10-2ubuntu0.1`
@@ -751,9 +751,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris charls=1.1.0+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/charls/charls_1.1.0+dfsg-2.dsc' charls_1.1.0+dfsg-2.dsc 2057 SHA256:50016f859c4b1fb6df77b4af533c6df246eb48f2bf31af6583ff9d988dbf0747
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/charls/charls_1.1.0+dfsg.orig.tar.xz' charls_1.1.0+dfsg.orig.tar.xz 35060 SHA256:e41475961f7c40c4c56fe4163873eb7751544b1ee120fb2fb26e7aa72927c40b
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/charls/charls_1.1.0+dfsg-2.debian.tar.xz' charls_1.1.0+dfsg-2.debian.tar.xz 5172 SHA256:391ff96bb5e7c096caed443441c1ca477b54ce07e726adf66bb5f92dc4201b05
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/charls/charls_1.1.0%2bdfsg-2.dsc' charls_1.1.0+dfsg-2.dsc 2057 SHA256:50016f859c4b1fb6df77b4af533c6df246eb48f2bf31af6583ff9d988dbf0747
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/charls/charls_1.1.0%2bdfsg.orig.tar.xz' charls_1.1.0+dfsg.orig.tar.xz 35060 SHA256:e41475961f7c40c4c56fe4163873eb7751544b1ee120fb2fb26e7aa72927c40b
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/charls/charls_1.1.0%2bdfsg-2.debian.tar.xz' charls_1.1.0+dfsg-2.debian.tar.xz 5172 SHA256:391ff96bb5e7c096caed443441c1ca477b54ce07e726adf66bb5f92dc4201b05
 ```
 
 ### `dpkg` source package: `chromaprint=1.4.3-1`
@@ -865,9 +865,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris console-bridge=0.4.0+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/console-bridge/console-bridge_0.4.0+dfsg-2.dsc' console-bridge_0.4.0+dfsg-2.dsc 1949 SHA256:5cfb1b8f43d210c5c1c72bdccb909092b40f361759372211331f75859f29ff91
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/console-bridge/console-bridge_0.4.0+dfsg.orig.tar.gz' console-bridge_0.4.0+dfsg.orig.tar.gz 6042 SHA256:172eecc6c185de2f6d43aed10c3110b8573e53a49f77c48c3f81a83e0e6e63c2
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/console-bridge/console-bridge_0.4.0+dfsg-2.debian.tar.xz' console-bridge_0.4.0+dfsg-2.debian.tar.xz 3628 SHA256:56bdfbf50a6e7a83c1f4d1f9052b5b605b8f61846cce7042af0bb6ab661707f7
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/console-bridge/console-bridge_0.4.0%2bdfsg-2.dsc' console-bridge_0.4.0+dfsg-2.dsc 1949 SHA256:5cfb1b8f43d210c5c1c72bdccb909092b40f361759372211331f75859f29ff91
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/console-bridge/console-bridge_0.4.0%2bdfsg.orig.tar.gz' console-bridge_0.4.0+dfsg.orig.tar.gz 6042 SHA256:172eecc6c185de2f6d43aed10c3110b8573e53a49f77c48c3f81a83e0e6e63c2
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/console-bridge/console-bridge_0.4.0%2bdfsg-2.debian.tar.xz' console-bridge_0.4.0+dfsg-2.debian.tar.xz 3628 SHA256:56bdfbf50a6e7a83c1f4d1f9052b5b605b8f61846cce7042af0bb6ab661707f7
 ```
 
 ### `dpkg` source package: `constantly=15.1.0-1`
@@ -925,9 +925,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris crystalhd=1:0.0~git20110715.fdd2f19-12
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/crystalhd/crystalhd_0.0~git20110715.fdd2f19-12.dsc' crystalhd_0.0~git20110715.fdd2f19-12.dsc 2356 SHA256:24d2413fe865d91f54366f906f04ebaa8cb9a2c28b3359a83f3754581474f621
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/crystalhd/crystalhd_0.0~git20110715.fdd2f19.orig.tar.gz' crystalhd_0.0~git20110715.fdd2f19.orig.tar.gz 1186072 SHA256:a1c22908b85085dcc4591bc033fe054be63eab59b7d35f0a9ab3fcb2600722b7
-'http://archive.ubuntu.com/ubuntu/pool/universe/c/crystalhd/crystalhd_0.0~git20110715.fdd2f19-12.debian.tar.xz' crystalhd_0.0~git20110715.fdd2f19-12.debian.tar.xz 15260 SHA256:b634af1ff394c6e44445e29e7e6b27648d35f58e475ed1749eeaf3dc80ca15a1
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/crystalhd/crystalhd_0.0%7egit20110715.fdd2f19-12.dsc' crystalhd_0.0~git20110715.fdd2f19-12.dsc 2356 SHA256:24d2413fe865d91f54366f906f04ebaa8cb9a2c28b3359a83f3754581474f621
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/crystalhd/crystalhd_0.0%7egit20110715.fdd2f19.orig.tar.gz' crystalhd_0.0~git20110715.fdd2f19.orig.tar.gz 1186072 SHA256:a1c22908b85085dcc4591bc033fe054be63eab59b7d35f0a9ab3fcb2600722b7
+'http://archive.ubuntu.com/ubuntu/pool/universe/c/crystalhd/crystalhd_0.0%7egit20110715.fdd2f19-12.debian.tar.xz' crystalhd_0.0~git20110715.fdd2f19-12.debian.tar.xz 15260 SHA256:b634af1ff394c6e44445e29e7e6b27648d35f58e475ed1749eeaf3dc80ca15a1
 ```
 
 ### `dpkg` source package: `cups=2.2.7-1ubuntu2.8`
@@ -994,14 +994,9 @@ Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/l
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2.3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg-3ubuntu2.3.dsc' cyrus-sasl2_2.1.27~101-g0780600+dfsg-3ubuntu2.3.dsc 2968 SHA512:d5989a35ee05a90e88f61dbe325238627d2f4349efd7376314dada58ef1ff5283f57a63afb5ea3ae81fb169c40e136b79187d4de75a41d80e37c5f74d978de22
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg.orig.tar.xz' cyrus-sasl2_2.1.27~101-g0780600+dfsg.orig.tar.xz 1143888 SHA512:cd684133dcea5856301f50e378ff105e88f8008af06bd4e02fb9a62a88ece2ee1901ea2776ef3d941d6a3cfc2a77875c08054326293818db89e5f9995c4cd524
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27~101-g0780600+dfsg-3ubuntu2.3.debian.tar.xz' cyrus-sasl2_2.1.27~101-g0780600+dfsg-3ubuntu2.3.debian.tar.xz 97164 SHA512:96ebeac028396c12a7b3b876c8cb7305234c3c9dc0e4e882eab4f5996739cb7d7d32cb3fecfebd2637d58835fd50c1ebefd30949480745c69a16212caae1f2c4
-```
 
 ### `dpkg` source package: `cython=0.26.1-0.4`
 
@@ -1448,9 +1443,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris findutils=4.6.0+git+20170828-2
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0+git+20170828-2.dsc' findutils_4.6.0+git+20170828-2.dsc 2221 SHA256:6997072de2f1b24457073275f7b8f15ad2f0569389dcb277ebe99dd1846e2ee9
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0+git+20170828.orig.tar.xz' findutils_4.6.0+git+20170828.orig.tar.xz 1865192 SHA256:8d6571ffd5105307bcb1b20c4b7d5c2d0b5152e463b082801268bd3ec9e2bbfd
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0+git+20170828-2.debian.tar.xz' findutils_4.6.0+git+20170828-2.debian.tar.xz 26532 SHA256:5b13792a14edec982fddcf74fe01b4380b909703d76aaba2860da51c6248de73
+'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0%2bgit%2b20170828-2.dsc' findutils_4.6.0+git+20170828-2.dsc 2221 SHA256:6997072de2f1b24457073275f7b8f15ad2f0569389dcb277ebe99dd1846e2ee9
+'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0%2bgit%2b20170828.orig.tar.xz' findutils_4.6.0+git+20170828.orig.tar.xz 1865192 SHA256:8d6571ffd5105307bcb1b20c4b7d5c2d0b5152e463b082801268bd3ec9e2bbfd
+'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0%2bgit%2b20170828-2.debian.tar.xz' findutils_4.6.0+git+20170828-2.debian.tar.xz 26532 SHA256:5b13792a14edec982fddcf74fe01b4380b909703d76aaba2860da51c6248de73
 ```
 
 ### `dpkg` source package: `flann=1.9.1+dfsg-2`
@@ -1472,9 +1467,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris flann=1.9.1+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/f/flann/flann_1.9.1+dfsg-2.dsc' flann_1.9.1+dfsg-2.dsc 2347 SHA256:c4c7356f02146526917b8fabc0a159d382dfd6e4a4a6981fcc07cac0e9d0cb6d
-'http://archive.ubuntu.com/ubuntu/pool/universe/f/flann/flann_1.9.1+dfsg.orig.tar.gz' flann_1.9.1+dfsg.orig.tar.gz 478803 SHA256:6cc1d97f504542b5f07c7eff46e87f5c9a67254b6d86ec500b15c1b7c51e1b61
-'http://archive.ubuntu.com/ubuntu/pool/universe/f/flann/flann_1.9.1+dfsg-2.debian.tar.xz' flann_1.9.1+dfsg-2.debian.tar.xz 5792 SHA256:dc0a0611ee308cdaff7d5e88da98c35ff366cad5fb22238ae5a104e5760e737f
+'http://archive.ubuntu.com/ubuntu/pool/universe/f/flann/flann_1.9.1%2bdfsg-2.dsc' flann_1.9.1+dfsg-2.dsc 2347 SHA256:c4c7356f02146526917b8fabc0a159d382dfd6e4a4a6981fcc07cac0e9d0cb6d
+'http://archive.ubuntu.com/ubuntu/pool/universe/f/flann/flann_1.9.1%2bdfsg.orig.tar.gz' flann_1.9.1+dfsg.orig.tar.gz 478803 SHA256:6cc1d97f504542b5f07c7eff46e87f5c9a67254b6d86ec500b15c1b7c51e1b61
+'http://archive.ubuntu.com/ubuntu/pool/universe/f/flann/flann_1.9.1%2bdfsg-2.debian.tar.xz' flann_1.9.1+dfsg-2.debian.tar.xz 5792 SHA256:dc0a0611ee308cdaff7d5e88da98c35ff366cad5fb22238ae5a104e5760e737f
 ```
 
 ### `dpkg` source package: `fontconfig=2.12.6-0ubuntu2`
@@ -1673,9 +1668,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-7=7.5.0-3ubuntu1~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-7/gcc-7_7.5.0-3ubuntu1~18.04.dsc' gcc-7_7.5.0-3ubuntu1~18.04.dsc 28071 SHA512:1c06ed6e3fb7d3799aaad1915e318597a90ec87ec513d6710157cdf3ce877e15989ea62b70e9b6d6a06c9e24ded1174d87621d01e025797b50d13347126dc3ec
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-7/gcc-7_7.5.0-3ubuntu1%7e18.04.dsc' gcc-7_7.5.0-3ubuntu1~18.04.dsc 28071 SHA512:1c06ed6e3fb7d3799aaad1915e318597a90ec87ec513d6710157cdf3ce877e15989ea62b70e9b6d6a06c9e24ded1174d87621d01e025797b50d13347126dc3ec
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-7/gcc-7_7.5.0.orig.tar.gz' gcc-7_7.5.0.orig.tar.gz 73877115 SHA512:806470ea2d8f69a8d7eed14e38d50ea58b7cb6b8da1bd91fecf15f2f840d67f321fb9602f2c25d44f13df12f80a4f8e2dbe4450d482ae876e3678f69a93dd2d8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-7/gcc-7_7.5.0-3ubuntu1~18.04.diff.gz' gcc-7_7.5.0-3ubuntu1~18.04.diff.gz 574614 SHA512:030ab7a7894d9af4ce280556bbfd90a695d6d9fc0814f768184dc0cccfb243015f35afc85b97b92a2e1fc7054872b5d59f9fddeb65ca057cbbb3ad2a17935e98
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-7/gcc-7_7.5.0-3ubuntu1%7e18.04.diff.gz' gcc-7_7.5.0-3ubuntu1~18.04.diff.gz 574614 SHA512:030ab7a7894d9af4ce280556bbfd90a695d6d9fc0814f768184dc0cccfb243015f35afc85b97b92a2e1fc7054872b5d59f9fddeb65ca057cbbb3ad2a17935e98
 ```
 
 ### `dpkg` source package: `gcc-8=8.4.0-1ubuntu1~18.04`
@@ -1707,9 +1702,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-8=8.4.0-1ubuntu1~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.4.0-1ubuntu1~18.04.dsc' gcc-8_8.4.0-1ubuntu1~18.04.dsc 36382 SHA512:064409c787f62bff87a494f2952f5c3f264d5a7c8508c83b863c1a1ad410d25988cfc73afde9908221258f81714164121cc1f02e3699ca2283c6a3aa035d1ddd
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.4.0-1ubuntu1%7e18.04.dsc' gcc-8_8.4.0-1ubuntu1~18.04.dsc 36382 SHA512:064409c787f62bff87a494f2952f5c3f264d5a7c8508c83b863c1a1ad410d25988cfc73afde9908221258f81714164121cc1f02e3699ca2283c6a3aa035d1ddd
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.4.0.orig.tar.gz' gcc-8_8.4.0.orig.tar.gz 85278215 SHA512:ce6ff302ab2e252950bc446bc2b58c198c4b1a75d59122c00845c026a29068f412e0d59cd6ddd8b648838f80589252a1695afc6193fb669082c9a1c4ad14b1dc
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.4.0-1ubuntu1~18.04.diff.gz' gcc-8_8.4.0-1ubuntu1~18.04.diff.gz 510634 SHA512:7bd97a04eccd35c3483a82b238d8d54c91071c4d1361cb30fb3fbf7b512c84b9d0bc80499373f2da3e17520d112125ebfebae6b93746feede78f9eecc1ccd4ac
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.4.0-1ubuntu1%7e18.04.diff.gz' gcc-8_8.4.0-1ubuntu1~18.04.diff.gz 510634 SHA512:7bd97a04eccd35c3483a82b238d8d54c91071c4d1361cb30fb3fbf7b512c84b9d0bc80499373f2da3e17520d112125ebfebae6b93746feede78f9eecc1ccd4ac
 ```
 
 ### `dpkg` source package: `gcc-defaults=1.176ubuntu2.3`
@@ -1779,9 +1774,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gdal=2.2.3+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gdal/gdal_2.2.3+dfsg-2.dsc' gdal_2.2.3+dfsg-2.dsc 3417 SHA256:1c773c32fc34610ef9ae19343476186423679f0ebe759c3b47664cb3205021f7
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gdal/gdal_2.2.3+dfsg.orig.tar.xz' gdal_2.2.3+dfsg.orig.tar.xz 8812900 SHA256:3f99d84541ec6f174da137166c1002b50ed138dde51d05180ad5c8dd49721057
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gdal/gdal_2.2.3+dfsg-2.debian.tar.xz' gdal_2.2.3+dfsg-2.debian.tar.xz 178768 SHA256:a545f89efa6815eb5d529f2114e9a04a4ba61df233752541369cee92009fc9c0
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gdal/gdal_2.2.3%2bdfsg-2.dsc' gdal_2.2.3+dfsg-2.dsc 3417 SHA256:1c773c32fc34610ef9ae19343476186423679f0ebe759c3b47664cb3205021f7
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gdal/gdal_2.2.3%2bdfsg.orig.tar.xz' gdal_2.2.3+dfsg.orig.tar.xz 8812900 SHA256:3f99d84541ec6f174da137166c1002b50ed138dde51d05180ad5c8dd49721057
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gdal/gdal_2.2.3%2bdfsg-2.debian.tar.xz' gdal_2.2.3+dfsg-2.debian.tar.xz 178768 SHA256:a545f89efa6815eb5d529f2114e9a04a4ba61df233752541369cee92009fc9c0
 ```
 
 ### `dpkg` source package: `gdbm=1.14.1-6`
@@ -1969,9 +1964,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gl2ps=1.4.0+dfsg1-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gl2ps/gl2ps_1.4.0+dfsg1-1.dsc' gl2ps_1.4.0+dfsg1-1.dsc 2255 SHA256:3ee92709ccec88ddf1cce2177ac3635fa2968ef85f9eb20236da856932b1fa0e
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gl2ps/gl2ps_1.4.0+dfsg1.orig.tar.xz' gl2ps_1.4.0+dfsg1.orig.tar.xz 59540 SHA256:7a2a914027182ccdb81284bb6fff203648df97de4ad40d51b123eeae555a887f
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gl2ps/gl2ps_1.4.0+dfsg1-1.debian.tar.xz' gl2ps_1.4.0+dfsg1-1.debian.tar.xz 10112 SHA256:04ec2ecd52064947ed84aff1f7dd2a94c05ddb4ec544374c55af0632222fd9bd
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gl2ps/gl2ps_1.4.0%2bdfsg1-1.dsc' gl2ps_1.4.0+dfsg1-1.dsc 2255 SHA256:3ee92709ccec88ddf1cce2177ac3635fa2968ef85f9eb20236da856932b1fa0e
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gl2ps/gl2ps_1.4.0%2bdfsg1.orig.tar.xz' gl2ps_1.4.0+dfsg1.orig.tar.xz 59540 SHA256:7a2a914027182ccdb81284bb6fff203648df97de4ad40d51b123eeae555a887f
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gl2ps/gl2ps_1.4.0%2bdfsg1-1.debian.tar.xz' gl2ps_1.4.0+dfsg1-1.debian.tar.xz 10112 SHA256:04ec2ecd52064947ed84aff1f7dd2a94c05ddb4ec544374c55af0632222fd9bd
 ```
 
 ### `dpkg` source package: `glib-networking=2.56.0-1ubuntu0.1`
@@ -2060,9 +2055,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gmp=2:6.1.2+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gmp/gmp_6.1.2+dfsg-2.dsc' gmp_6.1.2+dfsg-2.dsc 2152 SHA256:d1e7b69c619c2d07b3eaf9f051159cde1884cf9c68109f1dee278bf7a59b632b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gmp/gmp_6.1.2+dfsg.orig.tar.xz' gmp_6.1.2+dfsg.orig.tar.xz 1804424 SHA256:18016f718f621e7641ddd4e57f8e140391c5183252e5998263ffff59198a65b7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gmp/gmp_6.1.2+dfsg-2.debian.tar.xz' gmp_6.1.2+dfsg-2.debian.tar.xz 20744 SHA256:33cf6cc65827c9df744e4e07b216ca2d02eb57327a949f80a7b7dddd0485ee85
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gmp/gmp_6.1.2%2bdfsg-2.dsc' gmp_6.1.2+dfsg-2.dsc 2152 SHA256:d1e7b69c619c2d07b3eaf9f051159cde1884cf9c68109f1dee278bf7a59b632b
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gmp/gmp_6.1.2%2bdfsg.orig.tar.xz' gmp_6.1.2+dfsg.orig.tar.xz 1804424 SHA256:18016f718f621e7641ddd4e57f8e140391c5183252e5998263ffff59198a65b7
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gmp/gmp_6.1.2%2bdfsg-2.debian.tar.xz' gmp_6.1.2+dfsg-2.debian.tar.xz 20744 SHA256:33cf6cc65827c9df744e4e07b216ca2d02eb57327a949f80a7b7dddd0485ee85
 ```
 
 ### `dpkg` source package: `gnupg2=2.2.4-1ubuntu1.4`
@@ -2330,9 +2325,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gst-plugins-base1.0=1.14.5-0ubuntu1~18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.3.dsc' gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.3.dsc 4444 SHA512:196c190c2897f665d486fc27b75fd63e482e783e2ac3767c91d4437ce308637a8bd231b5c994f440c6195a975fbce069568d32590bd5272256e018d7b8849e4e
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5-0ubuntu1%7e18.04.3.dsc' gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.3.dsc 4444 SHA512:196c190c2897f665d486fc27b75fd63e482e783e2ac3767c91d4437ce308637a8bd231b5c994f440c6195a975fbce069568d32590bd5272256e018d7b8849e4e
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5.orig.tar.xz' gst-plugins-base1.0_1.14.5.orig.tar.xz 3717076 SHA512:4e81c44a5ea3b910f96d3e9251ba38a79feacead4f96adb92eab5a650695ca8d5313e3ec1df78fec04376cf3152d2eefd4d39f6c11dadc98a11e55bbf8c8ccdc
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.3.debian.tar.xz' gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.3.debian.tar.xz 46264 SHA512:ffdce5abfc5fe63245da595b0c6d6a385be15faa7b3f6e64f30357e1fb7bf350b88a2bfb40f7797eb311694623c0e6a3bb60be19382ceef70918a8ee01e0337b
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.5-0ubuntu1%7e18.04.3.debian.tar.xz' gst-plugins-base1.0_1.14.5-0ubuntu1~18.04.3.debian.tar.xz 46264 SHA512:ffdce5abfc5fe63245da595b0c6d6a385be15faa7b3f6e64f30357e1fb7bf350b88a2bfb40f7797eb311694623c0e6a3bb60be19382ceef70918a8ee01e0337b
 ```
 
 ### `dpkg` source package: `gstreamer1.0=1.14.5-0ubuntu1~18.04.2`
@@ -2353,9 +2348,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gstreamer1.0=1.14.5-0ubuntu1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5-0ubuntu1~18.04.2.dsc' gstreamer1.0_1.14.5-0ubuntu1~18.04.2.dsc 3131 SHA512:9a803197d56d14c2b99cd70cc3168841a8ee71c1a2e17d08b65996654f93b241537b39c199dbc6cfed0b87ce0b32ccb0b13fe2ac570003583138f3aa0f7a6dc8
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5-0ubuntu1%7e18.04.2.dsc' gstreamer1.0_1.14.5-0ubuntu1~18.04.2.dsc 3131 SHA512:9a803197d56d14c2b99cd70cc3168841a8ee71c1a2e17d08b65996654f93b241537b39c199dbc6cfed0b87ce0b32ccb0b13fe2ac570003583138f3aa0f7a6dc8
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5.orig.tar.xz' gstreamer1.0_1.14.5.orig.tar.xz 3268756 SHA512:1a97ae17f8fff041db5e24d712d33c7116e408be1fabc2abd7b652b067b6ebe6c0943845a33a21335a5b4fa0a1ba178873158659f761f1e3aab04a969029c5d8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5-0ubuntu1~18.04.2.debian.tar.xz' gstreamer1.0_1.14.5-0ubuntu1~18.04.2.debian.tar.xz 44684 SHA512:61dbdbf337a96b6e03af7369857183f7855d3c0f01bdca46976e4c0ad1b1dd199418e9d258a719521d68381069c71bb0d04a610ec4142705f97bcdc93a83b789
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.5-0ubuntu1%7e18.04.2.debian.tar.xz' gstreamer1.0_1.14.5-0ubuntu1~18.04.2.debian.tar.xz 44684 SHA512:61dbdbf337a96b6e03af7369857183f7855d3c0f01bdca46976e4c0ad1b1dd199418e9d258a719521d68381069c71bb0d04a610ec4142705f97bcdc93a83b789
 ```
 
 ### `dpkg` source package: `gtk+2.0=2.24.32-1ubuntu1`
@@ -2376,9 +2371,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gtk+2.0=2.24.32-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/gtk+2.0_2.24.32-1ubuntu1.dsc' gtk+2.0_2.24.32-1ubuntu1.dsc 3887 SHA256:a5ffdb0811ce5b1cbb4c4c1920ae38ee03fc7fffe4e7be9e8c0bd8826dce2778
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/gtk+2.0_2.24.32.orig.tar.xz' gtk+2.0_2.24.32.orig.tar.xz 12620860 SHA256:b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/gtk+2.0_2.24.32-1ubuntu1.debian.tar.xz' gtk+2.0_2.24.32-1ubuntu1.debian.tar.xz 103116 SHA256:da2adb218e807207a574d47ca4797b02e9f821d11b4aa24af0de83ab43f0a09d
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk%2b2.0/gtk%2b2.0_2.24.32-1ubuntu1.dsc' gtk+2.0_2.24.32-1ubuntu1.dsc 3887 SHA256:a5ffdb0811ce5b1cbb4c4c1920ae38ee03fc7fffe4e7be9e8c0bd8826dce2778
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk%2b2.0/gtk%2b2.0_2.24.32.orig.tar.xz' gtk+2.0_2.24.32.orig.tar.xz 12620860 SHA256:b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk%2b2.0/gtk%2b2.0_2.24.32-1ubuntu1.debian.tar.xz' gtk+2.0_2.24.32-1ubuntu1.debian.tar.xz 103116 SHA256:da2adb218e807207a574d47ca4797b02e9f821d11b4aa24af0de83ab43f0a09d
 ```
 
 ### `dpkg` source package: `gtk+3.0=3.22.30-1ubuntu4`
@@ -2404,9 +2399,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gtk+3.0=3.22.30-1ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu4.dsc' gtk+3.0_3.22.30-1ubuntu4.dsc 3364 SHA512:10f32b31fd76aee3bf0e3e64c4d23cfd621abaea21bf6e73cd9bdef5c280df88675be1ffa2166af5a532bb726284e4db45ab97f119645c0363eca94e34ff7151
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30.orig.tar.xz' gtk+3.0_3.22.30.orig.tar.xz 18946084 SHA512:31440a615cb2f406d0f904e59febb8f876106f27818ddd6951c76ab9bcb421ca480dae2bebfb1c4b1e03b833fc7c42e9feede053d9d71f19a02fe778e3197b38
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu4.debian.tar.xz' gtk+3.0_3.22.30-1ubuntu4.debian.tar.xz 162544 SHA512:8a3de916027748f1e9f013fd955a83ac568187cd7b52d1972bfd0dd753e860d5c2e89f91c294779a6d5f4f15066bed59084f508274493ea1944570fae341bd21
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk%2b3.0/gtk%2b3.0_3.22.30-1ubuntu4.dsc' gtk+3.0_3.22.30-1ubuntu4.dsc 3364 SHA512:10f32b31fd76aee3bf0e3e64c4d23cfd621abaea21bf6e73cd9bdef5c280df88675be1ffa2166af5a532bb726284e4db45ab97f119645c0363eca94e34ff7151
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk%2b3.0/gtk%2b3.0_3.22.30.orig.tar.xz' gtk+3.0_3.22.30.orig.tar.xz 18946084 SHA512:31440a615cb2f406d0f904e59febb8f876106f27818ddd6951c76ab9bcb421ca480dae2bebfb1c4b1e03b833fc7c42e9feede053d9d71f19a02fe778e3197b38
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk%2b3.0/gtk%2b3.0_3.22.30-1ubuntu4.debian.tar.xz' gtk+3.0_3.22.30-1ubuntu4.debian.tar.xz 162544 SHA512:8a3de916027748f1e9f013fd955a83ac568187cd7b52d1972bfd0dd753e860d5c2e89f91c294779a6d5f4f15066bed59084f508274493ea1944570fae341bd21
 ```
 
 ### `dpkg` source package: `gts=0.7.6+darcs121130-4`
@@ -2424,9 +2419,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gts=0.7.6+darcs121130-4
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gts/gts_0.7.6+darcs121130-4.dsc' gts_0.7.6+darcs121130-4.dsc 2170 SHA256:3d7dbf72a2194891a485d03f8a002e8d149dc59a915a7bbf36b42c53408ef733
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gts/gts_0.7.6+darcs121130.orig.tar.gz' gts_0.7.6+darcs121130.orig.tar.gz 880569 SHA256:c23f72ab74bbf65599f8c0b599d6336fabe1ec2a09c19b70544eeefdc069b73b
-'http://archive.ubuntu.com/ubuntu/pool/universe/g/gts/gts_0.7.6+darcs121130-4.debian.tar.bz2' gts_0.7.6+darcs121130-4.debian.tar.bz2 13837 SHA256:1fcf9c79ca0b4fc3662de645ba4e65564ea974566a3ecd730e9908f1adc425cd
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gts/gts_0.7.6%2bdarcs121130-4.dsc' gts_0.7.6+darcs121130-4.dsc 2170 SHA256:3d7dbf72a2194891a485d03f8a002e8d149dc59a915a7bbf36b42c53408ef733
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gts/gts_0.7.6%2bdarcs121130.orig.tar.gz' gts_0.7.6+darcs121130.orig.tar.gz 880569 SHA256:c23f72ab74bbf65599f8c0b599d6336fabe1ec2a09c19b70544eeefdc069b73b
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/gts/gts_0.7.6%2bdarcs121130-4.debian.tar.bz2' gts_0.7.6+darcs121130-4.debian.tar.bz2 13837 SHA256:1fcf9c79ca0b4fc3662de645ba4e65564ea974566a3ecd730e9908f1adc425cd
 ```
 
 ### `dpkg` source package: `gzip=1.6-5ubuntu1.1`
@@ -2491,9 +2486,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris hdf5=1.10.0-patch1+docs-4
-'http://archive.ubuntu.com/ubuntu/pool/universe/h/hdf5/hdf5_1.10.0-patch1+docs-4.dsc' hdf5_1.10.0-patch1+docs-4.dsc 2748 SHA256:cffb7859ef5db09b27d1cb0fc14375241e499c7f602f124b2a1e1019feaf9adf
-'http://archive.ubuntu.com/ubuntu/pool/universe/h/hdf5/hdf5_1.10.0-patch1+docs.orig.tar.gz' hdf5_1.10.0-patch1+docs.orig.tar.gz 25959021 SHA256:db039dd6825ce1e2845b2c7e9d8cf3cd0caa0842f713a7a8c282af09520204d8
-'http://archive.ubuntu.com/ubuntu/pool/universe/h/hdf5/hdf5_1.10.0-patch1+docs-4.debian.tar.xz' hdf5_1.10.0-patch1+docs-4.debian.tar.xz 119648 SHA256:d527f57aa97334bf9669b104d884ce4471cb9a49ef326d964b3d6c8620be283f
+'http://archive.ubuntu.com/ubuntu/pool/universe/h/hdf5/hdf5_1.10.0-patch1%2bdocs-4.dsc' hdf5_1.10.0-patch1+docs-4.dsc 2748 SHA256:cffb7859ef5db09b27d1cb0fc14375241e499c7f602f124b2a1e1019feaf9adf
+'http://archive.ubuntu.com/ubuntu/pool/universe/h/hdf5/hdf5_1.10.0-patch1%2bdocs.orig.tar.gz' hdf5_1.10.0-patch1+docs.orig.tar.gz 25959021 SHA256:db039dd6825ce1e2845b2c7e9d8cf3cd0caa0842f713a7a8c282af09520204d8
+'http://archive.ubuntu.com/ubuntu/pool/universe/h/hdf5/hdf5_1.10.0-patch1%2bdocs-4.debian.tar.xz' hdf5_1.10.0-patch1+docs-4.debian.tar.xz 119648 SHA256:d527f57aa97334bf9669b104d884ce4471cb9a49ef326d964b3d6c8620be283f
 ```
 
 ### `dpkg` source package: `heimdal=7.5.0+dfsg-1`
@@ -2522,9 +2517,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris heimdal=7.5.0+dfsg-1
-'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0+dfsg-1.dsc' heimdal_7.5.0+dfsg-1.dsc 3674 SHA256:98ce6bf21ac01400ec10a3620fe3c047da4cf63269f521ba96c59bbcaed822bf
-'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0+dfsg.orig.tar.gz' heimdal_7.5.0+dfsg.orig.tar.gz 8955005 SHA256:489119b7a1a900b88163765654dc59cba9a321b078fafc76629e2b85ef140867
-'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0+dfsg-1.debian.tar.xz' heimdal_7.5.0+dfsg-1.debian.tar.xz 125776 SHA256:7ad6c3f3968989ff06181409e1515a3feaf5a630d27ade7f2f018c9241f8c225
+'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0%2bdfsg-1.dsc' heimdal_7.5.0+dfsg-1.dsc 3674 SHA256:98ce6bf21ac01400ec10a3620fe3c047da4cf63269f521ba96c59bbcaed822bf
+'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0%2bdfsg.orig.tar.gz' heimdal_7.5.0+dfsg.orig.tar.gz 8955005 SHA256:489119b7a1a900b88163765654dc59cba9a321b078fafc76629e2b85ef140867
+'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0%2bdfsg-1.debian.tar.xz' heimdal_7.5.0+dfsg-1.debian.tar.xz 125776 SHA256:7ad6c3f3968989ff06181409e1515a3feaf5a630d27ade7f2f018c9241f8c225
 ```
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
@@ -2664,9 +2659,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris icu-le-hb=1.0.3+git161113-4
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu-le-hb/icu-le-hb_1.0.3+git161113-4.dsc' icu-le-hb_1.0.3+git161113-4.dsc 1929 SHA256:e486c93a9795a26347607ea19ad2ca97e043b6de3dcbbc8bf70b0826d740ed50
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu-le-hb/icu-le-hb_1.0.3+git161113.orig.tar.xz' icu-le-hb_1.0.3+git161113.orig.tar.xz 31460 SHA256:777cdb6fecedb6400cab85894a8407bb70771e38a0e99b837ccf9e4a55f8578c
-'http://archive.ubuntu.com/ubuntu/pool/main/i/icu-le-hb/icu-le-hb_1.0.3+git161113-4.debian.tar.xz' icu-le-hb_1.0.3+git161113-4.debian.tar.xz 3176 SHA256:e140404464ff5c26af2f7f2f974cb4447e833a64f4529e85564ad367fb483ee5
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu-le-hb/icu-le-hb_1.0.3%2bgit161113-4.dsc' icu-le-hb_1.0.3+git161113-4.dsc 1929 SHA256:e486c93a9795a26347607ea19ad2ca97e043b6de3dcbbc8bf70b0826d740ed50
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu-le-hb/icu-le-hb_1.0.3%2bgit161113.orig.tar.xz' icu-le-hb_1.0.3+git161113.orig.tar.xz 31460 SHA256:777cdb6fecedb6400cab85894a8407bb70771e38a0e99b837ccf9e4a55f8578c
+'http://archive.ubuntu.com/ubuntu/pool/main/i/icu-le-hb/icu-le-hb_1.0.3%2bgit161113-4.debian.tar.xz' icu-le-hb_1.0.3+git161113-4.debian.tar.xz 3176 SHA256:e140404464ff5c26af2f7f2f974cb4447e833a64f4529e85564ad367fb483ee5
 ```
 
 ### `dpkg` source package: `icu=60.2-3ubuntu3.2`
@@ -2747,9 +2742,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris infinipath-psm=3.3+20.604758e7-5
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/infinipath-psm/infinipath-psm_3.3+20.604758e7-5.dsc' infinipath-psm_3.3+20.604758e7-5.dsc 2284 SHA256:5b42b5d421a2bcc86999a019adfeeb0194584ac586374a285d6ae54ac018e2ac
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/infinipath-psm/infinipath-psm_3.3+20.604758e7.orig.tar.xz' infinipath-psm_3.3+20.604758e7.orig.tar.xz 287112 SHA256:2fb37b3436866b7f6d7244edded875bf7ebc89e7a09a1f372ace548d0f90481d
-'http://archive.ubuntu.com/ubuntu/pool/universe/i/infinipath-psm/infinipath-psm_3.3+20.604758e7-5.debian.tar.xz' infinipath-psm_3.3+20.604758e7-5.debian.tar.xz 9312 SHA256:d1cc95c8f929d86ebdd3ea12214ee7a9d4493db1f2cd2b9332f89c56ccab0a63
+'http://archive.ubuntu.com/ubuntu/pool/universe/i/infinipath-psm/infinipath-psm_3.3%2b20.604758e7-5.dsc' infinipath-psm_3.3+20.604758e7-5.dsc 2284 SHA256:5b42b5d421a2bcc86999a019adfeeb0194584ac586374a285d6ae54ac018e2ac
+'http://archive.ubuntu.com/ubuntu/pool/universe/i/infinipath-psm/infinipath-psm_3.3%2b20.604758e7.orig.tar.xz' infinipath-psm_3.3+20.604758e7.orig.tar.xz 287112 SHA256:2fb37b3436866b7f6d7244edded875bf7ebc89e7a09a1f372ace548d0f90481d
+'http://archive.ubuntu.com/ubuntu/pool/universe/i/infinipath-psm/infinipath-psm_3.3%2b20.604758e7-5.debian.tar.xz' infinipath-psm_3.3+20.604758e7-5.debian.tar.xz 9312 SHA256:d1cc95c8f929d86ebdd3ea12214ee7a9d4493db1f2cd2b9332f89c56ccab0a63
 ```
 
 ### `dpkg` source package: `init-system-helpers=1.51`
@@ -3318,10 +3313,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libdrm=2.4.101-2~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.101-2~18.04.1.dsc' libdrm_2.4.101-2~18.04.1.dsc 3297 SHA512:96d96d552b439a04502e8b32a0d27d02cb1f72cdc6245f9c88c4a114bef74a1629fc1c96ff7888e36a88721154a6ce94920e4b1a5d07504379346936d900c702
+'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.101-2%7e18.04.1.dsc' libdrm_2.4.101-2~18.04.1.dsc 3297 SHA512:96d96d552b439a04502e8b32a0d27d02cb1f72cdc6245f9c88c4a114bef74a1629fc1c96ff7888e36a88721154a6ce94920e4b1a5d07504379346936d900c702
 'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.101.orig.tar.xz' libdrm_2.4.101.orig.tar.xz 408856 SHA512:658cfc6f478b674b77b4613e1af9ce8f4fd2ace8a18e75729de254d14b7c1f5d67d4bfdb58744aea74abca0f6521326225f4156bd5cbeeed79ca3e025f657e8c
 'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.101.orig.tar.xz.asc' libdrm_2.4.101.orig.tar.xz.asc 833 SHA512:7c3897cb19de52e3a3d259e07993bc2e9699751497b4e3abd1b604a2eb8a5ffaa29cae61f92d2415befa34811e9f91189366b354dac9ab1e93c8a90a367860c2
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.101-2~18.04.1.debian.tar.xz' libdrm_2.4.101-2~18.04.1.debian.tar.xz 54212 SHA512:96d7085a73abfcda2997c45e833026e98f1eeb586ed546336aca8a19862d7b7b019f8e64bb6185c6d7b6f27f1cdf9d80e8c939298b4526243c27fcd62116d590
+'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.101-2%7e18.04.1.debian.tar.xz' libdrm_2.4.101-2~18.04.1.debian.tar.xz 54212 SHA512:96d7085a73abfcda2997c45e833026e98f1eeb586ed546336aca8a19862d7b7b019f8e64bb6185c6d7b6f27f1cdf9d80e8c939298b4526243c27fcd62116d590
 ```
 
 ### `dpkg` source package: `libedit=3.1-20170329-1`
@@ -3382,9 +3377,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libepsilon=0.9.2+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/libe/libepsilon/libepsilon_0.9.2+dfsg-2.dsc' libepsilon_0.9.2+dfsg-2.dsc 2231 SHA256:2c5bb58cb9c98c04fa8e80afd176414395d63b9c767ae1508468d11b09d88515
-'http://archive.ubuntu.com/ubuntu/pool/universe/libe/libepsilon/libepsilon_0.9.2+dfsg.orig.tar.gz' libepsilon_0.9.2+dfsg.orig.tar.gz 2395551 SHA256:684f77097c96862571e8c5da7acfe030bb597878153bf7d56672cb93ebd83c86
-'http://archive.ubuntu.com/ubuntu/pool/universe/libe/libepsilon/libepsilon_0.9.2+dfsg-2.debian.tar.xz' libepsilon_0.9.2+dfsg-2.debian.tar.xz 6912 SHA256:216d6a081950b15bbcaed0dd67ce64e595d6b6799492c4d4d04a042848e7aac7
+'http://archive.ubuntu.com/ubuntu/pool/universe/libe/libepsilon/libepsilon_0.9.2%2bdfsg-2.dsc' libepsilon_0.9.2+dfsg-2.dsc 2231 SHA256:2c5bb58cb9c98c04fa8e80afd176414395d63b9c767ae1508468d11b09d88515
+'http://archive.ubuntu.com/ubuntu/pool/universe/libe/libepsilon/libepsilon_0.9.2%2bdfsg.orig.tar.gz' libepsilon_0.9.2+dfsg.orig.tar.gz 2395551 SHA256:684f77097c96862571e8c5da7acfe030bb597878153bf7d56672cb93ebd83c86
+'http://archive.ubuntu.com/ubuntu/pool/universe/libe/libepsilon/libepsilon_0.9.2%2bdfsg-2.debian.tar.xz' libepsilon_0.9.2+dfsg-2.debian.tar.xz 6912 SHA256:216d6a081950b15bbcaed0dd67ce64e595d6b6799492c4d4d04a042848e7aac7
 ```
 
 ### `dpkg` source package: `liberror-perl=0.17025-1`
@@ -3425,9 +3420,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libevdev=1.5.8+dfsg-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libevdev/libevdev_1.5.8+dfsg-1ubuntu0.1.dsc' libevdev_1.5.8+dfsg-1ubuntu0.1.dsc 1628 SHA512:53ba50ed023aad891e4ad132ec10815335401be90c11d6ec0166d17126e8408e7dbec70190fc573a032a8b809d58226fe274715053a682ef47f25ac5b4430199
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libevdev/libevdev_1.5.8+dfsg.orig.tar.xz' libevdev_1.5.8+dfsg.orig.tar.xz 304700 SHA512:800412afd607035491054bfa482e309fe91439b2dd8e31e12f73da8358e43ff1bc38909d4358e1c81e096896e96132e26f756df5f2833c168c7e15cf265cc161
-'http://archive.ubuntu.com/ubuntu/pool/main/libe/libevdev/libevdev_1.5.8+dfsg-1ubuntu0.1.debian.tar.xz' libevdev_1.5.8+dfsg-1ubuntu0.1.debian.tar.xz 11448 SHA512:3bedc7c30e965542968b9db5daccb2e272b4384bd88ba9b539f71845773f01769f9e687713ce2818416a788c0248fcf07474c72bcd701e26f16bb4f36a47f579
+'http://archive.ubuntu.com/ubuntu/pool/main/libe/libevdev/libevdev_1.5.8%2bdfsg-1ubuntu0.1.dsc' libevdev_1.5.8+dfsg-1ubuntu0.1.dsc 1628 SHA512:53ba50ed023aad891e4ad132ec10815335401be90c11d6ec0166d17126e8408e7dbec70190fc573a032a8b809d58226fe274715053a682ef47f25ac5b4430199
+'http://archive.ubuntu.com/ubuntu/pool/main/libe/libevdev/libevdev_1.5.8%2bdfsg.orig.tar.xz' libevdev_1.5.8+dfsg.orig.tar.xz 304700 SHA512:800412afd607035491054bfa482e309fe91439b2dd8e31e12f73da8358e43ff1bc38909d4358e1c81e096896e96132e26f756df5f2833c168c7e15cf265cc161
+'http://archive.ubuntu.com/ubuntu/pool/main/libe/libevdev/libevdev_1.5.8%2bdfsg-1ubuntu0.1.debian.tar.xz' libevdev_1.5.8+dfsg-1ubuntu0.1.debian.tar.xz 11448 SHA512:3bedc7c30e965542968b9db5daccb2e272b4384bd88ba9b539f71845773f01769f9e687713ce2818416a788c0248fcf07474c72bcd701e26f16bb4f36a47f579
 ```
 
 ### `dpkg` source package: `libexif=0.6.21-4ubuntu0.6`
@@ -4211,9 +4206,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libseccomp=2.5.1-1ubuntu1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1-1ubuntu1~18.04.2.dsc' libseccomp_2.5.1-1ubuntu1~18.04.2.dsc 2303 SHA512:2e493d3aa3b9a83efc57a88388a4e37b57a10947b36e39e90953e630a7637656bcb41ddc5cec4887d928738bab0e652dc8d3264710c577910244fb7a3ebdf600
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1-1ubuntu1%7e18.04.2.dsc' libseccomp_2.5.1-1ubuntu1~18.04.2.dsc 2303 SHA512:2e493d3aa3b9a83efc57a88388a4e37b57a10947b36e39e90953e630a7637656bcb41ddc5cec4887d928738bab0e652dc8d3264710c577910244fb7a3ebdf600
 'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1.orig.tar.gz' libseccomp_2.5.1.orig.tar.gz 638811 SHA512:2be80a6323f9282dbeae8791724e5778b32e2382b2a3d1b0f77366371ec4072ea28128204f675cce101c091c0420d12c497e1a9ccbb7dc5bcbf61bfd777160af
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1-1ubuntu1~18.04.2.debian.tar.xz' libseccomp_2.5.1-1ubuntu1~18.04.2.debian.tar.xz 18840 SHA512:100d1d23c46f7e76c46b21ac8f7be74527ee52b2d1500427eb5d1891eee0f6afba44c3cddcea663110513f623477ce21904d09a9d50f2a017a90cb568048dca6
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libseccomp/libseccomp_2.5.1-1ubuntu1%7e18.04.2.debian.tar.xz' libseccomp_2.5.1-1ubuntu1~18.04.2.debian.tar.xz 18840 SHA512:100d1d23c46f7e76c46b21ac8f7be74527ee52b2d1500427eb5d1891eee0f6afba44c3cddcea663110513f623477ce21904d09a9d50f2a017a90cb568048dca6
 ```
 
 ### `dpkg` source package: `libselinux=2.7-2build2`
@@ -4385,9 +4380,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libssh=0.8.0~20170825.94fa1e38-1ubuntu0.7
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38-1ubuntu0.7.dsc' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.7.dsc 2518 SHA512:310a10f3179034b994048805dfbe1c4a026d7b3466b5bc3816d474d42eb7a3972136fe66801885c9fd568db7cf9c8d9515ce6cfca8b9484ae0036c6439fc2673
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38.orig.tar.xz' libssh_0.8.0~20170825.94fa1e38.orig.tar.xz 381176 SHA512:849eb8994361d56391471ef810aca16501fa5609f2c5a1b83bfa2f2ad688c4a5956c1d91c03d6bc6b93ec994ab38e10367ffc7d02c2d5a08f78b03859dcb82e5
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0~20170825.94fa1e38-1ubuntu0.7.debian.tar.xz' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.7.debian.tar.xz 36936 SHA512:60b6efb09514716500a953b8ea356b799c45d1defd13ebf719f44036d1298d5c063c9e12f8189c1916a1a2eef0a35fcb79bfa3c40cb13ecc501f2461c7392ab9
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0%7e20170825.94fa1e38-1ubuntu0.7.dsc' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.7.dsc 2518 SHA512:310a10f3179034b994048805dfbe1c4a026d7b3466b5bc3816d474d42eb7a3972136fe66801885c9fd568db7cf9c8d9515ce6cfca8b9484ae0036c6439fc2673
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0%7e20170825.94fa1e38.orig.tar.xz' libssh_0.8.0~20170825.94fa1e38.orig.tar.xz 381176 SHA512:849eb8994361d56391471ef810aca16501fa5609f2c5a1b83bfa2f2ad688c4a5956c1d91c03d6bc6b93ec994ab38e10367ffc7d02c2d5a08f78b03859dcb82e5
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.0%7e20170825.94fa1e38-1ubuntu0.7.debian.tar.xz' libssh_0.8.0~20170825.94fa1e38-1ubuntu0.7.debian.tar.xz 36936 SHA512:60b6efb09514716500a953b8ea356b799c45d1defd13ebf719f44036d1298d5c063c9e12f8189c1916a1a2eef0a35fcb79bfa3c40cb13ecc501f2461c7392ab9
 ```
 
 ### `dpkg` source package: `libtasn1-6=4.13-2`
@@ -4451,9 +4446,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libtheora=1.1.1+dfsg.1-14
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtheora/libtheora_1.1.1+dfsg.1-14.dsc' libtheora_1.1.1+dfsg.1-14.dsc 2592 SHA256:20992f97c4ea622cb2336e6795dd5d816eaf29499ed5278d05dd684218c8e91a
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtheora/libtheora_1.1.1+dfsg.1.orig.tar.gz' libtheora_1.1.1+dfsg.1.orig.tar.gz 2100495 SHA256:c59b0f07a7314dfe2ade15c41bc9f637f8a450fc6b340af61b81760629f28f90
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtheora/libtheora_1.1.1+dfsg.1-14.debian.tar.xz' libtheora_1.1.1+dfsg.1-14.debian.tar.xz 10532 SHA256:51d8d8bc6a613c42857a5c37e93b013e9239c2bb24c24873161adeee08319bc5
+'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtheora/libtheora_1.1.1%2bdfsg.1-14.dsc' libtheora_1.1.1+dfsg.1-14.dsc 2592 SHA256:20992f97c4ea622cb2336e6795dd5d816eaf29499ed5278d05dd684218c8e91a
+'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtheora/libtheora_1.1.1%2bdfsg.1.orig.tar.gz' libtheora_1.1.1+dfsg.1.orig.tar.gz 2100495 SHA256:c59b0f07a7314dfe2ade15c41bc9f637f8a450fc6b340af61b81760629f28f90
+'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtheora/libtheora_1.1.1%2bdfsg.1-14.debian.tar.xz' libtheora_1.1.1+dfsg.1-14.debian.tar.xz 10532 SHA256:51d8d8bc6a613c42857a5c37e93b013e9239c2bb24c24873161adeee08319bc5
 ```
 
 ### `dpkg` source package: `libtool=2.4.6-2`
@@ -4779,9 +4774,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxcb=1.13-2~ubuntu18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13-2~ubuntu18.04.dsc' libxcb_1.13-2~ubuntu18.04.dsc 4762 SHA512:034d032bcbbaa311b44eb0c01a7eefbf671644e3a3f8b1f5c001bf80df45120cc85ba25e8453b66a691751eebf2e21ed93af976471efa824b1d83b33a4f3769b
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13-2%7eubuntu18.04.dsc' libxcb_1.13-2~ubuntu18.04.dsc 4762 SHA512:034d032bcbbaa311b44eb0c01a7eefbf671644e3a3f8b1f5c001bf80df45120cc85ba25e8453b66a691751eebf2e21ed93af976471efa824b1d83b33a4f3769b
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13.orig.tar.gz' libxcb_1.13.orig.tar.gz 632493 SHA512:28e1db6f1981bef25007c98ba28f4c2a4d285af1aadd43ced631d630abab90ade055f125d5e384b6ff1e5ef8e31a745f53a77d61d862a6e3b7a64c52b749bc02
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13-2~ubuntu18.04.diff.gz' libxcb_1.13-2~ubuntu18.04.diff.gz 25267 SHA512:fd19a1c6a8f6ebf362e871e814455b7cc2d63ffa63f0d47cdc035a3d5bc4b4076a4dc487dfead4d40605a4fa330134eeceb0a3acfc760579de2e2380d3b97b01
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxcb/libxcb_1.13-2%7eubuntu18.04.diff.gz' libxcb_1.13-2~ubuntu18.04.diff.gz 25267 SHA512:fd19a1c6a8f6ebf362e871e814455b7cc2d63ffa63f0d47cdc035a3d5bc4b4076a4dc487dfead4d40605a4fa330134eeceb0a3acfc760579de2e2380d3b97b01
 ```
 
 ### `dpkg` source package: `libxcomposite=1:0.4.4-2`
@@ -4959,8 +4954,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxkbcommon=0.8.2-1~ubuntu18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.2-1~ubuntu18.04.1.dsc' libxkbcommon_0.8.2-1~ubuntu18.04.1.dsc 2178 SHA512:7ffcfd8b44df0c4c9e139e26682ce3187b14445f59235b7eea88c93194d86d451444e5d6715251e49565dc0c0987a4d044cbd889ad74547de525da2ff371f955
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.2-1~ubuntu18.04.1.tar.gz' libxkbcommon_0.8.2-1~ubuntu18.04.1.tar.gz 615081 SHA512:df4478194169c2f6abc43965be2ff0ceae06d37cc11b7bcdb26909b7bcf7b7eca6e933ce3921e4a926335aca94865231fb1a310483c7f59bd1eee2347b470180
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.2-1%7eubuntu18.04.1.dsc' libxkbcommon_0.8.2-1~ubuntu18.04.1.dsc 2178 SHA512:7ffcfd8b44df0c4c9e139e26682ce3187b14445f59235b7eea88c93194d86d451444e5d6715251e49565dc0c0987a4d044cbd889ad74547de525da2ff371f955
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.2-1%7eubuntu18.04.1.tar.gz' libxkbcommon_0.8.2-1~ubuntu18.04.1.tar.gz 615081 SHA512:df4478194169c2f6abc43965be2ff0ceae06d37cc11b7bcdb26909b7bcf7b7eca6e933ce3921e4a926335aca94865231fb1a310483c7f59bd1eee2347b470180
 ```
 
 ### `dpkg` source package: `libxml2=2.9.4+dfsg1-6.1ubuntu1.4`
@@ -4980,9 +4975,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-6.1ubuntu1.4
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-6.1ubuntu1.4.dsc' libxml2_2.9.4+dfsg1-6.1ubuntu1.4.dsc 2993 SHA512:b50073494274db84f8e19140ffa2b3e63c15086cb56cd83816e41b0015222b50ad44cb73f1e619c22e9302dab7b6ca81b9cea902f6e1219041fe5d720289833a
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA512:c921697db38b530b1a088636cb31226bbe9df8c9e9c83316ce53770f9bd2faeef360d5f526f34e00cd778150c408e8d91b99a67a5f5030a8b279961ff9299ae5
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-6.1ubuntu1.4.debian.tar.xz' libxml2_2.9.4+dfsg1-6.1ubuntu1.4.debian.tar.xz 42172 SHA512:872f047112ccde33b3fed2aa89c9c4c0c7785cb0e1030de94b112bbf46b9dc9af7f82444885c903d834ce6d2b18e1671f4eb4c47dcf8a75541e0f0807f49aa96
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4%2bdfsg1-6.1ubuntu1.4.dsc' libxml2_2.9.4+dfsg1-6.1ubuntu1.4.dsc 2993 SHA512:b50073494274db84f8e19140ffa2b3e63c15086cb56cd83816e41b0015222b50ad44cb73f1e619c22e9302dab7b6ca81b9cea902f6e1219041fe5d720289833a
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4%2bdfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA512:c921697db38b530b1a088636cb31226bbe9df8c9e9c83316ce53770f9bd2faeef360d5f526f34e00cd778150c408e8d91b99a67a5f5030a8b279961ff9299ae5
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4%2bdfsg1-6.1ubuntu1.4.debian.tar.xz' libxml2_2.9.4+dfsg1-6.1ubuntu1.4.debian.tar.xz 42172 SHA512:872f047112ccde33b3fed2aa89c9c4c0c7785cb0e1030de94b112bbf46b9dc9af7f82444885c903d834ce6d2b18e1671f4eb4c47dcf8a75541e0f0807f49aa96
 ```
 
 ### `dpkg` source package: `libxmu=2:1.1.2-2`
@@ -5200,9 +5195,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libzstd=1.3.3+dfsg-2ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.3+dfsg-2ubuntu1.2.dsc' libzstd_1.3.3+dfsg-2ubuntu1.2.dsc 2406 SHA512:ba1f7d18723eafcd18f2722a0005be04d0104c87a7cd80e2ffff91395df87213df3d6969d59e4260930ce583070d319847982c175dc99859bc8f0f964fbf1ad2
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.3+dfsg.orig.tar.xz' libzstd_1.3.3+dfsg.orig.tar.xz 1333584 SHA512:40f66d34247f549b6861677a520bdce722036c49bc78096981b3b6b4cbb798780c6afccaff18e843016ec7aab55b8bb3ce3ddbfb089efb5d83028058df5e755c
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.3+dfsg-2ubuntu1.2.debian.tar.xz' libzstd_1.3.3+dfsg-2ubuntu1.2.debian.tar.xz 13764 SHA512:f14aa9e453c7041a79dd90a52b5955b86fa86886b89ef26d4d257aa017a50d97410e8b875593992ad7d4b7e8e8d55743b8c66706be62cd4234f81e49c8bfc05d
+'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.3%2bdfsg-2ubuntu1.2.dsc' libzstd_1.3.3+dfsg-2ubuntu1.2.dsc 2406 SHA512:ba1f7d18723eafcd18f2722a0005be04d0104c87a7cd80e2ffff91395df87213df3d6969d59e4260930ce583070d319847982c175dc99859bc8f0f964fbf1ad2
+'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.3%2bdfsg.orig.tar.xz' libzstd_1.3.3+dfsg.orig.tar.xz 1333584 SHA512:40f66d34247f549b6861677a520bdce722036c49bc78096981b3b6b4cbb798780c6afccaff18e843016ec7aab55b8bb3ce3ddbfb089efb5d83028058df5e755c
+'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.3%2bdfsg-2ubuntu1.2.debian.tar.xz' libzstd_1.3.3+dfsg-2ubuntu1.2.debian.tar.xz 13764 SHA512:f14aa9e453c7041a79dd90a52b5955b86fa86886b89ef26d4d257aa017a50d97410e8b875593992ad7d4b7e8e8d55743b8c66706be62cd4234f81e49c8bfc05d
 ```
 
 ### `dpkg` source package: `linux=4.15.0-167.175`
@@ -5238,9 +5233,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris lksctp-tools=1.0.17+dfsg-2
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lksctp-tools/lksctp-tools_1.0.17+dfsg-2.dsc' lksctp-tools_1.0.17+dfsg-2.dsc 2014 SHA256:f9180a1d047ac7bdb853a000cd4c4f6a53143f2604bd7cd08bc0800a36abd0e7
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lksctp-tools/lksctp-tools_1.0.17+dfsg.orig.tar.gz' lksctp-tools_1.0.17+dfsg.orig.tar.gz 556428 SHA256:f7c537bc08bf57a8eddf49b232f19920e51b0e4ca55e7d47377ce64546d04e1d
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lksctp-tools/lksctp-tools_1.0.17+dfsg-2.debian.tar.xz' lksctp-tools_1.0.17+dfsg-2.debian.tar.xz 9436 SHA256:c8e05a29ffbca99428cf2c59a50dd26a4bf73f42487db8231b810882a5f5c779
+'http://archive.ubuntu.com/ubuntu/pool/main/l/lksctp-tools/lksctp-tools_1.0.17%2bdfsg-2.dsc' lksctp-tools_1.0.17+dfsg-2.dsc 2014 SHA256:f9180a1d047ac7bdb853a000cd4c4f6a53143f2604bd7cd08bc0800a36abd0e7
+'http://archive.ubuntu.com/ubuntu/pool/main/l/lksctp-tools/lksctp-tools_1.0.17%2bdfsg.orig.tar.gz' lksctp-tools_1.0.17+dfsg.orig.tar.gz 556428 SHA256:f7c537bc08bf57a8eddf49b232f19920e51b0e4ca55e7d47377ce64546d04e1d
+'http://archive.ubuntu.com/ubuntu/pool/main/l/lksctp-tools/lksctp-tools_1.0.17%2bdfsg-2.debian.tar.xz' lksctp-tools_1.0.17+dfsg-2.debian.tar.xz 9436 SHA256:c8e05a29ffbca99428cf2c59a50dd26a4bf73f42487db8231b810882a5f5c779
 ```
 
 ### `dpkg` source package: `llvm-toolchain-10=1:10.0.0-4ubuntu1~18.04.2`
@@ -5263,9 +5258,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris llvm-toolchain-10=1:10.0.0-4ubuntu1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-10/llvm-toolchain-10_10.0.0-4ubuntu1~18.04.2.dsc' llvm-toolchain-10_10.0.0-4ubuntu1~18.04.2.dsc 5754 SHA512:f90ee3293a09e01758c79eb0a91906322ff12f05401022c61325659409f6bbc109a0beefa192aeed64412ab24db3a2e417c6083ff4b37a5f7f9705b92944cb68
+'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-10/llvm-toolchain-10_10.0.0-4ubuntu1%7e18.04.2.dsc' llvm-toolchain-10_10.0.0-4ubuntu1~18.04.2.dsc 5754 SHA512:f90ee3293a09e01758c79eb0a91906322ff12f05401022c61325659409f6bbc109a0beefa192aeed64412ab24db3a2e417c6083ff4b37a5f7f9705b92944cb68
 'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-10/llvm-toolchain-10_10.0.0.orig.tar.xz' llvm-toolchain-10_10.0.0.orig.tar.xz 78321340 SHA512:7d2111510daf52ad085df9876c993b550e252b2a0ed2153fd45de1465fc2a38a798e7b1418dd750e84315ffce39d4439069510483bae44f4878fcc68e4823865
-'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-10/llvm-toolchain-10_10.0.0-4ubuntu1~18.04.2.debian.tar.xz' llvm-toolchain-10_10.0.0-4ubuntu1~18.04.2.debian.tar.xz 138936 SHA512:6c9b93289e077cf4ec717ff1d022c96f25a62f83cf3ce627eadec26fa155d4bf4c0b811eb9f53d3d0ce77f18acbd54c516f6574c6473406eae32dea770cb75dc
+'http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-10/llvm-toolchain-10_10.0.0-4ubuntu1%7e18.04.2.debian.tar.xz' llvm-toolchain-10_10.0.0-4ubuntu1~18.04.2.debian.tar.xz 138936 SHA512:6c9b93289e077cf4ec717ff1d022c96f25a62f83cf3ce627eadec26fa155d4bf4c0b811eb9f53d3d0ce77f18acbd54c516f6574c6473406eae32dea770cb75dc
 ```
 
 ### `dpkg` source package: `lm-sensors=1:3.4.0-4`
@@ -5345,9 +5340,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris lz4=0.0~r131-2ubuntu3.1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_0.0~r131-2ubuntu3.1.dsc' lz4_0.0~r131-2ubuntu3.1.dsc 2108 SHA512:a90ae7ae8793f180a604cb20a43ca5a69d837aaf9df7bbe6c23d6f6a4700ad9b81d06cb7503d5d3f2d0f2b9bbbe3013601eeb47641c3d12113ea66900876c6f4
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_0.0~r131.orig.tar.gz' lz4_0.0~r131.orig.tar.gz 133784 SHA512:60bd95d529691ffee2c43f0d8a62484c3cff74c0154094f073192606806ac8182dced61e0534ffa7e0ccf5f18e9a8cfd2738883a83814c0711a6d7f1d1b252e5
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_0.0~r131-2ubuntu3.1.debian.tar.xz' lz4_0.0~r131-2ubuntu3.1.debian.tar.xz 5848 SHA512:d2fbe7c7edc933391275d7a29a5e0893cc358454a7d54ee352cb9eb91532cf9d97daedd08b2c921373b0fff3a45522e07fef18f522b04160dc09432c0cf2acdc
+'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_0.0%7er131-2ubuntu3.1.dsc' lz4_0.0~r131-2ubuntu3.1.dsc 2108 SHA512:a90ae7ae8793f180a604cb20a43ca5a69d837aaf9df7bbe6c23d6f6a4700ad9b81d06cb7503d5d3f2d0f2b9bbbe3013601eeb47641c3d12113ea66900876c6f4
+'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_0.0%7er131.orig.tar.gz' lz4_0.0~r131.orig.tar.gz 133784 SHA512:60bd95d529691ffee2c43f0d8a62484c3cff74c0154094f073192606806ac8182dced61e0534ffa7e0ccf5f18e9a8cfd2738883a83814c0711a6d7f1d1b252e5
+'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_0.0%7er131-2ubuntu3.1.debian.tar.xz' lz4_0.0~r131-2ubuntu3.1.debian.tar.xz 5848 SHA512:d2fbe7c7edc933391275d7a29a5e0893cc358454a7d54ee352cb9eb91532cf9d97daedd08b2c921373b0fff3a45522e07fef18f522b04160dc09432c0cf2acdc
 ```
 
 ### `dpkg` source package: `lzo2=2.08-1.2`
@@ -5460,9 +5455,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mesa=20.0.8-0ubuntu1~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8-0ubuntu1~18.04.1.dsc' mesa_20.0.8-0ubuntu1~18.04.1.dsc 5293 SHA512:c2149b9557227aa1c5fdfaddf62b000feb039a42b326e6b390d546713e3e1ec7fd438eb815d309f202124e39b5c4c876ecd3e30f870ab870daa65872c95ec84f
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8-0ubuntu1%7e18.04.1.dsc' mesa_20.0.8-0ubuntu1~18.04.1.dsc 5293 SHA512:c2149b9557227aa1c5fdfaddf62b000feb039a42b326e6b390d546713e3e1ec7fd438eb815d309f202124e39b5c4c876ecd3e30f870ab870daa65872c95ec84f
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8.orig.tar.gz' mesa_20.0.8.orig.tar.gz 19030315 SHA512:d6a0365c8248c704548d74d6035da43a0791f3306176e873f7929ae34ac2254370190c6cd40cf5e8bfc2455dfbc02f40569a9b12c4b18c2048b29e635427cd53
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8-0ubuntu1~18.04.1.diff.gz' mesa_20.0.8-0ubuntu1~18.04.1.diff.gz 118306 SHA512:cba9931b5cd76a3e5300e1201d5f99e6f7893ff612f3ce36c9f33973c7bbc041dc4bb3d433f2dfdc9dcfb2ab48ada45a49b432b62b34a75ba030121e3f3cf2d9
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_20.0.8-0ubuntu1%7e18.04.1.diff.gz' mesa_20.0.8-0ubuntu1~18.04.1.diff.gz 118306 SHA512:cba9931b5cd76a3e5300e1201d5f99e6f7893ff612f3ce36c9f33973c7bbc041dc4bb3d433f2dfdc9dcfb2ab48ada45a49b432b62b34a75ba030121e3f3cf2d9
 ```
 
 ### `dpkg` source package: `mime-support=3.60ubuntu1`
@@ -5990,9 +5985,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ogdi-dfsg=3.2.0+ds-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/ogdi-dfsg/ogdi-dfsg_3.2.0+ds-2.dsc' ogdi-dfsg_3.2.0+ds-2.dsc 2131 SHA256:85613bf33f00823c3c5109681e14844604179e2c7a109bb972d6f0793b09a582
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/ogdi-dfsg/ogdi-dfsg_3.2.0+ds.orig.tar.gz' ogdi-dfsg_3.2.0+ds.orig.tar.gz 659158 SHA256:887bcfeaee5a3cffd228280a970b1a7e402763725ff9fad02387da9e3a521db9
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/ogdi-dfsg/ogdi-dfsg_3.2.0+ds-2.debian.tar.xz' ogdi-dfsg_3.2.0+ds-2.debian.tar.xz 12924 SHA256:cf9ef3233fd89a5e910630ac33ee37b61a2cd4c442f5af2bd2b4191847ecb4f3
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/ogdi-dfsg/ogdi-dfsg_3.2.0%2bds-2.dsc' ogdi-dfsg_3.2.0+ds-2.dsc 2131 SHA256:85613bf33f00823c3c5109681e14844604179e2c7a109bb972d6f0793b09a582
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/ogdi-dfsg/ogdi-dfsg_3.2.0%2bds.orig.tar.gz' ogdi-dfsg_3.2.0+ds.orig.tar.gz 659158 SHA256:887bcfeaee5a3cffd228280a970b1a7e402763725ff9fad02387da9e3a521db9
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/ogdi-dfsg/ogdi-dfsg_3.2.0%2bds-2.debian.tar.xz' ogdi-dfsg_3.2.0+ds-2.debian.tar.xz 12924 SHA256:cf9ef3233fd89a5e910630ac33ee37b61a2cd4c442f5af2bd2b4191847ecb4f3
 ```
 
 ### `dpkg` source package: `opencv=3.2.0+dfsg-4ubuntu0.1`
@@ -6049,9 +6044,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris opencv=3.2.0+dfsg-4ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/opencv/opencv_3.2.0+dfsg-4ubuntu0.1.dsc' opencv_3.2.0+dfsg-4ubuntu0.1.dsc 5993 SHA512:c7270cac2c394bb880f8042e25a159015b9476ff708e13a61999766d90844cf11fbfdcadc0077b5b0aa7349948025abe08b30bae43385fee587896e1e6db2fd0
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/opencv/opencv_3.2.0+dfsg.orig.tar.gz' opencv_3.2.0+dfsg.orig.tar.gz 125448078 SHA512:0e76652e9ae3319de645cd76399ce01d572dafad0d31d20ffc33fcc302fc4acc318fb9d2732c872a391f30bd947c0a14a6b80bcb9fc3e38e56d57eaa3640254e
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/opencv/opencv_3.2.0+dfsg-4ubuntu0.1.debian.tar.xz' opencv_3.2.0+dfsg-4ubuntu0.1.debian.tar.xz 37464 SHA512:998516ed8e85ef01ec572c4cd57d96ca9f813969d65d4645552cfe3c00063884fc3952e8a576db7e050985179f1de69911ccbf31d5cd52de482c13b2fbd323a9
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/opencv/opencv_3.2.0%2bdfsg-4ubuntu0.1.dsc' opencv_3.2.0+dfsg-4ubuntu0.1.dsc 5993 SHA512:c7270cac2c394bb880f8042e25a159015b9476ff708e13a61999766d90844cf11fbfdcadc0077b5b0aa7349948025abe08b30bae43385fee587896e1e6db2fd0
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/opencv/opencv_3.2.0%2bdfsg.orig.tar.gz' opencv_3.2.0+dfsg.orig.tar.gz 125448078 SHA512:0e76652e9ae3319de645cd76399ce01d572dafad0d31d20ffc33fcc302fc4acc318fb9d2732c872a391f30bd947c0a14a6b80bcb9fc3e38e56d57eaa3640254e
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/opencv/opencv_3.2.0%2bdfsg-4ubuntu0.1.debian.tar.xz' opencv_3.2.0+dfsg-4ubuntu0.1.debian.tar.xz 37464 SHA512:998516ed8e85ef01ec572c4cd57d96ca9f813969d65d4645552cfe3c00063884fc3952e8a576db7e050985179f1de69911ccbf31d5cd52de482c13b2fbd323a9
 ```
 
 ### `dpkg` source package: `openexr=2.2.0-11.1ubuntu1.9`
@@ -6118,9 +6113,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.10
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.10.dsc' openldap_2.4.45+dfsg-1ubuntu1.10.dsc 2888 SHA512:d66df6215f7afdc6cade06c71e95ae67c3f4f8acd4f43ca92f7e135d4dd5b5bab6fc1869fa968693b19d7a88fdaae1f3a3f4d3a7792580439a01b2fa72c662c8
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA512:fb2089aa6949ecced1d48242b203bc2f744e920ecea41559209f7d3a1cfe626c1d81e8a9234b6997b2379832d62e439ca1f674a8a06635fdaa359fc09d1b414e
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.10.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.10.debian.tar.xz 183732 SHA512:41b401e4a4d42653dcf016c685402e8866262c050131bf5aa5436643ed14d6979a9bbacca40a3d8be9115e0aa0b0839156c490f3b1f50ca64ecebde25cb84375
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45%2bdfsg-1ubuntu1.10.dsc' openldap_2.4.45+dfsg-1ubuntu1.10.dsc 2888 SHA512:d66df6215f7afdc6cade06c71e95ae67c3f4f8acd4f43ca92f7e135d4dd5b5bab6fc1869fa968693b19d7a88fdaae1f3a3f4d3a7792580439a01b2fa72c662c8
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45%2bdfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA512:fb2089aa6949ecced1d48242b203bc2f744e920ecea41559209f7d3a1cfe626c1d81e8a9234b6997b2379832d62e439ca1f674a8a06635fdaa359fc09d1b414e
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45%2bdfsg-1ubuntu1.10.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.10.debian.tar.xz 183732 SHA512:41b401e4a4d42653dcf016c685402e8866262c050131bf5aa5436643ed14d6979a9bbacca40a3d8be9115e0aa0b0839156c490f3b1f50ca64ecebde25cb84375
 ```
 
 ### `dpkg` source package: `openmpi=2.1.1-8`
@@ -6166,9 +6161,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openni2=2.2.0.33+dfsg-10
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openni2/openni2_2.2.0.33+dfsg-10.dsc' openni2_2.2.0.33+dfsg-10.dsc 2362 SHA256:843dc179ebcacbb1b2b791032ee53f611ec3c13251714ac41ac6dd9f7b6e0b93
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openni2/openni2_2.2.0.33+dfsg.orig.tar.gz' openni2_2.2.0.33+dfsg.orig.tar.gz 8604362 SHA256:abc17f5e30d6799200c69a52d34aefaef4fd567be7921e0cb68cae353ac4495a
-'http://archive.ubuntu.com/ubuntu/pool/universe/o/openni2/openni2_2.2.0.33+dfsg-10.debian.tar.xz' openni2_2.2.0.33+dfsg-10.debian.tar.xz 16044 SHA256:f334b6adceec88a7365bf7e3c36dfd27f714bad884111d42de01647c7f675782
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/openni2/openni2_2.2.0.33%2bdfsg-10.dsc' openni2_2.2.0.33+dfsg-10.dsc 2362 SHA256:843dc179ebcacbb1b2b791032ee53f611ec3c13251714ac41ac6dd9f7b6e0b93
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/openni2/openni2_2.2.0.33%2bdfsg.orig.tar.gz' openni2_2.2.0.33+dfsg.orig.tar.gz 8604362 SHA256:abc17f5e30d6799200c69a52d34aefaef4fd567be7921e0cb68cae353ac4495a
+'http://archive.ubuntu.com/ubuntu/pool/universe/o/openni2/openni2_2.2.0.33%2bdfsg-10.debian.tar.xz' openni2_2.2.0.33+dfsg-10.debian.tar.xz 16044 SHA256:f334b6adceec88a7365bf7e3c36dfd27f714bad884111d42de01647c7f675782
 ```
 
 ### `dpkg` source package: `openni=1.5.4.0-14build1`
@@ -6213,9 +6208,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.14
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.14.dsc' openssl_1.1.1-1ubuntu2.1~18.04.14.dsc 2543 SHA512:05dc02eecd62fe2905259655e64aecc8baef59260e12da4d1d1ff098569aace424cf8192b525479c802d32961b12cf1835f2ef7482eee57e068cfb48f81ea1e9
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1%7e18.04.14.dsc' openssl_1.1.1-1ubuntu2.1~18.04.14.dsc 2543 SHA512:05dc02eecd62fe2905259655e64aecc8baef59260e12da4d1d1ff098569aace424cf8192b525479c802d32961b12cf1835f2ef7482eee57e068cfb48f81ea1e9
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA512:c0284a4fe84bdf765ca5bc5148da4441ffc36392cfecaf9d372af00cf93b6de5681cab1248b6f8246474532155dc205da5ad49549ad7c61c07c917145e7c9c71
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.14.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.14.debian.tar.xz 129792 SHA512:bbf9ce2d80063a851d95701405681576420c05189a1b5eb87d73b8f373f51db283cc31af36669564a36e5a1408999391701ff05b85c8f9ada62f2520458a1903
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1%7e18.04.14.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.14.debian.tar.xz 129792 SHA512:bbf9ce2d80063a851d95701405681576420c05189a1b5eb87d73b8f373f51db283cc31af36669564a36e5a1408999391701ff05b85c8f9ada62f2520458a1903
 ```
 
 ### `dpkg` source package: `opus=1.1.2-1ubuntu1`
@@ -6405,9 +6400,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pcl=1.8.1+dfsg1-2ubuntu2.18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/pcl/pcl_1.8.1+dfsg1-2ubuntu2.18.04.1.dsc' pcl_1.8.1+dfsg1-2ubuntu2.18.04.1.dsc 4024 SHA512:d8250232f7d111cdbb6da75acfc27a2720bf4d4bf448ef6e3984c0def6f8f4fd32bd1bada48fd3d40802c131997eb0b57c9dcf0b1db7d7ceb3200bcc23059679
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/pcl/pcl_1.8.1+dfsg1.orig.tar.gz' pcl_1.8.1+dfsg1.orig.tar.gz 66826072 SHA512:21f18443b23b469cdd91e7c4eaa01571d60dad89a81b0a1c0a3d7085d121ea4a265ab8abac3261c98f2014025daa50f10ce59497fe390151cc24854ccc49fb62
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/pcl/pcl_1.8.1+dfsg1-2ubuntu2.18.04.1.debian.tar.xz' pcl_1.8.1+dfsg1-2ubuntu2.18.04.1.debian.tar.xz 31412 SHA512:6bc6245af3451c78f276186655080b9e9498510b266ae6c898e846567c3ee6eaf5af642dab8bb37eecbdbb81a1809179c7da565473ed3e7e1fdfbee35fd28eef
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/pcl/pcl_1.8.1%2bdfsg1-2ubuntu2.18.04.1.dsc' pcl_1.8.1+dfsg1-2ubuntu2.18.04.1.dsc 4024 SHA512:d8250232f7d111cdbb6da75acfc27a2720bf4d4bf448ef6e3984c0def6f8f4fd32bd1bada48fd3d40802c131997eb0b57c9dcf0b1db7d7ceb3200bcc23059679
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/pcl/pcl_1.8.1%2bdfsg1.orig.tar.gz' pcl_1.8.1+dfsg1.orig.tar.gz 66826072 SHA512:21f18443b23b469cdd91e7c4eaa01571d60dad89a81b0a1c0a3d7085d121ea4a265ab8abac3261c98f2014025daa50f10ce59497fe390151cc24854ccc49fb62
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/pcl/pcl_1.8.1%2bdfsg1-2ubuntu2.18.04.1.debian.tar.xz' pcl_1.8.1+dfsg1-2ubuntu2.18.04.1.debian.tar.xz 31412 SHA512:6bc6245af3451c78f276186655080b9e9498510b266ae6c898e846567c3ee6eaf5af642dab8bb37eecbdbb81a1809179c7da565473ed3e7e1fdfbee35fd28eef
 ```
 
 ### `dpkg` source package: `pcre3=2:8.39-9`
@@ -6811,9 +6806,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pyparsing=2.2.0+dfsg1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pyparsing/pyparsing_2.2.0+dfsg1-2.dsc' pyparsing_2.2.0+dfsg1-2.dsc 2429 SHA256:fb7dbda8c89bbddf2d96fab4bf770a59f53b08a8f727652556de98e20e1e74ea
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pyparsing/pyparsing_2.2.0+dfsg1.orig.tar.gz' pyparsing_2.2.0+dfsg1.orig.tar.gz 1146636 SHA256:8cf2bde582aa28b854cb96d225606caae902956136e5050ca62125371b06ef8c
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pyparsing/pyparsing_2.2.0+dfsg1-2.debian.tar.xz' pyparsing_2.2.0+dfsg1-2.debian.tar.xz 7984 SHA256:f968a17566c942a919fe7024a15bbbb2f1cce5af9c50e01e57ad9580b1e12591
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pyparsing/pyparsing_2.2.0%2bdfsg1-2.dsc' pyparsing_2.2.0+dfsg1-2.dsc 2429 SHA256:fb7dbda8c89bbddf2d96fab4bf770a59f53b08a8f727652556de98e20e1e74ea
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pyparsing/pyparsing_2.2.0%2bdfsg1.orig.tar.gz' pyparsing_2.2.0+dfsg1.orig.tar.gz 1146636 SHA256:8cf2bde582aa28b854cb96d225606caae902956136e5050ca62125371b06ef8c
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pyparsing/pyparsing_2.2.0%2bdfsg1-2.debian.tar.xz' pyparsing_2.2.0+dfsg1-2.debian.tar.xz 7984 SHA256:f968a17566c942a919fe7024a15bbbb2f1cce5af9c50e01e57ad9580b1e12591
 ```
 
 ### `dpkg` source package: `python-attrs=17.4.0-2`
@@ -6849,9 +6844,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-autobahn=17.10.1+dfsg1-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-autobahn/python-autobahn_17.10.1+dfsg1-2.dsc' python-autobahn_17.10.1+dfsg1-2.dsc 2947 SHA256:44ce90b6c8397cfece013312db1840e111d4390fee5b83786eba6e97f7b435e8
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-autobahn/python-autobahn_17.10.1+dfsg1.orig.tar.xz' python-autobahn_17.10.1+dfsg1.orig.tar.xz 1161340 SHA256:fd42fa43d6c10b176bd3da91924cc7e0d2ed4981976a35bf7b91361847a5be83
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-autobahn/python-autobahn_17.10.1+dfsg1-2.debian.tar.xz' python-autobahn_17.10.1+dfsg1-2.debian.tar.xz 3612 SHA256:5ed59b08042ad73a2b0f6298c03431cd23accbd4892888b8aabd77129860249b
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-autobahn/python-autobahn_17.10.1%2bdfsg1-2.dsc' python-autobahn_17.10.1+dfsg1-2.dsc 2947 SHA256:44ce90b6c8397cfece013312db1840e111d4390fee5b83786eba6e97f7b435e8
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-autobahn/python-autobahn_17.10.1%2bdfsg1.orig.tar.xz' python-autobahn_17.10.1+dfsg1.orig.tar.xz 1161340 SHA256:fd42fa43d6c10b176bd3da91924cc7e0d2ed4981976a35bf7b91361847a5be83
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-autobahn/python-autobahn_17.10.1%2bdfsg1-2.debian.tar.xz' python-autobahn_17.10.1+dfsg1-2.debian.tar.xz 3612 SHA256:5ed59b08042ad73a2b0f6298c03431cd23accbd4892888b8aabd77129860249b
 ```
 
 ### `dpkg` source package: `python-catkin-pkg-modules=0.4.24-1`
@@ -7009,8 +7004,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-defaults=2.7.15~rc1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python-defaults/python-defaults_2.7.15~rc1-1.dsc' python-defaults_2.7.15~rc1-1.dsc 2633 SHA256:1089e25a274fb86e8dfbab1b661ecb5ef2b7610e1b6e3fbf8388f875758f7c2c
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python-defaults/python-defaults_2.7.15~rc1-1.tar.gz' python-defaults_2.7.15~rc1-1.tar.gz 1958015 SHA256:f3bed2b81091821d2e514c2e17c6846f7e744487fd15f7d3c48fa1c91b9cd49b
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python-defaults/python-defaults_2.7.15%7erc1-1.dsc' python-defaults_2.7.15~rc1-1.dsc 2633 SHA256:1089e25a274fb86e8dfbab1b661ecb5ef2b7610e1b6e3fbf8388f875758f7c2c
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python-defaults/python-defaults_2.7.15%7erc1-1.tar.gz' python-defaults_2.7.15~rc1-1.tar.gz 1958015 SHA256:f3bed2b81091821d2e514c2e17c6846f7e744487fd15f7d3c48fa1c91b9cd49b
 ```
 
 ### `dpkg` source package: `python-docutils=0.14+dfsg-3`
@@ -7035,9 +7030,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-docutils=0.14+dfsg-3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python-docutils/python-docutils_0.14+dfsg-3.dsc' python-docutils_0.14+dfsg-3.dsc 2446 SHA256:400dc1214c70e86c13dd34dd134e4ece07fbbc0119f2c7ed0bf173fb7618bd5d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python-docutils/python-docutils_0.14+dfsg.orig.tar.gz' python-docutils_0.14+dfsg.orig.tar.gz 1739255 SHA256:9731d30e7d958c7fe8fcc20c1689064e130053c954e61df20ac5362eb6305760
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python-docutils/python-docutils_0.14+dfsg-3.debian.tar.xz' python-docutils_0.14+dfsg-3.debian.tar.xz 31188 SHA256:3e73e6211785b227dc0c9258e1a69b0adbbd129a401b5b09886981789569e024
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python-docutils/python-docutils_0.14%2bdfsg-3.dsc' python-docutils_0.14+dfsg-3.dsc 2446 SHA256:400dc1214c70e86c13dd34dd134e4ece07fbbc0119f2c7ed0bf173fb7618bd5d
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python-docutils/python-docutils_0.14%2bdfsg.orig.tar.gz' python-docutils_0.14+dfsg.orig.tar.gz 1739255 SHA256:9731d30e7d958c7fe8fcc20c1689064e130053c954e61df20ac5362eb6305760
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python-docutils/python-docutils_0.14%2bdfsg-3.debian.tar.xz' python-docutils_0.14+dfsg-3.debian.tar.xz 31188 SHA256:3e73e6211785b227dc0c9258e1a69b0adbbd129a401b5b09886981789569e024
 ```
 
 ### `dpkg` source package: `python-gnupg=0.4.1-1ubuntu1.18.04.1`
@@ -7117,9 +7112,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-lz4=0.10.1+dfsg1-0.2
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-lz4/python-lz4_0.10.1+dfsg1-0.2.dsc' python-lz4_0.10.1+dfsg1-0.2.dsc 2171 SHA256:9995687f3bae82fe0b36ecadbab2e800d6090d6cb6c3e674f1ffe88f90de0fc7
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-lz4/python-lz4_0.10.1+dfsg1.orig.tar.xz' python-lz4_0.10.1+dfsg1.orig.tar.xz 29936 SHA256:000eec61903b3979b9cba732d184c712c6858d1bec5ec99d43fb955c1f8922e7
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-lz4/python-lz4_0.10.1+dfsg1-0.2.debian.tar.xz' python-lz4_0.10.1+dfsg1-0.2.debian.tar.xz 3820 SHA256:69096b3d2e5d85bc0debc3e708d7760fc6f5cf2d09e4d8df1a5d38798901f657
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-lz4/python-lz4_0.10.1%2bdfsg1-0.2.dsc' python-lz4_0.10.1+dfsg1-0.2.dsc 2171 SHA256:9995687f3bae82fe0b36ecadbab2e800d6090d6cb6c3e674f1ffe88f90de0fc7
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-lz4/python-lz4_0.10.1%2bdfsg1.orig.tar.xz' python-lz4_0.10.1+dfsg1.orig.tar.xz 29936 SHA256:000eec61903b3979b9cba732d184c712c6858d1bec5ec99d43fb955c1f8922e7
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-lz4/python-lz4_0.10.1%2bdfsg1-0.2.debian.tar.xz' python-lz4_0.10.1+dfsg1-0.2.debian.tar.xz 3820 SHA256:69096b3d2e5d85bc0debc3e708d7760fc6f5cf2d09e4d8df1a5d38798901f657
 ```
 
 ### `dpkg` source package: `python-nacl=1.1.2-1build1`
@@ -7427,9 +7422,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-trie=0.2+ds-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trie/python-trie_0.2+ds-1.dsc' python-trie_0.2+ds-1.dsc 2145 SHA256:d5827956f951276ac7cac3721716d723a2daade4d438686f4f110f299bd02d3b
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trie/python-trie_0.2+ds.orig.tar.gz' python-trie_0.2+ds.orig.tar.gz 11243 SHA256:178747e52fb61ce322a0d1dde8d8420d4c3d184d7b4c49b73c997c94dd97c8a0
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trie/python-trie_0.2+ds-1.debian.tar.xz' python-trie_0.2+ds-1.debian.tar.xz 2584 SHA256:4f51ba6df078cea68819497d5a0e237d5f12771b61f044901e21221d6399afed
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trie/python-trie_0.2%2bds-1.dsc' python-trie_0.2+ds-1.dsc 2145 SHA256:d5827956f951276ac7cac3721716d723a2daade4d438686f4f110f299bd02d3b
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trie/python-trie_0.2%2bds.orig.tar.gz' python-trie_0.2+ds.orig.tar.gz 11243 SHA256:178747e52fb61ce322a0d1dde8d8420d4c3d184d7b4c49b73c997c94dd97c8a0
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trie/python-trie_0.2%2bds-1.debian.tar.xz' python-trie_0.2+ds-1.debian.tar.xz 2584 SHA256:4f51ba6df078cea68819497d5a0e237d5f12771b61f044901e21221d6399afed
 ```
 
 ### `dpkg` source package: `python-trollius=2.1~b1-5`
@@ -7447,9 +7442,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-trollius=2.1~b1-5
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trollius/python-trollius_2.1~b1-5.dsc' python-trollius_2.1~b1-5.dsc 2220 SHA256:7c0bb28140e1cf290c74bf6643fc608d0f991c5d2c4305271f91044acc6ebd3d
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trollius/python-trollius_2.1~b1.orig.tar.xz' python-trollius_2.1~b1.orig.tar.xz 217800 SHA256:af88fbabd16b025ff1a97b3aaefca9057b2a3dbe6f1fd2e3f5b2c3fea4edf789
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trollius/python-trollius_2.1~b1-5.debian.tar.xz' python-trollius_2.1~b1-5.debian.tar.xz 2688 SHA256:15138325e46595298e50f4d6f1436e904f00cedec8c46f58736576b9cc6facbe
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trollius/python-trollius_2.1%7eb1-5.dsc' python-trollius_2.1~b1-5.dsc 2220 SHA256:7c0bb28140e1cf290c74bf6643fc608d0f991c5d2c4305271f91044acc6ebd3d
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trollius/python-trollius_2.1%7eb1.orig.tar.xz' python-trollius_2.1~b1.orig.tar.xz 217800 SHA256:af88fbabd16b025ff1a97b3aaefca9057b2a3dbe6f1fd2e3f5b2c3fea4edf789
+'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-trollius/python-trollius_2.1%7eb1-5.debian.tar.xz' python-trollius_2.1~b1-5.debian.tar.xz 2688 SHA256:15138325e46595298e50f4d6f1436e904f00cedec8c46f58736576b9cc6facbe
 ```
 
 ### `dpkg` source package: `python-txaio=2.8.1-1`
@@ -7564,9 +7559,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python2.7=2.7.17-1~18.04ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1~18.04ubuntu1.6.dsc' python2.7_2.7.17-1~18.04ubuntu1.6.dsc 3483 SHA512:fa3e044bf34478dadc6b9cdd843d36f6e58947d975fe152ace9c922df6ab60f8dd6e373f9a58e595b6f78f84b7eeacbe127293271232515e57ac7a9e3dbde317
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.6.dsc' python2.7_2.7.17-1~18.04ubuntu1.6.dsc 3483 SHA512:fa3e044bf34478dadc6b9cdd843d36f6e58947d975fe152ace9c922df6ab60f8dd6e373f9a58e595b6f78f84b7eeacbe127293271232515e57ac7a9e3dbde317
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17.orig.tar.gz' python2.7_2.7.17.orig.tar.gz 17535962 SHA512:f526baff7f1a9451244edb04e2aca63336b656aac178f4f64c135390b5b1185990ccff0c48f602914dd1c49c9e075951d372b4f2daac39e336c23ae84ef4ca16
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1~18.04ubuntu1.6.diff.gz' python2.7_2.7.17-1~18.04ubuntu1.6.diff.gz 296112 SHA512:37159286b1269347c28ffa6114f610d32b96bf8a0f78ac592211b26a996533d949f6d1151102d9e6a52960adfa9176775518e8031e6f9459ff6be8d937700f7a
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.17-1%7e18.04ubuntu1.6.diff.gz' python2.7_2.7.17-1~18.04ubuntu1.6.diff.gz 296112 SHA512:37159286b1269347c28ffa6114f610d32b96bf8a0f78ac592211b26a996533d949f6d1151102d9e6a52960adfa9176775518e8031e6f9459ff6be8d937700f7a
 ```
 
 ### `dpkg` source package: `python3-defaults=3.6.7-1~18.04`
@@ -7587,8 +7582,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python3-defaults=3.6.7-1~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.6.7-1~18.04.dsc' python3-defaults_3.6.7-1~18.04.dsc 2896 SHA512:1f6f6bdbc030b0c9bf24a97b2c48052c8a52810e22e021b00719fce7eea8d454c9cc756e3d73ee79be06655b9a35fe8279bf71833a4aa6c605859856e4a31151
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.6.7-1~18.04.tar.gz' python3-defaults_3.6.7-1~18.04.tar.gz 137600 SHA512:7020c60ba146deafaf1937883bea03c39efb1068968025756b32e7c7f069c06bfdfb3e1b91dcaa5a1e1c4c01e0177ea91beb4f5fa71f5e60334866ef5b28a2ef
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.6.7-1%7e18.04.dsc' python3-defaults_3.6.7-1~18.04.dsc 2896 SHA512:1f6f6bdbc030b0c9bf24a97b2c48052c8a52810e22e021b00719fce7eea8d454c9cc756e3d73ee79be06655b9a35fe8279bf71833a4aa6c605859856e4a31151
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.6.7-1%7e18.04.tar.gz' python3-defaults_3.6.7-1~18.04.tar.gz 137600 SHA512:7020c60ba146deafaf1937883bea03c39efb1068968025756b32e7c7f069c06bfdfb3e1b91dcaa5a1e1c4c01e0177ea91beb4f5fa71f5e60334866ef5b28a2ef
 ```
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.6.9-1~18.04`
@@ -7606,9 +7601,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python3-stdlib-extensions=3.6.9-1~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.9-1~18.04.dsc' python3-stdlib-extensions_3.6.9-1~18.04.dsc 2624 SHA512:e10786f72375b0da8042ac41094c5c2fa9d4649001646da0072e51207042dc0434d5f06616e50a13bfe9610044f0e0bed4cc5b6e9487c38a81024568d52918ce
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.9-1%7e18.04.dsc' python3-stdlib-extensions_3.6.9-1~18.04.dsc 2624 SHA512:e10786f72375b0da8042ac41094c5c2fa9d4649001646da0072e51207042dc0434d5f06616e50a13bfe9610044f0e0bed4cc5b6e9487c38a81024568d52918ce
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.9.orig.tar.bz2' python3-stdlib-extensions_3.6.9.orig.tar.bz2 4237908 SHA512:79312db29db5ad407d6710f3f8d1c725f2efd481d875d06dfb7e3d442cafccca19d0601a899b86c4cf0360ba6dcaeca187e856c5a6d50df04abef309122b3dd7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.9-1~18.04.debian.tar.xz' python3-stdlib-extensions_3.6.9-1~18.04.debian.tar.xz 16908 SHA512:7f0e9efb59e4a50b913c13ed0308a3f3fd4c9fc8f029ea6100f40afffc7e6698c781d0910e5443dcde20345a9e5ef4402d4e22f393507169149e58fe14d857a3
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.9-1%7e18.04.debian.tar.xz' python3-stdlib-extensions_3.6.9-1~18.04.debian.tar.xz 16908 SHA512:7f0e9efb59e4a50b913c13ed0308a3f3fd4c9fc8f029ea6100f40afffc7e6698c781d0910e5443dcde20345a9e5ef4402d4e22f393507169149e58fe14d857a3
 ```
 
 ### `dpkg` source package: `python3.6=3.6.9-1~18.04ubuntu1.6`
@@ -7647,9 +7642,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python3.6=3.6.9-1~18.04ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1~18.04ubuntu1.6.dsc' python3.6_3.6.9-1~18.04ubuntu1.6.dsc 3336 SHA512:a8372da51ef3942ea4b3a06f7ea983c6994c431d3451f9b53b431b345d1249806fc3760104d148cb7337a4df5bade8b43150855ca38e4b0920144ea3f41a9652
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1%7e18.04ubuntu1.6.dsc' python3.6_3.6.9-1~18.04ubuntu1.6.dsc 3336 SHA512:a8372da51ef3942ea4b3a06f7ea983c6994c431d3451f9b53b431b345d1249806fc3760104d148cb7337a4df5bade8b43150855ca38e4b0920144ea3f41a9652
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9.orig.tar.xz' python3.6_3.6.9.orig.tar.xz 17212164 SHA512:05de9c6f44d96a52bfce10ede4312de892573edaf8bece65926d19973a3a800d65eed7a857af945f69efcfb25efa3788e7a54016b03d80b611eb51c3ea074819
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1~18.04ubuntu1.6.debian.tar.xz' python3.6_3.6.9-1~18.04ubuntu1.6.debian.tar.xz 224232 SHA512:989ae3c05c642ff78dd025d9d7ff3ffc0b46da5d6f2c7948ed933df8d6439c9f254dc26ac90e8e756e2f91d614c680deb6aca46f9aa9ba177c94d8117928848e
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.9-1%7e18.04ubuntu1.6.debian.tar.xz' python3.6_3.6.9-1~18.04ubuntu1.6.debian.tar.xz 224232 SHA512:989ae3c05c642ff78dd025d9d7ff3ffc0b46da5d6f2c7948ed933df8d6439c9f254dc26ac90e8e756e2f91d614c680deb6aca46f9aa9ba177c94d8117928848e
 ```
 
 ### `dpkg` source package: `pyyaml=3.12-1build2`
@@ -7745,9 +7740,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris qtbase-opensource-src=5.9.5+dfsg-0ubuntu2.6
-'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.6.dsc' qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.6.dsc 5088 SHA512:4a81e4704176c7277e5ee42b1d914d4727018480204d5eaff1e88e4df15ed589019503a955bceab489aec1621db54569076920d6e67291031c99fe5264f20d4b
-'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5+dfsg.orig.tar.xz' qtbase-opensource-src_5.9.5+dfsg.orig.tar.xz 44935364 SHA512:fd96926d965132d54212219d5cae4471d485a4fcf96884afb9588d2e4f90a2f9c8f28dec5ed07827043b090c349275ce6d7ffedef8560fa6d88e6ed6219e3d09
-'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.6.debian.tar.xz' qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.6.debian.tar.xz 267128 SHA512:5d08f10b6474e0d41c551dbad74288e363cc2838561dfa26fdb79b5ffa698954f30068fa562c97c6f8994eab44873ce98b2b2abb593396ac8405e3afdd45ad5e
+'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5%2bdfsg-0ubuntu2.6.dsc' qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.6.dsc 5088 SHA512:4a81e4704176c7277e5ee42b1d914d4727018480204d5eaff1e88e4df15ed589019503a955bceab489aec1621db54569076920d6e67291031c99fe5264f20d4b
+'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5%2bdfsg.orig.tar.xz' qtbase-opensource-src_5.9.5+dfsg.orig.tar.xz 44935364 SHA512:fd96926d965132d54212219d5cae4471d485a4fcf96884afb9588d2e4f90a2f9c8f28dec5ed07827043b090c349275ce6d7ffedef8560fa6d88e6ed6219e3d09
+'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5%2bdfsg-0ubuntu2.6.debian.tar.xz' qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.6.debian.tar.xz 267128 SHA512:5d08f10b6474e0d41c551dbad74288e363cc2838561dfa26fdb79b5ffa698954f30068fa562c97c6f8994eab44873ce98b2b2abb593396ac8405e3afdd45ad5e
 ```
 
 ### `dpkg` source package: `qtchooser=64-ga1b6736-5`
@@ -7832,9 +7827,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris qtlocation-opensource-src=5.9.5+dfsg-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtlocation-opensource-src/qtlocation-opensource-src_5.9.5+dfsg-0ubuntu2.dsc' qtlocation-opensource-src_5.9.5+dfsg-0ubuntu2.dsc 3386 SHA256:29bbee280f7a8bb5665591cad18494442f67303da475da385fe9570428f0ec0b
-'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtlocation-opensource-src/qtlocation-opensource-src_5.9.5+dfsg.orig.tar.xz' qtlocation-opensource-src_5.9.5+dfsg.orig.tar.xz 3282460 SHA256:76e6e08b188e71007f3d1cf1de808f55ded232e454b7b7555258e595f5039e02
-'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtlocation-opensource-src/qtlocation-opensource-src_5.9.5+dfsg-0ubuntu2.debian.tar.xz' qtlocation-opensource-src_5.9.5+dfsg-0ubuntu2.debian.tar.xz 30044 SHA256:0b855cd3bdd3df49a9292b2eec9af2c1581c422bf673a853834fc60a49fcf44e
+'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtlocation-opensource-src/qtlocation-opensource-src_5.9.5%2bdfsg-0ubuntu2.dsc' qtlocation-opensource-src_5.9.5+dfsg-0ubuntu2.dsc 3386 SHA256:29bbee280f7a8bb5665591cad18494442f67303da475da385fe9570428f0ec0b
+'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtlocation-opensource-src/qtlocation-opensource-src_5.9.5%2bdfsg.orig.tar.xz' qtlocation-opensource-src_5.9.5+dfsg.orig.tar.xz 3282460 SHA256:76e6e08b188e71007f3d1cf1de808f55ded232e454b7b7555258e595f5039e02
+'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtlocation-opensource-src/qtlocation-opensource-src_5.9.5%2bdfsg-0ubuntu2.debian.tar.xz' qtlocation-opensource-src_5.9.5+dfsg-0ubuntu2.debian.tar.xz 30044 SHA256:0b855cd3bdd3df49a9292b2eec9af2c1581c422bf673a853834fc60a49fcf44e
 ```
 
 ### `dpkg` source package: `qtsensors-opensource-src=5.9.5-0ubuntu1`
@@ -7956,9 +7951,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris qtwebkit-opensource-src=5.212.0~alpha2-7ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0~alpha2-7ubuntu1.dsc' qtwebkit-opensource-src_5.212.0~alpha2-7ubuntu1.dsc 3428 SHA256:8d2b69113236ac80411021f366e28eeb1268d52a3a75c2ba2bb5177b7c4c877c
-'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0~alpha2.orig.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2.orig.tar.xz 12456284 SHA256:f8f901de567e11fc5659402b6b827eac75505ff9c5072d8e919aa306003f8f8a
-'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0~alpha2-7ubuntu1.debian.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2-7ubuntu1.debian.tar.xz 67740 SHA256:21b0810d3605a3e07bf89223d4dbbe9d0702ccc7e58bf2691cd5355e2395797e
+'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0%7ealpha2-7ubuntu1.dsc' qtwebkit-opensource-src_5.212.0~alpha2-7ubuntu1.dsc 3428 SHA256:8d2b69113236ac80411021f366e28eeb1268d52a3a75c2ba2bb5177b7c4c877c
+'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0%7ealpha2.orig.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2.orig.tar.xz 12456284 SHA256:f8f901de567e11fc5659402b6b827eac75505ff9c5072d8e919aa306003f8f8a
+'http://archive.ubuntu.com/ubuntu/pool/universe/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0%7ealpha2-7ubuntu1.debian.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2-7ubuntu1.debian.tar.xz 67740 SHA256:21b0810d3605a3e07bf89223d4dbbe9d0702ccc7e58bf2691cd5355e2395797e
 ```
 
 ### `dpkg` source package: `rdma-core=17.1-1ubuntu0.2`
@@ -9725,9 +9720,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris rtmpdump=2.4+20151223.gitfa8646d.1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1-1.dsc' rtmpdump_2.4+20151223.gitfa8646d.1-1.dsc 2315 SHA256:e56822b88625bf6a51f06652fc36fa2a1348b4325ac76541800cd078192aa3d2
-'http://archive.ubuntu.com/ubuntu/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz' rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz 142213 SHA256:5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5
-'http://archive.ubuntu.com/ubuntu/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1-1.debian.tar.xz' rtmpdump_2.4+20151223.gitfa8646d.1-1.debian.tar.xz 8044 SHA256:675847f5cddb860256cbf2e7d5b85918aa53b59b0fd97a466b39a5c77a399537
+'http://archive.ubuntu.com/ubuntu/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1-1.dsc' rtmpdump_2.4+20151223.gitfa8646d.1-1.dsc 2315 SHA256:e56822b88625bf6a51f06652fc36fa2a1348b4325ac76541800cd078192aa3d2
+'http://archive.ubuntu.com/ubuntu/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1.orig.tar.gz' rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz 142213 SHA256:5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5
+'http://archive.ubuntu.com/ubuntu/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1-1.debian.tar.xz' rtmpdump_2.4+20151223.gitfa8646d.1-1.debian.tar.xz 8044 SHA256:675847f5cddb860256cbf2e7d5b85918aa53b59b0fd97a466b39a5c77a399537
 ```
 
 ### `dpkg` source package: `sbcl=2:1.4.5-1`
@@ -9915,9 +9910,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris sip4=4.19.7+dfsg-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/sip4/sip4_4.19.7+dfsg-1ubuntu0.1.dsc' sip4_4.19.7+dfsg-1ubuntu0.1.dsc 2823 SHA512:a22cd1440cbd17d0b9f72296e919177f05d3ed579902c0ebd651f8d257930c8cc8904bdd6a7f49edeeee4d78b56429bbff92be6d38898910446168e0bc5232e2
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/sip4/sip4_4.19.7+dfsg.orig.tar.gz' sip4_4.19.7+dfsg.orig.tar.gz 633201 SHA512:719be64979fcc9022df90a76996c0808c586e87793e29904a4e3b05e9db0259555cebbf1a9fc6e41e141f0f6f99ae49b57a83d32fa7a1dc1ade7ea52f6a7d73a
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/sip4/sip4_4.19.7+dfsg-1ubuntu0.1.debian.tar.xz' sip4_4.19.7+dfsg-1ubuntu0.1.debian.tar.xz 18220 SHA512:e83e0a58c67c21ce4802f9fc8cbbcc0016ad6bf21d5fba8d0abcd40014354e572ff463790201733a56c961f7814ed0ad3407555d992ad7c163f34738bff7757a
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/sip4/sip4_4.19.7%2bdfsg-1ubuntu0.1.dsc' sip4_4.19.7+dfsg-1ubuntu0.1.dsc 2823 SHA512:a22cd1440cbd17d0b9f72296e919177f05d3ed579902c0ebd651f8d257930c8cc8904bdd6a7f49edeeee4d78b56429bbff92be6d38898910446168e0bc5232e2
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/sip4/sip4_4.19.7%2bdfsg.orig.tar.gz' sip4_4.19.7+dfsg.orig.tar.gz 633201 SHA512:719be64979fcc9022df90a76996c0808c586e87793e29904a4e3b05e9db0259555cebbf1a9fc6e41e141f0f6f99ae49b57a83d32fa7a1dc1ade7ea52f6a7d73a
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/sip4/sip4_4.19.7%2bdfsg-1ubuntu0.1.debian.tar.xz' sip4_4.19.7+dfsg-1ubuntu0.1.debian.tar.xz 18220 SHA512:e83e0a58c67c21ce4802f9fc8cbbcc0016ad6bf21d5fba8d0abcd40014354e572ff463790201733a56c961f7814ed0ad3407555d992ad7c163f34738bff7757a
 ```
 
 ### `dpkg` source package: `six=1.11.0-2`
@@ -9973,9 +9968,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris socket++=1.12.13-9
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/socket++/socket++_1.12.13-9.dsc' socket++_1.12.13-9.dsc 2056 SHA256:d2f941ab723d42bfc7cbb4c4556b553eb3977da910690e38f4cd6bbc4ac6b81a
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/socket++/socket++_1.12.13.orig.tar.gz' socket++_1.12.13.orig.tar.gz 64263 SHA256:755cdcac06d40fcca2b221f840e05f89a86298bc3bfc518b51a57b42f0512b19
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/socket++/socket++_1.12.13-9.debian.tar.xz' socket++_1.12.13-9.debian.tar.xz 4232 SHA256:54724446597ab43c3d241eb8d6650baaa4cef88d4b7f71d3890a59652f206aa0
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/socket%2b%2b/socket%2b%2b_1.12.13-9.dsc' socket++_1.12.13-9.dsc 2056 SHA256:d2f941ab723d42bfc7cbb4c4556b553eb3977da910690e38f4cd6bbc4ac6b81a
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/socket%2b%2b/socket%2b%2b_1.12.13.orig.tar.gz' socket++_1.12.13.orig.tar.gz 64263 SHA256:755cdcac06d40fcca2b221f840e05f89a86298bc3bfc518b51a57b42f0512b19
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/socket%2b%2b/socket%2b%2b_1.12.13-9.debian.tar.xz' socket++_1.12.13-9.debian.tar.xz 4232 SHA256:54724446597ab43c3d241eb8d6650baaa4cef88d4b7f71d3890a59652f206aa0
 ```
 
 ### `dpkg` source package: `spatialite=4.3.0a-5build1`
@@ -10023,9 +10018,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris speex=1.2~rc1.2-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/speex/speex_1.2~rc1.2-1ubuntu2.dsc' speex_1.2~rc1.2-1ubuntu2.dsc 2360 SHA256:cfd4ef68c8ae7de261b0540b0749109c0831adee854b9262082c5f2e36cea046
-'http://archive.ubuntu.com/ubuntu/pool/main/s/speex/speex_1.2~rc1.2.orig.tar.gz' speex_1.2~rc1.2.orig.tar.gz 1069339 SHA256:8320fb86a024dfe1b6a78a7d57bc2388e5f8cb7f2fa10c946db2704e1e5d2805
-'http://archive.ubuntu.com/ubuntu/pool/main/s/speex/speex_1.2~rc1.2-1ubuntu2.diff.gz' speex_1.2~rc1.2-1ubuntu2.diff.gz 10372 SHA256:1f8602e771c179ce81444f2b82414683ee69715837e47b9755b114bbdfb64d17
+'http://archive.ubuntu.com/ubuntu/pool/main/s/speex/speex_1.2%7erc1.2-1ubuntu2.dsc' speex_1.2~rc1.2-1ubuntu2.dsc 2360 SHA256:cfd4ef68c8ae7de261b0540b0749109c0831adee854b9262082c5f2e36cea046
+'http://archive.ubuntu.com/ubuntu/pool/main/s/speex/speex_1.2%7erc1.2.orig.tar.gz' speex_1.2~rc1.2.orig.tar.gz 1069339 SHA256:8320fb86a024dfe1b6a78a7d57bc2388e5f8cb7f2fa10c946db2704e1e5d2805
+'http://archive.ubuntu.com/ubuntu/pool/main/s/speex/speex_1.2%7erc1.2-1ubuntu2.diff.gz' speex_1.2~rc1.2-1ubuntu2.diff.gz 10372 SHA256:1f8602e771c179ce81444f2b82414683ee69715837e47b9755b114bbdfb64d17
 ```
 
 ### `dpkg` source package: `sphinx=1.6.7-1ubuntu1`
@@ -10136,9 +10131,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris superlu=5.2.1+dfsg1-3
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/superlu/superlu_5.2.1+dfsg1-3.dsc' superlu_5.2.1+dfsg1-3.dsc 2203 SHA256:f0d1a6cf14701616d86cdd64a6b604ddfb5200ac063a121656deb019758393a6
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/superlu/superlu_5.2.1+dfsg1.orig.tar.xz' superlu_5.2.1+dfsg1.orig.tar.xz 702616 SHA256:6b09d9ad5f384300e9d2c85ccabb88e748405fbf768c79d7325bf1b8aba9d5e1
-'http://archive.ubuntu.com/ubuntu/pool/universe/s/superlu/superlu_5.2.1+dfsg1-3.debian.tar.xz' superlu_5.2.1+dfsg1-3.debian.tar.xz 6100 SHA256:143d97303271ad64e69a3166452bc3a79bf76a2bff19a8f91df44579b8ead65c
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/superlu/superlu_5.2.1%2bdfsg1-3.dsc' superlu_5.2.1+dfsg1-3.dsc 2203 SHA256:f0d1a6cf14701616d86cdd64a6b604ddfb5200ac063a121656deb019758393a6
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/superlu/superlu_5.2.1%2bdfsg1.orig.tar.xz' superlu_5.2.1+dfsg1.orig.tar.xz 702616 SHA256:6b09d9ad5f384300e9d2c85ccabb88e748405fbf768c79d7325bf1b8aba9d5e1
+'http://archive.ubuntu.com/ubuntu/pool/universe/s/superlu/superlu_5.2.1%2bdfsg1-3.debian.tar.xz' superlu_5.2.1+dfsg1-3.debian.tar.xz 6100 SHA256:143d97303271ad64e69a3166452bc3a79bf76a2bff19a8f91df44579b8ead65c
 ```
 
 ### `dpkg` source package: `systemd=237-3ubuntu10.53`
@@ -10222,9 +10217,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tbb=2017~U7-8
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tbb/tbb_2017~U7-8.dsc' tbb_2017~U7-8.dsc 2174 SHA256:0a120c83fbcc102ae337af9e43968200d8dcc2b189feb5c1b31cfa0c8a7a8dc0
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tbb/tbb_2017~U7.orig.tar.xz' tbb_2017~U7.orig.tar.xz 1863996 SHA256:a4121cb8e91ec95c4ee462eee0ab082d74f079bc58183dd7296d7a6f831de85d
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tbb/tbb_2017~U7-8.debian.tar.xz' tbb_2017~U7-8.debian.tar.xz 46076 SHA256:4d8054fb02d9d5686a9490fc1b6710a6c752a200b7ffdd3cf08bea9658d9b927
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tbb/tbb_2017%7eU7-8.dsc' tbb_2017~U7-8.dsc 2174 SHA256:0a120c83fbcc102ae337af9e43968200d8dcc2b189feb5c1b31cfa0c8a7a8dc0
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tbb/tbb_2017%7eU7.orig.tar.xz' tbb_2017~U7.orig.tar.xz 1863996 SHA256:a4121cb8e91ec95c4ee462eee0ab082d74f079bc58183dd7296d7a6f831de85d
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tbb/tbb_2017%7eU7-8.debian.tar.xz' tbb_2017~U7-8.debian.tar.xz 46076 SHA256:4d8054fb02d9d5686a9490fc1b6710a6c752a200b7ffdd3cf08bea9658d9b927
 ```
 
 ### `dpkg` source package: `tcl8.6=8.6.8+dfsg-3`
@@ -10243,9 +10238,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tcl8.6=8.6.8+dfsg-3
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/tcl8.6_8.6.8+dfsg-3.dsc' tcl8.6_8.6.8+dfsg-3.dsc 1998 SHA256:835f9313964feed7fdf53327f120f55a09cbaa4ec1340aa4c4ede3cda45ec51b
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/tcl8.6_8.6.8+dfsg.orig.tar.gz' tcl8.6_8.6.8+dfsg.orig.tar.gz 5886744 SHA256:e67d9dda22565804ce91d3c34c46f39d972caa1366fb6d34fa6eb4cadf1cbb1e
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/tcl8.6_8.6.8+dfsg-3.debian.tar.xz' tcl8.6_8.6.8+dfsg-3.debian.tar.xz 16008 SHA256:a1dbc70c609d317e63163b9bc713cea807f426d5f72e83517e4c25a7276ee44e
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/tcl8.6_8.6.8%2bdfsg-3.dsc' tcl8.6_8.6.8+dfsg-3.dsc 1998 SHA256:835f9313964feed7fdf53327f120f55a09cbaa4ec1340aa4c4ede3cda45ec51b
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/tcl8.6_8.6.8%2bdfsg.orig.tar.gz' tcl8.6_8.6.8+dfsg.orig.tar.gz 5886744 SHA256:e67d9dda22565804ce91d3c34c46f39d972caa1366fb6d34fa6eb4cadf1cbb1e
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/tcl8.6_8.6.8%2bdfsg-3.debian.tar.xz' tcl8.6_8.6.8+dfsg-3.debian.tar.xz 16008 SHA256:a1dbc70c609d317e63163b9bc713cea807f426d5f72e83517e4c25a7276ee44e
 ```
 
 ### `dpkg` source package: `tcltk-defaults=8.6.0+9`
@@ -10265,8 +10260,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tcltk-defaults=8.6.0+9
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tcltk-defaults/tcltk-defaults_8.6.0+9.dsc' tcltk-defaults_8.6.0+9.dsc 1995 SHA256:ab475d21042f133aefc7db5bb44fdab24329ff589556d6d2c65313541f4a7053
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tcltk-defaults/tcltk-defaults_8.6.0+9.tar.xz' tcltk-defaults_8.6.0+9.tar.xz 13964 SHA256:961a3534bb729b93d50d4db1d81cb85f59f6c5e4b7668cbb6438bd6407874e31
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tcltk-defaults/tcltk-defaults_8.6.0%2b9.dsc' tcltk-defaults_8.6.0+9.dsc 1995 SHA256:ab475d21042f133aefc7db5bb44fdab24329ff589556d6d2c65313541f4a7053
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tcltk-defaults/tcltk-defaults_8.6.0%2b9.tar.xz' tcltk-defaults_8.6.0+9.tar.xz 13964 SHA256:961a3534bb729b93d50d4db1d81cb85f59f6c5e4b7668cbb6438bd6407874e31
 ```
 
 ### `dpkg` source package: `tesseract=4.00~git2288-10f4998a-2`
@@ -10283,9 +10278,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tesseract=4.00~git2288-10f4998a-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract_4.00~git2288-10f4998a-2.dsc' tesseract_4.00~git2288-10f4998a-2.dsc 2397 SHA256:5ac889ae8490cb5ba6ff2fd17eb1b500734b2b78e70adfbcd1a83e7efe6ed128
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract_4.00~git2288-10f4998a.orig.tar.xz' tesseract_4.00~git2288-10f4998a.orig.tar.xz 9605504 SHA256:c6752c7713196c91f411af5667a64e769934c39e8627b382d3a94c477dc09550
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract_4.00~git2288-10f4998a-2.debian.tar.xz' tesseract_4.00~git2288-10f4998a-2.debian.tar.xz 25640 SHA256:a2e7bd4b8c4ef32c6c51c4656740c0e7c2637b6ef4de24e6c1d873bb9a837c3e
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract_4.00%7egit2288-10f4998a-2.dsc' tesseract_4.00~git2288-10f4998a-2.dsc 2397 SHA256:5ac889ae8490cb5ba6ff2fd17eb1b500734b2b78e70adfbcd1a83e7efe6ed128
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract_4.00%7egit2288-10f4998a.orig.tar.xz' tesseract_4.00~git2288-10f4998a.orig.tar.xz 9605504 SHA256:c6752c7713196c91f411af5667a64e769934c39e8627b382d3a94c477dc09550
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract_4.00%7egit2288-10f4998a-2.debian.tar.xz' tesseract_4.00~git2288-10f4998a-2.debian.tar.xz 25640 SHA256:a2e7bd4b8c4ef32c6c51c4656740c0e7c2637b6ef4de24e6c1d873bb9a837c3e
 ```
 
 ### `dpkg` source package: `tiff=4.0.9-5ubuntu0.4`
@@ -10327,9 +10322,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tinyxml2=6.0.0+dfsg-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tinyxml2/tinyxml2_6.0.0+dfsg-1.dsc' tinyxml2_6.0.0+dfsg-1.dsc 1999 SHA256:d103b12a55f1225e61a87cabf184237be9213233972e3d7bd35a4cc926736aec
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tinyxml2/tinyxml2_6.0.0+dfsg.orig.tar.gz' tinyxml2_6.0.0+dfsg.orig.tar.gz 352041 SHA256:ef930de291e18acef913a79bba1d2d8e387cd19cfd9fef7618895a21c909164b
-'http://archive.ubuntu.com/ubuntu/pool/universe/t/tinyxml2/tinyxml2_6.0.0+dfsg-1.debian.tar.xz' tinyxml2_6.0.0+dfsg-1.debian.tar.xz 5532 SHA256:6e6052241bc2d7cefbf915b101474185bd5a7369456fbac0f0efa53b8a3c75a6
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tinyxml2/tinyxml2_6.0.0%2bdfsg-1.dsc' tinyxml2_6.0.0+dfsg-1.dsc 1999 SHA256:d103b12a55f1225e61a87cabf184237be9213233972e3d7bd35a4cc926736aec
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tinyxml2/tinyxml2_6.0.0%2bdfsg.orig.tar.gz' tinyxml2_6.0.0+dfsg.orig.tar.gz 352041 SHA256:ef930de291e18acef913a79bba1d2d8e387cd19cfd9fef7618895a21c909164b
+'http://archive.ubuntu.com/ubuntu/pool/universe/t/tinyxml2/tinyxml2_6.0.0%2bdfsg-1.debian.tar.xz' tinyxml2_6.0.0+dfsg-1.debian.tar.xz 5532 SHA256:6e6052241bc2d7cefbf915b101474185bd5a7369456fbac0f0efa53b8a3c75a6
 ```
 
 ### `dpkg` source package: `tinyxml=2.6.2-4`
@@ -10465,8 +10460,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ubuntu-keyring=2018.09.18.1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2018.09.18.1~18.04.2.dsc' ubuntu-keyring_2018.09.18.1~18.04.2.dsc 1828 SHA512:d8ae5d5c056c7234d98171a9ad9eacf579e284ac6b06a33abd74fd153e7b42d62a8c4171222cd7d9e1feb7fc84e32671d15483e5a68e0e96d40b3efaea18d387
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2018.09.18.1~18.04.2.tar.gz' ubuntu-keyring_2018.09.18.1~18.04.2.tar.gz 34312 SHA512:54b1a31b822bdfe096d879c524043cc93df6d4440fd53264cc4f459fcbe25c26262a09eb637ed9dad6f7715f30acd96dc7e07ed1881a40fd982f7fa00a94e839
+'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2018.09.18.1%7e18.04.2.dsc' ubuntu-keyring_2018.09.18.1~18.04.2.dsc 1828 SHA512:d8ae5d5c056c7234d98171a9ad9eacf579e284ac6b06a33abd74fd153e7b42d62a8c4171222cd7d9e1feb7fc84e32671d15483e5a68e0e96d40b3efaea18d387
+'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2018.09.18.1%7e18.04.2.tar.gz' ubuntu-keyring_2018.09.18.1~18.04.2.tar.gz 34312 SHA512:54b1a31b822bdfe096d879c524043cc93df6d4440fd53264cc4f459fcbe25c26262a09eb637ed9dad6f7715f30acd96dc7e07ed1881a40fd982f7fa00a94e839
 ```
 
 ### `dpkg` source package: `ubuntu-themes=16.10+18.04.20181005-0ubuntu1`
@@ -10484,9 +10479,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ubuntu-themes=16.10+18.04.20181005-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-themes/ubuntu-themes_16.10+18.04.20181005-0ubuntu1.dsc' ubuntu-themes_16.10+18.04.20181005-0ubuntu1.dsc 2345 SHA512:5ef48ee86e3b0ba33c1acd58d9965823caeb4e5b363d18ebd16489e0e7b1101f13c26cdf35e9117c4f8a394bf6289819b1a8d5724572446a35bbb486332f6723
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-themes/ubuntu-themes_16.10+18.04.20181005.orig.tar.gz' ubuntu-themes_16.10+18.04.20181005.orig.tar.gz 16239257 SHA512:53e12897ca236e5a085445b05f48f21639b8acc56d5524022a3379619dbf43d19d71e50f73c6025bdec3f009a23f2d2f83921e13eea9c628fcf7ae27d7372146
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-themes/ubuntu-themes_16.10+18.04.20181005-0ubuntu1.diff.gz' ubuntu-themes_16.10+18.04.20181005-0ubuntu1.diff.gz 28561 SHA512:96f4376ceff9785923b8cb074893cbd6662da5478a173fd97c56c3f2dd40d8d31c73a46d2eb7722ef2429206d9f3eed12ec0afbeaefce3b4cfd113a83729ec68
+'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-themes/ubuntu-themes_16.10%2b18.04.20181005-0ubuntu1.dsc' ubuntu-themes_16.10+18.04.20181005-0ubuntu1.dsc 2345 SHA512:5ef48ee86e3b0ba33c1acd58d9965823caeb4e5b363d18ebd16489e0e7b1101f13c26cdf35e9117c4f8a394bf6289819b1a8d5724572446a35bbb486332f6723
+'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-themes/ubuntu-themes_16.10%2b18.04.20181005.orig.tar.gz' ubuntu-themes_16.10+18.04.20181005.orig.tar.gz 16239257 SHA512:53e12897ca236e5a085445b05f48f21639b8acc56d5524022a3379619dbf43d19d71e50f73c6025bdec3f009a23f2d2f83921e13eea9c628fcf7ae27d7372146
+'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-themes/ubuntu-themes_16.10%2b18.04.20181005-0ubuntu1.diff.gz' ubuntu-themes_16.10+18.04.20181005-0ubuntu1.diff.gz 28561 SHA512:96f4376ceff9785923b8cb074893cbd6662da5478a173fd97c56c3f2dd40d8d31c73a46d2eb7722ef2429206d9f3eed12ec0afbeaefce3b4cfd113a83729ec68
 ```
 
 ### `dpkg` source package: `ucf=3.0038`
@@ -10524,9 +10519,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris underscore=1.8.3~dfsg-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/u/underscore/underscore_1.8.3~dfsg-1ubuntu0.1.dsc' underscore_1.8.3~dfsg-1ubuntu0.1.dsc 2246 SHA512:6884c40d3bdb902ff5f6dfbd05192c50848f8adc054b8eb0353efc4113edf3765c564fba64de04cfb2eafdc5486707aad8a65dbb3fc343877822501a77ebb108
-'http://archive.ubuntu.com/ubuntu/pool/main/u/underscore/underscore_1.8.3~dfsg.orig.tar.gz' underscore_1.8.3~dfsg.orig.tar.gz 119157 SHA512:7c599e8552386ac480b202c40eb32c91f2824feb3f6f728c844a8768c117cfa74d7d644054e2e8d0663f2032343a54a03e913af0de18dc3d15246ad485a0faec
-'http://archive.ubuntu.com/ubuntu/pool/main/u/underscore/underscore_1.8.3~dfsg-1ubuntu0.1.debian.tar.xz' underscore_1.8.3~dfsg-1ubuntu0.1.debian.tar.xz 8024 SHA512:e93380276478bd26ec9e594c5fc2469a9c42a80524fc02957567b86cd2064014ef56affacf4f9c3a597cac46d18eff65e24b544d0b78871b736750d45abd60b4
+'http://archive.ubuntu.com/ubuntu/pool/main/u/underscore/underscore_1.8.3%7edfsg-1ubuntu0.1.dsc' underscore_1.8.3~dfsg-1ubuntu0.1.dsc 2246 SHA512:6884c40d3bdb902ff5f6dfbd05192c50848f8adc054b8eb0353efc4113edf3765c564fba64de04cfb2eafdc5486707aad8a65dbb3fc343877822501a77ebb108
+'http://archive.ubuntu.com/ubuntu/pool/main/u/underscore/underscore_1.8.3%7edfsg.orig.tar.gz' underscore_1.8.3~dfsg.orig.tar.gz 119157 SHA512:7c599e8552386ac480b202c40eb32c91f2824feb3f6f728c844a8768c117cfa74d7d644054e2e8d0663f2032343a54a03e913af0de18dc3d15246ad485a0faec
+'http://archive.ubuntu.com/ubuntu/pool/main/u/underscore/underscore_1.8.3%7edfsg-1ubuntu0.1.debian.tar.xz' underscore_1.8.3~dfsg-1ubuntu0.1.debian.tar.xz 8024 SHA512:e93380276478bd26ec9e594c5fc2469a9c42a80524fc02957567b86cd2064014ef56affacf4f9c3a597cac46d18eff65e24b544d0b78871b736750d45abd60b4
 ```
 
 ### `dpkg` source package: `unixodbc=2.3.4-1.1ubuntu3`
@@ -10573,9 +10568,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris uriparser=0.8.4-1+deb9u2build0.18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4-1+deb9u2build0.18.04.1.dsc' uriparser_0.8.4-1+deb9u2build0.18.04.1.dsc 2167 SHA512:5b4853dc2ee0fe7dd65b9a2ab00657f09a03f15def05a102b2a9e439e2b54c5bde2a74779cc109e6643ea9de388a10eae2be2362a56425a4b73b3c047196518c
+'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4-1%2bdeb9u2build0.18.04.1.dsc' uriparser_0.8.4-1+deb9u2build0.18.04.1.dsc 2167 SHA512:5b4853dc2ee0fe7dd65b9a2ab00657f09a03f15def05a102b2a9e439e2b54c5bde2a74779cc109e6643ea9de388a10eae2be2362a56425a4b73b3c047196518c
 'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4.orig.tar.bz2' uriparser_0.8.4.orig.tar.bz2 358408 SHA512:b6238c6495eaa9f7178269d66dbea05a39c51c27137d8ebf39cd02d1c3fa96aa0d1608f5ccb36bf7b454f3238830dd46d7de8299b608f185b2520fc2c955aa1a
-'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4-1+deb9u2build0.18.04.1.debian.tar.xz' uriparser_0.8.4-1+deb9u2build0.18.04.1.debian.tar.xz 8424 SHA512:760492bb434a620a18fe4c5ef573e327152a21dddd84eb773e4963ba405f33ea3a47570f2b1689e2dbb913e93701a915db6214b29a2c383e99a6c7fb80b71303
+'http://archive.ubuntu.com/ubuntu/pool/universe/u/uriparser/uriparser_0.8.4-1%2bdeb9u2build0.18.04.1.debian.tar.xz' uriparser_0.8.4-1+deb9u2build0.18.04.1.debian.tar.xz 8424 SHA512:760492bb434a620a18fe4c5ef573e327152a21dddd84eb773e4963ba405f33ea3a47570f2b1689e2dbb913e93701a915db6214b29a2c383e99a6c7fb80b71303
 ```
 
 ### `dpkg` source package: `util-linux=2.31.1-0.4ubuntu3.7`
@@ -10650,9 +10645,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris vtk6=6.3.0+dfsg1-11build1
-'http://archive.ubuntu.com/ubuntu/pool/universe/v/vtk6/vtk6_6.3.0+dfsg1-11build1.dsc' vtk6_6.3.0+dfsg1-11build1.dsc 3652 SHA256:fb00b2c86167b1f09f7edd825c678adb9310e5f4d306542b6247564e0896852b
-'http://archive.ubuntu.com/ubuntu/pool/universe/v/vtk6/vtk6_6.3.0+dfsg1.orig.tar.gz' vtk6_6.3.0+dfsg1.orig.tar.gz 17936046 SHA256:c485859fe954baed0069676b72d1f5bd06050fe4e02bb111b40acd969595ca8d
-'http://archive.ubuntu.com/ubuntu/pool/universe/v/vtk6/vtk6_6.3.0+dfsg1-11build1.debian.tar.xz' vtk6_6.3.0+dfsg1-11build1.debian.tar.xz 30600 SHA256:bf2539da557282332ec89446e46e79e8abe6ceb90f0c186f51b93f55e6dbf86b
+'http://archive.ubuntu.com/ubuntu/pool/universe/v/vtk6/vtk6_6.3.0%2bdfsg1-11build1.dsc' vtk6_6.3.0+dfsg1-11build1.dsc 3652 SHA256:fb00b2c86167b1f09f7edd825c678adb9310e5f4d306542b6247564e0896852b
+'http://archive.ubuntu.com/ubuntu/pool/universe/v/vtk6/vtk6_6.3.0%2bdfsg1.orig.tar.gz' vtk6_6.3.0+dfsg1.orig.tar.gz 17936046 SHA256:c485859fe954baed0069676b72d1f5bd06050fe4e02bb111b40acd969595ca8d
+'http://archive.ubuntu.com/ubuntu/pool/universe/v/vtk6/vtk6_6.3.0%2bdfsg1-11build1.debian.tar.xz' vtk6_6.3.0+dfsg1-11build1.debian.tar.xz 30600 SHA256:bf2539da557282332ec89446e46e79e8abe6ceb90f0c186f51b93f55e6dbf86b
 ```
 
 ### `dpkg` source package: `wavpack=5.1.0-2ubuntu1.5`
@@ -10693,8 +10688,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris wayland=1.16.0-1ubuntu1.1~18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/w/wayland/wayland_1.16.0-1ubuntu1.1~18.04.3.dsc' wayland_1.16.0-1ubuntu1.1~18.04.3.dsc 2468 SHA512:4fde23eeb1fe6967d70994ff9937a86e0b5918144eef3bad448273266d2e95a077208f1a84288148659087ded4841675f71c52a8312fed4bfa8610ac648f0afd
-'http://archive.ubuntu.com/ubuntu/pool/main/w/wayland/wayland_1.16.0-1ubuntu1.1~18.04.3.tar.gz' wayland_1.16.0-1ubuntu1.1~18.04.3.tar.gz 325074 SHA512:1e17d84369d58dac99edfb79249639069b69d63cb4716926963f2d637ec3199eed67ee283a84b32a1d2687c7286d0041752e5c6e54a7b9425cecd3253502a99b
+'http://archive.ubuntu.com/ubuntu/pool/main/w/wayland/wayland_1.16.0-1ubuntu1.1%7e18.04.3.dsc' wayland_1.16.0-1ubuntu1.1~18.04.3.dsc 2468 SHA512:4fde23eeb1fe6967d70994ff9937a86e0b5918144eef3bad448273266d2e95a077208f1a84288148659087ded4841675f71c52a8312fed4bfa8610ac648f0afd
+'http://archive.ubuntu.com/ubuntu/pool/main/w/wayland/wayland_1.16.0-1ubuntu1.1%7e18.04.3.tar.gz' wayland_1.16.0-1ubuntu1.1~18.04.3.tar.gz 325074 SHA512:1e17d84369d58dac99edfb79249639069b69d63cb4716926963f2d637ec3199eed67ee283a84b32a1d2687c7286d0041752e5c6e54a7b9425cecd3253502a99b
 ```
 
 ### `dpkg` source package: `woff2=1.0.2-1build0.1`
@@ -10732,9 +10727,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris wxpython3.0=3.0.2.0+dfsg-7
-'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxpython3.0/wxpython3.0_3.0.2.0+dfsg-7.dsc' wxpython3.0_3.0.2.0+dfsg-7.dsc 2523 SHA256:e5b36f67112af5bff719a881cb13d43d5daf0f3140350c8bf6a7304599b723dc
-'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxpython3.0/wxpython3.0_3.0.2.0+dfsg.orig.tar.xz' wxpython3.0_3.0.2.0+dfsg.orig.tar.xz 28961444 SHA256:c3e2f622ac449c535cf3a6261d30f052e4fba11bdcc145897038bf1b2c50708e
-'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxpython3.0/wxpython3.0_3.0.2.0+dfsg-7.debian.tar.xz' wxpython3.0_3.0.2.0+dfsg-7.debian.tar.xz 35116 SHA256:360f7d0a515e0fcfa5f84a0b4ff2a2b7d7b861f13ef27a58639cda923e06d656
+'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxpython3.0/wxpython3.0_3.0.2.0%2bdfsg-7.dsc' wxpython3.0_3.0.2.0+dfsg-7.dsc 2523 SHA256:e5b36f67112af5bff719a881cb13d43d5daf0f3140350c8bf6a7304599b723dc
+'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxpython3.0/wxpython3.0_3.0.2.0%2bdfsg.orig.tar.xz' wxpython3.0_3.0.2.0+dfsg.orig.tar.xz 28961444 SHA256:c3e2f622ac449c535cf3a6261d30f052e4fba11bdcc145897038bf1b2c50708e
+'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxpython3.0/wxpython3.0_3.0.2.0%2bdfsg-7.debian.tar.xz' wxpython3.0_3.0.2.0+dfsg-7.debian.tar.xz 35116 SHA256:360f7d0a515e0fcfa5f84a0b4ff2a2b7d7b861f13ef27a58639cda923e06d656
 ```
 
 ### `dpkg` source package: `wxwidgets3.0=3.0.4+dfsg-3`
@@ -10752,9 +10747,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris wxwidgets3.0=3.0.4+dfsg-3
-'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxwidgets3.0/wxwidgets3.0_3.0.4+dfsg-3.dsc' wxwidgets3.0_3.0.4+dfsg-3.dsc 3500 SHA256:52f5c9bc40298f9fd0cd5ea4333b91b3d953b7dfe9b0295193bbcbbb269a3063
-'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxwidgets3.0/wxwidgets3.0_3.0.4+dfsg.orig.tar.xz' wxwidgets3.0_3.0.4+dfsg.orig.tar.xz 12778116 SHA256:03e80b7b0b34ddb338c9ae383206d15fe9b6de592b0872de31313a3d00c09544
-'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxwidgets3.0/wxwidgets3.0_3.0.4+dfsg-3.debian.tar.xz' wxwidgets3.0_3.0.4+dfsg-3.debian.tar.xz 41112 SHA256:2f479996f0b59072942ef23e305a4d9249eb06ddf38907b2c845d23b9cacb2a2
+'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxwidgets3.0/wxwidgets3.0_3.0.4%2bdfsg-3.dsc' wxwidgets3.0_3.0.4+dfsg-3.dsc 3500 SHA256:52f5c9bc40298f9fd0cd5ea4333b91b3d953b7dfe9b0295193bbcbbb269a3063
+'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxwidgets3.0/wxwidgets3.0_3.0.4%2bdfsg.orig.tar.xz' wxwidgets3.0_3.0.4+dfsg.orig.tar.xz 12778116 SHA256:03e80b7b0b34ddb338c9ae383206d15fe9b6de592b0872de31313a3d00c09544
+'http://archive.ubuntu.com/ubuntu/pool/universe/w/wxwidgets3.0/wxwidgets3.0_3.0.4%2bdfsg-3.debian.tar.xz' wxwidgets3.0_3.0.4+dfsg-3.debian.tar.xz 41112 SHA256:2f479996f0b59072942ef23e305a4d9249eb06ddf38907b2c845d23b9cacb2a2
 ```
 
 ### `dpkg` source package: `x264=2:0.152.2854+gite9a5903-2`
@@ -10778,9 +10773,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris x264=2:0.152.2854+gite9a5903-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/x/x264/x264_0.152.2854+gite9a5903-2.dsc' x264_0.152.2854+gite9a5903-2.dsc 2469 SHA256:df456fc46c606550c87a8cd4fefee72cd6981acccda66c9ec363e7913fd225dd
-'http://archive.ubuntu.com/ubuntu/pool/universe/x/x264/x264_0.152.2854+gite9a5903.orig.tar.gz' x264_0.152.2854+gite9a5903.orig.tar.gz 912193 SHA256:8b623844222e23ae1f166a58575967d41e8a4478b43c4b2ff4b75dbcdd1f2d82
-'http://archive.ubuntu.com/ubuntu/pool/universe/x/x264/x264_0.152.2854+gite9a5903-2.debian.tar.xz' x264_0.152.2854+gite9a5903-2.debian.tar.xz 23472 SHA256:a26888df268e5222a137fd09cb871e446d1edd8ca4f57e76eef92f1338277a98
+'http://archive.ubuntu.com/ubuntu/pool/universe/x/x264/x264_0.152.2854%2bgite9a5903-2.dsc' x264_0.152.2854+gite9a5903-2.dsc 2469 SHA256:df456fc46c606550c87a8cd4fefee72cd6981acccda66c9ec363e7913fd225dd
+'http://archive.ubuntu.com/ubuntu/pool/universe/x/x264/x264_0.152.2854%2bgite9a5903.orig.tar.gz' x264_0.152.2854+gite9a5903.orig.tar.gz 912193 SHA256:8b623844222e23ae1f166a58575967d41e8a4478b43c4b2ff4b75dbcdd1f2d82
+'http://archive.ubuntu.com/ubuntu/pool/universe/x/x264/x264_0.152.2854%2bgite9a5903-2.debian.tar.xz' x264_0.152.2854+gite9a5903-2.debian.tar.xz 23472 SHA256:a26888df268e5222a137fd09cb871e446d1edd8ca4f57e76eef92f1338277a98
 ```
 
 ### `dpkg` source package: `x265=2.6-3`
@@ -10936,9 +10931,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xerces-c=3.2.0+debian-2
-'http://archive.ubuntu.com/ubuntu/pool/universe/x/xerces-c/xerces-c_3.2.0+debian-2.dsc' xerces-c_3.2.0+debian-2.dsc 2252 SHA256:126ad6bc0beffeb8dce7fccb66ce1b63e2298387502dd8e1bb92ef53570c9a90
-'http://archive.ubuntu.com/ubuntu/pool/universe/x/xerces-c/xerces-c_3.2.0+debian.orig.tar.gz' xerces-c_3.2.0+debian.orig.tar.gz 2456570 SHA256:78a246cb973f319c257a230bf6be3551104e04c7e7d94bbd3aa45f2c8822c016
-'http://archive.ubuntu.com/ubuntu/pool/universe/x/xerces-c/xerces-c_3.2.0+debian-2.debian.tar.xz' xerces-c_3.2.0+debian-2.debian.tar.xz 22084 SHA256:fbe820380a85d6c3f55359587a992ea0da5b8426434dc628b04a89e5d8cc8c56
+'http://archive.ubuntu.com/ubuntu/pool/universe/x/xerces-c/xerces-c_3.2.0%2bdebian-2.dsc' xerces-c_3.2.0+debian-2.dsc 2252 SHA256:126ad6bc0beffeb8dce7fccb66ce1b63e2298387502dd8e1bb92ef53570c9a90
+'http://archive.ubuntu.com/ubuntu/pool/universe/x/xerces-c/xerces-c_3.2.0%2bdebian.orig.tar.gz' xerces-c_3.2.0+debian.orig.tar.gz 2456570 SHA256:78a246cb973f319c257a230bf6be3551104e04c7e7d94bbd3aa45f2c8822c016
+'http://archive.ubuntu.com/ubuntu/pool/universe/x/xerces-c/xerces-c_3.2.0%2bdebian-2.debian.tar.xz' xerces-c_3.2.0+debian-2.debian.tar.xz 22084 SHA256:fbe820380a85d6c3f55359587a992ea0da5b8426434dc628b04a89e5d8cc8c56
 ```
 
 ### `dpkg` source package: `xft=2.3.2-1`
@@ -11032,8 +11027,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xorg=1:7.7+19ubuntu7.1
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xorg/xorg_7.7+19ubuntu7.1.dsc' xorg_7.7+19ubuntu7.1.dsc 2103 SHA512:e6c459b18a96cbfda965f13852ff1c75b7e3240f61c4ea941996b99f74ffcf52b6ef539d37ca91903459260354a9368db5cd38d84903647259d8f1ac85a47943
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xorg/xorg_7.7+19ubuntu7.1.tar.gz' xorg_7.7+19ubuntu7.1.tar.gz 298771 SHA512:6e3ac8b4932fc3ba476ce69fa5e111ed2f57b46e0b9361b01f631d82e635e8741088eedeeafdb0e13cf63cbedacf0a0872ca656ace349ecb6a79402f67522b6a
+'http://archive.ubuntu.com/ubuntu/pool/main/x/xorg/xorg_7.7%2b19ubuntu7.1.dsc' xorg_7.7+19ubuntu7.1.dsc 2103 SHA512:e6c459b18a96cbfda965f13852ff1c75b7e3240f61c4ea941996b99f74ffcf52b6ef539d37ca91903459260354a9368db5cd38d84903647259d8f1ac85a47943
+'http://archive.ubuntu.com/ubuntu/pool/main/x/xorg/xorg_7.7%2b19ubuntu7.1.tar.gz' xorg_7.7+19ubuntu7.1.tar.gz 298771 SHA512:6e3ac8b4932fc3ba476ce69fa5e111ed2f57b46e0b9361b01f631d82e635e8741088eedeeafdb0e13cf63cbedacf0a0872ca656ace349ecb6a79402f67522b6a
 ```
 
 ### `dpkg` source package: `xorgproto=2018.4-4`

@@ -260,9 +260,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris argon2=0~20171227-0.2
-'http://deb.debian.org/debian/pool/main/a/argon2/argon2_0~20171227-0.2.dsc' argon2_0~20171227-0.2.dsc 2108 SHA256:357d1e93318d7dd3bee401ee9cd92bd0f3ecaab3990013580a12306efda4ebf7
-'http://deb.debian.org/debian/pool/main/a/argon2/argon2_0~20171227.orig.tar.gz' argon2_0~20171227.orig.tar.gz 1503745 SHA256:eaea0172c1f4ee4550d1b6c9ce01aab8d1ab66b4207776aa67991eb5872fdcd8
-'http://deb.debian.org/debian/pool/main/a/argon2/argon2_0~20171227-0.2.debian.tar.xz' argon2_0~20171227-0.2.debian.tar.xz 6932 SHA256:49e630c0027ebbe0b53e3e692ce99da750e9bdfeddcebf303e595b4af5a2142f
+'http://deb.debian.org/debian/pool/main/a/argon2/argon2_0%7e20171227-0.2.dsc' argon2_0~20171227-0.2.dsc 2108 SHA256:357d1e93318d7dd3bee401ee9cd92bd0f3ecaab3990013580a12306efda4ebf7
+'http://deb.debian.org/debian/pool/main/a/argon2/argon2_0%7e20171227.orig.tar.gz' argon2_0~20171227.orig.tar.gz 1503745 SHA256:eaea0172c1f4ee4550d1b6c9ce01aab8d1ab66b4207776aa67991eb5872fdcd8
+'http://deb.debian.org/debian/pool/main/a/argon2/argon2_0%7e20171227-0.2.debian.tar.xz' argon2_0~20171227-0.2.debian.tar.xz 6932 SHA256:49e630c0027ebbe0b53e3e692ce99da750e9bdfeddcebf303e595b4af5a2142f
 ```
 
 Other potentially useful URLs:
@@ -288,9 +288,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris armadillo=1:9.200.7+dfsg-1
-'http://deb.debian.org/debian/pool/main/a/armadillo/armadillo_9.200.7+dfsg-1.dsc' armadillo_9.200.7+dfsg-1.dsc 2154 SHA256:b1d4d2b402fa0272f18d59daaac34df51dc2eb5d4803a64ad8467be1127bbecc
-'http://deb.debian.org/debian/pool/main/a/armadillo/armadillo_9.200.7+dfsg.orig.tar.xz' armadillo_9.200.7+dfsg.orig.tar.xz 535500 SHA256:d0e162aa7c79bb0998f1a975824935324b09920ef97d0d6fb815d2fa05cb7b36
-'http://deb.debian.org/debian/pool/main/a/armadillo/armadillo_9.200.7+dfsg-1.debian.tar.xz' armadillo_9.200.7+dfsg-1.debian.tar.xz 6628 SHA256:61fac2c85057d1379d8e561884d65fcd494822379300593f04077f6f67f7afa6
+'http://deb.debian.org/debian/pool/main/a/armadillo/armadillo_9.200.7%2bdfsg-1.dsc' armadillo_9.200.7+dfsg-1.dsc 2154 SHA256:b1d4d2b402fa0272f18d59daaac34df51dc2eb5d4803a64ad8467be1127bbecc
+'http://deb.debian.org/debian/pool/main/a/armadillo/armadillo_9.200.7%2bdfsg.orig.tar.xz' armadillo_9.200.7+dfsg.orig.tar.xz 535500 SHA256:d0e162aa7c79bb0998f1a975824935324b09920ef97d0d6fb815d2fa05cb7b36
+'http://deb.debian.org/debian/pool/main/a/armadillo/armadillo_9.200.7%2bdfsg-1.debian.tar.xz' armadillo_9.200.7+dfsg-1.debian.tar.xz 6628 SHA256:61fac2c85057d1379d8e561884d65fcd494822379300593f04077f6f67f7afa6
 ```
 
 Other potentially useful URLs:
@@ -630,9 +630,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris avahi=0.7-4+deb10u1
-'http://deb.debian.org/debian/pool/main/a/avahi/avahi_0.7-4+deb10u1.dsc' avahi_0.7-4+deb10u1.dsc 3920 SHA256:1e0550246ff1e4a965fab646e798b4b0ee2825c0d2dcd35a421c8d17de963fe2
+'http://deb.debian.org/debian/pool/main/a/avahi/avahi_0.7-4%2bdeb10u1.dsc' avahi_0.7-4+deb10u1.dsc 3920 SHA256:1e0550246ff1e4a965fab646e798b4b0ee2825c0d2dcd35a421c8d17de963fe2
 'http://deb.debian.org/debian/pool/main/a/avahi/avahi_0.7.orig.tar.gz' avahi_0.7.orig.tar.gz 1333400 SHA256:57a99b5dfe7fdae794e3d1ee7a62973a368e91e414bd0dfa5d84434de5b14804
-'http://deb.debian.org/debian/pool/main/a/avahi/avahi_0.7-4+deb10u1.debian.tar.xz' avahi_0.7-4+deb10u1.debian.tar.xz 30532 SHA256:7f7244a5728b58565192004e2f98b88e03d2e66a0f6320f885e53eaa41cfc61e
+'http://deb.debian.org/debian/pool/main/a/avahi/avahi_0.7-4%2bdeb10u1.debian.tar.xz' avahi_0.7-4+deb10u1.debian.tar.xz 30532 SHA256:7f7244a5728b58565192004e2f98b88e03d2e66a0f6320f885e53eaa41cfc61e
 ```
 
 Other potentially useful URLs:
@@ -655,8 +655,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris base-files=10.3+deb10u11
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u11.dsc' base-files_10.3+deb10u11.dsc 1107 SHA256:c330a188675075328a715fe1d3ace68ed366293dbd002ead99e17215debab4ee
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u11.tar.xz' base-files_10.3+deb10u11.tar.xz 65496 SHA256:8b3071976d9d896c0fa3b2481d81c69c7d627ab9f13eee848bddc8ed4f446794
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3%2bdeb10u11.dsc' base-files_10.3+deb10u11.dsc 1107 SHA256:c330a188675075328a715fe1d3ace68ed366293dbd002ead99e17215debab4ee
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3%2bdeb10u11.tar.xz' base-files_10.3+deb10u11.tar.xz 65496 SHA256:8b3071976d9d896c0fa3b2481d81c69c7d627ab9f13eee848bddc8ed4f446794
 ```
 
 Other potentially useful URLs:
@@ -888,9 +888,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris boost1.67=1.67.0-13+deb10u1
-'http://deb.debian.org/debian/pool/main/b/boost1.67/boost1.67_1.67.0-13+deb10u1.dsc' boost1.67_1.67.0-13+deb10u1.dsc 8402 SHA256:3a7ac414c257170befd3ca714d8f26ae9bc2a6adf10bdbe400800ec723e6c5bb
+'http://deb.debian.org/debian/pool/main/b/boost1.67/boost1.67_1.67.0-13%2bdeb10u1.dsc' boost1.67_1.67.0-13+deb10u1.dsc 8402 SHA256:3a7ac414c257170befd3ca714d8f26ae9bc2a6adf10bdbe400800ec723e6c5bb
 'http://deb.debian.org/debian/pool/main/b/boost1.67/boost1.67_1.67.0.orig.tar.gz' boost1.67_1.67.0.orig.tar.gz 85291274 SHA256:40c2e1fb225b688453ceeb3348265b4b7f2eee216e14f5158d51b0fef2fe0bb5
-'http://deb.debian.org/debian/pool/main/b/boost1.67/boost1.67_1.67.0-13+deb10u1.debian.tar.xz' boost1.67_1.67.0-13+deb10u1.debian.tar.xz 351404 SHA256:48b68b700f8f570c5db7c8ca13dce5c7c986bdc418a7d6ec1175239e11e963b2
+'http://deb.debian.org/debian/pool/main/b/boost1.67/boost1.67_1.67.0-13%2bdeb10u1.debian.tar.xz' boost1.67_1.67.0-13+deb10u1.debian.tar.xz 351404 SHA256:48b68b700f8f570c5db7c8ca13dce5c7c986bdc418a7d6ec1175239e11e963b2
 ```
 
 Other potentially useful URLs:
@@ -913,9 +913,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris brotli=1.0.7-2+deb10u1
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-2+deb10u1.dsc' brotli_1.0.7-2+deb10u1.dsc 2303 SHA256:30f498e51d963235ffaad6e8f3f956b37f38bb582cc5d39be277bdc7f56b8485
+'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-2%2bdeb10u1.dsc' brotli_1.0.7-2+deb10u1.dsc 2303 SHA256:30f498e51d963235ffaad6e8f3f956b37f38bb582cc5d39be277bdc7f56b8485
 'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7.orig.tar.gz' brotli_1.0.7.orig.tar.gz 23827908 SHA256:4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-2+deb10u1.debian.tar.xz' brotli_1.0.7-2+deb10u1.debian.tar.xz 4472 SHA256:81f8aa8af59c21ddf3c00c945086a97d8ef390568ec17b095f4ad07ed282a6c3
+'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-2%2bdeb10u1.debian.tar.xz' brotli_1.0.7-2+deb10u1.debian.tar.xz 4472 SHA256:81f8aa8af59c21ddf3c00c945086a97d8ef390568ec17b095f4ad07ed282a6c3
 ```
 
 Other potentially useful URLs:
@@ -965,9 +965,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris bzip2=1.0.6-9.2~deb10u1
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.2~deb10u1.dsc' bzip2_1.0.6-9.2~deb10u1.dsc 2380 SHA256:f518d7c599e1028002a739bd9123fa23767d74e1c5cf1d05f36eb7de9fc25b5c
+'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.2%7edeb10u1.dsc' bzip2_1.0.6-9.2~deb10u1.dsc 2380 SHA256:f518d7c599e1028002a739bd9123fa23767d74e1c5cf1d05f36eb7de9fc25b5c
 'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.2~deb10u1.debian.tar.bz2' bzip2_1.0.6-9.2~deb10u1.debian.tar.bz2 27542 SHA256:44900f7371503fe35ea7d3aa5b8ab8c677300be9b0d5277838d0c874be9c8541
+'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.2%7edeb10u1.debian.tar.bz2' bzip2_1.0.6-9.2~deb10u1.debian.tar.bz2 27542 SHA256:44900f7371503fe35ea7d3aa5b8ab8c677300be9b0d5277838d0c874be9c8541
 ```
 
 Other potentially useful URLs:
@@ -992,9 +992,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris bzr=2.7.0+bzr6622-15
-'http://deb.debian.org/debian/pool/main/b/bzr/bzr_2.7.0+bzr6622-15.dsc' bzr_2.7.0+bzr6622-15.dsc 2923 SHA256:ce3ad2a536c52343f06d7393a7f76ef3855bc91daa596e9e8e895bf289d2e43d
-'http://deb.debian.org/debian/pool/main/b/bzr/bzr_2.7.0+bzr6622.orig.tar.gz' bzr_2.7.0+bzr6622.orig.tar.gz 10948360 SHA256:08bba3e76cba9beb6b686e71253045beeab9db94753ddbcafa0f8ed1cba377ff
-'http://deb.debian.org/debian/pool/main/b/bzr/bzr_2.7.0+bzr6622-15.debian.tar.xz' bzr_2.7.0+bzr6622-15.debian.tar.xz 92936 SHA256:d2198b93059cc9d37c551f7bfda19a199c18f4c9c6104a8c40ccd6d0c65e6fd3
+'http://deb.debian.org/debian/pool/main/b/bzr/bzr_2.7.0%2bbzr6622-15.dsc' bzr_2.7.0+bzr6622-15.dsc 2923 SHA256:ce3ad2a536c52343f06d7393a7f76ef3855bc91daa596e9e8e895bf289d2e43d
+'http://deb.debian.org/debian/pool/main/b/bzr/bzr_2.7.0%2bbzr6622.orig.tar.gz' bzr_2.7.0+bzr6622.orig.tar.gz 10948360 SHA256:08bba3e76cba9beb6b686e71253045beeab9db94753ddbcafa0f8ed1cba377ff
+'http://deb.debian.org/debian/pool/main/b/bzr/bzr_2.7.0%2bbzr6622-15.debian.tar.xz' bzr_2.7.0+bzr6622-15.debian.tar.xz 92936 SHA256:d2198b93059cc9d37c551f7bfda19a199c18f4c9c6104a8c40ccd6d0c65e6fd3
 ```
 
 Other potentially useful URLs:
@@ -1019,8 +1019,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ca-certificates=20200601~deb10u2
-'http://deb.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20200601~deb10u2.dsc' ca-certificates_20200601~deb10u2.dsc 1907 SHA256:b89cbd8c235e131ee10cb85a9bd4b3e429874c1e0577c5ed35121f8590d4d029
-'http://deb.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20200601~deb10u2.tar.xz' ca-certificates_20200601~deb10u2.tar.xz 245804 SHA256:13ffd04d36230309ff383ad4ccbefb1852b1483f0ac3da75b4979906933ba5e8
+'http://deb.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20200601%7edeb10u2.dsc' ca-certificates_20200601~deb10u2.dsc 1907 SHA256:b89cbd8c235e131ee10cb85a9bd4b3e429874c1e0577c5ed35121f8590d4d029
+'http://deb.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20200601%7edeb10u2.tar.xz' ca-certificates_20200601~deb10u2.tar.xz 245804 SHA256:13ffd04d36230309ff383ad4ccbefb1852b1483f0ac3da75b4979906933ba5e8
 ```
 
 Other potentially useful URLs:
@@ -1044,9 +1044,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris cairo=1.16.0-4+deb10u1
-'http://deb.debian.org/debian/pool/main/c/cairo/cairo_1.16.0-4+deb10u1.dsc' cairo_1.16.0-4+deb10u1.dsc 2838 SHA256:756b8750f4c8e1c578da1a60ff2a0b2f98c6cb528a4e183725d12562f061dd85
+'http://deb.debian.org/debian/pool/main/c/cairo/cairo_1.16.0-4%2bdeb10u1.dsc' cairo_1.16.0-4+deb10u1.dsc 2838 SHA256:756b8750f4c8e1c578da1a60ff2a0b2f98c6cb528a4e183725d12562f061dd85
 'http://deb.debian.org/debian/pool/main/c/cairo/cairo_1.16.0.orig.tar.xz' cairo_1.16.0.orig.tar.xz 41997432 SHA256:5e7b29b3f113ef870d1e3ecf8adf21f923396401604bda16d44be45e66052331
-'http://deb.debian.org/debian/pool/main/c/cairo/cairo_1.16.0-4+deb10u1.debian.tar.xz' cairo_1.16.0-4+deb10u1.debian.tar.xz 30840 SHA256:5e99c19f48d4aa01096404d257f5c015b26ad854d950d5ab1f4e470e356463b1
+'http://deb.debian.org/debian/pool/main/c/cairo/cairo_1.16.0-4%2bdeb10u1.debian.tar.xz' cairo_1.16.0-4+deb10u1.debian.tar.xz 30840 SHA256:5e99c19f48d4aa01096404d257f5c015b26ad854d950d5ab1f4e470e356463b1
 ```
 
 Other potentially useful URLs:
@@ -1094,9 +1094,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris charls=2.0.0+dfsg-1
-'http://deb.debian.org/debian/pool/main/c/charls/charls_2.0.0+dfsg-1.dsc' charls_2.0.0+dfsg-1.dsc 2020 SHA256:47e52faf488e03e200605c26900690987c3dc8c2a1764120f2345d15d8d03a8c
-'http://deb.debian.org/debian/pool/main/c/charls/charls_2.0.0+dfsg.orig.tar.xz' charls_2.0.0+dfsg.orig.tar.xz 244076 SHA256:678dc217bb18648f139fdffa0bc3c3a6703ab5a65011138156b49781b3bac17e
-'http://deb.debian.org/debian/pool/main/c/charls/charls_2.0.0+dfsg-1.debian.tar.xz' charls_2.0.0+dfsg-1.debian.tar.xz 4720 SHA256:2a56c50528111304b9ae75bf75cf4dd7a7c564ac6456cdc3d067c3ad542e4086
+'http://deb.debian.org/debian/pool/main/c/charls/charls_2.0.0%2bdfsg-1.dsc' charls_2.0.0+dfsg-1.dsc 2020 SHA256:47e52faf488e03e200605c26900690987c3dc8c2a1764120f2345d15d8d03a8c
+'http://deb.debian.org/debian/pool/main/c/charls/charls_2.0.0%2bdfsg.orig.tar.xz' charls_2.0.0+dfsg.orig.tar.xz 244076 SHA256:678dc217bb18648f139fdffa0bc3c3a6703ab5a65011138156b49781b3bac17e
+'http://deb.debian.org/debian/pool/main/c/charls/charls_2.0.0%2bdfsg-1.debian.tar.xz' charls_2.0.0+dfsg-1.debian.tar.xz 4720 SHA256:2a56c50528111304b9ae75bf75cf4dd7a7c564ac6456cdc3d067c3ad542e4086
 ```
 
 Other potentially useful URLs:
@@ -1267,9 +1267,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris console-bridge=0.4.3+dfsg-1
-'http://deb.debian.org/debian/pool/main/c/console-bridge/console-bridge_0.4.3+dfsg-1.dsc' console-bridge_0.4.3+dfsg-1.dsc 1949 SHA256:5e42755791d518b4a79bc93a07ef7f10f6be0eaffc3d960a380c4e49ef88d290
-'http://deb.debian.org/debian/pool/main/c/console-bridge/console-bridge_0.4.3+dfsg.orig.tar.xz' console-bridge_0.4.3+dfsg.orig.tar.xz 5696 SHA256:d9f9f5a3f8c57fc588e4156d7f013f9c181d3569686952950612a284fc683ff5
-'http://deb.debian.org/debian/pool/main/c/console-bridge/console-bridge_0.4.3+dfsg-1.debian.tar.xz' console-bridge_0.4.3+dfsg-1.debian.tar.xz 3656 SHA256:8f2113cd5d0954adb0d14dcadb96168e8613899039e51e1d2f303a4ce16e1300
+'http://deb.debian.org/debian/pool/main/c/console-bridge/console-bridge_0.4.3%2bdfsg-1.dsc' console-bridge_0.4.3+dfsg-1.dsc 1949 SHA256:5e42755791d518b4a79bc93a07ef7f10f6be0eaffc3d960a380c4e49ef88d290
+'http://deb.debian.org/debian/pool/main/c/console-bridge/console-bridge_0.4.3%2bdfsg.orig.tar.xz' console-bridge_0.4.3+dfsg.orig.tar.xz 5696 SHA256:d9f9f5a3f8c57fc588e4156d7f013f9c181d3569686952950612a284fc683ff5
+'http://deb.debian.org/debian/pool/main/c/console-bridge/console-bridge_0.4.3%2bdfsg-1.debian.tar.xz' console-bridge_0.4.3+dfsg-1.debian.tar.xz 3656 SHA256:8f2113cd5d0954adb0d14dcadb96168e8613899039e51e1d2f303a4ce16e1300
 ```
 
 Other potentially useful URLs:
@@ -1352,9 +1352,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris cryptsetup=2:2.1.0-5+deb10u2
-'http://deb.debian.org/debian/pool/main/c/cryptsetup/cryptsetup_2.1.0-5+deb10u2.dsc' cryptsetup_2.1.0-5+deb10u2.dsc 2842 SHA256:be8654f3862a7271cb313a31a862729697c92e28c4dff94d7b575d98e98d9e1a
+'http://deb.debian.org/debian/pool/main/c/cryptsetup/cryptsetup_2.1.0-5%2bdeb10u2.dsc' cryptsetup_2.1.0-5+deb10u2.dsc 2842 SHA256:be8654f3862a7271cb313a31a862729697c92e28c4dff94d7b575d98e98d9e1a
 'http://deb.debian.org/debian/pool/main/c/cryptsetup/cryptsetup_2.1.0.orig.tar.gz' cryptsetup_2.1.0.orig.tar.gz 10708886 SHA256:e34b6502a8f72a5d76b0dc25349612c83e81d6d7d59a3feda50d66e6859f669e
-'http://deb.debian.org/debian/pool/main/c/cryptsetup/cryptsetup_2.1.0-5+deb10u2.debian.tar.xz' cryptsetup_2.1.0-5+deb10u2.debian.tar.xz 112312 SHA256:f775f41955845c849659b83e324514e3b14dbf7a63a7331b9ccbcf3c77252ab0
+'http://deb.debian.org/debian/pool/main/c/cryptsetup/cryptsetup_2.1.0-5%2bdeb10u2.debian.tar.xz' cryptsetup_2.1.0-5+deb10u2.debian.tar.xz 112312 SHA256:f775f41955845c849659b83e324514e3b14dbf7a63a7331b9ccbcf3c77252ab0
 ```
 
 Other potentially useful URLs:
@@ -1378,9 +1378,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris crystalhd=1:0.0~git20110715.fdd2f19-13
-'http://deb.debian.org/debian/pool/main/c/crystalhd/crystalhd_0.0~git20110715.fdd2f19-13.dsc' crystalhd_0.0~git20110715.fdd2f19-13.dsc 2363 SHA256:c545c6e51bdd03a34a1f311eb5d52b1316ba9f365cdbba39a1b0fa413ed3df76
-'http://deb.debian.org/debian/pool/main/c/crystalhd/crystalhd_0.0~git20110715.fdd2f19.orig.tar.gz' crystalhd_0.0~git20110715.fdd2f19.orig.tar.gz 1186072 SHA256:a1c22908b85085dcc4591bc033fe054be63eab59b7d35f0a9ab3fcb2600722b7
-'http://deb.debian.org/debian/pool/main/c/crystalhd/crystalhd_0.0~git20110715.fdd2f19-13.debian.tar.xz' crystalhd_0.0~git20110715.fdd2f19-13.debian.tar.xz 15320 SHA256:66308990232a5a91501f5243946a95a03ef36e922f6704c18d4ea380e02ce9bb
+'http://deb.debian.org/debian/pool/main/c/crystalhd/crystalhd_0.0%7egit20110715.fdd2f19-13.dsc' crystalhd_0.0~git20110715.fdd2f19-13.dsc 2363 SHA256:c545c6e51bdd03a34a1f311eb5d52b1316ba9f365cdbba39a1b0fa413ed3df76
+'http://deb.debian.org/debian/pool/main/c/crystalhd/crystalhd_0.0%7egit20110715.fdd2f19.orig.tar.gz' crystalhd_0.0~git20110715.fdd2f19.orig.tar.gz 1186072 SHA256:a1c22908b85085dcc4591bc033fe054be63eab59b7d35f0a9ab3fcb2600722b7
+'http://deb.debian.org/debian/pool/main/c/crystalhd/crystalhd_0.0%7egit20110715.fdd2f19-13.debian.tar.xz' crystalhd_0.0~git20110715.fdd2f19-13.debian.tar.xz 15320 SHA256:66308990232a5a91501f5243946a95a03ef36e922f6704c18d4ea380e02ce9bb
 ```
 
 Other potentially useful URLs:
@@ -1408,10 +1408,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris cups=2.2.10-6+deb10u4
-'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10-6+deb10u4.dsc' cups_2.2.10-6+deb10u4.dsc 3472 SHA256:5b6fc094d7ec4fdf21d6f6c2d35e8b20015d6ecf2e4178aed0a587f869e43883
+'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10-6%2bdeb10u4.dsc' cups_2.2.10-6+deb10u4.dsc 3472 SHA256:5b6fc094d7ec4fdf21d6f6c2d35e8b20015d6ecf2e4178aed0a587f869e43883
 'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10.orig.tar.gz' cups_2.2.10.orig.tar.gz 10403568 SHA256:77c8b2b3bb7fe8b5fbfffc307f2c817b2d7ec67b657f261a1dd1c61ab81205bb
 'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10.orig.tar.gz.asc' cups_2.2.10.orig.tar.gz.asc 864 SHA256:be235dd0cc526e5bde2a67f0dc2888be5d8dc40d1dfa44ab1a322d83f606e82d
-'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10-6+deb10u4.debian.tar.xz' cups_2.2.10-6+deb10u4.debian.tar.xz 361288 SHA256:c5e1fd533a8e2489d29beb5caafb8fb8cbd4e9acea5bfadf1417eec5d8260aeb
+'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.10-6%2bdeb10u4.debian.tar.xz' cups_2.2.10-6+deb10u4.debian.tar.xz 361288 SHA256:c5e1fd533a8e2489d29beb5caafb8fb8cbd4e9acea5bfadf1417eec5d8260aeb
 ```
 
 Other potentially useful URLs:
@@ -1441,9 +1441,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris curl=7.64.0-4+deb10u2
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0-4+deb10u2.dsc' curl_7.64.0-4+deb10u2.dsc 2719 SHA256:3cc585f4c22c0c001527f5f26f5a6154a86d1df9752aa118bf7d8e892ec4fac2
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0-4%2bdeb10u2.dsc' curl_7.64.0-4+deb10u2.dsc 2719 SHA256:3cc585f4c22c0c001527f5f26f5a6154a86d1df9752aa118bf7d8e892ec4fac2
 'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0.orig.tar.gz' curl_7.64.0.orig.tar.gz 4032645 SHA256:cb90d2eb74d4e358c1ed1489f8e3af96b50ea4374ad71f143fa4595e998d81b5
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0-4+deb10u2.debian.tar.xz' curl_7.64.0-4+deb10u2.debian.tar.xz 43572 SHA256:6b7f793e0cd41e2ccb49301ad4e58c83282f46be7c9415c9280164834efd0e52
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.64.0-4%2bdeb10u2.debian.tar.xz' curl_7.64.0-4+deb10u2.debian.tar.xz 43572 SHA256:6b7f793e0cd41e2ccb49301ad4e58c83282f46be7c9415c9280164834efd0e52
 ```
 
 Other potentially useful URLs:
@@ -1469,9 +1469,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris cyrus-sasl2=2.1.27+dfsg-1+deb10u1
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-1+deb10u1.dsc' cyrus-sasl2_2.1.27+dfsg-1+deb10u1.dsc 3580 SHA256:4537e3acdf1e009c402110aa47d6f5acef87594b4ad7e13733d3956d85b2d110
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg.orig.tar.xz' cyrus-sasl2_2.1.27+dfsg.orig.tar.xz 2058596 SHA256:108b0c691c423837264f05abb559ea76c3dfdd91246555e8abe87c129a6e37cd
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27+dfsg-1+deb10u1.debian.tar.xz' cyrus-sasl2_2.1.27+dfsg-1+deb10u1.debian.tar.xz 99972 SHA256:df71d3cd6c623702c5daeab440c91899c8d4e7955cf632e6bd07de3a65cb8538
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27%2bdfsg-1%2bdeb10u1.dsc' cyrus-sasl2_2.1.27+dfsg-1+deb10u1.dsc 3580 SHA256:4537e3acdf1e009c402110aa47d6f5acef87594b4ad7e13733d3956d85b2d110
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27%2bdfsg.orig.tar.xz' cyrus-sasl2_2.1.27+dfsg.orig.tar.xz 2058596 SHA256:108b0c691c423837264f05abb559ea76c3dfdd91246555e8abe87c129a6e37cd
+'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.27%2bdfsg-1%2bdeb10u1.debian.tar.xz' cyrus-sasl2_2.1.27+dfsg-1+deb10u1.debian.tar.xz 99972 SHA256:df71d3cd6c623702c5daeab440c91899c8d4e7955cf632e6bd07de3a65cb8538
 ```
 
 Other potentially useful URLs:
@@ -1544,9 +1544,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris db5.3=5.3.28+dfsg1-0.5
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1-0.5.dsc' db5.3_5.3.28+dfsg1-0.5.dsc 2804 SHA256:600ef735e47273c7e8de0a9bbbf2d6f31cb1d2851117f94776d7952588c0ecc4
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1.orig.tar.xz' db5.3_5.3.28+dfsg1.orig.tar.xz 19723860 SHA256:b19bf3dd8ce74b95a7b215be9a7c8489e8e8f18da60d64d6340a06e75f497749
-'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg1-0.5.debian.tar.xz' db5.3_5.3.28+dfsg1-0.5.debian.tar.xz 29128 SHA256:682c1736c1b5f3afbd90cf24e085a0437821ae595dc54aeef8c09ddd1c3d05fe
+'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28%2bdfsg1-0.5.dsc' db5.3_5.3.28+dfsg1-0.5.dsc 2804 SHA256:600ef735e47273c7e8de0a9bbbf2d6f31cb1d2851117f94776d7952588c0ecc4
+'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28%2bdfsg1.orig.tar.xz' db5.3_5.3.28+dfsg1.orig.tar.xz 19723860 SHA256:b19bf3dd8ce74b95a7b215be9a7c8489e8e8f18da60d64d6340a06e75f497749
+'http://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28%2bdfsg1-0.5.debian.tar.xz' db5.3_5.3.28+dfsg1-0.5.debian.tar.xz 29128 SHA256:682c1736c1b5f3afbd90cf24e085a0437821ae595dc54aeef8c09ddd1c3d05fe
 ```
 
 Other potentially useful URLs:
@@ -1579,10 +1579,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris dbus=1.12.20-0+deb10u1
-'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20-0+deb10u1.dsc' dbus_1.12.20-0+deb10u1.dsc 3928 SHA256:38fc131a229914bdf8d3945992e53a3a7abab048c6d28c49014389fdbdc642fd
+'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20-0%2bdeb10u1.dsc' dbus_1.12.20-0+deb10u1.dsc 3928 SHA256:38fc131a229914bdf8d3945992e53a3a7abab048c6d28c49014389fdbdc642fd
 'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20.orig.tar.gz' dbus_1.12.20.orig.tar.gz 2095511 SHA256:f77620140ecb4cdc67f37fb444f8a6bea70b5b6461f12f1cbe2cec60fa7de5fe
 'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20.orig.tar.gz.asc' dbus_1.12.20.orig.tar.gz.asc 833 SHA256:a5f4d51c9c95a6cf7270abb6548894d91d51eebc0e9f996d0951c8ee925894e7
-'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20-0+deb10u1.debian.tar.xz' dbus_1.12.20-0+deb10u1.debian.tar.xz 63300 SHA256:52dafb74ae52ab16159635db7762bdd41c584e292d3e93f84872b47df6004f49
+'http://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.20-0%2bdeb10u1.debian.tar.xz' dbus_1.12.20-0+deb10u1.debian.tar.xz 63300 SHA256:52dafb74ae52ab16159635db7762bdd41c584e292d3e93f84872b47df6004f49
 ```
 
 Other potentially useful URLs:
@@ -1633,8 +1633,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris debconf=1.5.71+deb10u1
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.71+deb10u1.dsc' debconf_1.5.71+deb10u1.dsc 2199 SHA256:9bad49c9ec67cfe5b516813a8643e8c22d89434fee6947c16c27ab5cbb99c7d5
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.71+deb10u1.tar.xz' debconf_1.5.71+deb10u1.tar.xz 570832 SHA256:cfa00cb4ac50919b8a1e3a9190a06a248e83e3f0362fa70e49237a3a2686dc61
+'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.71%2bdeb10u1.dsc' debconf_1.5.71+deb10u1.dsc 2199 SHA256:9bad49c9ec67cfe5b516813a8643e8c22d89434fee6947c16c27ab5cbb99c7d5
+'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.71%2bdeb10u1.tar.xz' debconf_1.5.71+deb10u1.tar.xz 570832 SHA256:cfa00cb4ac50919b8a1e3a9190a06a248e83e3f0362fa70e49237a3a2686dc61
 ```
 
 Other potentially useful URLs:
@@ -1657,8 +1657,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris debian-archive-keyring=2019.1+deb10u1
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2019.1+deb10u1.dsc' debian-archive-keyring_2019.1+deb10u1.dsc 1878 SHA256:5e331767f3b49a6da251e0723604ac953496536965dfddc1d527d23d028f0de0
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2019.1+deb10u1.tar.xz' debian-archive-keyring_2019.1+deb10u1.tar.xz 149144 SHA256:ffb63bc54d67f3d9125ebbb7298fdf3be1d18a6df1816d5ae96f1cf0f141eb39
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2019.1%2bdeb10u1.dsc' debian-archive-keyring_2019.1+deb10u1.dsc 1878 SHA256:5e331767f3b49a6da251e0723604ac953496536965dfddc1d527d23d028f0de0
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2019.1%2bdeb10u1.tar.xz' debian-archive-keyring_2019.1+deb10u1.tar.xz 149144 SHA256:ffb63bc54d67f3d9125ebbb7298fdf3be1d18a6df1816d5ae96f1cf0f141eb39
 ```
 
 Other potentially useful URLs:
@@ -1780,8 +1780,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris distro-info-data=0.41+deb10u4
-'http://deb.debian.org/debian/pool/main/d/distro-info-data/distro-info-data_0.41+deb10u4.dsc' distro-info-data_0.41+deb10u4.dsc 1070 SHA256:a06a76f301d12584cd8da00f63fe4ab440767e4d0188cb2fcedfa511bf2b2252
-'http://deb.debian.org/debian/pool/main/d/distro-info-data/distro-info-data_0.41+deb10u4.tar.xz' distro-info-data_0.41+deb10u4.tar.xz 7368 SHA256:1dccf7b8729c58c781d0931f7b8933884eaf00bb1ffcbe147b2e89c4bfaa7915
+'http://deb.debian.org/debian/pool/main/d/distro-info-data/distro-info-data_0.41%2bdeb10u4.dsc' distro-info-data_0.41+deb10u4.dsc 1070 SHA256:a06a76f301d12584cd8da00f63fe4ab440767e4d0188cb2fcedfa511bf2b2252
+'http://deb.debian.org/debian/pool/main/d/distro-info-data/distro-info-data_0.41%2bdeb10u4.tar.xz' distro-info-data_0.41+deb10u4.tar.xz 7368 SHA256:1dccf7b8729c58c781d0931f7b8933884eaf00bb1ffcbe147b2e89c4bfaa7915
 ```
 
 Other potentially useful URLs:
@@ -1863,10 +1863,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris e2fsprogs=1.44.5-1+deb10u3
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.44.5-1+deb10u3.dsc' e2fsprogs_1.44.5-1+deb10u3.dsc 2903 SHA256:acdc31d6fd491f9db97aabc96340559d8492b98e3549df32d8369690e03058dc
+'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.44.5-1%2bdeb10u3.dsc' e2fsprogs_1.44.5-1+deb10u3.dsc 2903 SHA256:acdc31d6fd491f9db97aabc96340559d8492b98e3549df32d8369690e03058dc
 'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.44.5.orig.tar.gz' e2fsprogs_1.44.5.orig.tar.gz 7619237 SHA256:2e211fae27ef74d5af4a4e40b10b8df7f87c655933bd171aab4889bfc4e6d1cc
 'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.44.5.orig.tar.gz.asc' e2fsprogs_1.44.5.orig.tar.gz.asc 488 SHA256:c0e3e4e51f46c005890963b005015b784b2f19e291a16a15681b9906528f557e
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.44.5-1+deb10u3.debian.tar.xz' e2fsprogs_1.44.5-1+deb10u3.debian.tar.xz 82412 SHA256:0114857448922a218613f369f665f03f1b1435004c9d79ce5ee1a8a8a6cec53f
+'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.44.5-1%2bdeb10u3.debian.tar.xz' e2fsprogs_1.44.5-1+deb10u3.debian.tar.xz 82412 SHA256:0114857448922a218613f369f665f03f1b1435004c9d79ce5ee1a8a8a6cec53f
 ```
 
 Other potentially useful URLs:
@@ -1972,9 +1972,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris expat=2.2.6-2+deb10u1
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2+deb10u1.dsc' expat_2.2.6-2+deb10u1.dsc 2136 SHA256:a32a035c9883b70ddf739eaacaa5c790ec5bf3027ba61eefdbc0cdf634aa4d96
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2%2bdeb10u1.dsc' expat_2.2.6-2+deb10u1.dsc 2136 SHA256:a32a035c9883b70ddf739eaacaa5c790ec5bf3027ba61eefdbc0cdf634aa4d96
 'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2+deb10u1.debian.tar.xz' expat_2.2.6-2+deb10u1.debian.tar.xz 12032 SHA256:15e75199a33c4e902788410f37e784c1082906e703c8619c4cfc715a0191e02b
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2%2bdeb10u1.debian.tar.xz' expat_2.2.6-2+deb10u1.debian.tar.xz 12032 SHA256:15e75199a33c4e902788410f37e784c1082906e703c8619c4cfc715a0191e02b
 ```
 
 Other potentially useful URLs:
@@ -2027,10 +2027,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ffmpeg=7:4.1.8-0+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.8-0+deb10u1.dsc' ffmpeg_4.1.8-0+deb10u1.dsc 5211 SHA256:72f0b6eed9bccdfe92c80f33a18fd4f4ebbea3d4b1f3ceca958687cae4f66419
+'http://security.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.8-0%2bdeb10u1.dsc' ffmpeg_4.1.8-0+deb10u1.dsc 5211 SHA256:72f0b6eed9bccdfe92c80f33a18fd4f4ebbea3d4b1f3ceca958687cae4f66419
 'http://security.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.8.orig.tar.xz' ffmpeg_4.1.8.orig.tar.xz 8920648 SHA256:715db4b6142d0587db82ba8049e4de117f08530cca5f50f5d6490d89ea1138c4
 'http://security.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.8.orig.tar.xz.asc' ffmpeg_4.1.8.orig.tar.xz.asc 520 SHA256:f36e4e41bd700d74af42932252dfc08077f511de32af9ad02dda9e0f1b198af8
-'http://security.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.8-0+deb10u1.debian.tar.xz' ffmpeg_4.1.8-0+deb10u1.debian.tar.xz 47964 SHA256:ec7efcade23617aa89093b6afde8f3128c8fec9e5dd4fa747669bc6f46b9ddf4
+'http://security.debian.org/debian-security/pool/updates/main/f/ffmpeg/ffmpeg_4.1.8-0%2bdeb10u1.debian.tar.xz' ffmpeg_4.1.8-0+deb10u1.debian.tar.xz 47964 SHA256:ec7efcade23617aa89093b6afde8f3128c8fec9e5dd4fa747669bc6f46b9ddf4
 ```
 
 Other potentially useful URLs:
@@ -2054,9 +2054,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris findutils=4.6.0+git+20190209-2
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0+git+20190209-2.dsc' findutils_4.6.0+git+20190209-2.dsc 2137 SHA256:e09430f44f976ee0e51e3226543247668b4ef88c05d14a84ed2d5a6f1bd07421
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0+git+20190209.orig.tar.xz' findutils_4.6.0+git+20190209.orig.tar.xz 1893084 SHA256:6832b3f6ddc0e2718795e6732ea40cc5309b948505f55fb9935919d6aaac7e9d
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0+git+20190209-2.debian.tar.xz' findutils_4.6.0+git+20190209-2.debian.tar.xz 26628 SHA256:d6f4c6fedc27cf5d616c9fbf41a46b8fb8b078f1f21045b484419b145037e849
+'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0%2bgit%2b20190209-2.dsc' findutils_4.6.0+git+20190209-2.dsc 2137 SHA256:e09430f44f976ee0e51e3226543247668b4ef88c05d14a84ed2d5a6f1bd07421
+'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0%2bgit%2b20190209.orig.tar.xz' findutils_4.6.0+git+20190209.orig.tar.xz 1893084 SHA256:6832b3f6ddc0e2718795e6732ea40cc5309b948505f55fb9935919d6aaac7e9d
+'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0%2bgit%2b20190209-2.debian.tar.xz' findutils_4.6.0+git+20190209-2.debian.tar.xz 26628 SHA256:d6f4c6fedc27cf5d616c9fbf41a46b8fb8b078f1f21045b484419b145037e849
 ```
 
 Other potentially useful URLs:
@@ -2084,9 +2084,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris flann=1.9.1+dfsg-7
-'http://deb.debian.org/debian/pool/main/f/flann/flann_1.9.1+dfsg-7.dsc' flann_1.9.1+dfsg-7.dsc 2385 SHA256:8f3f2754c864a28eb8c316079a53b1cdeba1fd788fee65734dde02e22df9a203
-'http://deb.debian.org/debian/pool/main/f/flann/flann_1.9.1+dfsg.orig.tar.gz' flann_1.9.1+dfsg.orig.tar.gz 478803 SHA256:6cc1d97f504542b5f07c7eff46e87f5c9a67254b6d86ec500b15c1b7c51e1b61
-'http://deb.debian.org/debian/pool/main/f/flann/flann_1.9.1+dfsg-7.debian.tar.xz' flann_1.9.1+dfsg-7.debian.tar.xz 8352 SHA256:83111da05f3193cce81a54d734b8c2919ca0c90bf2d52bfba3be848837436c60
+'http://deb.debian.org/debian/pool/main/f/flann/flann_1.9.1%2bdfsg-7.dsc' flann_1.9.1+dfsg-7.dsc 2385 SHA256:8f3f2754c864a28eb8c316079a53b1cdeba1fd788fee65734dde02e22df9a203
+'http://deb.debian.org/debian/pool/main/f/flann/flann_1.9.1%2bdfsg.orig.tar.gz' flann_1.9.1+dfsg.orig.tar.gz 478803 SHA256:6cc1d97f504542b5f07c7eff46e87f5c9a67254b6d86ec500b15c1b7c51e1b61
+'http://deb.debian.org/debian/pool/main/f/flann/flann_1.9.1%2bdfsg-7.debian.tar.xz' flann_1.9.1+dfsg-7.debian.tar.xz 8352 SHA256:83111da05f3193cce81a54d734b8c2919ca0c90bf2d52bfba3be848837436c60
 ```
 
 Other potentially useful URLs:
@@ -2178,14 +2178,14 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris freetype=2.9.1-3+deb10u2
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-3+deb10u2.dsc' freetype_2.9.1-3+deb10u2.dsc 3845 SHA256:374330a49a699ec8dc4fff06b3270ae4d236d5b68a1258d60512f6edc9ddd1d1
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-3%2bdeb10u2.dsc' freetype_2.9.1-3+deb10u2.dsc 3845 SHA256:374330a49a699ec8dc4fff06b3270ae4d236d5b68a1258d60512f6edc9ddd1d1
 'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2demos.tar.gz' freetype_2.9.1.orig-ft2demos.tar.gz 294850 SHA256:3d440aad3481285c7455f1593577e375c9d5792c800bbaba68d46fd75130fab9
 'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2demos.tar.gz.asc' freetype_2.9.1.orig-ft2demos.tar.gz.asc 359 SHA256:665b8357378dc715fbac964d05cdcc2a2f7fd1e9d7918a27bf50f4d0a17f0d30
 'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2docs.tar.gz' freetype_2.9.1.orig-ft2docs.tar.gz 2123920 SHA256:f57c1297f5ad2ad4764f491317fa0f548bd307c4513185d4a0602412e83b1dc9
 'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2docs.tar.gz.asc' freetype_2.9.1.orig-ft2docs.tar.gz.asc 359 SHA256:c4c674db43603f719018716970569d1722d0de46fa94757eb7f39266d72cdbd1
 'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig.tar.gz' freetype_2.9.1.orig.tar.gz 2533956 SHA256:ec391504e55498adceb30baceebd147a6e963f636eb617424bcfc47a169898ce
 'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig.tar.gz.asc' freetype_2.9.1.orig.tar.gz.asc 359 SHA256:2c2c5ae3b3838053b94366639e802b18bc4761003ea15ce73402d276baec424d
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-3+deb10u2.debian.tar.xz' freetype_2.9.1-3+deb10u2.debian.tar.xz 112652 SHA256:0fdd4dc35e232a9dc09450fc0b961e0642c6a54135abea53be64991f26d31cc6
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-3%2bdeb10u2.debian.tar.xz' freetype_2.9.1-3+deb10u2.debian.tar.xz 112652 SHA256:0fdd4dc35e232a9dc09450fc0b961e0642c6a54135abea53be64991f26d31cc6
 ```
 
 Other potentially useful URLs:
@@ -2246,9 +2246,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris fribidi=1.0.5-3.1+deb10u1
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.5-3.1+deb10u1.dsc' fribidi_1.0.5-3.1+deb10u1.dsc 2476 SHA256:671fc5877218b7b86e1243fc38051f1e0290dd084fec76e23c67be86458be2ab
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.5-3.1%2bdeb10u1.dsc' fribidi_1.0.5-3.1+deb10u1.dsc 2476 SHA256:671fc5877218b7b86e1243fc38051f1e0290dd084fec76e23c67be86458be2ab
 'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.5.orig.tar.bz2' fribidi_1.0.5.orig.tar.bz2 2082617 SHA256:6a64f2a687f5c4f203a46fa659f43dd43d1f8b845df8d723107e8a7e6158e4ce
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.5-3.1+deb10u1.debian.tar.xz' fribidi_1.0.5-3.1+deb10u1.debian.tar.xz 9656 SHA256:6db937390812dcfe3c929999accfd376a310b67af9c4fdb7949f14c1cc62040d
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.5-3.1%2bdeb10u1.debian.tar.xz' fribidi_1.0.5-3.1+deb10u1.debian.tar.xz 9656 SHA256:6db937390812dcfe3c929999accfd376a310b67af9c4fdb7949f14c1cc62040d
 ```
 
 Other potentially useful URLs:
@@ -2426,9 +2426,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gdal=2.4.0+dfsg-1
-'http://deb.debian.org/debian/pool/main/g/gdal/gdal_2.4.0+dfsg-1.dsc' gdal_2.4.0+dfsg-1.dsc 3449 SHA256:86d3685e4e924db8289059fee5a0896c1e07aaaf27597a15622c0c6d891cb6b0
-'http://deb.debian.org/debian/pool/main/g/gdal/gdal_2.4.0+dfsg.orig.tar.xz' gdal_2.4.0+dfsg.orig.tar.xz 9527148 SHA256:ad90a095018fc603f2c9f445da4a858d22caa019216ece765afb165ab0991427
-'http://deb.debian.org/debian/pool/main/g/gdal/gdal_2.4.0+dfsg-1.debian.tar.xz' gdal_2.4.0+dfsg-1.debian.tar.xz 214668 SHA256:242b536c2bf532e0788acc623c87d5028791f0b0c22dafeacdf4ee50dcba3835
+'http://deb.debian.org/debian/pool/main/g/gdal/gdal_2.4.0%2bdfsg-1.dsc' gdal_2.4.0+dfsg-1.dsc 3449 SHA256:86d3685e4e924db8289059fee5a0896c1e07aaaf27597a15622c0c6d891cb6b0
+'http://deb.debian.org/debian/pool/main/g/gdal/gdal_2.4.0%2bdfsg.orig.tar.xz' gdal_2.4.0+dfsg.orig.tar.xz 9527148 SHA256:ad90a095018fc603f2c9f445da4a858d22caa019216ece765afb165ab0991427
+'http://deb.debian.org/debian/pool/main/g/gdal/gdal_2.4.0%2bdfsg-1.debian.tar.xz' gdal_2.4.0+dfsg-1.debian.tar.xz 214668 SHA256:242b536c2bf532e0788acc623c87d5028791f0b0c22dafeacdf4ee50dcba3835
 ```
 
 Other potentially useful URLs:
@@ -2529,9 +2529,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gdk-pixbuf=2.38.1+dfsg-1
-'http://deb.debian.org/debian/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1+dfsg-1.dsc' gdk-pixbuf_2.38.1+dfsg-1.dsc 2903 SHA256:6f201d9dcb9b867678fa619bf054ff871105daca0fbc6a2e0639997d2bff91bc
-'http://deb.debian.org/debian/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1+dfsg.orig.tar.xz' gdk-pixbuf_2.38.1+dfsg.orig.tar.xz 5428160 SHA256:9d8666f01bfb31df1168e50d08d5646d18884ed674058b8b216397a85eac922b
-'http://deb.debian.org/debian/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1+dfsg-1.debian.tar.xz' gdk-pixbuf_2.38.1+dfsg-1.debian.tar.xz 16792 SHA256:6340efafbdb7b270fe3dd94a0e5c929669f4f0324b9f13a4ef0f2c402253a36f
+'http://deb.debian.org/debian/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1%2bdfsg-1.dsc' gdk-pixbuf_2.38.1+dfsg-1.dsc 2903 SHA256:6f201d9dcb9b867678fa619bf054ff871105daca0fbc6a2e0639997d2bff91bc
+'http://deb.debian.org/debian/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1%2bdfsg.orig.tar.xz' gdk-pixbuf_2.38.1+dfsg.orig.tar.xz 5428160 SHA256:9d8666f01bfb31df1168e50d08d5646d18884ed674058b8b216397a85eac922b
+'http://deb.debian.org/debian/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1%2bdfsg-1.debian.tar.xz' gdk-pixbuf_2.38.1+dfsg-1.debian.tar.xz 16792 SHA256:6340efafbdb7b270fe3dd94a0e5c929669f4f0324b9f13a4ef0f2c402253a36f
 ```
 
 Other potentially useful URLs:
@@ -2630,9 +2630,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris git=1:2.20.1-2+deb10u3
-'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1-2+deb10u3.dsc' git_2.20.1-2+deb10u3.dsc 2923 SHA256:6322d0dbe9b867a6cd1cd75f95a4a20335faa2030c38688f460ddaaaacbd4d06
+'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1-2%2bdeb10u3.dsc' git_2.20.1-2+deb10u3.dsc 2923 SHA256:6322d0dbe9b867a6cd1cd75f95a4a20335faa2030c38688f460ddaaaacbd4d06
 'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1.orig.tar.xz' git_2.20.1.orig.tar.xz 5359872 SHA256:9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9
-'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1-2+deb10u3.debian.tar.xz' git_2.20.1-2+deb10u3.debian.tar.xz 646216 SHA256:3c6e2f8495350bccd0981d579d4d1cac6b0e051e1f7ba8b1d22c842bd4cb3453
+'http://deb.debian.org/debian/pool/main/g/git/git_2.20.1-2%2bdeb10u3.debian.tar.xz' git_2.20.1-2+deb10u3.debian.tar.xz 646216 SHA256:3c6e2f8495350bccd0981d579d4d1cac6b0e051e1f7ba8b1d22c842bd4cb3453
 ```
 
 Other potentially useful URLs:
@@ -2658,9 +2658,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gl2ps=1.4.0+dfsg1-2
-'http://deb.debian.org/debian/pool/main/g/gl2ps/gl2ps_1.4.0+dfsg1-2.dsc' gl2ps_1.4.0+dfsg1-2.dsc 2216 SHA256:c7c5659010f4dde95ebf3ac43eb5f85d67700241461c58c6f5114f36e0986bea
-'http://deb.debian.org/debian/pool/main/g/gl2ps/gl2ps_1.4.0+dfsg1.orig.tar.xz' gl2ps_1.4.0+dfsg1.orig.tar.xz 59540 SHA256:7a2a914027182ccdb81284bb6fff203648df97de4ad40d51b123eeae555a887f
-'http://deb.debian.org/debian/pool/main/g/gl2ps/gl2ps_1.4.0+dfsg1-2.debian.tar.xz' gl2ps_1.4.0+dfsg1-2.debian.tar.xz 12540 SHA256:20cdc86d30f822ee2845f96eb42616dfa9f6224e80acb35b862b17d7d483effc
+'http://deb.debian.org/debian/pool/main/g/gl2ps/gl2ps_1.4.0%2bdfsg1-2.dsc' gl2ps_1.4.0+dfsg1-2.dsc 2216 SHA256:c7c5659010f4dde95ebf3ac43eb5f85d67700241461c58c6f5114f36e0986bea
+'http://deb.debian.org/debian/pool/main/g/gl2ps/gl2ps_1.4.0%2bdfsg1.orig.tar.xz' gl2ps_1.4.0+dfsg1.orig.tar.xz 59540 SHA256:7a2a914027182ccdb81284bb6fff203648df97de4ad40d51b123eeae555a887f
+'http://deb.debian.org/debian/pool/main/g/gl2ps/gl2ps_1.4.0%2bdfsg1-2.debian.tar.xz' gl2ps_1.4.0+dfsg1-2.debian.tar.xz 12540 SHA256:20cdc86d30f822ee2845f96eb42616dfa9f6224e80acb35b862b17d7d483effc
 ```
 
 Other potentially useful URLs:
@@ -2716,9 +2716,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glib-networking=2.58.0-2+deb10u2
-'http://deb.debian.org/debian/pool/main/g/glib-networking/glib-networking_2.58.0-2+deb10u2.dsc' glib-networking_2.58.0-2+deb10u2.dsc 2563 SHA256:f6b2e50aecca34adf31ca796c9c4ff11806693be257fafc445cf63cec6a35bfa
+'http://deb.debian.org/debian/pool/main/g/glib-networking/glib-networking_2.58.0-2%2bdeb10u2.dsc' glib-networking_2.58.0-2+deb10u2.dsc 2563 SHA256:f6b2e50aecca34adf31ca796c9c4ff11806693be257fafc445cf63cec6a35bfa
 'http://deb.debian.org/debian/pool/main/g/glib-networking/glib-networking_2.58.0.orig.tar.xz' glib-networking_2.58.0.orig.tar.xz 172632 SHA256:bdfa0255e031b8ee003cc283002536b77ee76450105f1dc6ab066b9bf4330068
-'http://deb.debian.org/debian/pool/main/g/glib-networking/glib-networking_2.58.0-2+deb10u2.debian.tar.xz' glib-networking_2.58.0-2+deb10u2.debian.tar.xz 10392 SHA256:a6cf9a402477dca577d2a326a243ad189d037e55d067879d55c5a2889f1e79ee
+'http://deb.debian.org/debian/pool/main/g/glib-networking/glib-networking_2.58.0-2%2bdeb10u2.debian.tar.xz' glib-networking_2.58.0-2+deb10u2.debian.tar.xz 10392 SHA256:a6cf9a402477dca577d2a326a243ad189d037e55d067879d55c5a2889f1e79ee
 ```
 
 Other potentially useful URLs:
@@ -2744,9 +2744,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glib2.0=2.58.3-2+deb10u3
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.58.3-2+deb10u3.dsc' glib2.0_2.58.3-2+deb10u3.dsc 3444 SHA256:1e016740f39e61ef728f4e2536dc3e3645d37c6dc8369816f8507792563643d8
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.58.3-2%2bdeb10u3.dsc' glib2.0_2.58.3-2+deb10u3.dsc 3444 SHA256:1e016740f39e61ef728f4e2536dc3e3645d37c6dc8369816f8507792563643d8
 'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.58.3.orig.tar.xz' glib2.0_2.58.3.orig.tar.xz 4863648 SHA256:8f43c31767e88a25da72b52a40f3301fefc49a665b56dc10ee7cc9565cbe7481
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.58.3-2+deb10u3.debian.tar.xz' glib2.0_2.58.3-2+deb10u3.debian.tar.xz 107124 SHA256:2749397b93fca317a7f47489390393dedda6ef3c9359488bbd475a698529cf7a
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.58.3-2%2bdeb10u3.debian.tar.xz' glib2.0_2.58.3-2+deb10u3.debian.tar.xz 107124 SHA256:2749397b93fca317a7f47489390393dedda6ef3c9359488bbd475a698529cf7a
 ```
 
 Other potentially useful URLs:
@@ -2803,9 +2803,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gmp=2:6.1.2+dfsg-4
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2+dfsg-4.dsc' gmp_6.1.2+dfsg-4.dsc 2123 SHA256:5e9c98e1636344bf0c84710ee564ee6032d6a9db26aa5d29857d65b2a979877c
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2+dfsg.orig.tar.xz' gmp_6.1.2+dfsg.orig.tar.xz 1804424 SHA256:18016f718f621e7641ddd4e57f8e140391c5183252e5998263ffff59198a65b7
-'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2+dfsg-4.debian.tar.xz' gmp_6.1.2+dfsg-4.debian.tar.xz 21416 SHA256:cb25b080d915d9e5a641920f0471b4deb5368af739c7675d887cf290c2cffbe2
+'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2%2bdfsg-4.dsc' gmp_6.1.2+dfsg-4.dsc 2123 SHA256:5e9c98e1636344bf0c84710ee564ee6032d6a9db26aa5d29857d65b2a979877c
+'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2%2bdfsg.orig.tar.xz' gmp_6.1.2+dfsg.orig.tar.xz 1804424 SHA256:18016f718f621e7641ddd4e57f8e140391c5183252e5998263ffff59198a65b7
+'http://deb.debian.org/debian/pool/main/g/gmp/gmp_6.1.2%2bdfsg-4.debian.tar.xz' gmp_6.1.2+dfsg-4.debian.tar.xz 21416 SHA256:cb25b080d915d9e5a641920f0471b4deb5368af739c7675d887cf290c2cffbe2
 ```
 
 Other potentially useful URLs:
@@ -2850,10 +2850,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gnupg2=2.2.12-1+deb10u1
-'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1+deb10u1.dsc' gnupg2_2.2.12-1+deb10u1.dsc 3261 SHA256:2e1ca8d194593c151228f6b54da51ccd0b17036a532c7724bfcab17594c886ed
+'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1%2bdeb10u1.dsc' gnupg2_2.2.12-1+deb10u1.dsc 3261 SHA256:2e1ca8d194593c151228f6b54da51ccd0b17036a532c7724bfcab17594c886ed
 'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12.orig.tar.bz2' gnupg2_2.2.12.orig.tar.bz2 6682303 SHA256:db030f8b4c98640e91300d36d516f1f4f8fe09514a94ea9fc7411ee1a34082cb
 'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12.orig.tar.bz2.asc' gnupg2_2.2.12.orig.tar.bz2.asc 3204 SHA256:97c8dc25c4c2fe9a39b2ffd81b65b6f3dc4ad359c9a81ca4bb9b4bdeb6167c60
-'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1+deb10u1.debian.tar.xz' gnupg2_2.2.12-1+deb10u1.debian.tar.xz 123224 SHA256:f8cd4f8a2b63208fd05ae433dc9cb11d2483a72ef057cfe5fcfe2385b7c63f38
+'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1%2bdeb10u1.debian.tar.xz' gnupg2_2.2.12-1+deb10u1.debian.tar.xz 123224 SHA256:f8cd4f8a2b63208fd05ae433dc9cb11d2483a72ef057cfe5fcfe2385b7c63f38
 ```
 
 Other potentially useful URLs:
@@ -2890,10 +2890,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gnutls28=3.6.7-4+deb10u7
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4+deb10u7.dsc' gnutls28_3.6.7-4+deb10u7.dsc 3354 SHA256:dac5aff80109fa5e05f4ab1cb5d402ee9caeefebaa12daf034bcdd7e614af6b2
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4%2bdeb10u7.dsc' gnutls28_3.6.7-4+deb10u7.dsc 3354 SHA256:dac5aff80109fa5e05f4ab1cb5d402ee9caeefebaa12daf034bcdd7e614af6b2
 'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
 'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz.asc' gnutls28_3.6.7.orig.tar.xz.asc 534 SHA256:a14d0a7b9295b65ae797a70f8e765024a2e363dca03d008bfce0aec2b3f292b0
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4+deb10u7.debian.tar.xz' gnutls28_3.6.7-4+deb10u7.debian.tar.xz 94000 SHA256:4f399badd85387e1dd42c811e16d10c4c22196e57142a7325ec44c52b3c6a168
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4%2bdeb10u7.debian.tar.xz' gnutls28_3.6.7-4+deb10u7.debian.tar.xz 94000 SHA256:4f399badd85387e1dd42c811e16d10c4c22196e57142a7325ec44c52b3c6a168
 ```
 
 Other potentially useful URLs:
@@ -3025,9 +3025,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris graphviz=2.40.1-6+deb10u1
-'http://deb.debian.org/debian/pool/main/g/graphviz/graphviz_2.40.1-6+deb10u1.dsc' graphviz_2.40.1-6+deb10u1.dsc 3245 SHA256:aa4b554ce1a2a048f2f4fb25ea84e5f4d9dbe594f39ca05b7468845f502ba1a3
+'http://deb.debian.org/debian/pool/main/g/graphviz/graphviz_2.40.1-6%2bdeb10u1.dsc' graphviz_2.40.1-6+deb10u1.dsc 3245 SHA256:aa4b554ce1a2a048f2f4fb25ea84e5f4d9dbe594f39ca05b7468845f502ba1a3
 'http://deb.debian.org/debian/pool/main/g/graphviz/graphviz_2.40.1.orig.tar.gz' graphviz_2.40.1.orig.tar.gz 25633455 SHA256:ca5218fade0204d59947126c38439f432853543b0818d9d728c589dfe7f3a421
-'http://deb.debian.org/debian/pool/main/g/graphviz/graphviz_2.40.1-6+deb10u1.debian.tar.xz' graphviz_2.40.1-6+deb10u1.debian.tar.xz 52100 SHA256:e9990d878a92936a217058988ac83aab24dcbc01c71fc7bb2fc7463957318b09
+'http://deb.debian.org/debian/pool/main/g/graphviz/graphviz_2.40.1-6%2bdeb10u1.debian.tar.xz' graphviz_2.40.1-6+deb10u1.debian.tar.xz 52100 SHA256:e9990d878a92936a217058988ac83aab24dcbc01c71fc7bb2fc7463957318b09
 ```
 
 Other potentially useful URLs:
@@ -3107,9 +3107,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gst-plugins-base1.0=1.14.4-2+deb10u1
-'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-2+deb10u1.dsc' gst-plugins-base1.0_1.14.4-2+deb10u1.dsc 4278 SHA256:33bff33b05373859678d36c64b7ecb64ff99ba95497e98e95dae75f94fa8efbd
+'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-2%2bdeb10u1.dsc' gst-plugins-base1.0_1.14.4-2+deb10u1.dsc 4278 SHA256:33bff33b05373859678d36c64b7ecb64ff99ba95497e98e95dae75f94fa8efbd
 'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4.orig.tar.xz' gst-plugins-base1.0_1.14.4.orig.tar.xz 3703232 SHA256:ca6139490e48863e7706d870ff4e8ac9f417b56f3b9e4b3ce490c13b09a77461
-'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-2+deb10u1.debian.tar.xz' gst-plugins-base1.0_1.14.4-2+deb10u1.debian.tar.xz 45788 SHA256:09680e228c545dd6b1b92ace5dceab53b4f33caf137699448b08dc03c712d576
+'http://deb.debian.org/debian/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-2%2bdeb10u1.debian.tar.xz' gst-plugins-base1.0_1.14.4-2+deb10u1.debian.tar.xz 45788 SHA256:09680e228c545dd6b1b92ace5dceab53b4f33caf137699448b08dc03c712d576
 ```
 
 Other potentially useful URLs:
@@ -3170,9 +3170,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gtk+3.0=3.24.5-1
-'http://deb.debian.org/debian/pool/main/g/gtk+3.0/gtk+3.0_3.24.5-1.dsc' gtk+3.0_3.24.5-1.dsc 3770 SHA256:a2371939541fcfc1c0a5c4840905cd77e496680e22485aeb5b869d64da6367f8
-'http://deb.debian.org/debian/pool/main/g/gtk+3.0/gtk+3.0_3.24.5.orig.tar.xz' gtk+3.0_3.24.5.orig.tar.xz 21012108 SHA256:0be5fb0d302bc3de26ab58c32990d895831e2b7c7418d0ffea1206d6a3ddb02f
-'http://deb.debian.org/debian/pool/main/g/gtk+3.0/gtk+3.0_3.24.5-1.debian.tar.xz' gtk+3.0_3.24.5-1.debian.tar.xz 150544 SHA256:baafc391b16f16b7ced315b414a5e9e23b38a06966292e2b2a356614ac30db5f
+'http://deb.debian.org/debian/pool/main/g/gtk%2b3.0/gtk%2b3.0_3.24.5-1.dsc' gtk+3.0_3.24.5-1.dsc 3770 SHA256:a2371939541fcfc1c0a5c4840905cd77e496680e22485aeb5b869d64da6367f8
+'http://deb.debian.org/debian/pool/main/g/gtk%2b3.0/gtk%2b3.0_3.24.5.orig.tar.xz' gtk+3.0_3.24.5.orig.tar.xz 21012108 SHA256:0be5fb0d302bc3de26ab58c32990d895831e2b7c7418d0ffea1206d6a3ddb02f
+'http://deb.debian.org/debian/pool/main/g/gtk%2b3.0/gtk%2b3.0_3.24.5-1.debian.tar.xz' gtk+3.0_3.24.5-1.debian.tar.xz 150544 SHA256:baafc391b16f16b7ced315b414a5e9e23b38a06966292e2b2a356614ac30db5f
 ```
 
 Other potentially useful URLs:
@@ -3196,9 +3196,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gts=0.7.6+darcs121130-4
-'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6+darcs121130-4.dsc' gts_0.7.6+darcs121130-4.dsc 2170 SHA256:3d7dbf72a2194891a485d03f8a002e8d149dc59a915a7bbf36b42c53408ef733
-'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6+darcs121130.orig.tar.gz' gts_0.7.6+darcs121130.orig.tar.gz 880569 SHA256:c23f72ab74bbf65599f8c0b599d6336fabe1ec2a09c19b70544eeefdc069b73b
-'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6+darcs121130-4.debian.tar.bz2' gts_0.7.6+darcs121130-4.debian.tar.bz2 13837 SHA256:1fcf9c79ca0b4fc3662de645ba4e65564ea974566a3ecd730e9908f1adc425cd
+'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6%2bdarcs121130-4.dsc' gts_0.7.6+darcs121130-4.dsc 2170 SHA256:3d7dbf72a2194891a485d03f8a002e8d149dc59a915a7bbf36b42c53408ef733
+'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6%2bdarcs121130.orig.tar.gz' gts_0.7.6+darcs121130.orig.tar.gz 880569 SHA256:c23f72ab74bbf65599f8c0b599d6336fabe1ec2a09c19b70544eeefdc069b73b
+'http://deb.debian.org/debian/pool/main/g/gts/gts_0.7.6%2bdarcs121130-4.debian.tar.bz2' gts_0.7.6+darcs121130-4.debian.tar.bz2 13837 SHA256:1fcf9c79ca0b4fc3662de645ba4e65564ea974566a3ecd730e9908f1adc425cd
 ```
 
 Other potentially useful URLs:
@@ -3279,9 +3279,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris hdf5=1.10.4+repack-10
-'http://deb.debian.org/debian/pool/main/h/hdf5/hdf5_1.10.4+repack-10.dsc' hdf5_1.10.4+repack-10.dsc 2636 SHA256:dbcbb9e3a4f1355b970a94cbb05903bf667bb3fa5c65f9236cc0e4282a22743d
-'http://deb.debian.org/debian/pool/main/h/hdf5/hdf5_1.10.4+repack.orig.tar.gz' hdf5_1.10.4+repack.orig.tar.gz 12443812 SHA256:9a7a23762a2f2dfb098bd655e1ee846d0412ec29c05e25c80e8f46b2d006e347
-'http://deb.debian.org/debian/pool/main/h/hdf5/hdf5_1.10.4+repack-10.debian.tar.xz' hdf5_1.10.4+repack-10.debian.tar.xz 132892 SHA256:a6a3a1968317384235ac809f4b359c1b963184884782c2f47e474266a1256b82
+'http://deb.debian.org/debian/pool/main/h/hdf5/hdf5_1.10.4%2brepack-10.dsc' hdf5_1.10.4+repack-10.dsc 2636 SHA256:dbcbb9e3a4f1355b970a94cbb05903bf667bb3fa5c65f9236cc0e4282a22743d
+'http://deb.debian.org/debian/pool/main/h/hdf5/hdf5_1.10.4%2brepack.orig.tar.gz' hdf5_1.10.4+repack.orig.tar.gz 12443812 SHA256:9a7a23762a2f2dfb098bd655e1ee846d0412ec29c05e25c80e8f46b2d006e347
+'http://deb.debian.org/debian/pool/main/h/hdf5/hdf5_1.10.4%2brepack-10.debian.tar.xz' hdf5_1.10.4+repack-10.debian.tar.xz 132892 SHA256:a6a3a1968317384235ac809f4b359c1b963184884782c2f47e474266a1256b82
 ```
 
 Other potentially useful URLs:
@@ -3437,9 +3437,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris icu=63.1-6+deb10u2
-'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u2.dsc' icu_63.1-6+deb10u2.dsc 2152 SHA256:4d175ca81d9605af871f634b831d75394f0497d66b523af8eaaf15846550333c
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6%2bdeb10u2.dsc' icu_63.1-6+deb10u2.dsc 2152 SHA256:4d175ca81d9605af871f634b831d75394f0497d66b523af8eaaf15846550333c
 'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1.orig.tar.xz' icu_63.1.orig.tar.xz 13638120 SHA256:347d0e6c39c3538b812c10c6c83815d4a089d578380387ae7d94c5b820948e82
-'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6+deb10u2.debian.tar.xz' icu_63.1-6+deb10u2.debian.tar.xz 25732 SHA256:1626f226cf3dad093bfc7874c5ebe9cc7a24e5fe8a1225a1de9fe576a4b9b463
+'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_63.1-6%2bdeb10u2.debian.tar.xz' icu_63.1-6+deb10u2.debian.tar.xz 25732 SHA256:1626f226cf3dad093bfc7874c5ebe9cc7a24e5fe8a1225a1de9fe576a4b9b463
 ```
 
 Other potentially useful URLs:
@@ -3517,9 +3517,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris infinipath-psm=3.3+20.604758e7-6
-'http://deb.debian.org/debian/pool/main/i/infinipath-psm/infinipath-psm_3.3+20.604758e7-6.dsc' infinipath-psm_3.3+20.604758e7-6.dsc 2284 SHA256:6cc7c9ae03a29f8be84a2b59a8980cfeb80922b3322e8631372160efd46328b9
-'http://deb.debian.org/debian/pool/main/i/infinipath-psm/infinipath-psm_3.3+20.604758e7.orig.tar.xz' infinipath-psm_3.3+20.604758e7.orig.tar.xz 287112 SHA256:2fb37b3436866b7f6d7244edded875bf7ebc89e7a09a1f372ace548d0f90481d
-'http://deb.debian.org/debian/pool/main/i/infinipath-psm/infinipath-psm_3.3+20.604758e7-6.debian.tar.xz' infinipath-psm_3.3+20.604758e7-6.debian.tar.xz 9340 SHA256:e5464e1588270d3a0e540dcbb739434576cebb132bfbeb6d1c5301386f24e95f
+'http://deb.debian.org/debian/pool/main/i/infinipath-psm/infinipath-psm_3.3%2b20.604758e7-6.dsc' infinipath-psm_3.3+20.604758e7-6.dsc 2284 SHA256:6cc7c9ae03a29f8be84a2b59a8980cfeb80922b3322e8631372160efd46328b9
+'http://deb.debian.org/debian/pool/main/i/infinipath-psm/infinipath-psm_3.3%2b20.604758e7.orig.tar.xz' infinipath-psm_3.3+20.604758e7.orig.tar.xz 287112 SHA256:2fb37b3436866b7f6d7244edded875bf7ebc89e7a09a1f372ace548d0f90481d
+'http://deb.debian.org/debian/pool/main/i/infinipath-psm/infinipath-psm_3.3%2b20.604758e7-6.debian.tar.xz' infinipath-psm_3.3+20.604758e7-6.debian.tar.xz 9340 SHA256:e5464e1588270d3a0e540dcbb739434576cebb132bfbeb6d1c5301386f24e95f
 ```
 
 Other potentially useful URLs:
@@ -3544,8 +3544,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris init-system-helpers=1.56+nmu1
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.56+nmu1.dsc' init-system-helpers_1.56+nmu1.dsc 1945 SHA256:96f7d1c696faf801eb5990223b2782dedaf4092efb9b0dcc13d038b91dbb1a51
-'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.56+nmu1.tar.xz' init-system-helpers_1.56+nmu1.tar.xz 40488 SHA256:ecb5b9a0dbf0b7e83ef41bfc15bf9d41868642d4d5f817a0962aa1b980a56368
+'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.56%2bnmu1.dsc' init-system-helpers_1.56+nmu1.dsc 1945 SHA256:96f7d1c696faf801eb5990223b2782dedaf4092efb9b0dcc13d038b91dbb1a51
+'http://deb.debian.org/debian/pool/main/i/init-system-helpers/init-system-helpers_1.56%2bnmu1.tar.xz' init-system-helpers_1.56+nmu1.tar.xz 40488 SHA256:ecb5b9a0dbf0b7e83ef41bfc15bf9d41868642d4d5f817a0962aa1b980a56368
 ```
 
 Other potentially useful URLs:
@@ -3568,9 +3568,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris iproute2=4.20.0-2+deb10u1
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0-2+deb10u1.dsc' iproute2_4.20.0-2+deb10u1.dsc 1929 SHA256:5d7968a3a021bfdfcf546af5e8fc905aea66d6b5adc923e8d187baddffc4e91f
+'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0-2%2bdeb10u1.dsc' iproute2_4.20.0-2+deb10u1.dsc 1929 SHA256:5d7968a3a021bfdfcf546af5e8fc905aea66d6b5adc923e8d187baddffc4e91f
 'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0.orig.tar.xz' iproute2_4.20.0.orig.tar.xz 707016 SHA256:c8adaa6a40f888476b23acb283cfa30c0dd55f07b5aa20663ed5ba2ef1f6fda8
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0-2+deb10u1.debian.tar.xz' iproute2_4.20.0-2+deb10u1.debian.tar.xz 146688 SHA256:d01f9c4b17519156cc0aadd5103cb38e928ceb3e86efb6b6e7479358794658e3
+'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0-2%2bdeb10u1.debian.tar.xz' iproute2_4.20.0-2+deb10u1.debian.tar.xz 146688 SHA256:d01f9c4b17519156cc0aadd5103cb38e928ceb3e86efb6b6e7479358794658e3
 ```
 
 Other potentially useful URLs:
@@ -3622,9 +3622,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris iputils=3:20180629-2+deb10u2
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629-2+deb10u2.dsc' iputils_20180629-2+deb10u2.dsc 2125 SHA256:e13bc2f1cc3e306f3075d6fafc48e5615081b5b5a3b05a4679e5b4440b8c962b
+'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629-2%2bdeb10u2.dsc' iputils_20180629-2+deb10u2.dsc 2125 SHA256:e13bc2f1cc3e306f3075d6fafc48e5615081b5b5a3b05a4679e5b4440b8c962b
 'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629.orig.tar.bz2' iputils_20180629.orig.tar.bz2 157943 SHA256:1a54fe72d67ac00dae328ddb1952110ee5310ccecbfcb97cbb26d4dedc73fe6d
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629-2+deb10u2.debian.tar.xz' iputils_20180629-2+deb10u2.debian.tar.xz 14144 SHA256:67453f496c473e4b33938bf63b522cf7289242443b9f69243cbdcfb95175b2bb
+'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629-2%2bdeb10u2.debian.tar.xz' iputils_20180629-2+deb10u2.debian.tar.xz 14144 SHA256:67453f496c473e4b33938bf63b522cf7289242443b9f69243cbdcfb95175b2bb
 ```
 
 Other potentially useful URLs:
@@ -3729,9 +3729,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris json-c=0.12.1+ds-2+deb10u1
-'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.dsc' json-c_0.12.1+ds-2+deb10u1.dsc 2105 SHA256:d64688bc4427ad313277c7074cb01f55ca6a1fe0aa60d2f47defb9101e203426
-'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds.orig.tar.gz' json-c_0.12.1+ds.orig.tar.gz 477598 SHA256:d036d20b63cb17ff02f43b86840f6c8c8da2b99077700c1779b16379cebb788d
-'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1+ds-2+deb10u1.debian.tar.xz' json-c_0.12.1+ds-2+deb10u1.debian.tar.xz 9460 SHA256:d40d54851a278018d15e1348efd9c169963add8566c455c8551d394337190d75
+'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1%2bds-2%2bdeb10u1.dsc' json-c_0.12.1+ds-2+deb10u1.dsc 2105 SHA256:d64688bc4427ad313277c7074cb01f55ca6a1fe0aa60d2f47defb9101e203426
+'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1%2bds.orig.tar.gz' json-c_0.12.1+ds.orig.tar.gz 477598 SHA256:d036d20b63cb17ff02f43b86840f6c8c8da2b99077700c1779b16379cebb788d
+'http://deb.debian.org/debian/pool/main/j/json-c/json-c_0.12.1%2bds-2%2bdeb10u1.debian.tar.xz' json-c_0.12.1+ds-2+deb10u1.debian.tar.xz 9460 SHA256:d40d54851a278018d15e1348efd9c169963add8566c455c8551d394337190d75
 ```
 
 Other potentially useful URLs:
@@ -3838,9 +3838,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris krb5=1.17-3+deb10u3
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-3+deb10u3.dsc' krb5_1.17-3+deb10u3.dsc 2968 SHA256:002bf39a1c8d410c5acbf20294d31a1ed620e207d589c75e13a568fddd6295ce
+'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-3%2bdeb10u3.dsc' krb5_1.17-3+deb10u3.dsc 2968 SHA256:002bf39a1c8d410c5acbf20294d31a1ed620e207d589c75e13a568fddd6295ce
 'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA256:5a6e2284a53de5702d3dc2be3b9339c963f9b5397d3fbbc53beb249380a781f5
-'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-3+deb10u3.debian.tar.xz' krb5_1.17-3+deb10u3.debian.tar.xz 103168 SHA256:12d8d480d5fa1dcec99c8ce0d5e3f249da94ab959829d83ca5ff09376349b1e3
+'http://deb.debian.org/debian/pool/main/k/krb5/krb5_1.17-3%2bdeb10u3.debian.tar.xz' krb5_1.17-3+deb10u3.debian.tar.xz 103168 SHA256:12d8d480d5fa1dcec99c8ce0d5e3f249da94ab959829d83ca5ff09376349b1e3
 ```
 
 Other potentially useful URLs:
@@ -4010,9 +4010,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libarchive=3.3.3-4+deb10u1
-'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.3.3-4+deb10u1.dsc' libarchive_3.3.3-4+deb10u1.dsc 2548 SHA256:e7d1aaa2866bb72a6c11fa3306243399d3265702a58a6e9711012bbe15d16479
+'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.3.3-4%2bdeb10u1.dsc' libarchive_3.3.3-4+deb10u1.dsc 2548 SHA256:e7d1aaa2866bb72a6c11fa3306243399d3265702a58a6e9711012bbe15d16479
 'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.3.3.orig.tar.gz' libarchive_3.3.3.orig.tar.gz 6535598 SHA256:ba7eb1781c9fbbae178c4c6bad1c6eb08edab9a1496c64833d1715d022b30e2e
-'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.3.3-4+deb10u1.debian.tar.xz' libarchive_3.3.3-4+deb10u1.debian.tar.xz 19876 SHA256:fefbe7c0686d6496bb526be4c00634d2992355dfab7d9be6bb2eb53dcf1f8bc7
+'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.3.3-4%2bdeb10u1.debian.tar.xz' libarchive_3.3.3-4+deb10u1.debian.tar.xz 19876 SHA256:fefbe7c0686d6496bb526be4c00634d2992355dfab7d9be6bb2eb53dcf1f8bc7
 ```
 
 Other potentially useful URLs:
@@ -4119,10 +4119,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libbsd=0.9.1-2+deb10u1
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.9.1-2+deb10u1.dsc' libbsd_0.9.1-2+deb10u1.dsc 2213 SHA256:7fc76a451acb1dccbd23edb1d7a7470f688a6fec4d6a62bfd84a177ebf8ddbc7
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.9.1-2%2bdeb10u1.dsc' libbsd_0.9.1-2+deb10u1.dsc 2213 SHA256:7fc76a451acb1dccbd23edb1d7a7470f688a6fec4d6a62bfd84a177ebf8ddbc7
 'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.9.1.orig.tar.xz' libbsd_0.9.1.orig.tar.xz 387180 SHA256:56d835742327d69faccd16955a60b6dcf30684a8da518c4eca0ac713b9e0a7a4
 'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.9.1.orig.tar.xz.asc' libbsd_0.9.1.orig.tar.xz.asc 833 SHA256:a34a81f40bfef37242943cb1c4c446e75d57f31be3317c887d8a5f2cbfb5577d
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.9.1-2+deb10u1.debian.tar.xz' libbsd_0.9.1-2+deb10u1.debian.tar.xz 17264 SHA256:33e197ee1d1640a39843cee0d25ba1f4b0e89706f81a28944a27d8f6a553f0b1
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.9.1-2%2bdeb10u1.debian.tar.xz' libbsd_0.9.1-2+deb10u1.debian.tar.xz 17264 SHA256:33e197ee1d1640a39843cee0d25ba1f4b0e89706f81a28944a27d8f6a553f0b1
 ```
 
 Other potentially useful URLs:
@@ -4398,9 +4398,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libepsilon=0.9.2+dfsg-4
-'http://deb.debian.org/debian/pool/main/libe/libepsilon/libepsilon_0.9.2+dfsg-4.dsc' libepsilon_0.9.2+dfsg-4.dsc 2240 SHA256:27cb8cbd991fb7c70429f666a7e3e14a225371afc4986aeabb62a6f998d0bfdd
-'http://deb.debian.org/debian/pool/main/libe/libepsilon/libepsilon_0.9.2+dfsg.orig.tar.gz' libepsilon_0.9.2+dfsg.orig.tar.gz 2395551 SHA256:684f77097c96862571e8c5da7acfe030bb597878153bf7d56672cb93ebd83c86
-'http://deb.debian.org/debian/pool/main/libe/libepsilon/libepsilon_0.9.2+dfsg-4.debian.tar.xz' libepsilon_0.9.2+dfsg-4.debian.tar.xz 7104 SHA256:37f09489efb316a4d800bf1411486e9c0b47b40d3cc45df87d4093e40c277a81
+'http://deb.debian.org/debian/pool/main/libe/libepsilon/libepsilon_0.9.2%2bdfsg-4.dsc' libepsilon_0.9.2+dfsg-4.dsc 2240 SHA256:27cb8cbd991fb7c70429f666a7e3e14a225371afc4986aeabb62a6f998d0bfdd
+'http://deb.debian.org/debian/pool/main/libe/libepsilon/libepsilon_0.9.2%2bdfsg.orig.tar.gz' libepsilon_0.9.2+dfsg.orig.tar.gz 2395551 SHA256:684f77097c96862571e8c5da7acfe030bb597878153bf7d56672cb93ebd83c86
+'http://deb.debian.org/debian/pool/main/libe/libepsilon/libepsilon_0.9.2%2bdfsg-4.debian.tar.xz' libepsilon_0.9.2+dfsg-4.debian.tar.xz 7104 SHA256:37f09489efb316a4d800bf1411486e9c0b47b40d3cc45df87d4093e40c277a81
 ```
 
 Other potentially useful URLs:
@@ -4453,9 +4453,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libevdev=1.6.0+dfsg-1
-'http://deb.debian.org/debian/pool/main/libe/libevdev/libevdev_1.6.0+dfsg-1.dsc' libevdev_1.6.0+dfsg-1.dsc 2203 SHA256:0886fddbde584bc3d479bd092c2d9162c5714defbf7f74127a5596e50a07b29a
-'http://deb.debian.org/debian/pool/main/libe/libevdev/libevdev_1.6.0+dfsg.orig.tar.xz' libevdev_1.6.0+dfsg.orig.tar.xz 307016 SHA256:4d03c8083fd11b363af912bbd66876e2743eda3447b45b9b43b6a2f0b5c932fa
-'http://deb.debian.org/debian/pool/main/libe/libevdev/libevdev_1.6.0+dfsg-1.debian.tar.xz' libevdev_1.6.0+dfsg-1.debian.tar.xz 10836 SHA256:a7e68c44a2ea7e9eae40932e361fed2b667d0a79840dffd73edcb61bc463b8c2
+'http://deb.debian.org/debian/pool/main/libe/libevdev/libevdev_1.6.0%2bdfsg-1.dsc' libevdev_1.6.0+dfsg-1.dsc 2203 SHA256:0886fddbde584bc3d479bd092c2d9162c5714defbf7f74127a5596e50a07b29a
+'http://deb.debian.org/debian/pool/main/libe/libevdev/libevdev_1.6.0%2bdfsg.orig.tar.xz' libevdev_1.6.0+dfsg.orig.tar.xz 307016 SHA256:4d03c8083fd11b363af912bbd66876e2743eda3447b45b9b43b6a2f0b5c932fa
+'http://deb.debian.org/debian/pool/main/libe/libevdev/libevdev_1.6.0%2bdfsg-1.debian.tar.xz' libevdev_1.6.0+dfsg-1.debian.tar.xz 10836 SHA256:a7e68c44a2ea7e9eae40932e361fed2b667d0a79840dffd73edcb61bc463b8c2
 ```
 
 Other potentially useful URLs:
@@ -4510,9 +4510,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libexif=0.6.21-5.1+deb10u5
-'http://deb.debian.org/debian/pool/main/libe/libexif/libexif_0.6.21-5.1+deb10u5.dsc' libexif_0.6.21-5.1+deb10u5.dsc 2149 SHA256:716eb92d05662db76ae60cfd69a451be2170971de488f70b25bc4f3633248ff8
+'http://deb.debian.org/debian/pool/main/libe/libexif/libexif_0.6.21-5.1%2bdeb10u5.dsc' libexif_0.6.21-5.1+deb10u5.dsc 2149 SHA256:716eb92d05662db76ae60cfd69a451be2170971de488f70b25bc4f3633248ff8
 'http://deb.debian.org/debian/pool/main/libe/libexif/libexif_0.6.21.orig.tar.gz' libexif_0.6.21.orig.tar.gz 2081615 SHA256:edb7eb13664cf950a6edd132b75e99afe61c5effe2f16494e6d27bc404b287bf
-'http://deb.debian.org/debian/pool/main/libe/libexif/libexif_0.6.21-5.1+deb10u5.debian.tar.xz' libexif_0.6.21-5.1+deb10u5.debian.tar.xz 18488 SHA256:a33893c940787cb7a270952d1cd007d3283bc47e31ba35435b50b16f76f2c49d
+'http://deb.debian.org/debian/pool/main/libe/libexif/libexif_0.6.21-5.1%2bdeb10u5.debian.tar.xz' libexif_0.6.21-5.1+deb10u5.debian.tar.xz 18488 SHA256:a33893c940787cb7a270952d1cd007d3283bc47e31ba35435b50b16f76f2c49d
 ```
 
 Other potentially useful URLs:
@@ -4589,10 +4589,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libgcrypt20=1.8.4-5+deb10u1
-'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5+deb10u1.dsc' libgcrypt20_1.8.4-5+deb10u1.dsc 2838 SHA256:b81da28242d5516fdd74449a48c67ab11f247070acfb11156d04e19a06cb0e63
+'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5%2bdeb10u1.dsc' libgcrypt20_1.8.4-5+deb10u1.dsc 2838 SHA256:b81da28242d5516fdd74449a48c67ab11f247070acfb11156d04e19a06cb0e63
 'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2' libgcrypt20_1.8.4.orig.tar.bz2 2990108 SHA256:f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227
 'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2.asc' libgcrypt20_1.8.4.orig.tar.bz2.asc 534 SHA256:97df94317ad273cffce4e78ad34ad0664819b44496f6528818a4298a691209a3
-'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5+deb10u1.debian.tar.xz' libgcrypt20_1.8.4-5+deb10u1.debian.tar.xz 30712 SHA256:5ab932db1f9c2c9e5d3e86266d020a492bbae845367982a0c7d5ec78abf55027
+'http://deb.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5%2bdeb10u1.debian.tar.xz' libgcrypt20_1.8.4-5+deb10u1.debian.tar.xz 30712 SHA256:5ab932db1f9c2c9e5d3e86266d020a492bbae845367982a0c7d5ec78abf55027
 ```
 
 Other potentially useful URLs:
@@ -4948,9 +4948,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libidn2=2.0.5-1+deb10u1
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5-1+deb10u1.dsc' libidn2_2.0.5-1+deb10u1.dsc 2501 SHA256:6c4eac5dc85983e4cf37ee8deea5e23cfb9e1620f7a94a858726676c8858b498
+'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5-1%2bdeb10u1.dsc' libidn2_2.0.5-1+deb10u1.dsc 2501 SHA256:6c4eac5dc85983e4cf37ee8deea5e23cfb9e1620f7a94a858726676c8858b498
 'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5.orig.tar.gz' libidn2_2.0.5.orig.tar.gz 2091929 SHA256:53f69170886f1fa6fa5b332439c7a77a7d22626a82ef17e2c1224858bb4ca2b8
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5-1+deb10u1.debian.tar.xz' libidn2_2.0.5-1+deb10u1.debian.tar.xz 10286540 SHA256:37cfdc06e4e2f03e932af5bb309cbe94f8466f8b347aa34fa7c1e03a425556b2
+'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5-1%2bdeb10u1.debian.tar.xz' libidn2_2.0.5-1+deb10u1.debian.tar.xz 10286540 SHA256:37cfdc06e4e2f03e932af5bb309cbe94f8466f8b347aa34fa7c1e03a425556b2
 ```
 
 Other potentially useful URLs:
@@ -5011,10 +5011,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libinput=1.12.6-2+deb10u1
-'http://deb.debian.org/debian/pool/main/libi/libinput/libinput_1.12.6-2+deb10u1.dsc' libinput_1.12.6-2+deb10u1.dsc 2825 SHA256:279969c4b9f00cdb2abbe227d397ea541064acd5fc8b621c79463026d8eac90d
+'http://deb.debian.org/debian/pool/main/libi/libinput/libinput_1.12.6-2%2bdeb10u1.dsc' libinput_1.12.6-2+deb10u1.dsc 2825 SHA256:279969c4b9f00cdb2abbe227d397ea541064acd5fc8b621c79463026d8eac90d
 'http://deb.debian.org/debian/pool/main/libi/libinput/libinput_1.12.6.orig.tar.xz' libinput_1.12.6.orig.tar.xz 518784 SHA256:12b4023a3fc683d3d8127db573bdf925a2ef366615042f69c87e57c32a50f45d
 'http://deb.debian.org/debian/pool/main/libi/libinput/libinput_1.12.6.orig.tar.xz.asc' libinput_1.12.6.orig.tar.xz.asc 241 SHA256:bb0639ad11468f00bfb767d92f8280731fa63ed5ce285c15dae593aca00b97d1
-'http://deb.debian.org/debian/pool/main/libi/libinput/libinput_1.12.6-2+deb10u1.debian.tar.xz' libinput_1.12.6-2+deb10u1.debian.tar.xz 11716 SHA256:ebdd864be2c4905b9132f72039f3453de8195ce1b9505017fe7ae5f38c6adc24
+'http://deb.debian.org/debian/pool/main/libi/libinput/libinput_1.12.6-2%2bdeb10u1.debian.tar.xz' libinput_1.12.6-2+deb10u1.debian.tar.xz 11716 SHA256:ebdd864be2c4905b9132f72039f3453de8195ce1b9505017fe7ae5f38c6adc24
 ```
 
 Other potentially useful URLs:
@@ -5041,9 +5041,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libjpeg-turbo=1:1.5.2-2+deb10u1
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-2+deb10u1.dsc' libjpeg-turbo_1.5.2-2+deb10u1.dsc 2336 SHA256:415219eb10407301651363a7e4fafa3a64a102eea4fb32b189f026b528831958
+'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-2%2bdeb10u1.dsc' libjpeg-turbo_1.5.2-2+deb10u1.dsc 2336 SHA256:415219eb10407301651363a7e4fafa3a64a102eea4fb32b189f026b528831958
 'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2.orig.tar.gz' libjpeg-turbo_1.5.2.orig.tar.gz 1657235 SHA256:9098943b270388727ae61de82adec73cf9f0dbb240b3bc8b172595ebf405b528
-'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-2+deb10u1.debian.tar.xz' libjpeg-turbo_1.5.2-2+deb10u1.debian.tar.xz 83360 SHA256:ce4aa2fbb6ee52f4076d9084377960b79f330792692d57b2a1b57d672213d01b
+'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-2%2bdeb10u1.debian.tar.xz' libjpeg-turbo_1.5.2-2+deb10u1.debian.tar.xz 83360 SHA256:ce4aa2fbb6ee52f4076d9084377960b79f330792692d57b2a1b57d672213d01b
 ```
 
 Other potentially useful URLs:
@@ -5245,9 +5245,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libopenmpt=0.4.3-1+deb10u1
-'http://deb.debian.org/debian/pool/main/libo/libopenmpt/libopenmpt_0.4.3-1+deb10u1.dsc' libopenmpt_0.4.3-1+deb10u1.dsc 2595 SHA256:d28a431ac8fa79aa2c0e2e89fd07b580f552f5ae1cf41334d35ac3ce51471bda
+'http://deb.debian.org/debian/pool/main/libo/libopenmpt/libopenmpt_0.4.3-1%2bdeb10u1.dsc' libopenmpt_0.4.3-1+deb10u1.dsc 2595 SHA256:d28a431ac8fa79aa2c0e2e89fd07b580f552f5ae1cf41334d35ac3ce51471bda
 'http://deb.debian.org/debian/pool/main/libo/libopenmpt/libopenmpt_0.4.3.orig.tar.gz' libopenmpt_0.4.3.orig.tar.gz 1462862 SHA256:d77443a279003921d6f0c4edb30d1e9dda387983f44113a6d58f623c1e6942ae
-'http://deb.debian.org/debian/pool/main/libo/libopenmpt/libopenmpt_0.4.3-1+deb10u1.debian.tar.xz' libopenmpt_0.4.3-1+deb10u1.debian.tar.xz 14320 SHA256:9198393186402030ab1cea0261a759a16b5448b9aaa288a134df5368ef12b63c
+'http://deb.debian.org/debian/pool/main/libo/libopenmpt/libopenmpt_0.4.3-1%2bdeb10u1.debian.tar.xz' libopenmpt_0.4.3-1+deb10u1.debian.tar.xz 14320 SHA256:9198393186402030ab1cea0261a759a16b5448b9aaa288a134df5368ef12b63c
 ```
 
 Other potentially useful URLs:
@@ -5354,9 +5354,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libproxy=0.4.15-5+deb10u1
-'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15-5+deb10u1.dsc' libproxy_0.4.15-5+deb10u1.dsc 3780 SHA256:37f6507bbdb7048836668d4a568403bd01a4d9d76332c0914a278e7bb4a9a3ec
+'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15-5%2bdeb10u1.dsc' libproxy_0.4.15-5+deb10u1.dsc 3780 SHA256:37f6507bbdb7048836668d4a568403bd01a4d9d76332c0914a278e7bb4a9a3ec
 'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15.orig.tar.gz' libproxy_0.4.15.orig.tar.gz 93084 SHA256:18f58b0a0043b6881774187427ead158d310127fc46a1c668ad6d207fb28b4e0
-'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15-5+deb10u1.debian.tar.xz' libproxy_0.4.15-5+deb10u1.debian.tar.xz 13420 SHA256:fb030935e8761becfb715d8b60c6c4de82158b1382dafa90d87e6bbb43d4d466
+'http://deb.debian.org/debian/pool/main/libp/libproxy/libproxy_0.4.15-5%2bdeb10u1.debian.tar.xz' libproxy_0.4.15-5+deb10u1.debian.tar.xz 13420 SHA256:fb030935e8761becfb715d8b60c6c4de82158b1382dafa90d87e6bbb43d4d466
 ```
 
 Other potentially useful URLs:
@@ -5828,9 +5828,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libssh=0.8.7-1+deb10u1
-'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7-1+deb10u1.dsc' libssh_0.8.7-1+deb10u1.dsc 2143 SHA256:d5008ee4ec3aa601bbfa1da617cdda31d0ba26066f66e070a943a3db4f77ffd4
+'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7-1%2bdeb10u1.dsc' libssh_0.8.7-1+deb10u1.dsc 2143 SHA256:d5008ee4ec3aa601bbfa1da617cdda31d0ba26066f66e070a943a3db4f77ffd4
 'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7.orig.tar.xz' libssh_0.8.7.orig.tar.xz 430104 SHA256:43304ca22f0ba0b654e14b574a39816bc70212fdea5858a6637cc26cade3d592
-'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7-1+deb10u1.debian.tar.xz' libssh_0.8.7-1+deb10u1.debian.tar.xz 26788 SHA256:45b691db8ea5ac344215ceb44d6654a986170a43c68d697213dafb4a1be165f3
+'http://deb.debian.org/debian/pool/main/libs/libssh/libssh_0.8.7-1%2bdeb10u1.debian.tar.xz' libssh_0.8.7-1+deb10u1.debian.tar.xz 26788 SHA256:45b691db8ea5ac344215ceb44d6654a986170a43c68d697213dafb4a1be165f3
 ```
 
 Other potentially useful URLs:
@@ -5913,9 +5913,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libtheora=1.1.1+dfsg.1-15
-'http://deb.debian.org/debian/pool/main/libt/libtheora/libtheora_1.1.1+dfsg.1-15.dsc' libtheora_1.1.1+dfsg.1-15.dsc 2603 SHA256:8c6c3a7d5befe0e67eb87e19c8b09046bfa185a57c4f0716ec32b4386cfc51a6
-'http://deb.debian.org/debian/pool/main/libt/libtheora/libtheora_1.1.1+dfsg.1.orig.tar.gz' libtheora_1.1.1+dfsg.1.orig.tar.gz 2100495 SHA256:c59b0f07a7314dfe2ade15c41bc9f637f8a450fc6b340af61b81760629f28f90
-'http://deb.debian.org/debian/pool/main/libt/libtheora/libtheora_1.1.1+dfsg.1-15.debian.tar.xz' libtheora_1.1.1+dfsg.1-15.debian.tar.xz 10736 SHA256:ffd09e84ac612b4f6326d4c43b26349688be34f688e09a6ed3c9160fcb99bead
+'http://deb.debian.org/debian/pool/main/libt/libtheora/libtheora_1.1.1%2bdfsg.1-15.dsc' libtheora_1.1.1+dfsg.1-15.dsc 2603 SHA256:8c6c3a7d5befe0e67eb87e19c8b09046bfa185a57c4f0716ec32b4386cfc51a6
+'http://deb.debian.org/debian/pool/main/libt/libtheora/libtheora_1.1.1%2bdfsg.1.orig.tar.gz' libtheora_1.1.1+dfsg.1.orig.tar.gz 2100495 SHA256:c59b0f07a7314dfe2ade15c41bc9f637f8a450fc6b340af61b81760629f28f90
+'http://deb.debian.org/debian/pool/main/libt/libtheora/libtheora_1.1.1%2bdfsg.1-15.debian.tar.xz' libtheora_1.1.1+dfsg.1-15.debian.tar.xz 10736 SHA256:ffd09e84ac612b4f6326d4c43b26349688be34f688e09a6ed3c9160fcb99bead
 ```
 
 Other potentially useful URLs:
@@ -6034,9 +6034,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libuv1=1.24.1-1+deb10u1
-'http://deb.debian.org/debian/pool/main/libu/libuv1/libuv1_1.24.1-1+deb10u1.dsc' libuv1_1.24.1-1+deb10u1.dsc 2084 SHA256:03683643b506f3dec9c5e611a4d9faa43482616317d7d69fcaab4de669e2a137
+'http://deb.debian.org/debian/pool/main/libu/libuv1/libuv1_1.24.1-1%2bdeb10u1.dsc' libuv1_1.24.1-1+deb10u1.dsc 2084 SHA256:03683643b506f3dec9c5e611a4d9faa43482616317d7d69fcaab4de669e2a137
 'http://deb.debian.org/debian/pool/main/libu/libuv1/libuv1_1.24.1.orig.tar.gz' libuv1_1.24.1.orig.tar.gz 1204188 SHA256:55f4d03e5d600d8a753e8f300f4ce5a9a39d7f8386855627fcc952bd561f4b4e
-'http://deb.debian.org/debian/pool/main/libu/libuv1/libuv1_1.24.1-1+deb10u1.debian.tar.xz' libuv1_1.24.1-1+deb10u1.debian.tar.xz 17248 SHA256:e9812eda6552f94291863216c27dba5502504f197211e0c5285a9727483f4b27
+'http://deb.debian.org/debian/pool/main/libu/libuv1/libuv1_1.24.1-1%2bdeb10u1.debian.tar.xz' libuv1_1.24.1-1+deb10u1.debian.tar.xz 17248 SHA256:e9812eda6552f94291863216c27dba5502504f197211e0c5285a9727483f4b27
 ```
 
 Other potentially useful URLs:
@@ -6146,9 +6146,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libvpx=1.7.0-3+deb10u1
-'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.7.0-3+deb10u1.dsc' libvpx_1.7.0-3+deb10u1.dsc 2293 SHA256:1799371d542b9771b43f6dd373c40bdd31c8633b7fbcf68e8626ee179e29d098
+'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.7.0-3%2bdeb10u1.dsc' libvpx_1.7.0-3+deb10u1.dsc 2293 SHA256:1799371d542b9771b43f6dd373c40bdd31c8633b7fbcf68e8626ee179e29d098
 'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.7.0.orig.tar.gz' libvpx_1.7.0.orig.tar.gz 2679797 SHA256:1fec931eb5c94279ad219a5b6e0202358e94a93a90cfb1603578c326abfc1238
-'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.7.0-3+deb10u1.debian.tar.xz' libvpx_1.7.0-3+deb10u1.debian.tar.xz 13936 SHA256:758471f1ecbdded674c5780cef72f3b7ad354934909cfb39a3c37c618f33bbd6
+'http://deb.debian.org/debian/pool/main/libv/libvpx/libvpx_1.7.0-3%2bdeb10u1.debian.tar.xz' libvpx_1.7.0-3+deb10u1.debian.tar.xz 13936 SHA256:758471f1ecbdded674c5780cef72f3b7ad354934909cfb39a3c37c618f33bbd6
 ```
 
 Other potentially useful URLs:
@@ -6201,9 +6201,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libwebp=0.6.1-2+deb10u1
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2+deb10u1.dsc' libwebp_0.6.1-2+deb10u1.dsc 2078 SHA256:8e049c4699d3e1196642782f14052d8558225d1c713fe1718d21f23524b81bd5
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u1.dsc' libwebp_0.6.1-2+deb10u1.dsc 2078 SHA256:8e049c4699d3e1196642782f14052d8558225d1c713fe1718d21f23524b81bd5
 'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1.orig.tar.gz' libwebp_0.6.1.orig.tar.gz 3554290 SHA256:a86045e3ec24704bddbaa369ca30980d6bf4f2625f4cdca03715e91f9c08bbb4
-'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2+deb10u1.debian.tar.xz' libwebp_0.6.1-2+deb10u1.debian.tar.xz 13612 SHA256:35121925b3a22ee41f4704f0118d30dae58f642e76565ab73d427b3e648d7961
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.6.1-2%2bdeb10u1.debian.tar.xz' libwebp_0.6.1-2+deb10u1.debian.tar.xz 13612 SHA256:35121925b3a22ee41f4704f0118d30dae58f642e76565ab73d427b3e648d7961
 ```
 
 Other potentially useful URLs:
@@ -6230,10 +6230,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libx11=2:1.6.7-1+deb10u2
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u2.dsc' libx11_1.6.7-1+deb10u2.dsc 2680 SHA256:49e4b4ea6c4f4c4d6dcb31e09450dd285a9dc6f232ee5aa727b8a5b7fc4f42c1
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1%2bdeb10u2.dsc' libx11_1.6.7-1+deb10u2.dsc 2680 SHA256:49e4b4ea6c4f4c4d6dcb31e09450dd285a9dc6f232ee5aa727b8a5b7fc4f42c1
 'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz' libx11_1.6.7.orig.tar.gz 2972354 SHA256:f62ab88c2a87b55e1dc338726a55bb6ed8048084fe6a3294a7ae324ca45159d1
 'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7.orig.tar.gz.asc' libx11_1.6.7.orig.tar.gz.asc 404 SHA256:01a06afbe0574a30721d98f1c80b668ebc46410a9e8b2eb81e69b4bd8667c386
-'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1+deb10u2.diff.gz' libx11_1.6.7-1+deb10u2.diff.gz 53354 SHA256:a2ba03e672aab422b356352406c827eaeecd3e3ffbdf39022556a6a459d08b16
+'http://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.6.7-1%2bdeb10u2.diff.gz' libx11_1.6.7-1+deb10u2.diff.gz 53354 SHA256:a2ba03e672aab422b356352406c827eaeecd3e3ffbdf39022556a6a459d08b16
 ```
 
 Other potentially useful URLs:
@@ -6585,9 +6585,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-7+deb10u2
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-7+deb10u2.dsc' libxml2_2.9.4+dfsg1-7+deb10u2.dsc 3163 SHA256:1a5189b5c4238d4d833ad7b18e56e23e50252b62dddc90b3aff67018bce1f3aa
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
-'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1-7+deb10u2.debian.tar.xz' libxml2_2.9.4+dfsg1-7+deb10u2.debian.tar.xz 40924 SHA256:07d0f31c11472f5a3407db92d363c30ad26100a11b5a181a6cf664af531f43fd
+'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4%2bdfsg1-7%2bdeb10u2.dsc' libxml2_2.9.4+dfsg1-7+deb10u2.dsc 3163 SHA256:1a5189b5c4238d4d833ad7b18e56e23e50252b62dddc90b3aff67018bce1f3aa
+'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4%2bdfsg1.orig.tar.xz' libxml2_2.9.4+dfsg1.orig.tar.xz 2446412 SHA256:a74ad55e346aa0b2b41903e66d21f8f3d2a736b3f41e32496376861ab484184e
+'http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.4%2bdfsg1-7%2bdeb10u2.debian.tar.xz' libxml2_2.9.4+dfsg1-7+deb10u2.debian.tar.xz 40924 SHA256:07d0f31c11472f5a3407db92d363c30ad26100a11b5a181a6cf664af531f43fd
 ```
 
 Other potentially useful URLs:
@@ -6737,10 +6737,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxslt=1.1.32-2.2~deb10u1
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.2~deb10u1.dsc' libxslt_1.1.32-2.2~deb10u1.dsc 2781 SHA256:ae3c135ea738ba088bda7dc76fb63cb68920a1fac0514aa5ff8761182d48b1f3
+'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.2%7edeb10u1.dsc' libxslt_1.1.32-2.2~deb10u1.dsc 2781 SHA256:ae3c135ea738ba088bda7dc76fb63cb68920a1fac0514aa5ff8761182d48b1f3
 'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
 'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz.asc' libxslt_1.1.32.orig.tar.gz.asc 455 SHA256:68b374a73747c57a17d62f0ccc1e9714f68a292e700fe4c88e3c2d9dcba71871
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.2~deb10u1.debian.tar.xz' libxslt_1.1.32-2.2~deb10u1.debian.tar.xz 34232 SHA256:1ac65664ec024a34da9c4180778073198868fb4ce78fb9bc936564dd61cc57e5
+'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.2%7edeb10u1.debian.tar.xz' libxslt_1.1.32-2.2~deb10u1.debian.tar.xz 34232 SHA256:1ac65664ec024a34da9c4180778073198868fb4ce78fb9bc936564dd61cc57e5
 ```
 
 Other potentially useful URLs:
@@ -6873,9 +6873,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libzstd=1.3.8+dfsg-3+deb10u2
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8+dfsg-3+deb10u2.dsc' libzstd_1.3.8+dfsg-3+deb10u2.dsc 1947 SHA256:572fae1c7dc9bace3b9f7fcdeabf30dd1d00d0462e319ccec7b58b0adbf7dc85
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8+dfsg.orig.tar.xz' libzstd_1.3.8+dfsg.orig.tar.xz 1299276 SHA256:03851f2c26ffbf1d43633df3f98966f3c62e698e91ef4dc90523915bc934e5f7
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8+dfsg-3+deb10u2.debian.tar.xz' libzstd_1.3.8+dfsg-3+deb10u2.debian.tar.xz 11648 SHA256:1f107f6cdc3bf46fb2aebf9c5c997ed2a125ac2fb1d28e939da857d5b061079e
+'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8%2bdfsg-3%2bdeb10u2.dsc' libzstd_1.3.8+dfsg-3+deb10u2.dsc 1947 SHA256:572fae1c7dc9bace3b9f7fcdeabf30dd1d00d0462e319ccec7b58b0adbf7dc85
+'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8%2bdfsg.orig.tar.xz' libzstd_1.3.8+dfsg.orig.tar.xz 1299276 SHA256:03851f2c26ffbf1d43633df3f98966f3c62e698e91ef4dc90523915bc934e5f7
+'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8%2bdfsg-3%2bdeb10u2.debian.tar.xz' libzstd_1.3.8+dfsg-3+deb10u2.debian.tar.xz 11648 SHA256:1f107f6cdc3bf46fb2aebf9c5c997ed2a125ac2fb1d28e939da857d5b061079e
 ```
 
 Other potentially useful URLs:
@@ -6934,9 +6934,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris lksctp-tools=1.0.18+dfsg-1
-'http://deb.debian.org/debian/pool/main/l/lksctp-tools/lksctp-tools_1.0.18+dfsg-1.dsc' lksctp-tools_1.0.18+dfsg-1.dsc 2017 SHA256:648c5a77722638056592fa9ba7bc99359ab70fcdf9f37c53e05d8cda96624705
-'http://deb.debian.org/debian/pool/main/l/lksctp-tools/lksctp-tools_1.0.18+dfsg.orig.tar.gz' lksctp-tools_1.0.18+dfsg.orig.tar.gz 194751 SHA256:ac0f4e499281e1d190b5cc9c7e31570de4b82fade1c2754a21b2c8e215cb3cf5
-'http://deb.debian.org/debian/pool/main/l/lksctp-tools/lksctp-tools_1.0.18+dfsg-1.debian.tar.xz' lksctp-tools_1.0.18+dfsg-1.debian.tar.xz 10488 SHA256:826130ee1a35bec5a0f73160328e4429f3a64e57a865c6e9b2286d2cc8ff2d30
+'http://deb.debian.org/debian/pool/main/l/lksctp-tools/lksctp-tools_1.0.18%2bdfsg-1.dsc' lksctp-tools_1.0.18+dfsg-1.dsc 2017 SHA256:648c5a77722638056592fa9ba7bc99359ab70fcdf9f37c53e05d8cda96624705
+'http://deb.debian.org/debian/pool/main/l/lksctp-tools/lksctp-tools_1.0.18%2bdfsg.orig.tar.gz' lksctp-tools_1.0.18+dfsg.orig.tar.gz 194751 SHA256:ac0f4e499281e1d190b5cc9c7e31570de4b82fade1c2754a21b2c8e215cb3cf5
+'http://deb.debian.org/debian/pool/main/l/lksctp-tools/lksctp-tools_1.0.18%2bdfsg-1.debian.tar.xz' lksctp-tools_1.0.18+dfsg-1.debian.tar.xz 10488 SHA256:826130ee1a35bec5a0f73160328e4429f3a64e57a865c6e9b2286d2cc8ff2d30
 ```
 
 Other potentially useful URLs:
@@ -6972,7 +6972,7 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris llvm-toolchain-7=1:7.0.1-8+deb10u2
-'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1-8+deb10u2.dsc' llvm-toolchain-7_7.0.1-8+deb10u2.dsc 8285 SHA256:cfaebe2dd6eb4546967ed4cb40c2ab029dad4fdf547c921e749c510726d68349
+'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1-8%2bdeb10u2.dsc' llvm-toolchain-7_7.0.1-8+deb10u2.dsc 8285 SHA256:cfaebe2dd6eb4546967ed4cb40c2ab029dad4fdf547c921e749c510726d68349
 'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1.orig-clang-tools-extra.tar.bz2' llvm-toolchain-7_7.0.1.orig-clang-tools-extra.tar.bz2 954392 SHA256:5bd9a587e321536bfe93619d4260f2c6d85973c7d2212b5a29f4e6d0b081b67a
 'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1.orig-clang.tar.bz2' llvm-toolchain-7_7.0.1.orig-clang.tar.bz2 13927137 SHA256:78d974b2200cf18e4d711492b601ffbe104fe43682f2626b931eeb89ad4524b1
 'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1.orig-compiler-rt.tar.bz2' llvm-toolchain-7_7.0.1.orig-compiler-rt.tar.bz2 2364285 SHA256:58c730ee430ebf274946402098c4798e0b8b45ff0d1fa05741236e10b713c06b
@@ -6983,7 +6983,7 @@ $ apt-get source -qq --print-uris llvm-toolchain-7=1:7.0.1-8+deb10u2
 'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1.orig-openmp.tar.bz2' llvm-toolchain-7_7.0.1.orig-openmp.tar.bz2 998026 SHA256:99cf464fcbcbfb8bbc80bde455f7a0171cb945970a4d8028ec055ffdfedb5e10
 'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1.orig-polly.tar.bz2' llvm-toolchain-7_7.0.1.orig-polly.tar.bz2 3319947 SHA256:3a5f5af8efed79763d2e052e75c11e6e987377201fde54fe6f664c8c9faa6b44
 'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1.orig.tar.bz2' llvm-toolchain-7_7.0.1.orig.tar.bz2 33380406 SHA256:4a45763b46c2d48ab6db5347afdbba520407e9b16134e71163163a4d2a5e0980
-'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1-8+deb10u2.debian.tar.xz' llvm-toolchain-7_7.0.1-8+deb10u2.debian.tar.xz 121352 SHA256:0b9c91c5fb262d8c677ade8a5706ff7f585552f49a7908815fe627c650fbf40f
+'http://deb.debian.org/debian/pool/main/l/llvm-toolchain-7/llvm-toolchain-7_7.0.1-8%2bdeb10u2.debian.tar.xz' llvm-toolchain-7_7.0.1-8+deb10u2.debian.tar.xz 121352 SHA256:0b9c91c5fb262d8c677ade8a5706ff7f585552f49a7908815fe627c650fbf40f
 ```
 
 Other potentially useful URLs:
@@ -7120,9 +7120,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris lz4=1.8.3-1+deb10u1
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3-1+deb10u1.dsc' lz4_1.8.3-1+deb10u1.dsc 2119 SHA256:22a32d93f1e1525efd33e80b8c8ffb9ad74b5baf441aa3534e875523d9b5eb93
+'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3-1%2bdeb10u1.dsc' lz4_1.8.3-1+deb10u1.dsc 2119 SHA256:22a32d93f1e1525efd33e80b8c8ffb9ad74b5baf441aa3534e875523d9b5eb93
 'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3.orig.tar.gz' lz4_1.8.3.orig.tar.gz 327897 SHA256:33af5936ac06536805f9745e0b6d61da606a1f8b4cc5c04dd3cbaca3b9b4fc43
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3-1+deb10u1.debian.tar.xz' lz4_1.8.3-1+deb10u1.debian.tar.xz 12068 SHA256:6d9896c90c93f312af743b2c6ea1b62ba8defe8696acf7a009bed03b012db60a
+'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3-1%2bdeb10u1.debian.tar.xz' lz4_1.8.3-1+deb10u1.debian.tar.xz 12068 SHA256:6d9896c90c93f312af743b2c6ea1b62ba8defe8696acf7a009bed03b012db60a
 ```
 
 Other potentially useful URLs:
@@ -7218,10 +7218,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mariadb-10.3=1:10.3.31-0+deb10u1
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.31-0+deb10u1.dsc' mariadb-10.3_10.3.31-0+deb10u1.dsc 4812 SHA256:fbddd89280470fea39b968c427fdf02716825826146e08b73dc3d67ff7dcc8d6
+'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.31-0%2bdeb10u1.dsc' mariadb-10.3_10.3.31-0+deb10u1.dsc 4812 SHA256:fbddd89280470fea39b968c427fdf02716825826146e08b73dc3d67ff7dcc8d6
 'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.31.orig.tar.gz' mariadb-10.3_10.3.31.orig.tar.gz 73298653 SHA256:20421dfe5750f510ab0ee23420337332e6799cd38fa31332e2841dfa956eb771
 'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.31.orig.tar.gz.asc' mariadb-10.3_10.3.31.orig.tar.gz.asc 195 SHA256:f215e0b11511b28b4f185fffad92cca3508531afa62279a0e30e84ce9953ea9d
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.31-0+deb10u1.debian.tar.xz' mariadb-10.3_10.3.31-0+deb10u1.debian.tar.xz 222020 SHA256:9ea979da970b6fef5874db889f0f78f9c301dc5d0a2e60780be0bcdc635d7b32
+'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.31-0%2bdeb10u1.debian.tar.xz' mariadb-10.3_10.3.31-0+deb10u1.debian.tar.xz 222020 SHA256:9ea979da970b6fef5874db889f0f78f9c301dc5d0a2e60780be0bcdc635d7b32
 ```
 
 Other potentially useful URLs:
@@ -7273,10 +7273,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mercurial=4.8.2-1+deb10u1
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.8.2-1+deb10u1.dsc' mercurial_4.8.2-1+deb10u1.dsc 2709 SHA256:e47f77a1f9555e4648e3331100318853dc81215531a18c41f731d93383038df1
+'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.8.2-1%2bdeb10u1.dsc' mercurial_4.8.2-1+deb10u1.dsc 2709 SHA256:e47f77a1f9555e4648e3331100318853dc81215531a18c41f731d93383038df1
 'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.8.2.orig.tar.gz' mercurial_4.8.2.orig.tar.gz 6870985 SHA256:6c202cb9cf05e63b86477ebf84d6475eb10b4022ac2cd3a7481fb36d9c45fdb2
 'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.8.2.orig.tar.gz.asc' mercurial_4.8.2.orig.tar.gz.asc 833 SHA256:ceaf75242740acfd06a96aae53d8a40f3b3f3c4a7119bb53224d0bf6efa65254
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.8.2-1+deb10u1.debian.tar.xz' mercurial_4.8.2-1+deb10u1.debian.tar.xz 64940 SHA256:5673d16057e140b74c0939e509a15dc4b67e18ee71cf806e9940896a42c9130c
+'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.8.2-1%2bdeb10u1.debian.tar.xz' mercurial_4.8.2-1+deb10u1.debian.tar.xz 64940 SHA256:5673d16057e140b74c0939e509a15dc4b67e18ee71cf806e9940896a42c9130c
 ```
 
 Other potentially useful URLs:
@@ -7314,9 +7314,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mesa=18.3.6-2+deb10u1
-'http://deb.debian.org/debian/pool/main/m/mesa/mesa_18.3.6-2+deb10u1.dsc' mesa_18.3.6-2+deb10u1.dsc 5172 SHA256:6170d13614b38d58d40c04b17b28920f701cf79f240c2b7dd384599289d7d89e
+'http://deb.debian.org/debian/pool/main/m/mesa/mesa_18.3.6-2%2bdeb10u1.dsc' mesa_18.3.6-2+deb10u1.dsc 5172 SHA256:6170d13614b38d58d40c04b17b28920f701cf79f240c2b7dd384599289d7d89e
 'http://deb.debian.org/debian/pool/main/m/mesa/mesa_18.3.6.orig.tar.gz' mesa_18.3.6.orig.tar.gz 20348664 SHA256:4619d92afadf7072f7956599a2ccd0934fc45b4ddbc2eb865bdcb50ddf963f87
-'http://deb.debian.org/debian/pool/main/m/mesa/mesa_18.3.6-2+deb10u1.diff.gz' mesa_18.3.6-2+deb10u1.diff.gz 105356 SHA256:f0fedac93bb9aca2248c7c676885f967516ccd87c4a3ce5c81918254fa9d273d
+'http://deb.debian.org/debian/pool/main/m/mesa/mesa_18.3.6-2%2bdeb10u1.diff.gz' mesa_18.3.6-2+deb10u1.diff.gz 105356 SHA256:f0fedac93bb9aca2248c7c676885f967516ccd87c4a3ce5c81918254fa9d273d
 ```
 
 Other potentially useful URLs:
@@ -7601,10 +7601,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ncurses=6.1+20181013-2+deb10u2
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013-2+deb10u2.dsc' ncurses_6.1+20181013-2+deb10u2.dsc 4179 SHA256:8318631ff3298951a93d6dd6c20bd47c9e5fdaaf30578d541bd6404bdd5317ea
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013.orig.tar.gz' ncurses_6.1+20181013.orig.tar.gz 3411288 SHA256:aeb1d098ee90b39a763b57b00da19ff5bbb573dea077f98fbd85d59444bb3b59
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013.orig.tar.gz.asc' ncurses_6.1+20181013.orig.tar.gz.asc 251 SHA256:865931406e519909a4d0ab87b14d0c6d3ebccb7b3e0dac5c6095f0dfce5e14cf
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013-2+deb10u2.debian.tar.xz' ncurses_6.1+20181013-2+deb10u2.debian.tar.xz 61664 SHA256:4574ec11ce2577e76f30f8d40cc2a9ebf94d8208f47247021da88b7b09e77df9
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1%2b20181013-2%2bdeb10u2.dsc' ncurses_6.1+20181013-2+deb10u2.dsc 4179 SHA256:8318631ff3298951a93d6dd6c20bd47c9e5fdaaf30578d541bd6404bdd5317ea
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1%2b20181013.orig.tar.gz' ncurses_6.1+20181013.orig.tar.gz 3411288 SHA256:aeb1d098ee90b39a763b57b00da19ff5bbb573dea077f98fbd85d59444bb3b59
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1%2b20181013.orig.tar.gz.asc' ncurses_6.1+20181013.orig.tar.gz.asc 251 SHA256:865931406e519909a4d0ab87b14d0c6d3ebccb7b3e0dac5c6095f0dfce5e14cf
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1%2b20181013-2%2bdeb10u2.debian.tar.xz' ncurses_6.1+20181013-2+deb10u2.debian.tar.xz 61664 SHA256:4574ec11ce2577e76f30f8d40cc2a9ebf94d8208f47247021da88b7b09e77df9
 ```
 
 Other potentially useful URLs:
@@ -7732,10 +7732,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nettle=3.4.1-1+deb10u1
-'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.4.1-1+deb10u1.dsc' nettle_3.4.1-1+deb10u1.dsc 2290 SHA256:b38c9a78ae0732a94d06dbc811479f6ee8357bd47604dfa92f0d0801b148eebc
+'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.4.1-1%2bdeb10u1.dsc' nettle_3.4.1-1+deb10u1.dsc 2290 SHA256:b38c9a78ae0732a94d06dbc811479f6ee8357bd47604dfa92f0d0801b148eebc
 'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.4.1.orig.tar.gz' nettle_3.4.1.orig.tar.gz 1947053 SHA256:f941cf1535cd5d1819be5ccae5babef01f6db611f9b5a777bae9c7604b8a92ad
 'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.4.1.orig.tar.gz.asc' nettle_3.4.1.orig.tar.gz.asc 2476 SHA256:07b265366b46bc67950da3f34687235eaa85c45b326e42bb7c9b58830b651d28
-'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.4.1-1+deb10u1.debian.tar.xz' nettle_3.4.1-1+deb10u1.debian.tar.xz 26508 SHA256:b847de5ccd50b9bc0aa56dd7fe750c224683174676dde69c86f62bece52ff4ba
+'http://deb.debian.org/debian/pool/main/n/nettle/nettle_3.4.1-1%2bdeb10u1.debian.tar.xz' nettle_3.4.1-1+deb10u1.debian.tar.xz 26508 SHA256:b847de5ccd50b9bc0aa56dd7fe750c224683174676dde69c86f62bece52ff4ba
 ```
 
 Other potentially useful URLs:
@@ -7764,9 +7764,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nghttp2=1.36.0-2+deb10u1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.36.0-2+deb10u1.dsc' nghttp2_1.36.0-2+deb10u1.dsc 2601 SHA256:3712e7cbb20d1b43f8f7a9c5408b79bd80e4c3c0cb2d4ad68062d367b1715fd6
+'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.36.0-2%2bdeb10u1.dsc' nghttp2_1.36.0-2+deb10u1.dsc 2601 SHA256:3712e7cbb20d1b43f8f7a9c5408b79bd80e4c3c0cb2d4ad68062d367b1715fd6
 'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.36.0.orig.tar.bz2' nghttp2_1.36.0.orig.tar.bz2 1919021 SHA256:16a734d7414062911e23989e243ca76e7722cb3c60273723e3e3ae4c21e71ceb
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.36.0-2+deb10u1.debian.tar.xz' nghttp2_1.36.0-2+deb10u1.debian.tar.xz 13132 SHA256:f4fb4dd2385d158efba2ec3d3ce1b13c24ecb05c75f353f370f7cb0f080c7537
+'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.36.0-2%2bdeb10u1.debian.tar.xz' nghttp2_1.36.0-2+deb10u1.debian.tar.xz 13132 SHA256:f4fb4dd2385d158efba2ec3d3ce1b13c24ecb05c75f353f370f7cb0f080c7537
 ```
 
 Other potentially useful URLs:
@@ -7872,9 +7872,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nss=2:3.42.1-1+deb10u5
-'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.42.1-1+deb10u5.dsc' nss_3.42.1-1+deb10u5.dsc 2347 SHA256:70cda0bc852ae903d1bbc93619b4aa9a11f0d6f85e953988a6919414b322942b
+'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.42.1-1%2bdeb10u5.dsc' nss_3.42.1-1+deb10u5.dsc 2347 SHA256:70cda0bc852ae903d1bbc93619b4aa9a11f0d6f85e953988a6919414b322942b
 'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.42.1.orig.tar.gz' nss_3.42.1.orig.tar.gz 23416408 SHA256:087db37d38fd49dfd584dd2a8b5baa7fc88de7c9bd97c0c2d5be4abcafc61fc6
-'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.42.1-1+deb10u5.debian.tar.xz' nss_3.42.1-1+deb10u5.debian.tar.xz 36748 SHA256:6b85e73c38b2c6d5a0a7611443b1c62321e9c93fe7816373adb2a08bd3ed8791
+'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.42.1-1%2bdeb10u5.debian.tar.xz' nss_3.42.1-1+deb10u5.debian.tar.xz 36748 SHA256:6b85e73c38b2c6d5a0a7611443b1c62321e9c93fe7816373adb2a08bd3ed8791
 ```
 
 Other potentially useful URLs:
@@ -7961,9 +7961,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ogdi-dfsg=3.2.1+ds-4
-'http://deb.debian.org/debian/pool/main/o/ogdi-dfsg/ogdi-dfsg_3.2.1+ds-4.dsc' ogdi-dfsg_3.2.1+ds-4.dsc 2149 SHA256:88055ca8e61fec673dd040c3faa1d2a1ab087aabf17fd5c5c2186c526780e411
-'http://deb.debian.org/debian/pool/main/o/ogdi-dfsg/ogdi-dfsg_3.2.1+ds.orig.tar.gz' ogdi-dfsg_3.2.1+ds.orig.tar.gz 652742 SHA256:2eab77f6965f10ff133154db28a03c061012838c2e95d8d4f07e2e5e33fbfff4
-'http://deb.debian.org/debian/pool/main/o/ogdi-dfsg/ogdi-dfsg_3.2.1+ds-4.debian.tar.xz' ogdi-dfsg_3.2.1+ds-4.debian.tar.xz 13660 SHA256:5956efd79c05b4a329f053030e3fcf1b8d4106e8575e2af07f664e08561f38e9
+'http://deb.debian.org/debian/pool/main/o/ogdi-dfsg/ogdi-dfsg_3.2.1%2bds-4.dsc' ogdi-dfsg_3.2.1+ds-4.dsc 2149 SHA256:88055ca8e61fec673dd040c3faa1d2a1ab087aabf17fd5c5c2186c526780e411
+'http://deb.debian.org/debian/pool/main/o/ogdi-dfsg/ogdi-dfsg_3.2.1%2bds.orig.tar.gz' ogdi-dfsg_3.2.1+ds.orig.tar.gz 652742 SHA256:2eab77f6965f10ff133154db28a03c061012838c2e95d8d4f07e2e5e33fbfff4
+'http://deb.debian.org/debian/pool/main/o/ogdi-dfsg/ogdi-dfsg_3.2.1%2bds-4.debian.tar.xz' ogdi-dfsg_3.2.1+ds-4.debian.tar.xz 13660 SHA256:5956efd79c05b4a329f053030e3fcf1b8d4106e8575e2af07f664e08561f38e9
 ```
 
 Other potentially useful URLs:
@@ -8026,9 +8026,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris opencv=3.2.0+dfsg-6
-'http://deb.debian.org/debian/pool/main/o/opencv/opencv_3.2.0+dfsg-6.dsc' opencv_3.2.0+dfsg-6.dsc 5847 SHA256:364f7c2196d8be003dca7ba1e3762e6100ccd69cc2b93542433a00504bc4cc45
-'http://deb.debian.org/debian/pool/main/o/opencv/opencv_3.2.0+dfsg.orig.tar.gz' opencv_3.2.0+dfsg.orig.tar.gz 125448078 SHA256:bb4351ce2a5402a36ea880f37924f803f0cdccd0850300b1bd1336e8c5d9dfa6
-'http://deb.debian.org/debian/pool/main/o/opencv/opencv_3.2.0+dfsg-6.debian.tar.xz' opencv_3.2.0+dfsg-6.debian.tar.xz 38760 SHA256:5ca6024cc017ce635d6e0d376dad8d3539ea6692360981aeeb50be42018884ca
+'http://deb.debian.org/debian/pool/main/o/opencv/opencv_3.2.0%2bdfsg-6.dsc' opencv_3.2.0+dfsg-6.dsc 5847 SHA256:364f7c2196d8be003dca7ba1e3762e6100ccd69cc2b93542433a00504bc4cc45
+'http://deb.debian.org/debian/pool/main/o/opencv/opencv_3.2.0%2bdfsg.orig.tar.gz' opencv_3.2.0+dfsg.orig.tar.gz 125448078 SHA256:bb4351ce2a5402a36ea880f37924f803f0cdccd0850300b1bd1336e8c5d9dfa6
+'http://deb.debian.org/debian/pool/main/o/opencv/opencv_3.2.0%2bdfsg-6.debian.tar.xz' opencv_3.2.0+dfsg-6.debian.tar.xz 38760 SHA256:5ca6024cc017ce635d6e0d376dad8d3539ea6692360981aeeb50be42018884ca
 ```
 
 Other potentially useful URLs:
@@ -8052,9 +8052,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openexr=2.2.1-4.1+deb10u1
-'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1-4.1+deb10u1.dsc' openexr_2.2.1-4.1+deb10u1.dsc 2302 SHA256:bf813e2e7c6baedd9068c02301511b2d05f14e511c18db827b16eca6bd7d9478
+'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1-4.1%2bdeb10u1.dsc' openexr_2.2.1-4.1+deb10u1.dsc 2302 SHA256:bf813e2e7c6baedd9068c02301511b2d05f14e511c18db827b16eca6bd7d9478
 'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1.orig.tar.gz' openexr_2.2.1.orig.tar.gz 18176639 SHA256:8f9a5af6131583404261931d9a5c83de0a425cb4b8b25ddab2b169fbf113aecd
-'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1-4.1+deb10u1.debian.tar.xz' openexr_2.2.1-4.1+deb10u1.debian.tar.xz 27212 SHA256:c991df0bf7582a9ce9ddf2294793c68e1b2f381d1bcc429eb8bfb914161dc47a
+'http://deb.debian.org/debian/pool/main/o/openexr/openexr_2.2.1-4.1%2bdeb10u1.debian.tar.xz' openexr_2.2.1-4.1+deb10u1.debian.tar.xz 27212 SHA256:c991df0bf7582a9ce9ddf2294793c68e1b2f381d1bcc429eb8bfb914161dc47a
 ```
 
 Other potentially useful URLs:
@@ -8086,9 +8086,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openjpeg2=2.3.0-2+deb10u2
-'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0-2+deb10u2.dsc' openjpeg2_2.3.0-2+deb10u2.dsc 2764 SHA256:6094cdce898466329764177f33c596786a10587c8d7608fd2d2cfcbc029a46b2
+'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0-2%2bdeb10u2.dsc' openjpeg2_2.3.0-2+deb10u2.dsc 2764 SHA256:6094cdce898466329764177f33c596786a10587c8d7608fd2d2cfcbc029a46b2
 'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0.orig.tar.gz' openjpeg2_2.3.0.orig.tar.gz 2074456 SHA256:fd5ca8cf3f195b0a54c56193c5897bb423c00db577afda4033318006769a5833
-'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0-2+deb10u2.debian.tar.xz' openjpeg2_2.3.0-2+deb10u2.debian.tar.xz 26324 SHA256:ab1d20e7298e86e124ffa4f18a929adaa75a0cee35755a8f7571acbbaca9093c
+'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0-2%2bdeb10u2.debian.tar.xz' openjpeg2_2.3.0-2+deb10u2.debian.tar.xz 26324 SHA256:ab1d20e7298e86e124ffa4f18a929adaa75a0cee35755a8f7571acbbaca9093c
 ```
 
 Other potentially useful URLs:
@@ -8113,9 +8113,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3+deb10u6
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u6.dsc' openldap_2.4.47+dfsg-3+deb10u6.dsc 3022 SHA256:14f48c8d0ffddaaf51edf064d9abe90d6f7466c710d6e78c520db48998eaebb0
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3+deb10u6.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u6.debian.tar.xz 173600 SHA256:d21ccc7d2fc3b38dd68e8f4dd73bcff51d377e4ad47e6372ea4f806729856b79
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47%2bdfsg-3%2bdeb10u6.dsc' openldap_2.4.47+dfsg-3+deb10u6.dsc 3022 SHA256:14f48c8d0ffddaaf51edf064d9abe90d6f7466c710d6e78c520db48998eaebb0
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47%2bdfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47%2bdfsg-3%2bdeb10u6.debian.tar.xz' openldap_2.4.47+dfsg-3+deb10u6.debian.tar.xz 173600 SHA256:d21ccc7d2fc3b38dd68e8f4dd73bcff51d377e4ad47e6372ea4f806729856b79
 ```
 
 Other potentially useful URLs:
@@ -8173,9 +8173,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openni2=2.2.0.33+dfsg-11
-'http://deb.debian.org/debian/pool/main/o/openni2/openni2_2.2.0.33+dfsg-11.dsc' openni2_2.2.0.33+dfsg-11.dsc 2331 SHA256:6c54e2e7d5d357ebfbd5031cfe502c62eeabfc4c4cd1193a57d75804871f34ae
-'http://deb.debian.org/debian/pool/main/o/openni2/openni2_2.2.0.33+dfsg.orig.tar.gz' openni2_2.2.0.33+dfsg.orig.tar.gz 8604362 SHA256:abc17f5e30d6799200c69a52d34aefaef4fd567be7921e0cb68cae353ac4495a
-'http://deb.debian.org/debian/pool/main/o/openni2/openni2_2.2.0.33+dfsg-11.debian.tar.xz' openni2_2.2.0.33+dfsg-11.debian.tar.xz 16244 SHA256:6d36b988ebacc43102af5f043ec5c6047536ece1e9c95bf5099e201c1c5ae849
+'http://deb.debian.org/debian/pool/main/o/openni2/openni2_2.2.0.33%2bdfsg-11.dsc' openni2_2.2.0.33+dfsg-11.dsc 2331 SHA256:6c54e2e7d5d357ebfbd5031cfe502c62eeabfc4c4cd1193a57d75804871f34ae
+'http://deb.debian.org/debian/pool/main/o/openni2/openni2_2.2.0.33%2bdfsg.orig.tar.gz' openni2_2.2.0.33+dfsg.orig.tar.gz 8604362 SHA256:abc17f5e30d6799200c69a52d34aefaef4fd567be7921e0cb68cae353ac4495a
+'http://deb.debian.org/debian/pool/main/o/openni2/openni2_2.2.0.33%2bdfsg-11.debian.tar.xz' openni2_2.2.0.33+dfsg-11.debian.tar.xz 16244 SHA256:6d36b988ebacc43102af5f043ec5c6047536ece1e9c95bf5099e201c1c5ae849
 ```
 
 Other potentially useful URLs:
@@ -8205,9 +8205,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openni=1.5.4.0+dfsg-2
-'http://deb.debian.org/debian/pool/main/o/openni/openni_1.5.4.0+dfsg-2.dsc' openni_1.5.4.0+dfsg-2.dsc 2320 SHA256:74d2972502057d74070a52f44176176d911b42b96e3e54be33b1e25acae6b87e
-'http://deb.debian.org/debian/pool/main/o/openni/openni_1.5.4.0+dfsg.orig.tar.xz' openni_1.5.4.0+dfsg.orig.tar.xz 9885380 SHA256:3e1dabf4fad5aaf67be6f4bfc161ce63b3e3a258f671ff9d65d84f5fadd3db1f
-'http://deb.debian.org/debian/pool/main/o/openni/openni_1.5.4.0+dfsg-2.debian.tar.xz' openni_1.5.4.0+dfsg-2.debian.tar.xz 648152 SHA256:fd62f3cd5e6237988e7792786101d20fd84408d00bc627ba749166f7152bc116
+'http://deb.debian.org/debian/pool/main/o/openni/openni_1.5.4.0%2bdfsg-2.dsc' openni_1.5.4.0+dfsg-2.dsc 2320 SHA256:74d2972502057d74070a52f44176176d911b42b96e3e54be33b1e25acae6b87e
+'http://deb.debian.org/debian/pool/main/o/openni/openni_1.5.4.0%2bdfsg.orig.tar.xz' openni_1.5.4.0+dfsg.orig.tar.xz 9885380 SHA256:3e1dabf4fad5aaf67be6f4bfc161ce63b3e3a258f671ff9d65d84f5fadd3db1f
+'http://deb.debian.org/debian/pool/main/o/openni/openni_1.5.4.0%2bdfsg-2.debian.tar.xz' openni_1.5.4.0+dfsg-2.debian.tar.xz 648152 SHA256:fd62f3cd5e6237988e7792786101d20fd84408d00bc627ba749166f7152bc116
 ```
 
 Other potentially useful URLs:
@@ -8237,10 +8237,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssh=1:7.9p1-10+deb10u2
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.9p1-10+deb10u2.dsc' openssh_7.9p1-10+deb10u2.dsc 3321 SHA256:bb8384534491eb1edba6c12a2d4f289e59abb4ec4795101d9655fae52e426dec
+'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.9p1-10%2bdeb10u2.dsc' openssh_7.9p1-10+deb10u2.dsc 3321 SHA256:bb8384534491eb1edba6c12a2d4f289e59abb4ec4795101d9655fae52e426dec
 'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.9p1.orig.tar.gz' openssh_7.9p1.orig.tar.gz 1565384 SHA256:6b4b3ba2253d84ed3771c8050728d597c91cfce898713beb7b64a305b6f11aad
 'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.9p1.orig.tar.gz.asc' openssh_7.9p1.orig.tar.gz.asc 683 SHA256:4fd584498595450d68f5514b3d79eb14425a3d6aa9e9021d9e928fdd7b4469eb
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.9p1-10+deb10u2.debian.tar.xz' openssh_7.9p1-10+deb10u2.debian.tar.xz 174016 SHA256:2f8d81757e3050aab4ab735692c1b2d521cee54ec3987ef3b08fbaff84abf3c1
+'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.9p1-10%2bdeb10u2.debian.tar.xz' openssh_7.9p1-10+deb10u2.debian.tar.xz 174016 SHA256:2f8d81757e3050aab4ab735692c1b2d521cee54ec3987ef3b08fbaff84abf3c1
 ```
 
 Other potentially useful URLs:
@@ -8265,10 +8265,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u7
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0+deb10u7.dsc' openssl_1.1.1d-0+deb10u7.dsc 2649 SHA256:1cb63c67aedf26f139124e4a9ec5d51fa036948df3964805070da7b816b14581
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0%2bdeb10u7.dsc' openssl_1.1.1d-0+deb10u7.dsc 2649 SHA256:1cb63c67aedf26f139124e4a9ec5d51fa036948df3964805070da7b816b14581
 'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
 'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0+deb10u7.debian.tar.xz' openssl_1.1.1d-0+deb10u7.debian.tar.xz 109236 SHA256:8a84cb76bf14a6725ee6b56d76335adadc639513d7c15b24b041fbb5f80cf053
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0%2bdeb10u7.debian.tar.xz' openssl_1.1.1d-0+deb10u7.debian.tar.xz 109236 SHA256:8a84cb76bf14a6725ee6b56d76335adadc639513d7c15b24b041fbb5f80cf053
 ```
 
 Other potentially useful URLs:
@@ -8347,9 +8347,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris orocos-kdl=1.4.0-7+deb10u2
-'http://deb.debian.org/debian/pool/main/o/orocos-kdl/orocos-kdl_1.4.0-7+deb10u2.dsc' orocos-kdl_1.4.0-7+deb10u2.dsc 2325 SHA256:32a68e990272283fa1c976155b01ac42a807a55cc85cb52553122c732a42b813
+'http://deb.debian.org/debian/pool/main/o/orocos-kdl/orocos-kdl_1.4.0-7%2bdeb10u2.dsc' orocos-kdl_1.4.0-7+deb10u2.dsc 2325 SHA256:32a68e990272283fa1c976155b01ac42a807a55cc85cb52553122c732a42b813
 'http://deb.debian.org/debian/pool/main/o/orocos-kdl/orocos-kdl_1.4.0.orig.tar.gz' orocos-kdl_1.4.0.orig.tar.gz 215050 SHA256:b69bddcf26a43260c4eda428aac6831cfc007bb2e78ac5e0847649dd7f88bbcd
-'http://deb.debian.org/debian/pool/main/o/orocos-kdl/orocos-kdl_1.4.0-7+deb10u2.debian.tar.xz' orocos-kdl_1.4.0-7+deb10u2.debian.tar.xz 6736 SHA256:e477404e3a3b6a1e014c8d142b7cd0a4fe4b52157d63c9222aa90f0853d26cee
+'http://deb.debian.org/debian/pool/main/o/orocos-kdl/orocos-kdl_1.4.0-7%2bdeb10u2.debian.tar.xz' orocos-kdl_1.4.0-7+deb10u2.debian.tar.xz 6736 SHA256:e477404e3a3b6a1e014c8d142b7cd0a4fe4b52157d63c9222aa90f0853d26cee
 ```
 
 Other potentially useful URLs:
@@ -8377,10 +8377,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris p11-kit=0.23.15-2+deb10u1
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15-2+deb10u1.dsc' p11-kit_0.23.15-2+deb10u1.dsc 2607 SHA256:d0c7215905c92f521b7b5a4dd98e2ad85abd40a05430dcf2a17dcc3e21f96389
+'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15-2%2bdeb10u1.dsc' p11-kit_0.23.15-2+deb10u1.dsc 2607 SHA256:d0c7215905c92f521b7b5a4dd98e2ad85abd40a05430dcf2a17dcc3e21f96389
 'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15.orig.tar.gz' p11-kit_0.23.15.orig.tar.gz 1276733 SHA256:f7c139a0c77a1f0012619003e542060ba8f94799a0ef463026db390680e4d798
 'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15.orig.tar.gz.asc' p11-kit_0.23.15.orig.tar.gz.asc 879 SHA256:e28bd948178e2f91e18fbb4387d7b6532aa44eb92ac4c67a6485bc9cd9c79db8
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15-2+deb10u1.debian.tar.xz' p11-kit_0.23.15-2+deb10u1.debian.tar.xz 25496 SHA256:9f90af175ef68fdb3aca71f22074fa1860f88a820e29e1290ee51d606c53b572
+'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15-2%2bdeb10u1.debian.tar.xz' p11-kit_0.23.15-2+deb10u1.debian.tar.xz 25496 SHA256:9f90af175ef68fdb3aca71f22074fa1860f88a820e29e1290ee51d606c53b572
 ```
 
 Other potentially useful URLs:
@@ -8438,9 +8438,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pango1.0=1.42.4-8~deb10u1
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8~deb10u1.dsc' pango1.0_1.42.4-8~deb10u1.dsc 3318 SHA256:37ef362bf9bdb0af41a9564a34dcf677e0d67954ba05858443c895785b398318
+'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8%7edeb10u1.dsc' pango1.0_1.42.4-8~deb10u1.dsc 3318 SHA256:37ef362bf9bdb0af41a9564a34dcf677e0d67954ba05858443c895785b398318
 'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4.orig.tar.xz' pango1.0_1.42.4.orig.tar.xz 833876 SHA256:1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d
-'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8~deb10u1.debian.tar.xz' pango1.0_1.42.4-8~deb10u1.debian.tar.xz 51280 SHA256:4ee1b2071855019df99c1f40c68e9b7a2741492d3003fedf3353067bec39d923
+'http://deb.debian.org/debian/pool/main/p/pango1.0/pango1.0_1.42.4-8%7edeb10u1.debian.tar.xz' pango1.0_1.42.4-8~deb10u1.debian.tar.xz 51280 SHA256:4ee1b2071855019df99c1f40c68e9b7a2741492d3003fedf3353067bec39d923
 ```
 
 Other potentially useful URLs:
@@ -8489,9 +8489,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris patch=2.7.6-3+deb10u1
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3+deb10u1.dsc' patch_2.7.6-3+deb10u1.dsc 1731 SHA256:dae4e0d25106b2d14d981309395371397091892359b44a919eb08dd841bee13f
+'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3%2bdeb10u1.dsc' patch_2.7.6-3+deb10u1.dsc 1731 SHA256:dae4e0d25106b2d14d981309395371397091892359b44a919eb08dd841bee13f
 'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3+deb10u1.debian.tar.xz' patch_2.7.6-3+deb10u1.debian.tar.xz 13164 SHA256:58d4e84bd4ce850152e1d1911546ac0aad9764992570c360cff8f9cf03eb37bc
+'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3%2bdeb10u1.debian.tar.xz' patch_2.7.6-3+deb10u1.debian.tar.xz 13164 SHA256:58d4e84bd4ce850152e1d1911546ac0aad9764992570c360cff8f9cf03eb37bc
 ```
 
 Other potentially useful URLs:
@@ -8541,9 +8541,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pcl=1.9.1+dfsg1-10
-'http://deb.debian.org/debian/pool/main/p/pcl/pcl_1.9.1+dfsg1-10.dsc' pcl_1.9.1+dfsg1-10.dsc 3960 SHA256:b81ea1524a4ee3ce6133b16e1a0e90e6612124705c391195a5edd8b301e72627
-'http://deb.debian.org/debian/pool/main/p/pcl/pcl_1.9.1+dfsg1.orig.tar.xz' pcl_1.9.1+dfsg1.orig.tar.xz 57706016 SHA256:453774bdcadb6773b4df310cef32daf3cb108e21bc148aca5298b11aed38a53b
-'http://deb.debian.org/debian/pool/main/p/pcl/pcl_1.9.1+dfsg1-10.debian.tar.xz' pcl_1.9.1+dfsg1-10.debian.tar.xz 30564 SHA256:1fdf476276babeaac660acaf81a31c49941d57a0b852b32f162075a0e5736eba
+'http://deb.debian.org/debian/pool/main/p/pcl/pcl_1.9.1%2bdfsg1-10.dsc' pcl_1.9.1+dfsg1-10.dsc 3960 SHA256:b81ea1524a4ee3ce6133b16e1a0e90e6612124705c391195a5edd8b301e72627
+'http://deb.debian.org/debian/pool/main/p/pcl/pcl_1.9.1%2bdfsg1.orig.tar.xz' pcl_1.9.1+dfsg1.orig.tar.xz 57706016 SHA256:453774bdcadb6773b4df310cef32daf3cb108e21bc148aca5298b11aed38a53b
+'http://deb.debian.org/debian/pool/main/p/pcl/pcl_1.9.1%2bdfsg1-10.debian.tar.xz' pcl_1.9.1+dfsg1-10.debian.tar.xz 30564 SHA256:1fdf476276babeaac660acaf81a31c49941d57a0b852b32f162075a0e5736eba
 ```
 
 Other potentially useful URLs:
@@ -8651,10 +8651,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris perl=5.28.1-6+deb10u1
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1-6+deb10u1.dsc' perl_5.28.1-6+deb10u1.dsc 2863 SHA256:a680d97001398640c249fc6bae6124fe59eb465b044f03fb4148b22152895785
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1-6%2bdeb10u1.dsc' perl_5.28.1-6+deb10u1.dsc 2863 SHA256:a680d97001398640c249fc6bae6124fe59eb465b044f03fb4148b22152895785
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1.orig-regen-configure.tar.xz' perl_5.28.1.orig-regen-configure.tar.xz 411944 SHA256:5873b81af4514d3910ab1a8267b15ff8c0e2100dbae4edfd10b65ef72cd31ef8
 'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1.orig.tar.xz' perl_5.28.1.orig.tar.xz 12372080 SHA256:fea7162d4cca940a387f0587b93f6737d884bf74d8a9d7cfd978bc12cd0b202d
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1-6+deb10u1.debian.tar.xz' perl_5.28.1-6+deb10u1.debian.tar.xz 185004 SHA256:e531c2d8c85b28b34c2122175a8e8f6cfe56b8a0708972fc4beae9876549d815
+'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1-6%2bdeb10u1.debian.tar.xz' perl_5.28.1-6+deb10u1.debian.tar.xz 185004 SHA256:e531c2d8c85b28b34c2122175a8e8f6cfe56b8a0708972fc4beae9876549d815
 ```
 
 Other potentially useful URLs:
@@ -8899,9 +8899,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris postgresql-11=11.14-0+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.14-0+deb10u1.dsc' postgresql-11_11.14-0+deb10u1.dsc 3745 SHA256:1315b0b02f2788ecd3aaf0fc581f05316d4fd72c17268453e2d7066082c1584a
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.14-0%2bdeb10u1.dsc' postgresql-11_11.14-0+deb10u1.dsc 3745 SHA256:1315b0b02f2788ecd3aaf0fc581f05316d4fd72c17268453e2d7066082c1584a
 'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.14.orig.tar.bz2' postgresql-11_11.14.orig.tar.bz2 20172910 SHA256:965c7f4be96fb64f9581852c58c4f05c3812d4ad823c0f3e2bdfe777c162f999
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.14-0+deb10u1.debian.tar.xz' postgresql-11_11.14-0+deb10u1.debian.tar.xz 28084 SHA256:f2c58526fdfad5cfc96e14bd9df4a24dc3e6335d5ec928ceaa5696e038439d28
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.14-0%2bdeb10u1.debian.tar.xz' postgresql-11_11.14-0+deb10u1.debian.tar.xz 28084 SHA256:f2c58526fdfad5cfc96e14bd9df4a24dc3e6335d5ec928ceaa5696e038439d28
 ```
 
 Other potentially useful URLs:
@@ -9097,9 +9097,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris pyparsing=2.2.0+dfsg1-2
-'http://deb.debian.org/debian/pool/main/p/pyparsing/pyparsing_2.2.0+dfsg1-2.dsc' pyparsing_2.2.0+dfsg1-2.dsc 2429 SHA256:fb7dbda8c89bbddf2d96fab4bf770a59f53b08a8f727652556de98e20e1e74ea
-'http://deb.debian.org/debian/pool/main/p/pyparsing/pyparsing_2.2.0+dfsg1.orig.tar.gz' pyparsing_2.2.0+dfsg1.orig.tar.gz 1146636 SHA256:8cf2bde582aa28b854cb96d225606caae902956136e5050ca62125371b06ef8c
-'http://deb.debian.org/debian/pool/main/p/pyparsing/pyparsing_2.2.0+dfsg1-2.debian.tar.xz' pyparsing_2.2.0+dfsg1-2.debian.tar.xz 7984 SHA256:f968a17566c942a919fe7024a15bbbb2f1cce5af9c50e01e57ad9580b1e12591
+'http://deb.debian.org/debian/pool/main/p/pyparsing/pyparsing_2.2.0%2bdfsg1-2.dsc' pyparsing_2.2.0+dfsg1-2.dsc 2429 SHA256:fb7dbda8c89bbddf2d96fab4bf770a59f53b08a8f727652556de98e20e1e74ea
+'http://deb.debian.org/debian/pool/main/p/pyparsing/pyparsing_2.2.0%2bdfsg1.orig.tar.gz' pyparsing_2.2.0+dfsg1.orig.tar.gz 1146636 SHA256:8cf2bde582aa28b854cb96d225606caae902956136e5050ca62125371b06ef8c
+'http://deb.debian.org/debian/pool/main/p/pyparsing/pyparsing_2.2.0%2bdfsg1-2.debian.tar.xz' pyparsing_2.2.0+dfsg1-2.debian.tar.xz 7984 SHA256:f968a17566c942a919fe7024a15bbbb2f1cce5af9c50e01e57ad9580b1e12591
 ```
 
 Other potentially useful URLs:
@@ -9147,9 +9147,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-autobahn=17.10.1+dfsg1-3+deb10u1
-'http://deb.debian.org/debian/pool/main/p/python-autobahn/python-autobahn_17.10.1+dfsg1-3+deb10u1.dsc' python-autobahn_17.10.1+dfsg1-3+deb10u1.dsc 2983 SHA256:2a5be90d03cdd0b6f1671b9ba07564f52a317c9df1d26fbebe26239ec264237f
-'http://deb.debian.org/debian/pool/main/p/python-autobahn/python-autobahn_17.10.1+dfsg1.orig.tar.xz' python-autobahn_17.10.1+dfsg1.orig.tar.xz 1161340 SHA256:fd42fa43d6c10b176bd3da91924cc7e0d2ed4981976a35bf7b91361847a5be83
-'http://deb.debian.org/debian/pool/main/p/python-autobahn/python-autobahn_17.10.1+dfsg1-3+deb10u1.debian.tar.xz' python-autobahn_17.10.1+dfsg1-3+deb10u1.debian.tar.xz 5064 SHA256:dbb70d0bed08893a0dd61efc33abc4b508ddacc9d49d093d437ed48c2b7dc79c
+'http://deb.debian.org/debian/pool/main/p/python-autobahn/python-autobahn_17.10.1%2bdfsg1-3%2bdeb10u1.dsc' python-autobahn_17.10.1+dfsg1-3+deb10u1.dsc 2983 SHA256:2a5be90d03cdd0b6f1671b9ba07564f52a317c9df1d26fbebe26239ec264237f
+'http://deb.debian.org/debian/pool/main/p/python-autobahn/python-autobahn_17.10.1%2bdfsg1.orig.tar.xz' python-autobahn_17.10.1+dfsg1.orig.tar.xz 1161340 SHA256:fd42fa43d6c10b176bd3da91924cc7e0d2ed4981976a35bf7b91361847a5be83
+'http://deb.debian.org/debian/pool/main/p/python-autobahn/python-autobahn_17.10.1%2bdfsg1-3%2bdeb10u1.debian.tar.xz' python-autobahn_17.10.1+dfsg1-3+deb10u1.debian.tar.xz 5064 SHA256:dbb70d0bed08893a0dd61efc33abc4b508ddacc9d49d093d437ed48c2b7dc79c
 ```
 
 Other potentially useful URLs:
@@ -9257,9 +9257,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-cryptography=2.6.1-3+deb10u2
-'http://deb.debian.org/debian/pool/main/p/python-cryptography/python-cryptography_2.6.1-3+deb10u2.dsc' python-cryptography_2.6.1-3+deb10u2.dsc 3556 SHA256:4b0fc06e420ed2b599f9f3cdb896648b45bda1298fefebf7c90d116d288f7ac9
+'http://deb.debian.org/debian/pool/main/p/python-cryptography/python-cryptography_2.6.1-3%2bdeb10u2.dsc' python-cryptography_2.6.1-3+deb10u2.dsc 3556 SHA256:4b0fc06e420ed2b599f9f3cdb896648b45bda1298fefebf7c90d116d288f7ac9
 'http://deb.debian.org/debian/pool/main/p/python-cryptography/python-cryptography_2.6.1.orig.tar.gz' python-cryptography_2.6.1.orig.tar.gz 491580 SHA256:26c821cbeb683facb966045e2064303029d572a87ee69ca5a1bf54bf55f93ca6
-'http://deb.debian.org/debian/pool/main/p/python-cryptography/python-cryptography_2.6.1-3+deb10u2.debian.tar.xz' python-cryptography_2.6.1-3+deb10u2.debian.tar.xz 29712 SHA256:43dbe9f6b272340c0c6a1d2bc6a56516cd087e065b054209956ba29446827061
+'http://deb.debian.org/debian/pool/main/p/python-cryptography/python-cryptography_2.6.1-3%2bdeb10u2.debian.tar.xz' python-cryptography_2.6.1-3+deb10u2.debian.tar.xz 29712 SHA256:43dbe9f6b272340c0c6a1d2bc6a56516cd087e065b054209956ba29446827061
 ```
 
 Other potentially useful URLs:
@@ -9349,9 +9349,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-docutils=0.14+dfsg-4
-'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.14+dfsg-4.dsc' python-docutils_0.14+dfsg-4.dsc 2475 SHA256:e6cdf648575b5ce6188a9630ab9106873d71bef2b945d79cc9eecefa867b2404
-'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.14+dfsg.orig.tar.gz' python-docutils_0.14+dfsg.orig.tar.gz 1739255 SHA256:9731d30e7d958c7fe8fcc20c1689064e130053c954e61df20ac5362eb6305760
-'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.14+dfsg-4.debian.tar.xz' python-docutils_0.14+dfsg-4.debian.tar.xz 32232 SHA256:8a215eebc72e222677ff3518279a039d40ca485a54c8e873ec81352992ec76d3
+'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.14%2bdfsg-4.dsc' python-docutils_0.14+dfsg-4.dsc 2475 SHA256:e6cdf648575b5ce6188a9630ab9106873d71bef2b945d79cc9eecefa867b2404
+'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.14%2bdfsg.orig.tar.gz' python-docutils_0.14+dfsg.orig.tar.gz 1739255 SHA256:9731d30e7d958c7fe8fcc20c1689064e130053c954e61df20ac5362eb6305760
+'http://deb.debian.org/debian/pool/main/p/python-docutils/python-docutils_0.14%2bdfsg-4.debian.tar.xz' python-docutils_0.14+dfsg-4.debian.tar.xz 32232 SHA256:8a215eebc72e222677ff3518279a039d40ca485a54c8e873ec81352992ec76d3
 ```
 
 Other potentially useful URLs:
@@ -9403,9 +9403,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-lz4=1.1.0+dfsg-1
-'http://deb.debian.org/debian/pool/main/p/python-lz4/python-lz4_1.1.0+dfsg-1.dsc' python-lz4_1.1.0+dfsg-1.dsc 2321 SHA256:98af1baebf66f715be12f53bfa8e3f4ea7e61d176df3c133dc453aff04dc1acc
-'http://deb.debian.org/debian/pool/main/p/python-lz4/python-lz4_1.1.0+dfsg.orig.tar.xz' python-lz4_1.1.0+dfsg.orig.tar.xz 39432 SHA256:4a087a24031128eb531d8bf3800e6508d9d797cd44bfb488e988e83739f21501
-'http://deb.debian.org/debian/pool/main/p/python-lz4/python-lz4_1.1.0+dfsg-1.debian.tar.xz' python-lz4_1.1.0+dfsg-1.debian.tar.xz 3800 SHA256:d99a2ae72b21dfc0750ebb23e5567fc1f0754e9c2cde621180f38da7124975e7
+'http://deb.debian.org/debian/pool/main/p/python-lz4/python-lz4_1.1.0%2bdfsg-1.dsc' python-lz4_1.1.0+dfsg-1.dsc 2321 SHA256:98af1baebf66f715be12f53bfa8e3f4ea7e61d176df3c133dc453aff04dc1acc
+'http://deb.debian.org/debian/pool/main/p/python-lz4/python-lz4_1.1.0%2bdfsg.orig.tar.xz' python-lz4_1.1.0+dfsg.orig.tar.xz 39432 SHA256:4a087a24031128eb531d8bf3800e6508d9d797cd44bfb488e988e83739f21501
+'http://deb.debian.org/debian/pool/main/p/python-lz4/python-lz4_1.1.0%2bdfsg-1.debian.tar.xz' python-lz4_1.1.0+dfsg-1.debian.tar.xz 3800 SHA256:d99a2ae72b21dfc0750ebb23e5567fc1f0754e9c2cde621180f38da7124975e7
 ```
 
 Other potentially useful URLs:
@@ -9634,9 +9634,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-trie=0.2+ds-1
-'http://deb.debian.org/debian/pool/main/p/python-trie/python-trie_0.2+ds-1.dsc' python-trie_0.2+ds-1.dsc 2145 SHA256:d5827956f951276ac7cac3721716d723a2daade4d438686f4f110f299bd02d3b
-'http://deb.debian.org/debian/pool/main/p/python-trie/python-trie_0.2+ds.orig.tar.gz' python-trie_0.2+ds.orig.tar.gz 11243 SHA256:178747e52fb61ce322a0d1dde8d8420d4c3d184d7b4c49b73c997c94dd97c8a0
-'http://deb.debian.org/debian/pool/main/p/python-trie/python-trie_0.2+ds-1.debian.tar.xz' python-trie_0.2+ds-1.debian.tar.xz 2584 SHA256:4f51ba6df078cea68819497d5a0e237d5f12771b61f044901e21221d6399afed
+'http://deb.debian.org/debian/pool/main/p/python-trie/python-trie_0.2%2bds-1.dsc' python-trie_0.2+ds-1.dsc 2145 SHA256:d5827956f951276ac7cac3721716d723a2daade4d438686f4f110f299bd02d3b
+'http://deb.debian.org/debian/pool/main/p/python-trie/python-trie_0.2%2bds.orig.tar.gz' python-trie_0.2+ds.orig.tar.gz 11243 SHA256:178747e52fb61ce322a0d1dde8d8420d4c3d184d7b4c49b73c997c94dd97c8a0
+'http://deb.debian.org/debian/pool/main/p/python-trie/python-trie_0.2%2bds-1.debian.tar.xz' python-trie_0.2+ds-1.debian.tar.xz 2584 SHA256:4f51ba6df078cea68819497d5a0e237d5f12771b61f044901e21221d6399afed
 ```
 
 Other potentially useful URLs:
@@ -9731,9 +9731,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python2.7=2.7.16-2+deb10u1
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2+deb10u1.dsc' python2.7_2.7.16-2+deb10u1.dsc 3362 SHA256:c976ba9e854cf611131aacb06f3ddca206b5c799871cb269dbef1ee629be6066
+'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u1.dsc' python2.7_2.7.16-2+deb10u1.dsc 3362 SHA256:c976ba9e854cf611131aacb06f3ddca206b5c799871cb269dbef1ee629be6066
 'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2+deb10u1.diff.gz' python2.7_2.7.16-2+deb10u1.diff.gz 293706 SHA256:37150412430a010c1f0cd816ff1c2b0d90459ecc37c8aa5df5d68f698ececeed
+'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2%2bdeb10u1.diff.gz' python2.7_2.7.16-2+deb10u1.diff.gz 293706 SHA256:37150412430a010c1f0cd816ff1c2b0d90459ecc37c8aa5df5d68f698ececeed
 ```
 
 Other potentially useful URLs:
@@ -9894,14 +9894,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg-modules=1.3.0-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.3.0-1.debian.tar.xz' python3-rospkg-modules_1.3.0-1.debian.tar.xz 1172 SHA512:ff0d48258872efdbf411b339f0318ccad55c45dc3c754866784dab37af82e510c56fb9883ac23be6cb5cd4805f087d3546b17dc11dd01fd09006f119d8951ffb
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.3.0-1.dsc' python3-rospkg-modules_1.3.0-1.dsc 940 SHA512:7f486e790013dfa15e705ad5bcd992196a95def41b378dc4e365cee4d183ca2af2b660ba1e4577baecb12c8dff7ab26f0875b2311c4e07da372a1ff3e5c39fbc
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.3.0.orig.tar.gz' python3-rospkg-modules_1.3.0.orig.tar.gz 41089 SHA512:c1ad1a6e1492d5cce712318e17433a9afccea548097a912f1c79d8fd3568ef443c52bb48eecc717796155b7151e1e42f0976be77d50b8f63fc67a7206e162763
-```
 
 ### `dpkg` source package: `python3-rospkg=1.3.0-100`
 
@@ -9913,14 +9908,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg=1.3.0-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.3.0-100.debian.tar.xz' python3-rospkg_1.3.0-100.debian.tar.xz 1128 SHA512:cae2d6745c777292da7c10f09545ddef1e8cf992561b5498807039f5cf48760a5d8f3f8e3bbf95020c3c282e0712f2086afc331b8b6cb7f9df55efe38ab30b30
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.3.0-100.dsc' python3-rospkg_1.3.0-100.dsc 876 SHA512:da0e3e6f4573bb27de8d152afd528134bfd7a4cdd1a5a4bdfa53fbf2b12ea1bd444f433845706acd8fc260add2deba3f85f9c0342afdfa51097e26e19082a33f
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.3.0.orig.tar.gz' python3-rospkg_1.3.0.orig.tar.gz 17694 SHA512:52922b0f52eef0db158b76af2a06c7f5d9cf3fa15508ce280217cd28336e41dbe05b9a5bbdb810a0952062b68133cc674f61180af808bcfaba43f5bdea0005fe
-```
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.7.3-1`
 
@@ -10003,9 +9993,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python3.7=3.7.3-2+deb10u3
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2+deb10u3.dsc' python3.7_3.7.3-2+deb10u3.dsc 3404 SHA256:b52c229041c77927dc0d9afb9cc55b3b70d5f844d2b73453ce64bf19e016575f
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2%2bdeb10u3.dsc' python3.7_3.7.3-2+deb10u3.dsc 3404 SHA256:b52c229041c77927dc0d9afb9cc55b3b70d5f844d2b73453ce64bf19e016575f
 'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3.orig.tar.xz' python3.7_3.7.3.orig.tar.xz 17108364 SHA256:da60b54064d4cfcd9c26576f6df2690e62085123826cff2e667e72a91952d318
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2+deb10u3.debian.tar.xz' python3.7_3.7.3-2+deb10u3.debian.tar.xz 219604 SHA256:ffce2cea2ec969626e2fada82daab737ef57675c5ac193e916f146f1b0cc0747
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2%2bdeb10u3.debian.tar.xz' python3.7_3.7.3-2+deb10u3.debian.tar.xz 219604 SHA256:ffce2cea2ec969626e2fada82daab737ef57675c5ac193e916f146f1b0cc0747
 ```
 
 Other potentially useful URLs:
@@ -10116,9 +10106,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris qtbase-opensource-src=5.11.3+dfsg1-1+deb10u4
-'http://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.11.3+dfsg1-1+deb10u4.dsc' qtbase-opensource-src_5.11.3+dfsg1-1+deb10u4.dsc 5206 SHA256:68d2c3c114cecd6e18b68650d02acc954a31f709a0b9dec4c4df98811b2f20a0
-'http://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.11.3+dfsg1.orig.tar.xz' qtbase-opensource-src_5.11.3+dfsg1.orig.tar.xz 45155472 SHA256:fb6707c7f9f65b7160879d3bf6d05b3a9a796172c1fc47962b79f5a45c375a22
-'http://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.11.3+dfsg1-1+deb10u4.debian.tar.xz' qtbase-opensource-src_5.11.3+dfsg1-1+deb10u4.debian.tar.xz 244416 SHA256:2742b480117f231a585ec352f25929c942ae7b443acfd615b696094cc750d4c6
+'http://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.11.3%2bdfsg1-1%2bdeb10u4.dsc' qtbase-opensource-src_5.11.3+dfsg1-1+deb10u4.dsc 5206 SHA256:68d2c3c114cecd6e18b68650d02acc954a31f709a0b9dec4c4df98811b2f20a0
+'http://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.11.3%2bdfsg1.orig.tar.xz' qtbase-opensource-src_5.11.3+dfsg1.orig.tar.xz 45155472 SHA256:fb6707c7f9f65b7160879d3bf6d05b3a9a796172c1fc47962b79f5a45c375a22
+'http://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.11.3%2bdfsg1-1%2bdeb10u4.debian.tar.xz' qtbase-opensource-src_5.11.3+dfsg1-1+deb10u4.debian.tar.xz 244416 SHA256:2742b480117f231a585ec352f25929c942ae7b443acfd615b696094cc750d4c6
 ```
 
 Other potentially useful URLs:
@@ -10222,9 +10212,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris qtlocation-opensource-src=5.11.3+dfsg-2
-'http://deb.debian.org/debian/pool/main/q/qtlocation-opensource-src/qtlocation-opensource-src_5.11.3+dfsg-2.dsc' qtlocation-opensource-src_5.11.3+dfsg-2.dsc 3455 SHA256:b241ce91c466eed961593d3292ecd0de4b3bbae41f19c160377dcfc213a6177f
-'http://deb.debian.org/debian/pool/main/q/qtlocation-opensource-src/qtlocation-opensource-src_5.11.3+dfsg.orig.tar.xz' qtlocation-opensource-src_5.11.3+dfsg.orig.tar.xz 3422344 SHA256:ffdc5e66bfe323a732e86c1a57f00911f8bc1544600495ce36f11e43579b74e7
-'http://deb.debian.org/debian/pool/main/q/qtlocation-opensource-src/qtlocation-opensource-src_5.11.3+dfsg-2.debian.tar.xz' qtlocation-opensource-src_5.11.3+dfsg-2.debian.tar.xz 35780 SHA256:761f100ef1e83745470833c28383a9f7d3036c6bf5548aa39496859c23781059
+'http://deb.debian.org/debian/pool/main/q/qtlocation-opensource-src/qtlocation-opensource-src_5.11.3%2bdfsg-2.dsc' qtlocation-opensource-src_5.11.3+dfsg-2.dsc 3455 SHA256:b241ce91c466eed961593d3292ecd0de4b3bbae41f19c160377dcfc213a6177f
+'http://deb.debian.org/debian/pool/main/q/qtlocation-opensource-src/qtlocation-opensource-src_5.11.3%2bdfsg.orig.tar.xz' qtlocation-opensource-src_5.11.3+dfsg.orig.tar.xz 3422344 SHA256:ffdc5e66bfe323a732e86c1a57f00911f8bc1544600495ce36f11e43579b74e7
+'http://deb.debian.org/debian/pool/main/q/qtlocation-opensource-src/qtlocation-opensource-src_5.11.3%2bdfsg-2.debian.tar.xz' qtlocation-opensource-src_5.11.3+dfsg-2.debian.tar.xz 35780 SHA256:761f100ef1e83745470833c28383a9f7d3036c6bf5548aa39496859c23781059
 ```
 
 Other potentially useful URLs:
@@ -10372,9 +10362,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris qtwebkit-opensource-src=5.212.0~alpha2-21
-'http://deb.debian.org/debian/pool/main/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0~alpha2-21.dsc' qtwebkit-opensource-src_5.212.0~alpha2-21.dsc 3256 SHA256:5d7d72debd191cec311b8a0cf83cc6b9f0147728103813e6423b6f131b55dcb9
-'http://deb.debian.org/debian/pool/main/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0~alpha2.orig.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2.orig.tar.xz 12456284 SHA256:f8f901de567e11fc5659402b6b827eac75505ff9c5072d8e919aa306003f8f8a
-'http://deb.debian.org/debian/pool/main/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0~alpha2-21.debian.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2-21.debian.tar.xz 68792 SHA256:15963e7f8966fb2ff258ee7373a086040a69a53e480e775bda4efac6789e70ce
+'http://deb.debian.org/debian/pool/main/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0%7ealpha2-21.dsc' qtwebkit-opensource-src_5.212.0~alpha2-21.dsc 3256 SHA256:5d7d72debd191cec311b8a0cf83cc6b9f0147728103813e6423b6f131b55dcb9
+'http://deb.debian.org/debian/pool/main/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0%7ealpha2.orig.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2.orig.tar.xz 12456284 SHA256:f8f901de567e11fc5659402b6b827eac75505ff9c5072d8e919aa306003f8f8a
+'http://deb.debian.org/debian/pool/main/q/qtwebkit-opensource-src/qtwebkit-opensource-src_5.212.0%7ealpha2-21.debian.tar.xz' qtwebkit-opensource-src_5.212.0~alpha2-21.debian.tar.xz 68792 SHA256:15963e7f8966fb2ff258ee7373a086040a69a53e480e775bda4efac6789e70ce
 ```
 
 Other potentially useful URLs:
@@ -12218,9 +12208,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris rtmpdump=2.4+20151223.gitfa8646d.1-2
-'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1-2.dsc' rtmpdump_2.4+20151223.gitfa8646d.1-2.dsc 2299 SHA256:a296819cd2ab5880b67ad963ef0867cb10e462f4403e52565aa863eb05bb1370
-'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz' rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz 142213 SHA256:5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5
-'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1-2.debian.tar.xz' rtmpdump_2.4+20151223.gitfa8646d.1-2.debian.tar.xz 8096 SHA256:26d47de07d16285e4ca55b0828cbbf1ba35e671f9b3500a87e301fe755d26882
+'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1-2.dsc' rtmpdump_2.4+20151223.gitfa8646d.1-2.dsc 2299 SHA256:a296819cd2ab5880b67ad963ef0867cb10e462f4403e52565aa863eb05bb1370
+'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1.orig.tar.gz' rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz 142213 SHA256:5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5
+'http://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1-2.debian.tar.xz' rtmpdump_2.4+20151223.gitfa8646d.1-2.debian.tar.xz 8096 SHA256:26d47de07d16285e4ca55b0828cbbf1ba35e671f9b3500a87e301fe755d26882
 ```
 
 Other potentially useful URLs:
@@ -12453,9 +12443,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris sip4=4.19.14+dfsg-2
-'http://deb.debian.org/debian/pool/main/s/sip4/sip4_4.19.14+dfsg-2.dsc' sip4_4.19.14+dfsg-2.dsc 2651 SHA256:17307d2237a11e6a7592137ad7c36afdcc130b723d01dadeaca0645d11a9049b
-'http://deb.debian.org/debian/pool/main/s/sip4/sip4_4.19.14+dfsg.orig.tar.xz' sip4_4.19.14+dfsg.orig.tar.xz 400168 SHA256:36325e6706e87700daada715d9df4d5aaa0ea0a5430c445511bfb1bef226583a
-'http://deb.debian.org/debian/pool/main/s/sip4/sip4_4.19.14+dfsg-2.debian.tar.xz' sip4_4.19.14+dfsg-2.debian.tar.xz 17628 SHA256:95465c2bb8dca7a3d689a4d2d9582192adca9493e9d49f33cd778299394b9c4d
+'http://deb.debian.org/debian/pool/main/s/sip4/sip4_4.19.14%2bdfsg-2.dsc' sip4_4.19.14+dfsg-2.dsc 2651 SHA256:17307d2237a11e6a7592137ad7c36afdcc130b723d01dadeaca0645d11a9049b
+'http://deb.debian.org/debian/pool/main/s/sip4/sip4_4.19.14%2bdfsg.orig.tar.xz' sip4_4.19.14+dfsg.orig.tar.xz 400168 SHA256:36325e6706e87700daada715d9df4d5aaa0ea0a5430c445511bfb1bef226583a
+'http://deb.debian.org/debian/pool/main/s/sip4/sip4_4.19.14%2bdfsg-2.debian.tar.xz' sip4_4.19.14+dfsg-2.debian.tar.xz 17628 SHA256:95465c2bb8dca7a3d689a4d2d9582192adca9493e9d49f33cd778299394b9c4d
 ```
 
 Other potentially useful URLs:
@@ -12530,9 +12520,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris socket++=1.12.13-10
-'http://deb.debian.org/debian/pool/main/s/socket++/socket++_1.12.13-10.dsc' socket++_1.12.13-10.dsc 2056 SHA256:96c6cda404c90483437c9a4397530dad20ae3e63b418971a26eb3f3c4736abac
-'http://deb.debian.org/debian/pool/main/s/socket++/socket++_1.12.13.orig.tar.gz' socket++_1.12.13.orig.tar.gz 64263 SHA256:755cdcac06d40fcca2b221f840e05f89a86298bc3bfc518b51a57b42f0512b19
-'http://deb.debian.org/debian/pool/main/s/socket++/socket++_1.12.13-10.debian.tar.xz' socket++_1.12.13-10.debian.tar.xz 4272 SHA256:bc949582d3b5679ef080d55f321078c20c61c79d7be27b6d757d1d2291108e24
+'http://deb.debian.org/debian/pool/main/s/socket%2b%2b/socket%2b%2b_1.12.13-10.dsc' socket++_1.12.13-10.dsc 2056 SHA256:96c6cda404c90483437c9a4397530dad20ae3e63b418971a26eb3f3c4736abac
+'http://deb.debian.org/debian/pool/main/s/socket%2b%2b/socket%2b%2b_1.12.13.orig.tar.gz' socket++_1.12.13.orig.tar.gz 64263 SHA256:755cdcac06d40fcca2b221f840e05f89a86298bc3bfc518b51a57b42f0512b19
+'http://deb.debian.org/debian/pool/main/s/socket%2b%2b/socket%2b%2b_1.12.13-10.debian.tar.xz' socket++_1.12.13-10.debian.tar.xz 4272 SHA256:bc949582d3b5679ef080d55f321078c20c61c79d7be27b6d757d1d2291108e24
 ```
 
 Other potentially useful URLs:
@@ -12592,9 +12582,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris speex=1.2~rc1.2-1
-'http://deb.debian.org/debian/pool/main/s/speex/speex_1.2~rc1.2-1.dsc' speex_1.2~rc1.2-1.dsc 1540 SHA256:faf1fa4e640bf3ba153ebe58f8f40824437ef303b276e04ef15b3841199dce43
-'http://deb.debian.org/debian/pool/main/s/speex/speex_1.2~rc1.2.orig.tar.gz' speex_1.2~rc1.2.orig.tar.gz 1069339 SHA256:8320fb86a024dfe1b6a78a7d57bc2388e5f8cb7f2fa10c946db2704e1e5d2805
-'http://deb.debian.org/debian/pool/main/s/speex/speex_1.2~rc1.2-1.diff.gz' speex_1.2~rc1.2-1.diff.gz 9750 SHA256:6c549549a9a8d1b24f12ddbfa706f1e078ad5d9fed9a9fe584f9d08b47458930
+'http://deb.debian.org/debian/pool/main/s/speex/speex_1.2%7erc1.2-1.dsc' speex_1.2~rc1.2-1.dsc 1540 SHA256:faf1fa4e640bf3ba153ebe58f8f40824437ef303b276e04ef15b3841199dce43
+'http://deb.debian.org/debian/pool/main/s/speex/speex_1.2%7erc1.2.orig.tar.gz' speex_1.2~rc1.2.orig.tar.gz 1069339 SHA256:8320fb86a024dfe1b6a78a7d57bc2388e5f8cb7f2fa10c946db2704e1e5d2805
+'http://deb.debian.org/debian/pool/main/s/speex/speex_1.2%7erc1.2-1.diff.gz' speex_1.2~rc1.2-1.diff.gz 9750 SHA256:6c549549a9a8d1b24f12ddbfa706f1e078ad5d9fed9a9fe584f9d08b47458930
 ```
 
 Other potentially useful URLs:
@@ -12620,10 +12610,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris sqlite3=3.27.2-3+deb10u1
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3+deb10u1.dsc' sqlite3_3.27.2-3+deb10u1.dsc 2430 SHA256:6faf359c70d0618558056d6dee9f05ea810ff57aebb141ac28129c17e685cf1b
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3%2bdeb10u1.dsc' sqlite3_3.27.2-3+deb10u1.dsc 2430 SHA256:6faf359c70d0618558056d6dee9f05ea810ff57aebb141ac28129c17e685cf1b
 'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2.orig-www.tar.xz' sqlite3_3.27.2.orig-www.tar.xz 5602752 SHA256:b50bea0e1974b33bcb2cec4c29fcdeecd8f960020ce0310b15fb123938844bee
 'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2.orig.tar.xz' sqlite3_3.27.2.orig.tar.xz 6844832 SHA256:6cb1606bbc38270739d256b5ab1cf94dccf5b2a3b4cbceb0545aac76f6ef40f2
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3+deb10u1.debian.tar.xz' sqlite3_3.27.2-3+deb10u1.debian.tar.xz 38844 SHA256:ccabd6cc3d05887f2dd239065f3c3063f766e9e187804a89f04cbcbdb49a6b7e
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3%2bdeb10u1.debian.tar.xz' sqlite3_3.27.2-3+deb10u1.debian.tar.xz 38844 SHA256:ccabd6cc3d05887f2dd239065f3c3063f766e9e187804a89f04cbcbdb49a6b7e
 ```
 
 Other potentially useful URLs:
@@ -12658,10 +12648,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris subversion=1.10.4-1+deb10u2
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1+deb10u2.dsc' subversion_1.10.4-1+deb10u2.dsc 3399 SHA256:fe2ad642c6b717e43a3e65e244ca13aa2cd20a2242d21e115f04ef173fadc9ab
+'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1%2bdeb10u2.dsc' subversion_1.10.4-1+deb10u2.dsc 3399 SHA256:fe2ad642c6b717e43a3e65e244ca13aa2cd20a2242d21e115f04ef173fadc9ab
 'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4.orig.tar.gz' subversion_1.10.4.orig.tar.gz 11347907 SHA256:354022a837596eb1b5676639ea8d73aa326fa8b2c610d8e1b39aeb7228921f4e
 'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4.orig.tar.gz.asc' subversion_1.10.4.orig.tar.gz.asc 2107 SHA256:bc6173c43ac837f875d9f2921e118c194455796b419769e155496cf084376428
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1+deb10u2.debian.tar.xz' subversion_1.10.4-1+deb10u2.debian.tar.xz 438360 SHA256:af81a4228e6b41ef533d95a40fc73ea5b67dfceb3054f57cd7bcb9d42596af7c
+'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1%2bdeb10u2.debian.tar.xz' subversion_1.10.4-1+deb10u2.debian.tar.xz 438360 SHA256:af81a4228e6b41ef533d95a40fc73ea5b67dfceb3054f57cd7bcb9d42596af7c
 ```
 
 Other potentially useful URLs:
@@ -12684,9 +12674,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris sudo=1.8.27-1+deb10u3
-'http://deb.debian.org/debian/pool/main/s/sudo/sudo_1.8.27-1+deb10u3.dsc' sudo_1.8.27-1+deb10u3.dsc 2130 SHA256:fa25a83685cb69b0313e3f6c775c0f2a2878d77ab901d3c0778f17ce9d530cc1
+'http://deb.debian.org/debian/pool/main/s/sudo/sudo_1.8.27-1%2bdeb10u3.dsc' sudo_1.8.27-1+deb10u3.dsc 2130 SHA256:fa25a83685cb69b0313e3f6c775c0f2a2878d77ab901d3c0778f17ce9d530cc1
 'http://deb.debian.org/debian/pool/main/s/sudo/sudo_1.8.27.orig.tar.gz' sudo_1.8.27.orig.tar.gz 3293178 SHA256:7beb68b94471ef56d8a1036dbcdc09a7b58a949a68ffce48b83f837dd33e2ec0
-'http://deb.debian.org/debian/pool/main/s/sudo/sudo_1.8.27-1+deb10u3.debian.tar.xz' sudo_1.8.27-1+deb10u3.debian.tar.xz 30836 SHA256:9ed1562303725a5d307c637cca3dbb65020b308b082f714b2d86cb2848c26d14
+'http://deb.debian.org/debian/pool/main/s/sudo/sudo_1.8.27-1%2bdeb10u3.debian.tar.xz' sudo_1.8.27-1+deb10u3.debian.tar.xz 30836 SHA256:9ed1562303725a5d307c637cca3dbb65020b308b082f714b2d86cb2848c26d14
 ```
 
 Other potentially useful URLs:
@@ -12714,9 +12704,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris superlu=5.2.1+dfsg1-4
-'http://deb.debian.org/debian/pool/main/s/superlu/superlu_5.2.1+dfsg1-4.dsc' superlu_5.2.1+dfsg1-4.dsc 2241 SHA256:63364ece2f9220ab8ab15b25511a88b837fa1d8b1313abf9ec312b164db61ec5
-'http://deb.debian.org/debian/pool/main/s/superlu/superlu_5.2.1+dfsg1.orig.tar.xz' superlu_5.2.1+dfsg1.orig.tar.xz 702616 SHA256:6b09d9ad5f384300e9d2c85ccabb88e748405fbf768c79d7325bf1b8aba9d5e1
-'http://deb.debian.org/debian/pool/main/s/superlu/superlu_5.2.1+dfsg1-4.debian.tar.xz' superlu_5.2.1+dfsg1-4.debian.tar.xz 6436 SHA256:3f4af1a6931b6a2d0e5fad02aa57af8c2d9773bcfbdf2230fd866184242b69f6
+'http://deb.debian.org/debian/pool/main/s/superlu/superlu_5.2.1%2bdfsg1-4.dsc' superlu_5.2.1+dfsg1-4.dsc 2241 SHA256:63364ece2f9220ab8ab15b25511a88b837fa1d8b1313abf9ec312b164db61ec5
+'http://deb.debian.org/debian/pool/main/s/superlu/superlu_5.2.1%2bdfsg1.orig.tar.xz' superlu_5.2.1+dfsg1.orig.tar.xz 702616 SHA256:6b09d9ad5f384300e9d2c85ccabb88e748405fbf768c79d7325bf1b8aba9d5e1
+'http://deb.debian.org/debian/pool/main/s/superlu/superlu_5.2.1%2bdfsg1-4.debian.tar.xz' superlu_5.2.1+dfsg1-4.debian.tar.xz 6436 SHA256:3f4af1a6931b6a2d0e5fad02aa57af8c2d9773bcfbdf2230fd866184242b69f6
 ```
 
 Other potentially useful URLs:
@@ -12749,9 +12739,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris systemd=241-7~deb10u8
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u8.dsc' systemd_241-7~deb10u8.dsc 5101 SHA256:925ac30011dee81ab0e418f27515db2ddead0fa609b34eb7815cee7861c5a561
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7%7edeb10u8.dsc' systemd_241-7~deb10u8.dsc 5101 SHA256:925ac30011dee81ab0e418f27515db2ddead0fa609b34eb7815cee7861c5a561
 'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u8.debian.tar.xz' systemd_241-7~deb10u8.debian.tar.xz 182616 SHA256:6f5419d06f917a0565a55b9c9e7b9b55c094623a32b722f24431c20f7b48491b
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7%7edeb10u8.debian.tar.xz' systemd_241-7~deb10u8.debian.tar.xz 182616 SHA256:6f5419d06f917a0565a55b9c9e7b9b55c094623a32b722f24431c20f7b48491b
 ```
 
 Other potentially useful URLs:
@@ -12802,9 +12792,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tar=1.30+dfsg-6
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.30+dfsg-6.dsc' tar_1.30+dfsg-6.dsc 1995 SHA256:1515951c8a2fc9a43e822efd82d9043cdec4bec47ddca9e7f1311c73e6b00d0c
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.30+dfsg.orig.tar.xz' tar_1.30+dfsg.orig.tar.xz 1883220 SHA256:c02f3747ffe02017878303dde8b78e79cd220364c5e8048cf92320232e38912d
-'http://deb.debian.org/debian/pool/main/t/tar/tar_1.30+dfsg-6.debian.tar.xz' tar_1.30+dfsg-6.debian.tar.xz 22124 SHA256:b7caae6287992536353413e7a9b21301b29c32066bb6f36b7190074af9dd5c50
+'http://deb.debian.org/debian/pool/main/t/tar/tar_1.30%2bdfsg-6.dsc' tar_1.30+dfsg-6.dsc 1995 SHA256:1515951c8a2fc9a43e822efd82d9043cdec4bec47ddca9e7f1311c73e6b00d0c
+'http://deb.debian.org/debian/pool/main/t/tar/tar_1.30%2bdfsg.orig.tar.xz' tar_1.30+dfsg.orig.tar.xz 1883220 SHA256:c02f3747ffe02017878303dde8b78e79cd220364c5e8048cf92320232e38912d
+'http://deb.debian.org/debian/pool/main/t/tar/tar_1.30%2bdfsg-6.debian.tar.xz' tar_1.30+dfsg-6.debian.tar.xz 22124 SHA256:b7caae6287992536353413e7a9b21301b29c32066bb6f36b7190074af9dd5c50
 ```
 
 Other potentially useful URLs:
@@ -12829,9 +12819,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tbb=2018~U6-4
-'http://deb.debian.org/debian/pool/main/t/tbb/tbb_2018~U6-4.dsc' tbb_2018~U6-4.dsc 2175 SHA256:1d4c4c2bf30d0eee5a7a788c39aaa26bf451c413c16523b9714f403099b39528
-'http://deb.debian.org/debian/pool/main/t/tbb/tbb_2018~U6.orig.tar.gz' tbb_2018~U6.orig.tar.gz 2922715 SHA256:d3e5fbca3cc643d03bf332d576ff85e19aa774b483f148f95cd7d09958372109
-'http://deb.debian.org/debian/pool/main/t/tbb/tbb_2018~U6-4.debian.tar.xz' tbb_2018~U6-4.debian.tar.xz 53484 SHA256:7388365461fe52b9d75eee63d3369dd5bca80b17baeaba80fce4abc811100255
+'http://deb.debian.org/debian/pool/main/t/tbb/tbb_2018%7eU6-4.dsc' tbb_2018~U6-4.dsc 2175 SHA256:1d4c4c2bf30d0eee5a7a788c39aaa26bf451c413c16523b9714f403099b39528
+'http://deb.debian.org/debian/pool/main/t/tbb/tbb_2018%7eU6.orig.tar.gz' tbb_2018~U6.orig.tar.gz 2922715 SHA256:d3e5fbca3cc643d03bf332d576ff85e19aa774b483f148f95cd7d09958372109
+'http://deb.debian.org/debian/pool/main/t/tbb/tbb_2018%7eU6-4.debian.tar.xz' tbb_2018~U6-4.debian.tar.xz 53484 SHA256:7388365461fe52b9d75eee63d3369dd5bca80b17baeaba80fce4abc811100255
 ```
 
 Other potentially useful URLs:
@@ -12856,9 +12846,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tcl8.6=8.6.9+dfsg-2
-'http://deb.debian.org/debian/pool/main/t/tcl8.6/tcl8.6_8.6.9+dfsg-2.dsc' tcl8.6_8.6.9+dfsg-2.dsc 2111 SHA256:eec45c5a639d6b9c4f10225f98f75fe7ad2169f58225c700fe7ec0e1f16524a2
-'http://deb.debian.org/debian/pool/main/t/tcl8.6/tcl8.6_8.6.9+dfsg.orig.tar.gz' tcl8.6_8.6.9+dfsg.orig.tar.gz 5934065 SHA256:e0a220012a61fd4bd07e0e6b3391a8884c16608b37a00f22726614d721c50659
-'http://deb.debian.org/debian/pool/main/t/tcl8.6/tcl8.6_8.6.9+dfsg-2.debian.tar.xz' tcl8.6_8.6.9+dfsg-2.debian.tar.xz 15360 SHA256:22f6a224965b542bc028e949cf120c883735274cb7e2a29a1f09a3444a4ffa83
+'http://deb.debian.org/debian/pool/main/t/tcl8.6/tcl8.6_8.6.9%2bdfsg-2.dsc' tcl8.6_8.6.9+dfsg-2.dsc 2111 SHA256:eec45c5a639d6b9c4f10225f98f75fe7ad2169f58225c700fe7ec0e1f16524a2
+'http://deb.debian.org/debian/pool/main/t/tcl8.6/tcl8.6_8.6.9%2bdfsg.orig.tar.gz' tcl8.6_8.6.9+dfsg.orig.tar.gz 5934065 SHA256:e0a220012a61fd4bd07e0e6b3391a8884c16608b37a00f22726614d721c50659
+'http://deb.debian.org/debian/pool/main/t/tcl8.6/tcl8.6_8.6.9%2bdfsg-2.debian.tar.xz' tcl8.6_8.6.9+dfsg-2.debian.tar.xz 15360 SHA256:22f6a224965b542bc028e949cf120c883735274cb7e2a29a1f09a3444a4ffa83
 ```
 
 Other potentially useful URLs:
@@ -12884,8 +12874,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tcltk-defaults=8.6.9+1
-'http://deb.debian.org/debian/pool/main/t/tcltk-defaults/tcltk-defaults_8.6.9+1.dsc' tcltk-defaults_8.6.9+1.dsc 2017 SHA256:f5b3ff227f28e1a513655793d31fbc7eb530d4b502acc600e932af903b67f56a
-'http://deb.debian.org/debian/pool/main/t/tcltk-defaults/tcltk-defaults_8.6.9+1.tar.xz' tcltk-defaults_8.6.9+1.tar.xz 13972 SHA256:5c97cc546ee2b73013c95b9ddacd8ac615581409df7f4ab564927b9e26808e4b
+'http://deb.debian.org/debian/pool/main/t/tcltk-defaults/tcltk-defaults_8.6.9%2b1.dsc' tcltk-defaults_8.6.9+1.dsc 2017 SHA256:f5b3ff227f28e1a513655793d31fbc7eb530d4b502acc600e932af903b67f56a
+'http://deb.debian.org/debian/pool/main/t/tcltk-defaults/tcltk-defaults_8.6.9%2b1.tar.xz' tcltk-defaults_8.6.9+1.tar.xz 13972 SHA256:5c97cc546ee2b73013c95b9ddacd8ac615581409df7f4ab564927b9e26808e4b
 ```
 
 Other potentially useful URLs:
@@ -12935,9 +12925,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tiff=4.1.0+git191117-2~deb10u3
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.1.0+git191117-2~deb10u3.dsc' tiff_4.1.0+git191117-2~deb10u3.dsc 2429 SHA256:78683a8ee5bfd5f3561e8e3d70c914c420d4cc590c9bbe9222832c2e9e8f3ec6
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.1.0+git191117.orig.tar.xz' tiff_4.1.0+git191117.orig.tar.xz 1533524 SHA256:67e1d045e994adb7144b0cca228d70dd6d520aaf8c75c342064bc0fd601e6e42
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.1.0+git191117-2~deb10u3.debian.tar.xz' tiff_4.1.0+git191117-2~deb10u3.debian.tar.xz 20896 SHA256:b58a9a797fc5526a0134bfd88081670b075a4b1bfa9a8aaf2607430e06bb63ca
+'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.1.0%2bgit191117-2%7edeb10u3.dsc' tiff_4.1.0+git191117-2~deb10u3.dsc 2429 SHA256:78683a8ee5bfd5f3561e8e3d70c914c420d4cc590c9bbe9222832c2e9e8f3ec6
+'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.1.0%2bgit191117.orig.tar.xz' tiff_4.1.0+git191117.orig.tar.xz 1533524 SHA256:67e1d045e994adb7144b0cca228d70dd6d520aaf8c75c342064bc0fd601e6e42
+'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.1.0%2bgit191117-2%7edeb10u3.debian.tar.xz' tiff_4.1.0+git191117-2~deb10u3.debian.tar.xz 20896 SHA256:b58a9a797fc5526a0134bfd88081670b075a4b1bfa9a8aaf2607430e06bb63ca
 ```
 
 Other potentially useful URLs:
@@ -12963,9 +12953,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tinyxml2=7.0.0+dfsg-1
-'http://deb.debian.org/debian/pool/main/t/tinyxml2/tinyxml2_7.0.0+dfsg-1.dsc' tinyxml2_7.0.0+dfsg-1.dsc 2004 SHA256:243db448c69bd0acb4d3584f821138f44b187028da80c798e5aec62ba92cfebb
-'http://deb.debian.org/debian/pool/main/t/tinyxml2/tinyxml2_7.0.0+dfsg.orig.tar.gz' tinyxml2_7.0.0+dfsg.orig.tar.gz 359355 SHA256:1eceb87c311b5bf44b2b7351fa6ffda810605d7de402348157262543cf7185ef
-'http://deb.debian.org/debian/pool/main/t/tinyxml2/tinyxml2_7.0.0+dfsg-1.debian.tar.xz' tinyxml2_7.0.0+dfsg-1.debian.tar.xz 5744 SHA256:467024830a07cc587d30ad8a12a741ae787af15edd3da363495f64f4105de9cd
+'http://deb.debian.org/debian/pool/main/t/tinyxml2/tinyxml2_7.0.0%2bdfsg-1.dsc' tinyxml2_7.0.0+dfsg-1.dsc 2004 SHA256:243db448c69bd0acb4d3584f821138f44b187028da80c798e5aec62ba92cfebb
+'http://deb.debian.org/debian/pool/main/t/tinyxml2/tinyxml2_7.0.0%2bdfsg.orig.tar.gz' tinyxml2_7.0.0+dfsg.orig.tar.gz 359355 SHA256:1eceb87c311b5bf44b2b7351fa6ffda810605d7de402348157262543cf7185ef
+'http://deb.debian.org/debian/pool/main/t/tinyxml2/tinyxml2_7.0.0%2bdfsg-1.debian.tar.xz' tinyxml2_7.0.0+dfsg-1.debian.tar.xz 5744 SHA256:467024830a07cc587d30ad8a12a741ae787af15edd3da363495f64f4105de9cd
 ```
 
 Other potentially useful URLs:
@@ -13092,10 +13082,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tzdata=2021a-0+deb10u3
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u3.dsc' tzdata_2021a-0+deb10u3.dsc 2264 SHA256:1730f7a8a2ac3ac3c9db9dc7ddd3074343a7846988c515d55f046be527a00834
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0%2bdeb10u3.dsc' tzdata_2021a-0+deb10u3.dsc 2264 SHA256:1730f7a8a2ac3ac3c9db9dc7ddd3074343a7846988c515d55f046be527a00834
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
 'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0+deb10u3.debian.tar.xz' tzdata_2021a-0+deb10u3.debian.tar.xz 109800 SHA256:aa09186f2ceb3d4b7ec9e7575ba51a3c1b4894e0669e1125c4cae1eafec73808
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0%2bdeb10u3.debian.tar.xz' tzdata_2021a-0+deb10u3.debian.tar.xz 109800 SHA256:aa09186f2ceb3d4b7ec9e7575ba51a3c1b4894e0669e1125c4cae1eafec73808
 ```
 
 Other potentially useful URLs:
@@ -13143,8 +13133,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris ucf=3.0038+nmu1
-'http://deb.debian.org/debian/pool/main/u/ucf/ucf_3.0038+nmu1.dsc' ucf_3.0038+nmu1.dsc 1420 SHA256:89b6f921a30e04a946f62e6996be7c16f2f7c383d20783cd4704b502c6d5b125
-'http://deb.debian.org/debian/pool/main/u/ucf/ucf_3.0038+nmu1.tar.xz' ucf_3.0038+nmu1.tar.xz 65860 SHA256:d00bc3dd8d2f91317f52b5352fe129023c72babad55bc0dd4ece7b34183c7436
+'http://deb.debian.org/debian/pool/main/u/ucf/ucf_3.0038%2bnmu1.dsc' ucf_3.0038+nmu1.dsc 1420 SHA256:89b6f921a30e04a946f62e6996be7c16f2f7c383d20783cd4704b502c6d5b125
+'http://deb.debian.org/debian/pool/main/u/ucf/ucf_3.0038%2bnmu1.tar.xz' ucf_3.0038+nmu1.tar.xz 65860 SHA256:d00bc3dd8d2f91317f52b5352fe129023c72babad55bc0dd4ece7b34183c7436
 ```
 
 Other potentially useful URLs:
@@ -13181,9 +13171,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris unbound=1.9.0-2+deb10u2
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0-2+deb10u2.dsc' unbound_1.9.0-2+deb10u2.dsc 3058 SHA256:2cc7711412bfed76f2b336e2a1c493cb7ae73f042271af001bf2174930244887
+'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0-2%2bdeb10u2.dsc' unbound_1.9.0-2+deb10u2.dsc 3058 SHA256:2cc7711412bfed76f2b336e2a1c493cb7ae73f042271af001bf2174930244887
 'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0.orig.tar.gz' unbound_1.9.0.orig.tar.gz 5662176 SHA256:415af94b8392bc6b2c52e44ac8f17935cc6ddf2cc81edfb47c5be4ad205ab917
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0-2+deb10u2.debian.tar.xz' unbound_1.9.0-2+deb10u2.debian.tar.xz 26772 SHA256:66230226f27f6a844854db76291b866aa432e75542c11e07e14b964e7a03d40e
+'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0-2%2bdeb10u2.debian.tar.xz' unbound_1.9.0-2+deb10u2.debian.tar.xz 26772 SHA256:66230226f27f6a844854db76291b866aa432e75542c11e07e14b964e7a03d40e
 ```
 
 Other potentially useful URLs:
@@ -13244,9 +13234,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris uriparser=0.9.1-1+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/u/uriparser/uriparser_0.9.1-1+deb10u1.dsc' uriparser_0.9.1-1+deb10u1.dsc 2258 SHA256:59371fa82d1d0e9b418897fdb45be805270b2e5d6c9f0c2928d1ff2bd65873e0
+'http://security.debian.org/debian-security/pool/updates/main/u/uriparser/uriparser_0.9.1-1%2bdeb10u1.dsc' uriparser_0.9.1-1+deb10u1.dsc 2258 SHA256:59371fa82d1d0e9b418897fdb45be805270b2e5d6c9f0c2928d1ff2bd65873e0
 'http://security.debian.org/debian-security/pool/updates/main/u/uriparser/uriparser_0.9.1.orig.tar.bz2' uriparser_0.9.1.orig.tar.bz2 372722 SHA256:75248f3de3b7b13c8c9735ff7b86ebe72cbb8ad043291517d7d53488e0893abe
-'http://security.debian.org/debian-security/pool/updates/main/u/uriparser/uriparser_0.9.1-1+deb10u1.debian.tar.xz' uriparser_0.9.1-1+deb10u1.debian.tar.xz 8328 SHA256:72bfc8d5c992cb783a8595b8e3c6a0cf1f7579313b2b860cae1b46fc598a460a
+'http://security.debian.org/debian-security/pool/updates/main/u/uriparser/uriparser_0.9.1-1%2bdeb10u1.debian.tar.xz' uriparser_0.9.1-1+deb10u1.debian.tar.xz 8328 SHA256:72bfc8d5c992cb783a8595b8e3c6a0cf1f7579313b2b860cae1b46fc598a460a
 ```
 
 Other potentially useful URLs:
@@ -13357,9 +13347,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris vtk6=6.3.0+dfsg2-2
-'http://deb.debian.org/debian/pool/main/v/vtk6/vtk6_6.3.0+dfsg2-2.dsc' vtk6_6.3.0+dfsg2-2.dsc 3311 SHA256:0886bd4ed88185335b35d35669d41ea673e4ed18f0fe06313448ece36b7cacfb
-'http://deb.debian.org/debian/pool/main/v/vtk6/vtk6_6.3.0+dfsg2.orig.tar.gz' vtk6_6.3.0+dfsg2.orig.tar.gz 18165661 SHA256:0c823748d66d36678a59c534ec9c919c9188d1176bbf31a511d6f53d503bc4f0
-'http://deb.debian.org/debian/pool/main/v/vtk6/vtk6_6.3.0+dfsg2-2.debian.tar.xz' vtk6_6.3.0+dfsg2-2.debian.tar.xz 32308 SHA256:5770adb4f283d5100a92ea3447eaa9f7dd1500daffa0a3e86701f4f455a2a9fe
+'http://deb.debian.org/debian/pool/main/v/vtk6/vtk6_6.3.0%2bdfsg2-2.dsc' vtk6_6.3.0+dfsg2-2.dsc 3311 SHA256:0886bd4ed88185335b35d35669d41ea673e4ed18f0fe06313448ece36b7cacfb
+'http://deb.debian.org/debian/pool/main/v/vtk6/vtk6_6.3.0%2bdfsg2.orig.tar.gz' vtk6_6.3.0+dfsg2.orig.tar.gz 18165661 SHA256:0c823748d66d36678a59c534ec9c919c9188d1176bbf31a511d6f53d503bc4f0
+'http://deb.debian.org/debian/pool/main/v/vtk6/vtk6_6.3.0%2bdfsg2-2.debian.tar.xz' vtk6_6.3.0+dfsg2-2.debian.tar.xz 32308 SHA256:5770adb4f283d5100a92ea3447eaa9f7dd1500daffa0a3e86701f4f455a2a9fe
 ```
 
 Other potentially useful URLs:
@@ -13404,9 +13394,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris vtk7=7.1.1+dfsg1-12
-'http://deb.debian.org/debian/pool/main/v/vtk7/vtk7_7.1.1+dfsg1-12.dsc' vtk7_7.1.1+dfsg1-12.dsc 3661 SHA256:7e4052bf97f888c059feecebfd4292b3b26b96bc81d76951c8adfb7a17340e74
-'http://deb.debian.org/debian/pool/main/v/vtk7/vtk7_7.1.1+dfsg1.orig.tar.gz' vtk7_7.1.1+dfsg1.orig.tar.gz 19576902 SHA256:0b33f346bae08f27fb097fd318605ed92d3cfefbe3df1fd96d9a16b388d734e0
-'http://deb.debian.org/debian/pool/main/v/vtk7/vtk7_7.1.1+dfsg1-12.debian.tar.xz' vtk7_7.1.1+dfsg1-12.debian.tar.xz 26256 SHA256:a61d2802643c4a13684279bf1e80a9042ccb3c36f1059e1633270eeec881bfbe
+'http://deb.debian.org/debian/pool/main/v/vtk7/vtk7_7.1.1%2bdfsg1-12.dsc' vtk7_7.1.1+dfsg1-12.dsc 3661 SHA256:7e4052bf97f888c059feecebfd4292b3b26b96bc81d76951c8adfb7a17340e74
+'http://deb.debian.org/debian/pool/main/v/vtk7/vtk7_7.1.1%2bdfsg1.orig.tar.gz' vtk7_7.1.1+dfsg1.orig.tar.gz 19576902 SHA256:0b33f346bae08f27fb097fd318605ed92d3cfefbe3df1fd96d9a16b388d734e0
+'http://deb.debian.org/debian/pool/main/v/vtk7/vtk7_7.1.1%2bdfsg1-12.debian.tar.xz' vtk7_7.1.1+dfsg1-12.debian.tar.xz 26256 SHA256:a61d2802643c4a13684279bf1e80a9042ccb3c36f1059e1633270eeec881bfbe
 ```
 
 Other potentially useful URLs:
@@ -13542,9 +13532,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris x264=2:0.155.2917+git0a84d98-2
-'http://deb.debian.org/debian/pool/main/x/x264/x264_0.155.2917+git0a84d98-2.dsc' x264_0.155.2917+git0a84d98-2.dsc 2407 SHA256:b296d3069efcbbf6a7a9c3a6bfd1ec99fa559ece8c5959158859e47e0092a393
-'http://deb.debian.org/debian/pool/main/x/x264/x264_0.155.2917+git0a84d98.orig.tar.gz' x264_0.155.2917+git0a84d98.orig.tar.gz 934501 SHA256:814e8d233a7a98a66b4c592bec60c531369bac453d679ba6c006bdcd2677e7e8
-'http://deb.debian.org/debian/pool/main/x/x264/x264_0.155.2917+git0a84d98-2.debian.tar.xz' x264_0.155.2917+git0a84d98-2.debian.tar.xz 23260 SHA256:9058a14889abcb6e28e1219ba3b5a78c00125f91877a1ecf3ac7d3aa352b19c3
+'http://deb.debian.org/debian/pool/main/x/x264/x264_0.155.2917%2bgit0a84d98-2.dsc' x264_0.155.2917+git0a84d98-2.dsc 2407 SHA256:b296d3069efcbbf6a7a9c3a6bfd1ec99fa559ece8c5959158859e47e0092a393
+'http://deb.debian.org/debian/pool/main/x/x264/x264_0.155.2917%2bgit0a84d98.orig.tar.gz' x264_0.155.2917+git0a84d98.orig.tar.gz 934501 SHA256:814e8d233a7a98a66b4c592bec60c531369bac453d679ba6c006bdcd2677e7e8
+'http://deb.debian.org/debian/pool/main/x/x264/x264_0.155.2917%2bgit0a84d98-2.debian.tar.xz' x264_0.155.2917+git0a84d98-2.debian.tar.xz 23260 SHA256:9058a14889abcb6e28e1219ba3b5a78c00125f91877a1ecf3ac7d3aa352b19c3
 ```
 
 Other potentially useful URLs:
@@ -13742,9 +13732,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xerces-c=3.2.2+debian-1+deb10u1
-'http://deb.debian.org/debian/pool/main/x/xerces-c/xerces-c_3.2.2+debian-1+deb10u1.dsc' xerces-c_3.2.2+debian-1+deb10u1.dsc 1944 SHA256:9494673a337d1da333df70f37a6d7c501df6b38f6cd0d05346f853ffbb4ac8d6
-'http://deb.debian.org/debian/pool/main/x/xerces-c/xerces-c_3.2.2+debian.orig.tar.gz' xerces-c_3.2.2+debian.orig.tar.gz 2513427 SHA256:98f9ece846b7858aad8243b066d3bf726abd72ccb93735b858a1b927fc7cdaca
-'http://deb.debian.org/debian/pool/main/x/xerces-c/xerces-c_3.2.2+debian-1+deb10u1.debian.tar.xz' xerces-c_3.2.2+debian-1+deb10u1.debian.tar.xz 22700 SHA256:a5288c40614b28164ab7bcd24164f88d988791aafc8e1ee5b61d52132de229d1
+'http://deb.debian.org/debian/pool/main/x/xerces-c/xerces-c_3.2.2%2bdebian-1%2bdeb10u1.dsc' xerces-c_3.2.2+debian-1+deb10u1.dsc 1944 SHA256:9494673a337d1da333df70f37a6d7c501df6b38f6cd0d05346f853ffbb4ac8d6
+'http://deb.debian.org/debian/pool/main/x/xerces-c/xerces-c_3.2.2%2bdebian.orig.tar.gz' xerces-c_3.2.2+debian.orig.tar.gz 2513427 SHA256:98f9ece846b7858aad8243b066d3bf726abd72ccb93735b858a1b927fc7cdaca
+'http://deb.debian.org/debian/pool/main/x/xerces-c/xerces-c_3.2.2%2bdebian-1%2bdeb10u1.debian.tar.xz' xerces-c_3.2.2+debian-1+deb10u1.debian.tar.xz 22700 SHA256:a5288c40614b28164ab7bcd24164f88d988791aafc8e1ee5b61d52132de229d1
 ```
 
 Other potentially useful URLs:
@@ -13819,8 +13809,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xml-core=0.18+nmu1
-'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18+nmu1.dsc' xml-core_0.18+nmu1.dsc 1632 SHA256:3b4bc034193f99750141611ae1c836c6b742c88ed0af1420051f3fcae30bf5ae
-'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18+nmu1.tar.xz' xml-core_0.18+nmu1.tar.xz 21312 SHA256:3e07592404b8ac38924fb650227cf5c9dcfc9933bd632eb4430635cd54898471
+'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18%2bnmu1.dsc' xml-core_0.18+nmu1.dsc 1632 SHA256:3b4bc034193f99750141611ae1c836c6b742c88ed0af1420051f3fcae30bf5ae
+'http://deb.debian.org/debian/pool/main/x/xml-core/xml-core_0.18%2bnmu1.tar.xz' xml-core_0.18+nmu1.tar.xz 21312 SHA256:3e07592404b8ac38924fb650227cf5c9dcfc9933bd632eb4430635cd54898471
 ```
 
 Other potentially useful URLs:
@@ -13868,8 +13858,8 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xorg=1:7.7+19
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.dsc' xorg_7.7+19.dsc 2016 SHA256:fc4a577eee67f3604c56701e21b28dccd3858da0f110b708ca3359e2718e3d46
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.tar.gz' xorg_7.7+19.tar.gz 288723 SHA256:5de6df9e19009450b94f4f5307049bc2c7dc1114222f6f2f6fc60d737a33a537
+'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7%2b19.dsc' xorg_7.7+19.dsc 2016 SHA256:fc4a577eee67f3604c56701e21b28dccd3858da0f110b708ca3359e2718e3d46
+'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7%2b19.tar.gz' xorg_7.7+19.tar.gz 288723 SHA256:5de6df9e19009450b94f4f5307049bc2c7dc1114222f6f2f6fc60d737a33a537
 ```
 
 Other potentially useful URLs:
