@@ -1,12 +1,110 @@
 ## `ros:rolling-ros-base-jammy`
 
 ```console
-$ docker pull ros@sha256:53f2cc58acc113e7f02e52887aa64672ba285a563478f0310903b02090c0e8a4
+$ docker pull ros@sha256:f2bbd1bc2e8c4b7d7f4212961b431e9680f74af886e9a318377f9c27429489c0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
+	-	linux; amd64
 	-	linux; arm64 variant v8
+
+### `ros:rolling-ros-base-jammy` - linux; amd64
+
+```console
+$ docker pull ros@sha256:979e8631ca260bf051c308446c63d2c2cc5d5fb267fc5412543463e4cbc13da3
+```
+
+-	Docker Version: 20.10.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **283.2 MB (283202060 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:a4d86fe3731f9d8e0f01689266fe6c1b9aa5cb0e41577a478a50ef371e63844b`
+-	Entrypoint: `["\/ros_entrypoint.sh"]`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Wed, 02 Feb 2022 02:15:16 GMT
+ADD file:3f673e2aa3a51c7980f0f25985b44578e091d31b3e0a8f481069c20b363a216c in / 
+# Wed, 02 Feb 2022 02:15:16 GMT
+CMD ["bash"]
+# Sat, 26 Feb 2022 02:24:22 GMT
+RUN echo 'Etc/UTC' > /etc/timezone &&     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime &&     apt-get update &&     apt-get install -q -y --no-install-recommends tzdata &&     rm -rf /var/lib/apt/lists/*
+# Sat, 26 Feb 2022 02:24:41 GMT
+RUN apt-get update && apt-get install -q -y --no-install-recommends     dirmngr     gnupg2     && rm -rf /var/lib/apt/lists/*
+# Sat, 26 Feb 2022 02:24:42 GMT
+RUN echo "deb http://packages.ros.org/ros2/ubuntu jammy main" > /etc/apt/sources.list.d/ros2-latest.list
+# Sat, 26 Feb 2022 02:25:22 GMT
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+# Sat, 26 Feb 2022 02:25:22 GMT
+ENV LANG=C.UTF-8
+# Sat, 26 Feb 2022 02:25:22 GMT
+ENV LC_ALL=C.UTF-8
+# Sat, 26 Feb 2022 02:25:23 GMT
+ENV ROS_DISTRO=rolling
+# Sat, 26 Feb 2022 02:28:06 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros-core=0.9.3-2*     && rm -rf /var/lib/apt/lists/*
+# Sat, 26 Feb 2022 02:28:08 GMT
+COPY file:57f71198b74c2c1967889acdfddb85d428137580d18be4211971fc7381557b6c in / 
+# Sat, 26 Feb 2022 02:28:09 GMT
+ENTRYPOINT ["/ros_entrypoint.sh"]
+# Sat, 26 Feb 2022 02:28:09 GMT
+CMD ["bash"]
+# Tue, 01 Mar 2022 01:28:04 GMT
+RUN apt-get update && apt-get install --no-install-recommends -y     build-essential     git     python3-colcon-common-extensions     python3-colcon-mixin     python3-rosdep     python3-vcstool     && rm -rf /var/lib/apt/lists/*
+# Tue, 01 Mar 2022 01:28:08 GMT
+RUN rosdep init &&   rosdep update --rosdistro $ROS_DISTRO
+# Tue, 01 Mar 2022 01:28:13 GMT
+RUN colcon mixin add default       https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml &&     colcon mixin update &&     colcon metadata add default       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml &&     colcon metadata update
+# Tue, 01 Mar 2022 01:29:09 GMT
+RUN apt-get update && apt-get install -y --no-install-recommends     ros-rolling-ros-base=0.9.3-2*     && rm -rf /var/lib/apt/lists/*
+```
+
+-	Layers:
+	-	`sha256:c610536171e3c233fc979d34130a90e9c9bc030425e5af141fd0c3aa8bcf5fb2`  
+		Last Modified: Wed, 02 Feb 2022 02:17:11 GMT  
+		Size: 30.5 MB (30532381 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:69865bdeb36f9908dc95f897cfa52157f167b05547180cd39a6b299ec5066824`  
+		Last Modified: Sat, 26 Feb 2022 02:29:52 GMT  
+		Size: 1.2 MB (1191817 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9177dcd66ad47879d77e6a83c2c8c0ed121ac7569db4fa355a902abcba68fe9f`  
+		Last Modified: Sat, 26 Feb 2022 02:29:50 GMT  
+		Size: 3.8 MB (3828294 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b51aecbdc07d493e58edb2120715fa312a3a4778f6353c8b89a6dde38c41a3f9`  
+		Last Modified: Sat, 26 Feb 2022 02:29:49 GMT  
+		Size: 234.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:09813fd921e82b5beee394a1640678fb2aae5b027828684f1b9d44378d7cfebd`  
+		Last Modified: Sat, 26 Feb 2022 02:29:49 GMT  
+		Size: 2.0 KB (1992 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:de7938cab3e71d4742241763bd05ede6ea9f334f91b7e7c012d24c36e84982ea`  
+		Last Modified: Sat, 26 Feb 2022 02:30:12 GMT  
+		Size: 124.6 MB (124647963 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:279917d4e15f9b0770a34b92772a0887b229ae8b81ba2d4812e08ce19bd41591`  
+		Last Modified: Sat, 26 Feb 2022 02:29:49 GMT  
+		Size: 195.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a0063b702ba11d68406fa74bd2300b4153b5bdc7d34d4e7feb5705c8661edf77`  
+		Last Modified: Tue, 01 Mar 2022 01:30:32 GMT  
+		Size: 99.9 MB (99861354 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:540611fbcddef698f5f5dfbda8c183c7e7d28861726d6d8b2c40efe91631e8d9`  
+		Last Modified: Tue, 01 Mar 2022 01:30:18 GMT  
+		Size: 264.6 KB (264598 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:aaaeb6ebeaa893b69004a25107ed8ad416460cf733552639bd7f079c14deebe3`  
+		Last Modified: Tue, 01 Mar 2022 01:30:18 GMT  
+		Size: 2.2 KB (2176 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ce96296e704dc0d80eb3ce429b33f1388e6484d7db2854086313e996d5320d53`  
+		Last Modified: Tue, 01 Mar 2022 01:30:22 GMT  
+		Size: 22.9 MB (22871056 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:rolling-ros-base-jammy` - linux; arm64 variant v8
 
