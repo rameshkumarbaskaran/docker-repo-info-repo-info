@@ -1,12 +1,88 @@
 ## `clojure:openjdk-17-tools-deps-1.10.3.1087-slim-buster`
 
 ```console
-$ docker pull clojure@sha256:d628aba17cc87b48866638efdf33464bb78df4c9f06fda08eb863edfa6af2cbc
+$ docker pull clojure@sha256:3a3236be6b8bdf9235d1002710b048e0e800dd913963108943d393a8cc99cd5c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 1
+-	Platforms: 2
+	-	linux; amd64
 	-	linux; arm64 variant v8
+
+### `clojure:openjdk-17-tools-deps-1.10.3.1087-slim-buster` - linux; amd64
+
+```console
+$ docker pull clojure@sha256:78be203cc8bdcf9575ba2790e17ef30072ee402b8f20257833fdba89c6f9d500
+```
+
+-	Docker Version: 20.10.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **280.0 MB (280011622 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:fe6c67f413da7b10a805023783376998043e9c22ff796ee9c3d5bbb513597eb4`
+-	Entrypoint: `["entrypoint"]`
+-	Default Command: `["-M","--repl"]`
+
+```dockerfile
+# Tue, 01 Mar 2022 02:13:56 GMT
+ADD file:702017714ad3e1567b4f60b688750f8b631d91088e4dcf41351c4bb07749c579 in / 
+# Tue, 01 Mar 2022 02:13:56 GMT
+CMD ["bash"]
+# Tue, 01 Mar 2022 14:22:11 GMT
+RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
+# Tue, 01 Mar 2022 14:25:47 GMT
+ENV JAVA_HOME=/usr/local/openjdk-17
+# Tue, 01 Mar 2022 14:25:47 GMT
+ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Tue, 01 Mar 2022 14:25:47 GMT
+ENV LANG=C.UTF-8
+# Tue, 01 Mar 2022 14:25:47 GMT
+ENV JAVA_VERSION=17.0.2
+# Tue, 01 Mar 2022 14:26:08 GMT
+RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
+# Tue, 01 Mar 2022 14:26:09 GMT
+CMD ["jshell"]
+# Thu, 03 Mar 2022 00:57:33 GMT
+ENV CLOJURE_VERSION=1.10.3.1087
+# Thu, 03 Mar 2022 00:57:33 GMT
+WORKDIR /tmp
+# Thu, 03 Mar 2022 00:57:50 GMT
+RUN apt-get update && apt-get install -y curl make git rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "fd3d465ac30095157ce754f1551b840008a6e3503ce5023d042d0490f7bafb98 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get purge -y --auto-remove curl wget
+# Thu, 03 Mar 2022 00:57:51 GMT
+COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
+# Thu, 03 Mar 2022 00:57:51 GMT
+COPY file:137b40904568e30898cd031ef34f77e7f132846ba4eec91d04ae4b93dddfbb8d in /usr/local/bin/entrypoint 
+# Thu, 03 Mar 2022 00:57:51 GMT
+ENTRYPOINT ["entrypoint"]
+# Thu, 03 Mar 2022 00:57:51 GMT
+CMD ["-M" "--repl"]
+```
+
+-	Layers:
+	-	`sha256:15115158dd02a1bf2fd28724e3c1024394033fb0e9a5d3e451ed2715b6ae312d`  
+		Last Modified: Tue, 01 Mar 2022 02:20:08 GMT  
+		Size: 27.2 MB (27153737 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e1727fec028eb22f37a4c93bbb31a582ebabb7664730fb7f93179214d45b7174`  
+		Last Modified: Tue, 01 Mar 2022 14:42:23 GMT  
+		Size: 3.3 MB (3269641 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ddaf76d225afd65558663a09c0c356bdd04b7418800e90a04ad956b1ad45c5f4`  
+		Last Modified: Tue, 01 Mar 2022 14:48:20 GMT  
+		Size: 187.9 MB (187902937 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c294f01712678f15ca0879a910835de1c29b2a419fc99b155956eb4ed8d109f8`  
+		Last Modified: Thu, 03 Mar 2022 01:19:11 GMT  
+		Size: 61.7 MB (61684280 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:46948cd983ad105c5c18f7dd36914b5fa4f09cd9a5896cb72754dda91e61f82f`  
+		Last Modified: Thu, 03 Mar 2022 01:19:03 GMT  
+		Size: 622.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:42ae9c8e64fe55655c394b7b7d414d924604cec2f2ce087869b37265a97554f6`  
+		Last Modified: Thu, 03 Mar 2022 01:19:03 GMT  
+		Size: 405.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-17-tools-deps-1.10.3.1087-slim-buster` - linux; arm64 variant v8
 

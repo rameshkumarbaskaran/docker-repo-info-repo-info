@@ -1,7 +1,7 @@
 ## `clojure:openjdk-11-lein-slim-buster`
 
 ```console
-$ docker pull clojure@sha256:ef7affdc1f61be7bb849ca9061876b7c4b14236924c9c3ba23fd601c00c784af
+$ docker pull clojure@sha256:6b3d3c6f91c5a842346ed6cb47cae42506e7e0156bc63057aa80f8839b4065ae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,79 +12,79 @@ $ docker pull clojure@sha256:ef7affdc1f61be7bb849ca9061876b7c4b14236924c9c3ba23f
 ### `clojure:openjdk-11-lein-slim-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:c83c192ec28df6a3f46011459f28ee4f194bef5ce0fc4c0f7f803e72e01dd222
+$ docker pull clojure@sha256:f4c9a61db210a24e319ba8da5451a7c3533c4954ef551856a54139575fa36121
 ```
 
--	Docker Version: 20.10.7
+-	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **250.0 MB (250023025 bytes)**  
+-	Total Size: **250.0 MB (250021920 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6a770ba06ec5eb0deb137c4b4a2f3d945bb0fd3d0d840f73ee64e2760753cf15`
+-	Image ID: `sha256:005fa1ede740cf33e44dcb395ec162d84ac6d64db0e733156cd6a51ecd46ce75`
 -	Default Command: `["lein","repl"]`
 
 ```dockerfile
-# Wed, 26 Jan 2022 01:40:59 GMT
-ADD file:c51141702f568a28a7e3e7a2748f5ead5754e32d7b1cf7ebc8f4326273d05206 in / 
-# Wed, 26 Jan 2022 01:40:59 GMT
+# Tue, 01 Mar 2022 02:13:56 GMT
+ADD file:702017714ad3e1567b4f60b688750f8b631d91088e4dcf41351c4bb07749c579 in / 
+# Tue, 01 Mar 2022 02:13:56 GMT
 CMD ["bash"]
-# Wed, 26 Jan 2022 09:19:38 GMT
+# Tue, 01 Mar 2022 14:22:11 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 26 Jan 2022 09:27:33 GMT
+# Tue, 01 Mar 2022 14:29:00 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 26 Jan 2022 09:27:34 GMT
+# Tue, 01 Mar 2022 14:29:01 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 26 Jan 2022 09:27:34 GMT
+# Tue, 01 Mar 2022 14:29:01 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 26 Jan 2022 09:27:34 GMT
+# Tue, 01 Mar 2022 14:29:01 GMT
 ENV LANG=C.UTF-8
-# Sat, 12 Feb 2022 00:00:02 GMT
+# Tue, 01 Mar 2022 14:29:01 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Sat, 12 Feb 2022 00:01:21 GMT
+# Tue, 01 Mar 2022 14:29:20 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Sat, 12 Feb 2022 00:01:22 GMT
+# Tue, 01 Mar 2022 14:29:21 GMT
 CMD ["jshell"]
-# Sat, 12 Feb 2022 01:24:57 GMT
+# Thu, 03 Mar 2022 00:53:16 GMT
 ENV LEIN_VERSION=2.9.8
-# Sat, 12 Feb 2022 01:24:57 GMT
+# Thu, 03 Mar 2022 00:53:16 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Sat, 12 Feb 2022 01:24:58 GMT
+# Thu, 03 Mar 2022 00:53:16 GMT
 WORKDIR /tmp
-# Sat, 12 Feb 2022 01:25:07 GMT
+# Thu, 03 Mar 2022 00:53:30 GMT
 RUN set -eux; apt-get update && apt-get install -y gnupg wget && rm -rf /var/lib/apt/lists/* && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "9952cba539cc6454c3b7385ebce57577087bf2b9001c3ab5c55d668d0aeff6e9 *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && if printf '%s\n%s\n' "2.9.7" "$LEIN_VERSION" | sort -cV; then               gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED;             else               gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 20242BACBBE95ADA22D0AFD7808A33D379C806C3;               FILENAME_EXT=zip;             fi && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apt-get purge -y --auto-remove gnupg wget
-# Sat, 12 Feb 2022 01:25:08 GMT
+# Thu, 03 Mar 2022 00:53:31 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Sat, 12 Feb 2022 01:25:08 GMT
+# Thu, 03 Mar 2022 00:53:31 GMT
 ENV LEIN_ROOT=1
-# Sat, 12 Feb 2022 01:25:11 GMT
+# Thu, 03 Mar 2022 00:53:34 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"]])' > project.clj   && lein deps && rm project.clj
-# Sat, 12 Feb 2022 01:25:12 GMT
+# Thu, 03 Mar 2022 00:53:35 GMT
 CMD ["lein" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:6552179c3509e3c4314b4065e0d2790563d01cd474e2fdd58be4d46acd48af6a`  
-		Last Modified: Wed, 26 Jan 2022 01:47:31 GMT  
-		Size: 27.2 MB (27153731 bytes)  
+	-	`sha256:15115158dd02a1bf2fd28724e3c1024394033fb0e9a5d3e451ed2715b6ae312d`  
+		Last Modified: Tue, 01 Mar 2022 02:20:08 GMT  
+		Size: 27.2 MB (27153737 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8aa8d0f5eb646a53df0b867301afa43404e868c540fdf170240578844dfd0d6b`  
-		Last Modified: Wed, 26 Jan 2022 09:43:10 GMT  
-		Size: 3.3 MB (3269688 bytes)  
+	-	`sha256:e1727fec028eb22f37a4c93bbb31a582ebabb7664730fb7f93179214d45b7174`  
+		Last Modified: Tue, 01 Mar 2022 14:42:23 GMT  
+		Size: 3.3 MB (3269641 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b26703fd9b538d0033bb6b086787138d6495f4c06aa58d045911dbe78a87a299`  
-		Last Modified: Wed, 26 Jan 2022 09:53:21 GMT  
-		Size: 212.0 B  
+	-	`sha256:7bf980c374bc6213eca6ca13ec421336185d3df022e4d730daf264bfdf44066c`  
+		Last Modified: Tue, 01 Mar 2022 14:51:38 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db2d53a16ed7b13226db754f8ca891b58a09aa53facb018a644f0641c34b413f`  
-		Last Modified: Sat, 12 Feb 2022 00:24:03 GMT  
-		Size: 203.5 MB (203532449 bytes)  
+	-	`sha256:ba6b696dd1b293c96e9c7b0e8e5935d6c81f735e09bef6de206ba4a1f73be493`  
+		Last Modified: Tue, 01 Mar 2022 14:51:59 GMT  
+		Size: 203.5 MB (203531384 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50c00b79e632e4a959c5f5a21dd49d2dd6fc15d02381926afecc6605e7e625da`  
-		Last Modified: Sat, 12 Feb 2022 01:37:55 GMT  
-		Size: 11.9 MB (11859726 bytes)  
+	-	`sha256:c1b4d8c1be84c71f6a9138573dee8739f80b748c10820f27eee2e3689b7d27e9`  
+		Last Modified: Thu, 03 Mar 2022 01:16:39 GMT  
+		Size: 11.9 MB (11859718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:906a9a0da54094d9437cc75b948d8048197a3266ac4091a69706e3730490a36e`  
-		Last Modified: Sat, 12 Feb 2022 01:37:55 GMT  
-		Size: 4.2 MB (4207219 bytes)  
+	-	`sha256:e9df2082c51a6e6662cc8de21471dbd08ca4df6d888c25472766247e91ae1253`  
+		Last Modified: Thu, 03 Mar 2022 01:16:38 GMT  
+		Size: 4.2 MB (4207229 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-11-lein-slim-buster` - linux; arm64 variant v8
