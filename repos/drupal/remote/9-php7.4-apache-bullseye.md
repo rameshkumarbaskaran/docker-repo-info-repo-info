@@ -1,7 +1,7 @@
 ## `drupal:9-php7.4-apache-bullseye`
 
 ```console
-$ docker pull drupal@sha256:d6346917b11e2fb93ba9fdd5f85fc2fe312f2e48c1a9f8c299efa558e93de2e4
+$ docker pull drupal@sha256:2f5bb1131ba781a0b5faf3228e48b5b187c4795c4282a149b1ab523ed46430e0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -841,14 +841,14 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupa
 ### `drupal:9-php7.4-apache-bullseye` - linux; s390x
 
 ```console
-$ docker pull drupal@sha256:bedf875c1da6b76f8cf329e0e30031a5d1fa92e05d1b24827913c7a4bf4b302c
+$ docker pull drupal@sha256:5ad809b4c63804223ef964808c7095877d68ffbd0b2d6fce79e1d4a1d7163d23
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **165.8 MB (165801864 bytes)**  
+-	Total Size: **162.3 MB (162344371 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6835a5cf1fc174f7609937499bb5fe9a426596d32986f738fede2c78ab8e54e6`
+-	Image ID: `sha256:203bb6feb6a53f9341fe1dd42965919c388cbbe77eeb03adf917077f68a0e198`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -895,37 +895,37 @@ ENV PHP_SHA256=9cc3b6f6217b60582f78566b3814532c4b71d517876c25013ae51811e65d8fce
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
 # Tue, 01 Mar 2022 14:26:21 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Tue, 01 Mar 2022 14:27:39 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-openssl 		--with-readline 		--with-zlib 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Tue, 01 Mar 2022 14:27:40 GMT
+# Wed, 02 Mar 2022 20:46:28 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		apache2-dev 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--disable-cgi 				--with-apxs2 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
+# Wed, 02 Mar 2022 20:46:29 GMT
 COPY multi:ee8b9bb4e448c5d38508b40a8ace77d14cf000229390e687b6d467283c9826e6 in /usr/local/bin/ 
-# Tue, 01 Mar 2022 14:27:41 GMT
+# Wed, 02 Mar 2022 20:46:29 GMT
 RUN docker-php-ext-enable sodium
-# Tue, 01 Mar 2022 14:27:41 GMT
+# Wed, 02 Mar 2022 20:46:30 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Tue, 01 Mar 2022 14:27:41 GMT
+# Wed, 02 Mar 2022 20:46:30 GMT
 STOPSIGNAL SIGWINCH
-# Tue, 01 Mar 2022 14:27:41 GMT
+# Wed, 02 Mar 2022 20:46:30 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Tue, 01 Mar 2022 14:27:41 GMT
+# Wed, 02 Mar 2022 20:46:30 GMT
 WORKDIR /var/www/html
-# Tue, 01 Mar 2022 14:27:41 GMT
+# Wed, 02 Mar 2022 20:46:30 GMT
 EXPOSE 80
-# Tue, 01 Mar 2022 14:27:41 GMT
+# Wed, 02 Mar 2022 20:46:30 GMT
 CMD ["apache2-foreground"]
-# Tue, 01 Mar 2022 22:15:54 GMT
+# Thu, 03 Mar 2022 00:47:59 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libwebp-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Tue, 01 Mar 2022 22:15:55 GMT
+# Thu, 03 Mar 2022 00:48:00 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Tue, 01 Mar 2022 22:15:55 GMT
+# Thu, 03 Mar 2022 00:48:00 GMT
 COPY file:4504a34585a65110669523e5922892f1b1d0b993b4131f7b2302f17c5be3d55f in /usr/local/bin/ 
-# Tue, 01 Mar 2022 22:21:50 GMT
+# Thu, 03 Mar 2022 00:56:08 GMT
 ENV DRUPAL_VERSION=9.2.13
-# Tue, 01 Mar 2022 22:21:50 GMT
+# Thu, 03 Mar 2022 00:56:08 GMT
 WORKDIR /opt/drupal
-# Tue, 01 Mar 2022 22:21:59 GMT
+# Thu, 03 Mar 2022 00:56:18 GMT
 RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --no-interaction "drupal/recommended-project:$DRUPAL_VERSION" ./; 	chown -R www-data:www-data web/sites web/modules web/themes; 	rmdir /var/www/html; 	ln -sf /opt/drupal/web /var/www/html; 	rm -rf "$COMPOSER_HOME"
-# Tue, 01 Mar 2022 22:22:02 GMT
+# Thu, 03 Mar 2022 00:56:22 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin
 ```
 
@@ -966,39 +966,39 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupa
 		Last Modified: Tue, 01 Mar 2022 15:16:00 GMT  
 		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec061545d4572448d42f7ece1318f30a83c09b20ddb74685ac9a329ba34ed045`  
-		Last Modified: Tue, 01 Mar 2022 15:16:02 GMT  
-		Size: 13.1 MB (13144620 bytes)  
+	-	`sha256:7901c7c5cd431f4339f8c8a61bad531303ada1d5703e7c3a3ae896268cfc216f`  
+		Last Modified: Wed, 02 Mar 2022 22:02:41 GMT  
+		Size: 9.7 MB (9687410 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88335b322417a72d08db3fbf1463eba0ec9767314f500d9b8ce082c660602161`  
-		Last Modified: Tue, 01 Mar 2022 15:16:01 GMT  
-		Size: 2.3 KB (2311 bytes)  
+	-	`sha256:00f0a842499523d36b9c040f784f95218c8566b827e897f214f0c217294b5c1c`  
+		Last Modified: Wed, 02 Mar 2022 22:02:39 GMT  
+		Size: 2.3 KB (2313 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc59c39177446cc660014d824d2f569e56bbdf5c0c5b2209bc884e127615ab7d`  
-		Last Modified: Tue, 01 Mar 2022 15:16:00 GMT  
+	-	`sha256:00a0788341dc2845306aef4029283660a1b162ac2b7d915bd1f4c4ffe8f9e834`  
+		Last Modified: Wed, 02 Mar 2022 22:02:39 GMT  
 		Size: 244.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59831220f82308069d50cad70c912bee55a1e81f5ce9985fd397c9d4da726b56`  
-		Last Modified: Tue, 01 Mar 2022 15:16:00 GMT  
-		Size: 893.0 B  
+	-	`sha256:1ac2af456bae72edaae053ae089986b8b09bcff14eeea6d73f3bebbb4a4928e1`  
+		Last Modified: Wed, 02 Mar 2022 22:02:39 GMT  
+		Size: 894.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3896f140dfcde6873bf4b72a1f62b36dda61ef32ec11487e17ea796d1c7f1ec0`  
-		Last Modified: Tue, 01 Mar 2022 22:37:03 GMT  
-		Size: 1.9 MB (1889891 bytes)  
+	-	`sha256:39671965d55a943bcd29b6cd1fd464159eef803da8435347e71f430e7959be51`  
+		Last Modified: Thu, 03 Mar 2022 01:13:19 GMT  
+		Size: 1.9 MB (1889880 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ada950771668810a7ddab152968a41fc6146796cdf8dbbb3dd35d571ad1917b`  
-		Last Modified: Tue, 01 Mar 2022 22:37:03 GMT  
-		Size: 324.0 B  
+	-	`sha256:9bd7a56a8cfd39fc2d674689cdad1efce5a5645f55aa10dbdc2296221b23bfa8`  
+		Last Modified: Thu, 03 Mar 2022 01:13:19 GMT  
+		Size: 323.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01e3458966796df8a118ffc3cde480d7fa558c05f11139434f32c25fd6ace361`  
-		Last Modified: Tue, 01 Mar 2022 22:37:03 GMT  
-		Size: 575.3 KB (575348 bytes)  
+	-	`sha256:7dabd8fa31edac6e5ce4f3e9b2a0f511acae0428a1b2eb5559ed61ed70ab9b78`  
+		Last Modified: Thu, 03 Mar 2022 01:13:19 GMT  
+		Size: 575.3 KB (575346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6f392bc3fe720785ec224a7694015bb07a7854f701a62a7bee4a28ce1ffb91f`  
-		Last Modified: Tue, 01 Mar 2022 22:40:47 GMT  
-		Size: 149.0 B  
+	-	`sha256:7278d3a8e1817f6fe3b47a2540bc1bc8da6074817aa158ea5a03e084831fbf0d`  
+		Last Modified: Thu, 03 Mar 2022 01:18:18 GMT  
+		Size: 148.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24209717667d86320958a61bf8f5f550d215cf1080a1df49818d142ef50bbd16`  
-		Last Modified: Tue, 01 Mar 2022 22:40:51 GMT  
-		Size: 19.1 MB (19110024 bytes)  
+	-	`sha256:1c52d0ffbb947bf99932f3b9db98ba91adf457b5e752654461852624d0d33b82`  
+		Last Modified: Thu, 03 Mar 2022 01:18:22 GMT  
+		Size: 19.1 MB (19109753 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
