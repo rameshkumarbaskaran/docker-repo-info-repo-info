@@ -1,7 +1,7 @@
 ## `mysql:5-oracle`
 
 ```console
-$ docker pull mysql@sha256:5fca31d24116ab727cdcb8cb8f0b581ba26f9257d2343e4b12a6de47c66ad3c5
+$ docker pull mysql@sha256:86a122ad0b82d36b481b123535b78f8f0033f4c84da705b6ebfd93c580fce9f9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull mysql@sha256:5fca31d24116ab727cdcb8cb8f0b581ba26f9257d2343e4b12a6d
 ### `mysql:5-oracle` - linux; amd64
 
 ```console
-$ docker pull mysql@sha256:47092e3dd85d585b6ebcf3a8d665ba37c524fb2e9ea2b6cba630ca2c468b7ed9
+$ docker pull mysql@sha256:e19f8d5206db74fadc240f6beef24a016eeb917cd9a7719984258f1a6cf5fa5f
 ```
 
--	Docker Version: 20.10.7
+-	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **124.8 MB (124772454 bytes)**  
+-	Total Size: **124.8 MB (124772649 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f2549c657f5970cfeed1e30074b83ae065d7c04e15708612f74c7d53f79e9708`
+-	Image ID: `sha256:d36fd9a5f9471c2ebfc0aca321187993cc650a62c1ef9c6f6f40fa61db654209`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
@@ -43,23 +43,23 @@ ENV MYSQL_MAJOR=5.7
 ENV MYSQL_VERSION=5.7.37-1.el7
 # Sat, 26 Feb 2022 02:33:55 GMT
 RUN set -eu; 	. /etc/os-release; 	{ 		echo '[mysql5.7-server-minimal]'; 		echo 'name=MySQL 5.7 Server Minimal'; 		echo 'enabled=1'; 		echo "baseurl=https://repo.mysql.com/yum/mysql-5.7-community/docker/el/${VERSION_ID%%[.-]*}/\$basearch/"; 		echo 'gpgcheck=1'; 		echo 'gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql'; 		echo 'module_hotfixes=true'; 	} | tee /etc/yum.repos.d/mysql-community-minimal.repo
-# Sat, 26 Feb 2022 02:34:14 GMT
-RUN set -eux; 	yum install -y "mysql-community-server-minimal-$MYSQL_VERSION"; 	yum clean all; 	grep -F 'socket=/var/lib/mysql/mysql.sock' /etc/my.cnf; 	sed -i 's!^socket=.*!socket=/var/run/mysqld/mysqld.sock!' /etc/my.cnf; 	grep -F 'socket=/var/run/mysqld/mysqld.sock' /etc/my.cnf; 		! grep -F '!includedir' /etc/my.cnf; 	{ echo; echo '!includedir /etc/mysql/conf.d/'; } >> /etc/my.cnf; 	mkdir -p /etc/mysql/conf.d; 		mysqld --version; 	mysql --version
-# Sat, 26 Feb 2022 02:34:15 GMT
+# Thu, 03 Mar 2022 01:45:28 GMT
+RUN set -eux; 	yum install -y "mysql-community-server-minimal-$MYSQL_VERSION"; 	yum clean all; 	grep -F 'socket=/var/lib/mysql/mysql.sock' /etc/my.cnf; 	sed -i 's!^socket=.*!socket=/var/run/mysqld/mysqld.sock!' /etc/my.cnf; 	grep -F 'socket=/var/run/mysqld/mysqld.sock' /etc/my.cnf; 	{ echo '[client]'; echo 'socket=/var/run/mysqld/mysqld.sock'; } >> /etc/my.cnf; 		! grep -F '!includedir' /etc/my.cnf; 	{ echo; echo '!includedir /etc/mysql/conf.d/'; } >> /etc/my.cnf; 	mkdir -p /etc/mysql/conf.d; 		mysqld --version; 	mysql --version
+# Thu, 03 Mar 2022 01:45:29 GMT
 RUN set -eu; 	. /etc/os-release; 	{ 		echo '[mysql-tools-community]'; 		echo 'name=MySQL Tools Community'; 		echo "baseurl=https://repo.mysql.com/yum/mysql-tools-community/el/${VERSION_ID%%[.-]*}/\$basearch/"; 		echo 'enabled=1'; 		echo 'gpgcheck=1'; 		echo 'gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql'; 		echo 'module_hotfixes=true'; 	} | tee /etc/yum.repos.d/mysql-community-tools.repo
-# Sat, 26 Feb 2022 02:34:15 GMT
+# Thu, 03 Mar 2022 01:45:29 GMT
 ENV MYSQL_SHELL_VERSION=8.0.28-1.el7
-# Sat, 26 Feb 2022 02:34:33 GMT
+# Thu, 03 Mar 2022 01:45:50 GMT
 RUN set -eux; 	yum install -y "mysql-shell-$MYSQL_SHELL_VERSION"; 	yum clean all; 		mysqlsh --version
-# Sat, 26 Feb 2022 02:34:34 GMT
+# Thu, 03 Mar 2022 01:45:52 GMT
 VOLUME [/var/lib/mysql]
-# Sat, 26 Feb 2022 02:34:34 GMT
-COPY file:baf57873956bd59e060e26b6c80f401272ee89005e3d62d008bf3de68c4c7545 in /usr/local/bin/ 
-# Sat, 26 Feb 2022 02:34:34 GMT
+# Thu, 03 Mar 2022 01:45:53 GMT
+COPY file:81330e6676744cda7c75d271a23cc812ef991a77c317dceaee88cb5b224a932a in /usr/local/bin/ 
+# Thu, 03 Mar 2022 01:45:53 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Sat, 26 Feb 2022 02:34:35 GMT
+# Thu, 03 Mar 2022 01:45:53 GMT
 EXPOSE 3306 33060
-# Sat, 26 Feb 2022 02:34:35 GMT
+# Thu, 03 Mar 2022 01:45:53 GMT
 CMD ["mysqld"]
 ```
 
@@ -88,19 +88,19 @@ CMD ["mysqld"]
 		Last Modified: Sat, 26 Feb 2022 02:35:37 GMT  
 		Size: 335.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55c0faeb2d4f17e0aa5422653dfccde10762667e946c7a6467564fa5abbeb345`  
-		Last Modified: Sat, 26 Feb 2022 02:35:41 GMT  
-		Size: 25.4 MB (25434060 bytes)  
+	-	`sha256:66a838dfe954ba51343e7ce31012d34b2194be8d00f1a7aeb2dda2ac8a7d2eb5`  
+		Last Modified: Thu, 03 Mar 2022 01:47:24 GMT  
+		Size: 25.4 MB (25434004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e76d2a24e41cb6651bef1fdd04c19ec05f9921971120256559f5d4dfc0174e47`  
-		Last Modified: Sat, 26 Feb 2022 02:35:37 GMT  
-		Size: 319.0 B  
+	-	`sha256:226af375d1e00539061e0aea8cee84fef985bc67a7f0f5b7eb15b687ce9ea147`  
+		Last Modified: Thu, 03 Mar 2022 01:47:19 GMT  
+		Size: 316.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8dce0835ec0040ee6a890b755517e33ca40d036e26056e40b8c6b0792536d58`  
-		Last Modified: Sat, 26 Feb 2022 02:35:46 GMT  
-		Size: 46.4 MB (46356342 bytes)  
+	-	`sha256:56e5c016c9d8c5a4656672738e60928f27bb90cc745c7f944b7a4b1d14ed5c25`  
+		Last Modified: Thu, 03 Mar 2022 01:47:28 GMT  
+		Size: 46.4 MB (46356426 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e76c9e91e4d59e02df36a3fdda04f62cda3325737aef115a8f63260a330eacd7`  
-		Last Modified: Sat, 26 Feb 2022 02:35:36 GMT  
-		Size: 5.0 KB (4955 bytes)  
+	-	`sha256:7bad1f72b6e82119dec322de8edb581bfe90b006696aaa97e6b0369974032a09`  
+		Last Modified: Thu, 03 Mar 2022 01:47:19 GMT  
+		Size: 5.1 KB (5125 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
