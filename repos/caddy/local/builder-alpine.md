@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ed4bb2f8ab23ac1342ad1fadfb2092fad0360c2b4980e0c95e1615631e63128d`
-- Created: `2022-02-18T01:11:13.363237207Z`
-- Virtual Size: ~ 331.74 Mb  
+- Image ID: `sha256:f0c3a82ad51f9b44b272a32de82576c64480a940db9877dd465101c921e11593`
+- Created: `2022-03-04T04:22:27.440568897Z`
+- Virtual Size: ~ 331.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
 - Environment:
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOLANG_VERSION=1.17.7`
+  - `GOLANG_VERSION=1.17.8`
   - `GOPATH=/go`
   - `XCADDY_VERSION=v0.2.0`
   - `CADDY_VERSION=v2.4.6`
@@ -140,16 +140,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.4-r0 description:
+expat-2.4.6-r0 description:
 XML Parser library written in C
 
-expat-2.4.4-r0 webpage:
+expat-2.4.6-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.4-r0 installed size:
+expat-2.4.6-r0 installed size:
 192 KiB
 
-expat-2.4.4-r0 license:
+expat-2.4.6-r0 license:
 MIT
 
 ```
