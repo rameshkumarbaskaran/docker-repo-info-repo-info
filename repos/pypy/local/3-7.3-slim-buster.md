@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6c25354abd82ad4400d842f34e1dade9441891b833d361dc2cd01040b498b155`
-- Created: `2022-02-23T01:28:55.597431858Z`
-- Virtual Size: ~ 223.07 Mb  
+- Image ID: `sha256:0b90bc04172796e72ee2781f2e35f5e47cfe71b4f7f2832097bbb9c28dcb7f09`
+- Created: `2022-03-02T01:46:38.203068883Z`
+- Virtual Size: ~ 224.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy3"]`
@@ -1554,6 +1554,34 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/shadow/1:4.5-1.1/ (for browsing the source)
 - https://sources.debian.net/src/shadow/1:4.5-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/shadow/1:4.5-1.1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `sqlite3=3.27.2-3+deb10u1`
+
+Binary Packages:
+
+- `libsqlite3-0:amd64=3.27.2-3+deb10u1`
+
+Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
+
+- `GPL-2`
+- `GPL-2+`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris sqlite3=3.27.2-3+deb10u1
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3%2bdeb10u1.dsc' sqlite3_3.27.2-3+deb10u1.dsc 2430 SHA256:6faf359c70d0618558056d6dee9f05ea810ff57aebb141ac28129c17e685cf1b
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2.orig-www.tar.xz' sqlite3_3.27.2.orig-www.tar.xz 5602752 SHA256:b50bea0e1974b33bcb2cec4c29fcdeecd8f960020ce0310b15fb123938844bee
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2.orig.tar.xz' sqlite3_3.27.2.orig.tar.xz 6844832 SHA256:6cb1606bbc38270739d256b5ab1cf94dccf5b2a3b4cbceb0545aac76f6ef40f2
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3%2bdeb10u1.debian.tar.xz' sqlite3_3.27.2-3+deb10u1.debian.tar.xz 38844 SHA256:ccabd6cc3d05887f2dd239065f3c3063f766e9e187804a89f04cbcbdb49a6b7e
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/sqlite3/3.27.2-3+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/sqlite3/3.27.2-3+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/sqlite3/3.27.2-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=241-7~deb10u8`
 
