@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a778fac0406c1c49fa9898dea22bd64a0de00c109559f078552af9a49a237a73`
-- Created: `2022-02-11T18:39:43.236353106Z`
+- Image ID: `sha256:ccfb3a0d48a92541944da360a08a2278898eb49ee2ee086e4fab96089a447e58`
+- Created: `2022-03-04T04:43:42.355464494Z`
 - Virtual Size: ~ 2.72 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -98,15 +98,15 @@ $ dnf --quiet download --source --url bzip2-libs-1.0.6-13.amzn2.0.3
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/5eb7c8b4ed1b326f5e640d655f92f498451c8013b223ad5702abb108358ef0dc/bzip2-1.0.6-13.amzn2.0.3.src.rpm
 ```
 
-### `rpm` package: `ca-certificates-2021.2.50-72.amzn2.0.2.noarch`
+### `rpm` package: `ca-certificates-2021.2.50-72.amzn2.0.3.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url ca-certificates-2021.2.50-72.amzn2.0.2.noarch
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/5c404184ea8d4d3c60fe47b7ba4dbfef334d70c1bb3d82391680c377d5ec2d07/ca-certificates-2021.2.50-72.amzn2.0.2.src.rpm
+$ dnf --quiet download --source --url ca-certificates-2021.2.50-72.amzn2.0.3.noarch
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/51340102b58ac29c4fd89233330f5aa4a3f2fe61aad0d9d5b8c5b643692afd6b/ca-certificates-2021.2.50-72.amzn2.0.3.src.rpm
 ```
 
 ### `rpm` package: `chkconfig-1.7.4-1.amzn2.0.2.x86_64`
@@ -2062,15 +2062,15 @@ $ dnf --quiet download --source --url tar-1.26-35.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/3249d58314be6399ecbfcf70476bb2a0039af066ed4fc79942090302f6b214f6/tar-1.26-35.amzn2.src.rpm
 ```
 
-### `rpm` package: `tzdata-2021a-1.amzn2.noarch`
+### `rpm` package: `tzdata-2021e-1.amzn2.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url tzdata-2021a-1.amzn2.noarch
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/d47583ea05cc858359697e71bf46e46966d5d029507abce69b7bec8a9da265fa/tzdata-2021a-1.amzn2.src.rpm
+$ dnf --quiet download --source --url tzdata-2021e-1.amzn2.noarch
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/2a015a96efe5f9505b4a549d34607861185eafc203245eb9caeb61f22e1a0819/tzdata-2021e-1.amzn2.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.amzn2.0.3.x86_64`
@@ -2095,26 +2095,26 @@ $ dnf --quiet download --source --url util-linux-2.30.2-2.amzn2.0.5
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/1e9059dd4733ce2ffc3c57b210ccb9e68af1e821d8002c90943fdb30803c2f7b/util-linux-2.30.2-2.amzn2.0.5.src.rpm
 ```
 
-### `rpm` package: `vim-data-8.2.4006-1.amzn2.0.1.noarch`
+### `rpm` package: `vim-data-8.2.4314-1.amzn2.0.1.noarch`
 
 Licenses (from `rpm --query`): Vim and MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url vim-data-8.2.4006-1.amzn2.0.1.noarch
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/16de1b9adc79a2b493bd2d622c7c36a460bf9677b14b9ae45a492cf47f3a9533/vim-8.2.4006-1.amzn2.0.1.src.rpm
+$ dnf --quiet download --source --url vim-data-8.2.4314-1.amzn2.0.1.noarch
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/b135e14e365c28ca913b26cda0969a66cdc9c1fae4505f86fa01fa973d838d22/vim-8.2.4314-1.amzn2.0.1.src.rpm
 ```
 
-### `rpm` package: `vim-minimal-8.2.4006-1.amzn2.0.1.x86_64`
+### `rpm` package: `vim-minimal-8.2.4314-1.amzn2.0.1.x86_64`
 
 Licenses (from `rpm --query`): Vim and MIT
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url vim-minimal-8.2.4006-1.amzn2.0.1
-https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/16de1b9adc79a2b493bd2d622c7c36a460bf9677b14b9ae45a492cf47f3a9533/vim-8.2.4006-1.amzn2.0.1.src.rpm
+$ dnf --quiet download --source --url vim-minimal-8.2.4314-1.amzn2.0.1
+https://cdn.amazonlinux.com/2/core/2.0/SRPMS/0fb73a8ab81f81d99df2464697d2f9184330ea58b58038a4af4c2e8b61809eae/../../../../../blobstore/b135e14e365c28ca913b26cda0969a66cdc9c1fae4505f86fa01fa973d838d22/vim-8.2.4314-1.amzn2.0.1.src.rpm
 ```
 
 ### `rpm` package: `xz-devel-5.2.2-1.amzn2.0.2.x86_64`
