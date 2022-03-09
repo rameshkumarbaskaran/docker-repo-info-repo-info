@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e6fa3c2b96217173a6c881bda685183c068a33dd901dd1827ac9aaac66424484`
-- Created: `2022-03-02T01:50:20.300067806Z`
+- Image ID: `sha256:b1898fa258a70f97a5b1174a481d7d5c9103b0a32399620209efcfa481d5a5ff`
+- Created: `2022-03-08T05:23:18.824772734Z`
 - Virtual Size: ~ 971.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -3730,20 +3730,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.10.92-1
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.92-1.dsc' linux_5.10.92-1.dsc 197231 SHA256:deb5c2eb26755d7954e109757ae410e8c5064dfcc64964e81df26dded3e98095
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.92.orig.tar.xz' linux_5.10.92.orig.tar.xz 121665656 SHA256:19b747100e42a1e4be3437aebd099db03de6fcf08bb19dbf61250adc65978984
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_5.10.92-1.debian.tar.xz' linux_5.10.92-1.debian.tar.xz 1471996 SHA256:2273c84a0d4240b89a1fdd432a5d2a1a89f750b8b045e286937a57ea71499412
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/5.10.92-1/
 
-- https://sources.debian.net/src/linux/5.10.92-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/5.10.92-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/5.10.92-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=11.1.0`
 
