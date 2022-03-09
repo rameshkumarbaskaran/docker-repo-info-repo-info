@@ -1794,14 +1794,9 @@ Licenses: (parsed from: `/usr/share/doc/cpp-9/copyright`, `/usr/share/doc/gcc-9-
 - `LGPL`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-9=9.3.0-17ubuntu1~20.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0-17ubuntu1%7e20.04.dsc' gcc-9_9.3.0-17ubuntu1~20.04.dsc 23746 SHA512:bae6c156516a4988546a4518934f661a70243a89ed17883fe382bd984ae6533aab7d9b459986c2ebdb715b64b11ac76b9283447b26be3dbaec0b00c02afeb7f6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0.orig.tar.gz' gcc-9_9.3.0.orig.tar.gz 90490748 SHA512:cebaa27b0ac7485e72f0d7b07e6ef08cd544bf551bc080ee00175cbe319ea8b0592ff54d55633bb189e481f9ba489d513205cf2310e4b5211869a021432ee31f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.3.0-17ubuntu1%7e20.04.debian.tar.xz' gcc-9_9.3.0-17ubuntu1~20.04.debian.tar.xz 763792 SHA512:f696a3d92edbadb7cfb29494b68ec00fa9b278ab7657e45933cf2e7564e6a524ac41edde14449114a2e06ad0c1f56473d998687aeb2f98f18c431727d4254d21
-```
 
 ### `dpkg` source package: `gcc-defaults=1.185.1ubuntu2`
 
@@ -3206,13 +3201,9 @@ Licenses: (parsed from: `/usr/share/doc/language-pack-fr-base/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris language-pack-fr-base=1:20.04+20210802
-'http://archive.ubuntu.com/ubuntu/pool/main/l/language-pack-fr-base/language-pack-fr-base_20.04%2b20210802.dsc' language-pack-fr-base_20.04+20210802.dsc 1555 SHA512:5fbcb7b13eee9ecb120e6e655b834fb90a9ed1a6b42eca3b054e217bdc2a3f28b082954727c3b2822fffd4f6671fe4e68da27fb978428c534e170bb6a94999bf
-'http://archive.ubuntu.com/ubuntu/pool/main/l/language-pack-fr-base/language-pack-fr-base_20.04%2b20210802.tar.xz' language-pack-fr-base_20.04+20210802.tar.xz 3707536 SHA512:a9c20ee9d5218f2c48d3f295d712b2966f5b9802d774ba36ccf48da48ed944ab677015f3d8af06d58117ce1139fa4797b47a67adcc36c240256c062fb1fe10e8
-```
 
 ### `dpkg` source package: `language-pack-fr=1:20.04+20210802`
 
@@ -3224,13 +3215,9 @@ Licenses: (parsed from: `/usr/share/doc/language-pack-fr/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris language-pack-fr=1:20.04+20210802
-'http://archive.ubuntu.com/ubuntu/pool/main/l/language-pack-fr/language-pack-fr_20.04%2b20210802.dsc' language-pack-fr_20.04+20210802.dsc 1516 SHA512:c121e868bc87ee5b6433c3e16941776e7474433e265cdb0c6cc1d54cdf05b72911fe78b80a96bfbfbb1b70cf0f98d1a4f75828209c1146d68231190dc08d4c1b
-'http://archive.ubuntu.com/ubuntu/pool/main/l/language-pack-fr/language-pack-fr_20.04%2b20210802.tar.xz' language-pack-fr_20.04+20210802.tar.xz 8096 SHA512:bbdd5d9e7f9efe7023401489c4717b80b9995d03f2b01bff2bfdfdbe4e1015b0c76c9b87917d9287877eec13594bebe5bca77d873ae6c4415500f7898113d59b
-```
 
 ### `dpkg` source package: `lcms2=2.9-4`
 
@@ -4151,14 +4138,9 @@ Licenses: (parsed from: `/usr/share/doc/libegl1/copyright`, `/usr/share/doc/libg
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libglvnd=1.3.2-1~ubuntu0.20.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libglvnd_1.3.2-1%7eubuntu0.20.04.1.dsc' libglvnd_1.3.2-1~ubuntu0.20.04.1.dsc 2773 SHA512:e1581e975c7ed8d9c1315aa76e9c511265481002c77b1c30aea6e79346095865a101799832f139d0f3bc67a81432b48cb9dc1ddf338562ac8bfaf15874a197ee
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libglvnd_1.3.2.orig.tar.gz' libglvnd_1.3.2.orig.tar.gz 1032413 SHA512:96bdf7adb62a4d20846830e5e0791885afb6ee0748e6345801d645f695eeb58cd7793f53b753f6d44dc630741eb864523dcf0393f3696c5d9774cc3ffa3b9c5b
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libglvnd_1.3.2-1%7eubuntu0.20.04.1.debian.tar.xz' libglvnd_1.3.2-1~ubuntu0.20.04.1.debian.tar.xz 21936 SHA512:46b732598d71548252d755fee227d17472763adbe9b186dcfd5f7ab3067ca417a88aeb5aee54f3cddf503bb4fd880b0f8be760069745177622943e08d6f57ca5
-```
 
 ### `dpkg` source package: `libgpg-error=1.37-1`
 
@@ -7590,14 +7572,9 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jdk/copyright`, `/usr/share/d
 - `LGPL-2`
 - `LGPL-2-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjdk-lts=11.0.13+8-0ubuntu1~20.04
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.13%2b8-0ubuntu1%7e20.04.dsc' openjdk-lts_11.0.13+8-0ubuntu1~20.04.dsc 4719 SHA512:53cfd4d5e89a78b0f8625c6fa637942032fcbf47955ee98222b7a972f06b78a9b8e80133fde37aab641b648f9e48cda4d1c1cacad3718dcbeaccf4b78ab805ca
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.13%2b8.orig.tar.xz' openjdk-lts_11.0.13+8.orig.tar.xz 78308880 SHA512:f5dee87f485944dbe0f99ca1db48c2255156c3c5603becd30c944cde60efd67053a5964e80e3ce60a38926c408045ebab3c1ad986c36c4a593690939a1bc2b91
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.13%2b8-0ubuntu1%7e20.04.debian.tar.xz' openjdk-lts_11.0.13+8-0ubuntu1~20.04.debian.tar.xz 172908 SHA512:6ff8486f61d8d6ffbfc7226a09c634cd048945a41d5ba1845322dbc4cc4dc505b2eb667840bf3c5f82819cf769ab35a138ed2b4e60d1b5ca8f80006f3799b3e8
-```
 
 ### `dpkg` source package: `openjpeg2=2.3.1-1ubuntu4.20.04.1`
 
@@ -7657,14 +7634,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.10
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.10.dsc' openssl_1.1.1f-1ubuntu2.10.dsc 2499 SHA512:388d30358cd111bac756318b259f76eedd77e8f131b1537f63b0b3e7a4c8860f9d39b8a3662931c37993c75579cd95640244e96382e841a3477abb34a26bde73
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.10.debian.tar.xz' openssl_1.1.1f-1ubuntu2.10.debian.tar.xz 170668 SHA512:e95371b58d36b3b7184c0b7b6a459ed121fb57baa4bc694bc0c1f004be98ef7b672b6c8ec2e1207998bf35aafb3dd2c3e8a0e018c13930dbb072f8d911b2b9ed
-```
 
 ### `dpkg` source package: `opus=1.3.1-0ubuntu1`
 
