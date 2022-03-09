@@ -1230,14 +1230,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-100.113
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-100.113.dsc' linux_5.4.0-100.113.dsc 7335 SHA512:c2eeb20bcedd34e3f8b36744586effe82932b094a31fa93f9ba9c5d0a259e755d6c52ab27e4189296d1bb4d8db5fe7cdba87d95b499ebfc8b789b1f5787c43f5
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-100.113.diff.gz' linux_5.4.0-100.113.diff.gz 9098439 SHA512:4c7c7f7538c318af123de3799e0fd6d6785381ec2c3a492a134fd1acdac0702dc5dbfafc6793715ef6267a684cba9841f7cdb5700c365b8a871f16f788157265
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu2`
 
@@ -1437,14 +1432,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.10
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.10.dsc' openssl_1.1.1f-1ubuntu2.10.dsc 2499 SHA512:388d30358cd111bac756318b259f76eedd77e8f131b1537f63b0b3e7a4c8860f9d39b8a3662931c37993c75579cd95640244e96382e841a3477abb34a26bde73
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.10.debian.tar.xz' openssl_1.1.1f-1ubuntu2.10.debian.tar.xz 170668 SHA512:e95371b58d36b3b7184c0b7b6a459ed121fb57baa4bc694bc0c1f004be98ef7b672b6c8ec2e1207998bf35aafb3dd2c3e8a0e018c13930dbb072f8d911b2b9ed
-```
 
 ### `dpkg` source package: `p11-kit=0.23.20-1ubuntu0.1`
 
