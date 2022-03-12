@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:65dadb200d9dec08c0750f4b0f898ba357d0960ea1fabc49a86dd4fb2acc2b4e`
-- Created: `2022-03-05T02:17:09.813847707Z`
+- Image ID: `sha256:de4c154c8f5c12dd82fb963bf582ff52ef4bccedb4861b506fd07a9c6a3007a5`
+- Created: `2022-03-11T23:20:02.882278133Z`
 - Virtual Size: ~ 40.40 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20220304`
+  - `build-date=20220311`
   - `name=Photon OS x86_64/4.0 Base Image`
   - `vendor=VMware`
 
@@ -65,7 +65,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `expat-libs-2.2.9-8.ph4.x86_64`
+### `rpm` package: `expat-libs-2.2.9-9.ph4.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -84,6 +84,12 @@ Licenses (from `rpm --query`): LGPLv2+
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `gpg-pubkey-66fd4949-4803fe57`
+
+Licenses (from `rpm --query`): pubkey
+
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
+
+### `rpm` package: `gpg-pubkey-8a6a826d-596882ca`
 
 Licenses (from `rpm --query`): pubkey
 
@@ -149,7 +155,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `ncurses-libs-6.2-4.ph4.x86_64`
+### `rpm` package: `ncurses-libs-6.2-5.ph4.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -179,7 +185,7 @@ Licenses (from `rpm --query`): Apache License
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `photon-repos-4.0-2.ph4.noarch`
+### `rpm` package: `photon-repos-4.0-3.ph4.noarch`
 
 Licenses (from `rpm --query`): Apache License
 
