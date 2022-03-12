@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3b0832e3f031649af3d8c61b2a4549bbe89d295a903249d297e35f11d978264f`
-- Created: `2022-03-03T13:26:40.203271991Z`
-- Virtual Size: ~ 194.81 Mb  
+- Image ID: `sha256:894c1ef3e832e85a2227ffac1b3b9ee8c4c60a35b6e1b41de397c451aea3a132`
+- Created: `2022-03-11T11:56:11.384337855Z`
+- Virtual Size: ~ 197.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -251,16 +251,16 @@ MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.6-r0 description:
+expat-2.4.7-r0 description:
 XML Parser library written in C
 
-expat-2.4.6-r0 webpage:
+expat-2.4.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.6-r0 installed size:
+expat-2.4.7-r0 installed size:
 192 KiB
 
-expat-2.4.6-r0 license:
+expat-2.4.7-r0 license:
 MIT
 
 ```
@@ -296,6 +296,23 @@ git-2.34.1-r0 installed size:
 
 git-2.34.1-r0 license:
 GPL-2.0-or-later
+
+```
+
+### `apk` package: `gnu-libiconv`
+
+```console
+gnu-libiconv-1.16-r0 description:
+GNU charset conversion library for libc which doesn't implement it
+
+gnu-libiconv-1.16-r0 webpage:
+https://www.gnu.org/software/libiconv
+
+gnu-libiconv-1.16-r0 installed size:
+1056 KiB
+
+gnu-libiconv-1.16-r0 license:
+LGPL-2.1-or-later
 
 ```
 
@@ -557,16 +574,16 @@ GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.12-r2 description:
+libxml2-2.9.13-r0 description:
 XML parsing library, version 2
 
-libxml2-2.9.12-r2 webpage:
+libxml2-2.9.13-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.12-r2 installed size:
+libxml2-2.9.13-r0 installed size:
 1200 KiB
 
-libxml2-2.9.12-r2 license:
+libxml2-2.9.13-r0 license:
 MIT
 
 ```
