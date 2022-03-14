@@ -1,16 +1,16 @@
-# `docker:20.10.12-dind-rootless`
+# `docker:20.10.13-dind-rootless`
 
 ## Docker Metadata
 
-- Image ID: `sha256:669719fc32513aae9029a1f8d6de49809af5919a32f08db35e2af61583ef8e19`
-- Created: `2022-01-21T20:33:46.337570114Z`
-- Virtual Size: ~ 287.62 Mb  
+- Image ID: `sha256:d466e72290286bcdfbc871e8561fae40d9eef80790216bb18f18b5313b6e088b`
+- Created: `2022-03-11T00:19:57.244405324Z`
+- Virtual Size: ~ 289.40 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=20.10.12`
+  - `DOCKER_VERSION=20.10.13`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=42b1175eda071c0e9121e1d64345928384a93df1`
 
@@ -393,16 +393,16 @@ MIT
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.37.2-r1 description:
+libblkid-2.37.4-r0 description:
 Block device identification library from util-linux
 
-libblkid-2.37.2-r1 webpage:
+libblkid-2.37.4-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.37.2-r1 installed size:
+libblkid-2.37.4-r0 installed size:
 300 KiB
 
-libblkid-2.37.2-r1 license:
+libblkid-2.37.4-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -648,16 +648,16 @@ BSD-3-Clause
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.37.2-r1 description:
+libuuid-2.37.4-r0 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.37.2-r1 webpage:
+libuuid-2.37.4-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.37.2-r1 installed size:
+libuuid-2.37.4-r0 installed size:
 40 KiB
 
-libuuid-2.37.2-r1 license:
+libuuid-2.37.4-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -818,16 +818,16 @@ BSD
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1l-r7 description:
+openssl-1.1.1l-r8 description:
 toolkit for transport layer security (TLS) - version 1.1
 
-openssl-1.1.1l-r7 webpage:
+openssl-1.1.1l-r8 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1l-r7 installed size:
+openssl-1.1.1l-r8 installed size:
 660 KiB
 
-openssl-1.1.1l-r7 license:
+openssl-1.1.1l-r8 license:
 OpenSSL
 
 ```
@@ -954,16 +954,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `zfs`
 
 ```console
-zfs-2.1.1-r0 description:
+zfs-2.1.2-r0 description:
 ZFS for Linux
 
-zfs-2.1.1-r0 webpage:
+zfs-2.1.2-r0 webpage:
 https://zfsonlinux.org
 
-zfs-2.1.1-r0 installed size:
+zfs-2.1.2-r0 installed size:
 1356 KiB
 
-zfs-2.1.1-r0 license:
+zfs-2.1.2-r0 license:
 CDDL-1.0
 
 ```
@@ -971,16 +971,16 @@ CDDL-1.0
 ### `apk` package: `zfs-libs`
 
 ```console
-zfs-libs-2.1.1-r0 description:
+zfs-libs-2.1.2-r0 description:
 ZFS for Linux (libraries)
 
-zfs-libs-2.1.1-r0 webpage:
+zfs-libs-2.1.2-r0 webpage:
 https://zfsonlinux.org
 
-zfs-libs-2.1.1-r0 installed size:
+zfs-libs-2.1.2-r0 installed size:
 4084 KiB
 
-zfs-libs-2.1.1-r0 license:
+zfs-libs-2.1.2-r0 license:
 CDDL-1.0
 
 ```

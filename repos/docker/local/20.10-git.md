@@ -1,17 +1,17 @@
-# `docker:20.10.12-git`
+# `docker:20.10.13-git`
 
 ## Docker Metadata
 
-- Image ID: `sha256:456c635446977ad70607efd5889908b1ccb8b727ae6244dca0569b72c2b63ead`
-- Created: `2021-12-15T20:19:58.491642966Z`
-- Virtual Size: ~ 229.49 Mb  
+- Image ID: `sha256:f328899fc7a17e58951f5523f603df43687ea162ad1f8f04eed66b876e9480ea`
+- Created: `2022-03-11T00:20:00.869148054Z`
+- Virtual Size: ~ 231.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_VERSION=20.10.12`
+  - `DOCKER_VERSION=20.10.13`
   - `DOCKER_TLS_CERTDIR=/certs`
 
 ## `apk` (`.apk`-based packages)
@@ -138,16 +138,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.1-r0 description:
+expat-2.4.7-r0 description:
 XML Parser library written in C
 
-expat-2.4.1-r0 webpage:
+expat-2.4.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.1-r0 installed size:
-188 KiB
+expat-2.4.7-r0 installed size:
+192 KiB
 
-expat-2.4.1-r0 license:
+expat-2.4.7-r0 license:
 MIT
 
 ```
