@@ -1,4 +1,4 @@
-## `openjdk:19-ea-slim-bullseye`
+## `openjdk:19-ea-13-slim-bullseye`
 
 ```console
 $ docker pull openjdk@sha256:3dd5a50ef4083385cde4f1727cee026a727f148fd38d759011cf44a61ce9f16a
@@ -9,7 +9,7 @@ $ docker pull openjdk@sha256:3dd5a50ef4083385cde4f1727cee026a727f148fd38d759011c
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `openjdk:19-ea-slim-bullseye` - linux; amd64
+### `openjdk:19-ea-13-slim-bullseye` - linux; amd64
 
 ```console
 $ docker pull openjdk@sha256:e1ec2039199fc80db317cb66347c95938fe43dc4d52e6d293d06f480d920df7d
@@ -57,7 +57,7 @@ CMD ["jshell"]
 		Size: 193.5 MB (193458806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `openjdk:19-ea-slim-bullseye` - linux; arm64 variant v8
+### `openjdk:19-ea-13-slim-bullseye` - linux; arm64 variant v8
 
 ```console
 $ docker pull openjdk@sha256:5235859f1ac28a1e1a005fdddc86c5757eaae5eef74f2522cce4a423aa7af92a
