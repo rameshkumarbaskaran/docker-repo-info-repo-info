@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bd947e2d6c914003962df62cdbe8f5c19e82641118f3836fbc52772f88d43c11`
-- Created: `2022-03-03T18:15:35.228688287Z`
-- Virtual Size: ~ 185.58 Mb  
+- Image ID: `sha256:db6103e740d5bd9e8af6a62b9d991cff686f87548ae5f24a640152eb3fccfe87`
+- Created: `2022-03-11T15:32:09.071413257Z`
+- Virtual Size: ~ 186.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -200,16 +200,16 @@ MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.6-r0 description:
+expat-2.4.7-r0 description:
 XML Parser library written in C
 
-expat-2.4.6-r0 webpage:
+expat-2.4.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.6-r0 installed size:
+expat-2.4.7-r0 installed size:
 192 KiB
 
-expat-2.4.6-r0 license:
+expat-2.4.7-r0 license:
 MIT
 
 ```
@@ -245,6 +245,23 @@ freetype-2.11.0-r0 installed size:
 
 freetype-2.11.0-r0 license:
 FTL GPL-2.0-or-later
+
+```
+
+### `apk` package: `gnu-libiconv`
+
+```console
+gnu-libiconv-1.16-r0 description:
+GNU charset conversion library for libc which doesn't implement it
+
+gnu-libiconv-1.16-r0 webpage:
+https://www.gnu.org/software/libiconv
+
+gnu-libiconv-1.16-r0 installed size:
+1056 KiB
+
+gnu-libiconv-1.16-r0 license:
+LGPL-2.1-or-later
 
 ```
 

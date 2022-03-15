@@ -1,10 +1,10 @@
-# `wordpress:5.9.1-php8.1-fpm-alpine`
+# `wordpress:5.9.2-php8.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:72ef9e7bfaba8578a767374a7e8744db791429d3273cbd4697645144ced7d35c`
-- Created: `2022-03-03T18:08:17.407883671Z`
-- Virtual Size: ~ 298.84 Mb  
+- Image ID: `sha256:4c13f25d495834bad66464c29f05ff66524e58e6586a4d9d5e4490da1be118ce`
+- Created: `2022-03-14T19:22:38.632400903Z`
+- Virtual Size: ~ 299.92 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -299,16 +299,16 @@ AFL-2.1 OR GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.6-r0 description:
+expat-2.4.7-r0 description:
 XML Parser library written in C
 
-expat-2.4.6-r0 webpage:
+expat-2.4.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.6-r0 installed size:
+expat-2.4.7-r0 installed size:
 192 KiB
 
-expat-2.4.6-r0 license:
+expat-2.4.7-r0 license:
 MIT
 
 ```
@@ -429,6 +429,23 @@ gmp-6.2.1-r1 installed size:
 
 gmp-6.2.1-r1 license:
 LGPL-3.0-or-later OR GPL-2.0-or-later
+
+```
+
+### `apk` package: `gnu-libiconv`
+
+```console
+gnu-libiconv-1.16-r0 description:
+GNU charset conversion library for libc which doesn't implement it
+
+gnu-libiconv-1.16-r0 webpage:
+https://www.gnu.org/software/libiconv
+
+gnu-libiconv-1.16-r0 installed size:
+1056 KiB
+
+gnu-libiconv-1.16-r0 license:
+LGPL-2.1-or-later
 
 ```
 

@@ -1,10 +1,10 @@
-# `wordpress:5.9.1-fpm`
+# `wordpress:5.9.2-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:79c8d4190caad0dc804d195d93e26f75d1cefe96402db96c4220f48b35ab2f03`
-- Created: `2022-03-03T17:53:44.186921413Z`
-- Virtual Size: ~ 595.97 Mb  
+- Image ID: `sha256:22211d895b086801043b1352927e03571e38dd7c2a017c2835de891b922d1085`
+- Created: `2022-03-14T19:21:29.249948518Z`
+- Virtual Size: ~ 595.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -900,20 +900,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.10-2+deb11u2
-'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10-2%2bdeb11u2.dsc' expat_2.2.10-2+deb11u2.dsc 2175 SHA256:6baf9313138838ef15bcc454e73c041c8cd0aef70e1f4e074c88f6caabc23fd3
-'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10.orig.tar.gz' expat_2.2.10.orig.tar.gz 8276395 SHA256:62e280f5fd29a5b70973f623e20a7412c3e3912c2684cb0e462e2c881be129e1
-'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.10-2%2bdeb11u2.debian.tar.xz' expat_2.2.10-2+deb11u2.debian.tar.xz 25192 SHA256:76a3b5cd539b299fac69502009dec3acbb3a4020732df548ddbde4344d8fa27e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/expat/2.2.10-2+deb11u2/
 
-- https://sources.debian.net/src/expat/2.2.10-2+deb11u2/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.10-2+deb11u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.10-2+deb11u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fftw3=3.3.8-2`
 
