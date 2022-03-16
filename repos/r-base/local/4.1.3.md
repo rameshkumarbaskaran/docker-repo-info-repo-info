@@ -1848,20 +1848,13 @@ Licenses: (parsed from: `/usr/share/doc/libdeflate0/copyright`)
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libdeflate=1.8-1
-'http://deb.debian.org/debian/pool/main/libd/libdeflate/libdeflate_1.8-1.dsc' libdeflate_1.8-1.dsc 2188 SHA256:d88651a173ca65945a9cd6b0d87637a989855a872fff85cd98a48b12d682e81c
-'http://deb.debian.org/debian/pool/main/libd/libdeflate/libdeflate_1.8.orig.tar.gz' libdeflate_1.8.orig.tar.gz 145823 SHA256:50711ad4e9d3862f8dfb11b97eb53631a86ee3ce49c0e68ec2b6d059a9662f61
-'http://deb.debian.org/debian/pool/main/libd/libdeflate/libdeflate_1.8-1.debian.tar.xz' libdeflate_1.8-1.debian.tar.xz 4228 SHA256:300c0e15f1f22bbfca2e6edc6abae2cfe71692ca86c67dcccbb39bf846568add
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libdeflate/1.8-1/
 
-- https://sources.debian.net/src/libdeflate/1.8-1/ (for browsing the source)
-- https://sources.debian.net/src/libdeflate/1.8-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libdeflate/1.8-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libffi=3.4.2-4`
 
@@ -2806,16 +2799,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.16.11-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.16.11-1.dsc' linux_5.16.11-1.dsc 248961 SHA256:cfa6a032dc3b1ec3b5cbd887cd5ebbf37fa93c932678d6e90392b28ec0f84ee2
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.16.11.orig.tar.xz' linux_5.16.11.orig.tar.xz 129203092 SHA256:550d6cdbf6d3f60f9c88284747dfd12fb8c91a855d241bfb9fd368ce9036ada4
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.16.11-1.debian.tar.xz' linux_5.16.11-1.debian.tar.xz 1308904 SHA256:2fb2ba1b661c1e57f8d592a413eb7a05adddfe9d7b00c345e05c9258d0cd878d
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.16.11-1.dsc' linux_5.16.11-1.dsc 248961 SHA256:cfa6a032dc3b1ec3b5cbd887cd5ebbf37fa93c932678d6e90392b28ec0f84ee2
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.16.11.orig.tar.xz' linux_5.16.11.orig.tar.xz 129203092 SHA256:550d6cdbf6d3f60f9c88284747dfd12fb8c91a855d241bfb9fd368ce9036ada4
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.16.11-1.debian.tar.xz' linux_5.16.11-1.debian.tar.xz 1308904 SHA256:2fb2ba1b661c1e57f8d592a413eb7a05adddfe9d7b00c345e05c9258d0cd878d
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/linux/5.16.11-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/5.16.11-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/5.16.11-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `littler=0.3.15-1`
 
