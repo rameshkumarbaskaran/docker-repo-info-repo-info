@@ -762,14 +762,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-12-base/copyright`, `/usr/share/doc/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-12=12-20220302-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12-20220302-1ubuntu1.dsc' gcc-12_12-20220302-1ubuntu1.dsc 27778 SHA512:d52cbeeba2ba37ebcbd25f7ee494c2dee4bf61eda9b1bf8a8d0719b55478e93b2b3aa1d169e77b13bbc23d25d619c702eb4cea8433153ef6cde09cb97f46beba
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12-20220302.orig.tar.gz' gcc-12_12-20220302.orig.tar.gz 97125333 SHA512:efd1e96fadc31a2b75f5b763c4f13beb12cf725e53436e3dbb3a5bb4d816cf7c12819c3c26bb95b96c40715b7c5dc4f5b0ff73559f28c8919a8ddc5417fa5c71
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-12/gcc-12_12-20220302-1ubuntu1.debian.tar.xz' gcc-12_12-20220302-1ubuntu1.debian.tar.xz 561192 SHA512:8d68d60216dbbdaed4b49987bbbaadbcdcb649fa72fe6252a54a9dc86bb1a5b6853e0a6be6e288cd050534478289785b0edcf7d4292b4832caff092b7a220cb1
-```
 
 ### `dpkg` source package: `glibc=2.35-0ubuntu1`
 
@@ -2774,13 +2769,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.10.1-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.10.1-0ubuntu1.dsc' python3-defaults_3.10.1-0ubuntu1.dsc 2967 SHA512:370f57a4bbce592b9b866cf3fc84806b5d659c68f02e2041a270d34a31ea5272d8b19bdd1188821b5ec43185db5dc7d8017f72cf08e446e6d094405b1da62e02
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.10.1-0ubuntu1.tar.gz' python3-defaults_3.10.1-0ubuntu1.tar.gz 141331 SHA512:b7421f059f6fdff6316d7497a69f8ef7d42a491bc0247d8aa6ff561fc7e435eeba5669e1b9c570e0901c4e1b225f7dbe86b5cd24d3f93c91064b88c1878e9bea
-```
 
 ### `dpkg` source package: `python3-rosdistro-modules=0.8.3-1`
 
@@ -2831,14 +2822,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.9.10-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.10-1.dsc' python3-stdlib-extensions_3.9.10-1.dsc 2571 SHA512:7064d5d7c58247d74b0497c9f3d792e672ad27f27a08de918c9acaebd6189a6a30276390fb86e6ded87b8319c94bd8939f4de2bc75d860b66dd2d0a96e07e04f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.10.orig.tar.xz' python3-stdlib-extensions_3.9.10.orig.tar.xz 1113008 SHA512:6a334816defc3c3e98045d7e8adb1d3f9bf96a14e5151a6174900247aba8cc9ec6b8ce15ec02bf39986584512d1aac2caf36e654c52ffdbbe33125b9c01b24e5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.9.10-1.debian.tar.xz' python3-stdlib-extensions_3.9.10-1.debian.tar.xz 24812 SHA512:16a36677a36e14b3ab928733df6bd40c4d238dffd4dab15f92e4b2db468d666768927d0a1507dc21c18286461d1eb22ad5d0e7fb606002e1e5a2a09e0a7305de
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.9.10-1/
+
 
 ### `dpkg` source package: `python3.10=3.10.2-5`
 
@@ -2872,14 +2862,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.10/copyright`, `/usr/share/do
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.10=3.10.2-5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.2-5.dsc' python3.10_3.10.2-5.dsc 3500 SHA512:97b580da07a627afd437b6a987a5fbe261d65d44461a815258c79f074df8ab65424ae4b6d7088e8d89ba2f36f657e13c5f6da1cd8d5723e278baf63af2ea45c1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.2.orig.tar.xz' python3.10_3.10.2.orig.tar.xz 18780936 SHA512:215a7159face84788fe547c1e2689b8d0ae510275157cf01636bef2902d0ff465f844eb0328c9f39fd1cd03a1d1736d4cf258992f2788e492a801a372032c08b
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.10/python3.10_3.10.2-5.debian.tar.xz' python3.10_3.10.2-5.debian.tar.xz 214388 SHA512:17f2ede1eb92ebdfcf1b26becf643485b7a54b5a9b767191dafbe72439e09d9cdbabe0ae5fc80250d651e3ec95a95ab524fcecf241fd417c93db9387bd599083
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python3.10/3.10.2-5/
+
 
 ### `dpkg` source package: `python3.9=3.9.10-2`
 
@@ -5132,14 +5121,9 @@ Licenses: (parsed from: `/usr/share/doc/login/copyright`, `/usr/share/doc/passwd
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris shadow=1:4.8.1-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-2ubuntu1.dsc' shadow_4.8.1-2ubuntu1.dsc 2381 SHA512:04251885e4b9f51c78d133aeddbcb5097e7e9a5844c842f621cb35b49f6cc5db7dad11b3967663dd34311ae8a3f6b28136d5e6dfe95b8ef4d51e8d40d4819310
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1.orig.tar.xz' shadow_4.8.1.orig.tar.xz 1611196 SHA512:780a983483d847ed3c91c82064a0fa902b6f4185225978241bc3bc03fcc3aa143975b46aee43151c6ba43efcfdb1819516b76ba7ad3d1d3c34fcc38ea42e917b
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-2ubuntu1.debian.tar.xz' shadow_4.8.1-2ubuntu1.debian.tar.xz 86604 SHA512:d0531d7faa0bb494f01b93fd7293c207b091392006300364a523f45eeed6868d891adf89d984873cbe0c9f5d8278a41d8e583bf4a1015504f6e7c2d56e4c2656
-```
 
 ### `dpkg` source package: `six=1.16.0-3`
 
