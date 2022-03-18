@@ -1,10 +1,10 @@
-# `crate:4.7.0`
+# `crate:4.7.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fdc1b69cbe7da4af4e9c515e47e59697da3045fd55e287c5f779247566c0e092`
-- Created: `2022-02-01T22:33:33.161928237Z`
-- Virtual Size: ~ 677.07 Mb  
+- Image ID: `sha256:8f173a79e7f82c0f7c0899f0b694ea14be06e91955b5d6d9aa2a7abd8ee91bf8`
+- Created: `2022-03-16T00:24:26.947443682Z`
+- Virtual Size: ~ 677.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -19,14 +19,14 @@
   - `org.label-schema.name=CentOS Base Image`
   - `org.label-schema.schema-version=1.0`
   - `org.label-schema.vendor=CentOS`
-  - `org.opencontainers.image.created=2022-01-26T09:48:10.009142`
+  - `org.opencontainers.image.created=2022-03-10T16:30:11.824373`
   - `org.opencontainers.image.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time.`
   - `org.opencontainers.image.licenses=GPL-2.0-only`
   - `org.opencontainers.image.source=https://github.com/crate/docker-crate`
   - `org.opencontainers.image.title=crate`
   - `org.opencontainers.image.url=https://crate.io/products/cratedb/`
   - `org.opencontainers.image.vendor=Crate.io`
-  - `org.opencontainers.image.version=4.7.0`
+  - `org.opencontainers.image.version=4.7.1`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -638,8 +638,8 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url krb5-libs-1.15.1-50.el7
-http://vault.centos.org/centos/7/os/Source/SPackages/krb5-1.15.1-50.el7.src.rpm
 http://vault.centos.org/centos/7/updates/Source/SPackages/krb5-1.15.1-50.el7.src.rpm
+http://vault.centos.org/centos/7/os/Source/SPackages/krb5-1.15.1-50.el7.src.rpm
 ```
 
 ### `rpm` package: `libacl-2.2.51-15.el7.x86_64`
