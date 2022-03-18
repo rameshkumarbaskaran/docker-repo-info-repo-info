@@ -1,7 +1,7 @@
 ## `drupal:9-fpm-alpine3.14`
 
 ```console
-$ docker pull drupal@sha256:8e0b625d5b1b5a75fdf11231cec09827d9649c64645390e245a7fa29eab2f2d8
+$ docker pull drupal@sha256:683b8430b890e27cb25a47d8c01ac99fbd4dc221b60d42187cc12b300dbaaa04
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -160,14 +160,14 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupa
 ### `drupal:9-fpm-alpine3.14` - linux; arm variant v6
 
 ```console
-$ docker pull drupal@sha256:a70feec46c0dbfefb132da6821dc5fe5ba9393e2dfcba4d845405f26d48b88ff
+$ docker pull drupal@sha256:9b6496014d148e83c049a57a1ce5242e1bd3572be2cd82af26845f4e081e52db
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **49.7 MB (49711595 bytes)**  
+-	Total Size: **49.6 MB (49619252 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:981f804d536596a6d1a545fb1a3cbb526615c2e229355e24dd84045204c38b8f`
+-	Image ID: `sha256:e1e17fb8512565adaf03ef08d6649a6f42dd762e500db31e12d4d986bcadcd43`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -194,47 +194,47 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Thu, 17 Mar 2022 21:05:18 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F
-# Thu, 17 Mar 2022 21:16:34 GMT
-ENV PHP_VERSION=8.0.16
-# Thu, 17 Mar 2022 21:16:35 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.0.16.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.16.tar.xz.asc
-# Thu, 17 Mar 2022 21:16:35 GMT
-ENV PHP_SHA256=f27a2f25259e8c51e42dfd74e24a546ee521438ad7d9f6c6e794aa91f38bab0a
-# Thu, 17 Mar 2022 21:16:56 GMT
+# Fri, 18 Mar 2022 02:20:19 GMT
+ENV PHP_VERSION=8.0.17
+# Fri, 18 Mar 2022 02:20:20 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.17.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.17.tar.xz.asc
+# Fri, 18 Mar 2022 02:20:20 GMT
+ENV PHP_SHA256=4e7d94bb3d144412cb8b2adeb599fb1c6c1d7b357b0d0d0478dc5ef53532ebc5
+# Fri, 18 Mar 2022 02:20:38 GMT
 RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
-# Thu, 17 Mar 2022 21:16:57 GMT
+# Fri, 18 Mar 2022 02:20:39 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Thu, 17 Mar 2022 21:26:45 GMT
+# Fri, 18 Mar 2022 02:29:44 GMT
 RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 				--disable-cgi 				--enable-fpm 		--with-fpm-user=www-data 		--with-fpm-group=www-data 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Thu, 17 Mar 2022 21:26:47 GMT
+# Fri, 18 Mar 2022 02:29:45 GMT
 COPY multi:7d7d4b016ee2e2e18720a1a58004eb4d59de798c619f217398cc1066a656bfd0 in /usr/local/bin/ 
-# Thu, 17 Mar 2022 21:26:49 GMT
+# Fri, 18 Mar 2022 02:29:47 GMT
 RUN docker-php-ext-enable sodium
-# Thu, 17 Mar 2022 21:26:49 GMT
+# Fri, 18 Mar 2022 02:29:48 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Thu, 17 Mar 2022 21:26:50 GMT
+# Fri, 18 Mar 2022 02:29:48 GMT
 WORKDIR /var/www/html
-# Thu, 17 Mar 2022 21:26:51 GMT
+# Fri, 18 Mar 2022 02:29:50 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Thu, 17 Mar 2022 21:26:52 GMT
+# Fri, 18 Mar 2022 02:29:50 GMT
 STOPSIGNAL SIGQUIT
-# Thu, 17 Mar 2022 21:26:52 GMT
+# Fri, 18 Mar 2022 02:29:51 GMT
 EXPOSE 9000
-# Thu, 17 Mar 2022 21:26:52 GMT
+# Fri, 18 Mar 2022 02:29:51 GMT
 CMD ["php-fpm"]
-# Thu, 17 Mar 2022 23:36:10 GMT
+# Fri, 18 Mar 2022 03:19:06 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-dev 		libjpeg-turbo-dev 		libpng-dev 		libwebp-dev 		libzip-dev 		postgresql-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr/include 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .drupal-phpexts-rundeps $runDeps; 	apk del --no-network .build-deps
-# Thu, 17 Mar 2022 23:36:12 GMT
+# Fri, 18 Mar 2022 03:19:08 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Thu, 17 Mar 2022 23:36:13 GMT
+# Fri, 18 Mar 2022 03:19:09 GMT
 COPY file:608f7625682057a8f327a57b0a8d1d350465d3209e7a8c9e119158b6dc4b876a in /usr/local/bin/ 
-# Fri, 18 Mar 2022 00:51:45 GMT
+# Fri, 18 Mar 2022 03:19:09 GMT
 ENV DRUPAL_VERSION=9.3.8
-# Fri, 18 Mar 2022 00:51:46 GMT
+# Fri, 18 Mar 2022 03:19:10 GMT
 WORKDIR /opt/drupal
-# Fri, 18 Mar 2022 00:52:15 GMT
+# Fri, 18 Mar 2022 03:19:40 GMT
 RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --no-interaction "drupal/recommended-project:$DRUPAL_VERSION" ./; 	chown -R www-data:www-data web/sites web/modules web/themes; 	rmdir /var/www/html; 	ln -sf /opt/drupal/web /var/www/html; 	rm -rf "$COMPOSER_HOME"
-# Fri, 18 Mar 2022 00:52:17 GMT
+# Fri, 18 Mar 2022 03:19:42 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin
 ```
 
@@ -255,49 +255,49 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupa
 		Last Modified: Thu, 17 Mar 2022 22:08:37 GMT  
 		Size: 268.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a41f530948d7937bffc041b6669ffd2b4616576483d13b8cd2625daf080da2ce`  
-		Last Modified: Thu, 17 Mar 2022 22:12:38 GMT  
-		Size: 10.9 MB (10883865 bytes)  
+	-	`sha256:24d07f09bfd239a7110b87df61e332c765b5c5089ebceacc315a227cb95ded8f`  
+		Last Modified: Fri, 18 Mar 2022 02:44:48 GMT  
+		Size: 10.8 MB (10790950 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23ebe87819659c101112ca32187ac456b0f0e0c6f50aaccd724f6a860b3e1ea8`  
-		Last Modified: Thu, 17 Mar 2022 22:12:36 GMT  
-		Size: 495.0 B  
+	-	`sha256:c3bc65444bdfa50d3ce285367e2d24ecfec6e2f7b2250f1bd91108dfc0a66de0`  
+		Last Modified: Fri, 18 Mar 2022 02:44:45 GMT  
+		Size: 496.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3034c1d91df4608ad12907b515acac3c30744c49a01e03915b2b7b5ccf72e61b`  
-		Last Modified: Thu, 17 Mar 2022 22:13:14 GMT  
-		Size: 11.0 MB (10966591 bytes)  
+	-	`sha256:b8bbdc1a5af8b1c717cd7f3293176c7094396e1dc40f1bbddce21d398dd69c22`  
+		Last Modified: Fri, 18 Mar 2022 02:45:24 GMT  
+		Size: 11.0 MB (10967030 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eee75e1bde40a9ba5f955c1ae19e57bbcadd246fcadfb2ceb1be23a548797887`  
-		Last Modified: Thu, 17 Mar 2022 22:13:06 GMT  
+	-	`sha256:e151af28c718b23d4d0e8d92c7155a46a7953b4bfa5f0ae92ffc1e96bcc44999`  
+		Last Modified: Fri, 18 Mar 2022 02:45:16 GMT  
 		Size: 2.3 KB (2303 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39fbbb80d4fae5d726a87fdd012b445b1b3594d9d118520af4588d4a43e1a3b2`  
-		Last Modified: Thu, 17 Mar 2022 22:13:06 GMT  
-		Size: 18.4 KB (18355 bytes)  
+	-	`sha256:a098f1f07a9c0ac17cc10cc638980d5f89f03275b496378cd246f6008c0fcda5`  
+		Last Modified: Fri, 18 Mar 2022 02:45:16 GMT  
+		Size: 18.4 KB (18357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2adbf6e4308010aefde9d99b11a15ed9b4f1430699a0200f77e7923fb146bf7`  
-		Last Modified: Thu, 17 Mar 2022 22:13:06 GMT  
-		Size: 8.6 KB (8570 bytes)  
+	-	`sha256:c3a7a51d5dce6a5a6423835cec9eb78eb7a7d667f670e298110431f0cc34f548`  
+		Last Modified: Fri, 18 Mar 2022 02:45:16 GMT  
+		Size: 8.6 KB (8571 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7e47362bf91418049d51f1553a73c8be8c5e6f69f6dfee934fc85b54017a9fe5`  
-		Last Modified: Thu, 17 Mar 2022 23:49:10 GMT  
-		Size: 2.0 MB (1995834 bytes)  
+	-	`sha256:6c3699130f304133eb08f9aa0112aa24816e216099ccb1a074b84039a656c299`  
+		Last Modified: Fri, 18 Mar 2022 03:31:27 GMT  
+		Size: 2.0 MB (1995962 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:36352962b3af4261a1d8517d509d1e58851de2c73263a10092d1b0526580b917`  
-		Last Modified: Thu, 17 Mar 2022 23:49:09 GMT  
-		Size: 327.0 B  
+	-	`sha256:744f7546bec97a96dde9c2979fe6ded4ccee210cdeef5fc5cc0fdaf15a561e33`  
+		Last Modified: Fri, 18 Mar 2022 03:31:26 GMT  
+		Size: 323.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb20025da407eb65507985bba592186463d87d04717e0f7ec0051b6857dae173`  
-		Last Modified: Thu, 17 Mar 2022 23:49:09 GMT  
+	-	`sha256:b9bd2ee7c87ef39c3d2b1086c3080915798b213fcac23761fd72a73a8da50e67`  
+		Last Modified: Fri, 18 Mar 2022 03:31:26 GMT  
 		Size: 575.7 KB (575708 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3b7e5179528543e1cfdb9b369aea2b2f1786568b56b3ec860082bff8e7227b32`  
-		Last Modified: Fri, 18 Mar 2022 01:05:04 GMT  
-		Size: 149.0 B  
+	-	`sha256:1e737293822c3ebed6855cc4f730c42af75f698e28e41d50c1b0bdbfcc600f33`  
+		Last Modified: Fri, 18 Mar 2022 03:31:26 GMT  
+		Size: 147.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35dd92d2a5e175d39b409c6abdfcedd91351d77e2da7ede0ae4ec93e40fb4a24`  
-		Last Modified: Fri, 18 Mar 2022 01:05:29 GMT  
-		Size: 20.9 MB (20937319 bytes)  
+	-	`sha256:cc3dbcbb1f73bf5c996d0617eb8cb6aec86c65dc0dac6f8914cf60d45238f0ac`  
+		Last Modified: Fri, 18 Mar 2022 03:31:55 GMT  
+		Size: 20.9 MB (20937326 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:9-fpm-alpine3.14` - linux; arm variant v7
