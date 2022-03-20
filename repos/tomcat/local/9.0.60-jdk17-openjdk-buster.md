@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:912383735255a65c04107ebe9933554c2ca70c8cb4100283cf5b7d58a5502fb2`
-- Created: `2022-03-16T01:54:04.990433946Z`
-- Virtual Size: ~ 679.61 Mb  
+- Image ID: `sha256:0e9718a6080fcc421a57fe09f7802f998e942c044e31123233432ad95cc795ba`
+- Created: `2022-03-20T11:31:23.080411559Z`
+- Virtual Size: ~ 674.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -711,23 +711,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/elfutils/0.176-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/elfutils/0.176-1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.6-2+deb10u3`
+### `dpkg` source package: `expat=2.2.6-2+deb10u4`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.6-2+deb10u3`
+- `libexpat1:amd64=2.2.6-2+deb10u4`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris expat=2.2.6-2+deb10u4
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2%2bdeb10u4.dsc' expat_2.2.6-2+deb10u4.dsc 2136 SHA256:1c675fb1b3fcde011eef35e8a96c5ceddcf7d89ccfeffe79b4e3e4ca166732c5
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2%2bdeb10u4.debian.tar.xz' expat_2.2.6-2+deb10u4.debian.tar.xz 27016 SHA256:f24d5eee71174ad5c21620e7f3374ee742be93007f6db68ba898523220405b8f
+```
 
-- http://snapshot.debian.org/package/expat/2.2.6-2+deb10u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u4/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.6-2+deb10u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 
@@ -2304,37 +2311,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openssh/1:7.9p1-10+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openssh/1:7.9p1-10+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.1d-0+deb10u7`
-
-Binary Packages:
-
-- `openssl=1.1.1d-0+deb10u7`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u7
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0%2bdeb10u7.dsc' openssl_1.1.1d-0+deb10u7.dsc 2649 SHA256:1cb63c67aedf26f139124e4a9ec5d51fa036948df3964805070da7b816b14581
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0%2bdeb10u7.debian.tar.xz' openssl_1.1.1d-0+deb10u7.debian.tar.xz 109236 SHA256:8a84cb76bf14a6725ee6b56d76335adadc639513d7c15b24b041fbb5f80cf053
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u7/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u7/ (for access to the source package after it no longer exists in the archive)
-
 ### `dpkg` source package: `openssl=1.1.1d-0+deb10u8`
 
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.1d-0+deb10u8`
+- `openssl=1.1.1d-0+deb10u8`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
