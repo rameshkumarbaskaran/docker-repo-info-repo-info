@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6415e9f29978965eb093d95ec1d02a1017c337877fcd27f9c296304ccea20c69`
-- Created: `2022-03-11T12:23:42.748998993Z`
-- Virtual Size: ~ 85.10 Mb  
+- Image ID: `sha256:cc338cce5fb9044e1c3516676a49592f05201a27c173511f7d1183e55fd45a61`
+- Created: `2022-03-19T15:35:59.633534482Z`
+- Virtual Size: ~ 85.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -131,16 +131,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r5 description:
+ca-certificates-20211220-r0 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r5 webpage:
+ca-certificates-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r5 installed size:
-672 KiB
+ca-certificates-20211220-r0 installed size:
+652 KiB
 
-ca-certificates-20191127-r5 license:
+ca-certificates-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -148,16 +148,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r5 description:
+ca-certificates-bundle-20211220-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r5 webpage:
+ca-certificates-bundle-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r5 installed size:
-228 KiB
+ca-certificates-bundle-20211220-r0 installed size:
+216 KiB
 
-ca-certificates-bundle-20191127-r5 license:
+ca-certificates-bundle-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -284,16 +284,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r0 description:
+libcrypto1.1-1.1.1n-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r0 webpage:
+libcrypto1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r0 installed size:
+libcrypto1.1-1.1.1n-r0 installed size:
 2704 KiB
 
-libcrypto1.1-1.1.1l-r0 license:
+libcrypto1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -437,16 +437,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r0 description:
+libssl1.1-1.1.1n-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r0 webpage:
+libssl1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r0 installed size:
+libssl1.1-1.1.1n-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r0 license:
+libssl1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -607,16 +607,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1l-r0 description:
+openssl-1.1.1n-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1l-r0 webpage:
+openssl-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1l-r0 installed size:
-660 KiB
+openssl-1.1.1n-r0 installed size:
+664 KiB
 
-openssl-1.1.1l-r0 license:
+openssl-1.1.1n-r0 license:
 OpenSSL
 
 ```

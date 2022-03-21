@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b153762cc33c2b2c7fc7b9023a8b452e5c100d34362bdd3d5195963bfb23d402`
-- Created: `2022-03-16T19:36:58.48021553Z`
-- Virtual Size: ~ 162.27 Mb  
+- Image ID: `sha256:3a46589dd423557b919ca207fc9f882f10dc50dcf941e14399e0df2c12c529f8`
+- Created: `2022-03-19T15:09:54.739949126Z`
+- Virtual Size: ~ 162.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.3`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.3.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.3.tar.xz.asc`
-  - `PHP_SHA256=5d65a11071b47669c17452fb336c290b67c101efb745c1dbe7525b5caf546ec6`
+  - `PHP_VERSION=8.1.4`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.4.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.4.tar.xz.asc`
+  - `PHP_SHA256=05a8c0ac30008154fb38a305560543fc172ba79fb957084a99b8d3b10d5bdb4b`
   - `DRUPAL_VERSION=10.0.0-alpha2`
 
 ## `apk` (`.apk`-based packages)
@@ -130,16 +130,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r5 description:
+ca-certificates-20211220-r0 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r5 webpage:
+ca-certificates-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r5 installed size:
-672 KiB
+ca-certificates-20211220-r0 installed size:
+652 KiB
 
-ca-certificates-20191127-r5 license:
+ca-certificates-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -147,16 +147,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r5 description:
+ca-certificates-bundle-20211220-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r5 webpage:
+ca-certificates-bundle-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r5 installed size:
-228 KiB
+ca-certificates-bundle-20211220-r0 installed size:
+216 KiB
 
-ca-certificates-bundle-20191127-r5 license:
+ca-certificates-bundle-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -283,16 +283,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r0 description:
+libcrypto1.1-1.1.1n-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r0 webpage:
+libcrypto1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r0 installed size:
+libcrypto1.1-1.1.1n-r0 installed size:
 2704 KiB
 
-libcrypto1.1-1.1.1l-r0 license:
+libcrypto1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -453,16 +453,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r0 description:
+libssl1.1-1.1.1n-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r0 webpage:
+libssl1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r0 installed size:
+libssl1.1-1.1.1n-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r0 license:
+libssl1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -487,16 +487,16 @@ BSD-3-Clause
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.12-r1 description:
+libxml2-2.9.13-r0 description:
 XML parsing library, version 2
 
-libxml2-2.9.12-r1 webpage:
+libxml2-2.9.13-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.12-r1 installed size:
+libxml2-2.9.13-r0 installed size:
 1200 KiB
 
-libxml2-2.9.12-r1 license:
+libxml2-2.9.13-r0 license:
 MIT
 
 ```
@@ -623,16 +623,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1l-r0 description:
+openssl-1.1.1n-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1l-r0 webpage:
+openssl-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1l-r0 installed size:
-660 KiB
+openssl-1.1.1n-r0 installed size:
+664 KiB
 
-openssl-1.1.1l-r0 license:
+openssl-1.1.1n-r0 license:
 OpenSSL
 
 ```
