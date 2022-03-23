@@ -610,7 +610,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url langpacks-en-1.0-12.el8.noarch
-http://la.mirrors.clouvider.net/almalinux/8/AppStream/Source/Packages/langpacks-1.0-12.el8.src.rpm
+http://mirror.phx1.us.spryservers.net/almalinux/8/AppStream/Source/Packages/langpacks-1.0-12.el8.src.rpm
 ```
 
 ### `rpm` package: `less-530-1.el8.x86_64`
