@@ -1798,9 +1798,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-9=9.4.0-1ubuntu1~20.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.4.0-1ubuntu1%7e20.04.dsc' gcc-9_9.4.0-1ubuntu1~20.04.dsc 23752 SHA512:19c1a3636fe50646050b7d78f70ba2bc215fa1b4f0867cf9bc5eebffd8fa1bba00464e96883f7b872251d1c0b33904ddfe2b485f76e30aefcf90d5ce9b5ea727
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.4.0-1ubuntu1%7e20.04.1.dsc' gcc-9_9.4.0-1ubuntu1~20.04.1.dsc 23760 SHA512:d79ad34fada44a666a231894b346f8f34c3f9c7d8ccca2c49155928f6ef9af1e7bd187adf14fd38851f14668769daaf0353f1b6018600bf7a281c7b5a0de9ef7
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.4.0.orig.tar.gz' gcc-9_9.4.0.orig.tar.gz 92368536 SHA512:c10390524e900d3f0afd4516af097f536304fb2946ecf73eaba0472b953609ce8fbb5c7f0c20af9e54fe38fc8f45ec3b6ebd2051fa67225c73efa8362150c1c6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.4.0-1ubuntu1%7e20.04.debian.tar.xz' gcc-9_9.4.0-1ubuntu1~20.04.debian.tar.xz 577692 SHA512:8c7a9255aef5c8fb3c8489ecb87059127a1c68321dd5f0d0a54a1d3761f3208e82da6236a7f39c48ba0c2a186ebe9d317eb5945825136bb1ea96f5209e8ea7bc
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.4.0-1ubuntu1%7e20.04.1.debian.tar.xz' gcc-9_9.4.0-1ubuntu1~20.04.1.debian.tar.xz 578028 SHA512:eba28507ac082c7febc8c9af48e797da2e540aa5dddbba94dee90807c8f0710b45373f571c569cb5432d07898c120452e5988cedeeb293655ee0613d744c2159
 ```
 
 ### `dpkg` source package: `gcc-defaults=1.185.1ubuntu2`
