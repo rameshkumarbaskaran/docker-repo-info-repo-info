@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3feae224004be03257df842266e9224a495e1f444ebf12efd9a14d7ea49aa836`
-- Created: `2022-03-08T20:19:34.226440423Z`
-- Virtual Size: ~ 388.44 Mb  
+- Image ID: `sha256:8f3f259b465aa94dd4eaa8bfc035f395cd82cc20369ec50ec480482a1bd3e0db`
+- Created: `2022-03-24T01:17:57.753944932Z`
+- Virtual Size: ~ 385.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -149,16 +149,16 @@ LGPL-2.0-or-later
 ### `apk` package: `bash`
 
 ```console
-bash-5.1.8-r0 description:
+bash-5.1.16-r0 description:
 The GNU Bourne Again shell
 
-bash-5.1.8-r0 webpage:
+bash-5.1.16-r0 webpage:
 https://www.gnu.org/software/bash/bash.html
 
-bash-5.1.8-r0 installed size:
+bash-5.1.16-r0 installed size:
 1296 KiB
 
-bash-5.1.8-r0 license:
+bash-5.1.16-r0 license:
 GPL-3.0-or-later
 
 ```
@@ -200,16 +200,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.34.1-r3 description:
+busybox-1.34.1-r4 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.34.1-r3 webpage:
+busybox-1.34.1-r4 webpage:
 https://busybox.net/
 
-busybox-1.34.1-r3 installed size:
+busybox-1.34.1-r4 installed size:
 924 KiB
 
-busybox-1.34.1-r3 license:
+busybox-1.34.1-r4 license:
 GPL-2.0-only
 
 ```
@@ -234,16 +234,16 @@ bzip2-1.0.6
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r7 description:
+ca-certificates-20211220-r0 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r7 webpage:
+ca-certificates-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r7 installed size:
-676 KiB
+ca-certificates-20211220-r0 installed size:
+656 KiB
 
-ca-certificates-20191127-r7 license:
+ca-certificates-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -251,16 +251,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r7 description:
+ca-certificates-bundle-20211220-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r7 webpage:
+ca-certificates-bundle-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r7 installed size:
-228 KiB
+ca-certificates-bundle-20211220-r0 installed size:
+216 KiB
 
-ca-certificates-bundle-20191127-r7 license:
+ca-certificates-bundle-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -336,16 +336,16 @@ AFL-2.1 OR GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.4.1-r0 description:
+expat-2.4.7-r0 description:
 XML Parser library written in C
 
-expat-2.4.1-r0 webpage:
+expat-2.4.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.4.1-r0 installed size:
-188 KiB
+expat-2.4.7-r0 installed size:
+192 KiB
 
-expat-2.4.1-r0 license:
+expat-2.4.7-r0 license:
 MIT
 
 ```
@@ -523,16 +523,16 @@ LGPL-2.1-or-later
 ### `apk` package: `gmp`
 
 ```console
-gmp-6.2.1-r0 description:
+gmp-6.2.1-r1 description:
 free library for arbitrary precision arithmetic
 
-gmp-6.2.1-r0 webpage:
+gmp-6.2.1-r1 webpage:
 https://gmplib.org/
 
-gmp-6.2.1-r0 installed size:
+gmp-6.2.1-r1 installed size:
 420 KiB
 
-gmp-6.2.1-r0 license:
+gmp-6.2.1-r1 license:
 LGPL-3.0-or-later OR GPL-2.0-or-later
 
 ```
@@ -540,16 +540,16 @@ LGPL-3.0-or-later OR GPL-2.0-or-later
 ### `apk` package: `gmp-dev`
 
 ```console
-gmp-dev-6.2.1-r0 description:
+gmp-dev-6.2.1-r1 description:
 free library for arbitrary precision arithmetic (development files)
 
-gmp-dev-6.2.1-r0 webpage:
+gmp-dev-6.2.1-r1 webpage:
 https://gmplib.org/
 
-gmp-dev-6.2.1-r0 installed size:
+gmp-dev-6.2.1-r1 installed size:
 1524 KiB
 
-gmp-dev-6.2.1-r0 license:
+gmp-dev-6.2.1-r1 license:
 LGPL-3.0-or-later OR GPL-2.0-or-later
 
 ```
@@ -676,16 +676,16 @@ MIT GPL-3.0-only
 ### `apk` package: `libblkid`
 
 ```console
-libblkid-2.37.2-r1 description:
+libblkid-2.37.4-r0 description:
 Block device identification library from util-linux
 
-libblkid-2.37.2-r1 webpage:
+libblkid-2.37.4-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libblkid-2.37.2-r1 installed size:
+libblkid-2.37.4-r0 installed size:
 300 KiB
 
-libblkid-2.37.2-r1 license:
+libblkid-2.37.4-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -744,16 +744,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r8 description:
+libcrypto1.1-1.1.1n-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r8 webpage:
+libcrypto1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r8 installed size:
+libcrypto1.1-1.1.1n-r0 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1l-r8 license:
+libcrypto1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -863,16 +863,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libgmpxx`
 
 ```console
-libgmpxx-6.2.1-r0 description:
+libgmpxx-6.2.1-r1 description:
 C++ support for gmp
 
-libgmpxx-6.2.1-r0 webpage:
+libgmpxx-6.2.1-r1 webpage:
 https://gmplib.org/
 
-libgmpxx-6.2.1-r0 installed size:
+libgmpxx-6.2.1-r1 installed size:
 44 KiB
 
-libgmpxx-6.2.1-r0 license:
+libgmpxx-6.2.1-r1 license:
 LGPL-3.0-or-later OR GPL-2.0-or-later
 
 ```
@@ -982,16 +982,16 @@ Public Domain
 ### `apk` package: `libmount`
 
 ```console
-libmount-2.37.2-r1 description:
+libmount-2.37.4-r0 description:
 Block device identification library from util-linux
 
-libmount-2.37.2-r1 webpage:
+libmount-2.37.4-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libmount-2.37.2-r1 installed size:
+libmount-2.37.4-r0 installed size:
 336 KiB
 
-libmount-2.37.2-r1 license:
+libmount-2.37.4-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -1050,16 +1050,16 @@ GPL-2.0-or-later AND LGPL-2.1-or-later
 ### `apk` package: `libretls`
 
 ```console
-libretls-3.3.4-r2 description:
+libretls-3.3.4-r3 description:
 port of libtls from libressl to openssl
 
-libretls-3.3.4-r2 webpage:
+libretls-3.3.4-r3 webpage:
 https://git.causal.agency/libretls/
 
-libretls-3.3.4-r2 installed size:
+libretls-3.3.4-r3 installed size:
 84 KiB
 
-libretls-3.3.4-r2 license:
+libretls-3.3.4-r3 license:
 ISC AND (BSD-3-Clause OR MIT)
 
 ```
@@ -1084,16 +1084,16 @@ LGPL-2.1-or-later
 ### `apk` package: `libsasl`
 
 ```console
-libsasl-2.1.27-r14 description:
+libsasl-2.1.28-r0 description:
 Cyrus Simple Authentication and Security Layer (SASL) library
 
-libsasl-2.1.27-r14 webpage:
+libsasl-2.1.28-r0 webpage:
 https://www.cyrusimap.org/sasl/
 
-libsasl-2.1.27-r14 installed size:
+libsasl-2.1.28-r0 installed size:
 192 KiB
 
-libsasl-2.1.27-r14 license:
+libsasl-2.1.28-r0 license:
 custom
 
 ```
@@ -1101,16 +1101,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r8 description:
+libssl1.1-1.1.1n-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r8 webpage:
+libssl1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r8 installed size:
+libssl1.1-1.1.1n-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r8 license:
+libssl1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -1169,16 +1169,16 @@ GPL-2.0+ OR LGPL-3.0+
 ### `apk` package: `libuuid`
 
 ```console
-libuuid-2.37.2-r1 description:
+libuuid-2.37.4-r0 description:
 DCE compatible Universally Unique Identifier library
 
-libuuid-2.37.2-r1 webpage:
+libuuid-2.37.4-r0 webpage:
 https://git.kernel.org/cgit/utils/util-linux/util-linux.git
 
-libuuid-2.37.2-r1 installed size:
+libuuid-2.37.4-r0 installed size:
 40 KiB
 
-libuuid-2.37.2-r1 license:
+libuuid-2.37.4-r0 license:
 GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 
 ```
@@ -1186,16 +1186,16 @@ GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 ### `apk` package: `libwebp`
 
 ```console
-libwebp-1.2.1-r0 description:
+libwebp-1.2.2-r0 description:
 Libraries for working with WebP images
 
-libwebp-1.2.1-r0 webpage:
+libwebp-1.2.2-r0 webpage:
 https://developers.google.com/speed/webp
 
-libwebp-1.2.1-r0 installed size:
+libwebp-1.2.2-r0 installed size:
 580 KiB
 
-libwebp-1.2.1-r0 license:
+libwebp-1.2.2-r0 license:
 BSD-3-Clause
 
 ```
@@ -1305,16 +1305,16 @@ MIT
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.12-r2 description:
+libxml2-2.9.13-r0 description:
 XML parsing library, version 2
 
-libxml2-2.9.12-r2 webpage:
+libxml2-2.9.13-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.12-r2 installed size:
+libxml2-2.9.13-r0 installed size:
 1200 KiB
 
-libxml2-2.9.12-r2 license:
+libxml2-2.9.13-r0 license:
 MIT
 
 ```
@@ -1900,16 +1900,16 @@ blessing
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.34.1-r3 description:
+ssl_client-1.34.1-r4 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.34.1-r3 webpage:
+ssl_client-1.34.1-r4 webpage:
 https://busybox.net/
 
-ssl_client-1.34.1-r3 installed size:
+ssl_client-1.34.1-r4 installed size:
 28 KiB
 
-ssl_client-1.34.1-r3 license:
+ssl_client-1.34.1-r4 license:
 GPL-2.0-only
 
 ```
@@ -2002,16 +2002,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2021e-r0 description:
+tzdata-2022a-r0 description:
 Timezone data
 
-tzdata-2021e-r0 webpage:
+tzdata-2022a-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2021e-r0 installed size:
+tzdata-2022a-r0 installed size:
 3376 KiB
 
-tzdata-2021e-r0 license:
+tzdata-2022a-r0 license:
 Public-Domain
 
 ```
