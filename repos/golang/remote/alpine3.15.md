@@ -1,7 +1,7 @@
 ## `golang:alpine3.15`
 
 ```console
-$ docker pull golang@sha256:370d25500ef468f2f43cf4663f70a0e35cc030211fb65f47cb303c5aedc382c6
+$ docker pull golang@sha256:7cc2bf2addf0f0d9ced1884dd07d05a8656bdcd0c878d1bd9d4ea77121409f6a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -197,60 +197,60 @@ WORKDIR /go
 ### `golang:alpine3.15` - linux; arm64 variant v8
 
 ```console
-$ docker pull golang@sha256:385800ac6c848fee1b899869be2b671d34b296ec165ea113057b066428469fa5
+$ docker pull golang@sha256:d64eab5773d562d352e70b1df3d75a9159afc8af2adcfd86d17f699807750e12
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.4 MB (113402640 bytes)**  
+-	Total Size: **113.4 MB (113402937 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:62459c209598a55a55f820d828bd7207636674b826c03b4daa727ad7d7f2f728`
+-	Image ID: `sha256:4a05ec8ae05b73cb6616ff204b57eb518bc9235b17eabdaa0f015f81fb05ae7d`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
-# Thu, 17 Mar 2022 03:19:52 GMT
-ADD file:cd7d91362950471ca4678cf3833dc47119ab519dea51424c847bbbb21e1649d4 in / 
-# Thu, 17 Mar 2022 03:19:52 GMT
+# Thu, 24 Mar 2022 00:36:14 GMT
+ADD file:30da1868f9f0555fb3e5223cd75cbf3c31760c1b6087f42d78abb08a8c5066ff in / 
+# Thu, 24 Mar 2022 00:36:14 GMT
 CMD ["/bin/sh"]
-# Thu, 17 Mar 2022 10:46:06 GMT
+# Thu, 24 Mar 2022 08:40:42 GMT
 RUN apk add --no-cache ca-certificates
-# Thu, 17 Mar 2022 10:46:07 GMT
+# Thu, 24 Mar 2022 09:03:36 GMT
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
-# Thu, 17 Mar 2022 10:46:08 GMT
+# Thu, 24 Mar 2022 09:03:37 GMT
 ENV PATH=/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 17 Mar 2022 10:46:09 GMT
+# Thu, 24 Mar 2022 09:03:38 GMT
 ENV GOLANG_VERSION=1.18
-# Thu, 17 Mar 2022 10:48:55 GMT
+# Thu, 24 Mar 2022 09:05:05 GMT
 RUN set -eux; 	apk add --no-cache --virtual .fetch-deps gnupg; 	arch="$(apk --print-arch)"; 	url=; 	case "$arch" in 		'x86_64') 			export GOARCH='amd64' GOOS='linux'; 			;; 		'armhf') 			export GOARCH='arm' GOARM='6' GOOS='linux'; 			;; 		'armv7') 			export GOARCH='arm' GOARM='7' GOOS='linux'; 			;; 		'aarch64') 			export GOARCH='arm64' GOOS='linux'; 			;; 		'x86') 			export GO386='softfloat' GOARCH='386' GOOS='linux'; 			;; 		'ppc64le') 			export GOARCH='ppc64le' GOOS='linux'; 			;; 		's390x') 			export GOARCH='s390x' GOOS='linux'; 			;; 		*) echo >&2 "error: unsupported architecture '$arch' (likely packaging update needed)"; exit 1 ;; 	esac; 	build=; 	if [ -z "$url" ]; then 		build=1; 		url='https://dl.google.com/go/go1.18.src.tar.gz'; 		sha256='38f423db4cc834883f2b52344282fa7a39fbb93650dc62a11fdf0be6409bdad6'; 	fi; 		wget -O go.tgz.asc "$url.asc"; 	wget -O go.tgz "$url"; 	echo "$sha256 *go.tgz" | sha256sum -c -; 		GNUPGHOME="$(mktemp -d)"; export GNUPGHOME; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 'EB4C 1BFD 4F04 2F6D DDCC  EC91 7721 F63B D38B 4796'; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys '2F52 8D36 D67B 69ED F998  D857 78BD 6547 3CB3 BD13'; 	gpg --batch --verify go.tgz.asc go.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" go.tgz.asc; 		tar -C /usr/local -xzf go.tgz; 	rm go.tgz; 		if [ -n "$build" ]; then 		apk add --no-cache --virtual .build-deps 			bash 			gcc 			go 			musl-dev 		; 				( 			cd /usr/local/go/src; 			export GOROOT_BOOTSTRAP="$(go env GOROOT)" GOHOSTOS="$GOOS" GOHOSTARCH="$GOARCH"; 			./make.bash; 		); 				apk del --no-network .build-deps; 				rm -rf 			/usr/local/go/pkg/*/cmd 			/usr/local/go/pkg/bootstrap 			/usr/local/go/pkg/obj 			/usr/local/go/pkg/tool/*/api 			/usr/local/go/pkg/tool/*/go_bootstrap 			/usr/local/go/src/cmd/dist/dist 		; 	fi; 		apk del --no-network .fetch-deps; 		go version
-# Thu, 17 Mar 2022 10:48:56 GMT
+# Thu, 24 Mar 2022 09:05:05 GMT
 ENV GOPATH=/go
-# Thu, 17 Mar 2022 10:48:56 GMT
+# Thu, 24 Mar 2022 09:05:06 GMT
 ENV PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 17 Mar 2022 10:48:57 GMT
+# Thu, 24 Mar 2022 09:05:07 GMT
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
-# Thu, 17 Mar 2022 10:48:58 GMT
+# Thu, 24 Mar 2022 09:05:08 GMT
 WORKDIR /go
 ```
 
 -	Layers:
-	-	`sha256:148d739a8e6b9342daa1f5b428d3a3c6118f340f21df28c16e06f918ef150147`  
-		Last Modified: Thu, 17 Mar 2022 03:20:45 GMT  
-		Size: 2.7 MB (2714807 bytes)  
+	-	`sha256:a5e44472bb1f0d721d23f82fa10a4c3d25994790238a173c1de950a649eb9a90`  
+		Last Modified: Wed, 23 Mar 2022 20:10:33 GMT  
+		Size: 2.7 MB (2714720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:894f5f3e7e6c9780a9451f7ec4df8bda968e14d218ac92bcac9b934f5d2f37bb`  
-		Last Modified: Thu, 17 Mar 2022 10:53:28 GMT  
+	-	`sha256:39b0b4c4587fbfa6f0755490bb53175932c8f0348926efd629b5e26b281aaa57`  
+		Last Modified: Thu, 24 Mar 2022 08:41:08 GMT  
 		Size: 271.8 KB (271767 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e9f9b584958b5416fa40fe714597003a1b5cb55cd17624091d981476b91c493`  
-		Last Modified: Thu, 17 Mar 2022 10:53:28 GMT  
-		Size: 155.0 B  
+	-	`sha256:63bc71a7e8dd1d9668121710be981aa07a74660d94ff3bc08a49ec70e7654c7f`  
+		Last Modified: Thu, 24 Mar 2022 09:08:22 GMT  
+		Size: 154.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4add61b9cd14fb864c6b9779b2229123583253c5e019d67886766e04911f07e3`  
-		Last Modified: Thu, 17 Mar 2022 10:53:43 GMT  
-		Size: 110.4 MB (110415785 bytes)  
+	-	`sha256:28729efea300514c84b5c5901bab6624e7da2206fc1a1c6026b30ff83b63278e`  
+		Last Modified: Thu, 24 Mar 2022 09:08:37 GMT  
+		Size: 110.4 MB (110416170 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:95abcafea6203012d1ec0ab264d1296e08fbfcd746ff75095ba9e5c6fafcf0f5`  
-		Last Modified: Thu, 17 Mar 2022 10:53:28 GMT  
+	-	`sha256:2df58df52022e92ccb4aff5c2174ebd969362eba19474445182b2ff84e497e3d`  
+		Last Modified: Thu, 24 Mar 2022 09:08:22 GMT  
 		Size: 126.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
