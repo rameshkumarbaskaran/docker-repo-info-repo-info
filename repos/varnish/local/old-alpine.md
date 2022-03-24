@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:fdf44f2abe1dc459ffab28115bd1ef23b8b8c87fa73c767025abe27dfd47aa34`
-- Created: `2022-01-26T00:27:01.754462381Z`
-- Virtual Size: ~ 146.28 Mb  
+- Image ID: `sha256:52790e148f256a2503ae5b9940ea6c9dc19d05615f6f8f0f39973dc94b2cb444`
+- Created: `2022-03-18T06:19:05.005456704Z`
+- Virtual Size: ~ 146.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-varnish-entrypoint"]`
@@ -102,16 +102,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r5 description:
+ca-certificates-bundle-20211220-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r5 webpage:
+ca-certificates-bundle-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r5 installed size:
-228 KiB
+ca-certificates-bundle-20211220-r0 installed size:
+216 KiB
 
-ca-certificates-bundle-20191127-r5 license:
+ca-certificates-bundle-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -136,16 +136,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `gmp`
 
 ```console
-gmp-6.2.1-r0 description:
+gmp-6.2.1-r1 description:
 free library for arbitrary precision arithmetic
 
-gmp-6.2.1-r0 webpage:
+gmp-6.2.1-r1 webpage:
 https://gmplib.org/
 
-gmp-6.2.1-r0 installed size:
+gmp-6.2.1-r1 installed size:
 420 KiB
 
-gmp-6.2.1-r0 license:
+gmp-6.2.1-r1 license:
 LGPL-3.0-or-later OR GPL-2.0-or-later
 
 ```
@@ -221,16 +221,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r0 description:
+libcrypto1.1-1.1.1n-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r0 webpage:
+libcrypto1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r0 installed size:
+libcrypto1.1-1.1.1n-r0 installed size:
 2704 KiB
 
-libcrypto1.1-1.1.1l-r0 license:
+libcrypto1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -323,16 +323,16 @@ ISC AND (BSD-3-Clause OR MIT)
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r0 description:
+libssl1.1-1.1.1n-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r0 webpage:
+libssl1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r0 installed size:
+libssl1.1-1.1.1n-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r0 license:
+libssl1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -490,19 +490,19 @@ MIT
 
 ```
 
-### `apk` package: `pcre`
+### `apk` package: `pcre2`
 
 ```console
-pcre-8.44-r0 description:
+pcre2-10.36-r0 description:
 Perl-compatible regular expression library
 
-pcre-8.44-r0 webpage:
-http://pcre.sourceforge.net
+pcre2-10.36-r0 webpage:
+https://pcre.org/
 
-pcre-8.44-r0 installed size:
-392 KiB
+pcre2-10.36-r0 installed size:
+652 KiB
 
-pcre-8.44-r0 license:
+pcre2-10.36-r0 license:
 BSD-3-Clause
 
 ```
@@ -561,16 +561,16 @@ GPL-2.0-only
 ### `apk` package: `varnish`
 
 ```console
-varnish-6.6.2-r1 description:
+varnish-7.0.2-r1 description:
 High-performance HTTP accelerator
 
-varnish-6.6.2-r1 webpage:
+varnish-7.0.2-r1 webpage:
 http://www.varnish-cache.org/
 
-varnish-6.6.2-r1 installed size:
-2256 KiB
+varnish-7.0.2-r1 installed size:
+2284 KiB
 
-varnish-6.6.2-r1 license:
+varnish-7.0.2-r1 license:
 BSD
 
 ```
@@ -578,16 +578,16 @@ BSD
 ### `apk` package: `varnish-dbg`
 
 ```console
-varnish-dbg-6.6.2-r1 description:
+varnish-dbg-7.0.2-r1 description:
 High-performance HTTP accelerator (debug symbols)
 
-varnish-dbg-6.6.2-r1 webpage:
+varnish-dbg-7.0.2-r1 webpage:
 http://www.varnish-cache.org/
 
-varnish-dbg-6.6.2-r1 installed size:
-6068 KiB
+varnish-dbg-7.0.2-r1 installed size:
+6188 KiB
 
-varnish-dbg-6.6.2-r1 license:
+varnish-dbg-7.0.2-r1 license:
 BSD
 
 ```
@@ -595,16 +595,16 @@ BSD
 ### `apk` package: `varnish-dev`
 
 ```console
-varnish-dev-6.6.2-r1 description:
+varnish-dev-7.0.2-r1 description:
 High-performance HTTP accelerator (development files)
 
-varnish-dev-6.6.2-r1 webpage:
+varnish-dev-7.0.2-r1 webpage:
 http://www.varnish-cache.org/
 
-varnish-dev-6.6.2-r1 installed size:
-640 KiB
+varnish-dev-7.0.2-r1 installed size:
+648 KiB
 
-varnish-dev-6.6.2-r1 license:
+varnish-dev-7.0.2-r1 license:
 BSD
 
 ```
@@ -612,16 +612,16 @@ BSD
 ### `apk` package: `varnish-doc`
 
 ```console
-varnish-doc-6.6.2-r1 description:
+varnish-doc-7.0.2-r1 description:
 High-performance HTTP accelerator (documentation)
 
-varnish-doc-6.6.2-r1 webpage:
+varnish-doc-7.0.2-r1 webpage:
 http://www.varnish-cache.org/
 
-varnish-doc-6.6.2-r1 installed size:
-224 KiB
+varnish-doc-7.0.2-r1 installed size:
+228 KiB
 
-varnish-doc-6.6.2-r1 license:
+varnish-doc-7.0.2-r1 license:
 BSD
 
 ```
@@ -629,16 +629,16 @@ BSD
 ### `apk` package: `varnish-libs`
 
 ```console
-varnish-libs-6.6.2-r1 description:
+varnish-libs-7.0.2-r1 description:
 High-performance HTTP accelerator (libraries)
 
-varnish-libs-6.6.2-r1 webpage:
+varnish-libs-7.0.2-r1 webpage:
 http://www.varnish-cache.org/
 
-varnish-libs-6.6.2-r1 installed size:
-200 KiB
+varnish-libs-7.0.2-r1 installed size:
+204 KiB
 
-varnish-libs-6.6.2-r1 license:
+varnish-libs-7.0.2-r1 license:
 BSD
 
 ```
