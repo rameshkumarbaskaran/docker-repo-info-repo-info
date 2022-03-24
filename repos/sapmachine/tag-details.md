@@ -6,6 +6,7 @@
 -	[`sapmachine:11.0.14.1`](#sapmachine110141)
 -	[`sapmachine:17`](#sapmachine17)
 -	[`sapmachine:17.0.2`](#sapmachine1702)
+-	[`sapmachine:18`](#sapmachine18)
 -	[`sapmachine:latest`](#sapmachinelatest)
 -	[`sapmachine:lts`](#sapmachinelts)
 
@@ -216,6 +217,15 @@ CMD ["jshell"]
 		Last Modified: Sat, 19 Mar 2022 23:24:55 GMT  
 		Size: 197.6 MB (197647720 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `sapmachine:18`
+
+```console
+$ docker pull sapmachine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
 
 ## `sapmachine:latest`
 
