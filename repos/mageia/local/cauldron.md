@@ -47,12 +47,7 @@ Licenses (from `rpm --query`): GPLv2
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url common-licenses-1.1-10.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/common-licenses-1.1-10.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `coreutils-8.32-2.mga8.x86_64`
 
@@ -82,12 +77,7 @@ Licenses (from `rpm --query`): MIT and BSD
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url crontabs-1.10-24.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/crontabs-1.10-24.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `crypto-policies-20210118-1.mga8.noarch`
 
@@ -141,12 +131,7 @@ Licenses (from `rpm --query`): GPLv2
 
 Licenses (from `rpm --query`): Public Domain
 
-Source:
-
-```console
-$ dnf --quiet download --source --url etcskel-1.63-36.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/etcskel-1.63-36.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `ethtool-5.10-1.mga8.x86_64`
 
@@ -182,12 +167,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url genhdlist2-7.12-2.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/rpmtools-7.12-2.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `gettext-base-0.21-8.mga8.x86_64`
 
@@ -235,12 +215,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url hostname-3.23-2.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/hostname-3.23-2.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `icu68-data-68.2-1.mga8.noarch`
 
@@ -256,7 +231,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url ifmetric-0.3-19.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/ifmetric-0.3-19.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/ifmetric-0.3-19.mga8.src.rpm
 ```
 
 ### `rpm` package: `ifplugd-0.28-23.mga8.x86_64`
@@ -267,7 +242,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url ifplugd-0.28-23.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/ifplugd-0.28-23.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/ifplugd-0.28-23.mga8.src.rpm
 ```
 
 ### `rpm` package: `initscripts-9.78-27.mga8.x86_64`
@@ -302,7 +277,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url kbd-2.4.0-1.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/kbd-2.4.0-1.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/kbd-2.4.0-1.mga8.src.rpm
 ```
 
 ### `rpm` package: `kmod-28-1.mga8.x86_64`
@@ -433,7 +408,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url lib64daemon0-0.14-13.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/libdaemon-0.14-13.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/libdaemon-0.14-13.mga8.src.rpm
 ```
 
 ### `rpm` package: `lib64db5.3-5.3.28-25.mga8.x86_64`
@@ -594,7 +569,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url lib64ip4tc2-1.8.7-1.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/iptables-1.8.7-1.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/iptables-1.8.7-1.mga8.src.rpm
 ```
 
 ### `rpm` package: `lib64iptables12-1.8.7-1.mga8.x86_64`
@@ -605,7 +580,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url lib64iptables12-1.8.7-1.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/iptables-1.8.7-1.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/iptables-1.8.7-1.mga8.src.rpm
 ```
 
 ### `rpm` package: `lib64json-c5-0.15-1.mga8.x86_64`
@@ -616,7 +591,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url lib64json-c5-0.15-1.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/json-c-0.15-1.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/json-c-0.15-1.mga8.src.rpm
 ```
 
 ### `rpm` package: `lib64keyutils1-1.6.3-1.mga8.x86_64`
@@ -713,12 +688,7 @@ Licenses (from `rpm --query`): LGPL2+
 
 Licenses (from `rpm --query`): LGPLv3+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64mpfr6-4.1.0-1.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/mpfr-4.1.0-1.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64ncurses6-6.2-20201205.1.mga8.x86_64`
 
@@ -754,12 +724,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 Licenses (from `rpm --query`): BSD and LGPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64nsl2-1.3.0-2.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/libnsl-1.3.0-2.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64openssl1.1-1.1.1k-1.mga9.x86_64`
 
@@ -787,7 +752,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url lib64pam_userpass1-1.0.2-15.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/pam_userpass-1.0.2-15.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/pam_userpass-1.0.2-15.mga8.src.rpm
 ```
 
 ### `rpm` package: `lib64pcre1-8.44-1.mga8.x86_64`
@@ -818,23 +783,13 @@ Licenses (from `rpm --query`): MIT
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64procps8-3.3.17-1.mga9
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/procps-ng-3.3.17-1.mga9.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64psl5-0.21.1-1.mga8.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64psl5-0.21.1-1.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/libpsl-0.21.1-1.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64python3.9-3.9.4-1.mga9.x86_64`
 
@@ -978,12 +933,7 @@ Licenses (from `rpm --query`): LGPLv3+ or GPLv2
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64usb1.0_0-1.0.24-3.mga9
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/libusb-1.0.24-3.mga9.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64user1-0.63-1.mga9.x86_64`
 
@@ -1001,12 +951,7 @@ Licenses (from `rpm --query`): BSD
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64verto1-0.3.2-1.mga9
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/libverto-0.3.2-1.mga9.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64xcrypt1-4.4.18-1.mga9.x86_64`
 
@@ -1024,12 +969,7 @@ Licenses (from `rpm --query`): MIT
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lib64yaml0_2-0.2.5-1.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/yaml-0.2.5-1.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `lib64zck1-1.1.9-1.mga8.x86_64`
 
@@ -1125,23 +1065,13 @@ Licenses (from `rpm --query`): GPLv2
 
 Licenses (from `rpm --query`): GPL
 
-Source:
-
-```console
-$ dnf --quiet download --source --url lsb-release-3.1-3.mga9.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/lsb-release-3.1-3.mga9.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `mageia-dnf-conf-1.0-3.mga8.noarch`
 
 Licenses (from `rpm --query`): CC0
 
-Source:
-
-```console
-$ dnf --quiet download --source --url mageia-dnf-conf-1.0-3.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/mageia-dnf-conf-1.0-3.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `mageia-release-Default-9-0.4.mga9.x86_64`
 
@@ -1183,12 +1113,7 @@ Licenses (from `rpm --query`): MIT
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url makedev-4.4-26.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/makedev-4.4-26.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `meta-task-8-1.mga8.noarch`
 
@@ -1258,7 +1183,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url passwd-0.80-2.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/passwd-0.80-2.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/passwd-0.80-2.mga8.src.rpm
 ```
 
 ### `rpm` package: `perl-5.32.1-4.mga9.x86_64`
@@ -1271,12 +1196,7 @@ Licenses (from `rpm --query`): GPL+ or Artistic
 
 Licenses (from `rpm --query`): GPL
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-Config-IniFiles-3.0.3-1.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-Config-IniFiles-3.0.3-1.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-File-Sync-0.110.0-31.mga8.x86_64`
 
@@ -1294,12 +1214,7 @@ Licenses (from `rpm --query`): GPL+ or Artistic
 
 Licenses (from `rpm --query`): Artistic/GPL
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-IO-stringy-2.113.0-1.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-IO-stringy-2.113.0-1.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-Locale-gettext-1.70.0-13.mga8.x86_64`
 
@@ -1311,45 +1226,25 @@ Licenses (from `rpm --query`): GPL+ or Artistic
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-MDK-Common-1.2.34.2-4.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-MDK-Common-1.2.34.2-4.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-MDV-Distribconf-4.101.0-3.mga8.noarch`
 
 Licenses (from `rpm --query`): GPL
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-MDV-Distribconf-4.101.0-3.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-MDV-Distribconf-4.101.0-3.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-MDV-Packdrakeng-1.130.0-6.mga8.noarch`
 
 Licenses (from `rpm --query`): GPL
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-MDV-Packdrakeng-1.130.0-6.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-MDV-Packdrakeng-1.130.0-6.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-Time-ZoneInfo-0.300.0-10.mga8.noarch`
 
 Licenses (from `rpm --query`): GPL+ or Artistic
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-Time-ZoneInfo-0.300.0-10.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-Time-ZoneInfo-0.300.0-10.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-URPM-5.123-1.mga8.x86_64`
 
@@ -1367,34 +1262,19 @@ Licenses (from `rpm --query`): GPL+ or Artistic
 
 Licenses (from `rpm --query`): MPL
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-XML-NamespaceSupport-1.120.0-3.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-XML-NamespaceSupport-1.120.0-3.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-XML-SAX-1.20.0-2.mga8.noarch`
 
 Licenses (from `rpm --query`): GPL+ or Artistic
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-XML-SAX-1.20.0-2.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-XML-SAX-1.20.0-2.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-XML-SAX-Base-1.90.0-4.mga8.noarch`
 
 Licenses (from `rpm --query`): GPL+ or Artistic
 
-Source:
-
-```console
-$ dnf --quiet download --source --url perl-XML-SAX-Base-1.90.0-4.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/perl-XML-SAX-Base-1.90.0-4.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `perl-base-5.32.1-4.mga9.x86_64`
 
@@ -1430,12 +1310,7 @@ Licenses (from `rpm --query`): MIT
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url procps-ng-3.3.17-1.mga9
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/procps-ng-3.3.17-1.mga9.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `psmisc-23.4-1.mga9.x86_64`
 
@@ -1543,12 +1418,7 @@ Licenses (from `rpm --query`): MIT
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url resolvconf-1.79-5.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/resolvconf-1.79-5.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `rmt-0.4b47-1.mga9.x86_64`
 
@@ -1566,12 +1436,7 @@ Licenses (from `rpm --query`): GPL
 
 Licenses (from `rpm --query`): Public Domain
 
-Source:
-
-```console
-$ dnf --quiet download --source --url rootfiles-11.0-16.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/rootfiles-11.0-16.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `rpm-4.16.1.3-2.mga9.x86_64`
 
@@ -1583,12 +1448,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 Licenses (from `rpm --query`): GPL
 
-Source:
-
-```console
-$ dnf --quiet download --source --url rpm-helper-0.24.21-1.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/rpm-helper-0.24.21-1.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `rpm-mageia-setup-2.58-4.mga9.x86_64`
 
@@ -1606,12 +1466,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ dnf --quiet download --source --url sash-3.8-9.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/sash-3.8-9.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `sed-4.8-3.mga8.x86_64`
 
@@ -1623,12 +1478,7 @@ Licenses (from `rpm --query`): GPL
 
 Licenses (from `rpm --query`): Public Domain
 
-Source:
-
-```console
-$ dnf --quiet download --source --url setup-2.7.25-1.mga8.noarch
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/setup-2.7.25-1.mga8.src.rpm
-```
+**WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
 ### `rpm` package: `shadow-utils-4.6-4.mga8.x86_64`
 
@@ -1644,7 +1494,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url shared-mime-info-2.1-2.mga8
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/shared-mime-info-2.1-2.mga8.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/shared-mime-info-2.1-2.mga8.src.rpm
 ```
 
 ### `rpm` package: `systemd-248-2.mga9.x86_64`
@@ -1661,7 +1511,7 @@ Source:
 
 ```console
 $ dnf --quiet download --source --url tar-1.34-1.mga9
-http://mirror2.tuxinator.org/mageia/distrib/cauldron/SRPMS/core/release/tar-1.34-1.mga9.src.rpm
+https://ftp.nluug.nl/pub/os/Linux/distr/mageia/distrib/cauldron/SRPMS/core/release/tar-1.34-1.mga9.src.rpm
 ```
 
 ### `rpm` package: `tcb-1.1-12.mga8.x86_64`
