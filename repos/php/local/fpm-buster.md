@@ -1,10 +1,10 @@
-# `php:8.1.3-fpm-buster`
+# `php:8.1.4-fpm-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:29f9578a2265127561a0e3ce0471d280939078b270faa3bd6bf5e72bf67ebb1f`
-- Created: `2022-03-11T03:48:47.308439731Z`
-- Virtual Size: ~ 395.05 Mb  
+- Image ID: `sha256:7d176f97a78f9409307c17c40613ce7437c5692dcf6aae626b4b04c34c48a11a`
+- Created: `2022-03-18T18:57:55.051677681Z`
+- Virtual Size: ~ 395.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.3`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.3.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.3.tar.xz.asc`
-  - `PHP_SHA256=5d65a11071b47669c17452fb336c290b67c101efb745c1dbe7525b5caf546ec6`
+  - `PHP_VERSION=8.1.4`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.4.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.4.tar.xz.asc`
+  - `PHP_SHA256=05a8c0ac30008154fb38a305560543fc172ba79fb957084a99b8d3b10d5bdb4b`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1733,11 +1733,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.3.8+dfsg-3+deb10u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.19.208-1`
+### `dpkg` source package: `linux=4.19.232-1`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.19.208-1`
+- `linux-libc-dev:amd64=4.19.232-1`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1752,17 +1752,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.19.208-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.208-1.dsc' linux_4.19.208-1.dsc 191615 SHA256:abc4bc72ccc5bf6d2c5ee4d60547c58ce8e00246effa0d4ca8d4a4ab36131dde
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.208.orig.tar.xz' linux_4.19.208.orig.tar.xz 107598860 SHA256:cabff7d88404362e0ac398f5fed783e00acfb0fcce8669ced3e0de44fc2b03bc
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.208-1.debian.tar.xz' linux_4.19.208-1.debian.tar.xz 1504196 SHA256:f4582cbfc68afe8650596ec591c4ebe4339d938f20b5dd034ae3110e011357cd
+$ apt-get source -qq --print-uris linux=4.19.232-1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.232-1.dsc' linux_4.19.232-1.dsc 191330 SHA256:44c2356ba2ee59faa8748ae851f3862b4a369732bd2b1485d11c5c5565d3ae31
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.232.orig.tar.xz' linux_4.19.232.orig.tar.xz 107634972 SHA256:efb63eb40947f9c1be7f17c89c61fe803e922a2046fc80c66f68cdc15f0f1be0
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.232-1.debian.tar.xz' linux_4.19.232-1.debian.tar.xz 1528664 SHA256:e24c7e82fb82300269ebf3ec87bacd25f2d5449273487df4b936127bd802f7a6
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.19.208-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.208-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.208-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.19.232-1/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.19.232-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.19.232-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.8.3-1+deb10u1`
 
@@ -2043,12 +2043,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openldap/2.4.47+dfsg-3+deb10u6/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3+deb10u6/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.1d-0+deb10u7`
+### `dpkg` source package: `openssl=1.1.1d-0+deb10u8`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1d-0+deb10u7`
-- `openssl=1.1.1d-0+deb10u7`
+- `libssl1.1:amd64=1.1.1d-0+deb10u8`
+- `openssl=1.1.1d-0+deb10u8`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2057,18 +2057,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u7
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0%2bdeb10u7.dsc' openssl_1.1.1d-0+deb10u7.dsc 2649 SHA256:1cb63c67aedf26f139124e4a9ec5d51fa036948df3964805070da7b816b14581
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.1d-0%2bdeb10u7.debian.tar.xz' openssl_1.1.1d-0+deb10u7.debian.tar.xz 109236 SHA256:8a84cb76bf14a6725ee6b56d76335adadc639513d7c15b24b041fbb5f80cf053
+$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u8
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0%2bdeb10u8.dsc' openssl_1.1.1d-0+deb10u8.dsc 2649 SHA256:4caeca5597aac6b5d889820f9c0f2c5d533aecbe4915da65eec81c399cffa6a8
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0%2bdeb10u8.debian.tar.xz' openssl_1.1.1d-0+deb10u8.debian.tar.xz 113480 SHA256:8ea7cf4aa35ca3028b04596ee0a8f61fb4712da79ca5bba39278f4f2a545a500
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u7/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u7/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u8/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u8/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2+deb10u1`
 
