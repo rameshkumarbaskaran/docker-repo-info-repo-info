@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5881bfdc7636e1b209494e2f8861d82f9c6ceb73bcfcab98ea230ea8ccc495f8`
-- Created: `2022-03-11T13:58:58.590546388Z`
-- Virtual Size: ~ 138.89 Mb  
+- Image ID: `sha256:5ee3ba0ee36358d6dac615548bed98fe4e10fbdbab46b98390d48ef1472fe5af`
+- Created: `2022-03-24T00:33:36.746818525Z`
+- Virtual Size: ~ 135.55 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.16`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.16.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.16.tar.xz.asc`
-  - `PHP_SHA256=f27a2f25259e8c51e42dfd74e24a546ee521438ad7d9f6c6e794aa91f38bab0a`
+  - `PHP_VERSION=8.0.17`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.17.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.17.tar.xz.asc`
+  - `PHP_SHA256=4e7d94bb3d144412cb8b2adeb599fb1c6c1d7b357b0d0d0478dc5ef53532ebc5`
   - `PHP_MEMORY_LIMIT=256M`
   - `MATOMO_VERSION=4.8.0`
 - Labels:
@@ -116,16 +116,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.34.1-r3 description:
+busybox-1.34.1-r4 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.34.1-r3 webpage:
+busybox-1.34.1-r4 webpage:
 https://busybox.net/
 
-busybox-1.34.1-r3 installed size:
+busybox-1.34.1-r4 installed size:
 924 KiB
 
-busybox-1.34.1-r3 license:
+busybox-1.34.1-r4 license:
 GPL-2.0-only
 
 ```
@@ -133,16 +133,16 @@ GPL-2.0-only
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20191127-r7 description:
+ca-certificates-20211220-r0 description:
 Common CA certificates PEM files from Mozilla
 
-ca-certificates-20191127-r7 webpage:
+ca-certificates-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20191127-r7 installed size:
-676 KiB
+ca-certificates-20211220-r0 installed size:
+656 KiB
 
-ca-certificates-20191127-r7 license:
+ca-certificates-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -150,16 +150,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `ca-certificates-bundle`
 
 ```console
-ca-certificates-bundle-20191127-r7 description:
+ca-certificates-bundle-20211220-r0 description:
 Pre generated bundle of Mozilla certificates
 
-ca-certificates-bundle-20191127-r7 webpage:
+ca-certificates-bundle-20211220-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-bundle-20191127-r7 installed size:
-228 KiB
+ca-certificates-bundle-20211220-r0 installed size:
+216 KiB
 
-ca-certificates-bundle-20191127-r7 license:
+ca-certificates-bundle-20211220-r0 license:
 MPL-2.0 AND MIT
 
 ```
@@ -286,16 +286,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1l-r8 description:
+libcrypto1.1-1.1.1n-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1l-r8 webpage:
+libcrypto1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1l-r8 installed size:
+libcrypto1.1-1.1.1n-r0 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1l-r8 license:
+libcrypto1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -371,16 +371,16 @@ Libpng
 ### `apk` package: `libretls`
 
 ```console
-libretls-3.3.4-r2 description:
+libretls-3.3.4-r3 description:
 port of libtls from libressl to openssl
 
-libretls-3.3.4-r2 webpage:
+libretls-3.3.4-r3 webpage:
 https://git.causal.agency/libretls/
 
-libretls-3.3.4-r2 installed size:
+libretls-3.3.4-r3 installed size:
 84 KiB
 
-libretls-3.3.4-r2 license:
+libretls-3.3.4-r3 license:
 ISC AND (BSD-3-Clause OR MIT)
 
 ```
@@ -388,16 +388,16 @@ ISC AND (BSD-3-Clause OR MIT)
 ### `apk` package: `libsasl`
 
 ```console
-libsasl-2.1.27-r14 description:
+libsasl-2.1.28-r0 description:
 Cyrus Simple Authentication and Security Layer (SASL) library
 
-libsasl-2.1.27-r14 webpage:
+libsasl-2.1.28-r0 webpage:
 https://www.cyrusimap.org/sasl/
 
-libsasl-2.1.27-r14 installed size:
+libsasl-2.1.28-r0 installed size:
 192 KiB
 
-libsasl-2.1.27-r14 license:
+libsasl-2.1.28-r0 license:
 custom
 
 ```
@@ -422,16 +422,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1l-r8 description:
+libssl1.1-1.1.1n-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1l-r8 webpage:
+libssl1.1-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1l-r8 installed size:
+libssl1.1-1.1.1n-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1l-r8 license:
+libssl1.1-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -575,16 +575,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1l-r7 description:
+openssl-1.1.1n-r0 description:
 toolkit for transport layer security (TLS) - version 1.1
 
-openssl-1.1.1l-r7 webpage:
+openssl-1.1.1n-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1l-r7 installed size:
-660 KiB
+openssl-1.1.1n-r0 installed size:
+664 KiB
 
-openssl-1.1.1l-r7 license:
+openssl-1.1.1n-r0 license:
 OpenSSL
 
 ```
@@ -643,16 +643,16 @@ blessing
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.34.1-r3 description:
+ssl_client-1.34.1-r4 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.34.1-r3 webpage:
+ssl_client-1.34.1-r4 webpage:
 https://busybox.net/
 
-ssl_client-1.34.1-r3 installed size:
+ssl_client-1.34.1-r4 installed size:
 28 KiB
 
-ssl_client-1.34.1-r3 license:
+ssl_client-1.34.1-r4 license:
 GPL-2.0-only
 
 ```
