@@ -920,7 +920,7 @@ CMD ["mysqld"]
 ## `percona:8`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -930,82 +930,82 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:8` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:8-centos`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1015,82 +1015,82 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:8-centos` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:8.0`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1100,82 +1100,82 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:8.0` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:8.0-centos`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1185,82 +1185,82 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:8.0-centos` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:8.0.27-18`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1270,82 +1270,82 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:8.0.27-18` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:8.0.27-18-centos`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1355,76 +1355,76 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:8.0.27-18-centos` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:centos`
@@ -2043,7 +2043,7 @@ CMD ["mysqld"]
 ## `percona:ps-8`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2053,82 +2053,82 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:ps-8` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:ps-8.0`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2138,82 +2138,82 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:ps-8.0` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:ps-8.0.27-18`
 
 ```console
-$ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81db5e986b7f514
+$ docker pull percona@sha256:ef6b1fd59b07b6790ddff13828eaf428a3bf260f44a627b61599a1775c1ff56a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2223,76 +2223,76 @@ $ docker pull percona@sha256:808f5d5fcbcb6a4544eb32764b4bfad4c1f67af7738872b3d81
 ### `percona:ps-8.0.27-18` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:cc5ae6ed71a3c70594d767ced0e63311f54f2b136e10c9cc1c9953972aad7372
+$ docker pull percona@sha256:a03109c29c0cb497599cc32597b25fa090124b04d0602b5fa9fe028f36b9f82e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.1 MB (387097152 bytes)**  
+-	Total Size: **387.1 MB (387104175 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a7591b83834143aabe2efae78ea13969f1a36f9d1a234bd898b4eb069438a693`
+-	Image ID: `sha256:40609c750253841560e92386eb3ca1579e0f79d6032a894df9adbce3eb17e820`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["mysqld"]`
 
 ```dockerfile
-# Thu, 24 Mar 2022 01:38:59 GMT
-ADD file:d9d41dbd971eb6ad0ada43a69c0f968012b0f455b87ee145cb06680865946622 in / 
-# Thu, 24 Mar 2022 01:39:00 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Thu, 24 Mar 2022 01:55:22 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Thu, 24 Mar 2022 01:55:23 GMT
+# Thu, 24 Mar 2022 22:28:17 GMT
 RUN set -ex;     groupdel input;     userdel systemd-coredump;     groupadd -g 1001 mysql;     useradd -u 1001 -r -g 1001 -s /sbin/nologin         -c "Default Application User" mysql
-# Thu, 24 Mar 2022 01:55:49 GMT
+# Thu, 24 Mar 2022 22:28:43 GMT
 RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     dnf -y module disable mysql;     percona-release disable all;     percona-release enable ps-80 release
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV PS_VERSION=8.0.27-18.1
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV OS_VER=el8
-# Thu, 24 Mar 2022 01:55:50 GMT
+# Thu, 24 Mar 2022 22:28:44 GMT
 ENV FULL_PERCONA_VERSION=8.0.27-18.1.el8
-# Thu, 24 Mar 2022 01:56:23 GMT
+# Thu, 24 Mar 2022 22:29:17 GMT
 RUN set -ex;     rpm -e --nodeps tzdata;     dnf -y install         tzdata         jemalloc         which         cracklib-dicts         policycoreutils;         dnf -y install         percona-server-server-${FULL_PERCONA_VERSION}         percona-server-devel-${FULL_PERCONA_VERSION}         percona-server-rocksdb-${FULL_PERCONA_VERSION};     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /var/lib/mysql
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:19 GMT
 RUN set -ex;     /usr/bin/install -m 0775 -o mysql -g root -d /var/lib/mysql /var/run/mysqld /docker-entrypoint-initdb.d; 	find /etc/my.cnf /etc/my.cnf.d -name '*.cnf' -print0 		| xargs -0 grep -lZE '^(bind-address|log|user)' 		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user)/#&/'; 	echo '!includedir /etc/my.cnf.d' >> /etc/my.cnf; 	printf '[mysqld]\nskip-host-cache\nskip-name-resolve\n' > /etc/my.cnf.d/docker.cnf; 	/usr/bin/install -m 0664 -o mysql -g root /dev/null /etc/sysconfig/mysql; 	echo "LD_PRELOAD=/usr/lib64/libjemalloc.so.1" >> /etc/sysconfig/mysql; 	echo "THP_SETTING=never" >> /etc/sysconfig/mysql; 	chown -R mysql:root /etc/my.cnf /etc/my.cnf.d; 	chmod -R ug+rwX /etc/my.cnf /etc/my.cnf.d
-# Thu, 24 Mar 2022 01:56:25 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 VOLUME [/var/lib/mysql /var/log/mysql]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 COPY file:fcc7e1ba857456cd0be5e7e73c551fe742d4b08d93a5cc538710f4731b28e602 in /docker-entrypoint.sh 
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 USER mysql
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 EXPOSE 3306 33060
-# Thu, 24 Mar 2022 01:56:26 GMT
+# Thu, 24 Mar 2022 22:29:20 GMT
 CMD ["mysqld"]
 ```
 
 -	Layers:
-	-	`sha256:6a231160b82defbb19bf0b7a7a35ab634f85859ee75d86816352920a3aec3f25`  
-		Last Modified: Thu, 24 Mar 2022 01:39:46 GMT  
-		Size: 87.5 MB (87480114 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f863bfda77299d9c7ff8120bd41193907e0c582c700f60078e991ecfa0def75`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 1.2 KB (1170 bytes)  
+	-	`sha256:fca18a40015b8e04c884f29979a8e256d3fbd77612baeb927edb9f0e3e361b5c`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24c3fd858212a6fcbed4ed5c0ac3af7de2b89a44671daeece5eba47bc2441d09`  
-		Last Modified: Thu, 24 Mar 2022 01:57:28 GMT  
-		Size: 137.3 MB (137318714 bytes)  
+	-	`sha256:3d6d08cc8f4e2bcdb05c4cc6ed982c58ac0c608e1dd78080520c977b394990e7`  
+		Last Modified: Thu, 24 Mar 2022 22:31:30 GMT  
+		Size: 137.3 MB (137318899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c20db09773885e7ce80a2621d531f6c213d3cfdcddc169392d69a99d530ec93`  
-		Last Modified: Thu, 24 Mar 2022 01:57:45 GMT  
-		Size: 162.3 MB (162292898 bytes)  
+	-	`sha256:05edb4e83b4b2d92ec3a4db3a46ac772febaf181d94ab28ecbfcf8ed032a3c32`  
+		Last Modified: Thu, 24 Mar 2022 22:31:46 GMT  
+		Size: 162.3 MB (162300866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e14770b150ed969b3d0bb2baa04cac07058ba5a0f353cdad5f1e468725b7401b`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
+	-	`sha256:e7efe18e4f9c4b1f74e097563d301e5ca46a7b67a307bb3121b5fd01b80c1301`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fb0e094adc7049d5cd8730230083831ce09331f0c24a7ad3549e260d901b702`  
-		Last Modified: Thu, 24 Mar 2022 01:57:20 GMT  
-		Size: 3.1 KB (3089 bytes)  
+	-	`sha256:ac3cafbc522b01a5f8fff47cd552a156dea70c6ec77be9512b774086993208cb`  
+		Last Modified: Thu, 24 Mar 2022 22:31:21 GMT  
+		Size: 3.1 KB (3088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:psmdb-3.6`
@@ -2936,7 +2936,7 @@ CMD ["mongod"]
 ## `percona:psmdb-4.4`
 
 ```console
-$ docker pull percona@sha256:1a245032443a99c2b7cc5b198b4a0037cb8c8396f580e7d1f4f35df29c637cd8
+$ docker pull percona@sha256:ee40d17b867471c650431e7450e66671e8eacdec42d39d73765a1587fb219092
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2946,111 +2946,218 @@ $ docker pull percona@sha256:1a245032443a99c2b7cc5b198b4a0037cb8c8396f580e7d1f4f
 ### `percona:psmdb-4.4` - linux; amd64
 
 ```console
-$ docker pull percona@sha256:70ffd342cd0aebf3d3e78ee271d64b7476c1ad85d4f82a0c40b2850b355a7c48
+$ docker pull percona@sha256:4e9375aa9350eca0b54a5842eb9b5724e1c8335af464901984c6ac82383ea1ed
 ```
 
--	Docker Version: 20.10.7
+-	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **218.4 MB (218393779 bytes)**  
+-	Total Size: **198.4 MB (198377353 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cc72685c6fa3c2f1529c6794b48513d514c77638b88d1027db7e76fc2f2d9e3f`
+-	Image ID: `sha256:24f5dcc334cefa84c40fd991ed8ffa4a4dde81aaa63cafbc4e5b466d90f4f078`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["mongod"]`
 
 ```dockerfile
-# Wed, 15 Sep 2021 18:20:04 GMT
-ADD file:805cb5e15fb6e0bb0326ca33fd2942e068863ce2a8491bb71522c652f31fb466 in / 
-# Wed, 15 Sep 2021 18:20:04 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20210915
-# Wed, 15 Sep 2021 18:20:05 GMT
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
 CMD ["/bin/bash"]
-# Wed, 15 Sep 2021 18:56:15 GMT
+# Thu, 24 Mar 2022 22:28:16 GMT
 LABEL org.opencontainers.image.authors=info@percona.com
-# Wed, 15 Sep 2021 19:00:27 GMT
-RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     dnf install -y /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     percona-release enable psmdb-44 release
-# Fri, 08 Oct 2021 17:29:07 GMT
-ENV PSMDB_VERSION=4.4.9-10
-# Fri, 08 Oct 2021 17:29:07 GMT
+# Thu, 24 Mar 2022 22:29:37 GMT
+RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D 94E279EB8D8F25B21810ADF121EA45AB2F86D6A1;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     gpg --batch --export --armor 94E279EB8D8F25B21810ADF121EA45AB2F86D6A1 > ${GNUPGHOME}/RPM-GPG-KEY-EPEL-8;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial ${GNUPGHOME}/RPM-GPG-KEY-EPEL-8;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     percona-release enable psmdb-44 release
+# Thu, 24 Mar 2022 22:29:37 GMT
+ENV PSMDB_VERSION=4.4.13-13
+# Thu, 24 Mar 2022 22:29:37 GMT
 ENV OS_VER=el8
-# Fri, 08 Oct 2021 17:29:07 GMT
-ENV FULL_PERCONA_VERSION=4.4.9-10.el8
-# Fri, 08 Oct 2021 17:29:08 GMT
+# Thu, 24 Mar 2022 22:29:37 GMT
+ENV FULL_PERCONA_VERSION=4.4.13-13.el8
+# Thu, 24 Mar 2022 22:29:37 GMT
 ENV K8S_TOOLS_VERSION=0.5.0
-# Fri, 08 Oct 2021 17:29:38 GMT
-RUN set -ex;     dnf install -y         percona-server-mongodb-mongos-${FULL_PERCONA_VERSION}         percona-server-mongodb-shell-${FULL_PERCONA_VERSION}         shadow-utils         curl         procps-ng         oniguruma         jq         dnf-utils;             repoquery -a --location         policycoreutils             | xargs curl -Lf -o /tmp/policycoreutils.rpm;     repoquery -a --location         percona-server-mongodb-server-${FULL_PERCONA_VERSION}             | xargs curl -Lf -o /tmp/percona-server-mongodb-server-${FULL_PERCONA_VERSION}.rpm;     rpm -iv /tmp/policycoreutils.rpm /tmp/percona-server-mongodb-server-${FULL_PERCONA_VERSION}.rpm --nodeps;         rm -rf /tmp/policycoreutils.rpm /tmp/percona-server-mongodb-server-${FULL_PERCONA_VERSION}.rpm;     dnf clean all;     dnf -y remove dnf-utils;     rm -rf /var/cache/dnf /data/db && mkdir -p /data/db;     chown -R 1001:0 /data/db
-# Fri, 08 Oct 2021 17:29:39 GMT
+# Thu, 24 Mar 2022 22:30:29 GMT
+RUN set -ex;     dnf -y install         percona-server-mongodb-mongos-${FULL_PERCONA_VERSION}         percona-server-mongodb-shell-${FULL_PERCONA_VERSION}         procps-ng         jq         tar         oniguruma         policycoreutils;             curl -Lf -o /tmp/Percona-Server-MongoDB-server.rpm http://repo.percona.com/psmdb-44/yum/release/8/RPMS/x86_64/percona-server-mongodb-server-${FULL_PERCONA_VERSION}.x86_64.rpm;     rpmkeys --checksig /tmp/Percona-Server-MongoDB-server.rpm;     rpm -iv /tmp/Percona-Server-MongoDB-server.rpm --nodeps;     rm -rf /tmp/Percona-Server-MongoDB-server.rpm;     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /data/db && mkdir -p /data/db;     chown -R 1001:0 /data/db
+# Thu, 24 Mar 2022 22:30:29 GMT
 RUN useradd -u 1001 -r -g 0 -s /sbin/nologin             -c "Default Application User" mongodb
-# Fri, 08 Oct 2021 17:29:40 GMT
+# Thu, 24 Mar 2022 22:30:30 GMT
 COPY file:b7c621ae843e72f20dd7ef20e8c42b89234688ceed5018592c3e5bfa61048aad in /licenses/LICENSE.Dockerfile 
-# Fri, 08 Oct 2021 17:29:40 GMT
+# Thu, 24 Mar 2022 22:30:30 GMT
 RUN cp /usr/share/doc/percona-server-mongodb-server/LICENSE-Community.txt /licenses/LICENSE.Percona-Server-for-MongoDB
-# Fri, 08 Oct 2021 17:29:41 GMT
+# Thu, 24 Mar 2022 22:30:30 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 08 Oct 2021 17:29:45 GMT
+# Thu, 24 Mar 2022 22:30:33 GMT
 RUN set -eux;     curl -Lf -o /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64;     curl -Lf -o /usr/bin/gosu.asc https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64.asc;         export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4;     gpg --batch --verify /usr/bin/gosu.asc /usr/bin/gosu;     rm -rf "$GNUPGHOME" /usr/bin/gosu.asc;         chmod +x /usr/bin/gosu;     curl -f -o /licenses/LICENSE.gosu https://raw.githubusercontent.com/tianon/gosu/${GOSU_VERSION}/LICENSE
-# Fri, 08 Oct 2021 17:29:47 GMT
+# Thu, 24 Mar 2022 22:30:36 GMT
 RUN set -ex;     curl -fSL https://github.com/percona/mongodb-orchestration-tools/releases/download/${K8S_TOOLS_VERSION}/k8s-mongodb-initiator -o /usr/local/bin/k8s-mongodb-initiator;     curl -fSL  https://github.com/percona/mongodb-orchestration-tools/releases/download/${K8S_TOOLS_VERSION}/mongodb-healthcheck -o /usr/local/bin/mongodb-healthcheck;     curl -fSL  https://github.com/percona/mongodb-orchestration-tools/releases/download/${K8S_TOOLS_VERSION}/SHA256SUMS -o /tmp/SHA256SUMS;     echo "$(grep 'k8s-mongodb-initiator' /tmp/SHA256SUMS | awk '{print $1}')" /usr/local/bin/k8s-mongodb-initiator | sha256sum -c -;     echo "$(grep 'mongodb-healthcheck' /tmp/SHA256SUMS   | awk '{print $1}')" /usr/local/bin/mongodb-healthcheck   | sha256sum -c -;     rm -f /tmp/SHA256SUMS;         chmod 0755 /usr/local/bin/k8s-mongodb-initiator /usr/local/bin/mongodb-healthcheck
-# Fri, 08 Oct 2021 17:29:48 GMT
-RUN set -ex;     curl -fSL https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js -o /js-yaml.js;     echo "45dc3dd03dc07a06705a2c2989b8c7f709013f04bd5386e3279d4e447f07ebd7  /js-yaml.js" | sha256sum -c -
-# Fri, 08 Oct 2021 17:29:49 GMT
-COPY file:2e691e8e3c29008da8a3c85bbe67de1e1e3fbb73ae7ec22473431d5a771341bf in /entrypoint.sh 
-# Fri, 08 Oct 2021 17:29:49 GMT
+# Thu, 24 Mar 2022 22:30:37 GMT
 VOLUME [/data/db]
-# Fri, 08 Oct 2021 17:29:49 GMT
+# Thu, 24 Mar 2022 22:30:37 GMT
+RUN set -ex;     curl -fSL https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js -o /js-yaml.js;     echo "45dc3dd03dc07a06705a2c2989b8c7f709013f04bd5386e3279d4e447f07ebd7  /js-yaml.js" | sha256sum -c -
+# Thu, 24 Mar 2022 22:30:37 GMT
+COPY file:2e691e8e3c29008da8a3c85bbe67de1e1e3fbb73ae7ec22473431d5a771341bf in /entrypoint.sh 
+# Thu, 24 Mar 2022 22:30:37 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 08 Oct 2021 17:29:49 GMT
+# Thu, 24 Mar 2022 22:30:37 GMT
 EXPOSE 27017
-# Fri, 08 Oct 2021 17:29:49 GMT
+# Thu, 24 Mar 2022 22:30:38 GMT
 USER 1001
-# Fri, 08 Oct 2021 17:29:49 GMT
+# Thu, 24 Mar 2022 22:30:38 GMT
 CMD ["mongod"]
 ```
 
 -	Layers:
-	-	`sha256:a1d0c75327776413fa0db9ed3adcdbadedc95a662eb1d360dad82bb913f8a1d1`  
-		Last Modified: Wed, 15 Sep 2021 18:21:25 GMT  
-		Size: 83.5 MB (83518086 bytes)  
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ce4a021af05ac4cdbe7625bc925b41c1bb50a7a385f4fc3dab431a07d712364d`  
-		Last Modified: Wed, 15 Sep 2021 19:07:16 GMT  
-		Size: 29.0 MB (28996777 bytes)  
+	-	`sha256:01286792c772da9e6eac01033dbfa6099f0d1105c4f52e53731476c38967cf4e`  
+		Last Modified: Thu, 24 Mar 2022 22:32:27 GMT  
+		Size: 3.8 MB (3758917 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0c72bf3cbe7339a6cb91be4376ace8a0616f250d6ec146b8db7a3268db24aafa`  
-		Last Modified: Fri, 08 Oct 2021 17:31:05 GMT  
-		Size: 96.8 MB (96792513 bytes)  
+	-	`sha256:6042b45107ed5067aa1ef3ef9bcd0de602e64a9bbbbe08caa0d2d698499be1e0`  
+		Last Modified: Thu, 24 Mar 2022 22:32:38 GMT  
+		Size: 98.1 MB (98053403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8de47aa321cf2aafebaa702288fe7ef722db505739af3981996de664430be6de`  
-		Last Modified: Fri, 08 Oct 2021 17:30:53 GMT  
-		Size: 1.5 KB (1541 bytes)  
+	-	`sha256:fc11abe74b2c5176c796dc6661a6f78212aa478a3594ee0f32a8321e2c4794bf`  
+		Last Modified: Thu, 24 Mar 2022 22:32:25 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:36fdc13b654cc3fa9b82a7186c28915fc4406e39174476148eadd5163876f816`  
-		Last Modified: Fri, 08 Oct 2021 17:30:53 GMT  
+	-	`sha256:1f863ba1bdda0ffe9f5f436f06cea437ddec40c4389ca35659d95b530b17b62d`  
+		Last Modified: Thu, 24 Mar 2022 22:32:25 GMT  
 		Size: 4.1 KB (4103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03c8102bf73d831abdec9820699daa8df3fe1c5cf481ff69aeba78144761b8fc`  
-		Last Modified: Fri, 08 Oct 2021 17:30:51 GMT  
-		Size: 10.6 KB (10573 bytes)  
+	-	`sha256:3a99ece30adeb87836f98d023973389712ab30295784852bfc1293c288233655`  
+		Last Modified: Thu, 24 Mar 2022 22:32:23 GMT  
+		Size: 10.6 KB (10578 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff6c9d2dbdd772da46a7e697fc45acf3fb379185682d88af7f58fddb3f351ddb`  
-		Last Modified: Fri, 08 Oct 2021 17:30:51 GMT  
-		Size: 914.5 KB (914540 bytes)  
+	-	`sha256:dd89161c12d0ca30973699d0dddcd76b74ef86dd8e874daecb31e8370dc142cc`  
+		Last Modified: Thu, 24 Mar 2022 22:32:24 GMT  
+		Size: 914.6 KB (914551 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efe74822d9b9a15393ca341767582396dbd490386b7ecd04c5f8f12debb2e8c1`  
-		Last Modified: Fri, 08 Oct 2021 17:30:52 GMT  
+	-	`sha256:e91617e9382b21ee70cba99bf35547aa12168c263d001bb28368cc1056d2cb0e`  
+		Last Modified: Thu, 24 Mar 2022 22:32:24 GMT  
 		Size: 8.1 MB (8137888 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13bcee84b935141816b3c773457065b8c301dc7a8ee3861f161c14bede5c2ef5`  
-		Last Modified: Fri, 08 Oct 2021 17:30:50 GMT  
-		Size: 13.2 KB (13202 bytes)  
+	-	`sha256:0ad14c681b2dad0c73d7803daea960f31b1a938b1d8b34c14ee8ce3a540a9211`  
+		Last Modified: Thu, 24 Mar 2022 22:32:23 GMT  
+		Size: 13.2 KB (13204 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc6b5c3585416016350db51917050dcb097da088d152f5764c51ddcf56f8a180`  
-		Last Modified: Fri, 08 Oct 2021 17:30:51 GMT  
-		Size: 4.6 KB (4556 bytes)  
+	-	`sha256:66d10bfb026577be35e9e4a07bfabdb6c050fcccf3f72bf2e8576dc468736d32`  
+		Last Modified: Thu, 24 Mar 2022 22:32:23 GMT  
+		Size: 4.6 KB (4558 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:psmdb-4.4.13`
 
-**does not exist** (yet?)
+```console
+$ docker pull percona@sha256:ee40d17b867471c650431e7450e66671e8eacdec42d39d73765a1587fb219092
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 1
+	-	linux; amd64
+
+### `percona:psmdb-4.4.13` - linux; amd64
+
+```console
+$ docker pull percona@sha256:4e9375aa9350eca0b54a5842eb9b5724e1c8335af464901984c6ac82383ea1ed
+```
+
+-	Docker Version: 20.10.12
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **198.4 MB (198377353 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:24f5dcc334cefa84c40fd991ed8ffa4a4dde81aaa63cafbc4e5b466d90f4f078`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["mongod"]`
+
+```dockerfile
+# Thu, 24 Mar 2022 22:26:07 GMT
+ADD file:8de122754f28308c5a43ec6c9d2e21a84f88ce3d857c57ceebdbb006ec4218ea in / 
+# Thu, 24 Mar 2022 22:26:08 GMT
+CMD ["/bin/bash"]
+# Thu, 24 Mar 2022 22:28:16 GMT
+LABEL org.opencontainers.image.authors=info@percona.com
+# Thu, 24 Mar 2022 22:29:37 GMT
+RUN set -ex;     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A 99DB70FAE1D7CE227FB6488205B555B38483C65D 94E279EB8D8F25B21810ADF121EA45AB2F86D6A1;     gpg --batch --export --armor 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A > ${GNUPGHOME}/RPM-GPG-KEY-Percona;     gpg --batch --export --armor 99DB70FAE1D7CE227FB6488205B555B38483C65D > ${GNUPGHOME}/RPM-GPG-KEY-centosofficial;     gpg --batch --export --armor 94E279EB8D8F25B21810ADF121EA45AB2F86D6A1 > ${GNUPGHOME}/RPM-GPG-KEY-EPEL-8;     rpmkeys --import ${GNUPGHOME}/RPM-GPG-KEY-Percona ${GNUPGHOME}/RPM-GPG-KEY-centosofficial ${GNUPGHOME}/RPM-GPG-KEY-EPEL-8;     curl -Lf -o /tmp/percona-release.rpm https://repo.percona.com/yum/percona-release-latest.noarch.rpm;     rpmkeys --checksig /tmp/percona-release.rpm;     rpm -i /tmp/percona-release.rpm;     rm -rf "$GNUPGHOME" /tmp/percona-release.rpm;     rpm --import /etc/pki/rpm-gpg/PERCONA-PACKAGING-KEY;     percona-release enable psmdb-44 release
+# Thu, 24 Mar 2022 22:29:37 GMT
+ENV PSMDB_VERSION=4.4.13-13
+# Thu, 24 Mar 2022 22:29:37 GMT
+ENV OS_VER=el8
+# Thu, 24 Mar 2022 22:29:37 GMT
+ENV FULL_PERCONA_VERSION=4.4.13-13.el8
+# Thu, 24 Mar 2022 22:29:37 GMT
+ENV K8S_TOOLS_VERSION=0.5.0
+# Thu, 24 Mar 2022 22:30:29 GMT
+RUN set -ex;     dnf -y install         percona-server-mongodb-mongos-${FULL_PERCONA_VERSION}         percona-server-mongodb-shell-${FULL_PERCONA_VERSION}         procps-ng         jq         tar         oniguruma         policycoreutils;             curl -Lf -o /tmp/Percona-Server-MongoDB-server.rpm http://repo.percona.com/psmdb-44/yum/release/8/RPMS/x86_64/percona-server-mongodb-server-${FULL_PERCONA_VERSION}.x86_64.rpm;     rpmkeys --checksig /tmp/Percona-Server-MongoDB-server.rpm;     rpm -iv /tmp/Percona-Server-MongoDB-server.rpm --nodeps;     rm -rf /tmp/Percona-Server-MongoDB-server.rpm;     dnf clean all;     rm -rf /var/cache/dnf /var/cache/yum /data/db && mkdir -p /data/db;     chown -R 1001:0 /data/db
+# Thu, 24 Mar 2022 22:30:29 GMT
+RUN useradd -u 1001 -r -g 0 -s /sbin/nologin             -c "Default Application User" mongodb
+# Thu, 24 Mar 2022 22:30:30 GMT
+COPY file:b7c621ae843e72f20dd7ef20e8c42b89234688ceed5018592c3e5bfa61048aad in /licenses/LICENSE.Dockerfile 
+# Thu, 24 Mar 2022 22:30:30 GMT
+RUN cp /usr/share/doc/percona-server-mongodb-server/LICENSE-Community.txt /licenses/LICENSE.Percona-Server-for-MongoDB
+# Thu, 24 Mar 2022 22:30:30 GMT
+ENV GOSU_VERSION=1.11
+# Thu, 24 Mar 2022 22:30:33 GMT
+RUN set -eux;     curl -Lf -o /usr/bin/gosu https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64;     curl -Lf -o /usr/bin/gosu.asc https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64.asc;         export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4;     gpg --batch --verify /usr/bin/gosu.asc /usr/bin/gosu;     rm -rf "$GNUPGHOME" /usr/bin/gosu.asc;         chmod +x /usr/bin/gosu;     curl -f -o /licenses/LICENSE.gosu https://raw.githubusercontent.com/tianon/gosu/${GOSU_VERSION}/LICENSE
+# Thu, 24 Mar 2022 22:30:36 GMT
+RUN set -ex;     curl -fSL https://github.com/percona/mongodb-orchestration-tools/releases/download/${K8S_TOOLS_VERSION}/k8s-mongodb-initiator -o /usr/local/bin/k8s-mongodb-initiator;     curl -fSL  https://github.com/percona/mongodb-orchestration-tools/releases/download/${K8S_TOOLS_VERSION}/mongodb-healthcheck -o /usr/local/bin/mongodb-healthcheck;     curl -fSL  https://github.com/percona/mongodb-orchestration-tools/releases/download/${K8S_TOOLS_VERSION}/SHA256SUMS -o /tmp/SHA256SUMS;     echo "$(grep 'k8s-mongodb-initiator' /tmp/SHA256SUMS | awk '{print $1}')" /usr/local/bin/k8s-mongodb-initiator | sha256sum -c -;     echo "$(grep 'mongodb-healthcheck' /tmp/SHA256SUMS   | awk '{print $1}')" /usr/local/bin/mongodb-healthcheck   | sha256sum -c -;     rm -f /tmp/SHA256SUMS;         chmod 0755 /usr/local/bin/k8s-mongodb-initiator /usr/local/bin/mongodb-healthcheck
+# Thu, 24 Mar 2022 22:30:37 GMT
+VOLUME [/data/db]
+# Thu, 24 Mar 2022 22:30:37 GMT
+RUN set -ex;     curl -fSL https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js -o /js-yaml.js;     echo "45dc3dd03dc07a06705a2c2989b8c7f709013f04bd5386e3279d4e447f07ebd7  /js-yaml.js" | sha256sum -c -
+# Thu, 24 Mar 2022 22:30:37 GMT
+COPY file:2e691e8e3c29008da8a3c85bbe67de1e1e3fbb73ae7ec22473431d5a771341bf in /entrypoint.sh 
+# Thu, 24 Mar 2022 22:30:37 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Thu, 24 Mar 2022 22:30:37 GMT
+EXPOSE 27017
+# Thu, 24 Mar 2022 22:30:38 GMT
+USER 1001
+# Thu, 24 Mar 2022 22:30:38 GMT
+CMD ["mongod"]
+```
+
+-	Layers:
+	-	`sha256:00e01bb8b231e8861500c644bc1bd18c32cf5bb204a4e618d2bae1dcfee66836`  
+		Last Modified: Thu, 24 Mar 2022 22:27:07 GMT  
+		Size: 87.5 MB (87478984 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:01286792c772da9e6eac01033dbfa6099f0d1105c4f52e53731476c38967cf4e`  
+		Last Modified: Thu, 24 Mar 2022 22:32:27 GMT  
+		Size: 3.8 MB (3758917 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6042b45107ed5067aa1ef3ef9bcd0de602e64a9bbbbe08caa0d2d698499be1e0`  
+		Last Modified: Thu, 24 Mar 2022 22:32:38 GMT  
+		Size: 98.1 MB (98053403 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fc11abe74b2c5176c796dc6661a6f78212aa478a3594ee0f32a8321e2c4794bf`  
+		Last Modified: Thu, 24 Mar 2022 22:32:25 GMT  
+		Size: 1.2 KB (1167 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1f863ba1bdda0ffe9f5f436f06cea437ddec40c4389ca35659d95b530b17b62d`  
+		Last Modified: Thu, 24 Mar 2022 22:32:25 GMT  
+		Size: 4.1 KB (4103 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3a99ece30adeb87836f98d023973389712ab30295784852bfc1293c288233655`  
+		Last Modified: Thu, 24 Mar 2022 22:32:23 GMT  
+		Size: 10.6 KB (10578 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd89161c12d0ca30973699d0dddcd76b74ef86dd8e874daecb31e8370dc142cc`  
+		Last Modified: Thu, 24 Mar 2022 22:32:24 GMT  
+		Size: 914.6 KB (914551 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e91617e9382b21ee70cba99bf35547aa12168c263d001bb28368cc1056d2cb0e`  
+		Last Modified: Thu, 24 Mar 2022 22:32:24 GMT  
+		Size: 8.1 MB (8137888 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:0ad14c681b2dad0c73d7803daea960f31b1a938b1d8b34c14ee8ce3a540a9211`  
+		Last Modified: Thu, 24 Mar 2022 22:32:23 GMT  
+		Size: 13.2 KB (13204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:66d10bfb026577be35e9e4a07bfabdb6c050fcccf3f72bf2e8576dc468736d32`  
+		Last Modified: Thu, 24 Mar 2022 22:32:23 GMT  
+		Size: 4.6 KB (4558 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `percona:psmdb-5.0`
 
