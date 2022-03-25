@@ -1,7 +1,7 @@
 ## `kapacitor:alpine`
 
 ```console
-$ docker pull kapacitor@sha256:9d1fea13f74037a873977f35976edc7f524287c85ee2ca78798443311d8e1794
+$ docker pull kapacitor@sha256:07d242f6b8222a6f0e531ef665ec0403d10abc2b251a04087a49e5d5b20f9a65
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull kapacitor@sha256:9d1fea13f74037a873977f35976edc7f524287c85ee2ca787
 ### `kapacitor:alpine` - linux; amd64
 
 ```console
-$ docker pull kapacitor@sha256:7b80b18e0b03667ed5646cbb8f99ac28757a4f4740a2dc65d3b7d53f3e4e5b61
+$ docker pull kapacitor@sha256:ba629122f0f1096c6ac9cd97e085351febb17d16fbb9eae2168aea3f7a75f165
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **61.4 MB (61448749 bytes)**  
+-	Total Size: **63.8 MB (63759302 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:deab38f6e54c02a09af803e498e85900c59830648fc96707b475abc2e857902c`
+-	Image ID: `sha256:08ece327d562ac124fe4cfcf4c6ad1de857e89f46f45a54e2506c2cd4a25a249`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
@@ -31,21 +31,21 @@ CMD ["/bin/sh"]
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 # Thu, 17 Mar 2022 18:05:43 GMT
 RUN apk add --no-cache ca-certificates &&     update-ca-certificates
-# Thu, 17 Mar 2022 18:06:24 GMT
-ENV KAPACITOR_VERSION=1.6.3
-# Thu, 17 Mar 2022 18:06:52 GMT
+# Thu, 24 Mar 2022 22:24:39 GMT
+ENV KAPACITOR_VERSION=1.6.4
+# Thu, 24 Mar 2022 22:24:47 GMT
 RUN set -ex &&     mkdir ~/.gnupg;     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf;     apk add --no-cache --virtual .build-deps wget gnupg tar &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys "$key" ;     done &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz &&     gpg --batch --verify kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz.asc kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz &&     mkdir -p /usr/src &&     tar -C /usr/src -xzf kapacitor-${KAPACITOR_VERSION}_linux_amd64.tar.gz &&     cp -ar /usr/src/kapacitor-*/* / &&     gpgconf --kill all &&     rm -rf *.tar.gz* /usr/src /root/.gnupg &&     apk del .build-deps
-# Thu, 17 Mar 2022 18:06:53 GMT
+# Thu, 24 Mar 2022 22:24:47 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Thu, 17 Mar 2022 18:06:53 GMT
+# Thu, 24 Mar 2022 22:24:48 GMT
 EXPOSE 9092
-# Thu, 17 Mar 2022 18:06:53 GMT
+# Thu, 24 Mar 2022 22:24:48 GMT
 VOLUME [/var/lib/kapacitor]
-# Thu, 17 Mar 2022 18:06:53 GMT
+# Thu, 24 Mar 2022 22:24:48 GMT
 COPY file:a64543022a380a96e18ddc4e841e034238df340064743d570fa109d5086b123a in /entrypoint.sh 
-# Thu, 17 Mar 2022 18:06:53 GMT
+# Thu, 24 Mar 2022 22:24:48 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 17 Mar 2022 18:06:53 GMT
+# Thu, 24 Mar 2022 22:24:48 GMT
 CMD ["kapacitord"]
 ```
 
@@ -62,15 +62,15 @@ CMD ["kapacitord"]
 		Last Modified: Thu, 17 Mar 2022 18:07:13 GMT  
 		Size: 271.7 KB (271670 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b4ad12656fe460f674ab7f5ec540772003d0372d5fd248843987826b0977f2f`  
-		Last Modified: Thu, 17 Mar 2022 18:07:36 GMT  
-		Size: 58.4 MB (58360302 bytes)  
+	-	`sha256:48b74230ee1ffa356cb93a66b538c6de055b31a91af446db57facd26adf8b52d`  
+		Last Modified: Thu, 24 Mar 2022 22:25:34 GMT  
+		Size: 60.7 MB (60670854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:641a70ee4993f9c1c1c87380e01bb51c766fdcfbb98fd0f4bedefdacd566b962`  
-		Last Modified: Thu, 17 Mar 2022 18:07:28 GMT  
+	-	`sha256:f0471533845bde002bebdbed8fa921a4a78d0e52b4bbfcc055fc903fa1ed4660`  
+		Last Modified: Thu, 24 Mar 2022 22:25:26 GMT  
 		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbb68c806ef27ef0b5cf3bdbba4fa0c5d9ec667945ee6da1ba24571ab50e7be3`  
-		Last Modified: Thu, 17 Mar 2022 18:07:28 GMT  
-		Size: 228.0 B  
+	-	`sha256:41ea9c4c1fc429a5f60ef4c53efb82955df2ef029f31c5bc9af7abbb6fe95e7e`  
+		Last Modified: Thu, 24 Mar 2022 22:25:26 GMT  
+		Size: 229.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
