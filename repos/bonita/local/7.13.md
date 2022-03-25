@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:468e05946fa80fe40a05962e9cc79a26c5a7b75aef8631b29a3bf2ff3e78b649`
-- Created: `2022-03-03T20:40:38.905930103Z`
-- Virtual Size: ~ 456.34 Mb  
+- Image ID: `sha256:d15d1ac77f073ff34cd4af6e8870392ef73eb84279d0aeb4e35641c72b1ae3d4`
+- Created: `2022-03-19T22:35:20.274443215Z`
+- Virtual Size: ~ 456.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/opt/files/startup.sh"]`
@@ -557,19 +557,24 @@ $ apt-get source -qq --print-uris e2fsprogs=1.44.1-1ubuntu1.3
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.3.debian.tar.xz' e2fsprogs_1.44.1-1ubuntu1.3.debian.tar.xz 81152 SHA512:0fa4885fbd73b00efbd865e17898362d6cd8551be169f8f23ea0fa52cf4de8d6c244315ef69631062fbc97c11be19f0decfac775811b47405416e5ae645e0956
 ```
 
-### `dpkg` source package: `expat=2.2.5-3ubuntu0.4`
+### `dpkg` source package: `expat=2.2.5-3ubuntu0.7`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.5-3ubuntu0.4`
+- `libexpat1:amd64=2.2.5-3ubuntu0.7`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris expat=2.2.5-3ubuntu0.7
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.7.dsc' expat_2.2.5-3ubuntu0.7.dsc 2214 SHA512:92501860b0eaba70da80b4891df4e630b1b1c106a0d9ab680c9ede8beffadd11aff3d50c1fce7ea0013bb15d8310674b606c41af752d0fc76f1594bd9e160b4b
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5.orig.tar.gz' expat_2.2.5.orig.tar.gz 8273003 SHA512:61ce2a479521412e0c56c352106c4adfb61a6bedb883921aba3ebccc29311ddd192646ac2c51b41572728d4de6ab4cb60a1dbc71515d742a80a8b59d89ca74d6
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.7.debian.tar.xz' expat_2.2.5-3ubuntu0.7.debian.tar.xz 25800 SHA512:c813288c179eea85f56bd4742be81148d6c2bdb7c80283a5dfb4803a870cdc4c3a600adb29c9e8f7b2f0174762a15f4bf78db61b83b2debb0bc88eb55bfc7e02
+```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20170828-2`
 
@@ -1759,11 +1764,11 @@ $ apt-get source -qq --print-uris numactl=2.0.11-2.1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/numactl/numactl_2.0.11-2.1ubuntu0.1.debian.tar.xz' numactl_2.0.11-2.1ubuntu0.1.debian.tar.xz 9504 SHA512:a389644eac8e9ddaa9c644d9c3fff01f1bd4c5e0f2b4da7593806846fd5d288af44e559a8eb48a720003e62141924f96b654b0a4adda846947ac5e0601892961
 ```
 
-### `dpkg` source package: `openjdk-lts=11.0.13+8-0ubuntu1~18.04`
+### `dpkg` source package: `openjdk-lts=11.0.14+9-0ubuntu2~18.04`
 
 Binary Packages:
 
-- `openjdk-11-jre-headless:amd64=11.0.13+8-0ubuntu1~18.04`
+- `openjdk-11-jre-headless:amd64=11.0.14+9-0ubuntu2~18.04`
 
 Licenses: (parsed from: `/usr/share/doc/openjdk-11-jre-headless/copyright`)
 
@@ -1772,9 +1777,14 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jre-headless/copyright`)
 - `LGPL-2`
 - `LGPL-2-1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openjdk-lts=11.0.14+9-0ubuntu2~18.04
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9-0ubuntu2%7e18.04.dsc' openjdk-lts_11.0.14+9-0ubuntu2~18.04.dsc 4697 SHA512:fce4f1be495b6b1e714f9e7cbd580b896e7cffe4476e5704f7d5df6a9e143c8e1c2b2a7a8fe526163fbab39dcb1c314c0ce479efcbb73baa8dbde8e94fdfc674
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9.orig.tar.xz' openjdk-lts_11.0.14+9.orig.tar.xz 78374336 SHA512:32f73520650665d16685eac7f28819e083c9f2053512a23c7f006eaa0f5a90bb2bc4792c421aba778fe7df65f8ba977cd84c141a52e16b23e51d83dc512f3ae8
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9-0ubuntu2%7e18.04.debian.tar.xz' openjdk-lts_11.0.14+9-0ubuntu2~18.04.debian.tar.xz 172896 SHA512:52d585621ec4ce2f83fd67c5c7b901f66a00772fdcfdb9cc18fb0d4f1b8d753ee588739fee7792fa504589d19a19484bd0d1f16a5a09b5c9157260b41f4b03c6
+```
 
 ### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.10`
 
@@ -1796,20 +1806,25 @@ $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.10
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45%2bdfsg-1ubuntu1.10.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.10.debian.tar.xz 183732 SHA512:41b401e4a4d42653dcf016c685402e8866262c050131bf5aa5436643ed14d6979a9bbacca40a3d8be9115e0aa0b0839156c490f3b1f50ca64ecebde25cb84375
 ```
 
-### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.14`
+### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.15`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.14`
-- `openssl=1.1.1-1ubuntu2.1~18.04.14`
+- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.15`
+- `openssl=1.1.1-1ubuntu2.1~18.04.15`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.15
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1%7e18.04.15.dsc' openssl_1.1.1-1ubuntu2.1~18.04.15.dsc 2514 SHA512:92b17c14f7236914aaf9198a20a2f252052d6a3d5a8911cf4f5e19b1cd7d1265dfb6966658c7a5000f4bbb7a7424301c93bec89c4aaba77c7159ce331dbe05d4
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA512:c0284a4fe84bdf765ca5bc5148da4441ffc36392cfecaf9d372af00cf93b6de5681cab1248b6f8246474532155dc205da5ad49549ad7c61c07c917145e7c9c71
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1%7e18.04.15.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.15.debian.tar.xz 131628 SHA512:7e4617d11f7f0ddc1c56c5e072c9f9642db3298ed2419d7ca1b109e4fa88c21ff8b64764d078249b4897ad061b0ad20475ae32e5c812c50353d845380bbaca47
+```
 
 ### `dpkg` source package: `p11-kit=0.23.9-2ubuntu0.1`
 
@@ -2216,20 +2231,25 @@ $ apt-get source -qq --print-uris sysvinit=2.88dsf-59.10ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_2.88dsf-59.10ubuntu1.debian.tar.xz' sysvinit_2.88dsf-59.10ubuntu1.debian.tar.xz 132736 SHA256:faee591309aa0065aa43f44a1e840eb01db7f55379af2b45949534bd0317b734
 ```
 
-### `dpkg` source package: `tar=1.29b-2ubuntu0.2`
+### `dpkg` source package: `tar=1.29b-2ubuntu0.3`
 
 Binary Packages:
 
-- `tar=1.29b-2ubuntu0.2`
+- `tar=1.29b-2ubuntu0.3`
 
 Licenses: (parsed from: `/usr/share/doc/tar/copyright`)
 
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris tar=1.29b-2ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.29b-2ubuntu0.3.dsc' tar_1.29b-2ubuntu0.3.dsc 1776 SHA512:d67785fa916988ddc357d3de81486b8dce4995e68b852ba5dae36527a846fb2431e902c0b036d287d0fc35a95ca2def3aade4facec29c2834c70c77db02c5998
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.29b.orig.tar.xz' tar_1.29b.orig.tar.xz 1822008 SHA512:6814c906f3bf3d1421d46e63aff7921acffbd2b2a0a7e5c20b472a821eab839d6eab93653d964ae16376b65da223c57a92455f44793522c84c8b1343af20b106
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.29b-2ubuntu0.3.debian.tar.xz' tar_1.29b-2ubuntu0.3.debian.tar.xz 35080 SHA512:4808285a3ea5903a7c61be297e2c2cb41654facd68397966a91ae5ebd2381e196cb159c2cec3bcf8f26b24d913764fd4d178670a324ca4daf8ee78050acd7cb2
+```
 
 ### `dpkg` source package: `ubuntu-keyring=2018.09.18.1~18.04.2`
 
