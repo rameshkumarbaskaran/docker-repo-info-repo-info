@@ -1,7 +1,7 @@
 ## `php:7-bullseye`
 
 ```console
-$ docker pull php@sha256:c8a1fe243c27a2b210903b10289941d6bada339e64cbebd4cfcb359b57eeb2fc
+$ docker pull php@sha256:bcd8dbac5adaf013079192f555defef1b9ca9c19b46cadf4d42d176a334a55e5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -212,14 +212,14 @@ CMD ["php" "-a"]
 ### `php:7-bullseye` - linux; arm variant v7
 
 ```console
-$ docker pull php@sha256:7561b6632b1551e9de603ec205b3b08d09fcddfb783744e9e7a741ff5bbbd894
+$ docker pull php@sha256:9253175dd7a433ecf5e77f093137e1a18b015960dcf5932a46d244ea56f01398
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **136.4 MB (136389890 bytes)**  
+-	Total Size: **136.4 MB (136390042 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:426bc0031c11664c3fdd81ea878fd2602a27b1f11122c4816c4f4c79820848c7`
+-	Image ID: `sha256:a1b5245bf84bd02200572b3c45db16e3d82b99cf06981ce82d46ace53a098808`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php","-a"]`
 
@@ -258,13 +258,13 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
 # Fri, 18 Mar 2022 02:31:14 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--enable-embed 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Fri, 18 Mar 2022 02:31:16 GMT
-COPY multi:a00980ff863125d6071b93844e0a51dc89719405d95217aba6860be950a05740 in /usr/local/bin/ 
-# Fri, 18 Mar 2022 02:31:17 GMT
+# Tue, 29 Mar 2022 00:53:24 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 29 Mar 2022 00:53:28 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 18 Mar 2022 02:31:18 GMT
+# Tue, 29 Mar 2022 00:53:28 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 18 Mar 2022 02:31:18 GMT
+# Tue, 29 Mar 2022 00:53:28 GMT
 CMD ["php" "-a"]
 ```
 
@@ -297,13 +297,13 @@ CMD ["php" "-a"]
 		Last Modified: Fri, 18 Mar 2022 05:36:17 GMT  
 		Size: 29.8 MB (29761685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18627cdce9e124ec6f56ac7674ce85ae377a59c91839f8ae65965bb614f5c172`  
-		Last Modified: Fri, 18 Mar 2022 05:36:00 GMT  
-		Size: 2.3 KB (2304 bytes)  
+	-	`sha256:292c5685ac93b00bf910623b71082315088cf0f72d1bbcb5a4f7cdc61b0d5f85`  
+		Last Modified: Tue, 29 Mar 2022 01:24:28 GMT  
+		Size: 2.5 KB (2453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:075e342f3d9fb05f8c58a38c411e4bde98ba7a15fc872b7d2e29a5c9ebbaa8e3`  
-		Last Modified: Fri, 18 Mar 2022 05:36:00 GMT  
-		Size: 248.0 B  
+	-	`sha256:71d284c88f84694e209d42e885239740261088be5a042de5248f5c449869bbbe`  
+		Last Modified: Tue, 29 Mar 2022 01:24:28 GMT  
+		Size: 251.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:7-bullseye` - linux; arm64 variant v8
@@ -503,14 +503,14 @@ CMD ["php" "-a"]
 ### `php:7-bullseye` - linux; mips64le
 
 ```console
-$ docker pull php@sha256:5f1c9b2ce40cd6287a1a284df13222e9d08aaef1c517e9938aa688521853046d
+$ docker pull php@sha256:0129b563c7f3763cce0dc2460598f77863d7ace01fb6972e34853f46cb6077a4
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **143.5 MB (143514425 bytes)**  
+-	Total Size: **143.5 MB (143514575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ad8e9db1758c210e6dd47e71bad689fe87591d2a01f40b84a0fe7218ed6a1a05`
+-	Image ID: `sha256:8ee993ceb712a96de1061d648cefd458064a3bc95aef98505dc108d64a32b19a`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php","-a"]`
 
@@ -549,13 +549,13 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
 # Fri, 18 Mar 2022 10:16:07 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libonig-dev 		libreadline-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 	; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv 		--with-openssl 		--with-readline 		--with-zlib 				--enable-phpdbg 		--enable-phpdbg-readline 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				--enable-embed 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Fri, 18 Mar 2022 10:16:11 GMT
-COPY multi:a00980ff863125d6071b93844e0a51dc89719405d95217aba6860be950a05740 in /usr/local/bin/ 
-# Fri, 18 Mar 2022 10:16:18 GMT
+# Tue, 29 Mar 2022 00:23:27 GMT
+COPY multi:6edd033b037aa2d7697fc3b9f82c2f162146c1920a0c6d25a165dc56783204db in /usr/local/bin/ 
+# Tue, 29 Mar 2022 00:23:35 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 18 Mar 2022 10:16:22 GMT
+# Tue, 29 Mar 2022 00:23:38 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 18 Mar 2022 10:16:25 GMT
+# Tue, 29 Mar 2022 00:23:42 GMT
 CMD ["php" "-a"]
 ```
 
@@ -588,13 +588,13 @@ CMD ["php" "-a"]
 		Last Modified: Fri, 18 Mar 2022 13:12:34 GMT  
 		Size: 31.5 MB (31542612 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c8994c89ef4aa41f4e9565b69826304eeb79b64dca5e45a8ba7f5c008afd56f4`  
-		Last Modified: Fri, 18 Mar 2022 13:12:13 GMT  
-		Size: 2.3 KB (2307 bytes)  
+	-	`sha256:54bf62e02e59ec9a3e3767b3a4603d7b7210bf74be5f802c8754a4122fc2ad05`  
+		Last Modified: Tue, 29 Mar 2022 00:34:25 GMT  
+		Size: 2.5 KB (2453 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f60a5817a504c8e25afa9ea6e924ba2734d1d8f8917b07d7d91068115fe7f9d`  
-		Last Modified: Fri, 18 Mar 2022 13:12:13 GMT  
-		Size: 246.0 B  
+	-	`sha256:cf4fc5b896d53d3c20baf030249ffa03fc1e7ba58c65aeae4c98ca0983f58f4e`  
+		Last Modified: Tue, 29 Mar 2022 00:34:25 GMT  
+		Size: 250.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:7-bullseye` - linux; ppc64le
