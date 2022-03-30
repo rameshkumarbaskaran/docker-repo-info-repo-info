@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f16c75595e1395e903a0443ba772cb948f2bce5e89096d90c11791eeae67e17a`
-- Created: `2022-03-23T15:51:30.315719863Z`
+- Image ID: `sha256:75c9f34611acde062af02631a1cb87c190c0b5a475d883cb85d3e9dfe8a48190`
+- Created: `2022-03-29T05:33:47.868594155Z`
 - Virtual Size: ~ 16.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -291,16 +291,16 @@ GPL-3.0-or-later WITH OpenSSL-Exception
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.11-r3 description:
+zlib-1.2.12-r0 description:
 A compression/decompression Library
 
-zlib-1.2.11-r3 webpage:
+zlib-1.2.12-r0 webpage:
 https://zlib.net/
 
-zlib-1.2.11-r3 installed size:
+zlib-1.2.12-r0 installed size:
 108 KiB
 
-zlib-1.2.11-r3 license:
+zlib-1.2.12-r0 license:
 Zlib
 
 ```
