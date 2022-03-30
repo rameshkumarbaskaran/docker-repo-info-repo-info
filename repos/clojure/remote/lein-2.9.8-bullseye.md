@@ -1,7 +1,7 @@
 ## `clojure:lein-2.9.8-bullseye`
 
 ```console
-$ docker pull clojure@sha256:653338be031925873395a68b06d27a9637792412112959fefad46ea379c380b3
+$ docker pull clojure@sha256:b537b8da0ffa8567b7224ba4b1314da5e058bb99f8d5bc9236c25fde7dca1caf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -111,98 +111,98 @@ CMD ["repl"]
 ### `clojure:lein-2.9.8-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:a10edc6ae0095730187cfb6ec312145555a2e36e620ed5dd6f00763bf44b6202
+$ docker pull clojure@sha256:565754647210ee2b6a7cf547274846980708fb14d7e1a7c6f7e8d26c4ad7f80f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **342.4 MB (342439119 bytes)**  
+-	Total Size: **342.5 MB (342459595 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8031b4bef2da642277bc5464f1abe4b77336ff88323db988def239c6e9aeb92a`
+-	Image ID: `sha256:a5a4502592d9bcd9e8d5691cbe22f60c027275447511dbf5ec8a0ce11bb1130b`
 -	Entrypoint: `["entrypoint"]`
 -	Default Command: `["repl"]`
 
 ```dockerfile
-# Thu, 17 Mar 2022 03:21:41 GMT
-ADD file:5effc7e0ab7312f14a7ee81c06c71400aae31219d477ebe1a4f7a9156797c42a in / 
-# Thu, 17 Mar 2022 03:21:42 GMT
+# Tue, 29 Mar 2022 00:43:01 GMT
+ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
+# Tue, 29 Mar 2022 00:43:03 GMT
 CMD ["bash"]
-# Thu, 17 Mar 2022 22:10:58 GMT
+# Wed, 30 Mar 2022 02:13:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 17 Mar 2022 22:11:03 GMT
+# Wed, 30 Mar 2022 02:13:17 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 17 Mar 2022 22:11:23 GMT
+# Wed, 30 Mar 2022 02:13:41 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 17 Mar 2022 23:19:55 GMT
+# Wed, 30 Mar 2022 08:59:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 17 Mar 2022 23:26:04 GMT
+# Wed, 30 Mar 2022 09:03:12 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Thu, 17 Mar 2022 23:26:05 GMT
+# Wed, 30 Mar 2022 09:03:12 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 17 Mar 2022 23:26:06 GMT
+# Wed, 30 Mar 2022 09:03:13 GMT
 ENV LANG=C.UTF-8
-# Thu, 17 Mar 2022 23:26:07 GMT
+# Wed, 30 Mar 2022 09:03:14 GMT
 ENV JAVA_VERSION=17.0.2
-# Thu, 17 Mar 2022 23:26:18 GMT
+# Wed, 30 Mar 2022 09:03:25 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Thu, 17 Mar 2022 23:26:18 GMT
+# Wed, 30 Mar 2022 09:03:26 GMT
 CMD ["jshell"]
-# Sat, 19 Mar 2022 09:07:54 GMT
+# Wed, 30 Mar 2022 09:58:06 GMT
 ENV LEIN_VERSION=2.9.8
-# Sat, 19 Mar 2022 09:07:54 GMT
+# Wed, 30 Mar 2022 09:58:07 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Sat, 19 Mar 2022 09:07:55 GMT
+# Wed, 30 Mar 2022 09:58:07 GMT
 WORKDIR /tmp
-# Sat, 19 Mar 2022 09:08:02 GMT
+# Wed, 30 Mar 2022 09:58:15 GMT
 RUN set -eux; apt-get update && apt-get install -y make gnupg && rm -rf /var/lib/apt/lists/* && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha256sum lein-pkg && echo "9952cba539cc6454c3b7385ebce57577087bf2b9001c3ab5c55d668d0aeff6e9 *lein-pkg" | sha256sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && export GNUPGHOME="$(mktemp -d)" && export FILENAME_EXT=jar && if printf '%s\n%s\n' "2.9.7" "$LEIN_VERSION" | sort -cV; then               gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 6A2D483DB59437EBB97D09B1040193357D0606ED;             else               gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys 20242BACBBE95ADA22D0AFD7808A33D379C806C3;               FILENAME_EXT=zip;             fi && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && echo "Verifying file PGP signature..." && gpg --batch --verify leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT && gpgconf --kill all && rm -rf "$GNUPGHOME" leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.$FILENAME_EXT /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apt-get purge -y --auto-remove gnupg
-# Sat, 19 Mar 2022 09:08:02 GMT
+# Wed, 30 Mar 2022 09:58:16 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Sat, 19 Mar 2022 09:08:03 GMT
+# Wed, 30 Mar 2022 09:58:16 GMT
 ENV LEIN_ROOT=1
-# Sat, 19 Mar 2022 09:08:07 GMT
+# Wed, 30 Mar 2022 09:58:21 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"]])' > project.clj   && lein deps && rm project.clj
-# Sat, 19 Mar 2022 09:08:09 GMT
+# Wed, 30 Mar 2022 09:58:23 GMT
 COPY file:cf90f595e38d932dff3bdcd4221efe7c65fb3432787490053b55b6917f06e4cd in /usr/local/bin/entrypoint 
-# Sat, 19 Mar 2022 09:08:09 GMT
+# Wed, 30 Mar 2022 09:58:23 GMT
 ENTRYPOINT ["entrypoint"]
-# Sat, 19 Mar 2022 09:08:10 GMT
+# Wed, 30 Mar 2022 09:58:24 GMT
 CMD ["repl"]
 ```
 
 -	Layers:
-	-	`sha256:260ad8146ed2447d5587608b10fed4f80de80cdc559e619f3a235d3ba09eaf7b`  
-		Last Modified: Thu, 17 Mar 2022 03:28:04 GMT  
-		Size: 53.6 MB (53616308 bytes)  
+	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
+		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
+		Size: 53.6 MB (53633710 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1399f445da611be3789923cf26d158e3f4f80449b7295fa069a8eaecaaf137e6`  
-		Last Modified: Thu, 17 Mar 2022 22:20:58 GMT  
-		Size: 4.9 MB (4937558 bytes)  
+	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
+		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
+		Size: 4.9 MB (4938638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cd9e43777fa6c09c341f3aa922f47b5b3ace26de1d779124afd2f1d435731d9`  
-		Last Modified: Thu, 17 Mar 2022 22:20:58 GMT  
-		Size: 10.7 MB (10655858 bytes)  
+	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
+		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
+		Size: 10.7 MB (10656993 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f81267e40a2df9e572fe797e45dbc086008422eb2216df18b7a91f1cf13e22b`  
-		Last Modified: Thu, 17 Mar 2022 22:21:21 GMT  
-		Size: 54.7 MB (54671322 bytes)  
+	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
+		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
+		Size: 54.7 MB (54671703 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f3aa309b6e3524c3f3c38e901096dcffe1aad16e70f0d64aae615a9d7baac20`  
-		Last Modified: Thu, 17 Mar 2022 23:46:25 GMT  
-		Size: 15.5 MB (15524647 bytes)  
+	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
+		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
+		Size: 15.5 MB (15524979 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eca7da2abc413a6504dadbc635335478670f5d4568f25228522d60bb16dceebd`  
-		Last Modified: Thu, 17 Mar 2022 23:52:10 GMT  
-		Size: 186.5 MB (186472929 bytes)  
+	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
+		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
+		Size: 186.5 MB (186472959 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ccd5feeb0d43145731eafa3ad75f97db4d5d5cc291660c6a86d9be29473f589e`  
-		Last Modified: Sat, 19 Mar 2022 09:32:27 GMT  
-		Size: 12.4 MB (12353020 bytes)  
+	-	`sha256:33c3acbbba085b6065e80e6483ce721192d3a72cf96e9416cc76a1582cb5e042`  
+		Last Modified: Wed, 30 Mar 2022 10:25:07 GMT  
+		Size: 12.4 MB (12353135 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:89d88ff0cbee0f12a17086969bcbb4887e14d52d4f226d47af39a75c831ba176`  
-		Last Modified: Sat, 19 Mar 2022 09:32:26 GMT  
-		Size: 4.2 MB (4207070 bytes)  
+	-	`sha256:07d11e26f66a1c944dcb59831a41c0114009d6d9b6c018344b45f20dfabd4024`  
+		Last Modified: Wed, 30 Mar 2022 10:25:06 GMT  
+		Size: 4.2 MB (4207073 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5ccadacce5e274a22320c2d0ef02dc979ce03508119ef4beeb2a1d847ed96d5b`  
-		Last Modified: Sat, 19 Mar 2022 09:32:26 GMT  
-		Size: 407.0 B  
+	-	`sha256:bf2bc1488d1c5394f0627bc15622e04e53b9ecc20bbd32b11ca36ca11de10261`  
+		Last Modified: Wed, 30 Mar 2022 10:25:06 GMT  
+		Size: 405.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
