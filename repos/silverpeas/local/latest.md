@@ -7590,14 +7590,9 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jdk/copyright`, `/usr/share/d
 - `LGPL-2`
 - `LGPL-2-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjdk-lts=11.0.14+9-0ubuntu2~20.04
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9-0ubuntu2%7e20.04.dsc' openjdk-lts_11.0.14+9-0ubuntu2~20.04.dsc 4719 SHA512:4c813fef2b9507a25ec3cc4306cefc10f87ccdca070ca5f705cb46897b2b58f19a746a966fb10923b6d18893ac298eb9e0f17345089a06b28e3ef156c8f4519d
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9.orig.tar.xz' openjdk-lts_11.0.14+9.orig.tar.xz 78374336 SHA512:32f73520650665d16685eac7f28819e083c9f2053512a23c7f006eaa0f5a90bb2bc4792c421aba778fe7df65f8ba977cd84c141a52e16b23e51d83dc512f3ae8
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9-0ubuntu2%7e20.04.debian.tar.xz' openjdk-lts_11.0.14+9-0ubuntu2~20.04.debian.tar.xz 172916 SHA512:1a1d21a1315bd1401199512f36810a5a787064bedda5bbe624eccf012152a877d5e14a1d12e36e2617aa8d14314b07c04aa66b0ed3ea20e70277d392816ab8f9
-```
 
 ### `dpkg` source package: `openjpeg2=2.3.1-1ubuntu4.20.04.1`
 
@@ -8166,14 +8161,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.8/copyright`, `/usr/share/doc
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.8=3.8.10-0ubuntu1~20.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1%7e20.04.2.dsc' python3.8_3.8.10-0ubuntu1~20.04.2.dsc 3370 SHA512:29054162745490a8f275ef065276d6ac4d6d9a3dfa2dc8c740a6038c8a9eeee909e0f0d02b07c8ce56324a4e8a55d970886a5d9465953d03ffea245ffc943571
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10.orig.tar.xz' python3.8_3.8.10.orig.tar.xz 18433456 SHA512:0be69705483ff9692e12048a96180e586f9d84c8d53066629f7fb2389585eb75c0f3506bb8182936e322508f58b71f4d8c6dfebbab9049b31b49da11d3b98e80
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.8/python3.8_3.8.10-0ubuntu1%7e20.04.2.debian.tar.xz' python3.8_3.8.10-0ubuntu1~20.04.2.debian.tar.xz 214612 SHA512:9b149f8cf1ede3fbf4aaebd9ecba147dad0c5507d9b7aa3c51e3d4e330a76c863a6749aec59578a66f9175bdb2f625f36c9a42c00b417d79d63c1d9a61e5cb51
-```
 
 ### `dpkg` source package: `raptor2=2.0.15-0ubuntu1.20.04.1`
 
