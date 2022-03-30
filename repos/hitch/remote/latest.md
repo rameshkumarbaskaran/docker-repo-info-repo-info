@@ -1,7 +1,7 @@
 ## `hitch:latest`
 
 ```console
-$ docker pull hitch@sha256:1f1276c17760fb20c750ac8e0c9df1c05c7a5c311d894b3de11341d9769c9364
+$ docker pull hitch@sha256:5a8d6c4f4aaf64d5d8512dc12facf23be2846e643114d0ca26281aced9ca771a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -248,59 +248,59 @@ CMD []
 ### `hitch:latest` - linux; ppc64le
 
 ```console
-$ docker pull hitch@sha256:65091de4ccb8940ff4efe57ab8a9772a2a66c3e90aa9f5b5d1d4b740825eb27a
+$ docker pull hitch@sha256:1ac83655cbb0813a91b5d9994628cb2653216de1d784f0ec31db6f07c0ff2e70
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **37.0 MB (36967827 bytes)**  
+-	Total Size: **37.0 MB (36970025 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:223fbb99b6d98b5b47643b92de577b685229699f3ba1f25f85403788b874017e`
+-	Image ID: `sha256:921af62a85875103f6ba3929edacd2e1ce8103528dbd761350effa3ad25516b8`
 -	Entrypoint: `["docker-hitch-entrypoint"]`
 -	Default Command: `[]`
 
 ```dockerfile
-# Thu, 17 Mar 2022 11:17:54 GMT
-ADD file:e8555f1cb439a45786b92e929cfa154b51f668c5b4cd69e4ce98340c5998fe0c in / 
-# Thu, 17 Mar 2022 11:18:00 GMT
+# Tue, 29 Mar 2022 00:22:08 GMT
+ADD file:e7ae113c10f322a9cffc46b62ba12820e270caaadaee3c5b907c801a37e1632c in / 
+# Tue, 29 Mar 2022 00:22:11 GMT
 CMD ["bash"]
-# Sat, 19 Mar 2022 07:04:10 GMT
+# Wed, 30 Mar 2022 10:53:20 GMT
 ARG SRCVER=1.7.2
-# Sat, 19 Mar 2022 07:04:13 GMT
+# Wed, 30 Mar 2022 10:53:22 GMT
 ARG PKGVER=1
-# Sat, 19 Mar 2022 07:04:17 GMT
+# Wed, 30 Mar 2022 10:53:25 GMT
 ARG DISTVER=bullseye
-# Sat, 19 Mar 2022 07:04:21 GMT
+# Wed, 30 Mar 2022 10:53:27 GMT
 ARG PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794
-# Sat, 19 Mar 2022 07:04:27 GMT
+# Wed, 30 Mar 2022 10:53:30 GMT
 ARG SHASUM=7b35b5f4a3b6dab2599643c0bc90880a77ea518a627b31813f45a7ee8c52982ba4ac07228b640a0bcf90ea7d63421b62884a091fed6664732585585e5ec15bcf
-# Sat, 19 Mar 2022 07:26:24 GMT
+# Wed, 30 Mar 2022 11:09:49 GMT
 # ARGS: DISTVER=bullseye PKGCOMMIT=f12ab7958bc4885f3f00311cbca5103d9e6ba794 PKGVER=1 SHASUM=7b35b5f4a3b6dab2599643c0bc90880a77ea518a627b31813f45a7ee8c52982ba4ac07228b640a0bcf90ea7d63421b62884a091fed6664732585585e5ec15bcf SRCVER=1.7.2
 RUN set -ex;     BASE_PKGS="apt-utils curl dirmngr dpkg-dev debhelper devscripts equivs fakeroot git gnupg pkg-config";     export DEBIAN_FRONTEND=noninteractive;     export DEBCONF_NONINTERACTIVE_SEEN=true;     tmpdir="$(mktemp -d)";     cd "$tmpdir";     apt-get update;     apt-get install -y $BASE_PKGS;     git clone https://github.com/varnish/pkg-hitch.git;     cd pkg-hitch;     git checkout ${PKGCOMMIT};     rm -rf .git;     curl -Lf https://hitch-tls.org/source/hitch-${SRCVER}.tar.gz -o $tmpdir/orig.tgz;     echo "${SHASUM}  $tmpdir/orig.tgz" | sha512sum -c -;     tar xavf $tmpdir/orig.tgz --strip 1;     sed -i         -e "s/@SRCVER@/${SRCVER}/g"         -e "s/@PKGVER@/${PKGVER:-1}/g"         -e "s/@DISTVER@/$DISTVER/g" debian/changelog;     mk-build-deps --install --tool="apt-get -o Debug::pkgProblemResolver=yes --yes" debian/control;     sed -i '' debian/hitch*;     dpkg-buildpackage -us -uc -j"$(nproc)";     apt-get -y purge --auto-remove hitch-build-deps $BASE_PKGS;     apt-get -y install ../*.deb;     sed -i 's/daemon = on/daemon = off/' /etc/hitch/hitch.conf;     rm -rf /var/lib/apt/lists/* "$tmpdir"
-# Sat, 19 Mar 2022 07:26:28 GMT
+# Wed, 30 Mar 2022 11:09:51 GMT
 WORKDIR /etc/hitch
-# Sat, 19 Mar 2022 07:26:28 GMT
+# Wed, 30 Mar 2022 11:09:52 GMT
 COPY file:1abf3c94dce5dc9f6617dc8d36a6fe6f4f7236189d4819f16cefb54288e80e0d in /usr/local/bin/ 
-# Sat, 19 Mar 2022 07:26:32 GMT
+# Wed, 30 Mar 2022 11:09:53 GMT
 ENTRYPOINT ["docker-hitch-entrypoint"]
-# Sat, 19 Mar 2022 07:26:35 GMT
+# Wed, 30 Mar 2022 11:09:55 GMT
 EXPOSE 443
-# Sat, 19 Mar 2022 07:26:37 GMT
+# Wed, 30 Mar 2022 11:09:56 GMT
 CMD []
 ```
 
 -	Layers:
-	-	`sha256:aec78dc45d7b3df12df0672d13e22005592b453f03ff2580efac2598dddd680b`  
-		Last Modified: Thu, 17 Mar 2022 11:28:17 GMT  
-		Size: 35.3 MB (35279758 bytes)  
+	-	`sha256:ecc74bb8af5a048e1123af0e17d88ef3da1d10951ada79e8e1cc9c0a694245d3`  
+		Last Modified: Tue, 29 Mar 2022 00:32:57 GMT  
+		Size: 35.3 MB (35282506 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:887c40c99cc121f02c2422358abe0d493e0a654839fd296127ed3eda0e8f13ac`  
-		Last Modified: Sat, 19 Mar 2022 07:27:08 GMT  
-		Size: 1.7 MB (1687652 bytes)  
+	-	`sha256:9a2b12879beb406605cb0316311af5322378ef9af423cd8cd8108e400a0558ac`  
+		Last Modified: Wed, 30 Mar 2022 11:10:18 GMT  
+		Size: 1.7 MB (1687101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a4c87d06515aa51230da6c70b7e0dacd883d95a5a2ed7d76851f900cd795f76`  
-		Last Modified: Sat, 19 Mar 2022 07:27:08 GMT  
-		Size: 417.0 B  
+	-	`sha256:a62ecdd60c9622d60a0fbfac70bbaa94c624ee92e2c40ff47f1fff1f149f8ff4`  
+		Last Modified: Wed, 30 Mar 2022 11:10:17 GMT  
+		Size: 418.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `hitch:latest` - linux; s390x
