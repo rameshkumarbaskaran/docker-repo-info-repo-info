@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4627ade3d75e42cee6bc2aece6a763d77d51684e72475548058d776c767e3a32`
-- Created: `2022-03-18T22:21:41.486146722Z`
+- Image ID: `sha256:5a77fa54b0b2a0ded5f32550c48913071d4843b802f93c1b7bcf784435399dc4`
+- Created: `2022-03-30T14:00:38.17425663Z`
 - Virtual Size: ~ 53.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -195,16 +195,16 @@ MIT
 ### `apk` package: `krb5-libs`
 
 ```console
-krb5-libs-1.18.4-r0 description:
+krb5-libs-1.18.5-r0 description:
 The shared libraries used by Kerberos 5
 
-krb5-libs-1.18.4-r0 webpage:
+krb5-libs-1.18.5-r0 webpage:
 https://web.mit.edu/kerberos/www/
 
-krb5-libs-1.18.4-r0 installed size:
+krb5-libs-1.18.5-r0 installed size:
 1960 KiB
 
-krb5-libs-1.18.4-r0 license:
+krb5-libs-1.18.5-r0 license:
 MIT
 
 ```
@@ -331,16 +331,16 @@ LGPL-2.0-or-later
 ### `apk` package: `libretls`
 
 ```console
-libretls-3.3.3p1-r2 description:
+libretls-3.3.3p1-r3 description:
 port of libtls from libressl to openssl
 
-libretls-3.3.3p1-r2 webpage:
+libretls-3.3.3p1-r3 webpage:
 https://git.causal.agency/libretls/
 
-libretls-3.3.3p1-r2 installed size:
+libretls-3.3.3p1-r3 installed size:
 84 KiB
 
-libretls-3.3.3p1-r2 license:
+libretls-3.3.3p1-r3 license:
 ISC AND (BSD-3-Clause OR MIT)
 
 ```
@@ -603,16 +603,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.11-r3 description:
+zlib-1.2.12-r0 description:
 A compression/decompression Library
 
-zlib-1.2.11-r3 webpage:
+zlib-1.2.12-r0 webpage:
 https://zlib.net/
 
-zlib-1.2.11-r3 installed size:
+zlib-1.2.12-r0 installed size:
 108 KiB
 
-zlib-1.2.11-r3 license:
+zlib-1.2.12-r0 license:
 Zlib
 
 ```
