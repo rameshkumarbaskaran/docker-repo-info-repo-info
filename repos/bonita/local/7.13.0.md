@@ -1777,14 +1777,9 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jre-headless/copyright`)
 - `LGPL-2`
 - `LGPL-2-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjdk-lts=11.0.14+9-0ubuntu2~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9-0ubuntu2%7e18.04.dsc' openjdk-lts_11.0.14+9-0ubuntu2~18.04.dsc 4697 SHA512:fce4f1be495b6b1e714f9e7cbd580b896e7cffe4476e5704f7d5df6a9e143c8e1c2b2a7a8fe526163fbab39dcb1c314c0ce479efcbb73baa8dbde8e94fdfc674
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9.orig.tar.xz' openjdk-lts_11.0.14+9.orig.tar.xz 78374336 SHA512:32f73520650665d16685eac7f28819e083c9f2053512a23c7f006eaa0f5a90bb2bc4792c421aba778fe7df65f8ba977cd84c141a52e16b23e51d83dc512f3ae8
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.14%2b9-0ubuntu2%7e18.04.debian.tar.xz' openjdk-lts_11.0.14+9-0ubuntu2~18.04.debian.tar.xz 172896 SHA512:52d585621ec4ce2f83fd67c5c7b901f66a00772fdcfdb9cc18fb0d4f1b8d753ee588739fee7792fa504589d19a19484bd0d1f16a5a09b5c9157260b41f4b03c6
-```
 
 ### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.10`
 
