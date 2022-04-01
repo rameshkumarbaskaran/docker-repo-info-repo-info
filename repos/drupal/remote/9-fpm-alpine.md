@@ -1,7 +1,7 @@
 ## `drupal:9-fpm-alpine`
 
 ```console
-$ docker pull drupal@sha256:b37c2e4dcac0dbe972180e07b681c6f7b077202c470a7e99b0ca85559c28c519
+$ docker pull drupal@sha256:b0c407afb7acca8d8c1feeb8c40a4e59a5f97180c044c9114540d2a88578fbf0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -446,14 +446,14 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupa
 ### `drupal:9-fpm-alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull drupal@sha256:232110287a94e03388f5bac279bdc8c47cb6b4eeb59ed2e7758120f902b563cf
+$ docker pull drupal@sha256:f27a1db07572d15f2adbddc42af5cc8c7cac7087b10a5518dc8835e821c2036f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **50.5 MB (50495288 bytes)**  
+-	Total Size: **50.6 MB (50577786 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9b3860b41a5e8df2772629659a7ae09ab67c55ff752fe847f90bc17f12cd9bba`
+-	Image ID: `sha256:48f7c952ec42353085f47c8949f867cabdc98ee0a9f64c5508fede36ad0bb536`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -512,15 +512,15 @@ CMD ["php-fpm"]
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-dev 		libjpeg-turbo-dev 		libpng-dev 		libwebp-dev 		libzip-dev 		postgresql-dev 	; 		docker-php-ext-configure gd 		--with-freetype 		--with-jpeg=/usr/include 		--with-webp 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-network --virtual .drupal-phpexts-rundeps $runDeps; 	apk del --no-network .build-deps
 # Wed, 30 Mar 2022 15:23:15 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Thu, 31 Mar 2022 10:20:35 GMT
-COPY file:6955c7ba02c5cb16962dcfe4b0f4180532979928cffc18a143125dffa5446374 in /usr/local/bin/ 
-# Thu, 31 Mar 2022 10:20:35 GMT
+# Fri, 01 Apr 2022 18:05:57 GMT
+COPY file:c3280c5aa1c63545b95c5964162aa4e4237d0a5e557cee74de211cd921f827d0 in /usr/local/bin/ 
+# Fri, 01 Apr 2022 18:05:57 GMT
 ENV DRUPAL_VERSION=9.3.9
-# Thu, 31 Mar 2022 10:20:36 GMT
+# Fri, 01 Apr 2022 18:05:58 GMT
 WORKDIR /opt/drupal
-# Thu, 31 Mar 2022 10:20:48 GMT
+# Fri, 01 Apr 2022 18:06:10 GMT
 RUN set -eux; 	export COMPOSER_HOME="$(mktemp -d)"; 	composer create-project --no-interaction "drupal/recommended-project:$DRUPAL_VERSION" ./; 	chown -R www-data:www-data web/sites web/modules web/themes; 	rmdir /var/www/html; 	ln -sf /opt/drupal/web /var/www/html; 	rm -rf "$COMPOSER_HOME"
-# Thu, 31 Mar 2022 10:20:49 GMT
+# Fri, 01 Apr 2022 18:06:12 GMT
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupal/vendor/bin
 ```
 
@@ -573,17 +573,17 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/drupa
 		Last Modified: Wed, 30 Mar 2022 15:52:46 GMT  
 		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f403b892e8cf6a6aae173992373771c0e84c5a801cf7573acb0b8843c8de361`  
-		Last Modified: Thu, 31 Mar 2022 10:44:04 GMT  
-		Size: 576.1 KB (576064 bytes)  
+	-	`sha256:cb0dbfe146dcf85b994833092b6765006a4a92f3d2f86a9806beb8ecd1bb5e1e`  
+		Last Modified: Fri, 01 Apr 2022 18:29:01 GMT  
+		Size: 659.0 KB (659024 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5273c4242dd5d44bb0614c7db90da985678191c483f57a794d9de2c7fa3db543`  
-		Last Modified: Thu, 31 Mar 2022 10:44:04 GMT  
-		Size: 114.0 B  
+	-	`sha256:ebcdf09eed0c029135b8949a7ac327bd76766f288c44d539c3c8e88db0cb0366`  
+		Last Modified: Fri, 01 Apr 2022 18:29:00 GMT  
+		Size: 115.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db63533cb30a90f6c86cc1bae33f91ab2b335d705ba2d8a99a3cc13d97898780`  
-		Last Modified: Thu, 31 Mar 2022 10:44:09 GMT  
-		Size: 20.9 MB (20938659 bytes)  
+	-	`sha256:8912fd1ececc7a25cee082f606244bbe6cd844837ab1059ff34c4e624a7a3dfa`  
+		Last Modified: Fri, 01 Apr 2022 18:29:06 GMT  
+		Size: 20.9 MB (20938196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:9-fpm-alpine` - linux; 386
