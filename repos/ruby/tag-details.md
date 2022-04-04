@@ -92,6 +92,24 @@
 -	[`ruby:3.1.1-slim`](#ruby311-slim)
 -	[`ruby:3.1.1-slim-bullseye`](#ruby311-slim-bullseye)
 -	[`ruby:3.1.1-slim-buster`](#ruby311-slim-buster)
+-	[`ruby:3.2-rc`](#ruby32-rc)
+-	[`ruby:3.2-rc-alpine`](#ruby32-rc-alpine)
+-	[`ruby:3.2-rc-alpine3.14`](#ruby32-rc-alpine314)
+-	[`ruby:3.2-rc-alpine3.15`](#ruby32-rc-alpine315)
+-	[`ruby:3.2-rc-bullseye`](#ruby32-rc-bullseye)
+-	[`ruby:3.2-rc-buster`](#ruby32-rc-buster)
+-	[`ruby:3.2-rc-slim`](#ruby32-rc-slim)
+-	[`ruby:3.2-rc-slim-bullseye`](#ruby32-rc-slim-bullseye)
+-	[`ruby:3.2-rc-slim-buster`](#ruby32-rc-slim-buster)
+-	[`ruby:3.2.0-preview1`](#ruby320-preview1)
+-	[`ruby:3.2.0-preview1-alpine`](#ruby320-preview1-alpine)
+-	[`ruby:3.2.0-preview1-alpine3.14`](#ruby320-preview1-alpine314)
+-	[`ruby:3.2.0-preview1-alpine3.15`](#ruby320-preview1-alpine315)
+-	[`ruby:3.2.0-preview1-bullseye`](#ruby320-preview1-bullseye)
+-	[`ruby:3.2.0-preview1-buster`](#ruby320-preview1-buster)
+-	[`ruby:3.2.0-preview1-slim`](#ruby320-preview1-slim)
+-	[`ruby:3.2.0-preview1-slim-bullseye`](#ruby320-preview1-slim-bullseye)
+-	[`ruby:3.2.0-preview1-slim-buster`](#ruby320-preview1-slim-buster)
 -	[`ruby:alpine`](#rubyalpine)
 -	[`ruby:alpine3.14`](#rubyalpine314)
 -	[`ruby:alpine3.15`](#rubyalpine315)
@@ -51461,6 +51479,78 @@ CMD ["irb"]
 		Last Modified: Wed, 30 Mar 2022 00:13:23 GMT  
 		Size: 174.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `ruby:3.2-rc`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-alpine`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-alpine3.14`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-alpine3.15`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-bullseye`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-buster`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-slim`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-slim-bullseye`
+
+**does not exist** (yet?)
+
+## `ruby:3.2-rc-slim-buster`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-alpine`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-alpine3.14`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-alpine3.15`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-bullseye`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-buster`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-slim`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-slim-bullseye`
+
+**does not exist** (yet?)
+
+## `ruby:3.2.0-preview1-slim-buster`
+
+**does not exist** (yet?)
 
 ## `ruby:alpine`
 
