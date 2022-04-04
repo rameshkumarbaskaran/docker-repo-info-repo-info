@@ -1,7 +1,7 @@
 ## `clojure:openjdk-11-bullseye`
 
 ```console
-$ docker pull clojure@sha256:e59f4ad72d93dab8e7bd11a95924bb32cd164d457b291108a7f61c7b1ba3a189
+$ docker pull clojure@sha256:1fbc292fd33cddd743e42f5459302bda1f85645f1ade598e29193bb64f4f50a9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull clojure@sha256:e59f4ad72d93dab8e7bd11a95924bb32cd164d457b291108a7f
 ### `clojure:openjdk-11-bullseye` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:e9be7e0e2696dd2acf606df56d098d9a79ff23839edac3fc26d4b895766f57f0
+$ docker pull clojure@sha256:cc490a2e6811b5d394fff8292ed8e745084d1640cff588dabec6d03b37256187
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **357.0 MB (357033826 bytes)**  
+-	Total Size: **357.4 MB (357448474 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:328abe213aae98854a85eb97e7f41fe5b9f35cd094c35b18f8cb855cba231f1a`
+-	Image ID: `sha256:52feb7580ac0fa0cf48aa468f58f5e329142c16bb5587015feb952f8d4495e00`
 -	Default Command: `["clj"]`
 
 ```dockerfile
@@ -49,15 +49,15 @@ ENV JAVA_VERSION=11.0.14.1
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
 # Tue, 29 Mar 2022 23:11:28 GMT
 CMD ["jshell"]
-# Tue, 29 Mar 2022 23:47:22 GMT
-ENV CLOJURE_VERSION=1.10.3.1087
-# Tue, 29 Mar 2022 23:47:22 GMT
+# Mon, 04 Apr 2022 21:28:10 GMT
+ENV CLOJURE_VERSION=1.11.0.1100
+# Mon, 04 Apr 2022 21:28:10 GMT
 WORKDIR /tmp
-# Tue, 29 Mar 2022 23:47:30 GMT
-RUN apt-get update && apt-get install -y make rlwrap && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "fd3d465ac30095157ce754f1551b840008a6e3503ce5023d042d0490f7bafb98 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)"
-# Tue, 29 Mar 2022 23:47:30 GMT
+# Mon, 04 Apr 2022 21:28:18 GMT
+RUN apt-get update && apt-get install -y make rlwrap && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "a71bd520bd43d4be6e0cab0c525f5d1f85911fc276f3d0f37f00243fb0f1e594 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)"
+# Mon, 04 Apr 2022 21:28:18 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Tue, 29 Mar 2022 23:47:30 GMT
+# Mon, 04 Apr 2022 21:28:18 GMT
 CMD ["clj"]
 ```
 
@@ -90,26 +90,26 @@ CMD ["clj"]
 		Last Modified: Tue, 29 Mar 2022 23:27:29 GMT  
 		Size: 203.3 MB (203253348 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:36b4235113c36c662788ae6febced680db40bc214dbb8b1c8b29f2dac4a8f254`  
-		Last Modified: Wed, 30 Mar 2022 00:06:55 GMT  
-		Size: 22.8 MB (22814698 bytes)  
+	-	`sha256:0c4642a7b002196403e766e443756345dedd5456b108179da500af4809b0c815`  
+		Last Modified: Mon, 04 Apr 2022 21:37:39 GMT  
+		Size: 23.2 MB (23229342 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:89f9937173a103d96571f075cb804fd503d07308cbd8f74cdc952cd1960ba7be`  
-		Last Modified: Wed, 30 Mar 2022 00:06:54 GMT  
-		Size: 619.0 B  
+	-	`sha256:c32959cd14b0f8b8040d2df26c2b2b8aa3b19f14484447e2b77e182caa5a87a4`  
+		Last Modified: Mon, 04 Apr 2022 21:37:38 GMT  
+		Size: 623.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-11-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull clojure@sha256:bcf1f95c764fb50c3c05406346d41c18bbe3a688c9178a0a9756fd66fa3abf6e
+$ docker pull clojure@sha256:10b3477dfa0c7e59440ed4bb3c34619247c7316f1759e40827a6a34ece80592b
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **352.8 MB (352778643 bytes)**  
+-	Total Size: **353.2 MB (353195739 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1b1459d9dca51c08fbcc9ee567f296a86f3f36b89a8daafdc386ed0c46b07b2f`
+-	Image ID: `sha256:430f29beed7a45321e212b7312f0ec0307ca8cf2cec5277d65a897f2cd8b384e`
 -	Default Command: `["clj"]`
 
 ```dockerfile
@@ -139,15 +139,15 @@ ENV JAVA_VERSION=11.0.14.1
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
 # Wed, 30 Mar 2022 09:06:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 09:56:45 GMT
-ENV CLOJURE_VERSION=1.10.3.1087
-# Wed, 30 Mar 2022 09:56:45 GMT
+# Mon, 04 Apr 2022 20:49:01 GMT
+ENV CLOJURE_VERSION=1.11.0.1100
+# Mon, 04 Apr 2022 20:49:02 GMT
 WORKDIR /tmp
-# Wed, 30 Mar 2022 09:56:55 GMT
-RUN apt-get update && apt-get install -y make rlwrap && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "fd3d465ac30095157ce754f1551b840008a6e3503ce5023d042d0490f7bafb98 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)"
-# Wed, 30 Mar 2022 09:56:57 GMT
+# Mon, 04 Apr 2022 20:49:10 GMT
+RUN apt-get update && apt-get install -y make rlwrap && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && sha256sum linux-install-$CLOJURE_VERSION.sh && echo "a71bd520bd43d4be6e0cab0c525f5d1f85911fc276f3d0f37f00243fb0f1e594 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && rm linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)"
+# Mon, 04 Apr 2022 20:49:12 GMT
 COPY file:b0aef3ea203de7b5c2ea645debf58c8231445a2e3070b72749b54614f4a89b82 in /usr/local/bin/rlwrap 
-# Wed, 30 Mar 2022 09:56:57 GMT
+# Mon, 04 Apr 2022 20:49:12 GMT
 CMD ["clj"]
 ```
 
@@ -180,11 +180,11 @@ CMD ["clj"]
 		Last Modified: Wed, 30 Mar 2022 09:29:52 GMT  
 		Size: 200.9 MB (200882722 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d03d8ed7577c1695026b4b87563b54a1e5d4e71ab6b4ab52d7773d2bf9fbe2dd`  
-		Last Modified: Wed, 30 Mar 2022 10:23:31 GMT  
-		Size: 22.6 MB (22573588 bytes)  
+	-	`sha256:45e7e024bf95b15e6992f61f3ac3b68d985dd8ff67f04dbb58f4b97eb588907e`  
+		Last Modified: Mon, 04 Apr 2022 21:04:16 GMT  
+		Size: 23.0 MB (22990682 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bd112a6d6f829cdc24534939562f806da49124feff4ed4853f62386a41cae9c6`  
-		Last Modified: Wed, 30 Mar 2022 10:23:28 GMT  
-		Size: 622.0 B  
+	-	`sha256:50470d626ee74e2b426cee01458074a81cf4a3233cb250270e28ead228bae62a`  
+		Last Modified: Mon, 04 Apr 2022 21:04:14 GMT  
+		Size: 624.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
