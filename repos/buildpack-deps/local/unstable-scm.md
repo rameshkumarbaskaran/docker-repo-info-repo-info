@@ -131,19 +131,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.4.3
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.4.3.dsc' apt_2.4.3.dsc 2797 SHA256:1596dc1289a04a1ce46e3285a7fae6bdc91bbe6a89cf54736fbde636ff93aea8
-'http://deb.debian.org/debian/pool/main/a/apt/apt_2.4.3.tar.xz' apt_2.4.3.tar.xz 2216172 SHA256:5a7215ca924302da0b2205862cd2d651326eea222a589184ec6ce663885729f7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/2.4.3/
 
-- https://sources.debian.net/src/apt/2.4.3/ (for browsing the source)
-- https://sources.debian.net/src/apt/2.4.3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/2.4.3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.5.1-1`
 
@@ -1235,21 +1229,13 @@ Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
 - `ISC-Original`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libbsd=0.11.5-1
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.5-1.dsc' libbsd_0.11.5-1.dsc 2292 SHA256:51479863a91fc2293da337d926862465e460bf4afdc3c0b362939749bfee6c53
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.5.orig.tar.xz' libbsd_0.11.5.orig.tar.xz 409972 SHA256:1a9c952525635c1bb6770cb22e969b938d8e6a9d7912362b98ee8370599b0efd
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.5.orig.tar.xz.asc' libbsd_0.11.5.orig.tar.xz.asc 833 SHA256:95e418668c1d3f16a63dca24b9149119bdaf5095a3e1f3f84673be1a108a0916
-'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.5-1.debian.tar.xz' libbsd_0.11.5-1.debian.tar.xz 17604 SHA256:83d6f3205c8e0119de85763831f3e09a8152a695d2cebc5a55069472e97e6d0c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libbsd/0.11.5-1/
 
-- https://sources.debian.net/src/libbsd/0.11.5-1/ (for browsing the source)
-- https://sources.debian.net/src/libbsd/0.11.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libbsd/0.11.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libcap-ng=0.7.9-2.2`
 
@@ -1918,20 +1904,13 @@ Licenses: (parsed from: `/usr/share/doc/libzstd1/copyright`)
 - `GPL-2`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libzstd=1.4.9+dfsg-1
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.9%2bdfsg-1.dsc' libzstd_1.4.9+dfsg-1.dsc 2165 SHA256:7b6f8fcfb0b3e1b429e0220bcec56c359f7db010d69a7a855a1a724e588492dd
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.9%2bdfsg.orig.tar.xz' libzstd_1.4.9+dfsg.orig.tar.xz 1344352 SHA256:3154e7b52e63b626a64476b5ecab57c367ec3f14220ad5deeac6f249d68cd911
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.4.9%2bdfsg-1.debian.tar.xz' libzstd_1.4.9+dfsg-1.debian.tar.xz 11704 SHA256:d68c20fb972cc174edeef6d7e31d7e8090ba7819c75747312d490cbc15bd35d1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libzstd/1.4.9+dfsg-1/
 
-- https://sources.debian.net/src/libzstd/1.4.9+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/libzstd/1.4.9+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libzstd/1.4.9+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=11.1.0`
 
@@ -2607,20 +2586,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.10-minimal/copyright`, `/usr/
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.10=3.10.4-1
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.4-1.dsc' python3.10_3.10.4-1.dsc 3544 SHA256:c67dc7c159dabf6502454f5f399c4519066c9b592f3f3c974d810b8a8b97d487
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.4.orig.tar.xz' python3.10_3.10.4.orig.tar.xz 19342692 SHA256:80bf925f571da436b35210886cf79f6eb5fa5d6c571316b73568343451f77a19
-'http://deb.debian.org/debian/pool/main/p/python3.10/python3.10_3.10.4-1.debian.tar.xz' python3.10_3.10.4-1.debian.tar.xz 215436 SHA256:24e3b7525739c4afc4e0ec3d09c8c4a63ba31db270d121100c03d766e30dae52
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.10/3.10.4-1/
 
-- https://sources.debian.net/src/python3.10/3.10.4-1/ (for browsing the source)
-- https://sources.debian.net/src/python3.10/3.10.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.10/3.10.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.1.2-1`
 
@@ -3064,21 +3036,13 @@ Licenses: (parsed from: `/usr/share/doc/wget/copyright`)
 - `GFDL-1.2`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris wget=1.21.2-2
-'http://deb.debian.org/debian/pool/main/w/wget/wget_1.21.2-2.dsc' wget_1.21.2-2.dsc 2167 SHA256:163ced65ad67e242401ff2e0a94350f8865d51cd6b5d3e00b0256396742f13be
-'http://deb.debian.org/debian/pool/main/w/wget/wget_1.21.2.orig.tar.gz' wget_1.21.2.orig.tar.gz 5004576 SHA256:e6d4c76be82c676dd7e8c61a29b2ac8510ae108a810b5d1d18fc9a1d2c9a2497
-'http://deb.debian.org/debian/pool/main/w/wget/wget_1.21.2.orig.tar.gz.asc' wget_1.21.2.orig.tar.gz.asc 833 SHA256:877e0b2580655a0ef71628f3975d2f629f56f5338b169667f97c2742e9970137
-'http://deb.debian.org/debian/pool/main/w/wget/wget_1.21.2-2.debian.tar.xz' wget_1.21.2-2.debian.tar.xz 61048 SHA256:c1eaf8288894ea516db3b0a6f5f733ce5a0f08c8773beac86a17594958fb1323
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/wget/1.21.2-2/
 
-- https://sources.debian.net/src/wget/1.21.2-2/ (for browsing the source)
-- https://sources.debian.net/src/wget/1.21.2-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/wget/1.21.2-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xxhash=0.8.1-1`
 
