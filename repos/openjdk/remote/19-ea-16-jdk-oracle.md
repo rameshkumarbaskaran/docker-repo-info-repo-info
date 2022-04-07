@@ -1,4 +1,4 @@
-## `openjdk:19-oracle`
+## `openjdk:19-ea-16-jdk-oracle`
 
 ```console
 $ docker pull openjdk@sha256:0c223cdf8b70724c44dd7b746dcd7a452d0d0a231a61e7c896349257aafbe59f
@@ -9,7 +9,7 @@ $ docker pull openjdk@sha256:0c223cdf8b70724c44dd7b746dcd7a452d0d0a231a61e7c8963
 	-	linux; amd64
 	-	linux; arm64 variant v8
 
-### `openjdk:19-oracle` - linux; amd64
+### `openjdk:19-ea-16-jdk-oracle` - linux; amd64
 
 ```console
 $ docker pull openjdk@sha256:f78872a0ca1ada040758a0edc494863146acae50f9a5cdbfe43a7b55d0dd9d28
@@ -57,7 +57,7 @@ CMD ["jshell"]
 		Size: 193.2 MB (193175943 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `openjdk:19-oracle` - linux; arm64 variant v8
+### `openjdk:19-ea-16-jdk-oracle` - linux; arm64 variant v8
 
 ```console
 $ docker pull openjdk@sha256:de4efc83c752c2f656e9e0b7953ffc3314e5f322a28910eb8ee590d934a2f21c
