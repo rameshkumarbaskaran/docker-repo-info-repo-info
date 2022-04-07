@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:04471d67cda6379abe5f290e293438440877fe5181ccd0f44f701864ec35a6b8`
-- Created: `2022-03-29T23:54:38.699536876Z`
-- Virtual Size: ~ 372.65 Mb  
+- Image ID: `sha256:4dd2414ce9ae8aaf85254b6dcad3d539e4914920a25d9abbeeba5b91650a9c93`
+- Created: `2022-04-05T16:00:44.00955137Z`
+- Virtual Size: ~ 373.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint"]`
@@ -13,7 +13,7 @@
   - `PATH=/opt/openjdk-19/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/opt/openjdk-19`
   - `JAVA_VERSION=19-ea+5`
-  - `CLOJURE_VERSION=1.10.3.1087`
+  - `CLOJURE_VERSION=1.11.0.1100`
 
 ## `apk` (`.apk`-based packages)
 
@@ -105,16 +105,16 @@ MIT
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.34.1-r4 description:
+busybox-1.34.1-r5 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.34.1-r4 webpage:
+busybox-1.34.1-r5 webpage:
 https://busybox.net/
 
-busybox-1.34.1-r4 installed size:
+busybox-1.34.1-r5 installed size:
 924 KiB
 
-busybox-1.34.1-r4 license:
+busybox-1.34.1-r5 license:
 GPL-2.0-only
 
 ```
@@ -513,16 +513,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.34.1-r4 description:
+ssl_client-1.34.1-r5 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.34.1-r4 webpage:
+ssl_client-1.34.1-r5 webpage:
 https://busybox.net/
 
-ssl_client-1.34.1-r4 installed size:
+ssl_client-1.34.1-r5 installed size:
 28 KiB
 
-ssl_client-1.34.1-r4 license:
+ssl_client-1.34.1-r5 license:
 GPL-2.0-only
 
 ```

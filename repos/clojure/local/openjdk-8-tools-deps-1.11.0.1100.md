@@ -1,20 +1,19 @@
-# `clojure:openjdk-19`
+# `clojure:openjdk-8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:966f676c25c353638e8f39fe89448c78bcff773bf43ea0430d1aa00d20d977fc`
-- Created: `2022-03-29T23:53:40.473151702Z`
-- Virtual Size: ~ 554.85 Mb  
+- Image ID: `sha256:e7ae4391cec85c6151490b8ebd358c756c759d19e03a86909d82e9424a9e6612`
+- Created: `2022-04-04T21:27:57.944410567Z`
+- Virtual Size: ~ 432.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Entrypoint: `["entrypoint"]`
-- Command: `["-M","--repl"]`
+- Command: `["clj"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-19/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_HOME=/usr/local/openjdk-19`
+  - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=19-ea+15`
-  - `CLOJURE_VERSION=1.10.3.1087`
+  - `JAVA_VERSION=8u322`
+  - `CLOJURE_VERSION=1.11.0.1100`
 
 ## `dpkg` (`.deb`-based packages)
 
