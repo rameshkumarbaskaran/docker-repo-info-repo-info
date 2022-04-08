@@ -7,11 +7,11 @@
 -	[`rocket.chat:3.18.5`](#rocketchat3185)
 -	[`rocket.chat:4`](#rocketchat4)
 -	[`rocket.chat:4.4`](#rocketchat44)
--	[`rocket.chat:4.4.2`](#rocketchat442)
+-	[`rocket.chat:4.4.3`](#rocketchat443)
 -	[`rocket.chat:4.5`](#rocketchat45)
--	[`rocket.chat:4.5.5`](#rocketchat455)
+-	[`rocket.chat:4.5.6`](#rocketchat456)
 -	[`rocket.chat:4.6`](#rocketchat46)
--	[`rocket.chat:4.6.0`](#rocketchat460)
+-	[`rocket.chat:4.6.1`](#rocketchat461)
 -	[`rocket.chat:latest`](#rocketchatlatest)
 
 ## `rocket.chat:3`
@@ -239,7 +239,7 @@ CMD ["node" "main.js"]
 ## `rocket.chat:4`
 
 ```console
-$ docker pull rocket.chat@sha256:cfafb2db795ccb2d226e28491b5e652ba7e05c95a264031434cc4c1613be6d48
+$ docker pull rocket.chat@sha256:e0782b3f32afd053beda10cb832693d087e6fa86469d2ff658febb6bc8fd62f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -249,14 +249,14 @@ $ docker pull rocket.chat@sha256:cfafb2db795ccb2d226e28491b5e652ba7e05c95a264031
 ### `rocket.chat:4` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:f1cd6447cc0d417c6e4dfd41f2fa53dd33874f5faa90929aaf1e951e34f10b1f
+$ docker pull rocket.chat@sha256:3b7b708195325fb5beb2fea180f818f9e256f6337c65b03e7d99988530bfed48
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **242.0 MB (242014603 bytes)**  
+-	Total Size: **242.1 MB (242080965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a12f919af4dc2769fa4b4a13b47327668567189369e8452176258ae2f6614e3`
+-	Image ID: `sha256:1f12ffc04e520fd731e72e65d18b6190593983c940d617ce78239e9252c10bb1`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -274,21 +274,21 @@ RUN ARCH="x64"   && set -eux   && apt-get update && apt-get install -y --no-inst
 RUN groupadd -r rocketchat   && useradd -r -g rocketchat rocketchat   && mkdir -p /app/uploads   && chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:47:01 GMT
 VOLUME [/app/uploads]
-# Mon, 04 Apr 2022 21:51:45 GMT
-ENV RC_VERSION=4.6.0
-# Mon, 04 Apr 2022 21:51:45 GMT
+# Fri, 08 Apr 2022 20:40:24 GMT
+ENV RC_VERSION=4.6.1
+# Fri, 08 Apr 2022 20:40:24 GMT
 WORKDIR /app
-# Mon, 04 Apr 2022 21:52:43 GMT
+# Fri, 08 Apr 2022 20:41:23 GMT
 RUN set -eux   && apt-get update   && apt-get install -y --no-install-recommends fontconfig   && aptMark="$(apt-mark showmanual)"   && apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg   && rm -rf /var/lib/apt/lists/*   && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc   && gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz   && tar zxf rocket.chat.tgz   && rm rocket.chat.tgz rocket.chat.tgz.asc   && cd bundle/programs/server   && npm install   && apt-mark auto '.*' > /dev/null   && apt-mark manual $aptMark > /dev/null   && find /usr/local -type f -executable -exec ldd '{}' ';'   | awk '/=>/ { print $(NF-1) }'   | sort -u   | xargs -r dpkg-query --search   | cut -d: -f1   | sort -u   | xargs -r apt-mark manual   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false   && npm cache clear --force   && chown -R rocketchat:rocketchat /app
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 USER rocketchat
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 WORKDIR /app/bundle
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 EXPOSE 3000
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -305,15 +305,15 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:54:20 GMT  
 		Size: 1.8 KB (1809 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:676642a6cad48760f35bd47eb8148e5b2be02eed4c3bc8f1b3212083b2530558`  
-		Last Modified: Mon, 04 Apr 2022 21:53:47 GMT  
-		Size: 179.3 MB (179336178 bytes)  
+	-	`sha256:af6ec192f41c2b98fb7f21c297b9d857cad563ff8e2347c6e059b954a98f24a9`  
+		Last Modified: Fri, 08 Apr 2022 20:44:54 GMT  
+		Size: 179.4 MB (179402540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rocket.chat:4.4`
 
 ```console
-$ docker pull rocket.chat@sha256:cad5f8c1396ca753a0b7163eb1a7e695325ecd706ea4fe20aa9ad60d49bc2505
+$ docker pull rocket.chat@sha256:481c8ae6a46666b9971f0c49bb11042c2cf76fdbfb081ad8aa5a37f1c2f6442e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -323,14 +323,14 @@ $ docker pull rocket.chat@sha256:cad5f8c1396ca753a0b7163eb1a7e695325ecd706ea4fe2
 ### `rocket.chat:4.4` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:add1002cc7822a4a78a078ba00cc56ff99eacd3683da487fff41ac4e5eb18c05
+$ docker pull rocket.chat@sha256:085d4db158b8924dffd52a055d4feeeba13bdcbe2a13cfcd69b045397821fe29
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.2 MB (240164313 bytes)**  
+-	Total Size: **240.2 MB (240215397 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b619188fa0dd7ff2b8d64fa19eb4f66d35e755b4186ea775cc92c5bb567fa423`
+-	Image ID: `sha256:26e7d41b5b51cccf38e41de9bc0c8574900c8da0b4276f81b5ecd66dfc9fd63b`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -348,21 +348,21 @@ RUN ARCH="x64"     && set -eux     && apt-get update && apt-get install -y --no-
 RUN groupadd -r rocketchat &&  useradd -r -g rocketchat rocketchat &&  mkdir -p /app/uploads &&  chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:48:38 GMT
 VOLUME [/app/uploads]
-# Tue, 29 Mar 2022 18:48:38 GMT
-ENV RC_VERSION=4.4.2
-# Tue, 29 Mar 2022 18:48:38 GMT
+# Fri, 08 Apr 2022 20:42:42 GMT
+ENV RC_VERSION=4.4.3
+# Fri, 08 Apr 2022 20:42:42 GMT
 WORKDIR /app
-# Tue, 29 Mar 2022 18:49:36 GMT
+# Fri, 08 Apr 2022 20:43:45 GMT
 RUN set -eux &&  apt-get update &&  apt-get install -y --no-install-recommends fontconfig &&  aptMark="$(apt-mark showmanual)" &&  apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg && rm -rf /var/lib/apt/lists/* &&  gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104 &&  curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz &&  curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc &&  gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz &&  tar zxf rocket.chat.tgz &&  rm rocket.chat.tgz rocket.chat.tgz.asc &&  cd bundle/programs/server &&  npm install &&  apt-mark auto '.*' > /dev/null &&  apt-mark manual $aptMark > /dev/null &&  find /usr/local -type f -executable -exec ldd '{}' ';'     | awk '/=>/ { print $(NF-1) }'     | sort -u     | xargs -r dpkg-query --search     | cut -d: -f1     | sort -u     | xargs -r apt-mark manual &&  apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false &&  npm cache clear --force &&  chown -R rocketchat:rocketchat /app
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 USER rocketchat
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 WORKDIR /app/bundle
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 EXPOSE 3000
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -379,32 +379,32 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:55:08 GMT  
 		Size: 1.8 KB (1808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ec4cd6f378eb533cdf7d51cb7d2729018718a4ada6209817be169eafc3f4bf4`  
-		Last Modified: Tue, 29 Mar 2022 18:55:42 GMT  
-		Size: 177.5 MB (177485464 bytes)  
+	-	`sha256:0c155b4a2f50fe92192ab1b15b41916bb55d837521e5b9f8076af16f9affa235`  
+		Last Modified: Fri, 08 Apr 2022 20:46:28 GMT  
+		Size: 177.5 MB (177536548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `rocket.chat:4.4.2`
+## `rocket.chat:4.4.3`
 
 ```console
-$ docker pull rocket.chat@sha256:cad5f8c1396ca753a0b7163eb1a7e695325ecd706ea4fe20aa9ad60d49bc2505
+$ docker pull rocket.chat@sha256:481c8ae6a46666b9971f0c49bb11042c2cf76fdbfb081ad8aa5a37f1c2f6442e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms: 1
 	-	linux; amd64
 
-### `rocket.chat:4.4.2` - linux; amd64
+### `rocket.chat:4.4.3` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:add1002cc7822a4a78a078ba00cc56ff99eacd3683da487fff41ac4e5eb18c05
+$ docker pull rocket.chat@sha256:085d4db158b8924dffd52a055d4feeeba13bdcbe2a13cfcd69b045397821fe29
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.2 MB (240164313 bytes)**  
+-	Total Size: **240.2 MB (240215397 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b619188fa0dd7ff2b8d64fa19eb4f66d35e755b4186ea775cc92c5bb567fa423`
+-	Image ID: `sha256:26e7d41b5b51cccf38e41de9bc0c8574900c8da0b4276f81b5ecd66dfc9fd63b`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -422,21 +422,21 @@ RUN ARCH="x64"     && set -eux     && apt-get update && apt-get install -y --no-
 RUN groupadd -r rocketchat &&  useradd -r -g rocketchat rocketchat &&  mkdir -p /app/uploads &&  chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:48:38 GMT
 VOLUME [/app/uploads]
-# Tue, 29 Mar 2022 18:48:38 GMT
-ENV RC_VERSION=4.4.2
-# Tue, 29 Mar 2022 18:48:38 GMT
+# Fri, 08 Apr 2022 20:42:42 GMT
+ENV RC_VERSION=4.4.3
+# Fri, 08 Apr 2022 20:42:42 GMT
 WORKDIR /app
-# Tue, 29 Mar 2022 18:49:36 GMT
+# Fri, 08 Apr 2022 20:43:45 GMT
 RUN set -eux &&  apt-get update &&  apt-get install -y --no-install-recommends fontconfig &&  aptMark="$(apt-mark showmanual)" &&  apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg && rm -rf /var/lib/apt/lists/* &&  gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104 &&  curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz &&  curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc &&  gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz &&  tar zxf rocket.chat.tgz &&  rm rocket.chat.tgz rocket.chat.tgz.asc &&  cd bundle/programs/server &&  npm install &&  apt-mark auto '.*' > /dev/null &&  apt-mark manual $aptMark > /dev/null &&  find /usr/local -type f -executable -exec ldd '{}' ';'     | awk '/=>/ { print $(NF-1) }'     | sort -u     | xargs -r dpkg-query --search     | cut -d: -f1     | sort -u     | xargs -r apt-mark manual &&  apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false &&  npm cache clear --force &&  chown -R rocketchat:rocketchat /app
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 USER rocketchat
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 WORKDIR /app/bundle
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 EXPOSE 3000
-# Tue, 29 Mar 2022 18:49:41 GMT
+# Fri, 08 Apr 2022 20:43:50 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -453,15 +453,15 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:55:08 GMT  
 		Size: 1.8 KB (1808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ec4cd6f378eb533cdf7d51cb7d2729018718a4ada6209817be169eafc3f4bf4`  
-		Last Modified: Tue, 29 Mar 2022 18:55:42 GMT  
-		Size: 177.5 MB (177485464 bytes)  
+	-	`sha256:0c155b4a2f50fe92192ab1b15b41916bb55d837521e5b9f8076af16f9affa235`  
+		Last Modified: Fri, 08 Apr 2022 20:46:28 GMT  
+		Size: 177.5 MB (177536548 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rocket.chat:4.5`
 
 ```console
-$ docker pull rocket.chat@sha256:e4c68cdaa87d030b4528152121aeb6ee96f62564b8c5a6aa568f4b239a3d5b40
+$ docker pull rocket.chat@sha256:389e4d7b54a6433fff65ec61e4d2895a0b56257fe44cf3405a93e0c3c200fe82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -471,14 +471,14 @@ $ docker pull rocket.chat@sha256:e4c68cdaa87d030b4528152121aeb6ee96f62564b8c5a6a
 ### `rocket.chat:4.5` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:2d28bd06003b6181487dd09f8c1e45e84a892c08264352364a296deb1a29b3c8
+$ docker pull rocket.chat@sha256:5a7b2cc77ab2cf46c277a44fb8fa9fb9d30f301ae96c2e0a386cf1c57e2baf9c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **241.5 MB (241536742 bytes)**  
+-	Total Size: **241.6 MB (241600328 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4ab109f186607232d09fa7bfd2e3b5223762d1769b403fe466ea00e10cce7357`
+-	Image ID: `sha256:ffd585ac9fdc65350002bbde43f820cff4bcfe7026562f13554c92e621b54d9c`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -496,21 +496,21 @@ RUN ARCH="x64"   && set -eux   && apt-get update && apt-get install -y --no-inst
 RUN groupadd -r rocketchat   && useradd -r -g rocketchat rocketchat   && mkdir -p /app/uploads   && chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:47:01 GMT
 VOLUME [/app/uploads]
-# Fri, 01 Apr 2022 02:27:58 GMT
-ENV RC_VERSION=4.5.5
-# Fri, 01 Apr 2022 02:27:58 GMT
+# Fri, 08 Apr 2022 20:41:33 GMT
+ENV RC_VERSION=4.5.6
+# Fri, 08 Apr 2022 20:41:33 GMT
 WORKDIR /app
-# Fri, 01 Apr 2022 02:28:59 GMT
+# Fri, 08 Apr 2022 20:42:33 GMT
 RUN set -eux   && apt-get update   && apt-get install -y --no-install-recommends fontconfig   && aptMark="$(apt-mark showmanual)"   && apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg   && rm -rf /var/lib/apt/lists/*   && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc   && gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz   && tar zxf rocket.chat.tgz   && rm rocket.chat.tgz rocket.chat.tgz.asc   && cd bundle/programs/server   && npm install   && apt-mark auto '.*' > /dev/null   && apt-mark manual $aptMark > /dev/null   && find /usr/local -type f -executable -exec ldd '{}' ';'   | awk '/=>/ { print $(NF-1) }'   | sort -u   | xargs -r dpkg-query --search   | cut -d: -f1   | sort -u   | xargs -r apt-mark manual   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false   && npm cache clear --force   && chown -R rocketchat:rocketchat /app
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 USER rocketchat
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 WORKDIR /app/bundle
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 EXPOSE 3000
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -527,32 +527,32 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:54:20 GMT  
 		Size: 1.8 KB (1809 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e209e69e6b559f4d9efc65576cac81ee152bff66e9f37c1094b396c98aa30c1`  
-		Last Modified: Fri, 01 Apr 2022 02:29:59 GMT  
-		Size: 178.9 MB (178858317 bytes)  
+	-	`sha256:4feea542289463fb00d2be0d93c5fbc2c585e10e7d05e8be774123014213d462`  
+		Last Modified: Fri, 08 Apr 2022 20:45:43 GMT  
+		Size: 178.9 MB (178921903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `rocket.chat:4.5.5`
+## `rocket.chat:4.5.6`
 
 ```console
-$ docker pull rocket.chat@sha256:e4c68cdaa87d030b4528152121aeb6ee96f62564b8c5a6aa568f4b239a3d5b40
+$ docker pull rocket.chat@sha256:389e4d7b54a6433fff65ec61e4d2895a0b56257fe44cf3405a93e0c3c200fe82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms: 1
 	-	linux; amd64
 
-### `rocket.chat:4.5.5` - linux; amd64
+### `rocket.chat:4.5.6` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:2d28bd06003b6181487dd09f8c1e45e84a892c08264352364a296deb1a29b3c8
+$ docker pull rocket.chat@sha256:5a7b2cc77ab2cf46c277a44fb8fa9fb9d30f301ae96c2e0a386cf1c57e2baf9c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **241.5 MB (241536742 bytes)**  
+-	Total Size: **241.6 MB (241600328 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4ab109f186607232d09fa7bfd2e3b5223762d1769b403fe466ea00e10cce7357`
+-	Image ID: `sha256:ffd585ac9fdc65350002bbde43f820cff4bcfe7026562f13554c92e621b54d9c`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -570,21 +570,21 @@ RUN ARCH="x64"   && set -eux   && apt-get update && apt-get install -y --no-inst
 RUN groupadd -r rocketchat   && useradd -r -g rocketchat rocketchat   && mkdir -p /app/uploads   && chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:47:01 GMT
 VOLUME [/app/uploads]
-# Fri, 01 Apr 2022 02:27:58 GMT
-ENV RC_VERSION=4.5.5
-# Fri, 01 Apr 2022 02:27:58 GMT
+# Fri, 08 Apr 2022 20:41:33 GMT
+ENV RC_VERSION=4.5.6
+# Fri, 08 Apr 2022 20:41:33 GMT
 WORKDIR /app
-# Fri, 01 Apr 2022 02:28:59 GMT
+# Fri, 08 Apr 2022 20:42:33 GMT
 RUN set -eux   && apt-get update   && apt-get install -y --no-install-recommends fontconfig   && aptMark="$(apt-mark showmanual)"   && apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg   && rm -rf /var/lib/apt/lists/*   && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc   && gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz   && tar zxf rocket.chat.tgz   && rm rocket.chat.tgz rocket.chat.tgz.asc   && cd bundle/programs/server   && npm install   && apt-mark auto '.*' > /dev/null   && apt-mark manual $aptMark > /dev/null   && find /usr/local -type f -executable -exec ldd '{}' ';'   | awk '/=>/ { print $(NF-1) }'   | sort -u   | xargs -r dpkg-query --search   | cut -d: -f1   | sort -u   | xargs -r apt-mark manual   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false   && npm cache clear --force   && chown -R rocketchat:rocketchat /app
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 USER rocketchat
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 WORKDIR /app/bundle
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 EXPOSE 3000
-# Fri, 01 Apr 2022 02:29:04 GMT
+# Fri, 08 Apr 2022 20:42:38 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -601,15 +601,15 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:54:20 GMT  
 		Size: 1.8 KB (1809 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e209e69e6b559f4d9efc65576cac81ee152bff66e9f37c1094b396c98aa30c1`  
-		Last Modified: Fri, 01 Apr 2022 02:29:59 GMT  
-		Size: 178.9 MB (178858317 bytes)  
+	-	`sha256:4feea542289463fb00d2be0d93c5fbc2c585e10e7d05e8be774123014213d462`  
+		Last Modified: Fri, 08 Apr 2022 20:45:43 GMT  
+		Size: 178.9 MB (178921903 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rocket.chat:4.6`
 
 ```console
-$ docker pull rocket.chat@sha256:cfafb2db795ccb2d226e28491b5e652ba7e05c95a264031434cc4c1613be6d48
+$ docker pull rocket.chat@sha256:e0782b3f32afd053beda10cb832693d087e6fa86469d2ff658febb6bc8fd62f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -619,14 +619,14 @@ $ docker pull rocket.chat@sha256:cfafb2db795ccb2d226e28491b5e652ba7e05c95a264031
 ### `rocket.chat:4.6` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:f1cd6447cc0d417c6e4dfd41f2fa53dd33874f5faa90929aaf1e951e34f10b1f
+$ docker pull rocket.chat@sha256:3b7b708195325fb5beb2fea180f818f9e256f6337c65b03e7d99988530bfed48
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **242.0 MB (242014603 bytes)**  
+-	Total Size: **242.1 MB (242080965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a12f919af4dc2769fa4b4a13b47327668567189369e8452176258ae2f6614e3`
+-	Image ID: `sha256:1f12ffc04e520fd731e72e65d18b6190593983c940d617ce78239e9252c10bb1`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -644,21 +644,21 @@ RUN ARCH="x64"   && set -eux   && apt-get update && apt-get install -y --no-inst
 RUN groupadd -r rocketchat   && useradd -r -g rocketchat rocketchat   && mkdir -p /app/uploads   && chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:47:01 GMT
 VOLUME [/app/uploads]
-# Mon, 04 Apr 2022 21:51:45 GMT
-ENV RC_VERSION=4.6.0
-# Mon, 04 Apr 2022 21:51:45 GMT
+# Fri, 08 Apr 2022 20:40:24 GMT
+ENV RC_VERSION=4.6.1
+# Fri, 08 Apr 2022 20:40:24 GMT
 WORKDIR /app
-# Mon, 04 Apr 2022 21:52:43 GMT
+# Fri, 08 Apr 2022 20:41:23 GMT
 RUN set -eux   && apt-get update   && apt-get install -y --no-install-recommends fontconfig   && aptMark="$(apt-mark showmanual)"   && apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg   && rm -rf /var/lib/apt/lists/*   && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc   && gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz   && tar zxf rocket.chat.tgz   && rm rocket.chat.tgz rocket.chat.tgz.asc   && cd bundle/programs/server   && npm install   && apt-mark auto '.*' > /dev/null   && apt-mark manual $aptMark > /dev/null   && find /usr/local -type f -executable -exec ldd '{}' ';'   | awk '/=>/ { print $(NF-1) }'   | sort -u   | xargs -r dpkg-query --search   | cut -d: -f1   | sort -u   | xargs -r apt-mark manual   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false   && npm cache clear --force   && chown -R rocketchat:rocketchat /app
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 USER rocketchat
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 WORKDIR /app/bundle
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 EXPOSE 3000
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -675,32 +675,32 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:54:20 GMT  
 		Size: 1.8 KB (1809 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:676642a6cad48760f35bd47eb8148e5b2be02eed4c3bc8f1b3212083b2530558`  
-		Last Modified: Mon, 04 Apr 2022 21:53:47 GMT  
-		Size: 179.3 MB (179336178 bytes)  
+	-	`sha256:af6ec192f41c2b98fb7f21c297b9d857cad563ff8e2347c6e059b954a98f24a9`  
+		Last Modified: Fri, 08 Apr 2022 20:44:54 GMT  
+		Size: 179.4 MB (179402540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `rocket.chat:4.6.0`
+## `rocket.chat:4.6.1`
 
 ```console
-$ docker pull rocket.chat@sha256:cfafb2db795ccb2d226e28491b5e652ba7e05c95a264031434cc4c1613be6d48
+$ docker pull rocket.chat@sha256:e0782b3f32afd053beda10cb832693d087e6fa86469d2ff658febb6bc8fd62f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms: 1
 	-	linux; amd64
 
-### `rocket.chat:4.6.0` - linux; amd64
+### `rocket.chat:4.6.1` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:f1cd6447cc0d417c6e4dfd41f2fa53dd33874f5faa90929aaf1e951e34f10b1f
+$ docker pull rocket.chat@sha256:3b7b708195325fb5beb2fea180f818f9e256f6337c65b03e7d99988530bfed48
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **242.0 MB (242014603 bytes)**  
+-	Total Size: **242.1 MB (242080965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a12f919af4dc2769fa4b4a13b47327668567189369e8452176258ae2f6614e3`
+-	Image ID: `sha256:1f12ffc04e520fd731e72e65d18b6190593983c940d617ce78239e9252c10bb1`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -718,21 +718,21 @@ RUN ARCH="x64"   && set -eux   && apt-get update && apt-get install -y --no-inst
 RUN groupadd -r rocketchat   && useradd -r -g rocketchat rocketchat   && mkdir -p /app/uploads   && chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:47:01 GMT
 VOLUME [/app/uploads]
-# Mon, 04 Apr 2022 21:51:45 GMT
-ENV RC_VERSION=4.6.0
-# Mon, 04 Apr 2022 21:51:45 GMT
+# Fri, 08 Apr 2022 20:40:24 GMT
+ENV RC_VERSION=4.6.1
+# Fri, 08 Apr 2022 20:40:24 GMT
 WORKDIR /app
-# Mon, 04 Apr 2022 21:52:43 GMT
+# Fri, 08 Apr 2022 20:41:23 GMT
 RUN set -eux   && apt-get update   && apt-get install -y --no-install-recommends fontconfig   && aptMark="$(apt-mark showmanual)"   && apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg   && rm -rf /var/lib/apt/lists/*   && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc   && gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz   && tar zxf rocket.chat.tgz   && rm rocket.chat.tgz rocket.chat.tgz.asc   && cd bundle/programs/server   && npm install   && apt-mark auto '.*' > /dev/null   && apt-mark manual $aptMark > /dev/null   && find /usr/local -type f -executable -exec ldd '{}' ';'   | awk '/=>/ { print $(NF-1) }'   | sort -u   | xargs -r dpkg-query --search   | cut -d: -f1   | sort -u   | xargs -r apt-mark manual   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false   && npm cache clear --force   && chown -R rocketchat:rocketchat /app
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 USER rocketchat
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 WORKDIR /app/bundle
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 EXPOSE 3000
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -749,15 +749,15 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:54:20 GMT  
 		Size: 1.8 KB (1809 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:676642a6cad48760f35bd47eb8148e5b2be02eed4c3bc8f1b3212083b2530558`  
-		Last Modified: Mon, 04 Apr 2022 21:53:47 GMT  
-		Size: 179.3 MB (179336178 bytes)  
+	-	`sha256:af6ec192f41c2b98fb7f21c297b9d857cad563ff8e2347c6e059b954a98f24a9`  
+		Last Modified: Fri, 08 Apr 2022 20:44:54 GMT  
+		Size: 179.4 MB (179402540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `rocket.chat:latest`
 
 ```console
-$ docker pull rocket.chat@sha256:cfafb2db795ccb2d226e28491b5e652ba7e05c95a264031434cc4c1613be6d48
+$ docker pull rocket.chat@sha256:e0782b3f32afd053beda10cb832693d087e6fa86469d2ff658febb6bc8fd62f2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -767,14 +767,14 @@ $ docker pull rocket.chat@sha256:cfafb2db795ccb2d226e28491b5e652ba7e05c95a264031
 ### `rocket.chat:latest` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:f1cd6447cc0d417c6e4dfd41f2fa53dd33874f5faa90929aaf1e951e34f10b1f
+$ docker pull rocket.chat@sha256:3b7b708195325fb5beb2fea180f818f9e256f6337c65b03e7d99988530bfed48
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **242.0 MB (242014603 bytes)**  
+-	Total Size: **242.1 MB (242080965 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a12f919af4dc2769fa4b4a13b47327668567189369e8452176258ae2f6614e3`
+-	Image ID: `sha256:1f12ffc04e520fd731e72e65d18b6190593983c940d617ce78239e9252c10bb1`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -792,21 +792,21 @@ RUN ARCH="x64"   && set -eux   && apt-get update && apt-get install -y --no-inst
 RUN groupadd -r rocketchat   && useradd -r -g rocketchat rocketchat   && mkdir -p /app/uploads   && chown rocketchat:rocketchat /app/uploads
 # Tue, 29 Mar 2022 18:47:01 GMT
 VOLUME [/app/uploads]
-# Mon, 04 Apr 2022 21:51:45 GMT
-ENV RC_VERSION=4.6.0
-# Mon, 04 Apr 2022 21:51:45 GMT
+# Fri, 08 Apr 2022 20:40:24 GMT
+ENV RC_VERSION=4.6.1
+# Fri, 08 Apr 2022 20:40:24 GMT
 WORKDIR /app
-# Mon, 04 Apr 2022 21:52:43 GMT
+# Fri, 08 Apr 2022 20:41:23 GMT
 RUN set -eux   && apt-get update   && apt-get install -y --no-install-recommends fontconfig   && aptMark="$(apt-mark showmanual)"   && apt-get install -y --no-install-recommends g++ make python ca-certificates curl gnupg   && rm -rf /var/lib/apt/lists/*   && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz   && curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc   && gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz   && tar zxf rocket.chat.tgz   && rm rocket.chat.tgz rocket.chat.tgz.asc   && cd bundle/programs/server   && npm install   && apt-mark auto '.*' > /dev/null   && apt-mark manual $aptMark > /dev/null   && find /usr/local -type f -executable -exec ldd '{}' ';'   | awk '/=>/ { print $(NF-1) }'   | sort -u   | xargs -r dpkg-query --search   | cut -d: -f1   | sort -u   | xargs -r apt-mark manual   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false   && npm cache clear --force   && chown -R rocketchat:rocketchat /app
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 USER rocketchat
-# Mon, 04 Apr 2022 21:52:48 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 WORKDIR /app/bundle
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 EXPOSE 3000
-# Mon, 04 Apr 2022 21:52:49 GMT
+# Fri, 08 Apr 2022 20:41:28 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -823,7 +823,7 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 29 Mar 2022 18:54:20 GMT  
 		Size: 1.8 KB (1809 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:676642a6cad48760f35bd47eb8148e5b2be02eed4c3bc8f1b3212083b2530558`  
-		Last Modified: Mon, 04 Apr 2022 21:53:47 GMT  
-		Size: 179.3 MB (179336178 bytes)  
+	-	`sha256:af6ec192f41c2b98fb7f21c297b9d857cad563ff8e2347c6e059b954a98f24a9`  
+		Last Modified: Fri, 08 Apr 2022 20:44:54 GMT  
+		Size: 179.4 MB (179402540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
