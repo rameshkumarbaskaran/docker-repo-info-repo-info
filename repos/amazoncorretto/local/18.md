@@ -1,17 +1,17 @@
-# `amazoncorretto:8`
+# `amazoncorretto:18`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d8d546b207c16a3d6b064507e8eca13ed9598f22b60f47e4bea29284851696b1`
-- Created: `2022-03-19T00:34:10.456389392Z`
-- Virtual Size: ~ 347.21 Mb  
+- Image ID: `sha256:8f15a88f1aa398689271e72388b83b6b78a600dea2aad65ee63209c7a8a9b414`
+- Created: `2022-04-06T22:20:49.355151398Z`
+- Virtual Size: ~ 463.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto`
+  - `JAVA_HOME=/usr/lib/jvm/java-18-amazon-corretto`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -390,9 +390,9 @@ $ dnf --quiet download --source --url info-5.1-5.amzn2
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/37eaca2854cfb48e16ced2e2a46fb7e92869f36c054be627be581970bc437a42/../../../../../blobstore/968c079ef8a8a2efee76ff59cd99e06dd242b8813960171d0f5c23f4a6eb0bb2/texinfo-5.1-5.amzn2.src.rpm
 ```
 
-### `rpm` package: `java-1.8.0-amazon-corretto-devel-1.8.0_322.b06-2.x86_64`
+### `rpm` package: `java-18-amazon-corretto-devel-18.0.0.37-1.x86_64`
 
-Licenses (from `rpm --query`): ASL 1.1 and ASL 2.0 and BSD and BSD with advertising and GPL+ and GPLv2 and GPLv2 with exceptions and IJG and LGPLv2+ and MIT and MPLv2.0 and Public Domain and W3C and zlib.
+Licenses (from `rpm --query`): ASL 1.1 and ASL 2.0 and BSD and BSD with advertising and GPL+ and GPLv2 and GPLv2 with exceptions and IJG and LGPLv2+ and MIT and MPLv2.0 and Public Domain and W3C and zlib and ISC and FTL and RSA.
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
