@@ -1,10 +1,10 @@
-# `kong:2.8.0-alpine`
+# `kong:2.8.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:62abd56e893359a729325103065a1f6c2e004dec25e2ffc382016551372b6707`
-- Created: `2022-04-05T07:18:13.85103959Z`
-- Virtual Size: ~ 138.83 Mb  
+- Image ID: `sha256:8301ad2c6ccefa9744c675de2e3776def471cb145084c87faa69b863bde93cd1`
+- Created: `2022-04-12T19:31:14.256343204Z`
+- Virtual Size: ~ 138.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `ASSET=ce`
-  - `KONG_VERSION=2.8.0`
+  - `KONG_VERSION=2.8.1`
 - Labels:
   - `maintainer=Kong <support@konghq.com>`
 
