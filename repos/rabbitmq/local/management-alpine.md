@@ -1,10 +1,10 @@
-# `rabbitmq:3.9.14-management-alpine`
+# `rabbitmq:3.9.15-management-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7aa0c1151d687b7d6ffb7d368bbc3cc88a43993cb91487dcf6329d3c60460324`
-- Created: `2022-04-05T11:24:42.66100869Z`
-- Virtual Size: ~ 180.40 Mb  
+- Image ID: `sha256:1126ad4df16768efd24e9e074dcae3650478f5bdb0666b6a9d4875ea86b99d15`
+- Created: `2022-04-14T07:19:12.086507227Z`
+- Virtual Size: ~ 180.44 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `OTP_VERSION=24.3.3`
   - `OTP_SOURCE_SHA256=cc3177f765c6a2b018e9a80c30bd3eac9a1f1d4c2690bb10557b384a9a63ae8d`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
-  - `RABBITMQ_VERSION=3.9.14`
+  - `RABBITMQ_VERSION=3.9.15`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
   - `RABBITMQ_HOME=/opt/rabbitmq`
   - `HOME=/var/lib/rabbitmq`
@@ -540,16 +540,16 @@ MIT
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.5-r0 description:
+xz-libs-5.2.5-r1 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.5-r0 webpage:
+xz-libs-5.2.5-r1 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.5-r0 installed size:
+xz-libs-5.2.5-r1 installed size:
 148 KiB
 
-xz-libs-5.2.5-r0 license:
+xz-libs-5.2.5-r1 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```
