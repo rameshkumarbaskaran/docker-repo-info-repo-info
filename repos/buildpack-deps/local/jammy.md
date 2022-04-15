@@ -2965,14 +2965,13 @@ Licenses: (parsed from: `/usr/share/doc/libzstd-dev/copyright`, `/usr/share/doc/
 - `GPL-2`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libzstd=1.4.8+dfsg-3
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg-3.dsc' libzstd_1.4.8+dfsg-3.dsc 2291 SHA512:54e17fdc2882d49265739bb844f21e7e07e50873d0aba149ba6e6d11f15dd03040c63652f57164bd00e21cec9922f14074f48628cf158f30a667a63c3004b117
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg.orig.tar.xz' libzstd_1.4.8+dfsg.orig.tar.xz 1331996 SHA512:07fabe431367eea4badae7b1e46ac73e0b33aad5b67361bc7b67d5f9aef249c51db5b560f1cf59233255cc49db341a8d8440fed87745026fca7a7c5c14448cd8
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg-3.debian.tar.xz' libzstd_1.4.8+dfsg-3.debian.tar.xz 12184 SHA512:b006d4c1ef6c687331dfb4d585227262a51f6578a4faa2cea9224fdfbdfcc61dd0f1e4fdbf453617ebb2c3dc68ec09bfebf27e3631b6fd0aa20e87c44bffbaef
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libzstd/1.4.8+dfsg-3/
+
 
 ### `dpkg` source package: `linux=5.15.0-25.25`
 
@@ -3160,15 +3159,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=6.0.1-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.0.1-1.dsc' mercurial_6.0.1-1.dsc 2764 SHA512:7026790dd8d3f2ad0d1b6e400eb02169f45475300e73a2f81fef0bb0183d18fdd95575380572de0c932b5feb39d25d3ea477c6c06e21946dc9e143f91b7b60c5
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.0.1.orig.tar.gz' mercurial_6.0.1.orig.tar.gz 8072365 SHA512:dae18c38e7df001177867ed9cb1c9cea6f25fff6c23fd307c56c89bba0e4641d6cf993aabefe1fcb6ab99bd32732b858411f722bea839690fbc04c0a91c1dc53
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.0.1.orig.tar.gz.asc' mercurial_6.0.1.orig.tar.gz.asc 659 SHA512:8fb5e66e3f1593cd8324a7213b00803f50c9fc4d48a028a614b1a37fbe5d5295a8cc48a2c75cabc70101ea410a61cc4354b50b56db99ba2315e06ddddde513eb
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_6.0.1-1.debian.tar.xz' mercurial_6.0.1-1.debian.tar.xz 68640 SHA512:5d768f4552b29d842dff58713a223042d6a2d16b5c1755c4ff5f6d143c8361aa19afbf96b324deecd1d6c292d0cd03b50a5654ce149b4fc007db9dd47be38511
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/mercurial/6.0.1-1/
+
 
 ### `dpkg` source package: `mpclib3=1.2.1-2build1`
 
