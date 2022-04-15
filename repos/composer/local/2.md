@@ -1,10 +1,10 @@
-# `composer:2.3.4`
+# `composer:2.3.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b9ba497e0d9c8cae2bdb93e41425685f307fe445956a794b92e92845abf53492`
-- Created: `2022-04-08T20:19:47.156266697Z`
-- Virtual Size: ~ 191.23 Mb  
+- Image ID: `sha256:9ffd9c810473bbbf7965e74759a3133c116fee41bc543b2411a21a5dc561ca0a`
+- Created: `2022-04-13T20:21:08.176796859Z`
+- Virtual Size: ~ 207.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_SHA256=05a8c0ac30008154fb38a305560543fc172ba79fb957084a99b8d3b10d5bdb4b`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=2.3.4`
+  - `COMPOSER_VERSION=2.3.5`
 
 ## `apk` (`.apk`-based packages)
 
@@ -285,16 +285,16 @@ GPL-3.0-or-later
 ### `apk` package: `git`
 
 ```console
-git-2.34.1-r0 description:
+git-2.34.2-r0 description:
 Distributed version control system
 
-git-2.34.1-r0 webpage:
+git-2.34.2-r0 webpage:
 https://www.git-scm.com/
 
-git-2.34.1-r0 installed size:
+git-2.34.2-r0 installed size:
 10 MiB
 
-git-2.34.1-r0 license:
+git-2.34.2-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -1033,16 +1033,16 @@ GPL-2.0-only
 ### `apk` package: `subversion`
 
 ```console
-subversion-1.14.1-r7 description:
+subversion-1.14.2-r0 description:
 Replacement for CVS, another versioning system (svn)
 
-subversion-1.14.1-r7 webpage:
+subversion-1.14.2-r0 webpage:
 https://subversion.apache.org/
 
-subversion-1.14.1-r7 installed size:
+subversion-1.14.2-r0 installed size:
 1044 KiB
 
-subversion-1.14.1-r7 license:
+subversion-1.14.2-r0 license:
 Apache-2.0 BSD
 
 ```
@@ -1050,16 +1050,16 @@ Apache-2.0 BSD
 ### `apk` package: `subversion-libs`
 
 ```console
-subversion-libs-1.14.1-r7 description:
+subversion-libs-1.14.2-r0 description:
 Replacement for CVS, another versioning system (svn) (libraries)
 
-subversion-libs-1.14.1-r7 webpage:
+subversion-libs-1.14.2-r0 webpage:
 https://subversion.apache.org/
 
-subversion-libs-1.14.1-r7 installed size:
+subversion-libs-1.14.2-r0 installed size:
 3628 KiB
 
-subversion-libs-1.14.1-r7 license:
+subversion-libs-1.14.2-r0 license:
 Apache-2.0 BSD
 
 ```
