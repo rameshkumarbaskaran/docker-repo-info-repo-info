@@ -2858,14 +2858,13 @@ Licenses: (parsed from: `/usr/share/doc/libzstd-dev/copyright`, `/usr/share/doc/
 - `GPL-2`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libzstd=1.4.8+dfsg-3
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg-3.dsc' libzstd_1.4.8+dfsg-3.dsc 2291 SHA512:54e17fdc2882d49265739bb844f21e7e07e50873d0aba149ba6e6d11f15dd03040c63652f57164bd00e21cec9922f14074f48628cf158f30a667a63c3004b117
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg.orig.tar.xz' libzstd_1.4.8+dfsg.orig.tar.xz 1331996 SHA512:07fabe431367eea4badae7b1e46ac73e0b33aad5b67361bc7b67d5f9aef249c51db5b560f1cf59233255cc49db341a8d8440fed87745026fca7a7c5c14448cd8
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.8%2bdfsg-3.debian.tar.xz' libzstd_1.4.8+dfsg-3.debian.tar.xz 12184 SHA512:b006d4c1ef6c687331dfb4d585227262a51f6578a4faa2cea9224fdfbdfcc61dd0f1e4fdbf453617ebb2c3dc68ec09bfebf27e3631b6fd0aa20e87c44bffbaef
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libzstd/1.4.8+dfsg-3/
+
 
 ### `dpkg` source package: `linux=5.15.0-25.25`
 
@@ -4939,14 +4938,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pyyaml=5.4.1-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pyyaml/pyyaml_5.4.1-1build1.dsc' pyyaml_5.4.1-1build1.dsc 2109 SHA512:abf11da3a099264ec68faf86116490d8bfa591d3687a863594f8169337ed593cdb45ad6e9f50227d8ade2aef64b326f5adec7cb2713e50d1f45beb6cc26b1a7c
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pyyaml/pyyaml_5.4.1.orig.tar.gz' pyyaml_5.4.1.orig.tar.gz 175147 SHA512:359c45d843fd839797572efeab121f17b1947647960dfb062f3618f25f71e1a6bc4bab14a1720b6b67f256089d5d48c452ec5419e3130222765c7ca41db11dad
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pyyaml/pyyaml_5.4.1-1build1.debian.tar.xz' pyyaml_5.4.1-1build1.debian.tar.xz 7416 SHA512:b49db1de89186e673994f18a962a39b5bdfa849f978d68f2d251fc557374bd6302cfe8328d94062198927d20ded54a7a8892f91e5b15e803463be30e006948ad
-```
 
 ### `dpkg` source package: `readline=8.1.2-1`
 
@@ -7768,14 +7762,13 @@ Licenses: (parsed from: `/usr/share/doc/python3-six/copyright`)
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris six=1.16.0-3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.16.0-3.dsc' six_1.16.0-3.dsc 2358 SHA512:9a70a693229b6bceaa01fbe9c886f68cf3fcf8dd0148caf688e169fa3d0419b44518ec90b1c88c3823716ba1895d2dba28d2b976145480ea526516d6904d3fa1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.16.0.orig.tar.gz' six_1.16.0.orig.tar.gz 34041 SHA512:076fe31c8f03b0b52ff44346759c7dc8317da0972403b84dfe5898179f55acdba6c78827e0f8a53ff20afe8b76432c6fe0d655a75c24259d9acbaa4d9e8015c0
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.16.0-3.debian.tar.xz' six_1.16.0-3.debian.tar.xz 4964 SHA512:a7f4bf61129722f16c3011852cff0028176893fc3cd8b5e641b6ba0e7f6aaac0858c8b29611a598a786a07d5ee8d8243d6a1c977e6360a1c70a18fbff3090fec
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/six/1.16.0-3/
+
 
 ### `dpkg` source package: `snowball=2.2.0-1build1`
 
