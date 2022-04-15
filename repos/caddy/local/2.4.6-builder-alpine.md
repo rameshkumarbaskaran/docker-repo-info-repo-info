@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:caa54d86d06fba28c500cfe838c151623b997c5e35b2af29ea8b70b6a92a7fb8`
-- Created: `2022-04-05T15:45:55.952533278Z`
-- Virtual Size: ~ 331.80 Mb  
+- Image ID: `sha256:f4fb1ee8fe4d7702096d54e6a71c30dbb57b04c59099b5a32e21d127178b56fe`
+- Created: `2022-04-13T02:49:14.555480529Z`
+- Virtual Size: ~ 331.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
 - Environment:
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOLANG_VERSION=1.17.8`
+  - `GOLANG_VERSION=1.17.9`
   - `GOPATH=/go`
   - `XCADDY_VERSION=v0.2.1`
   - `CADDY_VERSION=v2.4.6`
@@ -157,16 +157,16 @@ MIT
 ### `apk` package: `git`
 
 ```console
-git-2.34.1-r0 description:
+git-2.34.2-r0 description:
 Distributed version control system
 
-git-2.34.1-r0 webpage:
+git-2.34.2-r0 webpage:
 https://www.git-scm.com/
 
-git-2.34.1-r0 installed size:
+git-2.34.2-r0 installed size:
 10 MiB
 
-git-2.34.1-r0 license:
+git-2.34.2-r0 license:
 GPL-2.0-or-later
 
 ```
