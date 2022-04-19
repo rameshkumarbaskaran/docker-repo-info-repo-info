@@ -1,10 +1,10 @@
-# `php:7.4.28-cli-alpine3.14`
+# `php:7.4.29-cli-alpine3.14`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d5e6d2f30e3a2393357b6d99c84d7277ca960e82edc39cf53b7ba7d61e6a30ca`
-- Created: `2022-04-05T02:32:26.828042411Z`
-- Virtual Size: ~ 83.46 Mb  
+- Image ID: `sha256:96683a177eb186d17d17e3b357cdc5cd558fdfa0b5f44fcda0f5911541660b8e`
+- Created: `2022-04-19T01:17:19.818648393Z`
+- Virtual Size: ~ 83.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.28`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.28.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.28.tar.xz.asc`
-  - `PHP_SHA256=9cc3b6f6217b60582f78566b3814532c4b71d517876c25013ae51811e65d8fce`
+  - `PHP_VERSION=7.4.29`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.29.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.29.tar.xz.asc`
+  - `PHP_SHA256=7d0f07869f33311ff3fe1138dc0d6c0d673c37fcb737eaed2c6c10a949f1aed6`
 
 ## `apk` (`.apk`-based packages)
 
@@ -554,16 +554,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.5-r0 description:
+xz-libs-5.2.5-r1 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.5-r0 webpage:
+xz-libs-5.2.5-r1 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.5-r0 installed size:
+xz-libs-5.2.5-r1 installed size:
 148 KiB
 
-xz-libs-5.2.5-r0 license:
+xz-libs-5.2.5-r1 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```
