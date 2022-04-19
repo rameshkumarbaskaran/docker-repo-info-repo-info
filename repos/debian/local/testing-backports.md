@@ -1544,20 +1544,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pcre2=10.39-3
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.39-3.dsc' pcre2_10.39-3.dsc 2286 SHA256:fdb34ea12f4cd80570f22228990bfbc2fa4cf9ebfd14495c94646687495d61ef
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.39.orig.tar.gz' pcre2_10.39.orig.tar.gz 2309964 SHA256:0781bd2536ef5279b1943471fdcdbd9961a2845e1d2c9ad849b9bd98ba1a9bd4
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.39-3.diff.gz' pcre2_10.39-3.diff.gz 7080 SHA256:04c45c7ce5f7acef85902bd0292713232a036dd26d20dae171167f06adb6378e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pcre2/10.39-3/
 
-- https://sources.debian.net/src/pcre2/10.39-3/ (for browsing the source)
-- https://sources.debian.net/src/pcre2/10.39-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pcre2/10.39-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcre3=2:8.39-13`
 
@@ -1826,20 +1819,13 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.37.3-1
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.37.3-1.dsc' util-linux_2.37.3-1.dsc 4454 SHA256:9f97d1679da1ac683605256d0cfdbf11a1892cc461812a728f6911a6cf05f8b6
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.37.3.orig.tar.xz' util-linux_2.37.3.orig.tar.xz 6126260 SHA256:590c592e58cd6bf38519cb467af05ce6a1ab18040e3e3418f24bcfb2f55f9776
-'http://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.37.3-1.debian.tar.xz' util-linux_2.37.3-1.debian.tar.xz 99240 SHA256:7ba53657ebefb530b52269834443218f573335b3ae844f3bd421600417f1fb01
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/util-linux/2.37.3-1/
 
-- https://sources.debian.net/src/util-linux/2.37.3-1/ (for browsing the source)
-- https://sources.debian.net/src/util-linux/2.37.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/util-linux/2.37.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xxhash=0.8.1-1`
 
@@ -1895,10 +1881,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris xz-utils=5.2.5-2
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.5-2.dsc' xz-utils_5.2.5-2.dsc 2312 SHA256:fa2706f0c863bee4715460bc9103c6fb73ad2cbc12d8d6d7d5dced81ab349949
+'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.5-2.1.dsc' xz-utils_5.2.5-2.1.dsc 2402 SHA256:338b5ec72d0d48a5fbb004926ebac8850eecd9626e38f6b50960ed975513b081
 'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.5.orig.tar.xz' xz-utils_5.2.5.orig.tar.xz 1148824 SHA256:3e1e518ffc912f86608a8cb35e4bd41ad1aec210df2a47aaa1f95e7f5576ef56
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.5.orig.tar.xz.asc' xz-utils_5.2.5.orig.tar.xz.asc 833 SHA256:6efc0075a58912e640119d2b52ef7d1518b260d8720fadc73df21ab7fc727624
-'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.5-2.debian.tar.xz' xz-utils_5.2.5-2.debian.tar.xz 33532 SHA256:7bf06a86c35cc6b21a7731df9e11d241f8d3c16b0fe6ed78d64506d1bc29b06e
+'http://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.2.5-2.1.debian.tar.xz' xz-utils_5.2.5-2.1.debian.tar.xz 34916 SHA256:24a1950b365b0922c3ef7f1475930bbcc64cdef04929f081b8ad5e2628ef2413
 ```
 
 Other potentially useful URLs:
