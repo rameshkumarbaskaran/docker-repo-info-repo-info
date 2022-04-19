@@ -2966,9 +2966,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.13.0-39.44
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.13.0-39.44.dsc' linux_5.13.0-39.44.dsc 8810 SHA512:9205760fb59140be72e80e2e85794f4c8906ab958c8d20bf071b325323e109cfd428af18ca50b94c40a803556d0152e4c33f5aec253220511b632f03593ad0f1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.13.0.orig.tar.gz' linux_5.13.0.orig.tar.gz 189652704 SHA512:e7aff485ac9f5752df4a35fbb7668fd0a60597d3cd63c3bc78933f9fbf509ed83f8d2516c8441e6136157c5efe9a4745f97ba74b3b4353c26c1e44ca0eaa0b87
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.13.0-39.44.diff.gz' linux_5.13.0-39.44.diff.gz 6423598 SHA512:6825d36c1ebf6cc3735ae05261c9f521524717673c8f1acf5779708828338e788f6aaa133d83bcc26b87ba55a30a81d092cb9e85981b4b4c3ae0933d0292c764
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.13.0-39.44.dsc' linux_5.13.0-39.44.dsc 8810 SHA512:9205760fb59140be72e80e2e85794f4c8906ab958c8d20bf071b325323e109cfd428af18ca50b94c40a803556d0152e4c33f5aec253220511b632f03593ad0f1
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.13.0.orig.tar.gz' linux_5.13.0.orig.tar.gz 189652704 SHA512:e7aff485ac9f5752df4a35fbb7668fd0a60597d3cd63c3bc78933f9fbf509ed83f8d2516c8441e6136157c5efe9a4745f97ba74b3b4353c26c1e44ca0eaa0b87
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.13.0-39.44.diff.gz' linux_5.13.0-39.44.diff.gz 6423598 SHA512:6825d36c1ebf6cc3735ae05261c9f521524717673c8f1acf5779708828338e788f6aaa133d83bcc26b87ba55a30a81d092cb9e85981b4b4c3ae0933d0292c764
 ```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu3`
