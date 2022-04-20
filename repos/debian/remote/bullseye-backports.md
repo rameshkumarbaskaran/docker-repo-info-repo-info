@@ -1,7 +1,7 @@
 ## `debian:bullseye-backports`
 
 ```console
-$ docker pull debian@sha256:449bbd2b6031912e0b368100739d40b3b12ef4e4698b29c50cf9926bb2e68237
+$ docker pull debian@sha256:9a0d5bd58e060a1ac147e31dd776768446fddc790b51620a6328f15a76e7a6bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -82,33 +82,33 @@ RUN echo 'deb http://deb.debian.org/debian bullseye-backports main' > /etc/apt/s
 ### `debian:bullseye-backports` - linux; arm variant v7
 
 ```console
-$ docker pull debian@sha256:b1489da3a3c779ab3d98583721186cb603fbb74c15e92699018ff42b076daf15
+$ docker pull debian@sha256:63f71f177b81effa8428fe9b48705f49fa6c16205e3e58f1bd54b216c6f06c1c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **50.1 MB (50134096 bytes)**  
+-	Total Size: **50.1 MB (50133923 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ab0a9bc51b0e6b32717a5929a50fdd3f38b8b90cb6a4a42346eecc63bc87762e`
+-	Image ID: `sha256:4f327f0aa4e3c1b28d39808f65ae0e9727d6626c1dc4533193f1b30b809306d1`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 02:17:58 GMT
-ADD file:d8d3280d101d611090968c237af923598174e090c533c24bcee805d174e4a6f5 in / 
-# Tue, 29 Mar 2022 02:17:59 GMT
+# Wed, 20 Apr 2022 13:26:39 GMT
+ADD file:1c05c50014bbd32a4cf1edd085996a8c62abc3c8969b64d2355475827a07475e in / 
+# Wed, 20 Apr 2022 13:26:40 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 02:18:15 GMT
+# Wed, 20 Apr 2022 13:26:56 GMT
 RUN echo 'deb http://deb.debian.org/debian bullseye-backports main' > /etc/apt/sources.list.d/backports.list
 ```
 
 -	Layers:
-	-	`sha256:fc87a15f2d540adb88546a549e56aa0a378d5719bbfd07399e467a095e27d5df`  
-		Last Modified: Tue, 29 Mar 2022 02:33:28 GMT  
-		Size: 50.1 MB (50133868 bytes)  
+	-	`sha256:0a2c02101ee4340d4a9ebb962e9331486e417a3835c9adefb9badd2f0c116ab6`  
+		Last Modified: Wed, 20 Apr 2022 13:42:55 GMT  
+		Size: 50.1 MB (50133696 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d8e757f8312f44280f1b0df74caa810dc429ab2348ac8fa3c273e80ff4b33150`  
-		Last Modified: Tue, 29 Mar 2022 02:33:50 GMT  
-		Size: 228.0 B  
+	-	`sha256:38c506110af71156f1de46457aeb7eba0cb5a54241438a1fbefb3bce94f3d6a4`  
+		Last Modified: Wed, 20 Apr 2022 13:43:18 GMT  
+		Size: 227.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:bullseye-backports` - linux; arm64 variant v8
