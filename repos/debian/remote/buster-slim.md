@@ -1,7 +1,7 @@
 ## `debian:buster-slim`
 
 ```console
-$ docker pull debian@sha256:c2f9136f97c36f57f0cc032abcaffc15de728c386c08ad130f713336972540b5
+$ docker pull debian@sha256:a257269a4205fed17512760f7bca2332fbe485fa68d5b2d4f1728a9fe969dee9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18,27 +18,27 @@ $ docker pull debian@sha256:c2f9136f97c36f57f0cc032abcaffc15de728c386c08ad130f71
 ### `debian:buster-slim` - linux; amd64
 
 ```console
-$ docker pull debian@sha256:662c4c0ce658eb6cfaadb6f2f4bab59ce7b5745afd0bdd9117d1d87298cc9533
+$ docker pull debian@sha256:dfa8be0c158e556532b023717650ee2ab52ed2b1b792a5810db138708101548a
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **27.2 MB (27151970 bytes)**  
+-	Total Size: **27.1 MB (27140664 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e92a8e29cec00346df3846902937944d722600e68fb8bf39b44d3be0a23fedd2`
+-	Image ID: `sha256:77eeed0828a424e6b36cbde8c519381037702610d8e2f883872d7ba7198fb4e8`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:38 GMT
-ADD file:59187422476c57db46e60f894a4cfd0f243e80230ef9ea75b2d8dd4925d59df3 in / 
-# Tue, 29 Mar 2022 00:22:38 GMT
+# Wed, 20 Apr 2022 04:43:48 GMT
+ADD file:011a43ee23214c201afb7f3b5be592f374b89a4c71aea82ca66146bbbc31b959 in / 
+# Wed, 20 Apr 2022 04:43:48 GMT
 CMD ["bash"]
 ```
 
 -	Layers:
-	-	`sha256:f003217c5aaebdfee0b9a448fbabd995e5f0159f5b231460c0ecc21baf171953`  
-		Last Modified: Tue, 29 Mar 2022 00:28:02 GMT  
-		Size: 27.2 MB (27151970 bytes)  
+	-	`sha256:4be315f6562fccf08fd6c749557e31e45ab6d987370e20e2c4933ddb04ddd5ff`  
+		Last Modified: Wed, 20 Apr 2022 04:49:15 GMT  
+		Size: 27.1 MB (27140664 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:buster-slim` - linux; arm variant v5
@@ -96,27 +96,27 @@ CMD ["bash"]
 ### `debian:buster-slim` - linux; arm64 variant v8
 
 ```console
-$ docker pull debian@sha256:4de5fcf494f9a420e40b1e3a7f7b8eae0a6366c9ffc51387decf1c4a9cdf0548
+$ docker pull debian@sha256:09d07b5771076a6acf574e578ade2f64f4f4d44845d5fee34a6814beb4601d98
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **25.9 MB (25919777 bytes)**  
+-	Total Size: **25.9 MB (25908349 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:944dbcff3b5466365df365faa8b061383a58fbfc61351482daf088afd1804058`
+-	Image ID: `sha256:1a2d0ef9e5ad17086e08346533255f9296d445e66bad3c5b9601c9758c878524`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:42 GMT
-ADD file:fdc8a5391a75cbf8c121f8f799ca08e94d2b3967b2546b36231c9297f7ce2151 in / 
-# Tue, 29 Mar 2022 00:43:43 GMT
+# Wed, 20 Apr 2022 04:29:36 GMT
+ADD file:5de4397c1295f7249c93907be599d96efbd9cd25909340d245ec8d1c9770f444 in / 
+# Wed, 20 Apr 2022 04:29:37 GMT
 CMD ["bash"]
 ```
 
 -	Layers:
-	-	`sha256:5022906f515a0d4ec6bc1d0e5e7a01f47b1fbbb912e7e3f1ace27987169a9a21`  
-		Last Modified: Tue, 29 Mar 2022 00:50:58 GMT  
-		Size: 25.9 MB (25919777 bytes)  
+	-	`sha256:6c3e5b218d6477ff77053280968d5bdeaa5dcf16a803e917d98dd0ea8b93ac82`  
+		Last Modified: Wed, 20 Apr 2022 04:36:38 GMT  
+		Size: 25.9 MB (25908349 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:buster-slim` - linux; 386
