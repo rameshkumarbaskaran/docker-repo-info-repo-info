@@ -1,10 +1,10 @@
-# `drupal:9.3.9-php8.0-fpm-buster`
+# `drupal:9.3.11-php8.0-fpm-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0641d0f2ed730406578297aaed43e77c17ea77048527371c7407eaab9f99c81b`
-- Created: `2022-04-13T20:58:26.089847563Z`
-- Virtual Size: ~ 481.98 Mb  
+- Image ID: `sha256:0012e3325ea4b5080fae2b4d64a369151d8d3e95bc5fcdd31cd5d8aa2046690d`
+- Created: `2022-04-19T02:17:20.705212763Z`
+- Virtual Size: ~ 482.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,11 +17,11 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.17`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.17.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.17.tar.xz.asc`
-  - `PHP_SHA256=4e7d94bb3d144412cb8b2adeb599fb1c6c1d7b357b0d0d0478dc5ef53532ebc5`
-  - `DRUPAL_VERSION=9.3.9`
+  - `PHP_VERSION=8.0.18`
+  - `PHP_URL=https://www.php.net/distributions/php-8.0.18.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.18.tar.xz.asc`
+  - `PHP_SHA256=db161652cacae4b31c347fbf2e17b80656473cb365f2bb3460c4552f5647e2e7`
+  - `DRUPAL_VERSION=9.3.11`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2810,11 +2810,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/xz-utils/5.2.4-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/xz-utils/5.2.4-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `zlib=1:1.2.11.dfsg-1`
+### `dpkg` source package: `zlib=1:1.2.11.dfsg-1+deb10u1`
 
 Binary Packages:
 
-- `zlib1g:amd64=1:1.2.11.dfsg-1`
+- `zlib1g:amd64=1:1.2.11.dfsg-1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/zlib1g/copyright`)
 
@@ -2823,14 +2823,14 @@ Licenses: (parsed from: `/usr/share/doc/zlib1g/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-1
-'http://deb.debian.org/debian/pool/main/z/zlib/zlib_1.2.11.dfsg-1.dsc' zlib_1.2.11.dfsg-1.dsc 2266 SHA256:bf21ab4d60cb836725162f5072884596e781a2f4974182af1868f546306eb8c8
-'http://deb.debian.org/debian/pool/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.gz' zlib_1.2.11.dfsg.orig.tar.gz 370248 SHA256:80c481411a4fe8463aeb8270149a0e80bb9eaf7da44132b6e16f2b5af01bc899
-'http://deb.debian.org/debian/pool/main/z/zlib/zlib_1.2.11.dfsg-1.debian.tar.xz' zlib_1.2.11.dfsg-1.debian.tar.xz 18956 SHA256:00b95b629fbe9a5181f8ba1ceddedf627aba1ab42e47f5916be8a41deb54098a
+$ apt-get source -qq --print-uris zlib=1:1.2.11.dfsg-1+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/z/zlib/zlib_1.2.11.dfsg-1%2bdeb10u1.dsc' zlib_1.2.11.dfsg-1+deb10u1.dsc 2774 SHA256:3eddd036f314f8a7717c41fe7d3c935653afeb6b7f7bf6d9ad80c10ef1c4bdc3
+'http://security.debian.org/debian-security/pool/updates/main/z/zlib/zlib_1.2.11.dfsg.orig.tar.gz' zlib_1.2.11.dfsg.orig.tar.gz 370248 SHA256:80c481411a4fe8463aeb8270149a0e80bb9eaf7da44132b6e16f2b5af01bc899
+'http://security.debian.org/debian-security/pool/updates/main/z/zlib/zlib_1.2.11.dfsg-1%2bdeb10u1.debian.tar.xz' zlib_1.2.11.dfsg-1+deb10u1.debian.tar.xz 23092 SHA256:eb26660e5b8a39f945a4fe1284e29b0279ded3513327e3cbd51c51921758f13f
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/zlib/1:1.2.11.dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/zlib/1:1.2.11.dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/zlib/1:1.2.11.dfsg-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/zlib/1:1.2.11.dfsg-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/zlib/1:1.2.11.dfsg-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/zlib/1:1.2.11.dfsg-1+deb10u1/ (for access to the source package after it no longer exists in the archive)

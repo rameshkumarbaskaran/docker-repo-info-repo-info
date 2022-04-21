@@ -1,10 +1,10 @@
-# `drupal:10.0.0-alpha2-php8.1-fpm-alpine3.15`
+# `drupal:10.0.0-alpha3-php8.1-fpm-alpine3.15`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f9822d49414644b9a073fdbd4ee51aaff432f2279ddd0195f071ed5e05918e24`
-- Created: `2022-04-13T20:57:09.097377389Z`
-- Virtual Size: ~ 162.73 Mb  
+- Image ID: `sha256:7f4c94e0f3687e2ac6b23298bcf84167868b9747798592e062dad5b556a35d5f`
+- Created: `2022-04-19T02:10:43.408026492Z`
+- Virtual Size: ~ 162.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,11 +17,11 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.4`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.4.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.4.tar.xz.asc`
-  - `PHP_SHA256=05a8c0ac30008154fb38a305560543fc172ba79fb957084a99b8d3b10d5bdb4b`
-  - `DRUPAL_VERSION=10.0.0-alpha2`
+  - `PHP_VERSION=8.1.5`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.5.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.5.tar.xz.asc`
+  - `PHP_SHA256=7647734b4dcecd56b7e4bd0bc55e54322fa3518299abcdc68eb557a7464a2e8a`
+  - `DRUPAL_VERSION=10.0.0-alpha3`
 
 ## `apk` (`.apk`-based packages)
 
@@ -691,16 +691,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.5-r0 description:
+xz-libs-5.2.5-r1 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.5-r0 webpage:
+xz-libs-5.2.5-r1 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.5-r0 installed size:
+xz-libs-5.2.5-r1 installed size:
 148 KiB
 
-xz-libs-5.2.5-r0 license:
+xz-libs-5.2.5-r1 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```
