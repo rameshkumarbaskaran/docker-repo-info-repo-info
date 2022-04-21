@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bb11ec2e5bc20897e776fe81a89a2b8a5f1d7d0928c8c041e06015e21cdef124`
-- Created: `2022-04-13T19:28:43.592843254Z`
-- Virtual Size: ~ 488.55 Mb  
+- Image ID: `sha256:e7ef6b6b7ebfc2078442559ade838082fc97f6a1c1b4ed86c449b5511bc8cb2f`
+- Created: `2022-04-19T04:14:36.901620384Z`
+- Virtual Size: ~ 488.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.28`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.28.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.28.tar.xz.asc`
-  - `PHP_SHA256=9cc3b6f6217b60582f78566b3814532c4b71d517876c25013ae51811e65d8fce`
+  - `PHP_VERSION=7.4.29`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.29.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.29.tar.xz.asc`
+  - `PHP_SHA256=7d0f07869f33311ff3fe1138dc0d6c0d673c37fcb737eaed2c6c10a949f1aed6`
   - `MEDIAWIKI_MAJOR_VERSION=1.35`
   - `MEDIAWIKI_VERSION=1.35.6`
 
@@ -369,16 +369,16 @@ GPL-3.0-or-later
 ### `apk` package: `gdk-pixbuf`
 
 ```console
-gdk-pixbuf-2.42.6-r0 description:
+gdk-pixbuf-2.42.8-r0 description:
 GTK+ image loading library
 
-gdk-pixbuf-2.42.6-r0 webpage:
+gdk-pixbuf-2.42.8-r0 webpage:
 https://wiki.gnome.org/Projects/GdkPixbuf
 
-gdk-pixbuf-2.42.6-r0 installed size:
+gdk-pixbuf-2.42.8-r0 installed size:
 528 KiB
 
-gdk-pixbuf-2.42.6-r0 license:
+gdk-pixbuf-2.42.8-r0 license:
 LGPL-2.0-or-later
 
 ```
@@ -403,16 +403,16 @@ AGPL-3.0-or-later
 ### `apk` package: `git`
 
 ```console
-git-2.34.1-r0 description:
+git-2.34.2-r0 description:
 Distributed version control system
 
-git-2.34.1-r0 webpage:
+git-2.34.2-r0 webpage:
 https://www.git-scm.com/
 
-git-2.34.1-r0 installed size:
+git-2.34.2-r0 installed size:
 10 MiB
 
-git-2.34.1-r0 license:
+git-2.34.2-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -1610,16 +1610,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.5-r0 description:
+xz-libs-5.2.5-r1 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.5-r0 webpage:
+xz-libs-5.2.5-r1 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.5-r0 installed size:
+xz-libs-5.2.5-r1 installed size:
 148 KiB
 
-xz-libs-5.2.5-r0 license:
+xz-libs-5.2.5-r1 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```
