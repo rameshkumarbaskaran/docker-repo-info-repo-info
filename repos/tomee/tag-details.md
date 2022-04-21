@@ -53,7 +53,7 @@
 ## `tomee:11-jre-8.0.10-microprofile`
 
 ```console
-$ docker pull tomee@sha256:72f827eae5b1ec0a131f5bd5952656e1ddd41c6784b872a2f096eaf8e8f62de1
+$ docker pull tomee@sha256:272721f73ec98cc792c437abb5453a127ed690ab4c7d544b6189a68dae7149c7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -64,195 +64,195 @@ $ docker pull tomee@sha256:72f827eae5b1ec0a131f5bd5952656e1ddd41c6784b872a2f096e
 ### `tomee:11-jre-8.0.10-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:b58cf3e03339df5acba4f8ccf6c4dd1e733aeca75b3d5f96a94cb789ac0e1e51
+$ docker pull tomee@sha256:89002578f56ef0b4417d72bb2132d86c8f5b456b20ee9a6a56d614ca60d6bf8f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **189.3 MB (189265948 bytes)**  
+-	Total Size: **189.3 MB (189271559 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:52435351f58096ea71fa9be9b8204cc93c689bbaf0c72bbf732c0d50bff67965`
+-	Image ID: `sha256:26a0662e2065a4f6a74c1015514837af50fca73b1dc35f1b5cb4d07d06f16c79`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:03 GMT
+# Thu, 21 Apr 2022 07:19:09 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:28:10 GMT
+# Thu, 21 Apr 2022 07:19:16 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:10 GMT
+# Thu, 21 Apr 2022 07:19:16 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:10 GMT
+# Thu, 21 Apr 2022 07:19:16 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:891336e432493db1d2cc8f473a90c6db14af57994207885c733a6910a55ed0da`  
-		Last Modified: Wed, 30 Mar 2022 06:34:07 GMT  
-		Size: 65.7 MB (65702891 bytes)  
+	-	`sha256:2f4891c592ac784f9e3fd4ad28ba99a2b6b254949701eb87226f6c729c1e3712`  
+		Last Modified: Thu, 21 Apr 2022 07:25:15 GMT  
+		Size: 65.7 MB (65702910 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-8.0.10-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:74226a6100cc709dd793541ac210f2d7f77990633a64d745e7efe7d5e7995f70
+$ docker pull tomee@sha256:ce7b8ae79778581ede5cb1a4c7fa0cbc7f6370cf0872619ac4bc92f7f8a32c53
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.6 MB (186612316 bytes)**  
+-	Total Size: **186.6 MB (186612512 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b709db1c78ace7897782ea369e4e44461b3ec72bfd1d595a9e5c5e661cfb55b4`
+-	Image ID: `sha256:8dfdb952b714fcd61db074c4b2215d243ae5c0d9aeccc8c64ab1385f78f3e97c`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:49:08 GMT
+# Thu, 21 Apr 2022 05:24:58 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:49:13 GMT
+# Thu, 21 Apr 2022 05:25:04 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:13 GMT
+# Thu, 21 Apr 2022 05:25:04 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:14 GMT
+# Thu, 21 Apr 2022 05:25:05 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63b7840783e5414bfed69cfd2c928dd8dd7e724067e54cb513facbb08c69d17d`  
-		Last Modified: Wed, 30 Mar 2022 13:57:34 GMT  
-		Size: 65.7 MB (65702546 bytes)  
+	-	`sha256:01ff9c811cd81975139fa5c41848b71f038de2a6d5d8653da884520f1e57099b`  
+		Last Modified: Thu, 21 Apr 2022 05:34:42 GMT  
+		Size: 65.7 MB (65702562 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:11-jre-8.0.10-plume`
 
 ```console
-$ docker pull tomee@sha256:c3481b624f0c20434f44f3ad7a9994fb72c1d5b9623aa1326bba7944d16091e9
+$ docker pull tomee@sha256:377d220653c22eeeb16c6540847ade9d79ee759d2238dc35d7e931b1b9a7f385
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -263,195 +263,195 @@ $ docker pull tomee@sha256:c3481b624f0c20434f44f3ad7a9994fb72c1d5b9623aa1326bba7
 ### `tomee:11-jre-8.0.10-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:35f4dd5816f68c34c44dc6061d96c380ead9f06abc1540736422b7de20c59f18
+$ docker pull tomee@sha256:19edfcea706b0c0ef120d5ebe81a1dd85d009d7fd1b9894cf2512cefcfe72d6b
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **201.3 MB (201251450 bytes)**  
+-	Total Size: **201.3 MB (201257018 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5cd4dfb25b3976ceaf3f3a842d93859a427c64558a8ecbd08f7df33fa29fed82`
+-	Image ID: `sha256:c7ca3d8c647efe2a5ae5496e58bd2220df2172d3aa82efa0ecaf7bf36ea934dd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:27:47 GMT
+# Thu, 21 Apr 2022 07:18:57 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:27:48 GMT
+# Thu, 21 Apr 2022 07:18:57 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:27:48 GMT
+# Thu, 21 Apr 2022 07:18:57 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79052a022ce4503809bd8084d3c0bc90597bf0d9d03cd7c102dccb8cf36eafdb`  
-		Last Modified: Wed, 30 Mar 2022 06:33:38 GMT  
-		Size: 77.7 MB (77688393 bytes)  
+	-	`sha256:0206cdb1e7a9673ff64a88c7d7c42de5f46dc50ff774e1c2d1b07a78109e93ed`  
+		Last Modified: Thu, 21 Apr 2022 07:24:46 GMT  
+		Size: 77.7 MB (77688369 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-8.0.10-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:6a4fcaf23c15cfe5d8b7915fdf46b56a5fd7999619fde154d17c5f48f6e9383a
+$ docker pull tomee@sha256:b21625a8b1be3b9059ca84fdb861fb768b0fe474db73f3b9a2781075869a0014
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **198.6 MB (198597927 bytes)**  
+-	Total Size: **198.6 MB (198598117 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d6cd7106c6599f415404acf611d8150492c6eb79997d41fc576fbea0ef1cbfd6`
+-	Image ID: `sha256:461defd7fe6395fa6e9839515a77553144bdac4a1a2daa2b23f6d280aac70885`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:48:42 GMT
+# Thu, 21 Apr 2022 05:24:31 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:48:49 GMT
+# Thu, 21 Apr 2022 05:24:37 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:48:49 GMT
+# Thu, 21 Apr 2022 05:24:38 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:48:50 GMT
+# Thu, 21 Apr 2022 05:24:39 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5ce17ee43c6d8111a447741773ac7f0b95a77f4f71182d68158c42cde1abd68`  
-		Last Modified: Wed, 30 Mar 2022 13:56:55 GMT  
-		Size: 77.7 MB (77688157 bytes)  
+	-	`sha256:829c05d232fc30a56a0bbb9a51933a844e582e194b8c39766f091694b887c9fc`  
+		Last Modified: Thu, 21 Apr 2022 05:33:54 GMT  
+		Size: 77.7 MB (77688167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:11-jre-8.0.10-plus`
 
 ```console
-$ docker pull tomee@sha256:112516c691319a7775c1b469a1e42962c370ea26f47c12f181bde42c0e7b6209
+$ docker pull tomee@sha256:2a43b7faf8be4b75b34abe44dccbea69435031ef97171705bd7bd61a2df50a76
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -462,195 +462,195 @@ $ docker pull tomee@sha256:112516c691319a7775c1b469a1e42962c370ea26f47c12f181bde
 ### `tomee:11-jre-8.0.10-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:1439a0bb65d9225c884d3c8b520f157b9779f451751b63c2135976bcf37ca6f8
+$ docker pull tomee@sha256:123e824332cf3e54ae815b2dc7df0bb23071f0a76c10112947906f3dd5d66cf2
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **194.2 MB (194171994 bytes)**  
+-	Total Size: **194.2 MB (194177558 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a30868ca4b2198b97e3b5ec8fa20488c9ba9f26de81f80d79275e13cdb0c2d5`
+-	Image ID: `sha256:e70ac963c4145014829fdb14f04e9a8aebea961c25e075fb506952609f345df8`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:27:53 GMT
+# Thu, 21 Apr 2022 07:18:59 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:28:00 GMT
+# Thu, 21 Apr 2022 07:19:06 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:01 GMT
+# Thu, 21 Apr 2022 07:19:07 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:01 GMT
+# Thu, 21 Apr 2022 07:19:07 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0c2edc06eea47f7aff70fd199827462241e2c7230bc46a9edd3d4fff59792d4b`  
-		Last Modified: Wed, 30 Mar 2022 06:33:53 GMT  
-		Size: 70.6 MB (70608937 bytes)  
+	-	`sha256:b6266a4bc0412875ec076cd0d265da07972055d61dc7cc6bc91c5e2f5885e3b8`  
+		Last Modified: Thu, 21 Apr 2022 07:25:00 GMT  
+		Size: 70.6 MB (70608909 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-8.0.10-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:5b325d1a2f5dadc3dae9ed6f02b73cc4eda54071fbaca6a13bca84c4975f3d2e
+$ docker pull tomee@sha256:378e821cd5e0dd41af8b78937efec41f0e63febb673055dca69e5c4d38840e03
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **191.5 MB (191518230 bytes)**  
+-	Total Size: **191.5 MB (191518425 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d959a284407f7eaccebe360775fb4fccedfd7e14a9b2c9332db619ce14fce410`
+-	Image ID: `sha256:7029f0e25f65ffe4d36eecbb94cf9cb9301ee61d422a1339fb506ece6aadd2b6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:48:56 GMT
+# Thu, 21 Apr 2022 05:24:44 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:49:01 GMT
+# Thu, 21 Apr 2022 05:24:52 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:02 GMT
+# Thu, 21 Apr 2022 05:24:52 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:02 GMT
+# Thu, 21 Apr 2022 05:24:53 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19bd20bb9f0a522bcabbc234fd5ddbe22571f51c702498a3a5619bedc4dc8ec3`  
-		Last Modified: Wed, 30 Mar 2022 13:57:15 GMT  
-		Size: 70.6 MB (70608460 bytes)  
+	-	`sha256:b6ecb17bf82bddcfffcd4b3776695b92df27537d81c61a0ff318ab7067086063`  
+		Last Modified: Thu, 21 Apr 2022 05:34:23 GMT  
+		Size: 70.6 MB (70608475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:11-jre-8.0.10-webprofile`
 
 ```console
-$ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de847c4a2423f8
+$ docker pull tomee@sha256:bdb8af99623365ec4b31b3e7da0dac60cc69714024d2d27f408346ec03cf7e2c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -661,195 +661,195 @@ $ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de8
 ### `tomee:11-jre-8.0.10-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:76590393e506ad8a1f27fa87b52f262773eb14855bda1183fab02ebb162f1200
+$ docker pull tomee@sha256:245b280b4bcc7c95f95287c56eb3c49925491729d287c898e69816f7639bf3c2
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **170.9 MB (170899559 bytes)**  
+-	Total Size: **170.9 MB (170905144 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:319e974e5f3a2fd001fe032d0c192a133035116e00649ef5adf22fa74f2f28cd`
+-	Image ID: `sha256:24616cf46df4d8f57f74f13f9b53382d267c2c8bbe53fb91db50c5984460bc6d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:12 GMT
+# Thu, 21 Apr 2022 07:19:19 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bd52238a6201d759b2d612406c2d10dcc2eaeee0af17a33385de5545f91e7f2`  
-		Last Modified: Wed, 30 Mar 2022 06:34:19 GMT  
-		Size: 47.3 MB (47336502 bytes)  
+	-	`sha256:63b492f8510b64c55c18fc5d9d0e53b64efba0d440ea5dd558dc0c948fdce4b6`  
+		Last Modified: Thu, 21 Apr 2022 07:25:28 GMT  
+		Size: 47.3 MB (47336495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-8.0.10-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:c189714e421bb9b5685436908346e199c3cbf591d6f741c9b4a80a62caa53f87
+$ docker pull tomee@sha256:9de0a1dba1e9889678f7c919d870772bd3d64fab5b35bd12742daed72d521e44
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.2 MB (168245733 bytes)**  
+-	Total Size: **168.2 MB (168245940 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:73d85ed96edaae1f11f0090c324fb87f10c537c2d4f29937d8819162f0f21d29`
+-	Image ID: `sha256:f1c3544c1d0cbb05c610b886659f027f745d32c9ef568d2c8b2c13f2b563aa88`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:49:20 GMT
+# Thu, 21 Apr 2022 05:25:11 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:49:25 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:26 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:27 GMT
+# Thu, 21 Apr 2022 05:25:16 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33023bcc2d012a5c2ebac995703f11ef2dfe1d5c97a572a04fadc2de8e4926b9`  
-		Last Modified: Wed, 30 Mar 2022 13:57:50 GMT  
-		Size: 47.3 MB (47335963 bytes)  
+	-	`sha256:1e1988bd3be155b6778484d05a5b51e752fbf80f6f3707f8389c4974be4cac01`  
+		Last Modified: Thu, 21 Apr 2022 05:35:00 GMT  
+		Size: 47.3 MB (47335990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:11-jre-9.0.0-M7-microprofile`
 
 ```console
-$ docker pull tomee@sha256:66fd18d2587ba91c58b9366c6f4c487febc947bd2f5f4d41fb38113bbb45f014
+$ docker pull tomee@sha256:54902dda0050c53673d83a137a9aa3fa600cc6ced1ead3de86fe08ac896aa3d4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -860,195 +860,195 @@ $ docker pull tomee@sha256:66fd18d2587ba91c58b9366c6f4c487febc947bd2f5f4d41fb381
 ### `tomee:11-jre-9.0.0-M7-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:43033cf6c5427c1b8fcb28198b5c89e5052b8f98b84598c01e7f998b5088a82d
+$ docker pull tomee@sha256:5f486dfa49473a6a4657c393c27d832e43fcb6f614d4e93bd92e5877f7be7d81
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **189.2 MB (189170727 bytes)**  
+-	Total Size: **189.2 MB (189176285 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:643ca426d95b7f2237368655feca777cde17fa34393b88a7051cec049909187e`
+-	Image ID: `sha256:1c3ca5fed82d8b61913550de82f987ad1515e116fa76326c4881ed3e57bfd25e`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:07 GMT
+# Thu, 21 Apr 2022 07:20:13 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:28 GMT
+# Thu, 21 Apr 2022 07:20:34 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:29:35 GMT
+# Thu, 21 Apr 2022 07:20:42 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:29:36 GMT
+# Thu, 21 Apr 2022 07:20:42 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:29:36 GMT
+# Thu, 21 Apr 2022 07:20:42 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0154f34e67aeb22abadf347d41bec8cc11fdcf52e55790abffedddbb381a650`  
-		Last Modified: Wed, 30 Mar 2022 06:35:47 GMT  
-		Size: 65.6 MB (65607670 bytes)  
+	-	`sha256:9adf70b2f8f2d11c9db19ecae0fd83a43bbfbeb4b4298dfe6e92def768497d6a`  
+		Last Modified: Thu, 21 Apr 2022 07:26:58 GMT  
+		Size: 65.6 MB (65607636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-9.0.0-M7-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:bc0b59dd3c7f07513e3a1c527fb34cf64e587d32d77666977a996add94a5a394
+$ docker pull tomee@sha256:272f95fafed5c2a6fc489b2331dbbcd6f9eff4f9ce31c3630eb3861d275406c0
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.5 MB (186517257 bytes)**  
+-	Total Size: **186.5 MB (186517444 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fa35948fd8037034a9d341486acc3a969f73e33919479cce9a38f340240431b8`
+-	Image ID: `sha256:ad960d7a0736e18ecef0bb42b2f8feff8e7911f617a4d238322d2f14eea88422`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:50:40 GMT
+# Thu, 21 Apr 2022 05:26:29 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:51:06 GMT
+# Thu, 21 Apr 2022 05:26:55 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:51:13 GMT
+# Thu, 21 Apr 2022 05:27:01 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:51:14 GMT
+# Thu, 21 Apr 2022 05:27:01 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:51:15 GMT
+# Thu, 21 Apr 2022 05:27:02 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99f862165d8c187c15cbfb75ef8c487cb80228dc75f1dc00d7b3fb457a39c830`  
-		Last Modified: Wed, 30 Mar 2022 13:59:41 GMT  
-		Size: 65.6 MB (65607487 bytes)  
+	-	`sha256:6073453bbecba451835c2a48379675290ddd33a6cc58b4041650fee6782ce2f2`  
+		Last Modified: Thu, 21 Apr 2022 05:37:00 GMT  
+		Size: 65.6 MB (65607494 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:11-jre-9.0.0-M7-plume`
 
 ```console
-$ docker pull tomee@sha256:8c93f4986626700477b1c3e0261ea9db15d125d9b6d858b3985b4fcf7cccba8c
+$ docker pull tomee@sha256:31f9d960a8534d5fa35d708c6a13fa45414554e62b97ccf385eb5e8eb18515e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1059,195 +1059,195 @@ $ docker pull tomee@sha256:8c93f4986626700477b1c3e0261ea9db15d125d9b6d858b3985b4
 ### `tomee:11-jre-9.0.0-M7-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:4596acaced724d28c789eb2d3e0ea83dde331eaf068a812b11b72d7b44e1fc5d
+$ docker pull tomee@sha256:b14cb634040399e6b725f67168871f2d582a8e76be16f883777f98d315857530
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **202.0 MB (202044858 bytes)**  
+-	Total Size: **202.1 MB (202050489 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2377d1179bd1a4ecb45def039020d10fdf43d9c208d82a9f209cf2cfd19ba941`
+-	Image ID: `sha256:9c8b85c2b40e0343f264788a736208560f78947896015b3e11487df65f159370`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:07 GMT
+# Thu, 21 Apr 2022 07:20:13 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:07 GMT
+# Thu, 21 Apr 2022 07:20:14 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:29:15 GMT
+# Thu, 21 Apr 2022 07:20:21 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:29:15 GMT
+# Thu, 21 Apr 2022 07:20:22 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:29:15 GMT
+# Thu, 21 Apr 2022 07:20:22 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f0a66b9241d5ccba53239ccf59385eaade4633792ed753bdfb8581c0bca3c61`  
-		Last Modified: Wed, 30 Mar 2022 06:35:24 GMT  
-		Size: 78.5 MB (78481801 bytes)  
+	-	`sha256:6a1fe9d36d61ef46de6406e05a2670db7c749db1323c02bd2f8a608199c156d8`  
+		Last Modified: Thu, 21 Apr 2022 07:26:35 GMT  
+		Size: 78.5 MB (78481840 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-9.0.0-M7-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:cc1f80c87207a31bc667b9c51b2aacd3349a7b2dba2c3f23acf6d548fad43b4e
+$ docker pull tomee@sha256:7a423f6ea7e16f6646351df9481330319c0f699f50e66df4de7f889b0c1e0456
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **199.4 MB (199391264 bytes)**  
+-	Total Size: **199.4 MB (199391445 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:40e11a2b26b07b9851cda0b5b1f548c90e322602a384d927906ddf96b9e87589`
+-	Image ID: `sha256:3236229d755bc5f75e4b310dfd26fdaf5b5fae98f89d9893f370698861b44d03`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:50:40 GMT
+# Thu, 21 Apr 2022 05:26:29 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:50:41 GMT
+# Thu, 21 Apr 2022 05:26:30 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:50:48 GMT
+# Thu, 21 Apr 2022 05:26:36 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:50:48 GMT
+# Thu, 21 Apr 2022 05:26:37 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:50:49 GMT
+# Thu, 21 Apr 2022 05:26:38 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fead6fc5e293ab40d9dd1496027ce81e9c06735a699f29bc2e18f99c89b8ebd7`  
-		Last Modified: Wed, 30 Mar 2022 13:59:13 GMT  
-		Size: 78.5 MB (78481494 bytes)  
+	-	`sha256:5a87c1b5b19becc577548b7f5efbd8d6fc9732101a98033f02477e62d349a098`  
+		Last Modified: Thu, 21 Apr 2022 05:36:30 GMT  
+		Size: 78.5 MB (78481495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:11-jre-9.0.0-M7-plus`
 
 ```console
-$ docker pull tomee@sha256:ddeb4acf8e07e9b32ab5bd0b07e4217e2e324c65a58179e7efe503d79fcfa11d
+$ docker pull tomee@sha256:fd589d278672d698a2c7a1e4967e63ecf6916b02a76932cd385ee4e9acf84223
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1258,195 +1258,195 @@ $ docker pull tomee@sha256:ddeb4acf8e07e9b32ab5bd0b07e4217e2e324c65a58179e7efe50
 ### `tomee:11-jre-9.0.0-M7-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:ce69d506eebed1596fdb7eee9f2e4a12774df2319c753b81f6347887591a4c85
+$ docker pull tomee@sha256:161bf87be1b12cdfae66ad890e7de37376cfbd9c9624769278fc944fc5526edf
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **194.1 MB (194088990 bytes)**  
+-	Total Size: **194.1 MB (194094572 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:507a1734209522b850a7a98d63031786b2a735df79113fd4d07151d49070ed9f`
+-	Image ID: `sha256:385d85e126f902b6898fc8ab77b924c47f42d7e7ed115f0c146cceffe4a62c8b`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:07 GMT
+# Thu, 21 Apr 2022 07:20:13 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:19 GMT
+# Thu, 21 Apr 2022 07:20:25 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:29:26 GMT
+# Thu, 21 Apr 2022 07:20:32 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:29:26 GMT
+# Thu, 21 Apr 2022 07:20:32 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:29:27 GMT
+# Thu, 21 Apr 2022 07:20:33 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5a1b57496822c7ea4d63d74a3a82d3ec80add8a945f90b875e7844a96b4cec41`  
-		Last Modified: Wed, 30 Mar 2022 06:35:36 GMT  
-		Size: 70.5 MB (70525933 bytes)  
+	-	`sha256:3a7d3775af8d74256907ed3f7d30779fb62ebc8e4e79cf1a6a40cb4c6b8c1c3b`  
+		Last Modified: Thu, 21 Apr 2022 07:26:46 GMT  
+		Size: 70.5 MB (70525923 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-9.0.0-M7-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:032ca91efc9878ab2dd79fd1e7c1eb0e7ca18b525bac798827d40d1c72521713
+$ docker pull tomee@sha256:6b0351e3d497dc0dc1882e74bac5ddf1bd269a746aee211ff58d3bd79a16c823
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **191.4 MB (191435022 bytes)**  
+-	Total Size: **191.4 MB (191435246 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:34857766694921cd4675d1323326492f1aead032e555e646242af5712985cd18`
+-	Image ID: `sha256:237568f786e30a52b24668a3c69a7ad12949193da7600558fe964c602548c51c`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:50:40 GMT
+# Thu, 21 Apr 2022 05:26:29 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:50:54 GMT
+# Thu, 21 Apr 2022 05:26:43 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:51:00 GMT
+# Thu, 21 Apr 2022 05:26:49 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:51:00 GMT
+# Thu, 21 Apr 2022 05:26:49 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:51:01 GMT
+# Thu, 21 Apr 2022 05:26:50 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cf060621276c5245259af6ba0c8c7ce87d9ecad5db3cf6914d3bdc6310aae036`  
-		Last Modified: Wed, 30 Mar 2022 13:59:27 GMT  
-		Size: 70.5 MB (70525252 bytes)  
+	-	`sha256:b1391e32f4162af1a11151e45869e4aae4a616234023301d890cd0a2bd60e4aa`  
+		Last Modified: Thu, 21 Apr 2022 05:36:46 GMT  
+		Size: 70.5 MB (70525296 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:11-jre-9.0.0-M7-webprofile`
 
 ```console
-$ docker pull tomee@sha256:6683aa0291b9e4137ef4c45c7df14e7e4ecef245bf908c6ce71eae4119fa117a
+$ docker pull tomee@sha256:a9e345429ecd23c8ff50b743a3db618a450ecac55b8214694bf86b8895f24f3a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1457,195 +1457,195 @@ $ docker pull tomee@sha256:6683aa0291b9e4137ef4c45c7df14e7e4ecef245bf908c6ce71ea
 ### `tomee:11-jre-9.0.0-M7-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:a42cdc7c56d6cb2d80f3e62e9767882963fa784520abda32688aa92e6614ee63
+$ docker pull tomee@sha256:a1a243b2a081220cbfdbb4a81e1210a872d389cb34e070d5a6c382f3b35298ea
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **178.1 MB (178131282 bytes)**  
+-	Total Size: **178.1 MB (178136918 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f0b6d58d282333e773a138489052ee2b6c68b4def0d42fcbb6fcdab2be4e7802`
+-	Image ID: `sha256:d46a48c1a9ff30af93e82abf724c998d0001f5186157027b6590b79fdc5f1bcb`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:07 GMT
+# Thu, 21 Apr 2022 07:20:13 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:38 GMT
+# Thu, 21 Apr 2022 07:20:44 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:29:44 GMT
+# Thu, 21 Apr 2022 07:20:50 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:29:44 GMT
+# Thu, 21 Apr 2022 07:20:50 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:29:44 GMT
+# Thu, 21 Apr 2022 07:20:50 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2033c0c9913a0f5b3a32b3f1c69010c8e0f3344d80b1f6a720b195ec4f6d4b1f`  
-		Last Modified: Wed, 30 Mar 2022 06:35:58 GMT  
-		Size: 54.6 MB (54568225 bytes)  
+	-	`sha256:a7592ad928cf72aef7cf9d42868fa233e9e0e3722151fbc8114480d9cf17b2d5`  
+		Last Modified: Thu, 21 Apr 2022 07:27:09 GMT  
+		Size: 54.6 MB (54568269 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:11-jre-9.0.0-M7-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:39ab5ce42116f908bfe3c85abcaa2dd3f760d6ef10acabf1bd1fc3800afac3a7
+$ docker pull tomee@sha256:3986a1a5dd251bce60afbdb2e2a06f6d6a90948e3bd1117bb9124161d2ff70b2
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **175.5 MB (175477767 bytes)**  
+-	Total Size: **175.5 MB (175477969 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:72bb98ac289967695ffd1bfe8358ce3c023e3887987497d9024e53dc3de9a1a7`
+-	Image ID: `sha256:51f97d022c602ac747a9760fe3199e5780a500f38f0cd82e07ecb6ca00284aa6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:50:40 GMT
+# Thu, 21 Apr 2022 05:26:29 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:51:20 GMT
+# Thu, 21 Apr 2022 05:27:07 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:51:26 GMT
+# Thu, 21 Apr 2022 05:27:13 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:51:26 GMT
+# Thu, 21 Apr 2022 05:27:14 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:51:27 GMT
+# Thu, 21 Apr 2022 05:27:15 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c54f7deb62bac770503306195fbc9eadecdc0db8f8c2e6c4c0fcf935a932015`  
-		Last Modified: Wed, 30 Mar 2022 14:00:10 GMT  
-		Size: 54.6 MB (54567997 bytes)  
+	-	`sha256:5fe29e67901c2a2e2cff53b7310bbd35a0204dabc6b09d9cdf3f27396421e8c0`  
+		Last Modified: Thu, 21 Apr 2022 05:37:15 GMT  
+		Size: 54.6 MB (54568019 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-8.0.10-microprofile`
 
 ```console
-$ docker pull tomee@sha256:a4a34165b839a65785c3bf566926dd0238fd33b3c6f613ed7258fdb0db1d9ed0
+$ docker pull tomee@sha256:931f2fd7f98ce9989f27e71165951f4bcb43024766b38839d9dae83dcd0bf720
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1656,199 +1656,199 @@ $ docker pull tomee@sha256:a4a34165b839a65785c3bf566926dd0238fd33b3c6f613ed7258f
 ### `tomee:17-jdk-8.0.10-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:a0231b9ade3dd41b69c3258493637490a0b4714b1c88046981787aadbca5c973
+$ docker pull tomee@sha256:b74acc7fb0dab7ec7c2a93d1e000bf6365942a4c9d413a5da99fc58de091f045
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **393.0 MB (393006598 bytes)**  
+-	Total Size: **393.0 MB (393012417 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d9e3368af3772b7123ac549af18f575a8c3d5db43fd841ab48e894776808c478`
+-	Image ID: `sha256:33750901ec6b815e4b88b2e69450bd25135cb3a269d58b7b36c24e8e19a1a2ce`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:50 GMT
+# Thu, 21 Apr 2022 07:19:56 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:28:57 GMT
+# Thu, 21 Apr 2022 07:20:03 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:57 GMT
+# Thu, 21 Apr 2022 07:20:03 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:57 GMT
+# Thu, 21 Apr 2022 07:20:04 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ca3169c67c26d23a2557029a3711512e2c1827020414ad9843d88ee9e6c5437`  
-		Last Modified: Wed, 30 Mar 2022 06:35:03 GMT  
-		Size: 65.7 MB (65702902 bytes)  
+	-	`sha256:2b2319579da1274ec982c53c9a9a1294b153db6a37469732242eecccb80f4ac5`  
+		Last Modified: Thu, 21 Apr 2022 07:26:13 GMT  
+		Size: 65.7 MB (65702899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-8.0.10-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:7d5cddcf5db8e73b13a0313b63d15a296e22659c5f6f272fc2b34940cce2f519
+$ docker pull tomee@sha256:ff87a31e1b736422d500cdafb45082e8cac5988795318aafca0f1c03cec50f81
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **391.7 MB (391659911 bytes)**  
+-	Total Size: **391.7 MB (391661234 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e3f3aa43c06e4cb64708a3178fd7f8531511543007ec1bbdd689ed1d3784ac19`
+-	Image ID: `sha256:8c1c2ac42b265313ca07adc2112527d4e267ff31dec3d4cd253279e7024a4d91`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:49:45 GMT
+# Thu, 21 Apr 2022 05:25:34 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:50:17 GMT
+# Thu, 21 Apr 2022 05:26:06 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:50:22 GMT
+# Thu, 21 Apr 2022 05:26:12 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:50:23 GMT
+# Thu, 21 Apr 2022 05:26:12 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:50:24 GMT
+# Thu, 21 Apr 2022 05:26:13 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5baf51a505d29738832df1cd38031a6a7451c01e6c163cee0af78f854dfc0ab`  
-		Last Modified: Wed, 30 Mar 2022 13:58:43 GMT  
-		Size: 65.7 MB (65702555 bytes)  
+	-	`sha256:7cd3e2c7cb34bf0aed067fc7c0717cf17b35b3641e42379001f55e2413935f78`  
+		Last Modified: Thu, 21 Apr 2022 05:35:59 GMT  
+		Size: 65.7 MB (65702563 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-8.0.10-plume`
 
 ```console
-$ docker pull tomee@sha256:92a4b18a762e3abf3e008d251314fec997d8f01e248114fc62b38bcaeda7600b
+$ docker pull tomee@sha256:4919f8284f25e2810a3424aa7e10a038e08bcb3fd5666791ece799bb61ac1e3a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1859,199 +1859,199 @@ $ docker pull tomee@sha256:92a4b18a762e3abf3e008d251314fec997d8f01e248114fc62b38
 ### `tomee:17-jdk-8.0.10-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:00b600748d7c6c570afaba7c5b03ad5aad9579015cffa90a1c057d6e70972b79
+$ docker pull tomee@sha256:abae7a3e9f0160b879e6b0bacdc71dba9d5570977ce9abd46aaf20028a16fb5e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **405.0 MB (404992065 bytes)**  
+-	Total Size: **405.0 MB (404997887 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:806c98eec90b257aca038b94706a3113eeb1b533c2bb90f2473034e43b22d332`
+-	Image ID: `sha256:1cb38331ae4fdf9cda36d48af7e5798a262914eef8c4ddadb9eaf7f5b442026f`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:28:37 GMT
+# Thu, 21 Apr 2022 07:19:44 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:38 GMT
+# Thu, 21 Apr 2022 07:19:44 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:38 GMT
+# Thu, 21 Apr 2022 07:19:45 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba6a7f9dbedca7d0b158ec9fdb3ea2e2278de731b0cbf120995295c4bac48b34`  
-		Last Modified: Wed, 30 Mar 2022 06:34:40 GMT  
+	-	`sha256:793374f0d8e9d6e969c77fd601f0b93cd580754289c5d88df4ac3d59eaa4e557`  
+		Last Modified: Thu, 21 Apr 2022 07:25:48 GMT  
 		Size: 77.7 MB (77688369 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-8.0.10-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:fcfe3bf512ec0a8153fe09e87c9ecfc66006d48d862b3f94226aad58935cab21
+$ docker pull tomee@sha256:e20af3449a46cce6439ed055c96ebf480cbd6e23ba3bb4b3e979240894ff6687
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **403.6 MB (403645527 bytes)**  
+-	Total Size: **403.6 MB (403646837 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:903b78d3d4e8df65f333122a74760f75a5763fb140e8cae3b6825c8288696553`
+-	Image ID: `sha256:70e48cbfb74ab74bcde82ccf8fac520cedf1780421d350ea25f9bae9d6260237`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:49:45 GMT
+# Thu, 21 Apr 2022 05:25:34 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:49:46 GMT
+# Thu, 21 Apr 2022 05:25:35 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:49:55 GMT
+# Thu, 21 Apr 2022 05:25:43 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:56 GMT
+# Thu, 21 Apr 2022 05:25:44 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:56 GMT
+# Thu, 21 Apr 2022 05:25:44 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e3103a5594a98b5b7853f5c54f637113b46ba98f98397ae5e9b650ea74ce6a3e`  
-		Last Modified: Wed, 30 Mar 2022 13:58:15 GMT  
-		Size: 77.7 MB (77688171 bytes)  
+	-	`sha256:5c6f061bf8ea349c38bdae9f9203ee4d17fbddc943e1b66d41826e44fe75a4ed`  
+		Last Modified: Thu, 21 Apr 2022 05:35:28 GMT  
+		Size: 77.7 MB (77688166 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-8.0.10-plus`
 
 ```console
-$ docker pull tomee@sha256:137407181879e0e9b54df7f89e5151b4f81fc1dfac3ba0e3281b37c37f7630ef
+$ docker pull tomee@sha256:35c0322337f700f16c878a83fa438319ac40dfc1cc822864adde5edbd3c75914
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2062,199 +2062,199 @@ $ docker pull tomee@sha256:137407181879e0e9b54df7f89e5151b4f81fc1dfac3ba0e3281b3
 ### `tomee:17-jdk-8.0.10-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:a371c6580e73a9075fed5a8baffeb9cdc78860664bb6cd2a263cc774bd76c0e2
+$ docker pull tomee@sha256:9a1f2c9a734310921daf12b23877086075baa1f33714626d3a1d58d637f3d886
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **397.9 MB (397912637 bytes)**  
+-	Total Size: **397.9 MB (397918457 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d2c466cee8f1eede6b03fa6a5452677f7d2aec0ce8b55e34b7141040b835523f`
+-	Image ID: `sha256:2864566096858306c9cfdb8c194fd523e273d520ffe18617415a7f17d343728d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:40 GMT
+# Thu, 21 Apr 2022 07:19:47 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:28:47 GMT
+# Thu, 21 Apr 2022 07:19:54 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:48 GMT
+# Thu, 21 Apr 2022 07:19:54 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:48 GMT
+# Thu, 21 Apr 2022 07:19:54 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d6eccc22435d0426d653f58fd1ec6bb5a7098b9b3f63960e0c097374f74d164`  
-		Last Modified: Wed, 30 Mar 2022 06:34:52 GMT  
-		Size: 70.6 MB (70608941 bytes)  
+	-	`sha256:5b3d91d8ffa3fdcd2e50f8d118da3003faa52e2a5afbff1be56bbde4313b3194`  
+		Last Modified: Thu, 21 Apr 2022 07:26:02 GMT  
+		Size: 70.6 MB (70608939 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-8.0.10-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:feb9120a9fbb0f64e3806db32e9cd58a4220a3492af32edb5399aa742e75271a
+$ docker pull tomee@sha256:6407ebff6cdc712bf45cac346ff7b43c10229ce8eaee2a6e5a7104c33ab2d881
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **396.6 MB (396565863 bytes)**  
+-	Total Size: **396.6 MB (396567151 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7b887b3c7bfa4886f51a2227ba7193ecdb2a404244fd075abb44dfa901a2af2b`
+-	Image ID: `sha256:16a513fdabb50856ac5b00644c66c797e007a241c85e75745684d4360d66a2b3`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:49:45 GMT
+# Thu, 21 Apr 2022 05:25:34 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:50:05 GMT
+# Thu, 21 Apr 2022 05:25:49 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:50:10 GMT
+# Thu, 21 Apr 2022 05:25:58 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:50:11 GMT
+# Thu, 21 Apr 2022 05:25:58 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:50:11 GMT
+# Thu, 21 Apr 2022 05:25:59 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0fc4bb0e6b7c3ce5d8d1f7130b1db11ec225b94227e61d8da33f72178ee29ec4`  
-		Last Modified: Wed, 30 Mar 2022 13:58:30 GMT  
-		Size: 70.6 MB (70608507 bytes)  
+	-	`sha256:ec808258b81352c2664d7d37e78afa4a57547ed4e72b6b91c3f4eab092a702ee`  
+		Last Modified: Thu, 21 Apr 2022 05:35:43 GMT  
+		Size: 70.6 MB (70608480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-8.0.10-webprofile`
 
 ```console
-$ docker pull tomee@sha256:9bb3d38fec71d84ecdf79f39a130d2c2471a1fa55df9b914870585a2521363a0
+$ docker pull tomee@sha256:1a8bee2d1f4061df057a0a321734d5ff337835dd749a9e410274674dec5682a2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2265,199 +2265,199 @@ $ docker pull tomee@sha256:9bb3d38fec71d84ecdf79f39a130d2c2471a1fa55df9b91487058
 ### `tomee:17-jdk-8.0.10-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:884450a4423f07521f13c63f4e94a984d5744c223c71feb31ee029e709fe43d6
+$ docker pull tomee@sha256:c573db3ed69843e99fe2fc7d0ef341f4967da66c5803efbcb5fd969b5fd9c2fd
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **374.6 MB (374640211 bytes)**  
+-	Total Size: **374.6 MB (374646026 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3f009d09a3eb0ccdec1247c628aa3635a57c31906796c206de447f96b5e90f14`
+-	Image ID: `sha256:b7c092a74495b46f746649146a3cb2f102db4f50bf942ee276cdf47885cec4c5`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:59 GMT
+# Thu, 21 Apr 2022 07:20:06 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:29:05 GMT
+# Thu, 21 Apr 2022 07:20:11 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:29:05 GMT
+# Thu, 21 Apr 2022 07:20:11 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:29:05 GMT
+# Thu, 21 Apr 2022 07:20:11 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6e14e867042e5ad26bbbe29f279f68efe7f8c530bb87e1b1a03e092421d47f1`  
-		Last Modified: Wed, 30 Mar 2022 06:35:13 GMT  
-		Size: 47.3 MB (47336515 bytes)  
+	-	`sha256:13a3447823878914c894e42b0724f7163706daa2ca97b9e78b2a34a4fecfe9cb`  
+		Last Modified: Thu, 21 Apr 2022 07:26:24 GMT  
+		Size: 47.3 MB (47336508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-8.0.10-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:0b5b0ce6a3488d4559d31ecf98ecfda750c95ca03c74583529fb808fab864dd2
+$ docker pull tomee@sha256:1d2b82783697b97378f781c51e41eb49a9e707339e0219139628d212a25aecbb
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **373.3 MB (373293339 bytes)**  
+-	Total Size: **373.3 MB (373294614 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:03125c299216ddcd2264f301b8ea2b35d4159be27658cab1e4f578c6d2bee018`
+-	Image ID: `sha256:c725764590b946d9cee47948c0f4535da82037fed1fcdbf13235f7cee0670020`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:49:45 GMT
+# Thu, 21 Apr 2022 05:25:34 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:50:29 GMT
+# Thu, 21 Apr 2022 05:26:18 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:50:34 GMT
+# Thu, 21 Apr 2022 05:26:23 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:50:35 GMT
+# Thu, 21 Apr 2022 05:26:24 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:50:35 GMT
+# Thu, 21 Apr 2022 05:26:24 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b236ce2e53de9cd2327676665c0820c3c0fcf2b42752b3ce038f0f95f65455e`  
-		Last Modified: Wed, 30 Mar 2022 13:58:55 GMT  
-		Size: 47.3 MB (47335983 bytes)  
+	-	`sha256:5256c1c1d6a2fe4d188eb41d232959b0ae63cab469a986c27ae68ddcefa9e155`  
+		Last Modified: Thu, 21 Apr 2022 05:36:15 GMT  
+		Size: 47.3 MB (47335943 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-9.0.0-M7-microprofile`
 
 ```console
-$ docker pull tomee@sha256:daa9e70d639daeb88688e51489f77d87bc8042b8c01af8e825dae8b282862048
+$ docker pull tomee@sha256:74df95c8fd8416d2cbdc2977f5c002bacda4f5d91a4037937a2cbfa3270e597b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2468,199 +2468,199 @@ $ docker pull tomee@sha256:daa9e70d639daeb88688e51489f77d87bc8042b8c01af8e825dae
 ### `tomee:17-jdk-9.0.0-M7-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:ae17cfefde57b9c820412cc1e3f15934384cdb91341290288b6f4e051d4efbdc
+$ docker pull tomee@sha256:3508a6fbd557c80d9e046e676ca10336709ce754b6a8df81a7e3e4473928db5d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **392.9 MB (392911366 bytes)**  
+-	Total Size: **392.9 MB (392917198 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:272d1e4d24cfd1a0f60e9d85cec5cad80afc80aa6393bae07c399b4aca685ff1`
+-	Image ID: `sha256:1bbe450b8bdd45687e3fa2923ed83fb1db6b4a453e2997fb56fb0a2c9981f4a5`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:30:07 GMT
+# Thu, 21 Apr 2022 07:21:14 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:30:14 GMT
+# Thu, 21 Apr 2022 07:21:21 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:30:15 GMT
+# Thu, 21 Apr 2022 07:21:21 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:30:15 GMT
+# Thu, 21 Apr 2022 07:21:21 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d76ac8bf521e979748364f70882872c8e1a913ae07f56c7d119a63d7bdc153`  
-		Last Modified: Wed, 30 Mar 2022 06:36:39 GMT  
-		Size: 65.6 MB (65607670 bytes)  
+	-	`sha256:793f9b7be0763d6fea4d3f2815b125fb007bd2f3f868b684cf02cb623d9ef01d`  
+		Last Modified: Thu, 21 Apr 2022 07:27:48 GMT  
+		Size: 65.6 MB (65607680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-9.0.0-M7-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:99dce1839b4388a90ee2131b3ff57afd9cdb156757d6e9b3ee3021c4987b66eb
+$ docker pull tomee@sha256:5dd1528a8c3e781405e531943f0b2492017cc8a75481394746b45b55e429af37
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **391.6 MB (391564827 bytes)**  
+-	Total Size: **391.6 MB (391566162 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ed48057cf9317103bb2e719b6773b74262112757e68da15fd6f83e3e451fd1c8`
+-	Image ID: `sha256:23082514fe0d61b4820faf255f3a1ec94d56340c989ae145299b0baefaa4cf49`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:52:01 GMT
+# Thu, 21 Apr 2022 05:27:47 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:52:06 GMT
+# Thu, 21 Apr 2022 05:27:55 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:52:07 GMT
+# Thu, 21 Apr 2022 05:27:56 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:52:07 GMT
+# Thu, 21 Apr 2022 05:27:56 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3acb8602903a699cad882a77a2511277279f1e5ff5eeafb531737d9676fcfdd`  
-		Last Modified: Wed, 30 Mar 2022 14:01:09 GMT  
-		Size: 65.6 MB (65607471 bytes)  
+	-	`sha256:d2075fb6821077105bd99cff5f708e2dbf7e568929f46bde59914bb8e2957a80`  
+		Last Modified: Thu, 21 Apr 2022 05:38:11 GMT  
+		Size: 65.6 MB (65607491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-9.0.0-M7-plume`
 
 ```console
-$ docker pull tomee@sha256:8d304bdb0001547bae13b07a71efe116e7d75afd8c79fa50cae4186e2ec1a433
+$ docker pull tomee@sha256:5e7c7c4a711d1bc46051d9f7cdbd4bb4637857d16b2d6ea8b5949e4a9444e5a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2671,199 +2671,199 @@ $ docker pull tomee@sha256:8d304bdb0001547bae13b07a71efe116e7d75afd8c79fa50cae41
 ### `tomee:17-jdk-9.0.0-M7-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:f055e452c53e78e01ab4996511cf1df72371a281ccce639e63e9851028e01a59
+$ docker pull tomee@sha256:627458be0326417d83c9f45c530b8b18ec86b7396a3e21ceb422aad733cec8aa
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **405.8 MB (405785496 bytes)**  
+-	Total Size: **405.8 MB (405791358 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3eafe8aef071a460f7b5dbc8188567308c9975e31b6b7131ae45e5b380875b7a`
+-	Image ID: `sha256:f0e83a5d7241d46019c82d4d89c995d956869d9f2f6f68f31bc36a980902a6c1`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:29:54 GMT
+# Thu, 21 Apr 2022 07:21:02 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:29:54 GMT
+# Thu, 21 Apr 2022 07:21:02 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:29:54 GMT
+# Thu, 21 Apr 2022 07:21:02 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:28d0cc452123ccb8854a7122348b1e12d00bfc986aad74b0efe7a5553ce945de`  
-		Last Modified: Wed, 30 Mar 2022 06:36:10 GMT  
-		Size: 78.5 MB (78481800 bytes)  
+	-	`sha256:2faac8c3bdfa9195ff5d493fcacd51432d7169aa9ef92e1c2885a48d2b800ef1`  
+		Last Modified: Thu, 21 Apr 2022 07:27:21 GMT  
+		Size: 78.5 MB (78481840 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-9.0.0-M7-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:de97d9e4ab20b071b99fdd99039140cc3decc7c5ec1833edbe277756f44c3181
+$ docker pull tomee@sha256:013f587858b8f288354968960ac53a9b1668b24a99e0c3498ada8a92e5044f58
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.4 MB (404438824 bytes)**  
+-	Total Size: **404.4 MB (404440167 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:39458f255d516f3449f2671677aaa6d86b97d7b83a8d671aa37090bfcc1e8bf9`
+-	Image ID: `sha256:ea82ad6187fc304c72a24281c6eac79099fc66bbef84ae3cdc1d56d01612dcb8`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:22 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:51:40 GMT
+# Thu, 21 Apr 2022 05:27:29 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:51:41 GMT
+# Thu, 21 Apr 2022 05:27:30 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:51:42 GMT
+# Thu, 21 Apr 2022 05:27:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e9b1aaa2c47bb4c2eaeb207181f61cd64c16c7fb00d8bb889e7ac5a6974be12`  
-		Last Modified: Wed, 30 Mar 2022 14:00:34 GMT  
-		Size: 78.5 MB (78481468 bytes)  
+	-	`sha256:72c80f1e6dfb83b4e8847a1479e15691d8e326694e1a4795f515fc8e1a524aa6`  
+		Last Modified: Thu, 21 Apr 2022 05:37:34 GMT  
+		Size: 78.5 MB (78481496 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-9.0.0-M7-plus`
 
 ```console
-$ docker pull tomee@sha256:30f69e0732a48b680671839dad434b457f2c46815b2f6af79556b187fa3ffd9b
+$ docker pull tomee@sha256:96b155e73991f7c646c6abaf6424b247e0813e41925b1539d87f6ccd0f0b3970
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2874,199 +2874,199 @@ $ docker pull tomee@sha256:30f69e0732a48b680671839dad434b457f2c46815b2f6af79556b
 ### `tomee:17-jdk-9.0.0-M7-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:43d994529d9ecc386e939d719e658b796b0b46ca275de6c2fc0a4b077e4c9862
+$ docker pull tomee@sha256:2ab9f0e6308b4d9457a1b9057187f8df94680c4afcc4252055f819bd8f144cb0
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **397.8 MB (397829645 bytes)**  
+-	Total Size: **397.8 MB (397835467 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0ce7d69e004214d5845e3254d9aaff4a1c7e73e28fd438c72bb6f6281b43073e`
+-	Image ID: `sha256:01439200c5d17f13bbec6f46dd8bd3122a1c24621d3c66136b83e8d9d4003389`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:57 GMT
+# Thu, 21 Apr 2022 07:21:05 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:30:05 GMT
+# Thu, 21 Apr 2022 07:21:12 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:30:05 GMT
+# Thu, 21 Apr 2022 07:21:12 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:30:05 GMT
+# Thu, 21 Apr 2022 07:21:12 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57f7b205402f4279d97d9196d2d227b0094cab6e0025fdc48d9c798749dfdb46`  
-		Last Modified: Wed, 30 Mar 2022 06:36:26 GMT  
+	-	`sha256:57f1cedb354d37a0e39b9ced4aff0930b7d0b5fd50d8ee72ab95a1e84f41df86`  
+		Last Modified: Thu, 21 Apr 2022 07:27:34 GMT  
 		Size: 70.5 MB (70525949 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-9.0.0-M7-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:bea2d2d5964f28ddaf15f52b45223605d0ae5e61ee1095861c3bfbc1b60bb72f
+$ docker pull tomee@sha256:0ce57d281ccc9ffa22424d5d0d44d5e59afa06a68d4916a5e3de16b69a1995ea
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **396.5 MB (396482663 bytes)**  
+-	Total Size: **396.5 MB (396483968 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:990ac5bb2206fb5cd78710b28db25434a0d43c092f7b8d168e456afc33ac1974`
+-	Image ID: `sha256:e60151baa746d5ca28c82e40fbd2b0174e2b04a34cfa6ade9ca457aa59eb857d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:51:47 GMT
+# Thu, 21 Apr 2022 05:27:35 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:51:54 GMT
+# Thu, 21 Apr 2022 05:27:41 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:51:54 GMT
+# Thu, 21 Apr 2022 05:27:42 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:51:55 GMT
+# Thu, 21 Apr 2022 05:27:42 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d847ce52a4e20906598e3f50fb0bfbbc739676438e2be5e5b97d9396e8accf0`  
-		Last Modified: Wed, 30 Mar 2022 14:00:51 GMT  
-		Size: 70.5 MB (70525307 bytes)  
+	-	`sha256:2f62b594631c41f28457d320ab789321fb7767cebaecb29c4e2840be25882726`  
+		Last Modified: Thu, 21 Apr 2022 05:37:53 GMT  
+		Size: 70.5 MB (70525297 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:17-jdk-9.0.0-M7-webprofile`
 
 ```console
-$ docker pull tomee@sha256:586a6c3a7e9cdbd7641683556517a3af267880a47b10f5e4d5efa77d98c851f2
+$ docker pull tomee@sha256:85e1ca0b84ff3710e56833c4d28dbde495b2f5e2ffcf6d4d3e7f9ed00d981d3e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3077,199 +3077,199 @@ $ docker pull tomee@sha256:586a6c3a7e9cdbd7641683556517a3af267880a47b10f5e4d5efa
 ### `tomee:17-jdk-9.0.0-M7-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:91733c50648891013b0de9daa8c581c0c0d42accb66e2b165757c576908fbb29
+$ docker pull tomee@sha256:f2cd8b32f569b08f0354f100b55e5d26022d2279ffebef72de14c168525b6359
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **381.9 MB (381872041 bytes)**  
+-	Total Size: **381.9 MB (381877738 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31c13c3e6f6c085a1d11c5abbcfa49b6a73c413e630b4c6468919f99fba8f8da`
+-	Image ID: `sha256:51ba0e34161010fafc7748765907fb5fbc26d8c6e7caec9416e2955f07d85de5`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:30:17 GMT
+# Thu, 21 Apr 2022 07:21:23 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49783a7b622ae6fe99b28c2a48a1c9d60a369cc4ac0b5b89eab36f2bb507b720`  
-		Last Modified: Wed, 30 Mar 2022 06:36:53 GMT  
-		Size: 54.6 MB (54568345 bytes)  
+	-	`sha256:6821b0c6cf4f1a4df4e2e774c8a1a56430b4d7c4a33af4a756f17c34f0bcfbc9`  
+		Last Modified: Thu, 21 Apr 2022 07:28:02 GMT  
+		Size: 54.6 MB (54568220 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:17-jdk-9.0.0-M7-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:55af5408d8582b5732a4028b9b2d535f9e386952a8f57edc5e2e74a554384e72
+$ docker pull tomee@sha256:45cc34eede53939f18f15890ff7aea7626fd6105c3c28e47c329b2b003f2fe94
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **380.5 MB (380525374 bytes)**  
+-	Total Size: **380.5 MB (380526680 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2e985b943137900608e11ecc31f312e95bc42ed0d01600ae76557558cec18cd7`
+-	Image ID: `sha256:607f6ea8b1f549f0a541450abb65361aba056bad6ce2983fca967f86ad0625dc`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:52:13 GMT
+# Thu, 21 Apr 2022 05:28:02 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:52:18 GMT
+# Thu, 21 Apr 2022 05:28:08 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:52:18 GMT
+# Thu, 21 Apr 2022 05:28:08 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:52:19 GMT
+# Thu, 21 Apr 2022 05:28:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a698591f74583c76fbaf2ff0909b87aecaac0317cb90e34cb53306d8c8681930`  
-		Last Modified: Wed, 30 Mar 2022 14:01:34 GMT  
-		Size: 54.6 MB (54568018 bytes)  
+	-	`sha256:ee3260b4683690e39fd1bdee5e67c105e470a2bdfe1e72738be307de3cd1921d`  
+		Last Modified: Thu, 21 Apr 2022 05:38:41 GMT  
+		Size: 54.6 MB (54568009 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7`
 
 ```console
-$ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09ce223e484af
+$ docker pull tomee@sha256:396c681969579c0a8056ef621e0e7c31ad9d273e6eeaa79d3acadbf2bf04cf98
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3280,199 +3280,199 @@ $ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09
 ### `tomee:7` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:17b42166712d13412fe0b44bab175d218d6ce156b02531f05d44c1533c7af41e
+$ docker pull tomee@sha256:0abae181af6c0c2c7f0f289096156900034b332f21859631e2025cd4d58d4eeb
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.6 MB (158555199 bytes)**  
+-	Total Size: **158.6 MB (158559547 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ad82abd781a2924a0f5fe34d1603530c2760ea7a520d1edbeb348245f33f186b`
+-	Image ID: `sha256:64cc6a27dedf789e967e5b7cde079ef22e1c707f5a122203cd2d13adddef79f0`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:36 GMT
+# Thu, 21 Apr 2022 07:17:46 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b42a9ad0170f6a198a5300729b7669786633a85f8980136ee2110fa3e06d26da`  
-		Last Modified: Wed, 30 Mar 2022 06:32:35 GMT  
-		Size: 40.5 MB (40520417 bytes)  
+	-	`sha256:c8a46647e80526b691173407174a826ec1fb4ec1881f78f6907d101e1876b4ad`  
+		Last Modified: Thu, 21 Apr 2022 07:23:41 GMT  
+		Size: 40.5 MB (40520421 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:e9939a6025814fe1582b0ea5159f31f12f3b34cd704d546054ccc763ed5bae56
+$ docker pull tomee@sha256:d41a8666810a4cfd9740ac640565d32850dbe4356ed0fe6cee94632a4c0d82c1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.1 MB (156073764 bytes)**  
+-	Total Size: **156.1 MB (156073595 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7b73fd0840cdea53d4b4159eac1dc03cdb177d54038292e89df66f6b141f3cc`
+-	Image ID: `sha256:eda6debe71296c61592f0699eede09b5b2fb9de12198a608bf0bfb79aad2d089`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:47:13 GMT
+# Thu, 21 Apr 2022 05:23:04 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:47:16 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:17 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:18 GMT
+# Thu, 21 Apr 2022 05:23:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee1ab9c2b67428f245f9138e3bcd95fbcc810ab817a5fd0bd2b4c3cd1ad33d22`  
-		Last Modified: Wed, 30 Mar 2022 13:55:37 GMT  
-		Size: 40.5 MB (40519939 bytes)  
+	-	`sha256:a5b10893a32b2c99b6797c8452e9476c412558b16b8fb1b4a560097c6f2a8700`  
+		Last Modified: Thu, 21 Apr 2022 05:32:11 GMT  
+		Size: 40.5 MB (40519971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.0`
 
 ```console
-$ docker pull tomee@sha256:9bbfffa6bbe358af61474d6bb32adc5cb1045b3e431ffdae5f048459e458f45a
+$ docker pull tomee@sha256:6c072069ccbe5f03e505ea97841d058a8db5a05518670d9b648606bb5b217095
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3483,199 +3483,199 @@ $ docker pull tomee@sha256:9bbfffa6bbe358af61474d6bb32adc5cb1045b3e431ffdae5f048
 ### `tomee:7.0` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:26c401d14b052705e35b60845eb3b99488e820a2f60b6ee6de7976f4f292352d
+$ docker pull tomee@sha256:a6f9406e91a0a19b53e117cf5cee0618f1648b7c6329746fce298511e244c303
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.4 MB (156441252 bytes)**  
+-	Total Size: **156.4 MB (156445580 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:190da8928f62a71065fea5a86c247b1f9ad229d53fc6e939481603997512822b`
+-	Image ID: `sha256:441ca5dddb7a1f1357b9da5c8bbef3a3f994d3461d5991cf50d54b69461ff35d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 06:26:03 GMT
+# Thu, 21 Apr 2022 07:17:13 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:26:07 GMT
+# Thu, 21 Apr 2022 07:17:18 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:07 GMT
+# Thu, 21 Apr 2022 07:17:18 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:07 GMT
+# Thu, 21 Apr 2022 07:17:18 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9d0c3ae4de0f189e915a93edd6b1eaa450453960e1767f0c74ebd7b878c8c95`  
-		Last Modified: Wed, 30 Mar 2022 06:31:43 GMT  
-		Size: 38.4 MB (38406470 bytes)  
+	-	`sha256:c82e82049894ef990c6c38cb6f5cfce94af6a87da365fb48ae3e7083eefe9273`  
+		Last Modified: Thu, 21 Apr 2022 07:22:49 GMT  
+		Size: 38.4 MB (38406454 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:73d829fb2a359d84369c18d6272c086d49821637b6b8f98bae323ded41d4225f
+$ docker pull tomee@sha256:defd5eb6e07cf49787d9fbe72c584bfa732e0683ac5f37eea4aa909b50e36d92
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.0 MB (153959658 bytes)**  
+-	Total Size: **154.0 MB (153959456 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:510c09897c9a4a0213acfdd6c52d482d784466931701f1ea564abc107f760202`
+-	Image ID: `sha256:21434dac2e52edd700b6770f3fa7131ea843010d6c36d30e544f302ee2510936`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:45:50 GMT
+# Thu, 21 Apr 2022 05:21:31 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 13:46:26 GMT
+# Thu, 21 Apr 2022 05:22:07 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:46:29 GMT
+# Thu, 21 Apr 2022 05:22:11 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:30 GMT
+# Thu, 21 Apr 2022 05:22:11 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:31 GMT
+# Thu, 21 Apr 2022 05:22:12 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2fd915b84208d71ca0c03b94fb654e0f54972c7fb87536d1229d4d2fa86411ae`  
-		Last Modified: Wed, 30 Mar 2022 13:54:31 GMT  
-		Size: 38.4 MB (38405833 bytes)  
+	-	`sha256:74dc8a751461cfb91ff43afe6336cfea6d389d51a7ce3d7594e84ee57938fc8d`  
+		Last Modified: Thu, 21 Apr 2022 05:30:48 GMT  
+		Size: 38.4 MB (38405832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.0.9-plume`
 
 ```console
-$ docker pull tomee@sha256:d59193d83ab9939568e535ad57d6c022e34dd5afbd2c2175bc4ceb1dbedbe5bd
+$ docker pull tomee@sha256:8543cd5f4a9440d96e0ba904a1a45e7c55a5a80a42b6a9691c4ffdeca956af28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3686,199 +3686,199 @@ $ docker pull tomee@sha256:d59193d83ab9939568e535ad57d6c022e34dd5afbd2c2175bc4ce
 ### `tomee:7.0.9-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:081a4797ef9ff27b41923ece49d3f55089dbf3af3493aa24165d6d4134de84e5
+$ docker pull tomee@sha256:b181638ae6d9ce392d508fd0a4137adb79008bc6aad2d5a0639bafc5600a0fee
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **181.2 MB (181167235 bytes)**  
+-	Total Size: **181.2 MB (181171558 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:59ce9fe15816c66a4ea3da58719d1c1da8fde4ece863aac40960b0c10525619b`
+-	Image ID: `sha256:be140187f761f598df7056859566b82d818b2666a2da5a1a17f9511da36b545b`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:25:39 GMT
+# Thu, 21 Apr 2022 07:16:59 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:25:39 GMT
+# Thu, 21 Apr 2022 07:16:59 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:25:39 GMT
+# Thu, 21 Apr 2022 07:17:00 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd3c7ee89503b851d4f9604dacdadabbcd268e2ab95ae74ab4ea1146294982ee`  
-		Last Modified: Wed, 30 Mar 2022 06:31:18 GMT  
-		Size: 63.1 MB (63132453 bytes)  
+	-	`sha256:424f96eee8175cfa0b931722fcc7a528f0e4318c2a0d39416fcf2721672caa7d`  
+		Last Modified: Thu, 21 Apr 2022 07:22:24 GMT  
+		Size: 63.1 MB (63132432 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.0.9-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:574ea13bb2ab290fc04b718c895d3a7dbb83fae0c7829e23af9d15c735d89940
+$ docker pull tomee@sha256:e66ddb1b19378df6fa3e5302412924049ead7468adbaac14554d9d94f603d30f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **178.7 MB (178685784 bytes)**  
+-	Total Size: **178.7 MB (178685616 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9dd4739e506b58b1798a262d5bb4bcc8de6cbb64550e9db8719d8405583a77ef`
+-	Image ID: `sha256:c84925d7a37dcd5d7232fa9645701c79a2ac80d52425e78dbd22643a8000d363`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:45:50 GMT
+# Thu, 21 Apr 2022 05:21:31 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 13:45:51 GMT
+# Thu, 21 Apr 2022 05:21:32 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:45:56 GMT
+# Thu, 21 Apr 2022 05:21:37 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:45:57 GMT
+# Thu, 21 Apr 2022 05:21:38 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:45:57 GMT
+# Thu, 21 Apr 2022 05:21:39 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:04e2dc277972c667dbb012c5fe653f968e67fe65a913dc3bdb86dbc592e2569e`  
-		Last Modified: Wed, 30 Mar 2022 13:53:59 GMT  
-		Size: 63.1 MB (63131959 bytes)  
+	-	`sha256:d0a189aa58e7da371e8c203f496ce81985e5d84fb883f40ce985f054d9e9298e`  
+		Last Modified: Thu, 21 Apr 2022 05:29:53 GMT  
+		Size: 63.1 MB (63131992 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.0.9-plus`
 
 ```console
-$ docker pull tomee@sha256:1d08854484a09859eabb9320686e0a0de6902f1ad85ee261ad120ac7ff52c0dc
+$ docker pull tomee@sha256:ec3e9615ab8316ebba98ca517599499aa38e63a8f855805fad6caf6bf6e1b6e2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3889,199 +3889,199 @@ $ docker pull tomee@sha256:1d08854484a09859eabb9320686e0a0de6902f1ad85ee261ad120
 ### `tomee:7.0.9-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:3336ebd5ab106ce205a6d316c6011fb3af591cf37701b780afe1e688f0c73f4c
+$ docker pull tomee@sha256:f1d44c45eb7b3c32315d56ed72df5577a33967eab3e4d8789b773d34f17d5e4c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **174.1 MB (174095303 bytes)**  
+-	Total Size: **174.1 MB (174099625 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1fab031d5793127611354f67ec5e739971466b1ce1afe33530ae4b831eadb707`
+-	Image ID: `sha256:2347de44bb513fee38e6e8055d2d97ace2e10c67eff687159e12111ffcf0dd02`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 06:25:55 GMT
+# Thu, 21 Apr 2022 07:17:05 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:26:00 GMT
+# Thu, 21 Apr 2022 07:17:11 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:00 GMT
+# Thu, 21 Apr 2022 07:17:11 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:00 GMT
+# Thu, 21 Apr 2022 07:17:11 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:958ebfea211b7854baeecab04891f3539e3115d89f3e5bedeeb78dbbc82a7e22`  
-		Last Modified: Wed, 30 Mar 2022 06:31:31 GMT  
-		Size: 56.1 MB (56060521 bytes)  
+	-	`sha256:73931f07c809b3157e6ee24ec65b2fad3317540cad2a926ba7fd8266848295ff`  
+		Last Modified: Thu, 21 Apr 2022 07:22:37 GMT  
+		Size: 56.1 MB (56060499 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.0.9-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:227c8a7ac6e098349f1eda006f86b2e621dcf2db7dd61192e63e220b339b8d12
+$ docker pull tomee@sha256:39b1bda08b920b0f338848b2878ac62f53ccd1b6dac2cf1e2efb65d5055fe062
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **171.6 MB (171613838 bytes)**  
+-	Total Size: **171.6 MB (171613649 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2fc60576be65d44c1c68953bce06ee339fd4d91c674cda1c2740fc1ad6be5f53`
+-	Image ID: `sha256:35fdb1c9bb8e1743793e0945f224d2badcd869baa03460666a2f12ce230cf625`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:45:50 GMT
+# Thu, 21 Apr 2022 05:21:31 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 13:46:14 GMT
+# Thu, 21 Apr 2022 05:21:54 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:46:19 GMT
+# Thu, 21 Apr 2022 05:22:00 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:20 GMT
+# Thu, 21 Apr 2022 05:22:00 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:20 GMT
+# Thu, 21 Apr 2022 05:22:01 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06a45967007579081e9d9a04ef79c40303b1361cd71e1b5d105bd34fa773b416`  
-		Last Modified: Wed, 30 Mar 2022 13:54:17 GMT  
-		Size: 56.1 MB (56060013 bytes)  
+	-	`sha256:c9448af336494548be23b57c4efadc043d8b73b473902ba7aff41def23ddc333`  
+		Last Modified: Thu, 21 Apr 2022 05:30:29 GMT  
+		Size: 56.1 MB (56060025 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.1`
 
 ```console
-$ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09ce223e484af
+$ docker pull tomee@sha256:396c681969579c0a8056ef621e0e7c31ad9d273e6eeaa79d3acadbf2bf04cf98
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4092,199 +4092,199 @@ $ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09
 ### `tomee:7.1` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:17b42166712d13412fe0b44bab175d218d6ce156b02531f05d44c1533c7af41e
+$ docker pull tomee@sha256:0abae181af6c0c2c7f0f289096156900034b332f21859631e2025cd4d58d4eeb
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.6 MB (158555199 bytes)**  
+-	Total Size: **158.6 MB (158559547 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ad82abd781a2924a0f5fe34d1603530c2760ea7a520d1edbeb348245f33f186b`
+-	Image ID: `sha256:64cc6a27dedf789e967e5b7cde079ef22e1c707f5a122203cd2d13adddef79f0`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:36 GMT
+# Thu, 21 Apr 2022 07:17:46 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b42a9ad0170f6a198a5300729b7669786633a85f8980136ee2110fa3e06d26da`  
-		Last Modified: Wed, 30 Mar 2022 06:32:35 GMT  
-		Size: 40.5 MB (40520417 bytes)  
+	-	`sha256:c8a46647e80526b691173407174a826ec1fb4ec1881f78f6907d101e1876b4ad`  
+		Last Modified: Thu, 21 Apr 2022 07:23:41 GMT  
+		Size: 40.5 MB (40520421 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:e9939a6025814fe1582b0ea5159f31f12f3b34cd704d546054ccc763ed5bae56
+$ docker pull tomee@sha256:d41a8666810a4cfd9740ac640565d32850dbe4356ed0fe6cee94632a4c0d82c1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.1 MB (156073764 bytes)**  
+-	Total Size: **156.1 MB (156073595 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7b73fd0840cdea53d4b4159eac1dc03cdb177d54038292e89df66f6b141f3cc`
+-	Image ID: `sha256:eda6debe71296c61592f0699eede09b5b2fb9de12198a608bf0bfb79aad2d089`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:47:13 GMT
+# Thu, 21 Apr 2022 05:23:04 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:47:16 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:17 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:18 GMT
+# Thu, 21 Apr 2022 05:23:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee1ab9c2b67428f245f9138e3bcd95fbcc810ab817a5fd0bd2b4c3cd1ad33d22`  
-		Last Modified: Wed, 30 Mar 2022 13:55:37 GMT  
-		Size: 40.5 MB (40519939 bytes)  
+	-	`sha256:a5b10893a32b2c99b6797c8452e9476c412558b16b8fb1b4a560097c6f2a8700`  
+		Last Modified: Thu, 21 Apr 2022 05:32:11 GMT  
+		Size: 40.5 MB (40519971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.1.4-microprofile`
 
 ```console
-$ docker pull tomee@sha256:9fe0f94421dc892601c9fa558861303249577a09100e1e7587c84a2a8d153e09
+$ docker pull tomee@sha256:67ce8682e892ca338d1793828afa05d6e75ff7d56de21599c6f7e356ad15791f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4295,199 +4295,199 @@ $ docker pull tomee@sha256:9fe0f94421dc892601c9fa558861303249577a09100e1e7587c84
 ### `tomee:7.1.4-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:babf6d7548e7b9e004599f1782710baf79b7f70ce61345109c2d60319c0dd758
+$ docker pull tomee@sha256:c9daf9c2deae7fa602a0489d23a6f8ebfe7ce45df09b34a88b5c7b7d6fb2ed6e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **159.1 MB (159067298 bytes)**  
+-	Total Size: **159.1 MB (159071617 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d718c0d29cca515b32d92e7fb9e0aa5a33d0c29856ba6653d95a3c4a220e646f`
+-	Image ID: `sha256:8fd8163dc98a85cac65d8c6866bbfac765005a40bf0809400d729de986b2420d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:28 GMT
+# Thu, 21 Apr 2022 07:17:39 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:26:33 GMT
+# Thu, 21 Apr 2022 07:17:44 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:34 GMT
+# Thu, 21 Apr 2022 07:17:44 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:34 GMT
+# Thu, 21 Apr 2022 07:17:44 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:07b1c7ea6d0cf4cea1d095c7d1d7fe877b41ca5e87275f007623f0949c11ab4e`  
-		Last Modified: Wed, 30 Mar 2022 06:32:23 GMT  
-		Size: 41.0 MB (41032516 bytes)  
+	-	`sha256:91510921efbbeda89234a4671ed449ca1486bffd5879bf0ec3b83edcf6f69266`  
+		Last Modified: Thu, 21 Apr 2022 07:23:29 GMT  
+		Size: 41.0 MB (41032491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.1.4-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:42dabb67d7e2bc2806bb6b11bc0a504f057c6b8b384bd50a77a2417f4d6f20dd
+$ docker pull tomee@sha256:ec6263368e56d7aa2c095cc90992ba953d392f8b195bf64e2cc260e72dad5135
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.6 MB (156585868 bytes)**  
+-	Total Size: **156.6 MB (156585644 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:882066ce54aa810105940a4259c54120c942260ddbdc0db4eeedd3a1c54db976`
+-	Image ID: `sha256:40a57bb7c0c0911185b5ba5223366b2d5a589542c917f94453a3fe84b01e7459`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:47:02 GMT
+# Thu, 21 Apr 2022 05:22:41 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:47:05 GMT
+# Thu, 21 Apr 2022 05:22:54 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:06 GMT
+# Thu, 21 Apr 2022 05:22:55 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:07 GMT
+# Thu, 21 Apr 2022 05:22:56 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc5b50fecd3a1cc07418f0150b562ad3b830ac70f55896b4fe1726256eb1f00c`  
-		Last Modified: Wed, 30 Mar 2022 13:55:22 GMT  
-		Size: 41.0 MB (41032043 bytes)  
+	-	`sha256:35a7142eb3fdf4c7c10e0722beaf997f9bd741d0e4894cfbc956fe622beb13b7`  
+		Last Modified: Thu, 21 Apr 2022 05:31:52 GMT  
+		Size: 41.0 MB (41032020 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.1.4-plume`
 
 ```console
-$ docker pull tomee@sha256:d28477d789aa7728fdd9f3b676eb343da9c0643954970ca6fd339db5cddef3c8
+$ docker pull tomee@sha256:c212e7e6f21802e63b3b4f0b1337d7e785ff4202c7883b7aa75ba0b63fa08cf2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4498,199 +4498,199 @@ $ docker pull tomee@sha256:d28477d789aa7728fdd9f3b676eb343da9c0643954970ca6fd339
 ### `tomee:7.1.4-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:b62ddc3b49dfdbf375a520503991ea6932bc1ea8f4e5d516423273b842a6b532
+$ docker pull tomee@sha256:debf4bd5d35da1bf15c196107362c081f18c5656496d4cf26d99c48b09c77ff4
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.2 MB (183211733 bytes)**  
+-	Total Size: **183.2 MB (183216077 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:553d395073d2e16300d64e76c98f33eca20d4e43864e210c086749d27a2581fb`
+-	Image ID: `sha256:3c1c55d901593e1c9e18308f67dedcf360b1b60fa79bc58ef811fa6dda564134`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:26:16 GMT
+# Thu, 21 Apr 2022 07:17:27 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:16 GMT
+# Thu, 21 Apr 2022 07:17:27 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:16 GMT
+# Thu, 21 Apr 2022 07:17:27 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1733c27ddd07023043973a497981cf2253ae771613f5959efbf72daa55f37bbc`  
-		Last Modified: Wed, 30 Mar 2022 06:31:57 GMT  
+	-	`sha256:ff344434085babd29906ebe84554445e1a23ec6ea99100030941d3487f8f0ef7`  
+		Last Modified: Thu, 21 Apr 2022 07:23:04 GMT  
 		Size: 65.2 MB (65176951 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.1.4-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:f300ebdae783ec0c5ac855b03b30839b65db690e29a9a25180eb5d1ec99cf5d1
+$ docker pull tomee@sha256:3ac29f6af55e8aa6ea41e5af5307dff8569526e848d887395fe6b4d4ed2effd1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.7 MB (180730240 bytes)**  
+-	Total Size: **180.7 MB (180730049 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7a2048c5c7bd4c14e10ab315ad014ddf1a9b4b04e663aa17bf013d7d0b3d288e`
+-	Image ID: `sha256:ab9291fbbf3f61529ede9ea2e8be3ce84fa22986c03e74389c2f069141af9e4a`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:46:37 GMT
+# Thu, 21 Apr 2022 05:22:18 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:46:42 GMT
+# Thu, 21 Apr 2022 05:22:24 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:43 GMT
+# Thu, 21 Apr 2022 05:22:25 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:44 GMT
+# Thu, 21 Apr 2022 05:22:25 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a89f88e22369d0453399e678ddbb0dd37104821e5361b177eed7a717a9c9a3ef`  
-		Last Modified: Wed, 30 Mar 2022 13:54:48 GMT  
-		Size: 65.2 MB (65176415 bytes)  
+	-	`sha256:d43fd5c5ed50bfe8cebbf7bcc5f6b041943b380cd387c02ff2c5cb6c91106436`  
+		Last Modified: Thu, 21 Apr 2022 05:31:08 GMT  
+		Size: 65.2 MB (65176425 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.1.4-plus`
 
 ```console
-$ docker pull tomee@sha256:e4b4c2ec1a3e73018881e51932b8421b63227d8531dbc6fd31349823b806a1c7
+$ docker pull tomee@sha256:ed8610d9d1aa7e4bc3174e7a9c27bddb953bca180ff65ffc754d64aa0db89fe2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4701,199 +4701,199 @@ $ docker pull tomee@sha256:e4b4c2ec1a3e73018881e51932b8421b63227d8531dbc6fd31349
 ### `tomee:7.1.4-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:e536a013b96711676cba36b7a579a82473416ef90ace2eed3b0211d5426a47ca
+$ docker pull tomee@sha256:5fe01879032746dce50f6c76882252df68829c1802bb953d517ed34c1d9a2b36
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **176.2 MB (176176942 bytes)**  
+-	Total Size: **176.2 MB (176181222 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:920d5592d049162390203e005683994be94fc4701f237745a955d5d9e6c9509e`
+-	Image ID: `sha256:5506aaea334db3cf38fe4f8e39bedfd469d991c20b2b010c9675c546006a14e6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:19 GMT
+# Thu, 21 Apr 2022 07:17:30 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:26:25 GMT
+# Thu, 21 Apr 2022 07:17:36 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:25 GMT
+# Thu, 21 Apr 2022 07:17:36 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:25 GMT
+# Thu, 21 Apr 2022 07:17:36 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:770b9cb5a98bf61c0c73917e6cf96d17e34fb978c863f6a375cd40d42a51021f`  
-		Last Modified: Wed, 30 Mar 2022 06:32:10 GMT  
-		Size: 58.1 MB (58142160 bytes)  
+	-	`sha256:c891ac4fa1276a06f7fd7a1dab15d8a9cc6df0af581e0dcd1b7b8c0be123e972`  
+		Last Modified: Thu, 21 Apr 2022 07:23:17 GMT  
+		Size: 58.1 MB (58142096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.1.4-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:9fb636adb10703fd133bd2a394771b3d5143fd87dc1e6e62f8f6e810f75c8fe7
+$ docker pull tomee@sha256:677ecd845851f13ca6839d410ed6e16ea8b4fcf7876f6b8bf78f067718b199af
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **173.7 MB (173695723 bytes)**  
+-	Total Size: **173.7 MB (173695437 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:476b45bb86fda301834588d452a6ca4ecf26373816f6f1db117f96cdf60e389a`
+-	Image ID: `sha256:d57f8a9bd3c9b5b98559bca9a9f2fb53fe513ecee949e04131ad17a29a7a05dd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:46:50 GMT
+# Thu, 21 Apr 2022 05:22:31 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:46:55 GMT
+# Thu, 21 Apr 2022 05:22:35 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:56 GMT
+# Thu, 21 Apr 2022 05:22:35 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:56 GMT
+# Thu, 21 Apr 2022 05:22:36 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78fdca37f7afe44159b3fbeecb67a22890d4ea9e173c791ad3e2a222357d3996`  
-		Last Modified: Wed, 30 Mar 2022 13:55:07 GMT  
-		Size: 58.1 MB (58141898 bytes)  
+	-	`sha256:1089a54ee2b438f8679fb787de788923753ff63a6265740307ce85c51724ec1e`  
+		Last Modified: Thu, 21 Apr 2022 05:31:32 GMT  
+		Size: 58.1 MB (58141813 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:7.1.4-webprofile`
 
 ```console
-$ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09ce223e484af
+$ docker pull tomee@sha256:396c681969579c0a8056ef621e0e7c31ad9d273e6eeaa79d3acadbf2bf04cf98
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4904,199 +4904,199 @@ $ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09
 ### `tomee:7.1.4-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:17b42166712d13412fe0b44bab175d218d6ce156b02531f05d44c1533c7af41e
+$ docker pull tomee@sha256:0abae181af6c0c2c7f0f289096156900034b332f21859631e2025cd4d58d4eeb
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.6 MB (158555199 bytes)**  
+-	Total Size: **158.6 MB (158559547 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ad82abd781a2924a0f5fe34d1603530c2760ea7a520d1edbeb348245f33f186b`
+-	Image ID: `sha256:64cc6a27dedf789e967e5b7cde079ef22e1c707f5a122203cd2d13adddef79f0`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:36 GMT
+# Thu, 21 Apr 2022 07:17:46 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b42a9ad0170f6a198a5300729b7669786633a85f8980136ee2110fa3e06d26da`  
-		Last Modified: Wed, 30 Mar 2022 06:32:35 GMT  
-		Size: 40.5 MB (40520417 bytes)  
+	-	`sha256:c8a46647e80526b691173407174a826ec1fb4ec1881f78f6907d101e1876b4ad`  
+		Last Modified: Thu, 21 Apr 2022 07:23:41 GMT  
+		Size: 40.5 MB (40520421 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:7.1.4-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:e9939a6025814fe1582b0ea5159f31f12f3b34cd704d546054ccc763ed5bae56
+$ docker pull tomee@sha256:d41a8666810a4cfd9740ac640565d32850dbe4356ed0fe6cee94632a4c0d82c1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.1 MB (156073764 bytes)**  
+-	Total Size: **156.1 MB (156073595 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7b73fd0840cdea53d4b4159eac1dc03cdb177d54038292e89df66f6b141f3cc`
+-	Image ID: `sha256:eda6debe71296c61592f0699eede09b5b2fb9de12198a608bf0bfb79aad2d089`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:47:13 GMT
+# Thu, 21 Apr 2022 05:23:04 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:47:16 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:17 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:18 GMT
+# Thu, 21 Apr 2022 05:23:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee1ab9c2b67428f245f9138e3bcd95fbcc810ab817a5fd0bd2b4c3cd1ad33d22`  
-		Last Modified: Wed, 30 Mar 2022 13:55:37 GMT  
-		Size: 40.5 MB (40519939 bytes)  
+	-	`sha256:a5b10893a32b2c99b6797c8452e9476c412558b16b8fb1b4a560097c6f2a8700`  
+		Last Modified: Thu, 21 Apr 2022 05:32:11 GMT  
+		Size: 40.5 MB (40519971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8`
 
 ```console
-$ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de847c4a2423f8
+$ docker pull tomee@sha256:bdb8af99623365ec4b31b3e7da0dac60cc69714024d2d27f408346ec03cf7e2c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5107,195 +5107,195 @@ $ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de8
 ### `tomee:8` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:76590393e506ad8a1f27fa87b52f262773eb14855bda1183fab02ebb162f1200
+$ docker pull tomee@sha256:245b280b4bcc7c95f95287c56eb3c49925491729d287c898e69816f7639bf3c2
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **170.9 MB (170899559 bytes)**  
+-	Total Size: **170.9 MB (170905144 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:319e974e5f3a2fd001fe032d0c192a133035116e00649ef5adf22fa74f2f28cd`
+-	Image ID: `sha256:24616cf46df4d8f57f74f13f9b53382d267c2c8bbe53fb91db50c5984460bc6d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:12 GMT
+# Thu, 21 Apr 2022 07:19:19 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bd52238a6201d759b2d612406c2d10dcc2eaeee0af17a33385de5545f91e7f2`  
-		Last Modified: Wed, 30 Mar 2022 06:34:19 GMT  
-		Size: 47.3 MB (47336502 bytes)  
+	-	`sha256:63b492f8510b64c55c18fc5d9d0e53b64efba0d440ea5dd558dc0c948fdce4b6`  
+		Last Modified: Thu, 21 Apr 2022 07:25:28 GMT  
+		Size: 47.3 MB (47336495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:c189714e421bb9b5685436908346e199c3cbf591d6f741c9b4a80a62caa53f87
+$ docker pull tomee@sha256:9de0a1dba1e9889678f7c919d870772bd3d64fab5b35bd12742daed72d521e44
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.2 MB (168245733 bytes)**  
+-	Total Size: **168.2 MB (168245940 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:73d85ed96edaae1f11f0090c324fb87f10c537c2d4f29937d8819162f0f21d29`
+-	Image ID: `sha256:f1c3544c1d0cbb05c610b886659f027f745d32c9ef568d2c8b2c13f2b563aa88`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:49:20 GMT
+# Thu, 21 Apr 2022 05:25:11 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:49:25 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:26 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:27 GMT
+# Thu, 21 Apr 2022 05:25:16 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33023bcc2d012a5c2ebac995703f11ef2dfe1d5c97a572a04fadc2de8e4926b9`  
-		Last Modified: Wed, 30 Mar 2022 13:57:50 GMT  
-		Size: 47.3 MB (47335963 bytes)  
+	-	`sha256:1e1988bd3be155b6778484d05a5b51e752fbf80f6f3707f8389c4974be4cac01`  
+		Last Modified: Thu, 21 Apr 2022 05:35:00 GMT  
+		Size: 47.3 MB (47335990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-7.0.9-plume`
 
 ```console
-$ docker pull tomee@sha256:d59193d83ab9939568e535ad57d6c022e34dd5afbd2c2175bc4ceb1dbedbe5bd
+$ docker pull tomee@sha256:8543cd5f4a9440d96e0ba904a1a45e7c55a5a80a42b6a9691c4ffdeca956af28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5306,199 +5306,199 @@ $ docker pull tomee@sha256:d59193d83ab9939568e535ad57d6c022e34dd5afbd2c2175bc4ce
 ### `tomee:8-jre-7.0.9-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:081a4797ef9ff27b41923ece49d3f55089dbf3af3493aa24165d6d4134de84e5
+$ docker pull tomee@sha256:b181638ae6d9ce392d508fd0a4137adb79008bc6aad2d5a0639bafc5600a0fee
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **181.2 MB (181167235 bytes)**  
+-	Total Size: **181.2 MB (181171558 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:59ce9fe15816c66a4ea3da58719d1c1da8fde4ece863aac40960b0c10525619b`
+-	Image ID: `sha256:be140187f761f598df7056859566b82d818b2666a2da5a1a17f9511da36b545b`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:25:39 GMT
+# Thu, 21 Apr 2022 07:16:59 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:25:39 GMT
+# Thu, 21 Apr 2022 07:16:59 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:25:39 GMT
+# Thu, 21 Apr 2022 07:17:00 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd3c7ee89503b851d4f9604dacdadabbcd268e2ab95ae74ab4ea1146294982ee`  
-		Last Modified: Wed, 30 Mar 2022 06:31:18 GMT  
-		Size: 63.1 MB (63132453 bytes)  
+	-	`sha256:424f96eee8175cfa0b931722fcc7a528f0e4318c2a0d39416fcf2721672caa7d`  
+		Last Modified: Thu, 21 Apr 2022 07:22:24 GMT  
+		Size: 63.1 MB (63132432 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-7.0.9-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:574ea13bb2ab290fc04b718c895d3a7dbb83fae0c7829e23af9d15c735d89940
+$ docker pull tomee@sha256:e66ddb1b19378df6fa3e5302412924049ead7468adbaac14554d9d94f603d30f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **178.7 MB (178685784 bytes)**  
+-	Total Size: **178.7 MB (178685616 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9dd4739e506b58b1798a262d5bb4bcc8de6cbb64550e9db8719d8405583a77ef`
+-	Image ID: `sha256:c84925d7a37dcd5d7232fa9645701c79a2ac80d52425e78dbd22643a8000d363`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:45:50 GMT
+# Thu, 21 Apr 2022 05:21:31 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 13:45:51 GMT
+# Thu, 21 Apr 2022 05:21:32 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:45:56 GMT
+# Thu, 21 Apr 2022 05:21:37 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:45:57 GMT
+# Thu, 21 Apr 2022 05:21:38 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:45:57 GMT
+# Thu, 21 Apr 2022 05:21:39 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:04e2dc277972c667dbb012c5fe653f968e67fe65a913dc3bdb86dbc592e2569e`  
-		Last Modified: Wed, 30 Mar 2022 13:53:59 GMT  
-		Size: 63.1 MB (63131959 bytes)  
+	-	`sha256:d0a189aa58e7da371e8c203f496ce81985e5d84fb883f40ce985f054d9e9298e`  
+		Last Modified: Thu, 21 Apr 2022 05:29:53 GMT  
+		Size: 63.1 MB (63131992 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-7.0.9-plus`
 
 ```console
-$ docker pull tomee@sha256:1d08854484a09859eabb9320686e0a0de6902f1ad85ee261ad120ac7ff52c0dc
+$ docker pull tomee@sha256:ec3e9615ab8316ebba98ca517599499aa38e63a8f855805fad6caf6bf6e1b6e2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5509,199 +5509,199 @@ $ docker pull tomee@sha256:1d08854484a09859eabb9320686e0a0de6902f1ad85ee261ad120
 ### `tomee:8-jre-7.0.9-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:3336ebd5ab106ce205a6d316c6011fb3af591cf37701b780afe1e688f0c73f4c
+$ docker pull tomee@sha256:f1d44c45eb7b3c32315d56ed72df5577a33967eab3e4d8789b773d34f17d5e4c
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **174.1 MB (174095303 bytes)**  
+-	Total Size: **174.1 MB (174099625 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1fab031d5793127611354f67ec5e739971466b1ce1afe33530ae4b831eadb707`
+-	Image ID: `sha256:2347de44bb513fee38e6e8055d2d97ace2e10c67eff687159e12111ffcf0dd02`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 06:25:55 GMT
+# Thu, 21 Apr 2022 07:17:05 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:26:00 GMT
+# Thu, 21 Apr 2022 07:17:11 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:00 GMT
+# Thu, 21 Apr 2022 07:17:11 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:00 GMT
+# Thu, 21 Apr 2022 07:17:11 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:958ebfea211b7854baeecab04891f3539e3115d89f3e5bedeeb78dbbc82a7e22`  
-		Last Modified: Wed, 30 Mar 2022 06:31:31 GMT  
-		Size: 56.1 MB (56060521 bytes)  
+	-	`sha256:73931f07c809b3157e6ee24ec65b2fad3317540cad2a926ba7fd8266848295ff`  
+		Last Modified: Thu, 21 Apr 2022 07:22:37 GMT  
+		Size: 56.1 MB (56060499 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-7.0.9-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:227c8a7ac6e098349f1eda006f86b2e621dcf2db7dd61192e63e220b339b8d12
+$ docker pull tomee@sha256:39b1bda08b920b0f338848b2878ac62f53ccd1b6dac2cf1e2efb65d5055fe062
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **171.6 MB (171613838 bytes)**  
+-	Total Size: **171.6 MB (171613649 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2fc60576be65d44c1c68953bce06ee339fd4d91c674cda1c2740fc1ad6be5f53`
+-	Image ID: `sha256:35fdb1c9bb8e1743793e0945f224d2badcd869baa03460666a2f12ce230cf625`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:45:50 GMT
+# Thu, 21 Apr 2022 05:21:31 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 13:46:14 GMT
+# Thu, 21 Apr 2022 05:21:54 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:46:19 GMT
+# Thu, 21 Apr 2022 05:22:00 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:20 GMT
+# Thu, 21 Apr 2022 05:22:00 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:20 GMT
+# Thu, 21 Apr 2022 05:22:01 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:06a45967007579081e9d9a04ef79c40303b1361cd71e1b5d105bd34fa773b416`  
-		Last Modified: Wed, 30 Mar 2022 13:54:17 GMT  
-		Size: 56.1 MB (56060013 bytes)  
+	-	`sha256:c9448af336494548be23b57c4efadc043d8b73b473902ba7aff41def23ddc333`  
+		Last Modified: Thu, 21 Apr 2022 05:30:29 GMT  
+		Size: 56.1 MB (56060025 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-7.0.9-webprofile`
 
 ```console
-$ docker pull tomee@sha256:9bbfffa6bbe358af61474d6bb32adc5cb1045b3e431ffdae5f048459e458f45a
+$ docker pull tomee@sha256:6c072069ccbe5f03e505ea97841d058a8db5a05518670d9b648606bb5b217095
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5712,199 +5712,199 @@ $ docker pull tomee@sha256:9bbfffa6bbe358af61474d6bb32adc5cb1045b3e431ffdae5f048
 ### `tomee:8-jre-7.0.9-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:26c401d14b052705e35b60845eb3b99488e820a2f60b6ee6de7976f4f292352d
+$ docker pull tomee@sha256:a6f9406e91a0a19b53e117cf5cee0618f1648b7c6329746fce298511e244c303
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.4 MB (156441252 bytes)**  
+-	Total Size: **156.4 MB (156445580 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:190da8928f62a71065fea5a86c247b1f9ad229d53fc6e939481603997512822b`
+-	Image ID: `sha256:441ca5dddb7a1f1357b9da5c8bbef3a3f994d3461d5991cf50d54b69461ff35d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 06:26:03 GMT
+# Thu, 21 Apr 2022 07:17:13 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:26:07 GMT
+# Thu, 21 Apr 2022 07:17:18 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:07 GMT
+# Thu, 21 Apr 2022 07:17:18 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:07 GMT
+# Thu, 21 Apr 2022 07:17:18 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9d0c3ae4de0f189e915a93edd6b1eaa450453960e1767f0c74ebd7b878c8c95`  
-		Last Modified: Wed, 30 Mar 2022 06:31:43 GMT  
-		Size: 38.4 MB (38406470 bytes)  
+	-	`sha256:c82e82049894ef990c6c38cb6f5cfce94af6a87da365fb48ae3e7083eefe9273`  
+		Last Modified: Thu, 21 Apr 2022 07:22:49 GMT  
+		Size: 38.4 MB (38406454 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-7.0.9-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:73d829fb2a359d84369c18d6272c086d49821637b6b8f98bae323ded41d4225f
+$ docker pull tomee@sha256:defd5eb6e07cf49787d9fbe72c584bfa732e0683ac5f37eea4aa909b50e36d92
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.0 MB (153959658 bytes)**  
+-	Total Size: **154.0 MB (153959456 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:510c09897c9a4a0213acfdd6c52d482d784466931701f1ea564abc107f760202`
+-	Image ID: `sha256:21434dac2e52edd700b6770f3fa7131ea843010d6c36d30e544f302ee2510936`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:45:50 GMT
+# Thu, 21 Apr 2022 05:21:31 GMT
 ENV TOMEE_VER=7.0.9
-# Wed, 30 Mar 2022 13:46:26 GMT
+# Thu, 21 Apr 2022 05:22:07 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:46:29 GMT
+# Thu, 21 Apr 2022 05:22:11 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:30 GMT
+# Thu, 21 Apr 2022 05:22:11 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:31 GMT
+# Thu, 21 Apr 2022 05:22:12 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2fd915b84208d71ca0c03b94fb654e0f54972c7fb87536d1229d4d2fa86411ae`  
-		Last Modified: Wed, 30 Mar 2022 13:54:31 GMT  
-		Size: 38.4 MB (38405833 bytes)  
+	-	`sha256:74dc8a751461cfb91ff43afe6336cfea6d389d51a7ce3d7594e84ee57938fc8d`  
+		Last Modified: Thu, 21 Apr 2022 05:30:48 GMT  
+		Size: 38.4 MB (38405832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-7.1.4-microprofile`
 
 ```console
-$ docker pull tomee@sha256:9fe0f94421dc892601c9fa558861303249577a09100e1e7587c84a2a8d153e09
+$ docker pull tomee@sha256:67ce8682e892ca338d1793828afa05d6e75ff7d56de21599c6f7e356ad15791f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5915,199 +5915,199 @@ $ docker pull tomee@sha256:9fe0f94421dc892601c9fa558861303249577a09100e1e7587c84
 ### `tomee:8-jre-7.1.4-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:babf6d7548e7b9e004599f1782710baf79b7f70ce61345109c2d60319c0dd758
+$ docker pull tomee@sha256:c9daf9c2deae7fa602a0489d23a6f8ebfe7ce45df09b34a88b5c7b7d6fb2ed6e
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **159.1 MB (159067298 bytes)**  
+-	Total Size: **159.1 MB (159071617 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d718c0d29cca515b32d92e7fb9e0aa5a33d0c29856ba6653d95a3c4a220e646f`
+-	Image ID: `sha256:8fd8163dc98a85cac65d8c6866bbfac765005a40bf0809400d729de986b2420d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:28 GMT
+# Thu, 21 Apr 2022 07:17:39 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:26:33 GMT
+# Thu, 21 Apr 2022 07:17:44 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:34 GMT
+# Thu, 21 Apr 2022 07:17:44 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:34 GMT
+# Thu, 21 Apr 2022 07:17:44 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:07b1c7ea6d0cf4cea1d095c7d1d7fe877b41ca5e87275f007623f0949c11ab4e`  
-		Last Modified: Wed, 30 Mar 2022 06:32:23 GMT  
-		Size: 41.0 MB (41032516 bytes)  
+	-	`sha256:91510921efbbeda89234a4671ed449ca1486bffd5879bf0ec3b83edcf6f69266`  
+		Last Modified: Thu, 21 Apr 2022 07:23:29 GMT  
+		Size: 41.0 MB (41032491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-7.1.4-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:42dabb67d7e2bc2806bb6b11bc0a504f057c6b8b384bd50a77a2417f4d6f20dd
+$ docker pull tomee@sha256:ec6263368e56d7aa2c095cc90992ba953d392f8b195bf64e2cc260e72dad5135
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.6 MB (156585868 bytes)**  
+-	Total Size: **156.6 MB (156585644 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:882066ce54aa810105940a4259c54120c942260ddbdc0db4eeedd3a1c54db976`
+-	Image ID: `sha256:40a57bb7c0c0911185b5ba5223366b2d5a589542c917f94453a3fe84b01e7459`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:47:02 GMT
+# Thu, 21 Apr 2022 05:22:41 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:47:05 GMT
+# Thu, 21 Apr 2022 05:22:54 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:06 GMT
+# Thu, 21 Apr 2022 05:22:55 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:07 GMT
+# Thu, 21 Apr 2022 05:22:56 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc5b50fecd3a1cc07418f0150b562ad3b830ac70f55896b4fe1726256eb1f00c`  
-		Last Modified: Wed, 30 Mar 2022 13:55:22 GMT  
-		Size: 41.0 MB (41032043 bytes)  
+	-	`sha256:35a7142eb3fdf4c7c10e0722beaf997f9bd741d0e4894cfbc956fe622beb13b7`  
+		Last Modified: Thu, 21 Apr 2022 05:31:52 GMT  
+		Size: 41.0 MB (41032020 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-7.1.4-plume`
 
 ```console
-$ docker pull tomee@sha256:d28477d789aa7728fdd9f3b676eb343da9c0643954970ca6fd339db5cddef3c8
+$ docker pull tomee@sha256:c212e7e6f21802e63b3b4f0b1337d7e785ff4202c7883b7aa75ba0b63fa08cf2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6118,199 +6118,199 @@ $ docker pull tomee@sha256:d28477d789aa7728fdd9f3b676eb343da9c0643954970ca6fd339
 ### `tomee:8-jre-7.1.4-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:b62ddc3b49dfdbf375a520503991ea6932bc1ea8f4e5d516423273b842a6b532
+$ docker pull tomee@sha256:debf4bd5d35da1bf15c196107362c081f18c5656496d4cf26d99c48b09c77ff4
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.2 MB (183211733 bytes)**  
+-	Total Size: **183.2 MB (183216077 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:553d395073d2e16300d64e76c98f33eca20d4e43864e210c086749d27a2581fb`
+-	Image ID: `sha256:3c1c55d901593e1c9e18308f67dedcf360b1b60fa79bc58ef811fa6dda564134`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:26:16 GMT
+# Thu, 21 Apr 2022 07:17:27 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:16 GMT
+# Thu, 21 Apr 2022 07:17:27 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:16 GMT
+# Thu, 21 Apr 2022 07:17:27 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1733c27ddd07023043973a497981cf2253ae771613f5959efbf72daa55f37bbc`  
-		Last Modified: Wed, 30 Mar 2022 06:31:57 GMT  
+	-	`sha256:ff344434085babd29906ebe84554445e1a23ec6ea99100030941d3487f8f0ef7`  
+		Last Modified: Thu, 21 Apr 2022 07:23:04 GMT  
 		Size: 65.2 MB (65176951 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-7.1.4-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:f300ebdae783ec0c5ac855b03b30839b65db690e29a9a25180eb5d1ec99cf5d1
+$ docker pull tomee@sha256:3ac29f6af55e8aa6ea41e5af5307dff8569526e848d887395fe6b4d4ed2effd1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.7 MB (180730240 bytes)**  
+-	Total Size: **180.7 MB (180730049 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7a2048c5c7bd4c14e10ab315ad014ddf1a9b4b04e663aa17bf013d7d0b3d288e`
+-	Image ID: `sha256:ab9291fbbf3f61529ede9ea2e8be3ce84fa22986c03e74389c2f069141af9e4a`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:46:37 GMT
+# Thu, 21 Apr 2022 05:22:18 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:46:42 GMT
+# Thu, 21 Apr 2022 05:22:24 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:43 GMT
+# Thu, 21 Apr 2022 05:22:25 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:44 GMT
+# Thu, 21 Apr 2022 05:22:25 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a89f88e22369d0453399e678ddbb0dd37104821e5361b177eed7a717a9c9a3ef`  
-		Last Modified: Wed, 30 Mar 2022 13:54:48 GMT  
-		Size: 65.2 MB (65176415 bytes)  
+	-	`sha256:d43fd5c5ed50bfe8cebbf7bcc5f6b041943b380cd387c02ff2c5cb6c91106436`  
+		Last Modified: Thu, 21 Apr 2022 05:31:08 GMT  
+		Size: 65.2 MB (65176425 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-7.1.4-plus`
 
 ```console
-$ docker pull tomee@sha256:e4b4c2ec1a3e73018881e51932b8421b63227d8531dbc6fd31349823b806a1c7
+$ docker pull tomee@sha256:ed8610d9d1aa7e4bc3174e7a9c27bddb953bca180ff65ffc754d64aa0db89fe2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6321,199 +6321,199 @@ $ docker pull tomee@sha256:e4b4c2ec1a3e73018881e51932b8421b63227d8531dbc6fd31349
 ### `tomee:8-jre-7.1.4-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:e536a013b96711676cba36b7a579a82473416ef90ace2eed3b0211d5426a47ca
+$ docker pull tomee@sha256:5fe01879032746dce50f6c76882252df68829c1802bb953d517ed34c1d9a2b36
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **176.2 MB (176176942 bytes)**  
+-	Total Size: **176.2 MB (176181222 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:920d5592d049162390203e005683994be94fc4701f237745a955d5d9e6c9509e`
+-	Image ID: `sha256:5506aaea334db3cf38fe4f8e39bedfd469d991c20b2b010c9675c546006a14e6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:19 GMT
+# Thu, 21 Apr 2022 07:17:30 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:26:25 GMT
+# Thu, 21 Apr 2022 07:17:36 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:25 GMT
+# Thu, 21 Apr 2022 07:17:36 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:25 GMT
+# Thu, 21 Apr 2022 07:17:36 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:770b9cb5a98bf61c0c73917e6cf96d17e34fb978c863f6a375cd40d42a51021f`  
-		Last Modified: Wed, 30 Mar 2022 06:32:10 GMT  
-		Size: 58.1 MB (58142160 bytes)  
+	-	`sha256:c891ac4fa1276a06f7fd7a1dab15d8a9cc6df0af581e0dcd1b7b8c0be123e972`  
+		Last Modified: Thu, 21 Apr 2022 07:23:17 GMT  
+		Size: 58.1 MB (58142096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-7.1.4-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:9fb636adb10703fd133bd2a394771b3d5143fd87dc1e6e62f8f6e810f75c8fe7
+$ docker pull tomee@sha256:677ecd845851f13ca6839d410ed6e16ea8b4fcf7876f6b8bf78f067718b199af
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **173.7 MB (173695723 bytes)**  
+-	Total Size: **173.7 MB (173695437 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:476b45bb86fda301834588d452a6ca4ecf26373816f6f1db117f96cdf60e389a`
+-	Image ID: `sha256:d57f8a9bd3c9b5b98559bca9a9f2fb53fe513ecee949e04131ad17a29a7a05dd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:46:50 GMT
+# Thu, 21 Apr 2022 05:22:31 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:46:55 GMT
+# Thu, 21 Apr 2022 05:22:35 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:46:56 GMT
+# Thu, 21 Apr 2022 05:22:35 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:46:56 GMT
+# Thu, 21 Apr 2022 05:22:36 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78fdca37f7afe44159b3fbeecb67a22890d4ea9e173c791ad3e2a222357d3996`  
-		Last Modified: Wed, 30 Mar 2022 13:55:07 GMT  
-		Size: 58.1 MB (58141898 bytes)  
+	-	`sha256:1089a54ee2b438f8679fb787de788923753ff63a6265740307ce85c51724ec1e`  
+		Last Modified: Thu, 21 Apr 2022 05:31:32 GMT  
+		Size: 58.1 MB (58141813 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-7.1.4-webprofile`
 
 ```console
-$ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09ce223e484af
+$ docker pull tomee@sha256:396c681969579c0a8056ef621e0e7c31ad9d273e6eeaa79d3acadbf2bf04cf98
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6524,199 +6524,199 @@ $ docker pull tomee@sha256:b2fa45ba67c3b788ca24a9c6fd40d84e6af336c179db5030d4a09
 ### `tomee:8-jre-7.1.4-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:17b42166712d13412fe0b44bab175d218d6ce156b02531f05d44c1533c7af41e
+$ docker pull tomee@sha256:0abae181af6c0c2c7f0f289096156900034b332f21859631e2025cd4d58d4eeb
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **158.6 MB (158555199 bytes)**  
+-	Total Size: **158.6 MB (158559547 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ad82abd781a2924a0f5fe34d1603530c2760ea7a520d1edbeb348245f33f186b`
+-	Image ID: `sha256:64cc6a27dedf789e967e5b7cde079ef22e1c707f5a122203cd2d13adddef79f0`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:58 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 06:25:33 GMT
+# Thu, 21 Apr 2022 07:16:53 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 06:26:10 GMT
+# Thu, 21 Apr 2022 07:17:20 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 06:26:36 GMT
+# Thu, 21 Apr 2022 07:17:46 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:26:41 GMT
+# Thu, 21 Apr 2022 07:17:51 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c08f27b664dbf827b925dc3114f25baad0b85f9c497d56447a623adb41fe6fef`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 21.4 KB (21378 bytes)  
+	-	`sha256:e72dc9fddbe308f9021191bd814602d3b1b38f884c0b2f34a8dc8c309294a9db`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 21.4 KB (21383 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b42a9ad0170f6a198a5300729b7669786633a85f8980136ee2110fa3e06d26da`  
-		Last Modified: Wed, 30 Mar 2022 06:32:35 GMT  
-		Size: 40.5 MB (40520417 bytes)  
+	-	`sha256:c8a46647e80526b691173407174a826ec1fb4ec1881f78f6907d101e1876b4ad`  
+		Last Modified: Thu, 21 Apr 2022 07:23:41 GMT  
+		Size: 40.5 MB (40520421 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-7.1.4-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:e9939a6025814fe1582b0ea5159f31f12f3b34cd704d546054ccc763ed5bae56
+$ docker pull tomee@sha256:d41a8666810a4cfd9740ac640565d32850dbe4356ed0fe6cee94632a4c0d82c1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.1 MB (156073764 bytes)**  
+-	Total Size: **156.1 MB (156073595 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7b73fd0840cdea53d4b4159eac1dc03cdb177d54038292e89df66f6b141f3cc`
+-	Image ID: `sha256:eda6debe71296c61592f0699eede09b5b2fb9de12198a608bf0bfb79aad2d089`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:34 GMT
+# Thu, 21 Apr 2022 05:11:42 GMT
 ENV GPG_KEYS=223D3A74B068ECA354DC385CE126833F9CF64915     7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF     82D8419BA697F0E7FB85916EE91287822FDB81B1     9056B710F1E332780DE7AF34CBAEBE39A46C4CA1     A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1     B7574789F5018690043E6DD9C212662E12F3E1DD     B8B301E6105DF628076BD92C5483E55897ABD9B9     DBCCD103B8B24F86FFAAB025C8BB472CD297D428     F067B8140F5DD80E1D3B5D92318242FE9A0B1183     FAA603D58B1BA4EDF65896D0ED340E0E6D545F97     C92604B0DEC5C62CFF5801E73D4683C24EDC64D1     294A395FFDC9FCF25A7E2BFDCF6FC99C2CC77782
-# Wed, 30 Mar 2022 13:45:49 GMT
+# Thu, 21 Apr 2022 05:21:30 GMT
 RUN set -xe     && for key in $GPG_KEYS; do         gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" ||         gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;     done
-# Wed, 30 Mar 2022 13:46:36 GMT
+# Thu, 21 Apr 2022 05:22:17 GMT
 ENV TOMEE_VER=7.1.4
-# Wed, 30 Mar 2022 13:47:13 GMT
+# Thu, 21 Apr 2022 05:23:04 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:47:16 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 RUN set -x 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc 	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz 	&& tar -zxf tomee.tar.gz 	&& mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee 	&& rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER} 	&& rm bin/*.bat 	&& rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:17 GMT
+# Thu, 21 Apr 2022 05:23:09 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:18 GMT
+# Thu, 21 Apr 2022 05:23:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f8c0fc05e60579d0c3a79b789efd9ccf087cdceeb01d5abe73a8d40073f0da`  
-		Last Modified: Wed, 30 Mar 2022 13:53:54 GMT  
-		Size: 21.3 KB (21344 bytes)  
+	-	`sha256:555dc56cc9c5a48508e0d3bb7beb377aab0d0edb0ad16f68ae04c06bfd2ed8a8`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 21.4 KB (21351 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee1ab9c2b67428f245f9138e3bcd95fbcc810ab817a5fd0bd2b4c3cd1ad33d22`  
-		Last Modified: Wed, 30 Mar 2022 13:55:37 GMT  
-		Size: 40.5 MB (40519939 bytes)  
+	-	`sha256:a5b10893a32b2c99b6797c8452e9476c412558b16b8fb1b4a560097c6f2a8700`  
+		Last Modified: Thu, 21 Apr 2022 05:32:11 GMT  
+		Size: 40.5 MB (40519971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-8.0.10-microprofile`
 
 ```console
-$ docker pull tomee@sha256:fa52970be70dd713332dfdfb56df27d09178016593232c7bac90b69954b40290
+$ docker pull tomee@sha256:e6e889494ed85dce3c2a25d72151de5e40cac7723a8d674f2a0c7c8d7668023b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6727,195 +6727,195 @@ $ docker pull tomee@sha256:fa52970be70dd713332dfdfb56df27d09178016593232c7bac90b
 ### `tomee:8-jre-8.0.10-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:afc8cca1c59decc1bec7f4788b1a9f34988628f75a5bb89c9954147468a3dee5
+$ docker pull tomee@sha256:07118da7b0d258f514354e433def24e0e81a5ee649c373497af89daa33438a53
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.8 MB (183774587 bytes)**  
+-	Total Size: **183.8 MB (183778879 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:89c09455c5ede3eacd849adc6495374fa4f2b84c2aae32e13589a24c1c1c13ce`
+-	Image ID: `sha256:2ff9d3e9dc311d2a2c67368fa346109ce55e89f4e22587674d1b59a427bc55e4`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:27:12 GMT
+# Thu, 21 Apr 2022 07:18:22 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:27:19 GMT
+# Thu, 21 Apr 2022 07:18:29 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:27:20 GMT
+# Thu, 21 Apr 2022 07:18:29 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:27:20 GMT
+# Thu, 21 Apr 2022 07:18:29 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7ae0a608647449e09370f4e7a4a81cbf4da7c5f6effbbefe603fb4468fe28294`  
-		Last Modified: Wed, 30 Mar 2022 06:32:49 GMT  
-		Size: 58.3 KB (58307 bytes)  
+	-	`sha256:f365cdc6d698c5dd6d4be25b0736a3901cc01b5fdb38f3c05aa4e66b3c4b28fe`  
+		Last Modified: Thu, 21 Apr 2022 07:23:56 GMT  
+		Size: 58.3 KB (58273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2731739b58b80d884551e8a96b5e917adba553b1101ab1923da8445e54e7a924`  
-		Last Modified: Wed, 30 Mar 2022 06:33:17 GMT  
-		Size: 65.7 MB (65702876 bytes)  
+	-	`sha256:912f8d5f63891c2923396f67ae79b8d3a14e320389cdeb03eea8ea1c5ff81188`  
+		Last Modified: Thu, 21 Apr 2022 07:24:24 GMT  
+		Size: 65.7 MB (65702863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-8.0.10-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:09e1519b2d416619a579d32fd8c131b3a36bf66831962fd0a139ceda29ea2405
+$ docker pull tomee@sha256:0cdd86691049c38f866069f3963176a1cbbad58937f599545891b9f29c87bec4
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **181.3 MB (181293305 bytes)**  
+-	Total Size: **181.3 MB (181293122 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84386b66661dc850aecd5eea3ff49f5c02d23a002109db3f06ee886b84b7e814`
+-	Image ID: `sha256:7e98eb3f97adae8e6986115d4817cb13f94beaf575c0efcec961c0a495f5abb1`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:47:32 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:47:33 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:48:05 GMT
+# Thu, 21 Apr 2022 05:23:53 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:48:11 GMT
+# Thu, 21 Apr 2022 05:24:00 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:48:12 GMT
+# Thu, 21 Apr 2022 05:24:00 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:48:12 GMT
+# Thu, 21 Apr 2022 05:24:01 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:89c43a0adb8d055cc69d7f9b0c72f3e0096e62575f57a36571a80a3bb690090c`  
-		Last Modified: Wed, 30 Mar 2022 13:55:54 GMT  
-		Size: 58.3 KB (58287 bytes)  
+	-	`sha256:22b7fccd0226c778de75bebcc33261d3718a84e25479061635deca3dced0b91a`  
+		Last Modified: Thu, 21 Apr 2022 05:32:29 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5d341bf5b1164655e46bd1a42fd2464611d18e4caecb8fa527d8c51b75b7a52`  
-		Last Modified: Wed, 30 Mar 2022 13:56:30 GMT  
-		Size: 65.7 MB (65702537 bytes)  
+	-	`sha256:db858f845ee486176ba99dbf433d81abd667afafb420d1d786ffcedbc50d0e3f`  
+		Last Modified: Thu, 21 Apr 2022 05:33:19 GMT  
+		Size: 65.7 MB (65702579 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-8.0.10-plume`
 
 ```console
-$ docker pull tomee@sha256:f4374e641f6b7704795c611c62cc1108ac8c92d3adf4b692963685dedcb72b07
+$ docker pull tomee@sha256:25a4b4148b596d983b39fa85b334c10b3df25ac341261d120839b7d4deea8675
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6926,195 +6926,195 @@ $ docker pull tomee@sha256:f4374e641f6b7704795c611c62cc1108ac8c92d3adf4b69296368
 ### `tomee:8-jre-8.0.10-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:f99d43901bd44503a9662f98b2c202fed038912629e1d114db686070891c6bcb
+$ docker pull tomee@sha256:22b1a2d4fe9426c62a44083a18ceaeda32103a7d90a4da864d0f89b5b58becb8
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.8 MB (195760193 bytes)**  
+-	Total Size: **195.8 MB (195764506 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ab0a36a8a166e98ea667a008c3f77fda4859bce802e4692c0d44ddaeefee689c`
+-	Image ID: `sha256:65bb307e8a06f019bb7039f4d6b95f21db7cfa92b06a90f84c768f72f8fead96`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:27:00 GMT
+# Thu, 21 Apr 2022 07:18:10 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:27:00 GMT
+# Thu, 21 Apr 2022 07:18:10 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:27:00 GMT
+# Thu, 21 Apr 2022 07:18:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7ae0a608647449e09370f4e7a4a81cbf4da7c5f6effbbefe603fb4468fe28294`  
-		Last Modified: Wed, 30 Mar 2022 06:32:49 GMT  
-		Size: 58.3 KB (58307 bytes)  
+	-	`sha256:f365cdc6d698c5dd6d4be25b0736a3901cc01b5fdb38f3c05aa4e66b3c4b28fe`  
+		Last Modified: Thu, 21 Apr 2022 07:23:56 GMT  
+		Size: 58.3 KB (58273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0973e5cc8deb6d8b14e7f6273afd0b9bbbadf7cc92c4d46a647a1ce85184b11a`  
-		Last Modified: Wed, 30 Mar 2022 06:32:54 GMT  
-		Size: 77.7 MB (77688482 bytes)  
+	-	`sha256:70a33370768f67c850bd16da6648525ffac262e19f5c3209131624ad0c0202bf`  
+		Last Modified: Thu, 21 Apr 2022 07:24:01 GMT  
+		Size: 77.7 MB (77688490 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-8.0.10-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:a19438cfca06fb79daf2fa18c238d814f8325851a41cf418ecefc5a6b7306caa
+$ docker pull tomee@sha256:705c6a270919f6aff714648f1ef92e7cd102970b8be8ad37763d7ed5dc67be06
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **193.3 MB (193278975 bytes)**  
+-	Total Size: **193.3 MB (193278689 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2a1c1fc919edd31aeb5fd9e51340caff9cae61ada2c220dddf0719c1eaf7d194`
+-	Image ID: `sha256:b4c0a3b790ece687f7466dac0ce7c9df78434460f2dcd6e3a4eabc54a2e911d9`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:47:32 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:47:33 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:47:34 GMT
+# Thu, 21 Apr 2022 05:23:26 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:47:43 GMT
+# Thu, 21 Apr 2022 05:23:32 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:44 GMT
+# Thu, 21 Apr 2022 05:23:33 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:44 GMT
+# Thu, 21 Apr 2022 05:23:34 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:89c43a0adb8d055cc69d7f9b0c72f3e0096e62575f57a36571a80a3bb690090c`  
-		Last Modified: Wed, 30 Mar 2022 13:55:54 GMT  
-		Size: 58.3 KB (58287 bytes)  
+	-	`sha256:22b7fccd0226c778de75bebcc33261d3718a84e25479061635deca3dced0b91a`  
+		Last Modified: Thu, 21 Apr 2022 05:32:29 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8d68229bd89706d07fa7e59cf5f60694fa9ca587ee3e4ac2da7e28fa2fecabca`  
-		Last Modified: Wed, 30 Mar 2022 13:56:00 GMT  
-		Size: 77.7 MB (77688207 bytes)  
+	-	`sha256:793841ff827f9ab87d139e0bfd4f5eaa19129a4cb2dc26aedc0c1aee167778bd`  
+		Last Modified: Thu, 21 Apr 2022 05:32:36 GMT  
+		Size: 77.7 MB (77688146 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-8.0.10-plus`
 
 ```console
-$ docker pull tomee@sha256:84b22fb605cdfd9d0d3ab386f45b190c2449a5276b7833368c5d0b9c9e1f19b9
+$ docker pull tomee@sha256:ee5083d9d10c8d926b74a7bf00d0f7ef2e1e6a269f20289c6536b18a22e05ad4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7125,195 +7125,195 @@ $ docker pull tomee@sha256:84b22fb605cdfd9d0d3ab386f45b190c2449a5276b7833368c5d0
 ### `tomee:8-jre-8.0.10-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:2aba713d6bd90f0935379da43e57c04f0fa0008dc6b09ab592609251ca53b157
+$ docker pull tomee@sha256:5feac8738bf849e6978b68aeb4c701eb3f0e0dec590c3092ed563a0d20d4ecf1
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **188.7 MB (188680616 bytes)**  
+-	Total Size: **188.7 MB (188684924 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:18f6c64e3d8329ed080e6c658667564bcde69ea3c8fc8215f1b334566c26601e`
+-	Image ID: `sha256:843aca98a629f5e326805c1c029bbfc3bc9db266087c75e8388e9929e0390661`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:27:03 GMT
+# Thu, 21 Apr 2022 07:18:13 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:27:10 GMT
+# Thu, 21 Apr 2022 07:18:20 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:27:10 GMT
+# Thu, 21 Apr 2022 07:18:20 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:27:10 GMT
+# Thu, 21 Apr 2022 07:18:20 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7ae0a608647449e09370f4e7a4a81cbf4da7c5f6effbbefe603fb4468fe28294`  
-		Last Modified: Wed, 30 Mar 2022 06:32:49 GMT  
-		Size: 58.3 KB (58307 bytes)  
+	-	`sha256:f365cdc6d698c5dd6d4be25b0736a3901cc01b5fdb38f3c05aa4e66b3c4b28fe`  
+		Last Modified: Thu, 21 Apr 2022 07:23:56 GMT  
+		Size: 58.3 KB (58273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7866640386bcc50f8750e377d5f63ffd76678713aaab40a71db23d27f3e4c747`  
-		Last Modified: Wed, 30 Mar 2022 06:33:06 GMT  
-		Size: 70.6 MB (70608905 bytes)  
+	-	`sha256:c878f2a7ad3d0f3f4adf77efd57123fa3893761cbf7f61932acc9fd8b8d76e94`  
+		Last Modified: Thu, 21 Apr 2022 07:24:12 GMT  
+		Size: 70.6 MB (70608908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-8.0.10-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:c4065e83a7144e2fdb76b02f7125d25ef8c4c3ebed3c22a91bafddcebfdd9014
+$ docker pull tomee@sha256:f829797fcbb8fd8bb7252bd074e820349504a4db97dca43d38c68caf84791a7f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.2 MB (186199226 bytes)**  
+-	Total Size: **186.2 MB (186199059 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9e0fd0a73792d767fb1739268361e072a5bab1951814477d65fc1068fd71d128`
+-	Image ID: `sha256:2d6f26e86cb3d582ba6aeea13fea5bb56507e8d7cabc0cf64c7d7e33d0789d0a`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:47:32 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:47:33 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:47:51 GMT
+# Thu, 21 Apr 2022 05:23:39 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:47:57 GMT
+# Thu, 21 Apr 2022 05:23:47 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:47:58 GMT
+# Thu, 21 Apr 2022 05:23:47 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:47:59 GMT
+# Thu, 21 Apr 2022 05:23:48 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:89c43a0adb8d055cc69d7f9b0c72f3e0096e62575f57a36571a80a3bb690090c`  
-		Last Modified: Wed, 30 Mar 2022 13:55:54 GMT  
-		Size: 58.3 KB (58287 bytes)  
+	-	`sha256:22b7fccd0226c778de75bebcc33261d3718a84e25479061635deca3dced0b91a`  
+		Last Modified: Thu, 21 Apr 2022 05:32:29 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0afb6813e704bd3763ded71e11881ef0fda954bd81b12456e4322071f6f69253`  
-		Last Modified: Wed, 30 Mar 2022 13:56:16 GMT  
-		Size: 70.6 MB (70608458 bytes)  
+	-	`sha256:42277ec5a234a4283c8f5b41c7e55328837fb6f39e3857fbdfdc92b7537ccff0`  
+		Last Modified: Thu, 21 Apr 2022 05:32:57 GMT  
+		Size: 70.6 MB (70608516 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8-jre-8.0.10-webprofile`
 
 ```console
-$ docker pull tomee@sha256:c41668005a21e349aa08fa7e4b9e128fbee4d5f05de1392b852f01402752f65e
+$ docker pull tomee@sha256:92dde1f92d7567656c5ea0b22dbfeb4c3e9567153d0dccae99824889dd6a38c7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7324,195 +7324,195 @@ $ docker pull tomee@sha256:c41668005a21e349aa08fa7e4b9e128fbee4d5f05de1392b852f0
 ### `tomee:8-jre-8.0.10-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:22e2d6ff6a388ddb39d2ee69f02e0e2ec0d56306e39f31baf3dcbbafe3a6a177
+$ docker pull tomee@sha256:c0d8d7494e76bb201e6d9e92b8ea5a7d7f7fe414eea654b0c3c261d8769e5624
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **165.4 MB (165408216 bytes)**  
+-	Total Size: **165.4 MB (165412516 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:49dffe2721e491478093ba5f9c48332341947209a94482c1e8b49f7c8d307c74`
+-	Image ID: `sha256:ae1df6357a72c13732b801587664014296cbf9aaa18bab485a26770a1d8159f2`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:13:35 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:13:36 GMT
+# Wed, 20 Apr 2022 10:55:59 GMT
 ENV JAVA_VERSION=8u322
-# Tue, 29 Mar 2022 23:13:42 GMT
+# Wed, 20 Apr 2022 10:56:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 06:19:16 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:19:17 GMT
+# Thu, 21 Apr 2022 07:07:57 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:26:52 GMT
+# Thu, 21 Apr 2022 07:18:02 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:27:22 GMT
+# Thu, 21 Apr 2022 07:18:32 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:27:27 GMT
+# Thu, 21 Apr 2022 07:18:37 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:27:27 GMT
+# Thu, 21 Apr 2022 07:18:37 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:27:27 GMT
+# Thu, 21 Apr 2022 07:18:37 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:584e22393054af2b0e026945f5e73974281a3a9eea2d51088cd02bcfabc69ad5`  
-		Last Modified: Tue, 29 Mar 2022 23:31:23 GMT  
-		Size: 209.0 B  
+	-	`sha256:ac8878e24fd9e707ced7ce1489388fd559b17000f5c28a4829bcb49f29d3cca6`  
+		Last Modified: Wed, 20 Apr 2022 11:15:58 GMT  
+		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b55101a8ff11e93bf49504ca5b58eab4cce963d627a19eb40c70b7370dc5c2a`  
-		Last Modified: Tue, 29 Mar 2022 23:31:28 GMT  
-		Size: 41.4 MB (41387563 bytes)  
+	-	`sha256:3811f4d5a35b1413e3e201c97e98ccbed53dbe4185273b45abdf27cbb0c40e18`  
+		Last Modified: Wed, 20 Apr 2022 11:16:03 GMT  
+		Size: 41.4 MB (41387518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0715c77828e973841404487ae977299702b3fbadf5c3f4979fb6fa179dab92da`  
-		Last Modified: Wed, 30 Mar 2022 06:31:13 GMT  
-		Size: 171.0 B  
+	-	`sha256:ad1f4afd19fcaf8e9e6843229d876ac66f3493ec3fa92be572b5a3c7aaf181d6`  
+		Last Modified: Thu, 21 Apr 2022 07:22:20 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7ae0a608647449e09370f4e7a4a81cbf4da7c5f6effbbefe603fb4468fe28294`  
-		Last Modified: Wed, 30 Mar 2022 06:32:49 GMT  
-		Size: 58.3 KB (58307 bytes)  
+	-	`sha256:f365cdc6d698c5dd6d4be25b0736a3901cc01b5fdb38f3c05aa4e66b3c4b28fe`  
+		Last Modified: Thu, 21 Apr 2022 07:23:56 GMT  
+		Size: 58.3 KB (58273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1d8778130e2500874074fb4a95b12566bc34d5de2ddb0b85a85c08173d9c5b0d`  
-		Last Modified: Wed, 30 Mar 2022 06:33:26 GMT  
-		Size: 47.3 MB (47336505 bytes)  
+	-	`sha256:bc723980336666360dcf47976b0ecbb15b2a069764c578e0724a3172e6e49bb2`  
+		Last Modified: Thu, 21 Apr 2022 07:24:34 GMT  
+		Size: 47.3 MB (47336500 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8-jre-8.0.10-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:bda30e7fa726304657f9c5434a9c5ef21ad4bc29827ea580aa9fc76c2acf976c
+$ docker pull tomee@sha256:c1353a54de5ab24bf9ebd366576a78d431a93007cf4e2a6213fdab37caeeebdd
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.9 MB (162926682 bytes)**  
+-	Total Size: **162.9 MB (162926550 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9715244fca44265c721d1d737bf0e8b4d3cf2a787cea014b16a5109c78c56316`
+-	Image ID: `sha256:7cf548f26e6fcca057396d74a2f5edc850683f1f6662ba7d0d990e91d06ea7be`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:09:57 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 30 Mar 2022 09:09:58 GMT
+# Wed, 20 Apr 2022 10:36:28 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:09:59 GMT
+# Wed, 20 Apr 2022 10:36:29 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:10:00 GMT
+# Wed, 20 Apr 2022 10:36:30 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:10:01 GMT
+# Wed, 20 Apr 2022 10:36:31 GMT
 ENV JAVA_VERSION=8u322
-# Wed, 30 Mar 2022 09:10:08 GMT
+# Wed, 20 Apr 2022 10:36:37 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_x64_linux_8u322b06.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jre_aarch64_linux_8u322b06.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Wed, 30 Mar 2022 13:40:31 GMT
+# Thu, 21 Apr 2022 05:11:39 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:40:32 GMT
+# Thu, 21 Apr 2022 05:11:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:40:33 GMT
+# Thu, 21 Apr 2022 05:11:41 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:47:32 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:47:33 GMT
+# Thu, 21 Apr 2022 05:23:25 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:48:17 GMT
+# Thu, 21 Apr 2022 05:24:07 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:48:23 GMT
+# Thu, 21 Apr 2022 05:24:12 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:48:23 GMT
+# Thu, 21 Apr 2022 05:24:12 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:48:24 GMT
+# Thu, 21 Apr 2022 05:24:13 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0f7d2aecfeabca96ca23febcdac6ae00782336d0eca6ae914bbbe4e77ee86bd7`  
-		Last Modified: Wed, 30 Mar 2022 09:34:37 GMT  
-		Size: 209.0 B  
+	-	`sha256:755e558edd97c18a34166be3c67f631c203f345ef3b3369335202ce71db8b957`  
+		Last Modified: Wed, 20 Apr 2022 11:02:14 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:112cd66392a9cb85905ca9fa430b7dd08123fa3fdf678b82a1e7c386df8e5255`  
-		Last Modified: Wed, 30 Mar 2022 09:34:42 GMT  
-		Size: 40.7 MB (40653745 bytes)  
+	-	`sha256:84c5920902c15c039903a1feea0bad9ce94bc8651ec697b98e01216aa9f1dd3c`  
+		Last Modified: Wed, 20 Apr 2022 11:02:20 GMT  
+		Size: 40.7 MB (40653697 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:042a65558fadbea2f0595e6563265cd83542ac7349f0298dac49c916358036a8`  
-		Last Modified: Wed, 30 Mar 2022 13:53:55 GMT  
-		Size: 137.0 B  
+	-	`sha256:60d35e5ba6daed7f597270a6973907972f6aa8614a5e2db9fa70288a56f35503`  
+		Last Modified: Thu, 21 Apr 2022 05:29:47 GMT  
+		Size: 140.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:89c43a0adb8d055cc69d7f9b0c72f3e0096e62575f57a36571a80a3bb690090c`  
-		Last Modified: Wed, 30 Mar 2022 13:55:54 GMT  
-		Size: 58.3 KB (58287 bytes)  
+	-	`sha256:22b7fccd0226c778de75bebcc33261d3718a84e25479061635deca3dced0b91a`  
+		Last Modified: Thu, 21 Apr 2022 05:32:29 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1df441bc81214c07bca5d136f0c947594ae822f2a1554f43cbfeacc7fd65c8f2`  
-		Last Modified: Wed, 30 Mar 2022 13:56:41 GMT  
-		Size: 47.3 MB (47335914 bytes)  
+	-	`sha256:bb13a6e3566d2853d815386150d8c3d3af1d8869e40a0ae5a352e81dc83fdb01`  
+		Last Modified: Thu, 21 Apr 2022 05:33:31 GMT  
+		Size: 47.3 MB (47336007 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8.0.10-microprofile`
 
 ```console
-$ docker pull tomee@sha256:72f827eae5b1ec0a131f5bd5952656e1ddd41c6784b872a2f096eaf8e8f62de1
+$ docker pull tomee@sha256:272721f73ec98cc792c437abb5453a127ed690ab4c7d544b6189a68dae7149c7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7523,195 +7523,195 @@ $ docker pull tomee@sha256:72f827eae5b1ec0a131f5bd5952656e1ddd41c6784b872a2f096e
 ### `tomee:8.0.10-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:b58cf3e03339df5acba4f8ccf6c4dd1e733aeca75b3d5f96a94cb789ac0e1e51
+$ docker pull tomee@sha256:89002578f56ef0b4417d72bb2132d86c8f5b456b20ee9a6a56d614ca60d6bf8f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **189.3 MB (189265948 bytes)**  
+-	Total Size: **189.3 MB (189271559 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:52435351f58096ea71fa9be9b8204cc93c689bbaf0c72bbf732c0d50bff67965`
+-	Image ID: `sha256:26a0662e2065a4f6a74c1015514837af50fca73b1dc35f1b5cb4d07d06f16c79`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:03 GMT
+# Thu, 21 Apr 2022 07:19:09 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:28:10 GMT
+# Thu, 21 Apr 2022 07:19:16 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:10 GMT
+# Thu, 21 Apr 2022 07:19:16 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:10 GMT
+# Thu, 21 Apr 2022 07:19:16 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:891336e432493db1d2cc8f473a90c6db14af57994207885c733a6910a55ed0da`  
-		Last Modified: Wed, 30 Mar 2022 06:34:07 GMT  
-		Size: 65.7 MB (65702891 bytes)  
+	-	`sha256:2f4891c592ac784f9e3fd4ad28ba99a2b6b254949701eb87226f6c729c1e3712`  
+		Last Modified: Thu, 21 Apr 2022 07:25:15 GMT  
+		Size: 65.7 MB (65702910 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8.0.10-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:74226a6100cc709dd793541ac210f2d7f77990633a64d745e7efe7d5e7995f70
+$ docker pull tomee@sha256:ce7b8ae79778581ede5cb1a4c7fa0cbc7f6370cf0872619ac4bc92f7f8a32c53
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.6 MB (186612316 bytes)**  
+-	Total Size: **186.6 MB (186612512 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b709db1c78ace7897782ea369e4e44461b3ec72bfd1d595a9e5c5e661cfb55b4`
+-	Image ID: `sha256:8dfdb952b714fcd61db074c4b2215d243ae5c0d9aeccc8c64ab1385f78f3e97c`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:49:08 GMT
+# Thu, 21 Apr 2022 05:24:58 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:49:13 GMT
+# Thu, 21 Apr 2022 05:25:04 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:13 GMT
+# Thu, 21 Apr 2022 05:25:04 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:14 GMT
+# Thu, 21 Apr 2022 05:25:05 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:63b7840783e5414bfed69cfd2c928dd8dd7e724067e54cb513facbb08c69d17d`  
-		Last Modified: Wed, 30 Mar 2022 13:57:34 GMT  
-		Size: 65.7 MB (65702546 bytes)  
+	-	`sha256:01ff9c811cd81975139fa5c41848b71f038de2a6d5d8653da884520f1e57099b`  
+		Last Modified: Thu, 21 Apr 2022 05:34:42 GMT  
+		Size: 65.7 MB (65702562 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8.0.10-plume`
 
 ```console
-$ docker pull tomee@sha256:c3481b624f0c20434f44f3ad7a9994fb72c1d5b9623aa1326bba7944d16091e9
+$ docker pull tomee@sha256:377d220653c22eeeb16c6540847ade9d79ee759d2238dc35d7e931b1b9a7f385
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7722,195 +7722,195 @@ $ docker pull tomee@sha256:c3481b624f0c20434f44f3ad7a9994fb72c1d5b9623aa1326bba7
 ### `tomee:8.0.10-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:35f4dd5816f68c34c44dc6061d96c380ead9f06abc1540736422b7de20c59f18
+$ docker pull tomee@sha256:19edfcea706b0c0ef120d5ebe81a1dd85d009d7fd1b9894cf2512cefcfe72d6b
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **201.3 MB (201251450 bytes)**  
+-	Total Size: **201.3 MB (201257018 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5cd4dfb25b3976ceaf3f3a842d93859a427c64558a8ecbd08f7df33fa29fed82`
+-	Image ID: `sha256:c7ca3d8c647efe2a5ae5496e58bd2220df2172d3aa82efa0ecaf7bf36ea934dd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:27:47 GMT
+# Thu, 21 Apr 2022 07:18:57 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:27:48 GMT
+# Thu, 21 Apr 2022 07:18:57 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:27:48 GMT
+# Thu, 21 Apr 2022 07:18:57 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79052a022ce4503809bd8084d3c0bc90597bf0d9d03cd7c102dccb8cf36eafdb`  
-		Last Modified: Wed, 30 Mar 2022 06:33:38 GMT  
-		Size: 77.7 MB (77688393 bytes)  
+	-	`sha256:0206cdb1e7a9673ff64a88c7d7c42de5f46dc50ff774e1c2d1b07a78109e93ed`  
+		Last Modified: Thu, 21 Apr 2022 07:24:46 GMT  
+		Size: 77.7 MB (77688369 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8.0.10-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:6a4fcaf23c15cfe5d8b7915fdf46b56a5fd7999619fde154d17c5f48f6e9383a
+$ docker pull tomee@sha256:b21625a8b1be3b9059ca84fdb861fb768b0fe474db73f3b9a2781075869a0014
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **198.6 MB (198597927 bytes)**  
+-	Total Size: **198.6 MB (198598117 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d6cd7106c6599f415404acf611d8150492c6eb79997d41fc576fbea0ef1cbfd6`
+-	Image ID: `sha256:461defd7fe6395fa6e9839515a77553144bdac4a1a2daa2b23f6d280aac70885`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:48:42 GMT
+# Thu, 21 Apr 2022 05:24:31 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:48:49 GMT
+# Thu, 21 Apr 2022 05:24:37 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:48:49 GMT
+# Thu, 21 Apr 2022 05:24:38 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:48:50 GMT
+# Thu, 21 Apr 2022 05:24:39 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5ce17ee43c6d8111a447741773ac7f0b95a77f4f71182d68158c42cde1abd68`  
-		Last Modified: Wed, 30 Mar 2022 13:56:55 GMT  
-		Size: 77.7 MB (77688157 bytes)  
+	-	`sha256:829c05d232fc30a56a0bbb9a51933a844e582e194b8c39766f091694b887c9fc`  
+		Last Modified: Thu, 21 Apr 2022 05:33:54 GMT  
+		Size: 77.7 MB (77688167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8.0.10-plus`
 
 ```console
-$ docker pull tomee@sha256:112516c691319a7775c1b469a1e42962c370ea26f47c12f181bde42c0e7b6209
+$ docker pull tomee@sha256:2a43b7faf8be4b75b34abe44dccbea69435031ef97171705bd7bd61a2df50a76
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7921,195 +7921,195 @@ $ docker pull tomee@sha256:112516c691319a7775c1b469a1e42962c370ea26f47c12f181bde
 ### `tomee:8.0.10-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:1439a0bb65d9225c884d3c8b520f157b9779f451751b63c2135976bcf37ca6f8
+$ docker pull tomee@sha256:123e824332cf3e54ae815b2dc7df0bb23071f0a76c10112947906f3dd5d66cf2
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **194.2 MB (194171994 bytes)**  
+-	Total Size: **194.2 MB (194177558 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9a30868ca4b2198b97e3b5ec8fa20488c9ba9f26de81f80d79275e13cdb0c2d5`
+-	Image ID: `sha256:e70ac963c4145014829fdb14f04e9a8aebea961c25e075fb506952609f345df8`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:27:53 GMT
+# Thu, 21 Apr 2022 07:18:59 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:28:00 GMT
+# Thu, 21 Apr 2022 07:19:06 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:01 GMT
+# Thu, 21 Apr 2022 07:19:07 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:01 GMT
+# Thu, 21 Apr 2022 07:19:07 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0c2edc06eea47f7aff70fd199827462241e2c7230bc46a9edd3d4fff59792d4b`  
-		Last Modified: Wed, 30 Mar 2022 06:33:53 GMT  
-		Size: 70.6 MB (70608937 bytes)  
+	-	`sha256:b6266a4bc0412875ec076cd0d265da07972055d61dc7cc6bc91c5e2f5885e3b8`  
+		Last Modified: Thu, 21 Apr 2022 07:25:00 GMT  
+		Size: 70.6 MB (70608909 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8.0.10-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:5b325d1a2f5dadc3dae9ed6f02b73cc4eda54071fbaca6a13bca84c4975f3d2e
+$ docker pull tomee@sha256:378e821cd5e0dd41af8b78937efec41f0e63febb673055dca69e5c4d38840e03
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **191.5 MB (191518230 bytes)**  
+-	Total Size: **191.5 MB (191518425 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d959a284407f7eaccebe360775fb4fccedfd7e14a9b2c9332db619ce14fce410`
+-	Image ID: `sha256:7029f0e25f65ffe4d36eecbb94cf9cb9301ee61d422a1339fb506ece6aadd2b6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:48:56 GMT
+# Thu, 21 Apr 2022 05:24:44 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:49:01 GMT
+# Thu, 21 Apr 2022 05:24:52 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:02 GMT
+# Thu, 21 Apr 2022 05:24:52 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:02 GMT
+# Thu, 21 Apr 2022 05:24:53 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19bd20bb9f0a522bcabbc234fd5ddbe22571f51c702498a3a5619bedc4dc8ec3`  
-		Last Modified: Wed, 30 Mar 2022 13:57:15 GMT  
-		Size: 70.6 MB (70608460 bytes)  
+	-	`sha256:b6ecb17bf82bddcfffcd4b3776695b92df27537d81c61a0ff318ab7067086063`  
+		Last Modified: Thu, 21 Apr 2022 05:34:23 GMT  
+		Size: 70.6 MB (70608475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:8.0.10-webprofile`
 
 ```console
-$ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de847c4a2423f8
+$ docker pull tomee@sha256:bdb8af99623365ec4b31b3e7da0dac60cc69714024d2d27f408346ec03cf7e2c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8120,195 +8120,195 @@ $ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de8
 ### `tomee:8.0.10-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:76590393e506ad8a1f27fa87b52f262773eb14855bda1183fab02ebb162f1200
+$ docker pull tomee@sha256:245b280b4bcc7c95f95287c56eb3c49925491729d287c898e69816f7639bf3c2
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **170.9 MB (170899559 bytes)**  
+-	Total Size: **170.9 MB (170905144 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:319e974e5f3a2fd001fe032d0c192a133035116e00649ef5adf22fa74f2f28cd`
+-	Image ID: `sha256:24616cf46df4d8f57f74f13f9b53382d267c2c8bbe53fb91db50c5984460bc6d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:12 GMT
+# Thu, 21 Apr 2022 07:19:19 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bd52238a6201d759b2d612406c2d10dcc2eaeee0af17a33385de5545f91e7f2`  
-		Last Modified: Wed, 30 Mar 2022 06:34:19 GMT  
-		Size: 47.3 MB (47336502 bytes)  
+	-	`sha256:63b492f8510b64c55c18fc5d9d0e53b64efba0d440ea5dd558dc0c948fdce4b6`  
+		Last Modified: Thu, 21 Apr 2022 07:25:28 GMT  
+		Size: 47.3 MB (47336495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:8.0.10-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:c189714e421bb9b5685436908346e199c3cbf591d6f741c9b4a80a62caa53f87
+$ docker pull tomee@sha256:9de0a1dba1e9889678f7c919d870772bd3d64fab5b35bd12742daed72d521e44
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.2 MB (168245733 bytes)**  
+-	Total Size: **168.2 MB (168245940 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:73d85ed96edaae1f11f0090c324fb87f10c537c2d4f29937d8819162f0f21d29`
+-	Image ID: `sha256:f1c3544c1d0cbb05c610b886659f027f745d32c9ef568d2c8b2c13f2b563aa88`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:49:20 GMT
+# Thu, 21 Apr 2022 05:25:11 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:49:25 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:26 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:27 GMT
+# Thu, 21 Apr 2022 05:25:16 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33023bcc2d012a5c2ebac995703f11ef2dfe1d5c97a572a04fadc2de8e4926b9`  
-		Last Modified: Wed, 30 Mar 2022 13:57:50 GMT  
-		Size: 47.3 MB (47335963 bytes)  
+	-	`sha256:1e1988bd3be155b6778484d05a5b51e752fbf80f6f3707f8389c4974be4cac01`  
+		Last Modified: Thu, 21 Apr 2022 05:35:00 GMT  
+		Size: 47.3 MB (47335990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:9`
 
 ```console
-$ docker pull tomee@sha256:586a6c3a7e9cdbd7641683556517a3af267880a47b10f5e4d5efa77d98c851f2
+$ docker pull tomee@sha256:85e1ca0b84ff3710e56833c4d28dbde495b2f5e2ffcf6d4d3e7f9ed00d981d3e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8319,199 +8319,199 @@ $ docker pull tomee@sha256:586a6c3a7e9cdbd7641683556517a3af267880a47b10f5e4d5efa
 ### `tomee:9` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:91733c50648891013b0de9daa8c581c0c0d42accb66e2b165757c576908fbb29
+$ docker pull tomee@sha256:f2cd8b32f569b08f0354f100b55e5d26022d2279ffebef72de14c168525b6359
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **381.9 MB (381872041 bytes)**  
+-	Total Size: **381.9 MB (381877738 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31c13c3e6f6c085a1d11c5abbcfa49b6a73c413e630b4c6468919f99fba8f8da`
+-	Image ID: `sha256:51ba0e34161010fafc7748765907fb5fbc26d8c6e7caec9416e2955f07d85de5`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:30:17 GMT
+# Thu, 21 Apr 2022 07:21:23 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49783a7b622ae6fe99b28c2a48a1c9d60a369cc4ac0b5b89eab36f2bb507b720`  
-		Last Modified: Wed, 30 Mar 2022 06:36:53 GMT  
-		Size: 54.6 MB (54568345 bytes)  
+	-	`sha256:6821b0c6cf4f1a4df4e2e774c8a1a56430b4d7c4a33af4a756f17c34f0bcfbc9`  
+		Last Modified: Thu, 21 Apr 2022 07:28:02 GMT  
+		Size: 54.6 MB (54568220 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:9` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:55af5408d8582b5732a4028b9b2d535f9e386952a8f57edc5e2e74a554384e72
+$ docker pull tomee@sha256:45cc34eede53939f18f15890ff7aea7626fd6105c3c28e47c329b2b003f2fe94
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **380.5 MB (380525374 bytes)**  
+-	Total Size: **380.5 MB (380526680 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2e985b943137900608e11ecc31f312e95bc42ed0d01600ae76557558cec18cd7`
+-	Image ID: `sha256:607f6ea8b1f549f0a541450abb65361aba056bad6ce2983fca967f86ad0625dc`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:52:13 GMT
+# Thu, 21 Apr 2022 05:28:02 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:52:18 GMT
+# Thu, 21 Apr 2022 05:28:08 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:52:18 GMT
+# Thu, 21 Apr 2022 05:28:08 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:52:19 GMT
+# Thu, 21 Apr 2022 05:28:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a698591f74583c76fbaf2ff0909b87aecaac0317cb90e34cb53306d8c8681930`  
-		Last Modified: Wed, 30 Mar 2022 14:01:34 GMT  
-		Size: 54.6 MB (54568018 bytes)  
+	-	`sha256:ee3260b4683690e39fd1bdee5e67c105e470a2bdfe1e72738be307de3cd1921d`  
+		Last Modified: Thu, 21 Apr 2022 05:38:41 GMT  
+		Size: 54.6 MB (54568009 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:9.0.0-M7-microprofile`
 
 ```console
-$ docker pull tomee@sha256:daa9e70d639daeb88688e51489f77d87bc8042b8c01af8e825dae8b282862048
+$ docker pull tomee@sha256:74df95c8fd8416d2cbdc2977f5c002bacda4f5d91a4037937a2cbfa3270e597b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8522,199 +8522,199 @@ $ docker pull tomee@sha256:daa9e70d639daeb88688e51489f77d87bc8042b8c01af8e825dae
 ### `tomee:9.0.0-M7-microprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:ae17cfefde57b9c820412cc1e3f15934384cdb91341290288b6f4e051d4efbdc
+$ docker pull tomee@sha256:3508a6fbd557c80d9e046e676ca10336709ce754b6a8df81a7e3e4473928db5d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **392.9 MB (392911366 bytes)**  
+-	Total Size: **392.9 MB (392917198 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:272d1e4d24cfd1a0f60e9d85cec5cad80afc80aa6393bae07c399b4aca685ff1`
+-	Image ID: `sha256:1bbe450b8bdd45687e3fa2923ed83fb1db6b4a453e2997fb56fb0a2c9981f4a5`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:30:07 GMT
+# Thu, 21 Apr 2022 07:21:14 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 06:30:14 GMT
+# Thu, 21 Apr 2022 07:21:21 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:30:15 GMT
+# Thu, 21 Apr 2022 07:21:21 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:30:15 GMT
+# Thu, 21 Apr 2022 07:21:21 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44d76ac8bf521e979748364f70882872c8e1a913ae07f56c7d119a63d7bdc153`  
-		Last Modified: Wed, 30 Mar 2022 06:36:39 GMT  
-		Size: 65.6 MB (65607670 bytes)  
+	-	`sha256:793f9b7be0763d6fea4d3f2815b125fb007bd2f3f868b684cf02cb623d9ef01d`  
+		Last Modified: Thu, 21 Apr 2022 07:27:48 GMT  
+		Size: 65.6 MB (65607680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:9.0.0-M7-microprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:99dce1839b4388a90ee2131b3ff57afd9cdb156757d6e9b3ee3021c4987b66eb
+$ docker pull tomee@sha256:5dd1528a8c3e781405e531943f0b2492017cc8a75481394746b45b55e429af37
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **391.6 MB (391564827 bytes)**  
+-	Total Size: **391.6 MB (391566162 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ed48057cf9317103bb2e719b6773b74262112757e68da15fd6f83e3e451fd1c8`
+-	Image ID: `sha256:23082514fe0d61b4820faf255f3a1ec94d56340c989ae145299b0baefaa4cf49`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:52:01 GMT
+# Thu, 21 Apr 2022 05:27:47 GMT
 ENV TOMEE_BUILD=microprofile
-# Wed, 30 Mar 2022 13:52:06 GMT
+# Thu, 21 Apr 2022 05:27:55 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:52:07 GMT
+# Thu, 21 Apr 2022 05:27:56 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:52:07 GMT
+# Thu, 21 Apr 2022 05:27:56 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3acb8602903a699cad882a77a2511277279f1e5ff5eeafb531737d9676fcfdd`  
-		Last Modified: Wed, 30 Mar 2022 14:01:09 GMT  
-		Size: 65.6 MB (65607471 bytes)  
+	-	`sha256:d2075fb6821077105bd99cff5f708e2dbf7e568929f46bde59914bb8e2957a80`  
+		Last Modified: Thu, 21 Apr 2022 05:38:11 GMT  
+		Size: 65.6 MB (65607491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:9.0.0-M7-plume`
 
 ```console
-$ docker pull tomee@sha256:8d304bdb0001547bae13b07a71efe116e7d75afd8c79fa50cae4186e2ec1a433
+$ docker pull tomee@sha256:5e7c7c4a711d1bc46051d9f7cdbd4bb4637857d16b2d6ea8b5949e4a9444e5a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8725,199 +8725,199 @@ $ docker pull tomee@sha256:8d304bdb0001547bae13b07a71efe116e7d75afd8c79fa50cae41
 ### `tomee:9.0.0-M7-plume` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:f055e452c53e78e01ab4996511cf1df72371a281ccce639e63e9851028e01a59
+$ docker pull tomee@sha256:627458be0326417d83c9f45c530b8b18ec86b7396a3e21ceb422aad733cec8aa
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **405.8 MB (405785496 bytes)**  
+-	Total Size: **405.8 MB (405791358 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3eafe8aef071a460f7b5dbc8188567308c9975e31b6b7131ae45e5b380875b7a`
+-	Image ID: `sha256:f0e83a5d7241d46019c82d4d89c995d956869d9f2f6f68f31bc36a980902a6c1`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 06:29:54 GMT
+# Thu, 21 Apr 2022 07:21:02 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:29:54 GMT
+# Thu, 21 Apr 2022 07:21:02 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:29:54 GMT
+# Thu, 21 Apr 2022 07:21:02 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:28d0cc452123ccb8854a7122348b1e12d00bfc986aad74b0efe7a5553ce945de`  
-		Last Modified: Wed, 30 Mar 2022 06:36:10 GMT  
-		Size: 78.5 MB (78481800 bytes)  
+	-	`sha256:2faac8c3bdfa9195ff5d493fcacd51432d7169aa9ef92e1c2885a48d2b800ef1`  
+		Last Modified: Thu, 21 Apr 2022 07:27:21 GMT  
+		Size: 78.5 MB (78481840 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:9.0.0-M7-plume` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:de97d9e4ab20b071b99fdd99039140cc3decc7c5ec1833edbe277756f44c3181
+$ docker pull tomee@sha256:013f587858b8f288354968960ac53a9b1668b24a99e0c3498ada8a92e5044f58
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.4 MB (404438824 bytes)**  
+-	Total Size: **404.4 MB (404440167 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:39458f255d516f3449f2671677aaa6d86b97d7b83a8d671aa37090bfcc1e8bf9`
+-	Image ID: `sha256:ea82ad6187fc304c72a24281c6eac79099fc66bbef84ae3cdc1d56d01612dcb8`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:22 GMT
 ENV TOMEE_BUILD=plume
-# Wed, 30 Mar 2022 13:51:40 GMT
+# Thu, 21 Apr 2022 05:27:29 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:51:41 GMT
+# Thu, 21 Apr 2022 05:27:30 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:51:42 GMT
+# Thu, 21 Apr 2022 05:27:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e9b1aaa2c47bb4c2eaeb207181f61cd64c16c7fb00d8bb889e7ac5a6974be12`  
-		Last Modified: Wed, 30 Mar 2022 14:00:34 GMT  
-		Size: 78.5 MB (78481468 bytes)  
+	-	`sha256:72c80f1e6dfb83b4e8847a1479e15691d8e326694e1a4795f515fc8e1a524aa6`  
+		Last Modified: Thu, 21 Apr 2022 05:37:34 GMT  
+		Size: 78.5 MB (78481496 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:9.0.0-M7-webprofile`
 
 ```console
-$ docker pull tomee@sha256:586a6c3a7e9cdbd7641683556517a3af267880a47b10f5e4d5efa77d98c851f2
+$ docker pull tomee@sha256:85e1ca0b84ff3710e56833c4d28dbde495b2f5e2ffcf6d4d3e7f9ed00d981d3e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8928,199 +8928,199 @@ $ docker pull tomee@sha256:586a6c3a7e9cdbd7641683556517a3af267880a47b10f5e4d5efa
 ### `tomee:9.0.0-M7-webprofile` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:91733c50648891013b0de9daa8c581c0c0d42accb66e2b165757c576908fbb29
+$ docker pull tomee@sha256:f2cd8b32f569b08f0354f100b55e5d26022d2279ffebef72de14c168525b6359
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **381.9 MB (381872041 bytes)**  
+-	Total Size: **381.9 MB (381877738 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:31c13c3e6f6c085a1d11c5abbcfa49b6a73c413e630b4c6468919f99fba8f8da`
+-	Image ID: `sha256:51ba0e34161010fafc7748765907fb5fbc26d8c6e7caec9416e2955f07d85de5`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:30:17 GMT
+# Thu, 21 Apr 2022 07:21:23 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:30:23 GMT
+# Thu, 21 Apr 2022 07:21:30 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49783a7b622ae6fe99b28c2a48a1c9d60a369cc4ac0b5b89eab36f2bb507b720`  
-		Last Modified: Wed, 30 Mar 2022 06:36:53 GMT  
-		Size: 54.6 MB (54568345 bytes)  
+	-	`sha256:6821b0c6cf4f1a4df4e2e774c8a1a56430b4d7c4a33af4a756f17c34f0bcfbc9`  
+		Last Modified: Thu, 21 Apr 2022 07:28:02 GMT  
+		Size: 54.6 MB (54568220 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:9.0.0-M7-webprofile` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:55af5408d8582b5732a4028b9b2d535f9e386952a8f57edc5e2e74a554384e72
+$ docker pull tomee@sha256:45cc34eede53939f18f15890ff7aea7626fd6105c3c28e47c329b2b003f2fe94
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **380.5 MB (380525374 bytes)**  
+-	Total Size: **380.5 MB (380526680 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2e985b943137900608e11ecc31f312e95bc42ed0d01600ae76557558cec18cd7`
+-	Image ID: `sha256:607f6ea8b1f549f0a541450abb65361aba056bad6ce2983fca967f86ad0625dc`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:52:13 GMT
+# Thu, 21 Apr 2022 05:28:02 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:52:18 GMT
+# Thu, 21 Apr 2022 05:28:08 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:52:18 GMT
+# Thu, 21 Apr 2022 05:28:08 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:52:19 GMT
+# Thu, 21 Apr 2022 05:28:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a698591f74583c76fbaf2ff0909b87aecaac0317cb90e34cb53306d8c8681930`  
-		Last Modified: Wed, 30 Mar 2022 14:01:34 GMT  
-		Size: 54.6 MB (54568018 bytes)  
+	-	`sha256:ee3260b4683690e39fd1bdee5e67c105e470a2bdfe1e72738be307de3cd1921d`  
+		Last Modified: Thu, 21 Apr 2022 05:38:41 GMT  
+		Size: 54.6 MB (54568009 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:9.0.0.M7-plus`
 
 ```console
-$ docker pull tomee@sha256:30f69e0732a48b680671839dad434b457f2c46815b2f6af79556b187fa3ffd9b
+$ docker pull tomee@sha256:96b155e73991f7c646c6abaf6424b247e0813e41925b1539d87f6ccd0f0b3970
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9131,199 +9131,199 @@ $ docker pull tomee@sha256:30f69e0732a48b680671839dad434b457f2c46815b2f6af79556b
 ### `tomee:9.0.0.M7-plus` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:43d994529d9ecc386e939d719e658b796b0b46ca275de6c2fc0a4b077e4c9862
+$ docker pull tomee@sha256:2ab9f0e6308b4d9457a1b9057187f8df94680c4afcc4252055f819bd8f144cb0
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **397.8 MB (397829645 bytes)**  
+-	Total Size: **397.8 MB (397835467 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0ce7d69e004214d5845e3254d9aaff4a1c7e73e28fd438c72bb6f6281b43073e`
+-	Image ID: `sha256:01439200c5d17f13bbec6f46dd8bd3122a1c24621d3c66136b83e8d9d4003389`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 17:30:02 GMT
+# Wed, 20 Apr 2022 06:58:03 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:07:20 GMT
+# Wed, 20 Apr 2022 10:47:19 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:09:39 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:09:40 GMT
+# Wed, 20 Apr 2022 10:50:50 GMT
 ENV JAVA_VERSION=17.0.2
-# Tue, 29 Mar 2022 23:09:49 GMT
+# Wed, 20 Apr 2022 10:51:01 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Tue, 29 Mar 2022 23:09:50 GMT
+# Wed, 20 Apr 2022 10:51:02 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:28:21 GMT
+# Thu, 21 Apr 2022 07:19:27 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:22 GMT
+# Thu, 21 Apr 2022 07:19:28 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:28:30 GMT
+# Thu, 21 Apr 2022 07:19:36 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:29:46 GMT
+# Thu, 21 Apr 2022 07:20:53 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 06:29:57 GMT
+# Thu, 21 Apr 2022 07:21:05 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 06:30:05 GMT
+# Thu, 21 Apr 2022 07:21:12 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:30:05 GMT
+# Thu, 21 Apr 2022 07:21:12 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:30:05 GMT
+# Thu, 21 Apr 2022 07:21:12 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19a994f6d4cdbb620339bd2e4ad47b229f14276b542060622ae447649294e5d`  
-		Last Modified: Tue, 29 Mar 2022 17:38:33 GMT  
-		Size: 54.6 MB (54576420 bytes)  
+	-	`sha256:c766e27afb21eddf9ab3e4349700ebe697c32a4c6ada6af4f08282277a291a28`  
+		Last Modified: Wed, 20 Apr 2022 07:06:05 GMT  
+		Size: 54.6 MB (54578663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18bf70d022dcc85ebcf204b1587cbb09fca454963d16c1afe48a80cc79c183e7`  
-		Last Modified: Tue, 29 Mar 2022 23:19:25 GMT  
-		Size: 14.1 MB (14071880 bytes)  
+	-	`sha256:18e454664a629c8e4cac99685ba1b624982040c45466f197f649234a8e132803`  
+		Last Modified: Wed, 20 Apr 2022 11:00:48 GMT  
+		Size: 14.1 MB (14071513 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e935ee67cdc00ffcba7067195505ef3b9f503cb3e227f1a7e78154bc5fb40811`  
-		Last Modified: Tue, 29 Mar 2022 23:24:23 GMT  
-		Size: 187.6 MB (187628576 bytes)  
+	-	`sha256:303943476b6f5143642c36b70f95ce88a30634496fdbf41b8f5c5deaf16b48f7`  
+		Last Modified: Wed, 20 Apr 2022 11:05:54 GMT  
+		Size: 187.6 MB (187628474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0f59f0da2b43da06ac1b31ac4ceb3c7032b2fe79dbf4c2df5c9a2c38eed895e`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 172.0 B  
+	-	`sha256:9aaa577c15baf0f19b4e1fa6283bd664e6f8a6eb797a1cda2173b61c4dea3156`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d446978bd7ef9a4c72430a0e317b7fe21017e8201c92cd71e8a39654a4a6a4a0`  
-		Last Modified: Wed, 30 Mar 2022 06:34:36 GMT  
-		Size: 58.3 KB (58276 bytes)  
+	-	`sha256:e8c89683181028fd96aaaf974294f9e0fc26fcf6b412de14f5bee9f54a99da34`  
+		Last Modified: Thu, 21 Apr 2022 07:25:44 GMT  
+		Size: 58.3 KB (58277 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57f7b205402f4279d97d9196d2d227b0094cab6e0025fdc48d9c798749dfdb46`  
-		Last Modified: Wed, 30 Mar 2022 06:36:26 GMT  
+	-	`sha256:57f1cedb354d37a0e39b9ced4aff0930b7d0b5fd50d8ee72ab95a1e84f41df86`  
+		Last Modified: Thu, 21 Apr 2022 07:27:34 GMT  
 		Size: 70.5 MB (70525949 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:9.0.0.M7-plus` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:bea2d2d5964f28ddaf15f52b45223605d0ae5e61ee1095861c3bfbc1b60bb72f
+$ docker pull tomee@sha256:0ce57d281ccc9ffa22424d5d0d44d5e59afa06a68d4916a5e3de16b69a1995ea
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **396.5 MB (396482663 bytes)**  
+-	Total Size: **396.5 MB (396483968 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:990ac5bb2206fb5cd78710b28db25434a0d43c092f7b8d168e456afc33ac1974`
+-	Image ID: `sha256:e60151baa746d5ca28c82e40fbd2b0174e2b04a34cfa6ade9ca457aa59eb857d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 02:13:41 GMT
+# Wed, 20 Apr 2022 06:44:33 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 08:59:10 GMT
+# Wed, 20 Apr 2022 10:24:10 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				binutils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:20 GMT
 ENV JAVA_HOME=/usr/local/openjdk-17
-# Wed, 30 Mar 2022 09:03:12 GMT
+# Wed, 20 Apr 2022 10:28:21 GMT
 ENV PATH=/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:03:13 GMT
+# Wed, 20 Apr 2022 10:28:22 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:03:14 GMT
+# Wed, 20 Apr 2022 10:28:23 GMT
 ENV JAVA_VERSION=17.0.2
-# Wed, 30 Mar 2022 09:03:25 GMT
+# Wed, 20 Apr 2022 10:28:39 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz'; 			downloadSha256='0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44'; 			;; 		'arm64') 			downloadUrl='https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz'; 			downloadSha256='13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	echo "$downloadSha256 *openjdk.tgz" | sha256sum --strict --check -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Wed, 30 Mar 2022 09:03:26 GMT
+# Wed, 20 Apr 2022 10:28:40 GMT
 CMD ["jshell"]
-# Wed, 30 Mar 2022 13:49:34 GMT
+# Thu, 21 Apr 2022 05:25:23 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:35 GMT
+# Thu, 21 Apr 2022 05:25:24 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:49:44 GMT
+# Thu, 21 Apr 2022 05:25:33 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:51:33 GMT
+# Thu, 21 Apr 2022 05:27:21 GMT
 ENV TOMEE_VER=9.0.0-M7
-# Wed, 30 Mar 2022 13:51:47 GMT
+# Thu, 21 Apr 2022 05:27:35 GMT
 ENV TOMEE_BUILD=plus
-# Wed, 30 Mar 2022 13:51:54 GMT
+# Thu, 21 Apr 2022 05:27:41 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o tomee.tar.gz   && gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz   && echo `cat tomee.tar.gz.sha512` tomee.tar.gz | sha512sum -c -   && tar -zxf tomee.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:51:54 GMT
+# Thu, 21 Apr 2022 05:27:42 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:51:55 GMT
+# Thu, 21 Apr 2022 05:27:42 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f906570592fdd65a2fcfae6164990d0422e03ccadba25c5b1d1268a29f7c530`  
-		Last Modified: Wed, 30 Mar 2022 02:24:36 GMT  
-		Size: 54.7 MB (54671703 bytes)  
+	-	`sha256:350ecaf08eac09037b05465ab97a1b8f7bc9b7a9b1fcef900dedd7dba9bbcf4d`  
+		Last Modified: Wed, 20 Apr 2022 06:54:32 GMT  
+		Size: 54.7 MB (54672934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:853816c9302dd46795217ad48fd4f824d07138762d488c289fb8f04937b99372`  
-		Last Modified: Wed, 30 Mar 2022 09:20:08 GMT  
-		Size: 15.5 MB (15524979 bytes)  
+	-	`sha256:d8b174d41b9ea1124e2245788f2c290f940eca707dcc0446cd302b01aaeb5c82`  
+		Last Modified: Wed, 20 Apr 2022 10:45:28 GMT  
+		Size: 15.5 MB (15525740 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1270aecbcf9ad206744bffc3c5e97856b035bd037c31a0daa739dcd490787126`  
-		Last Modified: Wed, 30 Mar 2022 09:26:06 GMT  
-		Size: 186.5 MB (186472959 bytes)  
+	-	`sha256:fcad0d6cbc9566a9060cce10d4afebc73de9f59e90ed2ba2e9fe4e6767013600`  
+		Last Modified: Wed, 20 Apr 2022 10:51:07 GMT  
+		Size: 186.5 MB (186472881 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f16a1fb51ff366f35299042a9d59a8ae7a8167bad2bba1ba5f9df91ae082e0a6`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 138.0 B  
+	-	`sha256:d7a6102698af63e25110fc1338cb9b1034c762a2ef63c307bd3a2c314302fa4e`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71a21c74cd36e03754c9cb48c62359c3d6205581aca9f8efe6b4ae876ce39746`  
-		Last Modified: Wed, 30 Mar 2022 13:58:08 GMT  
-		Size: 58.2 KB (58236 bytes)  
+	-	`sha256:00ec81f2641bf09aeec66231e81faa1186f18000eb3909302b3478193e0c3941`  
+		Last Modified: Thu, 21 Apr 2022 05:35:21 GMT  
+		Size: 58.2 KB (58247 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d847ce52a4e20906598e3f50fb0bfbbc739676438e2be5e5b97d9396e8accf0`  
-		Last Modified: Wed, 30 Mar 2022 14:00:51 GMT  
-		Size: 70.5 MB (70525307 bytes)  
+	-	`sha256:2f62b594631c41f28457d320ab789321fb7767cebaecb29c4e2840be25882726`  
+		Last Modified: Thu, 21 Apr 2022 05:37:53 GMT  
+		Size: 70.5 MB (70525297 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomee:latest`
 
 ```console
-$ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de847c4a2423f8
+$ docker pull tomee@sha256:bdb8af99623365ec4b31b3e7da0dac60cc69714024d2d27f408346ec03cf7e2c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9334,187 +9334,187 @@ $ docker pull tomee@sha256:0fa2acd4bbf7da90ba2172231632fb8427d6c6c88f62177e75de8
 ### `tomee:latest` - linux; amd64
 
 ```console
-$ docker pull tomee@sha256:76590393e506ad8a1f27fa87b52f262773eb14855bda1183fab02ebb162f1200
+$ docker pull tomee@sha256:245b280b4bcc7c95f95287c56eb3c49925491729d287c898e69816f7639bf3c2
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **170.9 MB (170899559 bytes)**  
+-	Total Size: **170.9 MB (170905144 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:319e974e5f3a2fd001fe032d0c192a133035116e00649ef5adf22fa74f2f28cd`
+-	Image ID: `sha256:24616cf46df4d8f57f74f13f9b53382d267c2c8bbe53fb91db50c5984460bc6d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:22:07 GMT
-ADD file:e8d512b08fe2ddc6f2c85831c73e4c72b9c850fa428913d19da4bb1a34f84cf2 in / 
-# Tue, 29 Mar 2022 00:22:08 GMT
+# Wed, 20 Apr 2022 04:43:15 GMT
+ADD file:3a81c181c66f226bd6abd48d0c7ed8a9c599c9f521ec7229286c83161afec8c2 in / 
+# Wed, 20 Apr 2022 04:43:16 GMT
 CMD ["bash"]
-# Tue, 29 Mar 2022 17:29:41 GMT
+# Wed, 20 Apr 2022 06:57:42 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 17:29:47 GMT
+# Wed, 20 Apr 2022 06:57:48 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 29 Mar 2022 23:12:10 GMT
+# Wed, 20 Apr 2022 10:53:57 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV LANG=C.UTF-8
-# Tue, 29 Mar 2022 23:12:11 GMT
+# Wed, 20 Apr 2022 10:53:58 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Tue, 29 Mar 2022 23:12:18 GMT
+# Wed, 20 Apr 2022 10:54:05 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:30 GMT
+# Thu, 21 Apr 2022 07:18:40 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 06:27:39 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 06:27:40 GMT
+# Thu, 21 Apr 2022 07:18:49 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 06:28:12 GMT
+# Thu, 21 Apr 2022 07:19:19 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 06:28:18 GMT
+# Thu, 21 Apr 2022 07:19:24 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:dbba69284b2786013fe94fefe0c2e66a7d3cecbb20f6d691d71dac891ee37be5`  
-		Last Modified: Tue, 29 Mar 2022 00:26:47 GMT  
-		Size: 54.9 MB (54937710 bytes)  
+	-	`sha256:6aefca2dc61dcbcd268b8a9861e552f9cdb69e57242faec64ac120d2355a9c1a`  
+		Last Modified: Wed, 20 Apr 2022 04:47:57 GMT  
+		Size: 54.9 MB (54941777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9baf437a1badb6aad2dae5f2cd4a7b53a6c7ab6c14cba1ed1ecb42b4822b0e87`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 5.2 MB (5155705 bytes)  
+	-	`sha256:967757d5652770cfa81b6cc7577d65e06d336173da116d1fb5b2d349d5d44127`  
+		Last Modified: Wed, 20 Apr 2022 07:05:43 GMT  
+		Size: 5.2 MB (5155716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ade5c59e324bd7cf369c72ad781c23d37e8fb48c9bbb4abbecafafd9be4cc35`  
-		Last Modified: Tue, 29 Mar 2022 17:38:08 GMT  
-		Size: 10.9 MB (10874957 bytes)  
+	-	`sha256:c357e2c68cb3bf1e98dcb3eb6ceb16837253db71535921d6993c594588bffe04`  
+		Last Modified: Wed, 20 Apr 2022 07:05:45 GMT  
+		Size: 10.9 MB (10874928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d0950e7f796fc5b266ec0635e028f10b0a5b3855be74e97664ebdb6646bc203`  
-		Last Modified: Tue, 29 Mar 2022 23:28:46 GMT  
-		Size: 5.7 MB (5657089 bytes)  
+	-	`sha256:56ccb680c1c472c36a4595e2d4a2b4d1a434c377feb1ec57942b4006051064e6`  
+		Last Modified: Wed, 20 Apr 2022 11:12:20 GMT  
+		Size: 5.7 MB (5657427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d3c098d9d0b1f9d4e2bdc60de1f8b04b9838328574f3719e5f0d5306bd646d`  
-		Last Modified: Tue, 29 Mar 2022 23:28:45 GMT  
-		Size: 209.0 B  
+	-	`sha256:41c2d2d2ad823b35ca184fcea252da3e7848e1ed4b31168688a265e4a1ab86b0`  
+		Last Modified: Wed, 20 Apr 2022 11:12:19 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcd14d6b8adc38ba7cf7f795bb29d9df27ed0b0d945b0c072d056394dafdb9a0`  
-		Last Modified: Tue, 29 Mar 2022 23:28:52 GMT  
-		Size: 46.9 MB (46878908 bytes)  
+	-	`sha256:3adba0a35f28cdd034bef4df08d640578ed8f0c6b971084706a9203183d6387c`  
+		Last Modified: Wed, 20 Apr 2022 11:12:26 GMT  
+		Size: 46.9 MB (46880152 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69cb5384ce6c9fd3b0a3b72d35897956be3347d363551644eb86c1faac314bf`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 171.0 B  
+	-	`sha256:79944a5d5ee5ebf10f8da27960acd3d94fdf12431de9ad4ed1a52b074fc99081`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 169.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b23309eee02f25983275ba1a5335eb616ec8f68bd4e0f8941ab9aab6150420c`  
-		Last Modified: Wed, 30 Mar 2022 06:33:34 GMT  
-		Size: 58.3 KB (58308 bytes)  
+	-	`sha256:e79ffbb2ad2027cea06fb201535e10c93a2bc8b0927b83f169fcc191ed8f8970`  
+		Last Modified: Thu, 21 Apr 2022 07:24:42 GMT  
+		Size: 58.3 KB (58270 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bd52238a6201d759b2d612406c2d10dcc2eaeee0af17a33385de5545f91e7f2`  
-		Last Modified: Wed, 30 Mar 2022 06:34:19 GMT  
-		Size: 47.3 MB (47336502 bytes)  
+	-	`sha256:63b492f8510b64c55c18fc5d9d0e53b64efba0d440ea5dd558dc0c948fdce4b6`  
+		Last Modified: Thu, 21 Apr 2022 07:25:28 GMT  
+		Size: 47.3 MB (47336495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomee:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomee@sha256:c189714e421bb9b5685436908346e199c3cbf591d6f741c9b4a80a62caa53f87
+$ docker pull tomee@sha256:9de0a1dba1e9889678f7c919d870772bd3d64fab5b35bd12742daed72d521e44
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **168.2 MB (168245733 bytes)**  
+-	Total Size: **168.2 MB (168245940 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:73d85ed96edaae1f11f0090c324fb87f10c537c2d4f29937d8819162f0f21d29`
+-	Image ID: `sha256:f1c3544c1d0cbb05c610b886659f027f745d32c9ef568d2c8b2c13f2b563aa88`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Tue, 29 Mar 2022 00:43:01 GMT
-ADD file:5e8f8c10da6d37a727fb5e1ed13b3dd78769f0ca7e91f0c3510e2edd25177117 in / 
-# Tue, 29 Mar 2022 00:43:03 GMT
+# Wed, 20 Apr 2022 04:28:55 GMT
+ADD file:ece192802cbdaf1a141d04f0c2e90cfd3479e5e3e82c6a00206970684494cf48 in / 
+# Wed, 20 Apr 2022 04:28:56 GMT
 CMD ["bash"]
-# Wed, 30 Mar 2022 02:13:10 GMT
+# Wed, 20 Apr 2022 06:44:07 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 02:13:17 GMT
+# Wed, 20 Apr 2022 06:44:12 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 30 Mar 2022 09:07:16 GMT
+# Wed, 20 Apr 2022 10:33:20 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 30 Mar 2022 09:07:17 GMT
+# Wed, 20 Apr 2022 10:33:21 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 30 Mar 2022 09:07:18 GMT
+# Wed, 20 Apr 2022 10:33:22 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Wed, 30 Mar 2022 09:07:19 GMT
+# Wed, 20 Apr 2022 10:33:23 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 09:07:20 GMT
+# Wed, 20 Apr 2022 10:33:24 GMT
 ENV LANG=C.UTF-8
-# Wed, 30 Mar 2022 09:07:21 GMT
+# Wed, 20 Apr 2022 10:33:25 GMT
 ENV JAVA_VERSION=11.0.14.1
-# Wed, 30 Mar 2022 09:07:29 GMT
+# Wed, 20 Apr 2022 10:33:33 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_x64_linux_11.0.14.1_1.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jre_aarch64_linux_11.0.14.1_1.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		java --version
-# Wed, 30 Mar 2022 13:48:29 GMT
+# Thu, 21 Apr 2022 05:24:18 GMT
 ENV PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 30 Mar 2022 13:48:30 GMT
+# Thu, 21 Apr 2022 05:24:19 GMT
 RUN mkdir -p /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:31 GMT
+# Thu, 21 Apr 2022 05:24:20 GMT
 WORKDIR /usr/local/tomee
-# Wed, 30 Mar 2022 13:48:40 GMT
+# Thu, 21 Apr 2022 05:24:29 GMT
 RUN set -xe;   for key in   9056B710F1E332780DE7AF34CBAEBE39A46C4CA1   F067B8140F5DD80E1D3B5D92318242FE9A0B1183   223D3A74B068ECA354DC385CE126833F9CF64915   DBCCD103B8B24F86FFAAB025C8BB472CD297D428   7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF   B8B301E6105DF628076BD92C5483E55897ABD9B9   FAA603D58B1BA4EDF65896D0ED340E0E6D545F97   A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1   82D8419BA697F0E7FB85916EE91287822FDB81B1   B7574789F5018690043E6DD9C212662E12F3E1DD   C23A3F6F595EBD0F960270CC997C8F1A5BE6E4C1   678F2D98F1FD9643811639FB622B8F2D043F71D8   BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF   D11DF12CC2CA4894BDE638B967C1227A2678363C   C92604B0DEC5C62CFF5801E73D4683C24EDC64D1   626C542EDA7C113814B77AF09C04914D63645D20   3948829384B269D333CC5B98358807C52B4B0E23   ; do     gpg --batch --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key" ||     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ;   done
-# Wed, 30 Mar 2022 13:48:41 GMT
+# Thu, 21 Apr 2022 05:24:30 GMT
 ENV TOMEE_VER=8.0.10
-# Wed, 30 Mar 2022 13:49:20 GMT
+# Thu, 21 Apr 2022 05:25:11 GMT
 ENV TOMEE_BUILD=webprofile
-# Wed, 30 Mar 2022 13:49:25 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 RUN set -x   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.asc -o tomee.tar.gz.asc   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz.sha512 -o tomee.tar.gz.sha512   && curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-${TOMEE_VER}/apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz -o apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && gpg --batch --verify tomee.tar.gz.asc apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && echo `cat tomee.tar.gz.sha512` | sha512sum -c -   && tar -zxf apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && mv apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}/* /usr/local/tomee   && rm apache-tomee-${TOMEE_VER}-${TOMEE_BUILD}.tar.gz   && rm -Rf apache-tomee-${TOMEE_BUILD}-${TOMEE_VER}   && rm bin/*.bat   && rm bin/*.exe   && rm bin/*.tar.gz*   && rm tomee.tar.gz.asc   && rm tomee.tar.gz*
-# Wed, 30 Mar 2022 13:49:26 GMT
+# Thu, 21 Apr 2022 05:25:15 GMT
 EXPOSE 8080
-# Wed, 30 Mar 2022 13:49:27 GMT
+# Thu, 21 Apr 2022 05:25:16 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:fa223d8c149d7beec8e997e1415ee4961473cafaf88a932f70baf3da56f2c564`  
-		Last Modified: Tue, 29 Mar 2022 00:49:33 GMT  
-		Size: 53.6 MB (53633710 bytes)  
+	-	`sha256:83d5dcfea08e6927083bc886bf182fc39d87bb04b54b63002ac0c4c0b9aab682`  
+		Last Modified: Wed, 20 Apr 2022 04:35:19 GMT  
+		Size: 53.6 MB (53633096 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17ffbd2ab15985c19f9e1e3199cdce06090266d20d11dbd3d55fba45de2fcc27`  
-		Last Modified: Wed, 30 Mar 2022 02:24:13 GMT  
-		Size: 4.9 MB (4938638 bytes)  
+	-	`sha256:45cfa86b7b1aca6d694057e4d42ee1440527f41c00b9e577df729244380c9eba`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 4.9 MB (4938663 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3953e76cee2ab175d909ccec1a3399912a690ad621ae88cff787d98419b97bb`  
-		Last Modified: Wed, 30 Mar 2022 02:24:14 GMT  
-		Size: 10.7 MB (10656993 bytes)  
+	-	`sha256:5c79b19335f27cc78840bf9159e875322f3252ac06113c73756f9d4fba905f9b`  
+		Last Modified: Wed, 20 Apr 2022 06:54:10 GMT  
+		Size: 10.7 MB (10656971 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a7231566decf8fbce03d4780325fa68b475237a1f9fa0638d4178aa8c09aa71`  
-		Last Modified: Wed, 30 Mar 2022 09:31:31 GMT  
-		Size: 5.6 MB (5649049 bytes)  
+	-	`sha256:579ba6ed012bb5067169efabd19955cc8bc89ef5df54b8aac8fa222e892c1e88`  
+		Last Modified: Wed, 20 Apr 2022 10:58:19 GMT  
+		Size: 5.6 MB (5649495 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7eb8796b2bbf8aa282685d2785d7e83bb2c6688e0c29412fd75a98e5086eec8e`  
-		Last Modified: Wed, 30 Mar 2022 09:31:30 GMT  
-		Size: 210.0 B  
+	-	`sha256:46016f3a0b390c1ffbf70f7c3608b0562ff1162909dac20f2e3cf144104f0ac4`  
+		Last Modified: Wed, 20 Apr 2022 10:58:18 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55f6ec6d22b90c59974db6b96561a0f5583cd0c7fae4c66dfe02f1f16e450313`  
-		Last Modified: Wed, 30 Mar 2022 09:31:37 GMT  
-		Size: 46.0 MB (45972793 bytes)  
+	-	`sha256:40d6de991e78ab0a1a545ddecf4aabe021bb59242b8dda46c0c3d39f1f857969`  
+		Last Modified: Wed, 20 Apr 2022 10:58:25 GMT  
+		Size: 46.0 MB (45973128 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88db45f14120a92ad4390ade872fdfa616d47f4b1e0d16a87ec20aebf677b21d`  
-		Last Modified: Wed, 30 Mar 2022 13:56:50 GMT  
+	-	`sha256:51772d7304f3a3d69eafd5b03eefa9f005f5b4100574898dab905baf3ca8e300`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d9afb04eb1f9e19346368f86bfa91a1fbdb0b074ea4368513b23099e4aec5576`  
-		Last Modified: Wed, 30 Mar 2022 13:56:49 GMT  
-		Size: 58.2 KB (58239 bytes)  
+	-	`sha256:b43cee630bb7a4a8b24d6502031f1daffde0cfdd99806631d44eb613fd4daff9`  
+		Last Modified: Thu, 21 Apr 2022 05:33:44 GMT  
+		Size: 58.2 KB (58248 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33023bcc2d012a5c2ebac995703f11ef2dfe1d5c97a572a04fadc2de8e4926b9`  
-		Last Modified: Wed, 30 Mar 2022 13:57:50 GMT  
-		Size: 47.3 MB (47335963 bytes)  
+	-	`sha256:1e1988bd3be155b6778484d05a5b51e752fbf80f6f3707f8389c4974be4cac01`  
+		Last Modified: Thu, 21 Apr 2022 05:35:00 GMT  
+		Size: 47.3 MB (47335990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
