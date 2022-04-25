@@ -2,14 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0dab4e7437abd7ecf726a01a48c85a431cbda6d625edbf956ff932036900bfbb`
-- Created: `2022-04-05T09:46:09.875527951Z`
-- Virtual Size: ~ 203.98 Mb  
+- Image ID: `sha256:3c410d76e4ae50504580f78c53148ba1e62fb8d27e1e4a1a2f98d3cde5a289e0`
+- Created: `2022-04-21T22:11:42.072799917Z`
+- Virtual Size: ~ 148.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-varnish-entrypoint"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `VMOD_DEPS=automake curl gcc libtool make pkgconfig py3-sphinx`
   - `VARNISH_SIZE=100M`
 
 ## `apk` (`.apk`-based packages)
@@ -646,16 +647,16 @@ BSD
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.5-r0 description:
+xz-libs-5.2.5-r1 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.5-r0 webpage:
+xz-libs-5.2.5-r1 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.5-r0 installed size:
+xz-libs-5.2.5-r1 installed size:
 148 KiB
 
-xz-libs-5.2.5-r0 license:
+xz-libs-5.2.5-r1 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```

@@ -2,14 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3111609b5e95691325632ca868c5fbe3d15fe08ce5b49b3fe37962357e70a722`
-- Created: `2022-04-20T15:19:47.07946497Z`
+- Image ID: `sha256:e101db8ad94e05a3ef6573f0d73ae802e3392a7eedf795d88212d8b66135e4e0`
+- Created: `2022-04-21T22:10:15.649241014Z`
 - Virtual Size: ~ 269.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/docker-varnish-entrypoint"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `VMOD_DEPS=automake curl gcc libtool make pkg-config python3-sphinx`
   - `VARNISH_SIZE=100M`
 
 ## `dpkg` (`.deb`-based packages)
