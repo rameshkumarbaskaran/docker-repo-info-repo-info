@@ -1064,21 +1064,13 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris file=1:5.41-3
-'http://deb.debian.org/debian/pool/main/f/file/file_5.41-3.dsc' file_5.41-3.dsc 2240 SHA256:8f27562eb16a0eb3e9b713ecd8ec6ba6c33fe7f4e67d335ea201954a8ff8579a
-'http://deb.debian.org/debian/pool/main/f/file/file_5.41.orig.tar.gz' file_5.41.orig.tar.gz 1064097 SHA256:13e532c7b364f7d57e23dfeea3147103150cb90593a57af86c10e4f6e411603f
-'http://deb.debian.org/debian/pool/main/f/file/file_5.41.orig.tar.gz.asc' file_5.41.orig.tar.gz.asc 169 SHA256:6373c37ef9d824e3db55f96d6dcf63c9cd2ed5361a30062ccd0c576fe1eb1373
-'http://deb.debian.org/debian/pool/main/f/file/file_5.41-3.debian.tar.xz' file_5.41-3.debian.tar.xz 34236 SHA256:336ac1462fbbfcb6be52121b0269d406e63996fcdcabb5acdd8e4cf3faf17262
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/file/1:5.41-3/
 
-- https://sources.debian.net/src/file/1:5.41-3/ (for browsing the source)
-- https://sources.debian.net/src/file/1:5.41-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/file/1:5.41-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.9.0-2`
 
@@ -1452,20 +1444,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.35.2-1
-'http://deb.debian.org/debian/pool/main/g/git/git_2.35.2-1.dsc' git_2.35.2-1.dsc 2825 SHA256:d6c6a3047c0bffa9ef116f4ec0524c61862e4d979a411839fd8cb1e72875137e
-'http://deb.debian.org/debian/pool/main/g/git/git_2.35.2.orig.tar.xz' git_2.35.2.orig.tar.xz 6876028 SHA256:c73d0c4fa5dcebdb2ccc293900952351cc5fb89224bb133c116305f45ae600f3
-'http://deb.debian.org/debian/pool/main/g/git/git_2.35.2-1.debian.tar.xz' git_2.35.2-1.debian.tar.xz 708764 SHA256:3b47625eccba3a02a0d404c5290f9c42c356f2bd881d866509cdff7cdfe4f967
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.35.2-1/
 
-- https://sources.debian.net/src/git/1:2.35.2-1/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.35.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.35.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.72.1-1`
 
@@ -1588,20 +1573,13 @@ Licenses: (parsed from: `/usr/share/doc/dirmngr/copyright`, `/usr/share/doc/gnup
 - `TinySCHEME`
 - `permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnupg2=2.2.27-3
-'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.27-3.dsc' gnupg2_2.2.27-3.dsc 3630 SHA256:c3fcf3c8f0aad05bb86f7bdcd67bdc9dd67cb35b0605778de3ee5b07ba621934
-'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.27.orig.tar.bz2' gnupg2_2.2.27.orig.tar.bz2 7191555 SHA256:34e60009014ea16402069136e0a5f63d9b65f90096244975db5cea74b3d02399
-'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.27-3.debian.tar.xz' gnupg2_2.2.27-3.debian.tar.xz 63396 SHA256:ef72e1094b7c47c9394d1d46bfda1ca46fbea53165f3e40fe169372f8fa3f62b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnupg2/2.2.27-3/
 
-- https://sources.debian.net/src/gnupg2/2.2.27-3/ (for browsing the source)
-- https://sources.debian.net/src/gnupg2/2.2.27-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnupg2/2.2.27-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gnutls28=3.7.4-2`
 
@@ -4521,20 +4499,13 @@ Licenses: (parsed from: `/usr/share/doc/libpam-modules/copyright`, `/usr/share/d
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pam=1.4.0-11
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-11.dsc' pam_1.4.0-11.dsc 2543 SHA256:49f996d03d8781d8dda78a58ea4eca3c16c4ea8430556b8ad915b4bbbb069056
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0.orig.tar.xz' pam_1.4.0.orig.tar.xz 988908 SHA256:cd6d928c51e64139be3bdb38692c68183a509b83d4f2c221024ccd4bcddfd034
-'http://deb.debian.org/debian/pool/main/p/pam/pam_1.4.0-11.debian.tar.xz' pam_1.4.0-11.debian.tar.xz 121324 SHA256:c190f584ceb5d667f1af0f9dd91f220bbb557a7e4b642263a142b702f5ee0dee
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pam/1.4.0-11/
 
-- https://sources.debian.net/src/pam/1.4.0-11/ (for browsing the source)
-- https://sources.debian.net/src/pam/1.4.0-11/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pam/1.4.0-11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pango1.0=1.50.6+ds-2`
 
@@ -4627,20 +4598,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pcre2=10.39-4
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.39-4.dsc' pcre2_10.39-4.dsc 2286 SHA256:976be6a92ccf0598a02c718b0f6276614398f11d7977bfd7057835cc1937cf22
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.39.orig.tar.gz' pcre2_10.39.orig.tar.gz 2309964 SHA256:0781bd2536ef5279b1943471fdcdbd9961a2845e1d2c9ad849b9bd98ba1a9bd4
-'http://deb.debian.org/debian/pool/main/p/pcre2/pcre2_10.39-4.diff.gz' pcre2_10.39-4.diff.gz 7715 SHA256:8d4f1a30310deeca495f4dd5e5be3592f35be414c6d974b8ea8a552df7c2f213
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/pcre2/10.39-4/
 
-- https://sources.debian.net/src/pcre2/10.39-4/ (for browsing the source)
-- https://sources.debian.net/src/pcre2/10.39-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/pcre2/10.39-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcre3=2:8.39-14`
 
@@ -5357,21 +5321,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.3.0-6
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.3.0-6.dsc' tiff_4.3.0-6.dsc 2417 SHA256:85bb9336fa1e880ca17159176dee73a2832aa60e131cce2a65b7ab69d87863b8
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.3.0.orig.tar.gz' tiff_4.3.0.orig.tar.gz 2808254 SHA256:0e46e5acb087ce7d1ac53cf4f56a09b221537fc86dfc5daaad1c2e89e1b37ac8
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.3.0.orig.tar.gz.asc' tiff_4.3.0.orig.tar.gz.asc 488 SHA256:6e41d0a4c042d2903f28534eb696a16409ccde9aaa2d02d06b5daaabbfb94aa7
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.3.0-6.debian.tar.xz' tiff_4.3.0-6.debian.tar.xz 25112 SHA256:116bb5a0343185ffde46b0b0bde300731c0ebe37b5ae8541992f6556e8e2d408
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.3.0-6/
 
-- https://sources.debian.net/src/tiff/4.3.0-6/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.3.0-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.3.0-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2022a-1`
 
