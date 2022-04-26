@@ -1,19 +1,19 @@
-# `tomee:11-jre-8.0.10-plus`
+# `tomee:8-jre-8.0.11-plus`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e70ac963c4145014829fdb14f04e9a8aebea961c25e075fb506952609f345df8`
-- Created: `2022-04-21T07:19:07.142941509Z`
-- Virtual Size: ~ 388.85 Mb  
+- Image ID: `sha256:9aca40f61a72d83e0b884221c6eaec022ae3eacacf5b7e67b917d53e5c020301`
+- Created: `2022-04-26T00:16:46.651953577Z`
+- Virtual Size: ~ 354.72 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
 - Environment:
-  - `PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_HOME=/usr/local/openjdk-11`
+  - `PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=11.0.14.1`
-  - `TOMEE_VER=8.0.10`
+  - `JAVA_VERSION=8u322`
+  - `TOMEE_VER=8.0.11`
   - `TOMEE_BUILD=plus`
 
 ## `dpkg` (`.deb`-based packages)

@@ -1,10 +1,10 @@
-# `tomee:8-jre-8.0.10-plume`
+# `tomee:8-jre-8.0.11-microprofile`
 
 ## Docker Metadata
 
-- Image ID: `sha256:65bb307e8a06f019bb7039f4d6b95f21db7cfa92b06a90f84c768f72f8fead96`
-- Created: `2022-04-21T07:18:10.773693163Z`
-- Virtual Size: ~ 363.06 Mb  
+- Image ID: `sha256:3069193d875ae9022d6253d4e9f28957646c25a5d47a1907bb24b3509c0fbfb8`
+- Created: `2022-04-26T00:16:55.363067746Z`
+- Virtual Size: ~ 349.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -13,8 +13,8 @@
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
   - `JAVA_VERSION=8u322`
-  - `TOMEE_VER=8.0.10`
-  - `TOMEE_BUILD=plume`
+  - `TOMEE_VER=8.0.11`
+  - `TOMEE_BUILD=microprofile`
 
 ## `dpkg` (`.deb`-based packages)
 

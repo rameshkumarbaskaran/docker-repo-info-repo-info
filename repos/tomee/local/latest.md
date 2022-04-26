@@ -1,10 +1,10 @@
-# `tomee:11-jre-8.0.10-webprofile`
+# `tomee:11-jre-8.0.11-webprofile`
 
 ## Docker Metadata
 
-- Image ID: `sha256:24616cf46df4d8f57f74f13f9b53382d267c2c8bbe53fb91db50c5984460bc6d`
-- Created: `2022-04-21T07:19:24.89272173Z`
-- Virtual Size: ~ 362.26 Mb  
+- Image ID: `sha256:25ef2a4fa2f70261ab2d1592998a6fd426b8a40f5467e751ea620f10ec548b0e`
+- Created: `2022-04-26T00:17:54.407111527Z`
+- Virtual Size: ~ 361.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/tomee/bin:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-11`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=11.0.14.1`
-  - `TOMEE_VER=8.0.10`
+  - `JAVA_VERSION=11.0.15`
+  - `TOMEE_VER=8.0.11`
   - `TOMEE_BUILD=webprofile`
 
 ## `dpkg` (`.deb`-based packages)
