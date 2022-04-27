@@ -578,20 +578,13 @@ Licenses: (parsed from: `/usr/share/doc/libsasl2-2/copyright`, `/usr/share/doc/l
 - `RSA-MD`
 - `SSLeay`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cyrus-sasl2=2.1.28+dfsg-3
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg-3.dsc' cyrus-sasl2_2.1.28+dfsg-3.dsc 3253 SHA256:dc52e4a3c4e924acc11a4c5aa9afaa83ee71127544d0083f2efb66522341a91b
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg.orig.tar.xz' cyrus-sasl2_2.1.28+dfsg.orig.tar.xz 797472 SHA256:a15886d7da5958bd27f35b7c871dd872f6dc5b9917c9b6b15e3de014c7dab3d9
-'http://deb.debian.org/debian/pool/main/c/cyrus-sasl2/cyrus-sasl2_2.1.28%2bdfsg-3.debian.tar.xz' cyrus-sasl2_2.1.28+dfsg-3.debian.tar.xz 87148 SHA256:51e8c8f4fe3f27b67d6d73145e5210591b7e1661b66106f9a8c8c217c7f4ac6e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/cyrus-sasl2/2.1.28+dfsg-3/
 
-- https://sources.debian.net/src/cyrus-sasl2/2.1.28+dfsg-3/ (for browsing the source)
-- https://sources.debian.net/src/cyrus-sasl2/2.1.28+dfsg-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/cyrus-sasl2/2.1.28+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dash=0.5.11+git20210903+057cd650a4ed-8`
 
@@ -1297,21 +1290,13 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `LGPLv3+_or_GPLv2+`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.7.3-4
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.3-4.dsc' gnutls28_3.7.3-4.dsc 3457 SHA256:f855b4f36a392459465c610235b6f9de569232a83eef7be4629daca192f0ad8c
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.3.orig.tar.xz' gnutls28_3.7.3.orig.tar.xz 6119292 SHA256:fc59c43bc31ab20a6977ff083029277a31935b8355ce387b634fa433f8f6c49a
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.3.orig.tar.xz.asc' gnutls28_3.7.3.orig.tar.xz.asc 833 SHA256:a2f95ac5d7dd951bddef01ec9930616dd1a5226173b3dc7896b3bed411c91d9a
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.7.3-4.debian.tar.xz' gnutls28_3.7.3-4.debian.tar.xz 66780 SHA256:0c2dbafae29ba7bb82568a6fabf6be270633af74366e7f580f86f1c13f176084
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnutls28/3.7.3-4/
 
-- https://sources.debian.net/src/gnutls28/3.7.3-4/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.7.3-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.7.3-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.14-1`
 
@@ -2813,16 +2798,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.16.18-1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.16.18-1.dsc' linux_5.16.18-1.dsc 248967 SHA256:ddf243e6d56c60e6b5df8ffcf28cf77360037387a93ce178d5b6065ad94e07c2
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.16.18.orig.tar.xz' linux_5.16.18.orig.tar.xz 129239608 SHA256:c50b8a9f4231fe5ab6520e7f29acff642343b474c95e01ea609928ece6886429
-'http://deb.debian.org/debian/pool/main/l/linux/linux_5.16.18-1.debian.tar.xz' linux_5.16.18-1.debian.tar.xz 1315364 SHA256:a247e5c8d0855faedb723ccc3473ae6bc8cf224349b5263758cb5ca2b32120d0
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.16.18-1.dsc' linux_5.16.18-1.dsc 248967 SHA256:ddf243e6d56c60e6b5df8ffcf28cf77360037387a93ce178d5b6065ad94e07c2
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.16.18.orig.tar.xz' linux_5.16.18.orig.tar.xz 129239608 SHA256:c50b8a9f4231fe5ab6520e7f29acff642343b474c95e01ea609928ece6886429
+'http://http.debian.net/debian/pool/main/l/linux/linux_5.16.18-1.debian.tar.xz' linux_5.16.18-1.debian.tar.xz 1315364 SHA256:a247e5c8d0855faedb723ccc3473ae6bc8cf224349b5263758cb5ca2b32120d0
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/linux/5.16.18-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/5.16.18-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/5.16.18-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `littler=0.3.15-1`
 
@@ -3255,21 +3234,13 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.24.0-6
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.24.0-6.dsc' p11-kit_0.24.0-6.dsc 2501 SHA256:c313e3ab1b9405633abe103ce44608f29556aca65c45fcc349b749bd1c114ff6
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.24.0.orig.tar.xz' p11-kit_0.24.0.orig.tar.xz 834392 SHA256:81e6140584f635e4e956a1b93a32239acf3811ff5b2d3a5c6094e94e99d2c685
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.24.0.orig.tar.xz.asc' p11-kit_0.24.0.orig.tar.xz.asc 833 SHA256:f9996976ae08e48ac652d2aad3f0528a75f87eaa6c17cf076ec00e7ce2fbaeed
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.24.0-6.debian.tar.xz' p11-kit_0.24.0-6.debian.tar.xz 23176 SHA256:076d61ccfcc53193cd40d57976a850d9c4d361b84acf6f9070c1e59930be61b1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/p11-kit/0.24.0-6/
 
-- https://sources.debian.net/src/p11-kit/0.24.0-6/ (for browsing the source)
-- https://sources.debian.net/src/p11-kit/0.24.0-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/p11-kit/0.24.0-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.4.0-11`
 
@@ -4275,20 +4246,13 @@ Licenses: (parsed from: `/usr/share/doc/vim-common/copyright`, `/usr/share/doc/v
 - `XPM`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris vim=2:8.2.3995-1
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.2.3995-1.dsc' vim_8.2.3995-1.dsc 3044 SHA256:da4a7f9c8216842eb2ae243246f4d97a32231f202916a50ab94c46a52a616615
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.2.3995.orig.tar.xz' vim_8.2.3995.orig.tar.xz 10377164 SHA256:a9d4993d94a212c1e284fe19d7127508dc9c911cddaf91f2a6f72d0b9b71b8ce
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.2.3995-1.debian.tar.xz' vim_8.2.3995-1.debian.tar.xz 211600 SHA256:a09a72d3e71617e065ef6b82fae151413168f7a5832ae7c6f602e11c3ca2acec
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/vim/2:8.2.3995-1/
 
-- https://sources.debian.net/src/vim/2:8.2.3995-1/ (for browsing the source)
-- https://sources.debian.net/src/vim/2:8.2.3995-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/vim/2:8.2.3995-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.21.3-1`
 
