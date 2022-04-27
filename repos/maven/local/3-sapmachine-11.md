@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:27ea75afad4298b1c49662676dc8b5af77623b20a2a300f84c7d6a9074f81e72`
-- Created: `2022-04-22T08:11:59.219738912Z`
-- Virtual Size: ~ 521.19 Mb  
+- Image ID: `sha256:a589dd115e129bbbe64a19b7cc33e56b8c0b938e5992a7887ba6350176054240`
+- Created: `2022-04-25T19:59:42.14035998Z`
+- Virtual Size: ~ 521.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -680,14 +680,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.3.dsc' git_2.25.1-1ubuntu3.3.dsc 2962 SHA512:72f28a7ff61a6b8f877ce3e9ff6017535a1e92f8093e9c2ec373a8e1fae220de9bc3cd2e1be35eacde111588e5d54cfd801e4a1c3bd1eda2c43290e0e90a43bd
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1.orig.tar.xz' git_2.25.1.orig.tar.xz 5875548 SHA512:15241143acfd8542d85d2709ac3c80dbd6e8d5234438f70c4f33cc71a2bdec3e32938df7f6351e2746d570b021d3bd0b70474ea4beec0c51d1fc45f9c287b344
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.3.debian.tar.xz' git_2.25.1-1ubuntu3.3.debian.tar.xz 660008 SHA512:4298635ec12a520465cbe56d2ca77ee5ca7d199c7469c9d9dbcb0bc179636a40fe9be107dd2e2a3ccce1bd83e80777f9d1d15eaf9e96ee0a4efe7c712ba1307f
-```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.7`
 
@@ -2159,6 +2154,26 @@ $ apt-get source -qq --print-uris procps=2:3.3.16-1ubuntu2.3
 'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.16-1ubuntu2.3.debian.tar.xz' procps_3.3.16-1ubuntu2.3.debian.tar.xz 33972 SHA512:cbeb9513f4932d159eed653fbc568b4b26e61e92184f8d8e6fd4122cfdda62ff04a7e9dbba1914efff0fe7addfbd380a0def4b8cf1c61f4e91107b02b3b61064
 ```
 
+### `dpkg` source package: `publicsuffix=20200303.0012-1`
+
+Binary Packages:
+
+- `publicsuffix=20200303.0012-1`
+
+Licenses: (parsed from: `/usr/share/doc/publicsuffix/copyright`)
+
+- `CC0`
+- `MPL-2.0`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris publicsuffix=20200303.0012-1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/publicsuffix/publicsuffix_20200303.0012-1.dsc' publicsuffix_20200303.0012-1.dsc 1406 SHA256:ada2841021e758d6ebb15063d3caf243f545b01b5edf6adf65ecdf187fa2493c
+'http://archive.ubuntu.com/ubuntu/pool/main/p/publicsuffix/publicsuffix_20200303.0012.orig.tar.gz' publicsuffix_20200303.0012.orig.tar.gz 94164 SHA256:048bf6efaf055c4cfed1c79b204f4c1f8f2d1f66ad0424979a227f43ef8df243
+'http://archive.ubuntu.com/ubuntu/pool/main/p/publicsuffix/publicsuffix_20200303.0012-1.debian.tar.xz' publicsuffix_20200303.0012-1.debian.tar.xz 15328 SHA256:3dbbd7b1e20bafc3e5ad73732cb026a4b8e6e5dafa25a9047151e9a28b251647
+```
+
 ### `dpkg` source package: `readline=8.0-4`
 
 Binary Packages:
@@ -2200,11 +2215,11 @@ $ apt-get source -qq --print-uris rtmpdump=2.4+20151223.gitfa8646d.1-2build1
 'http://archive.ubuntu.com/ubuntu/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1-2build1.debian.tar.xz' rtmpdump_2.4+20151223.gitfa8646d.1-2build1.debian.tar.xz 8216 SHA256:b256cc2aa96c9b99918052c4badfab0339ba95a852eab5ae37aa8b53c259efd2
 ```
 
-### `dpkg` source package: `sapmachine-11-jdk=11.0.14.1`
+### `dpkg` source package: `sapmachine-11-jdk=11.0.15`
 
 Binary Packages:
 
-- `sapmachine-11-jdk=11.0.14.1`
+- `sapmachine-11-jdk=11.0.15`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2441,27 +2456,6 @@ $ apt-get source -qq --print-uris util-linux=2.34-0.1ubuntu9.3
 'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.3.dsc' util-linux_2.34-0.1ubuntu9.3.dsc 4042 SHA512:e65684c641d175110008f865369c35adb734f8a80626c0eb3b3f3f47e05c1a6277c9f92b4032e30bb69711d67c2a5ad651adb3ec9ac4ef67d45a2858ce48cc6a
 'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34.orig.tar.xz' util-linux_2.34.orig.tar.xz 4974812 SHA512:2d0b76f63d32e7afb7acf61a83fabbfd58baa34ab78b3a331ce87f9c676a5fd71c56a493ded95039540d2c46b6048caaa38d7fb4491eb3d52d7b09dc54655cd7
 'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.34-0.1ubuntu9.3.debian.tar.xz' util-linux_2.34-0.1ubuntu9.3.debian.tar.xz 94976 SHA512:b6e55588aea32de6481dad01f194e6f71b8a859019e5c8d6d816c65f32c8b31821d1ab73f13ec34c5d3551311c43b7e24ac01c2af5878a85df72326293c3a71a
-```
-
-### `dpkg` source package: `wget=1.20.3-1ubuntu2`
-
-Binary Packages:
-
-- `wget=1.20.3-1ubuntu2`
-
-Licenses: (parsed from: `/usr/share/doc/wget/copyright`)
-
-- `GFDL-1.2`
-- `GPL-3`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris wget=1.20.3-1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/w/wget/wget_1.20.3-1ubuntu2.dsc' wget_1.20.3-1ubuntu2.dsc 2272 SHA512:acf0dc7618adda63d4579b6bb110bcad5ade7e4ed9474695a37397aeebf0d882c279c5318c15581630ddf7b2c2d7b665c241853e5922d39cf469d7439d4bc9aa
-'http://archive.ubuntu.com/ubuntu/pool/main/w/wget/wget_1.20.3.orig.tar.gz' wget_1.20.3.orig.tar.gz 4489249 SHA512:e8b82b40e270296228094a78d47f81580bdbdea9e6b93fd61b37dccb39430aeb9bda5397dc53a31c952a61629383c7e2a8c8abf414c8a4dd369af6ecf2717e6c
-'http://archive.ubuntu.com/ubuntu/pool/main/w/wget/wget_1.20.3.orig.tar.gz.asc' wget_1.20.3.orig.tar.gz.asc 833 SHA512:40e1bb87dba49e9b8a1e3a6e9ffb95e97933508cd8fef4aac9545b74073800e2945b80bab749e57d4ddc8260a612d784160bec45a6c9c057954d22960c8dd170
-'http://archive.ubuntu.com/ubuntu/pool/main/w/wget/wget_1.20.3-1ubuntu2.debian.tar.xz' wget_1.20.3-1ubuntu2.debian.tar.xz 64192 SHA512:39bcd9010374f8f99778e12cee5df9af16c734c14229b96c4d74de222207966c99448ff539257f8a642d92b67e7656618bd1b29a29ed1ac2c58df68ce1496af4
 ```
 
 ### `dpkg` source package: `xauth=1:1.1-0ubuntu1`
