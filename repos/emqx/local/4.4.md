@@ -1,17 +1,17 @@
-# `emqx:4.4.2`
+# `emqx:4.4.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:69ef1420603b2b042c1a4a2afd1227557c6ea3e7045cd0a8e0b1c301b4335981`
-- Created: `2022-04-20T07:16:55.224268081Z`
-- Virtual Size: ~ 267.75 Mb  
+- Image ID: `sha256:5931e9b9acdb65ea67ab0ddb1cf82a195d2435a761eb6ae9e4269a07c1c826c4`
+- Created: `2022-04-26T00:49:40.562540931Z`
+- Virtual Size: ~ 268.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/bin/docker-entrypoint.sh"]`
 - Command: `["emqx","foreground"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `EMQX_VERSION=4.4.2`
+  - `EMQX_VERSION=4.4.3`
   - `OTP=otp24.1.5-3`
 
 ## `dpkg` (`.deb`-based packages)
