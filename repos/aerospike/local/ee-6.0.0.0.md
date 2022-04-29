@@ -1,18 +1,18 @@
-# `aerospike:ee-5.7.0.17`
+# `aerospike:ee-6.0.0.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f7593e43631d102da87008daead703dd68cc32b7041cbc19cedb4cb3c034b467`
-- Created: `2022-04-23T01:19:32.698419384Z`
-- Virtual Size: ~ 221.67 Mb  
+- Image ID: `sha256:d84131006c6ce4656a2dbb1f186d9c30ba891fa7788aaac5e4e2b85b70a26d81`
+- Created: `2022-04-27T19:49:10.393157204Z`
+- Virtual Size: ~ 257.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/bin/as-tini-static","-r","SIGUSR1","-t","SIGTERM","--","/entrypoint.sh"]`
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=5.7.0.17`
-  - `AEROSPIKE_SHA256=1716524cf3d0d3087c6a62f28d49ab3d2c2d1dd739fe2d84d57ba71c337a6ef0`
+  - `AEROSPIKE_VERSION=6.0.0.0`
+  - `AEROSPIKE_SHA256=439bd7013edcded45b8d3ca0bfddf2551c523564480576f961de1e6088c04707`
   - `AS_TINI_SHA256=d1f6826dd70cdd88dde3d5a20d8ed248883a3bc2caba3071c8a3a9b0e0de5940`
 
 ## `dpkg` (`.deb`-based packages)
@@ -70,11 +70,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.118/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.118/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-enterprise=5.7.0.17-1`
+### `dpkg` source package: `aerospike-server-enterprise=6.0.0.0-1`
 
 Binary Packages:
 
-- `aerospike-server-enterprise=5.7.0.17-1`
+- `aerospike-server-enterprise=6.0.0.0-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -84,11 +84,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `aerospike-tools=6.1.0`
+### `dpkg` source package: `aerospike-tools=7.0.3`
 
 Binary Packages:
 
-- `aerospike-tools=6.1.0`
+- `aerospike-tools=7.0.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
