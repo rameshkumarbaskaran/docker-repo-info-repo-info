@@ -967,14 +967,9 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.16
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.16.dsc' curl_7.58.0-2ubuntu3.16.dsc 2781 SHA512:5d4c83c384aa31726304ca49474d5f05268d0f3e4ff59e456dcc627500dcefe29c2b70f6548e1d865b6cbb0b4385c022fa3b477441747f9edc7bdc463551841b
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0.orig.tar.gz' curl_7.58.0.orig.tar.gz 3879728 SHA512:7b12b79107558bb266672d6e128615fe5a8149c37f4ae540197e3298f5d312beb2d78fbb23e3ea84ea7afc41549898a1e5cd38509f0388b11707b48d5efb8ca3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.16.debian.tar.xz' curl_7.58.0-2ubuntu3.16.debian.tar.xz 64604 SHA512:dc79fb59f9b0a7520b3b99b27136a2a05b66867a615f54e4294f7a2232a43b6b32cea506deb54f2e7564a44e9a24ebdd4c07fcf199e0b3f41415dc196c505f0d
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2.4`
 
@@ -1207,13 +1202,9 @@ Licenses: (parsed from: `/usr/share/doc/distro-info-data/copyright`)
 
 - `ISC`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris distro-info-data=0.37ubuntu0.13
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.37ubuntu0.13.dsc' distro-info-data_0.37ubuntu0.13.dsc 1417 SHA512:fc669fc25d911f03e895c61efd8ee872a96c7f1d028c7c853ddb9ef1e5f2116d18debf8d474469a21c132459770ef8840fa11bc97ade42ee5b23de3bbbf4813a
-'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.37ubuntu0.13.tar.xz' distro-info-data_0.37ubuntu0.13.tar.xz 7488 SHA512:a559b7ae03301b6a5be27278bed85884141bd34027f92378b36f2339825f6a0366344cf56fe039b20ac7abd97638cabe253191441434688ff1d7f9e6331efbe1
-```
 
 ### `dpkg` source package: `double-conversion=2.0.1-4ubuntu1`
 
@@ -1943,14 +1934,9 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.17.1-1ubuntu0.10
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1-1ubuntu0.10.dsc' git_2.17.1-1ubuntu0.10.dsc 2963 SHA512:18ad8f05dd52f5302fb768d27d4568e9a42337e7d615cef60c3bbd56997a4a867bb2f8d59d6809467617618b847e9195aa96ade49049b25a9dc88cbbb80aba54
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1.orig.tar.xz' git_2.17.1.orig.tar.xz 5015484 SHA512:77c27569d40fbae1842130baa0cdda674a02e384631bd8fb1f2ddf67ce372dd4903b2ce6b4283a4ae506cdedd5daa55baa2afe6a6689528511e24e4beb864960
-'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.17.1-1ubuntu0.10.debian.tar.xz' git_2.17.1-1ubuntu0.10.debian.tar.xz 623624 SHA512:05578e8d004a0e8442a1e0854192c463dc362d927179d6414496bc408bf6e25b910f6c7ee0cdb58ff2b8b795cc5a082a56d7555d58878a0495b4f3bc6d7bb684
-```
 
 ### `dpkg` source package: `gl2ps=1.4.0+dfsg1-1`
 
