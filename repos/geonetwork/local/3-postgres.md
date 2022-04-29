@@ -1,10 +1,10 @@
-# `geonetwork:3.12.3-postgres`
+# `geonetwork:3.12.4-postgres`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ddcd51424f8693de37a11ebb2a9b8ab50c83b69cc7a21712443c6d589cd4146b`
-- Created: `2022-04-21T11:57:48.854481439Z`
-- Virtual Size: ~ 867.69 Mb  
+- Image ID: `sha256:1818945a7d5b99d4c06837954f05e01e792529c106b920432a443b0ce911a90a`
+- Created: `2022-04-28T01:21:56.248296431Z`
+- Virtual Size: ~ 981.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=8u322`
+  - `JAVA_VERSION=8u332`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
@@ -24,8 +24,8 @@
   - `GN_FILE=geonetwork.war`
   - `DATA_DIR=/usr/local/tomcat/webapps/geonetwork/WEB-INF/data`
   - `JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -server -Xms512m -Xmx2024m -XX:NewSize=512m -XX:MaxNewSize=1024m -XX:+UseConcMarkSweepGC`
-  - `GN_VERSION=3.12.3`
-  - `GN_DOWNLOAD_MD5=ecbbff832c8a6edf22e06aa1870dddab`
+  - `GN_VERSION=3.12.4`
+  - `GN_DOWNLOAD_MD5=f51bd23bd45dfc656fb21484b465eae3`
 
 ## `dpkg` (`.deb`-based packages)
 
