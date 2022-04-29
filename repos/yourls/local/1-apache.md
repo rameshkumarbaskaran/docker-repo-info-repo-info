@@ -1,10 +1,10 @@
-# `yourls:1.8.2-apache`
+# `yourls:1.9-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:459a6016c6edcc8adbe052d0f78d3d48cc4c68594978047ca790b3be5fc2f889`
-- Created: `2022-04-21T11:07:22.672648878Z`
-- Virtual Size: ~ 462.29 Mb  
+- Image ID: `sha256:daa6a5b28c08691563726d95d0d215c8cf0dae6c225ae5557e21792b490c1054`
+- Created: `2022-04-27T20:39:43.064727706Z`
+- Virtual Size: ~ 468.26 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,19 +18,22 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.18`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.18.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.18.tar.xz.asc`
-  - `PHP_SHA256=db161652cacae4b31c347fbf2e17b80656473cb365f2bb3460c4552f5647e2e7`
+  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
+  - `PHP_VERSION=8.1.5`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.5.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.5.tar.xz.asc`
+  - `PHP_SHA256=7647734b4dcecd56b7e4bd0bc55e54322fa3518299abcdc68eb557a7464a2e8a`
+  - `YOURLS_VERSION=1.9`
+  - `YOURLS_SHA256=212c4cd283f0b2b44e07da66a882cca4886e064f642bf4de8ecb8dbfb867e542`
 - Labels:
   - `org.opencontainers.image.authors=YOURLS`
   - `org.opencontainers.image.description=Your Own URL Shortener`
   - `org.opencontainers.image.documentation=https://yourls.org/`
+  - `org.opencontainers.image.licenses=MIT`
   - `org.opencontainers.image.title=YOURLS`
   - `org.opencontainers.image.url=https://yourls.org/`
   - `org.opencontainers.image.vendor=YOURLS Org`
-  - `org.opencontainers.image.version=1.8.2`
+  - `org.opencontainers.image.version=1.9`
 
 ## `dpkg` (`.deb`-based packages)
 

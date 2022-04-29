@@ -1,10 +1,10 @@
-# `yourls:1.8.2-fpm-alpine`
+# `yourls:1.9-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3be9df5c69616d773544878d9b3efe96b685008896dc4eb4adbf3315c0b25b61`
-- Created: `2022-04-19T04:46:24.107771971Z`
-- Virtual Size: ~ 77.05 Mb  
+- Image ID: `sha256:e691d33366eb2f6c38102bcc1439a0c1104309bec945745872df55ed8ee35712`
+- Created: `2022-04-27T20:41:34.375164098Z`
+- Virtual Size: ~ 84.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,19 +16,22 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F`
-  - `PHP_VERSION=8.0.18`
-  - `PHP_URL=https://www.php.net/distributions/php-8.0.18.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.0.18.tar.xz.asc`
-  - `PHP_SHA256=db161652cacae4b31c347fbf2e17b80656473cb365f2bb3460c4552f5647e2e7`
+  - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
+  - `PHP_VERSION=8.1.5`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.5.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.5.tar.xz.asc`
+  - `PHP_SHA256=7647734b4dcecd56b7e4bd0bc55e54322fa3518299abcdc68eb557a7464a2e8a`
+  - `YOURLS_VERSION=1.9`
+  - `YOURLS_SHA256=212c4cd283f0b2b44e07da66a882cca4886e064f642bf4de8ecb8dbfb867e542`
 - Labels:
   - `org.opencontainers.image.authors=YOURLS`
   - `org.opencontainers.image.description=Your Own URL Shortener`
   - `org.opencontainers.image.documentation=https://yourls.org/`
+  - `org.opencontainers.image.licenses=MIT`
   - `org.opencontainers.image.title=YOURLS`
   - `org.opencontainers.image.url=https://yourls.org/`
   - `org.opencontainers.image.vendor=YOURLS Org`
-  - `org.opencontainers.image.version=1.8.2`
+  - `org.opencontainers.image.version=1.9`
 
 ## `apk` (`.apk`-based packages)
 
@@ -284,6 +287,23 @@ libcurl-7.80.0-r0 installed size:
 
 libcurl-7.80.0-r0 license:
 MIT
+
+```
+
+### `apk` package: `libgcc`
+
+```console
+libgcc-10.3.1_git20211027-r0 description:
+GNU C compiler runtime libraries
+
+libgcc-10.3.1_git20211027-r0 webpage:
+https://gcc.gnu.org
+
+libgcc-10.3.1_git20211027-r0 installed size:
+112 KiB
+
+libgcc-10.3.1_git20211027-r0 license:
+GPL-2.0-or-later LGPL-2.1-or-later
 
 ```
 
