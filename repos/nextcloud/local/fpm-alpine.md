@@ -1,10 +1,10 @@
-# `nextcloud:23.0.3-fpm-alpine`
+# `nextcloud:23.0.4-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:69e74bd8263eccb4640b04bc7c41864dbe9df89cea175403853ea82b83bc7953`
-- Created: `2022-04-19T04:40:03.405240938Z`
-- Virtual Size: ~ 568.49 Mb  
+- Image ID: `sha256:15086b196197381e3adc7ac6e1017ed84d426719368f07fce0dcf02eb106e50b`
+- Created: `2022-04-28T21:33:08.233287217Z`
+- Virtual Size: ~ 571.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_SHA256=db161652cacae4b31c347fbf2e17b80656473cb365f2bb3460c4552f5647e2e7`
   - `PHP_MEMORY_LIMIT=512M`
   - `PHP_UPLOAD_LIMIT=512M`
-  - `NEXTCLOUD_VERSION=23.0.3`
+  - `NEXTCLOUD_VERSION=23.0.4`
 
 ## `apk` (`.apk`-based packages)
 
@@ -1118,16 +1118,16 @@ GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.12-r0 description:
+zlib-1.2.12-r1 description:
 A compression/decompression Library
 
-zlib-1.2.12-r0 webpage:
+zlib-1.2.12-r1 webpage:
 https://zlib.net/
 
-zlib-1.2.12-r0 installed size:
+zlib-1.2.12-r1 installed size:
 108 KiB
 
-zlib-1.2.12-r0 license:
+zlib-1.2.12-r1 license:
 Zlib
 
 ```
