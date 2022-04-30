@@ -1,4 +1,4 @@
-# `jetty:10.0.9-jre11`
+# `jetty:10.0.9-jre11-openjdk`
 
 ## Docker Metadata
 

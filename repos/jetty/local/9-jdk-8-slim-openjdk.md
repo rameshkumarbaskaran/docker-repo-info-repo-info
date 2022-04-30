@@ -1,10 +1,10 @@
-# `jetty:9.4.46-jdk-8-slim`
+# `jetty:9.4.46-jdk-8-slim-openjdk`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6184272da780ed036c7e8c2f4fc95077731e15a2c0b4fcd9e10a874662c61870`
-- Created: `2022-04-21T01:40:37.018079634Z`
-- Virtual Size: ~ 308.50 Mb  
+- Image ID: `sha256:982b85848f301558bb4d104dcae92ca7bd5bb51e4041d16173c2f0ab488e2cc2`
+- Created: `2022-04-27T23:28:27.534344533Z`
+- Virtual Size: ~ 308.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/jetty/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JAVA_HOME=/usr/local/openjdk-8`
   - `LANG=C.UTF-8`
-  - `JAVA_VERSION=8u322`
+  - `JAVA_VERSION=8u332`
   - `JETTY_VERSION=9.4.46.v20220331`
   - `JETTY_HOME=/usr/local/jetty`
   - `JETTY_BASE=/var/lib/jetty`
