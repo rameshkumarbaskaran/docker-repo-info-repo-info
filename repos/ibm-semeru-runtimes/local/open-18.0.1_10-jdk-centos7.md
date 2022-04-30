@@ -1,10 +1,10 @@
-# `ibm-semeru-runtimes:open-17.0.2_8-jdk-centos7`
+# `ibm-semeru-runtimes:open-18.0.1_10-jdk-centos7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:79a9818a0bdd34e1f78b104c11aee97db943277cb149f3a02a5649f688c816cc`
-- Created: `2022-03-17T03:48:54.340520171Z`
-- Virtual Size: ~ 607.96 Mb  
+- Image ID: `sha256:0d81dd871a60500eb289ea078757ad2f3c1970b1b8081adaed07bc13dede3e59`
+- Created: `2022-04-27T20:07:26.092573099Z`
+- Virtual Size: ~ 609.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-17.0.2+8_openj9-0.30.0`
+  - `JAVA_VERSION=jdk-18.0.1+10_openj9-0.32.0`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal`
 - Labels:
