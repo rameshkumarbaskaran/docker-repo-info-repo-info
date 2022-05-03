@@ -527,21 +527,13 @@ Licenses: (parsed from: `/usr/share/doc/findutils/copyright`)
 - `GFDL-1.3`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris findutils=4.9.0-2
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0-2.dsc' findutils_4.9.0-2.dsc 2304 SHA256:85d8c92104d56af1dacf3be544c3aea5d1b71186d170cdd92bdeac9be5f4981a
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0.orig.tar.xz' findutils_4.9.0.orig.tar.xz 2046252 SHA256:a2bfb8c09d436770edc59f50fa483e785b161a3b7b9d547573cb08065fd462fe
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0.orig.tar.xz.asc' findutils_4.9.0.orig.tar.xz.asc 488 SHA256:924c3719d066eda1b3e47175f8b83e90e9a23f0a639ebe7445621917b283c385
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0-2.debian.tar.xz' findutils_4.9.0-2.debian.tar.xz 27584 SHA256:173aa2ac4ee290804f48bb9ea51d23dae38e8d5bd94f24f6af39bd68c170a6e6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/findutils/4.9.0-2/
 
-- https://sources.debian.net/src/findutils/4.9.0-2/ (for browsing the source)
-- https://sources.debian.net/src/findutils/4.9.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/findutils/4.9.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-12=12-20220319-1`
 
