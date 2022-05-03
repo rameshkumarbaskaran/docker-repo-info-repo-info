@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bdf1eab5ff47ea02c884e6f99e01b82106247185704ba244505d93fa6ec51b75`
-- Created: `2022-04-22T03:41:30.405490331Z`
-- Virtual Size: ~ 702.62 Mb  
+- Image ID: `sha256:cf0dc73b6e546edaf107115cdb44ef3fe1976827fdb3bcc9b8e1c232b5e491e7`
+- Created: `2022-04-30T02:15:38.133439621Z`
+- Virtual Size: ~ 702.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/ros_entrypoint.sh"]`
@@ -185,19 +185,24 @@ $ apt-get source -qq --print-uris base-passwd=3.5.47
 'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.47.tar.xz' base-passwd_3.5.47.tar.xz 53024 SHA256:9810ae0216e96bf9fc7ca6163d47ef8ec7d1677f533451af5911d8202a490a23
 ```
 
-### `dpkg` source package: `bash=5.0-6ubuntu1.1`
+### `dpkg` source package: `bash=5.0-6ubuntu1.2`
 
 Binary Packages:
 
-- `bash=5.0-6ubuntu1.1`
+- `bash=5.0-6ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris bash=5.0-6ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.2.dsc' bash_5.0-6ubuntu1.2.dsc 2296 SHA512:d93b919ae7b8e67e3b4e31d205e13006a37aa2a42378744599c3214ecab6544084856a739b38aaeb06742524e2ea302c8147f7a88dbc738e1e7ac0a29be0c0b8
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA512:f3a719997a8515bae7e84701afafc9b2cdd23c95d29533adb678000b08eba968450b93d5576c3cffbeccbdcd95b713db830e8efeda689258dcfe6f15f0c5dec4
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.2.debian.tar.xz' bash_5.0-6ubuntu1.2.debian.tar.xz 75200 SHA512:50de22a6cd140fcb95eca9172e9927a4eeddd90bfbd23072d5e209db1675f331716dfd54ef3281caa7020e3fa1aef9ca7caafc6a8d3067741b1ae41f7dff7724
+```
 
 ### `dpkg` source package: `binutils=2.34-6ubuntu1.3`
 
@@ -481,12 +486,12 @@ $ apt-get source -qq --print-uris cppcheck=1.90-4build1
 'http://archive.ubuntu.com/ubuntu/pool/universe/c/cppcheck/cppcheck_1.90-4build1.debian.tar.xz' cppcheck_1.90-4build1.debian.tar.xz 11404 SHA256:67ebd147f808dc6837c5eddab3d6f707a5cdf09e7ec1750223d29bd961e1b48e
 ```
 
-### `dpkg` source package: `curl=7.68.0-1ubuntu2.7`
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.10`
 
 Binary Packages:
 
-- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.7`
-- `libcurl4:amd64=7.68.0-1ubuntu2.7`
+- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.10`
+- `libcurl4:amd64=7.68.0-1ubuntu2.10`
 
 Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
@@ -497,9 +502,14 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.10
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.10.dsc' curl_7.68.0-1ubuntu2.10.dsc 2737 SHA512:c7e59b48d6743b2c0bd9fcfa76605cb4b9693bb467df2e2aabf25e38b0349f4d28aa50136efc25535f971a70a9c252d053a88539b9b0f0fdc36302f6ed145c2c
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.10.debian.tar.xz' curl_7.68.0-1ubuntu2.10.debian.tar.xz 52592 SHA512:2ed50fea6923e23c83b08a4c5eba4d1475f9d46308bd664804759a6bf8b187d9d649bcf59e171c853bbe65ab1b6403a4e00d29a3369bcf8fa21ca8a1d5275fe0
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -688,19 +698,23 @@ $ apt-get source -qq --print-uris distlib=0.3.0-1
 'http://archive.ubuntu.com/ubuntu/pool/universe/d/distlib/distlib_0.3.0-1.debian.tar.xz' distlib_0.3.0-1.debian.tar.xz 6388 SHA256:5da6fe7efcb3aeed405250f00f73d8a4fc9e1c71fdc9d169e09e97b55a21d25c
 ```
 
-### `dpkg` source package: `distro-info-data=0.43ubuntu1.9`
+### `dpkg` source package: `distro-info-data=0.43ubuntu1.10`
 
 Binary Packages:
 
-- `distro-info-data=0.43ubuntu1.9`
+- `distro-info-data=0.43ubuntu1.10`
 
 Licenses: (parsed from: `/usr/share/doc/distro-info-data/copyright`)
 
 - `ISC`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris distro-info-data=0.43ubuntu1.10
+'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.43ubuntu1.10.dsc' distro-info-data_0.43ubuntu1.10.dsc 1421 SHA512:254831fd04fd1151277e1a1c9ae17425b98138bb7a001d650e6b2c0a18912a1e19115ca10e30799ecb7be79bca945199b6a3d613360bd8eb001f1f76531ec595
+'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.43ubuntu1.10.tar.xz' distro-info-data_0.43ubuntu1.10.tar.xz 8864 SHA512:922ac38161c2461828825142eebbc7323a309936ce1757780046c1c85c48fcb89462ae008a2c653a3e7e42f259364513232e0adc8746772f0bff65dc1d3cd3f7
+```
 
 ### `dpkg` source package: `dpkg=1.19.7ubuntu3`
 
@@ -1065,12 +1079,12 @@ $ apt-get source -qq --print-uris gdbm=1.18.1-5
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.18.1-5.debian.tar.xz' gdbm_1.18.1-5.debian.tar.xz 16348 SHA256:3c1a0e05b40a97ee51ce77c736c72c37738ba31b2720111d3bc99175a2c3a3ed
 ```
 
-### `dpkg` source package: `git=1:2.25.1-1ubuntu3.3`
+### `dpkg` source package: `git=1:2.25.1-1ubuntu3.4`
 
 Binary Packages:
 
-- `git=1:2.25.1-1ubuntu3.3`
-- `git-man=1:2.25.1-1ubuntu3.3`
+- `git=1:2.25.1-1ubuntu3.4`
+- `git-man=1:2.25.1-1ubuntu3.4`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -1093,9 +1107,14 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.4.dsc' git_2.25.1-1ubuntu3.4.dsc 2962 SHA512:eb2b1800c05ed3826469f49c95ff154e646c8187ce75f758975f0802d531a1ffbdb41f922626c46a74a5d677f3a53962b7be52c5caca7c60af47c50776a7eae4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1.orig.tar.xz' git_2.25.1.orig.tar.xz 5875548 SHA512:15241143acfd8542d85d2709ac3c80dbd6e8d5234438f70c4f33cc71a2bdec3e32938df7f6351e2746d570b021d3bd0b70474ea4beec0c51d1fc45f9c287b344
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.4.debian.tar.xz' git_2.25.1-1ubuntu3.4.debian.tar.xz 661056 SHA512:5af63bee7c5a2e2ea0214b79d3cd421d2b089676c5c3c5f78e1487fa6f5e54bc101b79dac4aa51517d6093fbc0fa7c3058a211701d2eb13999bf5ee3a869a5ea
+```
 
 ### `dpkg` source package: `glib2.0=2.64.6-1~ubuntu20.04.4`
 
@@ -4145,19 +4164,24 @@ $ apt-get source -qq --print-uris python3-colcon-common-extensions=0.3.0-1
 'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-common-extensions/python3-colcon-common-extensions_0.3.0.orig.tar.gz' python3-colcon-common-extensions_0.3.0.orig.tar.gz 1695 SHA512:4f20c8706c2eef956e351f1f1281a4afa1e2c13a9b4ac80d5c1a8b2b51585d9e33c29bc8b8822d53b888a0f2c431d36b98c1d64efaa0a409d7b76c146c0f0ece
 ```
 
-### `dpkg` source package: `python3-colcon-core=0.8.1-1`
+### `dpkg` source package: `python3-colcon-core=0.8.2-1`
 
 Binary Packages:
 
-- `python3-colcon-core=0.8.1-1`
+- `python3-colcon-core=0.8.2-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3-colcon-core=0.8.2-1
+'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.2-1.debian.tar.xz' python3-colcon-core_0.8.2-1.debian.tar.xz 1600 SHA512:5ebcc058ecdcad4b47673d00d5f9cc61806e9012f51710fc7b7a7e8cbda91a74805b2bb48b345ac8ac467b67c511e7be5e36bd0c945e7436cd3b03125cd40f8d
+'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.2-1.dsc' python3-colcon-core_0.8.2-1.dsc 916 SHA512:f9a3ff4e03914c095cbf2a82c05b1d52c236f789b08419b1a1325711361414eb0e2a752f76af16fb026ae5c94f81d71ad5f51788cc7f5600e616a3a9d4f500eb
+'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.2.orig.tar.gz' python3-colcon-core_0.8.2.orig.tar.gz 105806 SHA512:9b632093d02702a90a7f995adc2e3ff57fa564f6bdc3954a90f2862e38b6c415f4d17d2e87bff2cb5a8d5d1b7d3d9149a911d50b5f1181f391b9b7cc7e27286e
+```
 
 ### `dpkg` source package: `python3-colcon-defaults=0.2.6-1`
 
