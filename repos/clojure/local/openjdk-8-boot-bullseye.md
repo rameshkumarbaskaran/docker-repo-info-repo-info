@@ -1,4 +1,4 @@
-# `clojure:openjdk-8-boot-bullseye`
+# `clojure:openjdk-8-boot-2.8.3-bullseye`
 
 ## Docker Metadata
 

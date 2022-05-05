@@ -1,4 +1,4 @@
-# `clojure:openjdk-8-buster`
+# `clojure:openjdk-8-tools-deps-buster`
 
 ## Docker Metadata
 

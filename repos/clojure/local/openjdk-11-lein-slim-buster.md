@@ -1,4 +1,4 @@
-# `clojure:openjdk-11-lein-slim-buster`
+# `clojure:openjdk-11-lein-2.9.8-slim-buster`
 
 ## Docker Metadata
 

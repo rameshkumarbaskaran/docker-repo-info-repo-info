@@ -1,4 +1,4 @@
-# `clojure:openjdk-11-bullseye`
+# `clojure:openjdk-11-tools-deps-bullseye`
 
 ## Docker Metadata
 
