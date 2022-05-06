@@ -3151,14 +3151,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.12
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.12.dsc' openssl_1.1.1f-1ubuntu2.12.dsc 2470 SHA512:d6439e1d598089b7115b55643f3042078d6440ff78b8f72db0abed892aa510873d2a456f1e92ff67fffaa541813149aa870e13c6557358dd4596c140f159b63f
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.12.debian.tar.xz' openssl_1.1.1f-1ubuntu2.12.debian.tar.xz 173140 SHA512:a265a6227dfc61d9dc9f3b32b522135df5bc3fa1adaa8aba90b4acba0710f245e435d50ffe5d3ef74dff1cc4ac52bfde9bc9cfd60b5b115e8d5d3abb2a29efec
-```
 
 ### `dpkg` source package: `p11-kit=0.23.20-1ubuntu0.1`
 
@@ -4172,14 +4167,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-core=0.8.2-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.2-1.debian.tar.xz' python3-colcon-core_0.8.2-1.debian.tar.xz 1600 SHA512:5ebcc058ecdcad4b47673d00d5f9cc61806e9012f51710fc7b7a7e8cbda91a74805b2bb48b345ac8ac467b67c511e7be5e36bd0c945e7436cd3b03125cd40f8d
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.2-1.dsc' python3-colcon-core_0.8.2-1.dsc 916 SHA512:f9a3ff4e03914c095cbf2a82c05b1d52c236f789b08419b1a1325711361414eb0e2a752f76af16fb026ae5c94f81d71ad5f51788cc7f5600e616a3a9d4f500eb
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.2.orig.tar.gz' python3-colcon-core_0.8.2.orig.tar.gz 105806 SHA512:9b632093d02702a90a7f995adc2e3ff57fa564f6bdc3954a90f2862e38b6c415f4d17d2e87bff2cb5a8d5d1b7d3d9149a911d50b5f1181f391b9b7cc7e27286e
-```
 
 ### `dpkg` source package: `python3-colcon-defaults=0.2.6-1`
 
@@ -7417,15 +7407,9 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.31.1-4ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1-4ubuntu0.2.dsc' sqlite3_3.31.1-4ubuntu0.2.dsc 2519 SHA512:d7adfe86e7996d2a45238bc3b782de6894a585bba1498b3747aacb15313160354bc072ab2e257a2a034ce44921bd07329b8a9172290428f753274b6d7b00326e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1.orig-www.tar.xz' sqlite3_3.31.1.orig-www.tar.xz 5764424 SHA512:a47adacd46c673cfd674cb64fb54b054e69560aed8c8c429773f0eccdcdbce4be538397506eca8e2d169f4b46d0d47442b273e12d82f8c87e1aadf3ade458db6
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1.orig.tar.xz' sqlite3_3.31.1.orig.tar.xz 7108036 SHA512:67e1050efe2988fa3d0d7e4a87e147a8114c6ff9b6ca5307a068befb38e861930eaee0135048ff1abb1e6323b507cbc68a0aac3a8fe5f095d6fcea1547a7efaf
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1-4ubuntu0.2.debian.tar.xz' sqlite3_3.31.1-4ubuntu0.2.debian.tar.xz 33492 SHA512:87cc51bce108d6306d815683a1825b43a6e7a7d8dc2bade8ce34d3850b8a4437034b1383f5e60b8d9c4569e8ab5bb3eb28febda7745f4a9db01b5e1b0b11d5ae
-```
 
 ### `dpkg` source package: `sudo=1.8.31-1ubuntu1.2`
 
