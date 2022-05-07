@@ -1,10 +1,10 @@
-# `nats:2.8.1-scratch`
+# `nats:2.8.2-scratch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:913890b0a2d48e5c381bcf8b123528904a57150fa69138277620e0ff995dff8b`
-- Created: `2022-04-22T16:22:23.495605131Z`
-- Virtual Size: ~ 11.92 Mb  
+- Image ID: `sha256:71863590dea616f7cf93b753e1e7a3baf16f89747f06004d08f65d3fa907ee9a`
+- Created: `2022-05-04T21:19:54.968436202Z`
+- Virtual Size: ~ 11.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/nats-server"]`
