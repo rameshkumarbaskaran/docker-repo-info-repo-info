@@ -694,15 +694,9 @@ Licenses: (parsed from: `/usr/share/doc/libdbus-1-3/copyright`)
 - `Tcl-BSDish`
 - `g10-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dbus=1.12.16-2ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16-2ubuntu2.1.dsc' dbus_1.12.16-2ubuntu2.1.dsc 3867 SHA512:b635e40d4a52664ace191d6d3ae7f817b6ead4f7d01ce97d498d31f958f3a51a53843c0f51651027a5d1081d4e9987c3f7986e59e406f09406cd1128a91dcbd9
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16.orig.tar.gz' dbus_1.12.16.orig.tar.gz 2093296 SHA512:27ae805170e9515a8bb0fba5f29d414edc70e3b6b28b7b65bbea47035b8eafa9ac4820cdc92645be6035f6748f8aa45679e1ffc84ba74a64859a3056d318b9bb
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16.orig.tar.gz.asc' dbus_1.12.16.orig.tar.gz.asc 833 SHA512:6d19bf7be86ae1dc70550ba472e5761f3ed1a71007c00679e3a586d567776e82cf9869c9a7021c1324990615657a054b949dc5bbd8e60b0a8843ef6d977eda24
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16-2ubuntu2.1.debian.tar.xz' dbus_1.12.16-2ubuntu2.1.debian.tar.xz 69204 SHA512:44c4b8867f6cd12c0e0ced86a270928d612a1ad541b8df9097c1b80a01646b58ccb890bec64b0603b86d6b769c495fe672663b4609a584ad49deb50cd317a06b
-```
 
 ### `dpkg` source package: `debconf=1.5.73`
 
@@ -5945,15 +5939,9 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.31.1-4ubuntu0.2
-'http://security.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1-4ubuntu0.2.dsc' sqlite3_3.31.1-4ubuntu0.2.dsc 2519 SHA512:d7adfe86e7996d2a45238bc3b782de6894a585bba1498b3747aacb15313160354bc072ab2e257a2a034ce44921bd07329b8a9172290428f753274b6d7b00326e
-'http://security.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1.orig-www.tar.xz' sqlite3_3.31.1.orig-www.tar.xz 5764424 SHA512:a47adacd46c673cfd674cb64fb54b054e69560aed8c8c429773f0eccdcdbce4be538397506eca8e2d169f4b46d0d47442b273e12d82f8c87e1aadf3ade458db6
-'http://security.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1.orig.tar.xz' sqlite3_3.31.1.orig.tar.xz 7108036 SHA512:67e1050efe2988fa3d0d7e4a87e147a8114c6ff9b6ca5307a068befb38e861930eaee0135048ff1abb1e6323b507cbc68a0aac3a8fe5f095d6fcea1547a7efaf
-'http://security.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.31.1-4ubuntu0.2.debian.tar.xz' sqlite3_3.31.1-4ubuntu0.2.debian.tar.xz 33492 SHA512:87cc51bce108d6306d815683a1825b43a6e7a7d8dc2bade8ce34d3850b8a4437034b1383f5e60b8d9c4569e8ab5bb3eb28febda7745f4a9db01b5e1b0b11d5ae
-```
 
 ### `dpkg` source package: `sratom=0.6.4-1`
 
