@@ -1234,15 +1234,9 @@ Licenses: (parsed from: `/usr/share/doc/dbus/copyright`, `/usr/share/doc/dbus-us
 - `Tcl-BSDish`
 - `g10-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dbus=1.12.16-2ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16-2ubuntu2.1.dsc' dbus_1.12.16-2ubuntu2.1.dsc 3867 SHA512:b635e40d4a52664ace191d6d3ae7f817b6ead4f7d01ce97d498d31f958f3a51a53843c0f51651027a5d1081d4e9987c3f7986e59e406f09406cd1128a91dcbd9
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16.orig.tar.gz' dbus_1.12.16.orig.tar.gz 2093296 SHA512:27ae805170e9515a8bb0fba5f29d414edc70e3b6b28b7b65bbea47035b8eafa9ac4820cdc92645be6035f6748f8aa45679e1ffc84ba74a64859a3056d318b9bb
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16.orig.tar.gz.asc' dbus_1.12.16.orig.tar.gz.asc 833 SHA512:6d19bf7be86ae1dc70550ba472e5761f3ed1a71007c00679e3a586d567776e82cf9869c9a7021c1324990615657a054b949dc5bbd8e60b0a8843ef6d977eda24
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16-2ubuntu2.1.debian.tar.xz' dbus_1.12.16-2ubuntu2.1.debian.tar.xz 69204 SHA512:44c4b8867f6cd12c0e0ced86a270928d612a1ad541b8df9097c1b80a01646b58ccb890bec64b0603b86d6b769c495fe672663b4609a584ad49deb50cd317a06b
-```
 
 ### `dpkg` source package: `dconf=0.36.0-1`
 
