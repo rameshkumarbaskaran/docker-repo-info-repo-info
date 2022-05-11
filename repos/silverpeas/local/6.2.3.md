@@ -967,15 +967,9 @@ Licenses: (parsed from: `/usr/share/doc/dbus/copyright`, `/usr/share/doc/dbus-us
 - `Tcl-BSDish`
 - `g10-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dbus=1.12.16-2ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16-2ubuntu2.1.dsc' dbus_1.12.16-2ubuntu2.1.dsc 3867 SHA512:b635e40d4a52664ace191d6d3ae7f817b6ead4f7d01ce97d498d31f958f3a51a53843c0f51651027a5d1081d4e9987c3f7986e59e406f09406cd1128a91dcbd9
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16.orig.tar.gz' dbus_1.12.16.orig.tar.gz 2093296 SHA512:27ae805170e9515a8bb0fba5f29d414edc70e3b6b28b7b65bbea47035b8eafa9ac4820cdc92645be6035f6748f8aa45679e1ffc84ba74a64859a3056d318b9bb
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16.orig.tar.gz.asc' dbus_1.12.16.orig.tar.gz.asc 833 SHA512:6d19bf7be86ae1dc70550ba472e5761f3ed1a71007c00679e3a586d567776e82cf9869c9a7021c1324990615657a054b949dc5bbd8e60b0a8843ef6d977eda24
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.16-2ubuntu2.1.debian.tar.xz' dbus_1.12.16-2ubuntu2.1.debian.tar.xz 69204 SHA512:44c4b8867f6cd12c0e0ced86a270928d612a1ad541b8df9097c1b80a01646b58ccb890bec64b0603b86d6b769c495fe672663b4609a584ad49deb50cd317a06b
-```
 
 ### `dpkg` source package: `dconf=0.36.0-1`
 
@@ -2000,9 +1994,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glibc=2.31-0ubuntu9.7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.dsc' glibc_2.31-0ubuntu9.7.dsc 9561 SHA512:1d67eee4c20e9a236b4ffc706a8ac3b53d9837be2c8dd4f52edd52ca97082284d7ed8d74bb2d533efb024a8e3596d8ca3fd12e0acfcfa2923a26ee9dd25931bb
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17317924 SHA512:2ff56628fe935cacbdf1825534f15d45cb87a159cbdb2e6a981590eeb6174ed4b3ff7041519cdecbd4f624ac20b745e2dd9614c420dd3ea186b8f36bc4c2453c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.debian.tar.xz' glibc_2.31-0ubuntu9.7.debian.tar.xz 870504 SHA512:8653d4a47043ef759662e5451410740f2e8dac3d7845fe6434ebb6f0bf013b3eb40cfe873c7e742d0856bce219c0f7898fd8cf3d0f0f7144637dd110b9302243
+'http://security.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.dsc' glibc_2.31-0ubuntu9.7.dsc 9561 SHA512:1d67eee4c20e9a236b4ffc706a8ac3b53d9837be2c8dd4f52edd52ca97082284d7ed8d74bb2d533efb024a8e3596d8ca3fd12e0acfcfa2923a26ee9dd25931bb
+'http://security.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17317924 SHA512:2ff56628fe935cacbdf1825534f15d45cb87a159cbdb2e6a981590eeb6174ed4b3ff7041519cdecbd4f624ac20b745e2dd9614c420dd3ea186b8f36bc4c2453c
+'http://security.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.debian.tar.xz' glibc_2.31-0ubuntu9.7.debian.tar.xz 870504 SHA512:8653d4a47043ef759662e5451410740f2e8dac3d7845fe6434ebb6f0bf013b3eb40cfe873c7e742d0856bce219c0f7898fd8cf3d0f0f7144637dd110b9302243
 ```
 
 ### `dpkg` source package: `gmp=2:6.2.0+dfsg-4`
@@ -7465,14 +7459,9 @@ Licenses: (parsed from: `/usr/share/doc/libnss3/copyright`)
 - `Zlib`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.49.1-1ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.49.1-1ubuntu1.6.dsc' nss_3.49.1-1ubuntu1.6.dsc 2287 SHA512:d443346e0b800fd49cd94b6f4b40fab9f7204ca61872dad32723ef332c77b2106b797625efbfdba4abc93aae8f4663c3baf824672656b79d41d96526aef30d9c
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.49.1.orig.tar.gz' nss_3.49.1.orig.tar.gz 76489134 SHA512:e463c9d71537ac30dbd2998cbdbc0cadc734768a6f3a316c57b6a6d01ad6d26ca732dff65e9c88555a834ae7d71fc857e4cbc1799438069f544a1e27f75985e8
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.49.1-1ubuntu1.6.debian.tar.xz' nss_3.49.1-1ubuntu1.6.debian.tar.xz 199832 SHA512:5bd39d2fb81acae597586f5229c364a8e2c3ae6cacd938e877fff844695563d7637850c0b62ffaf90733e956517a75e3d1c111756ceb421205894c2412d4175a
-```
 
 ### `dpkg` source package: `numactl=2.0.12-1`
 
@@ -8666,14 +8655,9 @@ Licenses: (parsed from: `/usr/share/doc/libnss-systemd/copyright`, `/usr/share/d
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.16
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.16.dsc' systemd_245.4-4ubuntu3.16.dsc 5262 SHA512:15c9908fcefaffd7d6ad5fa47d5dd6f7049a64b86bd1d440d9d8e207486b660d206f62b53e6e26f62eda9a899f0259557cc0252f5f59dde63630829a70d3ebfb
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.16.debian.tar.xz' systemd_245.4-4ubuntu3.16.debian.tar.xz 275576 SHA512:070a7299594ec7ab0c36a005b42823f2a7db3d1612272b6e73ac034a96321b5d5f2ede3f6b1fc578105f9ad87223b96e490291da2b722fc9b6be4985258ee262
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
