@@ -913,14 +913,9 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.10
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.10.dsc' curl_7.68.0-1ubuntu2.10.dsc 2737 SHA512:c7e59b48d6743b2c0bd9fcfa76605cb4b9693bb467df2e2aabf25e38b0349f4d28aa50136efc25535f971a70a9c252d053a88539b9b0f0fdc36302f6ed145c2c
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.10.debian.tar.xz' curl_7.68.0-1ubuntu2.10.debian.tar.xz 52592 SHA512:2ed50fea6923e23c83b08a4c5eba4d1475f9d46308bd664804759a6bf8b187d9d649bcf59e171c853bbe65ab1b6403a4e00d29a3369bcf8fa21ca8a1d5275fe0
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -1992,9 +1987,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glibc=2.31-0ubuntu9.7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.dsc' glibc_2.31-0ubuntu9.7.dsc 9561 SHA512:1d67eee4c20e9a236b4ffc706a8ac3b53d9837be2c8dd4f52edd52ca97082284d7ed8d74bb2d533efb024a8e3596d8ca3fd12e0acfcfa2923a26ee9dd25931bb
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17317924 SHA512:2ff56628fe935cacbdf1825534f15d45cb87a159cbdb2e6a981590eeb6174ed4b3ff7041519cdecbd4f624ac20b745e2dd9614c420dd3ea186b8f36bc4c2453c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.debian.tar.xz' glibc_2.31-0ubuntu9.7.debian.tar.xz 870504 SHA512:8653d4a47043ef759662e5451410740f2e8dac3d7845fe6434ebb6f0bf013b3eb40cfe873c7e742d0856bce219c0f7898fd8cf3d0f0f7144637dd110b9302243
+'http://security.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.dsc' glibc_2.31-0ubuntu9.7.dsc 9561 SHA512:1d67eee4c20e9a236b4ffc706a8ac3b53d9837be2c8dd4f52edd52ca97082284d7ed8d74bb2d533efb024a8e3596d8ca3fd12e0acfcfa2923a26ee9dd25931bb
+'http://security.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31.orig.tar.xz' glibc_2.31.orig.tar.xz 17317924 SHA512:2ff56628fe935cacbdf1825534f15d45cb87a159cbdb2e6a981590eeb6174ed4b3ff7041519cdecbd4f624ac20b745e2dd9614c420dd3ea186b8f36bc4c2453c
+'http://security.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.31-0ubuntu9.7.debian.tar.xz' glibc_2.31-0ubuntu9.7.debian.tar.xz 870504 SHA512:8653d4a47043ef759662e5451410740f2e8dac3d7845fe6434ebb6f0bf013b3eb40cfe873c7e742d0856bce219c0f7898fd8cf3d0f0f7144637dd110b9302243
 ```
 
 ### `dpkg` source package: `gmp=2:6.2.0+dfsg-4`
@@ -2403,14 +2398,9 @@ Licenses: (parsed from: `/usr/share/doc/libignition-math6/copyright`, `/usr/shar
 - `Apache-2.0`
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ignition-math6=6.10.0-1~focal
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.10.0-1%7efocal.dsc' ignition-math6_6.10.0-1~focal.dsc 1620 SHA256:9e0cbdd09fbac61ed3385bcf3f06574fd13ba7a017441e21f0b05e08c046fdf9
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.10.0.orig.tar.bz2' ignition-math6_6.10.0.orig.tar.bz2 479660 SHA256:8de0f92a5a2bbce84695ba75ab798c22d32da54be454736af6bbcb6eed404902
-'http://packages.osrfoundation.org/gazebo/ubuntu-stable/pool/main/i/ignition-math6/ignition-math6_6.10.0-1%7efocal.debian.tar.xz' ignition-math6_6.10.0-1~focal.debian.tar.xz 4264 SHA256:c642b7b7479dca901f473af0e6b2d3e9c2d9505301241a009a9e7412c2cc45a6
-```
 
 ### `dpkg` source package: `ignition-msgs5=5.9.0-1~focal`
 
@@ -5257,14 +5247,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.4.0-109.123
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-109.123.dsc' linux_5.4.0-109.123.dsc 6990 SHA512:54e8cda3ba363213e3e2be06fb4de48145eb99ff03234cd91455dd37f80938cf6dd6a83683924a0e7af3d5d75b349100ff5a1db3268c3c5d00e317165610c284
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0.orig.tar.gz' linux_5.4.0.orig.tar.gz 170244619 SHA512:62b09a7231fd793973c5f59b16c4f6ffce621188b02a71915874b05e8e3f956fb6146d4a4fb1a4475bebe463949ca5a18da12842c3ce7c52e996e6bc4012a074
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.4.0-109.123.diff.gz' linux_5.4.0-109.123.diff.gz 9316079 SHA512:505f2a54fcffc9677da4e3b9979a4074be2dcbc0c2ad069b3a6c5224e2240b2a7145dcf6a6457eaa74731fc1e5361035bf275275b903554323e2f61395adf95a
-```
 
 ### `dpkg` source package: `llvm-toolchain-12=1:12.0.0-3ubuntu1~20.04.5`
 
@@ -5815,14 +5800,9 @@ Licenses: (parsed from: `/usr/share/doc/libnss3/copyright`)
 - `Zlib`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.49.1-1ubuntu1.6
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.49.1-1ubuntu1.6.dsc' nss_3.49.1-1ubuntu1.6.dsc 2287 SHA512:d443346e0b800fd49cd94b6f4b40fab9f7204ca61872dad32723ef332c77b2106b797625efbfdba4abc93aae8f4663c3baf824672656b79d41d96526aef30d9c
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.49.1.orig.tar.gz' nss_3.49.1.orig.tar.gz 76489134 SHA512:e463c9d71537ac30dbd2998cbdbc0cadc734768a6f3a316c57b6a6d01ad6d26ca732dff65e9c88555a834ae7d71fc857e4cbc1799438069f544a1e27f75985e8
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.49.1-1ubuntu1.6.debian.tar.xz' nss_3.49.1-1ubuntu1.6.debian.tar.xz 199832 SHA512:5bd39d2fb81acae597586f5229c364a8e2c3ae6cacd938e877fff844695563d7637850c0b62ffaf90733e956517a75e3d1c111756ceb421205894c2412d4175a
-```
 
 ### `dpkg` source package: `numactl=2.0.12-1`
 
@@ -6146,14 +6126,9 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.2p1-4ubuntu0.4
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.4.dsc' openssh_8.2p1-4ubuntu0.4.dsc 3098 SHA512:36f3eb577c244098cd45e302c91db6e967ab8e8f87cc88e2fd53a576ac62e8de4d06243aaa3af8b88a3021b732fe0fb14bda97653dd7688e4b79f2b07da2ccbf
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1.orig.tar.gz' openssh_8.2p1.orig.tar.gz 1701197 SHA512:c4db64e52a3a4c410de9de49f9cb104dd493b10250af3599b92457dd986277b3fd99a6f51cec94892fd1be5bd0369c5757262ea7805f0de464b245c3d34c120a
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.4.debian.tar.xz' openssh_8.2p1-4ubuntu0.4.debian.tar.xz 175556 SHA512:b500a0d00242fa2b4cc87705eb7547fa92fe67417c283b7f2ce67732e2f764f2ab10eab745bacfdfa5af55d7f6bb38050423325a9960c50d875cca5e6bedaf99
-```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.12`
 
@@ -7548,14 +7523,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=245.4-4ubuntu3.16
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.16.dsc' systemd_245.4-4ubuntu3.16.dsc 5262 SHA512:15c9908fcefaffd7d6ad5fa47d5dd6f7049a64b86bd1d440d9d8e207486b660d206f62b53e6e26f62eda9a899f0259557cc0252f5f59dde63630829a70d3ebfb
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4.orig.tar.gz' systemd_245.4.orig.tar.gz 9000780 SHA512:02036bb1ab05301a9d0dfdd4b9c9376e90134474482531e6e292122380be2f24f99177493dd3af6f8af1a8ed2599ee0996da91a3b1b7872bbfaf26a1c3e61b4c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_245.4-4ubuntu3.16.debian.tar.xz' systemd_245.4-4ubuntu3.16.debian.tar.xz 275576 SHA512:070a7299594ec7ab0c36a005b42823f2a7db3d1612272b6e73ac034a96321b5d5f2ede3f6b1fc578105f9ad87223b96e490291da2b722fc9b6be4985258ee262
-```
 
 ### `dpkg` source package: `sysvinit=2.96-2.1ubuntu1`
 
