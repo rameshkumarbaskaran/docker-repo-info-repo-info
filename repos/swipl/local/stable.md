@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bf0310c1f9198ce8350781936058ccbd87408d857342376dd120f8695f1eb299`
-- Created: `2022-04-20T15:16:06.50905294Z`
-- Virtual Size: ~ 212.89 Mb  
+- Image ID: `sha256:9740e4550273c0e6070a8006673a281ede3f718fbec3ed795c9316d355e3dea1`
+- Created: `2022-05-11T10:04:23.449148817Z`
+- Virtual Size: ~ 212.71 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["swipl"]`
@@ -957,11 +957,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/grep/3.6-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/grep/3.6-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gzip=1.10-4`
+### `dpkg` source package: `gzip=1.10-4+deb11u1`
 
 Binary Packages:
 
-- `gzip=1.10-4`
+- `gzip=1.10-4+deb11u1`
 
 Licenses: (parsed from: `/usr/share/doc/gzip/copyright`)
 
@@ -974,17 +974,17 @@ Licenses: (parsed from: `/usr/share/doc/gzip/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris gzip=1.10-4
-'http://deb.debian.org/debian/pool/main/g/gzip/gzip_1.10-4.dsc' gzip_1.10-4.dsc 1780 SHA256:c2728d6a042bf41e43f8bf86f520682a312235f981cca26a60fc0745ff536459
-'http://deb.debian.org/debian/pool/main/g/gzip/gzip_1.10.orig.tar.gz' gzip_1.10.orig.tar.gz 1201421 SHA256:c91f74430bf7bc20402e1f657d0b252cb80aa66ba333a25704512af346633c68
-'http://deb.debian.org/debian/pool/main/g/gzip/gzip_1.10-4.debian.tar.xz' gzip_1.10-4.debian.tar.xz 19300 SHA256:f3e40d75fe3f695c76f028194b2031a2016a302b3c95d28ebc52b8538331a708
+$ apt-get source -qq --print-uris gzip=1.10-4+deb11u1
+'http://security.debian.org/debian-security/pool/updates/main/g/gzip/gzip_1.10-4%2bdeb11u1.dsc' gzip_1.10-4+deb11u1.dsc 1812 SHA256:0bcc813d124297ae741573b30db5faefec038aff92616d6ba014f859703f5acf
+'http://security.debian.org/debian-security/pool/updates/main/g/gzip/gzip_1.10.orig.tar.gz' gzip_1.10.orig.tar.gz 1201421 SHA256:c91f74430bf7bc20402e1f657d0b252cb80aa66ba333a25704512af346633c68
+'http://security.debian.org/debian-security/pool/updates/main/g/gzip/gzip_1.10-4%2bdeb11u1.debian.tar.xz' gzip_1.10-4+deb11u1.debian.tar.xz 22952 SHA256:183338e989ad327fca8c3281e8452c571bafed0c3cca0b6cea269a34b8dc19d2
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/gzip/1.10-4/ (for browsing the source)
-- https://sources.debian.net/src/gzip/1.10-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gzip/1.10-4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/gzip/1.10-4+deb11u1/ (for browsing the source)
+- https://sources.debian.net/src/gzip/1.10-4+deb11u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gzip/1.10-4+deb11u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hostname=3.23`
 
