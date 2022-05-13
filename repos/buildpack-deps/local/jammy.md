@@ -483,15 +483,9 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.81.0-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.1.dsc' curl_7.81.0-1ubuntu1.1.dsc 3139 SHA512:c12250f7940917069896c33f19f60b667198399a2aa098a473b54630463e2ebc01219e6fb01b95d90db4ee481d6e54255f654391e516f7a622065881c6ee2ae6
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0.orig.tar.gz' curl_7.81.0.orig.tar.gz 4188040 SHA512:e3084f0fa083f7f93eac923edbfdddb5fd0a372b94673ba9d4427a2b95508898c15ecdf63b99a1c1f6cf3215e27b06cbaa2b7073df038d43b362e586f92495d3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0.orig.tar.gz.asc' curl_7.81.0.orig.tar.gz.asc 488 SHA512:92bc5ede831551285d67b03abe8400c609ad31c9d33e324ee5c41b92dd5c2a0245a09a396bd76807b3e44bcfef944b1e16ac266264f7b85d27cc1c072a6e82bd
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.81.0-1ubuntu1.1.debian.tar.xz' curl_7.81.0-1ubuntu1.1.debian.tar.xz 41720 SHA512:37c3c8c04fdf5954330724fef9731fc3227a1de49ac499869bc1f8f8f6c6196732b8d33c1bd3cff619135d5bd6d145743c330a94df7684964a38358f85e37a70
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg2-3ubuntu1`
 
@@ -3008,9 +3002,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.15.0-27.28
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-27.28.dsc' linux_5.15.0-27.28.dsc 7228 SHA512:aac822f21ca50f5df9be71f6a463956d04555294ac158c89bc1b70c41a73172eb79b86d8a9c7e3c0212c621d2e37576d55f86bc6df1beb1239f500a220f527b6
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0.orig.tar.gz' linux_5.15.0.orig.tar.gz 194969557 SHA512:ae9a32132d5988441c189157703b0f8fa4e232d8d24f7104f944c06827db740beafae55eb37a51eb99b4ac513927cd372321fa1e84afff4d450b786e44414861
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-27.28.diff.gz' linux_5.15.0-27.28.diff.gz 5796913 SHA512:edb6ec3f2847403964bc7221b4d00a399885d34849343424a9922e4f7048e9946d806031a54d739622d5aa9a64365519442f272751ee0e99fef89c2a56a9c4d3
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-27.28.dsc' linux_5.15.0-27.28.dsc 7228 SHA512:aac822f21ca50f5df9be71f6a463956d04555294ac158c89bc1b70c41a73172eb79b86d8a9c7e3c0212c621d2e37576d55f86bc6df1beb1239f500a220f527b6
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0.orig.tar.gz' linux_5.15.0.orig.tar.gz 194969557 SHA512:ae9a32132d5988441c189157703b0f8fa4e232d8d24f7104f944c06827db740beafae55eb37a51eb99b4ac513927cd372321fa1e84afff4d450b786e44414861
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-27.28.diff.gz' linux_5.15.0-27.28.diff.gz 5796913 SHA512:edb6ec3f2847403964bc7221b4d00a399885d34849343424a9922e4f7048e9946d806031a54d739622d5aa9a64365519442f272751ee0e99fef89c2a56a9c4d3
 ```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu4`
