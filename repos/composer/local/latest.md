@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:558ce1cf68770ab3f544f36da8c1d485bd63c2ddf71444f2ccfd2a4c52f656fe`
-- Created: `2022-04-19T03:18:39.398294641Z`
-- Virtual Size: ~ 191.29 Mb  
+- Image ID: `sha256:8622bcd5ae85ec4e194542803e1abf3dccf2b93175968616987f9fbd60e94e7a`
+- Created: `2022-05-13T23:37:52.772461113Z`
+- Virtual Size: ~ 195.97 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD`
-  - `PHP_VERSION=8.1.5`
-  - `PHP_URL=https://www.php.net/distributions/php-8.1.5.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.5.tar.xz.asc`
-  - `PHP_SHA256=7647734b4dcecd56b7e4bd0bc55e54322fa3518299abcdc68eb557a7464a2e8a`
+  - `PHP_VERSION=8.1.6`
+  - `PHP_URL=https://www.php.net/distributions/php-8.1.6.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.6.tar.xz.asc`
+  - `PHP_SHA256=da38d65bb0d5dd56f711cd478204f2b62a74a2c2b0d2d523a78d6eb865b2364c`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
   - `COMPOSER_VERSION=2.3.5`
@@ -234,16 +234,16 @@ GPL-3.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.80.0-r0 description:
+curl-7.80.0-r1 description:
 URL retrival utility and library
 
-curl-7.80.0-r0 webpage:
+curl-7.80.0-r1 webpage:
 https://curl.se/
 
-curl-7.80.0-r0 installed size:
+curl-7.80.0-r1 installed size:
 248 KiB
 
-curl-7.80.0-r0 license:
+curl-7.80.0-r1 license:
 MIT
 
 ```
@@ -387,16 +387,16 @@ BSD-2-Clause AND BSD-3-Clause
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1n-r0 description:
+libcrypto1.1-1.1.1o-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1n-r0 webpage:
+libcrypto1.1-1.1.1o-r0 webpage:
 https://www.openssl.org/
 
-libcrypto1.1-1.1.1n-r0 installed size:
+libcrypto1.1-1.1.1o-r0 installed size:
 2676 KiB
 
-libcrypto1.1-1.1.1n-r0 license:
+libcrypto1.1-1.1.1o-r0 license:
 OpenSSL
 
 ```
@@ -404,16 +404,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.80.0-r0 description:
+libcurl-7.80.0-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.80.0-r0 webpage:
+libcurl-7.80.0-r1 webpage:
 https://curl.se/
 
-libcurl-7.80.0-r0 installed size:
+libcurl-7.80.0-r1 installed size:
 504 KiB
 
-libcurl-7.80.0-r0 license:
+libcurl-7.80.0-r1 license:
 MIT
 
 ```
@@ -523,16 +523,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1n-r0 description:
+libssl1.1-1.1.1o-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1n-r0 webpage:
+libssl1.1-1.1.1o-r0 webpage:
 https://www.openssl.org/
 
-libssl1.1-1.1.1n-r0 installed size:
+libssl1.1-1.1.1o-r0 installed size:
 528 KiB
 
-libssl1.1-1.1.1n-r0 license:
+libssl1.1-1.1.1o-r0 license:
 OpenSSL
 
 ```
@@ -574,16 +574,16 @@ GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.13-r0 description:
+libxml2-2.9.14-r0 description:
 XML parsing library, version 2
 
-libxml2-2.9.13-r0 webpage:
+libxml2-2.9.14-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.13-r0 installed size:
+libxml2-2.9.14-r0 installed size:
 1200 KiB
 
-libxml2-2.9.13-r0 license:
+libxml2-2.9.14-r0 license:
 MIT
 
 ```
@@ -829,16 +829,16 @@ BSD
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1n-r0 description:
+openssl-1.1.1o-r0 description:
 toolkit for transport layer security (TLS) - version 1.1
 
-openssl-1.1.1n-r0 webpage:
+openssl-1.1.1o-r0 webpage:
 https://www.openssl.org/
 
-openssl-1.1.1n-r0 installed size:
+openssl-1.1.1o-r0 installed size:
 664 KiB
 
-openssl-1.1.1n-r0 license:
+openssl-1.1.1o-r0 license:
 OpenSSL
 
 ```
@@ -1186,16 +1186,16 @@ Info-ZIP
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.12-r0 description:
+zlib-1.2.12-r1 description:
 A compression/decompression Library
 
-zlib-1.2.12-r0 webpage:
+zlib-1.2.12-r1 webpage:
 https://zlib.net/
 
-zlib-1.2.12-r0 installed size:
+zlib-1.2.12-r1 installed size:
 108 KiB
 
-zlib-1.2.12-r0 license:
+zlib-1.2.12-r1 license:
 Zlib
 
 ```
