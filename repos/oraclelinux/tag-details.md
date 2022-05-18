@@ -8,6 +8,7 @@
 -	[`oraclelinux:8`](#oraclelinux8)
 -	[`oraclelinux:8-slim`](#oraclelinux8-slim)
 -	[`oraclelinux:8.5`](#oraclelinux85)
+-	[`oraclelinux:8.6`](#oraclelinux86)
 
 ## `oraclelinux:7`
 
@@ -386,3 +387,12 @@ CMD ["/bin/bash"]
 		Last Modified: Tue, 17 May 2022 22:53:26 GMT  
 		Size: 83.7 MB (83739935 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `oraclelinux:8.6`
+
+```console
+$ docker pull oraclelinux@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms: 0
