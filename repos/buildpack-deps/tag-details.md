@@ -17,6 +17,9 @@
 -	[`buildpack-deps:22.04`](#buildpack-deps2204)
 -	[`buildpack-deps:22.04-curl`](#buildpack-deps2204-curl)
 -	[`buildpack-deps:22.04-scm`](#buildpack-deps2204-scm)
+-	[`buildpack-deps:22.10`](#buildpack-deps2210)
+-	[`buildpack-deps:22.10-curl`](#buildpack-deps2210-curl)
+-	[`buildpack-deps:22.10-scm`](#buildpack-deps2210-scm)
 -	[`buildpack-deps:bionic`](#buildpack-depsbionic)
 -	[`buildpack-deps:bionic-curl`](#buildpack-depsbionic-curl)
 -	[`buildpack-deps:bionic-scm`](#buildpack-depsbionic-scm)
@@ -39,6 +42,9 @@
 -	[`buildpack-deps:jammy`](#buildpack-depsjammy)
 -	[`buildpack-deps:jammy-curl`](#buildpack-depsjammy-curl)
 -	[`buildpack-deps:jammy-scm`](#buildpack-depsjammy-scm)
+-	[`buildpack-deps:kinetic`](#buildpack-depskinetic)
+-	[`buildpack-deps:kinetic-curl`](#buildpack-depskinetic-curl)
+-	[`buildpack-deps:kinetic-scm`](#buildpack-depskinetic-scm)
 -	[`buildpack-deps:latest`](#buildpack-depslatest)
 -	[`buildpack-deps:oldoldstable`](#buildpack-depsoldoldstable)
 -	[`buildpack-deps:oldoldstable-curl`](#buildpack-depsoldoldstable-curl)
@@ -4271,6 +4277,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercuri
 		Last Modified: Fri, 29 Apr 2022 23:21:37 GMT  
 		Size: 39.3 MB (39272081 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `buildpack-deps:22.10`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:22.10-curl`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:22.10-scm`
+
+**does not exist** (yet?)
 
 ## `buildpack-deps:bionic`
 
@@ -11030,6 +11048,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercuri
 		Last Modified: Fri, 29 Apr 2022 23:21:37 GMT  
 		Size: 39.3 MB (39272081 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `buildpack-deps:kinetic`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:kinetic-curl`
+
+**does not exist** (yet?)
+
+## `buildpack-deps:kinetic-scm`
+
+**does not exist** (yet?)
 
 ## `buildpack-deps:latest`
 
