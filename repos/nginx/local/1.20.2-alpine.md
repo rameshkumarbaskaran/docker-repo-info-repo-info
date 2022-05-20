@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5c05ca04583592f86e3905af9515babbb8935170e0d2c6006bcae09b09be3cf9`
-- Created: `2022-04-05T07:22:29.769078417Z`
-- Virtual Size: ~ 23.13 Mb  
+- Image ID: `sha256:6cf0c840a5a456151810814231943a691d54afc5ee58a2e447d5f259e5e23ab2`
+- Created: `2022-05-17T22:37:53.699922729Z`
+- Virtual Size: ~ 23.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `NGINX_VERSION=1.20.2`
-  - `NJS_VERSION=0.7.0`
+  - `NJS_VERSION=0.7.3`
   - `PKG_RELEASE=1`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -141,16 +141,16 @@ MPL-2.0 AND MIT
 ### `apk` package: `curl`
 
 ```console
-curl-7.79.1-r0 description:
+curl-7.79.1-r1 description:
 URL retrival utility and library
 
-curl-7.79.1-r0 webpage:
+curl-7.79.1-r1 webpage:
 https://curl.se/
 
-curl-7.79.1-r0 installed size:
+curl-7.79.1-r1 installed size:
 248 KiB
 
-curl-7.79.1-r0 license:
+curl-7.79.1-r1 license:
 MIT
 
 ```
@@ -158,16 +158,16 @@ MIT
 ### `apk` package: `freetype`
 
 ```console
-freetype-2.10.4-r1 description:
+freetype-2.10.4-r2 description:
 TrueType font rendering library
 
-freetype-2.10.4-r1 webpage:
+freetype-2.10.4-r2 webpage:
 https://www.freetype.org/
 
-freetype-2.10.4-r1 installed size:
+freetype-2.10.4-r2 installed size:
 728 KiB
 
-freetype-2.10.4-r1 license:
+freetype-2.10.4-r2 license:
 FTL GPL-2.0-or-later
 
 ```
@@ -243,16 +243,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.79.1-r0 description:
+libcurl-7.79.1-r1 description:
 The multiprotocol file transfer library
 
-libcurl-7.79.1-r0 webpage:
+libcurl-7.79.1-r1 webpage:
 https://curl.se/
 
-libcurl-7.79.1-r0 installed size:
-500 KiB
+libcurl-7.79.1-r1 installed size:
+504 KiB
 
-libcurl-7.79.1-r0 license:
+libcurl-7.79.1-r1 license:
 MIT
 
 ```
@@ -430,16 +430,16 @@ BSD-3-Clause
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.13-r0 description:
+libxml2-2.9.14-r0 description:
 XML parsing library, version 2
 
-libxml2-2.9.13-r0 webpage:
+libxml2-2.9.14-r0 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.13-r0 installed size:
+libxml2-2.9.14-r0 installed size:
 1200 KiB
 
-libxml2-2.9.13-r0 license:
+libxml2-2.9.14-r0 license:
 MIT
 
 ```
@@ -600,16 +600,16 @@ nginx-module-image-filter-1.20.2-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.20.2.0.7.0-r1 description:
+nginx-module-njs-1.20.2.0.7.3-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.20.2.0.7.0-r1 webpage:
+nginx-module-njs-1.20.2.0.7.3-r1 webpage:
 https://nginx.org/
 
-nginx-module-njs-1.20.2.0.7.0-r1 installed size:
+nginx-module-njs-1.20.2.0.7.3-r1 installed size:
 3812 KiB
 
-nginx-module-njs-1.20.2.0.7.0-r1 license:
+nginx-module-njs-1.20.2.0.7.3-r1 license:
 2-clause BSD-like license
 
 ```
@@ -702,16 +702,16 @@ Public-Domain
 ### `apk` package: `xz-libs`
 
 ```console
-xz-libs-5.2.5-r0 description:
+xz-libs-5.2.5-r1 description:
 Library and CLI tools for XZ and LZMA compressed files (libraries)
 
-xz-libs-5.2.5-r0 webpage:
+xz-libs-5.2.5-r1 webpage:
 https://tukaani.org/xz
 
-xz-libs-5.2.5-r0 installed size:
+xz-libs-5.2.5-r1 installed size:
 148 KiB
 
-xz-libs-5.2.5-r0 license:
+xz-libs-5.2.5-r1 license:
 GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later
 
 ```
