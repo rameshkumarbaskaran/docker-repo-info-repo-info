@@ -1,7 +1,7 @@
 ## `redis:5-bullseye`
 
 ```console
-$ docker pull redis@sha256:c7bda5264810d533aaf6cf8ca550c922c1f01f3f308a6c061f97fbac3ee5b9e2
+$ docker pull redis@sha256:c59ae33dd225ae5488ad9be0867bb9084f1dfa48d545ddc63215e2127e1d5c81
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -243,14 +243,14 @@ CMD ["redis-server"]
 ### `redis:5-bullseye` - linux; arm64 variant v8
 
 ```console
-$ docker pull redis@sha256:68634f6795b5b795be86b093f2b1481a11af2c88deb240c28790b97f227c2fa7
+$ docker pull redis@sha256:bece39a77d460c217c5fc881a96ba1cb999f20ca92f674b0bc89fab428e2470d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **38.7 MB (38716570 bytes)**  
+-	Total Size: **38.7 MB (38716732 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:59a61963a8ef0c24531995c82b897238643cfe2e721ab68de2c02319e791caa2`
+-	Image ID: `sha256:b6f6c58c5c47662669ff14b9e59630b68c0b6c278a2084439094e99a6d987451`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["redis-server"]`
 
@@ -279,13 +279,13 @@ RUN mkdir /data && chown redis:redis /data
 VOLUME [/data]
 # Wed, 11 May 2022 12:01:54 GMT
 WORKDIR /data
-# Wed, 11 May 2022 12:01:56 GMT
-COPY file:df205a0ef6e6df8947ce0a7ae9e37b6a5588035647f38a49b8b07321003a8a01 in /usr/local/bin/ 
-# Wed, 11 May 2022 12:01:56 GMT
+# Wed, 25 May 2022 23:47:17 GMT
+COPY file:e873a0e3c13001b5e1c63f9dbe60cc65722af522671787f68b8e8cbcae7d02ac in /usr/local/bin/ 
+# Wed, 25 May 2022 23:47:17 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 May 2022 12:01:57 GMT
+# Wed, 25 May 2022 23:47:18 GMT
 EXPOSE 6379
-# Wed, 11 May 2022 12:01:58 GMT
+# Wed, 25 May 2022 23:47:19 GMT
 CMD ["redis-server"]
 ```
 
@@ -310,9 +310,9 @@ CMD ["redis-server"]
 		Last Modified: Wed, 11 May 2022 12:05:05 GMT  
 		Size: 99.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e390f8207c87661b42f6bdb9f07224bde6885f5a27c688dfb175b4f0bbaab5b`  
-		Last Modified: Wed, 11 May 2022 12:05:04 GMT  
-		Size: 409.0 B  
+	-	`sha256:90fbcf7ada4a558b68d278e0562af2640b23bf36ac53a67fccf2c0b01528cbba`  
+		Last Modified: Wed, 25 May 2022 23:52:58 GMT  
+		Size: 571.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `redis:5-bullseye` - linux; 386
@@ -543,14 +543,14 @@ CMD ["redis-server"]
 ### `redis:5-bullseye` - linux; s390x
 
 ```console
-$ docker pull redis@sha256:dbcfb27cbaf4dc80f7b275f128a1cbc76cd55febcad8a4e7e92be0e8374ed97f
+$ docker pull redis@sha256:0b81ba861786f04b653e79b44440712672e4ad8581082a837a034fa4cde14dfd
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **38.6 MB (38637776 bytes)**  
+-	Total Size: **38.6 MB (38637937 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:706d2b8d1563f1e8d24f27ebeb9574a32d54b0e1d4e227b0e9c61ecde3c8e0e3`
+-	Image ID: `sha256:9ae00b5918f32d1bc7ad14d6ecc286f4e48f9f10acf8ed79ec2672e52232ec5a`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["redis-server"]`
 
@@ -579,13 +579,13 @@ RUN mkdir /data && chown redis:redis /data
 VOLUME [/data]
 # Wed, 11 May 2022 06:20:50 GMT
 WORKDIR /data
-# Wed, 11 May 2022 06:20:50 GMT
-COPY file:df205a0ef6e6df8947ce0a7ae9e37b6a5588035647f38a49b8b07321003a8a01 in /usr/local/bin/ 
-# Wed, 11 May 2022 06:20:50 GMT
+# Wed, 25 May 2022 23:27:08 GMT
+COPY file:e873a0e3c13001b5e1c63f9dbe60cc65722af522671787f68b8e8cbcae7d02ac in /usr/local/bin/ 
+# Wed, 25 May 2022 23:27:09 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 May 2022 06:20:51 GMT
+# Wed, 25 May 2022 23:27:09 GMT
 EXPOSE 6379
-# Wed, 11 May 2022 06:20:51 GMT
+# Wed, 25 May 2022 23:27:09 GMT
 CMD ["redis-server"]
 ```
 
@@ -610,7 +610,7 @@ CMD ["redis-server"]
 		Last Modified: Wed, 11 May 2022 06:23:35 GMT  
 		Size: 134.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:874d4a2ab0d1e14b1ba9dac6a6020dfdaa2b65625b91c7291c4995effa3ab1c3`  
-		Last Modified: Wed, 11 May 2022 06:23:35 GMT  
-		Size: 410.0 B  
+	-	`sha256:228aaeff3914ac7be3729d737b2c1a82274c5939061ce0c5e14981cf9cf57707`  
+		Last Modified: Wed, 25 May 2022 23:31:41 GMT  
+		Size: 571.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
