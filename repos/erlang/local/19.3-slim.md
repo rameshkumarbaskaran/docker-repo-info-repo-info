@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d4685976982ab22cda6df4a406d99abc257605b306e011bf3883c3bbb2eafe04`
-- Created: `2022-05-11T03:54:57.592690571Z`
-- Virtual Size: ~ 896.13 Mb  
+- Image ID: `sha256:5f918be9b5fbdb67cef1129f1954fcff5b4544664ef2972a8337293fcc565291`
+- Created: `2022-05-28T04:45:27.091688101Z`
+- Virtual Size: ~ 896.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["erl"]`
@@ -373,11 +373,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/coreutils/8.26-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/coreutils/8.26-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cups=2.2.1-8+deb9u7`
+### `dpkg` source package: `cups=2.2.1-8+deb9u8`
 
 Binary Packages:
 
-- `libcups2:amd64=2.2.1-8+deb9u7`
+- `libcups2:amd64=2.2.1-8+deb9u8`
 
 Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 
@@ -388,13 +388,20 @@ Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 - `LGPL-2.0 with AOSDL exception`
 - `Zlib`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris cups=2.2.1-8+deb9u8
+'http://security.debian.org/debian-security/pool/updates/main/c/cups/cups_2.2.1-8%2bdeb9u8.dsc' cups_2.2.1-8+deb9u8.dsc 3522 SHA256:a5d944381ec4f577e3e81b65a687b598dd328afaf01dcdf19d5b76a374680bc7
+'http://security.debian.org/debian-security/pool/updates/main/c/cups/cups_2.2.1.orig.tar.gz' cups_2.2.1.orig.tar.gz 9486635 SHA256:83b8730aa977cc055e7410df6a3a682548994c113994ca630a16513017e419d5
+'http://security.debian.org/debian-security/pool/updates/main/c/cups/cups_2.2.1-8%2bdeb9u8.debian.tar.xz' cups_2.2.1-8+deb9u8.debian.tar.xz 369172 SHA256:c46e3a4dee101758332f0e8593af28e9f22b5ff9032c676961e23d29b9b0f254
+```
 
-- http://snapshot.debian.org/package/cups/2.2.1-8+deb9u7/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/cups/2.2.1-8+deb9u8/ (for browsing the source)
+- https://sources.debian.net/src/cups/2.2.1-8+deb9u8/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/cups/2.2.1-8+deb9u8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dash=0.5.8-2.4`
 
@@ -578,11 +585,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/diffutils/1:3.5-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/diffutils/1:3.5-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `dpkg=1.18.25`
+### `dpkg` source package: `dpkg=1.18.26`
 
 Binary Packages:
 
-- `dpkg=1.18.25`
+- `dpkg=1.18.26`
 
 Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 
@@ -595,16 +602,16 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris dpkg=1.18.25
-'http://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.18.25.dsc' dpkg_1.18.25.dsc 2048 SHA256:5cf6ac260dc3adae91516b777f9e3b6fcb783d867f811fa8fd0787f570a059a6
-'http://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.18.25.tar.xz' dpkg_1.18.25.tar.xz 4541640 SHA256:c49c371953aea03f543814dcae37c069e86069333fb2e24e9252e76647663492
+$ apt-get source -qq --print-uris dpkg=1.18.26
+'http://security.debian.org/debian-security/pool/updates/main/d/dpkg/dpkg_1.18.26.dsc' dpkg_1.18.26.dsc 2048 SHA256:263e1dfe67164601ae0416d3361cc3aad5ab93a8280fc9175a01059ca807442c
+'http://security.debian.org/debian-security/pool/updates/main/d/dpkg/dpkg_1.18.26.tar.xz' dpkg_1.18.26.tar.xz 4529136 SHA256:a72d6bf530bd8fd17c011187aa34c8c01de8ff1eea2b47b377d09a39988d08d4
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/dpkg/1.18.25/ (for browsing the source)
-- https://sources.debian.net/src/dpkg/1.18.25/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/dpkg/1.18.25/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/dpkg/1.18.26/ (for browsing the source)
+- https://sources.debian.net/src/dpkg/1.18.26/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/dpkg/1.18.26/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `e2fsprogs=1.43.4-2+deb9u2`
 
@@ -1791,20 +1798,13 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg62-turbo/copyright`)
 - `BSD-BY-LC-NE`
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libjpeg-turbo=1:1.5.1-2+deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1-2%2bdeb9u1.dsc' libjpeg-turbo_1.5.1-2+deb9u1.dsc 2332 SHA256:c279f540af20efed9482a9e57b3878d4095c2249e7564b1805f24f6190b0fb63
-'http://security.debian.org/debian-security/pool/updates/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1.orig.tar.gz' libjpeg-turbo_1.5.1.orig.tar.gz 1650647 SHA256:41429d3d253017433f66e3d472b8c7d998491d2f41caa7306b8d9a6f2a2c666c
-'http://security.debian.org/debian-security/pool/updates/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.1-2%2bdeb9u1.debian.tar.xz' libjpeg-turbo_1.5.1-2+deb9u1.debian.tar.xz 85132 SHA256:a8655688837fafbdef3922619e5f5a3c73956626ccbcfe89c7821d2b6e682b7c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libjpeg-turbo/1:1.5.1-2+deb9u1/
 
-- https://sources.debian.net/src/libjpeg-turbo/1:1.5.1-2+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/libjpeg-turbo/1:1.5.1-2+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libjpeg-turbo/1:1.5.1-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libmnl=1.0.4-2`
 
@@ -2458,23 +2458,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxinerama/2:1.1.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxinerama/2:1.1.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u6`
+### `dpkg` source package: `libxml2=2.9.4+dfsg1-2.2+deb9u7`
 
 Binary Packages:
 
-- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u6`
+- `libxml2:amd64=2.9.4+dfsg1-2.2+deb9u7`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxml2=2.9.4+dfsg1-2.2+deb9u7
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4%2bdfsg1-2.2%2bdeb9u7.dsc' libxml2_2.9.4+dfsg1-2.2+deb9u7.dsc 3045 SHA256:46d0b6bef2d8e9cb9d4b1be2390913954ae6f6cc8d53959a45f24dda80ab4501
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4%2bdfsg1.orig.tar.gz' libxml2_2.9.4+dfsg1.orig.tar.gz 4067518 SHA256:57441479117cd4b3a3fbe1eda8028d578e3b2de7e745362f67669a0cf5fb3726
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxml2/libxml2_2.9.4%2bdfsg1-2.2%2bdeb9u7.debian.tar.xz' libxml2_2.9.4+dfsg1-2.2+deb9u7.debian.tar.xz 43396 SHA256:19a100b02c40564bc0c51e5454846055aac9ac43845258b3cc5de7caf065de36
+```
 
-- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u6/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u7/ (for browsing the source)
+- https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxrandr=2:1.5.1-1`
 
