@@ -22,9 +22,13 @@
 -	[`elixir:1.12.3-slim`](#elixir1123-slim)
 -	[`elixir:1.13`](#elixir113)
 -	[`elixir:1.13-alpine`](#elixir113-alpine)
+-	[`elixir:1.13-otp-25`](#elixir113-otp-25)
+-	[`elixir:1.13-otp-25-alpine`](#elixir113-otp-25-alpine)
 -	[`elixir:1.13-slim`](#elixir113-slim)
 -	[`elixir:1.13.4`](#elixir1134)
 -	[`elixir:1.13.4-alpine`](#elixir1134-alpine)
+-	[`elixir:1.13.4-otp-25`](#elixir1134-otp-25)
+-	[`elixir:1.13.4-otp-25-alpine`](#elixir1134-otp-25-alpine)
 -	[`elixir:1.13.4-slim`](#elixir1134-slim)
 -	[`elixir:1.6`](#elixir16)
 -	[`elixir:1.6-alpine`](#elixir16-alpine)
@@ -60,6 +64,8 @@
 -	[`elixir:1.9.4-slim`](#elixir194-slim)
 -	[`elixir:alpine`](#elixiralpine)
 -	[`elixir:latest`](#elixirlatest)
+-	[`elixir:otp-25`](#elixirotp-25)
+-	[`elixir:otp-25-alpine`](#elixirotp-25-alpine)
 -	[`elixir:slim`](#elixirslim)
 
 ## `elixir:1.10`
@@ -7718,6 +7724,14 @@ CMD ["iex"]
 		Size: 6.0 MB (5961193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `elixir:1.13-otp-25`
+
+**does not exist** (yet?)
+
+## `elixir:1.13-otp-25-alpine`
+
+**does not exist** (yet?)
+
 ## `elixir:1.13-slim`
 
 ```console
@@ -8854,6 +8868,14 @@ CMD ["iex"]
 		Last Modified: Tue, 10 May 2022 00:05:37 GMT  
 		Size: 6.0 MB (5961193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `elixir:1.13.4-otp-25`
+
+**does not exist** (yet?)
+
+## `elixir:1.13.4-otp-25-alpine`
+
+**does not exist** (yet?)
 
 ## `elixir:1.13.4-slim`
 
@@ -19083,6 +19105,14 @@ CMD ["iex"]
 		Last Modified: Sun, 29 May 2022 03:23:28 GMT  
 		Size: 5.9 MB (5944839 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `elixir:otp-25`
+
+**does not exist** (yet?)
+
+## `elixir:otp-25-alpine`
+
+**does not exist** (yet?)
 
 ## `elixir:slim`
 
