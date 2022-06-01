@@ -7,7 +7,6 @@
 -	[`oraclelinux:7.9`](#oraclelinux79)
 -	[`oraclelinux:8`](#oraclelinux8)
 -	[`oraclelinux:8-slim`](#oraclelinux8-slim)
--	[`oraclelinux:8.5`](#oraclelinux85)
 -	[`oraclelinux:8.6`](#oraclelinux86)
 
 ## `oraclelinux:7`
@@ -323,69 +322,6 @@ CMD ["/bin/bash"]
 	-	`sha256:0dbddf5847a3e154a061766ddebe6a3cae471c97cabb3be2871f6d91f265d137`  
 		Last Modified: Tue, 17 May 2022 22:53:43 GMT  
 		Size: 38.0 MB (38012703 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-## `oraclelinux:8.5`
-
-```console
-$ docker pull oraclelinux@sha256:cda8334297e86456c96986b4070891ed58f56151e8ae2e500d9e13b1d743b2c6
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms: 2
-	-	linux; amd64
-	-	linux; arm64 variant v8
-
-### `oraclelinux:8.5` - linux; amd64
-
-```console
-$ docker pull oraclelinux@sha256:3cadd263e7744a34daa274f6d95e621b1c06a15aa34d2ede3ef6798ad77bac3b
-```
-
--	Docker Version: 20.10.12
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **87.5 MB (87479695 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bbfaaa4ae0740f0edf1ded0237637a09e2dbbc40299f0bd4209064ccae0581ef`
--	Default Command: `["\/bin\/bash"]`
-
-```dockerfile
-# Mon, 02 May 2022 20:50:56 GMT
-ADD file:84bf324680059e085907eb7d75c8cb37d4d01aff3cc8241463bbc7d042db93d9 in / 
-# Mon, 02 May 2022 20:50:56 GMT
-CMD ["/bin/bash"]
-```
-
--	Layers:
-	-	`sha256:42405d186b2e7939aa51dc1bcc0f4cf0ce1236f4d6e38f2fae9822c41e98078e`  
-		Last Modified: Mon, 02 May 2022 20:51:41 GMT  
-		Size: 87.5 MB (87479695 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-### `oraclelinux:8.5` - linux; arm64 variant v8
-
-```console
-$ docker pull oraclelinux@sha256:b23a7880eb68ecf76b2eca54ac623fa2749c584553ce0f6d4abd37ee8117fcd4
-```
-
--	Docker Version: 20.10.12
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **87.8 MB (87773301 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c86048b098538e84e5906d1706745448d8efb4f1209a50aa13a732dd52a248cc`
--	Default Command: `["\/bin\/bash"]`
-
-```dockerfile
-# Mon, 02 May 2022 21:46:23 GMT
-ADD file:26e478b2545f5887dfb4859d2188243d55d0b5d63e249a4187ff2bc80fe35799 in / 
-# Mon, 02 May 2022 21:46:25 GMT
-CMD ["/bin/bash"]
-```
-
--	Layers:
-	-	`sha256:40464a84aa85010d3c4c36e0963540febd307685b81a0ac1ae596143bab11432`  
-		Last Modified: Mon, 02 May 2022 21:47:18 GMT  
-		Size: 87.8 MB (87773301 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `oraclelinux:8.6`
