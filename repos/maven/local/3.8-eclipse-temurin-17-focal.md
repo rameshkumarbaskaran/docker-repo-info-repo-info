@@ -1,10 +1,10 @@
-# `maven:3.8.5-eclipse-temurin-16`
+# `maven:3.8.5-eclipse-temurin-17-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fcf4c2f4ded5fdc0bb890ccb4545912ac032122a7ef782431979f7540fc5c4b9`
-- Created: `2022-04-22T08:08:45.084179742Z`
-- Virtual Size: ~ 582.58 Mb  
+- Image ID: `sha256:0979bdf7262508a2b1b7f58f714d85170c19dda727ba93e8c97e5defc4ab034e`
+- Created: `2022-06-01T00:39:35.668450291Z`
+- Virtual Size: ~ 555.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-16.0.2+7`
+  - `JAVA_VERSION=jdk-17.0.3+7`
   - `JAVA_HOME=/opt/java/openjdk`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
@@ -160,19 +160,24 @@ $ apt-get source -qq --print-uris base-passwd=3.5.47
 'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.47.tar.xz' base-passwd_3.5.47.tar.xz 53024 SHA256:9810ae0216e96bf9fc7ca6163d47ef8ec7d1677f533451af5911d8202a490a23
 ```
 
-### `dpkg` source package: `bash=5.0-6ubuntu1.1`
+### `dpkg` source package: `bash=5.0-6ubuntu1.2`
 
 Binary Packages:
 
-- `bash=5.0-6ubuntu1.1`
+- `bash=5.0-6ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris bash=5.0-6ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.2.dsc' bash_5.0-6ubuntu1.2.dsc 2296 SHA512:d93b919ae7b8e67e3b4e31d205e13006a37aa2a42378744599c3214ecab6544084856a739b38aaeb06742524e2ea302c8147f7a88dbc738e1e7ac0a29be0c0b8
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA512:f3a719997a8515bae7e84701afafc9b2cdd23c95d29533adb678000b08eba968450b93d5576c3cffbeccbdcd95b713db830e8efeda689258dcfe6f15f0c5dec4
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-6ubuntu1.2.debian.tar.xz' bash_5.0-6ubuntu1.2.debian.tar.xz 75200 SHA512:50de22a6cd140fcb95eca9172e9927a4eeddd90bfbd23072d5e209db1675f331716dfd54ef3281caa7020e3fa1aef9ca7caafc6a8d3067741b1ae41f7dff7724
+```
 
 ### `dpkg` source package: `binutils=2.34-6ubuntu1.3`
 
@@ -297,15 +302,14 @@ $ apt-get source -qq --print-uris coreutils=8.30-3ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu2.debian.tar.xz' coreutils_8.30-3ubuntu2.debian.tar.xz 39636 SHA256:98204ef9d94e5c567880cd0245fdb7940eaf7592d6c6830c300ad117628b351f
 ```
 
-### `dpkg` source package: `curl=7.68.0-1ubuntu2.7`
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.10`
 
 Binary Packages:
 
-- `curl=7.68.0-1ubuntu2.7`
-- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.7`
-- `libcurl4:amd64=7.68.0-1ubuntu2.7`
+- `curl=7.68.0-1ubuntu2.10`
+- `libcurl4:amd64=7.68.0-1ubuntu2.10`
 
-Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl3-gnutls/copyright`, `/usr/share/doc/libcurl4/copyright`)
+Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl4/copyright`)
 
 - `BSD-3-Clause`
 - `BSD-4-Clause`
@@ -317,6 +321,30 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `curl=7.68.0-1ubuntu2.11`
+
+Binary Packages:
+
+- `libcurl3-gnutls:amd64=7.68.0-1ubuntu2.11`
+
+Licenses: (parsed from: `/usr/share/doc/libcurl3-gnutls/copyright`)
+
+- `BSD-3-Clause`
+- `BSD-4-Clause`
+- `ISC`
+- `curl`
+- `other`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris curl=7.68.0-1ubuntu2.11
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.11.dsc' curl_7.68.0-1ubuntu2.11.dsc 2737 SHA512:0f8d4a00073bfb5ad72c692f56534b229883044c75b7fb90501b9f4ab7b4c7c5e8b4ebbc0ec6ad0f7760323426f6c6d03d6ef67702fffff5c9c2b2b2fb406331
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0.orig.tar.gz' curl_7.68.0.orig.tar.gz 4096350 SHA512:58b42c08b1cf4cb6e68f8e469d5b5f6298eebe286ba2677ad29e1a7eefd15b8609af54544f4c5a7dadebbd3b23bd77700830f2f60fbea7ae3f2f306e640010b0
+'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.68.0-1ubuntu2.11.debian.tar.xz' curl_7.68.0-1ubuntu2.11.debian.tar.xz 56048 SHA512:b7504d92d64b8fd8734614845fc125421cae0e64fd52afeaf233763b33d0dceaac0887b572a463ef3f3dfd0c1d5baf33eedb82c3bc6612668580c660c937b729
+```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-2ubuntu0.1`
 
@@ -653,12 +681,12 @@ $ apt-get source -qq --print-uris gdbm=1.18.1-5
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.18.1-5.debian.tar.xz' gdbm_1.18.1-5.debian.tar.xz 16348 SHA256:3c1a0e05b40a97ee51ce77c736c72c37738ba31b2720111d3bc99175a2c3a3ed
 ```
 
-### `dpkg` source package: `git=1:2.25.1-1ubuntu3.3`
+### `dpkg` source package: `git=1:2.25.1-1ubuntu3.4`
 
 Binary Packages:
 
-- `git=1:2.25.1-1ubuntu3.3`
-- `git-man=1:2.25.1-1ubuntu3.3`
+- `git=1:2.25.1-1ubuntu3.4`
+- `git-man=1:2.25.1-1ubuntu3.4`
 
 Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/copyright`)
 
@@ -681,9 +709,14 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris git=1:2.25.1-1ubuntu3.4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.4.dsc' git_2.25.1-1ubuntu3.4.dsc 2962 SHA512:eb2b1800c05ed3826469f49c95ff154e646c8187ce75f758975f0802d531a1ffbdb41f922626c46a74a5d677f3a53962b7be52c5caca7c60af47c50776a7eae4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1.orig.tar.xz' git_2.25.1.orig.tar.xz 5875548 SHA512:15241143acfd8542d85d2709ac3c80dbd6e8d5234438f70c4f33cc71a2bdec3e32938df7f6351e2746d570b021d3bd0b70474ea4beec0c51d1fc45f9c287b344
+'http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.25.1-1ubuntu3.4.debian.tar.xz' git_2.25.1-1ubuntu3.4.debian.tar.xz 661056 SHA512:5af63bee7c5a2e2ea0214b79d3cd421d2b089676c5c3c5f78e1487fa6f5e54bc101b79dac4aa51517d6093fbc0fa7c3058a211701d2eb13999bf5ee3a869a5ea
+```
 
 ### `dpkg` source package: `glibc=2.31-0ubuntu9.7`
 
@@ -1724,11 +1757,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `openssh=1:8.2p1-4ubuntu0.4`
+### `dpkg` source package: `openssh=1:8.2p1-4ubuntu0.5`
 
 Binary Packages:
 
-- `openssh-client=1:8.2p1-4ubuntu0.4`
+- `openssh-client=1:8.2p1-4ubuntu0.5`
 
 Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 
@@ -1741,9 +1774,14 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssh=1:8.2p1-4ubuntu0.5
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.5.dsc' openssh_8.2p1-4ubuntu0.5.dsc 3098 SHA512:6b6c0dfcea6e32b4cae419adaa9f16612e1e599f9de31a7b43b181da1f10048ea852cef9d3337bfd77f708571ba521617fe5c23352be521bf36a946f72cc516d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1.orig.tar.gz' openssh_8.2p1.orig.tar.gz 1701197 SHA512:c4db64e52a3a4c410de9de49f9cb104dd493b10250af3599b92457dd986277b3fd99a6f51cec94892fd1be5bd0369c5757262ea7805f0de464b245c3d34c120a
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.2p1-4ubuntu0.5.debian.tar.xz' openssh_8.2p1-4ubuntu0.5.debian.tar.xz 176572 SHA512:15200a62ea815f8de47631706059209f2e424809e044b4a6e1dc645cda145de10fd039721dfb7600df9e5f7ec755dd38308460e8230959d002e75bebf8fca510
+```
 
 ### `dpkg` source package: `openssl=1.1.1f-1ubuntu2.12`
 
