@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:597a14e354f094f907eeabad20df8738df57b138115e5583a09adb6f30f4e22a`
-- Created: `2022-05-02T18:23:52.367057823Z`
+- Image ID: `sha256:33957a339e91524d8c5445340abf1eda5aad366e2af7ecd4129c7934d7fd891a`
+- Created: `2022-06-01T17:07:23.948066944Z`
 - Virtual Size: ~ 186.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20220502`
+  - `build-date=20220601`
   - `name=SL7 Base Image`
   - `vendor=Scientific Linux`
 
@@ -424,26 +424,26 @@ $ dnf --quiet download --source --url glib2-2.56.1-9.el7_9
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/glib2-2.56.1-9.el7_9.src.rpm
 ```
 
-### `rpm` package: `glibc-2.17-325.el7_9.x86_64`
+### `rpm` package: `glibc-2.17-326.el7_9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url glibc-2.17-325.el7_9
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/glibc-2.17-325.el7_9.src.rpm
+$ dnf --quiet download --source --url glibc-2.17-326.el7_9
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/glibc-2.17-326.el7_9.src.rpm
 ```
 
-### `rpm` package: `glibc-common-2.17-325.el7_9.x86_64`
+### `rpm` package: `glibc-common-2.17-326.el7_9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url glibc-common-2.17-325.el7_9
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/glibc-2.17-325.el7_9.src.rpm
+$ dnf --quiet download --source --url glibc-common-2.17-326.el7_9
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/glibc-2.17-326.el7_9.src.rpm
 ```
 
 ### `rpm` package: `gmp-6.0.0-15.el7.x86_64`
@@ -502,15 +502,15 @@ $ dnf --quiet download --source --url grep-2.20-3.el7
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/grep-2.20-3.el7.src.rpm
 ```
 
-### `rpm` package: `gzip-1.5-10.el7.x86_64`
+### `rpm` package: `gzip-1.5-11.el7_9.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GFDL
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url gzip-1.5-10.el7
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/gzip-1.5-10.el7.src.rpm
+$ dnf --quiet download --source --url gzip-1.5-11.el7_9
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/gzip-1.5-11.el7_9.src.rpm
 ```
 
 ### `rpm` package: `hardlink-1.0-19.el7.x86_64`
@@ -1614,13 +1614,13 @@ $ dnf --quiet download --source --url yum-plugin-ovl-1.1.31-54.el7_8.noarch
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/yum-utils-1.1.31-54.el7_8.src.rpm
 ```
 
-### `rpm` package: `zlib-1.2.7-19.el7_9.x86_64`
+### `rpm` package: `zlib-1.2.7-20.el7_9.x86_64`
 
 Licenses (from `rpm --query`): zlib and Boost
 
 Source:
 
 ```console
-$ dnf --quiet download --source --url zlib-1.2.7-19.el7_9
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/zlib-1.2.7-19.el7_9.src.rpm
+$ dnf --quiet download --source --url zlib-1.2.7-20.el7_9
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS/vendor/zlib-1.2.7-20.el7_9.src.rpm
 ```
