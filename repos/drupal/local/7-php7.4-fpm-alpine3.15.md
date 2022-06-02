@@ -1,10 +1,10 @@
-# `drupal:7.89-php7.4-fpm-alpine3.15`
+# `drupal:7.90-php7.4-fpm-alpine3.15`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c3fdb60c2476bac5c86d30c1bbe1f3e829f08761d19a2f972232e042f335e353`
-- Created: `2022-04-19T02:29:24.921045734Z`
-- Virtual Size: ~ 85.41 Mb  
+- Image ID: `sha256:0158bfb6fe563768d2ecf597aad58098125e0a8f399086e849a1c2e29ca206e9`
+- Created: `2022-06-01T16:35:37.94800804Z`
+- Virtual Size: ~ 85.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -21,8 +21,8 @@
   - `PHP_URL=https://www.php.net/distributions/php-7.4.29.tar.xz`
   - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.29.tar.xz.asc`
   - `PHP_SHA256=7d0f07869f33311ff3fe1138dc0d6c0d673c37fcb737eaed2c6c10a949f1aed6`
-  - `DRUPAL_VERSION=7.89`
-  - `DRUPAL_MD5=924e707e3b1e8269fe623cf2f22ee710`
+  - `DRUPAL_VERSION=7.90`
+  - `DRUPAL_MD5=4cb30e74d1b57ef32d8efcd664e32f54`
 
 ## `apk` (`.apk`-based packages)
 
