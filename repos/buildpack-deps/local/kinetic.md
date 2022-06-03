@@ -46,13 +46,9 @@ Licenses: (parsed from: `/usr/share/doc/adduser/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris adduser=3.118ubuntu5
-'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu5.dsc' adduser_3.118ubuntu5.dsc 1766 SHA512:8d6e9894549dc9dd53db8480cb18ee9b012bc70ea7b53d72b0ad8ad713a1672d2e94750e1cde44d2b8f9fd7e66b1ea7c2ad20202fc7bcd90e2fba5cee63d5b5d
-'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu5.tar.xz' adduser_3.118ubuntu5.tar.xz 222904 SHA512:ded568a5a3f5a5ac1acc2098e37160194f8c4622e90c7044d599286a321fe8fd701c8554a4517e4d72a6089b8e3b5592b92d46668032bda81de64cc736bf0a75
-```
 
 ### `dpkg` source package: `aom=3.3.0-2`
 
@@ -271,13 +267,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=12ubuntu5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu5.dsc' base-files_12ubuntu5.dsc 1245 SHA512:85c80988f54f596764037bdfc42b8cbe3fc842d054ab231b820d9a544fe2468ee7e636e69b55e6ac1b9fd041745b51f3a9ff30ce87513a52695f6e40cb00b8a0
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_12ubuntu5.tar.xz' base-files_12ubuntu5.tar.xz 81756 SHA512:e8dc55ef082d1ea50a60dbeab0ade5f279cf9059b067280cb1c3608935b9f94eed236914fec0270adc13649bc0ccc94a290b7a8dc64526e3861365a29aec0221
-```
 
 ### `dpkg` source package: `base-passwd=3.5.52build1`
 
@@ -2975,14 +2967,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.15.0-28.29
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-28.29.dsc' linux_5.15.0-28.29.dsc 7191 SHA512:d8c3aa467c6e6903bc4a201ac8908942aba3b3fae362952a7b9bc6690d643c6b605ff9956efd75043328fc54de62357219e121b1ea684366a9467b3d4b0c256c
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0.orig.tar.gz' linux_5.15.0.orig.tar.gz 194969557 SHA512:ae9a32132d5988441c189157703b0f8fa4e232d8d24f7104f944c06827db740beafae55eb37a51eb99b4ac513927cd372321fa1e84afff4d450b786e44414861
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.15.0-28.29.diff.gz' linux_5.15.0-28.29.diff.gz 6697229 SHA512:577d3a81657c752e9a37ae47e2bdcbe72d47994c74c9b8027973e6768486e56401b2dd5a270a9288a6fa23847d216aed7e8f86f40915ce5c4300494d994f0ae5
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu4`
 
@@ -3014,13 +3001,9 @@ Licenses: (parsed from: `/usr/share/doc/lto-disabled-list/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lto-disabled-list=25
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lto-disabled-list/lto-disabled-list_25.dsc' lto-disabled-list_25.dsc 1421 SHA512:63725198a036c0dca7c5850d4de99ce6b0aab1385faaf4b94aaa7dbbf000024137886237ab4e77b9328555d80700d5a00c4fede04db435de38ca485d63e47efe
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lto-disabled-list/lto-disabled-list_25.tar.xz' lto-disabled-list_25.tar.xz 12528 SHA512:324dbfec9e9c0b066876f18c49dd7cb6450a7f75927bef63ebcf10b5a5aa3bbe1adbe63f3df897a185c595424509d939a62074988cce8542771bf528109f3f37
-```
 
 ### `dpkg` source package: `lz4=1.9.3-2build2`
 
@@ -3901,14 +3884,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.10.4-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.4-0ubuntu1.dsc' python3-stdlib-extensions_3.10.4-0ubuntu1.dsc 2599 SHA512:63307ed3a72a01527f68398f905f1b90cf06bdd36e6c8e1c0012bc88166a70f3b6383613966eafdb655c149b158a7d6454945ebec05566c4754bcf587f7cd343
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.4.orig.tar.xz' python3-stdlib-extensions_3.10.4.orig.tar.xz 1113688 SHA512:44ab4d6d883f62a2ebfe6585509caef63d74daea5970487231646c5adf9622e3f979c552867520bb08a7254520d23c6593602a6136ecce32eeaa5e941bd142a3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.10.4-0ubuntu1.debian.tar.xz' python3-stdlib-extensions_3.10.4-0ubuntu1.debian.tar.xz 25344 SHA512:4e72bfa2127d0b7ef55c698955a1fc1e6ded2c9926741262c2fbf4cc950a21175f5425cfa1800b668a71ebc6dc08403725d2d6a9b5a6f05ce674e01717275f41
-```
 
 ### `dpkg` source package: `python3.10=3.10.4-4`
 

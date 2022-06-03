@@ -213,9 +213,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris bash=5.1-6
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-6.dsc' bash_5.1-6.dsc 2292 SHA256:f1a717dd6f67c39b5b72af43fd62d23e2e492019c701068c7f8eb0e06033ec23
+'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-6.1.dsc' bash_5.1-6.1.dsc 2279 SHA256:01eabdef2dfbb323ff1bf475b5fb9176456de2d5210dbc83b5e85c40afd10105
 'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1.orig.tar.xz' bash_5.1.orig.tar.xz 5802740 SHA256:d5eeee4f953c09826409d572e2e8996a2140d67eb8f382ce1f3a9d23883ad696
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-6.debian.tar.xz' bash_5.1-6.debian.tar.xz 93524 SHA256:929c7ff828d449f17f7cbe76a34634c62722b899d5429488704a393a534a0ae6
+'http://deb.debian.org/debian/pool/main/b/bash/bash_5.1-6.1.debian.tar.xz' bash_5.1-6.1.debian.tar.xz 93472 SHA256:241906d63ddde94eadadaff6c0e50cea1cc3736d00e521709a02b547737e713f
 ```
 
 Other potentially useful URLs:
@@ -1524,19 +1524,13 @@ Licenses: (parsed from: `/usr/share/doc/lsb-base/copyright`)
 - `BSD-3-clause`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lsb=11.1.0
-'http://deb.debian.org/debian/pool/main/l/lsb/lsb_11.1.0.dsc' lsb_11.1.0.dsc 1800 SHA256:5cb5679dcc92e30aa878f892f73081d6b4d5299841549f6d53a886d51509feb1
-'http://deb.debian.org/debian/pool/main/l/lsb/lsb_11.1.0.tar.xz' lsb_11.1.0.tar.xz 42452 SHA256:c7926d511228862892630070f7708c425db9473ceefc70872868c448b5145b57
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lsb/11.1.0/
 
-- https://sources.debian.net/src/lsb/11.1.0/ (for browsing the source)
-- https://sources.debian.net/src/lsb/11.1.0/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lsb/11.1.0/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.9.3-2`
 
@@ -1749,20 +1743,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.5.11+dfsg-1
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.11%2bdfsg-1.dsc' openldap_2.5.11+dfsg-1.dsc 3179 SHA256:19759b4b8305a8afc784e5669ce4c6eb960827b2d479ae5879ad7afd47b31dc5
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.11%2bdfsg.orig.tar.gz' openldap_2.5.11+dfsg.orig.tar.gz 5609424 SHA256:a159eece6577fd97aaa894b72e08f94d6d404155d05bf4653602418a88b20904
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.5.11%2bdfsg-1.debian.tar.xz' openldap_2.5.11+dfsg-1.debian.tar.xz 157864 SHA256:6e430b7ce7007bd83d79f2dafe38fcf85f43b1c30c3bcbc86e24ad0f4641e66f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.5.11+dfsg-1/
 
-- https://sources.debian.net/src/openldap/2.5.11+dfsg-1/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.5.11+dfsg-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.5.11+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1o-1`
 
