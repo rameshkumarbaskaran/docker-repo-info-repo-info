@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a27a562094207a2c19e5279c06cc81fa52fee37a7e627676646a9cfb6fbcacd3`
-- Created: `2022-05-20T22:45:31.968062281Z`
-- Virtual Size: ~ 36.90 Mb  
+- Image ID: `sha256:4a211faa08363be35086ee466c1e5c9d464d312f5b523abad3db417839f6dacf`
+- Created: `2022-06-03T23:20:04.764993314Z`
+- Virtual Size: ~ 36.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20220520`
+  - `build-date=20220603`
   - `name=Photon OS x86_64/4.0 Base Image`
   - `vendor=VMware`
 
@@ -41,13 +41,13 @@ Licenses (from `rpm --query`): Custom
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `curl-7.82.0-3.ph4.x86_64`
+### `rpm` package: `curl-7.82.0-4.ph4.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `curl-libs-7.82.0-3.ph4.x86_64`
+### `rpm` package: `curl-libs-7.82.0-4.ph4.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -101,7 +101,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `libcap-2.43-1.ph4.x86_64`
+### `rpm` package: `libcap-2.43-2.ph4.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
@@ -137,7 +137,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `ncurses-libs-6.2-5.ph4.x86_64`
+### `rpm` package: `ncurses-libs-6.2-6.ph4.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -197,13 +197,13 @@ Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `tdnf-3.2.5-2.ph4.x86_64`
+### `rpm` package: `tdnf-3.3.1-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `tdnf-cli-libs-3.2.5-2.ph4.x86_64`
+### `rpm` package: `tdnf-cli-libs-3.3.1-1.ph4.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
