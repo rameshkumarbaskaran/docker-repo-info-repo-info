@@ -1,7 +1,7 @@
 ## `ros:foxy-ros1-bridge-focal`
 
 ```console
-$ docker pull ros@sha256:fa04ffe4b407e1c3ce05239a4e2f7373b49ce89fb04fdb47631ae59e36586422
+$ docker pull ros@sha256:23057a8b5b5f605187378c65129216db6659b8ba0d717d90b34495af6256de68
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,132 +12,132 @@ $ docker pull ros@sha256:fa04ffe4b407e1c3ce05239a4e2f7373b49ce89fb04fdb47631ae59
 ### `ros:foxy-ros1-bridge-focal` - linux; amd64
 
 ```console
-$ docker pull ros@sha256:471cea3a3cd89d9009f2af6e940602d2be8616ef8ad5aec2fab565e5fe7e0877
+$ docker pull ros@sha256:845fc60bb1307a03bf649f02283e0cfe1304fbf4823b8541fb1a0060c543b43f
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **349.7 MB (349719626 bytes)**  
+-	Total Size: **348.5 MB (348478447 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d9c3b6d782d54002076c35ea6faa00a0fec26265116b7709b8a2746b6f8a0f09`
+-	Image ID: `sha256:665532b112476db2c919c9d6ea566b426ee92be833f5eb901fff3e427584f343`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Fri, 29 Apr 2022 23:20:59 GMT
-ADD file:7009ad0ee0bbe5ed7f381792e07347e260e6896aeee0d80597808065120fa96b in / 
-# Fri, 29 Apr 2022 23:20:59 GMT
+# Mon, 06 Jun 2022 22:21:11 GMT
+ADD file:00dae10e79b05c4e1a3db053a1f85a4f38a39fe85cbbd88d74201a01a7dd59b5 in / 
+# Mon, 06 Jun 2022 22:21:12 GMT
 CMD ["bash"]
-# Sat, 30 Apr 2022 00:39:00 GMT
+# Tue, 07 Jun 2022 01:10:54 GMT
 RUN echo 'Etc/UTC' > /etc/timezone &&     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime &&     apt-get update &&     apt-get install -q -y --no-install-recommends tzdata &&     rm -rf /var/lib/apt/lists/*
-# Sat, 30 Apr 2022 02:00:47 GMT
+# Tue, 07 Jun 2022 01:11:01 GMT
 RUN apt-get update && apt-get install -q -y --no-install-recommends     dirmngr     gnupg2     && rm -rf /var/lib/apt/lists/*
-# Sat, 30 Apr 2022 02:11:21 GMT
+# Tue, 07 Jun 2022 01:22:52 GMT
 RUN echo "deb http://packages.ros.org/ros2/ubuntu focal main" > /etc/apt/sources.list.d/ros2-latest.list
-# Sat, 30 Apr 2022 02:11:22 GMT
+# Tue, 07 Jun 2022 01:22:53 GMT
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-# Sat, 30 Apr 2022 02:11:22 GMT
+# Tue, 07 Jun 2022 01:22:53 GMT
 ENV LANG=C.UTF-8
-# Sat, 30 Apr 2022 02:11:22 GMT
+# Tue, 07 Jun 2022 01:22:53 GMT
 ENV LC_ALL=C.UTF-8
-# Sat, 30 Apr 2022 02:11:22 GMT
+# Tue, 07 Jun 2022 01:22:53 GMT
 ENV ROS_DISTRO=foxy
-# Sat, 30 Apr 2022 02:12:22 GMT
+# Tue, 07 Jun 2022 01:23:52 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-foxy-ros-core=0.9.2-1*     && rm -rf /var/lib/apt/lists/*
-# Sat, 30 Apr 2022 02:12:24 GMT
+# Tue, 07 Jun 2022 01:23:54 GMT
 COPY file:57f71198b74c2c1967889acdfddb85d428137580d18be4211971fc7381557b6c in / 
-# Sat, 30 Apr 2022 02:12:24 GMT
+# Tue, 07 Jun 2022 01:23:54 GMT
 ENTRYPOINT ["/ros_entrypoint.sh"]
-# Sat, 30 Apr 2022 02:12:24 GMT
+# Tue, 07 Jun 2022 01:23:54 GMT
 CMD ["bash"]
-# Sat, 30 Apr 2022 02:12:55 GMT
+# Tue, 07 Jun 2022 01:24:24 GMT
 RUN apt-get update && apt-get install --no-install-recommends -y     build-essential     git     python3-colcon-common-extensions     python3-colcon-mixin     python3-rosdep     python3-vcstool     && rm -rf /var/lib/apt/lists/*
-# Sat, 30 Apr 2022 02:13:00 GMT
+# Tue, 07 Jun 2022 01:24:31 GMT
 RUN rosdep init &&   rosdep update --rosdistro $ROS_DISTRO
-# Sat, 30 Apr 2022 02:13:05 GMT
+# Tue, 07 Jun 2022 01:24:37 GMT
 RUN colcon mixin add default       https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml &&     colcon mixin update &&     colcon metadata add default       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml &&     colcon metadata update
-# Sat, 30 Apr 2022 02:13:21 GMT
+# Tue, 07 Jun 2022 01:24:52 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-foxy-ros-base=0.9.2-1*     && rm -rf /var/lib/apt/lists/*
-# Sat, 30 Apr 2022 02:13:27 GMT
+# Tue, 07 Jun 2022 01:24:59 GMT
 RUN echo "deb http://packages.ros.org/ros/ubuntu focal main" > /etc/apt/sources.list.d/ros1-latest.list
-# Sat, 30 Apr 2022 02:13:29 GMT
+# Tue, 07 Jun 2022 01:25:00 GMT
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-# Sat, 30 Apr 2022 02:13:29 GMT
+# Tue, 07 Jun 2022 01:25:00 GMT
 ENV ROS1_DISTRO=noetic
-# Sat, 30 Apr 2022 02:13:29 GMT
+# Tue, 07 Jun 2022 01:25:00 GMT
 ENV ROS2_DISTRO=foxy
-# Sat, 30 Apr 2022 02:13:53 GMT
+# Tue, 07 Jun 2022 01:25:25 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-noetic-ros-comm=1.15.14-1*     ros-noetic-roscpp-tutorials=0.10.2-1*     ros-noetic-rospy-tutorials=0.10.2-1*     && rm -rf /var/lib/apt/lists/*
-# Sat, 30 Apr 2022 02:14:04 GMT
+# Tue, 07 Jun 2022 01:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends     ros-foxy-ros1-bridge=0.9.6-1*     ros-foxy-demo-nodes-cpp=0.9.3-1*     ros-foxy-demo-nodes-py=0.9.3-1*     && rm -rf /var/lib/apt/lists/*
-# Sat, 30 Apr 2022 02:14:04 GMT
+# Tue, 07 Jun 2022 01:25:38 GMT
 COPY file:f2fca591c0e2a31379c7ea28a9948ef5ee9d4a95b4831016253c1ef1a4f39718 in / 
 ```
 
 -	Layers:
-	-	`sha256:d5fd17ec1767521cf97f61568096bfc9a7cd9c2d149576a7b43930c5a97062b0`  
-		Last Modified: Thu, 28 Apr 2022 03:03:21 GMT  
-		Size: 28.6 MB (28566230 bytes)  
+	-	`sha256:d7bfe07ed8476565a440c2113cc64d7c0409dba8ef761fb3ec019d7e6b5952df`  
+		Last Modified: Wed, 01 Jun 2022 21:51:10 GMT  
+		Size: 28.6 MB (28572632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca43c78a9071a3a99b9aa1fe030cf8ba61c96fbf0b12adc1a85163d395cc10a1`  
-		Last Modified: Sat, 30 Apr 2022 00:50:22 GMT  
-		Size: 1.2 MB (1180884 bytes)  
+	-	`sha256:bf1e38681d9b6d153af3be7e0550217dc0dfb994512346ebc7d9a7a602651e74`  
+		Last Modified: Tue, 07 Jun 2022 01:47:20 GMT  
+		Size: 1.2 MB (1181179 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:695af473b1cd9e144d20d270ac7db7c1e34126fdb27db717ef1b82d4ea459397`  
-		Last Modified: Sat, 30 Apr 2022 02:23:44 GMT  
-		Size: 5.5 MB (5546712 bytes)  
+	-	`sha256:8a44b59555aadd115e37e45f079fef0ca694c5888fcd16350e10a693138a6db4`  
+		Last Modified: Tue, 07 Jun 2022 01:47:19 GMT  
+		Size: 5.5 MB (5547097 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20ecbdd5d86aa1bccfbc93111261e6b9ae8bbd5777bcb704b395d81b82a8e6f7`  
-		Last Modified: Sat, 30 Apr 2022 02:26:24 GMT  
-		Size: 230.0 B  
+	-	`sha256:12f29772f338ee6a1336a8cfeab6d4550be032d0e9cea76c782ba25f708e14a6`  
+		Last Modified: Tue, 07 Jun 2022 01:50:00 GMT  
+		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:184a755bf529bfea3fdd27ac8aa0a2c242d828fd03aa912766c514f925b0d324`  
-		Last Modified: Sat, 30 Apr 2022 02:26:24 GMT  
+	-	`sha256:0b699c33a19954e95275906408065472c7989f2a8bc685a5c9ffc5f7a70446e7`  
+		Last Modified: Tue, 07 Jun 2022 01:50:00 GMT  
 		Size: 2.0 KB (1990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c4352d7e2596c88ca8aa942219953143a17a9453871f288b5f352dbdb559f4d`  
-		Last Modified: Sat, 30 Apr 2022 02:26:45 GMT  
-		Size: 120.1 MB (120086250 bytes)  
+	-	`sha256:eb42810f84e69169e13f4ba7e14a1a7fa6d81dba996d2b091493577783be695e`  
+		Last Modified: Tue, 07 Jun 2022 01:50:21 GMT  
+		Size: 120.1 MB (120077388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea0e9bbed1d0b14dc544357de108d6f4ddafd24beb06a7734f5c47ba2142adbb`  
-		Last Modified: Sat, 30 Apr 2022 02:26:25 GMT  
+	-	`sha256:81f92457a493c04a77f0ac61cd065d158768a70191e86bf92fc446076123f8e7`  
+		Last Modified: Tue, 07 Jun 2022 01:50:00 GMT  
 		Size: 195.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65bf8fe277772f0499df386f672d466797d8e1b389cb7e27b531ed3f3bb91fdb`  
-		Last Modified: Sat, 30 Apr 2022 02:27:06 GMT  
-		Size: 74.5 MB (74540562 bytes)  
+	-	`sha256:476e616a90701bee44fbc310458b18ce75a4bdfe5680a22b27dba9a84bf0ef1c`  
+		Last Modified: Tue, 07 Jun 2022 01:50:41 GMT  
+		Size: 73.3 MB (73321142 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a7e4758ada805e565a51b082cf423dfcaa0584852447fc69f6389bb1e9c4400f`  
-		Last Modified: Sat, 30 Apr 2022 02:26:55 GMT  
-		Size: 254.9 KB (254921 bytes)  
+	-	`sha256:fa71ae8a0c62c2ef33328de080cdabeefda3946cc96f59ccad1ecba1796a9209`  
+		Last Modified: Tue, 07 Jun 2022 01:50:31 GMT  
+		Size: 257.1 KB (257124 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34a8c9291c7575bc8aceb707ad34ad1a467641e6cc4e996288462ad386f25d71`  
-		Last Modified: Sat, 30 Apr 2022 02:26:55 GMT  
-		Size: 2.2 KB (2192 bytes)  
+	-	`sha256:dd9ad82940247dc7731be3759d12e58bd52af7b3b53b4731f2d88990db31c281`  
+		Last Modified: Tue, 07 Jun 2022 01:50:31 GMT  
+		Size: 2.3 KB (2282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7686189d3c32eaec4a6e9b36df3aaae350d4808eba51c1c14d374e463008add4`  
-		Last Modified: Sat, 30 Apr 2022 02:26:58 GMT  
-		Size: 21.7 MB (21669633 bytes)  
+	-	`sha256:d0def727ac7744929624ad45072377c38e2b427e4acda1e1c0b108c45e6cae0f`  
+		Last Modified: Tue, 07 Jun 2022 01:50:35 GMT  
+		Size: 21.7 MB (21663791 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bcf64849d69a0668762771d46decff27002271117a9307b848787111eb04ded5`  
-		Last Modified: Sat, 30 Apr 2022 02:27:22 GMT  
-		Size: 224.0 B  
+	-	`sha256:8a3d2bc7757d3d9d4bb3b8f6a36ae62da3d95745ee4f11a56e38fdf554486938`  
+		Last Modified: Tue, 07 Jun 2022 01:50:55 GMT  
+		Size: 227.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:983bc670ad8a91de06ab59e59c959eb8b4ab62133c8274be34835e23f2125b44`  
-		Last Modified: Sat, 30 Apr 2022 02:27:22 GMT  
+	-	`sha256:b7ebc1131df0b50eabcf4d4c6f3247f87ddbbffc13edbfa443427e13add36ad4`  
+		Last Modified: Tue, 07 Jun 2022 01:50:55 GMT  
 		Size: 155.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40d497fc2f1e54dd6ae6ebb9a210bcaa83cdc477f318c26561fc26a0f5b47317`  
-		Last Modified: Sat, 30 Apr 2022 02:27:36 GMT  
-		Size: 76.3 MB (76324664 bytes)  
+	-	`sha256:12074399c950505a578a1947414ca27201fa77d5d64a7acd791e9a54957a4f68`  
+		Last Modified: Tue, 07 Jun 2022 01:51:10 GMT  
+		Size: 76.3 MB (76316167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:871d60c801818391ed70fb38ec09e11a67cd96a27d4c0c678d56e638b2c49240`  
-		Last Modified: Sat, 30 Apr 2022 02:27:26 GMT  
-		Size: 21.5 MB (21544540 bytes)  
+	-	`sha256:7ed4199ae2cdec8ea37d6ec3ae7cdeab825069a3f7d924bb5cbea0c4a5dc8f65`  
+		Last Modified: Tue, 07 Jun 2022 01:51:00 GMT  
+		Size: 21.5 MB (21536602 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d4afdffe0476c9e0722554858e2850f58ea931bf1205217d2826fce66caac27`  
-		Last Modified: Sat, 30 Apr 2022 02:27:22 GMT  
-		Size: 244.0 B  
+	-	`sha256:0c4fe45deb83c6b2ef4410607491f98ec61e82e32dde9b31b45a8868a4fc9248`  
+		Last Modified: Tue, 07 Jun 2022 01:50:55 GMT  
+		Size: 245.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:foxy-ros1-bridge-focal` - linux; arm64 variant v8
