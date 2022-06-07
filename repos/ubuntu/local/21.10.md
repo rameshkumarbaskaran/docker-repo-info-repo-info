@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:565852265961284e5715ccd6f1a20339c4b0448d7649d76e3abbd4fafab3adc4`
-- Created: `2022-04-29T23:21:07.509431711Z`
+- Image ID: `sha256:50398b9058c55fa969c8ab5db6a11ff52686a9b6738884a9113d164dc567dfac`
+- Created: `2022-06-06T22:21:19.310066598Z`
 - Virtual Size: ~ 77.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -54,12 +54,12 @@ $ apt-get source -qq --print-uris adduser=3.118ubuntu5
 'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu5.tar.xz' adduser_3.118ubuntu5.tar.xz 222904 SHA512:ded568a5a3f5a5ac1acc2098e37160194f8c4622e90c7044d599286a321fe8fd701c8554a4517e4d72a6089b8e3b5592b92d46668032bda81de64cc736bf0a75
 ```
 
-### `dpkg` source package: `apt=2.3.9`
+### `dpkg` source package: `apt=2.3.9ubuntu0.1`
 
 Binary Packages:
 
-- `apt=2.3.9`
-- `libapt-pkg6.0:amd64=2.3.9`
+- `apt=2.3.9ubuntu0.1`
+- `libapt-pkg6.0:amd64=2.3.9ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg6.0/copyright`)
 
@@ -69,9 +69,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apt=2.3.9
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9.dsc' apt_2.3.9.dsc 2797 SHA512:7d6469bfc071c06d00137f986b66ad3f8948a126c4178bebee810f3479aa7aa3e756a2118356dfeeef49f9c218dc804b3bc6a1c01e3c950475844f3d8631b36c
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9.tar.xz' apt_2.3.9.tar.xz 2204328 SHA512:1e3d65b8d1572ada5007bc5ca25c635580bfc6c03c94a69ab531cc26214fdb8dc78c3ecff0685537b629b714ec059bbe2d7c77a1fc6a406963a58c77e63d4f00
+$ apt-get source -qq --print-uris apt=2.3.9ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9ubuntu0.1.dsc' apt_2.3.9ubuntu0.1.dsc 2920 SHA512:0fde5b85261432e70291398ff282cae750f3d241d0d00afa45edb33055214f65bcc5d7efe0a9209745a3fe7476907436f8ba2416483510cb65bedd80357aecb6
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9ubuntu0.1.tar.xz' apt_2.3.9ubuntu0.1.tar.xz 2203752 SHA512:74fab1f48d6514aee3552166745f1f27bac8b33ea1f9ce9e17d43711ff34c32ab85d5b50761f899498d79c306e74cae7f769affbc9042eb622800ea8d551ddf2
 ```
 
 ### `dpkg` source package: `attr=1:2.4.48-6build2`
@@ -335,11 +335,11 @@ $ apt-get source -qq --print-uris diffutils=1:3.8-0ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.8-0ubuntu1.debian.tar.xz' diffutils_3.8-0ubuntu1.debian.tar.xz 11616 SHA512:061d016acfa3101c736279afc17b5f206666efc924dfc3fc13ae4a373059686630b49272a2f58b5275db832d5cb0123db5289066471260f6fd0bcab8db08683c
 ```
 
-### `dpkg` source package: `dpkg=1.20.9ubuntu2`
+### `dpkg` source package: `dpkg=1.20.9ubuntu2.2`
 
 Binary Packages:
 
-- `dpkg=1.20.9ubuntu2`
+- `dpkg=1.20.9ubuntu2.2`
 
 Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 
@@ -352,9 +352,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris dpkg=1.20.9ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.20.9ubuntu2.dsc' dpkg_1.20.9ubuntu2.dsc 2246 SHA512:b7ab9e1e15d0806748131008e7c19f9d0db3ad74a51cbe064eda2bf16c23dffc4a87884c70c0ae1150b074a016ac50d3719b056103cf7a7eb39ecde994b2805e
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.20.9ubuntu2.tar.xz' dpkg_1.20.9ubuntu2.tar.xz 4983396 SHA512:a4204ad7ba67e1be9af1478bc543ad5597d77a72edfdcdad03fbe7ed8a4a6ceb3e410603bc93ef4cd4a08c5054daccef0b22047c32572c880ff896e3fdfce570
+$ apt-get source -qq --print-uris dpkg=1.20.9ubuntu2.2
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.20.9ubuntu2.2.dsc' dpkg_1.20.9ubuntu2.2.dsc 2254 SHA512:2961080525981041a2359adb5d3a8a099c646b11c60c88e6e5afd7e8d33244fb42328899e1f8effc094869bc74c4b66d4808b19cca96df168737810972c70f52
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.20.9ubuntu2.2.tar.xz' dpkg_1.20.9ubuntu2.2.tar.xz 4984684 SHA512:7623024b3e233c86f3328b53f5cf61100d92ca26cb5c28613e966728ec69f930ede666a862e62a5236a3b08215d7a8428eecb337a605b20acd1570d3a9076abd
 ```
 
 ### `dpkg` source package: `e2fsprogs=1.46.3-1ubuntu3`
@@ -1147,19 +1147,25 @@ $ apt-get source -qq --print-uris nettle=3.7.3-1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.7.3-1.debian.tar.xz' nettle_3.7.3-1.debian.tar.xz 21956 SHA512:0170992b41041da149b1747bd106f8ef773a4643118e5483296d9e5afbff621d4afe7d087acd2cc320b5a5f418c2a44f67c79cdd32f131be5216434350850707
 ```
 
-### `dpkg` source package: `openssl=1.1.1l-1ubuntu1.2`
+### `dpkg` source package: `openssl=1.1.1l-1ubuntu1.3`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1l-1ubuntu1.2`
+- `libssl1.1:amd64=1.1.1l-1ubuntu1.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1l-1ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1l-1ubuntu1.3.dsc' openssl_1.1.1l-1ubuntu1.3.dsc 2745 SHA512:a718ce269139c485c257d8e622d446b52bd91a1bee54ccc30d297be9de410fe599f393ce020061e72fbb90688225181089a0da44fe78282327da4e1724a0d235
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1l.orig.tar.gz' openssl_1.1.1l.orig.tar.gz 9834044 SHA512:d9611f393e37577cca05004531388d3e0ebbf714894cab9f95f4903909cd4f45c214faab664c0cbc3ad3cca309d500b9e6d0ecbf9a0a0588d1677dc6b047f9e0
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1l.orig.tar.gz.asc' openssl_1.1.1l.orig.tar.gz.asc 488 SHA512:22f58aa49cec9e9678e56817113cccb5e1999b3148b1b3c40cf57c217d29b6bf3c7d8a4ed85b2dc865a1560095350902f7a3c78f6d4bb36ca2968740a8407aaf
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1l-1ubuntu1.3.debian.tar.xz' openssl_1.1.1l-1ubuntu1.3.debian.tar.xz 149576 SHA512:bea3091d2fdb3d6b0d74b67347a88b01e0cc94aa421a2eafaba8444757e9f934c10ae8f6afe46f53d8432819f7a0ca413ed016b1fdd7794bdadbeb2764fb19b3
+```
 
 ### `dpkg` source package: `p11-kit=0.23.22-1build1`
 
@@ -1226,11 +1232,11 @@ $ apt-get source -qq --print-uris pcre2=10.37-0ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre2/pcre2_10.37-0ubuntu2.debian.tar.xz' pcre2_10.37-0ubuntu2.debian.tar.xz 7264 SHA512:f08d80db62416ea466e6cef6a26dd6b8b499522bfec9dbd3353c746a865f0bdb0fb0e1b3fc685666790bd447fc202f1898729f5f49a9ef201ed75d9fb6dc5731
 ```
 
-### `dpkg` source package: `pcre3=2:8.39-13build3`
+### `dpkg` source package: `pcre3=2:8.39-13ubuntu0.21.10.1`
 
 Binary Packages:
 
-- `libpcre3:amd64=2:8.39-13build3`
+- `libpcre3:amd64=2:8.39-13ubuntu0.21.10.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1239,10 +1245,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris pcre3=2:8.39-13build3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-13build3.dsc' pcre3_8.39-13build3.dsc 2133 SHA512:bb81a058b965410c21825613fb206687a46dd4186d04ac65b3eb6c0b2bf5230fa1c48a03f30d706f1714c2888855f08783b893c63db0e45c33b32816fbc6ad4f
+$ apt-get source -qq --print-uris pcre3=2:8.39-13ubuntu0.21.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-13ubuntu0.21.10.1.dsc' pcre3_8.39-13ubuntu0.21.10.1.dsc 2101 SHA512:2eaa19ce65af4e38edee2bdce6699a1f59bdb09c1163bab620d4a1f173aa22c6cb649d4f68d6350991a012bc275d73d09db946188fb933410b6697310847a3db
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39.orig.tar.bz2' pcre3_8.39.orig.tar.bz2 1560758 SHA512:8b0f14ae5947c4b2d74876a795b04e532fd71c2479a64dbe0ed817e7c7894ea3cae533413de8c17322d305cb7f4e275d72b43e4e828eaca77dc4bcaf04529cf6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-13build3.debian.tar.gz' pcre3_8.39-13build3.debian.tar.gz 26940 SHA512:2c35a015446cc3d8ed78ed254a8a212d29f398f5b5a2d643dabcb3c559e4ff3e5e44f922a5746ccd981952adf9fa6a3529ddfe3abc5d862d86380b545641aaab
+'http://archive.ubuntu.com/ubuntu/pool/main/p/pcre3/pcre3_8.39-13ubuntu0.21.10.1.debian.tar.gz' pcre3_8.39-13ubuntu0.21.10.1.debian.tar.gz 27492 SHA512:dbc37793c91f227efcee1bebc1907bd1604c3479f079f0156d9a76296aa7d73000c32526fd7f0f429d9575fbd5b2db901e2a7ea7965a928ac098cb90cc1173e4
 ```
 
 ### `dpkg` source package: `perl=5.32.1-3ubuntu3`
@@ -1377,12 +1383,12 @@ $ apt-get source -qq --print-uris shadow=1:4.8.1-1ubuntu9
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.8.1-1ubuntu9.debian.tar.xz' shadow_4.8.1-1ubuntu9.debian.tar.xz 86872 SHA512:89d9d4c33598252e3df47b69e30424edea9743c6033fcf296a6a8ce2b450f9ea67008a3a79a5667a775eedf58320fd25fff83eb9e613e34ac9a88601c2c96930
 ```
 
-### `dpkg` source package: `systemd=248.3-1ubuntu8.5`
+### `dpkg` source package: `systemd=248.3-1ubuntu8.6`
 
 Binary Packages:
 
-- `libsystemd0:amd64=248.3-1ubuntu8.5`
-- `libudev1:amd64=248.3-1ubuntu8.5`
+- `libsystemd0:amd64=248.3-1ubuntu8.6`
+- `libudev1:amd64=248.3-1ubuntu8.6`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1395,9 +1401,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=248.3-1ubuntu8.6
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu8.6.dsc' systemd_248.3-1ubuntu8.6.dsc 5374 SHA512:32f7fb369859a1c9abab66f79b4e6bb6db6befc685b4341b4ff8c675679e6aea22a724a98b540d54351ccd5a8b4f12cddec440caa7cff4ee1bef8fec10ebed3c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3.orig.tar.gz' systemd_248.3.orig.tar.gz 10320940 SHA512:8e7ff0d5e63cc933e4dc23f7e0bef9707fde90396605eb8822d34de90d7abe8fd37e5739e33b657868218aa7281147cc944c096c007324c3e6fb54d833a83485
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_248.3-1ubuntu8.6.debian.tar.xz' systemd_248.3-1ubuntu8.6.debian.tar.xz 222604 SHA512:833d534fd75f3f789805c44f74330cc6be4c3f1ec430a96fb1c6e42e53d2cf9b1756eaaff5322b6467aabc75ae5db8be4f269f6dc9c60b382a594ffff6d01c96
+```
 
 ### `dpkg` source package: `sysvinit=2.96-7ubuntu1`
 
