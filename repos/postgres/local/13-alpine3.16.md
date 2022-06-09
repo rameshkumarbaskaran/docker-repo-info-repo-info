@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2557ebf9b7df1de90c2f02c7c79c40be89c54817a19d7a8c91c51d1d57376e82`
-- Created: `2022-05-25T20:44:17.594945098Z`
-- Virtual Size: ~ 185.10 Mb  
+- Image ID: `sha256:5b33cf664cdde678b1eba0f1e03bf4f3c63d315e1810146902add64a4df18f1c`
+- Created: `2022-06-06T22:07:59.387329359Z`
+- Virtual Size: ~ 212.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -155,19 +155,19 @@ GPL-3.0-or-later
 
 ```
 
-### `apk` package: `icu-data-en`
+### `apk` package: `icu-data-full`
 
 ```console
-icu-data-en-71.1-r2 description:
-Stripped down ICU data with only en_US/GB locale and no legacy charset converters
+icu-data-full-71.1-r2 description:
+Full ICU data
 
-icu-data-en-71.1-r2 webpage:
+icu-data-full-71.1-r2 webpage:
 https://icu.unicode.org/
 
-icu-data-en-71.1-r2 installed size:
-2640 KiB
+icu-data-full-71.1-r2 installed size:
+29 MiB
 
-icu-data-en-71.1-r2 license:
+icu-data-full-71.1-r2 license:
 MIT ICU Unicode-TOU
 
 ```
