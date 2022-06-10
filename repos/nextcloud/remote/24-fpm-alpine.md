@@ -1,7 +1,7 @@
 ## `nextcloud:24-fpm-alpine`
 
 ```console
-$ docker pull nextcloud@sha256:ff844d5b7226380bf9b3762cd7f64bd0f9e88e30e6671845566bab47edc6df78
+$ docker pull nextcloud@sha256:4d9b40ee9bd74e17e0cf4781f5c2b7455851e1b247461cdab0bc30535170bdb5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -174,14 +174,14 @@ CMD ["php-fpm"]
 ### `nextcloud:24-fpm-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull nextcloud@sha256:b08c5153a9b10b8503dbd60f431306fedfa6f2660b0a24e12e1fcce7f8e01809
+$ docker pull nextcloud@sha256:802f3c3f037fa356d53e4898d2bda6f49a19318dcc712d1d062de58f5669592d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.1 MB (186098113 bytes)**  
+-	Total Size: **186.2 MB (186198916 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e15ddae773ce950a110c65c6053108dc1a32499247c7d3998a1fa84fc4505029`
+-	Image ID: `sha256:3c855f58faa24eb6f8b6825d5ff90ff826fbb41412f94ea2be369e310a6de66a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -208,57 +208,57 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D
 ENV PHP_LDFLAGS=-Wl,-O1 -pie
 # Tue, 05 Apr 2022 00:35:51 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 BFDDD28642824F8118EF77909B67A5C12229118F
-# Thu, 12 May 2022 18:53:07 GMT
-ENV PHP_VERSION=8.0.19
-# Thu, 12 May 2022 18:53:08 GMT
-ENV PHP_URL=https://www.php.net/distributions/php-8.0.19.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.19.tar.xz.asc
-# Thu, 12 May 2022 18:53:08 GMT
-ENV PHP_SHA256=ba62219c4b0486cbb2a04f0796749a46b0ee1f5a142ed454212b4e2460cb0fab
-# Thu, 12 May 2022 18:53:16 GMT
+# Fri, 10 Jun 2022 00:12:29 GMT
+ENV PHP_VERSION=8.0.20
+# Fri, 10 Jun 2022 00:12:29 GMT
+ENV PHP_URL=https://www.php.net/distributions/php-8.0.20.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.0.20.tar.xz.asc
+# Fri, 10 Jun 2022 00:12:29 GMT
+ENV PHP_SHA256=973fec765336ee01f47536a5db1c2eee98df9d34a41522b7b6c760159bf0a77b
+# Fri, 10 Jun 2022 00:12:39 GMT
 RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
-# Thu, 12 May 2022 18:53:17 GMT
+# Fri, 10 Jun 2022 00:12:40 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Thu, 12 May 2022 19:05:14 GMT
+# Fri, 10 Jun 2022 00:22:12 GMT
 RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		gnu-libiconv-dev 		libsodium-dev 		libxml2-dev 		linux-headers 		oniguruma-dev 		openssl-dev 		readline-dev 		sqlite-dev 	; 		rm -vf /usr/include/iconv.h; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--with-pic 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-iconv=/usr 		--with-openssl 		--with-readline 		--with-zlib 				--disable-phpdbg 				--with-pear 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 				--disable-cgi 				--enable-fpm 		--with-fpm-user=www-data 		--with-fpm-group=www-data 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find 		/usr/local 		-type f 		-perm '/0111' 		-exec sh -euxc ' 			strip --strip-all "$@" || : 		' -- '{}' + 	; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 		php --version
-# Thu, 12 May 2022 19:05:15 GMT
+# Fri, 10 Jun 2022 00:22:14 GMT
 COPY multi:869bde9dbeae74886a05c9e2107b3e3b4877116db8c6d9adbaff2719f9fb5262 in /usr/local/bin/ 
-# Thu, 12 May 2022 19:05:17 GMT
+# Fri, 10 Jun 2022 00:22:17 GMT
 RUN docker-php-ext-enable sodium
-# Thu, 12 May 2022 19:05:18 GMT
+# Fri, 10 Jun 2022 00:22:17 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Thu, 12 May 2022 19:05:18 GMT
+# Fri, 10 Jun 2022 00:22:17 GMT
 WORKDIR /var/www/html
-# Thu, 12 May 2022 19:05:20 GMT
+# Fri, 10 Jun 2022 00:22:19 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Thu, 12 May 2022 19:05:20 GMT
+# Fri, 10 Jun 2022 00:22:19 GMT
 STOPSIGNAL SIGQUIT
-# Thu, 12 May 2022 19:05:21 GMT
+# Fri, 10 Jun 2022 00:22:20 GMT
 EXPOSE 9000
-# Thu, 12 May 2022 19:05:21 GMT
+# Fri, 10 Jun 2022 00:22:20 GMT
 CMD ["php-fpm"]
-# Thu, 12 May 2022 20:56:16 GMT
+# Fri, 10 Jun 2022 02:21:25 GMT
 RUN set -ex;         apk add --no-cache         rsync     ;         rm /var/spool/cron/crontabs/root;     echo '*/5 * * * * php -f /var/www/html/cron.php' > /var/spool/cron/crontabs/www-data
-# Thu, 12 May 2022 21:01:43 GMT
+# Fri, 10 Jun 2022 02:26:58 GMT
 RUN set -ex;         apk add --no-cache --virtual .build-deps         $PHPIZE_DEPS         autoconf         freetype-dev         icu-dev         libevent-dev         libjpeg-turbo-dev         libmcrypt-dev         libpng-dev         libmemcached-dev         libxml2-dev         libzip-dev         openldap-dev         pcre-dev         postgresql-dev         imagemagick-dev         libwebp-dev         gmp-dev     ;         docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp;     docker-php-ext-configure ldap;     docker-php-ext-install -j "$(nproc)"         bcmath         exif         gd         intl         ldap         opcache         pcntl         pdo_mysql         pdo_pgsql         zip         gmp     ;         pecl install APCu-5.1.21;     pecl install memcached-3.2.0;     pecl install redis-5.3.7;     pecl install imagick-3.7.0;         docker-php-ext-enable         apcu         memcached         redis         imagick     ;     rm -r /tmp/pear;         runDeps="$(         scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions             | tr ',' '\n'             | sort -u             | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }'     )";     apk add --virtual .nextcloud-phpext-rundeps $runDeps;     apk del .build-deps
-# Thu, 12 May 2022 21:01:44 GMT
+# Fri, 10 Jun 2022 02:26:58 GMT
 ENV PHP_MEMORY_LIMIT=512M
-# Thu, 12 May 2022 21:01:45 GMT
+# Fri, 10 Jun 2022 02:26:59 GMT
 ENV PHP_UPLOAD_LIMIT=512M
-# Thu, 12 May 2022 21:01:46 GMT
+# Fri, 10 Jun 2022 02:27:00 GMT
 RUN {         echo 'opcache.enable=1';         echo 'opcache.interned_strings_buffer=16';         echo 'opcache.max_accelerated_files=10000';         echo 'opcache.memory_consumption=128';         echo 'opcache.save_comments=1';         echo 'opcache.revalidate_freq=60';     } > /usr/local/etc/php/conf.d/opcache-recommended.ini;         echo 'apc.enable_cli=1' >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini;         {         echo 'memory_limit=${PHP_MEMORY_LIMIT}';         echo 'upload_max_filesize=${PHP_UPLOAD_LIMIT}';         echo 'post_max_size=${PHP_UPLOAD_LIMIT}';     } > /usr/local/etc/php/conf.d/nextcloud.ini;         mkdir /var/www/data;     chown -R www-data:root /var/www;     chmod -R g=u /var/www
-# Thu, 12 May 2022 21:01:46 GMT
+# Fri, 10 Jun 2022 02:27:01 GMT
 VOLUME [/var/www/html]
-# Fri, 20 May 2022 21:06:51 GMT
+# Fri, 10 Jun 2022 02:31:07 GMT
 ENV NEXTCLOUD_VERSION=24.0.1
-# Fri, 20 May 2022 21:08:19 GMT
+# Fri, 10 Jun 2022 02:32:34 GMT
 RUN set -ex;     apk add --no-cache --virtual .fetch-deps         bzip2         gnupg     ;         curl -fsSL -o nextcloud.tar.bz2         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2";     curl -fsSL -o nextcloud.tar.bz2.asc         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver keyserver.ubuntu.com  --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf "$GNUPGHOME" /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;     apk del .fetch-deps
-# Fri, 20 May 2022 21:08:21 GMT
+# Fri, 10 Jun 2022 02:32:37 GMT
 COPY multi:497b8d243f90fa6abd88194ba134de5703abecf47c13a92d2f2fb8210d2cfa77 in / 
-# Fri, 20 May 2022 21:08:23 GMT
+# Fri, 10 Jun 2022 02:32:38 GMT
 COPY multi:7281097c8fd959eff64684726d7707d598f15dc22353d1f6f843624f642bdcd2 in /usr/src/nextcloud/config/ 
-# Fri, 20 May 2022 21:08:24 GMT
+# Fri, 10 Jun 2022 02:32:39 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 20 May 2022 21:08:25 GMT
+# Fri, 10 Jun 2022 02:32:39 GMT
 CMD ["php-fpm"]
 ```
 
@@ -279,53 +279,53 @@ CMD ["php-fpm"]
 		Last Modified: Tue, 05 Apr 2022 01:33:29 GMT  
 		Size: 267.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:40e201b2860fa1a347902008e4d4bf2a301824eb971e7e0effb6bb63bbcdf162`  
-		Last Modified: Thu, 12 May 2022 19:38:15 GMT  
-		Size: 10.8 MB (10798938 bytes)  
+	-	`sha256:16a761e838868ef7af1b098872521e86a3af7b9f52cbb667dc26c24e2a575047`  
+		Last Modified: Fri, 10 Jun 2022 00:40:39 GMT  
+		Size: 10.9 MB (10898999 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f34988bbe56d1757ee9bfebbf34d0722486fb8e3e57d6e0461bf1593d3bd87d`  
-		Last Modified: Thu, 12 May 2022 19:38:12 GMT  
-		Size: 495.0 B  
+	-	`sha256:07e6d66d219f242d9e4c34b40cb649bdd3c7599548503c59c3b8bd32a6e25008`  
+		Last Modified: Fri, 10 Jun 2022 00:40:37 GMT  
+		Size: 498.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39a975b65235947b9550f021842907e23d3ca167adcada17fbf9d8122eabdfd5`  
-		Last Modified: Thu, 12 May 2022 19:39:07 GMT  
-		Size: 12.6 MB (12566546 bytes)  
+	-	`sha256:19e40681d9b4791ed6672c1c7a96210d2d39f6137a61400aa7bd8c0cc083c73f`  
+		Last Modified: Fri, 10 Jun 2022 00:41:17 GMT  
+		Size: 12.6 MB (12566665 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5db12658c847f57f0064d5ed268cdbe7bd95a8af82a1108947689485ff49d64`  
-		Last Modified: Thu, 12 May 2022 19:38:58 GMT  
-		Size: 2.4 KB (2448 bytes)  
+	-	`sha256:0caae61b26c7bf4e9d96814a7c009016e23a6c757faedad9850a16503b48e2cf`  
+		Last Modified: Fri, 10 Jun 2022 00:41:08 GMT  
+		Size: 2.5 KB (2450 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5243d4b03758ab990809fddac7abb73876394f4019545829b5f720557b2b508`  
-		Last Modified: Thu, 12 May 2022 19:38:58 GMT  
+	-	`sha256:f9aea91e38385da1c70de6518db1d5f687c12df23ad1fb2a5335545a244be1f7`  
+		Last Modified: Fri, 10 Jun 2022 00:41:08 GMT  
 		Size: 18.5 KB (18541 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0022410bdce94ced75cdca97151750996b6feeab544ad0403d62966476d1029f`  
-		Last Modified: Thu, 12 May 2022 19:38:58 GMT  
-		Size: 8.6 KB (8567 bytes)  
+	-	`sha256:966891c30b60b824461c3f8ae9861261197788bea6dfb78e958e5bc40a4ca4fd`  
+		Last Modified: Fri, 10 Jun 2022 00:41:08 GMT  
+		Size: 8.6 KB (8569 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bdbe31ef940f260cf2f03418b93b123321eb08b9fc12b2103c61b563d36330ca`  
-		Last Modified: Thu, 12 May 2022 21:08:29 GMT  
-		Size: 778.8 KB (778771 bytes)  
+	-	`sha256:aa32041c386804c63efb07baca77e20c984c2f57745c4eb36af4ea9c44a8929e`  
+		Last Modified: Fri, 10 Jun 2022 02:33:50 GMT  
+		Size: 778.8 KB (778761 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1eacfbf9269ae3371fad981d8e762df068e5a3cefbe100f4f7e6c085d4987c82`  
-		Last Modified: Thu, 12 May 2022 21:08:40 GMT  
-		Size: 23.9 MB (23894235 bytes)  
+	-	`sha256:92a11bcc639e387e14a2c06e1126ed92770420aacf8bc746b9d7e78adfcdd478`  
+		Last Modified: Fri, 10 Jun 2022 02:34:01 GMT  
+		Size: 23.9 MB (23894876 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:530900b897da436b6bf83a58b57e331ccc3d3c7f253af09d248f4016b289b674`  
-		Last Modified: Thu, 12 May 2022 21:08:27 GMT  
+	-	`sha256:45b6ee978ee3ca30a054f3fe19c640b31a710070eaf98e9f9ab8650ff87c7b08`  
+		Last Modified: Fri, 10 Jun 2022 02:33:47 GMT  
 		Size: 593.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c065d833218b31259cc2f2ebc59ab7c8f761afe4deb335b2124284c535e6ddca`  
-		Last Modified: Fri, 20 May 2022 21:15:03 GMT  
-		Size: 133.7 MB (133711632 bytes)  
+	-	`sha256:55a4cc0cd357de66893c3a2fe407c758b3f9721fc88795699328c26f175eeaff`  
+		Last Modified: Fri, 10 Jun 2022 02:39:15 GMT  
+		Size: 133.7 MB (133711623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2217a1c7bc7ea0fdf62a195221016c05f4640a00fc1bd728b35eb8e571e33fc7`  
-		Last Modified: Fri, 20 May 2022 21:13:36 GMT  
-		Size: 3.0 KB (2963 bytes)  
+	-	`sha256:f448f20dbf23cd440a2642daa7de33d907068bbe399d6d71e397326f26f64dba`  
+		Last Modified: Fri, 10 Jun 2022 02:37:50 GMT  
+		Size: 3.0 KB (2964 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac30edf33ced5e6db79b77caf926ad537d68e33f3a0dba30067ced842b228a03`  
-		Last Modified: Fri, 20 May 2022 21:13:36 GMT  
-		Size: 2.1 KB (2144 bytes)  
+	-	`sha256:f5c54180c499e1df897264f3f110c51dffeb3a84c9be89c7ab59cc8f5c1f1172`  
+		Last Modified: Fri, 10 Jun 2022 02:37:50 GMT  
+		Size: 2.1 KB (2137 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nextcloud:24-fpm-alpine` - linux; arm variant v7
