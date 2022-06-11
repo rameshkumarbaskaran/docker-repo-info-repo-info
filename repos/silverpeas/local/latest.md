@@ -585,13 +585,9 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ca-certificates=20210119~20.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119%7e20.04.2.dsc' ca-certificates_20210119~20.04.2.dsc 1917 SHA512:f7cebf760482ea3514303154a40f0a143ab1d97b0fe4d2e360c325115e2b5148e387be271060238e3e4133733316bb02cb161f42c2606dbf72d2493cce0667f9
-'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20210119%7e20.04.2.tar.xz' ca-certificates_20210119~20.04.2.tar.xz 232956 SHA512:03740922fcc051a5252129de3e973293de1e5f5833c08b58264362fed2d5d67b53c05f71f426ff56805a8fb8a6ffe35ef4e1556006a3e09471e8424d02ff099e
-```
 
 ### `dpkg` source package: `cairo=1.16.0-4ubuntu1`
 
@@ -1261,14 +1257,9 @@ Licenses: (parsed from: `/usr/share/doc/ffmpeg/copyright`, `/usr/share/doc/libav
 - `man-page`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ffmpeg=7:4.2.4-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/f/ffmpeg/ffmpeg_4.2.4-1ubuntu0.1.dsc' ffmpeg_4.2.4-1ubuntu0.1.dsc 5103 SHA512:f43f427d26994168330822383f83b9ec96817b87168b927147466216d2628bede99033630c457a226c33ab3facb012b038781223c961f372894a6bc82e4c1df7
-'http://archive.ubuntu.com/ubuntu/pool/universe/f/ffmpeg/ffmpeg_4.2.4.orig.tar.xz' ffmpeg_4.2.4.orig.tar.xz 9102888 SHA512:eced8108335df42065f671ba4e64e8f01c430953d55d2d1012a02aa2ba1cb75b18f80adf2f32433c984f4128985eedb09aa2e0149ec009cd28db9140730887a0
-'http://archive.ubuntu.com/ubuntu/pool/universe/f/ffmpeg/ffmpeg_4.2.4-1ubuntu0.1.debian.tar.xz' ffmpeg_4.2.4-1ubuntu0.1.debian.tar.xz 51152 SHA512:7315c28d7fb2d21317bf91b177a69022157bd7297475b5fd26c5d3d9b9a1d4f35843b38a9390e71e605fbbc34f4557bb421c96f9a316ac06abae046b66d1e3da
-```
 
 ### `dpkg` source package: `fftw3=3.3.8-2ubuntu1`
 
