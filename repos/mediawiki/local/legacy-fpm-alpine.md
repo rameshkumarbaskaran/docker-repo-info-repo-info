@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:00f2c11c348459f8acf495f6d70686947721688003881de3ae40bea150a4cbf1`
-- Created: `2022-06-08T18:30:19.691241614Z`
+- Image ID: `sha256:f61d2e46e3c0d780d558c2425779dd70db92cfca2f26ecb2cb35e1ba3bbf1bcf`
+- Created: `2022-06-10T04:31:34.809347728Z`
 - Virtual Size: ~ 507.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.29`
-  - `PHP_URL=https://www.php.net/distributions/php-7.4.29.tar.xz`
-  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.29.tar.xz.asc`
-  - `PHP_SHA256=7d0f07869f33311ff3fe1138dc0d6c0d673c37fcb737eaed2c6c10a949f1aed6`
+  - `PHP_VERSION=7.4.30`
+  - `PHP_URL=https://www.php.net/distributions/php-7.4.30.tar.xz`
+  - `PHP_ASC_URL=https://www.php.net/distributions/php-7.4.30.tar.xz.asc`
+  - `PHP_SHA256=ea72a34f32c67e79ac2da7dfe96177f3c451c3eefae5810ba13312ed398ba70d`
   - `MEDIAWIKI_MAJOR_VERSION=1.37`
   - `MEDIAWIKI_VERSION=1.37.2`
 
@@ -250,16 +250,16 @@ LGPL-2.0-or-later MPL-1.1
 ### `apk` package: `cups-libs`
 
 ```console
-cups-libs-2.4.1-r1 description:
+cups-libs-2.4.2-r0 description:
 CUPS libraries
 
-cups-libs-2.4.1-r1 webpage:
+cups-libs-2.4.2-r0 webpage:
 https://github.com/OpenPrinting/cups/
 
-cups-libs-2.4.1-r1 installed size:
+cups-libs-2.4.2-r0 installed size:
 572 KiB
 
-cups-libs-2.4.1-r1 license:
+cups-libs-2.4.2-r0 license:
 GPL-2.0-only
 
 ```
@@ -488,16 +488,16 @@ LGPL-2.1-or-later
 ### `apk` package: `gnutls`
 
 ```console
-gnutls-3.7.5-r0 description:
+gnutls-3.7.6-r0 description:
 TLS protocol implementation
 
-gnutls-3.7.5-r0 webpage:
+gnutls-3.7.6-r0 webpage:
 https://www.gnutls.org/
 
-gnutls-3.7.5-r0 installed size:
+gnutls-3.7.6-r0 installed size:
 1904 KiB
 
-gnutls-3.7.5-r0 license:
+gnutls-3.7.6-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -743,16 +743,16 @@ curl
 ### `apk` package: `libde265`
 
 ```console
-libde265-1.0.8-r1 description:
+libde265-1.0.8-r2 description:
 Open h.265 video codec implementation
 
-libde265-1.0.8-r1 webpage:
+libde265-1.0.8-r2 webpage:
 https://github.com/strukturag/libde265
 
-libde265-1.0.8-r1 installed size:
+libde265-1.0.8-r2 installed size:
 788 KiB
 
-libde265-1.0.8-r1 license:
+libde265-1.0.8-r2 license:
 LGPL-3.0-or-later
 
 ```
