@@ -1,10 +1,10 @@
-# `tomcat:10.0.21-jre11-openjdk-buster`
+# `tomcat:10.0.22-jre11-openjdk-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e369f55a9b88ebb6930be30b185bc4a0a1952b5012c7211e487b3b47cc5686db`
-- Created: `2022-05-28T21:49:36.45969087Z`
-- Virtual Size: ~ 321.48 Mb  
+- Image ID: `sha256:c8d5dffe4eef91f9c1ff311a3f323e74a96fc3bde2539f5e6c87a1668c9ea892`
+- Created: `2022-06-13T20:16:09.719721637Z`
+- Virtual Size: ~ 321.49 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -18,8 +18,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7`
   - `TOMCAT_MAJOR=10`
-  - `TOMCAT_VERSION=10.0.21`
-  - `TOMCAT_SHA512=a20d905486fc446bcc67501418520ab8a30425944fe30f30fb3306ef975573cd0a6c439c0b764bcec9144083684668ebe4aa0c80ccc7dd931af6c2f487f2fdba`
+  - `TOMCAT_VERSION=10.0.22`
+  - `TOMCAT_SHA512=fe46db8794f066882b30e7a94bd8d3dbcf29e8e8ffaf67c1355846755745a7c9eafd124819283f218bcf410921a485b44b57b56fd6251fb99d67d95f3dd36826`
 
 ## `dpkg` (`.deb`-based packages)
 

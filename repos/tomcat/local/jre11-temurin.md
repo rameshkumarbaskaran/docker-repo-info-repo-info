@@ -1,10 +1,10 @@
-# `tomcat:10.0.21-jre11-temurin-focal`
+# `tomcat:10.0.22-jre11-temurin-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:40355f2266b9a761d2223cff7b770a2536cb61f3f8d09c795fbe97dd514da193`
-- Created: `2022-06-07T06:32:52.885395075Z`
-- Virtual Size: ~ 264.85 Mb  
+- Image ID: `sha256:edcdb8ac9a8c288ab1eda76313166d757b6ffb77a3348f11f2dc5c26937a1495`
+- Created: `2022-06-13T20:19:24.526455772Z`
+- Virtual Size: ~ 264.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -20,8 +20,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7`
   - `TOMCAT_MAJOR=10`
-  - `TOMCAT_VERSION=10.0.21`
-  - `TOMCAT_SHA512=a20d905486fc446bcc67501418520ab8a30425944fe30f30fb3306ef975573cd0a6c439c0b764bcec9144083684668ebe4aa0c80ccc7dd931af6c2f487f2fdba`
+  - `TOMCAT_VERSION=10.0.22`
+  - `TOMCAT_SHA512=fe46db8794f066882b30e7a94bd8d3dbcf29e8e8ffaf67c1355846755745a7c9eafd124819283f218bcf410921a485b44b57b56fd6251fb99d67d95f3dd36826`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -98,13 +98,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.0.8
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.dsc' apt_2.0.8.dsc 2835 SHA512:376a12bb238002c0d52cb38925460b4f52a8e3b48bc75ef4707bfc4514cd2bee437c6cab2b8df1f804402497b6c085b57560506ccb82a5ef6bdb060ab4455108
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.tar.xz' apt_2.0.8.tar.xz 2176288 SHA512:abab5206313839126fdca8a8726600e37f4190cd0268d124d0849d34494bd2e453755086d4637722c505f52f9d1db684b7c50e4281d08721710cde0300c77680
-```
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 

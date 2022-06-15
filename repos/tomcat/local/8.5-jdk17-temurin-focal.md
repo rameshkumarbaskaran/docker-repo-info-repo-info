@@ -1,10 +1,10 @@
-# `tomcat:8.5.79-jdk17-temurin-focal`
+# `tomcat:8.5.81-jdk17-temurin-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0f5c73694ea1cd391d0120483f94b278ce2f7b96512b5a2fcc6f92fcdc734a69`
-- Created: `2022-06-07T06:37:50.801884937Z`
-- Virtual Size: ~ 477.69 Mb  
+- Image ID: `sha256:510c1ca9010cc46e6fe90e0573a28004c57d9171b61c8262f51883562d724e2e`
+- Created: `2022-06-13T20:26:22.725939791Z`
+- Virtual Size: ~ 479.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -20,8 +20,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 5C3C5F3E314C866292F359A8F3AD5C94A67F707E 765908099ACF92702C7D949BFA0C35EA8AA299F1 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.79`
-  - `TOMCAT_SHA512=ae059a595ba11386bf3c0a80e961c5f8bb057b2bab987c3863337311e95d4fa22f1185a44b2c8856dd33f7cfe76d4de4e2fe1bc8b89c6abfbfc008656c49b8c0`
+  - `TOMCAT_VERSION=8.5.81`
+  - `TOMCAT_SHA512=729387275cce4a0900289722f6c70ebcf7aee924af671b110b8ea8577fd6d045d47f17d526c8db5fd41c8590102e7f5100e95e89f7fd511b941565812ecbed35`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -98,13 +98,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.0.8
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.dsc' apt_2.0.8.dsc 2835 SHA512:376a12bb238002c0d52cb38925460b4f52a8e3b48bc75ef4707bfc4514cd2bee437c6cab2b8df1f804402497b6c085b57560506ccb82a5ef6bdb060ab4455108
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.tar.xz' apt_2.0.8.tar.xz 2176288 SHA512:abab5206313839126fdca8a8726600e37f4190cd0268d124d0849d34494bd2e453755086d4637722c505f52f9d1db684b7c50e4281d08721710cde0300c77680
-```
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -273,11 +269,11 @@ $ apt-get source -qq --print-uris bzip2=1.0.8-2
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.8-2.debian.tar.bz2' bzip2_1.0.8-2.debian.tar.bz2 26032 SHA256:237c8619bc9bc16f357b1077064a3e58aa1a230dadb4b9bb3bd8dc8f454afc0b
 ```
 
-### `dpkg` source package: `ca-certificates=20210119~20.04.2`
+### `dpkg` source package: `ca-certificates=20211016~20.04.1`
 
 Binary Packages:
 
-- `ca-certificates=20210119~20.04.2`
+- `ca-certificates=20211016~20.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 
@@ -285,9 +281,13 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris ca-certificates=20211016~20.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20211016%7e20.04.1.dsc' ca-certificates_20211016~20.04.1.dsc 1917 SHA512:136bf6a197dbae1b560a0302c9a0dd6b58bb25f2d284680ad59486eb8ad9be5c340ad2eabb448fd7284971bb8358a83cc23868a8e64e6c21368edbf9978ce2d9
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20211016%7e20.04.1.tar.xz' ca-certificates_20211016~20.04.1.tar.xz 239236 SHA512:8a8a96eeae0dc4a117f7b73f8d0823b0e3b99cae555538fd5ab7cab0216107656cd61a10e92a244482227568c695a52ac5debf2203ae419e0c9e24ca1f1c7beb
+```
 
 ### `dpkg` source package: `cdebconf=0.251ubuntu1`
 

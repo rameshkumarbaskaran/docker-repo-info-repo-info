@@ -1,10 +1,10 @@
-# `tomcat:10.0.21-jdk17-temurin-focal`
+# `tomcat:10.0.22-jdk17-temurin-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6fe27d7989575ea0f0840a41d8671b130328f3f42c0f9bfb84145ba39d0c5001`
-- Created: `2022-06-07T06:31:26.748450039Z`
-- Virtual Size: ~ 478.91 Mb  
+- Image ID: `sha256:4813a0e5f815c2f686a8e41d879735dc1ba1c2dc3b059223e9d0467e4fbf48ae`
+- Created: `2022-06-13T20:14:37.981026766Z`
+- Virtual Size: ~ 480.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -20,8 +20,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7`
   - `TOMCAT_MAJOR=10`
-  - `TOMCAT_VERSION=10.0.21`
-  - `TOMCAT_SHA512=a20d905486fc446bcc67501418520ab8a30425944fe30f30fb3306ef975573cd0a6c439c0b764bcec9144083684668ebe4aa0c80ccc7dd931af6c2f487f2fdba`
+  - `TOMCAT_VERSION=10.0.22`
+  - `TOMCAT_SHA512=fe46db8794f066882b30e7a94bd8d3dbcf29e8e8ffaf67c1355846755745a7c9eafd124819283f218bcf410921a485b44b57b56fd6251fb99d67d95f3dd36826`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -98,13 +98,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.0.8
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.dsc' apt_2.0.8.dsc 2835 SHA512:376a12bb238002c0d52cb38925460b4f52a8e3b48bc75ef4707bfc4514cd2bee437c6cab2b8df1f804402497b6c085b57560506ccb82a5ef6bdb060ab4455108
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.tar.xz' apt_2.0.8.tar.xz 2176288 SHA512:abab5206313839126fdca8a8726600e37f4190cd0268d124d0849d34494bd2e453755086d4637722c505f52f9d1db684b7c50e4281d08721710cde0300c77680
-```
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
@@ -273,11 +269,11 @@ $ apt-get source -qq --print-uris bzip2=1.0.8-2
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.8-2.debian.tar.bz2' bzip2_1.0.8-2.debian.tar.bz2 26032 SHA256:237c8619bc9bc16f357b1077064a3e58aa1a230dadb4b9bb3bd8dc8f454afc0b
 ```
 
-### `dpkg` source package: `ca-certificates=20210119~20.04.2`
+### `dpkg` source package: `ca-certificates=20211016~20.04.1`
 
 Binary Packages:
 
-- `ca-certificates=20210119~20.04.2`
+- `ca-certificates=20211016~20.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 
@@ -285,9 +281,13 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates/copyright`)
 - `GPL-2+`
 - `MPL-2.0`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris ca-certificates=20211016~20.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20211016%7e20.04.1.dsc' ca-certificates_20211016~20.04.1.dsc 1917 SHA512:136bf6a197dbae1b560a0302c9a0dd6b58bb25f2d284680ad59486eb8ad9be5c340ad2eabb448fd7284971bb8358a83cc23868a8e64e6c21368edbf9978ce2d9
+'http://archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20211016%7e20.04.1.tar.xz' ca-certificates_20211016~20.04.1.tar.xz 239236 SHA512:8a8a96eeae0dc4a117f7b73f8d0823b0e3b99cae555538fd5ab7cab0216107656cd61a10e92a244482227568c695a52ac5debf2203ae419e0c9e24ca1f1c7beb
+```
 
 ### `dpkg` source package: `cdebconf=0.251ubuntu1`
 

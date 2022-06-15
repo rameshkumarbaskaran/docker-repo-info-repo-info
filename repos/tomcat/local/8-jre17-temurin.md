@@ -1,10 +1,10 @@
-# `tomcat:8.5.79-jre17-temurin-focal`
+# `tomcat:8.5.81-jre17-temurin-focal`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ae4858f591eb8a774e27fdbe181fd015d9e17412e0ab4129b1ab14145bc28fb5`
-- Created: `2022-06-07T06:38:03.418743152Z`
-- Virtual Size: ~ 288.17 Mb  
+- Image ID: `sha256:9924a4ee51b9cd91b5a7c237965ce7582bff59639ca1dc3f4d28bba42a7886e5`
+- Created: `2022-06-13T20:26:32.524859502Z`
+- Virtual Size: ~ 288.18 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -20,8 +20,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 5C3C5F3E314C866292F359A8F3AD5C94A67F707E 765908099ACF92702C7D949BFA0C35EA8AA299F1 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.79`
-  - `TOMCAT_SHA512=ae059a595ba11386bf3c0a80e961c5f8bb057b2bab987c3863337311e95d4fa22f1185a44b2c8856dd33f7cfe76d4de4e2fe1bc8b89c6abfbfc008656c49b8c0`
+  - `TOMCAT_VERSION=8.5.81`
+  - `TOMCAT_SHA512=729387275cce4a0900289722f6c70ebcf7aee924af671b110b8ea8577fd6d045d47f17d526c8db5fd41c8590102e7f5100e95e89f7fd511b941565812ecbed35`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -98,13 +98,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=2.0.8
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.dsc' apt_2.0.8.dsc 2835 SHA512:376a12bb238002c0d52cb38925460b4f52a8e3b48bc75ef4707bfc4514cd2bee437c6cab2b8df1f804402497b6c085b57560506ccb82a5ef6bdb060ab4455108
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.0.8.tar.xz' apt_2.0.8.tar.xz 2176288 SHA512:abab5206313839126fdca8a8726600e37f4190cd0268d124d0849d34494bd2e453755086d4637722c505f52f9d1db684b7c50e4281d08721710cde0300c77680
-```
 
 ### `dpkg` source package: `attr=1:2.4.48-5`
 
