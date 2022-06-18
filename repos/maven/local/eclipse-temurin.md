@@ -1,9 +1,9 @@
-# `maven:3.8.5-eclipse-temurin-17`
+# `maven:3.8.6-eclipse-temurin-17`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f29af227623812dbe39b4fbd089da5860586980987f825f5aeb9d6a794766f38`
-- Created: `2022-06-07T04:59:24.783745064Z`
+- Image ID: `sha256:0ef41086a3988ce9e15223e33dfc638fce47d4d8834b4364dd0f4ab142c56192`
+- Created: `2022-06-15T18:21:22.141877248Z`
 - Virtual Size: ~ 535.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`

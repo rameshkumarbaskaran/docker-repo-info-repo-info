@@ -1,9 +1,9 @@
-# `maven:3.8.5-jdk-8-slim`
+# `maven:3.8.6-jdk-8-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6857cd52999ff88e3a5ae8892d4bbeb4b5667f5ab6435dd8daa1c8e45f5ea447`
-- Created: `2022-05-28T20:18:19.415715801Z`
+- Image ID: `sha256:f1a08b5259226bb7b1a39fabe050cce1b8f79a78d64497a0395792529ced9570`
+- Created: `2022-06-15T18:20:29.316566161Z`
 - Virtual Size: ~ 311.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`

@@ -1,9 +1,9 @@
-# `maven:3.8.5-sapmachine-17`
+# `maven:3.8.6-sapmachine-17`
 
 ## Docker Metadata
 
-- Image ID: `sha256:40736c694ab4c30799d643a85a72068d0df8cf6d983d7615e130802b1838d871`
-- Created: `2022-06-07T05:02:36.830657265Z`
+- Image ID: `sha256:36c59457aad66f5fcd20f587cfcc2a9f83b862e5b50d18fe30e1a9bebe5855fa`
+- Created: `2022-06-15T18:23:28.067750447Z`
 - Virtual Size: ~ 530.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
