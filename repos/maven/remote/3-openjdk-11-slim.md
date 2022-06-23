@@ -1,7 +1,7 @@
 ## `maven:3-openjdk-11-slim`
 
 ```console
-$ docker pull maven@sha256:8d865333722261f59878c6250c6651b9636b727dec73bfb412da897526ec1514
+$ docker pull maven@sha256:736af4051630d93eb75a24a9f3cdac66eb441a6dd605252ce4a0fe38bc1ebd11
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,96 +12,96 @@ $ docker pull maven@sha256:8d865333722261f59878c6250c6651b9636b727dec73bfb412da8
 ### `maven:3-openjdk-11-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:06e9bf60f6eb484bcfb8af054af1b8347d1978786e3a4a55a8f4fb2992db0d8c
+$ docker pull maven@sha256:bed43e35f3e5f013670d4d7d247612de5ac82355b0c58c244005c532dfe6a1d7
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **248.4 MB (248401133 bytes)**  
+-	Total Size: **248.4 MB (248402980 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dbd91ead3c99aef4ed5a7444947afcd13dd435e7680c78682aee1cedff732445`
+-	Image ID: `sha256:2561d9a86ebfca57d68d4da85a55bdb7d0ef3c1480380e88a1833b5752365236`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Sat, 28 May 2022 01:20:23 GMT
-ADD file:134f25aec8adf83cb940ba073a3409ca85dbb5ae592b704f95193e7d2539a3bc in / 
-# Sat, 28 May 2022 01:20:23 GMT
+# Thu, 23 Jun 2022 00:20:27 GMT
+ADD file:8adbbab04d6f84cd83b5f4205b89b0acb7ecbf27a1bb2dc181d0a629479039fe in / 
+# Thu, 23 Jun 2022 00:20:27 GMT
 CMD ["bash"]
-# Sat, 28 May 2022 02:16:35 GMT
+# Thu, 23 Jun 2022 04:53:52 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 May 2022 02:18:53 GMT
+# Thu, 23 Jun 2022 04:57:59 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Sat, 28 May 2022 02:18:54 GMT
+# Thu, 23 Jun 2022 04:58:00 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Sat, 28 May 2022 02:18:54 GMT
+# Thu, 23 Jun 2022 04:58:00 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 May 2022 02:18:54 GMT
+# Thu, 23 Jun 2022 04:58:00 GMT
 ENV LANG=C.UTF-8
-# Sat, 28 May 2022 02:18:54 GMT
+# Thu, 23 Jun 2022 04:58:00 GMT
 ENV JAVA_VERSION=11.0.15
-# Sat, 28 May 2022 02:19:21 GMT
+# Thu, 23 Jun 2022 04:58:18 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.15%2B10/OpenJDK11U-jdk_x64_linux_11.0.15_10.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.15%2B10/OpenJDK11U-jdk_aarch64_linux_11.0.15_10.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java; 	javac --version; 	java --version
-# Sat, 28 May 2022 02:19:21 GMT
+# Thu, 23 Jun 2022 04:58:18 GMT
 CMD ["jshell"]
-# Sat, 28 May 2022 20:17:56 GMT
+# Thu, 23 Jun 2022 21:00:02 GMT
 RUN apt-get update   && apt-get install -y curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 15 Jun 2022 18:20:09 GMT
+# Thu, 23 Jun 2022 21:00:02 GMT
 ARG MAVEN_VERSION=3.8.6
-# Wed, 15 Jun 2022 18:20:09 GMT
+# Thu, 23 Jun 2022 21:00:02 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 15 Jun 2022 18:20:09 GMT
+# Thu, 23 Jun 2022 21:00:02 GMT
 ARG SHA=f790857f3b1f90ae8d16281f902c689e4f136ebe584aba45e4b1fa66c80cba826d3e0e52fdd04ed44b4c66f6d3fe3584a057c26dfcac544a60b301e6d0f91c26
-# Wed, 15 Jun 2022 18:20:09 GMT
+# Thu, 23 Jun 2022 21:00:02 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.8.6/binaries
-# Wed, 15 Jun 2022 18:20:17 GMT
+# Thu, 23 Jun 2022 21:00:08 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.8.6/binaries MAVEN_VERSION=3.8.6 SHA=f790857f3b1f90ae8d16281f902c689e4f136ebe584aba45e4b1fa66c80cba826d3e0e52fdd04ed44b4c66f6d3fe3584a057c26dfcac544a60b301e6d0f91c26 USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 15 Jun 2022 18:20:17 GMT
+# Thu, 23 Jun 2022 21:00:08 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 15 Jun 2022 18:20:17 GMT
+# Thu, 23 Jun 2022 21:00:08 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 15 Jun 2022 18:20:17 GMT
+# Thu, 23 Jun 2022 21:00:09 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 15 Jun 2022 18:20:17 GMT
+# Thu, 23 Jun 2022 21:00:09 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 15 Jun 2022 18:20:17 GMT
+# Thu, 23 Jun 2022 21:00:09 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 15 Jun 2022 18:20:18 GMT
+# Thu, 23 Jun 2022 21:00:09 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:42c077c10790d51b6f75c4eb895cbd4da37558f7215b39cbf64c46b288f89bda`  
-		Last Modified: Sat, 28 May 2022 01:25:19 GMT  
-		Size: 31.4 MB (31379276 bytes)  
+	-	`sha256:b85a868b505ffd0342a37e6a3b1c49f7c71878afe569a807e6238ef08252fcb7`  
+		Last Modified: Thu, 23 Jun 2022 00:25:18 GMT  
+		Size: 31.4 MB (31379408 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44b062e78fd7c8f9370711c8b47595bc59fea38f7e04e22d887fbd3256f2324c`  
-		Last Modified: Sat, 28 May 2022 02:27:46 GMT  
-		Size: 1.6 MB (1582290 bytes)  
+	-	`sha256:4b4dc029a36926590a5070a9a58443942497e3b2d48cff116b8b15004d386a40`  
+		Last Modified: Thu, 23 Jun 2022 05:07:14 GMT  
+		Size: 1.6 MB (1582249 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3ba9647f27910af194c1f59daa84305d76075a5efabffe70cb38470670a20b6`  
-		Last Modified: Sat, 28 May 2022 02:32:12 GMT  
-		Size: 209.0 B  
+	-	`sha256:e45dadc191219f153f9cf4a382217cd22957cf80824baeffbe367d5fbf4eb25c`  
+		Last Modified: Thu, 23 Jun 2022 05:16:23 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0eb5e0710e62bd0b450fc69d5318f48d04e20ab36b03d176e8a653d19cb58bed`  
-		Last Modified: Sat, 28 May 2022 02:32:27 GMT  
-		Size: 204.2 MB (204237136 bytes)  
+	-	`sha256:6a3a8ac322c4765e994b2b00f4ef9c7f3b31ac41dcc00e176ab181a5e2a135a6`  
+		Last Modified: Thu, 23 Jun 2022 05:16:37 GMT  
+		Size: 204.2 MB (204238889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:785797c11d12ecb49eb8128b850b42c787a5edea8873c6a21ed26e445c9feab9`  
-		Last Modified: Sat, 28 May 2022 20:21:02 GMT  
-		Size: 2.5 MB (2461492 bytes)  
+	-	`sha256:84e02b03584c2c80bd95f88a3029792f1ea28b1746194998d68ffe29256bab19`  
+		Last Modified: Thu, 23 Jun 2022 21:03:33 GMT  
+		Size: 2.5 MB (2461497 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11a5d014da57f4ca3d3ab991fb2eabcb29a80ecef32c2ef58bd2d50b4f519940`  
-		Last Modified: Wed, 15 Jun 2022 18:25:21 GMT  
-		Size: 8.7 MB (8739516 bytes)  
+	-	`sha256:d9a5555119e63beb0fbc57ac93c8a8dba6ea5eae0186e9d07176295f5e7bf547`  
+		Last Modified: Thu, 23 Jun 2022 21:03:33 GMT  
+		Size: 8.7 MB (8739510 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22e7b6e03fee53ab2493e7e7f6b8573762455fccd227e14f1f018b43cbc4200b`  
-		Last Modified: Wed, 15 Jun 2022 18:25:20 GMT  
-		Size: 854.0 B  
+	-	`sha256:42aaa675a61945c397a10eb973672fbfc3efbc87d3dfd7d2f4f9b36a86b107bf`  
+		Last Modified: Thu, 23 Jun 2022 21:03:33 GMT  
+		Size: 856.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:146d5451b31e3d04fd096ba97cb735d11c85dff83c8d3ee9c9f367c87296dda2`  
-		Last Modified: Wed, 15 Jun 2022 18:25:20 GMT  
+	-	`sha256:b1e3ced0bb4ddc8bfd80fc98f5c9ed9e823dfbdd73e6d7298c4a2bf0461581d8`  
+		Last Modified: Thu, 23 Jun 2022 21:03:33 GMT  
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
