@@ -1,7 +1,7 @@
 ## `openjdk:8-jre-buster`
 
 ```console
-$ docker pull openjdk@sha256:363bb562e68ae03b306daba3a831c53688eb8cee0ecd5a713eb6c48adce78599
+$ docker pull openjdk@sha256:454480d9e5d44d48e4401953bc0ee6b8ce772ede03807d4b54b6532f331273cc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,65 +12,65 @@ $ docker pull openjdk@sha256:363bb562e68ae03b306daba3a831c53688eb8cee0ecd5a713eb
 ### `openjdk:8-jre-buster` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:dcc04268746d3e53d683d9cd5f828ee1eb20268615c10630fdda1faa39fa9d51
+$ docker pull openjdk@sha256:abf01550450fa9a2dda7bdd9726f1f2a3c8b5911d28593002aa88ae34cbfc28d
 ```
 
 -	Docker Version: 20.10.12
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **115.3 MB (115259310 bytes)**  
+-	Total Size: **115.3 MB (115259612 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f7219f57c7f8f7b597219a3c1ce219e98a5b5003566504bd91ba2bbd89cf4523`
+-	Image ID: `sha256:69d569890b595a96df981142eb35f4ab22a088d36efe8f81a7ca99f5f8995aea`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Sat, 28 May 2022 01:20:32 GMT
-ADD file:5c5cde050dbdbd5c7c0d9c723f436d37ab4a8b1a498647a719771eccce99d9cb in / 
-# Sat, 28 May 2022 01:20:33 GMT
+# Thu, 23 Jun 2022 00:20:36 GMT
+ADD file:2f32dd3ef1e51a4d2d6dcf55fbf766434df5b3ada802b087d5761f2fa0cdebf5 in / 
+# Thu, 23 Jun 2022 00:20:36 GMT
 CMD ["bash"]
-# Sat, 28 May 2022 02:42:00 GMT
+# Thu, 23 Jun 2022 00:51:33 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 May 2022 02:42:06 GMT
+# Thu, 23 Jun 2022 00:51:39 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Sat, 28 May 2022 19:38:54 GMT
+# Thu, 23 Jun 2022 04:59:49 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		unzip 		xz-utils 				fontconfig libfreetype6 				ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Sat, 28 May 2022 19:39:58 GMT
+# Thu, 23 Jun 2022 05:01:45 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Sat, 28 May 2022 19:39:58 GMT
+# Thu, 23 Jun 2022 05:01:45 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ] # backwards compatibility
-# Sat, 28 May 2022 19:39:59 GMT
+# Thu, 23 Jun 2022 05:01:46 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Sat, 28 May 2022 19:39:59 GMT
+# Thu, 23 Jun 2022 05:01:46 GMT
 ENV LANG=C.UTF-8
-# Sat, 28 May 2022 19:39:59 GMT
+# Thu, 23 Jun 2022 05:01:46 GMT
 ENV JAVA_VERSION=8u332
-# Sat, 28 May 2022 19:40:04 GMT
+# Thu, 23 Jun 2022 05:01:53 GMT
 RUN set -eux; 		arch="$(dpkg --print-architecture)"; 	case "$arch" in 		'amd64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jre_x64_linux_8u332b09.tar.gz'; 			;; 		'arm64') 			downloadUrl='https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jre_aarch64_linux_8u332b09.tar.gz'; 			;; 		*) echo >&2 "error: unsupported architecture: '$arch'"; exit 1 ;; 	esac; 		wget --progress=dot:giga -O openjdk.tgz "$downloadUrl"; 	wget --progress=dot:giga -O openjdk.tgz.asc "$downloadUrl.sign"; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --keyserver keyserver.ubuntu.com --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$JAVA_HOME/lib/security/cacerts"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
 ```
 
 -	Layers:
-	-	`sha256:982cba7e471c6d3ce96014cf58b2e4e115a525e60da2e1e08716818f2c057a6b`  
-		Last Modified: Sat, 28 May 2022 01:25:39 GMT  
-		Size: 50.4 MB (50440422 bytes)  
+	-	`sha256:ea267e4631a981caf2841a7e9a1faf29cef9d020c4378fc64845802d17586531`  
+		Last Modified: Thu, 23 Jun 2022 00:25:38 GMT  
+		Size: 50.4 MB (50440811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b02d86f59850f3e13d394072350625a8526b912af24b3bfc0e50e9a8862a79d0`  
-		Last Modified: Sat, 28 May 2022 02:50:21 GMT  
-		Size: 7.9 MB (7856653 bytes)  
+	-	`sha256:8a014c92148934973210d840dc7cfed53e0afba38d839afaa48ed5150eae19af`  
+		Last Modified: Thu, 23 Jun 2022 00:59:51 GMT  
+		Size: 7.9 MB (7856631 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b047e8f2e47bdf998a952572ae5e9d64edf8e29b716be0ee50a15e6d21cb2ce`  
-		Last Modified: Sat, 28 May 2022 02:50:21 GMT  
-		Size: 10.0 MB (9997224 bytes)  
+	-	`sha256:293ff1be7001d642a624409e2d5f90e7708ef7e6f1a75f4eb7362a9296e18d20`  
+		Last Modified: Thu, 23 Jun 2022 00:59:50 GMT  
+		Size: 10.0 MB (9997231 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a02a3a0320c2f4349bf0eed0709861ab5ca2cc4ab9b7ae76e0236167ca1a33ab`  
-		Last Modified: Sat, 28 May 2022 19:48:53 GMT  
-		Size: 5.5 MB (5532613 bytes)  
+	-	`sha256:9250eef0f01e9551fef0eaea0e242501ab3d09c6a7e72c66f5083b55a6daa18d`  
+		Last Modified: Thu, 23 Jun 2022 05:19:07 GMT  
+		Size: 5.5 MB (5532608 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87ff28c5ece4596ac9b9c39e8a64ed5df9cd9c44f9bf2bc43b405b3fba9cc499`  
-		Last Modified: Sat, 28 May 2022 19:50:26 GMT  
-		Size: 211.0 B  
+	-	`sha256:706a76fd54c3779c8650b52578c425ee9ea28faf52393424f3a137a9974627bc`  
+		Last Modified: Thu, 23 Jun 2022 05:22:11 GMT  
+		Size: 209.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbbcaeeb7d1419e1af2654a51d7b63480636381adb83c95e6e206cd3e449f5d2`  
-		Last Modified: Sat, 28 May 2022 19:50:31 GMT  
-		Size: 41.4 MB (41432187 bytes)  
+	-	`sha256:99571f7ac24e01dd83ae457173630a53f6e3ef10ce6926ffcc4b23cff6a7c9c7`  
+		Last Modified: Thu, 23 Jun 2022 05:22:16 GMT  
+		Size: 41.4 MB (41432122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:8-jre-buster` - linux; arm64 variant v8
