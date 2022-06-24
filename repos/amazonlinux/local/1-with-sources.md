@@ -1,10 +1,10 @@
-# `amazonlinux:2018.03.0.20220503.0-with-sources`
+# `amazonlinux:2018.03.0.20220609.0-with-sources`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9d05eec4707c75703bdce6abd77c2fb00614c233b683e9af819205c335b2e666`
-- Created: `2022-05-12T22:53:03.178633366Z`
-- Virtual Size: ~ 620.11 Mb  
+- Image ID: `sha256:98bea2ab30f386fa0269d2414b6c2045299fdfbaec499f6e68966d83a99dfe86`
+- Created: `2022-06-22T20:20:31.51419938Z`
+- Virtual Size: ~ 620.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -79,7 +79,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `expat-2.1.0-12.27.amzn1.x86_64`
+### `rpm` package: `expat-2.1.0-12.28.amzn1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -157,7 +157,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `gzip-1.5-9.19.amzn1.x86_64`
+### `rpm` package: `gzip-1.5-9.20.amzn1.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GFDL
 
@@ -397,7 +397,7 @@ Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `openldap-2.4.40-16.31.amzn1.x86_64`
+### `rpm` package: `openldap-2.4.40-16.32.amzn1.x86_64`
 
 Licenses (from `rpm --query`): OpenLDAP
 
@@ -451,7 +451,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python27-2.7.18-2.141.amzn1.x86_64`
+### `rpm` package: `python27-2.7.18-2.142.amzn1.x86_64`
 
 Licenses (from `rpm --query`): Python
 
@@ -475,7 +475,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `python27-libs-2.7.18-2.141.amzn1.x86_64`
+### `rpm` package: `python27-libs-2.7.18-2.142.amzn1.x86_64`
 
 Licenses (from `rpm --query`): Python
 
@@ -583,13 +583,13 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `tzdata-2021e-1.78.amzn1.noarch`
+### `rpm` package: `tzdata-2022a-1.79.amzn1.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`dnf download` failed or returned no results)!
 
-### `rpm` package: `xz-libs-5.2.2-1.13.amzn1.x86_64`
+### `rpm` package: `xz-libs-5.2.2-1.14.amzn1.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
