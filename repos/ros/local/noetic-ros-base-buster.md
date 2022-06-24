@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1787fc9fbba7cce41d505c70929c0e44fc93a728c92d389afb7b6e6645b7585e`
-- Created: `2022-05-28T15:33:08.447347202Z`
+- Image ID: `sha256:a9f05059606cd7f18f9bae4a272bf4a607309d6c3a28241b4f76ddd4ee93c78d`
+- Created: `2022-06-23T12:50:10.512164977Z`
 - Virtual Size: ~ 1.34 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -4721,33 +4721,43 @@ $ apt-get source -qq --print-uris python3-rosdep=0.21.0-1
 'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rosdep/python3-rosdep_0.21.0.orig.tar.gz' python3-rosdep_0.21.0.orig.tar.gz 32255 SHA512:884b89d8de336a7c2d8db0707c97197517cb4fdb57dbeb819ea964bbeaa506ed7af3b04d83ca998de57e7efaf22322f78c30c80fe0ca838bb863631349b3603e
 ```
 
-### `dpkg` source package: `python3-rosdistro-modules=0.8.3-1`
+### `dpkg` source package: `python3-rosdistro-modules=0.9.0-1`
 
 Binary Packages:
 
-- `python3-rosdistro-modules=0.8.3-1`
+- `python3-rosdistro-modules=0.9.0-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3-rosdistro-modules=0.9.0-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rosdistro-modules/python3-rosdistro-modules_0.9.0-1.debian.tar.xz' python3-rosdistro-modules_0.9.0-1.debian.tar.xz 2004 SHA512:8312a9e75ed1da0f7da358b6d860e7445253693478651778e0e82d8302941875ffe0ae1c11d6d480299626858d387fd50bbacaab6c686e02d75d8041b1314034
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rosdistro-modules/python3-rosdistro-modules_0.9.0-1.dsc' python3-rosdistro-modules_0.9.0-1.dsc 1038 SHA512:0f8ab8f26b1df89fcec4c12450a76fa18fd94556e08c7a5c4db463031ded956514ff2e7ac7ef8f95fb7d3db58df03186463f763c32455dbbb8bd1176892a750a
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rosdistro-modules/python3-rosdistro-modules_0.9.0.orig.tar.gz' python3-rosdistro-modules_0.9.0.orig.tar.gz 43482 SHA512:7f20ff589fc5343ec39772f51b656022cf3762ed2ee7dddb57b66189e58fdc8408646fbeb488f19e63448448a91215b5869317851a8ccc826cf8e6d87ae92d0b
+```
 
-### `dpkg` source package: `python3-rosdistro=0.8.3-100`
+### `dpkg` source package: `python3-rosdistro=0.9.0-100`
 
 Binary Packages:
 
-- `python3-rosdistro=0.8.3-100`
+- `python3-rosdistro=0.9.0-100`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3-rosdistro=0.9.0-100
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rosdistro/python3-rosdistro_0.9.0-100.debian.tar.xz' python3-rosdistro_0.9.0-100.debian.tar.xz 1976 SHA512:3a00a99d5e6b8a88e507c2c5dd67f978c9c56bd03f2e60a1860114a844f44109387a029c57fa51ee95b6c471d4f5c9d0db2997c98cd530fce57162bf99e28ba1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rosdistro/python3-rosdistro_0.9.0-100.dsc' python3-rosdistro_0.9.0-100.dsc 974 SHA512:4288ad1f0a576ece5c48b33481ede30ea5a6074971fadce90e906af7e82e251866723ed7022acefec1ff67f681dcd1f42fc148fe4fab47719fec24ecafd0d9ce
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python3-rosdistro/python3-rosdistro_0.9.0.orig.tar.gz' python3-rosdistro_0.9.0.orig.tar.gz 11272 SHA512:5f24479a1a0a10b1706758111f5839b1fc4621a5bb1f69f2c3cc3e33c81a9adb181a748a7a7ddc005ec1e29c80d41907cbc29548cac7abf7bf672840c3747114
+```
 
 ### `dpkg` source package: `python3-rospkg-modules=1.4.0-1`
 
@@ -6559,23 +6569,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tinyxml2/7.0.0+dfsg-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tinyxml2/7.0.0+dfsg-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2021a-0+deb10u4`
+### `dpkg` source package: `tzdata=2021a-0+deb10u5`
 
 Binary Packages:
 
-- `tzdata=2021a-0+deb10u4`
+- `tzdata=2021a-0+deb10u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris tzdata=2021a-0+deb10u5
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0%2bdeb10u5.dsc' tzdata_2021a-0+deb10u5.dsc 2264 SHA256:a994b9adbb5623bbee257dcdbbd9494ec732d508e857fb38cc6a966447d9d20b
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a.orig.tar.gz.asc' tzdata_2021a.orig.tar.gz.asc 833 SHA256:9dc5f54674166f4ffbc2d4485e656227430ab5f39c9006e6ed9986281117f058
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2021a-0%2bdeb10u5.debian.tar.xz' tzdata_2021a-0+deb10u5.debian.tar.xz 110812 SHA256:3e75987d349081fc6bf76e46404e6aded0ff96ee0ffd5bed5dca0bfb8fcf7fa3
+```
 
-- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u4/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/tzdata/2021a-0+deb10u5/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2021a-0+deb10u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2021a-0+deb10u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0038+nmu1`
 

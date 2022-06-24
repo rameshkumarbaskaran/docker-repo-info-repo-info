@@ -2969,14 +2969,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1f-1ubuntu2.13
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.13.dsc' openssl_1.1.1f-1ubuntu2.13.dsc 2470 SHA512:123a6be01f4c4e9f282b4ec5851428f6271672489dab3cfcea0e38da9b680c032415be792877767818b93b1f82c0707d1afce8b72fc60c85587e13139881e0b9
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f.orig.tar.gz' openssl_1.1.1f.orig.tar.gz 9792828 SHA512:b00bd9b5ad5298fbceeec6bb19c1ab0c106ca5cfb31178497c58bf7e0e0cf30fcc19c20f84e23af31cc126bf2447d3e4f8461db97bafa7bd78f69561932f000c
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.13.debian.tar.xz' openssl_1.1.1f-1ubuntu2.13.debian.tar.xz 173700 SHA512:e074e6051de63add4a2e75dcc44f3adad949be90d2a6e36cccbb01d620e65a655667fb520e9c2e8ece2b96cfeb89a426157cfae43f67730bf08176e3f1deabd3
-```
 
 ### `dpkg` source package: `p11-kit=0.23.20-1ubuntu0.1`
 
@@ -3947,14 +3942,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-core=0.8.3-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.3-1.debian.tar.xz' python3-colcon-core_0.8.3-1.debian.tar.xz 1608 SHA512:1cceafe1cadbeac51c09d513d24a38131f4aeb11c2a61fe49db79a3796f8a708852647aecf542f7d1d9dce1eadf2a2798c6fd2d0294ef140f4c3e381166a9d06
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.3-1.dsc' python3-colcon-core_0.8.3-1.dsc 916 SHA512:1cda05553a5529366ca16441a3abe719b4a562f875b2bb4662ba0ea6ef7621be2963e6212139f810a1c5b01e9a180f37cb8ce85b77bc0f578b69469c683d61b7
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-core/python3-colcon-core_0.8.3.orig.tar.gz' python3-colcon-core_0.8.3.orig.tar.gz 106115 SHA512:00edcf3f3debbc21b181ac8bf8174a05f303e3163fbb53e518365dd24b3553a792e7c692a651f013db018b9cc94485977d17a4e99fe2fe117a2e07eab5cc48e9
-```
 
 ### `dpkg` source package: `python3-colcon-defaults=0.2.6-1`
 
