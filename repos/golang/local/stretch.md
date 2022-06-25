@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ce77cc785a8d039eebc5cd19309c176e7997046ed7e7c062a5456ba24bb54e96`
-- Created: `2022-06-01T22:20:35.404303729Z`
+- Image ID: `sha256:6ee1deda35bd32b4e08dfd7d0a41f79c14f75afd102507c9ae79a9c10950eb4a`
+- Created: `2022-06-23T18:50:40.067219697Z`
 - Virtual Size: ~ 867.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -960,11 +960,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/git/1:2.11.0-3+deb9u7/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/git/1:2.11.0-3+deb9u7/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `glib2.0=2.50.3-2+deb9u2`
+### `dpkg` source package: `glib2.0=2.50.3-2+deb9u3`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.50.3-2+deb9u2`
+- `libglib2.0-0:amd64=2.50.3-2+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 
@@ -973,17 +973,17 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris glib2.0=2.50.3-2+deb9u2
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3-2%2bdeb9u2.dsc' glib2.0_2.50.3-2+deb9u2.dsc 3278 SHA256:04b8ae6238d36052ef753615f8278b69df8b91922c15776409a1a60e3eec3b00
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3.orig.tar.xz' glib2.0_2.50.3.orig.tar.xz 7589284 SHA256:82ee94bf4c01459b6b00cb9db0545c2237921e3060c0b74cff13fbc020cfd999
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3-2%2bdeb9u2.debian.tar.xz' glib2.0_2.50.3-2+deb9u2.debian.tar.xz 77776 SHA256:f6d26084bf06135d85188f881790d9e0c5e706d24735af68cafa5d96f3da7fd4
+$ apt-get source -qq --print-uris glib2.0=2.50.3-2+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.50.3-2%2bdeb9u3.dsc' glib2.0_2.50.3-2+deb9u3.dsc 3429 SHA256:7e080dfb2f6aeb8db835c1aef845294665d99fd07f9494c4ff022cedb2bcd059
+'http://security.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.50.3.orig.tar.xz' glib2.0_2.50.3.orig.tar.xz 7589284 SHA256:82ee94bf4c01459b6b00cb9db0545c2237921e3060c0b74cff13fbc020cfd999
+'http://security.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.50.3-2%2bdeb9u3.debian.tar.xz' glib2.0_2.50.3-2+deb9u3.debian.tar.xz 87720 SHA256:c8c0b58d5cb5c510546bfbaa6289ac93417dbac6efeb289d938d816458a358c8
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/glib2.0/2.50.3-2+deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.50.3-2+deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.50.3-2+deb9u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/glib2.0/2.50.3-2+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/glib2.0/2.50.3-2+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glib2.0/2.50.3-2+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.24-11+deb9u4`
 
@@ -3017,23 +3017,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.29b-1.1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.29b-1.1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2021a-0+deb9u3`
+### `dpkg` source package: `tzdata=2021a-0+deb9u4`
 
 Binary Packages:
 
-- `tzdata=2021a-0+deb9u3`
+- `tzdata=2021a-0+deb9u4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris tzdata=2021a-0+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2021a-0%2bdeb9u4.dsc' tzdata_2021a-0+deb9u4.dsc 2029 SHA256:e4117835c21c65b0c4527770a2518085fad326f5513838819613d64c458f08e9
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2021a.orig.tar.gz' tzdata_2021a.orig.tar.gz 411892 SHA256:39e7d2ba08c68cbaefc8de3227aab0dec2521be8042cf56855f7dc3a9fb14e08
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2021a-0%2bdeb9u4.debian.tar.xz' tzdata_2021a-0+deb9u4.debian.tar.xz 107952 SHA256:ac1ba438b78485a77b91ca4c6628eb32ba085c44d7dd70ac1b9f709bdf6fe2dd
+```
 
-- http://snapshot.debian.org/package/tzdata/2021a-0+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/tzdata/2021a-0+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2021a-0+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2021a-0+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0036`
 
