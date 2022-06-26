@@ -1,10 +1,10 @@
-# `hylang:1.0a4-python3.7-alpine3.15`
+# `hylang:0.24.0-python3.7-alpine3.15`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c09d3cb409b098e4c9e8ea84ef03a0f005e6a37438e454b574747df319e940f2`
-- Created: `2022-06-02T20:50:32.652402074Z`
-- Virtual Size: ~ 53.20 Mb  
+- Image ID: `sha256:65f5505381147aa6b8a380fa63d6d1febf342392f04da7fc78bbe05535be9a94`
+- Created: `2022-06-24T02:21:33.692837056Z`
+- Virtual Size: ~ 54.80 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -17,8 +17,8 @@
   - `PYTHON_SETUPTOOLS_VERSION=57.5.0`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/6ce3639da143c5d79b44f94b04080abf2531fd6e/public/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=ba3ab8267d91fd41c58dbce08f76db99f747f716d85ce1865813842bb035524d`
-  - `HY_VERSION=1.0a4`
-  - `HYRULE_VERSION=0.1`
+  - `HY_VERSION=0.24.0`
+  - `HYRULE_VERSION=0.2`
 
 ## `apk` (`.apk`-based packages)
 
