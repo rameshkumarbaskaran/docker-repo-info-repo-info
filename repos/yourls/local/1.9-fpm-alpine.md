@@ -1,10 +1,10 @@
-# `yourls:1.9-fpm-alpine`
+# `yourls:1.9.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2b409d594dbb2ee43a35624d3ad61a9cc0c736891cb67f54f5778dc4620a9321`
-- Created: `2022-06-10T04:15:56.546472666Z`
-- Virtual Size: ~ 84.42 Mb  
+- Image ID: `sha256:01070a242f24ce4293c4703fac50deb3ca180a5b773539f65f6c29d01a5c907f`
+- Created: `2022-06-24T19:08:11.417678698Z`
+- Virtual Size: ~ 84.34 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -21,9 +21,10 @@
   - `PHP_URL=https://www.php.net/distributions/php-8.1.7.tar.xz`
   - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.7.tar.xz.asc`
   - `PHP_SHA256=f042322f1b5a9f7c2decb84b7086ef676896c2f7178739b9672afafa964ed0e5`
-  - `YOURLS_VERSION=1.9`
-  - `YOURLS_SHA256=212c4cd283f0b2b44e07da66a882cca4886e064f642bf4de8ecb8dbfb867e542`
+  - `YOURLS_VERSION=1.9.1`
+  - `YOURLS_SHA256=0bf53290e8f86ea2e0121aac70f7c64d70d3dfb54823acb9dcc343dd7c5f455a`
 - Labels:
+  - `io.artifacthub.package.readme-url=https://raw.githubusercontent.com/YOURLS/YOURLS/master/README.md`
   - `org.opencontainers.image.authors=YOURLS`
   - `org.opencontainers.image.description=Your Own URL Shortener`
   - `org.opencontainers.image.documentation=https://yourls.org/`
@@ -31,7 +32,7 @@
   - `org.opencontainers.image.title=YOURLS`
   - `org.opencontainers.image.url=https://yourls.org/`
   - `org.opencontainers.image.vendor=YOURLS Org`
-  - `org.opencontainers.image.version=1.9`
+  - `org.opencontainers.image.version=1.9.1`
 
 ## `apk` (`.apk`-based packages)
 

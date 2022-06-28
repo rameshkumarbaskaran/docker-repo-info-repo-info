@@ -1,10 +1,10 @@
-# `yourls:1.9-fpm`
+# `yourls:1.9.1-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4b10a2698d001c6313dded98624069975d917f4ec3d14abdbf18bfad64a12f0e`
-- Created: `2022-06-24T02:13:30.861964193Z`
-- Virtual Size: ~ 459.13 Mb  
+- Image ID: `sha256:1e893f57c6f31351e841a5e02747ec8a37747ec3f118284656d7315d4b4381c8`
+- Created: `2022-06-24T19:07:05.719196604Z`
+- Virtual Size: ~ 459.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -21,9 +21,10 @@
   - `PHP_URL=https://www.php.net/distributions/php-8.1.7.tar.xz`
   - `PHP_ASC_URL=https://www.php.net/distributions/php-8.1.7.tar.xz.asc`
   - `PHP_SHA256=f042322f1b5a9f7c2decb84b7086ef676896c2f7178739b9672afafa964ed0e5`
-  - `YOURLS_VERSION=1.9`
-  - `YOURLS_SHA256=212c4cd283f0b2b44e07da66a882cca4886e064f642bf4de8ecb8dbfb867e542`
+  - `YOURLS_VERSION=1.9.1`
+  - `YOURLS_SHA256=0bf53290e8f86ea2e0121aac70f7c64d70d3dfb54823acb9dcc343dd7c5f455a`
 - Labels:
+  - `io.artifacthub.package.readme-url=https://raw.githubusercontent.com/YOURLS/YOURLS/master/README.md`
   - `org.opencontainers.image.authors=YOURLS`
   - `org.opencontainers.image.description=Your Own URL Shortener`
   - `org.opencontainers.image.documentation=https://yourls.org/`
@@ -31,7 +32,7 @@
   - `org.opencontainers.image.title=YOURLS`
   - `org.opencontainers.image.url=https://yourls.org/`
   - `org.opencontainers.image.vendor=YOURLS Org`
-  - `org.opencontainers.image.version=1.9`
+  - `org.opencontainers.image.version=1.9.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2267,21 +2268,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1n-0+deb11u2
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb11u2.dsc' openssl_1.1.1n-0+deb11u2.dsc 2652 SHA256:d2d4680d901c8678ea9a99bd05850f7a81f9d2ee7c4d1c6626faccd309f67701
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz' openssl_1.1.1n.orig.tar.gz 9850712 SHA256:40dceb51a4f6a5275bde0e6bf20ef4b91bfc32ed57c0552e2e8e15463372b17a
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n.orig.tar.gz.asc' openssl_1.1.1n.orig.tar.gz.asc 488 SHA256:e0e89e9467102880ee6f2ee8c1413933eb1268969afb97b9bec61e2190a62fd0
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1n-0%2bdeb11u2.debian.tar.xz' openssl_1.1.1n-0+deb11u2.debian.tar.xz 85408 SHA256:2983ba19dc9f923161d171fe7a52fddc75f1c4503cb104bce5a6aee529791b85
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb11u2/
 
-- https://sources.debian.net/src/openssl/1.1.1n-0+deb11u2/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1n-0+deb11u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1n-0+deb11u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.22-1`
 
