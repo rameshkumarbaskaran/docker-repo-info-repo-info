@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5bec4dcdadc957d6c17a5e5d21d5571874812112148ba55c4ca46fb6e7fdd48e`
-- Created: `2022-06-07T02:53:48.206110099Z`
-- Virtual Size: ~ 167.91 Mb  
+- Image ID: `sha256:21176977374beb1433a858ab721a0083ceadad531a120e6d614cf26cd0cdc037`
+- Created: `2022-06-29T18:21:49.424150882Z`
+- Virtual Size: ~ 168.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/opt/ibm/java/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_VERSION=8.0.7.10`
+  - `JAVA_VERSION=8.0.7.11`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-XX:+UseContainerSupport`
 
@@ -1210,9 +1210,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris shadow=1:4.5-1ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1ubuntu2.2.dsc' shadow_4.5-1ubuntu2.2.dsc 2401 SHA512:edc71f8392ffedba675d403d2c54084bbbc4b05be63ec6b77055a7fa82647779f26a427d3c12392567e27da3b831b506b5b34ffa75c92b64162133098dd666f0
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5.orig.tar.xz' shadow_4.5.orig.tar.xz 1344524 SHA512:4278544efdd6d800a3c46cfcb144f209ace14ebe017ba1c0d05425fac7868062a73afa8522036a2bc0a16f6f1e7c16373a204463221012367ce0e8e9ef4c4a4d
-'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1ubuntu2.2.debian.tar.xz' shadow_4.5-1ubuntu2.2.debian.tar.xz 473640 SHA512:2f1b28b796e1157164859d63e129b8e08dc297610580396993e4fae6f491ed5d56581461540e3a020ea44838431e36e828ac15d575f3b1849789415493095d6e
+'http://security.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1ubuntu2.2.dsc' shadow_4.5-1ubuntu2.2.dsc 2401 SHA512:edc71f8392ffedba675d403d2c54084bbbc4b05be63ec6b77055a7fa82647779f26a427d3c12392567e27da3b831b506b5b34ffa75c92b64162133098dd666f0
+'http://security.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5.orig.tar.xz' shadow_4.5.orig.tar.xz 1344524 SHA512:4278544efdd6d800a3c46cfcb144f209ace14ebe017ba1c0d05425fac7868062a73afa8522036a2bc0a16f6f1e7c16373a204463221012367ce0e8e9ef4c4a4d
+'http://security.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1ubuntu2.2.debian.tar.xz' shadow_4.5-1ubuntu2.2.debian.tar.xz 473640 SHA512:2f1b28b796e1157164859d63e129b8e08dc297610580396993e4fae6f491ed5d56581461540e3a020ea44838431e36e828ac15d575f3b1849789415493095d6e
 ```
 
 ### `dpkg` source package: `systemd=237-3ubuntu10.53`
