@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:77d763f31ce4600b00c167994d82e3c043211bb9de961587aa343a306300f632`
-- Created: `2022-06-22T01:51:52.654965442Z`
-- Virtual Size: ~ 256.68 Mb  
+- Image ID: `sha256:58c7308dd84727e9cfdac2c7f3c00a5ee9fae344c56c31ec5ccbdea7ffe15806`
+- Created: `2022-07-01T01:51:06.429707642Z`
+- Virtual Size: ~ 261.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -1520,6 +1520,25 @@ $ apt-get source -qq --print-uris tar=1.30+dfsg-7ubuntu0.20.04.2
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30%2bdfsg-7ubuntu0.20.04.2.dsc' tar_1.30+dfsg-7ubuntu0.20.04.2.dsc 1816 SHA512:41897fe2364f5eccabb92f551efe0008be995b6651c951c1c0f9e8272b8e92563b5a5ae360d9bb566976a8d0c32e67187599cb262a835ebce432ddf4bf925158
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30%2bdfsg.orig.tar.xz' tar_1.30+dfsg.orig.tar.xz 1883220 SHA512:f9b3843bd4da03f58d6f88de70ecb36b8ac29312714fd2120ff00f17c99e6d77cc82a8f9de348f4c2bdba9a6cc8e8c6c78039b6c14cdee15d68f2517000c36f2
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.30%2bdfsg-7ubuntu0.20.04.2.debian.tar.xz' tar_1.30+dfsg-7ubuntu0.20.04.2.debian.tar.xz 23580 SHA512:2c9999bff0257251eb7d09a702898e42ce45b117d8e3595d68bf0a6ffdeb1d4a1d69202a2674d93a9193576f65dad4de4e094479228bfb4efc4a7931f00d3875
+```
+
+### `dpkg` source package: `tzdata=2022a-0ubuntu0.20.04`
+
+Binary Packages:
+
+- `tzdata=2022a-0ubuntu0.20.04`
+
+Licenses: (parsed from: `/usr/share/doc/tzdata/copyright`)
+
+- `ICU`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris tzdata=2022a-0ubuntu0.20.04
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2022a-0ubuntu0.20.04.dsc' tzdata_2022a-0ubuntu0.20.04.dsc 2109 SHA512:bc96329a1c0d62a8e4060d8bc6add8651db7f34c0aee6788230c2c87a1528287daeee1a8913db8e5623bc67a3a224a864a863e6895037990fbec15ed9fffdd30
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2022a.orig.tar.gz' tzdata_2022a.orig.tar.gz 425833 SHA512:542e4559beac8fd8c4af7d08d816fd12cfe7ffcb6f20bba4ff1c20eba717749ef96e5cf599b2fe03b5b8469c0467f8cb1c893008160da281055a123dd9e810d9
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2022a-0ubuntu0.20.04.debian.tar.xz' tzdata_2022a-0ubuntu0.20.04.debian.tar.xz 167756 SHA512:983d605613453304cc7c74162697d7d6064a402beaec08cfde47079d5054c953455c8588294948164e253661015929dc56fe4356db47761222e6601a05844dde
 ```
 
 ### `dpkg` source package: `ubuntu-keyring=2020.02.11.4`
