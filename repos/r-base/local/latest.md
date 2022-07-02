@@ -3585,10 +3585,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris r-base=4.2.1-1
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.2.1-1.dsc' r-base_4.2.1-1.dsc 2952 SHA256:e9b80a3a2da23fc88a7ca72e0b45cc3925773b5fab0595629838d92a1a3ac442
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.2.1.orig.tar.gz' r-base_4.2.1.orig.tar.gz 37601544 SHA256:4d52db486d27848e54613d4ee977ad952ec08ce17807e1b525b10cd4436c643f
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_4.2.1-1.debian.tar.xz' r-base_4.2.1-1.debian.tar.xz 98160 SHA256:b2ed0639f855cdac4c9848d72a8e07b4df013cc6feaed7fac3d4fea46116abeb
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.2.1-1.dsc' r-base_4.2.1-1.dsc 2952 SHA256:e9b80a3a2da23fc88a7ca72e0b45cc3925773b5fab0595629838d92a1a3ac442
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.2.1.orig.tar.gz' r-base_4.2.1.orig.tar.gz 37601544 SHA256:4d52db486d27848e54613d4ee977ad952ec08ce17807e1b525b10cd4436c643f
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_4.2.1-1.debian.tar.xz' r-base_4.2.1-1.debian.tar.xz 98160 SHA256:b2ed0639f855cdac4c9848d72a8e07b4df013cc6feaed7fac3d4fea46116abeb
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/r-base/4.2.1-1/ (for browsing the source)
+- https://sources.debian.net/src/r-base/4.2.1-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/r-base/4.2.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-class=7.3-20-1`
 
